@@ -1,0 +1,2685 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Series Sort -->
+<script src="scripts/showSeries.js"></script>
+<!-- End of Seriers Sort -->
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*41;
+var imgBgSrc="icons/background/dystopia.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_dystopia_score_eng.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_dystopia_score_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_dystopia_score_rus.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_dystopia_score_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('phd_eng.html');
+			} else {
+				window.location.href='phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+	
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_not_selected_black">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_selected">
+		  Movies</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; By Actors</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; By Genre</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_action_horror_score_eng.html');
+			} else {
+				window.location.href='movies_genre_action_horror_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Action Horror</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_body_horror_score_eng.html');
+			} else {
+				window.location.href='movies_genre_body_horror_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Body Horror</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_dystopia_score_eng.html');
+			} else {
+				window.location.href='movies_genre_dystopia_score_eng.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 15px;">
+		  &bull; Dystopia</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_pilot_score_eng.html');
+			} else {
+				window.location.href='movies_genre_pilot_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Television Pilot</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_7"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_post_apocalyptic_score_eng.html');
+			} else {
+				window.location.href='movies_genre_post_apocalyptic_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Post-Apocalyptic</div>
+        </td>
+	</tr>
+
+
+
+	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_9"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_short_score_eng.html');
+			} else {
+				window.location.href='movies_genre_short_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Short</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_10"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_sitcom_score_eng.html');
+			} else {
+				window.location.href='movies_genre_sitcom_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Situation Comedy</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_11"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_space_opera_score_eng.html');
+			} else {
+				window.location.href='movies_genre_space_opera_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Space Opera</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_3"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Animation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_mockbuster_eng.html');
+			} else {
+				window.location.href='movies_mockbuster_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Mockbuster</div>
+        </td>
+	</tr>		
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_5"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Superhero</div>
+        </td>
+	</tr>
+
+
+
+<tr>
+		<td align="left" >
+		  <div id="menu_8_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_not_satanic_eng.html');
+			} else {
+				window.location.href='movies_not_satanic_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &bull; Not Satanic</div>
+        </td>
+	</tr>	
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"  
+		  class="menu_not_selected_black">
+		  Series</div>
+        </td>
+	</tr>
+
+
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('radio_eng.html');
+			} else {
+				window.location.href='radio_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Radio</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Psychology</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table with search, name and languages -->
+        <tr class="title_black"> 
+                <td  class="title_black" style="width: 500px;"><a name="series">Movies &blacktriangleright; Dystopia</a></td>
+				<td bgcolor="#e2e2e2" width="3"></td>
+				<td  style="width: 150px;">
+				    Sort By:
+				</td>
+
+				<td style="width: 22px;">
+				    <div id="sortby_name" align="center" 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="mouseOutSortByName('score');"
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('movies_genre_dystopia_eng.html'+ window.location.hash);
+                        } else {
+                                window.location.href='movies_genre_dystopia_eng.html'+ window.location.hash;
+                        };"
+                        class="flag_not_selected"
+                    >
+<img src="scripts/contents/icons/sortby/sortby_name.png" alt="Name" title="Name" width="22" height="18"  style="display: block;"/>
+                    </div>
+				</td>
+
+				<td style="width: 22px;">
+				    <div id="sortby_score" align="center" 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="mouseOutSortByScore('score');"
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('movies_genre_dystopia_score_eng.html'+ window.location.hash);
+                        } else {
+                                window.location.href='movies_genre_dystopia_score_eng.html'+ window.location.hash;
+                        };"
+                        class="flag_selected"
+                    >
+                        <img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18" style="display: block;"/>
+                    </div>
+				</td>
+				
+				
+				
+        </tr>
+
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+</table>
+
+
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:943px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="music">Dystopia</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/dystopia.jpg" alt="Dystopia" title="Dystopia" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					
+
+<P>A <b>dystopia</b> (from the Greek &delta;&upsilon;&sigma;- and &tau;&omicron;&pi;&omicron;&sigmaf;, alternatively, <b>cacotopia</b>, <b>kakotopia</b>, or simply <b>anti-utopia</b>) is a community or society that is undesirable or frightening. It is translated as "not-good place", an antonym of utopia, a term that was coined by Sir Thomas More and figures as the title of his most well-known work, Utopia (the blueprint for an ideal society with no crime or poverty). Dystopian societies appear in many artistic works, particularly in stories set in the future. Some of the most famous examples are 1984 and Brave New World. Dystopias are often characterized by dehumanization, totalitarian governments, environmental disaster, or other characteristics associated with a cataclysmic decline in society. Dystopian societies appear in many subgenres of fiction and are often used to draw attention to real-world issues regarding society, environment, politics, economics, religion, psychology, ethics, science, and/or technology, which if unaddressed could potentially lead to such a dystopia-like condition.
+		
+<br><br>
+<P><b>Etymology:</b>
+
+<P>Dystopia is derived from the term Utopia, itself originally coined by Thomas More in his book of that title completed in 1516. "Utopia" is derived from the Greek words ou (&omicron;&nu;), "not", and topos (&tau;&omicron;&pi;&omicron;&sigmaf;), "place". In the 17th century, the term came to be applied to any place or society considered perfect or ideal, possibly by confusion with the Greek prefix eu- (as in eutopia "good place"), which would have coincided in English pronunciation.
+
+<P>Dystopia was coined as the antonym of this latter meaning developed by Utopia to refer to an "imagined bad place", replacing the prefix with the Ancient Greek: &delta;&upsilon;&sigma;- "bad". It was first used by J. S. Mill in one of his Parliamentary Speeches 1868 (Hansard Commons).
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Dystopia" class = "standardb_black" target="_blank">Wikipedia Dystopia</a> - <b>Dystopia</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					05th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="anon">Anon</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/anon.jpg" alt="Anon" title="Anon" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Anon</b> is a 2018 British science fiction thriller film directed and written by Andrew Niccol and financed by Sky Cinema Original Films. The film stars Clive Owen and Amanda Seyfried. The plot follows a troubled detective in a futuristic world where privacy and anonymity no longer exist, who comes across a young woman that has evaded the government's transparency system. The film was released internationally as an "Original Film" on the streaming service Netflix on 4 May 2018, whilst in the United Kingdom and Ireland, the film was released in cinemas by Altitude Film Distribution and through on-demand by Sky Cinema on 11 May 2018.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Anon_(film)" class = "standardb_black" target="_blank">Wikipedia Anon (film)</a> - <b>Anon</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=4zaJ1f2_D94" class = "standardb_black" target="_blank">Anon</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					10th of Jun, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="chaos_walking">Chaos Walking</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/chaos_walking.jpg" alt="Chaos Walking" title="Chaos Walking" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Chaos Walking</b> is a 2021 American dystopian action film directed by Doug Liman from a screenplay by Patrick Ness and Christopher Ford. It is based on Ness's science fiction trilogy Chaos Walking, adapting its first book, 2008's The Knife of Never Letting Go. It stars Daisy Ridley, Tom Holland, Mads Mikkelsen, Demián Bichir, Cynthia Erivo, Nick Jonas, and David Oyelowo. It follows a young man (Holland) who lives in a dystopian world without women, where all living creatures can hear each other's thoughts in streams of images, words, and sounds called "Noise". When a woman (Ridley) crash-lands on the planet, he must help her escape danger.
+
+<P>Announced in 2011, the film underwent several rewrites from a draft by Charlie Kaufman, with Jamie Linden, John Lee Hancock, Gary Spinelli, Lindsey Beer, Christopher Ford, and Ness revising it further. Liman was later announced as director in 2016, and principal photography began in 2017. Originally set to release on March 1, 2019, it was removed from schedule to accommodate the film's reshoots in April 2019 after poor test screenings.
+
+<P>Chaos Walking was theatrically released on February 24, 2021, in South Korea, and on March 5, 2021, in the United States. It received generally negative reviews from critics, and was a box office failure, grossing $21 million worldwide against its $100 million budget, resulting in a write-down for Lionsgate.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Chaos_Walking_(film)" class = "standardb_black" target="_blank">Wikipedia Chaos Walking (film)</a> - <b>Chaos Walking</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=UIrGxHhdqXo" class = "standardb_black" target="_blank">Chaos Walking</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					03rd of May, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="childhoods_end">Childhood's End</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/books/childhoods_end.png" alt="Childhood's End" title="Childhood's End" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Childhood's End</b> is an American television miniseries based on the <a href="books_clarke_eng.html#childhoods_end" class = "standardb_black" target="_blank">novel of the same name</a>, by <a href="books_clarke_eng.html" class = "standardb_black" target="_blank">Arthur C. Clarke</a>, and developed by Matthew Graham. It premiered on Syfy on December 14, 2015.
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Childhood%27s_End_(miniseries)" class = "standardb_black" target="_blank">Wikipedia Childhood's End (miniseries)</a> - <b>Childhood's End</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=i3e7aMCIxjY" class = "standardb_black" target="_blank">Childhood's End</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					29th of Dec, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="code_8">Code 8</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/code_8.jpg" alt="Code 8" title="Code 8" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Code 8</b> is a 2019 Canadian science fiction action film written and directed by Jeff Chan, about a man with superpowers who works with a group of criminals to raise money to help his sick mother. The film is a feature-length version of the 2016 short film of the same name.
+			
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Code_8_(2019_film)" class = "standardb_black" target="_blank">Wikipedia Code 8 (2019 film)</a> - <b>Code 8</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=PrX1JJ5dduA" class = "standardb_black" target="_blank">Code 8</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					15th of Jan, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="darkest_minds">The Darkest Minds</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/darkest_minds.jpg" alt="The Darkest Minds" title="The Darkest Minds" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>The Darkest Minds</b> is a 2018 American dystopian science fiction thriller film directed by Jennifer Yuh Nelson, and written by Chad Hodge, based on Alexandra Bracken's young adult novel of the same name. The film stars Amandla Stenberg, Harris Dickinson, Mandy Moore, and Gwendoline Christie, and follows a group of teenagers who are on the run from the government after mysteriously obtaining superpowers. The film was released in the United States on August 3, 2018, by 20th Century Fox. It received negative reviews from critics and grossed $41.1 million worldwide against its $34 million production budget.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Darkest_Minds" class = "standardb_black" target="_blank">Wikipedia The Darkest Minds</a> - <b>The Darkest Minds</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=tN8o_E_f9FQ" class = "standardb_black" target="_blank">The Darkest Minds</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14th of Jan, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="dragon_day">Dragon Day</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/dragon_day.jpg" alt="Dragon Day" title="Dragon Day" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Dragon Day
+
+<P><b>Storyline:</b> A family getaway to a mountain town turns deadly when China launches a massive cyberattack against the USA, forcing former NSA engineer Duke Evans to fight to save his wife and daughter in the New World Order. 
+
+<P><b>Genres:</b>  Drama, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Ethan Flower, Osa Wallander, Jenn Gotzon Chandler
+
+<P><b>Director:</b> Jeffrey Travis
+
+<P><b>Country:</b> USA
+
+<P><b>Production Co:</b> Burning Myth Productions, Matter Media Studios
+
+<P><b>Duration:</b> 95 min
+
+<P><b>Release:</b> 28 October 2014 (USA)
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt1772262/" class = "standardb_black" target="_blank">IMDb Dragon Day</a> - <b>Dragon Day</b> on IMDb.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=GsnYqbVfjNA" class = "standardb_black" target="_blank">Dragon Day</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					21st of Dec, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+
+        </td>
+		</tr>
+		
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="equals">Equals</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/equals.jpg" alt="Equals" title="Equals" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Equals</b> is a 2015 American science fiction romantic drama film directed by Drake Doremus, produced by Michael Pruss, Chip Diggins, Ann Ruak, Michael Schaefer, Ridley Scott, and Jay Stern, and written by Nathan Parker from a story by Doremus. It stars Nicholas Hoult and Kristen Stewart as two people diagnosed with a disease that restores their human compassion and emotions in a dystopian world where emotions do not exist. Additional roles are played by Guy Pearce and Jacki Weaver.
+
+<P>The film had its world premiere in the international competition section at the 72nd Venice International Film Festival. The film had its North American premiere in the Special Presentations programme at the 2015 Toronto International Film Festival. The film was released on May 26, 2016 through DirecTV Cinema prior to opening in a limited release on July 15 by A24.
+
+
+<br><br>
+<P><b>Reception:</b>
+<P>The film has received mixed reviews from critics. Review aggregator Rotten Tomatoes currently gives the film a rating of 32% based on 66 reviews with a weighted average score of 5/10. The site's critical consensus reads, "Equals is a treat for the eyes, but its futuristic aesthetic isn't enough to make up for its plodding pace and aimlessly derivative story." Metacritic assigned the film a normalized score of 43 out of 100, based on 27 critics, indicating "mixed or average reviews ".
+
+<P>Peter Debruge of Variety, giving the film a positive review, said "Kristen Stewart and Nicholas Hoult play citizens living in an emotion-free future who struggle to understand the attraction they feel for one another in this stylish, if simplistic sci-fi romance." While, IndieWire gave the film a C-, writing that "the real wonder and marvel and breathless mystery of Equals may be that something so dazzlingly white can be so very dull."
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Equals_(film)" class = "standardb_black" target="_blank">Wikipedia Equals (film)</a> - <b>Equals</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=OW-0wmuNBto" class = "standardb_black" target="_blank">Equals</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14th of Sep, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="hotel_artemis">Hotel Artemis</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/hotel_artemis.jpg" alt="Hotel Artemis" title="Hotel Artemis" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Hotel Artemis</b> is a 2018 American dystopian action thriller film written and directed by Drew Pearce, in his feature film directorial debut. It stars Jodie Foster, Sterling K. Brown, Sofia Boutella, Jeff Goldblum, Charlie Day, Brian Tyree Henry, Jenny Slate, Dave Bautista, and Zachary Quinto. The plot follows Jean Thomas, a nurse who runs a secret hospital for criminals in futuristic Los Angeles. It was released in the United States on June 8, 2018 and received mixed reviews from critics, who praised the cast and premise but said "it doesn’t exactly punch above its weight in terms of originality or impact given the intriguing pedigree."
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Hotel_Artemis" class = "standardb_black" target="_blank">Wikipedia Hotel Artemis</a> - <b>Hotel Artemis</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=S4ExcW_ia0Q" class = "standardb_black" target="_blank">Hotel Artemis</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14th of Aug, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="last_man">The Last Man</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/last_man.jpg" alt="The Last Man" title="The Last Man" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> The Last Man
+
+<P><b>Storyline:</b> Tov Matheson is a war veteran with post traumatic stress disorder who perceives that the end of the world is coming. After establishing a relationship with a dubious Messiah, he leaves his normal life to begin the construction of a shelter underground and trains himself, in an extreme way, at the cost of everything in his life. When he also believes the Messiah, something extraordinary happens.
+
+<P><b>Genres:</b>  Action, Drama, Sci-Fi
+
+<P><b>Actor:</b> Hayden Christensen, Harvey Keitel, Marco Leonardi
+
+<P><b>Director:</b> Rodrigo H. Vila
+
+<P><b>Country:</b> Argentina, Canada
+
+<P><b>Production Co:</b>  Cinema 7 Films, Aicon Music Pictures, Quintessential Film
+
+<P><b>Duration:</b> 100 min
+
+<P><b>Release:</b> 6 September 2018 (Argentina)
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt3312180/" class = "standardb_black" target="_blank">IMDb The Last Man (2018)</a> - <b>The Last Man</b> on IMDb.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=AMzFvzGv0NI" class = "standardb_black" target="_blank">The Last Man</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30th of Aug, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="perfect_creature">Perfect Creature</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/perfect_creature.jpg" alt="Perfect Creature" title="Perfect Creature" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Perfect Creature</b> is a 2007 New Zealand horror/thriller film from 2007, written and directed by Glenn Standring and starring Saffron Burrows and Dougray Scott, set in an alternate universe New Zealand. The New Zealand release date was 18 October 2007.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Perfect_Creature" class = "standardb_black" target="_blank">Wikipedia Perfect Creature</a> - <b>Perfect Creature</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=qc3SWpzl868" class = "standardb_black" target="_blank">Perfect Creature</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					26th of Apr, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="rogue_warrior">Rogue Warrior: Robot Fighter</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/rogue_warrior.jpg" alt="Rogue Warrior: Robot Fighter" title="Rogue Warrior: Robot Fighter" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Rogue Warrior: Robot Fighter
+
+<P><b>Storyline:</b> A few decades from now - Sienna, a rebellious robot-fighting arms dealer, lives on a post-apocalyptic Earth. When the cities start to fall under the control of the A.I. Scourge, a hyper-weaponized robot army, Sienna decides to leave the Earth and journey to the centre of the galaxy, seeking a mythical weapon that can neutralize any form of A.I.Pursued by giant machines, Sienna loses everything she cares about in an effort to save the last vestiges of humanity in an A.I. controlled galaxy.
+
+<P><b>Genres:</b> Action, Sci-Fi
+
+<P><b>Actor:</b> Tracey Birdsall, William Kircher, Daz Crawford
+
+<P><b>Director:</b> Neil Johnson
+
+<P><b>Country:</b> USA
+
+<P><b>Production Co:</b> Empire Motion pictures, Pacific Coast Entertainment
+
+<P><b>Duration:</b> 101 min
+
+<P><b>Release:</b> 6 June 2017 (USA)
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt4937114/" class = "standardb_black" target="_blank">IMDb Rogue Warrior: Robot Fighter</a> - <b>Rogue Warrior: Robot Fighter</b> on IMDb.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=LUUsELHtdxk" class = "standardb_black" target="_blank">Rogue Warrior: Robot Fighter</a> - Movie <b>Rogue Warrior: Robot Fighter</b> on Youtube.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=LUUsELHtdxk" class = "standardb_black" target="_blank">Rogue Warrior: Robot Fighter</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					20th of Jun, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="rover">The Rover</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/rover.jpg" alt="The Rover" title="The Rover" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>The Rover</b> is a 2014 Australian dystopian drama film written and directed by David Michôd and based on a story by Michôd and Joel Edgerton. It is a contemporary western taking place in the Australian outback, ten years after a global economic collapse. The film features Guy Pearce, Robert Pattinson, and Scoot McNairy with Anthony Hayes, Gillian Jones, Susan Prior, Nash Edgerton, David Field and Tawanda Manyimo. It premiered out of competition in the Midnight Screenings section at the 2014 Cannes Film Festival on 18 May 2014.
+
+<P>The film screened at the 2014 Sydney Film Festival on 7 June 2014, followed by the theatrical release of film in Australia on 12 June 2014. It had a limited release on 13 June 2014 in New York City and Los Angeles before expanding wide on 20 June 2014 in the United States.
+
+<P>The film earned five nominations from AACTA Awards: Best Direction, Best Lead Actor for Guy Pearce, Best Supporting Actor for Robert Pattinson, Best Production Design and Best Original Music Score and included two wins: Best Supporting Actress for Susan Prior and Best Sound.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Rover_(2014_film)" class = "standardb_black" target="_blank">Wikipedia The Rover (2014 film)</a> - <b>The Rover</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=wQmadbpV9Zk" class = "standardb_black" target="_blank">The Rover</a> - Movie <b>The Rover</b> on Youtube.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ChM2icbWo9w" class = "standardb_black" target="_blank">The Rover</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					03rd of Jul, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="sleep_dealer">Sleep Dealer</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/sleep_dealer.jpg" alt="Sleep Dealer" title="Sleep Dealer" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Sleep Dealer</b> is a 2008 futuristic science fiction film directed by Alex Rivera.
+
+<P>Sleep Dealer depicts a dystopian future to explore ways in which technology both oppresses and connects migrants. A fortified wall has ended unauthorized Mexico-US immigration, but migrant workers are replaced by robots, remotely controlled by the same class of would-be emigrants. Their life force is inevitably used up, and they are discarded without medical compensation.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Sleep_Dealer" class = "standardb_black" target="_blank">Wikipedia Sleep Dealer</a> - <b>Sleep Dealer</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=CCZJ5mSF3Wc" class = "standardb_black" target="_blank">Sleep Dealer</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					07th of Aug, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="terra_nova">Terra Nova (rus. Новая Земля)</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/terra_nova.jpg" alt="Terra Nova (rus. Новая Земля)" title="Terra Nova (rus. Новая Земля)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Terra Nova</b> (Russian: Новая Земля, translit. Novaya Zemlya) is an action film, directed by Aleksandr Melnik and released in 2008. The film stars Konstantin Lavronenko, Andrei Feskov, Marat Basharov, Pavel Sborshchikov, Sergei Zhigunov, Aleksandr Samoylenko, Tommy 'Tiny' Lister and Ingeborga Dapkunaite. It was filmed in Russia, Ukraine, Malta and Norway.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Terra_Nova_(2008_film)" class = "standardb_black" target="_blank">Wikipedia Terra Nova (2008 film)</a> - <b>Terra Nova (rus. Новая Земля)</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=jSJ3jRBaHrs" class = "standardb_black" target="_blank">Terra Nova (rus. Новая Земля)</a> - Official Trailer (rus.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					29th of Jan, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="vivarium">Vivarium</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/vivarium.jpg" alt="Vivarium" title="Vivarium" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Vivarium</b> is a 2019 science fiction thriller film directed by Lorcan Finnegan, from a story by Finnegan and Garret Shanley. An international co-production between Ireland, Denmark and Belgium, the film stars Imogen Poots and Jesse Eisenberg.
+
+<P>The film had its world premiere at the Cannes Film Festival on 18 May 2019. It was released in Ireland on 27 March 2020 by Vertigo Releasing.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Vivarium_(film)" class = "standardb_black" target="_blank">Wikipedia Vivarium (film)</a> - <b>Vivarium</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=U3Xy2x9NDrw" class = "standardb_black" target="_blank">Vivarium</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					18th of May, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="white_king">The White King</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/white_king.jpg" alt="The White King" title="The White King" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>The White King</b> is a 2016 British science fiction-drama film written and directed by Alex Helfrecht and Jörg Tittel. It is an adaptation of the novel of the same name written by György Dragomán and follows Djata (Lorenzo Allchurch) growing up in a dictatorship, without access to the rest of the world, while dealing with persecution against him and his parents by the government. It had its world premiere at the Edinburgh International Film Festival and its international premiere at the Tallinn Black Nights Film Festival.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_White_King_(film)" class = "standardb_black" target="_blank">Wikipedia The White King (film)</a> - <b>The White King</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ulmPSRqEQDI" class = "standardb_black" target="_blank">The White King</a> - Movie <b>The White King</b> on Youtube.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=mJyfDzNuXOA" class = "standardb_black" target="_blank">The White King</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					18th of Jul, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="ares">Ares (fr. Ar&egrave;s)</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/ares.jpg" alt="Ares (fr. Ar&egrave;s)" title="Ares (fr. Ar&egrave;s)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Ares</b> (French: Ar&egrave;s) is a 2016 French dystopian science fiction film directed by Jean-Patrick Benes. Ola Rapace stars as a boxer who is forced into testing a dangerous new performance-enhancing drug for one of the corporations that now controls France. It premiered at the Paris Comic-con on October 21 and was released in France on 11 November 2016.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Ares_(film)" class = "standardb_black" target="_blank">Wikipedia Ares (film)</a> - <b>Ares (fr. Ar&egrave;s)</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=fPnsQf-S0uQ" class = "standardb_black" target="_blank">Ares (fr. Ar&egrave;s)</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14th of Jun, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+
+        </td>
+		</tr>
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="bliss">Bliss</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/bliss.jpg" alt="Bliss" title="Bliss" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Bliss</b> is a 2021 American science fiction drama film written and directed by Mike Cahill. It stars Owen Wilson and Salma Hayek. A man whose life is in disarray meets a beautiful woman who tries to convince him he is living in a simulation.
+
+<P>It was released on February 5, 2021, on Amazon Prime Video. The film received mostly unfavorable reviews from critics.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Bliss_(2021_film)" class = "standardb_black" target="_blank">Wikipedia Bliss (2021 film)</a> - <b>Bliss</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ZHtPm8v-yNw" class = "standardb_black" target="_blank">Bliss</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					19th of Feb, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="dark_noon">Dark by Noon</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/dark_noon.jpg" alt="Dark by Noon" title="Dark by Noon" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Dark by Noon
+
+<P><b>Storyline:</b> This time-travel thriller is set in an alternate time, a world where history has unfolded differently. Rez played by Patrick Buchanan (Belfast Story) lost his wife sometime in the past. Now heist a man abandoned by society, but he possesses a gift: the perfect photographic memory, but having perfect recall isn't all it's cracked up to be. A covert government agency headed by Rez's old mentor Haycock - played by Anthony Murphy (Charlie Casanova, Dawn of the Dragonslayer) has stolen a device called 'Titus'; a machine that has the ability to send a person eight hours into the future, but only for a short period. The organisation is making millions by recording advance knowledge of the stock market, heisting the future eight hours at a time. One day Rez leaps forward in time and witnesses a nuclear explosion. As he jumps back to his own time-line, events begin to spiral out of control as he only has eight hours to discover the cause, save his estranged daughter and a city, unaware it's about to be destroyed.
+
+<P><b>Genres:</b>  Drama, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Patrick Buchanan, Tim Dillard, Grace Fitzgerald
+
+<P><b>Director:</b> Alan Leonard, Michael O'Flaherty
+
+<P><b>Country:</b> Ireland
+
+<P><b>Production Co:</b> Ikka Productions, Vico Films
+
+<P><b>Duration:</b> 96 min
+
+<P><b>Release:</b> 6 May 2013 (UK)
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt2387431/" class = "standardb_black" target="_blank">IMDb Dark by Noon (2013)</a> - <b>Dark by Noon</b> on IMDb.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ipANk1BK2BY" class = "standardb_black" target="_blank">Dark by Noon</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					12th of May, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="nineteen_eighty_four">Nineteen Eighty-Four</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/nineteen_eighty_four.jpg" alt="Nineteen Eighty-Four" title="Nineteen Eighty-Four" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Nineteen Eighty-Four</b>, also known as <b>1984</b>, is a 1984 British dystopian science fiction film written and directed by Michael Radford, based upon George Orwell's novel of the same name. Starring John Hurt, Richard Burton, Suzanna Hamilton, and Cyril Cusack, the film follows the life of Winston Smith, a low-ranking civil servant in a post-disaster London ruled by Oceania, a totalitarian superstate. Smith (Hurt) struggles to maintain his sanity and his grip on reality as the regime's overwhelming power and influence persecutes individualism and individual thinking on both a political and personal level.
+
+<P>The film, which features Burton's last screen appearance, is dedicated to him. The film was nominated for a BAFTA Award for Best Art Direction, and won two Evening Standard British Film Awards for Best Film and Best Actor.
+
+<br><br>
+<P><b>Reception:</b>
+
+<P>Upon its U.S. premiere, Vincent Canby said the film was "admirable, bleakly beautiful", though "not an easy film to watch". Roger Ebert awarded the film 3.5/4 stars, writing that it "penetrates much more deeply into the novel's heart of darkness" than previous adaptations, and describing Hurt as "the perfect Winston Smith."
+
+<P>Review aggregation website Rotten Tomatoes gives the film an 80% "fresh" rating, based on 20 reviews, with an average rating of 6.7/10.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Nineteen_Eighty-Four_(1984_film)" class = "standardb_black" target="_blank">Wikipedia Nineteen Eighty-Four (1984 film)</a> - <b>Nineteen Eighty-Four</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=urrqW4_3IBg" class = "standardb_black" target="_blank">Nineteen Eighty-Four</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					16th of Jun, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="arq">ARQ</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 3/5">&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 3/5">&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/arq.jpg" alt="ARQ" title="ARQ" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+
+
+<P><b>ARQ</b> is a 2016 American-Canadian science fiction film directed by Tony Elliott. It was selected to be screened in the Discovery section at the 2016 Toronto International Film Festival. The film was released on Netflix worldwide on September 16, 2016. Robbie Amell plays an engineer whose invention causes time to loop during a home invasion. He attempts to save his former lover, played by Rachael Taylor, while learning who has targeted him and why.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/ARQ_(film)" class = "standardb_black" target="_blank">Wikipedia ARQ (film)</a> - <b>ARQ</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=pC2yaaXsHM0" class = "standardb_black" target="_blank">ARQ</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					27th of Nov, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="true_bloodthirst">True Bloodthirst</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 3/5">&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 3/5">&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/true_bloodthirst.jpg" alt="True Bloodthirst" title="True Bloodthirst" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> True Bloodthirst
+
+<P><b>Storyline:</b> Bucharest, Romania. The not-too-distant future, but an entirely different city. The human population is dwindling. The vampire population, meanwhile, is exploding. Having emerged from the shadows a decade earlier, vampires now walk openly amongst the human population, as a precarious peace exists between the two. A peace made possible by the introduction of a synthetic blood substitute, dispensed by the Romanian government, making traditional vampire feeding, and preying on humans, no longer necessary. But even so, it's not a peace that everyone is entirely comfortable with...
+
+<P><b>Genres:</b> Sci-Fi, Horror, Action
+
+<P><b>Actor:</b> Ben Lambert, Ewan Bailey, Claudia Bassols, Roark Critchlow, Neil Jackson, Iliana Lazarova, Dimitar Ougrinov, Andrew Lee Potts, Heida Reed, George Zlatarev
+
+<P><b>Director:</b> Todor Chapkanov
+
+<P><b>Country:</b> USA
+
+<P><b>Production Co:</b> UFO Films, UFO International Productions
+
+<P><b>Duration:</b> 90 min
+
+<P><b>Release:</b> 2012
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="http://l23movies.com/watch/0v8zEWGw-true-bloodthirst.html" class = "standardb_black" target="_blank">True Bloodthirst</a> - Movie <b>True Bloodthirst</b> on 123Movies.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Ebwz0-K6iZM" class = "standardb_black" target="_blank">True Bloodthirst</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					21st of May, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+	
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="dark_city">Dark City</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 2/5">&bigstar;&bigstar;</font><font color="silver" title="Score: 2/5">&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/dark_city.jpg" alt="Dark City" title="Dark City" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Dark City</b> is a 1998 American neo-noir science fiction film directed by Alex Proyas. The screenplay was written by Proyas, Lem Dobbs and David S. Goyer. The film stars Rufus Sewell, Kiefer Sutherland, Jennifer Connelly, and William Hurt. Sewell plays John Murdoch, an amnesiac man who finds himself suspected of murder. Murdoch attempts to discover his true identity and clear his name while on the run from the police and a mysterious group known only as the "Strangers".
+
+<P>The majority of the film was shot at Fox Studios Australia. It was jointly produced by New Line Cinema and Mystery Clock Cinema. New Line Cinema and New Line Home Video commercially distributed the theatrical release and home media respectively. The film premiered in the United States on February 27, 1998, and was a box office bomb, but received mainly positive reviews. The film was nominated for Hugo and Saturn Awards, and has become a cult classic. For the theatrical release, the studio was concerned that the audience would not understand the film and asked Proyas to add an explanatory voice-over narration to the introduction. A director's cut was released in 2008, restoring and preserving Proyas's original artistic vision for the film. Some critics have noted its similarities and possible influence on the Matrix series, which came out a year later.
+
+<br><br>
+<P><b>Accolades:</b>
+
+<P>The film won and was nominated for several awards in 1998. Film critic Roger Ebert cited it as the best film of 1998. In 2005, he included it on his "Great Movies" list. Ebert used it in his teaching, and also appears on a commentary track for the original DVD and the 2006 Director's Cut. The film was screened out of competition at the 1998 Cannes Film Festival.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Dark_City_%281998_film%29" class = "standardb_black" target="_blank">Wikipedia Dark City (1998 film)</a> - <b>Dark City</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=jSpowoKqSzc" class = "standardb_black" target="_blank">Dark City</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					05th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+	
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="zero_theorem">The Zero Theorem</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 2/5">&bigstar;&bigstar;</font><font color="silver" title="Score: 2/5">&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/zero_theorem.jpg" alt="The Zero Theorem" title="The Zero Theorem" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+
+<P><b>The Zero Theorem</b> is a 2013 British-French-Romanian science fiction film directed by Terry Gilliam, written by Pat Rushin, and starring Christoph Waltz, Lucas Hedges, M&eacute;lanie Thierry, and David Thewlis. The story centres on Qohen Leth (Waltz), a reclusive computer genius working on a formula to determine whether life holds any meaning.
+
+<P>Some have called it the final part of &quot;The Brazil Trilogy&quot;, though Gilliam has not referred to the film this way. Nevertheless, one can easily regard the film as the third of a satirical dystopian trilogy or &quot;Orwellian triptych&quot; begun with 1985's Brazil and continued with 1995's 12 Monkeys.
+
+<P>The film began production in October 2012.
+
+
+<br><br>
+<P><b>Reception:</b>
+
+<P>Rotten Tomatoes gives the film a critic rating of 51% from 111 critics with a weighted average score of 5.8/10 and an audience score of 43%. The site's consensus states: "Fans of director Terry Gilliam's trademark visual aesthetic will find everything they've bargained for, but for the unconverted, The Zero Theorem may prove too muddled to enjoy." On Metacritic, the film has a normalized score of 50% based on 28 critics, indicating "mixed or average reviews".
+
+<P>Harry Knowles, who saw an early screening, gave a very positive review of The Zero Theorem, stating it was "perfect", and Gilliam's best film since Brazil, describing Waltz's performance as "amazing" and that the actor deserved to win the Academy Award for Best Actor. He also hoped that the final version of the movie would be the one he saw, stating "There’s not a frame needing to be lost".
+
+<P>Commenting on the film's misrepresentation by critics, Gilliam stated on his official Facebook page that one of the few critics to note that The Zero Theorem was not a comedy, but actually a tragedy, was Dave Lancaster of Cinemas Online in his analysis of the film.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Zero_Theorem" class = "standardb_black" target="_blank">Wikipedia The Zero Theorem</a> - <b>The Zero Theorem</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=yEvA_87krBA" class = "standardb_black" target="_blank">The Zero Theorem</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					17th of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+	
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="in_time">In Time</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 1/5">&bigstar;</font><font color="silver" title="Score: 1/5">&bigstar;&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/in_time.jpg" alt="In Time" title="In Time" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>In Time</b> is a 2011 American dystopian science fiction action thriller film written, directed, and produced by Andrew Niccol and starring Justin Timberlake, Amanda Seyfried and Cillian Murphy that takes place in a society where people stop aging at 25 and each has a clock on their arm that counts down how long they have to live. The film was released on October 28, 2011.
+
+<br><br>
+<P><b>Similar works:</b>
+
+<P>Many of the elements of In Time can be found in the 1987 short film The Price of Life, made by Chanticleer Films. Its basic premise and storyline are so similar that In Time has been called an unacknowledged remake of the earlier film. The Price of Life was a 38-minute short film (story by Stephen Tolkin and Michel Monteaux) in which a time account is physically linked to every infant at birth, with death automatic when the balance drops to zero. An elite upper-class is portrayed as living hundreds of years or more. The protagonist is given a certain amount of time as an infant, and as a young boy adds days and years to his time account by buying valuables from people and selling them to visiting tourists from the rich enclave. After his sister dies after gambling away her time, the protagonist (now a young man) sets out on a journey to the enclave of "the Old Ones" in order to save the life of his mother, who is (literally) running out of time. He gets there and meets a beautiful older woman who co-opts him into the immortal lifestyle.
+
+<P>The movie Logan's Run (1976) depicts a city where everyone is destroyed when they reach the age of 30. The protagonists are Sandmen who hunt Runners trying to avoid destruction.
+
+<P>It also shares many of the elements of the short story "Time is Money" by Lee Falk, which was published in 1975.
+
+<br><br>
+<P><b>Reception, Critical response:</b>
+
+<P>The film received generally mixed reviews from critics, with praise over the originality and cast performances, but had criticism for the lack of character development; review aggregator Rotten Tomatoes reports that 36% of 152 critics gave the movie a positive review, with a rating average of 5.2 out of 10. The website's consensus reads, "In Time's intriguing premise and appealing cast are easily overpowered by the blunt, heavy-handed storytelling." Metacritic, which assigns a weighted average score out of 100 to reviews from mainstream critics, gives the film a score of 53 based on 36 reviews. CinemaScore polls reported that the average grade moviegoers gave the film was a "B-minus" on an A+ to F scale. Roger Ebert gave the film a positive review with 3 stars out of 4, noting that the "premise is damnably intriguing", but "a great deal of this film has been assembled from standard elements". Henry Barnes noted that Will is "one of the 99%" and calls the character "a Rolex Robin Hood". The film has since earned enough popularity and positive word of mouth to frequently air on basic cable stations such as FX (TV Channel).
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/In_Time" class = "standardb_black" target="_blank">Wikipedia In Time</a> - <b>In Time</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=YRSBiTF3wNw" class = "standardb_black" target="_blank">In Time</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					20th of Apr, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="realive">Realive (sp. Proyecto L&aacute;zaro)</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 1/5">&bigstar;</font><font color="silver" title="Score: 1/5">&bigstar;&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/realive.png" alt="Realive (sp. Proyecto L&aacute;zaro)" title="Realive (sp. Proyecto L&aacute;zaro)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Realive</b> (Spanish: Proyecto L&aacute;zaro) is a 2016 Belgian-Spanish-French science fiction film written and directed by Mateo Gil.
+
+<br><br>
+<P><b>Reception:</b>
+<P>Film critic Dennis Harvey of Variety.com wrote that "Gil demonstrates a graceful assurance orchestrating Realive's design and technical elements" but felt that the film was ultimately "emotionally antiseptic".
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Realive" class = "standardb_black" target="_blank">Wikipedia Realive</a> - <b>Realive (sp. Proyecto L&aacute;zaro)</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Djlkn-8fTgU" class = "standardb_black" target="_blank">Realive (sp. Proyecto L&aacute;zaro)</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					01st of Jul, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+	
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+

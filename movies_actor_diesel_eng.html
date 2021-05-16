@@ -1,0 +1,1081 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*40;
+var imgBgSrc="icons/background/vin_diesel.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_actor_diesel_eng.html' + window.location.hash);
+				} else {
+					window.location.href='movies_actor_diesel_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_actor_diesel_rus.html' + window.location.hash);
+				} else {
+					window.location.href='movies_actor_diesel_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('phd_eng.html');
+			} else {
+				window.location.href='phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+	
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_not_selected_black">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_selected">
+		  Movies</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; By Actors</div>
+        </td>
+	</tr>	
+
+
+	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('movies_actor_diesel_eng.html');
+			} else {
+				window.location.href='movies_actor_diesel_eng.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 15px;">
+		  &bull; Vin Diesel</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1_5"
+
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_actor_douglas_eng.html');
+			} else {
+				window.location.href='movies_actor_douglas_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Michael Douglas</div>
+        </td>
+	</tr>	
+
+
+
+	
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1_9"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_actor_jovovich_eng.html');
+			} else {
+				window.location.href='movies_actor_jovovich_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Milla Jovovich</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1_14"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_actor_schwarzenegger_eng.html');
+			} else {
+				window.location.href='movies_actor_schwarzenegger_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Arnold Schwarzenegger</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1_15"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_actor_stallone_eng.html');
+			} else {
+				window.location.href='movies_actor_stallone_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Sylvester Stallone</div>
+        </td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1_16"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_actor_statham_eng.html');
+			} else {
+				window.location.href='movies_actor_statham_eng.html';
+			};"		 		  
+
+
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Jason Statham</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1_18"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_actor_willis_eng.html');
+			} else {
+				window.location.href='movies_actor_willis_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Bruce Willis</div>
+        </td>
+	</tr>		
+
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; By Genre</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_3"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Animation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_mockbuster_eng.html');
+			} else {
+				window.location.href='movies_mockbuster_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Mockbuster</div>
+        </td>
+	</tr>		
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_5"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Superhero</div>
+        </td>
+	</tr>
+
+	
+
+<tr>
+		<td align="left" >
+		  <div id="menu_8_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_not_satanic_eng.html');
+			} else {
+				window.location.href='movies_not_satanic_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &bull; Not Satanic</div>
+        </td>
+	</tr>	
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"  
+		  class="menu_not_selected_black">
+		  Series</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('radio_eng.html');
+			} else {
+				window.location.href='radio_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Radio</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Psychology</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Movies &blacktriangleright; Vin Diesel</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:920px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+		
+		
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="movies">Vin Diesel</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Biography</td>
+			</tr>			
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/vin_diesel.jpg" alt="Vin Diesel" title="Vin Diesel" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Mark Sinclair</b> (born July 18, 1967), better known by his stage name Vin Diesel, is an American actor, producer, director, and screenwriter. He is best known for his portrayals of Dominic Toretto in The Fast and the Furious film series and Richard B. Riddick in The Chronicles of Riddick trilogy. He also was a producer on sequels in both franchises.
+
+<P><b>Diesel</b> has also starred in films such as xXx (2002) and Find Me Guilty (2006). His voice acting work includes The Iron Giant (1999), the video game spin-offs from The Chronicles of Riddick franchise, and Guardians of the Galaxy (2014). He wrote, directed, produced, and starred in a short film titled Multi-Facial and the feature-length drama film Strays. He is the founder of the production companies One Race Films, Racetrack Records, and Tigon Studios.
+
+
+					
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Vin_Diesel" class = "standardb_black" target="_blank">Wikipedia Vin Diesel</a> - <b>Vin Diesel</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of July, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="babylon_a_d">Babylon A.D.</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/babylon_a_d.jpg" alt="Babylon A.D." title="Babylon A.D." vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Babylon A.D.</b> is a 2008 French science fiction action film based on the novel Babylon Babies by Maurice Georges Dantec. The film was directed by Mathieu Kassovitz and stars Vin Diesel. It was released on 29 August 2008 in the United States.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Babylon_A.D." class = "standardb_black" target="_blank">Wikipedia Babylon A.D.</a> - <b>Babylon A.D.</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=_wW9pYbRkjk" class = "standardb_black" target="_blank">Babylon A.D.</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of Jul, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="bloodshot">Bloodshot</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/bloodshot.jpg" alt="Bloodshot" title="Bloodshot" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Bloodshot</b> is a 2020 American superhero film based on the Valiant Comics character of the same name. It is intended to be the first installment in a series of films set within a Valiant Comics shared cinematic universe. Directed by David S. F. Wilson (in his feature directorial debut) from a screenplay by Jeff Wadlow and Eric Heisserer and a story by Wadlow, the film stars Vin Diesel, Eiza González, Sam Heughan, Toby Kebbell, and Guy Pearce. It follows a Marine who was killed in action, only to be brought back to life with superpowers by an organization that wants to use him as a weapon.
+
+<P>Bloodshot was theatrically released in the United States on March 13, 2020, by Sony Pictures Releasing. The film grossed $37 million worldwide and received mixed reviews from critics. Due to the COVID-19 pandemic closing theaters across the globe, Sony made the film available digitally on-demand less than two weeks after it was released theatrically.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Bloodshot_(film)" class = "standardb_black" target="_blank">Wikipedia Bloodshot (film)</a> - <b>Bloodshot</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=vOUVVDWdXbo" class = "standardb_black" target="_blank">Bloodshot</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					19th of Sep, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="furious_7">Furious 7</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/furious_7.jpg" alt="Furious 7" title="Furious 7" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Furious 7</b> (often stylized as Furious Seven and alternatively known as <b>Fast Seven</b> or <b>Fast &amp; Furious 7</b>) is a 2015 American action film directed by James Wan and written by Chris Morgan. It is the seventh installment in the Fast and the Furious franchise. The film stars Vin Diesel, Paul Walker, Dwayne Johnson, Michelle Rodriguez, Tyrese Gibson, Chris Bridges, Jordana Brewster, Kurt Russell, and Jason Statham. Furious 7 follows Dominic Toretto (Diesel), Brian O'Conner (Walker) and the rest of their team, who have returned to the United States to live normal lives after securing amnesty for their past crimes in Fast &amp; Furious 6 (2013), until Deckard Shaw (Statham), a rogue special forces assassin seeking to avenge his comatose younger brother, puts them in danger once again.
+
+<P>With the previous three installments set between 2 Fast 2 Furious (2003) and The Fast and the Furious: Tokyo Drift (2006), Furious 7 is the first installment in the franchise to take place after Tokyo Drift. The film also marks the final film appearance of Walker, who died in a single-vehicle crash on November 30, 2013, with filming only half-completed. Following Walker's death, filming was delayed for script rewrites, and his brothers, Caleb and Cody, were used among others as stand-ins to complete his remaining scenes.
+
+<P>Plans for a seventh installment were first announced in February 2012 when Johnson stated that production on the film would begin after the completion of Fast &amp; Furious 6. In April 2013, Wan, predominantly known for horror films, was announced to direct the film in place of Justin Lin, who left the franchise after directing the previous four installments. Casting began in the same month with the re-signing of Diesel and Walker, and an initial release date was set. Principal photography began in Atlanta, Georgia, in September 2013, resumed in April 2014 and ended in July 2014, with other filming locations including Los Angeles, Colorado, Abu Dhabi and Tokyo.
+
+<P><b>Furious 7</b> premiered in Los Angeles on April 1, 2015, and was first released in Australia on April 2, 2015, and then in the United States on April 3, 2015. The film was also released in 3D, IMAX 3D, and 4DX internationally. Upon release, the film became a critical and commercial success, with praise being aimed at the film's action sequences and its tribute to Walker. The film grossed $397.6 million worldwide in its first five days of release, which is the fifth highest-grossing opening of all time. The film has grossed over $1.5 billion worldwide, making it the highest-grossing film in the franchise after just twelve days, the third highest-grossing film of 2015 and the sixth highest-grossing film of all time. A sequel, Fast 8 is scheduled to be released on April 14, 2017.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Furious_7" class = "standardb_black" target="_blank">Wikipedia Furious 7</a> - <b>Furious 7</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Skpu5HaVkOc" class = "standardb_black" target="_blank">Furious 7</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of Jul, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="riddick">Riddick</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/riddick.jpg" alt="Riddick" title="Riddick" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Riddick</b> is a 2013 American science fiction thriller film, the third installment in the Riddick film series. Produced by and starring Vin Diesel as the title character, Riddick is written and directed by David Twohy, who previously wrote and directed the first two installments, Pitch Black (2000) and The Chronicles of Riddick (2004).
+
+<P>The film was released on September 4, 2013, in the UK and Ireland, and September 6, 2013, in the United States. It was shown in both conventional and IMAX Digital theaters.
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Riddick_%28film%29" class = "standardb_black" target="_blank">Wikipedia Riddick (film)</a> - <b>Riddick</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=rTw4OHsh9so" class = "standardb_black" target="_blank">Riddick</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of Jul, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

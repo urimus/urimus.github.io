@@ -1,0 +1,5 @@
+﻿<P><b class="text_red_blue">Новости</b>
+<P>&nbsp;&#9679; <a href="news_bbc_rus.html?type=world" class = "standardb_red" data-added="05th of Jul, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">BBC RSS Строка</a>
+<P>&nbsp;&#9679; <a href="news_bbcrussian_rus.html?type=world" class = "standardb_red" data-added="19th of Feb, 2021." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">BBC Русская Служба RSS Строка</a>
+<P>&nbsp;&#9679; <a href="news_lenta_rus.html?type=world" class = "standardb_red" data-added="26th of Oct, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Lenta.ru RSS Строка</a>
+<P>&nbsp;&#9679; <a href="news_space_program_rus.html" class = "standardb_red" data-added="05th of Jul, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Космическая Программа</a>

@@ -1,0 +1,1529 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+
+<!-- Series Sort -->
+<script src="scripts/showSeries.js"></script>
+<!-- End of Seriers Sort -->
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*41;
+var imgBgSrc="icons/background/sitcom.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_sitcom_score_eng.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_sitcom_score_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_sitcom_score_rus.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_sitcom_score_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('phd_eng.html');
+			} else {
+				window.location.href='phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+	
+	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_not_selected_black">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_selected">
+		  Movies</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; By Actors</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; By Genre</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_action_horror_score_eng.html');
+			} else {
+				window.location.href='movies_genre_action_horror_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Action Horror</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_body_horror_score_eng.html');
+			} else {
+				window.location.href='movies_genre_body_horror_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Body Horror</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_dystopia_score_eng.html');
+			} else {
+				window.location.href='movies_genre_dystopia_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Dystopia</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_pilot_score_eng.html');
+			} else {
+				window.location.href='movies_genre_pilot_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Television Pilot</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_7"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_post_apocalyptic_score_eng.html');
+			} else {
+				window.location.href='movies_genre_post_apocalyptic_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Post-Apocalyptic</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_9"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_short_score_eng.html');
+			} else {
+				window.location.href='movies_genre_short_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Short</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_10"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_sitcom_score_eng.html');
+			} else {
+				window.location.href='movies_genre_sitcom_score_eng.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 15px;">
+		  &bull; Situation Comedy</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_11"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_space_opera_score_eng.html');
+			} else {
+				window.location.href='movies_genre_space_opera_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Space Opera</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_3"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Animation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_mockbuster_eng.html');
+			} else {
+				window.location.href='movies_mockbuster_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Mockbuster</div>
+        </td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_5"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Superhero</div>
+        </td>
+	</tr>
+
+
+
+<tr>
+		<td align="left" >
+		  <div id="menu_8_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_not_satanic_eng.html');
+			} else {
+				window.location.href='movies_not_satanic_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &bull; Not Satanic</div>
+        </td>
+	</tr>	
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"  
+		  class="menu_not_selected_black">
+		  Series</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('radio_eng.html');
+			} else {
+				window.location.href='radio_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Radio</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>
+
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Psychology</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table with search, name and languages -->
+        <tr class="title_black"> 
+                <td  class="title_black" style="width: 500px;"><a name="series">Movies &blacktriangleright; Situation Comedy</a></td>
+				<td bgcolor="#e2e2e2" width="3"></td>
+				<td  style="width: 150px;">
+				    Sort By:
+				</td>
+
+				<td style="width: 22px;">
+				    <div id="sortby_name" align="center" 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="mouseOutSortByName('score');"
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('movies_genre_sitcom_eng.html'+ window.location.hash);
+                        } else {
+                                window.location.href='movies_genre_sitcom_eng.html'+ window.location.hash;
+                        };"
+                        class="flag_not_selected"
+                    >
+<img src="scripts/contents/icons/sortby/sortby_name.png" alt="Name" title="Name" width="22" height="18"  style="display: block;"/>
+                    </div>
+				</td>
+
+				<td style="width: 22px;">
+				    <div id="sortby_score" align="center" 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="mouseOutSortByScore('score');"
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('movies_genre_sitcom_score_eng.html'+ window.location.hash);
+                        } else {
+                                window.location.href='movies_genre_sitcom_score_eng.html'+ window.location.hash;
+                        };"
+                        class="flag_selected"
+                    >
+                        <img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18" style="display: block;"/>
+                    </div>
+				</td>
+				
+				
+				
+        </tr>
+
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:943px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+
+		
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="sitcom">Situation Comedy</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/movies_sitcom.jpg" alt="Situation Comedy" title="Situation Comedy" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>A <b>situation comedy</b>, or <b>sitcom</b>, is a genre of comedy centered on a fixed set of characters who carry over from episode to episode. Sitcoms can be contrasted with sketch comedy where a troupe may use new characters in each sketch, and stand-up comedy where a comedian tells jokes and stories to an audience. Sitcoms originated in radio, but today are found mostly on television as one of its dominant narrative forms. This form can also include mockumentaries.
+
+<P>A situation comedy television program may be recorded in front of a studio audience, depending on the program's production format. The effect of a live studio audience can be imitated or enhanced by the use of a laugh track.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Sitcom" class = "standardb_black" target="_blank">Wikipedia Sitcom</a> - <b>Situation Comedy</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					28th of Dec, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="bright">Bright</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/bright.jpg" alt="Bright" title="Bright" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Bright</b> is a 2017 American urban fantasy action film directed by David Ayer, written by Max Landis, and starring Will Smith, Joel Edgerton, Noomi Rapace, Lucy Fry, Édgar Ramírez, and Ike Barinholtz. The film is set in an alternate present in which humans and mythical creatures co-exist and details an LAPD police officer and his orc partner confronting racism and police corruption while protecting a magic wand and the elf girl who wields it.
+
+<P>Principal photography began in November 2016 in Los Angeles. The film was released worldwide on Netflix on December 22, 2017. While it has received largely negative reviews from critics, it has become one of Netflix's most streamed movies ever.
+
+		
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Bright_(film)" class = "standardb_black" target="_blank">Wikipedia Bright (film)</a> - <b>Bright</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=6EZCBSsBxko" class = "standardb_black" target="_blank">Bright</a> - Official Trailer.
+			</td>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					23rd of Jan, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="circle">Circle</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/circle.jpg" alt="Circle" title="Circle" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Circle</b> is a 2015 American science fiction psychological horror-thriller film written and directed by Aaron Hann and Mario Miscione. The ensemble cast includes Carter Jenkins, Lawrence Kao, Allegra Masters, Michael Nardelli, Julie Benz, Mercy Malick, Lisa Pelikan, and Cesar Garcia. It was inspired by the 1957 drama 12 Angry Men and was shot in 2014. It premiered at the Seattle International Film Festival on May 28, 2015, before being released to video-on-demand on October 16, 2015. In the film, fifty people wake up in a darkened room, only to find that one of them is killed every two minutes or when they attempt to leave. When they realize that they can control which person is selected to die, blocs emerge based on personal values.
+
+
+		
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Circle_(2015_film)" class = "standardb_black" target="_blank">Wikipedia Circle (2015 film)</a> - <b>Circle</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=JAlpm2oRzy8" class = "standardb_black" target="_blank">Circle</a> - Official Trailer.
+			</td>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					19th of Apr, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="doctor_who_shada">Doctor Who: Shada</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/doctor_who_shada.jpg" alt="Doctor Who: Shada" title="Doctor Who: Shada" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Doctor Who: Shada
+
+<P><b>Storyline:</b> The story revolves around the planet Shada, on which the Time Lords have constructed a high security prison for some of the Universe's most dangerous criminals. Skagra, a flawed genius from the planet Dronoid, wishes to create a "Universal Mind" in which all the pooled knowledge of the universe's greatest criminals would be placed at his disposal and with which he intends to take control of the Universe. Skagra wants to go to Shada to extract the knowledge of the criminals who have been imprisoned there. Unfortunately for Skagra, knowledge of the location of Shada has been deliberately hidden by the Time Lords, but Skagra discovers that there is a Time Lord living on Earth in the twentieth century who may hold the key to its location. This Time Lord is masquerading as a professor at St. Cedd's College, Cambridge and calling himself Professor Chronotis. Sensing danger, Chronotis calls for the assistance of his old friend and protégé, the Doctor. The story climaxes in a battle for control of the Universal Mind.
+
+<P><b>Genres:</b> Animation, Sci-Fi
+
+<P><b>Actor:</b> Tom Baker, Lalla Ward, Christopher Neame
+
+<P><b>Director:</b> Charles Norton
+
+<P><b>Country:</b> UK
+
+<P><b>Production Co:</b> BBC Worldwide
+
+<P><b>Duration:</b> 138 min
+
+<P><b>Release:</b> 24 November 2017 (Australia)
+
+		
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt7689226/" class = "standardb_black" target="_blank">IMDb Doctor Who: Shada (Video 2017)</a> - <b>Doctor Who: Shada</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=E_hvtYaOnYA" class = "standardb_black" target="_blank">Doctor Who: Shada</a> - Official Trailer.
+			</td>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					06th of May, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="tajna_tretej_planety">The Mystery of the Third Planet (rus. Тайна Третьей Планеты)</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/tajna_tretej_planety.jpg" alt="The Mystery of the Third Planet (rus. Тайна Третьей Планеты)" title="The Mystery of the Third Planet (rus. Тайна Третьей Планеты)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>The Mystery of the Third Planet</b> (Russian: Тайна третьей планеты, Tayna tretyey planety), aka <b>The Secret of the Third Planet</b> is a 1981 Soviet traditionally animated feature film directed by Roman Kachanov and produced by the Soyuzmultfilm studio in Moscow. It is based on a children's science fiction novella "Alice's Travel" by <a href="books_bulychev_eng.html" class = "standardb_black" target="_blank">Kir Bulychov</a>, from <a href="books_bulychev_eng.html#prikljuchenija_alisy" class = "standardb_black" target="_blank">Alisa (Alice) Selezneva</a> book series.
+
+<P>The movie is considered a cult classic in Russia, it was included in various top list of animated films and science fiction films. A shortened novelisation of the film was written by <a href="books_bulychev_eng.html" class = "standardb_black" target="_blank">Bulychov</a> himself, a diafilm and a number of video games were based on The Mystery of the Third Planet, and spiritual successor film Alice's Birthday was released in 2009.
+
+<br><br>
+<P><b>Awards:</b>
+
+<P>&nbsp;&bull; 1982 — the State award USSR
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Mystery_of_the_Third_Planet" class = "standardb_black" target="_blank">Wikipedia The Mystery of the Third Planet</a> - <b>The Mystery of the Third Planet (rus. Тайна Третьей Планеты)</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=98uBKcPKJnk" class = "standardb_black" target="_blank">The Mystery of the Third Planet (rus. Тайна Третьей Планеты)</a> - Official Trailer (rus.).
+			</td>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					28th of Dec, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="futurama">Futurama</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/futurama.jpg" alt="Futurama" title="Futurama" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Futurama</b> is an American animated science fiction sitcom created by Matt Groening for the Fox Broadcasting Company. The series follows the adventures of a late-20th-century New York City pizza delivery boy, Philip J. Fry, who, after being unwittingly cryogenically frozen for one thousand years, finds employment at Planet Express, an interplanetary delivery company in the retro-futuristic 31st century. The series was envisioned by Groening in the mid-1990s while working on The Simpsons; he later brought David X. Cohen aboard to develop storylines and characters to pitch the show to Fox.
+
+<P>In the United States, the series aired on Fox from March 28, 1999, to August 10, 2003, before ceasing production. Futurama also aired in reruns on Cartoon Network's Adult Swim from 2002 to 2007, until the network's contract expired. It was revived in 2007 as four direct-to-video films; the last of which was released in early 2009. Comedy Central entered into an agreement with 20th Century Fox Television to syndicate the existing episodes and air the films as 16 new, half-hour episodes, constituting a fifth season.
+
+<P>In June 2009, producing studio 20th Century Fox announced that Comedy Central had picked up the show for 26 new half-hour episodes, which began airing in 2010 and 2011. The show was renewed for a seventh season, with the first half airing in June 2012 and the second set for mid-2013. It was later revealed that the seventh season would be the final season, as Comedy Central announced that they would not be commissioning any further episodes. The series finale aired on September 4, 2013. While Groening has said he will try to get it picked up by another network, David X. Cohen stated that the episode "Meanwhile" would be the last episode of season 7 and also the series finale.
+
+<P>Throughout its run, Futurama has received critical acclaim. The show has been nominated for 17 Annie Awards and 12 Emmy Awards, winning seven of the former and six of the latter. It has also been nominated four times for a Writers Guild of America Award, winning two for the episodes "Godfellas" and "The Prisoner of Benda", been nominated for a Nebula Award and has received Environmental Media Awards for episodes "The Problem with Popplers" and "The Futurama Holiday Spectacular". Futurama-related merchandise has also been released, including a tie-in comic book series and video game, calendars, clothes and figurines. In 2013, TV Guide ranked Futurama as one of the top 60 Greatest TV Cartoons of All Time.
+
+
+<br><br>
+<P><b>Awards and nominations:</b>
+
+
+<P>&nbsp;&bull; 2000 - Annie Awards - Outstanding Individual Achievement for Directing in an Animated Television Production
+<P>&nbsp;&bull; 2000 - Primetime Emmy Award - Outstanding Individual Achievement in Animation
+<P>&nbsp;&bull; 2000 - Environmental Media Awards - TV Episodic – Comedy
+<P>&nbsp;&bull; 2001 - Annie Awards - Outstanding Individual Achievement for Voice Acting by a Male 2001 - Annie Awards - Performer in an Animated Television Production
+Outstanding Individual Achievement for Writing in an Animated Television Production
+<P>&nbsp;&bull; 2001 - Primetime Emmy Award - Outstanding Individual Achievement in Animation
+<P>&nbsp;&bull; 2002 - Primetime Emmy Award - Outstanding Animated Program
+<P>&nbsp;&bull; 2002 - Annie Awards - Outstanding Directing in an Animated Television Production
+<P>&nbsp;&bull; 2002 - Writers Guild of America Award - Animation
+<P>&nbsp;&bull; 2007 - Annie Awards - Best Home Entertainment Production
+<P>&nbsp;&bull; 2008 - Annie Awards - Best Home Entertainment Production
+<P>&nbsp;&bull; 2009 - Annie Awards - Best Home Entertainment Production
+<P>&nbsp;&bull; 2011 - Primetime Emmy Award - Outstanding Animated Program
+<P>&nbsp;&bull; 2011 - Primetime Emmy Award - Outstanding Voice-Over Performance
+<P>&nbsp;&bull; 2011 - Environmental Media Awards - TV Episodic – Comedy
+<P>&nbsp;&bull; 2011 - Environmental Media Awards - Outstanding Voice-Over Performance
+<P>&nbsp;&bull; 2013 - Annie Awards - Best General Audience Animated TV/Broadcast Production
+<P>&nbsp;&bull; 2013 - Annie Awards - Writing in an Animated TV/Broadcast Production
+
+<br><br>
+<P><b>Achievements:</b>
+
+<br><br>
+<P><b>The Futurama Theorem:</b>
+
+<P>On August 19, 2010, Comedy Central aired "The Prisoner of Benda", an episode written by Ken Keeler. To support the plot of this episode, Keeler, a PhD mathematician, penned "The Futurama Theorem", also known as "Keeler's theorem", which establishes (with mathematical proof) an algorithm for reversing the results of a particular body swap scenario.
+
+<br><br>
+<P><b>Other honors:</b>
+
+<P>&nbsp;&bull; In January 2009, IGN named Futurama as the eighth best in the "Top 100 Animated TV Series".
+
+<P>&nbsp;&bull; At the 2010 San Diego Comic-Con International, Guinness World Records presented Futurama with the record for "Current Most Critically Acclaimed Animated Series".
+
+<P>&nbsp;&bull; In 2014, WatchMojo.com ranked Futurama as the second best cartoon to have been cancelled.
+
+<P>&nbsp;&bull; In 2016, Rolling Stone ranked it as the thirtieth best science fiction television show ever.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Futurama" class = "standardb_black" target="_blank">Wikipedia Futurama</a> - <b>Futurama</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Wq67TpUtldg" class = "standardb_black" target="_blank">Futurama</a> - Official Trailer.
+			</td>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					28th of Dec, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="paradox">Paradox</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 3/5">&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 3/5">&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/paradox.jpg" alt="Paradox" title="Paradox" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Paradox</b> (2016 year film) is an American sci-fi / action film written and directed by Michael Hurst, starring Zo&euml; Bell.
+
+<br><br>
+<P><b>Cast:</b>
+<P>&nbsp;&bull; Zo&euml; Bell as Gale
+<P>&nbsp;&bull; Malik Yoba as Mr. Landau
+<P>&nbsp;&bull; Adam Huss as Jim
+<P>&nbsp;&bull; Bj&oslash;rn Alexander as Lewis Aberricki
+<P>&nbsp;&bull; Brian Flaccus as William Wishman
+<P>&nbsp;&bull; Michael Aaron Milligan as Randy Fraker
+<P>&nbsp;&bull; Steve Suh as Van Lang
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Paradox_(2016_film)" class = "standardb_black" target="_blank">Wikipedia Paradox (2016 film)</a> - <b>Paradox (2016 film)</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Y4FTJN7jqiU" class = "standardb_black" target="_blank">Paradox (2016 film)</a> - Official Trailer.
+			</td>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					02nd of Feb, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="thames_on_fire">Set the Thames on Fire</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 2/5">&bigstar;&bigstar;</font><font color="silver" title="Score: 2/5">&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/thames_on_fire.jpg" alt="Set the Thames on Fire" title="Set the Thames on Fire" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Set the Thames on Fire</b> is a 2016 British science fiction fantasy comedy-drama film directed by Ben Charles Edwards in his directorial debut. Based on characters created by Edwards and Al Joshua. The film stars Michael Winder and Max Bennett, alongside an ensemble cast featuring Noel Fielding, Sadie Frost, Sally Phillips, David Hoyle, and Lily Loveless. Its title is a reference to a line in the song "Anywhere I Lay My Head" by Tom Waits.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Set_the_Thames_on_Fire" class = "standardb_black" target="_blank">Wikipedia Set the Thames on Fire</a> - <b>Set the Thames on Fire</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=u-5N7NUk8Y8" class = "standardb_black" target="_blank">Set the Thames on Fire</a> - Official Trailer.
+			</td>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					08th of Nov, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="lapsis">Lapsis</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 1/5">&bigstar;</font><font color="silver" title="Score: 1/5">&bigstar;&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/lapsis.jpg" alt="Lapsis" title="Lapsis" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Lapsis
+
+<P><b>Storyline:</b> Struggling to support himself and his ailing younger brother, delivery man Ray takes a strange job in a strange new realm of the gig economy.
+
+<P><b>Genres:</b> Drama, Mystery, Sci-Fi
+
+<P><b>Actor:</b> Dean Imperial, Madeline Wise, Babe Howard
+
+<P><b>Director:</b> Noah Hutton
+
+<P><b>Country:</b> USA
+
+<P><b>Production Co:</b> Couple 3 Films
+
+<P><b>Duration:</b> 108 min
+
+<P><b>Release:</b> 1 October 2020 (Brazil)
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt11540272/" class = "standardb_black" target="_blank">IMDb Lapsis (2020)</a> - <b>Lapsis</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=vf3ZUi9zzOQ" class = "standardb_black" target="_blank">Lapsis</a> - Official Trailer.
+			</td>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					07th of Mar, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+		
+		
+		
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+
+</table> <!-- End of Main Table -->
+
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

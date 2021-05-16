@@ -1,0 +1,2544 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Домашняя страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Foto Gallery -->
+<script src="scripts/jquery/jquery.js"></script>
+<script src="scripts/galleria/galleria-1.4.2.min.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<!-- Background Images Script -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*43;
+var imgBgSrc="icons/background/rock.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+        <tr> 
+                <td  height="3"></td>
+        </tr>   
+        <tr>
+                <td width="1000">
+                        <img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Я" title="Я"  width="1000" style="display: block">
+                </td>
+        </tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+        <tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+                       <div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+                </td>
+
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_rock_eng.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_rock_eng.html' + window.location.hash;
+                                };"                     
+                        
+                        class="flag_not_selected"
+                >
+                        <img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_rock_rus.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_rock_rus.html' + window.location.hash;
+                                };"
+                        class="flag_selected"
+                >
+                        <img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+        </tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+        <tr> 
+
+        <td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+        <tr> 
+                <td  align="center" class="title_gradient_black">Меню</td>
+        </tr>
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'rus', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Карта Сайта</div>
+        </td>
+        </tr>   
+ 
+        <tr>
+                <td align="center">
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_rus.html');
+                        } else {
+                                window.location.href='about_me_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Обо мне</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center">
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_rus.html');
+                        } else {
+                                window.location.href='about_work_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  О моей работе</div>
+        </td>
+        </tr> 
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('phd_rus.html');
+                        } else {
+                                window.location.href='phd_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  О моём PhD</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_rus.html');
+                        } else {
+                                window.location.href='links_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Ссылки</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'rus', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_7"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"               
+                  class="menu_selected">
+                  Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+        
+        
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_1"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_chanson_rus.html');
+                        } else {
+                                window.location.href='music_chanson_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Шансон <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        
+
+                <td align="left" >
+                  <div id="menu_7_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_classical_rus.html');
+                        } else {
+                                window.location.href='music_classical_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Классическая</div>
+        </td>
+        </tr>   
+        
+        
+
+        
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_country_rus.html');
+                        } else {
+                                window.location.href='music_country_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Кантри <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_disco_rus.html');
+                        } else {
+                                window.location.href='music_disco_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Диско</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_5"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Электронная</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_6"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Индастриал</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_7"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Метал <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_8"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Национальная</div>
+        </td>
+        </tr>
+
+
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_9"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_pop_rus.html');
+                        } else {
+                                window.location.href='music_pop_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Поп <font class="blinking_text" color="slateblue"><sup>&smashp; Abstract &smashp;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_10"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Психоделическая <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_11"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Панк <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_12"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_rap_rus.html');
+                        } else {
+                                window.location.href='music_rap_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Рэп <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_reggae_rus.html');
+                        } else {
+                                window.location.href='music_reggae_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Регги</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_14"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="
+                    this.className='menu_selected';
+                        if (event.ctrlKey==1){
+                                window.open('music_rock_rus.html');
+                        } else {
+                                window.location.href='music_rock_rus.html';
+                        };"                               
+                  class="menu_selected"
+		  style="padding-left: 5px;">
+                  &#9679; Рок-музыка <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+
+
+<tr>
+                <td align="left" >
+                  <div id="menu_7_15"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_satanic_rus.html');
+                        } else {
+                                window.location.href='music_satanic_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Сатанинская <font class="blinking_text" color="darkred"><sup>&#9765; Tricky &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_corr_rus.html');
+                        } else {
+                                window.location.href='music_corr_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; США &#8596; СССР</div>
+        </td>
+        </tr>   
+                
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_8"
+                  onMouseOver="showSubMenu(this, 'rus', 'movies');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'movies');"                               
+                  class="menu_not_selected_black">
+                  Фильмы</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_27"
+                  onMouseOver="showSubMenu(this, 'rus', 'series');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'series');"                               
+                  class="menu_not_selected_black">
+                  Сериалы</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_9"
+                  onMouseOver="showSubMenu(this, 'rus', 'games');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'games');"  
+                  class="menu_not_selected_black">
+                  Игры</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_10"
+                  onMouseOver="showSubMenu(this, 'rus', 'books');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'books');"  
+                  class="menu_not_selected_red">
+                  Книги</div>
+        </td>
+        </tr>           
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_11"
+                  onMouseOver="showSubMenu(this, 'rus', 'photos');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'photos');"  
+                  class="menu_not_selected_red">
+                  Фото/Картинки</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_12"
+                  onMouseOver="showSubMenu(this, 'rus', 'amv');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'amv');"                                               
+                  class="menu_not_selected_black">
+                  AMV</div>
+        </td>
+        </tr>           
+        <tr>
+                <td align="center" >
+                  <div id="menu_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('radio_rus.html');
+                        } else {
+                                window.location.href='radio_rus.html';
+                        };"                                               
+                  class="menu_not_selected_black">
+                  Радио</div>
+        </td>
+        </tr>                   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_14"
+                  onMouseOver="showSubMenu(this, 'rus', 'stuff');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'stuff');"                                       
+                  class="menu_not_selected_black">
+                  Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font>
+ </div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_15"
+                  onMouseOver="showSubMenu(this, 'rus', 'anecdotes');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'anecdotes');"  
+                  class="menu_not_selected_red">
+                  Анекдоты</div>
+        </td>
+        </tr>           
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_rus.html');
+                        } else {
+                                window.location.href='heffalump_rus.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                  
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_17"
+                  onMouseOver="showSubMenu(this, 'rus', 'relaxation');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'rus', 'relaxation');"  
+                  class="menu_not_selected_white">
+                  Вещества Для Расслабления</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_18"
+                  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'rus', 'software');"  
+                  class="menu_not_selected_white">
+                  Разработка Программ</div>
+        </td>
+        </tr>   
+
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_19"
+                  onMouseOver="showSubMenu(this, 'rus', 'satanism');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'rus', 'satanism');"                                       
+                  class="menu_not_selected_green">
+                  Сатанизм</div>
+        </td>
+        </tr>
+
+		
+		
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_rus.html');
+                        } else {
+                                window.location.href='satanism_wicca_rus.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Викка</div>
+        </td>
+        </tr>
+		
+		
+		
+        <tr>
+                <td align="center" >
+                  <div id="menu_21"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('falsifiability_rus.html');
+                        } else {
+                                window.location.href='falsifiability_rus.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Фальсифицируемость</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_22"
+                  onMouseOver="showSubMenu(this, 'rus', 'psychology');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'rus', 'psychology');"                                       
+                  class="menu_not_selected_green">
+                  Психология</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_23"
+                  onMouseOver="showSubMenu(this, 'rus', 'countries');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'rus', 'countries');"                                       
+                  class="menu_not_selected_green">
+                  Страны</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_24"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('totalitarianism_rus.html');
+                        } else {
+                                window.location.href='totalitarianism_rus.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Тоталитаризм</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_25"
+                  onMouseOver="showSubMenu(this, 'rus', 'personalities');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'rus', 'personalities');"                                       
+                  class="menu_not_selected_green">
+                  Деятели</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'rus', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'news');"               
+                  class="menu_not_selected_red">
+                  Новости</div>
+        </td>
+        </tr>
+
+
+
+</table>
+
+                </td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+        <tr> 
+                <td  class="title_black" style="width: 530px;"><a name="welcome">Музыка &blacktriangleright; Рок-Музыка</a></td>
+        </tr>
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:989px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="rock">Рок-музыка <font class="blinking_text" color="crimson"><sup>&#191; Inadequate &#191;</sup></font> <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></a></td>
+                        </tr>
+                        <tr>
+                                <td width="350" height="100%" class="nimetus_black">Описание Жанра</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/music/rock.png" alt="Рок-музыка" title="Рок-музыка" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+                                        
+
+
+<P><b>Рок-музыка</b> (англ. Rock music) — обобщающее название ряда направлений популярной музыки. Слово rock (в переводе с английского «качать», «укачивать», «качаться») в данном случае указывает на характерные для этих направлений ритмические ощущения, связанные с определённой формой движения, по аналогии с roll, twist, swing, shake... Такие признаки рок-музыки, как использование электромузыкальных инструментов, творческая самодостаточность (для рок-музыкантов характерно исполнение композиций собственного сочинения), являются вторичными и часто вводят в заблуждение. По этой причине принадлежность некоторых стилей музыки к року оспаривается.
+
+<P>Такие субкультуры, как моды, хиппи, панки, металлисты, готы, эмо, индирокеры, СКА неразрывно связаны с определёнными жанрами рок-музыки.
+
+<P><b>Рок-музыка</b> имеет большое количество направлений: от достаточно «лёгких» жанров, таких как танцевальный рок-н-ролл, поп-рок, брит-поп, до брутальных и агрессивных жанров — дэт-метала и грайндкора. Содержание песен варьируется от лёгкого и непринуждённого до мрачного, глубокого и философского. Часто рок-музыка противопоставляется поп-музыке и т. н. «попсе». Несколько более определённо можно сказать о так называемой «музыкальной экспрессии», которая, в силу повышенной, в сравнении с иными жанрами музыки, динамики (громкости) исполнения (по разным источникам от 110 до 155 дБ), является особой для многих рок-стилей (направлений), поскольку даже звучание большого симфонического оркестра находится в пределах 85 дБ и редко доходит до 115 дБ. («Конкуренцию» в плане громкости могут составить лишь направления музыки, использующие электроакустическое звучание).
+
+                                        
+                                </td>
+                        </tr>
+                        
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%BA-%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0" class = "standardb_black" target="_blank">Wikipedia Рок-музыка</a> - <b>Рок-музыка</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+                        
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                       19th of Jul, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="russian_rock">Русский Рок</a></td>
+                        </tr>
+                        <tr>
+                                <td width="350" height="100%" class="nimetus_black">Описание Жанра</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/music/russian_rock.jpg" alt="“Revengers” 1961" title="“Revengers” 1961" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+                                        
+
+<P><b>Русский рок</b> — рок-музыка с текстами на русском языке и/или созданная музыкантами из России. Русский рок зародился в СССР во второй половине XX века под влиянием мировой, прежде всего западно-европейской и американской рок-музыки. 
+
+<br><br>
+<P><b>Особенности:</b>
+
+<P>Хотя в русском роке существуют все те же жанры и стили, что и в мировом, у него есть и свои национальные особенности, связанные с использованием русского мелоса. Кроме того, русский рок делает акцент на поэзию и подачу текста. Иногда «русский рок» рассматривают как отдельный жанр в музыке или в поэзии.
+
+<br><br>
+<P><b>Русский рок за пределами России:</b>
+
+<P>Иногда к русскому року относят себя некоторые русскоязычные группы за пределами России, а также различные группы в странах бывшего СССР, на которые оказал влияние русский рок. Например, такие рок-группы, как «Адаптация», которые, несмотря на нахождение в Казахстане (Алма-Ата и Актюбинск), имеют полное право называться русским роком. То же касается белорусской группы «Красные Звёзды», стилистически сближающейся с сибирской волной русского рока. Известная российская группа Peter Pan the Band стала более широко известна за рубежом. Её дебютный альбом «Послушай и застрелись!» стал саундтреком к скандальной игре Postal 3.
+
+<P>В 2013 году российская группа Louna выпустила дебютный англоязычный альбом «Behind a Mask», а также несколько англоязычных клипов, во главе которых стоит клип «Business». Группа попадает в ротации нескольких американских радиостанций.
+
+<br><br>
+<P><b>Рок-группы Украины:</b>
+
+<P>На Украине рок развивался со времён СССР. Русский рок представлен в творчестве музыкантов Украины достаточно ярко. В частности, это группы "5'NIZZA", «K.P.S.S.», «Труба», «Мы100», «ТОЛ», «Хламида», «Двойной Смысл», «Сердце СолнцА», «Rana Ridibunda», «MARVEL», «Дороги меняют цвет», «777». С русскоязычных песен начинала свой путь группа «Кому вниз» (альбом «Падая вверх»), отдельные русскоязычные песни есть у группы «Вопли Видоплясова».
+
+                                        
+                                </td>
+                        </tr>
+                        
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%BE%D0%BA" class = "standardb_black" target="_blank">Wikipedia Русский Рок</a> - <b>Русский Рок</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="http://www.shum.info/index/vladimir-marochkin/povsednevnaya-zhizn/" class = "standardb_black" target="_blank">История Рока в СССР.</a>
+                        </td>
+                        </tr>
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                       01st of Jul, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="agatha_christie">Агата Кристи</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/agatha_christie.jpg" alt="Агата Кристи" title="Агата Кристи" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>«<b>Агата Кристи</b>» — советская и российская рок-группа, одна из наиболее популярных в стране в середине и во второй половине 1990-х годов. Основана в 1985 году в Свердловске Вадимом Самойловым, Александром Козловым и Петром Маем под названием ВИА «РТФ УПИ», официально же история группы отсчитывается с концерта 20 февраля 1988 года. Во время записи альбома «Второй фронт» в начале того же года к группе примкнул младший брат Вадима Глеб. Впоследствии состав группы неоднократно менялся, но её лидерами и вокалистами неизменно оставались братья Самойловы. Они же, вместе с Александром Козловым, являются авторами всех песен «Агаты Кристи».
+
+<P>Творчество группы неоднородно и пересекается со многими направлениями рок-музыки — готик-рок, постпанк, альтернативный рок, психоделический рок, глэм-рок, арт-рок, хард-рок и другие.
+
+<P>К наиболее известным песням группы можно отнести такие композиции, как «Viva Kalman!», «Как на войне», «Истерика», «Опиум для никого», «Сказочная тайга», «Чёрная луна», «Моряк», «Ковёр-вертолёт» и «Секрет».
+
+<P>На счету у группы десять студийных альбомов, пять сборников, два альбома с ремиксами, три макси-сингла, восемнадцать видеоклипов. В 2009 году музыканты объявили о прекращении существования коллектива и отправились в заключительное турне по России и ближнему зарубежью. К лету 2010 года был записан последний альбом группы — «Эпилог», а также поставлена точка в одноимённом туре — группа отыграла прощальный концерт на фестивале «Нашествие».
+
+<P>После распада «Агаты Кристи» Глеб Самойлов совместно с клавишником Константином Бекревым и ударником Дмитрием Хакимовым, игравшими в «Агате» с 2008 года, создал группу «Глеб Самойлоff & The Matrixx» (впоследствии просто The Matrixx).
+
+
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%B3%D0%B0%D1%82%D0%B0_%D0%9A%D1%80%D0%B8%D1%81%D1%82%D0%B8_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Агата Кристи (группа)</a> - <b>Агата Кристи</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://agata.ru/" class = "standardb_black" target="_blank">Агата Кристи</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        15th of Apr, 2021.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="association">Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/association.jpg" alt="Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели" title="Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Ассоциация содействия возвращению заблудшей молодёжи на стезю добродетели</b> (кратко <b>Ассоциация</b>) — советская рок-группа, созданная в 1986 году в Свердловске Алексеем Могилевским и Николаем Петровым. «Ассоциация» записала шесть альбомов и прекратила своё существование в середине 90-х. Коллектив был возрожден в 2014-м году.
+
+<P>Название позаимствовано у <a href="books_wells_rus.html" class = "standardb_black" target="_blank">Герберта Уэллса</a>, книга <a href="books_wells_rus.html#mr_ledbetters_vacation" class = "standardb_black" target="_blank">Каникулы Мистера Ледбеттера (англ. Mr. Ledbetter's Vacation)</a>.
+
+<br><br>
+<P><b>Состав Группы:</b>
+<P>&nbsp;&bull; Алексей Могилевский — вокал, клавишные, саксофон, аккордеон, гитара
+<P>&nbsp;&bull; Валерий Кузин — гитара, бэк-вокал
+<P>&nbsp;&bull; Евгений Звидённый — бас-гитара
+									
+									
+<br><br>
+<P><b>Дискография:</b>
+<P>&nbsp;&bull; 1986 — «Угол»
+<P>&nbsp;&bull; 1987 — «Команда 33» (песни из одноимённого фильма)
+<P>&nbsp;&bull; 1988 — «Калейдоскопия»
+<P>&nbsp;&bull; 1989 — «Клетка для маленьких»
+<P>&nbsp;&bull; 1990 — «Сторона»
+<P>&nbsp;&bull; 1991 — «Щелкунчик»
+<P>&nbsp;&bull; 1996 — «Greatest Hits» (сборник)
+									
+									
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F_%D1%81%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F_%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D1%8E_%D0%B7%D0%B0%D0%B1%D0%BB%D1%83%D0%B4%D1%88%D0%B5%D0%B9_%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%91%D0%B6%D0%B8_%D0%BD%D0%B0_%D1%81%D1%82%D0%B5%D0%B7%D1%8E_%D0%B4%D0%BE%D0%B1%D1%80%D0%BE%D0%B4%D0%B5%D1%82%D0%B5%D0%BB%D0%B8" class = "standardb_black" target="_blank">Wikipedia Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели</a> - <b>Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+						
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://vk.com/a_mogilevsky" class = "standardb_black" target="_blank">ВКонтакте Алексей Могилевский и "Ассоциация"</a> - <b>Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели</b> на ВКонтакте.
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        21st of Oct, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="chizh">Чиж &amp; Co <font class="blinking_text" color="crimson"><sup>&#191; Inadequate &#191;</sup></font></a></a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/chizh.jpg" alt="Чиж &amp; Co" title="Чиж &amp; Co" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>&laquo;<b>Чиж &amp; Со</b>&raquo; (Чиж и Ко) &mdash; российская рок-группа, созданная в начале 1990-х годов гитаристом, вокалистом и автором песен Сергеем Чиграковым по прозвищу &laquo;Чиж&raquo;. Последний студийный альбом группы вышел в 1999 году.
+
+
+
+<br><br>
+<P><b>Состав:</b>
+
+<P>&nbsp;&bull; Сергей «Чиж» Чиграков — вокал, гитары, клавишные, губная гармоника и другие инструменты, автор музыки и текстов (1994—наши дни)
+<P>&nbsp;&bull; Михаил Владимиров — гитара (1994—наши дни)
+<P>&nbsp;&bull; Алексей Романюк — бас-гитара (1994—наши дни)
+<P>&nbsp;&bull; Евгений Баринов — клавишные, аккордеон, конги, шейкер, бубны (1996—наши дни)
+<P>&nbsp;&bull; Владимир Назимов — ударные (2014—наши дни)
+
+
+<br><br>
+<P><b>Дискография, Студийные альбомы:</b>
+
+
+<P>&nbsp;&bull; 1994 - Перекрёсток
+<P>&nbsp;&bull; 1995 - О любви
+<P>&nbsp;&bull; 1996 - Эрогенная зона
+<P>&nbsp;&bull; 1996 - Полонез
+<P>&nbsp;&bull; 1997 - Бомбардировщики
+<P>&nbsp;&bull; 1999 - Нечего терять
+
+
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D0%B6_%26_Co" class = "standardb_black" target="_blank">Wikipedia Чиж &amp; Co</a> - <b>Чиж &amp; Co</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.chizh.net/" class = "standardb_black" target="_blank">Чиж &amp; Co</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Рекомендую:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria">
+          <a href="https://www.youtube.com/watch?v=ranLC5m8sfU"><img src="icons/playlists/chizh3.jpg" data-title="Чиж &amp; Co - Еду, Еду"   data-description="<a href='https://www.youtube.com/watch?v=ranLC5m8sfU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>23rd of Oct, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=wyiibtKb0VI"><img src="icons/playlists/chizh1.jpg" data-title="Чиж &amp; Co - Жёлтый дождь"   data-description="<a href='https://www.youtube.com/watch?v=wyiibtKb0VI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08th of Aug, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=zpnF1i3oVlU"><img src="icons/playlists/chizh2.jpg" data-title="Чиж &amp; Co - Она Не Вышла Замуж"   data-description="<a href='https://www.youtube.com/watch?v=zpnF1i3oVlU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08th of Aug, 2017."></a>
+        </div>
+
+
+
+        <script>
+            var galleria2 = new Galleria.loadTheme('scripts/galleria/themes/classic/galleria.classic.min.js');
+
+            Galleria.run('.galleria', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        08th of Aug, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="komissar">Комиссар</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/komissar.jpg" alt="Комиссар" title="Комиссар" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>«<b>Комиссар</b>» — российская музыкальная группа.
+
+<br><br>
+<P><b>Дискография, Альбомы:</b>
+<P>&nbsp;&bull; 1991 — Наше время пришло
+<P>&nbsp;&bull; 1998 — Дрянь
+<P>&nbsp;&bull; 2000 — Музыка нового тысячелетия
+<P>&nbsp;&bull; 2002 — Любовь — это яд
+<P>&nbsp;&bull; 2013 — Короли
+
+
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B0%D1%80_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Комиссар (группа)</a> - <b>Комиссар</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.komissar.ru/" class = "standardb_black" target="_blank">Комиссар</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Рекомендую:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria2">
+          <a href="https://www.youtube.com/watch?v=3J54etwq_CI"><img src="icons/playlists/komissar1.jpg" data-title="Комиссар - Телефон"   data-description="Про <a href='satanism_theistic_rus.html' class = 'smallb_black' target='_blank'>Сатанизм</a>.<br><a href='https://www.youtube.com/watch?v=3J54etwq_CI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10th of May, 2018."></a>
+        </div>
+
+
+
+        <script>
+            Galleria.run('.galleria2', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        09th of May, 2018.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="leningrad">Ленинград</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/leningrad.jpg" alt="Ленинград" title="Ленинград" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>«<b>Ленинград</b>» (полное название — «<b>Группировка Ленинград</b>») — российская музыкальная группа из Санкт-Петербурга, созданная Сергеем Шнуровым. Известна, в частности, эксцентричными песнями с большим количеством мата и алкогольно-бытовой тематикой. Группа использует в своём творчестве обширный состав духовых инструментов: труба, саксофон, тромбон, туба. Также группа иногда расширяется за счёт саксгорнов.
+
+<P>25 декабря 2008 было объявлено о распаде группы. 9 августа 2010 года, с объявления двух ноябрьских концертов в Москве, началось возрождение группы.
+
+
+<br><br>
+<P><b>Текущий Состав:</b>
+
+<P>&nbsp;&bull; Сергей Шнуров, Шнур — вокал, музыка, тексты, гитара, перкуссия, бас-гитара, контрабас (1997—2008, 2010—наши дни)
+<P>&nbsp;&bull; Андрей Антоненко, Андромедыч (другой псевдоним Антоненыч) — туба, клавишные, аккордеон, вокал, баритон-горн (1997—2008, 2010—наши дни)
+<P>&nbsp;&bull; Алексей Калинин, Микшер — перкуссия (конги, бонги, тимбалес, тарелки и т. д.), барабаны (1997—2002, 2006—2008, 2010—наши дни)
+<P>&nbsp;&bull; Александр Попов, Пузо — большой барабан, вокал, гитара, бас-гитара (1997—2008, 2010—наши дни)
+<P>&nbsp;&bull; Всеволод Антонов, Севыч (ранее псевдоним был Козацька Рада) — бэк-вокал, шоумен, перкуссия (маракасы, тамбурин, гуиро), гитара, бас-гитара, губная гармоника (2000—2008, 2010—наши дни)
+<P>&nbsp;&bull; Григорий Зонтов, Зонтик, Mr. Umbrella — тенор-саксофон (2002—2008, 2010—наши дни)
+<P>&nbsp;&bull; Роман Парыгин, Ромыч, RGP, Шухер — труба, гитара, вокал, скретчи (2002—2008, 2010—наши дни)
+<P>&nbsp;&bull; Андрей Кураев, Дед, Grandpa — бас-гитара, перкуссия, контрабас (2002—2008, 2010—наши дни)
+<P>&nbsp;&bull; Илья Рогачевский, Пианист — клавиши, аккордеон (2002—2008, 2010—наши дни)
+<P>&nbsp;&bull; Константин Лимонов, Лимон — гитара, перкуссия (2002—2008, 2010—наши дни)
+<P>&nbsp;&bull; Владислав Александров, Валдос, Валдик, Водяной — тромбон (2002—2008, 2010—наши дни)
+<P>&nbsp;&bull; Алексей Канев, Лёха — баритон-саксофон, бубен, альт-саксофон (2002—2008, 2010—наши дни)
+<P>&nbsp;&bull; Денис Можин, Дэнс — звукорежиссёр (2002—2008), барабаны (2010—наши дни)
+<P>&nbsp;&bull; Дмитрий Гугучкин, Дима Гугучкин — гитара (2010—наши дни)
+<P>&nbsp;&bull; Флорида Чантурия — вокал, бэк-вокал (2016—наши дни)
+<P>&nbsp;&bull; Виктор Рапотихин — скрипка (2016—наши дни)
+
+
+<br><br>
+<P><b>Дискография, Студийные Альбомы:</b>
+<P>&nbsp;&bull; 1999 — Пуля
+<P>&nbsp;&bubull; 1999 — Мат без электричества
+<P>&nbsp;&bull; 2000 — Дачники
+<P>&nbsp;&bull; 2001 — Маде ин жопа
+<P>&nbsp;&bull; 2001 — Пуля +
+<P>&nbsp;&bull; 2002 — Пираты XXI века
+<P>&nbsp;&bull; 2002 — Точка
+<P>&nbsp;&bull; 2003 — Для миллионов
+<P>&nbsp;&bull; 2004 — Бабаробот
+<P>&nbsp;&bull; 2005 — Huinya (совместно с The Tiger Lillies)
+<P>&nbsp;&bull; 2005 — Хлеб
+<P>&nbsp;&bull; 2006 — Бабье лето
+<P>&nbsp;&bull; 2007 — Аврора
+<P>&nbsp;&bull; 2011 — Хна
+<P>&nbsp;&bull; 2011 — Вечный огонь
+<P>&nbsp;&bull; 2012 — Рыба
+<P>&nbsp;&bull; 2012 — Вечерний Ленинград
+<P>&nbsp;&bull; 2014 — Фарш/Пляж наш
+
+
+<br><br>
+<P><b>Использование музыки в кино:</b>
+<P>&nbsp;&bull; «Деньги» — песня «Money»
+<P>&nbsp;&bull; «Агентство НЛС» — песня «Зуб золотой» и главная музыкальная тема, в 14 серии 1 сезона звучит музыка из песни «WWW»
+<P>&nbsp;&bull; «Игры мотыльков» — песня «Злая пуля»
+<P>&nbsp;&bull; «Бумер» — песня «Жопа»
+<P>&nbsp;&bull; «Антибумер» — песня «Менеджер»
+<P>&nbsp;&bull; «Он ругается матом» — режиссёр (Тофик Шахвердиев)
+<P>&nbsp;&bull; «День выборов» — панк-группа «Ненормалы» (песня принадлежит Алексею Кортневу из «Несчастного случая»)
+<P>&nbsp;&bull; «О, счастливчик» — песня «Менеджер»
+<P>&nbsp;&bull; «Ленинград: Мужчина, который поет» — режиссёр (Питер Риппл)
+<P>&nbsp;&bull; «Гитлер капут!» — песня «Менеджер»
+<P>&nbsp;&bull; «Реальные пацаны. Московский сезон. Часть 1» — серия 94, песня «Рыба»
+<P>&nbsp;&bull; «Реальные пацаны. Московский сезон. Часть 2» — серия 121, песня «Мамба»
+<P>&nbsp;&bull; саундтрек к фильму «Бумер» (2003)
+<P>&nbsp;&bull; саундтрек к фильму «Бумер 2» (2007)
+<P>&nbsp;&bull; «Сладкая жизнь» — серия 4, песня «Рыба»
+<P>&nbsp;&bull; «Город соблазнов» (телесериал) — песни «Мне бы в небо», «Терминатор», «Злая пуля»
+<P>&nbsp;&bull; Саундтрек к фильму «Теория запоя» (2003)
+<P>&nbsp;&bull; «Кризис нежного возраста» (6-я серия) — песня «Терминатор»
+<P>&nbsp;&bull; «14+. История первой любви» — песня «И так далее»
+<P>&nbsp;&bull; «Ёлки 5» — песня «Начинаем отмечать»
+<P>&nbsp;&bull; «И всё осветилось» — песня «Звезда рок-н-ролла»
+<P>&nbsp;&bull; «Реальные упыри»  — песня «Ласточка»
+
+
+
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Ленинград (группа)</a> - <b>Ленинград</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://leningrad.top/" class = "standardb_black" target="_blank">Ленинград</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Рекомендую:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria3">
+          <a href="https://www.youtube.com/watch?v=zPL8TREIzjY"><img src="icons/playlists/leningrad1.jpg" data-title="Ленинград - Придорожная. Предвыборная песня"   data-description="<a href='https://www.youtube.com/watch?v=zPL8TREIzjY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15th of Sep, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=odfnQBSbaAc"><img src="icons/playlists/leningrad2.jpg" data-title="Ленинград - Отпускная"   data-description="<a href='https://www.youtube.com/watch?v=odfnQBSbaAc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15th of Sep, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=1ugivNRYfjc"><img src="icons/playlists/leningrad3.jpg" data-title="Ленинград - В Питере - Пить"   data-description="А Так-же <a href='https://www.youtube.com/watch?v=DgdP5U28jHc' class = 'smallb_black' target='_blank'>ЗОЖ</a> - Про Университеты (<a href='phd_rus.html' class = 'smallb_black' target='_blank'>PhD</a>).<br><a href='https://www.youtube.com/watch?v=1ugivNRYfjc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16th of Sep, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=cIiqrd3CoLU"><img src="icons/playlists/leningrad4.jpg" data-title="Ленинград - Дорога На Москву"   data-description="Про Группу <a href='music_reggae_rus.html#papernyj' class = 'smallb_black' target='_blank'>Паперный Т.А..М...</a>.<br><a href='https://www.youtube.com/watch?v=cIiqrd3CoLU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05th of Feb, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=EeSHN-V2Bgk"><img src="icons/playlists/leningrad5.jpg" data-title="Ленинград - Нефть"   data-description="Про Педофилию.<br><a href='https://www.youtube.com/watch?v=EeSHN-V2Bgk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05th of Feb, 2018."></a>
+        </div>
+
+
+
+        <script>
+            Galleria.run('.galleria3', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        15th of Sep, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="matov">Алексей Матов</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/matov.jpg" alt="Алексей Матов" title="Алексей Матов" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Известные официальные данные:</b>
+<P>&nbsp;&bull; Творческий псевдоним: Алексей Матов;
+<P>&nbsp;&bull; Дата рождения: 1973-й год, 3 ноября;
+<P>&nbsp;&bull; Знак зодиака: Скорпион;
+<P>&nbsp;&bull; Род деятельности: певец, клипмейкер, автор музыки и текстов.
+
+<br><br>
+<P><b>Биография и творчество:</b>
+<P>Сам бард не любит откровенничать про начало жизни, говоря: «Будет ли отрада читающему, если расскажу про обычное детство?» Кстати, Матов – это не настоящая фамилия певца, а псевдоним, присоединенный к имени. Классно сказал про неопределенность в знаниях о кумире один из поклонников Алексея, Сергей Аникеев: «Ну, распишет биографию – и все! Пропадет интрига, не будет гибкости для фантазии». И его же слова: «Распространять биографию Матова, на мой взгляд, вредно. Главное – аморального он ничего не делал».
+
+<P>Но сквозь строчки в соц. сетях можно кое-что просмотреть о том, как жил подросток, потом юноша, и уже взрослый мужчина. Взял гитару в руки, потому что популярное хобби: играть на гитаре – не обошло и его. «Подобрал несколько песен и понял: надо писать и петь свое, а не чье-то. Сначала выходило не слишком гладко, потом – лучше, но песни начали рождаться целыми блоками», – со слов Матова из интервью на встрече игроков «WOW» в Голицыно. Первое произведение родилось, по словам автора, когда ему было 13 лет.
+
+<P>Начало 2010-х – расцвет творчества Алексея Матова. Регулярные релизы песен и альбомов, выступления перед живой публикой создали ему славу искреннего, эмоционального исполнителя собственных талантливых произведений. Большинство синглов посвящено военной тематике, например:
+
+<P>&nbsp;&bull; «Полверсты смерти и огня», почти 2 млн просмотров на youtube;
+<P>&nbsp;&bull; «На последнем рубеже»; около 3 млн просмотров на ютубе;
+<P>&nbsp;&bull; «Аврора».
+
+
+<P>Есть у него и лирические синглы, например – «Много ли котенку надо». По стилю иногда Алексея Матова сравнивали с Виктором Цоем, но поклонники певца не соглашались: «Это эпоха похожа: перестроечная лихая молодость, полунищее начало жизни – а песни разные!» В 2016-м году бурно развивавшуюся карьеру барда прервала болезнь – Алексей пережил тяжелый инсульт. После болезни государство назначило певцу пенсию: ее Сергею Матову хватает на питание, на оплату коммунальных услуг. В 2020-м году, пока не появляясь на публике, Алексей уже активно занимается творчеством, занимаясь ремастерингом старых песен, выпуская новые альбомы.
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://mir-znamenitostej.ru/aleksej-matov-biografiya-tvorchestvo/" class = "standardb_black" target="_blank">Мир Знаменитостей Алексей Матов</a> - <b>Алексей Матов</b> на Мир Знаменитостей.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.alekseymatov.ru/" class = "standardb_black" target="_blank">Алексей Матов</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Рекомендую:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria4">
+          <a href="https://www.youtube.com/watch?v=zp4h0lR6OkM"><img src="icons/playlists/aleksei_matov1.jpg" data-title="Алексей Матов - Не Верится"   data-description="<a href='https://www.youtube.com/watch?v=zp4h0lR6OkM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>03rd of Jan, 2021."></a>
+          <a href="https://www.youtube.com/watch?v=GQe-uKm6SQc"><img src="icons/playlists/aleksei_matov2.jpg" data-title="Алексей Матов - Три Танкиста"   data-description="<a href='https://www.youtube.com/watch?v=GQe-uKm6SQc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>03rd of Jan, 2021."></a>
+          <a href="https://www.youtube.com/watch?v=Nd7mP9AF234"><img src="icons/playlists/aleksei_matov3.jpg" data-title="Алексей Матов - Второй Фронт"   data-description="<a href='https://www.youtube.com/watch?v=Nd7mP9AF234' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>03rd of Jan, 2021."></a>
+        </div>
+
+
+
+        <script>
+            Galleria.run('.galleria4', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        03rd of Jan, 2021.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="mumij_troll">Мумий Тролль</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/mumij_troll.jpg" alt="Мумий Тролль" title="Мумий Тролль" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>«<b>Мумий Тролль</b>» (до 1989 года — Муми Тролль) — советская и российская рок-группа из Владивостока. Основана в 1983 году во Владивостоке её бессменным лидером и идеологом Ильёй Лагутенко. Группа представляла Россию на конкурсе песни «Евровидение» 2001, где заняла 12-е место. 
+
+
+<br><br>
+<P><b>Дискография:</b>
+
+<P>&nbsp;&bull; Новая луна апреля (1985)
+<P>&nbsp;&bull; Делай Ю Ю (1990)
+<P>&nbsp;&bull; Морская (1997)
+<P>&nbsp;&bull; Икра (1997)
+<P>&nbsp;&bull; Шамора (1998)
+<P>&nbsp;&bull; Точно ртуть алоэ (2000)
+<P>&nbsp;&bull; Меамуры (2002)
+<P>&nbsp;&bull; Похитители Книг (2004)
+<P>&nbsp;&bull; Слияние и Поглощение (2005)
+<P>&nbsp;&bull; Амба (2007)
+<P>&nbsp;&bull; 8 (2008)
+<P>&nbsp;&bull; Редкие земли (2010)
+<P>&nbsp;&bull; Vladivostok (2012)
+<P>&nbsp;&bull; SOS матросу (2013)
+<P>&nbsp;&bull; Пиратские копии (2015)
+<P>&nbsp;&bull; Malibu Alibi (2016)
+
+
+<br><br>
+<P><b>Текущий состав:</b>
+
+
+<P>&nbsp;&bull; Илья Лагутенко — вокал, клавишные, ритм-гитара, автор песен, концепция, бубен, акустическая гитара (c 1983 года)
+<P>&nbsp;&bull; Олег Пунгин — ударные, электронная перкуссия (c 1997 года)
+<P>&nbsp;&bull; Александр Холенко (DZA) — программирование, семплы, синтезатор, аранжировки (с 2013 года)
+<P>&nbsp;&bull; Артём Крицин — соло-гитара, бэк-вокал (с 2013 года)
+<P>&nbsp;&bull; Павел Вовк — бас-гитара (с 2016 года)
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%BC%D0%B8%D0%B9_%D0%A2%D1%80%D0%BE%D0%BB%D0%BB%D1%8C" class = "standardb_black" target="_blank">Wikipedia Мумий Тролль</a> - <b>Мумий Тролль</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.mumiytroll.com/" class = "standardb_black" target="_blank">Мумий Тролль</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Рекомендую:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria5">
+          <a href="https://www.youtube.com/watch?v=4Ml5Fgq5aQY"><img src="icons/playlists/mumij_troll1.jpg" data-title="Мумий Тролль - Ложись, Подполковник"   data-description="<a href='https://www.youtube.com/watch?v=4Ml5Fgq5aQY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15th of Feb, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=OIDpkaqxJDE"><img src="icons/playlists/mumij_troll2.jpg" data-title="Мумий Тролль - Иди, Я Буду"   data-description="<a href='https://www.youtube.com/watch?v=OIDpkaqxJDE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15th of Feb, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=5yjZ2UF9IeA"><img src="icons/playlists/mumij_troll3.jpg" data-title="Мумий Тролль - Ой"   data-description="Про <a href='phd_rus.html' class = 'smallb_black' target='_blank'>PhD</a>.<br><a href='https://www.youtube.com/watch?v=5yjZ2UF9IeA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15th of Feb, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=5MWGIj8bBgk"><img src="icons/playlists/mumij_troll4.jpg" data-title="Мумий Тролль - Медленные Танцы"   data-description="<a href='https://www.youtube.com/watch?v=5MWGIj8bBgk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16th of Feb, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=clBEfxzuXuA"><img src="icons/playlists/mumij_troll11.jpg" data-title="Мумий Тролль - Мастера Кунг-Фу"   data-description="<a href='https://www.youtube.com/watch?v=clBEfxzuXuA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>13th of Mar, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=koTDxGTYqFI"><img src="icons/playlists/mumij_troll5.jpg" data-title="Мумий Тролль - Случайности"   data-description="Песня Напомнила Фразу 'Все Ваши Проблемы Из-За Недостатка Веры'.<br><a href='https://www.youtube.com/watch?v=koTDxGTYqFI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16th of Feb, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=3ByzcBPbKsE"><img src="icons/playlists/mumij_troll6.jpg" data-title="Мумий Тролль - Клубничная"   data-description="Про Диктатуру.<br><a href='https://www.youtube.com/watch?v=3ByzcBPbKsE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16th of Feb, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=7uVjKbmq59U"><img src="icons/playlists/mumij_troll7.jpg" data-title="Мумий Тролль - Недопонимающая"   data-description="<a href='https://www.youtube.com/watch?v=7uVjKbmq59U' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19th of Feb, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=Lw66mY_DBX0"><img src="icons/playlists/mumij_troll8.jpg" data-title="Мумий Тролль - Время Тепла"   data-description="Про Кохтла-Ярве.<br><a href='https://www.youtube.com/watch?v=Lw66mY_DBX0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02nd of Mar, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=slaKCut-THk"><img src="icons/playlists/mumij_troll9.jpg" data-title="Мумий Тролль - Масло"   data-description="Про <a href='music_rock_rus.html' class = 'smallb_black' target='_blank'>Рок Музыку</a>/<a href='music_metal_gothic_rus.html' class = 'smallb_black' target='_blank'>Метал Музыку</a>.<br><a href='https://www.youtube.com/watch?v=slaKCut-THk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02nd of Mar, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=ojlsE3DweNU"><img src="icons/playlists/mumij_troll10.jpg" data-title="Мумий Тролль - Воспитанник Упавшей Звезды"   data-description="Про Шизофреников.<br><a href='https://www.youtube.com/watch?v=ojlsE3DweNU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>02nd of Mar, 2018."></a>
+        </div>
+
+
+
+        <script>
+            Galleria.run('.galleria5', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        15th of Feb, 2018.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="nensi">Нэнси <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/nensi.jpg" alt="Нэнси" title="Нэнси" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P>«<b>Нэнси</b>» — российская и украинская музыкальная поп-рок группа, наиболее известная благодаря песне «Дым сигарет с ментолом».
+
+<P>Создана в 1992 году автором-исполнителем Анатолием Бондаренко в городе Константиновка Донецкой области.
+
+
+<br><br>
+<P><b>Состав группы:</b>
+
+<P>&nbsp;&bull; Анатолий Михайлович Бондаренко — родился 11.01.1966 г. Место рождения — г. Константиновка Донецкой области, УССР, СССР.
+<P>&nbsp;&bull; Андрей Александрович Костенко — родился 15.03.1971 г. Место рождения — о. Итуруп Южно-Курильский округ (Сахалинская область РСФСР) (СССР). С 1974 (3 года) жил в г. Краматорск Донецкой области.
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%9D%D1%8D%D0%BD%D1%81%D0%B8_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Нэнси (группа)</a> - <b>Нэнси</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        06th of Dec, 2018.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="vasja_oblomov">Вася Обломов</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/vasja_oblomov.jpg" alt="Вася Обломов" title="Вася Обломов" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Василий Владимирович Гончаров</b> (род. 21 марта 1984, Ростов-на-Дону, СССР) — российский музыкант, вокалист, поэт, композитор и музыкальный продюсер. Основатель и лидер группы «Чебоза». Более известен как <b>Вася Обломов</b> в связи с созданием одноимённого музыкального проекта. Один из основателей и участник музыкально-поэтического проекта «Господин хороший». Общественный деятель.
+
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%81%D1%8F_%D0%9E%D0%B1%D0%BB%D0%BE%D0%BC%D0%BE%D0%B2" class = "standardb_black" target="_blank">Wikipedia Вася Обломов</a> - <b>Вася Обломов</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://vasyaoblomov.ru/" class = "standardb_black" target="_blank">Вася Обломов</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        16th of Jul, 2019.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="serga">СерьГа <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="icons/music/serga.jpeg" alt="СерьГа" title="СерьГа" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P>«<b>СерьГа</b>» — российская рок-группа, образованная в 1994 году Сергеем Галаниным. Девиз группы — «Для тех, у кого есть уши».
+
+<br><br>
+<P><b>Состав:</b>
+<P>&nbsp;&bull; Сергей Галанин — вокал, акустическая гитара, электрогитара, электроакустическая гавайская гитара.
+<P>&nbsp;&bull; Андрей Кифияк — соло-гитара
+<P>&nbsp;&bull; Сергей Левитин — ритм-гитара
+<P>&nbsp;&bull; Сергей «Sungy» Поляков — барабаны.
+<P>&nbsp;&bull; Сергей Крынский — бас-гитара, бэк-вокал
+
+
+<br><br>
+<P><b>Дискография:</b>
+
+<P>&nbsp;&bull; Собачий вальс, 1994
+<P>&nbsp;&bull; СерьГа, 1995
+<P>&nbsp;&bull; Долина глаз, 1997
+<P>&nbsp;&bull; Дорога в ночь, 1997
+<P>&nbsp;&bull; Живая коллекция, 1998
+<P>&nbsp;&bull; Страна чудес, 1999
+<P>&nbsp;&bull; Лучшие песни, 2001
+<P>&nbsp;&bull; Я такой, как все, 2003
+<P>&nbsp;&bull; Ночная дорога в страну чудес, 2005
+<P>&nbsp;&bull; Нормальный человек, 2006
+<P>&nbsp;&bull; Детское сердце, 2011
+<P>&nbsp;&bull; Природа, свобода и любовь, 2011
+<P>&nbsp;&bull; Чистота, 2015
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D1%8C%D0%93%D0%B0" class = "standardb_black" target="_blank">Wikipedia СерьГа</a> - <b>СерьГа</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.serga.ru/" class = "standardb_black" target="_blank">СерьГа</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Рекомендую:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria6">
+          <a href="https://www.youtube.com/watch?v=DcXPVBe0F_w"><img src="icons/playlists/serga1.jpg" data-title="СерьГа - Страна Чудес"   data-description="<a href='https://www.youtube.com/watch?v=DcXPVBe0F_w' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=6qWoT1M8GfA"><img src="icons/playlists/serga2.jpg" data-title="СерьГа - А Что Нам Надо"   data-description="Про <a href='countries_ussr_communism_rus.html' class = 'smallb_black' target='_blank'>Советскую</a> <a href='countries_ussr_communism_rus.html' class = 'smallb_black' target='_blank'>Коммунистическую Идеологию</a>.<br><a href='https://www.youtube.com/watch?v=6qWoT1M8GfA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=uNSRl-9cYr4"><img src="icons/playlists/serga3.jpg" data-title="СерьГа - Не Повезло"   data-description="Про Кресты, Берлинских Бомжей и Торчков и Про Ислам.<br><a href='https://www.youtube.com/watch?v=uNSRl-9cYr4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=XvL-xybk9Wo"><img src="icons/playlists/serga4.jpg" data-title="СерьГа - Песня Про Радость"   data-description="а Так-же <a href='https://www.youtube.com/watch?v=TA-G59CTre8' class = 'smallb_black' target='_blank'>Холодное Море Молчит</a> - Про Самих Себя.<br><a href='https://www.youtube.com/watch?v=XvL-xybk9Wo' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=7BY1CF68WiY"><img src="icons/playlists/serga5.jpg" data-title="СерьГа - Детское Сердце"   data-description="Про Группу Peste Noire.<br><a href='https://www.youtube.com/watch?v=7BY1CF68WiY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>18th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=dabvWNVVnN4"><img src="icons/playlists/serga6.jpg" data-title="СерьГа - Ты Не Придёшь"   data-description="Про <a href='music_pop_rus.html#dion' class = 'smallb_black' target='_blank'>Celine Dion</a> (Творчество).<br><a href='https://www.youtube.com/watch?v=dabvWNVVnN4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02nd of May, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=If2bsBl8Lao"><img src="icons/playlists/serga6.jpg" data-title="СерьГа - С Днём Рождения"   data-description="Про Группу <a href='music_psychedelic_rock_rus.html#auktyon' class = 'smallb_black' target='_blank'>АукцЫон</a>.<br><a href='https://www.youtube.com/watch?v=If2bsBl8Lao' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16th of May, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=UKAEnbdcJPY"><img src="icons/playlists/serga7.jpg" data-title="СерьГа - Дорога в Ночь"   data-description="Про Михаил Круг (Творчество).<br><a href='https://www.youtube.com/watch?v=UKAEnbdcJPY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>07th of Jun, 2017."></a>
+        </div>
+
+
+
+        <script>
+            Galleria.run('.galleria6', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        11th of Apr, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="splean">Сплин</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/music/splin.jpg" alt="Сплин" title="Сплин" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+                                                
+<P><b>«Сплин»</b>  — российская рок-группа из Санкт-Петербурга. Бессменный лидер — Александр Васильев. Датой рождения группы считается 27 мая 1994 года.
+
+<P>Название группы возникло под влиянием строк стихотворения российского поэта Серебряного века Саши Чёрного, на основе которого была создана песня «Под сурдинку» из первого альбома группы («Пыльная быль»):
+<br><br>
+
+<i><P>Как молью изъеден я сплином…
+<P>Посыпьте меня нафталином,
+<P>Сложите в сундук и поставьте меня на чердак,
+<P>Пока не наступит весна. </i>
+                                
+<br><br>
+<P><b>Состав:</b>
+<br><br>
+<P><b>Текущий состав:</b>
+
+<P>&nbsp;&bull; Александр Васильев — вокал, ритм-гитара, гитара (1994—наши дни)
+<P>&nbsp;&bull; Николай Ростовский — клавишные (1994—1998, 2001—наши дни)
+<P>&nbsp;&bull; Вадим Сергеев — соло-гитара (2001—2002, 2007—наши дни); бас-гитара (2002—2007)
+<P>&nbsp;&bull; Алексей Мещеряков — ударные (2005—наши дни)
+<P>&nbsp;&bull; Дмитрий Кунин — бас-гитара (2007—наши дни)
+
+<br><br>
+<P><b>Бывшие участники:</b>
+
+<P>&nbsp;&bull; Александр Морозов — бас-гитара (1994—2000)
+<P>&nbsp;&bull; Стас Березовский — соло-гитара (1994—2006)
+<P>&nbsp;&bull; Николай Лысов — ударные (1994—1998)
+<P>&nbsp;&bull; Ян Николенко — флейта, перкуссия (1998—2006)
+<P>&nbsp;&bull; Сергей Наветный — ударные (1998—2005)
+<P>&nbsp;&bull; Николай Воронов — бас-гитара (2000—2002)
+
+
+<br><br>
+<P><b>Дискография, Номерные альбомы:</b>
+
+<P>&nbsp;&bull; 1994 — «Пыльная быль»
+<P>&nbsp;&bull; 1996 — «Коллекционер оружия»
+<P>&nbsp;&bull; 1997 — «Фонарь под глазом»
+<P>&nbsp;&bull; 1998 — «Гранатовый альбом»
+<P>&nbsp;&bull; 1999 — «Альтависта»
+<P>&nbsp;&bull; 2001 — «25-й кадр»
+<P>&nbsp;&bull; 2003 — «Новые люди»
+<P>&nbsp;&bull; 2004 — «Реверсивная хроника событий»
+<P>&nbsp;&bull; 2007 — «Раздвоение личности»
+<P>&nbsp;&bull; 2009 — «Сигнал из космоса»
+<P>&nbsp;&bull; 2012 — «Обман зрения»
+<P>&nbsp;&bull; 2014 — «Резонанс. Часть 1»
+<P>&nbsp;&bull; 2014 — «Резонанс. Часть 2»
+<P>&nbsp;&bull; 2016 — TBA (точная дата не названа)
+
+        
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%BB%D0%B8%D0%BD" class = "standardb_black" target="_blank">Wikipedia Сплин</a> - <b>Сплин</b> на Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://splean.ru/" class = "standardb_black" target="_blank">Сплин</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Рекомендую:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+        <div class="galleria7">
+          <a href="https://www.youtube.com/watch?v=k3pqv2mudSc"><img src="icons/playlists/splin38.jpg" data-title="Сплин - Окраины"   data-description="<a href='https://www.youtube.com/watch?v=k3pqv2mudSc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>27th of Oct, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=mmn8G_8ybmg"><img src="icons/playlists/splin41.jpg" data-title="Сплин - Всего Хорошего"   data-description="Про Атеизм.<br><a href='https://www.youtube.com/watch?v=mmn8G_8ybmg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>09th of Jun, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=vjdHU9I5QbM"><img src="icons/playlists/splin40.jpg" data-title="Сплин - Конец Прекрасной Эпохи"   data-description="Про <a href='satanism_theistic_rus.html' class = 'smallb_black' target='_blank'>сатанизм</a>.<br><a href='https://www.youtube.com/watch?v=vjdHU9I5QbM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>18th of Dec, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=mASDkiYuvLQ"><img src="icons/playlists/splin1.jpg" data-title="Сплин - Чёрная Волга"   data-description="Про Венгрию.<br><a href='https://www.youtube.com/watch?v=mASDkiYuvLQ' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11st of July, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=ERUGIS2CdJc"><img src="icons/playlists/splin2.jpg" data-title="Сплин - Чёрный Цвет Солнца"   data-description="Пародия на <a href='music_country_rus.html#belomorkanal' class = 'smallb_black' target='_blank'>Беломорканал</a> - <a href='https://www.youtube.com/watch?v=85WMxJVipXw' class = 'smallb_black' target='_blank'>Комсомольцы</a>.<br><a href='https://www.youtube.com/watch?v=ERUGIS2CdJc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11st of July, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=girYtxtVGEQ"><img src="icons/playlists/splin3.jpg" data-title="Сплин - Холодные зимы"   data-description="Про пустой автобус.<br><a href='https://www.youtube.com/watch?v=girYtxtVGEQ' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25th of July, 2016."></a>
+		  
+          <a href="https://www.youtube.com/watch?v=bEXk2pOmX18"><img src="icons/playlists/splin4.jpg" data-title="Сплин - Солнце взойдёт"   data-description="Про <a href='satanism_theistic_rus.html' class = 'smallb_black' target='_blank'>сатанизм</a>.<br><a href='https://www.youtube.com/watch?v=bEXk2pOmX18' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01st of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=EtIq70Xqoy4"><img src="icons/playlists/splin5.jpg" data-title="Сплин - Пожар"   data-description="Про выходные.<br><a href='https://www.youtube.com/watch?v=EtIq70Xqoy4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01st of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=fUNnL3Lybss"><img src="icons/playlists/splin6.jpg" data-title="Сплин - Пробки"   data-description="Про группу <a href='music_rap_rus.html#malchishnik' class = 'smallb_black' target='_blank'>Мальчишник</a>.<br><a href='https://www.youtube.com/watch?v=fUNnL3Lybss' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01st of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=-1a1BeafM9Q"><img src="icons/playlists/splin7.jpg" data-title="Сплин - Йог спокоен"   data-description="Про группу <a href='https://ru.wikipedia.org/wiki/Faktor_2' class = 'smallb_black' target='_blank'>Factor 2 (Wikipedia)</a>.<br><a href='https://www.youtube.com/watch?v=-1a1BeafM9Q' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02nd of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=Nx1N6JzGWvU"><img src="icons/playlists/splin8.jpg" data-title="Сплин - Я не хочу домой"   data-description="Про деньги.<br><a href='https://www.youtube.com/watch?v=Nx1N6JzGWvU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02nd of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=F4ZBJmsdn40"><img src="icons/playlists/splin9.jpg" data-title="Сплин - Пусть играет музыка"   data-description="А так-же <a href='https://www.youtube.com/watch?v=P0KVuSrbCOA' class = 'smallb_black' target='_blank'>Сплин - Помолчим немного</a>, <a href='https://www.youtube.com/watch?v=bEXk2pOmX18' class = 'smallb_black' target='_blank'>Сплин - Солнце взойдёт</a> - про чат.<br><a href='https://www.youtube.com/watch?v=F4ZBJmsdn40' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02nd of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=QFYqDc9O4IU"><img src="icons/playlists/splin10.jpg" data-title="Сплин - Сумасшедший автобус"   data-description="Про некрофилию.<br><a href='https://www.youtube.com/watch?v=QFYqDc9O4IU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>03rd of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=sGL3nZ3CwzA"><img src="icons/playlists/splin10.jpg" data-title="Сплин - Молоко и Мёд"   data-description="Про <a href='countries_ussr_communism_rus.html#socialism' class = 'smallb_black' target='_blank'>Социализм</a>.<br><a href='https://www.youtube.com/watch?v=sGL3nZ3CwzA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25th of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=XVqHWjGEdzU"><img src="icons/playlists/splin11.jpg" data-title="Сплин - Невский Проспект"   data-description="Про Евросоюз.<br><a href='https://www.youtube.com/watch?v=XVqHWjGEdzU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>27th of Sep, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=N7VNFG6lqYY"><img src="icons/playlists/splin12.jpg" data-title="Сплин - Есть Кто-Нибудь Живой?"   data-description="Про <a href='' class = 'smallb_black' target='_blank'>Рок-Музыку</a>.<br><a href='https://www.youtube.com/watch?v=N7VNFG6lqYY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>21st of Oct, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=SzAA5yKUzGU"><img src="icons/playlists/splin13.jpg" data-title="Сплин - Зелёная Песня"   data-description="Про <a href='music_psychedelic_trance_rus.html' class = 'smallb_black' target='_blank'>Психоделическую Музыку</a> и Литературу.<br><a href='https://www.youtube.com/watch?v=SzAA5yKUzGU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>21st of Oct, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=OhDgGRpODMg"><img src="icons/playlists/splin3.jpg" data-title="Сплин - Звери"   data-description="Про <a href='communism_enemies_rus.html#kolhoz' class = 'smallb_black' target='_blank'>Колхоз</a>.<br><a href='https://www.youtube.com/watch?v=OhDgGRpODMg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>03rd of Nov, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=ytZmTqJIJWI"><img src="icons/playlists/splin14.jpg" data-title="Сплин - Петербургская Свадьба"   data-description="Про Группу <a href='music_electronic_dance_rus.html#savage' class = 'smallb_black' target='_blank'>Savage</a>.<br><a href='https://www.youtube.com/watch?v=ytZmTqJIJWI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11th of Nov, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=rIItLazDnew"><img src="icons/playlists/splin5.jpg" data-title="Сплин - Полная Луна"   data-description="Про Группу <a href='music_punk_ska_rus.html#sektor_gaza' class = 'smallb_black' target='_blank'>Сектор Газа</a>.<br><a href='https://www.youtube.com/watch?v=rIItLazDnew' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11th of Nov, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=5SNz5N8LFmA"><img src="icons/playlists/splin15.jpg" data-title="Сплин - Будь Моей Тенью"   data-description="Про Ислам.<br><a href='https://www.youtube.com/watch?v=5SNz5N8LFmA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>24th of Nov, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=Zcjnxq9mTss"><img src="icons/playlists/splin16.jpg" data-title="Сплин - Пил-Курил"   data-description="Про <a href='https://get.google.com/albumarchive/110014055642206318907/album/AF1QipMcJy4O10ZHh0J-np5eZARqicdZMZlq7xzQOWt5' class = 'smallb_black' target='_blank'>Машу Поташенкову (фото)</a>.<br><a href='https://www.youtube.com/watch?v=Zcjnxq9mTss' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02nd of Dec, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=ni-DVugBHo4"><img src="icons/playlists/splin10.jpg" data-title="Сплин - Далеко Домой"   data-description="Про Педофилов.<br><a href='https://www.youtube.com/watch?v=ni-DVugBHo4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05th of Dec, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=rIItLazDnew"><img src="icons/playlists/splin5.jpg" data-title="Сплин - Полная Луна"   data-description="А так-же <a href='https://www.youtube.com/watch?v=vm8vRgEomFE' class = 'smallb_black' target='_blank'>Танцуй!</a> и <a href='https://www.youtube.com/watch?v=IEWi7s1hV_w' class = 'smallb_black' target='_blank'>Лестница</a> - Про Кресты.<br><a href='https://www.youtube.com/watch?v=rIItLazDnew' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>06th of Dec, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=tzPwC1lvRWc"><img src="icons/playlists/splin17.jpg" data-title="Сплин - Время Назад!"   data-description="Про Фабрики.<br><a href='https://www.youtube.com/watch?v=tzPwC1lvRWc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>09th of Dec, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=JtdscBYvzx8"><img src="icons/playlists/splin18.jpg" data-title="Сплин - Двуречье (Я Ничего не Скрыл)"   data-description="Про <a href='countries_ussr_communism_rus.html' class = 'smallb_black' target='_blank'>СССР</a>.<br><a href='https://www.youtube.com/watch?v=JtdscBYvzx8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16th of Dec, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=Oif_lC1elmc"><img src="icons/playlists/splin19.jpg" data-title="Сплин - Рай В Шалаше"   data-description="А так-же <a href='https://www.youtube.com/watch?v=bWDZYlrSsLE' class = 'smallb_black' target='_blank'>Страшная Тайна</a> - Про <a href='totalitarianism_rus.html' class = 'smallb_black' target='_blank'>Тоталитаризм</a>.<br><a href='https://www.youtube.com/watch?v=Oif_lC1elmc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=gfhda3in8Io"><img src="icons/playlists/splin20.jpg" data-title="Сплин - Среди Зимы"   data-description="Про Группу <a href='music_punk_rock_rus.html#krasnaja_plesen' class = 'smallb_black' target='_blank'>Красная Плесень</a>.<br><a href='https://www.youtube.com/watch?v=gfhda3in8Io' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=e6hSV56_bQI"><img src="icons/playlists/splin21.jpg" data-title="Сплин - Шахматы"   data-description="Про Кресты.<br><a href='https://www.youtube.com/watch?v=e6hSV56_bQI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=-o0xHWRmy-c"><img src="icons/playlists/splin22.jpg" data-title="Сплин - Исчезаем В Темноте"   data-description="Про <a href='news_rus.html' class = 'smallb_black' target='_blank'>Сайт Новостей</a>.<br><a href='https://www.youtube.com/watch?v=-o0xHWRmy-c' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=7QDZnVJWLQQ"><img src="icons/playlists/splin23.jpg" data-title="Сплин - Звезда Рок-Н-Ролла"   data-description="Про Группу <a href='music_national_soviet_rus.html#ddt' class = 'smallb_black' target='_blank'>ДДТ</a>.<br><a href='https://www.youtube.com/watch?v=7QDZnVJWLQQ' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=AymfndOyuBo"><img src="icons/playlists/splin24.jpg" data-title="Сплин - Больше Никакого Рок-Н-Ролла"   data-description="Про Германию.<br><a href='https://www.youtube.com/watch?v=AymfndOyuBo' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=voBlIqVlkjE"><img src="icons/playlists/splin25.jpg" data-title="Сплин - Жертва Талого Льда"   data-description="Про Германию.<br><a href='https://www.youtube.com/watch?v=voBlIqVlkjE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=oaSicf98fn4"><img src="icons/playlists/splin27.jpg" data-title="Сплин - Маяк"   data-description="Про Фильм <a href='movies_actor_douglas_rus.html#the_game' class = 'smallb_black' target='_blank'>Игра</a>.<br><a href='https://www.youtube.com/watch?v=oaSicf98fn4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01st of Mar, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=-LjF9Ym0Nmg"><img src="icons/playlists/splin28.jpg" data-title="Сплин - Тебе Это Снится"   data-description="Про <a href='music_punk_rock_rus.html' class = 'smallb_black' target='_blank'>Панков</a> и <a href='music_electronic_dance_rus.html' class = 'smallb_black' target='_blank'>Электронщиков</a>.<br><a href='https://www.youtube.com/watch?v=-LjF9Ym0Nmg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15th of Mar, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=PVca1CbYeEw"><img src="icons/playlists/splin29.jpg" data-title="Сплин - Англо-Русский Словарь"   data-description="Про Игру <a href='games_puzzle_rus.html#diamond_digger_saga' class = 'smallb_black' target='_blank'>Diamond Digger Saga</a>.<br><a href='https://www.youtube.com/watch?v=PVca1CbYeEw' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15th of Mar, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=19XP-ooSzzQ"><img src="icons/playlists/splin30.jpg" data-title="Сплин - Люся Сидит Дома"   data-description="Про <a href='personalities_middle_ages_rus.html#nostradamus' class = 'smallb_black' target='_blank'>Нострадамуса</a>.<br><a href='https://www.youtube.com/watch?v=19XP-ooSzzQ' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>20th of Mar, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=_IlqQAebQl8"><img src="icons/playlists/splin31.jpg" data-title="Сплин - Коктейли Третьей Мировой"   data-description="Про <a href='countries_ussr_communism_rus.html' class = 'smallb_black' target='_blank'>Советские</a> <a href='fotos_me_rus.html#soviet_ads' class = 'smallb_black' target='_blank'>Агитплакаты</a>.<br><a href='https://www.youtube.com/watch?v=_IlqQAebQl8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>20th of Mar, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=BXTx7RNEaYs"><img src="icons/playlists/splin32.jpg" data-title="Сплин - Спи В Заброшенном Доме"   data-description="Про <a href='movies_superhero_dc_rus.html' class = 'smallb_black' target='_blank'>Супергеройские Фильмы</a> <a href='movies_superhero_dc_rus.html#dc_comics_world' class = 'smallb_black' target='_blank'>Расширенная вселенная DC (рус. DC Comics World)</a>.<br><a href='https://www.youtube.com/watch?v=BXTx7RNEaYs' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>20th of Mar, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=fqp1uJfpzfA"><img src="icons/playlists/splin33.jpg" data-title="Сплин - Симфония"   data-description="Про Методы Обучения в <a href='phd_rus.html' class = 'smallb_black' target='_blank'>Докторантуре</a> в <a href='countries_ussr_communism_rus.html' class = 'smallb_black' target='_blank'>СССР</a>.<br><a href='https://www.youtube.com/watch?v=fqp1uJfpzfA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>20th of Mar, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=BAXv9QKgfN8"><img src="icons/playlists/splin34.jpg" data-title="Сплин - Красота"   data-description="Про Творчество Михаила Круга.<br><a href='https://www.youtube.com/watch?v=BAXv9QKgfN8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>27th of Mar, 2017."></a>    
+          <a href="https://www.youtube.com/watch?v=S3Ln1qBz3VQ"><img src="icons/playlists/splin35.jpg" data-title="Сплин - Первый Снег"   data-description="Про Абстрактные Вещи.<br><a href='https://www.youtube.com/watch?v=S3Ln1qBz3VQ' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=TWip1Txx0fw"><img src="icons/playlists/splin36.jpg" data-title="Сплин - Пластмассовая Жизнь"   data-description="Про Окончание Вещей/Проектов.<br><a href='https://www.youtube.com/watch?v=TWip1Txx0fw' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>14th of Aug, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=hr7NrNY9XI8"><img src="icons/playlists/splin37.jpg" data-title="Сплин - Выпусти Меня Отсюда"   data-description="Похоже на <a href='https://ru.wikipedia.org/wiki/Estradarada' class = 'smallb_black' target='_blank'>ESTRADARADA</a> (Wikipedia) - <a href='https://www.youtube.com/watch?v=HO6ebtWczX8' class = 'smallb_black' target='_blank'>Вите Надо Выйти</a>.<br><a href='https://www.youtube.com/watch?v=hr7NrNY9XI8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>27th of Oct, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=v1XHhYNVMGI"><img src="icons/playlists/splin39.jpg" data-title="Сплин - Семь Восьмых"   data-description="Про <a href='music_disco_rus.html#kombinacija' class = 'smallb_black' target='_blank'>Алёна Апина</a> - <a href='https://www.youtube.com/watch?v=tG21N2wvqDA' class = 'smallb_black' target='_blank'>Не Привыкай</a>.<br><a href='https://www.youtube.com/watch?v=v1XHhYNVMGI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>28th of Oct, 2017."></a>
+		  <a href="https://www.youtube.com/watch?v=HlQQYQlU1j8"><img src="icons/playlists/splin26.jpg" data-title="Сплин - Бони И Клайд"   data-description="Про Группу <a href='music_psychedelic_trance_rus.html#infected_mushroom' class = 'smallb_black' target='_blank'>Infected Mushroom</a>.<br><a href='https://www.youtube.com/watch?v=HlQQYQlU1j8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>30th of Oct, 2017."></a>
+        </div>
+
+
+
+        <script>
+
+            Galleria.run('.galleria7', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        01st of Jul, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="zemfira">Земфира</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                     <img src="icons/music/zemfira.jpg" alt="Земфира" title="Земфира" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Земфира</b> (полное имя <b>Земфира Талгатовна Рамазанова</b> (тат. Земфира Тәлгать кызы Рамазанова); род. 26 августа 1976, Уфа, Башкирская АССР, РСФСР, СССР) — российская рок-певица, музыкант, композитор, продюсер и автор песен. Земфира стала олицетворением нового движения в русском роке, которое журналисты окрестили «женский рок».
+
+<P>В начале 1998 года Земфира переезжает из родной Уфы в Москву, где начинает работу со своей группой «Zемфира» над первым студийным альбомом, выпущенным спустя год. С 1999 года Земфира выпустила шесть студийных альбомов, получивших значительное внимание прессы и публики. Также в её дискографию входят сборник би-сайдов и два концертных альбома. В её лирических исканиях нашли своё воплощение душевные страдания и поиски современной молодёжи. В 1999 году журнал «Огонёк» назвал Земфиру «прорвавшимся голосом поколения». На протяжении всей карьеры певицы многие из её песен попадали на первые строчки музыкальных чартов России, включая «Ариведерчи», «Искала», «Трафик», «Прогулка», «Мы разбиваемся» и «Без шансов».
+
+<P>Земфира также стала продюсером музыкального фильма Зелёный театр в Земфире (2008), получившего множество положительных отзывов от критиков. Вместе с режиссёром Ренатой Литвиновой Земфира стала сопродюсером картины Последняя сказка Риты (2012), к которой написала музыку. Фильм принял участие в конкурсной программе 3-го Одесского международного кинофестиваля и 34-го Московского международного кинофестиваля. Также написала музыку к фильмам Ренаты Литвиновой «Богиня: как я полюбила» и др. Несколько песен Земфиры из альбома «Спасибо» звучат в фильме Киры Муратовой «Мелодия для шарманки», а в картине «Вечное возвращение» в кадре неоднократно появляется концертная запись «Песенки герцога» из оперы «Риголетто» в исполнении певицы.
+
+<P>С момента появления в шоу-бизнесе в 1999 году Земфира претерпела многочисленные изменения во внешнем виде, манере поведения на сцене и общения с журналистами. Её поведение на публике нередко было эпатажным и вызывало неприятие прессы.
+
+<P>Земфира также отличается перфекционизмом в работе, жёсткими разногласиями с музыкальными продюсерами. Поэтому она часто продюсирует свои альбомы сама. Музыкальный стиль Земфиры относят к жанрам рока и поп-рока. В её музыке находят влияние как гитарного попа, так и гармоний джаза и босса-новы.
+
+<P>В 2004 году в российский учебник истории для 9 класса в раздел «Духовная жизнь» вошло упоминание о Земфире как о родоначальнике «совершенно иной» музыкальной молодёжной культуры (автор пособия — профессор Московского педагогического государственного университета Александр Данилов). Земфира оказала большое влияние на творчество молодых групп 2000-х годов и на подрастающее поколение в целом. В ноябре 2010 года её дебютный альбом был включён журналом «Афиша» в список «50 лучших русских альбомов всех времен. Выбор молодых музыкантов», где занял пятую строчку. Рейтинг составлялся по опросу среди представителей нескольких десятков молодых музыкальных групп России. В список также попал альбом «Прости меня моя любовь» (43 место).
+
+<P>В 2012, 2013 и 2014 годах певица вошла в рейтинг «Сто самых влиятельных женщин России», составленный радиостанцией «Эхо Москвы», информационными агентствами РИА Новости, «Интерфакс» и журналом «Огонёк».
+
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B5%D0%BC%D1%84%D0%B8%D1%80%D0%B0" class = "standardb_black" target="_blank">Wikipedia Земфира</a> - <b>Земфира</b> на Wikipedia.
+                        </td>
+
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://zemfira.ru/" class = "standardb_black" target="_blank">Земфира</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Рекомендую:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria8">
+          <a href="https://www.youtube.com/watch?v=IT05J3_Gn2I"><img src="icons/playlists/zemfira1.jpg" data-title="Земфира - Главное"   data-description="<a href='https://www.youtube.com/watch?v=IT05J3_Gn2I' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05th of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=AEPh6_xy0So"><img src="icons/playlists/zemfira2.jpg" data-title="Земфира - Я Полюбила Вас"   data-description="Про <a href='psychology_pseudo_rus.html' class = 'smallb_black' target='_blank'>Псевдопсихологию</a>.<br><a href='https://www.youtube.com/watch?v=AEPh6_xy0So' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05th of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=NLFm5dJlCbU"><img src="icons/playlists/zemfira3.jpg" data-title="Земфира - Австралия"   data-description="Про Доисторический Период.<br><a href='https://www.youtube.com/watch?v=NLFm5dJlCbU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05th of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=-_i5EbUn18A"><img src="icons/playlists/zemfira4.jpg" data-title="Земфира - Песня"   data-description="Про <a href='music_disco_rus.html#kombinacija' class = 'smallb_black' target='_blank'>Алёна Апина</a>.<br><a href='https://www.youtube.com/watch?v=-_i5EbUn18A' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05th of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=WSWwQiYLA3o"><img src="icons/playlists/zemfira5.jpg" data-title="Земфира - Дыши" data-description="Про Песню <a href='music_rock_rus.html#leningrad' class = 'smallb_black' target='_blank'>Ленинград</a> - <a href='https://www.youtube.com/watch?v=uvA1T_FRtPY' class = 'smallb_black' target='_blank'>Распиздяй</a>.<br><a href='https://www.youtube.com/watch?v=WSWwQiYLA3o' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>07th of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=A6Z2WVavXiQ"><img src="icons/playlists/zemfira6.jpg" data-title="Земфира - Созрела" data-description="Оригинально.<br><a href='https://www.youtube.com/watch?v=A6Z2WVavXiQ' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10th of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=ddmKppy0y6U"><img src="icons/playlists/zemfira7.jpg" data-title="Земфира - Кукушка" data-description="Похоже на <a href='music_national_soviet_rus.html#ddt' class = 'smallb_black' target='_blank'>ДДТ</a> - <a href='https://www.youtube.com/watch?v=S1NNhkPPNYA' class = 'smallb_black' target='_blank'>Дождь</a>.<br><a href='https://www.youtube.com/watch?v=ddmKppy0y6U' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11th of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=ezkfq3OoYtE"><img src="icons/playlists/zemfira8.jpg" data-title="Земфира - Повеситься" data-description="Про НКВД (<a href='https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B0%D1%82_%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D1%85_%D0%B4%D0%B5%D0%BB_%D0%A1%D0%A1%D0%A1%D0%A0' class = 'smallb_black' target='_blank'>Wikipedia</a>).<br><a href='https://www.youtube.com/watch?v=ezkfq3OoYtE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>29th of Jan, 2018."></a>
+        </div>
+
+
+
+        <script>
+
+            Galleria.run('.galleria8', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        03rd of Jan, 2018.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="zveri">Звери</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                     <img src="icons/music/zveri.jpg" alt="Звери" title="Звери" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>«Звери»</b> — российская поп-рок-группа, созданная Романом Билыком в 2001 году. Лауреат премий «MTV Россия» и премии «Дебют». Группа также является рекордсменом по количеству выигранных «премий Муз-ТВ» (11 наград, 9 из которых в номинации «Лучшая рок-группа»).
+
+<br><br>
+<P><b>Дискография, Студийные альбомы:</b>
+
+<P>&nbsp;&bull; 2003 — Голод
+<P>&nbsp;&bull; 2004 — Районы-кварталы
+<P>&nbsp;&bull; 2006 — Когда мы вместе, никто не круче
+<P>&nbsp;&bull; 2008 — Дальше
+<P>&nbsp;&bull; 2011 — Музы
+<P>&nbsp;&bull; 2013 — Лучшие
+<P>&nbsp;&bull; 2014 — Один на один
+<P>&nbsp;&bull; 2016 — Страха нет
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Ссылки:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B2%D0%B5%D1%80%D0%B8_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Звери (группа)</a> - <b>Звери</b> на Wikipedia.
+                        </td>
+
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.zve.ru/" class = "standardb_black" target="_blank">Звери</a> - Официальный Сайт.
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Рекомендую:
+                                </td>
+                        </tr>
+                        
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria9">
+          <a href="https://www.youtube.com/watch?v=Ezfv3J0jsnY"><img src="icons/playlists/zveri1.jpg" data-title="Звери - Районы-Кварталы"   data-description="Про Окончание Вещей/Проектов.<br><a href='https://www.youtube.com/watch?v=Ezfv3J0jsnY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22nd of Dec, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=mrV-SjSolxk"><img src="icons/playlists/zveri2.jpg" data-title="Звери - Я с Тобой"   data-description="Про Окончание Вещей/Проектов.<br><a href='https://www.youtube.com/watch?v=mrV-SjSolxk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>12th of Sep, 2017."></a>
+        </div>
+
+
+
+        <script>
+
+            Galleria.run('.galleria9', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+
+
+
+                        </td>
+                        </tr>
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        22nd of Dec, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+        
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+        </tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+        <tr>
+          <td class="title_black" >
+            &copy; Urmas Repinski, urrimus@hotmail.com
+          </td>
+        </tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

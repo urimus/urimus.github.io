@@ -1,0 +1,1147 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Foto Gallery -->
+<script src="scripts/jquery/jquery.js"></script>
+<script src="scripts/galleria/galleria-1.4.2.min.js"></script>
+<!-- End of Foto Gallery -->
+
+<!-- Background Images Script -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*47;
+var imgBgSrc="icons/background/national.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('music_national_irish_eng.html' + window.location.hash);
+				} else {
+					window.location.href='music_national_irish_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('music_national_irish_rus.html' + window.location.hash);
+				} else {
+					window.location.href='music_national_irish_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('phd_eng.html');
+			} else {
+				window.location.href='phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_selected">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_chanson_eng.html');
+			} else {
+				window.location.href='music_chanson_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Chanson <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_classical_eng.html');
+			} else {
+				window.location.href='music_classical_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Classical</div>
+        </td>
+	</tr>		
+	
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_country_eng.html');
+			} else {
+				window.location.href='music_country_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Country <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_disco_eng.html');
+			} else {
+				window.location.href='music_disco_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Disco</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_5"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Electronic</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_6"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Industrial</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Metal <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; National</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_8_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_national_usa_eng.html');
+			} else {
+				window.location.href='music_national_usa_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; American (USA)</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_8_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_national_uk_eng.html');
+			} else {
+				window.location.href='music_national_uk_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; English (UK)</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_8_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('music_national_irish_eng.html');
+			} else {
+				window.location.href='music_national_irish_eng.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 15px;">
+		  &bull; Irish (Ireland)</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_8_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_national_soviet_eng.html');
+			} else {
+				window.location.href='music_national_soviet_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Soviet (USSR)</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_9"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_pop_eng.html');
+			} else {
+				window.location.href='music_pop_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Pop <font class="blinking_text" color="slateblue"><sup>&smashp; Abstract &smashp;</sup></font></div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Psychedelic <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'"
+		  onClick="showSubMenu(this, 'eng', 'music');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_12"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_rap_eng.html');
+			} else {
+				window.location.href='music_rap_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Rap <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_reggae_eng.html');
+			} else {
+				window.location.href='music_reggae_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Reggae</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_14"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'"
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_rock_eng.html');
+			} else {
+				window.location.href='music_rock_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Rock <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+	</tr>	
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_15"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_satanic_eng.html');
+                        } else {
+                                window.location.href='music_satanic_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Satanic <font class="blinking_text" color="darkred"><sup>&#9765; Tricky &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_7_16"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('music_corr_eng.html');
+			} else {
+				window.location.href='music_corr_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; USA &#8596; USSR</div>
+        </td>
+	</tr>	
+		
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_not_selected_black">
+		  Movies</div>
+        </td>
+	</tr>	
+
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"		  		  
+		  class="menu_not_selected_black">
+		  Series</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('radio_eng.html');
+			} else {
+				window.location.href='radio_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Radio</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+	
+	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Psychology</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Music &blacktriangleright; National &blacktriangleright; Irish (Ireland)</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:1081px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+		
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="national">National Music</a></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/music/national.jpg" alt="National Music" title="National Music" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Folk Music</b> includes both traditional music and the genre that evolved from it during the 20th century folk revival. The term originated in the 19th century but is often applied to music that is older than that. Some types of folk music are also called world music. "<b>Traditional folk music</b>" has been defined in several ways: as music transmitted orally, music with unknown composers, or music performed by custom over a long period of time. It has been contrasted with commercial and classical styles.
+
+<P>Starting in the mid-20th century a new form of popular folk music evolved from traditional folk music. This process and period is called the (second) folk revival and reached a zenith in the 1960s. This form of music is sometimes called contemporary folk music or folk revival music to distinguish it from earlier folk forms. Smaller similar revivals have occurred elsewhere in the world at other times, but the term folk music has typically not been applied to the new music created during those revivals. This type of folk music also includes fusion genres such as folk rock, folk metal, electric folk, and others. While contemporary folk music is a genre generally distinct from traditional folk music, in English it shares the same name, and it often shares the same performers and venues as traditional folk music. Even individual songs may be a blend of the two.
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Folk_music" class = "standardb_black" target="_blank">Wikipedia Folk Music</a> - <b>National Music</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					28th of Jan, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="irish">Irish National Music</a></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/music/irish_national.jpg" alt="Irish National Music" title="Irish National Music" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					
+<P><b>Irish traditional music</b> (also known as <b>Irish trad</b>, <b>Irish folk music</b>, and other variants) is a genre of folk music that developed in Ireland.
+
+<P>In A History of Irish Music (1905), W. H. Grattan Flood wrote that, in Gaelic Ireland, there were at least ten instruments in general use. These were the cruit (a small harp) and clairseach (a bigger harp with typically 30 strings), the timpan (a small string instrument played with a bow or plectrum), the feadan (a fife), the buinne (an oboe or flute), the guthbuinne (a bassoon-type horn), the bennbuabhal and corn (hornpipes), the cuislenna (bagpipes – see Great Irish Warpipes), the stoc and sturgan (clarions or trumpets), and the cnamha (castanets). There is also evidence of the fiddle being used in the 8th century.
+
+<P>There are several collections of Irish folk music from the 18th century, but it was not until the 19th century that ballad printers became established in Dublin. Important collectors include Colm Ó Lochlainn, George Petrie, Edward Bunting, Francis O'Neill, James Goodman and many others. Though solo performance is preferred in the folk tradition, bands or at least small ensembles have probably been a part of Irish music since at least the mid-19th century, although this is a point of much contention among ethnomusicologists.
+
+<P>Irish traditional music has endured more strongly against the forces of cinema, radio and the mass media than the indigenous folk music of most European countries. This was possibly because the country was not a geographical battleground in either of the two world wars. Another potential factor was that the economy was largely agricultural, where oral tradition usually thrives. From the end of the second world war until the late fifties folk music was held in low regard. Comhaltas Ceoltóirí Éireann (an Irish traditional music association) and the popularity of the Fleadh Cheoil (music festival) helped lead the revival of the music. The English Folk music scene also encouraged and gave self-confidence to many Irish musicians. Following the success of The Clancy Brothers and Tommy Makem in the USA in 1959, Irish folk music became fashionable again. The lush sentimental style of singers such as Delia Murphy was replaced by guitar-driven male groups such as The Dubliners. Irish showbands presented a mixture of pop music and folk dance tunes, though these died out during the seventies. The international success of The Chieftains and subsequent musicians and groups has made Irish folk music a global brand.
+
+<P>Historically much old-time music of the USA grew out of the music of Ireland, England and Scotland, as a result of cultural diffusion. By the 1970s Irish traditional music was again influencing music in the USA and further afield in Australia and Europe. It has occasionally been fused with rock and roll, punk rock and other genres.
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Irish_traditional_music" class = "standardb_black" target="_blank">Wikipedia Irish Traditional Music</a> - <b>Irish National Music</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					20th of Mar, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="dolphin">Dolphin (rus. Дельфин)</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+					<img src="icons/music/dolphin.jpg" alt="Dolphin (rus. Дельфин)" title="Dolphin (rus. Дельфин)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5;">
+
+<P><b>Andrey Vyacheslavovich Lysikov</b> (born September 29, 1971 in Moscow) is a Russian musical artist, singer, songwriter, poet and rapper, known by his stage name Dolphin (or Дельфин). He won the award of best artist at the 2004 MTV Russian Music Awards. He also played at the Live 8 Russia concert.
+
+<br><br>
+<P><b>Discography, Studio Albums:</b>
+
+<P>&nbsp;&bullbull; Не в фокусе, (Ne v fokuse/Out of focus), (1997)
+<P>&nbsp;&bullbull; Глубина резкости, (Glubina rezkosti/Depth of field), (1998)
+<P>&nbsp;&bullbull; Плавники, (Plavniki/Flippers), (2000, recorded in 1998)
+<P>&nbsp;&bullbull; Ткани, (Tkani/Tissues), (2001)
+<P>&nbsp;&bullbull; Звезда, (Zvezda/Star), (2004) - SIM Records
+<P>&nbsp;&bullbull; Юность, (Yunost/Youth), (2007)
+<P>&nbsp;&bullbull; Существо, (Sushchestvo/Creature), (2011)
+<P>&nbsp;&bullbull; Андрей, (Andrey/Andrey), (2014)
+
+						
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+			  <a href="https://en.wikipedia.org/wiki/Dolphin_(musician)" class = "standardb_black" target="_blank">Wikipedia Dolphin (musician)</a> - <b>Dolphin (rus. Дельфин)</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+			  <a href="http://dolphinmusic.ru/" class = "standardb_black" target="_blank">Dolphin (rus. Дельфин)</a> - Official Website (rus.).
+			</td>
+			</tr>
+
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Recommend:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria">
+ 	  <a href="https://www.youtube.com/watch?v=5rcLTGFglI0"><img src="icons/playlists/dolphin1.jpg" data-title="Дельфин - Последнее Слово"   data-description="About Cocks.<br><a href='https://www.youtube.com/watch?v=5rcLTGFglI0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>21st of Apr, 2018."></a>
+        </div>
+
+
+        <script>
+            var galleria2 = new Galleria.loadTheme('scripts/galleria/themes/classic/galleria.classic.min.js');
+	    Galleria.run('.galleria', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					20th of Mar, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+
+
+
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>

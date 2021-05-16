@@ -1,0 +1,2 @@
+﻿<P><b class="text_green_blue">Викка</b>
+<P>&nbsp;- <a href="satanism_wicca_rus.html" class = "standardb_green" data-added="12th of Dec, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Викка</a>

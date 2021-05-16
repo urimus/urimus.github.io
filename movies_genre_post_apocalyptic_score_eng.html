@@ -1,0 +1,3226 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+
+<!-- Series Sort -->
+<script src="scripts/showSeries.js"></script>
+<!-- End of Seriers Sort -->
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*41;
+var imgBgSrc="icons/background/post_apocalyptic.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_post_apocalyptic_score_eng.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_post_apocalyptic_score_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_post_apocalyptic_score_rus.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_post_apocalyptic_score_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('phd_eng.html');
+			} else {
+				window.location.href='phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+	
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_not_selected_black">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_selected">
+		  Movies</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; By Actors</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; By Genre</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_action_horror_score_eng.html');
+			} else {
+				window.location.href='movies_genre_action_horror_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Action Horror</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_body_horror_score_eng.html');
+			} else {
+				window.location.href='movies_genre_body_horror_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Body Horror</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_dystopia_score_eng.html');
+			} else {
+				window.location.href='movies_genre_dystopia_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Dystopia</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_pilot_score_eng.html');
+			} else {
+				window.location.href='movies_genre_pilot_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Television Pilot</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_7"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_post_apocalyptic_score_eng.html');
+			} else {
+				window.location.href='movies_genre_post_apocalyptic_score_eng.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 15px;">
+		  &bull; Post-Apocalyptic</div>
+        </td>
+	</tr>
+
+
+
+	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_9"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_short_score_eng.html');
+			} else {
+				window.location.href='movies_genre_short_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Short</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_10"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_sitcom_score_eng.html');
+			} else {
+				window.location.href='movies_genre_sitcom_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Situation Comedy</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_11"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_space_opera_score_eng.html');
+			} else {
+				window.location.href='movies_genre_space_opera_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Space Opera</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_3"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Animation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_mockbuster_eng.html');
+			} else {
+				window.location.href='movies_mockbuster_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Mockbuster</div>
+        </td>
+	</tr>		
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_5"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Superhero</div>
+        </td>
+	</tr>
+
+
+
+<tr>
+		<td align="left" >
+		  <div id="menu_8_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_not_satanic_eng.html');
+			} else {
+				window.location.href='movies_not_satanic_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &bull; Not Satanic</div>
+        </td>
+	</tr>	
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"  
+		  class="menu_not_selected_black">
+		  Series</div>
+        </td>
+	</tr>
+
+
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('radio_eng.html');
+			} else {
+				window.location.href='radio_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Radio</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>
+
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Psychology</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table with search, name and languages -->
+        <tr class="title_black"> 
+                <td  class="title_black" style="width: 500px;"><a name="series">Movies &blacktriangleright; Post-Apocalyptic Fiction</a></td>
+				<td bgcolor="#e2e2e2" width="3"></td>
+				<td  style="width: 150px;">
+				    Sort By:
+				</td>
+
+				<td style="width: 22px;">
+				    <div id="sortby_name" align="center" 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="mouseOutSortByName('score');"
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('movies_genre_post_apocalyptic_eng.html'+ window.location.hash);
+                        } else {
+                                window.location.href='movies_genre_post_apocalyptic_eng.html'+ window.location.hash;
+                        };"
+                        class="flag_not_selected"
+                    >
+<img src="scripts/contents/icons/sortby/sortby_name.png" alt="Name" title="Name" width="22" height="18"  style="display: block;"/>
+                    </div>
+				</td>
+
+				<td style="width: 22px;">
+				    <div id="sortby_score" align="center" 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="mouseOutSortByScore('score');"
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('movies_genre_post_apocalyptic_score_eng.html'+ window.location.hash);
+                        } else {
+                                window.location.href='movies_genre_post_apocalyptic_score_eng.html'+ window.location.hash;
+                        };"
+                        class="flag_selected"
+                    >
+                        <img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18" style="display: block;"/>
+                    </div>
+				</td>
+				
+				
+				
+        </tr>
+
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:943px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+
+		
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="post_apocalyptic">Post-Apocalyptic Fiction</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
+			</tr>
+			<tr>
+
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/post_apocalyptic.jpg" alt="Post-Apocalyptic Fiction" title="Post-Apocalyptic Fiction" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Apocalyptic</b> and <b>post-apocalyptic fiction</b> is a genre which involves global catastrophic risk. The literature is mainly science fiction, science fantasy or horror fiction with the apocalypse event typically being climatic, such as runaway climate change; natural, such as an impact event; man-made, such as nuclear warfare; medical, such as a plague or virus, whether natural or man-made; or imaginative, such as zombie apocalypse or alien invasion. The story may involve attempts to prevent an apocalypse event, deal with the impact and consequences of the event itself, or it may be post-apocalyptic, set after the event. The time frame may be immediately after the catastrophe, focusing on the travails or psychology of survivors, the way to maintain the human race alive and together as one, or considerably later, often including the theme that the existence of pre-catastrophe civilization has been forgotten (or mythologized). Post-apocalyptic stories often take place in a non-technological future world, or a world where only scattered elements of society and technology remain.
+
+<P>Various ancient societies, including the Babylonian and Judaic, produced apocalyptic literature and mythology which dealt with the end of the world and of human society, such as the Epic of Gilgamesh, written ca. 2000–1500 BC. And recognizable modern apocalyptic novels had existed since at least the first quarter of the 19th century, when Mary Shelley's The Last Man (1826) was published. However, this form of literature gained widespread popularity after World War II, when the possibility of global annihilation by nuclear weapons entered the public consciousness.
+
+<br><br>
+<P><b>Themes:</b>
+
+
+<P>The apocalypse event may be climatic, such as runaway climate change; natural, such as an impact event; man-made, such as nuclear warfare; medical, such as a plague or virus, whether natural or man-made; or imaginative, such as zombie apocalypse or alien invasion. The story may involve attempts to prevent an apocalypse event, deal with the impact and consequences of the event itself, or may be post-apocalyptic, and be set after the event. The time frame may be immediately after the catastrophe, focusing on the travails or psychology of survivors, the way to maintain human race alive and together as one, or considerably later, often including the theme that the existence of pre-catastrophe civilization has been forgotten (or mythologized). Post-apocalyptic stories often take place in a non-technological future world, or a world where only scattered elements of society and technology remain.
+
+<P>Other themes may be cybernetic revolt, divine judgment, dysgenics, ecological collapse, pandemic, resource depletion, supernatural phenomena, technological singularity, or some other general disaster.
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Apocalyptic_and_post-apocalyptic_fiction" class = "standardb_black" target="_blank">Wikipedia Apocalyptic and post-apocalyptic fiction</a> - <b>Post-Apocalyptic Fiction</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					11th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="2067">2067</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/2067.jpg" alt="2067" title="2067" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>2067</b> is a 2020 Australian science fiction mystery thriller film directed by Seth Larney and starring Kodi Smit-McPhee and Ryan Kwanten.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/2067_(film)" class = "standardb_black" target="_blank">Wikipedia 2067 (film)</a> - <b>2067</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Fk3NhzNqAuY" class = "standardb_black" target="_blank">2067</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					09th of Oct, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="apocalypse_rising">Apocalypse Rising</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/apocalypse_rising.jpg" alt="Apocalypse Rising" title="Apocalypse Rising" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Apocalypse Rising
+
+<P><b>Storyline:</b> They came from a doomed world to save us from the same fate.
+
+<P><b>Genres:</b> Adventure, Comedy, Fantasy
+
+<P><b>Actor:</b> Hunter Alexes Parker, Shane Samples, Justin Lebrun
+
+<P><b>Director:</b> Richard Lowry
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 83 min
+
+<P><b>Release:</b> 12 June 2018 (USA)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt4959440/" class = "standardb_black" target="_blank">IMDb Apocalypse Rising (2018)</a> - <b>Apocalypse Rising</b> on IMDb.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=z6KHTTKc6gQ" class = "standardb_black" target="_blank">Apocalypse Rising</a> - Movie <b>Apocalypse Rising</b> on Youtube.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=vPLmkTkbeqQ" class = "standardb_black" target="_blank">Apocalypse Rising</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					28th of Jun, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="ashes">Ashes</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/ashes.jpg" alt="Ashes" title="Ashes" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Ashes
+
+<P><b>Storyline:</b> An obsessive doctor working on a cure for AIDS unwittingly creates an aggressive new bacteria that deteriorates the body and enrages the mind.
+
+<P><b>Genres:</b> Horror, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Enrique Almeida, Joel Bryant, Chris Trouble Delfosse
+
+<P><b>Director:</b> Elias Matar
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 95 min
+
+<P><b>Release:</b> 9 September 2010
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt1674769/" class = "standardb_black" target="_blank">IMDb Ashes (2010)</a> - <b>Ashes</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=qrfwjdpGf8U" class = "standardb_black" target="_blank">Ashes</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					24th of Apr, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="code_red">Code Red</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/code_red.jpg" alt="Code Red" title="Code Red" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Code Red
+
+<P><b>Storyline:</b> A Special Forces soldier is sent into Bulgaria when a chemical agent from WWII is uncovered that can reanimate the dead. 
+
+<P><b>Genres:</b> Action, Horror, Sci-Fi
+
+<P><b>Actor:</b> Julian Kostov, Paul Logan, Manal El-Feitury
+
+<P><b>Director:</b> Valeri Milev
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 91 min
+
+<P><b>Release:</b> 13 February 2014 (Kuwait)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt2119404/" class = "standardb_black" target="_blank">IMDb Code Red (2013)</a> - <b>Code Red</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=dRrAlpEEYok" class = "standardb_black" target="_blank">Code Red</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14th of Mar, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="contagion">Contagion</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/contagion.jpg" alt="Contagion" title="Contagion" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Contagion</b> is a 2011 American medical thriller film directed by Steven Soderbergh. The film features an ensemble cast that includes Marion Cotillard, Bryan Cranston, Matt Damon, Laurence Fishburne, Jude Law, Gwyneth Paltrow, Kate Winslet, and Jennifer Ehle. The plot of Contagion concerns the spread of a virus transmitted by fomites, attempts by medical researchers and public health officials to identify and contain the disease, the loss of social order in a pandemic, and finally the introduction of a vaccine to halt its spread. To follow several interacting plot lines, the film makes use of the multi-narrative "hyperlink cinema" style, popularized in several of Soderbergh's films.
+
+<P>Soderbergh and screenwriter Scott Z. Burns had collaborated on The Informant! (2009). Following that film's release, Burns brought up the idea of producing a medical thriller film depicting the rapid spread of a virus, which was inspired by various pandemics such as the 2003 SARS epidemic and the 2009 flu pandemic. To devise an accurate perception of a pandemic event, Burns consulted with representatives of the World Health Organization as well as noted medical experts such as W. Ian Lipkin and Lawrence "Larry" Brilliant. Principal photography started in Hong Kong in September 2010, and continued in Chicago, Atlanta, London, Geneva, and San Francisco until February 2011.
+
+<P>Contagion premiered at the 68th Venice Film Festival in Venice, Italy on September 3, 2011, and went on general release on September 9. The film was well received by critics, who praised the narratives and the performances of various actors and actresses. It was also well received by scientists, who praised its accuracy. Commercially, the film was a box office success. Budgeted at $60 million, Contagion took $135 million in box office revenue during its theatrical run.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Contagion_(film)" class = "standardb_black" target="_blank">Wikipedia Contagion (film)</a> - <b>Contagion</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=4sYSyuuLk5g" class = "standardb_black" target="_blank">Contagion</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					02nd of Feb, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="directive">The Directive</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/directive.jpg" alt="The Directive" title="The Directive" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> The Directive
+
+<P><b>Storyline:</b> One Year after a Virus kills most of humanity, a lone Survivor meets a broken Robot that helps him embark on a journey to find Safe Zone 57.
+
+<P><b>Genres:</b> Action, Adventure, Sci-Fi
+
+<P><b>Actor:</b> Kyle Abraham, Scott Thompson, Blaiden D. Cordle
+
+<P><b>Director:</b> Alexander Raye Pimentel
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 113 min
+
+<P><b>Release:</b> 15 March 2019 (USA)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt5834278/" class = "standardb_black" target="_blank">IMDb The Directive (2019)</a> - <b>The Directive</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=AexcJynrpYI" class = "standardb_black" target="_blank">The Directive</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					21st of Apr, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="doomsday">Doomsday</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/doomsday.jpg" alt="Doomsday" title="Doomsday" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Doomsday</b> is a 2008 science fiction film written and directed by Neil Marshall. The film takes place in the future in Scotland, which has been quarantined because of a deadly virus. When the virus is found in London, political leaders send a team led by Major Eden Sinclair (Rhona Mitra) to Scotland to find a possible cure. Sinclair's team runs into two types of survivors: marauders and medieval knights. Doomsday was conceived by Marshall based on the idea of futuristic soldiers facing medieval knights. In producing the film, he drew inspiration from various movies, including Mad Max, Escape from New York and 28 Days Later.
+
+<P>Marshall had a budget three times the size of his previous two films, The Descent and Dog Soldiers, and the director filmed the larger-scale Doomsday in Scotland and South Africa. The film was released in the United States and Canada on 14 March 2008 and in the United Kingdom on 9 May 2008. Doomsday did not perform well at the box office, and critics gave the film mixed reviews.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Doomsday_(2008_film)" class = "standardb_black" target="_blank">Wikipedia Doomsday (2008 film)</a> - <b>Doomsday</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=-M0fIbx-irk" class = "standardb_black" target="_blank">Doomsday</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					04th of May, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="end">The End (sp. Fin)</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/end.jpg" alt="The End (sp. Fin)" title="The End (sp. Fin)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>The End</b> (Spanish: Fin) is a 2012 Spanish thriller film directed by Jorge Torregrossa and based on David Monteagudo's novel Fin, with a screenplay by Sergio G. Sánchez and Jorge Guerricaechevarría. The film was produced by Antena 3 Films. It was first screened at the 2012 Toronto International Film Festival in September and later opened in Spain on 23 November of the same year. The film also marks the screen debut of model Andrés Velencoso.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_End_(2012_film)" class = "standardb_black" target="_blank">Wikipedia The End (2012 film)</a> - <b>The End (sp. Fin)</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=TC3b9eVPHgc" class = "standardb_black" target="_blank">The End (sp. Fin)</a> - Official Trailer (sp.).
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					24th of Jul, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="exodus">Exodus</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/exodus.jpg" alt="Exodus" title="Exodus" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Exodus
+
+<P><b>Storyline:</b> When a VHS-tape proves the existence of a rumored doorway to paradise, a young man abandons his decaying hometown in pursuit of the door to salvation, evading vengeful pursuers along the way.
+
+<P><b>Genres:</b> Sci-Fi
+
+<P><b>Actor:</b> Jimi Stanton, Janelle Snow, Charles Andrew Gardner
+
+<P><b>Director:</b> Logan Stone
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 75 min
+
+<P><b>Release:</b> 1 April 2021 (Russia)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt7740204/" class = "standardb_black" target="_blank">IMDb Exodus (2021)</a> - <b>Exodus</b> on IMDb.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=fy6W1c9Omfw" class = "standardb_black" target="_blank">Exodus</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of Mar, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="fallout_red_star">Fallout: Red Star</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/fallout_red_star.jpg" alt="Fallout: Red Star" title="Fallout: Red Star" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Fallout: Red Star
+
+<P><b>Storyline:</b> Set in the Fallout game universe, this fan film follows the ranger on a mission to find a person of interest.
+
+<P><b>Genres:</b> Action, Drama, Sci-Fi
+
+<P><b>Actor:</b> Cameron Diskin, Catherine Carlen, Toni Wynne
+
+<P><b>Director:</b> Vincent Talenti
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 29 min
+
+<P><b>Release:</b> 28 June 2013 (USA)
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt3007348/" class = "standardb_black" target="_blank">IMDb Fallout: Red Star</a> - <b>Fallout: Red Star</b> on IMDb.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=HPs5nQ5d584" class = "standardb_black" target="_blank">Fallout: Red Star</a> - Movie <b>Fallout: Red Star</b> on Youtube.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					10th of Nov, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="phase_7">Phase 7 (sp. Fase 7)</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/phase_7.jpg" alt="Phase 7 (sp. Fase 7)" title="Phase 7 (sp. Fase 7)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Phase 7</b> (Spanish: Fase 7) is a 2010 Argentine science fiction black comedy film written and directed by Nicolas Goldbart and starring Daniel Hendler, Yayo Guridi, Jazmín Stuart and Federico Luppi.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Phase_7" class = "standardb_black" target="_blank">Wikipedia Phase 7</a> - <b>Phase 7 (sp. Fase 7)</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=L9uid0gax30" class = "standardb_black" target="_blank">Phase 7 (sp. Fase 7)</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					26th of Aug, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="last_first_men">Last and First Men</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/last_first_men.jpg" alt="Last and First Men" title="Last and First Men" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Last and First Men
+
+<P><b>Storyline:</b> Two billion years ahead of us, a future race of humans finds itself on the verge of extinction. Almost all that is left in the world are lone and surreal monuments, beaming their message into the wilderness.
+
+<P><b>Genres:</b>  Fantasy, Mystery, Sci-Fi
+
+<P><b>Actor:</b> Tilda Swinton
+
+<P><b>Director:</b> Jóhann Jóhannsson
+
+<P><b>Country:</b> Iceland
+
+<P><b>Duration:</b> 70 min
+
+<P><b>Release:</b> 21 September 2020 (UK)
+
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt8015444/" class = "standardb_black" target="_blank">IMDb Last and First Men (2020)</a> - <b>Last and First Men</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=nqDBlBKlbDA" class = "standardb_black" target="_blank">Last and First Men</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					23rd of Feb, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="second_origin">Second Origin</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/second_origin.jpg" alt="Second Origin" title="Second Origin" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Second Origin</b> is a 2015 Spanish film directed by Carles Porta, after an idea of Bigas Luna, co-produced by Produccions Audiovisuals Antàrtida and Ipso Facto Films. It is an adaptation by Bigas Luna, Carles Porta and Carmen Chaves of the well-known novel Mecanoscrit del segon origen by the Catalan writer Manuel de Pedrolo.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Second_Origin" class = "standardb_black" target="_blank">Wikipedia Second Origin</a> - <b>Second Origin</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=xiy8UM9TPt8" class = "standardb_black" target="_blank">Second Origin</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					20th of Aug, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="snowpiercer">Snowpiercer</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/snowpiercer.jpg" alt="Snowpiercer" title="Snowpiercer" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Snowpiercer</b> is a 2013 English-language South Korean-Czech science fiction thriller based on the French graphic novel Le Transperceneige by Jacques Lob, Benjamin Legrand and Jean-Marc Rochette. The film is directed by Bong Joon-ho, and written by Bong and Kelly Masterson. The film marks Bong's English-language debut; approximately 80% of the film was shot in English.
+
+<P>The film stars Chris Evans, Song Kang-ho, Tilda Swinton, Jamie Bell, Octavia Spencer, Go Ah-sung, John Hurt, and Ed Harris. The movie takes place aboard the globe-spanning Snowpiercer train which holds the last remnants of humanity after an attempt at climate engineering in order to stop global warming has unintentionally created a new ice age. Evans stars as Curtis Everett, a member of the lower-class tail section passengers as they lead a revolution against the elite of the front of the train. Filming was done on train car sets mounted on gimbals at Barrandov Studios in Prague to simulate the motion of the train.
+
+<P>Snowpiercer was well-received by critics, and appeared on many film critics' top ten film lists of 2014 following its international release. Praise was primarily directed towards its vision, direction and performances, particularly Evans and Swinton's. Initially planned for a limited-screen showing in the USA, the critical response to the film prompted The Weinstein Company to expand the showing to more theaters and through digital streaming services. Produced at a budget of $40 million, it remains as the most expensive Korean production ever.
+
+
+<br><br>
+<P><b>Reception:</b>
+
+<br><br>
+<P><b>Box office:</b>
+
+<P>Since its South Korean opening, the film has earned US$86.7 million worldwide. As of April 2014, it is the tenth highest-grossing domestic film in South Korea with 9,350,141 admissions. The film holds the domestic record for the fastest movie (domestic and foreign) to reach four million admissions, which it achieved in its fifth day after premiere, and another record for the highest weekend figure (from Friday to Sunday) for a Korean film, with 2.26 million viewers. The film took in a total of $171,187 on its US opening weekend, averaging $21,398 per theater. The film grossed US$59,802,711 in South Korea and its largest international market was China, with $11,100,000.
+
+<br><br>
+<P><b>Critical response:</b>
+
+<P>Upon release, Snowpiercer received universal acclaim. Review aggregator Rotten Tomatoes reports that 95% of critics gave the film a "Certified Fresh" rating, based on 204 reviews with an average score of 8.1/10, with the site's consensus stating, <i>"Snowpiercer offers an audaciously ambitious action spectacle for filmgoers numb to effects-driven blockbusters."</i> Metacritic, another review aggregator, assigned the film a weighted average score of 84 (out of 100) based on 38 reviews from mainstream critics, considered to be "universal acclaim".
+
+<P>Chris Nashawaty of Entertainment Weekly gave the piece an "A" rating, stating, <i>"Snowpiercer sucks you into its strange, brave new world so completely, it leaves you with the all-too-rare sensation that you've just witnessed something you've never seen before ... and need to see again."</i>
+
+<P>A.O. Scott wrote, in his review for The New York Times, <i>"Planetary destruction and human extinction happen a half-dozen times every summer. It's rarely this refreshing, though."</i> Andrew Pulver of The Guardian scored the film most positively, writing, <i>"Snowpiercer works brilliantly, the sum of extremely disparate parts that adds up to cinematic excellence."</i> Joshua Rothkopf of Time Out New York scored the film five out of five stars, writing, <i>"Sprung from a 1982 French graphic novel and bearing its era's trickle-down tensions, Snowpiercer is a headlong rush into conceptual lunacy—but you'll love it anyway."</i> Rothkopf praises Joon-ho, stating, <i>"[...] Bong grabs onto the grungy conventions of postapocalyptic adventure with relish. He serves up claustrophobic action scenes (one largely shot in the dark) and ominous, messianic overtones as the band of rebels makes its way forward."</i>
+
+<P>Lou Lumenick of The New York Post gave the piece high acclaim, writing, <i>"Don't miss it—this is enormously fun visionary filmmaking, with a witty script and a great international cast."</i> He added, <i>"The beautifully designed train is one of the most memorable in screen history [...]"</i> David Denby of The New Yorker spoke highly of the piece, stating it to be, <i>"Violent, often absurd, but full of brilliant surprises, while Bong keeps the center of the action moving toward the front of the train, a considerable feat of camera placement, choreographed mayhem, and cohesive editing,"</i> and praising Nekvasil's production design, <i>"Bong and [Nekvasil], provide them with a series of sybaritic astonishments."</i>
+
+<P>Clarence Tsui of The Hollywood Reporter wrote a highly positive review, commenting, <i>"Snowpiercer is still an intellectually and artistically superior vehicle to many of the end-of-days futuristic action thrillers out there."</i> Speaking highly of Bong's film-making, Tsui wrote, <i>"Bong's vivid depictions—aided by Ondrej Nekvasil's production design, Hong Kyung-pyo's cinematography and Steve M. Choe's editing—are exceptional."</i> David Thomson of The New Republic remarked that <i>"The most bracing and liberating thing about Joon-ho Bong's Snowpiercer is not just its lyrical forward motion, but the exuberance with which the film revels in its plot predicament."</i> He furthers praises Nekvasil's "progression of design set-pieces" and Tilda Swinton's performance, saying <i>"She is the life and soul of this riotous party, and you will be sad to see her disposed of, no matter that Mason's ghastly manner has earned it."</i> Scott Foundas of Variety wrote, <i>"An enormously ambitious, visually stunning and richly satisfying futuristic epic from the gifted Korean genre director Bong Joon-ho."</i> Foundas added that Beltrami's original score was <i>"among the generally impeccable craft contributions [to the film]."</i>
+
+<P>James Rocchi of Film.com wrote that, <i>"If the film has one element that never flags or falters, it's Evans."</i>
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Snowpiercer" class = "standardb_black" target="_blank">Wikipedia Snowpiercer</a> - <b>Snowpiercer</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=fyWfZ9866DE" class = "standardb_black" target="_blank">Snowpiercer</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					05th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="stake_land">Stake Land</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/stake_land.jpg" alt="Stake Land" title="Stake Land" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Stake Land</b> is a 2010 American vampire horror film in the zombie apocalypse vein directed by Jim Mickle and starring Nick Damici, who cowrote the script with Mickle. It also stars Connor Paolo, Danielle Harris and Kelly McGillis. The plot revolves around an orphaned young man being taken under the wing of a vampire hunter known only as "Mister", and the battle for survival in their quest for a safe haven.
+
+
+<br><br>
+<P><b>Sequel:</b>
+
+<P>In June 2016, it was revealed that a sequel, entitled The Stakelander, had already been filmed and would be released as a Syfy original film later in the year.
+
+<P>The sequel, retitled Stake Land II, premiered on Syfy on October 15, 2016.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Stake_Land" class = "standardb_black" target="_blank">Wikipedia Stake Land</a> - <b>Stake Land</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=zNC2HwAaWWE" class = "standardb_black" target="_blank">Stake Land</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					16th of Nov, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="tribe">The Tribe</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/tribe.jpg" alt="The Tribe" title="The Tribe" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> The Tribe
+
+<P><b>Storyline:</b> A family of three young sisters live out their days after a pandemic has consumed most of the known world. One day a stranger suddenly shows up and their world changes in ways they never could have imagined.
+
+<P><b>Genres:</b>  Drama, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Anne Winters, Jessica Rothe, Michael Nardelli
+
+<P><b>Director:</b> Roxy Shih
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 97 min
+
+<P><b>Release:</b> 2016 (USA)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt3953186/" class = "standardb_black" target="_blank">IMDb The Tribe (2016)</a> - <b>The Tribe</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=VfWXmw5sfS4" class = "standardb_black" target="_blank">The Tribe</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14th of Sep, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="viral">Viral</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/viral.jpg" alt="Viral" title="Viral" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Viral</b> is a 2016 American science fiction horror film directed by Ariel Schulman and Henry Joost, directed from a screenplay by Christopher Landon and Barbara Marshall. It stars Sofia Black D'Elia, Analeigh Tipton, Travis Tope, Machine Gun Kelly, and Michael Kelly. The film was released on July 29, 2016, in a limited release and through video on demand, by Dimension Films.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Viral_(2016_film)" class = "standardb_black" target="_blank">Wikipedia Viral (2016 film)</a> - <b>Viral</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=4XdRLd13a4M" class = "standardb_black" target="_blank">Viral</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					19th of Apr, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="world_war_z">World War Z</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/world_war_z.jpg" alt="World War Z" title="World War Z" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>World War Z</b> is a 2013 American apocalyptic action horror film directed by Marc Forster, with a screenplay by Matthew Michael Carnahan, Drew Goddard, and Damon Lindelof, from a screen story by Carnahan and J. Michael Straczynski, based on the 2006 novel of the same name by Max Brooks. The film stars Brad Pitt as Gerry Lane, a former United Nations investigator who must travel the world to find a way to stop a zombie pandemic. The ensemble supporting cast includes Mireille Enos, Daniella Kertesz, James Badge Dale, Ludi Boeken, Fana Mokoena, David Morse, Peter Capaldi, Pierfrancesco Favino, Ruth Negga, and David Andrews.
+
+<P>Pitt's Plan B Entertainment secured the film rights in 2007, and Forster was approached to direct. In 2009, Carnahan was hired to rewrite the script. Filming began in July 2011 in Malta, on an estimated $125 million budget, before moving to Glasgow in August 2011 and Budapest in October 2011. Originally set for a December 2012 release, the production suffered some setbacks. In June 2012, the film's release date was pushed back, and the crew returned to Budapest for seven weeks of additional shooting. Damon Lindelof was hired to rewrite the third act, but did not have time to finish the script, and Drew Goddard was hired to rewrite it. The reshoots took place between September and October 2012.
+
+<P>World War Z premiered in London on June 3, 2013, and was chosen to open the 35th Moscow International Film Festival. The film premiered in New York, and Los Angeles on June 14, 2013, and released everywhere on June 21, 2013, in the United States, in 2D and RealD 3D. The film received positive reviews for Brad Pitt's performance and as a realistic revival of the zombie genre, but received certain criticism for the anti-climax and outdated CGI. Regardless, the film was a commercial success, grossing over $540 million against a production budget of $190 million, becoming the highest-grossing zombie film of all time. A sequel was announced shortly after the film's release, but in February 2019 it was cancelled, reportedly, due to budget issues.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/World_War_Z_(film)" class = "standardb_black" target="_blank">Wikipedia World War Z (film)</a> - <b>World War Z</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Md6Dvxdr0AQ" class = "standardb_black" target="_blank">World War Z</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					20th of Aug, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+       <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="another_world">Another World</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/another_world.jpg" alt="Another World" title="Another World" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Another World
+
+<P><b>Storyline:</b> In a post-apocalyptic future, a biological warfare program gone wrong leaves only four survivors defending themselves from "the infected" - mindless killers. As they struggle to survive and make sense of what is happening, they find another survivor, intent on revealing the truth.
+
+<P><b>Genres:</b> Action, Horror, Sci-Fi
+
+<P><b>Actor:</b> Larry Butchins, Zach Cohen, Susanne Gschwendtner
+
+<P><b>Director:</b> Eitan Reuven
+
+<P><b>Country:</b> Israel
+
+<P><b>Duration:</b> 99 min
+
+<P><b>Release:</b> 12 June 2018 (USA)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt1920846/" class = "standardb_black" target="_blank">IMDB Another World (2014)</a> - <b>Another World</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=RQMlQ-IICmU" class = "standardb_black" target="_blank">Another World</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					11th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+       <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="chrysalis">Chrysalis</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/chrysalis.jpg" alt="Chrysalis" title="Chrysalis" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Chrysalis
+
+<P><b>Storyline:</b> Joshua and Penelope are survivors of a deadly infection that laid waste to humanity 25 years ago. When they encounter fellow survivor Abira, their lives are forever changed as they fight off the remnants of the infected. 
+
+<P><b>Genres:</b> Drama, Horror, Sci-Fi
+
+<P><b>Actor:</b> Sara Gorsky, Cole Simon, Tanya Thai McBride 
+
+<P><b>Director:</b> John Klein
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 100 min
+
+<P><b>Release:</b> 24 April 2014
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt2836260/" class = "standardb_black" target="_blank">IMDb Chrysalis</a> - Chrysalis on IMDb.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ApiiW_hMscg" class = "standardb_black" target="_blank">Chrysalis</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					03rd of Aug, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+       <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="doors">Doors</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/doors.jpg" alt="Doors" title="Doors" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Doors
+
+<P><b>Storyline:</b> Without warning, millions of mysterious alien "doors" suddenly appear around the globe. In a rush to determine the reason for their arrival, mankind must work together to understand the purpose of these cosmic anomalies. Bizarre incidences occurring around the sentient doors leads humanity to question their own existence and an altered reality as they attempt to enter them.
+
+<P><b>Genres:</b> Sci-Fi
+
+<P><b>Actor:</b> Kathy Khanh, Julianne Collins, Aric Floyd
+
+<P><b>Director:</b> Saman Kesh, Jeff Desom
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 81 min
+
+<P><b>Release:</b> 23 March 2021 (USA)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt12483708/" class = "standardb_black" target="_blank">IMDb Doors (2021)</a> - Doors on IMDb.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=lhJx3iFp_y8" class = "standardb_black" target="_blank">Doors</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					25th of Mar, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="road_wars">Road Wars</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/road_wars.jpg" alt="Road Wars" title="Road Wars" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Road Wars
+
+<P><b>Storyline:</b> When an amnesiac wakes up in a post apocalyptic world ravaged by a rabies type virus, he must band together with a small group of survivors.
+
+<P><b>Genres:</b> Action, Sci-Fi
+
+<P><b>Actor:</b> Chloe Farnworth, Cole Parker, John Freeman
+
+<P><b>Director:</b> Mark Atkins
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 90 min
+
+<P><b>Release:</b> 5 May 2015 (USA)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="http://www.imdb.com/title/tt4530832/" class = "standardb_black" target="_blank">IMDb Road Wars (2015)</a> - <b>Road Wars</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=9h_TzJDGABQ" class = "standardb_black" target="_blank">Road Wars</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					07th of Feb, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="cargo">Cargo</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 3/5">&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 3/5">&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/cargo.jpg" alt="Cargo" title="Cargo" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Cargo</b> is a 2009 science fiction film, the first from Swiss production and the first major feature film by Ivan Engler.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Cargo_(2009_film)" class = "standardb_black" target="_blank">Wikipedia Cargo (2009 film)</a> - <b>Cargo</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=sfkdluZ-SZI" class = "standardb_black" target="_blank">Cargo</a> - Official Trailer (ger., with subtitles).
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14th of Jul, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="los_ultimos_dias">Los &Uacute;ltimos D&iacute;as</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 3/5">&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 3/5">&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/los_ultimos_dias.jpg" alt="Los &Uacute;ltimos D&iacute;as" title="Los &Uacute;ltimos D&iacute;as" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Los &Uacute;ltimos D&iacute;as</b> (also known <b>The Last Days</b>) is a 2013 Spanish science fiction thriller film directed by David and &Agrave;lex Pastor. The film had its world premiere on March 20, 2013, in Barcelona, and stars Quim Guti&eacute;rrez as a man who must deal with the potential end of all humanity.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Los_%C3%9Altimos_D%C3%ADas" class = "standardb_black" target="_blank">Wikipedia Los &Uacute;ltimos D&iacute;as</a> - <b>Los &Uacute;ltimos D&iacute;as</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=-I7SduGdEUo" class = "standardb_black" target="_blank">Los &Uacute;ltimos D&iacute;as</a> - Official Trailer (sp., with subtitles).
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					26th of Jun, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="pandorica">Pandorica</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 3/5">&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 3/5">&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/pandorica.jpg" alt="Pandorica" title="Pandorica" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Pandorica
+
+<P><b>Storyline:</b> Pandorica revolves around the leadership trials of The Varosha Tribe. Eiren, Ares and Thade are all in line to lead the next generation of their people. Only one of them will become leader but who will it be? Pandorica is an edge of your seat action horror that keeps the twists coming thick and fast.
+
+<P><b>Genres:</b> Sci-Fi
+
+<P><b>Actor:</b> Jade Hobday, Marc Zammit, Adam Bond
+
+<P><b>Director:</b> Tom Paton
+
+<P><b>Country:</b> UK
+
+<P><b>Duration:</b> 82 min
+
+<P><b>Release:</b> 1 April 2016 (UK)
+
+
+		
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt5131914/" class = "standardb_black" target="_blank">IMDb Pandorica (2016)</a> - <b>Pandorica</b> on IMDb.
+			</td>
+			</tr>
+
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=UBE_8PCPZvc" class = "standardb_black" target="_blank">Pandorica</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					06th of Jul, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+       <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="outer_wild">The Outer Wild</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 2/5">&bigstar;&bigstar;</font><font color="silver" title="Score: 2/5">&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/outer_wild.jpg" alt="The Outer Wild" title="The Outer Wild" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> The Outer Wild
+
+<P><b>Storyline:</b> After an unnatural event leaves mankind nearly extinct, a runaway girl and a rogue bounty hunter brave a dangerous wilderness to find a fabled sanctuary that can either save or destroy what's left of humanity.
+
+<P><b>Genres:</b> Action, Adventure, Horror
+
+<P><b>Actor:</b> Lauren McKnight, Christian Oliver, Jeffrey Vincent Parise
+
+<P><b>Director:</b> Philip Chidel
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 85 min
+
+<P><b>Release:</b> 28 September 2018 (USA)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt6958520/" class = "standardb_black" target="_blank">IMDb The Outer Wild (2018)</a> - <b>The Outer Wild</b> on IMDb.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=bafS6GmXIDc" class = "standardb_black" target="_blank">The Outer Wild</a> - Movie <b>The Outer Wild</b> on Youtube.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=wnDsXxJ6meA" class = "standardb_black" target="_blank">The Outer Wild</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					13th of Jul, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+
+       <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="ozland">OzLand</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 2/5">&bigstar;&bigstar;</font><font color="silver" title="Score: 2/5">&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/ozland.jpg" alt="OzLand" title="OzLand" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>OzLand</b> is a 2014 American fantasy/sci-fi drama independent film starring Zack Ratkovich and Glenn Payne. It was written and directed by Michael Williams in his feature film debut.
+
+<P>The film's story and characters are inspired by and are references to characters and events that appear in L. Frank Baum's children's book, The Wonderful Wizard of Oz, and also in Alexander Volkov's children's book, The Wizard of the Emerald City.
+
+
+<br><br>
+<P><b>Awards:</b>
+
+<P>&nbsp;&bull; Best Feature at Magnolia Independent Film Festival (2015)
+<P>&nbsp;&bull; Best Cinematography, Magnolia Independent Film Festival (2015)
+<P>&nbsp;&bull; Best of Show, Tupelo Film Festival (2015)
+<P>&nbsp;&bull; 1st Place Feature, Tupelo Film Festival (2015)
+<P>&nbsp;&bull; Elvin Whitesides Director's Award, Tupelo Film Festival (2015)
+<P>&nbsp;&bull; Best Feature Film, Real to Reel Film Festival (2015)
+<P>&nbsp;&bull; Best Narrative Feature, Offshoot Film Festival (2015)
+<P>&nbsp;&bull; Best Cinematography, FestivalSouth Film Expo (2015)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/OzLand" class = "standardb_black" target="_blank">Wikipedia OzLand</a> - <b>OzLand</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="http://putlockers.ch/watch-ozland-online-free-putlocker.html" class = "standardb_black" target="_blank">PutLockers OzLand</a> - <b>OzLand</b> on PutLockers.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					07th of Dec, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="population_2">Population: 2</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 2/5">&bigstar;&bigstar;</font><font color="silver" title="Score: 2/5">&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/population_2.jpg" alt="Population: 2" title="Population: 2" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Population: 2</b> is a 2012 American film directed by Gil Luna. The film was made entirely in Oregon with an all-Oregon cast and crew. It is recognized as having utilized several historic sites, one of which, the Fairview Training Center, no longer exists in its full form, having been deconstructed starting in 2011.
+
+<br><br>
+<P><b>Plot:</b>
+
+<P>Set against the backdrop of a post-apocalyptic Earth, Population 2 is about Lilith who wanders the remains of civilization every day, scavenging what she can from the deserted refuse of what was once a bustling city.
+
+
+<br><br>
+<P><b>Cast:</b>
+
+<P>&nbsp;&bull; Jon Ashley Hall as Simon Prime
+<P>&nbsp;&bull; Shelly Lipkin as Vincent Velo
+<P>&nbsp;&bull; Sibyl Lazzara as Kennedy
+<P>&nbsp;&bull; Jacqueline Gault as Doctor Bannon
+<P>&nbsp;&bull; Meredith Adelaide as Face of Pandora (as Meredith Williams)
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Population:_2" class = "standardb_black" target="_blank">Wikipedia Population: 2</a> - <b>Population: 2</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=AUuT8RQAYZ4" class = "standardb_black" target="_blank">Population: 2</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					09th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="containment">Containment</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 1/5">&bigstar;</font><font color="silver" title="Score: 1/5">&bigstar;&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/containment.jpg" alt="Containment" title="Containment" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Containment</b> is a 2015 British thriller film written by David Lemon, directed by Neil Mcenery-West, produced by Casey Herbert, Pete Smyth and Christine Hartland; and starring Lee Ross, Sheila Reid, Louise Brealey, Pippa Nixon, Andrew Leung, William Postlethwaite and Gabriel Senior. The film's executive producer is Simon Sole.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Containment_(film)" class = "standardb_black" target="_blank">Wikipedia Containment (film)</a> - <b>Containment</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=azDC2DouXUw" class = "standardb_black" target="_blank">Containment</a> - Movie <b>Containment</b> on Youtube.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=fh0mV9CKDIY" class = "standardb_black" target="_blank">Containment</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					24th of Jul, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="extinction">Extinction</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 1/5">&bigstar;</font><font color="silver" title="Score: 1/5">&bigstar;&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/extinction2.jpg" alt="Extinction" title="Extinction" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Extinction</b> (formerly known as <b>Welcome to Harmony</b>) is a 2015 post-apocalyptic horror film directed by Miguel Ángel Vivas who also co-wrote the screenplay with Alberto Marini from the novel Y pese a todo by Juan de Dios Garduño. The film stars Matthew Fox, Jeffrey Donovan and Quinn McColgan. In a post-apocalypse future, three survivors confront issues from their past, as well as a race of crazed zombies. The film was released on July 31, 2015 in the United States.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Extinction_(2015_film)" class = "standardb_black" target="_blank">Wikipedia Extinction (2015 film)</a> - <b>Extinction</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=wwUh5w3BRbg" class = "standardb_black" target="_blank">Extinction</a> - Movie <b>Extinction</b> on Youtube.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=vZoSD-riiy0" class = "standardb_black" target="_blank">Extinction</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					27th of Mar, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="quiet_hour">The Quiet Hour</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 1/5">&bigstar;</font><font color="silver" title="Score: 1/5">&bigstar;&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/quiet_hour.jpg" alt="The Quiet Hour" title="The Quiet Hour" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>The Quiet Hour</b> is a British science fiction film written and directed by Stéphanie Joalland and produced by Sean Anthony McConville. It stars Dakota Blue Richards, Karl Davies, Jack McMullen, and Brigitte Millar. Humans are few and far between since Earth was invaded by unseen extraterrestrial machines that harvest the planet's natural resources and relentlessly kill its inhabitants. In a remote part of the countryside, where starved humans have become as dangerous as the alien machines hovering in the sky, a feisty 19-year-old girl, Sarah Connolly, sets out on a desperate attempt to fight back a group of bandits and defend her parents' farm, their remaining livestock, and the solar panels that keep them safe from extraterrestrials. If she doesn't succeed, she will lose her only source of food and shelter; but if she resists, she and her helpless blind sibling will be killed. And if the mysterious intruder dressed like a soldier who claims he can help them turns out to be a liar, then the enemy may already be in the house.
+
+<P>The film was shot in County Tipperary in Ireland and made its world premiere in July 2014 at the 26th Galway Film Fleadh. It was nominated for Best UK Feature at the 22nd Raindance Film Festival, where it made its UK premiere on 3 October 2014.
+
+<P>The film was produced by Frenzy Films and distributed by Vision Films.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Quiet_Hour" class = "standardb_black" target="_blank">Wikipedia The Quiet Hour</a> - <b>The Quiet Hour</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=PcDsFKkHAqs" class = "standardb_black" target="_blank">The Quiet Hour</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					06th of Sep, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>

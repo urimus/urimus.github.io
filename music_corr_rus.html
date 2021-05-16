@@ -1,0 +1,1759 @@
+﻿
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Домашняя страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*43;
+var imgBgSrc="icons/background/usa_ussr.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+        <tr> 
+                <td  height="3"></td>
+        </tr>   
+        <tr>
+                <td width="1000">
+                        <img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Я" title="Я"  width="1000" style="display: block">
+                </td>
+        </tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+        <tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+                       <div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+                </td>
+
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_corr_eng.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_corr_eng.html' + window.location.hash;
+                                };"                     
+                        
+                        class="flag_not_selected"
+                >
+                        <img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_corr_rus.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_corr_rus.html' + window.location.hash;
+                                };"
+                        class="flag_selected"
+                >
+                        <img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+        </tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+        <tr> 
+
+        <td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+        <tr> 
+                <td  align="center" class="title_gradient_black">Меню</td>
+        </tr>
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'rus', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Карта Сайта</div>
+        </td>
+        </tr>   
+ 
+        <tr>
+                <td align="center">
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_rus.html');
+                        } else {
+                                window.location.href='about_me_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Обо мне</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center">
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_rus.html');
+                        } else {
+                                window.location.href='about_work_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  О моей работе</div>
+        </td>
+        </tr> 
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('phd_rus.html');
+                        } else {
+                                window.location.href='phd_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  О моём PhD</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_rus.html');
+                        } else {
+                                window.location.href='links_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Ссылки</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'rus', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_7"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"               
+                  class="menu_selected">
+                  Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+        
+        
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_1"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_chanson_rus.html');
+                        } else {
+                                window.location.href='music_chanson_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Шансон <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_classical_rus.html');
+                        } else {
+                                window.location.href='music_classical_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Классическая</div>
+        </td>
+        </tr>           
+        
+
+        
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_country_rus.html');
+                        } else {
+                                window.location.href='music_country_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Кантри <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_disco_rus.html');
+                        } else {
+                                window.location.href='music_disco_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Диско</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_5"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Электронная</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_6"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Индастриал</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_7"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Метал <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_8"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Национальная</div>
+        </td>
+        </tr>
+
+
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_9"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_pop_rus.html');
+                        } else {
+                                window.location.href='music_pop_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Поп <font class="blinking_text" color="slateblue"><sup>&smashp; Abstract &smashp;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_10"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Психоделическая <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_11"
+                  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Панк <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_12"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_rap_rus.html');
+                        } else {
+                                window.location.href='music_rap_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Рэп <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_reggae_rus.html');
+                        } else {
+                                window.location.href='music_reggae_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Регги</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_14"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_rock_rus.html');
+                        } else {
+                                window.location.href='music_rock_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Рок-музыка <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_15"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_satanic_rus.html');
+                        } else {
+                                window.location.href='music_satanic_rus.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Сатанинская <font class="blinking_text" color="darkred"><sup>&#9765; Tricky &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="
+                    this.className='menu_selected';
+                        if (event.ctrlKey==1){
+                                window.open('music_corr_rus.html');
+                        } else {
+                                window.location.href='music_corr_rus.html';
+                        };"                               
+                  class="menu_selected"
+		  style="padding-left: 5px;">
+                  &#9679; США &#8596; СССР</div>
+        </td>
+        </tr>   
+                
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_8"
+                  onMouseOver="showSubMenu(this, 'rus', 'movies');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'movies');"                               
+                  class="menu_not_selected_black">
+                  Фильмы</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_27"
+                  onMouseOver="showSubMenu(this, 'rus', 'series');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'series');"                               
+                  class="menu_not_selected_black">
+                  Сериалы</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_9"
+                  onMouseOver="showSubMenu(this, 'rus', 'games');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'games');"  
+                  class="menu_not_selected_black">
+                  Игры</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_10"
+                  onMouseOver="showSubMenu(this, 'rus', 'books');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'books');"  
+                  class="menu_not_selected_red">
+                  Книги</div>
+        </td>
+        </tr>           
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_11"
+                  onMouseOver="showSubMenu(this, 'rus', 'photos');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'photos');"  
+                  class="menu_not_selected_red">
+                  Фото/Картинки</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_12"
+                  onMouseOver="showSubMenu(this, 'rus', 'amv');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'amv');"                                               
+                  class="menu_not_selected_black">
+                  AMV</div>
+        </td>
+        </tr>           
+        <tr>
+                <td align="center" >
+                  <div id="menu_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('radio_rus.html');
+                        } else {
+                                window.location.href='radio_rus.html';
+                        };"                                               
+                  class="menu_not_selected_black">
+                  Радио</div>
+        </td>
+        </tr>                   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_14"
+                  onMouseOver="showSubMenu(this, 'rus', 'stuff');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'rus', 'stuff');"                                       
+                  class="menu_not_selected_black">
+                  Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font>
+ </div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_15"
+                  onMouseOver="showSubMenu(this, 'rus', 'anecdotes');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'anecdotes');"  
+                  class="menu_not_selected_red">
+                  Анекдоты</div>
+        </td>
+        </tr>           
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_rus.html');
+                        } else {
+                                window.location.href='heffalump_rus.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                  
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_17"
+                  onMouseOver="showSubMenu(this, 'rus', 'relaxation');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'rus', 'relaxation');"  
+                  class="menu_not_selected_white">
+                  Вещества Для Расслабления</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_18"
+                  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'rus', 'software');"  
+                  class="menu_not_selected_white">
+                  Разработка Программ</div>
+        </td>
+        </tr>   
+
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_19"
+                  onMouseOver="showSubMenu(this, 'rus', 'satanism');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'rus', 'satanism');"                                       
+                  class="menu_not_selected_green">
+                  Сатанизм</div>
+        </td>
+        </tr>
+
+		
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_rus.html');
+                        } else {
+                                window.location.href='satanism_wicca_rus.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Викка</div>
+        </td>
+        </tr>
+		
+		
+		
+		
+        <tr>
+                <td align="center" >
+                  <div id="menu_21"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('falsifiability_rus.html');
+                        } else {
+                                window.location.href='falsifiability_rus.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Фальсифицируемость</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_22"
+                  onMouseOver="showSubMenu(this, 'rus', 'psychology');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'rus', 'psychology');"                                       
+                  class="menu_not_selected_green">
+                  Психология</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_23"
+                  onMouseOver="showSubMenu(this, 'rus', 'countries');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'rus', 'countries');"                                       
+                  class="menu_not_selected_green">
+                  Страны</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_24"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('totalitarianism_rus.html');
+                        } else {
+                                window.location.href='totalitarianism_rus.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Тоталитаризм</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_25"
+                  onMouseOver="showSubMenu(this, 'rus', 'personalities');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'rus', 'personalities');"                                       
+                  class="menu_not_selected_green">
+                  Деятели</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'rus', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'news');"               
+                  class="menu_not_selected_red">
+                  Новости</div>
+        </td>
+        </tr>
+
+
+
+</table>
+
+                </td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+        <tr> 
+                <td  class="title_black" style="width: 530px;"><a name="welcome">Музыка &blacktriangleright; США &#8596; СССР</a></td>
+        </tr>
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:989px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr>
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="usa_ussr">США &#8596; СССР</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/music/usa_vs_ussr.jpg" alt="США vs СССР" title="США vs СССР" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+                                        
+                                                <P>Последнее время слушаю очень много очень хорошей советской или советско-российской эстрады. Вот и решил сделать раздел на домашней страничке какая советская музыка, по моему, соответствует западной. 
+                                                <P>Итак, что получилось ... ?
+
+
+<br><br>
+<P><a href="#1" class = "standardb_black">1. Frank Sinatra, Therion &#8596; Юрий Антонов</a>
+<P><a href="#2" class = "standardb_black">2. Mono Inc. &#8596; Мальчишник</a>
+<P><a href="#3" class = "standardb_black">3. Gothminister &#8596; Земляне</a>
+<P><a href="#4" class = "standardb_black">4. Roxette &#8596; Каролина</a>
+<P><a href="#5" class = "standardb_black">5. Vanessa-Mae &#8596; Комбинация</a>
+<P><a href="#6" class = "standardb_black">6. Abba, Britney Spears &#8596; Ноль</a>
+<P><a href="#7" class = "standardb_black">7. Джонни Кэш &#8596; Владимир Высоцкий</a>
+<P><a href="#8" class = "standardb_black">8. Green Day &#8596; Сплин</a>
+<P><a href="#9" class = "standardb_black">9. Das Ich &#8596; Белый Орёл</a>
+<P><a href="#10" class = "standardb_black">10. Garbage &#8596; Мираж</a>
+<P><a href="#11" class = "standardb_black">11. Evanescence &#8596; Сектор Газа</a>
+<P><a href="#12" class = "standardb_black">12. The Doors &#8596; Ника</a>
+<P><a href="#13" class = "standardb_black">13. Celine Dion &#8596; Машина Времени</a>
+<P><a href="#14" class = "standardb_black">14. C. C. Catch &#8596; Кино</a>
+<P><a href="#15" class = "standardb_black">15. Infected Mushroom &#8596; Сергей Наговицын</a>                                        
+                                </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        15th of May, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+                
+        <tr align="center">
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse; ">
+                        <tr>
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="music">Сравнение</a></td>
+                        </tr>
+                        <tr>
+                        <td >
+                                <table  cellpadding="5" cellspacing="0" width="100%" >
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left" ><a name="music">США</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right" ><a name="music">СССР</a></td>
+                                        </tr>
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="1">Frank Sinatra, Therion</a></td>                                              
+                                                <td width="50%" height="100%" class="table_cell_name_right">Юрий Антонов</td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/frank_sinatra.jpg" alt="Frank Sinatra" title="Frank Sinatra" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+<P style="padding-top:10px;"><b>Фрэнсис Альберт Синатра</b> (англ. Francis Albert Sinatra: 12 декабря 1915, Хобокен, Нью-Джерси — 14 мая 1998, Лос-Анджелес) — американский певец (крунер), актёр, кинорежиссёр, продюсер и шоумен. Девять раз становился лауреатом премии «Грэмми». Славился романтическим стилем исполнения песен и «бархатным» тембром голоса.
+
+<P>В XX веке Синатра стал легендой не только музыкального мира, но и каждого аспекта американской культуры. Когда его не стало, некоторые журналисты писали: «К чёрту календарь. День смерти Фрэнка Синатры — конец XX века». Певческая карьера Синатры стартовала ещё в 1930-х годах, а к концу жизни он считался эталоном музыкального стиля и вкуса. Песни в его исполнении вошли в классику эстрады и стиля свинг, стали наиболее яркими образцами эстрадно-джазовой манеры пения «крунинг», на них воспитаны несколько поколений американцев. В молодые годы имел прозвище Фрэнки (англ. Frankie) и Голос (англ. The Voice), в более поздние годы — Мистер Голубые Глаза (англ. Ol' Blue Eyes), а затем — Председатель (англ. Chairman). За 60 лет активной творческой деятельности записал около 100 неизменно популярных дисков-синглов, исполнил все самые известные песни крупнейших композиторов США — Джорджа Гершвина, Харольда Арлена, Кола Портера и Ирвинга Берлина.
+
+<P>Помимо музыкального триумфа, Синатра был и успешным киноактёром, высшей точкой его карьеры стал «Оскар», 1954 года за лучшую мужскую роль второго плана. В его «копилке» содержится множество кинонаград: от «Золотых глобусов» до премии Гильдии киноактёров США. За свою жизнь Синатра снялся более чем в 60 кинофильмах, наиболее известными из которых стали «Увольнение в город», «Отныне и во веки веков», «Человек с золотой рукой», «Высшее общество», «Гордость и страсть», «Одиннадцать друзей Оушена» и «Маньчжурский кандидат».
+
+<P>Фрэнк Синатра удостоен премий «Золотой глобус», Гильдии киноактёров США и Национальной ассоциации содействия прогрессу цветного населения, а за год до кончины награждён высшей наградой США — Золотой медалью Конгресса.
+                                                        
+                                                        <img src="icons/music/therion.jpg" alt="Therion" title="Therion" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px; padding-top:10px;">
+                                                                <P><b>Therion</b> (от греч. &Theta;&eta;&rho;&iota;&omicron;&nu; — «зверь») — шведская метал-группа, основанная в 1987 году гитаристом Кристофером Йонсоном. Therion считаются одними из основателей и ключевых исполнителей в стиле симфоник-метал: её композиции записываются и исполняются с участием живых оркестров, приглашённых вокалистов и хоров. <b>Большая часть песен группы касается различных мистических учений, мифологии народов мира.</b>
+                                                                <P>Симфоник-метал или симфо-метал (англ. symphonic metal — «симфонический металл») — музыкальный стиль, в котором соединены метал и симфоническая оркестровая музыка. При создании музыки в этом стиле часто используется женский вокал, хор, симфонические музыкальные инструменты или их имитация с помощью синтезатора, нередко при записи используется полноценный симфонический оркестр. Для жанра характерны концептуальные альбомы, дуэты и хоры из нескольких вокалистов.
+                                                        
+                                                </td>                                           
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/antonov.jpg" alt="Юрий Антонов" title="Юрий Антонов" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>Юрий Михайлович Антонов</b> (род. 19 февраля 1945, Ташкент, Узбекская ССР, СССР) — советский и российский композитор, эстрадный певец, поэт, актёр. Народный артист Российской Федерации (1997).
+                                                                <P><b>У Антонова характерны песни о природе и о жизни, и многие названия песен четко дают это понять:</b>
+                                                                <P>Сотрудничество с группой «Аракс» в 1979—1981 годах приносит Антонову всесоюзную славу. Три пластинки-миньона с записанными в сопровождении этого ансамбля песнями «Анастасия» (слова Леонида Фадеева), «Зеркало» (слова Михаила Танича), «Золотая лестница» (слова М. Виккерс), «Тебе» (слова Льва Ошанина), «Я вспоминаю» (слова Леонида Фадеева), «Не забывай» (слова Михаила Танича), «Моё богатство» (слова Игоря Кохановского), «Жизнь», «Дорога к морю», «Двадцать лет спустя», а также две пластинки-миньона с песнями «Маки», «Море», «Вот как бывает», «Крыша дома твоего», «Родные места», «Наша магистраль», записанные с другими музыкантами, разошлись тиражом свыше 20 миллионов копий, сделав Ю. Антонова одним из самых популярных исполнителей в СССР — в 1982—1983 годах он становится лучшим певцом СССР в хит-параде «Звуковая дорожка».
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B0%D1%82%D1%80%D0%B0,_%D0%A4%D1%80%D1%8D%D0%BD%D0%BA" class = "standardb_black" target="_blank">Wikipedia Синатра, Фрэнк</a> - <b>Frank Sinatra</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_pop_rus.html#sinatra" class = "standardb_black" target="_blank">Frank Sinatra</a> - На этом Вебсайте.
+                                                        <br>
+                                                        <a href="https://ru.wikipedia.org/wiki/Therion" class = "standardb_black" target="_blank">Wikipedia Therion</a> - <b>Therion</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_metal_symphonic_rus.html#therion" class = "standardb_black" target="_blank">Therion</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2,_%D0%AE%D1%80%D0%B8%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_black" target="_blank">Wikipedia Антонов, Юрий Михайлович</a> - <b>Юрий Антонов</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_satanic_rus.html#antonov" class = "standardb_black" target="_blank">Юрий Антонов</a> - На этом Вебсайте.
+                                                </td>                                           
+                                        </tr>
+                                        
+        
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="2">Mono Inc.</a></td>                                           
+                                                <td width="50%" height="100%" class="table_cell_name_right">Мальчишник</td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/mono_inc.jpg" alt="Mono Inc." title="Mono Inc." vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>Mono Inc.</b> немецкая группа, играющая в стилях Gothic Rock и Alternative Rock.
+                                                                <P>Готик-рок (англ. gothic rock) — музыкальный жанр, возникший как ответвление пост-панка на рубеже 1970-х и 1980-х годов. В начале 1980-х жанр стал отдельным направлением. <b>В музыке преобладают мрачные темы и интеллектуальные направления, такие как романтизм, нигилизм, а также готическое направление в искусстве Нового времени.</b> Готик-рок стал основой для готической субкультуры, которая впоследствии существенно расширилась.
+                                                        
+                                                </td>                                           
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/malchishnik.jpg" alt="Мальчишник" title="Мальчишник" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P style="padding-top:10px;"><b>Группа «Мальчишник»</b> — скандальная рэп-группа 90-х, образовавшаяся в 1991 году. Рэперы «Мальчишника» исполняли песни сексуального характера и пропагандировали буквально сексуальную революцию. Группа просуществовала до 2006 года. Сейчас группа практически не существует, хотя её участники периодически устраивают концерты и в наши дни.
+                                                                <P><b>Музыка сексуфльного характера является в какой-то мере нигилизмом.</b>
+                                                                <P><b>Нигилизм</b> (от лат. nihil — ничто) — мировоззренческая позиция, ставящая под сомнение (в крайней своей форме абсолютно отрицающая) общепринятые ценности, идеалы, нормы нравственности, культуры. В словарях определяется также как «отрицание», «абсолютное отрицание», «социально-нравственное явление», «умонастроение», то есть, очевидно, определение нигилизма и его проявление в разное время зависело от культурно-исторической эпохи, субъективно и контекстно зависимо.
+                                                                                                          
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>           
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/Mono_Inc." class = "standardb_black" target="_blank">Wikipedia Mono Inc.</a> - <b>Mono Inc.</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_industrial_rock_rus.html#mono_inc" class = "standardb_black" target="_blank">Mono Inc.</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D1%88%D0%BD%D0%B8%D0%BA_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Мальчишник (группа)</a> - <b>Мальчишник</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_rap_rus.html#malchishnik" class = "standardb_black" target="_blank">Мальчишник</a> - На этом Вебсайте.
+                                                        <br>
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%B3%D0%B8%D0%BB%D0%B8%D0%B7%D0%BC" class = "standardb_black" target="_blank">Wikipedia Нигилизм</a> - <b>Нигилизм</b> на Wikipedia.
+                                                </td>
+
+                                        </tr>
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="3">Gothminister</a></td>
+
+                                                <td width="50%" height="100%" class="table_cell_name_right">Земляне</td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/gothminister.jpg" alt="Gothminister" title="Gothminister" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P>Группа <b>Готминистер</b> (англ. Gothminister) была создана в 1999 году Бьёрном Александром Бремом (Норвегия).
+                                                                
+                                                                <P>Готминистер выпустила несколько успешных клубных синглов, наибольшего успеха из которых добился хит «Angel», вошедший в десятку лучших хитов в списке немецких альтернативных групп.
+
+                                                                <P>Готминистер выступала на всех крупных фестивалях в Германии, таких как Wave Gotik Treffen, фестиваль Дарк Сторм, два года подряд группу приглашали на фестиваль М’эра Луна и она также выступала перед более чем 10,000 зрителей на фестивале Схаттенрайх в концертном зале «Арена» в городе Оберхаузен вместе с такими группами, как Oomph!, In Extremo и Within Temptation.
+
+                                                                <P>Готминистер добилась огромного успеха, и в ноябре 2003 года дебютный альбом был переиздан компанией Драккар Энтертеймент GmbH/BMG. С тех пор в группе Готминистер появилось два новых участника: клавишник Android и «живой» барабанщик Chris Dead.
+
+                                                                <P><b>В новом альбоме в музыке Готминистера как никогда раньше делается акцент на тяжёлые гитары и мрачный метал. Элементы электронного звучания тоже присутствуют, но скорее в виде фона, чтобы освободить место для потрясающих оркестровых помпезных настроений.</b>
+
+                                                        
+                                                </td>                                           
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/zemljane.jpeg" alt="Земляне" title="Земляне" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>«Земляне»</b> — советская и российская музыкальная группа, один из самых заметных коллективов периода «ВИА» в советской музыке. Наиболее известные и популярные песни: «Трава у дома», «Каскадёры», «Прости, Земля», «Маленький кораблик», «Путь домой», «Красный конь», «Каратэ», «Взлётная полоса», «Поверь в мечту» и многие другие.
+                                                                <P><b>Тематика текстов «Землян» касалась приключенческой и мужественной романтики, «мужских» профессий — лётчики, спортсмены, каскадёры, космонавты. По сравнению со многими современниками, «Земляне» отличались более тяжёлой музыкой, энергичной подачей материала, экспрессивным поведением на сцене.</b> Фактически «Земляне» исполняли рок, но в официальной прессе того времени их старались не называть рок-группой.
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>           
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/Gothminister" class = "standardb_black" target="_blank">Wikipedia Gothminister</a> - <b>Gothminister</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_industrial_metal_rus.html#gothminister" class = "standardb_black" target="_blank">Gothminister</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B5%D0%BC%D0%BB%D1%8F%D0%BD%D0%B5_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Земляне (группа)</a> - <b>Земляне</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_rock_rus.html#zemljane" class = "standardb_black" target="_blank">Земляне</a> - На этом Вебсайте.
+                                                </td>
+
+                                        </tr>
+                                        
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+
+                                        
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="4">Roxette</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Каролина</td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/roxette.jpg" alt="Roxette" title="Roxette" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>Roxette</b> (Роксэт) — шведская поп-рок-группа, лидерами которой являются Пер Гессле (автор текстов песен и музыки, гитара, вокал, губная гармоника) и Мари Фредрикссон (вокал, рояль). Как и многие другие шведские музыканты, они исполняют свои песни на английском языке. Само название «Roxette» происходит от названия песни группы Dr. Feelgood.
+                                                                
+                                                                
+                                                        
+                                                </td>                                           
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/karolina.jpg" alt="Каролина" title="Каролина" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>Татьяна Тишинская</b> (настоящее имя — Татьяна Борисовна Корнева, род. 25 марта 1967, Люберцы, Московская область, РСФСР, СССР) — советская и российская певица, исполняющая русский шансон, которая до 1999 года была известна под псевдонимом <b>Каролина</b>.
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/Roxette" class = "standardb_black" target="_blank">Wikipedia Roxette</a> - <b>Roxette</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_disco_rus.html#roxette" class = "standardb_black" target="_blank">Roxette</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D1%88%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F,_%D0%A2%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0" class = "standardb_black" target="_blank">Wikipedia Тишинская, Татьяна</a> - <b>Каролина</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_disco_rus.html#karolina" class = "standardb_black" target="_blank">Каролина</a> - На этом Вебсайте.
+                                                </td>                                           
+                                        </tr>
+                                                                                
+                                        
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="5">Vanessa-Mae</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Комбинация</td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/vanessa_mae.jpg" alt="Vanessa-Mae" title="Vanessa-Mae" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>Ванесса-Мэй Ванакорн Николсон</b> (англ. Vanessa-Mae Vanakorn Nicholson, род. 27 октября 1978) — британская скрипачка, композитор, горнолыжница, певица. Известна в основном благодаря техно-обработкам классических композиций. Стиль исполнения: «скрипичный техно-акустический фьюжн» (англ. violin techno-acoustic fusion), или «эстрадная скрипка».
+                                                                
+                                                                
+                                                        
+                                                </td>                                           
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/kombinacija.jpg" alt="Комбинация" title="Комбинация" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+
+                                                                <P><b>«Комбинация»</b> — советская, а затем и российская поп-группа, основанная в 1988 году бывшим работником ОБХСС Александром Шишининым (директором группы) и молодым композитором Виталием Окороковым. Отличалась «социальной» тематикой, практически каждая песня отражала то или иное явление, происходящее в обществе на рубеже 80-х и 90-х: повальный дефицит товаров, бум мексиканских сериалов, преклонение перед представителями развитых капиталистических стран и т. д.
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%B5%D1%81%D1%81%D0%B0_%D0%9C%D1%8D%D0%B9" class = "standardb_black" target="_blank">Wikipedia Ванесса Мэй</a> - <b>Vanessa Mae</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_classical_rus.html#vanessa_mae" class = "standardb_black" target="_blank">Vanessa-Mae</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B0%D1%86%D0%B8%D1%8F_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Комбинация (группа)</a> - <b>Комбинация</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_disco_rus.html#kombinacija" class = "standardb_black" target="_blank">Комбинация</a> - На этом Вебсайте.
+                                                </td>                                           
+                                        </tr>
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="6">Abba, Britney Spears</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Ноль</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/abba.jpg" alt="Abba" title="Abba" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>ABBA</b> (рус. — АББА) — шведский музыкальный квартет, существовавший в 1972—1982 годах и названный по первым буквам имён исполнителей: <b>А</b>гнета Фельтског, <b>Б</b>ьорн Ульвеус, <b>Б</b>енни Андерссон, <b>А</b>нни-Фрид Лингстад. Является одним из наиболее успешных коллективов за всю историю популярной музыки и самым успешным из числа созданных в Скандинавии: записи группы по всему миру были проданы тиражом более 350 миллионов экземпляров. Синглы квартета занимали первые места в мировых чартах с середины 1970-х (Waterloo) до начала 1980-х (One of Us), а альбомы-сборники возглавляли мировые хит-парады и в 2000-х. Они остались в плей-листах радиостанций, и их альбомы продолжают продаваться по сей день.
+
+                                                                <P>Они были первыми представителями континентальной Европы, завоевавшими первые места в чартах всех ведущих англоговорящих стран (США, Великобритания, Канада, Ирландия, Австралия и Новая Зеландия).
+
+                                                                <P>Группа ABBA была включена в Зал славы рок-н-ролла 15 марта 2010 года.
+                                                        
+                                                        <img src="icons/music/britney_spears.jpg" alt="Britney Spears" title="Britney Spears" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px; padding-top:10px;">
+                                                                <P style="padding-top:10px;"><b>Бритни Джин Спирс</b> (англ. Britney Jean Spears; род. 2 декабря 1981, Маккомб, Миссисипи, США) — американская поп-певица, обладательница премии «Грэмми», танцовщица, автор песен, киноактриса.
+                                                        
+                                                        <img src="icons/music/britney_spears2.jpg" alt="Britney Spears" title="Britney Spears" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px; padding-top:10px;">
+                                                                <P>Её дебютный альбом …Baby One More Time сделал её всемирно популярной, а одноимённый сингл возглавил чарт Billboard Hot 100. Первый альбом Бритни содержал пять мощных хитов. Успешный дебют певицы в музыке породил большой общественный резонанс: так, The Daily Yomiuri назвала её «самым одарённым несовершеннолетним поп-идолом последних лет», а по мнению Rolling Stone, «Бритни Спирс — классический стереотип подростковой королевы рок-н-ролла, ангельский ребёнок, который просто должен быть на сцене».
+                                                        
+                                                </td>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/nol.jpg" alt="Ноль" title="Ноль" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>Ноль</b> — советская и российская рок-группа, была основана певцом-баянистом Фёдором Чистяковым (по прозвищу «Дядя Фёдор») вместе с барабанщиком Алексеем «Николс» Николаевым и Анатолием Платоновым в Ленинграде (ныне Санкт-Петербург) осенью 1985-го года. После записи первого альбома к музыкантам присоединился бас-гитарист Дмитрий «Монстр» Гусаков (ранее игравший в группе «Вымысел», а затем в группе «Цветные сны» с Ильёй Сёмкиным), а в 1987 году — гитарист Георгий Стариков. От других ансамблей конца 1980-х они отличались использованием баяна как главного солирующего инструмента рок-группы.
+                                                        
+                                                </td>                                           
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                
+                                        </tr>
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/ABBA" class = "standardb_black" target="_blank">Wikipedia Abba</a> - <b>Abba</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_disco_rus.html#abba" class = "standardb_black" target="_blank">Abba</a> - На этом Вебсайте.
+                                                        <br>
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%80%D1%81,_%D0%91%D1%80%D0%B8%D1%82%D0%BD%D0%B8" class = "standardb_black" target="_blank">Wikipedia Спирс, Бритни</a> - <b>Britney Spears</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_pop_rus.html#spears" class = "standardb_black" target="_blank">Britney Spears</a> - На этом Вебсайте.
+                                                </td>                                   
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D0%BB%D1%8C_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Ноль (группа)</a> - <b>Ноль</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_punk_rock_rus.html#nol" class = "standardb_black" target="_blank">Ноль</a> - На этом Вебсайте.
+                                                </td>
+
+                                        </tr>
+                                        
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="7">Johnny Cash</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Владимир Высоцкий</td>
+                                        </tr>   
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/johnny_cash.jpg" alt="Johnny Cash" title="Johnny Cash" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>Джонни Кэш</b> (англ. Johnny Cash; 26 февраля 1932, Кингсленд, Арканзас — 12 сентября 2003, Нашвилл, Теннесси) — американский певец и композитор-песенник, ключевая фигура в музыке кантри, является одним из самых влиятельных музыкантов XX века. Несмотря на то, что в первую очередь его признали иконой кантри, исполнение песен в таких жанрах как госпел, рок-н-ролл и рокабилли — не редкость. Благодаря своей музыке, стилю жизни на сцене и вне её заслужил авторитет среди большого круга любителей музыки, далеко за пределами жанра кантри. Сам себя позиционировал как исполнителя «христианского кантри».
+
+                                                                <P>С Джонни Кэшем ассоциируется устойчивое словосочетание «Человек в чёрном» (англ. Man In Black), поскольку с 1960-х годов для него было характерно ношение тёмной одежды (причины этого он поясняет в тексте одноимённой песни «Man in Black» 1971 года).
+                                                                
+                                                                
+                                                        
+                                                </td>                                           
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/vysockij.jpg" alt="Владимир Высоцкий" title="Владимир Высоцкий" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+
+                                                                <P><b>Владимир Семёнович Высоцкий</b> (25 января 1938, Москва — 25 июля 1980, Москва) — советский поэт, актёр и автор-исполнитель песен; автор прозаических произведений. Лауреат Государственной премии СССР (1987, посмертно).
+
+                                                                <P>Актёр Театра драмы и комедии на Таганке в Москве (1964—1980). Владимир Высоцкий сыграл более 20-ти ролей в театре, в том числе Гамлета («Гамлет» У. Шекспира), Галилея («Жизнь Галилея» Б. Брехта), Лопахина («Вишнёвый сад» А. Чехова). Наиболее примечательными работами в кинематографе как актёра являются его роли в фильмах «Место встречи изменить нельзя» (включая в качестве помощника режиссёра), «Маленькие трагедии», «Интервенция», «Хозяин тайги», «Вертикаль», «Служили два товарища», «Сказ про то, как царь Пётр арапа женил», «Короткие встречи», «Плохой хороший человек».
+
+                                                                <P>Владимир Высоцкий вошёл в историю как автор-исполнитель своих песен под русскую семиструнную гитару.
+
+                                                                <P>По итогам опроса ВЦИОМ, проведённого в 2010 году, Высоцкий занял второе место в списке «кумиров XX века» после Юрия Гагарина. Опрос, проведённый ФОМ в середине июля 2011 года, продемонстрировал, что, несмотря на снижение интереса к творчеству Высоцкого, абсолютному большинству (98 %) россиян знакомо имя «Владимир Высоцкий», а около 70 % ответили, что его песни нравятся, и считают его творчество важным явлением отечественной культуры XX века.
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%8D%D1%88,_%D0%94%D0%B6%D0%BE%D0%BD%D0%BD%D0%B8" class = "standardb_black" target="_blank">Wikipedia Кэш, Джонни</a> - <b>Johnny Cash</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_country_rus.html#cash" class = "standardb_black" target="_blank">Johnny Cash</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%92%D1%8B%D1%81%D0%BE%D1%86%D0%BA%D0%B8%D0%B9,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_black" target="_blank">Wikipedia Высоцкий, Владимир Семёнович</a> - <b>Владимир Высоцкий</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_country_rus.html#vysockij" class = "standardb_black" target="_blank">Владимир Высоцкий</a> - На этом Вебсайте.
+                                                </td>                                           
+                                        </tr>
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+                                        
+                                        
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="8">Green Day</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Сплин</td>
+                                        </tr>   
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/green_day.jpg" alt="Green Day" title="Green Day" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>Green Day</b> (рус. Зелёный день) — американская <b>панк-рок-группа</b>, основанная в 1986 году. Состоит из четырёх участников: Билли Джо Армстронга (вокал, гитара), Майка Дёрнта (бас гитара, бэк-вокал), Тре Кула (ударные) и (с момента анонса альбома ?Uno!) Джейсона Уайта (гитара).
+
+                                                                <P>Green Day первоначально были частью панк-рок среды, сформировавшейся вокруг панк-клуба 924 Gilman Street (Беркли). Их первые альбомы, записанные на независимой компании Lookout!Records, позволили группе заработать множество фанатов. В результате группа вместе с другими калифорнийскими панками (The Offspring, Rancid) подняла волну огромного интереса к панк-музыке не только в США, но и во всём мире. Green Day стали вдохновителями таких известных групп, как Good Charlotte, Fall Out Boy, Simple Plan.
+
+                                                                <P>В 2011 году трио было признано лучшей панк-группой в истории музыки по результатам опроса, проведённого журналом Rolling Stone. В 2015 году Green Day были включены в «Зал славы рок-н-ролла».                                                               
+                                                                 
+                                                        
+                                                </td>                                           
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/splin.jpg" alt="Сплин" title="Сплин" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+
+                                                                <P><b>«Сплин»</b>  — российская <b>рок-группа</b> из Санкт-Петербурга. Бессменный лидер — Александр Васильев. Датой рождения группы считается 27 мая 1994 года.
+
+                                                                <P>Название группы возникло под влиянием строк стихотворения российского поэта Серебряного века Саши Чёрного, на основе которого была создана песня «Под сурдинку» из первого альбома группы («Пыльная быль»):
+
+                                                                <i><P>Как молью изъеден я сплином…
+                                                                <P>Посыпьте меня нафталином,
+                                                                <P>Сложите в сундук и поставьте меня на чердак,
+                                                                <P>Пока не наступит весна.</i>
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/Green_Day" class = "standardb_black" target="_blank">Wikipedia Green Day</a> - <b>Green Day</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_punk_rock_rus.html#green_day" class = "standardb_black" target="_blank">Green Day</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%BB%D0%B8%D0%BD" class = "standardb_black" target="_blank">Wikipedia Сплин</a> - <b>Сплин</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_rock_rus.html#splean" class = "standardb_black" target="_blank">Сплин</a> - На этом Вебсайте.
+
+                                                </td>                                           
+                                        </tr>
+
+
+
+
+
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="9">Das Ich</a></td>                                            
+                                                <td width="50%" height="100%" class="table_cell_name_right">Белый Орёл</td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/das_ich.jpg" alt="Das Ich" title="Das Ich" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+<P><b>Das Ich</b> — немецкая группа, играющая в стилях darkwave, industrial, EBM electro-gothic. Название Das Ich заимствовано из работ основателя психоанализа Зигмунда Фрейда (например Freud, Sigmund (1923), Das Ich und das Es) и тесно связано с термином Эго. Основной мотив творчества группы — экспрессионистские стихи, наложенные на электронную музыку. На концертах музыканты широко используют театральные приёмы, декорации, грим.
+                                                        
+                                                </td>                                           
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/belyj_orel.jpg" alt="Белый Орёл" title="Белый Орёл" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+<P>«<b>Белый Орёл</b>» — российская музыкальная группа, основанная в 1997 году бизнесменом Владимиром Жечковым, который лично исполнил большинство хитов группы.
+                                                        
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Links:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Links:
+                                                </td>           
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/Das_Ich" class = "standardb_black" target="_blank">Wikipedia Das Ich</a> - <b>Das Ich</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_industrial_electro_rus.html#das_ich" class = "standardb_black" target="_blank">Das Ich</a> - На этом Вебсайте.
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D1%8B%D0%B9_%D0%BE%D1%80%D1%91%D0%BB_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Белый орёл (группа)</a> - <b>Белый Орёл</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_country_rus.html#belyj_orel" class = "standardb_black" target="_blank">Белый Орёл</a> - На этом Вебсайте.
+                                                </td>
+
+                                        </tr>
+
+
+
+
+
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+        
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="10">Garbage</a></td>                                            
+                                                <td width="50%" height="100%" class="table_cell_name_right">Мираж</td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/garbage.jpg" alt="Garbage" title="Garbage" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+<P><b>Garbage</b> (в переводе с англ. — «мусор») — рок-группа, сформированная в США в городе Мэдисон в 1994 году. В состав группы входят шотландская певица Ширли Мэнсон (вокал, гитара, клавишные) и американские музыканты Стив Маркер (гитара, клавишные), Дюк Эриксон (бас-гитара, клавишные, гитара, перкуссия) и Бутч Виг (ударные, перкуссия). Коллектив стал известен своим необычным звучанием, выразительным вокалом солистки, а также инновационными средствами обработки звука. Garbage являются одной из наиболее успешных рок-групп 1990-х годов. Всего в мире продано более 17 миллионов экземпляров альбомов Garbage.
+
+                                                        
+                                                </td>                                           
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/mirazh.jpeg" alt="Мираж" title="Мираж" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+<P><b>«Мираж»</b> — советская, а затем российская музыкальная группа, работающая, в основном, в стиле евродиско.
+
+                                                        
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>           
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/Garbage" class = "standardb_black" target="_blank">Wikipedia Garbage</a> - <b>Garbage</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_industrial_rock_rus.html#garbage" class = "standardb_black" target="_blank">Garbage</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%80%D0%B0%D0%B6_%28%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0%29" class = "standardb_black" target="_blank">Wikipedia Мираж (группа)</a> - <b>Мираж</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_disco_rus.html#mirazh" class = "standardb_black" target="_blank">Мираж</a> - На этом Вебсайте.
+                                                </td>
+
+                                        </tr>
+
+
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+
+
+
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="11">Evanescence</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Сектор Газа</td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/evanescence.jpg" alt="Evanescence" title="Evanescence" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P style="padding-top:10px;"><b>Evanescence</b> (с англ. — «Исчезновение») — американская рок-группа, основанная в 1995 году вокалисткой Эми Ли и гитаристом Беном Муди.
+
+                                                                <P>Группа добилась большой популярности в начале 2003 года с выходом альбома Fallen, разошедшегося тиражом около 15 миллионов копий и принёсшего группе две премии «Грэмми». В 2004 г. вышел первый концертный альбом Evanescence Anywhere but Home. В 2006 г. был выпущен второй студийный альбом The Open Door, тираж которого составил около 6 миллионов копий.
+
+                                                                <P>После выхода второго альбома группа временно ушла со сцены.
+                                                                
+                                                                <P>Среди критиков нет единства во мнениях относительно того, как классифицировать музыку Evanescence: как рок или как метал. <b>Некоторые критики сравнивают коллектив с итальянской готик-метал-группой Lacuna Coil, уточняя, однако, что Evanescence пошли ещё дальше последних в разбавлении метала элементами поп-музыки.</b>
+
+                                                                <P><b>Журналистка New York Times Джулия Чаплин сочла музыку Evanescence готик-металом.</b>
+                                                                
+                                                        
+                                                </td>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/sektor_gaza.jpg" alt="Сектор Газа" title="Сектор Газа" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                        <P><b>«Сектор Газа»</b> — советская и российская <b>рок-группа</b>, основанная 5 декабря 1987 года в Воронеже музыкантом, вокалистом и автором песен Юрием Клинских, более известным под псевдонимом Хой. 9 июня 1988 года состоялось первое выступление группы в «электрическом» составе в местном рок-клубе при ТЭЦ, там группа получила приз зрительских симпатий. Однако традиционно датой основания группы считается 5 декабря 1987 года, когда состоялось первое сольное выступление Юрия Клинских с репертуаром будущего «Сектор Газа» в воронежском рок-клубе. На сегодняшний день группа широко известна на территории всего бывшего СССР.
+
+                                                        <P>Название группы произошло от индустриального Левобережного района Воронежа, названного в народе в шутку «Сектором Газа» из-за обилия дымящих заводов. В этом районе и проживал Юрий Клинских, а также находился воронежский рок-клуб. Название «Сектор Газа» также было навеяно и популярностью одноимённого палестинского региона, ставшего «горячей точкой» и частым сюжетом советских СМИ той эпохи.
+                                                        <P><i>«         …ну, это чисто такое местное название в Воронеже, где был рок-клуб, к которому мы принадлежали, он находился в очень задымлённом районе, и я его так прозвал — "Сектор газа", и мы в этом клубе постоянно играли, а так как я жил там неподалёку в этом районе, группу я назвал также — "Сектор Газа". Чисто местное название, я ведь не думал тогда, что мы так раскрутимся, я думал, что мы поиграемся и на этом всё закончится, как и многие коллективы, тогда первые в 85—87 году, когда открылись рок-клубы, вы помните, было очень много команд довольно-таки интересных…
+                                                        <P>Юрий «Хой» Клинских »</i>
+
+                                                        
+                                                </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                
+                                        </tr>
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/Evanescence" class = "standardb_black" target="_blank">Wikipedia Evanescence</a> - <b>Evanescence</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_national_usa_rus.html#evanescence" class = "standardb_black" target="_blank">Evanescence</a> - На этом Вебсайте.
+                                                </td>                                   
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BA%D1%82%D0%BE%D1%80_%D0%93%D0%B0%D0%B7%D0%B0_%28%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0%29" class = "standardb_black" target="_blank">Wikipedia Сектор Газа (группа)</a> - <b>Сектор Газа</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_punk_ska_rus.html#sektor_gaza" class = "standardb_black" target="_blank">Сектор Газа</a> - На этом Вебсайте.
+                                                </td>                                           
+                                        </tr>
+                                        
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+										
+										
+										
+
+
+
+
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="12">The Doors</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Ника</td>
+                                        </tr>   
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/the_doors.png" alt="The Doors" title="The Doors" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                        <P><b>The Doors</b> (с англ. — «Двери») — американская <b>рок-группа</b>, созданная в 1965 году в Лос-Анджелесе, оказавшая сильное влияние на культуру и искусство 60-х годов. Загадочные, мистические, иносказательные тексты песен и яркий образ вокалиста группы, Джима Моррисона, сделали её едва ли не самой знаменитой и равно же противоречивой группой своего времени. После смерти в 1971 году Джима Моррисона оставшиеся музыканты продолжили выступать и записываться в формате трио, а в 1973 году группа прекратила своё существование. В общей сложности в США было реализовано 32 500 500 копий их альбомов. Группа продала более 100 миллионов альбомов по всему миру. The Doors стала первой американской группой, у которой было 8 золотых альбомов подряд. В 1993 году были введены в Зал славы рок-н-ролла.
+                                                        
+                                                </td>   
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/nika.jpg" alt="Ника" title="Ника" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+                                                                <P><b>Ника</b> (настоящее имя Ирина Николаевна, фамилия по мужу Мальгина) (род. 8 июня 1964) — популярная эстрадная певица, Заслуженная артистка России. Пик популярности пришёлся на 1990-е годы. Наиболее известные композиции: «Три хризантемы», «Секс-бомба», «Карие глаза», «Это не мой секрет», «Бумажные цветы», «Подари мне поцелуй».
+                                                                <P><b>В Википедии не указано какое-либо отношение Ники к готик-металлу, но стиль очень похож на тот, что у Within Temptation и Evanescence.</b>
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px; ">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/The_Doors" class = "standardb_black" target="_blank">Wikipedia The Doors</a> - <b>The Doors</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_psychedelic_rock_rus.html#doors" class = "standardb_black" target="_blank">The Doors</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/Ника_(певица)" class = "standardb_black" target="_blank">Wikipedia Ника (певица)</a> - <b>Ника</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_disco_rus.html#nika" class = "standardb_black" target="_blank">Ника</a> - На этом Вебсайте.
+                                                </td>
+                                        </tr>
+
+
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+										
+
+
+
+
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="13">Celine Dion</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Машина Времени</td>
+                                        </tr>   
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/dion.jpg" alt="Celine Dion" title="Celine Dion" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+
+														<P><b>Селин Мари Клодетт Дион</b> (фр. C&eacute;line Marie Claudette Dion, род. 30 марта 1968) — канадская певица. Родившаяся в многодетной семье в провинции Квебек, Дион в подростковом возрасте стала звездой во франкоязычном мире после того, как её менеджер и будущий муж Рене Анжелил заложил свой дом, чтобы профинансировать её первую запись. В 1990 году она выпустила англоязычный альбом Unison и утвердилась как певица в Северной Америке и других англоязычных регионах мира.
+
+                                                        
+                                                </td>   
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/mashina_vremeni.jpg" alt="Машина Времени" title="Машина Времени" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+															<P>«<b>Машина времени</b>» — советская и российская рок-группа. Основана Андреем Макаревичем и Сергеем Кавагоэ 27 мая 1969 года. Жанр творчества группы включает элементы классического рока, рок-н-ролла, блюза и бардовской песни. Автор абсолютного большинства текстов песен и бессменный лидер группы — Андрей Макаревич, авторы музыки — Андрей Макаревич, Александр Кутиков, Евгений Маргулис, Пётр Подгородецкий, Андрей Державин.
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px; ">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%BE%D0%BD,_%D0%A1%D0%B5%D0%BB%D0%B8%D0%BD" class = "standardb_black" target="_blank">Wikipedia Дион, Селин</a> - <b>Celine Dion</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_pop_rus.html#dion" class = "standardb_black" target="_blank">Celine Dion</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%BE%D0%BD,_%D0%A1%D0%B5%D0%BB%D0%B8%D0%BD" class = "standardb_black" target="_blank">Wikipedia Машина времени (группа)</a> - <b>Машина Времени</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_national_soviet_rus.html#mashina_vremeni" class = "standardb_black" target="_blank">Машина Времени</a> - На этом Вебсайте.
+                                                </td>
+                                        </tr>
+
+
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+										
+									
+
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="14">C. C. Catch</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Кино</td>
+                                        </tr>   
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/c_c_catch.jpg" alt="C. C. Catch" title="C. C. Catch" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+
+<P><b>Каролина Катарина Мюллер</b> (нем. Caroline Catharina M&uuml;ller; 31 июля 1964, Осс, Северный Брабант) — немецкая певица нидерландского происхождения, получившая известность под сценическим псевдонимом <b>C. C. Catch</b> (рус. Си Си Кетч). Исполняет песни на английском языке в стилях поп и диско. С 2007 года проживала в Лондоне.
+
+<br><br>
+<P><b>Дискография, Альбомы:</b>
+<P>&nbsp;&bull; 1986 — Catch the Catch (№ 6 — Германия, № 7 — Бельгия, № 2 — Югославия, № 8 — Швейцария)
+<P>&nbsp;&bull; 1986 — Welcome to the Heartbreak Hotel (№ 28 — Германия, № 15 — Бельгия, № 21 — Норвегия, № 14 — Югославия)
+<P>&nbsp;&bull; 1987 — Like a Hurricane (№ 30 — Германия, № 2 — Югославия)
+<P>&nbsp;&bull; 1988 — Big Fun (№ 53 — Германия, № 40 — Бельгия, № 22 — Югославия)
+<P>&nbsp;&bull; 1989 — Hear What I Say (№ 75 — Германия)
+
+                                                        
+                                                </td>   
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/kino.jpg" alt="Кино" title="Кино" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+«Кино» — одна из самых популярных советских рок-групп 1980-х годов. Лидером и автором практически всех текстов и музыки неизменно оставался Виктор Цой, после смерти которого коллектив, выпустивший в общей сложности за девять лет на студийных альбомах более ста песен, несколько сборников и концертных записей, а также большое количество неофициальных бутлегов, прекратил существование.
+
+Стилистически группа ушла от многих традиционных элементов русского рока, в частности вместо обычных ударных установок нередко использовались разнообразные программируемые эффекты, создаваемые посредством драм-машин, что порой придавало звучанию налёт «дискотечности» или «попсовости». Тематическая составляющая лирики на раннем этапе творчества отражает подростковую обыденность и драматические переживания по поводу любви, благодаря чему музыканты удостоились звания «новые романтики»; в более же поздних текстах героика и протест сочетаются с трагичностью мироощущения.
+
+                                                        
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px; ">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/C._C._Catch" class = "standardb_black" target="_blank">Wikipedia C. C. Catch</a> - <b>C. C. Catch</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_disco_rus.html#c_c_catch" class = "standardb_black" target="_blank">C. C. Catch</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D0%BD%D0%BE_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Wikipedia Кино (группа)</a> - <b>Кино</b> на Wikipedia.
+                                                </td>
+                                        </tr>
+
+
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+					
+
+
+
+
+
+
+
+                                        <tr>
+                                                <td width="50%" height="100%" class="table_cell_name_left"><a name="15">Infected Mushroom</a></td>
+                                                <td width="50%" height="100%" class="table_cell_name_right">Сергей Наговицын</td>
+                                        </tr>   
+                                        <tr>
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_left">
+                                                        <img src="icons/music/infected_mushroom.jpg" alt="Infected Mushroom" title="Infected Mushroom" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+
+<P><b>Infected Mushroom</b> — израильская электронная группа. Изначально в группе было два человека — Эрез Айзен и Амит Дувдевани. Позже к ним присоединились Эрез Нетз, Том Каннингхэм и Рогерио Жардим.
+
+<br><br>
+<P><b>Коллектив:</b>
+<P><b>Эрез Айзен</b> родился 8 сентября 1980 года и с ранних лет получил музыкальное образование. Уже в 4 года Эрез научился играть на органе, а в 8 лет начал обучаться игре на фортепиано в Хайфской Консерватории. В 11 лет решил попробовать себя в электронной музыке с помощью Impulse Tracker. С 16 лет сотрудничал с различными диджеями, в том числе с DJ Jorg в составе проекта Shiva Shidapu. Слово Shidapu появилось случайно — из-за помех при телефонном разговоре с Йоргом. Эрез хотел взять псевдоним Sidpao, но Йорг расслышал Shidapu.
+
+<P><b>Амит Дувдевани</b> родился 7 ноября 1974 года и получил схожее музыкальное образование. С семи лет начал играть на фортепиано, позже увлёкся тяжёлым металлом и панк-роком. Амит играл на синтезаторе и писал лирику для местной панк-группы Enzyme. На транс-тусовку Амит попал впервые в 1991 году за неделю до призыва в армию (где он получил прозвище Duvdev), что сильно изменило его жизнь. С тех пор он думал только о транс-музыке. После службы Амит провёл год в Индии, в основном в штате Гоа, что окончательно определило его направление в музыке.
+
+
+                                                        
+                                                </td>   
+                                                <td width="50%" height="100%"  align="left"  valign="top"  class="table_cell_right">
+                                                        <img src="icons/music/nagovitsyn.jpg" alt="Сергей Наговицын" title="Сергей Наговицын" vspace="5" hspace="5" align = "left" width="250" style="padding-right:5px;">
+
+<P><b>Сергей Борисович Наговицын</b> (22 июля 1968, Пермь (Закамск), СССР — 20 декабря 1999, Курган) — российский автор-исполнитель песен в жанре русский шансон и городской романс. 
+
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left1" STYLE="padding-left:10px; padding-right:10px; ">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right1" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <br><br>
+                                                        Ссылки:
+                                                </td>
+                                        </tr>
+                                                
+                                        <tr> 
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_left2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/Infected_Mushroom" class = "standardb_black" target="_blank">Wikipedia Infected Mushroom</a> - <b>Infected Mushroom</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_psychedelic_trance_eng.html#infected_mushroom" class = "standardb_black" target="_blank">Infected Mushroom</a> - На этом Вебсайте.
+                                                </td>
+                                                <td width="50%" height="100%" align="center" class="table_cell_links_right2" valign="top" STYLE="padding-left:10px; padding-right:10px;">
+                                                        <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B3%D0%BE%D0%B2%D0%B8%D1%86%D1%8B%D0%BD,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_black" target="_blank">Wikipedia Наговицын, Сергей Борисович</a> - <b>Сергей Наговицын</b> на Wikipedia.
+                                                        <br>
+                                                        <a href="music_chanson_rus.html#nagovitsyn" class = "standardb_black" target="_blank">Сергей Наговицын</a> - На этом Вебсайте.
+                                                </td>
+                                        </tr>
+
+
+
+                                        <!-- Separator -->
+                                        <tr><td></td><td></td></tr>
+										
+		
+	
+                                </table>
+
+
+                        </td>
+                        </tr>
+        
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+                                        31st of Jul, 2018.
+                                </td>
+                        </tr>
+                        </table>
+
+
+
+
+        </td>
+                </tr>
+
+
+                
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+        </tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+        <tr>
+          <td class="title_black" >
+            &copy; Urmas Repinski, urrimus@hotmail.com
+          </td>
+        </tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>

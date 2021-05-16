@@ -1,0 +1,956 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Домашняя страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="google-site-verification" content="v6u7i24jgVhRRKYDwtq6zl5T86g4v9C7nzJ_UYw1LiU" />
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+
+var menuHeight=23*44;
+var imgBgSrc="icons/background/programming_languages.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#ffffff"> 
+                <td  bgcolor="#ffffff" width="100%">
+                       <div class="nimetus2_white"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+                </td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('software_development_c++_eng.html' + window.location.hash);
+				} else {
+					window.location.href='software_development_c++_eng.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('software_development_c++_rus.html' + window.location.hash);
+				} else {
+					window.location.href='software_development_c++_rus.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+	<td bgcolor="#ffffff" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td align="center" class="title_gradient_white">Меню</td>
+	</tr>
+	<tr>
+		<td height="3px" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'rus', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Карта Сайта</div>
+        </td>
+        </tr>   
+ 
+        <tr>
+                <td align="center">
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_rus.html');
+                        } else {
+                                window.location.href='about_me_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Обо мне</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center">
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_rus.html');
+                        } else {
+                                window.location.href='about_work_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  О моей работе</div>
+        </td>
+        </tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('phd_rus.html');
+			} else {
+				window.location.href='phd_rus.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  О моём PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_rus.html');
+                        } else {
+                                window.location.href='links_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Ссылки</div>
+        </td>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'rus', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'music');"		  
+		  class="menu_not_selected_black">
+		  Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'rus', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'movies');"		  		  
+		  class="menu_not_selected_black">
+		  Фильмы</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'rus', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'series');"		  		  
+		  class="menu_not_selected_black">
+		  Сериалы</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'rus', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'games');"  
+		  class="menu_not_selected_black">
+		  Игры</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'rus', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'rus', 'books');"  
+		  class="menu_not_selected_red">
+		  Книги</div>
+        </td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'rus', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'rus', 'photos');"  
+		  class="menu_not_selected_red">
+		  Фото/Картинки</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'rus', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('radio_rus.html');
+			} else {
+				window.location.href='radio_rus.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Радио</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'rus', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font>
+ </div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'rus', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'rus', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Анекдоты</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_rus.html');
+                        } else {
+                                window.location.href='heffalump_rus.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>              		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'rus', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Вещества Для Расслабления</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'rus', 'software');"  
+		  class="menu_selected">
+		  Разработка Программ</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_1"
+		  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'software');"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 5px;">
+		  &#9679; Обработка Аудио/Видео</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_2"
+		  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'software');"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 5px;">
+		  &#9679; Обработка Данных</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_3"
+		  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'software');"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 5px;">
+		  &#9679; Рисование</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_4"
+		  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'software');"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 5px;">
+		  &#9679; IDE</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5"
+		  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'rus', 'software');"  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; Языки Программирования</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_visual_basic_rus.html');
+			} else {
+				window.location.href='software_development_visual_basic_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 15px;">
+		  &bull; Visual Basic</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('software_development_c++_rus.html');
+			} else {
+				window.location.href='software_development_c++_rus.html';
+			};"  
+		  class="menu_selected"
+		  style="padding-left: 15px;">
+		  &bull; C++</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_fortran_rus.html');
+			} else {
+				window.location.href='software_development_fortran_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 15px;">
+		  &bull; Fortran</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_javascript_rus.html');
+			} else {
+				window.location.href='software_development_javascript_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 15px;">
+		  &bull; Java/JavaScript</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5_5"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_html_rus.html');
+			} else {
+				window.location.href='software_development_html_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 15px;">
+		  &bull; Html</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_laravel_rus.html');
+			} else {
+				window.location.href='software_development_laravel_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 15px;">
+		  &bull; Laravel</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5_7"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_php_rus.html');
+			} else {
+				window.location.href='software_development_php_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 15px;">
+		  &bull; PHP/MySql</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5_8"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_python_rus.html');
+			} else {
+				window.location.href='software_development_python_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 15px;">
+		  &bull; Python</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_5_9"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_ruby_on_rails_rus.html');
+			} else {
+				window.location.href='software_development_ruby_on_rails_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 15px;">
+		  &bull; Ruby On Rails</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_6"
+		  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'software');"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 5px;">
+		  &#9679; Обработка Текста</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_7"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_it_movies_rus.html');
+			} else {
+				window.location.href='software_development_it_movies_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 5px;">
+		  &#9679; Фильмы Про IT</div>
+        </td>
+	</tr>			
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_18_8"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="
+		    this.className='menu_not_selected_white';
+			if (event.ctrlKey==1){
+				window.open('software_development_it_music_rus.html');
+			} else {
+				window.location.href='software_development_it_music_rus.html';
+			};"  
+		  class="menu_not_selected_white"
+		  style="padding-left: 5px;">
+		  &#9679; Музыка Про IT</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'rus', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Сатанизм</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_rus.html');
+                        } else {
+                                window.location.href='satanism_wicca_rus.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Викка</div>
+        </td>
+        </tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_rus.html');
+			} else {
+				window.location.href='falsifiability_rus.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Фальсифицируемость</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'rus', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Психология</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'rus', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Страны</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('totalitarianism_rus.html');
+			} else {
+				window.location.href='totalitarianism_rus.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Тоталитаризм</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'rus', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Деятели</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'rus', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'news');"               
+                  class="menu_not_selected_red">
+                  Новости</div>
+        </td>
+        </tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#ffffff" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#ffffff" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ffffff">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ffffff">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_white" style="width: 530px;"><a name="welcome">Разработка Программ &blacktriangleright; Языки Программирования &blacktriangleright; C++</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div 550 -->
+<div id="scrollDiv" style="height:1012px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #A9A9A9 1px solid;  background-color: #ffffff">
+
+
+        <tr align="center" >
+		<td style = "border: #A9A9A9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="aboutme">C++</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" STYLE="padding-left:10px; padding-right:10px;">
+
+					<img src="icons/software_development/c++.png" alt="C++" title="C++" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>C++</b> — компилируемый, статически типизированный язык программирования общего назначения.
+
+<P>Поддерживает такие парадигмы программирования, как процедурное программирование, объектно-ориентированное программирование, обобщённое программирование, обеспечивает модульность, раздельную компиляцию, обработку исключений, абстракцию данных, объявление типов (классов) объектов, виртуальные функции. Стандартная библиотека включает, в том числе, общеупотребительные контейнеры и алгоритмы. C++ сочетает свойства как высокоуровневых, так и низкоуровневых языков. В сравнении с его предшественником — языком C, — наибольшее внимание уделено поддержке объектно-ориентированного и обобщённого программирования.
+
+<P><b>C++</b> широко используется для разработки программного обеспечения, являясь одним из самых распространенных, наиболее часто используемых языков программирования. Область его применения включает создание операционных систем, разнообразных прикладных программ, драйверов устройств, приложений для встраиваемых систем, высокопроизводительных серверов, а также развлекательных приложений (игр). Существует множество реализаций языка C++, как бесплатных, так и коммерческих и для различных платформ. Например, на платформе x86 это GCC, Visual C++, Intel C++ Compiler, Embarcadero (Borland) C++ Builder и другие. C++ оказал огромное влияние на другие языки программирования, в первую очередь на Java и C#.
+
+<P>Синтаксис C++ это дальнейшее развитие языка C. Одним из принципов разработки было сохранение совместимости с C. Тем не менее, C++ не является в строгом смысле надмножеством C; множество программ, которые могут одинаково успешно транслироваться как компиляторами C, так и компиляторами C++, довольно велико, но не включает все возможные программы на C.
+
+<br><br>
+<P><b>Особенности:</b>
+
+<P>С одной стороны, С++ является потомком Симулы, которую Алан Кэй определил как «Алгол с классами», и потому будет актуальной оценка С++ в сравнении с другими языками из семейства потомков Алгола (Basic, Pascal, Java, C#, Visual Basic, Delphi, D, Oberon и пр.). С другой стороны, С++ претендует на мультипарадигменность и универсальную применимость (в отличие от Си, ориентированного на очень узкий круг задач), и используется в промышленности намного шире других потомков Алгола, и потому будет актуальной оценка С++ в сравнении со всем многообразием применяемых языков, включая и Си. Во избежание повторений, оценки обычно совмещаются.
+
+<P>С++ — язык, складывающийся эволюционно. В отличие от языков с формальным определением семантики (см. Спецификация языков программирования), каждый элемент С++ заимствовался из других языков отдельно и независимо от остальных элементов (ничто из предложенного С++ за всю историю его развития не было новшеством в Computer Science), что сделало язык чрезвычайно сложным, со множеством дублирующихся и взаимно противоречивых элементов, блоки которых основаны на разных формальных базах. В этом отношении С++ повторяет путь PL/1, но, в отличие от последнего, длительное повсеместное использование С++ обеспечил выбор языка Си в качестве отправной точки.
+
+<P>Критики С++ не противопоставляют ему какой-либо конкретный язык, а наоборот, утверждают, что для всякого случая применения С++ всегда существует альтернативный инструментарий, позволяющий решить ту же задачу более эффективно и качественно. В свою очередь, сторонники С++ считают некорректным сравнивать различные аспекты С++ с совершенно различными языками, так как общий набор средств и возможностей С++ существенно шире, чем в большинстве языков, с которыми проводится сравнение, и сама по себе широта возможностей, на их взгляд, является веским оправданием несовершенства каждой отдельно взятой возможности. Более того, по их мнению, высокая совместимость с Си является одной из принципиальных черт языка, и потому все недостатки С++ оправданы преимуществами, предоставляемыми этой совместимостью (см. раздел Философия C++). При этом сторонники C++ игнорируют подтверждённый исследованиями факт, что декомпозиция проекта на несколько разных языков, наиболее пригодных для своих мини-задач, (или просто использование одного наилучшим образом подходящего языка) сокращает на порядок общую трудоёмкость разработки при одновременном повышении на порядки основных показателей качества программирования. По этой причине критики не соглашаются рассматривать недостатки С++ по отдельности и тем более делать поправку на «универсальность», утверждая, что если задача требует одновременно высокоуровневых и низкоуровневых возможностей, то использование Си совместно с языками, из которых заимствованы отсутствующие в Си возможности C++, будет более разумным, чем внедрение этих возможностей в сам Си и использование полученного языка резко возросшей степени внутренней сложности.
+
+<P>Таким образом, одно и то же свойство языка (совмещение большого числа элементов разных языков и отсутствие конкретной целевой ниши применения) рассматривается сторонниками как «главное достоинство», а критиками — как «главный недостаток».
+
+<P>Следует отметить, что рассмотрение элементов языка по отдельности означает отказ от рассмотрения языка как системы, а следовательно, и от ожидания синергизма,— что делает ограниченным (конечным) потенциал роста сложности абстракций, которые можно выразить посредством этого языка, и соответственно сужает спектр реализуемых на нём программных систем.
+
+<P>С++ заявляется как кроссплатформенный: стандарт языка накладывает минимальные требования на ЭВМ для запуска скомпилированных программ. На практике, для написания портируемого кода на С++ требуется огромное мастерство и опыт, и «небрежные» коды на С++ с высокой вероятностью могут оказаться непортируемыми. Тонкое владение С++ в принципе может сделать код на С++ столь же портируемым, что и код на Си (хотя, по мнению Линуса Торвальдса, С++ при этом фактически сократится до своего подмножества Си). Однако, критики С++ утверждают, что изучение и использование одновременно всех языков, противопоставляемых С++ (не вызывающих серьёзных проблем при портировании), в сумме требует примерно тех же интеллекта, усилий и временных затрат, что и изучение и использование одного только С++ на высококлассном уровне — в связи с чем становится актуальной также оценка порога вхождения и результативности (производительности и качества труда программистов).
+
+<P>Многие аспекты в спорах «за и против С++» обусловлены расхождением в сущностном понимании процесса стандартизации. Б.Страуструп и его последователи считают, что «стандарт — это контракт между программистами, разрабатывающими программы на языке, и программистами, разрабатывающими компиляторы языка». Каждый новый стандарт С++ являлся декларацией того, что отныне должно быть реализовано во всех компиляторах — при том, что С++ имеет естественное определение семантики, то есть потенциально зависим от реализации (стандарт содержит множество пунктов, определённых как «implementation-defined»). Традиционно, успешная стандартизация в технике представляет собой формальный перевод стандарта из статуса де-факто в статус де-юре (подытоживание общепринятых, устоявшихся знаний для обеспечения надёжной внутриотраслевой совместимости). Все противопоставляемые С++ языки программирования, если проходили процедуру стандартизации (что не обязательно для портируемости), то лишь после многолетней апробации на практике; при этом все они изначально имеют формальное определение семантики, так что накапливающиеся к моменту стандартизации изменения от первой версии языка оказываются не принципиальны. Теоретически эти определения стандартизации тождественны. На практике определение Страуструпа согласуется с традиционным лишь при условии, что нет абсолютно никаких препятствий против немедленного и беспрекословного подчинения статуса де-факто декларированному де-юре — то есть если абсолютно все компиляторы реализуют поддержку нового стандарта сразу после его выхода и со 100 % соответствием ему, и что новый стандарт не отменяет никаких положений старого, кроме признанных убыточными или вредоносными. Так может происходить лишь в условиях полного отсутствия человеческого фактора (иначе говоря, при отсутствии программистов как таковых). На практике именно этим и обусловлено значительное отставание реальной кроссплатформенности С++ от заявленной разработчиками стандарта и противоречивость предлагаемых возможностей. Сторонники С++ считают взгляд Страуструпа на стандартизацию более практико-ориентированным и принимают порождаемые им проблемы за должное.
+
+
+<br><br>
+<P><b>Достоинства:</b>
+
+<P>C++ содержит средства разработки программ контролируемой эффективности для широкого спектра задач, от низкоуровневых утилит и драйверов до весьма сложных программных комплексов. В частности:
+
+<P>&nbsp;&bull; Высокая совместимость с языком Си : код на Си может быть с минимальными переделками скомпилирован компилятором C++. Внешнеязыковой интерфейс является прозрачным, так что библиотеки на Си могут вызываться из C++ без дополнительных затрат, и более того — при определённых ограничениях код на С++ может экспортироваться внешне не отличимо от кода на Си (конструкция extern "C").
+<P>&nbsp;&bull; Как следствие предыдущего пункта — вычислительная производительность. Язык спроектирован так, чтобы дать программисту максимальный контроль над всеми аспектами структуры и порядка исполнения программы. Один из базовых принципов С++ — «не платишь за то, что не используешь» (см. Философия C++) — то есть ни одна из языковых возможностей, приводящая к дополнительным накладным расходам, не является обязательной для использования. Имеется возможность работы с памятью на низком уровне.
+<P>&nbsp;&bull; Поддержка различных стилей программирования: традиционное императивное программирование (структурное, объектно-ориентированное), обобщённое программирование, функциональное программирование, порождающее метапрограммирование.
+<P>&nbsp;&bull; Автоматический вызов деструкторов объектов в адекватном порядке (обратном вызову конструкторов) упрощает и повышает надёжность управления памятью и другими ресурсами (открытыми файлами, сетевыми соединениями, соединениями с базами данных и т. п.).
+<P>&nbsp;&bull; Перегрузка операторов позволяет кратко и ёмко записывать выражения над пользовательскими типами в естественной алгебраической форме.
+<P>&nbsp;&bull; Имеется возможность управления константностью объектов (модификаторы const, mutable, volatile). Использование константных объектов повышает надёжность и служит подсказкой для оптимизации. Перегрузка функций-членов по признаку константности позволяет определять выбор метода в зависимости цели вызова (константный для чтения, неконстантный для изменения). Объявление mutable позволяет сохранять логическую константность при виде извне кода, использующего кэши и ленивые вычисления.
+<P>&nbsp;&bull; Шаблоны C++ дают возможность построения обобщённых контейнеров и алгоритмов для разных типов данных. Попутно шаблоны дают возможность производить вычисления на этапе компиляции.
+<P>&nbsp;&bull; Возможность расширения языка для поддержки парадигм, которые не поддерживаются компиляторами напрямую. Например, библиотека Boost.Bind позволяет связывать аргументы функций. Используя шаблоны и множественное наследование, можно имитировать классы-примеси и комбинаторную параметризацию библиотек. Такой подход применён в библиотеке Loki, класс SmartPtr которой позволяет, управляя всего несколькими параметрами времени компиляции, сгенерировать около 300 видов «умных указателей» для управления ресурсами.
+<P>&nbsp;&bull; Возможность встраивания предметно-ориентированных языков программирования в основной код. Такой подход использует, например библиотека Boost.Spirit, позволяющая задавать EBNF-грамматику парсеров прямо в коде C++. Boost.Spirit реализует рекурсивно-нисходящий алгоритм, что накладывает соответствующие ограничения (такие как недопустимость левой рекурсии).
+<P>&nbsp;&bull; Доступность. Для С++ существует огромное количество учебной литературы, переведённой на всевозможные языки. Язык имеет высокий порог вхождения, но среди всех языков такого рода обладает наиболее широкими возможностями.
+
+<br><br>
+<P><b>Недостатки и критика:</b>
+
+<P>В погоне за быстротой выполнения программ язык С, С++ и прочие С-подобные языки упустили самое главное, для чего была придумана идея языков высокого уровня - абстрагирование от сложностей машинного языка и приближение компиляторов к естественным (человеческим) языкам. С-подобные языки изначально этим похвастаться не могли.
+
+<P>Сторонники С++ позиционируют его как «универсально применимый» — вплоть до отождествления «применимости» с Тьюринг-полнотой (что является ошибкой) и одновременно с оптимальностью, то есть обоснованностью выбора его в качестве инструмента для данной конкретной задачи; при этом ни одной конкретной задачи не обозначается, а наоборот, делается утверждение, что С++ подходит для любой задачи (что теоретически невозможно). Однако С++ не отвечает многим требованиям качества программирования, не предъявляемым к Си, но важным для широкого спектра задач прикладного программирования. В частности, критики полагают, что:
+
+<P>&nbsp;&bull; Плохо продуманный синтаксис сужает спектр применимости языка (что, с учётом претензий на «универсальность», делает его крайне неудобным в некоторых задачах).
+<P>&nbsp;&bull; Унаследованные от Си низкоуровневые свойства существенно тормозят и затрудняют прикладную разработку.
+<P>&nbsp;&bull; Язык не содержит многих важных возможностей.
+<P>&nbsp;&bull; Язык содержит опасные возможности, существенно снижающие качество программ сразу по всем показателям.
+<P>&nbsp;&bull; Производительность труда программистов на языке оказывается неоправданно низка, а продукт труда — низкокачественным.
+
+<P>В то же время, критике подвергается и применимость С++ в низкоуровневой разработке в качестве «улучшенного Си».
+
+<P>Многие конкретные недостатки вытекают непосредственно из свойств семантики системы типов языка: она не отвечает требованиям полноты и ортогональности, при этом обладает избыточностью и предусматривает понятие «приведения типов» (как явно, так и неявно). В отношении типизации, С++ чаще всего противопоставляются либо типизируемые по Хиндли-Милнеру, либо динамически типизируемые языки. Начиная со стандарта C++0x, в языке появилась возможность автоматического выведения типов, из-за чего возникло заблуждение, что отныне «С++ поддерживает вывод типов по Хиндли-Милнеру». Однако, системе типов С++ противопоставляется не сам механизм выведения типов, а полиморфная семантика системы типов Хиндли-Милнера, предусматривающая в том числе и механизм выведения, но не как главное преимущество. Существуют примеры развития Си по пути типизации Хиндли-Милнера (см. раздел Влияние и альтернативы).
+
+<P>Критика C++ с позиций только ООП (без сравнения методологий проектирования) с описанием вреда от влияния C++ на другие языки приведена в работе. В случае языково-ориентированного проектирования программ применимость С++, как и при использовании любых других языков, ограничивается нижним уровнем системы — реализацией предметно-специфичных языков (DSL) первого уровня. Для этой задачи С++ объективно является далеко не оптимальным выбором (см. раздел Отсутствие возможностей). В случае применения методологии «чистого встраивания» DSL в язык общего назначения (которая является традиционной для Lisp/ML, и для которой в С++ потенциально предназначена библиотека Boost.Spirit), с т.з. воплощения изоморфизма Карри-Ховарда выбор С++ в качестве базы был бы абсурден (см. ниже). Наиболее ортодоксальные противники С++ утверждают, что этот язык нельзя использовать в реальной индустрии вообще, и его существование имеет лишь педагогический смысл — в качестве образцово-показательной коллекции антипаттернов в задаче разработки языков программирования.
+				
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" STYLE="padding-left:10px; padding-right:10px;">
+				        <br><br>
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/C%2B%2B" class = "standardb_white" target="_blank">Wikipedia C++</a> - <b>C++</b> на Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" STYLE="padding-left:10px; padding-right:10px;">
+					28th of Feb, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_white" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

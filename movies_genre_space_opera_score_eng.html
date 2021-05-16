@@ -1,0 +1,2224 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Series Sort -->
+<script src="scripts/showSeries.js"></script>
+<!-- End of Seriers Sort -->
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*41;
+var imgBgSrc="icons/background/space_opera.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_space_opera_score_eng.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_space_opera_score_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_space_opera_score_rus.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_space_opera_score_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('phd_eng.html');
+			} else {
+				window.location.href='phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+	
+	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_not_selected_black">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_selected">
+		  Movies</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; By Actors</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; By Genre</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_action_horror_score_eng.html');
+			} else {
+				window.location.href='movies_genre_action_horror_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Action Horror</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_body_horror_score_eng.html');
+			} else {
+				window.location.href='movies_genre_body_horror_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Body Horror</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_dystopia_score_eng.html');
+			} else {
+				window.location.href='movies_genre_dystopia_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Dystopia</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_pilot_score_eng.html');
+			} else {
+				window.location.href='movies_genre_pilot_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Television Pilot</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_7"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_post_apocalyptic_score_eng.html');
+			} else {
+				window.location.href='movies_genre_post_apocalyptic_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Post-Apocalyptic</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_9"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_short_score_eng.html');
+			} else {
+				window.location.href='movies_genre_short_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Short</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_10"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_sitcom_score_eng.html');
+			} else {
+				window.location.href='movies_genre_sitcom_score_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Situation Comedy</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_11"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_space_opera_score_eng.html');
+			} else {
+				window.location.href='movies_genre_space_opera_score_eng.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 15px;">
+		  &bull; Space Opera</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_3"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Animation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_mockbuster_eng.html');
+			} else {
+				window.location.href='movies_mockbuster_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Mockbuster</div>
+        </td>
+	</tr>		
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_5"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Superhero</div>
+        </td>
+	</tr>
+
+
+
+
+<tr>
+		<td align="left" >
+		  <div id="menu_8_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_not_satanic_eng.html');
+			} else {
+				window.location.href='movies_not_satanic_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &bull; Not Satanic</div>
+        </td>
+	</tr>	
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"  
+		  class="menu_not_selected_black">
+		  Series</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('radio_eng.html');
+			} else {
+				window.location.href='radio_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Radio</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Psychology</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table with search, name and languages -->
+        <tr class="title_black"> 
+                <td  class="title_black" style="width: 500px;"><a name="series">Movies &blacktriangleright; Space Opera</a></td>
+				<td bgcolor="#e2e2e2" width="3"></td>
+				<td  style="width: 150px;">
+				    Sort By:
+				</td>
+
+				<td style="width: 22px;">
+				    <div id="sortby_name" align="center" 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="mouseOutSortByName('score');"
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('movies_genre_space_opera_eng.html'+ window.location.hash);
+                        } else {
+                                window.location.href='movies_genre_space_opera_eng.html'+ window.location.hash;
+                        };"
+                        class="flag_not_selected"
+                    >
+<img src="scripts/contents/icons/sortby/sortby_name.png" alt="Name" title="Name" width="22" height="18"  style="display: block;"/>
+                    </div>
+				</td>
+
+				<td style="width: 22px;">
+				    <div id="sortby_score" align="center" 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="mouseOutSortByScore('score');"
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('movies_genre_space_opera_score_eng.html'+ window.location.hash);
+                        } else {
+                                window.location.href='movies_genre_space_opera_score_eng.html'+ window.location.hash;
+                        };"
+                        class="flag_selected"
+                    >
+                        <img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18" style="display: block;"/>
+                    </div>
+				</td>
+				
+				
+				
+        </tr>
+
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:943px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+
+		
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="space_opera">Space Opera</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/space_opera.jpg" alt="Space Opera" title="Space Opera" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Space Opera</b> is a subgenre of science fiction that emphasizes space warfare, melodramatic adventure, interplanetary battles, as well as chivalric romance, and often risk-taking. Set mainly or entirely in outer space, it usually involves conflict between opponents possessing advanced abilities, futuristic weapons, and other sophisticated technology. The term has no relation to music, but is instead a play on the terms "soap opera" and "horse opera", the latter of which was coined during the heyday of silent movies to indicate clich&eacute;d and formulaic Western movies. Space operas emerged in the 1930s and they continue to be produced in literature, film, comics, and video games.
+
+<P>Notable space opera novels include the Foundation series (1942–99) by Isaac Asimov et al. and the Ender's Game series (1985–present) by Orson Scott Card. An early notable space opera film was Flash Gordon (1936–present) created by Alex Raymond. In the late 1970s, the Star Wars franchise (1977–present) created by George Lucas brought a great deal of attention to the genre.
+
+
+<br><br>
+<P><b>Definition:</b>
+
+<P>Space opera is defined as an adventure science-fiction story.
+
+<P>The term "space opera" was coined in 1941 by fan writer (and later author) Wilson Tucker, in a fanzine article, as a pejorative term. At the time, serial radio dramas in the US had become popularly known as soap operas because many were sponsored by soap manufacturers. Tucker defined space opera as the science fiction equivalent: a "hacky, grinding, stinking, outworn, spaceship yarn". Even earlier, the term horse opera had come into use as a term for Western films. In fact, some fans and critics have noted that the plots of space operas have sometimes been taken from horse operas and simply translated into an outer space environment, as famously parodied on the back cover of the first issue of Galaxy Science Fiction. Still, during the late '20s and early '30s, when the stories were printed in science-fiction magazines, the stories were often referred to as "super-science epics".
+
+<P>Beginning in the 1960s, and widely accepted by the 1970s, the space opera was redefined, following Brian Aldiss' definition in Space Opera (1974) as (in the paraphrase Hartwell and Cramer) "the good old stuff". Yet soon after his redefinition, it began to be challenged, for example, by the editorial practice and marketing of Judy-Lynn del Rey and in the reviews of her husband and colleague Lester del Rey. In particular, they disputed the claims that space operas were obsolete, and Del Rey Books labeled reissues of earlier work of Leigh Brackett as space opera. By the early 1980s, space operas—adventure stories set in space—were again redefined, and the label was attached to major popular culture works such as Star Wars. The term space opera began to be recognized only in the early 1990s as a legitimate genre of science fiction. Hartwell and Cramer define space opera as "colorful, dramatic, large-scale science fiction adventure, competently and sometimes beautifully written, usually focused on a sympathetic, heroic central character and plot action, and usually set in the relatively distant future, and in space or on other worlds, characteristically optimistic in tone. It often deals with war, piracy, military virtues, and very large-scale action, large stakes."
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Space_opera" class = "standardb_black" target="_blank">Wikipedia Space Opera</a> - <b>Space Opera</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					05th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="age_of_tomorrow">Age of Tomorrow</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/age_of_tomorrow.jpg" alt="Age of Tomorrow" title="Age of Tomorrow" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Age of Tomorrow
+
+<P><b>Storyline:</b> Mankind must fight to survive as Earth is invaded by hostile UFOs bent on destroying the planet. As the epic battle wages on, astronauts sneak aboard the mothership where they discover a portal to the aliens' home world. They manage to alert Earth before they are brutally murdered. Left with no other choice, Earth sends an elite military team of science and combat specialists through the portal where they attempt to stop the invasion from the inside out. But is the battle already lost for humanity?
+
+<P><b>Genres:</b> Action, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Kelly Hu, Anthony Marks, Robert Picardo
+
+<P><b>Director:</b> James Kondelik
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 90 min
+
+<P><b>Release:</b> 10 June 2014 (USA)
+
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt3677466/" class = "standardb_black" target="_blank">IMDb Age of Tomorrow (Video 2014)</a> - <b>Age of Tomorrow</b> on IMDb.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=V8nqhaNZMT4" class = "standardb_black" target="_blank">Age of Tomorrow</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					16th of Jun, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="battle_in_space">Battle in Space: The Armada Attacks</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/battle_in_space.jpg" alt="Battle in Space: The Armada Attacks" title="Battle in Space: The Armada Attacks" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Battle in Space: The Armada Attacks
+
+<P><b>Storyline:</b> A series of shorts depicting a future in 2420 after aliens and powerful space wizards enslaved human villages until a group of rebels organize a counter attack against their alien overlords by piloting fully loaded spaceships.
+
+<P><b>Genres:</b> Action, Sci-Fi
+
+<P><b>Actor:</b> Declan Churchill Carter, Philip Cristian Claassen, Tom Farrah
+
+<P><b>Director:</b> Andrew Jaksch, Lukas Kendall
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 90 min
+
+<P><b>Release:</b> 12 January 2021 (USA)
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt13057076/" class = "standardb_black" target="_blank">IMDb Battle in Space: The Armada Attacks (2021)</a> - <b>Battle in Space: The Armada Attacks</b> on IMDb.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=UDFTh6DeXkM" class = "standardb_black" target="_blank">Battle in Space: The Armada Attacks</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					17th of Apr, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="beyound">The Beyound</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/beyound.jpg" alt="The Beyound" title="The Beyound" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> The Beyond
+
+<P><b>Storyline:</b> Set in 2019, The Beyond chronicles the groundbreaking mission which sent astronauts - modified with advanced robotics, through a newly discovered worm hole known as the Void. When the mission returns unexpectedly, the space agency races to discover what the astronauts encountered on their first of its kind interstellar space journey.
+
+<P><b>Genres:</b> Drama, Sci-Fi
+
+<P><b>Actor:</b> Jane Perry, Nigel Barber, Noeleen Comiskey
+
+<P><b>Director:</b> Hasraf Dulull (as Hasraf 'HaZ' Dulull) 
+
+<P><b>Country:</b> UK
+
+<P><b>Duration:</b> 103 min
+
+<P><b>Release:</b> 9 January 2018 (UK)
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt5723416/" class = "standardb_black" target="_blank">IMDb The Beyound (2017)</a> - <b>The Beyound</b> on IMDb.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=xQE7NGkJZHs" class = "standardb_black" target="_blank">The Beyound</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					03rd of Feb, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="cosmos">Cosmos</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/cosmos2.jpg" alt="Cosmos" title="Cosmos" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Cosmos
+
+<P><b>Storyline:</b> Cosmos explores the thrilling first hours of first contact when three astronomers accidentally intercept what they believe to be a faint, coded signal from a distant alien civilisation.
+
+<P><b>Genres:</b> Adventure, Mystery, Sci-Fi
+
+<P><b>Actor:</b> Tom England, Joshua Ford, Arjun Singh Panam
+
+<P><b>Director:</b> Elliot Weaver, Zander Weaver
+
+<P><b>Country:</b> UK
+
+<P><b>Duration:</b> 128 min
+
+<P><b>Release:</b> 14 July 2019 (UK)
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt4477292/" class = "standardb_black" target="_blank">IMDb Cosmos (2019)</a> - <b>Cosmos</b> on IMDb.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=b95XIREFJwo" class = "standardb_black" target="_blank">Cosmos</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					06th of Dec, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="forsaken">Forsaken (rus. Пришелец)</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/forsaken.jpg" alt="Forsaken (rus. Пришелец)" title="Forsaken (rus. Пришелец)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Forsaken</b> (Russian: Пришелец) is a 2018 Russian science fiction film directed by Aleksey Kulikov.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Forsaken_(2018_film)" class = "standardb_black" target="_blank">Wikipedia Forsaken (2018 film)</a> - <b>Forsaken (rus. Пришелец)</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=oNvx_n3EkAM" class = "standardb_black" target="_blank">Forsaken (rus. Пришелец)</a> - Official Trailer (rus.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14th of Nov, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+		
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="jupiter_ascending">Jupiter Ascending</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/jupiter_ascending.jpeg" alt="Jupiter Ascending" title="Jupiter Ascending" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Jupiter Ascending</b> is a 2015 American–Australian space opera film written, produced, and directed by The Wachowskis. Starring Mila Kunis, Channing Tatum, Sean Bean and Eddie Redmayne, the film is centered on Jupiter Jones (Kunis), an ordinary cleaning woman, and Caine Wise (Tatum), an interplanetary warrior who informs Jones that her destiny extends beyond Earth. Supporting cast member Douglas Booth has described the film's fictional universe as a cross between The Matrix and Star Wars, while Kunis identified indulgence and consumerism as its underlying themes.
+
+<P>The film was co-produced by Grant Hill, who acted as executive producer on The Matrix Reloaded and The Matrix Revolutions and as producer on V for Vendetta, Speed Racer, Ninja Assassin and Cloud Atlas, making Jupiter Ascending his seventh collaboration with the Wachowskis. Several more longstanding Wachowski collaborators since the creation of The Matrix films have contributed to the picture, including production designer Hugh Bateup, visual effects supervisor Dan Glass, visual effects designer John Gaeta, supervising sound editor Dane Davis and costume designer Kym Barrett. Other notable past collaborators include Speed Racer's composer Michael Giacchino, Cloud Atlas director of photography John Toll along with its editor Alexander Berner and hair and make-up designer Jeremy Woodhead, who worked on both.
+
+<P>Although critics praised the visuals, world-building, Michael Giacchino's musical score, and originality, the general attitude toward the film was negative, with most criticism focused on incoherence in the screenplay, Eddie Redmayne's melodramatic performance, the characterization and an over-reliance on special effects. Despite this, the film has found a more positive response, particularly among a niche of female science fiction fans who appreciated the film's campiness and the film's deviation from typical gender norms in a genre that is traditionally male-centered.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Jupiter_Ascending" class = "standardb_black" target="_blank">Wikipedia Jupiter Ascending</a> - <b>Jupiter Ascending</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=t4ZzMkDLjWI" class = "standardb_black" target="_blank">Jupiter Ascending</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					05th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="incoming">Incoming</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/incoming.jpeg" alt="Incoming" title="Incoming" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Incoming
+
+<P><b>Storyline:</b> The International Space Station is now a prison - the ultimate black site. No one's getting out. And no one knows it's there. But when the imprisoned terrorists take over the Station and turn it into a missile aimed at Moscow, only a shuttle pilot and a rookie doctor can stop them. Their task is complicated by a rogue CIA agent (Scott Adkins) who has his own plans for the station and the terrorists within.
+
+<P><b>Genres:</b> Action, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Scott Adkins, Aaron McCusker, Michelle Lehane
+
+<P><b>Director:</b> Eric Zaragoza
+
+<P><b>Country:</b> Serbia | USA
+
+<P><b>Duration:</b> 89 min
+
+<P><b>Release:</b> 25 May 2018 (Germany)
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt6678874/" class = "standardb_black" target="_blank">IMDb Incoming (2018)</a> - <b>Incoming</b> on IMDb.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=klqZn-HC0Cg" class = "standardb_black" target="_blank">Incoming</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					25th of Dec, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="moontrap">Moontrap: Target Earth</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/moontrap.jpg" alt="Moontrap: Target Earth" title="Moontrap: Target Earth" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Moontrap: Target Earth
+
+<P><b>Storyline:</b> A long forgotten ancient spacecraft discovered on Earth. Investigations carried out by Scout transport her to the moon whereupon she meets the impressive machines preserving the wisdom of that long lost civilization.
+
+<P><b>Genres:</b> Action, Adventure, Sci-Fi
+
+<P><b>Actor:</b> Tarick Salmaci, Niki Spiridakos, Sarah Butler
+
+<P><b>Director:</b> Robert Dyke
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 85 min
+
+<P><b>Release:</b> 7 February 2017 (USA)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt3705822/" class = "standardb_black" target="_blank">IMDb Moontrap: Target Earth (2017)</a> - <b>Moontrap: Target Earth</b> on IMDb.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=6dyaa2A7agk" class = "standardb_black" target="_blank">Moontrap: Target Earth</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					02nd of Jul, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="project_m">Project-M</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/project_m.jpg" alt="Project-M" title="Project-M" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Project-M
+
+<P><b>Storyline:</b> Four astronauts have to stay 1000 days in a space station around Earth in order to prove that a trip to Europa, one of Jupiter's moon, is possible. The experience goes well until something happens on earth.
+
+<P><b>Genres:</b> Drama, Sci-Fi
+
+<P><b>Actor:</b> Jean-Nicolas Verreault, Julie Perreault, Julien Deschamps Jolin
+
+<P><b>Director:</b> Eric Piccoli
+
+<P><b>Country:</b> Canada
+
+<P><b>Duration:</b> 98 min
+
+<P><b>Release:</b> 3 February 2015 (Japan)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt3700038/" class = "standardb_black" target="_blank">IMDb Project-M</a> - <b>Project-M</b> on IMDb.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=j2wOC3-lJEY" class = "standardb_black" target="_blank">Project-M</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of Mar, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+		
+	
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="space_station_76">Space Station 76</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/space_station_76.jpg" alt="Space Station 76" title="Space Station 76" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Space Station 76</b> is a 2014 American science fiction dark comedy film, directed by Jack Plotnick, and co-written by Plotnick, Jennifer Elise Cox, Sam Pancake, Kali Rocha, and Michael Stoyanov.
+
+<P>It is the first film directed by Plotnick. He developed the script through improvisation sessions at his home with some of his favorite actors. The film was released in select theaters on September 19, 2014 then through Video-On-Demand beginning September 30, 2014.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Space_Station_76" class = "standardb_black" target="_blank">Wikipedia Space Station 76</a> - <b>Space Station 76</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=k520GiR362U" class = "standardb_black" target="_blank">Space Station 76</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					02nd of Aug, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+		
+	
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="star_raiders">Star Raiders: The Adventures of Saber Raine</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 5/5"></font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/star_raiders.jpg" alt="Star Raiders: The Adventures of Saber Raine" title="Star Raiders: The Adventures of Saber Raine" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Star Raiders: The Adventures of Saber Raine</b> is a 2017 science fiction film about a group of mercenaries who embark on a mission to rescue a prince and princess from an evil tyrant on a far away planet. It was directed by Mark Steven Grove, and stars Casper Van Dien, Cynthia Rothrock, James Lew, Brit Laree, Sara N. Salazar and Sarah Sansoni.
+		
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Star_Raiders:_The_Adventures_of_Saber_Raine" class = "standardb_black" target="_blank">Wikipedia Star Raiders: The Adventures of Saber Raine</a> - <b>Star Raiders: The Adventures of Saber Raine</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=mzrBn7tzGX0" class = "standardb_black" target="_blank">Star Raiders: The Adventures of Saber Raine</a> - Movie <b>Star Raiders: The Adventures of Saber Raine</b> on Youtube.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Vo23kaSEfdY" class = "standardb_black" target="_blank">Star Raiders: The Adventures of Saber Raine</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					05th of Aug, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+		
+	
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="pluto_nash">The Adventures of Pluto Nash</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/pluto_nash.jpg" alt="The Adventures of Pluto Nash" title="The Adventures of Pluto Nash" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>The Adventures of Pluto Nash</b> is a 2002 American science fiction action comedy film directed by Ron Underwood and starring Eddie Murphy (in a dual role), Randy Quaid, Rosario Dawson, Joe Pantoliano, Jay Mohr, Luis Guzmán, James Rebhorn, Peter Boyle, Pam Grier and John Cleese. The film was released in the United States on August 16, 2002.
+
+<P>A major critical and financial failure, The Adventures of Pluto Nash received overwhelmingly negative reviews and is notable for being one of the biggest box office bombs in the history of cinema.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Adventures_of_Pluto_Nash" class = "standardb_black" target="_blank">Wikipedia The Adventures of Pluto Nash</a> - <b>The Adventures of Pluto Nash</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=BPQQe2fFM3Q" class = "standardb_black" target="_blank">The Adventures of Pluto Nash</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					13th of Apr, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="last_scout">The Last Scout</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/last_scout.jpg" alt="The Last Scout" title="The Last Scout" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> The Last Scout
+
+<P><b>Storyline:</b> After the earth is destroyed by war, a scout team of astronauts searches the universe for an inhabitable place to save the human race.
+
+<P><b>Genres:</b> Sci-Fi
+
+<P><b>Actor:</b> Blaine Gray, Simon Phillips, Rebecca Ferdinando
+
+<P><b>Director:</b> Simon Phillips
+
+<P><b>Country:</b> UK
+
+<P><b>Duration:</b> 107 min
+
+<P><b>Release:</b> 7 March 2017 (Canada)
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt2923834/" class = "standardb_black" target="_blank">IMDb The Last Scout (2017)</a> - <b>The Last Scout</b> on IMDb.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=fJBiOYioqJM" class = "standardb_black" target="_blank">The Last Scout</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of Mar, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="starship_apocalypse">Starship: Apocalypse</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 4/5">&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/starship_apocalypse.jpg" alt="Starship: Apocalypse" title="Starship: Apocalypse" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Starship: Apocalypse</b> — American Sci-Fi Movie, 2014 year.
+
+<br><br>
+<P><b>Synopsis:</b>
+
+<P>The Overseer, Ruler of the Federation, wants to enslave the rebellious worlds with an ancient alien nano-virus that turns humans into slaves. John Worthy and his new Starship, Deliverance stands between the Earth and the coming storm. 
+		
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt2605528/" class = "standardb_black" target="_blank">IMDb Starship: Apocalypse</a> - <b>Starship: Apocalypse</b> on IMDb.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=1Xt_FvwNOmU" class = "standardb_black" target="_blank">Starship: Apocalypse</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					17th of Jun, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="alien_cargo">Alien Cargo</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 3/5">&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 3/5">&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/alien_cargo.jpg" alt="Alien Cargo" title="Alien Cargo" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Alien Cargo</b> is a 1999 science fiction film starring Jason London, Missy Crider, Elizabeth Alexander and Alan Dale, as the crew of a space-cargo transport ship, which is attacked by an unknown alien life form that manipulates all organic life into releasing their inner evil psyche.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Alien_Cargo" class = "standardb_black" target="_blank">Wikipedia Alien Cargo</a> - <b>Alien Cargo</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=-iAOJ-Tyvxg" class = "standardb_black" target="_blank">Alien Cargo</a> - Movie <b>Alien Cargo</b> on Youtube.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					17th of Jul, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="lost_in_space">Lost in Space</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 3/5">&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Score: 3/5">&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/lost_in_space2.jpg" alt="Lost in Space" title="Lost in Space" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Lost in Space</b> is a 1998 American science-fiction adventure film directed by Stephen Hopkins, and starring William Hurt, Matt LeBlanc, and Gary Oldman. The plot is adapted from the 1965–1968 CBS television series Lost in Space. Several actors from the TV show make cameo appearances.
+
+<P>The film focuses on the Robinson family, who undertake a voyage to a nearby star system to begin large-scale emigration from a soon-to-be uninhabitable Earth, but are thrown off course by a saboteur and must try to find their way home.
+
+<P>Lost in Space met with negative reviews, and grossed $136.2 million worldwide. 
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Lost_in_Space_(film)" class = "standardb_black" target="_blank">Wikipedia Lost in Space (film)</a> - <b>Lost in Space</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=fsBj9xSS47M" class = "standardb_black" target="_blank">Lost in Space</a> - Movie <b>Lost in Space</b> on Youtube.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=tsmacmhdrUs" class = "standardb_black" target="_blank">Lost in Space</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30th of Mar, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="teleios">Teleios</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 2/5">&bigstar;&bigstar;</font><font color="silver" title="Score: 2/5">&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/teleios.jpg" alt="Teleios" title="Teleios" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Teleios</b> — American Sci-Fi Movie, 2017 year.
+
+<br><br>
+<P><b>Synopsis:</b>
+
+<P>A deep space mining vessel has been adrift for two years. It is suspected the crew brutally killed each other, but the reason for the bloodbath is unknown. A rescue crew is sent to find if there are any survivors, what happened and why.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="http://www.imdb.com/title/tt3198000/" class = "standardb_black" target="_blank">IMDb Telios</a> - <b>Teleios</b> on IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BB%D0%B5%D0%B9%D0%BE%D1%81" class = "standardb_black" target="_blank">Wikipedia Телейос</a> - <b>Teleios</b> on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Mc1EREAYVlI" class = "standardb_black" target="_blank">Teleios</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					06th of Nov, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="serenity">Serenity</a></td>
+							<td height="100%" class="nimetus3_black">
+								<font color="orange" title="Score: 1/5">&bigstar;</font><font color="silver" title="Score: 1/5">&bigstar;&bigstar;&bigstar;&bigstar;</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/serenity.jpg" alt="Serenity" title="Serenity" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Serenity</b> is a 2005 American science fiction action film written and directed by Joss Whedon. It is a continuation of Whedon's short-lived 2002 Fox television series Firefly and stars the same cast, taking place after the events of the final episode. Set in 2517, Serenity is the story of the captain and crew of Serenity, a "Firefly-class" spaceship. The captain and first mate are veterans of the Unification War, having fought on the losing Independent side against the Alliance. Their lives of smuggling and cargo-running are interrupted by a psychic passenger who harbors a dangerous secret.
+
+<P>The film stars Nathan Fillion, Alan Tudyk, Adam Baldwin, Summer Glau and Chiwetel Ejiofor. It was released in North America on September 30, 2005 by Universal Pictures to generally positive reviews and several accolades, including the Hugo Award for Best Dramatic Presentation, the Prometheus Special Award and the Nebula Award for Best Script, but underperformed at the box office.
+				
+<br><br>
+<P><b>Reception:</b>
+<P><b>Box office:</b>
+
+
+<P>Despite high anticipation, Serenity performed poorly at the box office. Although several pundits predicted a #1 opening, the film opened at #2 in the United States, taking in $10.1 million on its first weekend, spending two weeks in the top ten, and closed on November 17, 2005 with a domestic box office gross of $25.5 million. Movie industry analyst Brandon Gray described Serenity's box office performance as "like a below average genre picture".
+
+<P>Serenity's international box office results were mixed, with strong openings in the UK, Portugal and Russia, but poor results in Spain, Australia, France and Italy. United International Pictures canceled the film's theatrical release in at least seven countries, planning to release it directly to DVD instead. The box office income outside the United States was $13.3 million, with a worldwide total of $38.9 million.
+
+
+<br><br>
+<P><b>Critical reception:</b>
+<P>Serenity received mostly positive reviews from film critics. On review aggregator site Rotten Tomatoes, the film has an 82% approval rating based on 179 reviews, with an average rating of 7.1 out of 10. The site's critical consensus states: "Snappy dialogue and goofy characters make this Wild Wild West soap opera in space fun and adventurous." Metacritic gives the film a weighted average score of 74 based on reviews from 34 critics, indicating "generally favorable reviews".
+
+<P>Ebert and Roeper gave the film a "Two Thumbs Up" rating. Roger Ebert, in his review for the Chicago Sun-Times, gave the film three out of four stars, commenting that it is "made of dubious but energetic special effects, breathless velocity, much imagination, some sly verbal wit and a little political satire". "The movie plays like a critique of contemporary society", he observed, also stating that in this way it was like Brave New World and Nineteen Eighty-Four. Peter Hartlaub in the San Francisco Chronicle called it "a triumph", comparing its writing to the best Star Trek episodes, while Manohla Dargis of The New York Times described it as a modest but superior science fiction film. Science fiction author Orson Scott Card called Serenity "the best science fiction film ever", further stating "If Ender's Game can't be this kind of movie, and this good a movie, then I want it never to be made. I'd rather just watch Serenity again." USA Today film critic Claudia Puig wrote that "the characters are generally uninteresting and one-dimensional, and the futuristic Western-style plot grows tedious" while Variety declared that the film "bounces around to sometimes memorable effect but rarely soars".
+
+<br><br>
+<P><b>Awards:</b>
+
+<P>Serenity won several awards after its release. It won the Hugo Award for Best Dramatic Presentation - Long Form, the Nebula Award for Best Script, and the Prometheus Special Award. The film was also named film of the year by Film 2005 and FilmFocus, and it was determined by SFX magazine to be the best science fiction movie of all time in 2007. IGN Film awarded Serenity Best Sci-Fi, Best Story, and Best Trailer for the year, and it won second for Overall Best Movie after Batman Begins. The SyFy Genre Awards awarded it runner-up in the categories for Best Movie, Best Actor in a film (Nathan Fillion), and Best Actress in a film (Summer Glau), losing in all categories to Harry Potter and the Goblet of Fire. Serenity later ranked 383 on Empire magazine's 500 Greatest Films of All Time and 90 of the 301 Greatest Movies of All Time as voted by the magazine's readers.
+
+<br><br>
+<P><b>Cultural impact:</b>
+<P>NASA astronaut Steven Swanson, a huge fan of the series, took the Region 1 Firefly and Serenity DVDs with him on Space Shuttle Atlantis' STS-117 mission, which lifted off on Friday June 8, 2007. The DVDs will permanently reside on the International Space Station as a form of entertainment for the station's crews.
+
+<P>On February 20, 2009, NASA announced an online poll to name Node 3 of the International Space Station; NASA-suggested options included Earthrise, Legacy, Serenity and Venture. At the March 20, 2009 poll close, 'Serenity' led those four choices with 70% of the vote, though the winner of the poll was 'Colbert', a reference to late night comedy show host Stephen Colbert. In the end, the poll was discarded and the node was eventually named 'Tranquility'.
+
+<br><br>
+<P><b>Charity screenings:</b>
+<P>Beginning in January 2006, fans (with Universal's blessing) began organizing charity screenings of Serenity to benefit Equality Now, a human rights organization supported by Joss Whedon. By mid-June, 41 such screenings had been confirmed for cities in Australia, Canada, England, New Zealand, and the United States, and as of June 19, 2006, there were 47 scheduled screenings. The project was referred to as "Serenity Now/Equality Now" on the official website, but was often referred to in shortened form as "Serenity Now", and was coordinated through "Can't Stop The Serenity". The name officially changed in 2007 to Can't Stop The Serenity (CSTS)
+
+<P>This has become a multi-venue event held each calendar year in various countries and cities and on various dates throughout the year. Funds raised by the events go to Equality Now (and other charities)
+
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Serenity_(2005_film)" class = "standardb_black" target="_blank">Wikipedia Serenity (2005 film)</a> - <b>Serenity</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=23ALg8Oi0jY" class = "standardb_black" target="_blank">Serenity</a> - Movie <b>Serenity</b> on Youtube.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=AAL6qVciZMA" class = "standardb_black" target="_blank">Serenity</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					23rd of May, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+
+		</tr>
+		
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+
+</table> <!-- End of Main Table -->
+
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+
+

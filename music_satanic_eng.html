@@ -1,0 +1,1375 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Foto Gallery -->
+<script src="scripts/jquery/jquery.js"></script>
+<script src="scripts/galleria/galleria-1.4.2.min.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<!-- Background Images Script -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*43;
+var imgBgSrc="icons/background/national.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+        <tr> 
+                <td  height="3"></td>
+        </tr>   
+        <tr>
+                <td width="1000">
+                        <img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+                </td>
+        </tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+        <tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_satanic_eng.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_satanic_eng.html' + window.location.hash;
+                                };"             
+                        class="flag_selected"
+                >
+                        <img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_satanic_rus.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_satanic_rus.html' + window.location.hash;
+                                };"             
+                        class="flag_not_selected"
+                >
+                        <img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+        </tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+        <tr> 
+
+        <td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+        <tr> 
+                <td  align="center" class="title_gradient_black">Menu</td>
+        </tr>
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_eng.html');
+                        } else {
+                                window.location.href='about_me_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About me</div>
+        </td>
+        </tr>   
+        <tr>
+                <td align="center" >
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_eng.html');
+                        } else {
+                                window.location.href='about_work_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my work</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('phd_eng.html');
+                        } else {
+                                window.location.href='phd_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my PhD</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_7"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"               
+                  class="menu_selected">
+                  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_1"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_chanson_eng.html');
+                        } else {
+                                window.location.href='music_chanson_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Chanson <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_classical_eng.html');
+                        } else {
+                                window.location.href='music_classical_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Classical</div>
+        </td>
+        </tr>           
+        
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_country_eng.html');
+                        } else {
+                                window.location.href='music_country_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Country <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_disco_eng.html');
+                        } else {
+                                window.location.href='music_disco_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Disco</div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_5"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Electronic</div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Industrial</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_7"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Metal <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_8"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; National</div>
+        </td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_9"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_pop_eng.html');
+                        } else {
+                                window.location.href='music_pop_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Pop <font class="blinking_text" color="slateblue"><sup>&smashp; Abstract &smashp;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_10"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Psychedelic <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_11"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'"
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_12"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_rap_eng.html');
+                        } else {
+                                window.location.href='music_rap_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Rap <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_reggae_eng.html');
+                        } else {
+                                window.location.href='music_reggae_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Reggae</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_14"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'"
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_rock_eng.html');
+                        } else {
+                                window.location.href='music_rock_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Rock <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+<tr>
+                <td align="left" >
+                  <div id="menu_7_15"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="
+                    this.className='menu_selected';
+                        if (event.ctrlKey==1){
+                                window.open('music_satanic_eng.html');
+                        } else {
+                                window.location.href='music_satanic_eng.html';
+                        };"                               
+                  class="menu_selected"
+		  style="padding-left: 5px;">
+                  &#9679; Satanic <font class="blinking_text" color="darkred"><sup>&#9765; Tricky &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_corr_eng.html');
+                        } else {
+                                window.location.href='music_corr_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; USA &#8596; USSR</div>
+        </td>
+        </tr>   
+                
+        <tr>
+                <td align="center" >
+                  <div id="menu_8"
+                  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'movies');"                               
+                  class="menu_not_selected_black">
+                  Movies</div>
+        </td>
+        </tr>
+
+
+<tr>
+                <td align="center" >
+                  <div id="menu_27"
+                  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'series');"                               
+                  class="menu_not_selected_black">
+                  Series</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_9"
+                  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'games');"  
+                  class="menu_not_selected_black">
+                  Games</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_10"
+                  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'books');"  
+                  class="menu_not_selected_red">
+                  Books</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_11"
+                  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'photos');"  
+                  class="menu_not_selected_red">
+                  Photos/Images</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_12"
+                  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'amv');"                                               
+                  class="menu_not_selected_black">
+                  AMV</div>
+        </td>
+        </tr>           
+        <tr>
+                <td align="center" >
+                  <div id="menu_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('radio_eng.html');
+                        } else {
+                                window.location.href='radio_eng.html';
+                        };"                                               
+                  class="menu_not_selected_black">
+                  Radio</div>
+        </td>
+        </tr>                   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_14"
+                  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'stuff');"                                       
+                  class="menu_not_selected_black">
+                  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_15"
+                  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+                  class="menu_not_selected_red">
+                  Anecdotes</div>
+        </td>
+        </tr>           
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_17"
+                  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+                  class="menu_not_selected_white">
+                  Substances For Relaxation</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_18"
+                  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'software');"  
+                  class="menu_not_selected_white">
+                  Software Development</div>
+        </td>
+        </tr>   
+        
+        
+        
+        
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_19"
+                  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'satanism');"                                       
+                  class="menu_not_selected_green">
+                  Satanism</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_21"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('falsifiability_eng.html');
+                        } else {
+                                window.location.href='falsifiability_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Falsifiability</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_22"
+                  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'psychology');"                                       
+                  class="menu_not_selected_green">
+                  Psychology</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_23"
+                  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'countries');"                                       
+                  class="menu_not_selected_green">
+                  Countries</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_24"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('totalitarianism_eng.html');
+                        } else {
+                                window.location.href='totalitarianism_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Totalitarianism</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_25"
+                  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'personalities');"                                       
+                  class="menu_not_selected_green">
+                  Personalities</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+
+
+
+
+
+</table>
+
+        
+
+                </td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+        <tr> 
+                <td  class="title_black" style="width: 530px;"><a name="welcome">Music &blacktriangleright; Satanic</a></td>
+        </tr>
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:989px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="satanic">Satanic Music</a> <font class="blinking_text" color="darkred"><sup>&#9765; Tricky &#9765;</sup></font></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/music/satanic.jpg" alt="Satanic Music" title="Satanic Music" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					
+
+
+<P>At the end of the twentieth century, a moral panic developed around claims regarding a Devil-worshipping cult that made use of sexual abuse, murder, and cannibalism in its rituals, with children being among its victims. Initially, the alleged perpetrators of such crimes were labelled "witches", although the term "Satanist" was soon adopted as a favoured alternative, and the phenomenon itself came to be called "the Satanism Scare". Promoters of the claims alleged that there was a conspiracy of organised Satanists who occupied prominent positions throughout society, from the police to politicians, and that they had been powerful enough to cover up their crimes.
+
+<P>One of the primary sources for the scare was Michelle Remembers, a 1980 book by the Canadian psychiatrist Lawrence Pazder in which he detailed what he claimed were the repressed memories of his patient (and wife) Michelle Smith. Smith had claimed that as a child she had been abused by her family in Satanic rituals in which babies were sacrificed and Satan himself appeared. In 1983, allegations were made that the McMartin family—owners of a preschool in California—were guilty of sexually abusing the children in their care during Satanic rituals. The allegations resulted in a lengthy and expensive trial, in which all of the accused would eventually be cleared. The publicity generated by the case resulted in similar allegations being made in various other parts of the United States.
+
+<P>A prominent aspect of the Satanic Scare was the claim by those in the developing "anti-Satanism" movement that any child's claim about Satanic ritual abuse must be true, because children would not lie. Although some involved in the anti-Satanism movement were from Jewish and secular backgrounds, a central part was played by fundamentalist and evangelical forms of Christianity, in particular Pentecostalism, with Christian groups holding conferences and producing books and videotapes to promote belief in the conspiracy. Various figures in law enforcement also came to be promoters of the conspiracy theory, with such "cult cops" holding various conferences to promote it. The scare was later imported to the United Kingdom through visiting evangelicals and became popular among some of the country's social workers, resulting in a range of accusations and trials across Britain.
+
+<P>The Satanic ritual abuse hysteria died down between 1990 and 1994. In the late 1980s, the Satanic Scare had lost its impetus following increasing scepticism about such allegations, and a number of those who had been convicted of perpetrating Satanic ritual abuse saw their convictions overturned. In 1990, an agent of the U.S. Federal Bureau of Investigation, Ken Lanning, revealed that he had investigated 300 allegations of Satanic ritual abuse and found no evidence for Satanism or ritualistic activity in any of them. In the UK, the Department of Health commissioned the anthropologist Jean La Fontaine to examine the allegations of SRA. She noted that while approximately half did reveal evidence of genuine sexual abuse of children, none revealed any evidence that Satanist groups had been involved or that any murders had taken place. She noted three examples in which lone individuals engaged in child molestation had created a ritual performance to facilitate their sexual acts, with the intent of frightening their victims and justifying their actions, but that none of these child molestors were involved in wider Satanist groups. By the 21st century, hysteria about criminal religious groups had switched focus from Satanism to extremist Islam in Western countries, although allegations of Satanic ritual abuse continued to surface in parts of continental Europe and Latin America.
+
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Satanism#Satanic_ritual_abuse_hysteria" class = "standardb_black" target="_blank">Wikipedia Satanic Ritual Abuse Hysteria</a> - <b>Satanic Ritual Abuse Hysteria</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					17th of Jun, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+ <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="antonov">Yuri Antonov (rus. Юрий Антонов)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+					<img src="icons/music/antonov.jpg" alt="Yuri Antonov" title="Yuri Antonov" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Yuri Mikhailovich Antonov</b> (Russian: Юрий Михайлович Антонов) (born February 19, 1945 in Tashkent, Uzbek SSR, Soviet Union) is a Soviet and Russian composer, singer and musician, People's Artist of Russia (1997). He is also the Distinguished performer of arts of the Russian Federation (Russia) and the Distinguished artist of the Chechnya-Ingushetia ASSR (1983).
+
+<br><br>
+<P><b>Biography:</b>
+
+<P><b>Yuri Mikhailovich Antonov</b> was born into the family of an officer of the Soviet Army, Mikhail Vasilievich Antonov, who after World War II stayed to serve in the military administration of Berlin. Yuri's sister, Zhanna (Jane) was born there. His mother, Natalya Mikhailovna (Litovchenko), who was from Kremenchuk (Poltava Region), died in 2008 at age 85. in 1997 Yuri Antonov get star on the Star Square in Moscow.
+
+<br><br>
+<P><b>Cinematography:</b>
+
+<P>He has composed music for the films Take Care of the Women! (1981), Before We Part (1984), Beauty Salon (1985) and Fools Die on Friday (1990).
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Yuri_Antonov_%28musician%29" class = "standardb_black" target="_blank">Wikipedia Yuri Antonov (musician)</a> - <b>Yuri Antonov</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+			  <a href="http://www.antonov.ru/" class = "standardb_black" target="_blank">Yuri Antonov</a> - Official Website (rus.).
+			</td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Recommend:
+				</td>
+			</tr>
+			
+			<tr> <!--- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria">
+      <a href="https://www.youtube.com/watch?v=xYqk5YZuTs8"><img src="icons/playlists/antonov38.jpg" data-title="Юрий Антонов - Это Москва"   data-description="<a href='https://www.youtube.com/watch?v=xYqk5YZuTs8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>26th of Jan, 2018."></a>
+	  <a href="https://www.youtube.com/watch?v=I9euevDmcpk"><img src="icons/playlists/antonov27.jpg" data-title="Юрий Антонов - Под Крышей Дома Твоего"   data-description="About <a href='satanism_simvoly_eng.html#ankh' class = 'smallb_black' target='_blank'>Symbol Ankh</a>.<br><a href='https://www.youtube.com/watch?v=I9euevDmcpk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Feb, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=fXSqQSZIYVI"><img src="icons/playlists/antonov6.jpg" data-title="Юрий Антонов - Несёт меня течение"   data-description="About the book &quot;The Master and Margarita&quot;.<br><a href='https://www.youtube.com/watch?v=fXSqQSZIYVI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Aug, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=4V7The9e34c"><img src="icons/playlists/antonov1.jpg" data-title="Юрий Антонов - На выском берегу на крутом"   data-description="About Book <a href='books_pavlov_eng.html' class = 'smallb_black' target='_blank'>Sergey Pavlov (rus. Сергей Павлов)</a> - <a href='books_pavlov_eng.html#lunnaja_raduga' class = 'smallb_black' target='_blank'>Moon Rainbow (rus. Лунная Радуга)</a>.<br><a href='https://www.youtube.com/watch?v=4V7The9e34c' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11st of July, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=6YV3z5e5Bx8"><img src="icons/playlists/antonov2.jpg" data-title="Юрий Антонов - На улице Каштановой"   data-description="About girls.<br><a href='https://www.youtube.com/watch?v=6YV3z5e5Bx8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11st of July, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=qft3wSIrUXA"><img src="icons/playlists/antonov3.jpg" data-title="Юрий Антонов - Дорога к морю"   data-description="About negotiations.<br><a href='https://www.youtube.com/watch?v=qft3wSIrUXA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11st of July, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=isJPAGWkF3w"><img src="icons/playlists/antonov4.jpg" data-title="Юрий Антонов - От печали до радости"   data-description="Total.<br><a href='https://www.youtube.com/watch?v=isJPAGWkF3w' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11st of July, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=YNAuBoOKrNY"><img src="icons/playlists/antonov5.jpg" data-title="Юрий Антонов - Не говорите мне прощай"   data-description="About Jews.<br><a href='https://www.youtube.com/watch?v=YNAuBoOKrNY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Aug, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=cMhixyU4jA8"><img src="icons/playlists/antonov7.jpg" data-title="Юрий Антонов - У берёз и сосен"   data-description="&Uuml;ber <a href='communism_enemies_eng.html#kapitalism' class = 'smallb_black' target='_blank'>capitalism</a>.<br><a href='https://www.youtube.com/watch?v=cMhixyU4jA8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02nd of Aug, 2016."></a>'
+	  <a href="https://www.youtube.com/watch?v=3C7j-cLzW2I"><img src="icons/playlists/antonov8.jpg" data-title="Юрий Антонов - Дорога в Горы"   data-description="About Translators.<br><a href='https://www.youtube.com/watch?v=3C7j-cLzW2I' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>23th of Sep, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=NEz_Pd5FLa4"><img src="icons/playlists/antonov9.jpg" data-title="Юрий Антонов - Просто Пойми"   data-description="About <a href='music_punk_rock_eng.html#sektor_gaza' class = 'smallb_black' target='_blank'>Сектор Газа</a> - <a href='https://www.youtube.com/watch?v=5xZcU7WSA7g' class = 'smallb_black' target='_blank'>Лирика (Сигарета Мелькает во Тьме)</a>.<br><a href='https://www.youtube.com/watch?v=NEz_Pd5FLa4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Oct, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=wOmGKlMaiD8"><img src="icons/playlists/antonov10.jpg" data-title="Юрий Антонов - Давай Не Будем Спешить"   data-description="And also <a href='https://www.youtube.com/watch?v=34FH393waLc' class = 'smallb_black' target='_blank'>Белый Теплоход</a> and <a href='https://www.youtube.com/watch?v=2sYSgjw7t2w' class = 'smallb_black' target='_blank'>Не Гаснут Костры</a> - About Band <a href='music_rap_eng.html#malchishnik' class = 'smallb_black' target='_blank'>Мальчишник</a>.<br><a href='https://www.youtube.com/watch?v=wOmGKlMaiD8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Oct, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=aBigz7QJHqY"><img src="icons/playlists/antonov15.jpg" data-title="Юрий Антонов - Бег Вокруг"   data-description="And Also <a href='https://www.youtube.com/watch?v=wOmGKlMaiD8' class = 'smallb_black' target='_blank'>Давай Не Будем Спешить</a> - About Something Else.<br><a href='https://www.youtube.com/watch?v=aBigz7QJHqY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=zSje3elQkQM"><img src="icons/playlists/antonov8.jpg" data-title="Юрий Антонов - Пусть Вечным Будет Мир"   data-description="About Crosses.<br><a href='https://www.youtube.com/watch?v=zSje3elQkQM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Oct, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=aKM0Q1h5nzo"><img src="icons/playlists/antonov11.jpg" data-title="Юрий Антонов - Для Тебя Пою"   data-description="About Me.<br><a href='https://www.youtube.com/watch?v=aKM0Q1h5nzo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Oct, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=0pwXAEu71is"><img src="icons/playlists/antonov12.jpg" data-title="Юрий Антонов - Земляничная Поляна"   data-description="About Book <a href='books_tarmashev_eng.html' class = 'smallb_black' target='_blank'>Sergei Tarmashev (rus. Сергей Тармашев)</a> - <a href='books_tarmashev_eng.html#areal' class = 'smallb_black' target='_blank'>Ареал</a>.<br><a href='https://www.youtube.com/watch?v=0pwXAEu71is' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Oct, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=epYa6YSnXHk"><img src="icons/playlists/antonov13.jpg" data-title="Юрий Антонов - Не Забывай"   data-description="About Cocs.<br><a href='https://www.youtube.com/watch?v=epYa6YSnXHk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Oct, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=xcbu65G2UHo"><img src="icons/playlists/antonov14.jpg" data-title="Юрий Антонов - Я Вспоминаю"   data-description="About Universities.<br><a href='https://www.youtube.com/watch?v=xcbu65G2UHo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Oct, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=udgt3E6PEEM"><img src="icons/playlists/antonov16.jpg" data-title="Юрий Антонов - Твоя Судьба"   data-description="And Also <a href='https://www.youtube.com/watch?v=H2hmfwgDKnU' class = 'smallb_black' target='_blank'>Золотая Лестница</a> - about <a href='countries_ussr_communism_eng.html' class = 'smallb_black' target='_blank'>USSR</a>.<br><a href='https://www.youtube.com/watch?v=udgt3E6PEEM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>13th of Oct, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=qOm6WeJj6VU"><img src="icons/playlists/antonov17.jpg" data-title="Юрий Антонов - Маки"   data-description="About Game <a href='games_rpg_breakout_eng.html#alphabounce' class = 'smallb_black' target='_blank'>Alphabounce</a>.<br><a href='https://www.youtube.com/watch?v=qOm6WeJj6VU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Nov, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=qbTWkcrtcT8"><img src="icons/playlists/antonov18.jpg" data-title="Юрий Антонов - Радуга"   data-description="About Respect to Other People.<br><a href='https://www.youtube.com/watch?v=qbTWkcrtcT8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Nov, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=La_nObbF2_Y"><img src="icons/playlists/antonov19.jpg" data-title="Юрий Антонов - Всё Как Прежде"   data-description="About Military.<br><a href='https://www.youtube.com/watch?v=La_nObbF2_Y' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Dec, 2016."></a>
+	  <a href="https://www.youtube.com/watch?v=rPTG9ESeQ1o"><img src="icons/playlists/antonov20.jpg" data-title="Юрий Антонов - Отчего"   data-description="About Laundry.<br><a href='https://www.youtube.com/watch?v=rPTG9ESeQ1o' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>04th of Jan, 2017."></a>	  
+	  <a href="https://www.youtube.com/watch?v=VXT_teX2m9k"><img src="icons/playlists/antonov21.jpg" data-title="Юрий Антонов - Хмельная Сирень"   data-description="About <a href='personalities_ussr_leaders_eng.html' class = 'smallb_black' target='_blank'>Leaders</a>.<br><a href='https://www.youtube.com/watch?v=VXT_teX2m9k' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Jan, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=BL1vB5UedFE"><img src="icons/playlists/antonov22.jpg" data-title="Юрий Антонов - Живёт Повсюду Красота"   data-description="About <a href='phd_eng.html' class = 'smallb_black' target='_blank'>PhD</a>.<br><a href='https://www.youtube.com/watch?v=BL1vB5UedFE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>19th of Jan, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=BQnZE6pQxAA"><img src="icons/playlists/antonov23.jpg" data-title="Юрий Антонов - Зеркало"   data-description="About Losers and About <a href='software_development_gimp_eng.html' class = 'smallb_black' target='_blank'>Drawing</a>.<br><a href='https://www.youtube.com/watch?v=BQnZE6pQxAA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>19th of Jan, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=KzyA7wfQhmw"><img src="icons/playlists/antonov24.jpg" data-title="Юрий Антонов - Море"   data-description="About Cold War.<br><a href='https://www.youtube.com/watch?v=KzyA7wfQhmw' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>19th of Jan, 2017."></a>
+ 	  <a href="https://www.youtube.com/watch?v=9r4K6JzzGHM"><img src="icons/playlists/antonov25.jpg" data-title="Юрий Антонов - Родные Места"   data-description="About Necrophilia.<br><a href='https://www.youtube.com/watch?v=9r4K6JzzGHM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>26th of Jan, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=5sEg6P7Z3dc"><img src="icons/playlists/antonov26.jpg" data-title="Юрий Антонов - Летящей Походкой (Я Вспоминаю)"   data-description="About Crosses.<br><a href='https://www.youtube.com/watch?v=5sEg6P7Z3dc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>26th of Jan, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=Ci8STEmvv-M"><img src="icons/playlists/antonov28.jpg" data-title="Юрий Антонов - Я Не Жалею Ниочем"   data-description="About <a href='islam_religion_eng.html' class = 'smallb_black' target='_blank'>Islam</a>.<br><a href='https://www.youtube.com/watch?v=Ci8STEmvv-M' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Feb, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=zyl2LVPbt0o"><img src="icons/playlists/antonov29.jpg" data-title="Юрий Антонов - Поверь в Мечту"   data-description=", <a href='https://www.youtube.com/watch?v=lotIjFy6B4M' class = 'smallb_black' target='_blank'>Гадкий Утёнок</a> - About <a href='phd_eng.html' class = 'smallb_black' target='_blank'>PhD</a>.<br><a href='https://www.youtube.com/watch?v=zyl2LVPbt0o' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Mar, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=qft3wSIrUXA"><img src="icons/playlists/antonov3.jpg" data-title="Юрий Антонов - Дорога к морю"   data-description=", <a href='https://www.youtube.com/watch?v=O27_MfLsBGA' class = 'smallb_black' target='_blank'>Снегири</a> - About English Royal Family.<br><a href='https://www.youtube.com/watch?v=qft3wSIrUXA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Mar, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=dzZjRPI7cdY"><img src="icons/playlists/antonov30.jpg" data-title="Юрий Антонов - Я Иду к Тебе Навстречу"   data-description=", <a href='https://www.youtube.com/watch?v=O27_MfLsBGA' class = 'smallb_black' target='_blank'>Снегири</a> - About Band <a href='music_punk_rock_eng.html#sektor_gaza' class = 'smallb_black' target='_blank'>Sektor Gaza (rus. Сектор Газа)</a>.<br><a href='https://www.youtube.com/watch?v=dzZjRPI7cdY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Mar, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=gg5zLcLn8wY"><img src="icons/playlists/antonov31.jpg" data-title="Юрий Антонов - Долгожданный Самолёт"   data-description="About Germany.<br><a href='https://www.youtube.com/watch?v=gg5zLcLn8wY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Mar, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=33_8ZjQBUP0"><img src="icons/playlists/antonov8.jpg" data-title="Юрий Антонов - Влюблённый Чудак"   data-description="About Movie <a href='movies_superhero_marvel_eng.html#doctor_strange' class = 'smallb_black' target='_blank'>Doctor Strange</a>.<br><a href='https://www.youtube.com/watch?v=33_8ZjQBUP0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Apr, 2017."></a>
+      <a href="https://www.youtube.com/watch?v=ZVLLV9lQMGA"><img src="icons/playlists/antonov32.jpg" data-title="Юрий Антонов - Если Пойдём Вдвоём"   data-description="About IT.<br><a href='https://www.youtube.com/watch?v=ZVLLV9lQMGA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>16th of Oct, 2017."></a>
+      <a href="https://www.youtube.com/watch?v=QwhezlRW6Yc"><img src="icons/playlists/antonov33.jpg" data-title="Юрий Антонов - Милая Моя"   data-description="About <a href='music_disco_eng.html#kombinacija' class = 'smallb_black' target='_blank'>Alena Apina (rus. Алёна Апина)</a> (Creation).<br><a href='https://www.youtube.com/watch?v=QwhezlRW6Yc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>16th of Oct, 2017."></a>
+      <a href="https://www.youtube.com/watch?v=-qrE893Rf3E"><img src="icons/playlists/antonov34.jpg" data-title="Юрий Антонов - Не Умирай Любовь"   data-description=", <a href='https://www.youtube.com/watch?v=qOm6WeJj6VU' class = 'smallb_black' target='_blank'>Маки</a> - About Respect to Other People.<br><a href='https://www.youtube.com/watch?v=-qrE893Rf3E' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>16th of Oct, 2017."></a>
+      <a href="https://www.youtube.com/watch?v=n1CaFlu_kNg"><img src="icons/playlists/antonov35.jpg" data-title="Юрий Антонов - Лунная Дорожка"   data-description="About Band <a href='music_country_eng.html#belomorkanal' class = 'smallb_black' target='_blank'>Belomorkanal (rus. Беломорканал)</a> and About Book <a href='books_wells_eng.html' class = 'smallb_black' target='_blank'>Herbert George Wells</a> - <a href='books_wells_eng.html#when_sleeper_wakes' class = 'smallb_black' target='_blank'>When the Sleeper Wakes</a>.<br><a href='https://www.youtube.com/watch?v=n1CaFlu_kNg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>25th of Oct, 2017."></a>
+      <a href="https://www.youtube.com/watch?v=DmWyy6CtA2c"><img src="icons/playlists/antonov36.jpg" data-title="Юрий Антонов - Если Любишь Ты"   data-description="And Also <a href='https://www.youtube.com/watch?v=D2mV2au5MjA' class = 'smallb_black' target='_blank'>Не До Смеха</a> - About Series <a href='movies_genre_series_eng.html#ministry_of_time' class = 'smallb_black' target='_blank'>The Ministry of Time (sp. El ministerio del tiempo)</a>.<br><a href='https://www.youtube.com/watch?v=DmWyy6CtA2c' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>30th of Oct, 2017."></a>
+      <a href="https://www.youtube.com/watch?v=JQnKA405rCg"><img src="icons/playlists/antonov37.jpg" data-title="Юрий Антонов - А Жизнь Идет Своим Чередом"   data-description="About Luck.<br><a href='https://www.youtube.com/watch?v=JQnKA405rCg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>24th of Nov, 2017."></a>
+      <a href="https://www.youtube.com/watch?v=HtiWzydpCaI"><img src="icons/playlists/antonov39.jpg" data-title="Юрий Антонов - Нет, Не Я"   data-description="<a href='https://www.youtube.com/watch?v=HtiWzydpCaI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>20th of Feb, 2018."></a>
+      <a href="https://www.youtube.com/watch?v=Wzhg79v7XLU"><img src="icons/playlists/antonov40.jpg" data-title="Юрий Антонов - Третий День"   data-description="About <a href='music_pop_eng.html#spears' class = 'smallb_black' target='_blank'>Britney Spears</a> (Creation).<br><a href='https://www.youtube.com/watch?v=Wzhg79v7XLU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>21st of Mar, 2018."></a>
+        </div>
+
+
+
+        <script>
+            var galleria2 = new Galleria.loadTheme('scripts/galleria/themes/classic/galleria.classic.min.js');
+
+	    Galleria.run('.galleria', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30th of June, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="kadysheva">Nadezhda Kadysheva (rus. Надежда Кадышева)</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                        <img src="icons/music/kadysheva.jpg" alt="Nadezhda Kadysheva (rus. Надежда Кадышева)" title="Nadezhda Kadysheva (rus. Надежда Кадышева)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5;">
+                                                
+                                                
+
+<P><b>Nadezhda Nikitichna Kadysheva</b> (Russian: Надeжда Никитична Кадышeва; born June 1, 1959, Gorki, Leninogorsky District, Tatar ASSR) is Russian singer, soloist of the Zolotoe Koltso. Honorary Citizen of Bugulma. People's Artist of Russia (1999), People's Artist of Mordovia, Honored Artist of Tatarstan.
+
+                                                
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://en.wikipedia.org/wiki/Nadezhda_Kadysheva" class = "standardb_black" target="_blank">Wikipedia Nadezhda Kadysheva</a> - <b>Nadezhda Kadysheva (rus. Надежда Кадышева)</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.kadisheva.ru/" class = "standardb_black" target="_blank">Nadezhda Kadysheva (rus. Надежда Кадышева)</a> - Official Website (rus.).
+                        </td>
+                        </tr>
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria2">
+          <a href="https://www.youtube.com/watch?v=sTolCeAgUd0"><img src="icons/playlists/kadysheva7.jpg" data-title="Надежда Кадышева - Дурман-Трава" data-description="<a href='https://www.youtube.com/watch?v=sTolCeAgUd0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=6Y45Q8Gi9ic"><img src="icons/playlists/kadysheva1.jpg" data-title="Надежда Кадышева и 'Золотое кольцо' - Не Верится" data-description="About Song <a href='music_industrial_electro_eng.html#das_ich' class = 'smallb_black' target='_blank'>Das Ich</a> - <a href='https://www.youtube.com/watch?v=-emQ5Fn63Sg' class = 'smallb_black' target='_blank'>Krieg im Paradies</a>.<br><a href='https://www.youtube.com/watch?v=6Y45Q8Gi9ic' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>17th of Jun, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=VJPbsbCAyhg"><img src="icons/playlists/kadysheva2.jpg" data-title="Надежда Кадышева - Пойте, Птахи, Песенки" data-description="About Diplom.<br><a href='https://www.youtube.com/watch?v=VJPbsbCAyhg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=uP_-zElT3HI"><img src="icons/playlists/kadysheva3.jpg" data-title="Надежда Кадышева - Страдания" data-description="About Project.<br><a href='https://www.youtube.com/watch?v=uP_-zElT3HI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=sNdCl21qKQA"><img src="icons/playlists/kadysheva4.jpg" data-title="Надежда Кадышева - Роспрягайте, Хлопцы, Коней" data-description="About <a href='software_development_html_eng.html' class = 'smallb_black' target='_blank'>Software Development</a>.<br><a href='https://www.youtube.com/watch?v=sNdCl21qKQA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=-kQ2nTys2-g"><img src="icons/playlists/kadysheva5.jpg" data-title="Надежда Кадышева - Фантазии" data-description="About <a href='phd_eng.html' class = 'smallb_black' target='_blank'>PhD</a>.<br><a href='https://www.youtube.com/watch?v=-kQ2nTys2-g' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=YPvsZcxUvJ0"><img src="icons/playlists/kadysheva6.jpg" data-title="Надежда Кадышева - Под Окном Черёмуха Колышется" data-description="About <a href='music_satanic_eng.html#antonov' class = 'smallb_black' target='_blank'>Yuri Antonov (rus. Юрий Антонов)</a> (Creation).<br><a href='https://www.youtube.com/watch?v=YPvsZcxUvJ0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=hePs7mYx7Lg"><img src="icons/playlists/kadysheva10.jpg" data-title="Надежда Кадышева - Волга-Речка" data-description="About <a href='music_satanic_eng.html#antonov' class = 'smallb_black' target='_blank'>Yuri Antonov (rus. Юрий Антонов)</a> (Creation).<br><a href='https://www.youtube.com/watch?v=hePs7mYx7Lg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=fo9eaqMuGYo"><img src="icons/playlists/kadysheva8.jpg" data-title="Надежда Кадышева - Шумел Камыш" data-description="And Also <a href='https://www.youtube.com/watch?v=de8_RkiH-58' class = 'smallb_black' target='_blank'>Живёт Моя Отрада</a> - About <a href='music_chanson_eng.html#petljura' class = 'smallb_black' target='_blank'>Petljura (rus. Петлюра)</a> (Creation).<br><a href='https://www.youtube.com/watch?v=fo9eaqMuGYo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=SdvXkGxv7q4"><img src="icons/playlists/kadysheva9.jpg" data-title="Надежда Кадышева - Хризантемы" data-description="About <a href='software_development_html_eng.html' class = 'smallb_black' target='_blank'>Software Development</a>.<br><a href='https://www.youtube.com/watch?v=SdvXkGxv7q4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=R9lRdEhKeNs"><img src="icons/playlists/kadysheva11.jpg" data-title="Надежда Кадышева - Подари, Берёзка" data-description="About Denying of Motivation.<br><a href='https://www.youtube.com/watch?v=R9lRdEhKeNs' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=utDrBCj1yjo"><img src="icons/playlists/kadysheva12.jpg" data-title="Надежда Кадышева - Коробейники" data-description="About <a href='music_punk_ska_eng.html' class = 'smallb_black' target='_blank'>Ska Punk</a>.<br><a href='https://www.youtube.com/watch?v=utDrBCj1yjo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=z51O80EYEhk"><img src="icons/playlists/kadysheva13.jpg" data-title="Надежда Кадышева - Называют Меня Некрасивою" data-description="About Alcoholism.<br><a href='https://www.youtube.com/watch?v=z51O80EYEhk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Nov, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=iK5nzmEQPzA"><img src="icons/playlists/kadysheva14.jpg" data-title="Надежда Кадышева - На Тот Большак" data-description="<a href='https://www.youtube.com/watch?v=iK5nzmEQPzA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Dec, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=cuUyyR36VwY"><img src="icons/playlists/kadysheva15.jpg" data-title="Надежда Кадышева - Старенькая Церквушка" data-description="About <a href='music_rock_rus.html#zemfira' class = 'smallb_black' target='_blank'>Zemfira (rus. Земфира)</a>.<br><a href='https://www.youtube.com/watch?v=cuUyyR36VwY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=0mqBa1VruAg"><img src="icons/playlists/kadysheva16.jpg" data-title="Надежда Кадышева и Олег Газманов - Смуглянка" data-description="About Berlin.<br><a href='https://www.youtube.com/watch?v=0mqBa1VruAg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>05th of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=FELgdP9j-xE"><img src="icons/playlists/kadysheva17.jpg" data-title="Надежда Кадышева - Зачем Солнце Рано Пало" data-description="About Education (<a href='phd_eng.html' class = 'smallb_black' target='_blank'>PhD</a>).<br><a href='https://www.youtube.com/watch?v=FELgdP9j-xE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>15th of Jan, 2018."></a>
+          <a href="https://www.youtube.com/watch?v=vW5uz11N_iA"><img src="icons/playlists/kadysheva18.jpg" data-title="Надежда Кадышева - Окрасился Месяц Багрянцем" data-description="About Game <a href='games_rpg_breakout_eng.html#alphabounce' class = 'smallb_black' target='_blank'>Alphabounce</a>.<br><a href='https://www.youtube.com/watch?v=vW5uz11N_iA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Mar, 2018."></a>
+        </div>
+
+
+        <script>
+            Galleria.run('.galleria2', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        17th of Jun, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+                
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="malinin">Alexander Malinin (rus. Александр Малинин)</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                        <img src="icons/music/malinin.jpg" alt="Alexander Malinin (rus. Александр Малинин)" title="Alexander Malinin (rus. Александр Малинин)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5;">
+                                                
+                                                
+<P><b>Aleksandr Nikolaevich Malinin</b>, in Russian Александр Малинин (born Aleksandr Nikolaevich Vyguzov, Александр Николаевич Выгузов; November 16, 1958) is a Russian singer who was named a People's Artist of Russia in 1997.
+                                                
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://en.wikipedia.org/wiki/Alexander_Malinin" class = "standardb_black" target="_blank">Wikipedia Alexander Malinin</a> - <b>Alexander Malinin (rus. Александр Малинин)</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.malinin.ru/" class = "standardb_black" target="_blank">Alexander Malinin (rus. Александр Малинин)</a> - Official Website (rus.).
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria3">
+          <a href="https://www.youtube.com/watch?v=I4PcaRP5_G0"><img src="icons/playlists/malinin1.jpg" data-title="Александр Малинин - Ели Бы Не Ты" data-description="<a href='https://www.youtube.com/watch?v=I4PcaRP5_G0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>17th of Jun, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=V7dlsOnScMk"><img src="icons/playlists/malinin2.jpg" data-title="Александр Малинин - Напрасные Слова" data-description="<a href='https://www.youtube.com/watch?v=V7dlsOnScMk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>17th of Jun, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=zscdDO_JBjU"><img src="icons/playlists/malinin3.jpg" data-title="Александр Малинин - Забава" data-description="Про <a href='music_country_eng.html#vysockij' class = 'smallb_black' target='_blank'>Vladimir Vysotsky (rus. Владимир Высоцкий)</a> (Creation).<br><a href='https://www.youtube.com/watch?v=zscdDO_JBjU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Jun, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=t_Yb0NvjyOQ"><img src="icons/playlists/malinin4.jpg" data-title="Александр Малинин - Леди Гамильтон" data-description="About <a href='phd_eng.html' class = 'smallb_black' target='_blank'>PhD</a> and About Movie <a href='movies_genre_dystopia_eng.html#equals' class = 'smallb_black' target='_blank'>Equals</a>.<br><a href='https://www.youtube.com/watch?v=t_Yb0NvjyOQ' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>25th of Jul, 2017."></a>
+        </div>
+
+
+        <script>
+            Galleria.run('.galleria3', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        17th of Jun, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="miles">Robert Miles</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/music/miles.jpg" alt="Robert Miles" title="Robert Miles" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Roberto Concina</b> (3 November 1969 – 9 May 2017), better known by his stage name <b>Robert Miles</b>, was a Swiss-born Italian record producer, composer, musician and DJ. He is best known for his composition "Children".
+
+
+<br><br>
+<P><b>Discography, Studio Albums:</b>
+<P>&nbsp;&bull; 1996 — Dreamland
+<P>&nbsp;&bull; 1996 — Dreamland (Limited Winter Edition)
+<P>&nbsp;&bull; 1997 — 23am
+<P>&nbsp;&bull; 2001 — Organik
+<P>&nbsp;&bull; 2004 — Miles Gurtu
+<P>&nbsp;&bull; 2011 — Th1rt3en
+                                        
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+			  <a href="https://en.wikipedia.org/wiki/Robert_Miles" class = "standardb_black" target="_blank">Wikipedia Robert Miles</a> - <b>Robert Miles</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria4">
+	  <a href="https://www.youtube.com/watch?v=vxq20ZYwcI8"><img src="icons/playlists/miles4.jpg" data-title="Robert Miles - Celebration"   data-description="<a href='https://www.youtube.com/watch?v=vxq20ZYwcI8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Jun, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=CC5ca6Hsb2Q"><img src="icons/playlists/miles1.jpg" data-title="Robert Miles - Children"   data-description="<a href='https://www.youtube.com/watch?v=CC5ca6Hsb2Q' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Jun, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=oQ8DEq9A8A8"><img src="icons/playlists/miles2.jpg" data-title="Robert Miles - Fable"   data-description="<a href='https://www.youtube.com/watch?v=oQ8DEq9A8A8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Jun, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=I3-MHW96Cs4"><img src="icons/playlists/miles3.jpg" data-title="Robert Miles - One & One"   data-description="<a href='https://www.youtube.com/watch?v=I3-MHW96Cs4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Jun, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=hQMNVizMhG4"><img src="icons/playlists/miles5.jpg" data-title="Robert Miles - In My Dreams"   data-description="<a href='https://www.youtube.com/watch?v=hQMNVizMhG4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Jun, 2017."></a>
+        </div>
+
+
+
+        <script>
+            Galleria.run('.galleria4', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        12th of June, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+                
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+        </tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+        <tr>
+          <td class="title_black" >
+            &copy; Urmas Repinski, urrimus@hotmail.com
+          </td>
+        </tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+
+

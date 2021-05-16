@@ -1,0 +1,1446 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*36;
+var imgBgSrc="icons/background/superhero.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+        <tr> 
+                <td  height="3"></td>
+        </tr>   
+        <tr>
+                <td width="1000">
+                        <img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+                </td>
+        </tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+        <tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('movies_superhero_marvel_eng.html' + window.location.hash);
+                                } else {
+                                        window.location.href='movies_superhero_marvel_eng.html' + window.location.hash;
+                                };"             
+                        class="flag_selected"
+                >
+                        <img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('movies_superhero_marvel_rus.html' + window.location.hash);
+                                } else {
+                                        window.location.href='movies_superhero_marvel_rus.html' + window.location.hash;
+                                };"             
+                        class="flag_not_selected"
+                >
+                        <img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+        </tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+        <tr> 
+
+        <td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+        <tr> 
+                <td  align="center" class="title_gradient_black">Menu</td>
+        </tr>
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_eng.html');
+                        } else {
+                                window.location.href='about_me_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About me</div>
+        </td>
+        </tr>   
+        <tr>
+                <td align="center" >
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_eng.html');
+                        } else {
+                                window.location.href='about_work_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my work</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('phd_eng.html');
+                        } else {
+                                window.location.href='phd_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my PhD</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+		
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+		
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_7"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"               
+                  class="menu_not_selected_black">
+                  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_8"
+                  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="showSubMenu(this, 'eng', 'movies');"                               
+                  class="menu_selected">
+                  Movies</div>
+        </td>
+        </tr>   
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; By Actors</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; By Genre</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_3"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Animation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_mockbuster_eng.html');
+			} else {
+				window.location.href='movies_mockbuster_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Mockbuster</div>
+        </td>
+	</tr>		
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_8_5"
+                  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="showSubMenu(this, 'eng', 'movies');"                               
+                  class="menu_selected"
+		  style="padding-left: 5px;">
+                  &#9679; Superhero</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_8_5_1"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('movies_superhero_dc_eng.html');
+                        } else {
+                                window.location.href='movies_superhero_dc_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+                  &bull; DC Extended Universe</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_8_5_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="
+                    this.className='menu_selected';
+                        if (event.ctrlKey==1){
+                                window.open('movies_superhero_marvel_eng.html');
+                        } else {
+                                window.location.href='movies_superhero_marvel_eng.html';
+                        };"                               
+                  class="menu_selected"
+		  style="padding-left: 15px;">
+                  &bull; Marvel Cinematic Universe</div>
+        </td>
+        </tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_5_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_superhero_other_eng.html');
+			} else {
+				window.location.href='movies_superhero_other_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Other</div>
+        </td>
+	</tr>
+
+
+
+<tr>
+		<td align="left" >
+		  <div id="menu_8_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_not_satanic_eng.html');
+			} else {
+				window.location.href='movies_not_satanic_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &bull; Not Satanic</div>
+        </td>
+	</tr>	
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"  
+		  class="menu_not_selected_black">
+		  Series</div>
+        </td>
+	</tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_9"
+                  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'games');"  
+                  class="menu_not_selected_black">
+                  Games</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_10"
+                  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'books');"  
+                  class="menu_not_selected_red">
+                  Books</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_11"
+                  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'photos');"  
+                  class="menu_not_selected_red">
+                  Photos/Images</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_12"
+                  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'amv');"                                               
+                  class="menu_not_selected_black">
+                  AMV</div>
+        </td>
+        </tr>           
+        <tr>
+                <td align="center" >
+                  <div id="menu_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('radio_eng.html');
+                        } else {
+                                window.location.href='radio_eng.html';
+                        };"                                               
+                  class="menu_not_selected_black">
+                  Radio</div>
+        </td>
+        </tr>                   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_14"
+                  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'stuff');"                                       
+                  class="menu_not_selected_black">
+                  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_15"
+                  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+                  class="menu_not_selected_red">
+                  Anecdotes</div>
+        </td>
+        </tr>           
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_17"
+                  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+                  class="menu_not_selected_white">
+                  Substances For Relaxation</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_18"
+                  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'software');"  
+                  class="menu_not_selected_white">
+                  Software Development</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_19"
+                  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'satanism');"                                       
+                  class="menu_not_selected_green">
+                  Satanism</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_21"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('falsifiability_eng.html');
+                        } else {
+                                window.location.href='falsifiability_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Falsifiability</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_22"
+                  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'psychology');"                                       
+                  class="menu_not_selected_green">
+                  Psychology</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_23"
+                  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'countries');"                                       
+                  class="menu_not_selected_green">
+                  Countries</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_24"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+
+                                window.open('totalitarianism_eng.html');
+                        } else {
+                                window.location.href='totalitarianism_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Totalitarianism</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_25"
+                  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'personalities');"                                       
+                  class="menu_not_selected_green">
+                  Personalities</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+        
+
+                </td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+        <tr> 
+                <td  class="title_black" style="width: 530px;"><a name="welcome">Movies &blacktriangleright; Superhero &blacktriangleright; Marvel Cinematic Universe</a></td>
+        </tr>
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+
+        </tr>   
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:828px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+                
+
+                
+                
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="superhero">Superhero Movies</a></td>
+                        </tr>
+                        <tr >
+                                <td width="250" height="100%" class="nimetus_black">Genre Description</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/movies/movies_superhero.jpg" alt="Superhero Films" title="Superhero Films" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>A <b>superhero film</b>, <b>superhero movie</b>, or <b>superhero motion</b> picture is a film that is focused on the actions of one or more superheroes: individuals who usually possess superhuman abilities relative to a normal person and are dedicated to protecting the public. These films typically feature action, fantasy and/or science fiction elements, with the first film of a particular character often including a focus on the origin of the special powers and the first fight against the character's most famous supervillain, or archenemy.
+
+<P>Most superhero movies are based on superhero comics. By contrast, several films such as the RoboCop series, The Meteor Man, Unbreakable, The Incredibles, and Hancock are original for the screen, while The Green Hornet is based primarily on the original radio series and its 1960s television adaptation, and both Underdog and The Powerpuff Girls are based on an animated television series.
+
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Superhero_film" class = "standardb_black" target="_blank">Wikipedia Superhero Film</a> - <b>Superhero Film</b> on Wikipedia.
+                        </td>
+                        </tr>
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        26th of Aug, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+                
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="marvel_cinematic_world">Marvel Cinematic Universe</a></td>
+                        </tr>
+                        <tr >
+                                <td width="250" height="100%" class="nimetus_black">Genre Description</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/movies/marvel_cinematic_universe.jpg" alt="Marvel Cinematic Universe" title="Marvel Cinematic Universe" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>The <b>Marvel Cinematic Universe</b> (<b>MCU</b>) is an American media franchise and shared universe that is centered on a series of superhero films, independently produced by Marvel Studios and based on characters that appear in publications by Marvel Comics. The franchise has expanded to include comic books, short films, television series and digital series. The shared universe, much like the original Marvel Universe in comic books, was established by crossing over common plot elements, settings, cast, and characters. Clark Gregg has appeared the most in the franchise, portraying Phil Coulson, a character original to the MCU.
+
+<P>The first film released in the MCU was Iron Man (2008), which began the first phase of films culminating in the crossover film Marvel's The Avengers (2012). Phase Two began with Iron Man 3 (2013), and concluded with Ant-Man (2015). The films are currently in Phase Three, which began with the release of Captain America: Civil War (2016). Marvel Television expanded the universe further, first to network television with Marvel's Agents of S.H.I.E.L.D. on ABC in the 2013–14 television season, followed by online streaming with Marvel's Daredevil on Netflix in 2015, and then to cable television with Marvel's Cloak & Dagger, which is scheduled to air in 2018 on Freeform. Marvel Television has also produced the digital series Marvel's Agents of S.H.I.E.L.D.: Slingshot, which is a supplement to Agents of S.H.I.E.L.D. Soundtrack albums have been released for all of the films, along with many of television series, as well as the release of compilation albums containing existing music heard in the films. The MCU also includes tie-in comics published by Marvel Comics, while Marvel Studios has also produced a series of direct-to-video short films and a viral marketing campaign for its films and the universe with the faux news program WHIH Newsfront.
+
+<P>The franchise has been commercially successful as a multimedia shared universe, though some critics have found that some of its films and television series have suffered in service of the wider universe. It has inspired other film and television studios with comic book character adaptation rights to attempt to create similar shared universes. The MCU has also been the focus of other media, outside of the shared universe, including attractions at the Disneyland Resort and Discovery Times Square, two television specials, guidebooks for each film, a Lego video game, and a commercial with Coca-Cola.
+
+<br><br>
+<P><b>Marvel Cinematic Universe films:</b>
+
+
+<br><br>
+<P><b>Phase One:</b>
+<P>&nbsp;&bull; Iron Man, May 2, 2008
+<P>&nbsp;&bull; The Incredible Hulk, June 13, 2008
+<P>&nbsp;&bull; Iron Man 2, May 7, 2010
+<P>&nbsp;&bull; <a href="#thor" class = "standardb_black" target="_blank">Thor</a>, May 6, 2011
+<P>&nbsp;&bull; <a href="#first_avenger" class = "standardb_black" target="_blank">Captain America: The First Avenger</a>, July 22, 2011
+<P>&nbsp;&bull; Marvel's The Avengers, May 4, 2012
+
+
+<br><br>
+<P><b>Phase Two:</b>
+<P>&nbsp;&bull; Iron Man 3, May 3, 2013
+<P>&nbsp;&bull; <a href="#thor_dark_world" class = "standardb_black" target="_blank">Thor: The Dark World</a>, November 8, 2013
+<P>&nbsp;&bull; Captain America: The Winter Soldier, April 4, 2014
+<P>&nbsp;&bull; <a href="#guardians_of_the_galaxy" class = "standardb_black" target="_blank">Guardians of the Galaxy</a>, August 1, 2014
+<P>&nbsp;&bull; Avengers: Age of Ultron, May 1, 2015
+<P>&nbsp;&bull; <a href="#ant_man" class = "standardb_black" target="_blank">Ant-Man</a>, July 17, 2015
+
+
+
+<br><br>
+<P><b>Phase Three:</b>
+<P>&nbsp;&bull; Captain America: Civil War, May 6, 2016
+<P>&nbsp;&bull; <a href="#doctor_strange" class = "standardb_black" target="_blank">Doctor Strange</a>, November 4, 2016
+<P>&nbsp;&bull; Guardians of the Galaxy Vol. 2, May 5, 2017
+<P>&nbsp;&bull; <a href="#spider_man" class = "standardb_black" target="_blank">Spider-Man: Homecoming</a>, July 7, 2017
+<P>&nbsp;&bull; <a href="#thor_ragnarok" class = "standardb_black" target="_blank">Thor: Ragnarok</a>, November 3, 2017
+<P>&nbsp;&bull; Black Panther, February 16, 2018
+<P>&nbsp;&bull; <a href="#avengers_infinity_war" class = "standardb_black" target="_blank">Avengers: Infinity War</a>, April 27, 2018
+<P>&nbsp;&bull; Ant-Man and the Wasp, July 6, 2018
+<P>&nbsp;&bull; Captain Marvel, March 8, 2019
+<P>&nbsp;&bull; Avengers: Endgame, April 26, 2019
+<P>&nbsp;&bull; Spider-Man: Far From Home, July 2, 2019
+
+<br><br>
+<P><b>Phase Four:</b>
+
+
+<P>&nbsp;&bull; Black Widow, July 9, 2021
+<P>&nbsp;&bull; Shang-Chi and the Legend of the Ten Rings, September 3, 2021
+<P>&nbsp;&bull; ...
+
+
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe" class = "standardb_black" target="_blank">Wikipedia Marvel Cinematic Universe</a> - <b>Marvel Cinematic Universe</b> on Wikipedia.
+                        </td>
+                        </tr>
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        28th of Mar, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+				
+				
+
+                
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="250" height="100%" class="nimetus_black"><a name="ant_man">Ant-Man</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/movies/ant_man.jpg" alt="Ant-Man" title="Ant-Man" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Ant-Man</b> is a 2015 American superhero film based on the Marvel Comics characters of the same name: Scott Lang and Hank Pym. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is the twelfth film of the Marvel Cinematic Universe (MCU). The film was directed by Peyton Reed, with a screenplay by the writing teams Edgar Wright and Joe Cornish, and Adam McKay and Paul Rudd, and stars Rudd, Evangeline Lilly, Corey Stoll, Bobby Cannavale, Michael Peña, Tip "T.I." Harris, Anthony Mackie, Wood Harris, Judy Greer, David Dastmalchian, and Michael Douglas. In Ant-Man, Lang must help defend Pym's Ant-Man shrinking technology and plot a heist with worldwide ramifications.
+
+<P>Development of Ant-Man began in April 2006, with the hiring of Wright to direct and co-write with Cornish. By April 2011, Wright and Cornish had completed three drafts of the script and Wright shot test footage for the film in July 2012. Pre-production began in October 2013 after being put on hold so that Wright could complete The World's End. Casting began in December 2013, with the hiring of Rudd to play Lang. In May 2014, Wright left the project, citing creative differences, though he still received screenplay and story credits with Cornish, as well as an executive producer credit. The following month, Reed was brought in to replace Wright, while McKay was hired to contribute to the script with Rudd. Principal photography took place between August and December 2014 in San Francisco and Metro Atlanta.
+
+<P>Ant-Man held its world premiere in Los Angeles on June 29, 2015, and was released in North America on July 17, 2015, in 3D and IMAX 3D. Upon its release, the film grossed more than $519 million worldwide, and received positive reviews from critics, who generally welcomed the film's smaller stakes than preceding MCU installments, as well as its cast, humor, and CGI sequences. A sequel, titled Ant-Man and the Wasp, is scheduled to be released on July 6, 2018.
+										
+										
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Ant-Man_(film)" class = "standardb_black" target="_blank">Wikipedia Ant-Man (film)</a> - <b>Ant-Man</b> on Wikipedia.
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://www.youtube.com/watch?v=QfOZWGLT1JM" class = "standardb_black" target="_blank">Ant-Man</a> - Official Trailer.
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        11th of Oct, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+                
+				
+
+                
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="250" height="100%" class="nimetus_black"><a name="avengers_infinity_war">Avengers: Infinity War</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/movies/avengers_infinity_war.jpg" alt="Avengers: Infinity War" title="Avengers: Infinity War" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Avengers: Infinity War</b> is a 2018 American superhero film based on the Marvel Comics superhero team the Avengers, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the sequel to 2012's The Avengers and 2015's Avengers: Age of Ultron, and the nineteenth film in the Marvel Cinematic Universe (MCU). The film is directed by Anthony and Joe Russo, written by Christopher Markus and Stephen McFeely, and features an ensemble cast including Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson, Benedict Cumberbatch, Don Cheadle, Tom Holland, Chadwick Boseman, Paul Bettany, Elizabeth Olsen, Anthony Mackie, Sebastian Stan, Danai Gurira, Letitia Wright, Dave Bautista, Zoe Saldana, Josh Brolin, and Chris Pratt. In Avengers: Infinity War, the Avengers and Guardians of the Galaxy attempt to stop Thanos from amassing the all-powerful Infinity Stones.
+
+<P>The film was announced in October 2014 as Avengers: Infinity War – Part 1. The Russo brothers came on board to direct in April 2015 and by May, Markus and McFeely had signed on to write the script for the film, which drew inspiration from Jim Starlin's 1991 The Infinity Gauntlet comic and Jonathan Hickman's 2013 Infinity comic. In 2016, Marvel shortened the title to Avengers: Infinity War. Filming began in January 2017 at Pinewood Atlanta Studios in Fayette County, Georgia, and lasted until July 2017, shooting back-to-back with a direct sequel. Additional filming took place in Scotland, England, the Downtown Atlanta area, and New York City. With an estimated budget of at least $320 million, it is one of the most expensive films ever made.
+
+<P>Avengers: Infinity War held its world premiere on April 23, 2018 in Los Angeles and was released in the United States on April 27, 2018, in IMAX and 3D. The film received generally positive reviews from critics, who praised the cast, visual effects, emotional weight of the story, and action scenes, although the runtime received some criticism. It has grossed over $1.1 billion worldwide, making it the second highest-grossing film of 2018 as well as the 15th highest-grossing film of all time. In its opening weekend it grossed $641 million worldwide and $258 million in the United States and Canada, setting the records for the highest-grossing openings for both. The untitled sequel is set to be released on May 3, 2019.
+										
+                        
+<br><br>
+<P><b>Reception:</b>
+<P><b>Box office:</b>
+<P>As of May 6, 2018, Avengers: Infinity War has grossed $453.1 million in the United States and Canada, and $714.6 million in other territories, for a worldwide total of $1.168 billion. It is currently the 15th highest-grossing film of all-time, as well as the fifth highest grossing superhero film, and the second highest-grossing film of 2018. Its worldwide opening weekend of $640.5 million, is the biggest of all time, beating The Fate of the Furious' $541.9 million. It crossed the $1 billion threshold at the worldwide box office in 11 days, becoming the fastest film to reach the milestone, eclipsing Star Wars: The Force Awakens' record of 12 days. Also in its second weekend, Infinity War passed $13.5 million from 4DX screens, which was the all-time record for the format.
+
+<br><br>
+<P><b>Pre-sale ticket records:</b>
+<P>In December 2017, a survey from Fandango indicated that Infinity War was the most anticipated film of 2018. Fandango reported that Infinity War achieved the largest initial 24-hour ticket pre-sales for a superhero film in just six hours, surpassing the record from Black Panther. Atom Tickets also reported that Infinity War sold more tickets in its first pre-sales day than Black Panther sold in its first month. Within 72 hours, the film generated the biggest amount of pre-sales for any superhero film at AMC Theatres. AMC noted that Infinity War's advance ticket sales were 257.6% ahead of Black Panther's, 751.5% ahead of Captain America: Civil War, and 1,106.5% ahead of Avengers: Age of Ultron during the same time frame. Two weeks before its release, Fandango revealed that advance ticket sales for Infinity War were outpacing the last seven MCU films combined in the same timeframe, and had become the company's top April release. It was also on pace to become the top superhero film, with Fandango's Erik Davis noting, "Infinity War has built up such unprecedented anticipation that it's pacing to break records, the likes of which we have never seen before for a superhero movie." A week before the film released, The Wall Street Journal noted the film had sold more than $50 million worth of advance tickets, behind only Star Wars: The Force Awakens (2015) and Star Wars: The Last Jedi (2017), with Fandango reporting that more than 2,500 showtimes had sold out. On Atom Tickets, Infinity War had the most pre-sale volume, selling 7% higher than The Last Jedi and 250% higher than Black Panther at the same point in their sales. Atom also reported that ticket sales for Infinity War were doubling daily the week of its release, the fastest rate of increase the service has seen for any MCU title.
+
+<br><br>
+<P><b>United States and Canada:</b>
+<P>Avengers: Infinity War earned $106.7 million on its opening day in the United States and Canada (including $39 million from Thursday night previews), for an opening weekend total of $258.2 million. The Thursday night preview earning was the best for an MCU film (beating Avengers: Age of Ultron's $27.6 million) and the fourth-best of all time, behind The Force Awakens ($57 million), The Last Jedi ($45 million) and Harry Potter and the Deathly Hallows – Part 2 ($43.5 million). Fandango reported that $14 million of the $39 million came from ticket pre-sales from the company. The opening day gross was the second-best ever, behind The Force Awakens' $119.1 million, its Saturday gross of $83 million was the best-ever Saturday gross, beating Jurassic World's $69.6 million, and its Sunday gross of $69.2 million was the best-ever, beating The Force Awakens' $60.5 million. The total weekend gross became highest-grossing opening weekend of all time, beating The Force Awakens' $248 million. IMAX contributed $22.5 million to the opening weekend gross, which was the best opening for a Marvel film in the format and the third-biggest opening, behind The Force Awakens ($30 million) and The Last Jedi ($24.7 million). AMC reported that the film had the highest Friday and Saturday box office gross for a single title in the company's history, while Fandango reported that approximately $84 million worth of tickets were sold through the service, approximately 30%, which was the largest share of the weekend box office for any film in the company's history. Avengers: Infinity War earned an additional $25 million the Monday after its opening weekend, which was the highest grossing Monday in April, beating Furious 7 ($14 million), and the second-best Monday gross for an MCU film, after Black Panther ($40.1 million). The next day, it earned $23.5 million, which was the highest grossing Tuesday for an MCU film, beating Black Panther ($20.8 million), and the highest grossing Tuesday in May, beating The Avengers ($17.6 million). It also tied The Force Awakens for the fastest to reach $300 million at five days.
+
+<P>The film remained number one in its second weekend, earning $115.5 million, which was the second-best second weekend ever after The Force Awakens ($149.2 million). Infinity War also surpassed $400 million in the weekend, doing so in nine days, becoming the second fastest film to reach that mark, again after The Force Awakens's eight days. It is currently the 15th highest-grossing film of all time. The film was projected to gross $490–590 million for its total final domestic gross, which was later revised upwards to $600 million.
+
+<br><br>
+<P><b>Other territories:</b>
+<P>Outside the United States and Canada, the film earned $382.7 million from 52 markets, opening number one in all, and became the number two opening internationally, behind The Fate of the Furious ($444.2 million). IMAX contributed $18.5 million, which was the best opening outside of the US, Canada, and China, surpassing The Force Awakens ($17.5 million). All-time opening weekend records were set in South Korea ($39.2 million), Mexico ($25.4 million), Brazil ($19.1 million), India (for a Western release, $18.6 million), the Philippines ($12.5 million), Thailand ($10 million), Indonesia ($9.6 million), Malaysia, Hong Kong, Vietnam, Central America, Peru, Chile, Ecuador, Venezuela, Bolivia, South Africa, Turkey, the United Arab Emirates, and West Africa. Many markets also set opening day records. Australia opened with $6.7 million, which was the second biggest opening day of all time, behind The Force Awakens; it went on to have the second-highest opening weekend ever, with $23.2 million. France's opening day gross of $3.9 million was the highest ever for the month of April and the largest ever for an MCU film, while the same amount in Italy was the third-highest opening day and biggest superhero and Disney opening ever. France went on to earn $17.7 million, the biggest superhero opening in the market. Denmark, Finland, Norway, Portugal, and Sweden had the best opening for a superhero film. The United Kingdom earned $8.9 million, which was the biggest MCU opening day and third highest opening day for a Disney film; it would go on to earn $41.4 million for the weekend, which was the third-highest of all time and the second-highest Disney opening. The United Kingdom also had the highest grossing Saturday ever. Argentina had the second highest opening day of all time, while Germany had the best superhero film opening day of all time, ultimately earning $14.7 million, which was the best superhero opening ever. Austria, Bosnia and Herzegovina, the Czech Republic, Estonia, Greece, Hungary, the Middle East, Poland, Serbia, Slovakia, Slovenia, and Ukraine also broke superhero film records. Japan had the second-biggest opening for an MCU film with $9 million.
+
+<P>Avengers: Infinity War remained number one in its 54 markets in its second weekend. The $4.9 million opening day in Russia was the biggest of all time. Infinity War was also the first film in Russia to sell more than 1 million tickets in a single day, and went on to gross $17.6 million in the market, a new opening weekend record. IMAX contributed $2.2 million in the market, which was also an opening weekend record. The film also became the highest grossing release ever in Brazil, Indonesia, and the Philippines, and was the second-highest in India (for a Western release) and Mexico, behind The Jungle Book and Coco, respectively. As of May 6, 2018, the film's top markets are South Korea ($69.1 million), United Kingdom ($67.2 million), and Mexico ($48.7 million). The film is currently the 24th highest-grossing film of all time in territories outside the United States and Canada.
+
+              
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Avengers:_Infinity_War" class = "standardb_black" target="_blank">Wikipedia Avengers: Infinity War</a> - <b>Avengers: Infinity War</b> on Wikipedia.
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://www.youtube.com/watch?v=QwievZ1Tx-8" class = "standardb_black" target="_blank">Avengers: Infinity War</a> - Official Trailer.
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        08th of May, 2018.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+                
+
+
+
+                
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="250" height="100%" class="nimetus_black"><a name="first_avenger">Captain America: The First Avenger</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/movies/first_avenger.jpg" alt="Captain America: The First Avenger" title="Captain America: The First Avenger" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Captain America: The First Avenger</b> is a 2011 American superhero film based on the Marvel Comics character Captain America, produced by Marvel Studios and distributed by Paramount Pictures. It is the fifth film in the Marvel Cinematic Universe. The film was directed by Joe Johnston, written by Christopher Markus & Stephen McFeely, and stars Chris Evans, Tommy Lee Jones, Hugo Weaving, Hayley Atwell, Sebastian Stan, Dominic Cooper, Neal McDonough, Derek Luke, and Stanley Tucci. Set predominantly during World War II, Captain America: The First Avenger tells the story of Steve Rogers, a sickly man from Brooklyn who is transformed into super-soldier Captain America and must stop the Red Skull, who intends to use an artifact called the "Tesseract" as an energy-source for world domination.
+
+<P>Captain America: The First Avenger began as a concept in 1997 and was scheduled for distribution by Artisan Entertainment. However, a lawsuit, not settled until September 2003, disrupted the project. In 2005, Marvel Studios received a loan from Merrill Lynch, and planned to finance and release it through Paramount Pictures. Directors Jon Favreau and Louis Leterrier were interested in directing the project before Johnston was approached in 2008. The principal characters were cast between March and June 2010. Production of Captain America: The First Avenger began in June 2010, and filming took place in London, Manchester, Caerwent, and Liverpool in the United Kingdom, and Los Angeles in the United States. The film was converted to 3D in post-production.
+
+<P>Captain America: The First Avenger premiered in Hollywood on July 19, 2011, and was released in the United States on July 22, 2011. The film received positive reviews and was commercially successful, grossing over $370 million worldwide. The Blu-ray and DVD were released on October 25, 2011. A sequel titled Captain America: The Winter Soldier was released on April 4, 2014, and a third film titled Captain America: Civil War was released on May 6, 2016.
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Captain_America:_The_First_Avenger" class = "standardb_black" target="_blank">Wikipedia Captain America: The First Avenger</a> - <b>Captain America: The First Avenger</b> on Wikipedia.
+
+
+
+
+
+                        </td>
+                        </tr>
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://www.youtube.com/watch?v=jh8q4y7tbuQ" class = "standardb_black" target="_blank">Captain America: The First Avenger</a> - Official Trailer.
+                        </td>
+                        </tr>
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        28th of Mar, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+
+                </tr>
+                
+                
+                
+     
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="doctor_strange">Doctor Strange</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/doctor_strange.jpg" alt="Doctor Strange" title="Doctor Strange" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Doctor Strange</b> is a 2016 American superhero film based on the Marvel Comics character of the same name, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the fourteenth film of the Marvel Cinematic Universe (MCU). The film is directed by Scott Derrickson, who wrote the film with Jon Spaihts and C. Robert Cargill, and stars Benedict Cumberbatch, Chiwetel Ejiofor, Rachel McAdams, Benedict Wong, Michael Stuhlbarg, Benjamin Bratt, Scott Adkins, Mads Mikkelsen, and Tilda Swinton. In Doctor Strange, surgeon Stephen Strange learns the mystic arts from the Ancient One after a career-ending car accident.
+
+<P>Various incarnations of a Doctor Strange film had been in development since the mid-1980s, until Paramount Pictures acquired the film rights in April 2005, on behalf of Marvel Studios. Thomas Dean Donnelly and Joshua Oppenheimer were brought on board in June 2010 to write a screenplay. In June 2014, Derrickson and Spaihts were hired to direct and re-write the film, respectively. Cumberbatch was chosen for the eponymous role in December 2014, necessitating a schedule change to work around his other commitments. This gave Derrickson time to work on the script himself, for which he brought Cargill on to help. The film began principal photography in November 2015 in Nepal, before moving to the United Kingdom, Hong Kong, and concluding in New York City in April 2016.
+
+<P>Doctor Strange held its world premiere in Hong Kong on October 13, 2016, and was released in the United States on November 4, 2016, in 3D and IMAX 3D. The film has grossed over $677 million worldwide, and was met with positive reviews from critics. It also received an Academy Award nomination for Best Visual Effects.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)" class = "standardb_black" target="_blank">Wikipedia Doctor Strange (2016 film)</a> - <b>Doctor Strange (film)</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=HSzx-zryEgM" class = "standardb_black" target="_blank">Doctor Strange</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					05th of Apr, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="guardians_of_the_galaxy">Guardians of the Galaxy</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/guardians_of_the_galaxy.jpg" alt="Guardians of the Galaxy" title="Guardians of the Galaxy" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Guardians of the Galaxy</b> (retroactively referred to as <b>Guardians of the Galaxy Vol. 1</b>) is a 2014 American superhero film based on the Marvel Comics superhero team of the same name, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the tenth film in the Marvel Cinematic Universe. The film was directed by James Gunn, who wrote the screenplay with Nicole Perlman, and features an ensemble cast including Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel, Bradley Cooper, Lee Pace, Michael Rooker, Karen Gillan, Djimon Hounsou, John C. Reilly, Glenn Close, and Benicio del Toro. In Guardians of the Galaxy, Peter Quill forms an uneasy alliance with a group of extraterrestrial misfits who are fleeing after stealing a powerful artifact.
+
+<P>Perlman began working on the screenplay in 2009. Producer Kevin Feige first publicly mentioned Guardians of the Galaxy as a potential film in 2010 and Marvel Studios announced it was in active development at the San Diego Comic-Con International in July 2012. Gunn was hired to write and direct the film that September. In February 2013, Pratt was hired to play Peter Quill / Star-Lord, and the supporting cast members were subsequently confirmed. Principal photography began in July 2013 at Shepperton Studios in England, with filming continuing in London before wrapping up in October 2013. Post-production was finished on July 7, 2014.
+
+<P>The film premiered in Hollywood on July 21, 2014. It was released in theaters on August 1, 2014 in the United States in the 3D and IMAX 3D formats. The film became a critical and commercial success, grossing $773.3 million worldwide and becoming the highest-grossing superhero film of 2014, as well as the third highest-grossing film in North America of 2014. The film garnered praise for its humor, action, soundtrack, visual effects, direction, musical score, and acting. A sequel, Guardians of the Galaxy Vol. 2, was released on May 5, 2017, with a third film, Guardians of the Galaxy Vol. 3, planned.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)" class = "standardb_black" target="_blank">Wikipedia Guardians of the Galaxy (film)</a> - <b>Guardians of the Galaxy (film)</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=d96cjJhvlMA" class = "standardb_black" target="_blank">Guardians of the Galaxy</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					20th of May, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="spider_man">Spider-Man: Homecoming</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/spider_man.jpg" alt="Spider-Man: Homecoming" title="Spider-Man: Homecoming" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Spider-Man: Homecoming</b> is a 2017 American superhero film based on the Marvel Comics character Spider-Man, co-produced by Columbia Pictures and Marvel Studios, and distributed by Sony Pictures Releasing. It is the second Spider-Man film reboot and the sixteenth film of the Marvel Cinematic Universe (MCU). The film is directed by Jon Watts, with a screenplay by the writing teams of Jonathan Goldstein and John Francis Daley, Watts and Christopher Ford, and Chris McKenna and Erik Sommers. Tom Holland stars as Spider-Man, alongside Michael Keaton, Jon Favreau, Zendaya, Donald Glover, Tyne Daly, Marisa Tomei and Robert Downey Jr. In Spider-Man: Homecoming, Peter Parker tries to balance high school life with being Spider-Man, while facing the Vulture.
+
+<P>In February 2015, Marvel Studios and Sony reached a deal to share the character rights of Spider-Man, integrating the character into the established MCU. The following June, Holland was cast as the title character, while Watts was hired to direct, followed shortly by the casting of Tomei and the hiring of Daley and Goldstein. In April 2016, the film's title was revealed, along with additional cast, including Downey. Principal photography began in June 2016 at Pinewood Atlanta Studios in Fayette County, Georgia, and continued in Atlanta, Los Angeles and New York City. The additional screenwriters were revealed during filming, which concluded in Berlin in October 2016. The production team made efforts to differentiate the film from previous Spider-Man incarnations.
+
+<P>Spider-Man: Homecoming premiered in Hollywood on June 28, 2017, and was released in the United States on July 7, 2017, in 3D, IMAX and IMAX 3D. Homecoming has grossed over $641 million worldwide, making it the seventh highest grossing film of 2017. It received positive reviews, with critics praising Holland and the other cast's performances, the light tone and the action sequences. A sequel is scheduled to be released on July 5, 2019.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Spider-Man:_Homecoming" class = "standardb_black" target="_blank">Wikipedia Spider-Man: Homecoming</a> - <b>Spider-Man: Homecoming</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=xrzXIaTt99U" class = "standardb_black" target="_blank">Spider-Man: Homecoming</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					03rd of Aug, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="thor">Thor</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/thor.jpg" alt="Thor" title="Thor" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Thor</b> is a 2011 American superhero film based on the Marvel Comics character of the same name, produced by Marvel Studios and distributed by Paramount Pictures. It is the fourth film in the Marvel Cinematic Universe. The film was directed by Kenneth Branagh, written by Ashley Edward Miller & Zack Stentz and Don Payne, and stars Chris Hemsworth, Natalie Portman, Tom Hiddleston, Stellan Skarsgard, Colm Feore, Ray Stevenson, Idris Elba, Kat Dennings, Rene Russo and Anthony Hopkins. The film sees Thor, the crown prince of Asgard, banished to Earth and stripped of his powers after he reignites a dormant war. As his brother, Loki, plots to take the throne for himself, Thor must prove himself worthy and reclaim his hammer Mjolnir.
+
+<P>Sam Raimi first developed the concept of a film adaptation of Thor in 1991, but soon abandoned the project, leaving it in "development hell" for several years. During this time, the rights were picked up by various film studios until Marvel Studios signed Mark Protosevich to develop the project in 2006, and planned to finance it and release it through Paramount Pictures. Matthew Vaughn was originally assigned to direct the film for a tentative 2010 release. However, after Vaughn was released from his holding deal in 2008, Branagh was approached and the film's release was rescheduled into 2011. The main characters were cast in 2009, and principal photography took place in California and New Mexico from January to May 2010. The film was converted to 3D in post-production.
+
+<P>Thor premiered on April 17, 2011, in Sydney, Australia and was released on May 6, 2011, in the United States. The film was a financial success and received positive reviews from film critics. The DVD and Blu-ray sets were released on September 13, 2011. A sequel, Thor: The Dark World, was released on November 8, 2013. A third film, Thor: Ragnarok is set to be released on November 3, 2017.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Thor_(film)" class = "standardb_black" target="_blank">Wikipedia Thor (film)</a> - <b>Thor</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=k9Nb7P6EfyU" class = "standardb_black" target="_blank">Thor</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					03rd of Apr, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="thor_dark_world">Thor: The Dark World</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/thor_dark_world.jpg" alt="Thor: The Dark World" title="Thor: The Dark World" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Thor: The Dark World</b> is a 2013 American superhero film based on the Marvel Comics character Thor, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the sequel to 2011's Thor and the eighth film in the Marvel Cinematic Universe (MCU). The film was directed by Alan Taylor, with a screenplay by Christopher Yost and the writing team of Christopher Markus and Stephen McFeely.[5] It stars Chris Hemsworth as Thor, alongside Natalie Portman, Tom Hiddleston, Anthony Hopkins, Stellan Skarsgård, Idris Elba, Christopher Eccleston, Adewale Akinnuoye-Agbaje, Kat Dennings, Ray Stevenson, Zachary Levi, Tadanobu Asano, Jaimie Alexander, and Rene Russo. In Thor: The Dark World, Thor teams up with Loki to save the Nine Realms from the Dark Elves led by the vengeful Malekith, who intends to plunge the universe into darkness.
+
+<P>Development of Thor: The Dark World began in April 2011, when producer Kevin Feige announced plans for a sequel to follow the crossover film The Avengers. In July 2011, Kenneth Branagh, the director of Thor, withdrew from the project. Brian Kirk and Patty Jenkins were considered to direct the film before Taylor was hired in January 2012. The supporting cast filled out in August 2012, with the hiring of Eccleston, Dennings, and Akinnuoye-Agbaje. Principal photography began in September 2012 in Surrey, England with filming continuing in Iceland and London, before wrapping up in December 2012. Thor: The Dark World was converted to 3D in post-production.
+
+<P>Thor: The Dark World premiered at the Odeon Leicester Square in London on October 22, 2013, and was released on November 8, 2013, in the United States. Many critics praised it for its visual effects and performances (particularly Hemsworth and Hiddleston), but criticized its story, villain, and pacing; many critics and fans declare it the weakest of the MCU films.[6][7] The film was a commercial success, grossing over $644 million worldwide and making it the 10th highest-grossing film of 2013. A third film, Thor: Ragnarok, was released on November 3, 2017.
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Thor:_The_Dark_World" class = "standardb_black" target="_blank">Wikipedia Thor: The Dark World</a> - <b>Thor: The Dark World</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=npvJ9FTgZbM" class = "standardb_black" target="_blank">Thor: The Dark World</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					02nd of Sep, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="thor_ragnarok">Thor: Ragnarok</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/movies/thor_ragnarok.jpg" alt="Thor: Ragnarok" title="Thor: Ragnarok" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Thor: Ragnarok</b> is a 2017 American superhero film based on the Marvel Comics character Thor, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the sequel to 2011's Thor and 2013's Thor: The Dark World, and is the seventeenth film of the Marvel Cinematic Universe (MCU). The film is directed by Taika Waititi from a screenplay by Eric Pearson and the writing team of Craig Kyle and Christopher Yost, and stars Chris Hemsworth as Thor alongside Tom Hiddleston, Cate Blanchett, Idris Elba, Jeff Goldblum, Tessa Thompson, Karl Urban, Mark Ruffalo, and Anthony Hopkins. In Thor: Ragnarok, Thor must escape the alien planet Sakaar in time to save Asgard from Hela and the impending Ragnarök.
+
+<P>A third Thor film was confirmed in January 2014, with Kyle and Yost beginning work on the screenplay. The involvement of Hemsworth and Hiddleston was announced that October. Waititi joined the film as director a year later, after The Dark World director Alan Taylor chose not to return. Ruffalo joined the cast reprising the role of Hulk from previous MCU films, which allowed elements of the 2006 comic storyline "Planet Hulk" to be adapted for Ragnarok. The rest of the cast, including Blanchett as Hela, was confirmed in May 2016, with Pearson's involvement revealed at the start of filming in July 2016. Principal photography took place in Brisbane and Sydney, Australia, with the film also having exclusive use of Village Roadshow Studios in Oxenford, concluding in October 2016.
+
+<P>Thor: Ragnarok premiered in Los Angeles on October 10, 2017, and was released in the United States on November 3, 2017, in 3D, IMAX, and IMAX 3D. The film received largely positive reviews with many critics declaring it as the best film of the Thor trilogy, with specific praise going to Waititi's direction, the cast, action sequences, music, and humor. It has grossed more than $431 million worldwide.					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Thor:_Ragnarok" class = "standardb_black" target="_blank">Wikipedia Thor: Ragnarok</a> - <b>Thor: Ragnarok</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ue80QwXMRHg" class = "standardb_black" target="_blank">Thor: Ragnarok</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					02nd of Nov, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+   
+
+
+
+                
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+
+</form> 
+    </td> <!-- End of Functional Table -->
+        </tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+        <tr>
+          <td class="title_black" >
+            &copy; Urmas Repinski, urrimus@hotmail.com
+          </td>
+        </tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+

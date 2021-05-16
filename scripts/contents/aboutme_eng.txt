@@ -1,0 +1,2 @@
+﻿<P><b class="text_blue">About Me</b>
+<P>&nbsp;&#9679; <a href="about_me_eng.html" class = "standardb_blue" data-added="02nd of Apr, 2014." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">About Me</a>

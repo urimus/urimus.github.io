@@ -1,0 +1,37 @@
+﻿<P><b class="text_white_blue">Разработка Программного Обеспечения</b>
+<P>&nbsp;&#9679; <b class="text_white_blue">Обработка Аудио/Видео</b>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_goldvawe_rus.html" class = "standardb_white" data-added="01st of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">GoldWave</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_movie_maker_online_rus.html" class = "standardb_white" data-added="01st of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Movie Maker Online</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_windows_movie_maker_rus.html" class = "standardb_white" data-added="01st of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Windows Movie Maker</a>
+<P>&nbsp;&#9679; <b class="text_white_blue">Обработка Данных</b>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_mathcad_rus.html" class = "standardb_white" data-added="01st of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">MathCAd</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_matlab_rus.html" class = "standardb_white" data-added="01st of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">MatLab</a>
+<P>&nbsp;&#9679; <b class="text_white_blue">Рисование</b>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_coreldraw_rus.html" class = "standardb_white" data-added="02nd of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">CorelDraw</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_gimp_rus.html" class = "standardb_white" data-added="02nd of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Gimp (Linux)</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_paint_rus.html" class = "standardb_white" data-added="02nd of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Microsoft Paint</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_photoshop_rus.html" class = "standardb_white" data-added="02nd of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Photoshop</a>
+<P>&nbsp;&#9679; <b class="text_white_blue">IDE</b>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_eclipse_rus.html" class = "standardb_white" data-added="02nd of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Eclipse</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_netbeans_rus.html" class = "standardb_white" data-added="02nd of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">NetBeans</a>
+<P>&nbsp;&#9679; <b class="text_white_blue">Языки Программирования</b>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_visual_basic_rus.html" class = "standardb_white" data-added="28th of Feb, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Visual Basic</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_c++_rus.html" class = "standardb_white" data-added="28th of Feb, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">C++</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_fortran_rus.html" class = "standardb_white" data-added="28th of Feb, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Fortran</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_javascript_rus.html" class = "standardb_white" data-added="28th of Feb, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Java/JavaScript</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_html_rus.html" class = "standardb_white" data-added="28th of Feb, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Html</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_laravel_rus.html" class = "standardb_white" data-added="28th of Feb, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Laravel</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_php_rus.html" class = "standardb_white" data-added="28th of Feb, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">PHP/MySql</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_python_rus.html" class = "standardb_white" data-added="28th of Feb, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Python</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_ruby_on_rails_rus.html" class = "standardb_white" data-added="28th of Feb, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Ruby On Rails</a>
+<P>&nbsp;&#9679; <b class="text_white_blue">Обработка Текста</b>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_latex_rus.html" class = "standardb_white" data-added="03rd of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Latex</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_microsoft_office_rus.html" class = "standardb_white" data-added="03rd of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Microsoft Office</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_notepad++_rus.html" class = "standardb_white" data-added="03rd of Mar, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Notepad++</a>
+
+<P>&nbsp;&#9679; <a href="software_development_it_music_rus.html" class = "standardb_white" data-added="20th of May, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Музыка Про IT</a>
+<P>&nbsp;&#9679; <b class="text_white_blue">Фильмы Про IT</b>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_it_movies_rus.html#one" class = "standardb_white" data-added="24th of Jun, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Противостояние (англ. The One)</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_it_movies_rus.html#primer" class = "standardb_white" data-added="31st of May, 2019." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Детонатор (англ. Primer)</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_it_movies_rus.html#scavengers" class = "standardb_white" data-added="24th of Jun, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Стервятники (англ. Scavengers)</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="software_development_it_movies_rus.html#sequence_break" class = "standardb_white" data-added="05th of Jul, 2019." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Разрыв Последовательности (англ. Sequence Break)</a>

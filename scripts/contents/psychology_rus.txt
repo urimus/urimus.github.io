@@ -1,0 +1,18 @@
+﻿<P><b class="text_green_blue">Психология</b>
+<P>&nbsp;&#10004; <a href="psychology_true_rus.html" class = "standardb_green" data-added="05th of Jul, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Труъ</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_true_rus.html#evolutionary_psychology" class = "standardb_green" data-added="05th of Jul, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Эволюционная</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_true_rus.html#integrity" class = "standardb_green" data-added="02nd of Dec, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Принципиальность</a>
+<P>&nbsp;&#10008; <a href="psychology_pseudo_rus.html" class = "standardb_green" data-added="02nd of Aug, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Псевдо-</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_pseudo_rus.html#psychoanalysis" class = "standardb_green" data-added="02nd of Aug, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Психоанализ</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_pseudo_rus.html#transactional_analysis" class = "standardb_green" data-added="02nd of Aug, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Трансакционный Анализ</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_pseudo_rus.html#corresponding_music" class = "standardb_green" data-added="07th of Jun, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Соответственная Музыка</a>
+<P>&nbsp;&#9679; <a href="psychology_movies_rus.html" class = "standardb_green" data-added="02nd of Aug, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Психологические Фильмы</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_movies_rus.html#answer" class = "standardb_green" data-added="22nd of Jul, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Ответ (англ. The Answer)</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_movies_rus.html#black_forest" class = "standardb_green" data-added="03rd of Jan, 2019." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Чёрный Лес (англ. Black Forest)</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_movies_rus.html#cube" class = "standardb_green" data-added="02nd of Aug, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Куб (англ. Cube) (серия фильмов)</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_movies_rus.html#curvature" class = "standardb_green" data-added="26th of Mar, 2019." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Кривизна (англ. Curvature)</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_movies_rus.html#elizabeth_harvest" class = "standardb_green" data-added="09th of Sep, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Элизабет Харвест</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_movies_rus.html#jupiter_holdja" class = "standardb_green" data-added="22nd of Aug, 2019." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Лишний Человек (венг. Jupiter Holdja)</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_movies_rus.html#returned" class = "standardb_green" data-added="02nd of Aug, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Возврат (англ. The Returned)</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_movies_rus.html#rough_draft" class = "standardb_green" data-added="08th of Oct, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Черновик</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="psychology_movies_rus.html#solis" class = "standardb_green" data-added="16th of Apr, 2019." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Солнце (англ. Solis)</a>

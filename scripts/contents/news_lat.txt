@@ -1,0 +1,4 @@
+﻿<P><b class="text_red_blue">Nuntium</b>
+<P>&nbsp;&#9679; <a href="news_bbc_lat.html?type=world" class = "standardb_red" data-added="05th of Jul, 2016." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">BBC RSS Acies</a>
+<P>&nbsp;&#9679; <a href="news_bbcrussian_lat.html?type=world" class = "standardb_red" data-added="19th of Feb, 2021." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">BBC Russian RSS Acies</a>
+<P>&nbsp;&#9679; <a href="news_lenta_lat.html?type=world" class = "standardb_red" data-added="26th of Oct, 2018." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Lenta.ru RSS Acies</a>

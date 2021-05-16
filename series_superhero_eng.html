@@ -1,0 +1,1379 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*31;
+var imgBgSrc="icons/background/superhero.png";
+var imgBgStarSrc="icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="dispatchResize();"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+        <tr> 
+                <td  height="3"></td>
+        </tr>   
+        <tr>
+                <td width="1000">
+                        <img src="icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+                </td>
+        </tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+        <tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('series_superhero_eng.html' + window.location.hash);
+                                } else {
+                                        window.location.href='series_superhero_eng.html' + window.location.hash;
+                                };"             
+                        class="flag_selected"
+                >
+                        <img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('series_superhero_rus.html' + window.location.hash);
+                                } else {
+                                        window.location.href='series_superhero_rus.html' + window.location.hash;
+                                };"             
+                        class="flag_not_selected"
+                >
+                        <img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+        </tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+        <tr> 
+
+        <td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+        <tr> 
+                <td  align="center" class="title_gradient_black">Menu</td>
+        </tr>
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_eng.html');
+                        } else {
+                                window.location.href='about_me_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About me</div>
+        </td>
+        </tr>   
+        <tr>
+                <td align="center" >
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_eng.html');
+                        } else {
+                                window.location.href='about_work_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my work</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('phd_eng.html');
+                        } else {
+                                window.location.href='phd_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my PhD</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+		
+		
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+		
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_7"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"               
+                  class="menu_not_selected_black">
+                  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_8"
+                  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'movies');"                               
+                  class="menu_not_selected_black">
+                  Movies</div>
+        </td>
+        </tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"  
+		  class="menu_selected">
+		  Series</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_animation_series_eng.html');
+			} else {
+				window.location.href='series_animation_eng.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Animation</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('series_superhero_series_eng.html');
+			} else {
+				window.location.href='series_superhero_eng.html';
+			};"
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+	     &bull; Superhero</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_other_eng.html');
+			} else {
+				window.location.href='series_other_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &bull; Other</div>
+        </td>
+	</tr>		
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_not_satanic_eng.html');
+			} else {
+				window.location.href='series_not_satanic_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &bull; Not Satanic</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_9"
+                  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'games');"  
+                  class="menu_not_selected_black">
+                  Games</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_10"
+                  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'books');"  
+                  class="menu_not_selected_red">
+                  Books</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_11"
+                  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'photos');"  
+                  class="menu_not_selected_red">
+                  Photos/Images</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_12"
+                  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'amv');"                                               
+                  class="menu_not_selected_black">
+                  AMV</div>
+        </td>
+        </tr>           
+        <tr>
+                <td align="center" >
+                  <div id="menu_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('radio_eng.html');
+                        } else {
+                                window.location.href='radio_eng.html';
+                        };"                                               
+                  class="menu_not_selected_black">
+                  Radio</div>
+        </td>
+        </tr>                   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_14"
+                  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'stuff');"                                       
+                  class="menu_not_selected_black">
+                  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_15"
+                  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+                  class="menu_not_selected_red">
+                  Anecdotes</div>
+        </td>
+        </tr>           
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_17"
+                  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+                  class="menu_not_selected_white">
+                  Substances For Relaxation</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_18"
+                  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'software');"  
+                  class="menu_not_selected_white">
+                  Software Development</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_19"
+                  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'satanism');"                                       
+                  class="menu_not_selected_green">
+                  Satanism</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_21"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('falsifiability_eng.html');
+                        } else {
+                                window.location.href='falsifiability_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Falsifiability</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_22"
+                  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'psychology');"                                       
+                  class="menu_not_selected_green">
+                  Psychology</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_23"
+                  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'countries');"                                       
+                  class="menu_not_selected_green">
+                  Countries</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_24"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+
+                                window.open('totalitarianism_eng.html');
+                        } else {
+                                window.location.href='totalitarianism_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Totalitarianism</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_25"
+                  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'personalities');"                                       
+                  class="menu_not_selected_green">
+                  Personalities</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+        
+
+                </td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+        <tr> 
+                <td  class="title_black" style="width: 530px;"><a name="welcome">Series &blacktriangleright; Superhero</a></td>
+        </tr>
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+
+        </tr>   
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:713px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+              
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="series">Series</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/series.jpg" alt="Series" title="Series" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					
+
+<P>A <b>film series</b> is more than one film, each depicting parts of a larger story. Sometimes the work is conceived from the beginning as a multiple-film work, for example the Three Colours series, but in most cases the success of the original film inspires further films to be made. Individual sequels are relatively common, but are not always successful enough to spawn further installments.
+
+<P>The Marvel Cinematic Universe is the most highest grossing film series in unadjusted US Dollar figures surpassing the Harry Potter, Star Wars and James Bond series. However Peter Jackson's The Lord of the Rings has the highest average box office intake.
+
+
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Film_series" class = "standardb_black" target="_blank">Wikipedia Film series</a> - <b>Series</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					29th of Jul, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+  
+
+                
+                
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="superhero">Superhero Movies</a></td>
+                        </tr>
+                        <tr >
+                                <td width="250" height="100%" class="nimetus_black">Genre Description</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="icons/movies/movies_superhero.jpg" alt="Superhero Films" title="Superhero Films" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>A <b>superhero film</b>, <b>superhero movie</b>, or <b>superhero motion</b> picture is a film that is focused on the actions of one or more superheroes: individuals who usually possess superhuman abilities relative to a normal person and are dedicated to protecting the public. These films typically feature action, fantasy and/or science fiction elements, with the first film of a particular character often including a focus on the origin of the special powers and the first fight against the character's most famous supervillain, or archenemy.
+
+<P>Most superhero movies are based on superhero comics. By contrast, several films such as the RoboCop series, The Meteor Man, Unbreakable, The Incredibles, and Hancock are original for the screen, while The Green Hornet is based primarily on the original radio series and its 1960s television adaptation, and both Underdog and The Powerpuff Girls are based on an animated television series.
+
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Superhero_film" class = "standardb_black" target="_blank">Wikipedia Superhero Film</a> - <b>Superhero Film</b> on Wikipedia.
+                        </td>
+                        </tr>
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        26th of Aug, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+                
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="blade">Blade</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/blade.jpg" alt="Blade" title="Blade" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Blade</b> is an American live-action superhero television series which ran from June to September 2006. It was based on the Marvel Comics character and film series, taking place after the events of Blade: Trinity. The show premiered on Spike on June 28, 2006. Sticky Fingaz starred in the title role, along with Jill Wagner as Krista Starr, Neil Jackson as Marcus van Sciver, Jessica Gower as Chase, and Nelson Lee as Shen. New Line Cinema (alongside Warner Bros.) is the distributor of this series as they had the rights for distribution prior to the Disney buyout of Marvel.
+
+<P>The two-hour pilot was directed by Peter O'Fallon from a script by David S. Goyer (who wrote the scripts for all three of the films) and Geoff Johns.
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Blade_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Blade (TV series)</a> - <b>Blade</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=f4snOcX4Xgk" class = "standardb_black" target="_blank">Blade</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of Apr, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="boys">The Boys</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/boys.jpg" alt="The Boys" title="The Boys" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>The Boys</b> is an American superhero web television series based on the comic book of the same name by Garth Ennis and Darick Robertson. Developed by Eric Kripke for Amazon, it follows the eponymous team of vigilantes as they fight back against superpowered individuals who abuse their abilities.
+
+<P>The series premiered on July 26, 2019. Ahead of the premiere, Amazon renewed The Boys for a second season.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Boys_(2019_TV_series)" class = "standardb_black" target="_blank">Wikipedia The Boys (2019 TV series)</a> - <b>The Boys</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=-iOi1f2CEcQ" class = "standardb_black" target="_blank">The Boys</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					04th of Mar, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="daredevil">Daredevil</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/daredevil.jpg" alt="Daredevil" title="Daredevil" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Marvel's Daredevil</b>, or simply <b>Daredevil</b>, is an American television series created by Drew Goddard for the streaming service Netflix, based on the Marvel Comics character of the same name. It is set in the Marvel Cinematic Universe (MCU), sharing continuity with the films of the franchise, and is the first in a series of shows that lead to The Defenders crossover miniseries. The series is produced by Marvel Television in association with ABC Studios, with DeKnight Productions for the first season and Goddard Textiles for the first and second seasons. Steven S. DeKnight served as showrunner on the first season, with Doug Petrie and Marco Ramirez taking over for the second season, and Erik Oleson joining the series as its showrunner for its third season; Goddard served as a consultant for the series.
+
+<P>Charlie Cox stars as Matt Murdock / Daredevil, a blind lawyer-by-day who fights crime as a masked vigilante by night. Deborah Ann Woll, Elden Henson, Rosario Dawson, and Vincent D'Onofrio also star, with Toby Leonard Moore, Vondie Curtis-Hall, Bob Gunton, and Ayelet Zurer joining them for season one, Jon Bernthal, Élodie Yung, and Stephen Rider joining the cast for season two, and Joanne Whalley, Jay Ali and Wilson Bethel joining in season three. Daredevil entered development in late 2013, a year after the film rights to the character reverted to Marvel, with Goddard initially hired in December 2013. DeKnight replaced him as showrunner and Cox was hired to star in May 2014. Filming took place in New York City, in areas that still looked like the old Hell's Kitchen.
+
+<P>All episodes of the first season were released on Netflix on April 10, 2015, while the second season was released in its entirety on March 18, 2016. They were met with positive reviews. In July 2016, the series was renewed for a third season, which was released on October 19, 2018. A spin-off series, centered on Bernthal's character Frank Castle / Punisher and titled The Punisher, was ordered by Netflix in April 2016. On November 29, 2018, Netflix canceled Daredevil.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Daredevil_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Daredevil (TV series)</a> - <b>Daredevil</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=jAy6NJ_D5vU" class = "standardb_black" target="_blank">Daredevil</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					16th of Apr, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="doom_patrol">Doom Patrol</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/doom_patrol.jpg" alt="Doom Patrol" title="Doom Patrol" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Doom Patrol</b> is an American superhero television series developed by Jeremy Carver. Based on the DC Comics superhero team of the same name, the series features Jane (Diane Guerrero), Rita Farr (April Bowlby), Vic Stone (Joivan Wade), Larry Trainor (Matt Bomer / Matthew Zuk), Cliff Steele (Brendan Fraser / Riley Shanahan), and the Chief (Timothy Dalton) as the members of the eponymous Doom Patrol. Although Bowlby, Bomer, and Fraser reprise their roles from the series Titans, the two shows are set in separate continuities.
+
+<P>The series premiered on February 15, 2019, exclusively for the DC Universe streaming service. The second season aired on both DC Universe and HBO Max, with the two streaming services releasing episodes simultaneously on June 25, 2020. In September 2020, the series was renewed for a third season exclusively for HBO Max.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Doom_Patrol_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Doom Patrol (TV series)</a> - <b>Doom Patrol</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=6tTM9nbRk5A" class = "standardb_black" target="_blank">Doom Patrol</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30th of Apr, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="helstrom">Helstrom</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/helstrom.jpg" alt="Helstrom" title="Helstrom" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Helstrom</b> is an American streaming television series created for Hulu by Paul Zbyszewski, based on the Marvel Comics characters Daimon and Satana Hellstrom. It tells a standalone story outside of the Marvel Cinematic Universe (MCU). The series is produced by Marvel Television and ABC Signature Studios, with Zbyszewski serving as showrunner.
+
+<P>Tom Austen and Sydney Lemmon respectively star as Daimon and Ana Helstrom, the children of a powerful serial killer, who hunt the worst of humanity. Elizabeth Marvel, Robert Wisdom, June Carryl, Ariana Guerra, and Alain Uy also star. Helstrom was officially announced with a series order at Hulu in May 2019, planned as the first series in Marvel Television's Adventure into Fear franchise. Filming took place in Vancouver from October 2019 until March 2020. Oversight of the series was moved to Marvel Studios in December 2019 when Marvel Television was folded into that company.
+
+<P>Helstrom was released on Hulu on October 16, 2020, and consists of 10 episodes.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Helstrom_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Helstrom (TV series)</a> - <b>Helstrom</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=XKeugS4qjag" class = "standardb_black" target="_blank">Helstrom</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					20th of Oct, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="inhumans">Inhumans</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/inhumans.jpg" alt="Inhumans" title="Inhumans" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Marvel's Inhumans</b>, or simply <b>Inhumans</b>, is an American television series created by Scott Buck for ABC, based on the Marvel Comics race of the same name. It is set in the Marvel Cinematic Universe (MCU) and acknowledges the franchise's other television series. It was produced by ABC Studios and Marvel Television in association with Devilina Productions, and was co-financed by IMAX Entertainment in a deal that gave the series a theatrical premiere. Buck served as showrunner on the series.
+
+<P>The series is centered on Black Bolt, portrayed by Anson Mount, and other members of the Inhuman Royal Family. Serinda Swan, Ken Leung, Eme Ikwuakor, Isabelle Cornish, Ellen Woglom, and Iwan Rheon also star. Marvel Studios announced an Inhumans film in 2014 as part of their Phase Three slate of films, with the species first introduced to the MCU in the series Agents of S.H.I.E.L.D. The film was removed from Marvel Studios' slate in April 2016, and the Inhumans series was announced that November, to be partly filmed using IMAX cameras. Buck joined the series in October, and Mount was cast in February 2017. Filming took place from March to June 2017, at the former Naval Air Station Barbers Point airfield in Kalaeloa, Hawaii and various locations on the island of Oahu.
+
+<P>Inhumans debuted on IMAX screens on September 1, 2017, the first live-action television series to do so. The theatrical run lasted two weeks, before the series premiered on ABC on September 29 and ran for eight episodes, concluding on November 10. The series was met with unfavorable reviews and low television ratings, and was canceled by ABC in May 2018.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Inhumans_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Inhumans</a> - <b>Inhumans (TV series)</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=1sYF1SXcWqQ" class = "standardb_black" target="_blank">Inhumans</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					28th of Sep, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="iron_fist">Iron Fist</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/iron_fist.jpg" alt="Iron Fist" title="Iron Fist" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Marvel's Iron Fist</b>, or simply <b>Iron Fist</b>, is an American web television series created for Netflix by Scott Buck, based on the Marvel Comics character of the same name. It is set in the Marvel Cinematic Universe (MCU), sharing continuity with the films of the franchise and is the fourth in a series of shows that lead to The Defenders crossover miniseries. The series is produced by Marvel Television in association with ABC Studios, with Devilina Productions and showrunner Buck for the first season. Raven Metzner took over as showrunner for the second season.
+
+<P>Finn Jones stars as Danny Rand / Iron Fist, a martial arts expert with the ability to call upon a mystical power known as the "Iron Fist". Jessica Henwick, Tom Pelphrey, Jessica Stroup, and Sacha Dhawan also star, with Ramón Rodríguez, Rosario Dawson and David Wenham joining them for the first season, Simone Missick and Alice Eve joining the cast for season two. After a film based on the character spent over a decade in development at Marvel Studios, development for the series began in late 2013 at Marvel Television, with Buck hired as the series showrunner in December 2015 and Jones cast as Rand in February 2016. Metzner was revealed as the series' new showrunner in July 2017. Filming for the series takes place in New York City.
+
+<P>All 13 episodes of the first season premiered on March 17, 2017. They received generally negative reviews from critics. Despite the critical reception, third-party data analytics determined the series had strong viewership. A second season, consisting of 10 episodes, was ordered in July 2017, and was released on September 7, 2018 to an improved critical reception. On October 12, 2018, Netflix canceled the series after two seasons.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Iron_Fist_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Iron Fist (TV series)</a> - <b>Iron Fist</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=f9OKL5no-S0" class = "standardb_black" target="_blank">Iron Fist</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					23rd of Mar, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="legends_of_tomorrow">Legends of Tomorrow</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/legends_of_tomorrow.jpg" alt="Legends of Tomorrow" title="Legends of Tomorrow" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>DC's Legends of Tomorrow</b>, or simply <b>Legends of Tomorrow</b>, is an American superhero television series developed by Greg Berlanti, Marc Guggenheim, Andrew Kreisberg, and Phil Klemmer, who are also executive producers along with Sarah Schechter and Chris Fedak; Klemmer and Fedak serve as showrunners. The series, based on the characters of DC Comics, airs on The CW and is a spin-off featuring characters introduced in Arrow and The Flash along with new characters, set in the Arrowverse, the same fictional universe. It is the fourth series in the Arrowverse, after Arrow, The Flash, and Supergirl. The series premiered in January 2016. In January 2020, The CW renewed the series for a sixth season, which is set to premiere on May 2, 2021. In February 2021, The CW renewed the series for a seventh season.
+
+<P>The show has received positive reviews from critics, who praised the action, comedy and acting.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Legends_of_Tomorrow" class = "standardb_black" target="_blank">Wikipedia Legends of Tomorrow</a> - <b>Legends of Tomorrow</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=_rgzmQ_vpSo" class = "standardb_black" target="_blank">Legends of Tomorrow</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					09th of Apr, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="legion">Legion</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/legion.jpg" alt="Legion" title="Legion" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Legion</b> is an American television series created for FX by Noah Hawley, based on the Marvel Comics character David Haller / Legion. It is produced by FX Productions in association with Marvel Television. Hawley is the showrunner.
+
+<P>Dan Stevens stars as Haller, a "mutant" diagnosed with schizophrenia at a young age. Rachel Keller, Aubrey Plaza, Bill Irwin, Jeremie Harris, Amber Midthunder, and Jean Smart also star, along with Katie Aselton during the first season; Navid Negahban, Jemaine Clement, and Hamish Linklater join the starring cast for the second season; and Lauren Tsai joins the cast for the third season. The show follows Haller as he tries to control his mutant powers and the sinister forces trying to control them while evading a government agency. FX and Marvel Television announced a new collaboration to create a television series based on the Marvel Comics character Legion in October 2015, with Hawley signed on to write and direct the pilot. He wanted to show Haller as an "unreliable narrator", including mixing 1960s design with modern-day elements, and filming the series through the title character's distorted view of reality.
+
+<P>The eight-episode first season of Legion aired from February to March 2017. An eleven-episode second season aired from April to June 2018. The eight-episode third and final season premiered on June 24, 2019. A total of 27 episodes aired over three seasons. All three seasons received universal acclaim for their distinct narrative structure and visual style, as a unique approach to the superhero genre.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Legion_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Legion (TV series)</a> - <b>Legion</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=4SZ3rMMYBLY" class = "standardb_black" target="_blank">Legion</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					24th of Apr, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="powers">Powers</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/powers.jpg" alt="Powers" title="Powers" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Powers</b> is an American online streaming series adaptation of the Powers comic book series published by Marvel Comics under their Icon Comics imprint. Marking PlayStation Network's first venture into scripted original programming, the series premiered on March 10, 2015. The first two episodes of the series were written by Charlie Huston and directed by David Slade. The first three episodes (the third directed by David Petrarca) were released on March 10, 2015, on the PlayStation Network. The pilot episode is available for free for people in the USA on YouTube and the entire first season was available on Crackle until May 3, 2016. On May 6, 2015, Powers was renewed for a second season, which premiered on May 31, 2016. It was announced on August 3, 2016 that Powers had been canceled.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Powers_(American_TV_series)" class = "standardb_black" target="_blank">Wikipedia Powers (American TV series)</a> - <b>Powers</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=yihZX3KEnE4" class = "standardb_black" target="_blank">Powers</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					17th of Mar, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="swamp_thing">Swamp Thing</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/swamp_thing.jpg" alt="Swamp Thing" title="Swamp Thing" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Swamp Thing</b> is an American superhero horror web television series created by Gary Dauberman and Mark Verheiden for DC Universe and based on the DC Comics character of the same name. Derek Mears portrays the eponymous Swamp Thing, a plant-elemental creature who fights malevolent forces around a Louisiana swamp with the help of medical doctor Abby Arcane (Crystal Reed).
+
+<P>The series premiered on May 31, 2019, and its first season consisted of 10 episodes. Shortly after its premiere, DC Universe announced that Swamp Thing had been canceled. The remaining episodes were released on DC Universe until the series' conclusion on August 2, 2019.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Swamp_Thing_(2019_TV_series)" class = "standardb_black" target="_blank">Wikipedia Swamp Thing (2019 TV series)</a> - <b>Swamp Thing</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=q8rzAYp-mNQ" class = "standardb_black" target="_blank">Swamp Thing</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					17th of Jan, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+                
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+
+</form> 
+    </td> <!-- End of Functional Table -->
+        </tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+        <tr>
+          <td class="title_black" >
+            &copy; Urmas Repinski, urrimus@hotmail.com
+          </td>
+        </tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
