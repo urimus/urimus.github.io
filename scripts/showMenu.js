@@ -38,6 +38,10 @@ function  getLangShort(lang1, lang) {
 		if (lang=='eng' || lang=='lat') return 'it.';
 		if (lang=='rus') return 'ит.';
 	}
+
+	if (lang=='eng' || lang=='lat') return 'orig.';
+	if (lang=='rus') return 'ориг.';
+
 }
 
 
@@ -120,14 +124,6 @@ function  getFlagTitle(flag, lang) {
 	if (flag=='denmark') {
 		if (lang=='eng' || lang=='lat') return 'Kingdom of Denmark';
 		if (lang=='rus') return 'Королевство Дания';
-	}
-	if (flag=='denmark') {
-		if (lang=='eng' || lang=='lat') return 'Kingdom of Denmark';
-		if (lang=='rus') return 'Королевство Дания';
-	}
-	if (flag=='bulgaria') {
-		if (lang=='eng' || lang=='lat') return 'Republic of Bulgaria';
-		if (lang=='rus') return 'Республика Болгария';
 	}
 	if (flag=='bulgaria') {
 		if (lang=='eng' || lang=='lat') return 'Republic of Bulgaria';
@@ -5370,210 +5366,49 @@ if (lang=="eng") {
 	wholeMenu["Software Development"].html = 'Software Development';
 
 
-	wholeMenu["● Audio/Video Processing"] = [];
-	wholeMenu["● Audio/Video Processing"].id = "18_1";
-	wholeMenu["● Audio/Video Processing"].color = "white";
-	wholeMenu["● Audio/Video Processing"].hasSub = 1;
-	wholeMenu["● Audio/Video Processing"].link = "";
-	wholeMenu["● Audio/Video Processing"].html = '&#9679; Audio/Video Processing';
+	wholeMenu["Audio/Video Processing"] = [];
+	wholeMenu["Audio/Video Processing"].id = "18_1";
+	wholeMenu["Audio/Video Processing"].color = "white";
+	wholeMenu["Audio/Video Processing"].hasSub = 0;
+	wholeMenu["Audio/Video Processing"].link = "software_development_audiovideo_eng.html";
+	wholeMenu["Audio/Video Processing"].html = 'Audio/Video Processing';
+
+	wholeMenu["Data Processing"] = [];
+	wholeMenu["Data Processing"].id = "18_2";
+	wholeMenu["Data Processing"].color = "white";
+	wholeMenu["Data Processing"].hasSub = 0;
+	wholeMenu["Data Processing"].link = "software_development_data_eng.html";
+	wholeMenu["Data Processing"].html = 'Data Processing';
+
+	wholeMenu["Drawing"] = [];
+	wholeMenu["Drawing"].id = "18_3";
+	wholeMenu["Drawing"].color = "white";
+	wholeMenu["Drawing"].hasSub = 0;
+	wholeMenu["Drawing"].link = "software_development_drawing_eng.html";
+	wholeMenu["Drawing"].html = 'Drawing';
+
+	wholeMenu["IDE"] = [];
+	wholeMenu["IDE"].id = "18_4";
+	wholeMenu["IDE"].color = "white";
+	wholeMenu["IDE"].hasSub = 0;
+	wholeMenu["IDE"].link = "software_development_ide_eng.html";
+	wholeMenu["IDE"].html = 'IDE';
+
+	wholeMenu["Programming Languages"] = [];
+	wholeMenu["Programming Languages"].id = "18_5";
+	wholeMenu["Programming Languages"].color = "white";
+	wholeMenu["Programming Languages"].hasSub = 0;
+	wholeMenu["Programming Languages"].link = "software_development_programming_languages_eng.html";
+	wholeMenu["Programming Languages"].html = 'Programming Languages';
 
 
-	wholeMenu["GoldWave"] = [];
-	wholeMenu["GoldWave"].id = "18_1_1";
-	wholeMenu["GoldWave"].color = "white";
-	wholeMenu["GoldWave"].hasSub = 0;
-	wholeMenu["GoldWave"].link = "software_development_goldvawe_eng.html";
-	wholeMenu["GoldWave"].html = 'GoldWave';
+	wholeMenu["Text Processing"] = [];
+	wholeMenu["Text Processing"].id = "18_6";
+	wholeMenu["Text Processing"].color = "white";
+	wholeMenu["Text Processing"].hasSub = 0;
+	wholeMenu["Text Processing"].link = "software_development_text_eng.html";
+	wholeMenu["Text Processing"].html = 'Text Processing';
 
-	wholeMenu["Movie Maker Online"] = [];
-	wholeMenu["Movie Maker Online"].id = "18_1_2";
-	wholeMenu["Movie Maker Online"].color = "white";
-	wholeMenu["Movie Maker Online"].hasSub = 0;
-	wholeMenu["Movie Maker Online"].link = "software_development_movie_maker_online_eng.html";
-	wholeMenu["Movie Maker Online"].html = 'Movie Maker Online';
-
-	wholeMenu["Windows Movie Maker"] = [];
-	wholeMenu["Windows Movie Maker"].id = "18_1_3";
-	wholeMenu["Windows Movie Maker"].color = "white";
-	wholeMenu["Windows Movie Maker"].hasSub = 0;
-	wholeMenu["Windows Movie Maker"].link = "software_development_windows_movie_maker_eng.html";
-	wholeMenu["Windows Movie Maker"].html = 'Windows Movie Maker';
-
-	wholeMenu["● Data Processing"] = [];
-	wholeMenu["● Data Processing"].id = "18_2";
-	wholeMenu["● Data Processing"].color = "white";
-	wholeMenu["● Data Processing"].hasSub = 1;
-	wholeMenu["● Data Processing"].link = "";
-	wholeMenu["● Data Processing"].html = '&#9679; Data Processing';
-
-	wholeMenu["MathCad"] = [];
-	wholeMenu["MathCad"].id = "18_2_1";
-	wholeMenu["MathCad"].color = "white";
-	wholeMenu["MathCad"].hasSub = 0;
-	wholeMenu["MathCad"].link = "software_development_mathcad_eng.html";
-	wholeMenu["MathCad"].html = 'MathCad';
-
-	wholeMenu["MatLab"] = [];
-	wholeMenu["MatLab"].id = "18_2_2";
-	wholeMenu["MatLab"].color = "white";
-	wholeMenu["MatLab"].hasSub = 0;
-	wholeMenu["MatLab"].link = "software_development_matlab_eng.html";
-	wholeMenu["MatLab"].html = 'MatLab';
-
-	wholeMenu["● Drawing"] = [];
-	wholeMenu["● Drawing"].id = "18_3";
-	wholeMenu["● Drawing"].color = "white";
-	wholeMenu["● Drawing"].hasSub = 1;
-	wholeMenu["● Drawing"].link = "";
-	wholeMenu["● Drawing"].html = '&#9679; Drawing';
-
-	wholeMenu["CorelDraw"] = [];
-	wholeMenu["CorelDraw"].id = "18_3_1";
-	wholeMenu["CorelDraw"].color = "white";
-	wholeMenu["CorelDraw"].hasSub = 0;
-	wholeMenu["CorelDraw"].link = "software_development_coreldraw_eng.html";
-	wholeMenu["CorelDraw"].html = 'CorelDraw';
-
-	wholeMenu["Gimp (Linux)"] = [];
-	wholeMenu["Gimp (Linux)"].id = "18_3_2";
-	wholeMenu["Gimp (Linux)"].color = "white";
-	wholeMenu["Gimp (Linux)"].hasSub = 0;
-	wholeMenu["Gimp (Linux)"].link = "software_development_gimp_eng.html";
-	wholeMenu["Gimp (Linux)"].html = 'Gimp (Linux)';
-
-	wholeMenu["Paint"] = [];
-	wholeMenu["Paint"].id = "18_3_3";
-	wholeMenu["Paint"].color = "white";
-	wholeMenu["Paint"].hasSub = 0;
-	wholeMenu["Paint"].link = "software_development_paint_eng.html";
-	wholeMenu["Paint"].html = 'Paint';
-
-	wholeMenu["Photoshop"] = [];
-	wholeMenu["Photoshop"].id = "18_3_3";
-	wholeMenu["Photoshop"].color = "white";
-	wholeMenu["Photoshop"].hasSub = 0;
-	wholeMenu["Photoshop"].link = "software_development_photoshop_eng.html";
-	wholeMenu["Photoshop"].html = 'Photoshop';
-
-	wholeMenu["● IDE"] = [];
-	wholeMenu["● IDE"].id = "18_4";
-	wholeMenu["● IDE"].color = "white";
-	wholeMenu["● IDE"].hasSub = 1;
-	wholeMenu["● IDE"].link = "";
-	wholeMenu["● IDE"].html = '&#9679; IDE';
-
-	wholeMenu["Eclipse"] = [];
-	wholeMenu["Eclipse"].id = "18_4_1";
-	wholeMenu["Eclipse"].color = "white";
-	wholeMenu["Eclipse"].hasSub = 0;
-	wholeMenu["Eclipse"].link = "software_development_eclipse_eng.html";
-	wholeMenu["Eclipse"].html = 'Eclipse';
-
-	wholeMenu["NetBeans"] = [];
-	wholeMenu["NetBeans"].id = "18_4_2";
-	wholeMenu["NetBeans"].color = "white";
-	wholeMenu["NetBeans"].hasSub = 0;
-	wholeMenu["NetBeans"].link = "software_development_netbeans_eng.html";
-	wholeMenu["NetBeans"].html = 'NetBeans';
-
-	wholeMenu["● Programming Languages"] = [];
-	wholeMenu["● Programming Languages"].id = "18_5";
-	wholeMenu["● Programming Languages"].color = "white";
-	wholeMenu["● Programming Languages"].hasSub = 1;
-	wholeMenu["● Programming Languages"].link = "";
-	wholeMenu["● Programming Languages"].html = '&#9679; Programming Languages';
-
-	wholeMenu["Visual Basic"] = [];
-	wholeMenu["Visual Basic"].id = "18_5_1";
-	wholeMenu["Visual Basic"].color = "white";
-	wholeMenu["Visual Basic"].hasSub = 0;
-	wholeMenu["Visual Basic"].link = "software_development_visual_basic_eng.html";
-	wholeMenu["Visual Basic"].html = 'Visual Basic';
-
-	wholeMenu["C++"] = [];
-	wholeMenu["C++"].id = "18_5_2";
-	wholeMenu["C++"].color = "white";
-	wholeMenu["C++"].hasSub = 0;
-	wholeMenu["C++"].link = "software_development_c++_eng.html";
-	wholeMenu["C++"].html = 'C++';
-
-	wholeMenu["Fortran"] = [];
-	wholeMenu["Fortran"].id = "18_5_3";
-	wholeMenu["Fortran"].color = "white";
-	wholeMenu["Fortran"].hasSub = 0;
-	wholeMenu["Fortran"].link = "software_development_fortran_eng.html";
-	wholeMenu["Fortran"].html = 'Fortran';
-
-	wholeMenu["Java/JavaScript"] = [];
-	wholeMenu["Java/JavaScript"].id = "18_5_4";
-	wholeMenu["Java/JavaScript"].color = "white";
-	wholeMenu["Java/JavaScript"].hasSub = 0;
-	wholeMenu["Java/JavaScript"].link = "software_development_javascript_eng.html";
-	wholeMenu["Java/JavaScript"].html = 'Java/JavaScript';
-
-	wholeMenu["Html"] = [];
-	wholeMenu["Html"].id = "18_5_5";
-	wholeMenu["Html"].color = "white";
-	wholeMenu["Html"].hasSub = 0;
-	wholeMenu["Html"].link = "software_development_html_eng.html";
-	wholeMenu["Html"].html = 'Html';
-
-	wholeMenu["Laravel"] = [];
-	wholeMenu["Laravel"].id = "18_5_6";
-	wholeMenu["Laravel"].color = "white";
-	wholeMenu["Laravel"].hasSub = 0;
-	wholeMenu["Laravel"].link = "software_development_laravel_eng.html";
-	wholeMenu["Laravel"].html = 'Laravel';
-
-	wholeMenu["PHP/MySql"] = [];
-	wholeMenu["PHP/MySql"].id = "18_5_7";
-	wholeMenu["PHP/MySql"].color = "white";
-	wholeMenu["PHP/MySql"].hasSub = 0;
-	wholeMenu["PHP/MySql"].link = "software_development_php_eng.html";
-	wholeMenu["PHP/MySql"].html = 'PHP/MySql';
-
-	wholeMenu["Python"] = [];
-	wholeMenu["Python"].id = "18_5_8";
-	wholeMenu["Python"].color = "white";
-	wholeMenu["Python"].hasSub = 0;
-	wholeMenu["Python"].link = "software_development_python_eng.html";
-	wholeMenu["Python"].html = 'Python';
-
-	wholeMenu["Ruby On Rails"] = [];
-	wholeMenu["Ruby On Rails"].id = "18_5_9";
-	wholeMenu["Ruby On Rails"].color = "white";
-	wholeMenu["Ruby On Rails"].hasSub = 0;
-	wholeMenu["Ruby On Rails"].link = "software_development_ruby_on_rails_eng.html";
-	wholeMenu["Ruby On Rails"].html = 'Ruby On Rails';
-
-
-	wholeMenu["● Text Processing"] = [];
-	wholeMenu["● Text Processing"].id = "18_6";
-	wholeMenu["● Text Processing"].color = "white";
-	wholeMenu["● Text Processing"].hasSub = 1;
-	wholeMenu["● Text Processing"].link = "";
-	wholeMenu["● Text Processing"].html = '&#9679; Text Processing';
-
-	wholeMenu["Latex"] = [];
-	wholeMenu["Latex"].id = "18_6_1";
-	wholeMenu["Latex"].color = "white";
-	wholeMenu["Latex"].hasSub = 0;
-	wholeMenu["Latex"].link = "software_development_latex_eng.html";
-	wholeMenu["Latex"].html = 'Latex';
-
-	wholeMenu["Microsoft Office"] = [];
-	wholeMenu["Microsoft Office"].id = "18_6_2";
-	wholeMenu["Microsoft Office"].color = "white";
-	wholeMenu["Microsoft Office"].hasSub = 0;
-	wholeMenu["Microsoft Office"].link = "software_development_microsoft_office_eng.html";
-	wholeMenu["Microsoft Office"].html = 'Microsoft Office';
-
-	wholeMenu["Notepad++"] = [];
-	wholeMenu["Notepad++"].id = "18_6_3";
-	wholeMenu["Notepad++"].color = "white";
-	wholeMenu["Notepad++"].hasSub = 0;
-	wholeMenu["Notepad++"].link = "software_development_notepad++_eng.html";
-	wholeMenu["Notepad++"].html = 'Notepad++';
 
 	wholeMenu["Movies About IT"] = [];
 	wholeMenu["Movies About IT"].id = "18_7";
@@ -5604,210 +5439,49 @@ if (lang=="rus") {
 	wholeMenu["Разработка Программ"].html = 'Разработка Программ';
 
 
-	wholeMenu["● Обработка Аудио/Видео"] = [];
-	wholeMenu["● Обработка Аудио/Видео"].id = "18_1";
-	wholeMenu["● Обработка Аудио/Видео"].color = "white";
-	wholeMenu["● Обработка Аудио/Видео"].hasSub = 1;
-	wholeMenu["● Обработка Аудио/Видео"].link = "";
-	wholeMenu["● Обработка Аудио/Видео"].html = '&#9679; Обработка Аудио/Видео';
+	wholeMenu["Обработка Аудио/Видео"] = [];
+	wholeMenu["Обработка Аудио/Видео"].id = "18_1";
+	wholeMenu["Обработка Аудио/Видео"].color = "white";
+	wholeMenu["Обработка Аудио/Видео"].hasSub = 0;
+	wholeMenu["Обработка Аудио/Видео"].link = "software_development_audiovideo_rus.html";
+	wholeMenu["Обработка Аудио/Видео"].html = 'Обработка Аудио/Видео';
 
 
-	wholeMenu["GoldWave"] = [];
-	wholeMenu["GoldWave"].id = "18_1_1";
-	wholeMenu["GoldWave"].color = "white";
-	wholeMenu["GoldWave"].hasSub = 0;
-	wholeMenu["GoldWave"].link = "software_development_goldvawe_rus.html";
-	wholeMenu["GoldWave"].html = 'GoldWave';
-
-	wholeMenu["Movie Maker Online"] = [];
-	wholeMenu["Movie Maker Online"].id = "18_1_2";
-	wholeMenu["Movie Maker Online"].color = "white";
-	wholeMenu["Movie Maker Online"].hasSub = 0;
-	wholeMenu["Movie Maker Online"].link = "software_development_movie_maker_online_rus.html";
-	wholeMenu["Movie Maker Online"].html = 'Movie Maker Online';
-
-	wholeMenu["Windows Movie Maker"] = [];
-	wholeMenu["Windows Movie Maker"].id = "18_1_3";
-	wholeMenu["Windows Movie Maker"].color = "white";
-	wholeMenu["Windows Movie Maker"].hasSub = 0;
-	wholeMenu["Windows Movie Maker"].link = "software_development_windows_movie_maker_rus.html";
-	wholeMenu["Windows Movie Maker"].html = 'Windows Movie Maker';
-
-	wholeMenu["● Обработка Данных"] = [];
-	wholeMenu["● Обработка Данных"].id = "18_2";
-	wholeMenu["● Обработка Данных"].color = "white";
-	wholeMenu["● Обработка Данных"].hasSub = 1;
-	wholeMenu["● Обработка Данных"].link = "";
-	wholeMenu["● Обработка Данных"].html = '&#9679; Обработка Данных';
-
-	wholeMenu["MathCad"] = [];
-	wholeMenu["MathCad"].id = "18_2_1";
-	wholeMenu["MathCad"].color = "white";
-	wholeMenu["MathCad"].hasSub = 0;
-	wholeMenu["MathCad"].link = "software_development_mathcad_rus.html";
-	wholeMenu["MathCad"].html = 'MathCad';
-
-	wholeMenu["MatLab"] = [];
-	wholeMenu["MatLab"].id = "18_2_2";
-	wholeMenu["MatLab"].color = "white";
-	wholeMenu["MatLab"].hasSub = 0;
-	wholeMenu["MatLab"].link = "software_development_matlab_rus.html";
-	wholeMenu["MatLab"].html = 'MatLab';
-
-	wholeMenu["● Рисование"] = [];
-	wholeMenu["● Рисование"].id = "18_3";
-	wholeMenu["● Рисование"].color = "white";
-	wholeMenu["● Рисование"].hasSub = 1;
-	wholeMenu["● Рисование"].link = "";
-	wholeMenu["● Рисование"].html = '&#9679; Рисование';
-
-	wholeMenu["CorelDraw"] = [];
-	wholeMenu["CorelDraw"].id = "18_3_1";
-	wholeMenu["CorelDraw"].color = "white";
-	wholeMenu["CorelDraw"].hasSub = 0;
-	wholeMenu["CorelDraw"].link = "software_development_coreldraw_rus.html";
-	wholeMenu["CorelDraw"].html = 'CorelDraw';
-
-	wholeMenu["Gimp (Linux)"] = [];
-	wholeMenu["Gimp (Linux)"].id = "18_3_2";
-	wholeMenu["Gimp (Linux)"].color = "white";
-	wholeMenu["Gimp (Linux)"].hasSub = 0;
-	wholeMenu["Gimp (Linux)"].link = "software_development_gimp_rus.html";
-	wholeMenu["Gimp (Linux)"].html = 'Gimp (Linux)';
-
-	wholeMenu["Paint"] = [];
-	wholeMenu["Paint"].id = "18_3_3";
-	wholeMenu["Paint"].color = "white";
-	wholeMenu["Paint"].hasSub = 0;
-	wholeMenu["Paint"].link = "software_development_paint_rus.html";
-	wholeMenu["Paint"].html = 'Paint';
-
-	wholeMenu["Photoshop"] = [];
-	wholeMenu["Photoshop"].id = "18_3_3";
-	wholeMenu["Photoshop"].color = "white";
-	wholeMenu["Photoshop"].hasSub = 0;
-	wholeMenu["Photoshop"].link = "software_development_photoshop_rus.html";
-	wholeMenu["Photoshop"].html = 'Photoshop';
-
-	wholeMenu["● IDE"] = [];
-	wholeMenu["● IDE"].id = "18_4";
-	wholeMenu["● IDE"].color = "white";
-	wholeMenu["● IDE"].hasSub = 1;
-	wholeMenu["● IDE"].link = "";
-	wholeMenu["● IDE"].html = '&#9679; IDE';
-
-	wholeMenu["Eclipse"] = [];
-	wholeMenu["Eclipse"].id = "18_4_1";
-	wholeMenu["Eclipse"].color = "white";
-	wholeMenu["Eclipse"].hasSub = 0;
-	wholeMenu["Eclipse"].link = "software_development_eclipse_rus.html";
-	wholeMenu["Eclipse"].html = 'Eclipse';
-
-	wholeMenu["NetBeans"] = [];
-	wholeMenu["NetBeans"].id = "18_4_2";
-	wholeMenu["NetBeans"].color = "white";
-	wholeMenu["NetBeans"].hasSub = 0;
-	wholeMenu["NetBeans"].link = "software_development_netbeans_rus.html";
-	wholeMenu["NetBeans"].html = 'NetBeans';
-
-	wholeMenu["● Языки Программирования"] = [];
-	wholeMenu["● Языки Программирования"].id = "18_5";
-	wholeMenu["● Языки Программирования"].color = "white";
-	wholeMenu["● Языки Программирования"].hasSub = 1;
-	wholeMenu["● Языки Программирования"].link = "";
-	wholeMenu["● Языки Программирования"].html = '&#9679; Языки Программирования';
-
-	wholeMenu["Visual Basic"] = [];
-	wholeMenu["Visual Basic"].id = "18_5_1";
-	wholeMenu["Visual Basic"].color = "white";
-	wholeMenu["Visual Basic"].hasSub = 0;
-	wholeMenu["Visual Basic"].link = "software_development_visual_basic_rus.html";
-	wholeMenu["Visual Basic"].html = 'Visual Basic';
-
-	wholeMenu["C++"] = [];
-	wholeMenu["C++"].id = "18_5_2";
-	wholeMenu["C++"].color = "white";
-	wholeMenu["C++"].hasSub = 0;
-	wholeMenu["C++"].link = "software_development_c++_rus.html";
-	wholeMenu["C++"].html = 'C++';
-
-	wholeMenu["Fortran"] = [];
-	wholeMenu["Fortran"].id = "18_5_3";
-	wholeMenu["Fortran"].color = "white";
-	wholeMenu["Fortran"].hasSub = 0;
-	wholeMenu["Fortran"].link = "software_development_fortran_rus.html";
-	wholeMenu["Fortran"].html = 'Fortran';
-
-	wholeMenu["Java/JavaScript"] = [];
-	wholeMenu["Java/JavaScript"].id = "18_5_4";
-	wholeMenu["Java/JavaScript"].color = "white";
-	wholeMenu["Java/JavaScript"].hasSub = 0;
-	wholeMenu["Java/JavaScript"].link = "software_development_javascript_rus.html";
-	wholeMenu["Java/JavaScript"].html = 'Java/JavaScript';
-
-	wholeMenu["Html"] = [];
-	wholeMenu["Html"].id = "18_5_5";
-	wholeMenu["Html"].color = "white";
-	wholeMenu["Html"].hasSub = 0;
-	wholeMenu["Html"].link = "software_development_html_rus.html";
-	wholeMenu["Html"].html = 'Html';
-
-	wholeMenu["Laravel"] = [];
-	wholeMenu["Laravel"].id = "18_5_6";
-	wholeMenu["Laravel"].color = "white";
-	wholeMenu["Laravel"].hasSub = 0;
-	wholeMenu["Laravel"].link = "software_development_laravel_rus.html";
-	wholeMenu["Laravel"].html = 'Laravel';
-
-	wholeMenu["PHP/MySql"] = [];
-	wholeMenu["PHP/MySql"].id = "18_5_7";
-	wholeMenu["PHP/MySql"].color = "white";
-	wholeMenu["PHP/MySql"].hasSub = 0;
-	wholeMenu["PHP/MySql"].link = "software_development_php_rus.html";
-	wholeMenu["PHP/MySql"].html = 'PHP/MySql';
-
-	wholeMenu["Python"] = [];
-	wholeMenu["Python"].id = "18_5_8";
-	wholeMenu["Python"].color = "white";
-	wholeMenu["Python"].hasSub = 0;
-	wholeMenu["Python"].link = "software_development_python_rus.html";
-	wholeMenu["Python"].html = 'Python';
-
-	wholeMenu["Ruby On Rails"] = [];
-	wholeMenu["Ruby On Rails"].id = "18_5_9";
-	wholeMenu["Ruby On Rails"].color = "white";
-	wholeMenu["Ruby On Rails"].hasSub = 0;
-	wholeMenu["Ruby On Rails"].link = "software_development_ruby_on_rails_rus.html";
-	wholeMenu["Ruby On Rails"].html = 'Ruby On Rails';
+	wholeMenu["Обработка Данных"] = [];
+	wholeMenu["Обработка Данных"].id = "18_2";
+	wholeMenu["Обработка Данных"].color = "white";
+	wholeMenu["Обработка Данных"].hasSub = 0;
+	wholeMenu["Обработка Данных"].link = "software_development_data_rus.html";
+	wholeMenu["Обработка Данных"].html = 'Обработка Данных';
 
 
-	wholeMenu["● Обработка Текста"] = [];
-	wholeMenu["● Обработка Текста"].id = "18_6";
-	wholeMenu["● Обработка Текста"].color = "white";
-	wholeMenu["● Обработка Текста"].hasSub = 1;
-	wholeMenu["● Обработка Текста"].link = "";
-	wholeMenu["● Обработка Текста"].html = '&#9679; Обработка Текста';
+	wholeMenu["Рисование"] = [];
+	wholeMenu["Рисование"].id = "18_3";
+	wholeMenu["Рисование"].color = "white";
+	wholeMenu["Рисование"].hasSub = 0;
+	wholeMenu["Рисование"].link = "software_development_drawing_rus.html";
+	wholeMenu["Рисование"].html = 'Рисование';
 
-	wholeMenu["Latex"] = [];
-	wholeMenu["Latex"].id = "18_6_1";
-	wholeMenu["Latex"].color = "white";
-	wholeMenu["Latex"].hasSub = 0;
-	wholeMenu["Latex"].link = "software_development_latex_rus.html";
-	wholeMenu["Latex"].html = 'Latex';
+	wholeMenu["IDE"] = [];
+	wholeMenu["IDE"].id = "18_4";
+	wholeMenu["IDE"].color = "white";
+	wholeMenu["IDE"].hasSub = 0;
+	wholeMenu["IDE"].link = "software_development_ide_rus.html";
+	wholeMenu["IDE"].html = 'IDE';
 
-	wholeMenu["Microsoft Office"] = [];
-	wholeMenu["Microsoft Office"].id = "18_6_2";
-	wholeMenu["Microsoft Office"].color = "white";
-	wholeMenu["Microsoft Office"].hasSub = 0;
-	wholeMenu["Microsoft Office"].link = "software_development_microsoft_office_rus.html";
-	wholeMenu["Microsoft Office"].html = 'Microsoft Office';
+	wholeMenu["Языки Программирования"] = [];
+	wholeMenu["Языки Программирования"].id = "18_5";
+	wholeMenu["Языки Программирования"].color = "white";
+	wholeMenu["Языки Программирования"].hasSub = 0;
+	wholeMenu["Языки Программирования"].link = "software_development_programming_languages_rus.html";
+	wholeMenu["Языки Программирования"].html = 'Языки Программирования';
 
-	wholeMenu["Notepad++"] = [];
-	wholeMenu["Notepad++"].id = "18_6_3";
-	wholeMenu["Notepad++"].color = "white";
-	wholeMenu["Notepad++"].hasSub = 0;
-	wholeMenu["Notepad++"].link = "software_development_notepad++_rus.html";
-	wholeMenu["Notepad++"].html = 'Notepad++';
+	wholeMenu["Обработка Текста"] = [];
+	wholeMenu["Обработка Текста"].id = "18_6";
+	wholeMenu["Обработка Текста"].color = "white";
+	wholeMenu["Обработка Текста"].hasSub = 0;
+	wholeMenu["Обработка Текста"].link = "software_development_text_rus.html";
+	wholeMenu["Обработка Текста"].html = 'Обработка Текста';
 
 	wholeMenu["Фильмы Про IT"] = [];
 	wholeMenu["Фильмы Про IT"].id = "18_7";
