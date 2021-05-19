@@ -25,7 +25,6 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_not_satanic_eng.html#letter_for_king" class = "standardb_black" data-added="19th of Aug, 2020." data-genre="Not Satanic" data-country="united_kingdom;netherlands" data-year="2020" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Letter for the King</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_not_satanic_eng.html#star_trek_short" class = "standardb_black" data-added="31st of Aug, 2020." data-genre="Not Satanic" data-country="usa" data-year="2018" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Star Trek: Short Treks</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_not_satanic_eng.html#terra_nova" class = "standardb_black" data-added="26th of Mar, 2021." data-genre="Not Satanic" data-country="usa" data-year="2011" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Terra Nova</a> 
-<P>&nbsp;&nbsp;&nbsp;- <a href="series_not_satanic_eng.html#war_worlds" class = "standardb_black" data-added="18th of May, 2021." data-genre="Not Satanic" data-country="usa;france" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">War of the Worlds</a> 
 
 <P>&nbsp;&#9679; <a href="series_other_eng.html" class = "standardb_black" data-added="29th of Jul, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Other</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_other_eng.html#alien_worlds" class = "standardb_black" data-added="15th of May, 2021." data-genre="Series" data-country="united_kingdom" data-year="2020" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Alien Worlds</a> 
