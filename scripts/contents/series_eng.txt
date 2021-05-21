@@ -26,7 +26,7 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_not_satanic_eng.html#star_trek_short" class = "standardb_black" data-added="31st of Aug, 2020." data-genre="Not Satanic" data-country="usa" data-year="2018" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Star Trek: Short Treks</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_not_satanic_eng.html#terra_nova" class = "standardb_black" data-added="26th of Mar, 2021." data-genre="Not Satanic" data-country="usa" data-year="2011" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Terra Nova</a> 
 
-<P>&nbsp;&#9679; <a href="series_other_eng.html" class = "standardb_black" data-added="29th of Jul, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Other</a>
+<P>&nbsp;&#9679; <a href="series_other_eng.html" class = "standardb_black" data-added="07th of May, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Other</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_other_eng.html#alien_worlds" class = "standardb_black" data-added="15th of May, 2021." data-genre="Series" data-country="united_kingdom" data-year="2020" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Alien Worlds</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_other_eng.html#alienist" class = "standardb_black" data-added="20th of Feb, 2020." data-genre="Series" data-country="usa" data-year="2018" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Alienist</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_other_eng.html#bastard_executioner" class = "standardb_black" data-added="29th of Aug, 2020." data-genre="Series" data-country="usa" data-year="2015" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Bastard Executioner</a> 
