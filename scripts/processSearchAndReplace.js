@@ -1390,6 +1390,7 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 	}
 	xhr.onreadystatechange = function(){
         	if (this.readyState==4 && this.status==200) {
+
 			if (this.responseText==0) {
 				alert(messageF+" '"+newFilePath+"/"+filename+"' "+message0);
 				upload2(lang, allFiles, i+1, totalFiles, newFilePath);
@@ -1415,7 +1416,7 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 
 
 
-function del(lang) {
+function del(lang, totalFiles) {
 	
 	message1="";
 	if (lang.localeCompare('rus')==0) {
@@ -1446,7 +1447,7 @@ function del(lang) {
 			if (this.responseText==1) {
 				alert(message2);
 				i = getParameterByName('i');
-				if (i>0) i=i-1;
+				if (i!=0 && i==(totalFiles-1)) i--;
 				window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(getParameterByName('pattern'))+'&i='+ encodeURIComponent(i);
 			} else {
 				alert(message3);
@@ -1707,7 +1708,7 @@ function processSearch(lang) {
 
 // -------------- LOAD FILE ------------- //
 							if (!dir[i]['encoding'] || typeof dir[i]['encoding']==='undefined') dir[i]['encoding']="Windows-1252"; // default
-							loadAndShowFile(lang, dir[i]['correctDir']+dir[i]['basename'], dir[i]['modified'], dir[i]['encoding']);
+							loadAndShowFile(lang, dir[i]['correctDir']+dir[i]['basename'], dir[i]['modified'], dir[i]['encoding'], dir.length);
 // -------------- End of LOAD FILE ------------- //
 									
 						} else {
@@ -1761,7 +1762,7 @@ function processSearch(lang) {
 
 
 
-function loadAndShowFile(lang, filename, modified, encoding){
+function loadAndShowFile(lang, filename, modified, encoding, totalFiles){
 
 
 
@@ -1801,9 +1802,9 @@ function loadAndShowFile(lang, filename, modified, encoding){
 			$("#files_count_alphabet_row").show();
 			$("#textarea_row").show();
 			$("#butt_row").show();
-			generateEncodings(lang, encoding);
+			generateEncodings(lang, encoding, totalFiles);
 			adjustTextareaAndEncodings();
-			setLinksValues(lang, encoding);
+			setLinksValues(lang, encoding, totalFiles);
 			document.getElementById("textarea_area").focus();
 			setLineAndColumnNumber(lang);
 
@@ -1813,7 +1814,7 @@ function loadAndShowFile(lang, filename, modified, encoding){
 	xhr.send();
 }
 
-function switchEncoding(lang, encoding, encodingSwitchTo, encodingOriginal) {
+function switchEncoding(lang, encoding, encodingSwitchTo, encodingOriginal, totalFiles) {
 	if (window.XMLHttpRequest) {
 		// code for IE7+, Firefox, Chrome, Opera, Safari
 		xhr=new XMLHttpRequest();
@@ -1823,8 +1824,8 @@ function switchEncoding(lang, encoding, encodingSwitchTo, encodingOriginal) {
 	xhr.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
 			document.getElementById("textarea_area").value=removeBom(this.responseText);
-			setLinksValues(lang, encodingSwitchTo);
-			generateEncodings(lang, encodingSwitchTo, encodingOriginal);
+			setLinksValues(lang, encodingSwitchTo, totalFiles);
+			generateEncodings(lang, encodingSwitchTo, totalFiles, encodingOriginal);
 			encodingDiv.scrollLeft = selEncodingPixelPosInEncodings - encodingDiv.clientWidth/2;
 			document.getElementById("textarea_area").focus();
 			setLineAndColumnNumber(lang);
@@ -1837,7 +1838,7 @@ function switchEncoding(lang, encoding, encodingSwitchTo, encodingOriginal) {
 }
 
 
-function generateEncodings(lang, encoding, encodingOriginal) {
+function generateEncodings(lang, encoding, totalFiles, encodingOriginal) {
 	if (typeof encodingOriginal==='undefined') encodingOriginal = encoding; // default
 // ----------------------- PHP mb_list_encodings() values --------- //
 allEncodings = [
@@ -1927,9 +1928,9 @@ allEncodings = [
 			encodingDiv.innerHTML=encodingDiv.innerHTML+nbspToShow;
 		} else {
 			if (encoding.localeCompare(encodingOriginal)!=0 && encodingOriginal.localeCompare(allEncodings[c])==0) {
-				encodingDiv.innerHTML=encodingDiv.innerHTML+"<a href=\"javascript:switchEncoding('"+lang+"', '"+encoding+"', '"+allEncodings[c]+"', '"+encodingOriginal+"')\" class = \"standardb_green\" title=\""+message1+"\">"+allEncodings[c]+"</a>"+nbspToShow;
+				encodingDiv.innerHTML=encodingDiv.innerHTML+"<a href=\"javascript:switchEncoding('"+lang+"', '"+encoding+"', '"+allEncodings[c]+"', '"+encodingOriginal+"',"+totalFiles+")\" class = \"standardb_green\" title=\""+message1+"\">"+allEncodings[c]+"</a>"+nbspToShow;
 			} else {
-				encodingDiv.innerHTML=encodingDiv.innerHTML+"<a href=\"javascript:switchEncoding('"+lang+"', '"+encoding+"', '"+allEncodings[c]+"', '"+encodingOriginal+"')\" class = \"standardb_blue\" >"+allEncodings[c]+"</a>"+nbspToShow;
+				encodingDiv.innerHTML=encodingDiv.innerHTML+"<a href=\"javascript:switchEncoding('"+lang+"', '"+encoding+"', '"+allEncodings[c]+"', '"+encodingOriginal+"',"+totalFiles+")\" class = \"standardb_blue\" >"+allEncodings[c]+"</a>"+nbspToShow;
 			}
 		}
 	}
@@ -1938,12 +1939,12 @@ allEncodings = [
 
 
 
-function setLinksValues(lang, encoding) {
+function setLinksValues(lang, encoding, totalFiles) {
 	document.getElementById("save_link").setAttribute("href", "javascript:save('"+lang+"' ,'"+encoding+"');");
 	document.getElementById("save_as_link").setAttribute("href", "javascript:saveas('"+lang+"' ,'"+encoding+"');");
 	document.getElementById("download_link").setAttribute("href", "javascript:download('"+lang+"' ,'"+encoding+"');");
 	document.getElementById("upload_link").setAttribute("href", "javascript:upload('"+lang+"');");
-	document.getElementById("delete_link").setAttribute("href", "javascript:del('"+lang+"');");
+	document.getElementById("delete_link").setAttribute("href", "javascript:del('"+lang+"',"+totalFiles+");");
 }
 
 

@@ -2439,29 +2439,6 @@ if (lang=="eng") {
 	wholeMenu["42SortBy"].link = "movies_genre_dystopia_score_eng.html";
 	wholeMenu["42SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18"  style="vertical-align:middle;"/>Score';
 
-
-	wholeMenu["● Television Pilot"] = [];
-	wholeMenu["● Television Pilot"].id = "8_2_6";
-	wholeMenu["● Television Pilot"].color = "black";
-	wholeMenu["● Television Pilot"].hasSub = 1;
-	wholeMenu["● Television Pilot"].subCaption = "&#9679; Television Pilot, Sort by";
-	wholeMenu["● Television Pilot"].link = "";
-	wholeMenu["● Television Pilot"].html = '&#9679; Television Pilot';
-
-	wholeMenu["61SortBy"] = [];
-	wholeMenu["61SortBy"].id = "8_2_6_1";
-	wholeMenu["61SortBy"].color = "black";
-	wholeMenu["61SortBy"].hasSub = 0;
-	wholeMenu["61SortBy"].link = "movies_genre_pilot_eng.html";
-	wholeMenu["61SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Name';
-
-	wholeMenu["62SortBy"] = [];
-	wholeMenu["62SortBy"].id = "8_2_6_2";
-	wholeMenu["62SortBy"].color = "black";
-	wholeMenu["62SortBy"].hasSub = 0;
-	wholeMenu["62SortBy"].link = "movies_genre_pilot_score_eng.html";
-	wholeMenu["62SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18"  style="vertical-align:middle;"/>Score';
-
 	wholeMenu["● Post-Apocalyptic"] = [];
 	wholeMenu["● Post-Apocalyptic"].id = "8_2_7";
 	wholeMenu["● Post-Apocalyptic"].color = "black";
@@ -2764,27 +2741,6 @@ if (lang=="rus") {
 	wholeMenu["42СортироватьПо"].link = "movies_genre_dystopia_score_rus.html";
 	wholeMenu["42СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" width="22" height="18"  style="vertical-align:middle;"/>Счёту';
 
-	wholeMenu["● Пилотный Эпизод"] = [];
-	wholeMenu["● Пилотный Эпизод"].id = "8_2_6";
-	wholeMenu["● Пилотный Эпизод"].color = "black";
-	wholeMenu["● Пилотный Эпизод"].hasSub = 1;
-	wholeMenu["● Пилотный Эпизод"].subCaption = "&#9679; Пилотный Эпизод, Сортировать по";
-	wholeMenu["● Пилотный Эпизод"].link = "";
-	wholeMenu["● Пилотный Эпизод"].html = '&#9679; Пилотный Эпизод';
-
-	wholeMenu["61СортироватьПо"] = [];
-	wholeMenu["61СортироватьПо"].id = "8_2_6_1";
-	wholeMenu["61СортироватьПо"].color = "black";
-	wholeMenu["61СортироватьПо"].hasSub = 0;
-	wholeMenu["61СортироватьПо"].link = "movies_genre_pilot_rus.html";
-	wholeMenu["61СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Имени';
-
-	wholeMenu["62СортироватьПо"] = [];
-	wholeMenu["62СортироватьПо"].id = "8_2_6_2";
-	wholeMenu["62СортироватьПо"].color = "black";
-	wholeMenu["62СортироватьПо"].hasSub = 0;
-	wholeMenu["62СортироватьПо"].link = "movies_genre_pilot_score_rus.html";
-	wholeMenu["62СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" width="22" height="18"  style="vertical-align:middle;"/>Счёту';
 
 	wholeMenu["● Постапокалиптика"] = [];
 	wholeMenu["● Постапокалиптика"].id = "8_2_7";
