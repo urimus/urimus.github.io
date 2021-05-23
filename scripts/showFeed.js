@@ -216,7 +216,6 @@ function processShowFeed(type, source, lang, result) {
 
 			// ------------- End of Setting Texts ---------------- //
 
-
 			var items=result.feed.entries;
 
 			// ------------- For Lenta only -------------- //
@@ -481,6 +480,7 @@ function processBbcRussian(type, source, lang) {
 	if (lang=="lat") errorM = 'Lectio https://www.bbc.com/russian defecit. <a href="javascript:location.reload();" class = "standardb_red">Reload Page</a>.';
 
 
+
 	result=[];
 	result.feed=[];
 	result.feed.meta=[];
@@ -510,7 +510,7 @@ function processBbcRussian(type, source, lang) {
 			shPos2=data.indexOf("</script>", shPos+1);
 			sh=data.substr(shPos+20, shPos2-shPos-20);
 			shJson=JSON.parse(sh);
-
+//console.log(shJson);
 
 			newSectionHtml=document.getElementById('feed_section').innerHTML;
 			newClusterHtml=document.getElementById('feed_cluster').innerHTML;
@@ -548,7 +548,7 @@ function processBbcRussian(type, source, lang) {
 					if (type=="section") items=shJson.pageData.content.groups[i].items;
 					newSectionHtml=shJson.pageData.content.groups[i].strapline.name;
 				} else {
-					if (shJson.pageData.content.groups[i].title!="Useful links") {
+					if (shJson.pageData.content.groups[i].title!="Useful links" && shJson.pageData.content.groups[i].title!="Social media links") {
 						console.log(shJson.pageData.content.groups[i].title);
 					}
 				}
@@ -600,7 +600,6 @@ function processBbcRussian(type, source, lang) {
 				result.feed.entries[i].width=items[i].indexImage.width;
 
 			}
-			//console.log(result);
 			processShowFeed(type, source, lang, result);
 
 		}
