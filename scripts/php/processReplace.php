@@ -14,13 +14,15 @@ $filename=$_GET["filename"];
 $fileNum=$_GET["fileNum"];
 $replaceWhat=$_GET["replaceWhat"];
 $replaceTo=$_GET["replaceTo"];
+$filesProcessed=$_GET["filesProcessed"];
+
 
 include 'saveClass.php';
 $file_contents=file_get_contents($filename) or die("Unable to open file! - '".$filename."'");
 // ---------- log -------- //
 date_default_timezone_set('UTC');
 if ($fileNum==0) {
-    file_put_contents("../logs/replace.log", "\n-------------- Replacement ".$replaceWhat." -> ".$replaceTo.", ".date("dS")." of ".date("F, Y, H:i:s")." UTC --------------\n");//, FILE_APPEND | LOCK_EX);    
+    file_put_contents("../logs/replace.log", "\n-------------- Replacement: \n".$replaceWhat."\n to \n".$replaceTo."\n".date("dS")." of ".date("F, Y, H:i:s")." UTC --------------\n");//, FILE_APPEND | LOCK_EX);    
 }
 // ---------- end of log -------- //
 
@@ -84,17 +86,19 @@ $out['modified']=$modified;
 $out['statisticsTimesReplaced']=$statisticsTimesReplaced;
 
 // ---------- log -------- //
-$status="Skipped";
 $replacementInfo="";
 if ($statisticsTimesReplaced>0) {
-    $status="Processed";
+    $filesProcessed=$filesProcessed+1;
     $replacementInfo=" - ".$statisticsTimesReplaced." Replacement(s), Line #(s) -";
     $replacementInfo=$replacementInfo." ".$lineNrs[0];
     for ($i = 1; $i < $statisticsTimesReplaced; $i++) {
         $replacementInfo=$replacementInfo.", ".$lineNrs[$i];
     } 
+    file_put_contents("../logs/replace.log", $filesProcessed.". Processed - ".substr($filename, 6).$replacementInfo.".\n", FILE_APPEND | LOCK_EX);
+} else {
+    file_put_contents("../logs/replace.log", "-. Skipped - ".substr($filename, 6).".\n", FILE_APPEND | LOCK_EX);
 }
-file_put_contents("../logs/replace.log", ($fileNum+1).". ".$status." - ".substr($filename, 6).$replacementInfo.".\n", FILE_APPEND | LOCK_EX);
+
 // ---------- end of log -------- //
 echo (json_encode($out)); 
 

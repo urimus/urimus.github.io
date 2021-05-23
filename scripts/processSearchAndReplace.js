@@ -264,7 +264,7 @@ function processReplace(lang, action, dir, i, replaceWhat, replaceTo, statistics
 		}
 	};
 	if (action.localeCompare("replace")==0) {
-		xhr.open("GET","scripts/php/processReplace.php?filename="+"../../"+encodeURIComponent(dir[i]['correctDir']+dir[i]['basename'])+"&replaceWhat="+encodeURIComponent(replaceWhat)+"&replaceTo="+encodeURIComponent(replaceTo)+"&fileNum="+i,true);
+		xhr.open("GET","scripts/php/processReplace.php?filename="+"../../"+encodeURIComponent(dir[i]['correctDir']+dir[i]['basename'])+"&replaceWhat="+encodeURIComponent(replaceWhat)+"&replaceTo="+encodeURIComponent(replaceTo)+"&fileNum="+i+"&filesProcessed="+statisticsFilesProcessed,true);
 	}
 	if (action.localeCompare("addMenu")==0 || action.localeCompare("removeMenu")==0) {
 		xhr.open("GET","scripts/php/processAddRemoveMenu.php?filename="+"../../"+encodeURIComponent(dir[i]['correctDir']+dir[i]['basename'])+"&action="+encodeURIComponent(action)+"&fileNum="+i,true);

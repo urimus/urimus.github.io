@@ -1736,13 +1736,6 @@ if (lang=="eng") {
 	wholeMenu["Chanson"].html = 'Chanson <font color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>';
 
 
-	wholeMenu["Classical"] = [];
-	wholeMenu["Classical"].id = "7_2";
-	wholeMenu["Classical"].color = "black";
-	wholeMenu["Classical"].hasSub = 0;
-	wholeMenu["Classical"].link = "music_classical_eng.html";
-	wholeMenu["Classical"].html = 'Classical';
-
 	wholeMenu["Country"] = [];
 	wholeMenu["Country"].id = "7_3";
 	wholeMenu["Country"].color = "black";
@@ -2011,14 +2004,6 @@ if (lang=="rus") {
 	wholeMenu["Шансон"].hasSub = 0;
 	wholeMenu["Шансон"].link = "music_chanson_rus.html";
 	wholeMenu["Шансон"].html = 'Шансон <font color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>';
-
-
-	wholeMenu["Классическая"] = [];
-	wholeMenu["Классическая"].id = "7_2";
-	wholeMenu["Классическая"].color = "black";
-	wholeMenu["Классическая"].hasSub = 0;
-	wholeMenu["Классическая"].link = "music_classical_rus.html";
-	wholeMenu["Классическая"].html = 'Классическая';
 
 
 	wholeMenu["Кантри"] = [];
