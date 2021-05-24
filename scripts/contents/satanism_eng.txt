@@ -7,8 +7,6 @@
 <P>&nbsp;&#10004; <a href="satanism_theistic_eng.html" class = "standardb_green" data-added="07th of May, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Theistic</a>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_theistic_eng.html#church_of_azazel" class = "standardb_green" data-added="06th of Sep, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Church of Azazel</a>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_theistic_eng.html#joy_of_satan_ministries" class = "standardb_green" data-added="06th of Sep, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');"> Joy of Satan Ministries</a>
-<P>&nbsp;&#10004; <a href="satanism_true_eng.html" class = "standardb_green" data-added="13th of Mar, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The True Church of Satan</a>
-<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_true_eng.html#"recent_posts" class = "standardb_green" data-added="24th of Mar, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Recent Posts</a>
 <P>&nbsp;&#10008; <a href="satanism_voluntarism_eng.html" class = "standardb_green" data-added="08th of Mar, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Voluntarism</a>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_voluntarism_eng.html#planet_of_apes" class = "standardb_green" data-added="26th of Jul, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Planet of the Apes</a>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_voluntarism_eng.html#galaxy_of_horrors" class = "standardb_green" data-added="27th of Jul, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Galaxy of Horrors</a>

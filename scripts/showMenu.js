@@ -5473,12 +5473,6 @@ if (lang=="eng") {
 	wholeMenu["✔ Theistic"].link = "satanism_theistic_eng.html";
 	wholeMenu["✔ Theistic"].html = '✔ Theistic';
 
-	wholeMenu["✔ The True Church of Satan"] = [];
-	wholeMenu["✔ The True Church of Satan"].id = "19_3";
-	wholeMenu["✔ The True Church of Satan"].color = "green";
-	wholeMenu["✔ The True Church of Satan"].hasSub = 0;
-	wholeMenu["✔ The True Church of Satan"].link = "satanism_true_eng.html";
-	wholeMenu["✔ The True Church of Satan"].html = '✔ The True Church of Satan';
 
 	wholeMenu["✘ Voluntarism"] = [];
 	wholeMenu["✘ Voluntarism"].id = "19_4";
@@ -5521,13 +5515,6 @@ if (lang=="rus") {
 	wholeMenu["✔ Теистический"].hasSub = 0;
 	wholeMenu["✔ Теистический"].link = "satanism_theistic_rus.html";
 	wholeMenu["✔ Теистический"].html = '✔ Теистический';
-
-	wholeMenu["✔ Истинная Церковь Сатаны"] = [];
-	wholeMenu["✔ Истинная Церковь Сатаны"].id = "19_3";
-	wholeMenu["✔ Истинная Церковь Сатаны"].color = "green";
-	wholeMenu["✔ Истинная Церковь Сатаны"].hasSub = 0;
-	wholeMenu["✔ Истинная Церковь Сатаны"].link = "satanism_true_rus.html";
-	wholeMenu["✔ Истинная Церковь Сатаны"].html = '✔ Истинная Церковь Сатаны';
 
 	wholeMenu["✘ Волюнтаризм"] = [];
 	wholeMenu["✘ Волюнтаризм"].id = "19_4";
