@@ -5474,13 +5474,6 @@ if (lang=="eng") {
 	wholeMenu["✔ Theistic"].html = '✔ Theistic';
 
 
-	wholeMenu["✘ Voluntarism"] = [];
-	wholeMenu["✘ Voluntarism"].id = "19_4";
-	wholeMenu["✘ Voluntarism"].color = "green";
-	wholeMenu["✘ Voluntarism"].hasSub = 0;
-	wholeMenu["✘ Voluntarism"].link = "satanism_voluntarism_eng.html";
-	wholeMenu["✘ Voluntarism"].html = '✘ Voluntarism';
-
 	wholeMenu["Symbolics"] = [];
 	wholeMenu["Symbolics"].id = "19_5";
 	wholeMenu["Symbolics"].color = "green";
@@ -5516,12 +5509,6 @@ if (lang=="rus") {
 	wholeMenu["✔ Теистический"].link = "satanism_theistic_rus.html";
 	wholeMenu["✔ Теистический"].html = '✔ Теистический';
 
-	wholeMenu["✘ Волюнтаризм"] = [];
-	wholeMenu["✘ Волюнтаризм"].id = "19_4";
-	wholeMenu["✘ Волюнтаризм"].color = "green";
-	wholeMenu["✘ Волюнтаризм"].hasSub = 0;
-	wholeMenu["✘ Волюнтаризм"].link = "satanism_voluntarism_rus.html";
-	wholeMenu["✘ Волюнтаризм"].html = '✘ Волюнтаризм';
 
 	wholeMenu["Символика"] = [];
 	wholeMenu["Символика"].id = "19_5";
@@ -6418,3 +6405,4 @@ $(document).keyup(function(e) {
 		hideSubMenu();
 	}
 });
+volun

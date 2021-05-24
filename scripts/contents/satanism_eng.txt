@@ -3,12 +3,7 @@
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_atheistic_eng.html#laveyan_satanism" class = "standardb_green" data-added="06th of Sep, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">LaVeyan Satanism</a>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_atheistic_eng.html#church_of_satan" class = "standardb_green" data-added="07th of May, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Church of Satan</a>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_atheistic_eng.html#the_satanic_temple" class = "standardb_green" data-added="06th of Sep, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Satanic Temple</a>
-<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_atheistic_eng.html#baphomet_statue" class = "standardb_green" data-added="07th of May, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Baphomet Statue</a>
 <P>&nbsp;&#10004; <a href="satanism_theistic_eng.html" class = "standardb_green" data-added="07th of May, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Theistic</a>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_theistic_eng.html#church_of_azazel" class = "standardb_green" data-added="06th of Sep, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Church of Azazel</a>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_theistic_eng.html#joy_of_satan_ministries" class = "standardb_green" data-added="06th of Sep, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');"> Joy of Satan Ministries</a>
-<P>&nbsp;&#10008; <a href="satanism_voluntarism_eng.html" class = "standardb_green" data-added="08th of Mar, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Voluntarism</a>
-<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_voluntarism_eng.html#planet_of_apes" class = "standardb_green" data-added="26th of Jul, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Planet of the Apes</a>
-<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_voluntarism_eng.html#galaxy_of_horrors" class = "standardb_green" data-added="27th of Jul, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Galaxy of Horrors</a>
-<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="satanism_voluntarism_eng.html#music" class = "standardb_green" data-added="12th of Aug, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Music</a>
 <P>&nbsp;&#9679; <a href="satanism_simvoly_eng.html" class = "standardb_green" data-added="16th of May, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Symbolics</a>
