@@ -1,5 +1,5 @@
 ﻿<P><b class="text_blue">О Моём PhD</b>
 <P>&nbsp;&#9679; <a href="phd_rus.html#aboutphd" class = "standardb_blue" data-added="15th of Sep, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">О Моём PhD</a>
-<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="phd_rus.html#asuperviser" class = "standardb_blue" data-added="15th of Sep, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Мой Научный Руководитель</a>
-<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="phd_rus.html#dissertation" class = "standardb_blue" data-added="08th of Aug, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Моя Диссертация</a>
-<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="phd_rus.html#publications" class = "standardb_blue" data-added="08th of Aug, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Мои Научные Статьи</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="phd_rus.html#asuperviser" class = "standardb_blue" data-added="15th of Sep, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Мой Научный Руководитель</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="phd_rus.html#dissertation" class = "standardb_blue" data-added="08th of Aug, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Моя Диссертация</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="phd_rus.html#publications" class = "standardb_blue" data-added="08th of Aug, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Мои Научные Статьи</a>
