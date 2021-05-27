@@ -2358,159 +2358,54 @@ if (lang=="eng") {
 	wholeMenu["● By Genre"].link = "";
 	wholeMenu["● By Genre"].html = '&#9679; By Genre';
 
-	wholeMenu["● Action Horror"] = [];
-	wholeMenu["● Action Horror"].id = "8_2_1";
-	wholeMenu["● Action Horror"].color = "black";
-	wholeMenu["● Action Horror"].hasSub = 1;
-	wholeMenu["● Action Horror"].subCaption = "&#9679; Action Horror, Sort by";
-	wholeMenu["● Action Horror"].link = "";
-	wholeMenu["● Action Horror"].html = '&#9679; Action Horror';
+	wholeMenu["Action Horror"] = [];
+	wholeMenu["Action Horror"].id = "8_2_1";
+	wholeMenu["Action Horror"].color = "black";
+	wholeMenu["Action Horror"].hasSub = 0;
+	wholeMenu["Action Horror"].link = "movies_genre_action_horror_eng.html";
+	wholeMenu["Action Horror"].html = 'Action Horror';
 
-	wholeMenu["11SortBy"] = [];
-	wholeMenu["11SortBy"].id = "8_2_1_1";
-	wholeMenu["11SortBy"].color = "black";
-	wholeMenu["11SortBy"].hasSub = 0;
-	wholeMenu["11SortBy"].link = "movies_genre_action_horror_eng.html";
-	wholeMenu["11SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Name';
+	wholeMenu["Body Horror"] = [];
+	wholeMenu["Body Horror"].id = "8_2_3";
+	wholeMenu["Body Horror"].color = "black";
+	wholeMenu["Body Horror"].hasSub = 0;
+	wholeMenu["Body Horror"].link = "movies_genre_body_horror_eng.html";
+	wholeMenu["Body Horror"].html = 'Body Horror';
 
-	wholeMenu["12SortBy"] = [];
-	wholeMenu["12SortBy"].id = "8_2_1_2";
-	wholeMenu["12SortBy"].color = "black";
-	wholeMenu["12SortBy"].hasSub = 0;
-	wholeMenu["12SortBy"].link = "movies_genre_action_horror_score_eng.html";
-	wholeMenu["12SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18"  style="vertical-align:middle;"/>Score';
+	wholeMenu["Dystopia"] = [];
+	wholeMenu["Dystopia"].id = "8_2_4";
+	wholeMenu["Dystopia"].color = "black";
+	wholeMenu["Dystopia"].hasSub = 0;
+	wholeMenu["Dystopia"].link = "movies_genre_dystopia_eng.html";
+	wholeMenu["Dystopia"].html = 'Dystopia';
 
-	wholeMenu["● Body Horror"] = [];
-	wholeMenu["● Body Horror"].id = "8_2_3";
-	wholeMenu["● Body Horror"].color = "black";
-	wholeMenu["● Body Horror"].hasSub = 1;
-	wholeMenu["● Body Horror"].subCaption = "&#9679; Body Horror, Sort by";
-	wholeMenu["● Body Horror"].link = "";
-	wholeMenu["● Body Horror"].html = '&#9679; Body Horror';
+	wholeMenu["Post-Apocalyptic"] = [];
+	wholeMenu["Post-Apocalyptic"].id = "8_2_7";
+	wholeMenu["Post-Apocalyptic"].color = "black";
+	wholeMenu["Post-Apocalyptic"].hasSub = 0;
+	wholeMenu["Post-Apocalyptic"].link = "movies_genre_post_apocalyptic_eng.html";
+	wholeMenu["Post-Apocalyptic"].html = 'Post-Apocalyptic';
 
-	wholeMenu["31SortBy"] = [];
-	wholeMenu["31SortBy"].id = "8_2_3_1";
-	wholeMenu["31SortBy"].color = "black";
-	wholeMenu["31SortBy"].hasSub = 0;
-	wholeMenu["31SortBy"].link = "movies_genre_body_horror_eng.html";
-	wholeMenu["31SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Name';
+	wholeMenu["Short"] = [];
+	wholeMenu["Short"].id = "8_2_9";
+	wholeMenu["Short"].color = "black";
+	wholeMenu["Short"].hasSub = 0;
+	wholeMenu["Short"].link = "movies_genre_short_eng.html";
+	wholeMenu["Short"].html = 'Short';
 
-	wholeMenu["32SortBy"] = [];
-	wholeMenu["32SortBy"].id = "8_2_3_2";
-	wholeMenu["32SortBy"].color = "black";
-	wholeMenu["32SortBy"].hasSub = 0;
-	wholeMenu["32SortBy"].link = "movies_genre_body_horror_score_eng.html";
-	wholeMenu["32SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18"  style="vertical-align:middle;"/>Score';
+	wholeMenu["Situation Comedy"] = [];
+	wholeMenu["Situation Comedy"].id = "8_2_10";
+	wholeMenu["Situation Comedy"].color = "black";
+	wholeMenu["Situation Comedy"].hasSub = 0;
+	wholeMenu["Situation Comedy"].link = "movies_genre_sitcom_eng.html";
+	wholeMenu["Situation Comedy"].html = 'Situation Comedy';
 
-	wholeMenu["● Dystopia"] = [];
-	wholeMenu["● Dystopia"].id = "8_2_4";
-	wholeMenu["● Dystopia"].color = "black";
-	wholeMenu["● Dystopia"].hasSub = 1;
-	wholeMenu["● Dystopia"].subCaption = "&#9679; Dystopia, Sort by";
-	wholeMenu["● Dystopia"].link = "";
-	wholeMenu["● Dystopia"].html = '&#9679; Dystopia';
-
-	wholeMenu["41SortBy"] = [];
-	wholeMenu["41SortBy"].id = "8_2_4_1";
-	wholeMenu["41SortBy"].color = "black";
-	wholeMenu["41SortBy"].hasSub = 0;
-	wholeMenu["41SortBy"].link = "movies_genre_dystopia_eng.html";
-	wholeMenu["41SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Name';
-
-	wholeMenu["42SortBy"] = [];
-	wholeMenu["42SortBy"].id = "8_2_4_2";
-	wholeMenu["42SortBy"].color = "black";
-	wholeMenu["42SortBy"].hasSub = 0;
-	wholeMenu["42SortBy"].link = "movies_genre_dystopia_score_eng.html";
-	wholeMenu["42SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18"  style="vertical-align:middle;"/>Score';
-
-	wholeMenu["● Post-Apocalyptic"] = [];
-	wholeMenu["● Post-Apocalyptic"].id = "8_2_7";
-	wholeMenu["● Post-Apocalyptic"].color = "black";
-	wholeMenu["● Post-Apocalyptic"].hasSub = 1;
-	wholeMenu["● Post-Apocalyptic"].subCaption = "&#9679; Post-Apocalyptic, Sort by";
-	wholeMenu["● Post-Apocalyptic"].link = "movies_genre_post_apocalyptic_eng.html";
-	wholeMenu["● Post-Apocalyptic"].html = '&#9679; Post-Apocalyptic';
-
-	wholeMenu["71SortBy"] = [];
-	wholeMenu["71SortBy"].id = "8_2_7_1";
-	wholeMenu["71SortBy"].color = "black";
-	wholeMenu["71SortBy"].hasSub = 0;
-	wholeMenu["71SortBy"].link = "movies_genre_post_apocalyptic_eng.html";
-	wholeMenu["71SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Name';
-
-	wholeMenu["72SortBy"] = [];
-	wholeMenu["72SortBy"].id = "8_2_7_2";
-	wholeMenu["72SortBy"].color = "black";
-	wholeMenu["72SortBy"].hasSub = 0;
-	wholeMenu["72SortBy"].link = "movies_genre_post_apocalyptic_score_eng.html";
-	wholeMenu["72SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18"  style="vertical-align:middle;"/>Score';
-
-	wholeMenu["● Short"] = [];
-	wholeMenu["● Short"].id = "8_2_9";
-	wholeMenu["● Short"].color = "black";
-	wholeMenu["● Short"].hasSub = 1;
-	wholeMenu["● Short"].subCaption = "&#9679; Short, Sort by";
-	wholeMenu["● Short"].link = "movies_genre_short_eng.html";
-	wholeMenu["● Short"].html = '&#9679; Short';
-
-	wholeMenu["91SortBy"] = [];
-	wholeMenu["91SortBy"].id = "8_2_9_1";
-	wholeMenu["91SortBy"].color = "black";
-	wholeMenu["91SortBy"].hasSub = 0;
-	wholeMenu["91SortBy"].link = "movies_genre_short_eng.html";
-	wholeMenu["91SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Name';
-
-	wholeMenu["92SortBy"] = [];
-	wholeMenu["92SortBy"].id = "8_2_9_2";
-	wholeMenu["92SortBy"].color = "black";
-	wholeMenu["92SortBy"].hasSub = 0;
-	wholeMenu["92SortBy"].link = "movies_genre_short_score_eng.html";
-	wholeMenu["92SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18"  style="vertical-align:middle;"/>Score';
-
-	wholeMenu["● Situation Comedy"] = [];
-	wholeMenu["● Situation Comedy"].id = "8_2_10";
-	wholeMenu["● Situation Comedy"].color = "black";
-	wholeMenu["● Situation Comedy"].hasSub = 1;
-	wholeMenu["● Situation Comedy"].subCaption = "&#9679; Situation Comedy, Sort by";
-	wholeMenu["● Situation Comedy"].link = "";
-	wholeMenu["● Situation Comedy"].html = '&#9679; Situation Comedy';
-
-	wholeMenu["101SortBy"] = [];
-	wholeMenu["101SortBy"].id = "8_2_10_1";
-	wholeMenu["101SortBy"].color = "black";
-	wholeMenu["101SortBy"].hasSub = 0;
-	wholeMenu["101SortBy"].link = "movies_genre_sitcom_eng.html";
-	wholeMenu["101SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Name';
-
-	wholeMenu["102SortBy"] = [];
-	wholeMenu["102SortBy"].id = "8_2_10_2";
-	wholeMenu["102SortBy"].color = "black";
-	wholeMenu["102SortBy"].hasSub = 0;
-	wholeMenu["102SortBy"].link = "movies_genre_sitcom_score_eng.html";
-	wholeMenu["102SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18"  style="vertical-align:middle;"/>Score';
-
-	wholeMenu["● Space Opera"] = [];
-	wholeMenu["● Space Opera"].id = "8_2_11";
-	wholeMenu["● Space Opera"].color = "black";
-	wholeMenu["● Space Opera"].hasSub = 1;
-	wholeMenu["● Space Opera"].subCaption = "&#9679; Space Opera, Sort by";
-	wholeMenu["● Space Opera"].link = "";
-	wholeMenu["● Space Opera"].html = '&#9679; Space Opera';
-
-	wholeMenu["111SortBy"] = [];
-	wholeMenu["111SortBy"].id = "8_2_11_1";
-	wholeMenu["111SortBy"].color = "black";
-	wholeMenu["111SortBy"].hasSub = 0;
-	wholeMenu["111SortBy"].link = "movies_genre_space_opera_eng.html";
-	wholeMenu["111SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Name';
-
-	wholeMenu["112SortBy"] = [];
-	wholeMenu["112SortBy"].id = "8_2_11_2";
-	wholeMenu["112SortBy"].color = "black";
-	wholeMenu["112SortBy"].hasSub = 0;
-	wholeMenu["112SortBy"].link = "movies_genre_space_opera_score_eng.html";
-	wholeMenu["112SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" alt="Score" title="Score" width="22" height="18"  style="vertical-align:middle;"/>Score';
+	wholeMenu["Space Opera"] = [];
+	wholeMenu["Space Opera"].id = "8_2_11";
+	wholeMenu["Space Opera"].color = "black";
+	wholeMenu["Space Opera"].hasSub = 0;
+	wholeMenu["Space Opera"].link = "movies_genre_space_opera_eng.html";
+	wholeMenu["Space Opera"].html = 'Space Opera';
 
 	wholeMenu["● Animation"] = [];
 	wholeMenu["● Animation"].id = "8_3";
@@ -2659,161 +2554,54 @@ if (lang=="rus") {
 	wholeMenu["● По Жанрам"].link = "";
 	wholeMenu["● По Жанрам"].html = '&#9679; По Жанрам';
 
-	wholeMenu["● Экшн-Хоррор"] = [];
-	wholeMenu["● Экшн-Хоррор"].id = "8_2_1";
-	wholeMenu["● Экшн-Хоррор"].color = "black";
-	wholeMenu["● Экшн-Хоррор"].hasSub = 1;
-	wholeMenu["● Экшн-Хоррор"].subCaption = "&#9679; Экшн-Хоррор, Сортировать по";
-	wholeMenu["● Экшн-Хоррор"].link = "";
-	wholeMenu["● Экшн-Хоррор"].html = '&#9679; Экшн-Хоррор';
+	wholeMenu["Экшн-Хоррор"] = [];
+	wholeMenu["Экшн-Хоррор"].id = "8_2_1";
+	wholeMenu["Экшн-Хоррор"].color = "black";
+	wholeMenu["Экшн-Хоррор"].hasSub = 0;
+	wholeMenu["Экшн-Хоррор"].link = "movies_genre_action_horror_rus.html";
+	wholeMenu["Экшн-Хоррор"].html = 'Экшн-Хоррор';
 
-	wholeMenu["11СортироватьПо"] = [];
-	wholeMenu["11СортироватьПо"].id = "8_2_1_1";
-	wholeMenu["11СортироватьПо"].color = "black";
-	wholeMenu["11СортироватьПо"].hasSub = 0;
-	wholeMenu["11СортироватьПо"].link = "movies_genre_action_horror_rus.html";
-	wholeMenu["11СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Имени';
+	wholeMenu["Боди-Хоррор"] = [];
+	wholeMenu["Боди-Хоррор"].id = "8_2_3";
+	wholeMenu["Боди-Хоррор"].color = "black";
+	wholeMenu["Боди-Хоррор"].hasSub = 0;
+	wholeMenu["Боди-Хоррор"].link = "movies_genre_body_horror_rus.html";
+	wholeMenu["Боди-Хоррор"].html = 'Боди-Хоррор';
 
-	wholeMenu["12СортироватьПо"] = [];
-	wholeMenu["12СортироватьПо"].id = "8_2_1_2";
-	wholeMenu["12СортироватьПо"].color = "black";
-	wholeMenu["12СортироватьПо"].hasSub = 0;
-	wholeMenu["12СортироватьПо"].link = "movies_genre_action_horror_score_rus.html";
-	wholeMenu["12СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" width="22" height="18"  style="vertical-align:middle;"/>Счёту';
+	wholeMenu["Антиутопия"] = [];
+	wholeMenu["Антиутопия"].id = "8_2_4";
+	wholeMenu["Антиутопия"].color = "black";
+	wholeMenu["Антиутопия"].hasSub = 0;
+	wholeMenu["Антиутопия"].link = "movies_genre_dystopia_rus.html";
+	wholeMenu["Антиутопия"].html = 'Антиутопия';
 
-	wholeMenu["● Боди-Хоррор"] = [];
-	wholeMenu["● Боди-Хоррор"].id = "8_2_3";
-	wholeMenu["● Боди-Хоррор"].color = "black";
-	wholeMenu["● Боди-Хоррор"].hasSub = 1;
-	wholeMenu["● Боди-Хоррор"].subCaption = "&#9679; Боди-Хоррор, Сортировать по";
-	wholeMenu["● Боди-Хоррор"].link = "";
-	wholeMenu["● Боди-Хоррор"].html = '&#9679; Боди-Хоррор';
+	wholeMenu["Постапокалиптика"] = [];
+	wholeMenu["Постапокалиптика"].id = "8_2_7";
+	wholeMenu["Постапокалиптика"].color = "black";
+	wholeMenu["Постапокалиптика"].hasSub = 0;
+	wholeMenu["Постапокалиптика"].link = "movies_genre_post_apocalyptic_rus.html";
+	wholeMenu["Постапокалиптика"].html = 'Постапокалиптика';
 
-	wholeMenu["31СортироватьПо"] = [];
-	wholeMenu["31СортироватьПо"].id = "8_2_3_1";
-	wholeMenu["31СортироватьПо"].color = "black";
-	wholeMenu["31СортироватьПо"].hasSub = 0;
-	wholeMenu["31СортироватьПо"].link = "movies_genre_body_horror_rus.html";
-	wholeMenu["31СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Имени';
+	wholeMenu["Короткометражные"] = [];
+	wholeMenu["Короткометражные"].id = "8_2_9";
+	wholeMenu["Короткометражные"].color = "black";
+	wholeMenu["Короткометражные"].hasSub = 0;
+	wholeMenu["Короткометражные"].link = "movies_genre_short_rus.html";
+	wholeMenu["Короткометражные"].html = 'Короткометражные';
 
-	wholeMenu["32СортироватьПо"] = [];
-	wholeMenu["32СортироватьПо"].id = "8_2_3_2";
-	wholeMenu["32СортироватьПо"].color = "black";
-	wholeMenu["32СортироватьПо"].hasSub = 0;
-	wholeMenu["32СортироватьПо"].link = "movies_genre_body_horror_score_rus.html";
-	wholeMenu["32СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" width="22" height="18"  style="vertical-align:middle;"/>Счёту';
+	wholeMenu["Ситуационная Комедия"] = [];
+	wholeMenu["Ситуационная Комедия"].id = "8_2_10";
+	wholeMenu["Ситуационная Комедия"].color = "black";
+	wholeMenu["Ситуационная Комедия"].hasSub = 0;
+	wholeMenu["Ситуационная Комедия"].link = "movies_genre_sitcom_rus.html";
+	wholeMenu["Ситуационная Комедия"].html = 'Ситуационная Комедия';
 
-
-	wholeMenu["● Антиутопия"] = [];
-	wholeMenu["● Антиутопия"].id = "8_2_4";
-	wholeMenu["● Антиутопия"].color = "black";
-	wholeMenu["● Антиутопия"].hasSub = 1;
-	wholeMenu["● Антиутопия"].subCaption = "&#9679; Антиутопия, Сортировать по";
-	wholeMenu["● Антиутопия"].link = "";
-	wholeMenu["● Антиутопия"].html = '&#9679; Антиутопия';
-
-	wholeMenu["41СортироватьПо"] = [];
-	wholeMenu["41СортироватьПо"].id = "8_2_4_1";
-	wholeMenu["41СортироватьПо"].color = "black";
-	wholeMenu["41СортироватьПо"].hasSub = 0;
-	wholeMenu["41СортироватьПо"].link = "movies_genre_dystopia_rus.html";
-	wholeMenu["41СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Имени';
-
-	wholeMenu["42СортироватьПо"] = [];
-	wholeMenu["42СортироватьПо"].id = "8_2_4_2";
-	wholeMenu["42СортироватьПо"].color = "black";
-	wholeMenu["42СортироватьПо"].hasSub = 0;
-	wholeMenu["42СортироватьПо"].link = "movies_genre_dystopia_score_rus.html";
-	wholeMenu["42СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" width="22" height="18"  style="vertical-align:middle;"/>Счёту';
-
-
-	wholeMenu["● Постапокалиптика"] = [];
-	wholeMenu["● Постапокалиптика"].id = "8_2_7";
-	wholeMenu["● Постапокалиптика"].color = "black";
-	wholeMenu["● Постапокалиптика"].hasSub = 1;
-	wholeMenu["● Постапокалиптика"].subCaption = "&#9679; Постапокалиптика, Сорт. по";
-	wholeMenu["● Постапокалиптика"].link = "";
-	wholeMenu["● Постапокалиптика"].html = '&#9679; Постапокалиптика';
-
-	wholeMenu["71СортироватьПо"] = [];
-	wholeMenu["71СортироватьПо"].id = "8_2_7_1";
-	wholeMenu["71СортироватьПо"].color = "black";
-	wholeMenu["71СортироватьПо"].hasSub = 0;
-	wholeMenu["71СортироватьПо"].link = "movies_genre_post_apocalyptic_rus.html";
-	wholeMenu["71СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Имени';
-
-	wholeMenu["72СортироватьПо"] = [];
-	wholeMenu["72СортироватьПо"].id = "8_2_7_2";
-	wholeMenu["72СортироватьПо"].color = "black";
-	wholeMenu["72СортироватьПо"].hasSub = 0;
-	wholeMenu["72СортироватьПо"].link = "movies_genre_post_apocalyptic_score_rus.html";
-	wholeMenu["72СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" width="22" height="18"  style="vertical-align:middle;"/>Счёту';
-
-	wholeMenu["● Короткометражные"] = [];
-	wholeMenu["● Короткометражные"].id = "8_2_9";
-	wholeMenu["● Короткометражные"].color = "black";
-	wholeMenu["● Короткометражные"].hasSub = 1;
-	wholeMenu["● Короткометражные"].subCaption = "&#9679; Короткометражные, Сорт. по";
-	wholeMenu["● Короткометражные"].link = "";
-	wholeMenu["● Короткометражные"].html = '&#9679; Короткометражные';
-
-	wholeMenu["91СортироватьПо"] = [];
-	wholeMenu["91СортироватьПо"].id = "8_2_9_1";
-	wholeMenu["91СортироватьПо"].color = "black";
-	wholeMenu["91СортироватьПо"].hasSub = 0;
-	wholeMenu["91СортироватьПо"].link = "movies_genre_short_rus.html";
-	wholeMenu["91СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Имени';
-
-	wholeMenu["92СортироватьПо"] = [];
-	wholeMenu["92СортироватьПо"].id = "8_2_9_2";
-	wholeMenu["92СортироватьПо"].color = "black";
-	wholeMenu["92СортироватьПо"].hasSub = 0;
-	wholeMenu["92СортироватьПо"].link = "movies_genre_short_score_rus.html";
-	wholeMenu["92СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" width="22" height="18"  style="vertical-align:middle;"/>Счёту';
-
-	wholeMenu["● Ситуационная Комедия"] = [];
-	wholeMenu["● Ситуационная Комедия"].id = "8_2_10";
-	wholeMenu["● Ситуационная Комедия"].color = "black";
-	wholeMenu["● Ситуационная Комедия"].hasSub = 1;
-	wholeMenu["● Ситуационная Комедия"].subCaption = "&#9679; Ситуационная Комедия, Сорт. по";
-	wholeMenu["● Ситуационная Комедия"].link = "";
-	wholeMenu["● Ситуационная Комедия"].html = '&#9679; Ситуационная Комедия';
-
-	wholeMenu["101СортироватьПо"] = [];
-	wholeMenu["101СортироватьПо"].id = "8_2_10_1";
-	wholeMenu["101СортироватьПо"].color = "black";
-	wholeMenu["101СортироватьПо"].hasSub = 0;
-	wholeMenu["101СортироватьПо"].link = "movies_genre_sitcom_rus.html";
-	wholeMenu["101СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Имени';
-
-	wholeMenu["102СортироватьПо"] = [];
-	wholeMenu["102СортироватьПо"].id = "8_2_10_2";
-	wholeMenu["102СортироватьПо"].color = "black";
-	wholeMenu["102СортироватьПо"].hasSub = 0;
-	wholeMenu["102СортироватьПо"].link = "movies_genre_sitcom_score_rus.html";
-	wholeMenu["102СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" width="22" height="18"  style="vertical-align:middle;"/>Счёту';
-
-	wholeMenu["● Космическая Опера"] = [];
-	wholeMenu["● Космическая Опера"].id = "8_2_11";
-	wholeMenu["● Космическая Опера"].color = "black";
-	wholeMenu["● Космическая Опера"].hasSub = 1;
-	wholeMenu["● Космическая Опера"].subCaption = "&#9679; Космическая Опера, Сорт. по";
-	wholeMenu["● Космическая Опера"].link = "";
-	wholeMenu["● Космическая Опера"].html = '&#9679; Космическая Опера';
-
-	wholeMenu["111СортироватьПо"] = [];
-	wholeMenu["111СортироватьПо"].id = "8_2_11_1";
-	wholeMenu["111СортироватьПо"].color = "black";
-	wholeMenu["111СортироватьПо"].hasSub = 0;
-	wholeMenu["111СортироватьПо"].link = "movies_genre_space_opera_rus.html";
-	wholeMenu["111СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="22" height="18"  style="vertical-align:middle;"/>Имени';
-
-	wholeMenu["112СортироватьПо"] = [];
-	wholeMenu["112СортироватьПо"].id = "8_2_11_2";
-	wholeMenu["112СортироватьПо"].color = "black";
-	wholeMenu["112СортироватьПо"].hasSub = 0;
-	wholeMenu["112СортироватьПо"].link = "movies_genre_space_opera_score_rus.html";
-	wholeMenu["112СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_score.png" width="22" height="18"  style="vertical-align:middle;"/>Счёту';
+	wholeMenu["Космическая Опера"] = [];
+	wholeMenu["Космическая Опера"].id = "8_2_11";
+	wholeMenu["Космическая Опера"].color = "black";
+	wholeMenu["Космическая Опера"].hasSub = 0;
+	wholeMenu["Космическая Опера"].link = "movies_genre_space_opera_rus.html";
+	wholeMenu["Космическая Опера"].html = 'Космическая Опера';
 
 	wholeMenu["● Мультипликация"] = [];
 	wholeMenu["● Мультипликация"].id = "8_3";
