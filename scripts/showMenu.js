@@ -6130,7 +6130,7 @@ function  showSubMenu(ele, lang, type, newTableId) {
 
 function  hideSubMenu(ele, manual) {
 
-	maxSubCount=3;
+	maxSubCount=2;
 
 	if (typeof manual==="undefined") manual=0;
 	eleID="";
