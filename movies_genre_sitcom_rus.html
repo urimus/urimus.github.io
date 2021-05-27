@@ -12,11 +12,6 @@
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 
-<!-- Series Sort -->
-<script src="scripts/showSeries.js"></script>
-<!-- End of Seriers Sort -->
-
-
 <!-- Background Images Script -->
 <script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
 <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
@@ -745,46 +740,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 <table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
 <!-- Table with search, name and languages -->
         <tr class="title_black"> 
-                <td  class="title_black" style="width: 500px;"><a name="series">Фильмы &blacktriangleright; Ситуационная Комедия</a></td>
-				<td bgcolor="#e2e2e2" width="3"></td>
-				<td  style="width: 150px;">
-				    Сортировать По:
-				</td>
-
-				<td style="width: 22px;">
-				    <div id="sortby_name" align="center" 
-                        onMouseOver="this.className='flag_selected'"
-                        onMouseOut="mouseOutSortByName('name');"
-                  	 onClick="
-                        if (event.ctrlKey==1){
-                                window.open('movies_genre_sitcom_rus.html'+ window.location.hash);
-                        } else {
-                                window.location.href='movies_genre_sitcom_rus.html'+ window.location.hash;
-                        };"
-                        class="flag_selected"
-                    >
-<img src="scripts/contents/icons/sortby/sortby_name.png" alt="Имени" title="Имени" width="22" height="18"  style="display: block;"/>
-                    </div>
-				</td>
-
-				<td style="width: 22px;">
-				    <div id="sortby_score" align="center" 
-                        onMouseOver="this.className='flag_selected'"
-                        onMouseOut="mouseOutSortByScore('name');"
-                  	 onClick="
-                        if (event.ctrlKey==1){
-                                window.open('movies_genre_sitcom_score_rus.html'+ window.location.hash);
-                        } else {
-                                window.location.href='movies_genre_sitcom_score_rus.html'+ window.location.hash;
-                        };"
-                        class="flag_not_selected"
-                    >
-                        <img src="scripts/contents/icons/sortby/sortby_score.png" alt="Счёту" title="Счёту" width="22" height="18" style="display: block;"/>
-                    </div>
-				</td>
-				
-				
-				
+                <td  class="title_black" style="width: 100%;"><a name="series">Фильмы &blacktriangleright; Ситуационная Комедия</a></td>
         </tr>
 
 </table>
@@ -866,9 +822,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
 							<td width="100%" height="100%" class="nimetus_black"><a name="bright">Яркость (англ. Bright)</a></td>
-							<td height="100%" class="nimetus3_black">
-								<font color="orange" title="Счёт: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Счёт: 5/5"></font>
-							</td>
 						</tr>
 					</table>
 				</td>
@@ -929,9 +882,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
 							<td width="100%" height="100%" class="nimetus_black"><a name="circle">Круг (англ. Circle)</a></td>
-							<td height="100%" class="nimetus3_black">
-								<font color="orange" title="Счёт: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Счёт: 5/5"></font>
-							</td>
 						</tr>
 					</table>
 				</td>
@@ -994,9 +944,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
 							<td width="100%" height="100%" class="nimetus_black"><a name="doctor_who_shada">Доктор Кто: Шада (англ. Doctor Who: Shada)</a></td>
-							<td height="100%" class="nimetus3_black">
-								<font color="orange" title="Счёт: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Счёт: 5/5"></font>
-							</td>
 						</tr>
 					</table>
 				</td>
@@ -1075,9 +1022,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
 							<td width="100%" height="100%" class="nimetus_black"><a name="futurama">Футурама (англ. Futurama)</a></td>
-							<td height="100%" class="nimetus3_black">
-								<font color="orange" title="Счёт: 4/5">&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Счёт: 4/5">&bigstar;</font>
-							</td>
 						</tr>
 					</table>
 				</td>
@@ -1193,9 +1137,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
 							<td width="100%" height="100%" class="nimetus_black"><a name="lapsis">Падшие (англ. Lapsis)</a></td>
-							<td height="100%" class="nimetus3_black">
-								<font color="orange" title="Счёт: 1/5">&bigstar;</font><font color="silver" title="Счёт: 1/5">&bigstar;&bigstar;&bigstar;&bigstar;</font>
-							</td>
 						</tr>
 					</table>
 				</td>
@@ -1277,9 +1218,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
 							<td width="100%" height="100%" class="nimetus_black"><a name="tajna_tretej_planety">Тайна Третьей Планеты</a></td>
-							<td height="100%" class="nimetus3_black">
-								<font color="orange" title="Счёт: 5/5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Счёт: 5/5"></font>
-							</td>
 						</tr>
 					</table>
 				</td>
@@ -1344,9 +1282,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
 							<td width="100%" height="100%" class="nimetus_black"><a name="paradox">Paradox</a></td>
-							<td height="100%" class="nimetus3_black">
-								<font color="orange" title="Счёт: 3/5">&bigstar;&bigstar;&bigstar;</font><font color="silver" title="Счёт: 3/5">&bigstar;&bigstar;</font>
-							</td>
 						</tr>
 					</table>
 				</td>
@@ -1416,9 +1351,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
 							<td width="100%" height="100%" class="nimetus_black"><a name="thames_on_fire">В Погоне за Мечтой (англ. Set the Thames on Fire)</a></td>
-							<td height="100%" class="nimetus3_black">
-								<font color="orange" title="Счёт: 2/5">&bigstar;&bigstar;</font><font color="silver" title="Счёт: 2/5">&bigstar;&bigstar;&bigstar;</font>
-							</td>
 						</tr>
 					</table>
 				</td>
