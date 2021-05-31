@@ -29,7 +29,7 @@ function printData() {
 }
 
 function addData($username, $email, $task) {
-    file_put_contents($_SESSION['database'], $username."_;_".$email."_;_0_;_".$task."\n", FILE_APPEND | LOCK_EX);
+    file_put_contents($_SESSION['database'], $username."_;_".$email."_;_".$task."\n", FILE_APPEND | LOCK_EX);
 }
 
 ?>
@@ -99,7 +99,7 @@ if (isset($_POST['add'])) {
 
 <table>
 <tr>
-    <td>Фаил для Сохранения/Показа:</td><td><input type="text" name="databaseName" value="<?php echo $_SESSION['database']; ?>"></td>
+    <td>Фаил для Сохранения/Показа:</td><td><input type="text" name="databaseName" value="<?php echo htmlspecialchars($_SESSION['database'], ENT_QUOTES); ?>"></td>
     <td><input type="submit" name="database" value="Установить"></td>
 </tr>
 </table>
