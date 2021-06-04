@@ -91,7 +91,7 @@ if (isset($_POST['add'])) {
 	if ($proceedAdd && empty($_POST['email'])) {$message="Email обязателен."; $proceedAdd=0;}
 	if ($proceedAdd && empty($_POST['task'])) {$message="Вопрос обязателен."; $proceedAdd=0;}
     if ($proceedAdd) {
-        addData($_POST['name'], $_POST['phone'], $_POST['task']);
+        addData($_POST['name'], $_POST['email'], $_POST['task']);
     }
 }
 
