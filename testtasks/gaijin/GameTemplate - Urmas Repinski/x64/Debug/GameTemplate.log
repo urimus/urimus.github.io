@@ -1,0 +1,3 @@
+﻿  Game.cpp
+D:\test-tasks\Gaijin\GameTemplate\Game.cpp(36,21): warning C4244: 'initializing': conversion from 'double' to 'unsigned __int64', possible loss of data
+  GameTemplate.vcxproj -> D:\test-tasks\Gaijin\GameTemplate\x64\Debug\GameTemplate.exe
