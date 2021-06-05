@@ -110,7 +110,6 @@
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="movies_genre_space_opera_eng.html#jupiter_ascending" class = "standardb_black" data-added="05th of Sep, 2016." data-genre="Space Opera" data-country="usa;australia" data-year="2015" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Jupiter Ascending</a> 
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="movies_genre_space_opera_eng.html#incoming" class = "standardb_black" data-added="25th of Dec, 2020." data-genre="Space Opera" data-country="usa;serbia" data-year="2018" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Incoming</a> 
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="movies_genre_space_opera_eng.html#teleios" class = "standardb_black" data-added="06th of Nov, 2017." data-genre="Space Opera" data-country="usa" data-year="2017" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Teleios</a> 
-<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="movies_genre_space_opera_eng.html#valerian" class = "standardb_black" data-added="04th of Jun, 2021." data-genre="Space Opera" data-country="france" data-year="2017" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Valerian and the City of a Thousand Planets</a> 
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="movies_genre_space_opera_eng.html#voyagers" class = "standardb_black" data-added="17th of May, 2021." data-genre="Space Opera" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Voyagers</a> 
 
 <P>&nbsp;&#9679; <b class="text_black_blue">Animation</b>
