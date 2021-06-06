@@ -115,8 +115,6 @@ function replace(lang, action) {
 		if (replaceWhat.localeCompare("")==0) {alert(message4); return;}
 		replaceTo = prompt(message5, replaceTo);
 		if (replaceTo == null ) {return;}
-		var confirm = window.confirm(message1+replaceWhat+message2+replaceTo+message3+getParameterByName('pattern')+"' ?");
-		if (!confirm) return;
 
 
 		if (document.getElementById('textarea_area').selectionStart != undefined) { // Mozilla version
@@ -130,6 +128,10 @@ function replace(lang, action) {
 			lines=replaceTo.split('\\t');
  			replaceTo=lines.join(String.fromCharCode(9));
 		}
+
+		var confirm = window.confirm(message1+replaceWhat+message2+replaceTo+message3+getParameterByName('pattern')+"' ?");
+		if (!confirm) return;
+
 
 	}
 // ---------------- End of Replace ----------------- //
