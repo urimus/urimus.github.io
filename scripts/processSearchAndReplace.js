@@ -92,11 +92,19 @@ function replace(lang, action) {
 			if (document.selection != undefined)  { // IE version
 				document.getElementById('textarea_area').focus();
 				replaceWhat = document.selection.createRange().text;
+				replaceTo=replaceWhat;
 			} else if (document.getElementById('textarea_area').selectionStart != undefined) { // Mozilla version
 				document.getElementById('textarea_area').focus();
 				var startPos = document.getElementById('textarea_area').selectionStart;
 				var endPos = document.getElementById('textarea_area').selectionEnd;
 				replaceWhat = document.getElementById('textarea_area').value.substring(startPos, endPos);
+
+
+				lines=replaceWhat.split(String.fromCharCode(10));
+				replaceWhat=lines.join('\\n');
+				lines=replaceWhat.split(String.fromCharCode(9));
+				replaceWhat=lines.join('\\t');
+
 				replaceTo=replaceWhat;
 			}
 		}
@@ -109,6 +117,20 @@ function replace(lang, action) {
 		if (replaceTo == null ) {return;}
 		var confirm = window.confirm(message1+replaceWhat+message2+replaceTo+message3+getParameterByName('pattern')+"' ?");
 		if (!confirm) return;
+
+
+		if (document.getElementById('textarea_area').selectionStart != undefined) { // Mozilla version
+			lines=replaceWhat.split('\\n');
+			replaceWhat=lines.join(String.fromCharCode(10));
+			lines=replaceWhat.split('\\t');
+ 			replaceWhat=lines.join(String.fromCharCode(9));
+
+			lines=replaceTo.split('\\n');
+			replaceTo=lines.join(String.fromCharCode(10));
+			lines=replaceTo.split('\\t');
+ 			replaceTo=lines.join(String.fromCharCode(9));
+		}
+
 	}
 // ---------------- End of Replace ----------------- //
 
@@ -269,7 +291,6 @@ function processReplace(lang, action, dir, i, replaceWhat, replaceTo, statistics
 	if (action.localeCompare("addMenu")==0 || action.localeCompare("removeMenu")==0) {
 		xhr.open("GET","scripts/php/processAddRemoveMenu.php?filename="+"../../"+encodeURIComponent(dir[i]['correctDir']+dir[i]['basename'])+"&action="+encodeURIComponent(action)+"&fileNum="+i,true);
 	}
-
 	xhr.send();
 }
 
