@@ -530,7 +530,7 @@ function processBbcRussian(type, source, lang) {
 				} else if (shJson.pageData.content.groups[i].title=="В мире") {
 					cWorld=shJson.pageData.content.groups[i].items.length;
 					if (type=="world") items=shJson.pageData.content.groups[i].items;
-				} else if (shJson.pageData.content.groups[i].title=="Журнал") {
+				} else if (shJson.pageData.content.groups[i].title=="Не пропустите") {
 					cFeatures=shJson.pageData.content.groups[i].items.length;
 					if (type=="features") items=shJson.pageData.content.groups[i].items;
 				} else if (shJson.pageData.content.groups[i].title=="Cluster 1") {
