@@ -11,6 +11,7 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_superhero_eng.html#helstrom" class = "standardb_black" data-added="20th of Oct, 2020." data-genre="Superhero" data-country="usa" data-year="2020" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Helstrom</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_superhero_eng.html#inhumans" class = "standardb_black" data-added="28th of Sep, 2020." data-genre="Superhero" data-country="usa" data-year="2017" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Inhumans</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_superhero_eng.html#iron_fist" class = "standardb_black" data-added="23rd of Mar, 2020." data-genre="Superhero" data-country="usa" data-year="2018" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Iron Fist</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_superhero_eng.html#loki" class = "standardb_black" data-added="11th of Jun, 2021." data-genre="Superhero" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Loki</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_superhero_eng.html#swamp_thing" class = "standardb_black" data-added="17th of Jan, 2020." data-genre="Superhero" data-country="usa" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Swamp Thing</a>
 
 <P>&nbsp;&#9679; <a href="series_not_satanic_eng.html" class = "standardb_black" data-added="23rd of Mar, 2020." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Not Satanic</a>
