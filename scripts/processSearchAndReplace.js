@@ -1405,10 +1405,17 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 
 
 	var confirmWebpToJpg=0;
-
 	if (allFiles[i].type=='image/webp') {
 		confirm2=window.confirm(message5 + filename + "'?" + message6);
-		if (confirm2) confirmWebpToJpg=1;
+		if (confirm2) {
+			confirmWebpToJpg=1;
+			dotPos=filename.lastIndexOf(".");
+			if (dotPos==-1) {
+				filename=filename+".jpg";
+			} else {
+				filename=filename.substr(0,dotPos)+".jpg";
+			}
+		}
 	}
 
 	let dataArray = new FormData();
@@ -1434,14 +1441,6 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 				upload2(lang, allFiles, i+1, totalFiles, newFilePath);
 			}
 			if (this.responseText==2) {
-				if (confirmWebpToJpg==1) {
-					dotPos=filename.lastIndexOf(".");
-					if (dotPos==-1) {
-						filename=filename+".jpg";
-					} else {
-						filename=filename.substr(0,dotPos)+".jpg";
-					}
-				}
 				fullMessage=messageF+" '"+newFilePath+"/"+filename+"' "+message2+newImageWidth+"px.";
 				if (confirmWebpToJpg==0) {
 					fullMessage=fullMessage+"\n"+message3;
@@ -1454,7 +1453,7 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 			}
         	}
 	};
-	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&width="+encodeURIComponent(newImageWidth)+"&webpToJpg="+encodeURIComponent(confirmWebpToJpg), true);
+	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&width="+encodeURIComponent(newImageWidth)+"&webpToJpg="+encodeURIComponent(confirmWebpToJpg)+"&filename="+encodeURIComponent(filename), true);
 	xhr.send(dataArray);
 
 }

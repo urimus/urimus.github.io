@@ -14,6 +14,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
 $path=$_GET["path"];
 $width=$_GET["width"];
 $webpToJpg=$_GET["webpToJpg"];
+$filename=$_GET["filename"];
 
 
 $response = 0;
@@ -68,14 +69,7 @@ if ($mime[0]!=$width) {
         if ($webpToJpg!=1) {
             $result = imagewebp($dst_img,"../../".$path."/".$_FILES['file']['name'],80);
         } else {
-            $filename=$_FILES['file']['name'];
-            $dotPos = strrpos($filename, ".");
-            if ($pos === false) {
-                $result = imagejpeg($dst_img,"../../".$path."/".$_FILES['file']['name'].".jpg",80);
-            } else {
-                $filename=substr($filename,0,$dotPos).".jpg";
-                $result = imagejpeg($dst_img,"../../".$path."/".$filename,80);
-            }
+            $result = imagejpeg($dst_img,"../../".$path."/".$filename,80);
         }
     }
 
