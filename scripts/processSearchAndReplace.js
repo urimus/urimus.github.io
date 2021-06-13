@@ -1304,16 +1304,37 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 		prompt2="Введите Новую Ширину Картинки (в пикселях).";
 		message3 = "Фаил '";
 		message4 = "' Существует. Заменить ?";
+		message5 = "Преобразовать .webp формат в .jpg в Файле '";
+		message6 = " (Отмена=Нет)";
 	}
 	if (lang.localeCompare('eng')==0) {
 		prompt2="Enter New Images Width (in pixels).";
 		message3 = "File '";
 		message4 = "' Exists. Overwrite ?";
+		message5 = "Transfer .webp format to .jpg in File '";
+		message6 = " (Cancel=No)";
 	}
 
 	if (i==totalFiles) return;
 	file=allFiles[i];
 
+
+
+	filename=allFiles[i].name;
+
+	var confirmWebpToJpg=0;
+	if (allFiles[i].type=='image/webp') {
+		confirm2=window.confirm(message5 + filename + "'?" + message6);
+		if (confirm2) {
+			confirmWebpToJpg=1;
+			dotPos=filename.lastIndexOf(".");
+			if (dotPos==-1) {
+				filename=filename+".jpg";
+			} else {
+				filename=filename.substr(0,dotPos)+".jpg";
+			}
+		}
+	}
 
 //   	// setting up the reader
 //   	var reader = new FileReader();
@@ -1331,32 +1352,32 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
             	_URL.revokeObjectURL(objectUrl);
 
 		$.ajax({
-    			url:"../../"+newFilePath+"/"+file.name,
+    			url:"../../"+newFilePath+"/"+filename,
     			type:'HEAD',
    			error: function()
     			{
 				newImageWidth=0;
 				if (file.type=='image/webp' || file.type=='image/png' || file.type=='image/jpg' || file.type=='image/jpeg' || file.type=='image/pjpeg') { 
-					newImageWidth = prompt(message3+newFilePath+"/"+file.name+"'. "+prompt2, imageWidth);
+					newImageWidth = prompt(message3+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
 					if (newImageWidth == null ) {return;}
 
 				}
 
 				//file not exists
-				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth);
+				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, filename);
    			 },
     			success: function()
     			{
         			//file exists
-				var confirm = window.confirm(message3+newFilePath+"/"+file.name+message4);
+				var confirm = window.confirm(message3+newFilePath+"/"+filename+message4);
 				if (!confirm) return;
 				newImageWidth=0;
 				if (file.type=='image/webp' || file.type=='image/png' || file.type=='image/jpg' || file.type=='image/jpeg' || file.type=='image/pjpeg') { 
-					newImageWidth = prompt(message3+newFilePath+"/"+file.name+"'. "+prompt2, imageWidth);
+					newImageWidth = prompt(message3+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
 					if (newImageWidth == null ) {return;}
 				}
 
-				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth);
+				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, filename);
     			}
 		});
 
@@ -1377,7 +1398,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 
 
 
-function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
+function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, filename) {
 
 
 	if (lang.localeCompare('rus')==0) {
@@ -1387,8 +1408,6 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 		message2="Загружен Успешно. Картинка Преобразована в Width=";
 		message3 = "Хочешь Просмотреть Преобразованную Картинку?";
 		message4 = "Хочешь Просмотреть Преобразованную и Переименованную Картинку?";
-		message5 = "Преобразовать .webp формат в .jpg в Файле '";
-		message6 = " (Отмена=Нет)";
 	}
 	if (lang.localeCompare('eng')==0) {
 		messageF="File";
@@ -1397,26 +1416,8 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 		message2="Uploaded Successfully. Image Resized to Width=";
 		message3 = "Do you Want to View Resized Image?";
 		message4 = "Do you Want to View Resized and Renamed Image?";
-		message5 = "Transfer .webp format to .jpg in File '";
-		message6 = " (Cancel=No)";
 	}
 
-	filename=allFiles[i].name;
-
-
-	var confirmWebpToJpg=0;
-	if (allFiles[i].type=='image/webp') {
-		confirm2=window.confirm(message5 + filename + "'?" + message6);
-		if (confirm2) {
-			confirmWebpToJpg=1;
-			dotPos=filename.lastIndexOf(".");
-			if (dotPos==-1) {
-				filename=filename+".jpg";
-			} else {
-				filename=filename.substr(0,dotPos)+".jpg";
-			}
-		}
-	}
 
 	let dataArray = new FormData();
 	dataArray.append('file', allFiles[i]);
