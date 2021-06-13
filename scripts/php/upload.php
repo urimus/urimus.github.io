@@ -13,6 +13,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
 //get the filename, q, encoding and wobom from POST
 $path=$_GET["path"];
 $width=$_GET["width"];
+$webpToJpg=$_GET["webpToJpg"];
 
 
 $response = 0;
@@ -64,7 +65,18 @@ if ($mime[0]!=$width) {
     if($mime['mime']=='image/webp') {
         $dst_img = ImageCreateTrueColor($thumb_w,$thumb_h);
         imagecopyresampled($dst_img,$src_img,0,0,0,0,$thumb_w,$thumb_h,$old_x,$old_y); 
-        $result = imagewebp($dst_img,"../../".$path."/".$_FILES['file']['name'],80);
+        if ($webpToJpg!=1) {
+            $result = imagewebp($dst_img,"../../".$path."/".$_FILES['file']['name'],80);
+        } else {
+            $filename=$_FILES['file']['name'];
+            $dotPos = strrpos($filename, ".");
+            if ($pos === false) {
+                $result = imagejpeg($dst_img,"../../".$path."/".$_FILES['file']['name'].".jpg",80);
+            } else {
+                $filename=substr($filename,0,$dotPos).".jpg";
+                $result = imagejpeg($dst_img,"../../".$path."/".$filename,80);
+            }
+        }
     }
 
     imagedestroy($dst_img);

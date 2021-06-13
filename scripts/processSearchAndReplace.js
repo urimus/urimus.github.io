@@ -1304,7 +1304,6 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 		prompt2="Введите Новую Ширину Картинки (в пикселях).";
 		message3 = "Фаил '";
 		message4 = "' Существует. Заменить ?";
-
 	}
 	if (lang.localeCompare('eng')==0) {
 		prompt2="Enter New Images Width (in pixels).";
@@ -1340,6 +1339,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 				if (file.type=='image/webp' || file.type=='image/png' || file.type=='image/jpg' || file.type=='image/jpeg' || file.type=='image/pjpeg') { 
 					newImageWidth = prompt(message3+newFilePath+"/"+file.name+"'. "+prompt2, imageWidth);
 					if (newImageWidth == null ) {return;}
+
 				}
 
 				//file not exists
@@ -1380,18 +1380,15 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 
 
-	filename=allFiles[i].name;
-
-	let dataArray = new FormData();
-	dataArray.append('file', allFiles[i]);
-
-
 	if (lang.localeCompare('rus')==0) {
 		messageF="Фаил";
 		message0="не Загружен.";
 		message1="Загружен Успешно.";
 		message2="Загружен Успешно. Картинка Преобразована в Width=";
 		message3 = "Хочешь Просмотреть Преобразованную Картинку?";
+		message4 = "Хочешь Просмотреть Преобразованную и Переименованную Картинку?";
+		message5 = "Преобразовать .webp формат в .jpg в Файле '";
+		message6 = " (Отмена=Нет)";
 	}
 	if (lang.localeCompare('eng')==0) {
 		messageF="File";
@@ -1399,8 +1396,23 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 		message1="Uploaded Successfully.";
 		message2="Uploaded Successfully. Image Resized to Width=";
 		message3 = "Do you Want to View Resized Image?";
+		message4 = "Do you Want to View Resized and Renamed Image?";
+		message5 = "Transfer .webp format to .jpg in File '";
+		message6 = " (Cancel=No)";
 	}
 
+	filename=allFiles[i].name;
+
+
+	var confirmWebpToJpg=0;
+
+	if (allFiles[i].type=='image/webp') {
+		confirm2=window.confirm(message5 + filename + "'?" + message6);
+		if (confirm2) confirmWebpToJpg=1;
+	}
+
+	let dataArray = new FormData();
+	dataArray.append('file', allFiles[i]);
 
 
 
@@ -1422,15 +1434,27 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth) {
 				upload2(lang, allFiles, i+1, totalFiles, newFilePath);
 			}
 			if (this.responseText==2) {
+				if (confirmWebpToJpg==1) {
+					dotPos=filename.lastIndexOf(".");
+					if (dotPos==-1) {
+						filename=filename+".jpg";
+					} else {
+						filename=filename.substr(0,dotPos)+".jpg";
+					}
+				}
 				fullMessage=messageF+" '"+newFilePath+"/"+filename+"' "+message2+newImageWidth+"px.";
-				fullMessage=fullMessage+"\n"+message3 ;
+				if (confirmWebpToJpg==0) {
+					fullMessage=fullMessage+"\n"+message3;
+				} else {
+					fullMessage=fullMessage+"\n"+message4;
+				}
 				var confirm = window.confirm(fullMessage);
 				if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
 				upload2(lang, allFiles, i+1, totalFiles, newFilePath);
 			}
         	}
 	};
-	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&width="+encodeURIComponent(newImageWidth), true);
+	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&width="+encodeURIComponent(newImageWidth)+"&webpToJpg="+encodeURIComponent(confirmWebpToJpg), true);
 	xhr.send(dataArray);
 
 }
