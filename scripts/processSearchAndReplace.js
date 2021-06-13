@@ -1316,16 +1316,15 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 	file=allFiles[i];
 
 
-
-
-
 //   	// setting up the reader
 //   	var reader = new FileReader();
 //   	reader.readAsText(file,'UTF-8');
 
+	imageWidth=0;
+
 
 	var _URL = window.URL || window.webkitURL;
-        var objectUrl = _URL.createObjectURL(file);
+	var objectUrl = _URL.createObjectURL(file);
 	img = new Image();
         img.onload = function () {
 
@@ -1338,7 +1337,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
    			error: function()
     			{
 				newImageWidth=0;
-				if (file.type=='image/png' || file.type=='image/jpg' || file.type=='image/jpeg' || file.type=='image/pjpeg') { 
+				if (file.type=='image/webp' || file.type=='image/png' || file.type=='image/jpg' || file.type=='image/jpeg' || file.type=='image/pjpeg') { 
 					newImageWidth = prompt(message3+newFilePath+"/"+file.name+"'. "+prompt2, imageWidth);
 					if (newImageWidth == null ) {return;}
 				}
@@ -1352,7 +1351,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 				var confirm = window.confirm(message3+newFilePath+"/"+file.name+message4);
 				if (!confirm) return;
 				newImageWidth=0;
-				if (file.type=='image/png' || file.type=='image/jpg' || file.type=='image/jpeg' || file.type=='image/pjpeg') { 
+				if (file.type=='image/webp' || file.type=='image/png' || file.type=='image/jpg' || file.type=='image/jpeg' || file.type=='image/pjpeg') { 
 					newImageWidth = prompt(message3+newFilePath+"/"+file.name+"'. "+prompt2, imageWidth);
 					if (newImageWidth == null ) {return;}
 				}

@@ -24,6 +24,9 @@ if($mime['mime']=='image/png') {
 } elseif($mime['mime']=='image/jpg' || $mime['mime']=='image/jpeg' || $mime['mime']=='image/pjpeg') {
     if ($width==0) $width=$mime[0];
     $src_img = imagecreatefromjpeg($_FILES['file']['tmp_name']);
+} elseif($mime['mime']=='image/webp') {
+    if ($width==0) $width=$mime[0];
+    $src_img = imagecreatefromwebp($_FILES['file']['tmp_name']);
 } else {
     if(move_uploaded_file($_FILES['file']['tmp_name'],"../../".$path."/".$_FILES['file']['name'])){
         $response = 1;
@@ -44,23 +47,24 @@ if ($mime[0]!=$width) {
 
 
     if($mime['mime']=='image/png') {
-
-
         $dst_img = imagecreatetruecolor($thumb_w, $thumb_h);
         imagesavealpha($dst_img, true);
         $color = imagecolorallocatealpha($dst_img, 0, 0, 0, 127);
         imagefill($dst_img, 0, 0, $color);
         imagecopyresampled($dst_img,$src_img,0,0,0,0,$thumb_w,$thumb_h,$old_x,$old_y); 
         //imagepng($img, 'test.png');
-    
         $result = imagepng($dst_img,"../../".$path."/".$_FILES['file']['name'],8);
     }
     if($mime['mime']=='image/jpg' || $mime['mime']=='image/jpeg' || $mime['mime']=='image/pjpeg') {
-
         $dst_img = ImageCreateTrueColor($thumb_w,$thumb_h);
         imagecopyresampled($dst_img,$src_img,0,0,0,0,$thumb_w,$thumb_h,$old_x,$old_y); 
         $result = imagejpeg($dst_img,"../../".$path."/".$_FILES['file']['name'],80);
 
+    }
+    if($mime['mime']=='image/webp') {
+        $dst_img = ImageCreateTrueColor($thumb_w,$thumb_h);
+        imagecopyresampled($dst_img,$src_img,0,0,0,0,$thumb_w,$thumb_h,$old_x,$old_y); 
+        $result = imagewebp($dst_img,"../../".$path."/".$_FILES['file']['name'],80);
     }
 
     imagedestroy($dst_img);
