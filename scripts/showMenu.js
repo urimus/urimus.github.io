@@ -202,6 +202,10 @@ function  getFlagTitle(flag, lang) {
 		if (lang=='eng' || lang=='lat') return 'Netherlands';
 		if (lang=='rus') return 'Нидерланды';
 	}
+	if (flag=='ukraine') {
+		if (lang=='eng' || lang=='lat') return 'Ukraine';
+		if (lang=='rus') return 'Украина';
+	}
 
 	return "";
 
