@@ -1,7 +1,5 @@
 ﻿
 
-
-
 <!DOCTYPE html>
 
 <html>
@@ -14,12 +12,9 @@
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 
-
-<!-- Foto Gallery -->
+<!-- jQuery -->
 <script src="scripts/jquery/jquery.js"></script>
-<script src="scripts/galleria/galleria-1.4.2.min.js"></script>
-<!-- End of Foto Gallery -->
-
+<!-- End of jQuery -->
 
 <!-- Background Images Script -->
 <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
@@ -27,7 +22,7 @@
 
 <script>
 var menuHeight=23*35;
-var imgBgSrc="icons/background/anime_movie.png";
+var imgBgSrc="icons/background/fantasy.png";
 var imgBgStarSrc="icons/background/sticky_note.png";
 </script>
 <!-- End of Background Images Script -->
@@ -65,9 +60,9 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_not_selected'"
 			onClick="
 				if (event.ctrlKey==1){
-					window.open('series_animation_eng.html' + window.location.hash);
+					window.open('series_fantasy_eng.html' + window.location.hash);
 				} else {
-					window.location.href='series_animation_eng.html' + window.location.hash;
+					window.location.href='series_fantasy_eng.html' + window.location.hash;
 				};"		 	
 			
 			class="flag_not_selected"
@@ -81,9 +76,9 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_selected'"
 			onClick="
 				if (event.ctrlKey==1){
-					window.open('series_animation_rus.html' + window.location.hash);
+					window.open('series_fantasy_rus.html' + window.location.hash);
 				} else {
-					window.location.href='series_animation_rus.html' + window.location.hash;
+					window.location.href='series_fantasy_rus.html' + window.location.hash;
 				};"
 			class="flag_selected"
 		>
@@ -109,6 +104,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	<tr>
 		<td height="3" bgcolor="#ff8a00"></td>
 	</tr>	
+
 
 
 
@@ -217,7 +213,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
         </td>
 	</tr>	
 	
-
+	
 	<tr>
 		<td align="center" >
 		  <div id="menu_8"
@@ -229,6 +225,9 @@ var imgBgStarSrc="icons/background/sticky_note.png";
         </td>
 	</tr>	
 	
+
+
+
 <tr>
 		<td align="center" >
 		  <div id="menu_27"
@@ -241,19 +240,20 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	</tr>
 
 
+
 	<tr>
 		<td align="left" >
 		  <div id="menu_27_1"
 		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_selected'" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
 		  onClick="
-		    this.className='menu_selected';
+		    this.className='menu_not_selected_black';
 			if (event.ctrlKey==1){
 				window.open('series_animation_rus.html');
 			} else {
 				window.location.href='series_animation_rus.html';
 			};"
-		  class="menu_selected"
+		  class="menu_not_selected_black"
 		  style="padding-left: 5px;">
 	     &bull; Мультипликация</div>
         </td>
@@ -288,15 +288,15 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		<td align="left" >
 		  <div id="menu_27_5"
 		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onMouseOut="this.className='menu_selected'" 
 		  onClick="
-		    this.className='menu_not_selected_black';
+		    this.className='menu_selected';
 			if (event.ctrlKey==1){
 				window.open('series_fantasy_rus.html');
 			} else {
 				window.location.href='series_fantasy_rus.html';
 			};"
-		  class="menu_not_selected_black"
+		  class="menu_selected"
 		  style="padding-left: 5px;">
 	     &bull; Фэнтези</div>
         </td>
@@ -343,6 +343,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	</tr>
 
 
+
 	<tr>
 		<td align="left" >
 		  <div id="menu_27_2"
@@ -379,6 +380,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	     &bull; Сверхъестественное</div>
         </td>
 	</tr>
+
 
 
 
@@ -444,8 +446,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		  AMV</div>
         </td>
 	</tr>		
-
-
 	<tr>
 		<td align="center" >
 		  <div id="menu_13"
@@ -474,6 +474,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		  Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
         </td>
 	</tr>
+
 
 
 	<tr>
@@ -531,7 +532,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	</tr>	
 
 
-
 	<tr>
 		<td align="center" >
 		  <div id="menu_19"
@@ -542,7 +542,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		  Сатанизм</div>
         </td>
 	</tr>
-
 
 
 
@@ -566,6 +565,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 
 
+
 	<tr>
 		<td align="center" >
 		  <div id="menu_21"
@@ -583,7 +583,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
         </td>
 	</tr>
 
-
 	<tr>
 		<td align="center" >
 		  <div id="menu_22"
@@ -595,6 +594,8 @@ var imgBgStarSrc="icons/background/sticky_note.png";
         </td>
 	</tr>
 
+
+
 	<tr>
 		<td align="center" >
 		  <div id="menu_23"
@@ -605,7 +606,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		  Страны</div>
         </td>
 	</tr>
-
 
 	<tr>
 		<td align="center" >
@@ -664,16 +664,21 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 <tr><td>
 
 
-<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
 <!-- Table with search, name and languages -->
-	<tr> 
-		<td  class="title_black" style="width: 530px;"><a name="welcome">Сериалы &blacktriangleright; Мультипликация</a></td>
-	</tr>
+        <tr class="title_black"> 
+                <td  class="title_black" style="width: 530px;"><a name="series">Сериалы &blacktriangleright; Фэнтези</a></td>
+        </tr>
 
-	<tr>
-		<td height="3" bgcolor="#ff8a00"></td>
-	</tr>	
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
 
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
 </table>
 
 
@@ -683,7 +688,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 
 <table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
-
 
 
 
@@ -744,28 +748,28 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 
 
+
+
         <tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
 			<tr >
-				<td width="100%" height="100%" class="nimetus2_black"><a name="animation">Мультипликация</a></td>
+				<td width="100%" height="100%" class="nimetus2_black"><a name="fantasy">Фэнтези</a></td>
 			</tr>
 			<tr>
 				<td width="250" height="100%" class="nimetus_black">Описание Жанра</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="icons/movies/animation.jpg" alt="Мультипликация" title="Мультипликация" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					<img src="icons/series/fantasy.jpg" alt="Фэнтези" title="Фэнтези" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
 					
 
+<P><b>Фэнтези</b> (англ. fantasy — «фантазия») — жанр современного искусства, разновидность фантастики. Фэнтези основывается на использовании мифологических и сказочных мотивов в современном виде. Жанр сформировался примерно в начале XV века. В середине XX века наиболее значительное влияние на формирование современного облика классического фэнтези оказали английские писатели Джон Рональд Руэл Толкин, автор романа «Властелин колец» и Клайв Стейплз Льюис (Хроники Нарнии).
 
-<P><b>Мультипликация</b> (от лат. multiplicatio — умножение, увеличение, возрастание, размножение) — технические приёмы создания иллюзии движущихся изображений (движения и/или изменения формы объектов — морфинга) с помощью последовательности неподвижных изображений (кадров), сменяющих друг друга с некоторой частотой. <b>Анимация</b> (от фр. animation: оживление, одушевление) — западное название мультипликации: вид киноискусства и его произведение (анимационный фильм и, в частности, мультфильм), а также семейство соответствующих технологий.
+<P>Произведения фэнтези нередко напоминают историко-приключенческий роман, действие которого происходит в вымышленном мире, близком к реальному Средневековью или (реже) эпохе Возрождения, герои которого сталкиваются со сверхъестественными явлениями и существами. Зачастую фэнтези построено на основе архетипических сюжетов.
 
-<P>По мнению известного мультипликатора Фёдора Хитрука, использование в СССР терминов «мультипликация», «мультипликатор» связано с технологией, использовавшейся до внедрения классической рисованной анимации — созданием изображений при помощи наложения на лист элементов персонажей, что сродни аппликации. По созвучию с этим словом эта отрасль кинематографа была названа мультипликацией.
+<P>В отличие от научной фантастики, фэнтези не стремится объяснить мир, в котором происходит действие произведения, с научной точки зрения. Сам этот мир существует гипотетически, часто его местоположение относительно нашей реальности никак не оговаривается: это может быть как параллельный мир, так и другая планета, а его физические законы могут отличаться от земных. В таком мире допустимо существование богов, магии, мифических существ вроде драконов, великанов, фей и т. д. В то же время, принципиальное отличие фэнтези от сказок заключается в том, что чудеса в фэнтези являются нормой описываемого мира и действуют так же системно, как и законы природы в реальном мире.
 
-<P>В искусстве мультипликацией называют разновидность искусства, как правило, использующую технологию мультипликации как основной элемент творчества.
-
-						
 					
 				</td>
 			</tr>
@@ -781,7 +785,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F" class = "standardb_black" target="_blank">Wikipedia Мультипликация</a> - <b>Мультипликация</b> на Wikipedia.
+				<a href="https://ru.wikipedia.org/wiki/%D0%A4%D1%8D%D0%BD%D1%82%D0%B5%D0%B7%D0%B8" class = "standardb_black" target="_blank">Wikipedia Фэнтези</a> - <b>Фэнтези</b> на Wikipedia.
 			</td>
 			</tr>
 			
@@ -789,65 +793,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					30th of Aug, 2016.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-
-
-
-
-
-		
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="castlevania">Кастлвания (англ. Castlevania)</a></td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="icons/series/castlevania.jpg" alt="Кастлвания (англ. Castlevania)" title="Кастлвания (англ. Castlevania)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P>«<b>Кастлвания</b>» (англ. Castlevania) — американский мультсериал Уоррена Эллиса, основанный на видеоигре Konami Castlevania III: Dracula’s Curse 1989 года.
-
-<P>Премьера сериала состоялась на платформе Netflix 7 июля 2017 года. В тот же день сериал был продлён на второй сезон из 8 эпизодов, премьера которого состоялась 26 октября 2018 года. Вскоре после выпуска второго сезона сериал был продлён на третий сезон из 10 эпизодов, который появился на Netflix 5 марта 2020 года. 27 марта 2020 года было объявлено о продлении на четвёртый сезон.
-
-					
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-			</tr>
-			
-
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%81%D1%82%D0%BB%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" class = "standardb_black" target="_blank">Wikipedia Кастлвания</a> - <b>Кастлвания (англ. Castlevania)</b> на Wikipedia.
-			</td>
-			</tr>
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=Kbb8zPQBmOw" class = "standardb_black" target="_blank">Кастлвания (англ. Castlevania)</a> - Официальный Трейлер (англ.).
-			</td>
-			</tr>
-
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					20th of Feb, 2021.
+					17th of Jun, 2021.
 				</td>
 			</tr>
 			</table>
@@ -863,54 +809,49 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
 			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="dark_crystal">Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)</a></td>
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="carnival_row">Карнивал Роу (англ. Carnival Row)</a></td>
+						</tr>
+					</table>
+				</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="icons/series/dark_crystal.jpg" alt="Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)" title="Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					<img src="icons/series/carnival_row.jpg" alt="Карнивал Роу (англ. Carnival Row)" title="Карнивал Роу (англ. Carnival Row)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
 
-<P>«<b>Тёмный кристалл: Эпоха сопротивления</b>» (англ. The Dark Crystal: Age of Resistance) — американский кукольный веб-сериал жанра приключения и тёмное фэнтези, созданный по мотивам вселенной фильма 1982 года — «Тёмный кристалл». Сериал подробнее исследует вселенную данного фильма, выступая одновременно его приквелом. Основной сюжет завязан на том, что гельфлинги формируют восстание против скексисов в стремлении спасти родной мир от надвигающейся катастрофы. Выход сериала на сайте Netflix состоялся 30 августа 2019 года.
 
-<P>Сериал был создан с использованием кукол-аниматроников, это по состоянию на 2019 год самый дорогостоящий и масштабный проект с привлечением марионеток. Сеттинг и дизайн персонажей максимально приближен к фильму-первоисточнику 1982 года. Идея создать сериал исходила от того, что оригинальный фильм оставил после себя множество сюжетных дыр и «неразгаданных тайн». Сериал же призван существенно раскрыть подробности вселенной Тра и культуры гельфлингов. Определённое участие в команде создателей также принимали сценаристы, дизайнеры и кукловоды кинофраншизы о маппетах.
+<P>«<b>Карнивал Роу</b>» (англ. Carnival Row) — американский фэнтезийный телесериал, создателями которого выступают Рене Эчеваррия и Трэвис Бичем. Главные роли исполняют Орландо Блум и Кара Делевинь. Премьера первого сезона состоялась на Amazon Video 30 августа 2019 года.
 
-<P>Сериал получил в целом признание критиков, которые назвали «Эпоху сопротивления» масштабным, красивым и эпическим шоу, «шедевром» кукольного искусства. История, по их мнению, в полной мере раскрывает сеттинг мира «Тёмного Кристалла». Одновременно марионетки были признаны и главным недостатком, так как они могут вызвать отторжение у потенциальных зрителей. Помимо прочего, критики указали и на неопределённость охвата целевой аудитории, вполне детский и наивный сюжет соседствует с жестокими сценами насилия и убийств.
+<P>27 июля 2019 года стало известно, что Amazon продлил телесериал на второй сезон.
+
 
 
 				</td>
 			</tr>
-
+			
 			<tr>
 				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 					<br><br>				
 					Ссылки:
 				</td>
 			</tr>
-
-
-
-
-
-
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%91%D0%BC%D0%BD%D1%8B%D0%B9_%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BB%D0%BB:_%D0%AD%D0%BF%D0%BE%D1%85%D0%B0_%D1%81%D0%BE%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" class = "standardb_black" target="_blank">Wikipedia Тёмный кристалл: Эпоха сопротивления</a> - <b>Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)</b> on Wikipedia.
+				<a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D0%BD%D0%B8%D0%B2%D0%B0%D0%BB_%D0%A0%D0%BE%D1%83" class = "standardb_black" target="_blank">Wikipedia Карнивал Роу</a> - <b>Карнивал Роу (англ. Carnival Row)</b> на Wikipedia.
 			</td>
 			</tr>
-
-
-
-
+			
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=YwolPn4JBoA" class = "standardb_black" target="_blank">Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)</a> - Официальный Трейлер.
+				<a href="https://www.youtube.com/watch?v=nFIsIUbDTlc" class = "standardb_black" target="_blank">Карнивал Роу (англ. Carnival Row)</a> - Официальный трейлер.
 			</td>
 			</tr>
-
-
-
+			
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					29th of Apr, 2021.
+					26th of May, 2021.
 				</td>
 			</tr>
 			</table>
@@ -923,24 +864,133 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 
 
-		
         <tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
 			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="love_death_robots">Любовь. Смерть. Роботы (англ. Love, Death & Robots)</a></td>
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="counterpart">По Ту Сторону (англ. Counterpart)</a></td>
+						</tr>
+					</table>
+				</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="icons/series/love_death_robots.jpg" alt="Любовь. Смерть. Роботы (англ. Love, Death & Robots)" title="Любовь. Смерть. Роботы (англ. Love, Death & Robots)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					<img src="icons/series/counterpart.jpg" alt="По Ту Сторону (англ. Counterpart)" title="По Ту Сторону (англ. Counterpart)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>«<b>По ту сторону</b>», «<b>Обратная сторона</b>», «<b>Контрмир</b>», или «<b>Двойник</b>» (англ. Counterpart) — американский телесериал в жанре триллера и научной фантастики, созданный Джастином Марксом. Режиссёром первых двух эпизодов выступит Мортен Тильдум. Премьерный эпизод был показан 10 декабря 2017 года на телеканале Starz.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE_%D1%82%D1%83_%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%83_(%D1%82%D0%B5%D0%BB%D0%B5%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB_Starz)" class = "standardb_black" target="_blank">Wikipedia По ту сторону (телесериал Starz)</a> - <b>По Ту Сторону (англ. Counterpart)</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=8fx2gbtZ-LU" class = "standardb_black" target="_blank">По Ту Сторону (англ. Counterpart)</a> -  Официальный трейлер.
+			</td>
+			</tr>
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					26th of Mar, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
 
 
 
-<P>«<b>Любовь. Смерть. Роботы</b>» (англ. Love, Death & Robots, стилизованно под LOVE DEATH + ROBOTS) — американский анимационный сериал-антология, выпущенный в потоковом сервисе Netflix и состоящий из короткометражных анимационных фильмов разной продолжительности, созданных с расчётом на взрослую аудиторию. Первый сезон, состоящий из 18 эпизодов, вышел 15 марта 2019 года.
 
-<P>Исполнительными продюсерами сериала выступили Дэвид Финчер, Тим Миллер, Джошуа Донен и Дженнифер Миллер. Каждый эпизод был создан разными командами и студиями из разных стран мира, а большинство из них использует собственные типы анимации, за исключением эпизода «Ледниковый период», где снялись живые актёры — Мэри Элизабет Уинстэд и Тофер Грейс. Сериал находился в разработке больше 10 лет, а источником вдохновения для Финчера и Миллера послужили комиксы и рассказы из журнала <a href="movies_animation_for_adults_rus.html#heavy_metal" class = "standardb_black" target="_blank">Heavy Metal</a>.
 
-<P>В июне 2019 года Netflix объявил о продлении сериала на второй сезон.
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="devs">Разрабы (англ. Devs)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/devs.jpg" alt="Разрабы (англ. Devs)" title="Разрабы (англ. Devs)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>«<b>Разрабы</b>», или «<b>Разработчики</b>», или «<b>Программисты</b>», (англ. Devs) — драматический мини-сериал Алекса Гарленда, выходивший на Hulu с 5 марта по 16 апреля 2020 года.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D1%8B" class = "standardb_black" target="_blank">Wikipedia Разрабы</a> - <b>Разрабы (англ. Devs)</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=rPRyYPQHxSw" class = "standardb_black" target="_blank">Разрабы (англ. Devs)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					27th of May, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="raised_by_wolves">Воспитанные Волками (англ. Raised by Wolves)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/raised_by_wolves.jpg" alt="Воспитанные Волками (англ. Raised by Wolves)" title="Воспитанные Волками (англ. Raised by Wolves)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Воспитанные волками</b>» (англ. Raised by Wolves; в другом переводе — «<b>Взращённые волками</b>») — американский телесериал в жанре научной фантастики, созданный Аароном Гузиковским. Премьера прошла 3 сентября 2020 года на HBO Max. Первые две серии снял Ридли Скотт, который также является исполнительным продюсером сериала.
 					
 				</td>
 			</tr>
@@ -950,25 +1000,22 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					<br><br>				
 					Ссылки:
 				</td>
-			</tr>
-			
 
+			</tr>
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/%D0%9B%D1%8E%D0%B1%D0%BE%D0%B2%D1%8C._%D0%A1%D0%BC%D0%B5%D1%80%D1%82%D1%8C._%D0%A0%D0%BE%D0%B1%D0%BE%D1%82%D1%8B" class = "standardb_black" target="_blank">Wikipedia Любовь. Смерть. Роботы</a> - <b>Любовь. Смерть. Роботы (англ. Love, Death & Robots)</b> на Wikipedia.
+				<a href="https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B2%D0%BE%D0%BB%D0%BA%D0%B0%D0%BC%D0%B8" class = "standardb_black" target="_blank">Wikipedia Воспитанные волками</a> - <b>Воспитанные Волками (англ. Raised by Wolves)</b> на Wikipedia.
 			</td>
 			</tr>
-
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=wUFwunMKa4E" class = "standardb_black" target="_blank">Любовь. Смерть. Роботы (англ. Love, Death & Robots)</a> - Официальный Трейлер (англ.).
+				<a href="https://www.youtube.com/watch?v=BeQeZB9ouzI" class = "standardb_black" target="_blank">Воспитанные Волками (англ. Raised by Wolves)</a> - Официальный трейлер.
 			</td>
 			</tr>
-
-
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					10th of Mar, 2021.
+					26th of Sep, 2020.
 				</td>
 			</tr>
 			</table>
@@ -977,11 +1024,181 @@ var imgBgStarSrc="icons/background/sticky_note.png";
         </td>
 		</tr>
 		
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="shannara_chronicles">Хроники Шаннары (англ. The Shannara Chronicles)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/shannara_chronicles.jpg" alt="Хроники Шаннары (англ. The Shannara Chronicles)" title="Хроники Шаннары (англ. The Shannara Chronicles)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Хроники Шаннары</b>» (англ. The Shannara Chronicles) — американский телесериал в жанре фэнтези, созданный Альфредом Гофом и Майлсом Милларом. Шоу является адаптацией оригинальной «Трилогии Шаннары», написанной американским фантастом Терри Бруксом. Телесериал снят на студии в Окленде и на местности по всей Новой Зеландии.
+
+<P>Премьера первого сезона из десяти эпизодов состоялась 5 января 2016 года на телеканале MTV. 20 апреля 2016 года MTV продлил сериал на второй сезон. Тем не менее, 11 мая 2017 года стало известно, что второй сезон выйдет не на MTV, а на телеканале Spike.
+
+<P>17 января 2018 года стало известно о закрытии сериала после второго сезона.
+
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%BE%D0%BD%D0%B8%D0%BA%D0%B8_%D0%A8%D0%B0%D0%BD%D0%BD%D0%B0%D1%80%D1%8B" class = "standardb_black" target="_blank">Wikipedia Хроники Шаннары</a> - <b>Хроники Шаннары (англ. The Shannara Chronicles)</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=swN6aWZk0SM" class = "standardb_black" target="_blank">Хроники Шаннары (англ. The Shannara Chronicles)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					12th of Mar, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
 		
 
 
 
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="sweet_tooth">Sweet Tooth: Мальчик с Оленьими Рогами (англ. Sweet Tooth)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/sweet_tooth.jpg" alt="Sweet Tooth: Мальчик с Оленьими Рогами (англ. Sweet Tooth)" title="Sweet Tooth: Мальчик с Оленьими Рогами (англ. Sweet Tooth)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Sweet Tooth: мальчик с оленьими рогами</b> (англ. Sweet Tooth) — американский телесериал по мотивам комиксов Sweet Tooth, который вышел на стриминговой платформе Netflix 4 июня 2021 года.
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Sweet_Tooth:_%D0%BC%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D0%BA_%D1%81_%D0%BE%D0%BB%D0%B5%D0%BD%D1%8C%D0%B8%D0%BC%D0%B8_%D1%80%D0%BE%D0%B3%D0%B0%D0%BC%D0%B8" class = "standardb_black" target="_blank">Wikipedia Sweet Tooth: мальчик с оленьими рогами</a> - <b>Sweet Tooth: Мальчик с Оленьими Рогами (англ. Sweet Tooth)</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=5TKhKsopnDw" class = "standardb_black" target="_blank">Sweet Tooth: Мальчик с Оленьими Рогами (англ. Sweet Tooth)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					06th of Jun, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
 		
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="zenith">Зенит (англ. Zenith)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/zenith.jpg" alt="Зенит (англ. Zenith)" title="Зенит (англ. Zenith)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Zenith</b> (also styled as Zenith - A Film by Anonymous) is a 2010 American psychological thriller directed by Vladan Nikolic and starring Peter Scanavino, Jason Robards III, and Ana Asensio. The screenplay concerns two men attempting to solve the same conspiracy theory. The title refers to a grand 'Zenith Conspiracy' formed by the film's protagonist, Ed Crowley. The film also utilizes an alternate reality game and transmedia storytelling to augment its narrative.
+
+<P>Zenith premiered at The IFC Center in New York City on October 1, 2010, and had an extended run in January 2011 at the Kraine Theatre with its distribution company, Cinema Purgatorio. All three parts have been made available as a free-to-share download at the BitTorrent powered distribution site VODO.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Zenith_(film)" class = "standardb_black" target="_blank">Wikipedia Zenith (film)</a> - <b>Зенит (англ. Zenith)</b> на Wikipedia (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=9K-OE2RJi1w" class = "standardb_black" target="_blank">Зенит (англ. Zenith)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					15th of Oct, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
   </table> <!-- End of Func area -->
 
 </div> <!-- End of scroll inside div -->
@@ -1003,6 +1220,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	  <td class="title_black" >
 	    &copy; Urmas Repinski, urrimus@hotmail.com
 	  </td>
+
 	</tr>
 </table>
 <!-- End of Bottom Copyright Table --> 
@@ -1012,6 +1230,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 </body>
 </html>
+
 
 
 

@@ -14,6 +14,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
 $path=$_GET["path"];
 $width=$_GET["width"];
 $webpToJpg=$_GET["webpToJpg"];
+$pngToJpg=$_GET["pngToJpg"];
 $filename=$_GET["filename"];
 
 
@@ -54,8 +55,11 @@ if ($mime[0]!=$width) {
         $color = imagecolorallocatealpha($dst_img, 0, 0, 0, 127);
         imagefill($dst_img, 0, 0, $color);
         imagecopyresampled($dst_img,$src_img,0,0,0,0,$thumb_w,$thumb_h,$old_x,$old_y); 
-        //imagepng($img, 'test.png');
-        $result = imagepng($dst_img,"../../".$path."/".$_FILES['file']['name'],8);
+        if ($pngToJpg!=1) {
+            $result = imagepng($dst_img,"../../".$path."/".$_FILES['file']['name'],8);
+        } else {
+            $result = imagejpeg($dst_img,"../../".$path."/".$filename,80);
+        }
     }
     if($mime['mime']=='image/jpg' || $mime['mime']=='image/jpeg' || $mime['mime']=='image/pjpeg') {
         $dst_img = ImageCreateTrueColor($thumb_w,$thumb_h);

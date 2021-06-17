@@ -1,7 +1,4 @@
 ﻿
-
-
-
 <!DOCTYPE html>
 
 <html>
@@ -14,18 +11,20 @@
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 
-<!-- Foto Gallery -->
+
+<!-- jQuery -->
 <script src="scripts/jquery/jquery.js"></script>
-<script src="scripts/galleria/galleria-1.4.2.min.js"></script>
-<!-- End of Foto Gallery -->
+<!-- End of jQuery -->
+
 
 <!-- Background Images Script -->
 <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
 <script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
+
 <script>
 var menuHeight=23*35;
-var imgBgSrc="icons/background/anime_movie.png";
+var imgBgSrc="icons/background/historical_fiction.png";
 var imgBgStarSrc="icons/background/sticky_note.png";
 </script>
 <!-- End of Background Images Script -->
@@ -63,9 +62,9 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_selected'"
 			onClick="
 				if (event.ctrlKey==1){
-					window.open('series_animation_eng.html' + window.location.hash);
+					window.open('series_historical_fiction_eng.html' + window.location.hash);
 				} else {
-					window.location.href='series_animation_eng.html' + window.location.hash;
+					window.location.href='series_historical_fiction_eng.html' + window.location.hash;
 				};"		
 			class="flag_selected"
 		>
@@ -78,9 +77,9 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_not_selected'"
 			onClick="
 				if (event.ctrlKey==1){
-					window.open('series_animation_rus.html' + window.location.hash);
+					window.open('series_historical_fiction_rus.html' + window.location.hash);
 				} else {
-					window.location.href='series_animation_rus.html' + window.location.hash;
+					window.location.href='series_historical_fiction_rus.html' + window.location.hash;
 				};"		
 			class="flag_not_selected"
 		>
@@ -106,6 +105,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	<tr>
 		<td height="3" bgcolor="#ff8a00"></td>
 	</tr>	
+
 
 
         <tr>
@@ -201,7 +201,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
         </tr>
 	
 	
-	
 	<tr>
 		<td align="center" >
 		  <div id="menu_7"
@@ -212,6 +211,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
         </td>
 	</tr>
+
 
 
 	<tr>
@@ -226,8 +226,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	</tr>	
 
 
-
-	<tr>
+<tr>
 		<td align="center" >
 		  <div id="menu_27"
 		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
@@ -243,15 +242,15 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		<td align="left" >
 		  <div id="menu_27_1"
 		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_selected'" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
 		  onClick="
-		    this.className='menu_selected';
+		    this.className='menu_not_selected_black';
 			if (event.ctrlKey==1){
 				window.open('series_animation_eng.html');
 			} else {
 				window.location.href='series_animation_eng.html';
 			};"
-		  class="menu_selected"
+		  class="menu_not_selected_black"
 		  style="padding-left: 5px;">
 	     &bull; Animation</div>
         </td>
@@ -275,6 +274,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	     &bull; Body Horror</div>
         </td>
 	</tr>
+
 
 
 
@@ -302,19 +302,20 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		<td align="left" >
 		  <div id="menu_27_6"
 		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onMouseOut="this.className='menu_selected'" 
 		  onClick="
-		    this.className='menu_not_selected_black';
+		    this.className='menu_selected';
 			if (event.ctrlKey==1){
 				window.open('series_historical_fiction_eng.html');
 			} else {
 				window.location.href='series_historical_fiction_eng.html';
 			};"
-		  class="menu_not_selected_black"
+		  class="menu_selected"
 		  style="padding-left: 5px;">
 	     &bull; Historical Fiction</div>
         </td>
 	</tr>
+
 
 
 
@@ -356,7 +357,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	</tr>
 
 
-
 	<tr>
 		<td align="left" >
 		  <div id="menu_27_8"
@@ -374,7 +374,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	     &bull; Supernatural</div>
         </td>
 	</tr>
-
 
 
 	<tr>
@@ -396,7 +395,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	</tr>
 
 
-	
 	<tr>
 		<td align="center" >
 		  <div id="menu_9"
@@ -411,6 +409,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 	<tr>
 		<td align="center" >
 		  <div id="menu_10"
+
 		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
 		  onMouseOut="this.className='menu_not_selected_red'" 
 		  onClick="showSubMenu(this, 'eng', 'books');"  
@@ -537,6 +536,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 
 
+
         <tr>
                 <td align="center" >
                   <div id="menu_20"
@@ -553,7 +553,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
                   Wicca</div>
         </td>
         </tr>
-
 
 
 
@@ -607,8 +606,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		  onClick="
 		    this.className='menu_not_selected_green';
 			if (event.ctrlKey==1){
-
-
 				window.open('totalitarianism_eng.html');
 			} else {
 				window.location.href='totalitarianism_eng.html';
@@ -617,7 +614,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		  Totalitarianism</div>
         </td>
 	</tr>
-
 
 
 
@@ -631,6 +627,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		  Personalities</div>
         </td>
 	</tr>
+
 
 
         <tr>
@@ -660,18 +657,21 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 <tr><td>
 
 
-<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
 <!-- Table with search, name and languages -->
-	<tr> 
-		<td  class="title_black" style="width: 530px;"><a name="welcome">Series &blacktriangleright; Animation</a></td>
-	</tr>
-
-	<tr>
-		<td height="3" bgcolor="#ff8a00"></td>
-
-	</tr>	
+        <tr class="title_black"> 
+                <td  class="title_black" style="width: 530px;"><a name="series">Series &blacktriangleright; Historical Fiction</a></td>
+        </tr>
 
 </table>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+</table>
+
 
 
 <!-- For scroll inside div -->
@@ -681,7 +681,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 <table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
 
 		
-
+		
 
 
         <tr align="center" >
@@ -736,25 +736,32 @@ var imgBgStarSrc="icons/background/sticky_note.png";
         </td>
 		</tr>
 
+		
+		
+
 
 
         <tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
 			<tr >
-				<td width="100%" height="100%" class="nimetus2_black"><a name="animation">Animation</a></td>
+				<td width="100%" height="100%" class="nimetus2_black"><a name="historical_fiction">Historical Fiction</a></td>
 			</tr>
 			<tr>
 				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="icons/movies/animation.jpg" alt="Animation" title="Animation" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					<img src="icons/series/historical_fiction.jpg" alt="Historical Fiction" title="Historical Fiction" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
 					
+<P><b>Historical fiction</b> is a literary genre in which the plot takes place in a setting located in the past. Although the term is commonly used as a synonym for the <b>historical novel</b>, it can also be applied to other types of narrative, including theatre, opera, cinema, and television, as well as video games and graphic novels.
 
-<P><b>Animation</b> is the process of making the illusion of motion and the illusion of change by means of the rapid display of a sequence of static images that minimally differ from each other. The illusion—as in motion pictures in general—is thought to rely on the phi phenomenon. Animators are artists who specialize in the creation of animation. Animation can be recorded with either analogue media, a flip book, motion picture film, video tape, digital media, including formats with animated GIF, Flash animation, and digital video. To display animation, a digital camera, computer, or projector are used along with new technologies that are produced.
+<P>An essential element of historical fiction is that it is set in the past and pays attention to the manners, social conditions and other details of the depicted period. Authors also frequently choose to explore notable historical figures in these settings, allowing readers to better understand how these individuals might have responded to their environments. Some subgenres such as alternate history and historical fantasy insert speculative or ahistorical elements into a novel.
 
-<P>Animation creation methods include the traditional animation creation method and those involving stop motion animation of two and three-dimensional objects, paper cutouts, puppets and clay figures. Images are displayed in a rapid succession, usually 24, 25, 30, or 60 frames per second. Computer animation processes generating animated images with the general term computer-generated imagery (CGI). 3D animation uses computer graphics, while 2D animation is used for stylistic, low bandwidth and faster real-time renderings.
+<P>Works of historical fiction are sometimes criticized for lack of authenticity because of readerly criticism or genre expectations for accurate period details. This tension between historical authenticity, or historicity, and fiction frequently becomes a point of comment for readers and popular critics, while scholarly criticism frequently goes beyond this commentary, investigating the genre for its other thematic and critical interests.
+
+<P>Historical fiction as a contemporary Western literary genre has its foundations in the early-19th-century works of Sir Walter Scott and his contemporaries in other national literatures such as the Frenchman Honoré de Balzac, the American James Fenimore Cooper, and later the Russian Leo Tolstoy. However, the melding of "historical" and "fiction" in individual works of literature has a long tradition in most cultures; both western traditions (as early as Ancient Greek and Roman literature) as well as Eastern, in the form of oral and folk traditions (see mythology and folklore), which produced epics, novels, plays and other fictional works describing history for contemporary audiences.
+
 					
 				</td>
 			</tr>
@@ -770,7 +777,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Animation" class = "standardb_black" target="_blank">Wikipedia Animation</a> - <b>Animation</b> on Wikipedia.
+				<a href="https://en.wikipedia.org/wiki/Historical_fiction" class = "standardb_black" target="_blank">Wikipedia Historical Fiction</a> - <b>Historical Fiction</b> on Wikipedia.
 			</td>
 			</tr>
 			
@@ -778,7 +785,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					30th of Aug, 2016.
+					17th of Jun, 2021.
 				</td>
 			</tr>
 			</table>
@@ -789,66 +796,6 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 
 
-
-		
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="castlevania">Castlevania</a></td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="icons/series/castlevania.jpg" alt="Castlevania" title="Castlevania" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P><b>Castlevania</b> is an American adult animated streaming television series on Netflix produced by Frederator Studios. Based on the Japanese video game series of the same name by Konami, the first two seasons adapt the 1989 entry Castlevania III: Dracula's Curse and follow Trevor Belmont, Alucard and Sypha Belnades as they defend the nation of Wallachia from Dracula and his minions. The second and third seasons borrow characters and elements from the 2005 entry Castlevania: Curse of Darkness.
-
-<P>The series was originally planned as a film, developed by producer Kevin Kolde and his company Project 51. Kolde had a contract for a script with writer Warren Ellis in 2007; the project entered development hell until about 2015, when Adi Shankar boarded the project and it was picked up by streaming service Netflix. Powerhouse Animation Studios joined the team and production commenced. Its art style is heavily influenced by Japanese anime and Ayami Kojima's artwork in Castlevania: Symphony of the Night with the production team including staff members who worked in the Japanese anime industry.
-
-<P>The series premiered on Netflix on July 7, 2017, and was renewed for an expanded second season of eight episodes on the same day; the second season premiered on October 26, 2018. A ten-episode third season was greenlit by Netflix and released on March 5, 2020. On March 27, 2020, Netflix announced they have renewed the series for a fourth season, with this being the final season with Ellis' involvement.
-
-
-
-					
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Links:
-				</td>
-			</tr>
-			
-
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Castlevania_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Castlevania (TV series)</a> - <b>Castlevania</b> on Wikipedia.
-			</td>
-			</tr>
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=Kbb8zPQBmOw" class = "standardb_black" target="_blank">Castlevania</a> - Official Trailer.
-			</td>
-			</tr>
-
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					20th of Feb, 2021.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-		
-		
 
 
 
@@ -856,76 +803,20 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
 			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="dark_crystal">The Dark Crystal: Age of Resistance</a></td>
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="alienist">The Alienist</a></td>
+						</tr>
+					</table>
+				</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="icons/series/dark_crystal.jpg" alt="The Dark Crystal: Age of Resistance" title="The Dark Crystal: Age of Resistance" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-<P><b>The Dark Crystal: Age of Resistance</b> is an American fantasy streaming television series produced by Netflix and The Jim Henson Company. It is a prequel to the 1982 Jim Henson film The Dark Crystal that explores the world of Thra created for the original film. It follows the story of three Gelflings: Rian, Deet, and Brea, as they journey together on a quest to unite the Gelfling clans to rise against the tyrannical Skeksis and save their planet Thra from a destructive blight known as the Darkening. The series premiered on August 30, 2019, to critical acclaim. In September 2020, it was announced that the series had been cancelled after one season.
+					<img src="icons/series/alienist.jpg" alt="The Alienist" title="The Alienist" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
 
 
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Links:
-				</td>
-			</tr>
-
-
-
-
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/The_Dark_Crystal:_Age_of_Resistance" class = "standardb_black" target="_blank">Wikipedia The Dark Crystal: Age of Resistance</a> - <b>The Dark Crystal: Age of Resistance</b> on Wikipedia.
-			</td>
-			</tr>
-
-
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=a3_owZfYVR8" class = "standardb_black" target="_blank">The Dark Crystal: Age of Resistance</a> - Official Trailer.
-			</td>
-			</tr>
-
-
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					29th of Apr, 2021.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-
-
-		
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="love_death_robots">Love, Death & Robots</a></td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="icons/series/love_death_robots.jpg" alt="Love, Death & Robots" title="Love, Death & Robots" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P><b>Love, Death & Robots</b> (stylized as <b>LOVE DEATH + ROBOTS</b>) is an American adult animated anthology streaming television series on Netflix. The 18-episode first season was released on March 15, 2019. The series is produced by Tim Miller, Joshua Donen, David Fincher and Jennifer Miller. Each episode was animated by different crews from a range of countries. The series is a re-imagining of Fincher and Miller's long in-development reboot of the 1981 animated science fiction film <a href="movies_animation_for_adults_eng.html#heavy_metal" class = "standardb_black" target="_blank">Heavy Metal</a>.
-
-<P>The cast includes Mary Elizabeth Winstead, Gary Cole, Chris Parnell, Omid Abtahi, John DiMaggio, Christine Adams, Josh Brener, Jill Talley, Hakeem Kae-Kazim, Nolan North, Elaine Tan, Aaron Himelstein, Samira Wiley, Stefan Kapičić, and Topher Grace, with Grace and Winstead appearing in live-action roles, rather than animated.
-
-<P>In June 2019, Netflix renewed the series for a second season.
+<P><b>The Alienist</b> is an American period drama television series based on the novel of the same name by Caleb Carr. The ten-episode limited series first aired on TNT as a sneak peek on January 21, 2018, before its official premiere on January 22, 2018, and ended on March 26, 2018. The series stars Daniel Brühl, Luke Evans, and Dakota Fanning as an ad hoc team assembled in mid-1890s New York City to investigate a serial killer who is murdering street children. The series incorporates fact with fiction by including the characters that are historical figures, such as Theodore Roosevelt, who held the post of police commissioner from 1895 to 1897. On August 16, 2018, TNT ordered a sequel series based upon the follow-up novel The Angel of Darkness.
 
 
 					
@@ -938,26 +829,19 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 					Links:
 				</td>
 			</tr>
-			
-
-
-
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Love,_Death_%26_Robots" class = "standardb_black" target="_blank">Wikipedia Love, Death & Robots</a> - <b>Love, Death & Robots</b> on Wikipedia.
+				<a href="https://en.wikipedia.org/wiki/The_Alienist_(TV_series)" class = "standardb_black" target="_blank">Wikipedia The Alienist (TV series)</a> - <b>The Alienist</b> on Wikipedia.
 			</td>
 			</tr>
-
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=wUFwunMKa4E" class = "standardb_black" target="_blank">Love, Death & Robots</a> - Official Trailer.
+				<a href="https://www.youtube.com/watch?v=q9867sT-Y1M" class = "standardb_black" target="_blank">The Alienist</a> - Official Trailer.
 			</td>
 			</tr>
-
-
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					10th of Mar, 2021.
+					20th of Feb, 2020.
 				</td>
 			</tr>
 			</table>
@@ -972,7 +856,425 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 
 
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="bastard_executioner">The Bastard Executioner</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/bastard_executioner.jpg" alt="The Bastard Executioner" title="The Bastard Executioner" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>The Bastard Executioner</b> is an American historical fiction drama television series, created by Kurt Sutter, that aired on FX from September 15, 2015 to November 17, 2015. On November 18, 2015, Sutter announced that FX had cancelled the series after one season.
+
+
 		
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Bastard_Executioner" class = "standardb_black" target="_blank">Wikipedia The Bastard Executioner</a> - <b>The Bastard Executioner</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=pCUoDZI9CpY" class = "standardb_black" target="_blank">The Bastard Executioner</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					29th of Aug, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="britannia">Britannia</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/britannia.jpg" alt="Britannia" title="Britannia" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Britannia</b> is a British-American historical fantasy drama series written by Jez Butterworth. The first nine-part series was the first co-production between Sky and Amazon Prime Video and stars Kelly Reilly, David Morrissey, Zoë Wanamaker, Mackenzie Crook, Nikolaj Lie Kaas and Eleanor Worthington Cox. It aired on Sky Atlantic in the UK beginning 18 January 2018 and on Amazon Prime Video in the US beginning 26 January 2018.
+
+		
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Britannia_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Britannia (TV series)</a> - <b>Britannia</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Xar1Chxf6bI" class = "standardb_black" target="_blank">Britannia</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					03rd of Dec, 2019.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="chernobyl">Chernobyl</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/chernobyl.jpg" alt="Chernobyl" title="Chernobyl" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Chernobyl</b> is a 2019 historical drama television miniseries that revolves around the Chernobyl disaster of 1986 and the cleanup efforts that followed. The series was created and written by Craig Mazin and directed by Johan Renck. It features an ensemble cast led by Jared Harris, Stellan Skarsgård, Emily Watson and Paul Ritter. The series was produced by HBO in the United States and Sky UK in the United Kingdom.
+
+<P>The five-part series premiered in the United States on May 6, 2019, and concurrently in the United Kingdom on May 7, to widespread critical acclaim. At the 71st Primetime Emmy Awards, it received nineteen nominations and won for Outstanding Limited Series, Outstanding Directing, and Outstanding Writing, while Harris, Skarsgård, and Watson received acting nominations. At the 77th Golden Globe Awards, the series won for Best Miniseries or Television Film and Skarsgård won for Best Supporting Actor in a Series, Miniseries or Television Film.
+
+<P>While the series was exhaustively researched, some liberties were taken for dramatic purposes. Critics, experts and witnesses have noted historical and factual discrepancies in the show.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Chernobyl_(miniseries)" class = "standardb_black" target="_blank">Wikipedia Chernobyl (miniseries)</a> - <b>Chernobyl</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=s9APLXM9Ei8" class = "standardb_black" target="_blank">Chernobyl</a> - Official Trailer.
+			</td>
+			</tr>
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					09th of Jun, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="dead_lands">The Dead Lands</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/dead_lands.jpg" alt="The Dead Lands" title="The Dead Lands" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>The Dead Lands</b> is a 2014 New Zealand action film directed by Toa Fraser. It was screened in the Special Presentations section at the 2014 Toronto International Film Festival where it had its world premier on 4 September 2014. It was selected as the New Zealand entry for the Best Foreign Language Film at the 87th Academy Awards, but was not nominated.
+
+<br><br>
+<P><b>TV adaptation:</b>
+
+<P>In 2019 streaming service Shudder and TVNZ said they would create a TV series based on the film. On 5 December, 2019 it was announced that the first two episodes of The Dead Lands would premiere on January 23, 2020 on Shudder's platforms. It also aired on TVNZ OnDemand in New Zealand immediately after its international debut. Subsequent episodes will premiere on both Shudder and TVNZ OnDemand weekly.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Dead_Lands#TV_adaptation" class = "standardb_black" target="_blank">Wikipedia The Dead Lands</a> - <b>The Dead Lands</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=X9VBpTgsOyo" class = "standardb_black" target="_blank">The Dead Lands</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30th of Mar, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="for_all_mankind">For All Mankind</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/for_all_mankind.jpg" alt="For All Mankind" title="For All Mankind" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>For All Mankind</b> is an American science fiction web television series created and written by Ronald D. Moore, Matt Wolpert and Ben Nedivi and produced for Apple TV+. The series dramatizes an alternate history depicting "what would have happened if the global space race had never ended" after the Soviet Union succeeds in the first crewed Moon landing ahead of the United States.
+
+<P>The series stars Joel Kinnaman in the lead role as fictionalised NASA astronaut Edward Baldwin and Apollo 11 crew Neil Armstrong, Buzz Aldrin and Michael Collins as characters in the story. Michael Dorman, Wrenn Schmidt, Shantel VanSanten, Sarah Jones, Jodi Balfour, Michael Harney and Colm Feore appear in supporting roles in the series. Seth Gordon directed the first two episodes of season 1.
+
+<P>For All Mankind Premiered on November 1, 2019, and was renewed by Apple TV+ in October 2019 for a second season.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/For_All_Mankind_(TV_series)" class = "standardb_black" target="_blank">Wikipedia For All Mankind (TV series)</a> - <b>For All Mankind</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=HZS9M52Bd_w" class = "standardb_black" target="_blank">For All Mankind</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					23rd of Oct, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="irregulars">The Irregulars</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/irregulars.jpg" alt="The Irregulars" title="The Irregulars" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>The Irregulars</b> is a British mystery adventure crime drama television series created by Tom Bidwell for Netflix. Based on the works of Sir Arthur Conan Doyle, it features the Baker Street Irregulars working for Dr. Watson saving London from supernatural elements.
+
+<P>Developed by Drama Republic, the eight-episode series premiered on 26 March 2021. In May 2021, the series was canceled after one season.
+
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Irregulars" class = "standardb_black" target="_blank">Wikipedia The Irregulars</a> - <b>The Irregulars</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=lTE5MAGpflw" class = "standardb_black" target="_blank">The Irregulars</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					31st of May, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="knightfall">Knightfall</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="icons/series/knightfall.jpg" alt="Knightfall" title="Knightfall" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Knightfall</b> is a historical fiction drama television series created by Don Handfield and Richard Rayner for the History channel. Filmed in the Czech Republic and Croatia, it premiered on December 6, 2017 in the United States. On August 13, 2018, History renewed the series for a second season, which premiered on March 25, 2019.
+
+<P>Knightfall recounts the success, fall, persecution, and suppression of the Knights Templar, as orchestrated by King Philip IV of France on October 13, 1307. The series focuses on the fictional Templar leader Landry du Lauzon, a brave warrior discouraged by the Templars' failures in the Holy Land who is reinvigorated by news that the Holy Grail has resurfaced.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Knightfall_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Knightfall (TV series)</a> - <b>Knightfall</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=F9dtepkeR0I" class = "standardb_black" target="_blank">Knightfall</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					21st of Jan, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+	
   </table> <!-- End of Func area -->
 
 </div> <!-- End of scroll inside div -->
@@ -992,6 +1294,7 @@ var imgBgStarSrc="icons/background/sticky_note.png";
   </tr>
 	<tr>
 	  <td class="title_black" >
+
 	    &copy; Urmas Repinski, urrimus@hotmail.com
 	  </td>
 	</tr>
@@ -1003,4 +1306,5 @@ var imgBgStarSrc="icons/background/sticky_note.png";
 
 </body>
 </html>
+
 

@@ -1306,6 +1306,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 		message4 = "' Существует. Заменить ?";
 		message5 = "Преобразовать .webp формат в .jpg в Файле '";
 		message6 = " (Отмена=Нет)";
+		message7 = "Преобразовать .png формат в .jpg в Файле '";
 	}
 	if (lang.localeCompare('eng')==0) {
 		prompt2="Enter New Images Width (in pixels).";
@@ -1313,6 +1314,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 		message4 = "' Exists. Overwrite ?";
 		message5 = "Transfer .webp format to .jpg in File '";
 		message6 = " (Cancel=No)";
+		message7 = "Transfer .png format to .jpg in File '";
 	}
 
 	if (i==totalFiles) return;
@@ -1323,16 +1325,25 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 	filename=allFiles[i].name;
 
 	var confirmWebpToJpg=0;
+	confirm2=0;
 	if (allFiles[i].type=='image/webp') {
 		confirm2=window.confirm(message5 + filename + "'?" + message6);
-		if (confirm2) {
-			confirmWebpToJpg=1;
-			dotPos=filename.lastIndexOf(".");
-			if (dotPos==-1) {
-				filename=filename+".jpg";
-			} else {
-				filename=filename.substr(0,dotPos)+".jpg";
-			}
+		if (confirm2) confirmWebpToJpg=1;
+	}
+
+
+	var confirmPngToJpg=0;
+	if (allFiles[i].type=='image/png') {
+		confirm2=window.confirm(message7 + filename + "'?" + message6);
+		if (confirm2) confirmPngToJpg=1;
+	}
+
+	if (confirm2) {
+		dotPos=filename.lastIndexOf(".");
+		if (dotPos==-1) {
+			filename=filename+".jpg";
+		} else {
+			filename=filename.substr(0,dotPos)+".jpg";
 		}
 	}
 
@@ -1364,7 +1375,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 				}
 
 				//file not exists
-				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, filename);
+				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, confirmPngToJpg, filename);
    			 },
     			success: function()
     			{
@@ -1377,7 +1388,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 					if (newImageWidth == null ) {return;}
 				}
 
-				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, filename);
+				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, confirmPngToJpg, filename);
     			}
 		});
 
@@ -1398,7 +1409,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 
 
 
-function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, filename) {
+function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, confirmPngToJpg, filename) {
 
 
 	if (lang.localeCompare('rus')==0) {
@@ -1433,6 +1444,8 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, c
 	xhr.onreadystatechange = function(){
         	if (this.readyState==4 && this.status==200) {
 
+			if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
+
 			if (this.responseText==0) {
 				alert(messageF+" '"+newFilePath+"/"+filename+"' "+message0);
 				upload2(lang, allFiles, i+1, totalFiles, newFilePath);
@@ -1443,10 +1456,10 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, c
 			}
 			if (this.responseText==2) {
 				fullMessage=messageF+" '"+newFilePath+"/"+filename+"' "+message2+newImageWidth+"px.";
-				if (confirmWebpToJpg==0) {
-					fullMessage=fullMessage+"\n"+message3;
-				} else {
+				if (confirmWebpToJpg!=0 || confirmPngToJpg!=0) {
 					fullMessage=fullMessage+"\n"+message4;
+				} else {
+					fullMessage=fullMessage+"\n"+message3;
 				}
 				var confirm = window.confirm(fullMessage);
 				if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
@@ -1454,7 +1467,7 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, c
 			}
         	}
 	};
-	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&width="+encodeURIComponent(newImageWidth)+"&webpToJpg="+encodeURIComponent(confirmWebpToJpg)+"&filename="+encodeURIComponent(filename), true);
+	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&width="+encodeURIComponent(newImageWidth)+"&webpToJpg="+encodeURIComponent(confirmWebpToJpg)+"&pngToJpg="+encodeURIComponent(confirmPngToJpg)+"&filename="+encodeURIComponent(filename), true);
 	xhr.send(dataArray);
 
 }
