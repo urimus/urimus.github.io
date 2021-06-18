@@ -38,6 +38,11 @@ function  getLangShort(lang1, lang) {
 		if (lang=='eng' || lang=='lat') return 'it.';
 		if (lang=='rus') return 'ит.';
 	}
+	if (lang1=='ice') {
+		if (lang=='eng' || lang=='lat') return 'ice.';
+		if (lang=='rus') return 'исл.';
+	}
+
 
 	if (lang=='eng' || lang=='lat') return 'orig.';
 	if (lang=='rus') return 'ориг.';
