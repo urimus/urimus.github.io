@@ -92,17 +92,19 @@ function getData($conn) {
 }
 
 function saveData($conn) {
-	foreach($_POST as $key => $value){
-		if (strstr($key, 'comment')){
-			$id=substr($key, 7);
-			if (!is_numeric($id) || $id==0) continue;
-			$sql = "UPDATE guestbook SET comment='".$value."' WHERE id=".$id;
-			$conn->query($sql);
-		}
-	}
 	
 	$guestbook_array=getData($conn);
+	
 	for ($i = 0; $i < count($guestbook_array); $i++) {
+		
+		$commentName='comment'.$guestbook_array[$i]['id'];
+		if (isset($_POST[$commentName]) && $guestbook_array[$i]['comment'] != $_POST[$commentName]) {
+			$sql = "UPDATE guestbook SET comment='".$_POST[$commentName]."' WHERE id=".$guestbook_array[$i]['id'];
+			$conn->query($sql);
+			echo $conn->error;
+		}
+
+	
 		$paydName='ispayd'.$guestbook_array[$i]['id'];
 		if ($guestbook_array[$i]['payd']==true && !isset($_POST[$paydName])) {
 			$sql = "UPDATE guestbook SET payd=false WHERE id=".$guestbook_array[$i]['id'];
@@ -160,10 +162,17 @@ function printData($conn) {
 		} else {
 			$out = $out."<td>".date("d.m.Y", $guestbook_array[$i]['dateOut'])."</td>";
 		}		
-        $out = $out."<td><input type='text' name='comment".$guestbook_array[$i]['id']."' value='".htmlspecialchars($guestbook_array[$i]['comment'], ENT_QUOTES)."'></td>";
-        $checked="";
-        if ($guestbook_array[$i]['payd']==true) $checked=" checked";
-        $out = $out."<td><input type='checkbox' name='ispayd".$guestbook_array[$i]['id']."' ".$checked."></td></tr>";
+		if (isLoggedIn()) {
+			$out = $out."<td><input type='text' name='comment".$guestbook_array[$i]['id']."' value='".htmlspecialchars($guestbook_array[$i]['comment'], ENT_QUOTES)."'></td>";
+			$onclickCheck="";
+		} else {
+			$out = $out."<td>".htmlspecialchars($guestbook_array[$i]['comment'], ENT_QUOTES)."</td>";
+			$onclickCheck=" onclick='return false;'";
+		}
+		$checked="";
+		if ($guestbook_array[$i]['payd']==true) $checked=" checked";
+		$out = $out."<td><input type='checkbox' name='ispayd".$guestbook_array[$i]['id']."' ".$checked.$onclickCheck."></td></tr>";
+
     }
     return $out;
 }
@@ -300,7 +309,6 @@ if (isset($_POST['save'])) {
 </table>
 
 
-<?php if (isLoggedIn()){ ?>
 
 <table class="tasktable">
   <tr>
@@ -316,13 +324,13 @@ if (isset($_POST['save'])) {
 <?php echo printData($conn); ?>
 
 </table>
-	
-<input type='submit' name='save' value='Сохранить'>
 
+<?php if (isLoggedIn()){ ?>	
+<input type='submit' name='save' value='Сохранить'>
+<?php } ?>
 <br>
 <?php echo "Пагинация: ".printPagination($conn); ?>
 
-<?php } ?>
 </form>
 
 <?php 			
