@@ -89,7 +89,7 @@ function addData($conn, $firstname, $lastname, $countrycode, $timezone, $phone) 
 function getData($conn, $searchid="", $searchfirstname="", $searchlastname="") {
 
 	$where="";
-	if ($searchid=="" && $searchfirstname="" && $searchlastname="") {
+	if ($searchid=="" && $searchfirstname=="" && $searchlastname=="") {
 		$where="";
 	} else {
 		if ($searchid!="") {
@@ -206,6 +206,7 @@ function getCurrentPage() {
 function printData($conn, $searchid="", $searchfirstname="", $searchlastname="") {
 	
 	
+	
     $phonebook_array=getData($conn, $searchid, $searchfirstname, $searchlastname);
 
 	$currentPage=getCurrentPage();
@@ -229,7 +230,7 @@ function printData($conn, $searchid="", $searchfirstname="", $searchlastname="")
 		if (isLoggedIn()) {
 			$out = $out."<td><input type='text' name='firstname".$phonebook_array[$i]['id']."' value='".htmlspecialchars($phonebook_array[$i]['firstname'], ENT_QUOTES)."'></td>";
 		} else {
-			$out = $out."<td>".htmlspecialchars($phonebook_array[$i]['name'], ENT_QUOTES)."</td>";
+			$out = $out."<td>".htmlspecialchars($phonebook_array[$i]['firstname'], ENT_QUOTES)."</td>";
 		}
 
 		if (isLoggedIn()) {
@@ -285,7 +286,7 @@ function printPagination($conn, $searchid="", $searchfirstname="", $searchlastna
 	
 	
 	$where="";
-	if ($searchid=="" && $searchfirstname="" && $searchlastname="") {
+	if ($searchid=="" && $searchfirstname=="" && $searchlastname=="") {
 		$where="";
 	} else {
 		if ($searchid!="") {
