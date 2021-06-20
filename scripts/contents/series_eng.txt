@@ -50,6 +50,7 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#feed" class = "standardb_black" data-added="13th of Jun, 2021." data-genre="Supernatural" data-country="united_kingdom" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Feed</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#katla" class = "standardb_black" data-added="18th of Jun, 2021." data-genre="Supernatural" data-country="iceland" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Katla</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#nevers" class = "standardb_black" data-added="15th of Jun, 2021." data-genre="Supernatural" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Nevers</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#plan_b" class = "standardb_black" data-added="20th of Jun, 2021." data-genre="Supernatural" data-country="canada" data-year="2017" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Plan B</a>
 
 <P>&nbsp;&#9679; <a href="series_not_satanic_eng.html" class = "standardb_black" data-added="23rd of Mar, 2020." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Not Satanic</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_not_satanic_eng.html#da_vincis_demons" class = "standardb_black" data-added="10th of May, 2021." data-genre="Not Satanic" data-country="usa;united_kingdom" data-year="2013" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Da Vinci's Demons</a> 
