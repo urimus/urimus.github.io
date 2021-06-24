@@ -20,7 +20,7 @@ $createFolder=$_GET["createFolder"];
 
 
 // create folder if necessary
-if ($createFolder) mkdir("../../".$path."/", 0777, true);
+if ($createFolder && !is_dir("../../".$path."/")) mkdir("../../".$path."/", 0777, true);
 
 $response = 0;
 $mime = getimagesize($_FILES['file']['tmp_name']);
