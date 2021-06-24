@@ -1257,14 +1257,20 @@ function saveas(lang, encoding) {
 
 function upload(lang) {
 	
+	createFolder=0;
 
 	if (lang.localeCompare('rus')==0) {
 		prompt11="Введите Расположение Файла на Сервере";
 		prompt12="Введите Расположение Файлов на Сервере";
+		message1 ="Папка '";
+		message2 ="' не Найдена. Создать?";
+
 	}
 	if (lang.localeCompare('eng')==0) {
 		prompt11="Enter File Location on Server";
 		prompt12="Enter Files Location on Server";
+		message1 ="Folder '";
+		message2 ="' not Found. Create?";
 	}
 
 	var input = document.createElement('input');
@@ -1286,7 +1292,27 @@ function upload(lang) {
 		if (newFilePath == null ) {return;}
 		if (newFilePath.substring(newFilePath.length - 1, newFilePath.length)=="/") newFilePath=newFilePath.substring(0, newFilePath.length - 1);
 
-		upload2(lang, e.target.files, 0, totalFiles, newFilePath);
+
+
+
+		$.ajax({
+    			url:"../../"+newFilePath,
+    			type:'HEAD',
+   			error: function()
+    			{
+				//newFilePath not exists
+				createFolder=window.confirm(message1 + newFilePath+ message2);
+				if (!createFolder) {return;}
+				upload2(lang, e.target.files, 0, totalFiles, newFilePath, createFolder);
+   			 },
+    			success: function()
+    			{
+        			//newFilePath exists
+				upload2(lang, e.target.files, 0, totalFiles, newFilePath, createFolder);
+    			}
+		});
+
+		
 
 	}
 
@@ -1298,7 +1324,7 @@ function upload(lang) {
 
 
 
-function upload2(lang, allFiles, i, totalFiles, newFilePath) {
+function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 	
 	if (lang.localeCompare('rus')==0) {
 		prompt2="Введите Новую Ширину Картинки (в пикселях).";
@@ -1375,7 +1401,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 				}
 
 				//file not exists
-				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, confirmPngToJpg, filename);
+				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, confirmPngToJpg, filename, createFolder);
    			 },
     			success: function()
     			{
@@ -1388,7 +1414,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 					if (newImageWidth == null ) {return;}
 				}
 
-				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, confirmPngToJpg, filename);
+				uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, confirmPngToJpg, filename, createFolder);
     			}
 		});
 
@@ -1409,7 +1435,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath) {
 
 
 
-function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, confirmPngToJpg, filename) {
+function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, confirmWebpToJpg, confirmPngToJpg, filename, createFolder) {
 
 
 	if (lang.localeCompare('rus')==0) {
@@ -1445,14 +1471,15 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, c
         	if (this.readyState==4 && this.status==200) {
 
 			if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
+//			console.log(this.responseText);
 
 			if (this.responseText==0) {
 				alert(messageF+" '"+newFilePath+"/"+filename+"' "+message0);
-				upload2(lang, allFiles, i+1, totalFiles, newFilePath);
+				upload2(lang, allFiles, i+1, totalFiles, newFilePath, createFolder);
 			}
 			if (this.responseText==1) {
 				alert(messageF+" '"+newFilePath+"/"+filename+"' "+message1);
-				upload2(lang, allFiles, i+1, totalFiles, newFilePath);
+				upload2(lang, allFiles, i+1, totalFiles, newFilePath, createFolder);
 			}
 			if (this.responseText==2) {
 				fullMessage=messageF+" '"+newFilePath+"/"+filename+"' "+message2+newImageWidth+"px.";
@@ -1463,11 +1490,11 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, newImageWidth, c
 				}
 				var confirm = window.confirm(fullMessage);
 				if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
-				upload2(lang, allFiles, i+1, totalFiles, newFilePath);
+				upload2(lang, allFiles, i+1, totalFiles, newFilePath, createFolder);
 			}
         	}
 	};
-	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&width="+encodeURIComponent(newImageWidth)+"&webpToJpg="+encodeURIComponent(confirmWebpToJpg)+"&pngToJpg="+encodeURIComponent(confirmPngToJpg)+"&filename="+encodeURIComponent(filename), true);
+	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&width="+encodeURIComponent(newImageWidth)+"&webpToJpg="+encodeURIComponent(confirmWebpToJpg)+"&pngToJpg="+encodeURIComponent(confirmPngToJpg)+"&filename="+encodeURIComponent(filename)+"&createFolder="+encodeURIComponent(createFolder), true);
 	xhr.send(dataArray);
 
 }

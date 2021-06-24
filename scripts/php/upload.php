@@ -16,7 +16,11 @@ $width=$_GET["width"];
 $webpToJpg=$_GET["webpToJpg"];
 $pngToJpg=$_GET["pngToJpg"];
 $filename=$_GET["filename"];
+$createFolder=$_GET["createFolder"];
 
+
+// create folder if necessary
+if ($createFolder) mkdir("../../".$path."/", 0777, true);
 
 $response = 0;
 $mime = getimagesize($_FILES['file']['tmp_name']);
