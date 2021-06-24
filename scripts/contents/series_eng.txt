@@ -12,6 +12,7 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_body_horror_eng.html#war_worlds" class = "standardb_black" data-added="02nd of Jun, 2021." data-genre="Body Horror" data-country="france;usa;united_kingdom" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">War of the Worlds</a> 
 
 <P>&nbsp;&#9679; <a href="series_fantasy_eng.html" class = "standardb_black" data-added="17th of Jun, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Fantasy</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#100" class = "standardb_black" data-added="24th of Jun, 2021." data-genre="Fantasy" data-country="usa" data-year="2014" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The 100</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#carnival_row" class = "standardb_black" data-added="26th of May, 2021." data-genre="Fantasy" data-country="usa" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Carnival Row</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#counterpart" class = "standardb_black" data-added="26th of Mar, 2018." data-genre="Fantasy" data-country="usa" data-year="2017" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Counterpart</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#devs" class = "standardb_black" data-added="27th of May, 2021." data-genre="Fantasy" data-country="usa" data-year="2020" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Devs</a> 
