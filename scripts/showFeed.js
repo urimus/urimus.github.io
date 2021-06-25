@@ -11,7 +11,7 @@ function newsLoad(source, lang) {
     if (typeL && typeL!="") {
         if (source=="bbc" && (typeL=="top" || typeL=="world" || typeL=="uk" || typeL=="business" || typeL=="politics" || typeL=="health" || typeL=="education" || typeL=="science" || typeL=="technology" || typeL=="entertainment") 
 	|| source=="bbcrussian" && (typeL=="top" || typeL=="russia" || typeL=="world" || typeL=="features" || typeL=="cluster" || typeL=="special" || typeL=="documentaries" || typeL=="papers" || typeL=="section")
-	|| source=="lenta" && (typeL=="russia" || typeL=="world" || typeL=="ussr" || typeL=="finances" || typeL=="business" || typeL=="power" || typeL=="science" || typeL=="culture" || typeL=="sport" || typeL=="internet" || typeL=="valuables" || typeL=="travelling" || typeL=="live" || typeL=="69" || typeL=="cultlight" || typeL=="economy" || typeL=="house" || typeL=="natproj" || typeL=="motor")) {
+	|| source=="lenta" && (typeL=="russia" || typeL=="world" || typeL=="ussr" || typeL=="my_country" || typeL=="environment" || typeL=="power" || typeL=="science" || typeL=="culture" || typeL=="sport" || typeL=="internet" || typeL=="valuables" || typeL=="travelling" || typeL=="live" || typeL=="69" || typeL=="cultlight" || typeL=="economy" || typeL=="house" || typeL=="natproj" || typeL=="motor")) {
             type=typeL;
         }
      } else {
@@ -62,7 +62,8 @@ function refreshFeedTabs(feedTypeL, col) {
 
     if (feedType=="russia" || feedTypeL=="russia") mouseOut("russia", feedTypeL, col);
     if (feedType=="ussr" || feedTypeL=="ussr") mouseOut("ussr", feedTypeL, col);
-    if (feedType=="finances" || feedTypeL=="finances") mouseOut("finances", feedTypeL, col);
+    if (feedType=="my_country" || feedTypeL=="my_country") mouseOut("my_country", feedTypeL, col);
+    if (feedType=="environment" || feedTypeL=="environment") mouseOut("environment", feedTypeL, col);
     if (feedType=="power" || feedTypeL=="power") mouseOut("power", feedTypeL, col);
     if (feedType=="culture" || feedTypeL=="culture") mouseOut("culture", feedTypeL, col);
     if (feedType=="sport" || feedTypeL=="sport") mouseOut("sport", feedTypeL, col);
@@ -221,7 +222,7 @@ function processShowFeed(type, source, lang, result) {
 			// ------------- For Lenta only -------------- //
 			if (source == "lenta") {
 				var items2 = [];
-				cRussia=0; cWorld=0; cUssr=0; 	cFinances=0; cBusiness=0; cPower=0; cScience=0; cCulture=0; cSport=0; cInternet=0; cValuables=0; cTravelling=0; cLive=0; c69=0; cCultlight=0; cEconomy=0; cHouse=0; cNatproj=0; cMotor=0;
+				cRussia=0; cWorld=0; cUssr=0; cMyCountry=0; cEnvironment=0; cPower=0; cScience=0; cCulture=0; cSport=0; cInternet=0; cValuables=0; cTravelling=0; cLive=0; c69=0; cCultlight=0; cEconomy=0; cHouse=0; cNatproj=0; cMotor=0;
 				for (var i = 0; i < items.length; i++) { // ------------- Keep curret category only ----------------
 					var entry = items[i];
 
@@ -232,8 +233,8 @@ function processShowFeed(type, source, lang, result) {
 						if (type == "russia" && category == "Россия") { items2.push(entry);
 						} else if (type == "world" && category == "Мир") { items2.push(entry);
 						} else if (type == "ussr" && category == "Бывший СССР") { items2.push(entry);
-						} else if (type == "finances" && category == "Финансы") { items2.push(entry);
-						} else if (type == "business" && category == "Бизнес") { items2.push(entry);
+						} else if (type == "my_country" && category == "Моя страна") { items2.push(entry);
+						} else if (type == "environment" && category == "Среда обитания") { items2.push(entry);
 						} else if (type == "power" && category == "Силовые структуры") { items2.push(entry);
 						} else if (type == "science" && category == "Наука и техника") { items2.push(entry);
 						} else if (type == "culture" && category == "Культура") { items2.push(entry);
@@ -252,8 +253,8 @@ function processShowFeed(type, source, lang, result) {
 							if (category != "Россия" &&
 								category != "Мир" &&
 								category != "Бывший СССР" &&
-								category != "Финансы" &&
-								category != "Бизнес" &&
+								category != "Моя страна" &&
+								category != "Среда обитания" &&
 								category != "Силовые структуры" &&
 								category != "Наука и техника" &&
 								category != "Культура" &&
@@ -276,8 +277,8 @@ function processShowFeed(type, source, lang, result) {
 						if (category == "Россия") cRussia++;
 						if (category == "Мир") cWorld++;
 						if (category == "Бывший СССР") cUssr++;
-						if (category == "Финансы") cFinances++;
-						if (category == "Бизнес") cBusiness++;
+						if (category == "Моя страна") cMyCountry++;
+						if (category == "Среда обитания") cEnvironment++;
 						if (category == "Силовые структуры") cPower++;
 						if (category == "Наука и техника") cScience++;
 						if (category == "Культура") cCulture++;
@@ -299,8 +300,8 @@ function processShowFeed(type, source, lang, result) {
 			    	showRecordsNum("russia", cRussia, lang);
 			    	showRecordsNum("world", cWorld, lang);
 			    	showRecordsNum("ussr", cUssr, lang);
-			    	showRecordsNum("finances", cFinances, lang);
-			    	showRecordsNum("business", cBusiness, lang);
+			    	showRecordsNum("my_country", cMyCountry, lang);
+			    	showRecordsNum("environment", cEnvironment, lang);
 			    	showRecordsNum("power", cPower, lang);
 			    	showRecordsNum("science", cScience, lang);
 			    	showRecordsNum("culture", cCulture, lang);
