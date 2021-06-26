@@ -31,7 +31,6 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_historical_fiction_eng.html#irregulars" class = "standardb_black" data-added="31st of May, 2021." data-genre="Historical Fiction" data-country="united_kingdom" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Irregulars</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_historical_fiction_eng.html#knightfall" class = "standardb_black" data-added="21st of Jan, 2020." data-genre="Historical Fiction" data-country="usa;czech" data-year="2017" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Knightfall</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_historical_fiction_eng.html#ragnarok" class = "standardb_black" data-added="22nd of Jun, 2021." data-genre="Historical Fiction" data-country="denmark;norway" data-year="2020" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Ragnarok</a> 
-<P>&nbsp;&nbsp;&nbsp;- <a href="series_historical_fiction_eng.html#timeless" class = "standardb_black" data-added="23rd of Jun, 2021." data-genre="Historical Fiction" data-country="usa" data-year="2016" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Timeless</a> 
 
 <P>&nbsp;&#9679; <a href="series_space_opera_eng.html" class = "standardb_black" data-added="17th of Jun, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Space Opera</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_space_opera_eng.html#debris" class = "standardb_black" data-added="03rd of Mar, 2021." data-genre="Space Opera" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Debris</a> 
@@ -52,6 +51,7 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#evil" class = "standardb_black" data-added="03rd of Jun, 2021." data-genre="Supernatural" data-country="usa" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Evil</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#feed" class = "standardb_black" data-added="13th of Jun, 2021." data-genre="Supernatural" data-country="united_kingdom" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Feed</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#katla" class = "standardb_black" data-added="18th of Jun, 2021." data-genre="Supernatural" data-country="iceland" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Katla</a> 
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#monsterland" class = "standardb_black" data-added="26th of Jun, 2021." data-genre="Supernatural" data-country="usa" data-year="2020" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Monsterland</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#nevers" class = "standardb_black" data-added="15th of Jun, 2021." data-genre="Supernatural" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Nevers</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_supernatural_eng.html#plan_b" class = "standardb_black" data-added="20th of Jun, 2021." data-genre="Supernatural" data-country="canada" data-year="2017" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Plan B</a>
 
