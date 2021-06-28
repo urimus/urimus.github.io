@@ -35,6 +35,7 @@
 <P>&nbsp;&#9679; <a href="series_space_opera_eng.html" class = "standardb_black" data-added="17th of Jun, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Space Opera</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_space_opera_eng.html#debris" class = "standardb_black" data-added="03rd of Mar, 2021." data-genre="Space Opera" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Debris</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_space_opera_eng.html#intergalactic" class = "standardb_black" data-added="02nd of May, 2021." data-genre="Space Opera" data-country="united_kingdom" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Intergalactic</a> 
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_space_opera_eng.html#lost_in_space" class = "standardb_black" data-added="28th of Jun, 2021." data-genre="Space Opera" data-country="usa" data-year="2018" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Lost in Space</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_space_opera_eng.html#pandora" class = "standardb_black" data-added="25th of Dec, 2020." data-genre="Space Opera" data-country="usa" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Pandora</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_space_opera_eng.html#troopers" class = "standardb_black" data-added="13th of Mar, 2021." data-genre="Space Opera" data-country="usa" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Troopers</a> 
 
