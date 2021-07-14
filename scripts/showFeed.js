@@ -10,7 +10,7 @@ function newsLoad(source, lang) {
     typeL=getParameterByName('type');
     if (typeL && typeL!="") {
         if (source=="bbc" && (typeL=="top" || typeL=="world" || typeL=="uk" || typeL=="business" || typeL=="politics" || typeL=="health" || typeL=="education" || typeL=="science" || typeL=="technology" || typeL=="entertainment") 
-	|| source=="bbcrussian" && (typeL=="top" || typeL=="russia" || typeL=="world" || typeL=="features" || typeL=="cluster" || typeL=="special" || typeL=="documentaries" || typeL=="papers" || typeL=="section")
+	|| source=="bbcrussian" && (typeL=="top" || typeL=="russia" || typeL=="world" || typeL=="features" || typeL=="cluster" || typeL=="podcasts" || typeL=="documentaries" || typeL=="papers" || typeL=="section")
 	|| source=="lenta" && (typeL=="russia" || typeL=="world" || typeL=="ussr" || typeL=="my_country" || typeL=="environment" || typeL=="power" || typeL=="science" || typeL=="culture" || typeL=="sport" || typeL=="internet" || typeL=="valuables" || typeL=="travelling" || typeL=="live" || typeL=="69" || typeL=="cultlight" || typeL=="economy" || typeL=="house" || typeL=="natproj" || typeL=="motor")) {
             type=typeL;
         }
@@ -80,7 +80,7 @@ function refreshFeedTabs(feedTypeL, col) {
 
     if (feedType=="features" || feedTypeL=="features") mouseOut("features", feedTypeL, col);
     if (feedType=="cluster" || feedTypeL=="cluster") mouseOut("cluster", feedTypeL, col);
-    if (feedType=="special" || feedTypeL=="special") mouseOut("special", feedTypeL, col);
+    if (feedType=="podcasts" || feedTypeL=="podcasts") mouseOut("podcasts", feedTypeL, col);
     if (feedType=="documentaries" || feedTypeL=="documentaries") mouseOut("documentaries", feedTypeL, col);
     if (feedType=="papers" || feedTypeL=="papers") mouseOut("papers", feedTypeL, col);
     if (feedType=="section" || feedTypeL=="section") mouseOut("section", feedTypeL, col);
@@ -517,14 +517,14 @@ function processBbcRussian(type, source, lang) {
 			newClusterHtml=document.getElementById('feed_cluster').innerHTML;
 
 			items=[];
-			cTop=0; cSpecial=0; cRussia=0; cWorld=0; cFeatures=0; cCluster=0; cDocumentaries=0; cPapers=0; cSection=0;
+			cTop=0; cPodcasts=0; cRussia=0; cWorld=0; cFeatures=0; cCluster=0; cDocumentaries=0; cPapers=0; cSection=0;
 			for(var i = 0; i < shJson.pageData.content.groups.length; i++ ) {
 				if (shJson.pageData.content.groups[i].title=="Top stories") {
 					cTop=shJson.pageData.content.groups[i].items.length;
 					if (type=="top") items=shJson.pageData.content.groups[i].items;
-				} else if (shJson.pageData.content.groups[i].title=="Special reports 1") {
-					cSpecial=shJson.pageData.content.groups[i].items.length;
-					if (type=="special") items=shJson.pageData.content.groups[i].items;
+				} else if (shJson.pageData.content.groups[i].title=="Podcasts") {
+					cPodcasts=shJson.pageData.content.groups[i].items.length;
+					if (type=="podcasts") items=shJson.pageData.content.groups[i].items;
 				} else if (shJson.pageData.content.groups[i].title=="В России") {
 					cRussia=shJson.pageData.content.groups[i].items.length;
 					if (type=="russia") items=shJson.pageData.content.groups[i].items;
@@ -556,7 +556,7 @@ function processBbcRussian(type, source, lang) {
 			}
 
 			showRecordsNum("top", cTop, lang);
-			showRecordsNum("special", cSpecial, lang);
+			showRecordsNum("podcasts", cPodcasts, lang);
 			showRecordsNum("russia", cRussia, lang);
 			showRecordsNum("world", cWorld, lang);
 			showRecordsNum("features", cFeatures, lang);
