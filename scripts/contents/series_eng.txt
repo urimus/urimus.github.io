@@ -9,6 +9,7 @@
 <P>&nbsp;&#9679; <a href="series_body_horror_eng.html" class = "standardb_black" data-added="17th of Jun, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Body Horror</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_body_horror_eng.html#debtors_shack" class = "standardb_black" data-added="28th of May, 2021." data-genre="Body Horror" data-country="russia" data-lang="rus" data-title_orig="Лачуга Должника" data-year="2018" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Debtor's Shack</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_body_horror_eng.html#helix" class = "standardb_black" data-added="16th of Jun, 2021." data-genre="Body Horror" data-country="usa" data-year="2015" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Helix</a> 
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_body_horror_eng.html#v_wars" class = "standardb_black" data-added="16th of Jul, 2021." data-genre="Body Horror" data-country="canada" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">V Wars</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_body_horror_eng.html#war_worlds" class = "standardb_black" data-added="02nd of Jun, 2021." data-genre="Body Horror" data-country="france;usa;united_kingdom" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">War of the Worlds</a> 
 
 <P>&nbsp;&#9679; <a href="series_fantasy_eng.html" class = "standardb_black" data-added="17th of Jun, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Fantasy</a>
