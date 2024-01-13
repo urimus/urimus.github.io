@@ -1,0 +1,1216 @@
+﻿
+
+
+
+
+
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Foto Gallery -->
+<script src="scripts/jquery/jquery.js"></script>
+<script src="scripts/galleria/galleria-1.4.2.min.js"></script>
+<!-- End of Foto Gallery -->
+
+<!-- Background Images Script -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/psychology.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('images/icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="processPageResize(1);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+                <td  bgcolor="#DAF28E" width="100%">
+                       <div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+                </td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('psychology_pseudo_eng.html' + window.location.hash);
+				} else {
+					window.location.href='psychology_pseudo_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('psychology_pseudo_rus.html' + window.location.hash);
+				} else {
+					window.location.href='psychology_pseudo_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_green">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_phd_eng.html');
+			} else {
+				window.location.href='about_phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_not_selected_black">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_not_selected_black">
+		  Movies</div>
+        </td>
+	</tr>	
+
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"		  		  
+		  class="menu_not_selected_black">
+		  Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('radio_eng.html');
+			} else {
+				window.location.href='radio_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Radio</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+		<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>		
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_selected">
+		  Psychology</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_22_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+
+			if (event.ctrlKey==1){
+				window.open('psychology_true_eng.html');
+
+			} else {
+				window.location.href='psychology_true_eng.html';
+			};"		 		  
+		  class="menu_not_selected_green"
+		  style="padding-left: 5px;">
+		  &#10004; True</div>
+        </td>
+	</tr>		
+	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_22_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('psychology_pseudo_eng.html');
+			} else {
+				window.location.href='psychology_pseudo_eng.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#10008; Pseudo-</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_22_3"
+		  onMouseOver="this.className='menu_selected'" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('psychology_movies_eng.html');
+			} else {
+				window.location.href='psychology_movies_eng.html';
+			};"		 		  
+		  class="menu_not_selected_green">
+		  &nbsp;&#9679; Movies</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#DAF28E" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Psychology &blacktriangleright; Pseudopsychology</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #008040 1px solid;  background-color: #DAF28E;">
+
+		
+
+		
+        <tr align="center" >
+		<td style = "border: #008040 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">Pseudoscience</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green">What is this?</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/pseudoscience.jpg" alt="Pseudoscience" title="Pseudoscience" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Pseudoscience</b> is a claim, belief, or practice presented as scientific, but which does not adhere to the scientific method. A field, practice, or body of knowledge can reasonably be called pseudoscientific when it is presented as consistent with the norms of scientific research, but it demonstrably fails to meet these norms.
+
+<P>Pseudoscience is often characterized by the following: contradictory, exaggerated or unprovable claims; over-reliance on confirmation rather than rigorous attempts at refutation; lack of openness to evaluation by other experts in the field; and absence of systematic practices when rationally developing theories. The term pseudoscience is often considered pejorative because it suggests something is being inaccurately or even deceptively portrayed as science. Accordingly, those labeled as practicing or advocating pseudoscience often dispute the characterization.
+
+<P>Science is distinguishable from revelation, theology, or spirituality in that it offers insight into the physical world obtained by empirical research and testing. Commonly held beliefs in popular science may not meet the criteria of science. "Pop science" may blur the divide between science and pseudoscience among the general public, and may also involve science fiction. Pseudoscientific beliefs are widespread, even among science teachers and newspaper editors.
+
+<P>The demarcation between science and pseudoscience has philosophical and scientific implications. Differentiating science from pseudoscience has practical implications in the case of health care, expert testimony, environmental policies, and science education. Distinguishing scientific facts and theories from pseudoscientific beliefs such as those found in astrology, alchemy, medical quackery, occult beliefs, and creation science combined with scientific concepts, is part of science education and scientific literacy.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Pseudoscience" class = "standardb_green" target="_blank">Wikipedia Pseudoscience</a> - <b>Pseudoscience</b> on Wikipedia.
+			</td>
+			</tr>		
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" STYLE="padding-left:10px; padding-right:10px;">
+				      02nd of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+		
+
+
+
+        <tr align="center" >
+		<td style = "border: #008040 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_green"><a name="psychoanalysis">Psychoanalysis</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/psychoanalysis.jpg" alt="Psychoanalysis" title="Psychoanalysis" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Psychoanalysis</b> is a set of psychological and psychotherapeutic theories and associated techniques, created by Austrian physician Sigmund Freud and stemming partly from the clinical work of Josef Breuer and others. Over time, psychoanalysis has been revised and developed in different directions. Some of Freud's colleagues and students, such as Alfred Adler and Carl Jung, went on to develop their own ideas independently. Freud insisted on retaining the term psychoanalysis for his school of thought, and Adler and Jung accepted this. The Neo-Freudians included Erich Fromm, Karen Horney, and Harry Stack Sullivan.
+
+<br><br>
+<P>The basic tenets of psychoanalysis include:
+
+<P>1. a person's development is determined by often forgotten events in early childhood rather than by inherited traits alone
+<P>2. human attitude, mannerism, experience, and thought is largely influenced by irrational drives that are rooted in the unconscious
+<P>3. it is necessary to bypass psychological resistance in the form of defense mechanisms when bringing drives into awareness
+<P>4. conflicts between the conscious and the unconscious, or with repressed material can materialize in the form of mental or emotional disturbances, for example: neurosis, neurotic traits, anxiety, depression etc.
+<P>5. liberating the elements of the unconscious is achieved through bringing this material into the conscious mind (via e.g. skilled guidance, i.e. therapeutic intervention).
+
+<br><br>
+<P>Under the broad umbrella of psychoanalysis there are at least 22 theoretical orientations regarding human mental development. The various approaches in treatment called "psychoanalysis" vary as much as the theories do. The term also refers to a method of analysing child development.
+
+<P>Freudian psychoanalysis refers to a specific type of treatment in which the "analysand" (analytic patient) verbally expresses his or her thoughts, including free associations, fantasies, and dreams, from which the analyst infers the unconscious conflicts causing the patient's symptoms and character problems, and interprets them for the patient to create insight for resolution of the problems. The analyst confronts and clarifies the patient's pathological defenses, wishes and guilt. Through the analysis of conflicts, including those contributing to resistance and those involving transference onto the analyst of distorted reactions, psychoanalytic treatment can hypothesize how patients unconsciously are their own worst enemies: how unconscious, symbolic reactions that have been stimulated by experience are causing symptoms. Freudian psychoanalysis relies on the concept that it is only after having a cathartic (e.g. healing) experience can a person be "cured" and aided.
+
+<P>Psychoanalysis has received criticism from a wide variety of sources. It is regarded by some critics as a pseudoscience. Nonetheless, it remains a strong influence within the realm of psychiatry, and more so in some quarters than others.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Psychoanalysis" class = "standardb_green" target="_blank">Wikipedia Psychoanalysis</a> - <b>Psychoanalysis</b> on Wikipedia.
+			</td>
+			</tr>		
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" STYLE="padding-left:10px; padding-right:10px;">
+				      02nd of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+		
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #008040 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_green"><a name="transactional_analysis">Transactional Analysis</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/transactional_analysis.jpg" alt="Transactional Analysis" title="Transactional Analysis" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Transactional analysis</b> is a psychoanalytic theory and method of therapy wherein social transactions are analyzed to determine the ego state of the patient (whether parent-like, child-like, or adult-like) as a basis for understanding behavior. In transactional analysis, the patient is taught to alter the ego state as a way to solve emotional problems. The method deviates from Freudian psychoanalysis which focuses on increasing awareness of the contents of unconsciously held ideas. Eric Berne developed the concept and paradigm of transactional analysis in the late 1950s.
+
+<br><br>
+<P><b>History overview:</b>
+
+<P>TA is not only post-Freudian, but, according to its founder's wishes, consciously extra-Freudian. That is to say that, while it has its roots in psychoanalysis, since Berne was a psychoanalytically-trained psychiatrist, it was designed as a dissenting branch of psychoanalysis in that it put its emphasis on transactional rather than "psycho-" analysis.
+
+<P>With its focus on transactions, TA shifted the attention from internal psychological dynamics to the dynamics contained in people's interactions. Rather than believing that increasing awareness of the contents of unconsciously held ideas was the therapeutic path, TA concentrated on the content of people's interactions with each other. Changing these interactions was TA's path to solving emotional problems.
+
+<P>TA also differs from Freudian analysis in explaining that an individual's final emotional state is the result of inner dialogue between different parts of the psyche, as opposed to the Freudian hypothesis that imagery is the overriding determinant of inner emotional state. (For example, depression may be due to ongoing critical verbal messages from the inner Parent to the inner Child.) Berne believed that it is relatively easy to identify these inner dialogues and that the ability to do so is parentally suppressed in early childhood.
+
+<P>In addition, Berne believed in making a commitment to "curing" his patients rather than just understanding them. To that end he introduced one of the most important aspects of TA: the contract—an agreement entered into by both client and therapist to pursue specific changes that the client desires.
+
+<P>Revising Freud's concept of the human psyche as composed of the id, ego, and super-ego, Berne postulated in addition three "ego states"—the Parent, Adult, and Child states—which were largely shaped through childhood experiences. These three are all part of Freud's ego; none represent the id or the superego.
+
+<P>Unhealthy childhood experiences can lead to these being pathologically fixated in the Child and Parent ego states, bringing discomfort to an individual and/or others in a variety of forms, including many types of mental illness.
+
+<P>Berne considered how individuals interact with one another, and how the ego states affect each set of transactions. Unproductive or counterproductive transactions were considered to be signs of ego state problems. Analyzing these transactions according to the person's individual developmental history would enable the person to "get better". Berne thought that virtually everyone has something problematic about their ego states and that negative behaviour would not be addressed by "treating" only the problematic individual.
+
+<P>Berne identified a typology of common counterproductive social interactions, identifying these as "games".
+
+<P>Berne presented his theories in two popular books on transactional analysis: Games People Play (1964) and What Do You Say After You Say Hello? (1975). I'm OK, You're OK (1969), written by Berne's long-time friend Thomas Anthony Harris, is probably the most popular TA book.
+
+<P>By the 1970s, because of TA's non-technical and non-threatening jargon and model of the human psyche, many of its terms and concepts were adopted by eclectic therapists as part of their individual approaches to psychotherapy. It also served well as a therapy model for groups of patients, or marital/family counselees, where interpersonal (rather than intrapersonal) disturbances were the focus of treatment.
+
+<P>TA's popularity in the U.S. waned in the 1970s. The more dedicated TA purists banded together in 1964 with Berne to form a research and professional accrediting body, the International Transactional Analysis Association, or ITAA.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Transactional_analysis" class = "standardb_green" target="_blank">Wikipedia Transactional analysis</a> - <b>Transactional analysis</b> on Wikipedia.
+			</td>
+			</tr>		
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" STYLE="padding-left:10px; padding-right:10px;">
+				      02nd of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+		
+
+		
+		
+
+    <tr align="center" >
+		<td style = "border: #008040 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_green"><a name="corresponding_music">Corresponding Music</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" STYLE="padding-left:10px; padding-right:10px;">
+
+        <div class="galleria">
+	  <a href="https://www.youtube.com/watch?v=cO02W3DzkPQ"><img src="images/icons/pseudopsychology/1.jpg" data-title="Алёна Апина - День Рождения"   data-description="<a href='https://www.youtube.com/watch?v=cO02W3DzkPQ' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=jux5lbokjeM"><img src="images/icons/pseudopsychology/2.jpg" data-title="Алёна Апина - Не Ходил Бы Ты За Мной"   data-description="<a href='https://www.youtube.com/watch?v=jux5lbokjeM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=rR8t2xNebj0"><img src="images/icons/pseudopsychology/3.jpg" data-title="Алёна Апина - Билет На Самолёт"   data-description="<a href='https://www.youtube.com/watch?v=rR8t2xNebj0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=lbldllLw0kg"><img src="images/icons/pseudopsychology/4.jpg" data-title="Алёна Апина - Ой-Ой-Ой"   data-description="<a href='https://www.youtube.com/watch?v=lbldllLw0kg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=3-pzw7QVIVU"><img src="images/icons/pseudopsychology/5.jpg" data-title="Алёна Апина - Назови Имя Моё"   data-description="<a href='https://www.youtube.com/watch?v=3-pzw7QVIVU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=CfYYiSCHeq0"><img src="images/icons/pseudopsychology/6.jpg" data-title="Алёна Апина - Мамочка Моя"   data-description="<a href='https://www.youtube.com/watch?v=CfYYiSCHeq0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+        </div>
+        <script>
+            var galleria2 = new Galleria.loadTheme('scripts/galleria/themes/classic/galleria.classic.min.js');
+
+	    Galleria.run('.galleria', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+<br>
+
+        <div class="galleria2">
+	  <a href="https://www.youtube.com/watch?v=ckNaViURVmk"><img src="images/icons/pseudopsychology/7.jpg" data-title="Алёна Апина - Кольцо"   data-description="<a href='https://www.youtube.com/watch?v=ckNaViURVmk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=kUAHhSMbyHg"><img src="images/icons/pseudopsychology/8.jpg" data-title="Алёна Апина - Дочь Городничего"   data-description="<a href='https://www.youtube.com/watch?v=kUAHhSMbyHg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=Wn26QzNofkc"><img src="images/icons/pseudopsychology/9.jpg" data-title="Алёна Апина - Ты Придуман Для Меня"   data-description="<a href='https://www.youtube.com/watch?v=Wn26QzNofkc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=HgCQmsqOF1U"><img src="images/icons/pseudopsychology/7.jpg" data-title="Алёна Апина - Ту-Ту"   data-description="<a href='https://www.youtube.com/watch?v=HgCQmsqOF1U' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=jcHOQuYAisM"><img src="images/icons/pseudopsychology/10.jpg" data-title="Алёна Апина - Хит-Парад"   data-description="<a href='https://www.youtube.com/watch?v=jcHOQuYAisM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=Que0fm6bQ5k"><img src="images/icons/pseudopsychology/11.jpg" data-title="Алёна Апина - Не Могу Я Жить Без Тебя"   data-description="<a href='https://www.youtube.com/watch?v=Que0fm6bQ5k' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=hxzUnUANxLY"><img src="images/icons/pseudopsychology/12.jpg" data-title="Алёна Апина - Электричка 2"   data-description="<a href='https://www.youtube.com/watch?v=hxzUnUANxLY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=1Bij8auvsus"><img src="images/icons/pseudopsychology/13.jpg" data-title="Алёна Апина - Эх Хоть бы Раз"   data-description="<a href='https://www.youtube.com/watch?v=1Bij8auvsus' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=Ezo7c82BAQw"><img src="images/icons/pseudopsychology/14.jpg" data-title="Алёна Апина - Недолгое Счастье"   data-description="<a href='https://www.youtube.com/watch?v=Ezo7c82BAQw' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+
+        </div>
+        <script>
+
+	    Galleria.run('.galleria2', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+		
+<br>
+
+        <div class="galleria3">
+	  <a href="https://www.youtube.com/watch?v=LKp84ZFqU9w"><img src="images/icons/pseudopsychology/15.jpg" data-title="Алёна Апина - СП"   data-description="<a href='https://www.youtube.com/watch?v=LKp84ZFqU9w' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=wrIIfIvm1Po"><img src="images/icons/pseudopsychology/16.jpg" data-title="Алёна Апина – Yo Te Quiero"   data-description="<a href='https://www.youtube.com/watch?v=wrIIfIvm1Po' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=jUllZiPs7X4"><img src="images/icons/pseudopsychology/17.jpg" data-title="Алёна Апина - Семечек Стакан"   data-description="<a href='https://www.youtube.com/watch?v=jUllZiPs7X4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=Xno7nvD81uY"><img src="images/icons/pseudopsychology/18.jpg" data-title="Алёна Апина - Улица Любви"   data-description="<a href='https://www.youtube.com/watch?v=Xno7nvD81uY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria3', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+	
+
+<br>
+
+        <div class="galleria4">
+	  <a href="https://www.youtube.com/watch?v=Ap6QQFvSYzY"><img src="images/icons/pseudopsychology/7.jpg" data-title="Алёна Апина - Иванов"   data-description="<a href='https://www.youtube.com/watch?v=Ap6QQFvSYzY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=Ewvue4Y9vaM"><img src="images/icons/pseudopsychology/19.jpg" data-title="Алёна Апина – Бухгалтер"   data-description="<a href='https://www.youtube.com/watch?v=Ewvue4Y9vaM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria4', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+<br>
+
+        <div class="galleria5">
+	  <a href="https://www.youtube.com/watch?v=B0SqrK1fgn4"><img src="images/icons/pseudopsychology/20.jpg" data-title="Алёна Апина - Ну Когда Под Венец"   data-description="<a href='https://www.youtube.com/watch?v=B0SqrK1fgn4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=2jQynuwSxck"><img src="images/icons/pseudopsychology/7.jpg" data-title="Алёна Апина – Романс"   data-description="<a href='https://www.youtube.com/watch?v=2jQynuwSxck' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=JBd-ZAs_0gk"><img src="images/icons/pseudopsychology/21.jpg" data-title="Алёна Апина – Лунные Ночи"   data-description="<a href='https://www.youtube.com/watch?v=JBd-ZAs_0gk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=CP5H3N75lqs"><img src="images/icons/pseudopsychology/22.jpg" data-title="Алёна Апина – Не Давай, Девочка, Матросам"   data-description="<a href='https://www.youtube.com/watch?v=CP5H3N75lqs' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=wrIIfIvm1Po"><img src="images/icons/pseudopsychology/16.jpg" data-title="Алёна Апина – Yo Te Quiero"   data-description="<a href='https://www.youtube.com/watch?v=wrIIfIvm1Po' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria5', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+<br>
+
+        <div class="galleria6">
+	  <a href="https://www.youtube.com/watch?v=gKh7Tk1V6_M"><img src="images/icons/pseudopsychology/27.jpg" data-title="Алёна Апина - Ты Всё- Таки Уехал"   data-description="<a href='https://www.youtube.com/watch?v=gKh7Tk1V6_M' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=xJDakFHxc6E"><img src="images/icons/pseudopsychology/28.jpg" data-title="Алёна Апина – Канарейка"   data-description="<a href='https://www.youtube.com/watch?v=xJDakFHxc6E' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Oct, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria6', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+
+
+
+<br>
+
+        <div class="galleria7">
+	  <a href="https://www.youtube.com/watch?v=af62JfvIc9k"><img src="images/icons/pseudopsychology/23.jpg" data-title="Алёна Апина - Узелки"   data-description="<a href='https://www.youtube.com/watch?v=af62JfvIc9k' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=TDpdvFR164I"><img src="images/icons/pseudopsychology/24.jpg" data-title="Алёна Апина – Пляжный Сезон"   data-description="<a href='https://www.youtube.com/watch?v=TDpdvFR164I' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=FQNMd-jjDU0"><img src="images/icons/pseudopsychology/25.jpg" data-title="Алёна Апина – Пойдём Со Мной"   data-description="<a href='https://www.youtube.com/watch?v=FQNMd-jjDU0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=-1Ehwi2irHk"><img src="images/icons/pseudopsychology/26.jpg" data-title="Алёна Апина – Попутка"   data-description="<a href='https://www.youtube.com/watch?v=-1Ehwi2irHk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria7', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+	
+<br>
+
+        <div class="galleria8">
+	  <a href="https://www.youtube.com/watch?v=nrOxy9TKDBw"><img src="images/icons/pseudopsychology/29.jpg" data-title="Алёна Апина - Самолёт на Москву"   data-description="<a href='https://www.youtube.com/watch?v=nrOxy9TKDBw' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=mWweplED6gY"><img src="images/icons/pseudopsychology/30.jpg" data-title="Алёна Апина – Конкурс Красоты"   data-description="<a href='https://www.youtube.com/watch?v=mWweplED6gY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=eyC6mhubJG0"><img src="images/icons/pseudopsychology/31.jpg" data-title="Алёна Апина – С Обоюдного Согласия"   data-description="<a href='https://www.youtube.com/watch?v=eyC6mhubJG0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=-1Ehwi2irHk"><img src="images/icons/pseudopsychology/26.jpg" data-title="Алёна Апина – Попутка"   data-description="<a href='https://www.youtube.com/watch?v=-1Ehwi2irHk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=6UgENR9gmyQ"><img src="images/icons/pseudopsychology/7.jpg" data-title="Алёна Апина – Не Могу"   data-description="<a href='https://www.youtube.com/watch?v=6UgENR9gmyQ' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=ZrBLda9jyw0"><img src="images/icons/pseudopsychology/32.jpg" data-title="Алёна Апина – Сенсация"   data-description="<a href='https://www.youtube.com/watch?v=ZrBLda9jyw0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Oct, 2017."></a>
+
+        </div>
+        <script>
+
+	    Galleria.run('.galleria8', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+	
+<br>
+
+        <div class="galleria9">
+	  <a href="https://www.youtube.com/watch?v=0mqgPd_aNQc"><img src="images/icons/pseudopsychology/33.jpg" data-title="Алёна Апина - Свидане Под Грушей"   data-description="<a href='https://www.youtube.com/watch?v=0mqgPd_aNQc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Oct, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=9nfM2pgJpwU"><img src="images/icons/pseudopsychology/34.jpg" data-title="Алёна Апина – Я Люблю"   data-description="<a href='https://www.youtube.com/watch?v=9nfM2pgJpwU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Oct, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria9', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+<br>
+
+        <div class="galleria10">
+	  <a href="https://www.youtube.com/watch?v=aKM0Q1h5nzo"><img src="images/icons/pseudopsychology/35.jpg" data-title="Юрий Антонов - Для Тебя Пою"   data-description="<a href='https://www.youtube.com/watch?v=aKM0Q1h5nzo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=isJPAGWkF3w"><img src="images/icons/pseudopsychology/36.jpg" data-title="Юрий Антонов - От Печали До Радости"   data-description="<a href='https://www.youtube.com/watch?v=isJPAGWkF3w' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=PsRSim-3cPs"><img src="images/icons/pseudopsychology/37.jpg" data-title="Юрий Антонов - Не Грусти Пожалуйста"   data-description="<a href='https://www.youtube.com/watch?v=PsRSim-3cPs' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=BQnZE6pQxAA"><img src="images/icons/pseudopsychology/38.jpg" data-title="Юрий Антонов - Зеркало"   data-description="<a href='https://www.youtube.com/watch?v=BQnZE6pQxAA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=VXT_teX2m9k"><img src="images/icons/pseudopsychology/39.jpg" data-title="Юрий Антонов - Хмельная Сирень"   data-description="<a href='https://www.youtube.com/watch?v=VXT_teX2m9k' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=9r4K6JzzGHM"><img src="images/icons/pseudopsychology/40.jpg" data-title="Юрий Антонов - Родные Места"   data-description="<a href='https://www.youtube.com/watch?v=9r4K6JzzGHM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Nov, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria10', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+
+		
+<br>
+
+        <div class="galleria11">
+	  <a href="https://www.youtube.com/watch?v=e6hSV56_bQI"><img src="images/icons/pseudopsychology/41.jpg" data-title="Сплин - Шахматы"   data-description="<a href='https://www.youtube.com/watch?v=e6hSV56_bQI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=PVca1CbYeEw"><img src="images/icons/pseudopsychology/42.jpg" data-title="Сплин - Англо-Русский Словарь (Давай, Лама)"   data-description="<a href='https://www.youtube.com/watch?v=PVca1CbYeEw' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=nj5nuYYrZvg"><img src="images/icons/pseudopsychology/43.jpg" data-title="Мумий Тролль - Уходим"   data-description="<a href='https://www.youtube.com/watch?v=nj5nuYYrZvg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Nov, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria11', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+	
+<br>
+
+        <div class="galleria12">
+	  <a href="https://www.youtube.com/watch?v=QEDwe5c9abU"><img src="images/icons/pseudopsychology/44.jpg" data-title="Сплин - Моё Сердце Остановилось"   data-description="<a href='https://www.youtube.com/watch?v=QEDwe5c9abU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=uLX_W4p1vwc"><img src="images/icons/pseudopsychology/45.jpg" data-title="Сплин - Добрых Дел Мастер"   data-description="<a href='https://www.youtube.com/watch?v=uLX_W4p1vwc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=u64N7OEZAz8"><img src="images/icons/pseudopsychology/46.jpg" data-title="Сплин - Двое не Спят"   data-description="<a href='https://www.youtube.com/watch?v=u64N7OEZAz8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=EJtNrqYGaVU"><img src="images/icons/pseudopsychology/47.jpg" data-title="Сплин - День за Днём"   data-description="<a href='https://www.youtube.com/watch?v=EJtNrqYGaVU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Nov, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria12', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+		
+
+		
+<br>
+
+        <div class="galleria13">
+	  <a href="https://www.youtube.com/watch?v=jMG4ZCVVFIk"><img src="images/icons/pseudopsychology/48.jpg" data-title="Сплин - Пой Мне Ещё"   data-description="<a href='https://www.youtube.com/watch?v=jMG4ZCVVFIk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Nov, 2017."></a>
+	  <a href="https://www.youtube.com/watch?v=dXEJMakFQF4"><img src="images/icons/pseudopsychology/49.jpg" data-title="Сплин - Земля Уходит из-под Ног"   data-description="<a href='https://www.youtube.com/watch?v=dXEJMakFQF4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Nov, 2017."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria13', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+			
+
+
+<br>
+
+        <div class="galleria14">
+          <a href="https://www.youtube.com/watch?v=lAv-XxKkgRQ"><img src="images/icons/pseudopsychology/50.jpg" data-title="Звери - Дело Не в Этом"   data-description="<a href='https://www.youtube.com/watch?v=lAv-XxKkgRQ' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>31st of Dec, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=yotHBo0aX1A"><img src="images/icons/pseudopsychology/51.jpg" data-title="Звери - Не Беда"   data-description="<a href='https://www.youtube.com/watch?v=yotHBo0aX1A' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>31st of Dec, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=J7IvY-Pu0aU"><img src="images/icons/pseudopsychology/52.jpg" data-title="Звери - Пока"   data-description="<a href='https://www.youtube.com/watch?v=J7IvY-Pu0aU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>31st of Dec, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=j39Hjl5O_oE"><img src="images/icons/pseudopsychology/53.jpg" data-title="Звери - Киборг-Убийца"   data-description="<a href='https://www.youtube.com/watch?v=j39Hjl5O_oE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>31st of Dec, 2017."></a>
+        </div>
+        <script>
+
+            Galleria.run('.galleria14', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+
+<br>
+
+        <div class="galleria15">
+	  <a href="https://www.youtube.com/watch?v=HtiWzydpCaI"><img src="images/icons/pseudopsychology/54.jpg" data-title="Юрий Антонов - Нет, Не Я"   data-description="<a href='https://www.youtube.com/watch?v=HtiWzydpCaI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Mar, 2018."></a>
+	  <a href="https://www.youtube.com/watch?v=n1-iAV1c2oQ"><img src="images/icons/pseudopsychology/55.jpg" data-title="Юрий Антонов - Завтра"   data-description="<a href='https://www.youtube.com/watch?v=n1-iAV1c2oQ' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Mar, 2018."></a>
+	  <a href="https://www.youtube.com/watch?v=k5bAc55zwZE"><img src="images/icons/pseudopsychology/56.jpg" data-title="Юрий Антонов - Страна Чудес"   data-description="<a href='https://www.youtube.com/watch?v=k5bAc55zwZE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Mar, 2018."></a>
+	  <a href="https://www.youtube.com/watch?v=VXT_teX2m9k"><img src="images/icons/pseudopsychology/39.jpg" data-title="Юрий Антонов - Хмельная Сирень"   data-description="<a href='https://www.youtube.com/watch?v=VXT_teX2m9k' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Mar, 2018."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria15', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+
+<br>
+
+        <div class="galleria16">
+	  <a href="https://www.youtube.com/watch?v=E7ojS6EsInw"><img src="images/icons/pseudopsychology/57.jpg" data-title="Валерий Ободзинский - Первое Апреля"   data-description="<a href='https://www.youtube.com/watch?v=E7ojS6EsInw' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Apr, 2018."></a>
+	  <a href="https://www.youtube.com/watch?v=9Q0Z1OoN4_c"><img src="images/icons/pseudopsychology/58.jpg" data-title="Валерий Ободзинский - До Свиданья, Друг"   data-description="<a href='https://www.youtube.com/watch?v=9Q0Z1OoN4_c' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Apr, 2018."></a>
+	  <a href="https://www.youtube.com/watch?v=UhRrQtecbj4"><img src="images/icons/pseudopsychology/59.jpg" data-title="Валерий Ободзинский - Восточная Песня"   data-description="<a href='https://www.youtube.com/watch?v=UhRrQtecbj4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Apr, 2018."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria16', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+
+
+
+<br>
+
+        <div class="galleria17">
+	  <a href="https://www.youtube.com/watch?v=hfRjCu6JNX0"><img src="images/icons/pseudopsychology/60.jpg" data-title="Мистер Кредо - Девочка-Ночь"   data-description="<a href='https://www.youtube.com/watch?v=hfRjCu6JNX0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>21st of May, 2018."></a>
+	  <a href="https://www.youtube.com/watch?v=3sCSwv3pvZ8"><img src="images/icons/pseudopsychology/61.jpg" data-title="Мистер Кредо - Нуворишь"   data-description="<a href='https://www.youtube.com/watch?v=3sCSwv3pvZ8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>21st of May, 2018."></a>
+	  <a href="https://www.youtube.com/watch?v=Hr6U-3y7_Bw"><img src="images/icons/pseudopsychology/62.jpg" data-title="Мистер Кредо - Голубые Глаза"   data-description="<a href='https://www.youtube.com/watch?v=Hr6U-3y7_Bw' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>21st of May, 2018."></a>
+        </div>
+        <script>
+
+	    Galleria.run('.galleria17', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+
+<br>
+
+        <div class="galleria18">
+	  <a href="https://www.youtube.com/watch?v=xwtdhWltSIg"><img src="images/icons/pseudopsychology/63.jpg" data-title="R.E.M. - Losing My Religion"   data-description="<a href='https://www.youtube.com/watch?v=xwtdhWltSIg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Jun, 2018."></a>
+	  <a href="https://www.youtube.com/watch?v=cNd4eocq2K0"><img src="images/icons/pseudopsychology/64.jpg" data-title="Depeche Mode - Personal Jesus"   data-description="<a href='https://www.youtube.com/watch?v=cNd4eocq2K0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Jun, 2018."></a>
+
+        </div>
+        <script>
+
+	    Galleria.run('.galleria18', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" STYLE="padding-left:10px; padding-right:10px;">
+				      07th of Jun, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_green" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

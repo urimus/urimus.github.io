@@ -1,0 +1,20 @@
+﻿<P><b class="text_black_blue">Барахло <font color="red"><sup>&#9889; Evil &#9889;</sup></font></b>
+<P>&nbsp;&#9679; <b class="text_black_blue" data-added="20е Июн, 2016.">Видеоролики</b>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_9_may_rus.html" class = "standardb_black" data-added="21е Апр, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Про 9. Мая 1945 &#9786;</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_count_dracula_rus.html" class = "standardb_black" data-added="30е Апр, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Граф Дракула Collection</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_different_rus.html" class = "standardb_black" data-added="20е Июн, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Разное</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_falsifiability_rus.html" class = "standardb_black" data-added="02е Мая, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Про Фальсифицируемость</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_latin_rus.html" class = "standardb_black" data-added="31е Мар, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Про Латинский Язык</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_phd_rus.html" class = "standardb_black" data-added="12е Апр, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Про PhD</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_russian_rus.html" class = "standardb_black" data-added="02е Мая, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Про Русский Язык</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_ussr_rus.html" class = "standardb_black" data-added="04е Мая, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Про СССР</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_yeralash_rus.html" class = "standardb_black" data-added="30е Дек, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Ералаш</a>
+<P>&nbsp;&#9679; <a href="stuff_chupacabra_rus.html" class = "standardb_black" data-added="14е Дек, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Чупакабра (исп. Chupacabras)</a>
+<P>&nbsp;&#9679; <a href="stuff_hyperspace_rus.html" class = "standardb_black" data-added="18е Июл, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Гиперпространство</a>
+<P>&nbsp;&#9679; <a href="stuff_images_general_rus.html" class = "standardb_black" data-added="21е Июл, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Картинки</a>
+<P>&nbsp;&#9679; <a href="stuff_matrix_rus.html#matrix" class = "standardb_black" data-added="10е Мая, 2023." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Матрица <font color="red"><sup>&#9889; Evil &#9889;</sup></font></a>
+<P>&nbsp;&#9679; <a href="stuff_warlock_rus.html" class = "standardb_black" data-added="15е Авг, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Чернокнижник</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="stuff_warlock_rus.html#warlock1" class = "standardb_black" data-added="13е Июн, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Чернокнижник</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="stuff_warlock_rus.html#warlock2" class = "standardb_black" data-added="13е Июн, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Чернокнижник: Армагеддон</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="stuff_warlock_rus.html#warlock3" class = "standardb_black" data-added="13е Июн, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Чернокнижник 3: Последняя битва</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="stuff_warlock_rus.html#warlock4" class = "standardb_black" data-added="13е Июн, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Чернокнижник 4: Невеста Дьявола</a>

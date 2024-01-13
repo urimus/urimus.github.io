@@ -1,0 +1,20 @@
+﻿<P><b class="text_black_blue">Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font></b>
+<P>&nbsp;&#9679; <b class="text_black_blue" data-added="20th of Jun, 2016.">Videoclips</b>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_9_may_lat.html" class = "standardb_black" data-added="21st of Apr, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">De 9. Maii MCMXLV &#9786;</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_count_dracula_lat.html" class = "standardb_black" data-added="30th of Apr, 2018." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Comes Dracula Collectio</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_different_lat.html" class = "standardb_black" data-added="20th of Jun, 2016." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Miscellanea</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_falsifiability_lat.html" class = "standardb_black" data-added="02nd of May, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">De Falsifiability</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_latin_lat.html" class = "standardb_black" data-added="31st of Mar, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">De Lingua Latina</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_phd_lat.html" class = "standardb_black" data-added="12th of Apr, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">De PhD</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_russian_lat.html" class = "standardb_black" data-added="02nd of May, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">De Lingua Russian</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_ussr_lat.html" class = "standardb_black" data-added="04th of May, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">De USSR</a>
+<P>&nbsp;&nbsp;&nbsp;&#9900; <a href="stuff_yeralash_lat.html" class = "standardb_black" data-added="30th of Dec, 2016." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Yeralash (rus. Ералаш)</a>
+<P>&nbsp;&#9679; <a href="stuff_chupacabra_lat.html" class = "standardb_black" data-added="14th of Dec, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Chupacabra (his. Chupacabras)</a>
+<P>&nbsp;&#9679; <a href="stuff_hyperspace_lat.html" class = "standardb_black" data-added="18th of Jul, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Hyperspace</a>
+<P>&nbsp;&#9679; <a href="stuff_images_general_lat.html" class = "standardb_black" data-added="21st of Jul, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Imaginibus</a>
+<P>&nbsp;&#9679; <a href="stuff_matrix_lat.html#matrix" class = "standardb_black" data-added="10th of May, 2023." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Matrix <font color="red"><sup>&#9889; Evil &#9889;</sup></font></a>
+<P>&nbsp;&#9679; <a href="stuff_warlock_lat.html" class = "standardb_black" data-added="15th of Aug, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Veneficus</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="stuff_warlock_lat.html#warlock1" class = "standardb_black" data-added="13th of Jun, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Warlock</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="stuff_warlock_lat.html#warlock2" class = "standardb_black" data-added="13th of Jun, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Warlock: The Armageddon</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="stuff_warlock_lat.html#warlock3" class = "standardb_black" data-added="13th of Jun, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Warlock III: The End of Innocence</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="stuff_warlock_lat.html#warlock4" class = "standardb_black" data-added="13th of Jun, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Чернокнижник 4: Невеста Дьявола</a>

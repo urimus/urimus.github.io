@@ -1,0 +1,1025 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Foto Gallery -->
+<script src="scripts/jquery/jquery.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<!-- Background Images Script -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*33;
+var imgBgSrc="images/icons/background/warlock.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('images/icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="processPageResize(1);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('stuff_warlock_lat.html' + window.location.hash);
+                                } else {
+                                        window.location.href='stuff_warlock_lat.html' + window.location.hash;
+                                };"                     
+                        class="flag_not_selected"
+                >
+                        <img src="lang/spqr.gif" alt="latina" title="latina" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+
+
+
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('stuff_warlock_eng.html' + window.location.hash);
+				} else {
+					window.location.href='stuff_warlock_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('stuff_warlock_rus.html' + window.location.hash);
+				} else {
+					window.location.href='stuff_warlock_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_phd_eng.html');
+			} else {
+				window.location.href='about_phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+	
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_not_selected_black">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_not_selected_black">
+		  Movies</div>
+        </td>
+	</tr>	
+
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"		  		  
+		  class="menu_not_selected_black">
+		  Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('radio_eng.html');
+			} else {
+				window.location.href='radio_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Radio</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_selected">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_14_1"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Videoclips</div>
+        </td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="left" >
+		  <div id="menu_14_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('stuff_chupacabra_eng.html');
+			} else {
+				window.location.href='stuff_chupacabra_eng.html';
+			};"		 			  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Chupacabra</div>
+        </td>
+	</tr>
+	
+	
+	
+	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_14_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('stuff_hyperspace_eng.html');
+			} else {
+				window.location.href='stuff_hyperspace_eng.html';
+			};"		 			  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Hyperspace</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_14_5"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('stuff_images_general_eng.html');
+			} else {
+				window.location.href='stuff_images_general_eng.html';
+			};"		 			  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Images</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_14_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('stuff_matrix_eng.html');
+			} else {
+				window.location.href='stuff_matrix_eng.html';
+			};"		 			  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Matrix <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_14_5"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('stuff_warlock_eng.html');
+			} else {
+				window.location.href='stuff_warlock_eng.html';
+			};"		 			  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; Warlock</div>
+        </td>
+	</tr>
+
+
+
+		<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Psychology</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Stuff &blacktriangleright; Warlock</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:759px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+
+
+
+
+		
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="warlock">Warlock</a></td>
+			</tr>
+			<tr >
+				<td width="100%" height="100%" class="nimetus_black">What is this?</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+					<img src="images/icons/warlock/warlock.jpg" alt="Warlock" title="Warlock" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+
+<P>A <b>warlock</b> is a male practitioner of evil magic (distinguished from a wizard or sorcerer, whose magic may be benign). The most commonly accepted etymology derives warlock from the Old English wǣrloga meaning &quot;oathbreaker&quot; or &quot;deceiver&quot;. However, in early modern Scots, the word came to be used as the male equivalent of witch (which can be male or female, but is used predominantly for females). From this use, the word passed into Romantic literature and ultimately 20th-century popular culture. A derivation from the Old Norse var&eth;-lokkur, &quot;caller of spirits&quot;, has also been suggested.
+
+
+					
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Warlock" class = "standardb_black" target="_blank">Wikipedia Warlock</a> - <b>Warlock</b> on Wikipedia.
+			</td>
+			</tr>	
+
+
+
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					15th of Aug, 2017.
+				</td>
+			</tr>
+			</table>
+        </td>
+		</tr>
+		
+			
+
+
+
+
+		
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_black"><a name="warlock1">Warlock</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+					<img src="images/icons/warlock/warlock1.jpg" alt="Warlock" title="Warlock" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+
+<P><b>Warlock</b> is a 1989 American cult supernatural horror film produced and directed by Steve Miner and starring Julian Sands, Lori Singer, and Richard E. Grant. It was written by David Twohy with a soundtrack by Jerry Goldsmith. The story concerns an evil 17th century warlock who flees to the 20th century pursued by a witch-hunter.
+					
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Warlock_(1989_film)" class = "standardb_black" target="_blank">Wikipedia Warlock (1989 film)</a> - <b>Warlock</b> on Wikipedia.
+			</td>
+			</tr>	
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=M5BaCvmyWUc" class = "standardb_black" target="_blank">Warlock</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					13th of Jun, 2017.
+				</td>
+			</tr>
+			</table>
+        </td>
+		</tr>
+		
+			
+
+
+
+		
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_black"><a name="warlock2">Warlock: The Armageddon</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+					<img src="images/icons/warlock/warlock2.jpg" alt="Warlock: The Armageddon" title="Warlock: The Armageddon" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+
+<P><b>Warlock: The Armageddon</b> is a 1993 American horror film directed by Anthony Hickox and produced by Peter Abrams. It is a sequel in title only to the 1989 film Warlock and stars Julian Sands, who returns in the title role as a warlock who attempts to free Satan from Hell.
+
+
+					
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Warlock:_The_Armageddon" class = "standardb_black" target="_blank">Wikipedia Warlock: The Armageddon</a> - <b>Warlock: The Armageddon</b> on Wikipedia.
+			</td>
+			</tr>	
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=5arLbaVo_og" class = "standardb_black" target="_blank">Warlock: The Armageddon</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					13th of Jun, 2017.
+				</td>
+			</tr>
+			</table>
+        </td>
+		</tr>
+		
+			
+
+		
+		
+
+
+
+		
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_black"><a name="warlock3">Warlock III: The End of Innocence</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+					<img src="images/icons/warlock/warlock3.jpg" alt="Warlock III: The End of Innocence" title="Warlock III: The End of Innocence" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+
+<P><b>Warlock III: The End of Innocence</b> is a 1999 direct-to-video horror film written by Bruce David Eisen and Eric Freiser and also directed by the latter. It is the third film in a series that started with the 1989 Warlock. The first two films starred Julian Sands as the Warlock but this film stars Bruce Payne in the titular role of The Warlock.
+
+
+					
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Warlock_III:_The_End_of_Innocence" class = "standardb_black" target="_blank">Wikipedia Warlock III: The End of Innocence</a> - <b>Warlock III: The End of Innocence</b> on Wikipedia.
+			</td>
+			</tr>	
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=JRAIi9fHi18" class = "standardb_black" target="_blank">Warlock III: The End of Innocence</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					13th of Jun, 2017.
+				</td>
+			</tr>
+			</table>
+        </td>
+		</tr>
+		
+			
+
+
+
+
+
+
+		
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_black"><a name="warlock4">Чернокнижник 4: Невеста Дьявола</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+					<img src="images/icons/warlock/warlock4.jpg" alt="Чернокнижник 4: Невеста Дьявола" title="Чернокнижник 4: Невеста Дьявола" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>О Фильме (1997):</b> В 1197 году в Кельне должна была пройти свадебная церемония Князя Тьмы и его избранницы. Но невесту и трех ее подруг сожгли на костре в замке Робентайн как ведьм. С тех пор на замке лежало проклятие. Но через 800 лет на пороге 21-го века магические силы старинного кольца вновь пробудили силы Зла. Могущественный демон Ада вернулся для новой, решающей битвы.Четыре студентки, забредшие в руины замка...
+
+
+					
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://de.wikipedia.org/wiki/Geisterj%C3%A4ger_John_Sinclair:_Die_D%C3%A4monenhochzeit" class = "standardb_black" target="_blank">Wikipedia Geisterj&auml;ger John Sinclair: Die D&auml;monenhochzeit</a> - <b>Чернокнижник 4: Невеста Дьявола</b> on Wikipedia (ger.).
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=rsJTy0YBWpU" class = "standardb_black" target="_blank">Чернокнижник 4: Невеста Дьявола</a> - Movie on YouTube (rus.).
+			</td>
+			</tr>
+
+
+
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					13th of Jun, 2017.
+				</td>
+			</tr>
+			</table>
+        </td>
+		</tr>
+		
+		
+		
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>

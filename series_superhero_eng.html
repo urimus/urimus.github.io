@@ -1,0 +1,1346 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*35;
+var imgBgSrc="images/icons/background/superhero.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('images/icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="processPageResize(1);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+        <tr> 
+                <td  height="3"></td>
+        </tr>   
+        <tr>
+                <td width="1000">
+                        <img src="images/icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+                </td>
+        </tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+        <tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('series_superhero_eng.html' + window.location.hash);
+                                } else {
+                                        window.location.href='series_superhero_eng.html' + window.location.hash;
+                                };"             
+                        class="flag_selected"
+                >
+                        <img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('series_superhero_rus.html' + window.location.hash);
+                                } else {
+                                        window.location.href='series_superhero_rus.html' + window.location.hash;
+                                };"             
+                        class="flag_not_selected"
+                >
+                        <img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+                </div>
+        </td>
+        </tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+        <tr> 
+
+        <td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+        <tr> 
+                <td  align="center" class="title_gradient_black">Menu</td>
+        </tr>
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_eng.html');
+                        } else {
+                                window.location.href='about_me_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About me</div>
+        </td>
+        </tr>   
+        <tr>
+                <td align="center" >
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_eng.html');
+                        } else {
+                                window.location.href='about_work_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my work</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_phd_eng.html');
+                        } else {
+                                window.location.href='about_phd_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my PhD</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+		
+		
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+		
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_7"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"               
+                  class="menu_not_selected_black">
+                  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_8"
+                  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'movies');"                               
+                  class="menu_not_selected_black">
+                  Movies</div>
+        </td>
+        </tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"  
+		  class="menu_selected">
+		  Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_animation_eng.html');
+			} else {
+				window.location.href='series_animation_eng.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Animation</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_body_horror_eng.html');
+			} else {
+				window.location.href='series_body_horror_eng.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Body Horror</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_5"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_fantasy_eng.html');
+			} else {
+				window.location.href='series_fantasy_eng.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Fantasy</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_historical_fiction_eng.html');
+			} else {
+				window.location.href='series_historical_fiction_eng.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Historical Fiction</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_7"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_space_opera_eng.html');
+			} else {
+				window.location.href='series_space_opera_eng.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Space Opera</div>
+        </td>
+	</tr>
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_9"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_star_wars_eng.html');
+			} else {
+				window.location.href='series_star_wars_eng.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Star Wars <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('series_superhero_series_eng.html');
+			} else {
+				window.location.href='series_superhero_eng.html';
+			};"
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+	     &bull; Superhero</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_8"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_supernatural_eng.html');
+			} else {
+				window.location.href='series_supernatural_eng.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Supernatural</div>
+        </td>
+	</tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_9"
+                  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'games');"  
+                  class="menu_not_selected_black">
+                  Games</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_10"
+                  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'books');"  
+                  class="menu_not_selected_red">
+                  Books</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_11"
+                  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'photos');"  
+                  class="menu_not_selected_red">
+                  Photos/Images</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_12"
+                  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'amv');"                                               
+                  class="menu_not_selected_black">
+                  AMV</div>
+        </td>
+        </tr>           
+        <tr>
+                <td align="center" >
+                  <div id="menu_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('radio_eng.html');
+                        } else {
+                                window.location.href='radio_eng.html';
+                        };"                                               
+                  class="menu_not_selected_black">
+                  Radio</div>
+        </td>
+        </tr>                   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_14"
+                  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'stuff');"                                       
+                  class="menu_not_selected_black">
+                  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_15"
+                  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+                  class="menu_not_selected_red">
+                  Anecdotes</div>
+        </td>
+        </tr>           
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_17"
+                  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+                  class="menu_not_selected_white">
+                  Substances For Relaxation</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_18"
+                  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'software');"  
+                  class="menu_not_selected_white">
+                  Software Development</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_19"
+                  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'satanism');"                                       
+                  class="menu_not_selected_green">
+                  Satanism</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_21"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('falsifiability_eng.html');
+                        } else {
+                                window.location.href='falsifiability_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Falsifiability</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_22"
+                  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'psychology');"                                       
+                  class="menu_not_selected_green">
+                  Psychology</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_23"
+                  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'countries');"                                       
+                  class="menu_not_selected_green">
+                  Countries</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_24"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+
+                                window.open('totalitarianism_eng.html');
+                        } else {
+                                window.location.href='totalitarianism_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Totalitarianism</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_25"
+                  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'personalities');"                                       
+                  class="menu_not_selected_green">
+                  Personalities</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+        
+
+                </td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+        <tr> 
+                <td  class="title_black" style="width: 530px;"><a name="welcome">Series &blacktriangleright; Superhero</a></td>
+        </tr>
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+
+        </tr>   
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:805px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+              
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="series">Series</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/series.jpg" alt="Series" title="Series" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					
+
+<P>A <b>film series</b> is more than one film, each depicting parts of a larger story. Sometimes the work is conceived from the beginning as a multiple-film work, for example the Three Colours series, but in most cases the success of the original film inspires further films to be made. Individual sequels are relatively common, but are not always successful enough to spawn further installments.
+
+<P>The Marvel Cinematic Universe is the most highest grossing film series in unadjusted US Dollar figures surpassing the Harry Potter, Star Wars and James Bond series. However Peter Jackson's The Lord of the Rings has the highest average box office intake.
+
+
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Film_series" class = "standardb_black" target="_blank">Wikipedia Film series</a> - <b>Series</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					29th of Jul, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+  
+
+                
+                
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="series_superhero">Superhero Movies</a></td>
+                        </tr>
+                        <tr >
+                                <td width="250" height="100%" class="nimetus_black">Genre Description</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/series/series_superhero.jpg" alt="Superhero Films" title="Superhero Films" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>A <b>superhero film</b>, <b>superhero movie</b>, or <b>superhero motion</b> picture is a film that is focused on the actions of one or more superheroes: individuals who usually possess superhuman abilities relative to a normal person and are dedicated to protecting the public. These films typically feature action, fantasy and/or science fiction elements, with the first film of a particular character often including a focus on the origin of the special powers and the first fight against the character's most famous supervillain, or archenemy.
+
+<P>Most superhero movies are based on superhero comics. By contrast, several films such as the RoboCop series, The Meteor Man, Unbreakable, The Incredibles, and Hancock are original for the screen, while The Green Hornet is based primarily on the original radio series and its 1960s television adaptation, and both Underdog and The Powerpuff Girls are based on an animated television series.
+
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Superhero_film" class = "standardb_black" target="_blank">Wikipedia Superhero Film</a> - <b>Superhero Film</b> on Wikipedia.
+                        </td>
+                        </tr>
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        26th of Aug, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+                
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="cowboy_bebop">Cowboy Bebop</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/cowboy_bebop.jpg" alt="Cowboy Bebop" title="Cowboy Bebop" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Cowboy Bebop</b> is an American science fiction streaming television series. It is a live action adaptation of the 1998 Japanese anime series of the same name. The series is developed by André Nemec, written by Christopher Yost, and stars John Cho, Mustafa Shakir, Daniella Pineda, Elena Satine, and Alex Hassell. The 10-episode series was released on November 19, 2021 on Netflix. It received mixed reviews from critics, being praised for its casting while being criticized for its writing, editing, and deviation from its source material.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Cowboy_Bebop_(2021_TV_series)" class = "standardb_black" target="_blank">Wikipedia Cowboy Bebop (2021 TV series)</a> - <b>Cowboy Bebop</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ULCIHP5dc44" class = "standardb_black" target="_blank">Cowboy Bebop</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of Nov, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="hawkeye">Hawkeye</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/hawkeye.jpg" alt="Hawkeye" title="Hawkeye" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Hawkeye</b> is an American television miniseries created by Jonathan Igla for the streaming service Disney+, based on Marvel Comics featuring the characters Clint Barton / Hawkeye and Kate Bishop / Hawkeye. It is the fifth television series in the Marvel Cinematic Universe (MCU) produced by Marvel Studios, sharing continuity with the films of the franchise and taking place after the events of the film Avengers: Endgame (2019). Igla served as head writer with Rhys Thomas leading the directing team.
+
+<P>Jeremy Renner reprises his role as Clint Barton from the film series, with Hailee Steinfeld joining him as Kate Bishop. Tony Dalton, Fra Fee, Brian d'Arcy James, Aleks Paunovic, Piotr Adamczyk, Linda Cardellini, Simon Callow, Vera Farmiga, Alaqua Cox, Zahn McClarnon, Florence Pugh, and Vincent D'Onofrio also star. Marvel Studios was developing a limited series for Disney+ centered on Hawkeye by April 2019, with Renner returning. The series was officially announced that July and Igla joined in September, with Steinfeld unofficially attached at that point. Thomas and Bert & Bertie joined as directors in July 2020 and filming began in New York City that December. Steinfeld and additional cast members were confirmed, and filming concluded in late April 2021. Additional shooting took place in Atlanta, Georgia. Matt Fraction and David Aja's Hawkeye comic run served as a major influence on the series.
+
+<P>Hawkeye premiered with its first two episodes on November 24, 2021, and ran for six episodes, concluding on December 22. It is part of Phase Four of the MCU. The series received positive reviews, with critics highlighting the action sequences and the chemistry between Renner and Steinfeld. A spin-off series, Echo, focusing on Cox's character Maya Lopez / Echo, is in production.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Hawkeye_(2021_TV_series)" class = "standardb_black" target="_blank">Wikipedia Hawkeye (2021 TV series)</a> - <b>Hawkeye</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=5VYb3B1ETlk" class = "standardb_black" target="_blank">Hawkeye</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					18th of May, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="krypton">Krypton</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/krypton.jpg" alt="Krypton" title="Krypton" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Krypton</b> is an American television series developed by David S. Goyer for Syfy. Focusing on Seg-El (Cameron Cuffe), the grandfather of DC Comics superhero Kal-El/Superman, the series is set approximately 200 years before the birth of Superman and takes place on the eponymous fictional planet. Krypton premiered on March 21, 2018. Its first season consists of ten episodes. In May 2018, Syfy renewed Krypton for a second season of ten episodes, which premiered on June 12, 2019. In August 2019, Syfy canceled the series after two seasons.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Krypton_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Krypton (TV series)</a> - <b>Krypton</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=YCeNXjoE9OQ" class = "standardb_black" target="_blank">Krypton</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					11th of Jul, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="loki">Loki</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/loki.jpg" alt="Loki" title="Loki" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Loki</b> is an American television series created by Michael Waldron for the streaming service Disney+, based on Marvel Comics featuring the character of the same name. It is the third television series in the Marvel Cinematic Universe (MCU) produced by Marvel Studios, sharing continuity with the films of the franchise. The series takes place after the events of the film Avengers: Endgame (2019), in which an alternate version of Loki created a new timeline. Waldron served as head writer and Kate Herron directed the first season, with Eric Martin and the duo Justin Benson and Aaron Moorhead serving as head writer and leading the directing team for the second season, respectively.
+
+<P>Tom Hiddleston reprises his role as Loki from the film series, starring alongside Gugu Mbatha-Raw, Wunmi Mosaku, Eugene Cordero, Tara Strong, Owen Wilson, Sophia Di Martino, Jonathan Majors, and Neil Ellice. Sasha Lane, Jack Veal, DeObia Oparei, and Richard E. Grant also star in the first season, with Rafael Casal, Kate Dickie, Liz Carr, Ke Huy Quan and Richard Dixon joining for the second. By September 2018, Marvel Studios was developing a number of limited series for Disney+, centered on supporting characters from the MCU films. A series featuring Hiddleston as Loki was confirmed in November 2018. Waldron was hired in February 2019, and Herron joined by that August. Martin, who served as a writer on the first season, was revealed to be writing the entire second season in February 2022, along with Benson and Moorhead joining to direct the majority of the season's episodes; Dan DeLeeuw and Kasra Farahani also direct in the second season. Filming occurred in Atlanta, Georgia for the first season, with the second season being filmed in the United Kingdom.
+
+<P>Loki premiered on June 9, 2021. Its first season, consisting of six episodes, concluded on July 14 and is part of Phase Four of the MCU. It received positive reviews, especially for the performances. A second season, also consisting of six episodes, ran from October 5 to November 9, 2023, as part of Phase Five.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Loki_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Loki (TV series)</a> - <b>Loki</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=vwSKatRviQo" class = "standardb_black" target="_blank">Loki</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					18th of Nov, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="mask">The Mask (sp. Por la Máscara)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/mask.jpg" alt="The Mask (sp. Por la Máscara)" title="The Mask (sp. Por la Máscara)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Por la Máscara
+
+<P><b>Storyline:</b> Un luchador veterano, quien estuvo ausente en la vida de su hijo, busca al indicado para que siga con su leyenda en los cuadriláteros. Ahora, su hijo es su peor rival.
+
+<P><b>Genres:</b> Action, Comedy, Drama
+
+<P><b>Actor:</b> Daniel Martínez, Álex Perea, Esau Ávila
+
+<P><b>Director:</b> Sergio Sánchez Suárez
+
+<P><b>Country:</b> Mexico
+
+<P><b>Duration:</b> 50 min
+
+<P><b>Release:</b> October 14, 2018 (Mexico)
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt9189314/" class = "standardb_black" target="_blank">IMDb Por la Máscara (TV Series 2018-)</a> - <b>The Mask (sp. Por la Máscara)</b> on IMDb.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=1vW5V9vLBpA" class = "standardb_black" target="_blank">The Mask (sp. Por la Máscara)</a> - Official Trailer (sp.).
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					27th of Aug, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="moon_knight">Moon Knight</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/moon_knight.jpg" alt="Moon Knight" title="Moon Knight" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Moon Knight</b> is an American superhero television miniseries created by Jeremy Slater for the streaming service Disney+, based on the Marvel Comics featuring the character of the same name. It is the sixth television series in the Marvel Cinematic Universe (MCU) produced by Marvel Studios, sharing continuity with the films of the franchise. Slater serves as head writer with Mohamed Diab leading the directing team.
+
+<P>Oscar Isaac stars as Marc Spector / Moon Knight, a mercenary who has dissociative identity disorder, with May Calamawy, Karim El-Hakim, F. Murray Abraham, and Ethan Hawke also starring. The series was announced in August 2019, with Slater hired in November. Diab was hired to direct four episodes in October 2020, with directing duo Justin Benson and Aaron Moorhead joining in January 2021 to direct the other two. Isaac was confirmed to star at that time, and used different accents to differentiate Spector's various identities. Filming took place from April to October 2021, primarily in Budapest as well as in Jordan, Slovenia, and Atlanta, Georgia.
+
+<P>Moon Knight premiered on March 30, 2022, and is scheduled to run for six episodes until May 4. It is part of Phase Four of the MCU.
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Moon_Knight_(TV_series)" class = "standardb_black" target="_blank">Wikipedia Moon Knight (TV series)</a> - <b>Moon Knight</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=x7Krla_UxRg" class = "standardb_black" target="_blank">Moon Knight</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					31st of Mar, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="swamp_thing">Swamp Thing</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/swamp_thing.jpg" alt="Swamp Thing" title="Swamp Thing" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Swamp Thing</b> is an American superhero horror web television series created by Gary Dauberman and Mark Verheiden for DC Universe and based on the DC Comics character of the same name. Derek Mears portrays the eponymous Swamp Thing, a plant-elemental creature who fights malevolent forces around a Louisiana swamp with the help of medical doctor Abby Arcane (Crystal Reed).
+
+<P>The series premiered on May 31, 2019, and its first season consisted of 10 episodes. Shortly after its premiere, DC Universe announced that Swamp Thing had been canceled. The remaining episodes were released on DC Universe until the series' conclusion on August 2, 2019.
+
+
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Swamp_Thing_(2019_TV_series)" class = "standardb_black" target="_blank">Wikipedia Swamp Thing (2019 TV series)</a> - <b>Swamp Thing</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=q8rzAYp-mNQ" class = "standardb_black" target="_blank">Swamp Thing</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					17th of Jan, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="vagrant_queen">Vagrant Queen</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/vagrant_queen.jpg" alt="Vagrant Queen" title="Vagrant Queen" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Vagrant Queen</b> is an American science fiction television series that premiered on Syfy on March 27, 2020. The series, co-produced by Blue Ice Pictures, is based on the Vault comic book series written by Magdalene Visaggio and illustrated by Jason Smith. In June 2020, the series was canceled after one season.
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Vagrant_Queen" class = "standardb_black" target="_blank">Wikipedia Vagrant Queen</a> - <b>Vagrant Queen</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=C2YnwEiRuTw" class = "standardb_black" target="_blank">Vagrant Queen</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					21st of Jul, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="wandavision">WandaVision</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/wandavision.jpg" alt="WandaVision" title="WandaVision" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>WandaVision</b> is an American television miniseries created by Jac Schaeffer for the streaming service Disney+, based on Marvel Comics featuring the characters Wanda Maximoff / Scarlet Witch and Vision. It is the first television series in the Marvel Cinematic Universe (MCU) produced by Marvel Studios, sharing continuity with the films of the franchise and taking place after the events of the film Avengers: Endgame (2019). Schaeffer served as head writer with Matt Shakman directing.
+
+<P>Elizabeth Olsen and Paul Bettany reprise their respective roles as Wanda Maximoff and Vision from the film series, with Debra Jo Rupp, Fred Melamed, Kathryn Hahn, Teyonah Parris, Randall Park, Kat Dennings, and Evan Peters also starring. By September 2018, Marvel Studios was developing a number of limited series for Disney+ centered on supporting characters from the MCU films such as Maximoff and Vision, with Olsen and Bettany returning. Schaeffer was hired in January 2019, with the series officially announced that April, and Shakman joining in August. The series pays homage to past sitcoms, with Maximoff and Vision living in a reality that takes them through different decades of television tropes. Filming began in Atlanta, Georgia, in November 2019, before production halted in March 2020 due to the COVID-19 pandemic. Production resumed in Los Angeles in September 2020 and wrapped that November.
+
+<P>WandaVision premiered with its first two episodes on January 15, 2021, and ran for nine episodes, concluding on March 5. It is the first series, and beginning, of Phase Four of the MCU. The series received praise from critics for its recreation of past sitcoms and for the performances of its cast, especially those of Olsen, Bettany, and Hahn, though there was criticism for the finale. It was widely discussed and analyzed by fans based on various popular theories, as well as by commentators for its exploration of grief and nostalgia. The series has received numerous accolades, including 23 Primetime Emmy Award nominations, winning three. WandaVision directly sets up the film Doctor Strange in the Multiverse of Madness (2022), in which Olsen reprises her role as Maximoff, while a spin-off series is in development, with Hahn returning as Agatha Harkness and Schaeffer writing and executive producing.
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/WandaVision" class = "standardb_black" target="_blank">Wikipedia WandaVision</a> - <b>WandaVision</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="httтps://www.youtube.com/watch?v=sj9J2ecsSpo" class = "standardb_black" target="_blank">WandaVision</a> - Official Trailer.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30th of Jan, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+
+                
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+
+</form> 
+    </td> <!-- End of Functional Table -->
+        </tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+        <tr>
+          <td class="title_black" >
+            &copy; Urmas Repinski, urrimus@hotmail.com
+          </td>
+        </tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
