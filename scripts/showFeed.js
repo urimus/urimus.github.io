@@ -135,6 +135,7 @@ function processShowFeedTitle(type, source, lang, result) {
 
 	if (lang == "lat"){
 		textZero="Non";
+		textRssFeed="RSS Acies";
 	}
 
 	// ------------- End of Setting Texts ---------------- //
@@ -194,6 +195,9 @@ function processShowFeedTitle(type, source, lang, result) {
 				}
 				Img.setAttribute('alt', textObtainedBy2);
 				Img.setAttribute('title', textObtainedBy2);
+			} else {
+				Img.setAttribute('alt', textRssFeed);
+				Img.setAttribute('title', textRssFeed);
 			}
 			a.appendChild(Img);
 			document.getElementById("feed_title").innerHTML=document.getElementById("feed_title").innerHTML+"&nbsp;";
@@ -735,7 +739,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		localStorage[source+"_"+type]=result_str;
 	}
 */
-	processShowFeedTitle(type, source, lang, result)
+	processShowFeedTitle(type, source, lang, result);
 }
 // ------------- End of Optimize---------------- //
 
