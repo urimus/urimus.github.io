@@ -324,7 +324,7 @@ function loadImage(i, item, lang, textLoadingImage){
 		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1);
 
 
-/*
+/* saving blob using localStorage - limited to 5MB
 		const dataString=JSON.stringify(Array.from(new Uint8Array(this.response)));
 		console.log(dataString);
 		buffer=new Uint8Array(JSON.parse(dataString)).buffer;
@@ -333,7 +333,9 @@ function loadImage(i, item, lang, textLoadingImage){
 
 		var blob = new Blob([this.response]);
 
-		//localforage.removeItem(filename, function () {return;});
+
+/*  saving blob using localforage - can be implemented
+		// localforage.removeItem(item.enclosures[0].url, function () {return;});
 		localforage.setItem(item.enclosures[0].url, blob);
 		localforage.getItem(item.enclosures[0].url, function (err, value) {
 			console.log("blob obtained");
@@ -347,7 +349,7 @@ function loadImage(i, item, lang, textLoadingImage){
 				// new value must be stored
 			}
 		});
-
+*/
 
 
 		blobLink= window.URL.createObjectURL(blob);
