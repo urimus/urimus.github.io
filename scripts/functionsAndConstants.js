@@ -323,6 +323,7 @@ function loadImage(i, item, lang, textLoadingImage){
 
 		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1);
 
+
 /*
 		const dataString=JSON.stringify(Array.from(new Uint8Array(this.response)));
 		console.log(dataString);
@@ -331,6 +332,24 @@ function loadImage(i, item, lang, textLoadingImage){
 */
 
 		var blob = new Blob([this.response]);
+
+		//localforage.removeItem(filename, function () {return;});
+		localforage.setItem(item.enclosures[0].url, blob);
+		localforage.getItem(item.enclosures[0].url, function (err, value) {
+			console.log("blob obtained");
+			console.log(err);
+			console.log(value);
+			if (value !== null) {
+				blob=value;
+				blobLink= window.URL.createObjectURL(blob);
+				console.log(blobLink);
+			} else {
+				// new value must be stored
+			}
+		});
+
+
+
 		blobLink= window.URL.createObjectURL(blob);
 
 		var Img=document.createElement("img");
