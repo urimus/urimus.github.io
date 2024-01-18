@@ -404,7 +404,6 @@ function loadImage(i, item, lang, textLoadingImage){
 				Div.appendChild(summarySpan);
 
 				var extensionA = document.createElement('a');
-				extensionA.setAttribute('id', "extension_a");
 				extensionA.setAttribute('href', "javascript:void(0);");
 				extensionA.setAttribute('class', 'standardb_blue');
 				extensionA.onclick  = function () { 
@@ -431,6 +430,11 @@ function loadImage(i, item, lang, textLoadingImage){
 					summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
 					if (extensionA.offsetTop!=currentLineTop) {
 						if (linesCount==linesToShow) {  // remove last word
+							if (k==summary_words.length-1 && (extensionA.offsetLeft==0 || extensionA.offsetLeft==1)) {
+								summarySpan.innerHTML="&nbsp;"+item.summary;
+								Div.removeChild(extensionA);
+								break;
+							}
 							wordsCount--;
 							summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
 							break;
