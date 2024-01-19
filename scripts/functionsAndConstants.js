@@ -243,11 +243,7 @@ function formatSummary(summary_arr, words) {
 	var summaryToShow="";
 	var j;
 	for (j=0; j<words&& j<summary_arr.length;  j++) {
-		if (j==summary_arr.length-1) {
-			summaryToShow=summaryToShow+summary_arr[j];
-		} else {
-			summaryToShow=summaryToShow+summary_arr[j]+" ";
-		}
+		summaryToShow=summaryToShow+summary_arr[j]+" ";
 	}
 	return summaryToShow;
 }
@@ -444,7 +440,10 @@ function loadImage(i, item, lang, textLoadingImage){
 						}
 					}
 				}
-				if (k==summary_words.length) Div.removeChild(extensionA);
+				if (k==summary_words.length) {
+					Div.removeChild(extensionA);
+					summarySpan.innerHTML="&nbsp;"+item.summary;
+				}
 			} else {
 				cell1.appendChild(Div);
 			}
