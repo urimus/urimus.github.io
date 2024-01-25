@@ -207,6 +207,7 @@ c. Superhero
 Superhero Movies
 a. DC Extended Universe
 - Aquaman
+- Aquaman and the Lost Kingdom
 - Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)
 - The Flash
 - Man of Steel
