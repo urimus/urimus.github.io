@@ -524,10 +524,6 @@ function showContents2(type, sortby, lang, textColor, entry) {
 
 				Figure.appendChild(ImgCaption);
 				cell1.appendChild(Figure);
-			} else {
-				scrollDivHeight=calcScrollDivHeightMax();
-				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-				adjustScrollDiv();
 			}
 // ------------- End of Showing Feed Image ----------- //
 
@@ -547,6 +543,12 @@ function showContents2(type, sortby, lang, textColor, entry) {
 			date_div.style.textAlign = 'right';
 			date_div.innerHTML = formatDate(modStr, lang);
 			cell1.appendChild(date_div);
+
+			if (entry==null) {
+				scrollDivHeight=calcScrollDivHeightMax();
+				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+				adjustScrollDiv();
+			}
 
 		}
 	}
