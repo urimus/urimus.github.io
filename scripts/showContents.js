@@ -457,25 +457,35 @@ function showContents(type, sortby, lang) {
 			 cell1.className = 'text_blue';
 			 cell1.style = 'padding-left:10px; padding-right:10px; ';
 
+			Figure=document.createElement("figure");
+			Figure.setAttribute('style', 'display: flex;');
+
 			var Img=null;
 			Img=document.createElement("img");
 			Img.setAttribute('src', images[type]);
 			Img.setAttribute('class', "text_"+textColor);
 			Img.setAttribute('vspace', '5');
 			Img.setAttribute('hspace', '5');
-			Img.setAttribute('align', 'left');
 			Img.setAttribute('width', '350');
+//			Img.setAttribute('align', 'left');
 			Img.setAttribute('style', 'padding-right:5px;');
 			Img.onload = function () { 
 				scrollDivHeight=calcScrollDivHeightMax();
 				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 				adjustScrollDiv();
 			}
-			cell1.appendChild(Img);
+			Figure.appendChild(Img);
+
+			ImgCaption=document.createElement("figcaption");
+			ImgCaption.innerHTML = "SomeText";
+			Figure.appendChild(ImgCaption);
+			cell1.appendChild(Figure);
+
 
 			 for (var i = 1; i < fileContents.length; i++) { 
 				cell1.innerHTML = cell1.innerHTML+fileContents[i]+"\n";
 			 }
+
 
 			modStr=xmlhttp.getResponseHeader('Last-Modified');
 
