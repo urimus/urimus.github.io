@@ -39,6 +39,7 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#shadow_bone" class = "standardb_black" data-added="25th of Nov, 2023." data-genre="Fantasy" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Shadow and Bone</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#shannara" class = "standardb_black" data-added="16th of Sep, 2023." data-genre="Fantasy" data-country="usa" data-year="2016" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Shannara Chronicles</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#watch" class = "standardb_black" data-added="30th of Jun, 2021." data-genre="Fantasy" data-country="united_kingdom;usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Watch</a> 
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#wheel_time" class = "standardb_black" data-added="28th of Jan, 2024." data-genre="Fantasy" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Wheel of Time</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#witcher" class = "standardb_black" data-added="05th of Aug, 2023." data-genre="Fantasy" data-country="usa;poland" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Witcher</a> 
 
 <P>&nbsp;&#9679; <a href="series_historical_fiction_eng.html#historical_fiction" class = "standardb_black" data-added="17th of Jun, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Historical Fiction</a>
