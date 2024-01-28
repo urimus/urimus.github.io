@@ -387,12 +387,12 @@ function showContents(type, sortby, lang) {
 	if (lang=="eng") cell1.innerHTML = "<b><div id='loadingDivTitle'>Reading News Feed</div><div id='loadingDiv'>.</div></b>";
 	if (lang=="lat") cell1.innerHTML = "<b><div id='loadingDivTitle'>Lectio Nuntium Acies</div><div id='loadingDiv'>.</div></b>";
 
-// ------------- Loading Feed Image----------- //
+// ------------- Loading Feed Image ----------- //
 
 	feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://apod.com/feed.rss";
 	feednami.load(feedURL, function(result){
 		if(result.error){
-			console.log("Feed Load Error");
+			showContents2(type, sortby, lang, textColor, null);
 			return;
 		}
 
@@ -408,13 +408,14 @@ function showContents(type, sortby, lang) {
 
 function showContents2(type, sortby, lang, textColor, entry) {
 
+	if (entry!=null) {
+		feedMediaUrl=entry["enclosures"][0].url;
+		feedMediaWidth=450;
+		feedMediaTitle=entry.title;
 
-	feedMediaUrl=entry["enclosures"][0].url;
-	feedMediaWidth=450;
-	feedMediaTitle=entry.title;
-
-	feedSummary=entry["rss:description"]["#"];
-	feedLink=entry.link;
+		feedSummary=entry["rss:description"]["#"];
+		feedLink=entry.link;
+	}
 
 	var dataFileName="scripts/contents/" + type +"_" + lang +".txt";
 
@@ -468,60 +469,67 @@ function showContents2(type, sortby, lang, textColor, entry) {
 			cell1.setAttribute('class', "text_"+textColor);
 			 cell1.style = 'padding-left:10px; padding-right:10px; ';
 
-			Figure=document.createElement("figure");
-			Figure.setAttribute('style', 'display: flex; margin: 0px;');
+// ------------- Showing Feed Image ----------- //
+			if (entry!=null) {
+				Figure=document.createElement("figure");
+				Figure.setAttribute('style', 'display: flex; margin: 0px;');
 
-			var Img=null;
-			Img=document.createElement("img");
-			Img.setAttribute('src', feedMediaUrl);
-			Img.setAttribute('title', feedMediaTitle);
+				var Img=null;
+				Img=document.createElement("img");
+				Img.setAttribute('src', feedMediaUrl);
+				Img.setAttribute('title', feedMediaTitle);
 
-			Img.setAttribute('width', feedMediaWidth);
-			Img.setAttribute('align', 'left');
-			Img.setAttribute('style', 'padding-right:5px;padding-bottom:5px;');
-			Img.onload = function () { 
+				Img.setAttribute('width', feedMediaWidth);
+				Img.setAttribute('align', 'left');
+				Img.setAttribute('style', 'padding-right:5px;padding-bottom:5px;');
+				Img.onload = function () { 
+					scrollDivHeight=calcScrollDivHeightMax();
+					document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+					adjustScrollDiv();
+				}
+				Figure.appendChild(Img);
+
+				ImgCaption=document.createElement("figcaption");
+				ImgCaption.setAttribute('class', "nimetus2_"+textColor);
+				ImgCaption.innerHTML = "NASA Astronomy Picture of the Day ";
+				var a = document.createElement('a');
+				a.setAttribute('href', "/news_nasa_"+lang+".html?type=picture");
+				a.setAttribute('class', 'standardb_blue');
+				a.setAttribute('target', '_blank');
+				Img2=document.createElement("img");
+				Img2.setAttribute('src', "images/icons/feed/feed_icon.png");
+				Img2.setAttribute('class', "thumbnail_image_both");
+				if (lang=="eng" || lang=="lat") feedTitleText = "NASA Astronomy Picture of the Day Feed on this Page";
+				if (lang=="rus") feedTitleText = "NASA Astronomy Picture of the Day Строка на этой Странице";
+				Img2.setAttribute('title', feedTitleText);
+				Img2.setAttribute('valign', "bottom");
+				a.appendChild(Img2);
+				ImgCaption.appendChild(a);
+
+				Div=document.createElement("div");
+				Div.innerHTML = "<br>";
+				var a2 = document.createElement('a');
+				a2.setAttribute('href', feedLink);
+				a2.setAttribute('class', 'standardb_'+textColor.split("_")[0]);
+				a2.setAttribute('target', '_blank');
+				if (lang=="rus") textImage = "Картинка";
+				if (lang=="eng") textImage = "Image";
+				if (lang=="lat") textImage = "Imagio";
+				a2.innerHTML = textImage;
+				Div.appendChild(a2);
+				Div.innerHTML = Div.innerHTML + " #1. "+feedSummary;
+				Div.setAttribute('class', "text_"+textColor);
+				Div.setAttribute('style', 'font-weight: normal;');
+				ImgCaption.appendChild(Div);
+
+				Figure.appendChild(ImgCaption);
+				cell1.appendChild(Figure);
+			} else {
 				scrollDivHeight=calcScrollDivHeightMax();
 				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 				adjustScrollDiv();
 			}
-			Figure.appendChild(Img);
-
-			ImgCaption=document.createElement("figcaption");
-			ImgCaption.setAttribute('class', "nimetus2_"+textColor);
-			ImgCaption.innerHTML = "NASA Astronomy Picture of the Day ";
-			var a = document.createElement('a');
-			a.setAttribute('href', "/news_nasa_"+lang+".html?type=picture");
-			a.setAttribute('class', 'standardb_blue');
-			a.setAttribute('target', '_blank');
-			Img2=document.createElement("img");
-			Img2.setAttribute('src', "images/icons/feed/feed_icon.png");
-			Img2.setAttribute('class', "thumbnail_image_both");
-			if (lang=="eng" || lang=="lat") feedTitleText = "NASA Astronomy Picture of the Day Feed on this Page";
-			if (lang=="rus") feedTitleText = "NASA Astronomy Picture of the Day Строка на этой Странице";
-			Img2.setAttribute('title', feedTitleText);
-			Img2.setAttribute('valign', "bottom");
-			a.appendChild(Img2);
-			ImgCaption.appendChild(a);
-
-			Div=document.createElement("div");
-			Div.innerHTML = "<br>";
-			var a2 = document.createElement('a');
-			a2.setAttribute('href', feedLink);
-			a2.setAttribute('class', 'standardb_'+textColor.split("_")[0]);
-			a2.setAttribute('target', '_blank');
-			if (lang=="rus") textImage = "Картинка";
-			if (lang=="eng") textImage = "Image";
-			if (lang=="lat") textImage = "Imagio";
-			a2.innerHTML = textImage;
-			Div.appendChild(a2);
-			Div.innerHTML = Div.innerHTML + "#1. "+feedSummary;
-			Div.setAttribute('class', "text_"+textColor);
-			Div.setAttribute('style', 'font-weight: normal;');
-			ImgCaption.appendChild(Div);
-
-			Figure.appendChild(ImgCaption);
-			cell1.appendChild(Figure);
-
+// ------------- End of Showing Feed Image ----------- //
 
 			 for (var i = 1; i < fileContents.length; i++) { 
 				cell1.innerHTML = cell1.innerHTML+fileContents[i]+"\n";
