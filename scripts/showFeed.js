@@ -665,7 +665,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			}  else if (type=="picture") {
 				result.entries[i].media.url=entry["enclosures"][0].url;
 				result.entries[i].media.width=450;
-				result.entries[i].summary=entry["rss:description"]["#"];
+				result.entries[i].summary=entry["rss:description"]["#"]+".";
 			} else {
 				result.entries[i].media.url="images/icons/feed/nasa_news.png";
 				result.entries[i].media.width=450;

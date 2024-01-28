@@ -413,7 +413,7 @@ function showContents2(type, sortby, lang, textColor, entry) {
 		feedMediaWidth=450;
 		feedMediaTitle=entry.title;
 
-		feedSummary=entry["rss:description"]["#"];
+		feedSummary=entry["rss:description"]["#"]+".";
 		feedLink=entry.link;
 	}
 
