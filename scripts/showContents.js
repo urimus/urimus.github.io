@@ -477,7 +477,35 @@ function showContents(type, sortby, lang) {
 			Figure.appendChild(Img);
 
 			ImgCaption=document.createElement("figcaption");
-			ImgCaption.innerHTML = "SomeText";
+			ImgCaption.setAttribute('align', 'left');
+
+			ImgCaption.setAttribute('class', "nimetus2_"+textColor);
+			ImgCaption.innerHTML = "NASA Astronomy Picture of the Day ";
+			var a = document.createElement('a');
+			a.setAttribute('href', "/news_nasa_"+lang+".html?type=picture");
+			a.setAttribute('class', 'standardb_blue');
+			a.setAttribute('target', '_blank');
+			Img2=document.createElement("img");
+			Img2.setAttribute('src', "images/icons/feed/feed_icon.png");
+			Img2.setAttribute('class', "thumbnail_image_both");
+			if (lang=="eng" || lang=="lat") feedTitleText = "NASA Astronomy Picture of the Day Feed on this Page";
+			if (lang=="rus") feedTitleText = "NASA Astronomy Picture of the Day Строка на этой Странице";
+			Img2.setAttribute('title', feedTitleText);
+			Img2.setAttribute('valign', "bottom");
+			a.appendChild(Img2);
+			ImgCaption.appendChild(a);
+
+			feedURL="https://apod.com/feed.rss";
+			feednami.load(feedURL, function(result){
+				if(result.error){
+					console.log("Feed Load Error");
+					return;
+				}
+				console.log(result.feed);
+				if (result.feed.entries.length==0) {
+				} else {
+				}
+			});
 			Figure.appendChild(ImgCaption);
 			cell1.appendChild(Figure);
 
