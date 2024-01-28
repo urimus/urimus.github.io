@@ -366,8 +366,6 @@ function showContents(type, sortby, lang) {
 	refreshContentsTabs(type);
 	refreshSortByTabs(type, sortby, lang);
 
-	var dataFileName="scripts/contents/" + type +"_" + lang +".txt";
-
 // ------------- used for small text and sort by date, flag  ----------- //
 	var textColor="blue";
 	if (type=="aboutme" || type=="aboutwork" || type=="aboutphd" || type=="links" || type=="howto" ) textColor="blue";
@@ -377,36 +375,50 @@ function showContents(type, sortby, lang) {
 	if (type=="satanism" || type=="wicca" || type=="falsifiability" || type=="psychology" || type=="countries" || type=="totalitarianism" || type=="personalities") textColor="green_blue";
 // ------------- End of used for ----------- //
 
+	var table = document.getElementById("contentstable");
+	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
 
-// ------------- images ----------- //
-	images=[];
-	images["aboutme"]="images/icons/background/succubus.png";
-	images["aboutwork"]="images/icons/background/work.png";
-	images["aboutphd"]="images/icons/background/einstein.png";
-	images["links"]="images/icons/background/links.png";
-	images["howto"]="images/icons/background/howto.png";
-	images["music"]="images/icons/background/guitar.png";
-	images["movies"]="images/icons/background/space_opera.png";
-	images["series"]="images/icons/background/body_horror.png";
-	images["games"]="images/icons/background/rpg.png";
-	images["amv"]="images/icons/background/amv.png";
-	images["radio"]="images/icons/background/radio.png";
-	images["stuff"]="images/icons/background/stuff.png";
-	images["books"]="images/icons/background/book.png";
-	images["photos"]="images/icons/background/photos.png";
-	images["anecdotes"]="images/icons/background/anekdots.png";
-	images["heffalump"]="images/icons/background/heffalump.png";
-	images["news"]="images/icons/background/news.png";
-	images["relaxation"]="images/icons/background/energy_drinks.png";
-	images["software"]="images/icons/background/ide.png";
-	images["satanism"]="images/icons/background/satanism_theistic.png";
-	images["wicca"]="images/icons/background/wicca.png";
-	images["falsifiability"]="images/icons/background/falsifiability.png";
-	images["psychology"]="images/icons/background/psychology.png";
-	images["countries"]="images/icons/background/sssr.png";
-	images["totalitarianism"]="images/icons/background/totalitarianism.png";
-	images["personalities"]="images/icons/background/ancient_rome.png";
-// ------------- End of images ----------- //
+	var row = table.insertRow(-1);
+	var cell1 = row.insertCell(0);
+	cell1.className = 'text_'+textColor;
+	cell1.style.textAlign = 'center';
+
+	if (lang=="rus") cell1.innerHTML = "<b><div id='loadingDivTitle'>Читается Строка Новостей</div><div id='loadingDiv'>.</div></b>";
+	if (lang=="eng") cell1.innerHTML = "<b><div id='loadingDivTitle'>Reading News Feed</div><div id='loadingDiv'>.</div></b>";
+	if (lang=="lat") cell1.innerHTML = "<b><div id='loadingDivTitle'>Lectio Nuntium Acies</div><div id='loadingDiv'>.</div></b>";
+
+// ------------- Loading Feed Image----------- //
+
+	feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://apod.com/feed.rss";
+	feednami.load(feedURL, function(result){
+		if(result.error){
+			console.log("Feed Load Error");
+			return;
+		}
+
+		showContents2(type, sortby, lang, textColor, result.feed.entries[0]);
+
+	});
+
+// ------------- End of Loading Feed Image ----------- //
+
+}
+
+
+
+function showContents2(type, sortby, lang, textColor, entry) {
+
+
+	feedMediaUrl=entry["enclosures"][0].url;
+	feedMediaWidth=450;
+	feedMediaTitle=entry.title;
+
+	feedSummary=entry["rss:description"]["#"];
+	feedLink=entry.link;
+
+	var dataFileName="scripts/contents/" + type +"_" + lang +".txt";
+
+
 
 	var xmlhttp;
 	var lines;
@@ -421,7 +433,6 @@ function showContents(type, sortby, lang) {
 	if (lang=="rus") cell1.innerHTML = "<b><div id='loadingDivTitle'>Читается Содержание</div><div id='loadingDiv'>.</div></b>";
 	if (lang=="eng") cell1.innerHTML = "<b><div id='loadingDivTitle'>Reading Contents</div><div id='loadingDiv'>.</div></b>";
 	if (lang=="lat") cell1.innerHTML = "<b><div id='loadingDivTitle'>Lectio Illa</div><div id='loadingDiv'>.</div></b>";
-
 
 	if (window.XMLHttpRequest) {
 		xmlhttp = new XMLHttpRequest();               
@@ -454,21 +465,20 @@ function showContents(type, sortby, lang) {
 
 			 var row = table.insertRow(-1);
 			 var cell1 = row.insertCell(0);
-			 cell1.className = 'text_blue';
+			cell1.setAttribute('class', "text_"+textColor);
 			 cell1.style = 'padding-left:10px; padding-right:10px; ';
 
 			Figure=document.createElement("figure");
-			Figure.setAttribute('style', 'display: flex;');
+			Figure.setAttribute('style', 'display: flex; margin: 0px;');
 
 			var Img=null;
 			Img=document.createElement("img");
-			Img.setAttribute('src', images[type]);
-			Img.setAttribute('class', "text_"+textColor);
-			Img.setAttribute('vspace', '5');
-			Img.setAttribute('hspace', '5');
-			Img.setAttribute('width', '350');
-//			Img.setAttribute('align', 'left');
-			Img.setAttribute('style', 'padding-right:5px;');
+			Img.setAttribute('src', feedMediaUrl);
+			Img.setAttribute('title', feedMediaTitle);
+
+			Img.setAttribute('width', feedMediaWidth);
+			Img.setAttribute('align', 'left');
+			Img.setAttribute('style', 'padding-right:5px;padding-bottom:5px;');
 			Img.onload = function () { 
 				scrollDivHeight=calcScrollDivHeightMax();
 				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
@@ -477,8 +487,6 @@ function showContents(type, sortby, lang) {
 			Figure.appendChild(Img);
 
 			ImgCaption=document.createElement("figcaption");
-			ImgCaption.setAttribute('align', 'left');
-
 			ImgCaption.setAttribute('class', "nimetus2_"+textColor);
 			ImgCaption.innerHTML = "NASA Astronomy Picture of the Day ";
 			var a = document.createElement('a');
@@ -495,17 +503,22 @@ function showContents(type, sortby, lang) {
 			a.appendChild(Img2);
 			ImgCaption.appendChild(a);
 
-			feedURL="https://apod.com/feed.rss";
-			feednami.load(feedURL, function(result){
-				if(result.error){
-					console.log("Feed Load Error");
-					return;
-				}
-				console.log(result.feed);
-				if (result.feed.entries.length==0) {
-				} else {
-				}
-			});
+			Div=document.createElement("div");
+			Div.innerHTML = "<br>";
+			var a2 = document.createElement('a');
+			a2.setAttribute('href', feedLink);
+			a2.setAttribute('class', 'standardb_'+textColor.split("_")[0]);
+			a2.setAttribute('target', '_blank');
+			if (lang=="rus") textImage = "Картинка";
+			if (lang=="eng") textImage = "Image";
+			if (lang=="lat") textImage = "Imagio";
+			a2.innerHTML = textImage;
+			Div.appendChild(a2);
+			Div.innerHTML = Div.innerHTML + "#1. "+feedSummary;
+			Div.setAttribute('class', "text_"+textColor);
+			Div.setAttribute('style', 'font-weight: normal;');
+			ImgCaption.appendChild(Div);
+
 			Figure.appendChild(ImgCaption);
 			cell1.appendChild(Figure);
 
@@ -532,4 +545,5 @@ function showContents(type, sortby, lang) {
 
 	xmlhttp.open("GET", dataFileName, true);
 	xmlhttp.send();
+
 }

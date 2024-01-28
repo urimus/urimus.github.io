@@ -534,7 +534,7 @@ function showFeed(type, source, lang) {
 		if (type=="aeronautics") feedURL="https://www.nasa.gov/aeronautics/feed/";
 		if (type=="iss") feedURL="https://www.nasa.gov/missions/station/feed/";
 		if (type=="artemis") feedURL="https://www.nasa.gov/missions/artemis/feed/";
-		if (type=="picture") feedURL="https://apod.com/feed.rss";
+		if (type=="picture") feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://apod.com/feed.rss";
 	}
 
 
