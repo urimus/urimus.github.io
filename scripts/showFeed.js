@@ -884,12 +884,10 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				result.entries[i].media.url=mediaURL;
 				result.entries[i].media.comment=mediaComment;
 
-				if (!(source=="nasa" && mediaURL=="https://science.nasa.gov/nasa-social-logo.webp")) {
-					locStUpdateData[entry_link]={};
-					locStUpdateData[entry_link].mediaUrl=mediaURL;
-					locStUpdateData[entry_link].mediaComment=mediaComment;
-					localStorage[source+"_"+type+"_images"]=JSON.stringify(locStUpdateData);
-				}
+				locStUpdateData[entry_link]={};
+				locStUpdateData[entry_link].mediaUrl=mediaURL;
+				locStUpdateData[entry_link].mediaComment=mediaComment;
+				localStorage[source+"_"+type+"_images"]=JSON.stringify(locStUpdateData);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			}
 			updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
