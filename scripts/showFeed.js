@@ -848,6 +848,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				}
+				corsProxyVer=1;
 				updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 				return;
 			}
@@ -991,6 +992,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				}
 				if (lang=="eng" || lang=="lat") result.entries[i].summary="Update Time-out.";
 				if (lang=="rus") result.entries[i].summary="Тайм-аут Обновления.";
+				corsProxyVer=1;
 				updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 				return;
 			}
@@ -1010,12 +1012,18 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 			description="";
 			if (matchPos==-1) { // error processing
-				if (result.entries[i].link.indexOf("yahoo.com")==-1) {
-					if (lang=="eng" || lang=="lat") description="Not a Yahoo link. Access to Description Denied.";
-					if (lang=="rus") description="Не Yahoo Ссылка. Доступ к Описанию Запрещён.";
-				} else {
-					if (lang=="eng" || lang=="lat") description="Access to Description Denied.";
-					if (lang=="rus") description="Доступ к Описанию Запрещён.";
+				if (corsProxyVer==1) {
+					if (result.entries[i].link.indexOf("yahoo.com")==-1) {
+						if (lang=="eng" || lang=="lat") description="Not a Yahoo link. Access to Description Denied.";
+						if (lang=="rus") description="Не Yahoo Ссылка. Доступ к Описанию Запрещён.";
+					} else {
+						if (lang=="eng" || lang=="lat") description="Access to Description Denied.";
+						if (lang=="rus") description="Доступ к Описанию Запрещён.";
+					}
+				}
+				if (corsProxyVer==2) {
+					if (lang=="eng" || lang=="lat") description="Description Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+					if (lang=="rus") description="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 				}
 			} else {
 				matchPos2=data.indexOf("\"",matchPos + searchStr.length);
