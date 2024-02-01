@@ -1022,9 +1022,11 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				description=data.substr(matchPos+searchStr.length, matchPos2-matchPos-searchStr.length);
 			}
 			result.entries[i].summary=description;
-			locStUpdateData[entry_link]={};
-			locStUpdateData[entry_link].summary=description;
-			localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
+			if (!(matchPos==-1 && corsProxyVer==2)) {
+				locStUpdateData[entry_link]={};
+				locStUpdateData[entry_link].summary=description;
+				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
+			}
 			loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 
