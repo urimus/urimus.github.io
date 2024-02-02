@@ -853,7 +853,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				return;
 			}
 
-			corsProxyVer=1;
 			searchStr="property=\"og:image\" content=\"";
 			matchPos=data.indexOf(searchStr);
 
@@ -891,6 +890,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				localStorage[source+"_"+type+"_images"]=JSON.stringify(locStUpdateData);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			}
+			corsProxyVer=1;
 			updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 
 		}
@@ -997,7 +997,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				return;
 			}
 
-			corsProxyVer=1;
 			searchStrArr=[];
 			searchStr="";
 			searchStrArr.push("name=\"twitter:description\" content=\"");
@@ -1036,6 +1035,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
 			}
 			loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
+			corsProxyVer=1;
 			updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 
 		}
