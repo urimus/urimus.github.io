@@ -907,10 +907,12 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 function updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates) {
 	if ((i+1)>= result.entries.length) {
 		removeUnusedUpdates("_descriptions", source, type, result, locStUpdateData);
+/*
 		if (source=="yahoo" && type=="world") {
 			result_str=JSON.stringify(result);
 			localStorage[source+"_"+type]=result_str;
 		}
+*/
 		processShowFeedData(type, source, lang, result);
 	} else {
 		updateDescription(i+1, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
