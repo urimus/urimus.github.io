@@ -992,8 +992,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				}
-				if (lang=="eng" || lang=="lat") result.entries[i].summary="Update Time-out.";
-				if (lang=="rus") result.entries[i].summary="Тайм-аут Обновления.";
+				if (lang=="eng" || lang=="lat") result.entries[i].summary="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+				if (lang=="rus") result.entries[i].summary="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 				corsProxyVer=1;
 				updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 				return;
