@@ -467,7 +467,7 @@ function showContents2(type, sortby, lang, textColor, entry) {
 			 var row = table.insertRow(-1);
 			 var cell1 = row.insertCell(0);
 			cell1.setAttribute('class', "text_"+textColor);
-			 cell1.style = 'padding-left:10px; padding-right:10px; ';
+			cell1.setAttribute('style', 'padding-left:10px; padding-right:10px;');
 
 // ------------- Showing Feed Image ----------- //
 			if (entry!=null) {
@@ -480,8 +480,8 @@ function showContents2(type, sortby, lang, textColor, entry) {
 				Img.setAttribute('title', feedMediaTitle);
 
 				Img.setAttribute('width', feedMediaWidth);
-				Img.setAttribute('align', 'left');
-				Img.setAttribute('style', 'padding-right:5px;padding-bottom:5px;');
+				Img.setAttribute('align', 'top');
+				Img.setAttribute('style', 'padding-right:10px;padding-bottom:5px;');
 				Img.onload = function () { 
 					scrollDivHeight=calcScrollDivHeightMax();
 					document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
