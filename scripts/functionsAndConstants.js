@@ -279,7 +279,7 @@ function showErrorImage(lang) {
 
 
 
-function showBlob(blob, i, item, lang){
+function showBlob(blobLink, i, item, lang){
 
 
 	if (lang=="rus") {
@@ -294,10 +294,6 @@ function showBlob(blob, i, item, lang){
 		textImage="Image";
 		textError = "Imago "+"#"+(i+1)+" Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
 	}
-
-
-
-	blobLink= window.URL.createObjectURL(blob);
 
 	var Img=document.createElement("img");
 	Img.src = blobLink;
@@ -487,7 +483,8 @@ function loadImage(i, item, lang, textLoadingImage){
 
 		localforage.setItem(item.enclosures[0].url, blob);
 
-		showBlob(blob, i, item, lang);
+		blobLink= window.URL.createObjectURL(blob);
+		showBlob(blobLink, i, item, lang);
 	};
 	xmlHTTP.onprogress = function(e) {
 		document.getElementById("loadingDivProgress").innerHTML = formatBytes(e.loaded);
@@ -553,8 +550,8 @@ function updateAboutMeImage(lang, random) {
 				blobExists=1;
 				localforage.getItem(items[i].enclosures[0].url, function (err, value) {
 					if (value !== null) {
-						blob=value;
-						showBlob(blob, i, items[i], lang);
+						blobLink= window.URL.createObjectURL(value);
+						showBlob(blobLink, i, items[i], lang);
 					} else {
 						// new value must be stored
 						loadImage(i, items[i], lang, textLoadingImage);
