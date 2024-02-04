@@ -552,7 +552,7 @@ function updateAboutMeImage(lang, random) {
 		var objToRemove=[];
 		localforage.keys(function (err, keys) {
 			for (j=0; j<keys.length;  j++) {			
-				recordExists=1;
+				recordExists=0;
 				for (j2=0; j2<totalEntries;  j2++) {			
 					if (items[j2].enclosures[0].url == keys[j]) {
 						recordExists=1;
