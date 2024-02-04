@@ -437,20 +437,7 @@ function getLocalStorageData(par) {
 }
 
 // image loading progress bar and contents
-function loadImage(i, item, lang, textLoadingImage){
-
-	if (lang=="rus") {
-		textSettingImage="Устанавливается Картинка";
-		textSkip="Отменить";
-	}
-	if (lang=="eng") {
-		textSettingImage="Setting Image";
-		textSkip="Skip";
-	}
-	if (lang=="lat") {
-		textSettingImage="Occasum Imagibus";
-		textSkip="Saltus";
-	}
+function loadImage(i, item, lang, textLoadingImage, textSettingImage, textSkip){
 
 	if (window.XMLHttpRequest) {
 		xmlHTTP = new XMLHttpRequest();               
@@ -510,12 +497,18 @@ function updateAboutMeImage(lang, random) {
 
 	if (lang=="rus") {
 		textLoadingImage="Читается Картинка";
+		textSettingImage="Устанавливается Картинка";
+		textSkip="Отменить";
 	}
 	if (lang=="eng") {
 		textLoadingImage="Reading Image";
+		textSettingImage="Setting Image";
+		textSkip="Skip";
 	}
 	if (lang=="lat") {
 		textLoadingImage="Lectio Imagibus";
+		textSettingImage="Occasum Imagibus";
+		textSkip="Saltus";
 	}
 
 
@@ -527,6 +520,18 @@ function updateAboutMeImage(lang, random) {
 	cellLoading.setAttribute('style', 'text-align:center; padding-top:10px;');
 	cellLoading.innerHTML = "<b><div id='loadingDivTitle'>"+textLoadingImage+"</div><div id='loadingDivProgress'></div><div id='loadingDiv'>.</div></b>";
 
+	loadingDivTitle=document.getElementById("loadingDivTitle");
+	var a = document.createElement('a');
+	a.setAttribute('href', "javascript:void(0);");
+	a.setAttribute('class', 'standardb_blue');
+	a.innerText = textSkip;
+	a.onclick = function () {
+		showErrorImage(lang);
+	}
+	if (random==0) loadingDivTitle.innerHTML = textLoadingImage+" #1";
+	if (random!=0) loadingDivTitle.innerHTML = textLoadingImage;
+	loadingDivTitle.appendChild(a);
+
 	feedURL="https://www.nasa.gov/feeds/iotd-feed/";
 	feednami.load(feedURL, function(result){
 
@@ -534,15 +539,16 @@ function updateAboutMeImage(lang, random) {
 			showErrorImage(lang);
 			return;
 		}
-
 		var items=result.feed.entries;
 		var totalEntries=items.length;
 
 		i=0;
 		if (random!=0) i=Math.floor(Math.random()*totalEntries);
 
+		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1);
+
 		if (typeof localStorage["nasa_image_blob"]==="undefined") {
-			loadImage(i, items[i], lang, textLoadingImage);;
+			loadImage(i, items[i], lang, textLoadingImage, textSettingImage, textSkip);
 		} else {
 			locStData=getLocalStorageData('nasa_image_blob');
 			blobExists=0;
@@ -554,13 +560,13 @@ function updateAboutMeImage(lang, random) {
 						showBlob(blobLink, i, items[i], lang);
 					} else {
 						// new value must be stored
-						loadImage(i, items[i], lang, textLoadingImage);
+						loadImage(i, items[i], lang, textLoadingImage, textSettingImage, textSkip);
 					}
 				});
 			}
 
 			if (blobExists==0) {
-				loadImage(i, items[i], lang, textLoadingImage);
+				loadImage(i, items[i], lang, textLoadingImage, textSettingImage, textSkip);
 			}
 		}
 
@@ -568,17 +574,14 @@ function updateAboutMeImage(lang, random) {
 		// check if record in Images Feed, if not - remove
 		var objToRemove=[];
 		for (var key in locStData) {
-			// check if the property/key is defined in the object itself, not in parent
-			if (locStData.hasOwnProperty(key)) {
-				recordExists=0;
-				for (j=0; j<totalEntries;  j++) {			
-					if (items[j].enclosures[0].url == key) {
-						recordExists=1;
-						break;
-					}
+			recordExists=0;
+			for (j=0; j<totalEntries;  j++) {			
+				if (items[j].enclosures[0].url == key) {
+					recordExists=1;
+					break;
 				}
-				if (recordExists==0) objToRemove.push(key);
 			}
+			if (recordExists==0) objToRemove.push(key);
 		}
 		for (j=0;j<objToRemove.length;j++) {	
 			localforage.removeItem(objToRemove[j], function () {return;});
