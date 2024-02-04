@@ -460,7 +460,7 @@ function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 
 	xmlHTTP.onload = function(e) {
 
-		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(item.enclosures[0].length)+") ";
+		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ";
 
 		var blob = new Blob([this.response]);
 
