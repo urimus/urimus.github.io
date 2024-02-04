@@ -427,15 +427,6 @@ function showBlob(blobLink, i, item, lang){
 }
 
 
-
-function getLocalStorageData(par) {
-	if (typeof localStorage[par]==="undefined") {
-		return {};
-	} else {
-		return JSON.parse(localStorage[par]);
-	}
-}
-
 // image loading progress bar and contents
 function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 
@@ -463,13 +454,7 @@ function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ";
 
 		var blob = new Blob([this.response]);
-
-		locStData=getLocalStorageData('nasa_image_blob');
-		locStData[item.enclosures[0].url]=null;
-		localStorage['nasa_image_blob']=JSON.stringify(locStData);
-
 		localforage.setItem(item.enclosures[0].url, blob);
-
 		blobLink= window.URL.createObjectURL(blob);
 		showBlob(blobLink, i, item, lang);
 	};
@@ -550,48 +535,36 @@ function updateAboutMeImage(lang, random) {
 
 		document.getElementById("loadingDivTitle").innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
 
-		if (typeof localStorage["nasa_image_blob"]==="undefined") {
-			loadImage(i, items[i], lang, textLoadingImage, textSkip, textSettingImage);
-		} else {
-			locStData=getLocalStorageData('nasa_image_blob');
-			blobExists=0;
-			if (typeof locStData[items[i].enclosures[0].url]!=="undefined") {
-				blobExists=1;
-				localforage.getItem(items[i].enclosures[0].url, function (err, value) {
-					if (value !== null) {
-						document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
-						blobLink= window.URL.createObjectURL(value);
-						showBlob(blobLink, i, items[i], lang);
-					} else {
-						// new value must be stored
-						loadImage(i, items[i], lang, textLoadingImage, textSkip, textSettingImage);
-					}
-				});
-			}
-
-			if (blobExists==0) {
+		localforage.getItem(items[i].enclosures[0].url, function (err, value) {
+			if (value !== null) {
+				document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
+				blobLink= window.URL.createObjectURL(value);
+				showBlob(blobLink, i, items[i], lang);
+			} else {
+				// new value must be stored
 				loadImage(i, items[i], lang, textLoadingImage, textSkip, textSettingImage);
 			}
-		}
+		});
+
 
 		// remove unusedRecords
 		// check if record in Images Feed, if not - remove
 		var objToRemove=[];
-		for (var key in locStData) {
-			recordExists=0;
-			for (j=0; j<totalEntries;  j++) {			
-				if (items[j].enclosures[0].url == key) {
-					recordExists=1;
-					break;
+		localforage.keys(function (err, keys) {
+			for (j=0; j<keys.length;  j++) {			
+				recordExists=1;
+				for (j2=0; j2<totalEntries;  j2++) {			
+					if (items[j2].enclosures[0].url == keys[j]) {
+						recordExists=1;
+						break;
+					}
 				}
+				if (recordExists==0) objToRemove.push(keys[j]);
 			}
-			if (recordExists==0) objToRemove.push(key);
-		}
+		});
 		for (j=0;j<objToRemove.length;j++) {	
 			localforage.removeItem(objToRemove[j], function () {return;});
-			delete locStData[objToRemove[j]];
 		}
-		localStorage['nasa_image_blob']=JSON.stringify(locStData);
 	});
 }
 
