@@ -437,7 +437,18 @@ function getLocalStorageData(par) {
 }
 
 // image loading progress bar and contents
-function loadImage(i, item, lang, textLoadingImage, textSettingImage, textSkip){
+function loadImage(i, item, lang){
+
+
+	if (lang=="rus") {
+		textSettingImage="Устанавливается Картинка";
+	}
+	if (lang=="eng") {
+		textSettingImage="Setting Image";
+	}
+	if (lang=="lat") {
+		textSettingImage="Occasum Imagibus";
+	}
 
 	if (window.XMLHttpRequest) {
 		xmlHTTP = new XMLHttpRequest();               
@@ -445,22 +456,9 @@ function loadImage(i, item, lang, textLoadingImage, textSettingImage, textSkip){
 		xmlHTTP = new ActiveXObject("Microsoft.XMLHTTP");               
 	}
 
-	loadingDivTitle=document.getElementById("loadingDivTitle");
-	var a = document.createElement('a');
-	a.setAttribute('href', "javascript:void(0);");
-	a.setAttribute('class', 'standardb_blue');
-	a.innerText = textSkip;
-	a.onclick = function () {
-		xmlHTTP.timeout=0;
-		showErrorImage(lang);
-	}
-	loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(item.enclosures[0].length)+") ";
-	loadingDivTitle.appendChild(a);
-
-
 	xmlHTTP.onload = function(e) {
 
-		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1);
+		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(item.enclosures[0].length)+")";
 
 		var blob = new Blob([this.response]);
 
@@ -497,17 +495,17 @@ function updateAboutMeImage(lang, random) {
 
 	if (lang=="rus") {
 		textLoadingImage="Читается Картинка";
-		textSettingImage="Устанавливается Картинка";
+		textLoadingRandomImage="Читается Случайная Картинка";
 		textSkip="Отменить";
 	}
 	if (lang=="eng") {
 		textLoadingImage="Reading Image";
-		textSettingImage="Setting Image";
+		textLoadingRandomImage="Reading Random Image";
 		textSkip="Skip";
 	}
 	if (lang=="lat") {
 		textLoadingImage="Lectio Imagibus";
-		textSettingImage="Occasum Imagibus";
+		textLoadingRandomImage="Lectio Fortuitus Imagibus";
 		textSkip="Saltus";
 	}
 
@@ -518,7 +516,7 @@ function updateAboutMeImage(lang, random) {
 	var cellLoading = row.insertCell(0);
 	cellLoading.className = 'text_blue';
 	cellLoading.setAttribute('style', 'text-align:center; padding-top:10px;');
-	cellLoading.innerHTML = "<b><div id='loadingDivTitle'>"+textLoadingImage+"</div><div id='loadingDivProgress'></div><div id='loadingDiv'>.</div></b>";
+	cellLoading.innerHTML = "<b><div id='loadingDivTitle'></div><div id='loadingDivProgress'></div><div id='loadingDiv'>.</div></b>";
 
 	loadingDivTitle=document.getElementById("loadingDivTitle");
 	var a = document.createElement('a');
@@ -529,7 +527,7 @@ function updateAboutMeImage(lang, random) {
 		showErrorImage(lang);
 	}
 	if (random==0) loadingDivTitle.innerHTML = textLoadingImage+" #1";
-	if (random!=0) loadingDivTitle.innerHTML = textLoadingImage;
+	if (random!=0) loadingDivTitle.innerHTML = textLoadingRandomImage;
 	loadingDivTitle.appendChild(a);
 
 	feedURL="https://www.nasa.gov/feeds/iotd-feed/";
@@ -545,10 +543,10 @@ function updateAboutMeImage(lang, random) {
 		i=0;
 		if (random!=0) i=Math.floor(Math.random()*totalEntries);
 
-		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1);
+		document.getElementById("loadingDivTitle").innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+")";
 
 		if (typeof localStorage["nasa_image_blob"]==="undefined") {
-			loadImage(i, items[i], lang, textLoadingImage, textSettingImage, textSkip);
+			loadImage(i, items[i], lang);
 		} else {
 			locStData=getLocalStorageData('nasa_image_blob');
 			blobExists=0;
@@ -560,13 +558,13 @@ function updateAboutMeImage(lang, random) {
 						showBlob(blobLink, i, items[i], lang);
 					} else {
 						// new value must be stored
-						loadImage(i, items[i], lang, textLoadingImage, textSettingImage, textSkip);
+						loadImage(i, items[i], lang);
 					}
 				});
 			}
 
 			if (blobExists==0) {
-				loadImage(i, items[i], lang, textLoadingImage, textSettingImage, textSkip);
+				loadImage(i, items[i], lang);
 			}
 		}
 
