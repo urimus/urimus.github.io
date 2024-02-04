@@ -548,9 +548,8 @@ function updateAboutMeImage(lang, random) {
 
 
 		// remove unusedRecords
-		// check if record in Images Feed, if not - remove
-		var objToRemove=[];
 		localforage.keys(function (err, keys) {
+			var objToRemove=[];
 			for (j=0; j<keys.length;  j++) {			
 				recordExists=0;
 				for (j2=0; j2<totalEntries;  j2++) {			
@@ -561,10 +560,11 @@ function updateAboutMeImage(lang, random) {
 				}
 				if (recordExists==0) objToRemove.push(keys[j]);
 			}
+			for (j=0;j<objToRemove.length;j++) {	
+				localforage.removeItem(objToRemove[j], function () {return;});
+			}
 		});
-		for (j=0;j<objToRemove.length;j++) {	
-			localforage.removeItem(objToRemove[j], function () {return;});
-		}
+
 	});
 }
 
