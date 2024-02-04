@@ -437,24 +437,26 @@ function getLocalStorageData(par) {
 }
 
 // image loading progress bar and contents
-function loadImage(i, item, lang){
-
-
-	if (lang=="rus") {
-		textSettingImage="Устанавливается Картинка";
-	}
-	if (lang=="eng") {
-		textSettingImage="Setting Image";
-	}
-	if (lang=="lat") {
-		textSettingImage="Occasum Imagibus";
-	}
+function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 
 	if (window.XMLHttpRequest) {
 		xmlHTTP = new XMLHttpRequest();               
 	}  else {               
 		xmlHTTP = new ActiveXObject("Microsoft.XMLHTTP");               
 	}
+
+	loadingDivTitle=document.getElementById("loadingDivTitle");
+	var a = document.createElement('a');
+	a.setAttribute('href', "javascript:void(0);");
+	a.setAttribute('class', 'standardb_blue');
+	a.innerText = textSkip;
+	a.onclick = function () {
+		xmlHTTP.timeout=0;
+		showErrorImage(lang);
+	}
+	loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(item.enclosures[0].length)+") ";
+	loadingDivTitle.appendChild(a);
+
 
 	xmlHTTP.onload = function(e) {
 
@@ -496,19 +498,21 @@ function updateAboutMeImage(lang, random) {
 	if (lang=="rus") {
 		textLoadingImage="Читается Картинка";
 		textLoadingRandomImage="Читается Случайная Картинка";
+		textSettingImage="Устанавливается Картинка";
 		textSkip="Отменить";
 	}
 	if (lang=="eng") {
 		textLoadingImage="Reading Image";
 		textLoadingRandomImage="Reading Random Image";
+		textSettingImage="Setting Image";
 		textSkip="Skip";
 	}
 	if (lang=="lat") {
 		textLoadingImage="Lectio Imagibus";
 		textLoadingRandomImage="Lectio Fortuitus Imagibus";
+		textSettingImage="Occasum Imagibus";
 		textSkip="Saltus";
 	}
-
 
 	var table = document.getElementById("imagetable");
 	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
@@ -546,7 +550,7 @@ function updateAboutMeImage(lang, random) {
 		document.getElementById("loadingDivTitle").innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+")";
 
 		if (typeof localStorage["nasa_image_blob"]==="undefined") {
-			loadImage(i, items[i], lang);
+			loadImage(i, items[i], lang, textLoadingImage, textSkip, textSettingImage);
 		} else {
 			locStData=getLocalStorageData('nasa_image_blob');
 			blobExists=0;
@@ -554,17 +558,18 @@ function updateAboutMeImage(lang, random) {
 				blobExists=1;
 				localforage.getItem(items[i].enclosures[0].url, function (err, value) {
 					if (value !== null) {
+						document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+")";
 						blobLink= window.URL.createObjectURL(value);
 						showBlob(blobLink, i, items[i], lang);
 					} else {
 						// new value must be stored
-						loadImage(i, items[i], lang);
+						loadImage(i, items[i], lang, textLoadingImage, textSkip, textSettingImage);
 					}
 				});
 			}
 
 			if (blobExists==0) {
-				loadImage(i, items[i], lang);
+				loadImage(i, items[i], lang, textLoadingImage, textSkip, textSettingImage);
 			}
 		}
 
