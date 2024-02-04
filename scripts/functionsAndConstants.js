@@ -529,6 +529,7 @@ function updateAboutMeImage(lang, random) {
 	a.innerText = textSkip;
 	a.onclick = function () {
 		showErrorImage(lang);
+		return;
 	}
 	if (random==0) loadingDivTitle.innerHTML = textLoadingImage+" #1";
 	if (random!=0) loadingDivTitle.innerHTML = textLoadingRandomImage;
