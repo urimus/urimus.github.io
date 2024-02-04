@@ -460,7 +460,7 @@ function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 
 	xmlHTTP.onload = function(e) {
 
-		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(item.enclosures[0].length)+")";
+		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(item.enclosures[0].length)+") ";
 
 		var blob = new Blob([this.response]);
 
@@ -531,8 +531,8 @@ function updateAboutMeImage(lang, random) {
 		showErrorImage(lang);
 		return;
 	}
-	if (random==0) loadingDivTitle.innerHTML = textLoadingImage+" #1";
-	if (random!=0) loadingDivTitle.innerHTML = textLoadingRandomImage;
+	if (random==0) loadingDivTitle.innerHTML = textLoadingImage+" #1 ";
+	if (random!=0) loadingDivTitle.innerHTML = textLoadingRandomImage+" ";
 	loadingDivTitle.appendChild(a);
 
 	feedURL="https://www.nasa.gov/feeds/iotd-feed/";
@@ -548,7 +548,7 @@ function updateAboutMeImage(lang, random) {
 		i=0;
 		if (random!=0) i=Math.floor(Math.random()*totalEntries);
 
-		document.getElementById("loadingDivTitle").innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+")";
+		document.getElementById("loadingDivTitle").innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
 
 		if (typeof localStorage["nasa_image_blob"]==="undefined") {
 			loadImage(i, items[i], lang, textLoadingImage, textSkip, textSettingImage);
@@ -559,7 +559,7 @@ function updateAboutMeImage(lang, random) {
 				blobExists=1;
 				localforage.getItem(items[i].enclosures[0].url, function (err, value) {
 					if (value !== null) {
-						document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+")";
+						document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
 						blobLink= window.URL.createObjectURL(value);
 						showBlob(blobLink, i, items[i], lang);
 					} else {
