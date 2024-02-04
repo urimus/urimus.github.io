@@ -617,7 +617,7 @@ function getLocalStorageData(par) {
 	if (typeof localStorage[par]==="undefined") {
 		return {};
 	} else {
-		return JSON.parse(localStorage[locStPar]);
+		return JSON.parse(localStorage[par]);
 	}
 }
 

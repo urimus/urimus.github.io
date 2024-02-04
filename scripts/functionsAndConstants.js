@@ -278,25 +278,181 @@ function showErrorImage(lang) {
 }
 
 
+
+function showBlob(blob, i, item, lang){
+
+
+	if (lang=="rus") {
+		textImage="Картинка";
+		textError = "Загрузка Картинки "+"#"+(i+1)+" не Удалась. <a href='javascript:location.reload();' class = 'standardb_blue'>Обновите Страницу</a>.";
+	}
+	if (lang=="eng") {
+		textImage="Image";
+		textError = "Image "+"#"+(i+1)+" Load Failed. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
+	}
+	if (lang=="lat") {
+		textImage="Image";
+		textError = "Imago "+"#"+(i+1)+" Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
+	}
+
+
+
+	blobLink= window.URL.createObjectURL(blob);
+
+	var Img=document.createElement("img");
+	Img.src = blobLink;
+	Img.setAttribute('class', "text_blue");
+	Img.setAttribute('title', item.title);
+	Img.setAttribute('alt', item.title);
+	Img.setAttribute('width', '100%');
+	Img.onerror  = function () { 
+		document.getElementById("loadingDivTitle").innerHTML = textError;
+		scrollDivHeight=calcScrollDivHeightMax();
+		document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+		adjustScrollDiv();
+	}
+	Img.onload  = function () { 
+
+		var table = document.getElementById("imagetable");
+		while(table.childNodes.length>0){table.removeChild(table.lastChild);}
+
+		var tableRow = table.insertRow(-1);
+		var cellImg=tableRow.insertCell(0);
+		cellImg.appendChild(Img);
+
+		var tableRow = table.insertRow(-1);
+		var cell1=tableRow.insertCell(0);
+
+		if (item.summary != null) summary_words=item.summary.split(" ");
+		wordsCount=0;
+		currentLineTop=0;
+
+		linesToShow=4;
+		linesCount=1;
+
+		var Div = document.createElement('div');
+		Div.setAttribute('class', "text_blue");
+
+		var imageA = document.createElement('a');
+		imageA.setAttribute('href', item.link);
+		imageA.setAttribute('class', 'standardb_blue');
+		imageA.setAttribute('target', '_blank');
+		imageA.innerText = textImage;
+		Div.appendChild(imageA);
+		Div.innerHTML=Div.innerHTML+"&nbsp;#"+(i+1)+".";
+		if (item.summary != null) {
+
+			var summarySpan = document.createElement('span');
+			summarySpan.setAttribute('class', "text_blue");
+			summarySpan.setAttribute('id', "summary_span");
+			summarySpan.innerHTML="&nbsp;";
+			Div.appendChild(summarySpan);
+
+			var extensionA = document.createElement('a');
+			extensionA.setAttribute('href', "javascript:void(0);");
+			extensionA.setAttribute('class', 'standardb_blue');
+			extensionA.onclick  = function () { 
+				// ▼- &#9660;   ▲- &#9650;
+				if (this.innerHTML=="[▼]") { // expand
+				summarySpan.innerHTML="&nbsp;"+item.summary;
+					this.innerHTML="[&#9650;]";
+				} else if (this.innerHTML=="[▲]") { // collapse
+					summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+					this.innerHTML="[&#9660;]";
+				}
+				scrollDivHeight=calcScrollDivHeightMax();
+				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+				adjustScrollDiv();
+			}
+			extensionA.innerHTML = "[&#9660;]";
+
+			var Pointer = document.createElement('a');
+			Div.appendChild(Pointer);
+			cell1.appendChild(Div);
+
+			// show linesToShow lines of summary
+			currentLineTop=Pointer.offsetTop;
+			for (k=0; k<summary_words.length; k++) {
+				summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, k+1);
+				if (Pointer.offsetTop!=currentLineTop) {
+					if (linesCount==linesToShow) {  // new pointer should be set
+						summarySpan.innerHTML="";
+						Div.removeChild(Pointer);
+						Div.appendChild(extensionA);
+						wordsCount=0;
+						linesCount=1;
+
+						// 2nd time with normal ponter
+						currentLineTop=extensionA.offsetTop;
+						for (k2=0; k2<summary_words.length; k2++) {
+							wordsCount++;
+							summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+							if (extensionA.offsetTop!=currentLineTop) {
+								if (linesCount==linesToShow) {  // remove last word
+									wordsCount--;
+									summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+									break;
+								} else {
+									currentLineTop=extensionA.offsetTop;
+									linesCount++;
+								}
+							}
+						}
+						break;
+					} else {
+						currentLineTop=Pointer.offsetTop;
+						linesCount++;
+					}
+				}
+			}
+			if (k==summary_words.length) {
+				Div.removeChild(Pointer);
+				summarySpan.innerHTML="&nbsp;"+item.summary;
+			}
+		} else {
+			cell1.appendChild(Div);
+		}
+
+
+		var tableRow = table.insertRow(-1);
+		var cell1=tableRow.insertCell(0);
+		var Div = document.createElement('div');
+		Div.setAttribute('class', "textsmall_blue");
+		Div.setAttribute('align', "right");
+		Div.setAttribute("style", "padding-left:10px; padding-right:10px;");
+		Div.innerHTML=formatDate(item.date_ms, lang);
+		cell1.appendChild(Div);
+
+		scrollDivHeight=calcScrollDivHeightMax();
+		document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+		adjustScrollDiv();
+	}
+
+}
+
+
+
+function getLocalStorageData(par) {
+	if (typeof localStorage[par]==="undefined") {
+		return {};
+	} else {
+		return JSON.parse(localStorage[par]);
+	}
+}
+
 // image loading progress bar and contents
 function loadImage(i, item, lang, textLoadingImage){
 
 	if (lang=="rus") {
-		textImage="Картинка";
 		textSettingImage="Устанавливается Картинка";
-		textError = "Загрузка Картинки "+"#"+(i+1)+" не Удалась. <a href='javascript:location.reload();' class = 'standardb_blue'>Обновите Страницу</a>.";
 		textSkip="Отменить";
 	}
 	if (lang=="eng") {
-		textImage="Image";
 		textSettingImage="Setting Image";
-		if (lang=="eng") textError = "Image "+"#"+(i+1)+" Load Failed. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
 		textSkip="Skip";
 	}
 	if (lang=="lat") {
-		textImage="Image";
 		textSettingImage="Occasum Imagibus";
-		textError = "Imago "+"#"+(i+1)+" Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
 		textSkip="Saltus";
 	}
 
@@ -323,165 +479,15 @@ function loadImage(i, item, lang, textLoadingImage){
 
 		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1);
 
-
-/* saving blob using localStorage - limited to 5MB
-		const dataString=JSON.stringify(Array.from(new Uint8Array(this.response)));
-		console.log(dataString);
-		buffer=new Uint8Array(JSON.parse(dataString)).buffer;
-		var blob = new Blob([buffer]);
-*/
-
 		var blob = new Blob([this.response]);
 
+		locStData=getLocalStorageData('nasa_image_blob');
+		locStData[item.enclosures[0].url]=null;
+		localStorage['nasa_image_blob']=JSON.stringify(locStData);
 
-/*  saving blob using localforage - can be implemented
-		// localforage.removeItem(item.enclosures[0].url, function () {return;});
 		localforage.setItem(item.enclosures[0].url, blob);
-		localforage.getItem(item.enclosures[0].url, function (err, value) {
-			console.log("blob obtained");
-			console.log(err);
-			console.log(value);
-			if (value !== null) {
-				blob=value;
-				blobLink= window.URL.createObjectURL(blob);
-				console.log(blobLink);
-			} else {
-				// new value must be stored
-			}
-		});
-*/
 
-
-		blobLink= window.URL.createObjectURL(blob);
-
-		var Img=document.createElement("img");
-		Img.src = blobLink;
-		Img.setAttribute('class', "text_blue");
-		Img.setAttribute('title', item.title);
-		Img.setAttribute('alt', item.title);
-		Img.setAttribute('width', '100%');
-		Img.onerror  = function () { 
-			document.getElementById("loadingDivTitle").innerHTML = textError;
-			scrollDivHeight=calcScrollDivHeightMax();
-			document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-			adjustScrollDiv();
-		}
-		Img.onload  = function () { 
-
-			var table = document.getElementById("imagetable");
-			while(table.childNodes.length>0){table.removeChild(table.lastChild);}
-
-			var tableRow = table.insertRow(-1);
-			var cellImg=tableRow.insertCell(0);
-			cellImg.appendChild(Img);
-
-			var tableRow = table.insertRow(-1);
-			var cell1=tableRow.insertCell(0);
-
-			if (item.summary != null) summary_words=item.summary.split(" ");
-			wordsCount=0;
-			currentLineTop=0;
-
-			linesToShow=4;
-			linesCount=1;
-
-			var Div = document.createElement('div');
-			Div.setAttribute('class', "text_blue");
-
-			var imageA = document.createElement('a');
-			imageA.setAttribute('href', item.link);
-			imageA.setAttribute('class', 'standardb_blue');
-			imageA.setAttribute('target', '_blank');
-			imageA.innerText = textImage;
-			Div.appendChild(imageA);
-			Div.innerHTML=Div.innerHTML+"&nbsp;#"+(i+1)+".";
-			if (item.summary != null) {
-
-				var summarySpan = document.createElement('span');
-				summarySpan.setAttribute('class', "text_blue");
-				summarySpan.setAttribute('id', "summary_span");
-				summarySpan.innerHTML="&nbsp;";
-				Div.appendChild(summarySpan);
-
-				var extensionA = document.createElement('a');
-				extensionA.setAttribute('href', "javascript:void(0);");
-				extensionA.setAttribute('class', 'standardb_blue');
-				extensionA.onclick  = function () { 
-					// ▼- &#9660;   ▲- &#9650;
-					if (this.innerHTML=="[▼]") { // expand
-					summarySpan.innerHTML="&nbsp;"+item.summary;
-						this.innerHTML="[&#9650;]";
-					} else if (this.innerHTML=="[▲]") { // collapse
-						summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
-						this.innerHTML="[&#9660;]";
-					}
-					scrollDivHeight=calcScrollDivHeightMax();
-					document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-					adjustScrollDiv();
-				}
-				extensionA.innerHTML = "[&#9660;]";
-
-				var Pointer = document.createElement('a');
-				Div.appendChild(Pointer);
-				cell1.appendChild(Div);
-
-				// show linesToShow lines of summary
-				currentLineTop=Pointer.offsetTop;
-				for (k=0; k<summary_words.length; k++) {
-					summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, k+1);
-					if (Pointer.offsetTop!=currentLineTop) {
-						if (linesCount==linesToShow) {  // new pointer should be set
-							summarySpan.innerHTML="";
-							Div.removeChild(Pointer);
-							Div.appendChild(extensionA);
-							wordsCount=0;
-							linesCount=1;
-
-							// 2nd time with normal ponter
-							currentLineTop=extensionA.offsetTop;
-							for (k2=0; k2<summary_words.length; k2++) {
-								wordsCount++;
-								summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
-								if (extensionA.offsetTop!=currentLineTop) {
-									if (linesCount==linesToShow) {  // remove last word
-										wordsCount--;
-										summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
-										break;
-									} else {
-										currentLineTop=extensionA.offsetTop;
-										linesCount++;
-									}
-								}
-							}
-							break;
-						} else {
-							currentLineTop=Pointer.offsetTop;
-							linesCount++;
-						}
-					}
-				}
-				if (k==summary_words.length) {
-					Div.removeChild(Pointer);
-					summarySpan.innerHTML="&nbsp;"+item.summary;
-				}
-			} else {
-				cell1.appendChild(Div);
-			}
-
-
-			var tableRow = table.insertRow(-1);
-			var cell1=tableRow.insertCell(0);
-			var Div = document.createElement('div');
-			Div.setAttribute('class', "textsmall_blue");
-			Div.setAttribute('align', "right");
-			Div.setAttribute("style", "padding-left:10px; padding-right:10px;");
-			Div.innerHTML=formatDate(item.date_ms, lang);
-			cell1.appendChild(Div);
-
-			scrollDivHeight=calcScrollDivHeightMax();
-			document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-			adjustScrollDiv();
-		}
+		showBlob(blob, i, item, lang);
 	};
 	xmlHTTP.onprogress = function(e) {
 		document.getElementById("loadingDivProgress").innerHTML = formatBytes(e.loaded);
@@ -538,7 +544,50 @@ function updateAboutMeImage(lang, random) {
 		i=0;
 		if (random!=0) i=Math.floor(Math.random()*totalEntries);
 
-		loadImage(i, items[i], lang, textLoadingImage);
+		if (typeof localStorage["nasa_image_blob"]==="undefined") {
+			loadImage(i, items[i], lang, textLoadingImage);;
+		} else {
+			locStData=getLocalStorageData('nasa_image_blob');
+			blobExists=0;
+			if (typeof locStData[items[i].enclosures[0].url]!=="undefined") {
+				blobExists=1;
+				localforage.getItem(items[i].enclosures[0].url, function (err, value) {
+					if (value !== null) {
+						blob=value;
+						showBlob(blob, i, items[i], lang);
+					} else {
+						// new value must be stored
+						loadImage(i, items[i], lang, textLoadingImage);
+					}
+				});
+			}
+
+			if (blobExists==0) {
+				loadImage(i, items[i], lang, textLoadingImage);
+			}
+		}
+
+		// remove unusedRecords
+		// check if record in Images Feed, if not - remove
+		var objToRemove=[];
+		for (var key in locStData) {
+			// check if the property/key is defined in the object itself, not in parent
+			if (locStData.hasOwnProperty(key)) {
+				recordExists=0;
+				for (j=0; j<totalEntries;  j++) {			
+					if (items[j].enclosures[0].url == key) {
+						recordExists=1;
+						break;
+					}
+				}
+				if (recordExists==0) objToRemove.push(key);
+			}
+		}
+		for (j=0;j<objToRemove.length;j++) {	
+			localforage.removeItem(objToRemove[j], function () {return;});
+			delete locStData[objToRemove[j]];
+		}
+		localStorage['nasa_image_blob']=JSON.stringify(locStData);
 	});
 }
 

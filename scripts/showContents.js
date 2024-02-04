@@ -383,9 +383,9 @@ function showContents(type, sortby, lang) {
 	cell1.className = 'text_'+textColor;
 	cell1.style.textAlign = 'center';
 
-	if (lang=="rus") cell1.innerHTML = "<b><div id='loadingDivTitle'>Читается Строка Новостей</div><div id='loadingDiv'>.</div></b>";
-	if (lang=="eng") cell1.innerHTML = "<b><div id='loadingDivTitle'>Reading News Feed</div><div id='loadingDiv'>.</div></b>";
-	if (lang=="lat") cell1.innerHTML = "<b><div id='loadingDivTitle'>Lectio Nuntium Acies</div><div id='loadingDiv'>.</div></b>";
+	if (lang=="rus") cell1.innerHTML = "<b><div id='loadingDivTitle'>Читается Картинка</div><div id='loadingDiv'>.</div></b>";
+	if (lang=="eng") cell1.innerHTML = "<b><div id='loadingDivTitle'>Reading Image</div><div id='loadingDiv'>.</div></b>";
+	if (lang=="lat") cell1.innerHTML = "<b><div id='loadingDivTitle'>Lectio Imagibus</div><div id='loadingDiv'>.</div></b>";
 
 // ------------- Loading Feed Image ----------- //
 
