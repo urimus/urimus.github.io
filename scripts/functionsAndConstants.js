@@ -444,6 +444,7 @@ function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 	a.onclick = function () {
 		xmlHTTP.timeout=0;
 		showErrorImage(lang);
+		return;
 	}
 	loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(item.enclosures[0].length)+") ";
 	loadingDivTitle.appendChild(a);
@@ -451,7 +452,9 @@ function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 
 	xmlHTTP.onload = function(e) {
 
-		document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ";
+		loadingDivTitle=document.getElementById("loadingDivTitle");
+		loadingDivTitle.innerHTML = textSettingImage+" #"+(i+1)+" ";
+		loadingDivTitle.appendChild(a);
 
 		var blob = new Blob([this.response]);
 		localforage.setItem(item.enclosures[0].url, blob);
@@ -533,11 +536,20 @@ function updateAboutMeImage(lang, random) {
 		i=0;
 		if (random!=0) i=Math.floor(Math.random()*totalEntries);
 
-		document.getElementById("loadingDivTitle").innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
+		loadingDivTitle=document.getElementById("loadingDivTitle");
+		loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
+		loadingDivTitle.appendChild(a);
 
 		localforage.getItem(items[i].enclosures[0].url, function (err, value) {
+			if (err !== null) {
+				showErrorImage(lang);
+				return;
+			}
 			if (value !== null) {
+				loadingDivTitle=document.getElementById("loadingDivTitle");
 				document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
+				loadingDivTitle.appendChild(a);
+
 				blobLink= window.URL.createObjectURL(value);
 				showBlob(blobLink, i, items[i], lang);
 			} else {
