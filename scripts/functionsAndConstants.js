@@ -446,14 +446,14 @@ function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 		showErrorImage(lang);
 		return;
 	}
-	loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(item.enclosures[0].length)+") ";
+	loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(item.enclosures[0].length)+"). ";
 	loadingDivTitle.appendChild(a);
 
 
 	xmlHTTP.onload = function(e) {
 
 		loadingDivTitle=document.getElementById("loadingDivTitle");
-		loadingDivTitle.innerHTML = textSettingImage+" #"+(i+1)+" ";
+		loadingDivTitle.innerHTML = textSettingImage+" #"+(i+1)+". ";
 		loadingDivTitle.appendChild(a);
 
 		var blob = new Blob([this.response]);
@@ -524,7 +524,7 @@ function updateAboutMeImage(lang, random) {
 		showErrorImage(lang);
 		return;
 	}
-	loadingDivTitle.innerHTML = textLoadingFeed+" ";
+	loadingDivTitle.innerHTML = textLoadingFeed+". ";
 	loadingDivTitle.appendChild(a);
 
 	feedURL="https://www.nasa.gov/feeds/iotd-feed/";
@@ -541,7 +541,7 @@ function updateAboutMeImage(lang, random) {
 		if (random!=0) i=Math.floor(Math.random()*totalEntries);
 
 		loadingDivTitle=document.getElementById("loadingDivTitle");
-		loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
+		loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+"). ";
 		loadingDivTitle.appendChild(a);
 
 		localforage.getItem(items[i].enclosures[0].url, function (err, value) {
@@ -551,7 +551,7 @@ function updateAboutMeImage(lang, random) {
 			}
 			if (value !== null) {
 				loadingDivTitle=document.getElementById("loadingDivTitle");
-				document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+") ";
+				document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+"). ";
 				loadingDivTitle.appendChild(a);
 
 				blobLink= window.URL.createObjectURL(value);
