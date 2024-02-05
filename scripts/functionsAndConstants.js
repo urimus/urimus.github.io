@@ -483,6 +483,11 @@ function updateAboutMeImage(lang, random) {
 
 	processPageResize(1);
 
+	localforage.config({
+		name: 'urepinski_homepage',
+		storeName: "nasa_image"
+	});
+
 	if (lang=="rus") {
 		textLoadingImage="Читается Картинка";
 		textLoadingFeed="Читается Строка Новостей";
@@ -572,7 +577,7 @@ function updateAboutMeImage(lang, random) {
 				if (recordExists==0) objToRemove.push(keys[j]);
 			}
 			for (j=0;j<objToRemove.length;j++) {	
-				localforage.removeItem(objToRemove[j], function () {return;});
+				localforage.removeItem(objToRemove[j], function (err) {return;});
 			}
 		});
 
