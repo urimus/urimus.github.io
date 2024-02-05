@@ -485,19 +485,19 @@ function updateAboutMeImage(lang, random) {
 
 	if (lang=="rus") {
 		textLoadingImage="Читается Картинка";
-		textLoadingRandomImage="Читается Случайная Картинка";
+		textLoadingFeed="Читается Строка Новостей";
 		textSettingImage="Устанавливается Картинка";
 		textSkip="Отменить";
 	}
 	if (lang=="eng") {
 		textLoadingImage="Reading Image";
-		textLoadingRandomImage="Reading Random Image";
+		textLoadingFeed="Reading News Feed";
 		textSettingImage="Setting Image";
 		textSkip="Skip";
 	}
 	if (lang=="lat") {
 		textLoadingImage="Lectio Imagibus";
-		textLoadingRandomImage="Lectio Fortuitus Imagibus";
+		textLoadingFeed="Lectio Nuntium Acies";
 		textSettingImage="Occasum Imagibus";
 		textSkip="Saltus";
 	}
@@ -519,8 +519,7 @@ function updateAboutMeImage(lang, random) {
 		showErrorImage(lang);
 		return;
 	}
-	if (random==0) loadingDivTitle.innerHTML = textLoadingImage+" #1 ";
-	if (random!=0) loadingDivTitle.innerHTML = textLoadingRandomImage+" ";
+	loadingDivTitle.innerHTML = textLoadingFeed+" ";
 	loadingDivTitle.appendChild(a);
 
 	feedURL="https://www.nasa.gov/feeds/iotd-feed/";
