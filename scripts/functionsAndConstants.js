@@ -577,7 +577,7 @@ function updateAboutMeImage(lang, random) {
 				if (recordExists==0) objToRemove.push(keys[j]);
 			}
 			for (j=0;j<objToRemove.length;j++) {	
-				localforage.removeItem(objToRemove[j], function (err) {return;});
+				localforage.removeItem(objToRemove[j], function (err) {});
 			}
 		});
 
