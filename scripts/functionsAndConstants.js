@@ -457,9 +457,32 @@ function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 		loadingDivTitle.appendChild(a);
 
 		var blob = new Blob([this.response]);
-		localforage.setItem(item.enclosures[0].url, blob);
-		blobLink= window.URL.createObjectURL(blob);
-		showBlob(blobLink, i, item, lang);
+
+		// resizing blob to 450 px
+		createImageBitmap(blob).then(
+			function(imageBitmap) {
+				console.log(imageBitmap);
+				bmpWidth=imageBitmap.width;
+				bmpHeight=imageBitmap.height;
+				console.log(bmpWidth);
+				console.log(bmpHeight);
+				ratio = 450.0 / bmpWidth;
+				var canvas = document.createElement("canvas");
+				canvas.width = 450;
+				canvas.height = bmpHeight*ratio;
+				var ctx = canvas.getContext("2d");
+				ctx.drawImage(imageBitmap, 0, 0, canvas.width, canvas.height);
+				canvas.toBlob(function (blob) {
+					localforage.setItem(item.enclosures[0].url, blob);
+					blobLink= window.URL.createObjectURL(blob);
+					showBlob(blobLink, i, item, lang);
+				}, '');
+			},
+			function(error) {
+				console.log(error);
+			},
+		);
+
 	};
 	xmlHTTP.onprogress = function(e) {
 		document.getElementById("loadingDivProgress").innerHTML = formatBytes(e.loaded);
@@ -541,7 +564,7 @@ function updateAboutMeImage(lang, random) {
 		if (random!=0) i=Math.floor(Math.random()*totalEntries);
 
 		loadingDivTitle=document.getElementById("loadingDivTitle");
-		loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+"). ";
+		loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+". ";
 		loadingDivTitle.appendChild(a);
 
 		localforage.getItem(items[i].enclosures[0].url, function (err, value) {
@@ -549,9 +572,10 @@ function updateAboutMeImage(lang, random) {
 				showErrorImage(lang);
 				return;
 			}
+
 			if (value !== null) {
 				loadingDivTitle=document.getElementById("loadingDivTitle");
-				document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(items[i].enclosures[0].length)+"). ";
+				document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(value.size)+"). ";
 				loadingDivTitle.appendChild(a);
 
 				blobLink= window.URL.createObjectURL(value);
@@ -560,6 +584,7 @@ function updateAboutMeImage(lang, random) {
 				// new value must be stored
 				loadImage(i, items[i], lang, textLoadingImage, textSkip, textSettingImage);
 			}
+
 		});
 
 
