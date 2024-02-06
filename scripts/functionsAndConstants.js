@@ -422,6 +422,8 @@ function showBlob(blobLink, i, item, lang){
 		scrollDivHeight=calcScrollDivHeightMax();
 		document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 		adjustScrollDiv();
+
+		URL.revokeObjectURL(blobLink);
 	}
 
 }
@@ -476,13 +478,12 @@ function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
 					localforage.setItem(item.enclosures[0].url, blob);
 					blobLink= window.URL.createObjectURL(blob);
 					showBlob(blobLink, i, item, lang);
-				}, '');
+				}, 'image/jpeg');
 			},
 			function(error) {
 				console.log(error);
 			},
 		);
-
 	};
 	xmlHTTP.onprogress = function(e) {
 		document.getElementById("loadingDivProgress").innerHTML = formatBytes(e.loaded);
@@ -572,12 +573,7 @@ function updateAboutMeImage(lang, random) {
 				showErrorImage(lang);
 				return;
 			}
-
 			if (value !== null) {
-				loadingDivTitle=document.getElementById("loadingDivTitle");
-				document.getElementById("loadingDivTitle").innerHTML = textSettingImage+" #"+(i+1)+" ("+formatBytes(value.size)+"). ";
-				loadingDivTitle.appendChild(a);
-
 				blobLink= window.URL.createObjectURL(value);
 				showBlob(blobLink, i, items[i], lang);
 			} else {
