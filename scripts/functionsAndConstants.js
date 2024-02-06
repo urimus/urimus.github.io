@@ -496,7 +496,8 @@ function loadImage(i, item, lang, textSkip,){
 				}, 'image/jpeg');
 			},
 			function(error) {
-				console.log(error);
+				showErrorImage(lang);
+				return;
 			},
 		);
 	};
