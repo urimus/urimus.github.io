@@ -430,7 +430,22 @@ function showBlob(blobLink, i, item, lang){
 
 
 // image loading progress bar and contents
-function loadImage(i, item, lang, textLoadingImage, textSkip, textSettingImage){
+function loadImage(i, item, lang, textSkip,){
+
+
+	if (lang=="rus") {
+		textLoadingImage="Читается Картинка";
+		textSettingImage="Устанавливается Картинка";
+	}
+	if (lang=="eng") {
+		textLoadingImage="Reading Image";
+		textSettingImage="Setting Image";
+	}
+	if (lang=="lat") {
+		textLoadingImage="Lectio Imagibus";
+		textSettingImage="Occasum Imagibus";
+	}
+
 
 	if (window.XMLHttpRequest) {
 		xmlHTTP = new XMLHttpRequest();               
@@ -513,21 +528,15 @@ function updateAboutMeImage(lang, random) {
 	});
 
 	if (lang=="rus") {
-		textLoadingImage="Читается Картинка";
 		textLoadingFeed="Читается Строка Новостей";
-		textSettingImage="Устанавливается Картинка";
 		textSkip="Отменить";
 	}
 	if (lang=="eng") {
-		textLoadingImage="Reading Image";
 		textLoadingFeed="Reading News Feed";
-		textSettingImage="Setting Image";
 		textSkip="Skip";
 	}
 	if (lang=="lat") {
-		textLoadingImage="Lectio Imagibus";
 		textLoadingFeed="Lectio Nuntium Acies";
-		textSettingImage="Occasum Imagibus";
 		textSkip="Saltus";
 	}
 
@@ -564,10 +573,6 @@ function updateAboutMeImage(lang, random) {
 		i=0;
 		if (random!=0) i=Math.floor(Math.random()*totalEntries);
 
-		loadingDivTitle=document.getElementById("loadingDivTitle");
-		loadingDivTitle.innerHTML = textLoadingImage+" #"+(i+1)+". ";
-		loadingDivTitle.appendChild(a);
-
 		localforage.getItem(items[i].enclosures[0].url, function (err, value) {
 			if (err !== null) {
 				showErrorImage(lang);
@@ -578,7 +583,7 @@ function updateAboutMeImage(lang, random) {
 				showBlob(blobLink, i, items[i], lang);
 			} else {
 				// new value must be stored
-				loadImage(i, items[i], lang, textLoadingImage, textSkip, textSettingImage);
+				loadImage(i, items[i], lang, textSkip);
 			}
 
 		});
