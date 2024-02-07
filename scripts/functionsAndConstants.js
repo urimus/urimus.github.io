@@ -435,11 +435,11 @@ function loadImage(i, item, lang, textSkip,){
 
 	if (lang=="rus") {
 		textLoadingImage="Читается Картинка";
-		textSettingImage="Устанавливается Картинка";
+		textSettingImage="Изменяется Размер Картинки";
 	}
 	if (lang=="eng") {
 		textLoadingImage="Reading Image";
-		textSettingImage="Setting Image";
+		textSettingImage="Resizing Image";
 	}
 	if (lang=="lat") {
 		textLoadingImage="Lectio Imagibus";
@@ -478,11 +478,8 @@ function loadImage(i, item, lang, textSkip,){
 		// resizing blob to 450 px
 		createImageBitmap(blob).then(
 			function(imageBitmap) {
-				console.log(imageBitmap);
 				bmpWidth=imageBitmap.width;
 				bmpHeight=imageBitmap.height;
-				console.log(bmpWidth);
-				console.log(bmpHeight);
 				ratio = 450.0 / bmpWidth;
 				var canvas = document.createElement("canvas");
 				canvas.width = 450;
@@ -579,7 +576,7 @@ function updateAboutMeImage(lang, random) {
 				showErrorImage(lang);
 				return;
 			}
-			if (value !== null) {
+			if (value != null) {
 				blobLink= window.URL.createObjectURL(value);
 				showBlob(blobLink, i, items[i], lang);
 			} else {
