@@ -443,7 +443,7 @@ function loadImage(i, item, lang, textSkip,){
 	}
 	if (lang=="lat") {
 		textLoadingImage="Lectio Imagibus";
-		textSettingImage="Occasum Imagibus";
+		textSettingImage="Resizing Imagibus";
 	}
 
 
