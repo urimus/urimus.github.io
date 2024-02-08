@@ -430,20 +430,28 @@ function showBlob(blobLink, i, item, lang){
 
 
 // image loading progress bar and contents
-function loadImage(i, item, lang, textSkip,){
+function loadImage(i, item, lang){
+
+
 
 
 	if (lang=="rus") {
 		textLoadingImage="Читается Картинка";
 		textSettingImage="Изменяется Размер Картинки";
+		textError = "Загрузка Картинки "+"#"+(i+1)+" не Удалась. <a href='javascript:location.reload();' class = 'standardb_blue'>Обновите Страницу</a>.";
+		textSkip="Отменить";
 	}
 	if (lang=="eng") {
 		textLoadingImage="Reading Image";
 		textSettingImage="Resizing Image";
+		textError = "Image "+"#"+(i+1)+" Load Failed. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
+		textSkip="Skip";
 	}
 	if (lang=="lat") {
 		textLoadingImage="Lectio Imagibus";
 		textSettingImage="Resizing Imagibus";
+		textError = "Imago "+"#"+(i+1)+" Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
+		textSkip="Saltus";
 	}
 
 
@@ -581,7 +589,7 @@ function updateAboutMeImage(lang, random) {
 				showBlob(blobLink, i, items[i], lang);
 			} else {
 				// new value must be stored
-				loadImage(i, items[i], lang, textSkip);
+				loadImage(i, items[i], lang);
 			}
 
 		});
