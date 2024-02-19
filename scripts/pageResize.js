@@ -64,12 +64,10 @@ function processPageResize(isLoad, orientationChanged){
 		if (window.location.pathname.substr(0, 12)=="/html_editor") {
 			adjustTextareaAndEncodings();
 		} else if (window.location.pathname.substr(0, 5)=="/news") {
-			if (allImagesLoaded==1) {
-				feedTitleHeight=parseInt($( "#feed_title" ).css( "height" ));
+			feedTitleHeight=parseInt($( "#feed_title" ).css( "height" ));
 //		$( "#scrollDiv" ).css( "height", (scrollDivHeight-feedTitleHeight-4) + "px");
-				document.getElementById("scrollDiv").setAttribute("style", "height:"+(scrollDivHeight-feedTitleHeight-4)+"px;width: 710px; overflow:auto;");
-				adjustScrollDiv();
-			}
+			document.getElementById("scrollDiv").setAttribute("style", "height:"+(scrollDivHeight-feedTitleHeight-4)+"px;width: 710px; overflow:auto;");
+			adjustScrollDiv();
 		} else if (window.location.pathname.substr(0, 9)=="/about_me") { // nothing
 
 		} else {

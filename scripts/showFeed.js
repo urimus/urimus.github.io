@@ -1,7 +1,5 @@
 ﻿// ------------- Global Variables ---------------- //
-allImagesLoaded=0; // for resize
 timeoutVal=10000; // 10s
-
 //corsProxyVer=1 - "https://api.codetabs.com/v1/proxy/?quest=";
 //corsProxyVer=2 - "https://api.allorigins.win/raw?url=";
 //corsProxyVer=1;
@@ -246,9 +244,6 @@ function processShowFeedTitle(type, source, lang, result) {
 function processShowFeedData(type, source, lang, result) {
 
 
-	images_loaded=0;
-
-
 	// ------------- Setting Texts ---------------- //
 	// Records Text is in getRecordsText function
 	if (lang == "rus"){
@@ -316,26 +311,11 @@ function processShowFeedData(type, source, lang, result) {
 		Img.setAttribute('style', 'padding-right:5px;');
 		Img.setAttribute('loading', 'lazy');
 		Img.onload = function () { 
-			images_loaded++;
-			if (images_loaded >= totalEntries) {
-				allImagesLoaded=1; 
-				feedTitleHeight=parseInt($( "#feed_title" ).css( "height" ));
-//				document.getElementById("scrollDiv").setAttribute("style", "height:"+(menuHeight - (upperIntend + feedTitleHeight+4))+"px;width: 710px; overflow:auto;");
-				scrollDivHeight=calcScrollDivHeightMax();
-				document.getElementById("scrollDiv").setAttribute("style", "height:"+(scrollDivHeight - (feedTitleHeight+4))+"px;width: 710px; overflow:auto;");
-				adjustScrollDiv();
-			}
-		}
-		Img.onerror= function () { 
-			images_loaded++;
-			if (images_loaded >= totalEntries) {
-				allImagesLoaded=1; 
-				feedTitleHeight=parseInt($( "#feed_title" ).css( "height" ));
-//				document.getElementById("scrollDiv").setAttribute("style", "height:"+(menuHeight - (upperIntend + feedTitleHeight+4))+"px;width: 710px; overflow:auto;");
-				scrollDivHeight=calcScrollDivHeightMax();
-				document.getElementById("scrollDiv").setAttribute("style", "height:"+(scrollDivHeight - (feedTitleHeight+4))+"px;width: 710px; overflow:auto;");
-				adjustScrollDiv();
-			}
+			feedTitleHeight=parseInt($( "#feed_title" ).css( "height" ));
+//			document.getElementById("scrollDiv").setAttribute("style", "height:"+(menuHeight - (upperIntend + feedTitleHeight+4))+"px;width: 710px; overflow:auto;");
+			scrollDivHeight=calcScrollDivHeightMax();
+			document.getElementById("scrollDiv").setAttribute("style", "height:"+(scrollDivHeight - (feedTitleHeight+4))+"px;width: 710px; overflow:auto;");
+			adjustScrollDiv();
 		}
 		cell1.appendChild(Img);
 
