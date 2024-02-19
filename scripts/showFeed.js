@@ -314,6 +314,7 @@ function processShowFeedData(type, source, lang, result) {
 		Img.setAttribute('align', 'left');
 		Img.setAttribute('width', entry.media.width);
 		Img.setAttribute('style', 'padding-right:5px;');
+		Img.setAttribute('loading', 'lazy');
 		Img.onload = function () { 
 			images_loaded++;
 			if (images_loaded >= totalEntries) {
