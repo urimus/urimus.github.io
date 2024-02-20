@@ -628,89 +628,92 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	result.link=resultOrig.feed.meta.link;
 
 	items=resultOrig.feed.entries;
+	c=-1;
 	for (var i=0; i<items.length; i++) {
-		result.entries[i]={};
 		entry = items[i];
-		result.entries[i].title=entry.title;
-		result.entries[i].media={};
+		if (entry.source.title=="Kyiv Independent" || entry.source.title=="Ukrayinska Pravda") continue;
+		c++;
+		result.entries[c]={};
+
+		result.entries[c].title=entry.title;
+		result.entries[c].media={};
 		if (source == "bbc") {
-			result.entries[i].media.url="images/icons/feed/bbc_news.jpg";
-			result.entries[i].media.width=450;
-			result.entries[i].summary=entry.description;
+			result.entries[c].media.url="images/icons/feed/bbc_news.jpg";
+			result.entries[c].media.width=450;
+			result.entries[c].summary=entry.description;
 		}
 		if (source == "nasa") {
 			if (type=="image") {
-				result.entries[i].media.url=entry["enclosures"][0].url;
-				result.entries[i].media.width=450;
-				result.entries[i].summary=entry.description;
+				result.entries[c].media.url=entry["enclosures"][0].url;
+				result.entries[c].media.width=450;
+				result.entries[c].summary=entry.description;
 			}  else if (type=="picture") {
-				result.entries[i].media.url=entry["enclosures"][0].url;
-				result.entries[i].media.width=450;
-				result.entries[i].summary=entry["rss:description"]["#"]+".";
+				result.entries[c].media.url=entry["enclosures"][0].url;
+				result.entries[c].media.width=450;
+				result.entries[c].summary=entry["rss:description"]["#"]+".";
 			} else {
-				result.entries[i].media.url="images/icons/feed/nasa_news.png";
-				result.entries[i].media.width=450;
-				result.entries[i].summary=entry["rss:description"]["#"];
+				result.entries[c].media.url="images/icons/feed/nasa_news.png";
+				result.entries[c].media.width=450;
+				result.entries[c].summary=entry["rss:description"]["#"];
 			}
 		}
 		if (source == "yahoo") {
 			if (entry["media:content"]==null) {
-				result.entries[i].media.url="images/icons/feed/yahoo_news.jpg";
+				result.entries[c].media.url="images/icons/feed/yahoo_news.jpg";
 			} else {
-				result.entries[i].media.url=entry["media:content"]["@"].url;
+				result.entries[c].media.url=entry["media:content"]["@"].url;
 			}
-			result.entries[i].media.width=450;
+			result.entries[c].media.width=450;
 			if (type=="sports") {
 				desc2=entry.description;
 				entry.description=entry.summary;
 				imgPos = desc2.indexOf("<img");
 				if (imgPos==-1) {
-					result.entries[i].media.url="images/icons/feed/yahoo_news.jpg";
+					result.entries[c].media.url="images/icons/feed/yahoo_news.jpg";
 				} else {
 					q1Pos=desc2.indexOf('"', imgPos+1);
 					q2Pos=desc2.indexOf('"', q1Pos+1);
-					result.entries[i].media.url=desc2.substring(q1Pos+1, q2Pos);
+					result.entries[c].media.url=desc2.substring(q1Pos+1, q2Pos);
 				}
 			}
-			result.entries[i].summary=entry.summary;
+			result.entries[c].summary=entry.summary;
 
 		}
-		if (result.entries[i].media.width>=450) result.entries[i].media.width=450;
+		if (result.entries[c].media.width>=450) result.entries[c].media.width=450;
 
 		if (entry.comments==null) {
-			result.entries[i].media.comment="";
+			result.entries[c].media.comment="";
 		} else {
-			result.entries[i].media.comment=entry.comments;
+			result.entries[c].media.comment=entry.comments;
 		}
 
-		result.entries[i].source={};
+		result.entries[c].source={};
 
-		result.entries[i].source.title=entry.source.title;
-		result.entries[i].source.url=entry.source.url;
+		result.entries[c].source.title=entry.source.title;
+		result.entries[c].source.url=entry.source.url;
 
 		if (source == "nasa" && type=="picture") {
-			result.entries[i].creator=[];
+			result.entries[c].creator=[];
 			for (var j=0; j<entry["dc:creator"].length; j++) {
-				result.entries[i].creator[j]=entry["dc:creator"][j]["#"];
+				result.entries[c].creator[j]=entry["dc:creator"][j]["#"];
 			}
 		}
 
 		if (typeof entry["rss:category"]!=="undefined") {
-			result.entries[i].category=[];
+			result.entries[c].category=[];
 			if (entry["rss:category"].length>1) {
 				for (var j = 0; j < entry["rss:category"].length; j++) {
-					result.entries[i].category[j]=entry["rss:category"][j]["#"];
+					result.entries[c].category[j]=entry["rss:category"][j]["#"];
 				}
 			} else {
-				result.entries[i].category[0]=entry["rss:category"]["#"];
+				result.entries[c].category[0]=entry["rss:category"]["#"];
 			}
 		}
 
-		result.entries[i].link=entry.link;
-		result.entries[i].date_ms=entry.date_ms;
+		result.entries[c].link=entry.link;
+		result.entries[c].date_ms=entry.date_ms;
 
 	}
-
 /* Feed can be stored locally
 	if (source=="yahoo" && type=="world") {
 		result.localCopy={};
