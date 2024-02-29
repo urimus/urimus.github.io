@@ -411,6 +411,15 @@ function processShowFeedData(type, source, lang, result) {
 
 function processEmptyFeed(type, source, lang, feedXML) {
 
+	locStPar=source+"_"+type;
+	if (typeof localStorage[locStPar]!=="undefined") {
+		var result= {}
+		var result= JSON.parse(localStorage[locStPar]);
+		result.localCopy.is=1;
+		processShowFeedTitle(type, source, lang, result);
+		return;
+	} 
+
 	if (window.XMLHttpRequest) {
 		xmlhttp = new XMLHttpRequest();               
 	} 
@@ -424,46 +433,31 @@ function processEmptyFeed(type, source, lang, feedXML) {
 			data=xmlhttp.responseText;
 //			data=JSON.parse(xmlhttp.responseText).contents;  
 
-			locStPar=source+"_"+type;
 			if (data=="") {
-
-				if (typeof localStorage[locStPar]!=="undefined") {
-					var result= {}
-					var result= JSON.parse(localStorage[locStPar]);
-					result.localCopy.is=1;
-					processShowFeedTitle(type, source, lang, result);
-				} else {
-					if (lang=="rus") textTimeout='Чтение '+feedXML+' неудачно - Тайм-аут '+(timeoutVal/1000)+'с. <a href="javascript:location.reload();" class = "standardb_red">Обновите Страницу</a>.';
-					if (lang=="eng") textTimeout='Reading '+feedXML+' failed - Time-out'+(timeoutVal/1000)+'s. <a href="javascript:location.reload();" class = "standardb_red">Reload Page</a>.';
-					if (lang=="lat") textTimeout='Lectio '+feedXML+' defecit - Time-out'+(timeoutVal/1000)+'s. <a href="javascript:location.reload();" class = "standardb_red">Reload Page</a>.';
-					document.getElementById("loadingDivTitle").innerHTML = textTimeout;
-					scrollDivHeight=calcScrollDivHeightMax();
-					document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-					adjustScrollDiv();
-				}
+				if (lang=="rus") textTimeout='Чтение '+feedXML+' неудачно - Тайм-аут '+(timeoutVal/1000)+'с. <a href="javascript:location.reload();" class = "standardb_red">Обновите Страницу</a>.';
+				if (lang=="eng") textTimeout='Reading '+feedXML+' failed - Time-out'+(timeoutVal/1000)+'s. <a href="javascript:location.reload();" class = "standardb_red">Reload Page</a>.';
+				if (lang=="lat") textTimeout='Lectio '+feedXML+' defecit - Time-out'+(timeoutVal/1000)+'s. <a href="javascript:location.reload();" class = "standardb_red">Reload Page</a>.';
+				document.getElementById("loadingDivTitle").innerHTML = textTimeout;
+				scrollDivHeight=calcScrollDivHeightMax();
+				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+				adjustScrollDiv();
 				return;
 			}
+
 			parser = new DOMParser();
 			xmlDoc = parser.parseFromString(data,"text/xml");
 			items=xmlDoc.getElementsByTagName("item");
 			itemsCount=xmlDoc.getElementsByTagName("item").length;
 
-			if (typeof localStorage[locStPar]!=="undefined") {
-				var result= {}
-				var result= JSON.parse(localStorage[locStPar]);
-				result.localCopy.is=1;
-				processShowFeedTitle(type, source, lang, result);
-			} else {
-				var result= {}
-				result.feedXML=feedXML;
-				result.title=xmlDoc.getElementsByTagName("channel")[0].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-				result.link=xmlDoc.getElementsByTagName("channel")[0].getElementsByTagName("link")[0].childNodes[0].nodeValue;
-				if (source == "yahoo") result.image="images/icons/feed/yahoo_news_logo.png";
-				if (source == "bbc") result.image="images/icons/feed/bbc_news_logo.png";
-				if (source == "nasa") result.image="images/icons/feed/NASA_Worm_logo.png";
-				result.entries=[];
-				processShowFeedTitle(type, source, lang, result);
-			}
+			var result= {}
+			result.feedXML=feedXML;
+			result.title=xmlDoc.getElementsByTagName("channel")[0].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+			result.link=xmlDoc.getElementsByTagName("channel")[0].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+			if (source == "yahoo") result.image="images/icons/feed/yahoo_news_logo.png";
+			if (source == "bbc") result.image="images/icons/feed/bbc_news_logo.png";
+			if (source == "nasa") result.image="images/icons/feed/NASA_Worm_logo.png";
+			result.entries=[];
+			processShowFeedTitle(type, source, lang, result);
 		}
 	}
 
