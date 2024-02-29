@@ -220,11 +220,11 @@ function processShowFeedTitle(type, source, lang, result) {
 
 		}
 		if (totalEntries>0) {
-			if (source=="bbc" || (source=="nasa" && type!="image"&& type!="picture")) {
+			if (source=="nasa" && type!="image"&& type!="picture") {
 				locStPar=source+"_"+type+"_images";
 				locStUpdateData=getLocalStorageData(locStPar);
 				updateImages(0, source, type, result, locStUpdateData, lang);
-			} else if ((source=="yahoo" && type=="sports") || (source=="nasa" && (type=="image" || type=="picture"))) {
+			} else if (source=="bbc" || (source=="yahoo" && type=="sports") || (source=="nasa" && (type=="image" || type=="picture"))) {
 				processShowFeedData(type, source, lang, result);
 			}  else if (source=="yahoo" && type!="sports") {
 				locStPar=source+"_"+type+"_descriptions";
@@ -638,8 +638,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		result.entries[c].title=entry.title;
 		result.entries[c].media={};
 		if (source == "bbc") {
-			result.entries[c].media.url="images/icons/feed/bbc_news.jpg";
-			result.entries[c].media.width=450;
+			result.entries[c].media.url=entry["media:thumbnail"]["@"].url;
+			result.entries[c].media.width=entry["media:thumbnail"]["@"].width;
 			result.entries[c].summary=entry.description;
 		}
 		if (source == "nasa") {
