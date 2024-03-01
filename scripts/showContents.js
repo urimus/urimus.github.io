@@ -366,6 +366,21 @@ function showContents(type, sortby, lang) {
 	refreshContentsTabs(type);
 	refreshSortByTabs(type, sortby, lang);
 
+	if (lang=="rus") {
+		textLoadingImage="Читается Картинка";
+		textSkip="Отменить";
+	}
+	if (lang=="eng") {
+		textLoadingImage="Reading Image";
+		textSkip="Skip";
+	}
+	if (lang=="lat") {
+		textLoadingImage="Lectio Imagibus";
+		textSkip="Saltus";
+	}
+
+	skipImageLoading=0;
+
 // ------------- used for small text and sort by date, flag  ----------- //
 	var textColor="blue";
 	if (type=="aboutme" || type=="aboutwork" || type=="aboutphd" || type=="links" || type=="howto" ) textColor="blue";
@@ -383,14 +398,26 @@ function showContents(type, sortby, lang) {
 	cell1.className = 'text_'+textColor;
 	cell1.style.textAlign = 'center';
 
-	if (lang=="rus") cell1.innerHTML = "<b><div id='loadingDivTitle'>Читается Картинка</div><div id='loadingDiv'>.</div></b>";
-	if (lang=="eng") cell1.innerHTML = "<b><div id='loadingDivTitle'>Reading Image</div><div id='loadingDiv'>.</div></b>";
-	if (lang=="lat") cell1.innerHTML = "<b><div id='loadingDivTitle'>Lectio Imagibus</div><div id='loadingDiv'>.</div></b>";
+	cell1.innerHTML = "<b><div id='loadingDivTitle'>"+textLoadingImage+". "+"</div><div id='loadingDiv'>.</div></b>";
+
+
+	loadingDivTitle=document.getElementById("loadingDivTitle");
+	var a = document.createElement('a');
+	a.setAttribute('href', "javascript:void(0);");
+	a.setAttribute('class', 'standardb_'+textColor.split("_")[0]);
+	a.innerText = textSkip;
+	a.onclick = function () {
+		skipImageLoading=1;
+		showContents2(type, sortby, lang, textColor, null);
+		return;
+	}
+	loadingDivTitle.appendChild(a);
 
 // ------------- Loading Feed Image ----------- //
 
 	feedURL="https://apod.com/feed.rss";
 	feednami.load(feedURL, function(result){
+		if (skipImageLoading==1) return;
 		if(result.error){
 			showContents2(type, sortby, lang, textColor, null);
 			return;
