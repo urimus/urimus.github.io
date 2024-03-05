@@ -319,7 +319,7 @@ function processShowFeedData(type, source, lang, result) {
 		}
 		cell1.appendChild(Img);
 
-		if (!(source=="nasa" && type=="image" && entry.summary==null)) {
+		if (entry.summary!=null) {
 			var Div = document.createElement('div');
 			Div.setAttribute('class', "text_red");
 			if (entry.summary==null) {
@@ -329,8 +329,7 @@ function processShowFeedData(type, source, lang, result) {
 			}
 			cell1.appendChild(Div);
 		}
-
-		if ((source == "yahoo" && type!="sports") || (source == "nasa" && type=="image")) {
+		if (typeof entry.source!=="undefined" && typeof entry.source.title!=="undefined") {
 			var Div = document.createElement('div');
 			Div.setAttribute('class', "text_red");
 
@@ -343,40 +342,32 @@ function processShowFeedData(type, source, lang, result) {
 			Div.innerHTML="<P><b>"+textSource+"</b>"+Div.innerHTML;
 			cell1.appendChild(Div);
 		}
-		if (source == "nasa" && type=="picture") {
+		if (typeof entry.creator!=="undefined" && entry.creator.length>0 && typeof entry.creator[0]!=="undefined") {
 			var Div = document.createElement('div');
 			Div.setAttribute('class', "text_red");
 			var outHTML="";
-			if (typeof entry.creator!=="undefined") {
-				if (entry.creator.length>1) {
-					outHTML="<P><b>"+textCreators+"</b>"+entry.creator[0];
-					for (var j = 1; j < entry.creator.length; j++) {
-						outHTML=outHTML+", "+entry.creator[j];
-					}
-				} else {
-					outHTML="<P><b>"+textCreator+"</b>"+entry.creator[0];
+			if (entry.creator.length>1) {
+				outHTML="<P><b>"+textCreators+"</b>"+entry.creator[0];
+				for (var j = 1; j < entry.creator.length; j++) {
+					outHTML=outHTML+", "+entry.creator[j];
 				}
 			} else {
-				outHTML="<P><b>"+textCreator+"</b>";
+				outHTML="<P><b>"+textCreator+"</b>"+entry.creator[0];
 			}
 			Div.innerHTML=outHTML;
 			cell1.appendChild(Div);
 		}
-		if (source == "nasa" && type!="image" && type!="picture") {
+		if (typeof entry.category!=="undefined" && entry.category.length>0 && typeof entry.category[0]!=="undefined") {
 			var Div = document.createElement('div');
 			Div.setAttribute('class', "text_red");
 			var outHTML="";
-			if (typeof entry.category!=="undefined") {
-				if (entry.category.length>1) {
-					outHTML="<P><b>"+textCategories+"</b>"+entry.category[0];
-					for (var j = 1; j < entry.category.length; j++) {
-						outHTML=outHTML+", "+entry.category[j];
-					}
-				} else {
-					outHTML="<P><b>"+textCategory+"</b>"+entry.category[0];
+			if (entry.category.length>1) {
+				outHTML="<P><b>"+textCategories+"</b>"+entry.category[0];
+				for (var j = 1; j < entry.category.length; j++) {
+					outHTML=outHTML+", "+entry.category[j];
 				}
 			} else {
-				outHTML="<P><b>"+textCategory+"</b>";
+				outHTML="<P><b>"+textCategory+"</b>"+entry.category[0];
 			}
 			Div.innerHTML=outHTML;
 			cell1.appendChild(Div);
@@ -686,21 +677,25 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		result.entries[c].source.title=entry.source.title;
 		result.entries[c].source.url=entry.source.url;
 
-		if (source == "nasa" && type=="picture") {
+		if (typeof entry["dc:creator"]!=="undefined") {
 			result.entries[c].creator=[];
-			for (var j=0; j<entry["dc:creator"].length; j++) {
-				result.entries[c].creator[j]=entry["dc:creator"][j]["#"];
+			if (typeof entry["dc:creator"]["#"]!=="undefined") {
+				result.entries[c].creator[0]=entry["dc:creator"]["#"];
+			} else {
+				for (var j=0; j<entry["dc:creator"].length; j++) {
+					result.entries[c].creator[j]=entry["dc:creator"][j]["#"];
+				}
 			}
 		}
 
 		if (typeof entry["rss:category"]!=="undefined") {
 			result.entries[c].category=[];
-			if (entry["rss:category"].length>1) {
+			if (typeof entry["rss:category"]["#"]!=="undefined") {
+				result.entries[c].category[0]=entry["rss:category"]["#"];
+			} else {
 				for (var j = 0; j < entry["rss:category"].length; j++) {
 					result.entries[c].category[j]=entry["rss:category"][j]["#"];
 				}
-			} else {
-				result.entries[c].category[0]=entry["rss:category"]["#"];
 			}
 		}
 
