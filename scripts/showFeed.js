@@ -613,94 +613,92 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	result.link=resultOrig.feed.meta.link;
 
 	items=resultOrig.feed.entries;
-	c=-1;
+
 	for (var i=0; i<items.length; i++) {
 		entry = items[i];
-		if (entry.source.title=="Kyiv Independent" || entry.source.title=="Ukrayinska Pravda") continue;
-		c++;
-		result.entries[c]={};
+		result.entries[i]={};
 
-		result.entries[c].title=entry.title;
-		result.entries[c].media={};
+		result.entries[i].title=entry.title;
+		result.entries[i].media={};
 		if (source == "bbc") {
-			result.entries[c].media.url=entry["media:thumbnail"]["@"].url;
-			result.entries[c].media.width=entry["media:thumbnail"]["@"].width;
-			result.entries[c].summary=entry.description;
+			result.entries[i].media.url=entry["media:thumbnail"]["@"].url;
+			result.entries[i].media.width=entry["media:thumbnail"]["@"].width;
+			result.entries[i].summary=entry.description;
 		}
 		if (source == "nasa") {
 			if (type=="image") {
-				result.entries[c].media.url=entry["enclosures"][0].url;
-				result.entries[c].media.width=450;
-				result.entries[c].summary=entry.description;
+				result.entries[i].media.url=entry["enclosures"][0].url;
+				result.entries[i].media.width=450;
+				result.entries[i].summary=entry.description;
 			}  else if (type=="picture") {
-				result.entries[c].media.url=entry["enclosures"][0].url;
-				result.entries[c].media.width=450;
-				result.entries[c].summary=entry["rss:description"]["#"]+".";
+				result.entries[i].media.url=entry["enclosures"][0].url;
+				result.entries[i].media.width=450;
+				result.entries[i].summary=entry["rss:description"]["#"]+".";
 			} else {
-				result.entries[c].media.url="images/icons/feed/nasa_news.png";
-				result.entries[c].media.width=450;
-				result.entries[c].summary=entry["rss:description"]["#"];
+				result.entries[i].media.url="images/icons/feed/nasa_news.png";
+				result.entries[i].media.width=450;
+				result.entries[i].summary=entry["rss:description"]["#"];
 			}
 		}
 		if (source == "yahoo") {
 			if (entry["media:content"]==null) {
-				result.entries[c].media.url="images/icons/feed/yahoo_news.jpg";
+				result.entries[i].media.url="images/icons/feed/yahoo_news.jpg";
 			} else {
-				result.entries[c].media.url=entry["media:content"]["@"].url;
+				result.entries[i].media.url=entry["media:content"]["@"].url;
 			}
-			result.entries[c].media.width=450;
+			result.entries[i].media.width=450;
 			if (type=="sports") {
 				desc2=entry.description;
 				entry.description=entry.summary;
 				imgPos = desc2.indexOf("<img");
 				if (imgPos==-1) {
-					result.entries[c].media.url="images/icons/feed/yahoo_news.jpg";
+					result.entries[i].media.url="images/icons/feed/yahoo_news.jpg";
 				} else {
 					q1Pos=desc2.indexOf('"', imgPos+1);
 					q2Pos=desc2.indexOf('"', q1Pos+1);
-					result.entries[c].media.url=desc2.substring(q1Pos+1, q2Pos);
+					result.entries[i].media.url=desc2.substring(q1Pos+1, q2Pos);
 				}
 			}
-			result.entries[c].summary=entry.summary;
+			result.entries[i].summary=entry.summary;
 
 		}
-		if (result.entries[c].media.width>=450) result.entries[c].media.width=450;
+		if (result.entries[i].media.width>=450) result.entries[i].media.width=450;
 
 		if (entry.comments==null) {
-			result.entries[c].media.comment="";
+			result.entries[i].media.comment="";
 		} else {
-			result.entries[c].media.comment=entry.comments;
+			result.entries[i].media.comment=entry.comments;
 		}
 
-		result.entries[c].source={};
+		result.entries[i].source={};
 
-		result.entries[c].source.title=entry.source.title;
-		result.entries[c].source.url=entry.source.url;
+		result.entries[i].source.title=entry.source.title;
+		result.entries[i].source.url=entry.source.url;
 
 		if (typeof entry["dc:creator"]!=="undefined") {
-			result.entries[c].creator=[];
+			result.entries[i].creator=[];
 			if (typeof entry["dc:creator"]["#"]!=="undefined") {
-				result.entries[c].creator[0]=entry["dc:creator"]["#"];
+				result.entries[i].creator[0]=entry["dc:creator"]["#"];
 			} else {
 				for (var j=0; j<entry["dc:creator"].length; j++) {
-					result.entries[c].creator[j]=entry["dc:creator"][j]["#"];
+					result.entries[i].creator[j]=entry["dc:creator"][j]["#"];
 				}
 			}
 		}
 
 		if (typeof entry["rss:category"]!=="undefined") {
-			result.entries[c].category=[];
+			result.entries[i].category=[];
 			if (typeof entry["rss:category"]["#"]!=="undefined") {
-				result.entries[c].category[0]=entry["rss:category"]["#"];
+				result.entries[i].category[0]=entry["rss:category"]["#"];
 			} else {
 				for (var j = 0; j < entry["rss:category"].length; j++) {
-					result.entries[c].category[j]=entry["rss:category"][j]["#"];
+					result.entries[i].category[j]=entry["rss:category"][j]["#"];
 				}
 			}
 		}
 
-		result.entries[c].link=entry.link;
-		result.entries[c].date_ms=entry.date_ms;
+		result.entries[i].link=entry.link;
+		result.entries[i].date_ms=entry.date_ms;
 
 	}
 /* Feed can be stored locally
