@@ -204,9 +204,27 @@ function loading() {
 		if ($("#loadingDiv").text().slice(-6)=="......") $("#loadingDiv").text($("#loadingDiv").text().slice(0, -5));
 	}
 } 
+function animatedText() {
+	if ($("#animatedText")) {
+		text=$("#animatedText").html();
+		fontStPos = text.indexOf("<font");
+		fontStEndPos = text.indexOf(">", fontStPos);
+		fontEndPos = text.indexOf("</font>");
+		textBeforeFont=text.substr(0, fontStPos);
+		textInFont=text.substr(fontStEndPos+1, 1);
+		textAfterFont=text.substr(fontEndPos+7);
+		newHightlightpos=fontStPos+1;
+		if (fontEndPos==text.length-7) newHightlightpos=0;
+		text2=$("#animatedText").text();
+		newAnimatedtext=text2.substr(0, newHightlightpos) +'<font color="#ff8a00">'+text2.substr(newHightlightpos,1)+"</font>"+text2.substr(newHightlightpos+1);
+		$("#animatedText").html(newAnimatedtext);
+	}
+} 
+
 
 setInterval(function() {
 	loading();
+	animatedText();
 }, 500 );
 setInterval(function() {
 	flashtext();
