@@ -192,20 +192,20 @@ function flashtext() {
 }
 
   window.onerror = function(e, url, lineNr, columnNr, errorObj) {
-	if ($("#loadingDivTitle")) {
+	if (document.getElementById("loadingDivTitle")) {
 		$("#loadingDivTitle").text(e+" in "+url+" at line "+lineNr+" column "+columnNr+".");
 	}
     };
 
 
 function loading() {
-	if ($("#loadingDiv")) {
+	if (document.getElementById("loadingDiv")) {
 		if ($("#loadingDiv").text().slice(-1)==".") $("#loadingDiv").text($("#loadingDiv").text()+".");
 		if ($("#loadingDiv").text().slice(-6)=="......") $("#loadingDiv").text($("#loadingDiv").text().slice(0, -5));
 	}
 } 
 function animatedText() {
-	if ($("#animatedText")) {
+	if (document.getElementById("animatedText")) {
 		text=$("#animatedText").html();
 		fontStPos = text.indexOf("<font");
 		fontStEndPos = text.indexOf(">", fontStPos);
