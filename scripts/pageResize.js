@@ -205,19 +205,22 @@ function loading() {
 	}
 } 
 function animatedText() {
-	if (document.getElementById("animatedText")) {
-		text=$("#animatedText").html();
-		fontStPos = text.indexOf("<font");
-		fontStEndPos = text.indexOf(">", fontStPos);
-		fontEndPos = text.indexOf("</font>");
-		textBeforeFont=text.substr(0, fontStPos);
-		textInFont=text.substr(fontStEndPos+1, 1);
-		textAfterFont=text.substr(fontEndPos+7);
-		newHightlightpos=fontStPos+1;
-		if (fontEndPos==text.length-7) newHightlightpos=0;
-		text2=$("#animatedText").text();
-		newAnimatedtext=text2.substr(0, newHightlightpos) +'<font color="#ff8a00">'+text2.substr(newHightlightpos,1)+"</font>"+text2.substr(newHightlightpos+1);
-		$("#animatedText").html(newAnimatedtext);
+	if (document.getElementsByClassName("animatedText")) {
+		ele2=document.getElementsByClassName("animatedText");
+		for (var i = 0; i<ele2.length; i++) {
+			text=ele2[i].innerHTML;
+			fontStPos = text.indexOf("<font");
+			fontStEndPos = text.indexOf(">", fontStPos);
+			fontEndPos = text.indexOf("</font>");
+			textBeforeFont=text.substr(0, fontStPos);
+			textInFont=text.substr(fontStEndPos+1, 1);
+			textAfterFont=text.substr(fontEndPos+7);
+			newHightlightpos=fontStPos+1;
+			if (fontEndPos==text.length-7) newHightlightpos=0;
+			text2=ele2[i].innerText;
+			newAnimatedtext=text2.substr(0, newHightlightpos) +'<font color="#ff8a00">'+text2.substr(newHightlightpos,1)+"</font>"+text2.substr(newHightlightpos+1);
+			ele2[i].innerHTML=newAnimatedtext;
+		}
 	}
 } 
 
