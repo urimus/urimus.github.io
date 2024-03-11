@@ -1,12 +1,6 @@
 ﻿// ------------- Global Variables ---------------- //
 timeoutVal=10000; // 10s
-//corsProxyVer=1 - "https://api.codetabs.com/v1/proxy/?quest=";
-//corsProxyVer=2 - "https://api.allorigins.win/raw?url=";
-//corsProxyVer=1;
 // ------------- End of Global Variables ---------------- //
-
-
-
 
 // ------------- Initial ---------------- //
 function newsLoad(source, lang) {
@@ -815,13 +809,14 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			if (data=="") { // timeout
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
 				if (corsProxyVer==1) {
-					corsProxyVer=2;
+					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
+				} else {
+					corsProxyVer=1;
+					updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+					return;
 				}
-				corsProxyVer=1;
-				updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-				return;
 			}
 
 			searchStr="property=\"og:image\" content=\"";
@@ -869,6 +864,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 
 	if (corsProxyVer==1) link2="https://api.codetabs.com/v1/proxy/?quest="+result.entries[i].link;
 	if (corsProxyVer==2) link2="https://api.allorigins.win/raw?url="+result.entries[i].link;
+
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
 	xmlhttp.send();
@@ -959,15 +955,16 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			if (data=="") { // timeout
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
 				if (corsProxyVer==1) {
-					corsProxyVer=2;
+					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
+				} else {
+					if (lang=="eng" || lang=="lat") result.entries[i].summary="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+					if (lang=="rus") result.entries[i].summary="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+					corsProxyVer=1;
+					updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+					return;
 				}
-				if (lang=="eng" || lang=="lat") result.entries[i].summary="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-				if (lang=="rus") result.entries[i].summary="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-				corsProxyVer=1;
-				updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-				return;
 			}
 
 			searchStrArr=[];
@@ -992,8 +989,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 						if (lang=="eng" || lang=="lat") description="Access to Description Denied.";
 						if (lang=="rus") description="Доступ к Описанию Запрещён.";
 					}
-				}
-				if (corsProxyVer==2) {
+				} else {
 					if (lang=="eng" || lang=="lat") description="Description Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") description="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 				}
