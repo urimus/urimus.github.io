@@ -446,9 +446,9 @@ function processEmptyFeed(type, source, lang, feedXML) {
 		}
 	}
 
-//	Link="https://api.allorigins.win/raw?url="+encodeURIComponent(feedXML);
-//	Link="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(feedXML);
 	Link="https://api.allorigins.win/raw?url="+encodeURIComponent(feedXML);
+//	Link="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(feedXML);
+//	Link="https://corsproxy.org/"+encodeURIComponent(feedXML);
 	xmlhttp.open("GET", Link, true);
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.send();
