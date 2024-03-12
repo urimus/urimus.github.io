@@ -515,8 +515,9 @@ function loadImage(i, item, lang){
 	xmlHTTP.onerror = function() {
 		document.getElementById("loadingDivTitle").innerHTML = textError;
 	};
-	url2="https://api.codetabs.com/v1/proxy/?quest="+item.enclosures[0].url;
-//	if (corsProxyVer==2) url2="https://api.allorigins.win/raw?url="+item.enclosures[0].url;
+	url2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(item.enclosures[0].url);
+//	url2="https://api.allorigins.win/raw?url="+encodeURIComponent(item.enclosures[0].url);
+//	url2="https://api.allorigins.win/raw?url="+encodeURIComponent(item.enclosures[0].url);
 	xmlHTTP.open('GET', url2, true);
 	xmlHTTP.responseType = 'arraybuffer';
 	xmlHTTP.send();

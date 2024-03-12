@@ -446,8 +446,9 @@ function processEmptyFeed(type, source, lang, feedXML) {
 		}
 	}
 
-	Link="https://api.allorigins.win/raw?url="+feedXML;
-//	Link="https://api.codetabs.com/v1/proxy/?quest="+feedXML;
+//	Link="https://api.allorigins.win/raw?url="+encodeURIComponent(feedXML);
+//	Link="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(feedXML);
+	Link="https://api.allorigins.win/raw?url="+encodeURIComponent(feedXML);
 	xmlhttp.open("GET", Link, true);
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.send();
@@ -808,7 +809,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			}
 			if (data=="") { // timeout
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
-				if (corsProxyVer==1) {
+				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -862,8 +863,9 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 		}
 	}
 
-	if (corsProxyVer==1) link2="https://api.codetabs.com/v1/proxy/?quest="+result.entries[i].link;
-	if (corsProxyVer==2) link2="https://api.allorigins.win/raw?url="+result.entries[i].link;
+	if (corsProxyVer==1) link2="https://corsproxy.org/?"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==2) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==3) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
@@ -954,7 +956,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 			if (data=="") { // timeout
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
-				if (corsProxyVer==1) {
+				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -981,18 +983,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 			description="";
 			if (matchPos==-1) { // error processing
-				if (corsProxyVer==1) {
-					if (result.entries[i].link.indexOf("yahoo.com")==-1) {
-						if (lang=="eng" || lang=="lat") description="Not a Yahoo link. Access to Description Denied.";
-						if (lang=="rus") description="Не Yahoo Ссылка. Доступ к Описанию Запрещён.";
-					} else {
-						if (lang=="eng" || lang=="lat") description="Access to Description Denied.";
-						if (lang=="rus") description="Доступ к Описанию Запрещён.";
-					}
-				} else {
-					if (lang=="eng" || lang=="lat") description="Description Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-					if (lang=="rus") description="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-				}
+				if (lang=="eng" || lang=="lat") description="Description Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+				if (lang=="rus") description="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 			} else {
 				matchPos2=data.indexOf("\"",matchPos + searchStr.length);
 				description=data.substr(matchPos+searchStr.length, matchPos2-matchPos-searchStr.length);
@@ -1009,9 +1001,10 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 
 		}
 	}
+	if (corsProxyVer==1) link2="https://corsproxy.org/?"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==2) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==3) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
 
-	if (corsProxyVer==1) link2="https://api.codetabs.com/v1/proxy/?quest="+result.entries[i].link;
-	if (corsProxyVer==2) link2="https://api.allorigins.win/raw?url="+result.entries[i].link;
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
