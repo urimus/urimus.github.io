@@ -797,6 +797,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 		if (xmlhttp.readyState == 4) {
 
 			if (skipUpdates==1) return;
+			mediaURL="";
 
 			data= xmlhttp.responseText;  
 //console.log("data="+data);
@@ -845,9 +846,9 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					mediaComment="";
 				}
 			} else { // video
-				mediaComment="Youtube Video"
+				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 			}
-			if (typeof mediaURL!=="undefined") {
+			if (mediaURL!="") {
 				result.entries[i].media.url=mediaURL;
 				result.entries[i].media.comment=mediaComment;
 
