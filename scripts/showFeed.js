@@ -986,20 +986,18 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			if (matchPos==-1) { // error processing
 				if (lang=="eng" || lang=="lat") description="Description Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 				if (lang=="rus") description="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 			} else {
 				matchPos2=data.indexOf("\"",matchPos + searchStr.length);
 				description=data.substr(matchPos+searchStr.length, matchPos2-matchPos-searchStr.length);
-			}
-			result.entries[i].summary=description;
-			if (!(matchPos==-1 && corsProxyVer==2)) {
+				result.entries[i].summary=description;
 				locStUpdateData[entry_link]={};
 				locStUpdateData[entry_link].summary=description;
 				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
+				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			}
-			loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			corsProxyVer=1;
 			updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-
 		}
 	}
 	if (corsProxyVer==1) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
