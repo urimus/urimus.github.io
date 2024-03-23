@@ -986,6 +986,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			if (matchPos==-1) { // error processing
 				if (lang=="eng" || lang=="lat") description="Description Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 				if (lang=="rus") description="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+				result.entries[i].summary=description;
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 			} else {
 				matchPos2=data.indexOf("\"",matchPos + searchStr.length);
