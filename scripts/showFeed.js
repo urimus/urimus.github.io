@@ -846,6 +846,8 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					mediaComment="";
 				}
 			} else { // video
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
+				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 			}
 			if (mediaURL!="") {
