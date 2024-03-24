@@ -230,5 +230,7 @@ setInterval(function() {
 }, 500 );
 setInterval(function() {
 	animatedText();
+}, 250 );
+setInterval(function() {
 	flashText();
 }, 50 );
