@@ -159,7 +159,7 @@ function adjustScrollDiv() {
 // -------------- End of Contents Scroll Div Adjustment  ------------- //
 }
 
-function flashtext() {
+function flashText() {
 	if (document.getElementsByClassName("blinking_text")) {
 		ele2=document.getElementsByClassName("blinking_text");
 		for (var i = 0; i<ele2.length; i++) {
@@ -227,8 +227,8 @@ function animatedText() {
 
 setInterval(function() {
 	loading();
-	animatedText();
 }, 500 );
 setInterval(function() {
-	flashtext();
+	animatedText();
+	flashText();
 }, 50 );
