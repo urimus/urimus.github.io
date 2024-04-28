@@ -1,7 +1,7 @@
 ﻿<P><b class="text_black_blue">Series <font color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></b>
 
 <P>&nbsp;&#9679; <a href="series_animation_eng.html#animation" class = "standardb_black" data-added="18th of Apr, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Animation</a>
-<P>&nbsp;&nbsp;&nbsp;- <a href="series_animation_eng.html#arcane" class = "standardb_black" data-added="07th of Apr, 2022." data-genre="Animation" data-country="france;usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Arcane</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_animation_eng.html#blade_runner" class = "standardb_black" data-added="28th of Apr, 2024." data-genre="Animation" data-country="usa;japan" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Blade Runner: Black Lotus</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_animation_eng.html#castlevania" class = "standardb_black" data-added="20th of Feb, 2021." data-genre="Animation" data-country="usa" data-year="2017" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Castlevania</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_animation_eng.html#cuphead_show" class = "standardb_black" data-added="13th of Mar, 2024." data-genre="Animation" data-country="usa;canada" data-year="2022" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Cuphead Show!</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_animation_eng.html#dark_crystal" class = "standardb_black" data-added="29th of Apr, 2021." data-genre="Animation" data-country="united_kingdom;usa" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Dark Crystal: Age of Resistance</a>
