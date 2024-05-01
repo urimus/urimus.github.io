@@ -125,7 +125,7 @@ function formatDate(date, lang) {
 		dayMonthSep=" of ";
 	}
 	if (lang=="rus") {
-		month = ["Янв", "Фев", "Мар", "Апр", "Май", "Июн","Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"][mydate.getUTCMonth()];
+		month = ["Янв", "Фев", "Мар", "Апр", "Мая", "Июн","Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"][mydate.getUTCMonth()];
 		dayEnding="е";
 		dayMonthSep=" ";
 	}
