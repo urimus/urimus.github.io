@@ -543,7 +543,8 @@ function showContents(type, sortby, lang) {
 						// remove unusedRecords
 						localforage.keys(function (err, keys) {
 							var objToRemove=[];
-							for (j=0; j<keys.length;  j++) {			
+							totalEntries=result.feed.entries.length;
+							for (j=0; j<keys.length;  j++) {
 								recordExists=0;
 								for (j2=0; j2<totalEntries;  j2++) {			
 									if (result.feed.entries[j2]["enclosures"][0].url == keys[j]) {
