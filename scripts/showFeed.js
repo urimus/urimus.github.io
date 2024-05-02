@@ -535,9 +535,9 @@ function showFeed(type, source, lang) {
 	var cell1 = row.insertCell(0);
 	cell1.className = 'text_red';
 	cell1.style.textAlign = 'center';
-	if (lang=="rus") cell1.innerHTML = "<b><div id='loadingSummary'></div><div id='loadingDivTitle'>Читается Строка Новостей</div><div id='loadingDiv'>.</div></b>";
-	if (lang=="eng") cell1.innerHTML = "<b><div id='loadingSummary'></div><div id='loadingDivTitle'>Reading News Feed</div><div id='loadingDiv'>.</div></b>";
-	if (lang=="lat") cell1.innerHTML = "<b><div id='loadingSummary'></div><div id='loadingDivTitle'>Lectio Nuntium Acies</div><div id='loadingDiv'>.</div></b>";
+	if (lang=="rus") cell1.innerHTML = "<b><div id='loadingDivTitle'>Читается Строка Новостей</div><div id='loadingDiv'>.</div><div id='loadingSummary'></div></b>";
+	if (lang=="eng") cell1.innerHTML = "<b><div id='loadingDivTitle'>Reading News Feed</div><div id='loadingDiv'>.</div><div id='loadingSummary'></div></b>";
+	if (lang=="lat") cell1.innerHTML = "<b><div id='loadingDivTitle'>Lectio Nuntium Acies</div><div id='loadingDiv'>.<div id='loadingSummary'></div></div></b>";
 
 	feedURL="";
 	if (source == "bbc") {
