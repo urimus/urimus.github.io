@@ -517,6 +517,7 @@ function showContents(type, sortby, lang) {
 					Img.setAttribute('width', feedMediaWidth);
 					Img.setAttribute('align', 'top');
 					Img.setAttribute('style', 'padding-right:10px;padding-bottom:5px;');
+					if (toSave==1) Img.setAttribute('crossorigin', 'anonymous');
 					Img.onload = function () {
 						if (toSave==1) {
 							imgWidth=Img.width;
