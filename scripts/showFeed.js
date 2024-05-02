@@ -281,7 +281,7 @@ function showEntry(type, source, lang, items, i, imagesrc, tableMainRow) {
 		showEntry2(type, source, lang, items, i, entry.media.url, tableMainRow, 0);
 	} else {
 		localforage.getItem(entry.media.url, function (err, value) {
-			if (err !== null || value == null) {
+			if (value == null) {
 				// new value must be stored
 				imagesrc=entry.media.url;
 				if (source=="nasa" && imagesrc!="images/icons/feed/nasa_news.png") {

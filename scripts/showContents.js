@@ -363,6 +363,12 @@ function sortByFlag(fileContentsL, lang){
 
 function showContents(type, sortby, lang) {
 
+
+	localforage.config({
+		name: 'urepinski_homepage',
+		storeName: "nasa_picture"
+	});
+
 	refreshContentsTabs(type);
 	refreshSortByTabs(type, sortby, lang);
 
@@ -448,6 +454,7 @@ function showContents(type, sortby, lang) {
 
 
 			loadingDivTitle=document.getElementById("loadingDivTitle");
+			toSkip=0;
 			var a = document.createElement('a');
 			a.setAttribute('href', "javascript:void(0);");
 			a.setAttribute('class', 'standardb_'+textColor.split("_")[0]);
@@ -459,6 +466,7 @@ function showContents(type, sortby, lang) {
 				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 				adjustScrollDiv();
 
+				toSkip=1;
 				return;
 			}
 			loadingDivTitle.appendChild(a);
@@ -468,6 +476,7 @@ function showContents(type, sortby, lang) {
 
 			feedURL="https://apod.com/feed.rss";
 			feednami.load(feedURL, function(result){
+				if (toSkip==1) return;
 				if(result.error){
 					rowLoading.deleteCell(0);
 					scrollDivHeight=calcScrollDivHeightMax();
@@ -485,64 +494,114 @@ function showContents(type, sortby, lang) {
 				feedSummary=entry["rss:description"]["#"]+".";
 				feedLink=entry.link;
 
+				toSave=0;
 
-				Figure=document.createElement("figure");
-				Figure.setAttribute('style', 'display: flex; margin: 0px; padding-left:10px;');
+				localforage.getItem(feedMediaUrl, function (err, value) {
+					if (toSkip==1) return;
+					if (value == null) {
+						// new value must be stored
+						toSave=1;
+						feedMediaUrl="https://api.codetabs.com/v1/proxy/?quest="+feedMediaUrl;
+					} else {
+						feedMediaUrl= window.URL.createObjectURL(value);
+					}
 
-				var Img=null;
-				Img=document.createElement("img");
-				Img.setAttribute('src', feedMediaUrl);
-				Img.setAttribute('title', feedMediaTitle);
+					Figure=document.createElement("figure");
+					Figure.setAttribute('style', 'display: flex; margin: 0px; padding-left:10px;');
 
-				Img.setAttribute('width', feedMediaWidth);
-				Img.setAttribute('align', 'top');
-				Img.setAttribute('style', 'padding-right:10px;padding-bottom:5px;');
-				Img.onload = function () { 
-					scrollDivHeight=calcScrollDivHeightMax();
-					document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-					adjustScrollDiv();
-				}
-				Figure.appendChild(Img);
+					var Img=null;
+					Img=document.createElement("img");
+					Img.setAttribute('src', feedMediaUrl);
+					Img.setAttribute('title', feedMediaTitle);
 
-				ImgCaption=document.createElement("figcaption");
-				ImgCaption.setAttribute('class', "nimetus2_"+textColor);
-				ImgCaption.innerHTML = "NASA Astronomy Picture of the Day ";
-				var a = document.createElement('a');
-				a.setAttribute('href', "/news_nasa_"+lang+".html?type=picture");
-				a.setAttribute('class', 'standardb_blue');
-				a.setAttribute('target', '_blank');
-				Img2=document.createElement("img");
-				Img2.setAttribute('src', "images/icons/feed/feed_icon.png");
-				Img2.setAttribute('class', "thumbnail_image_both");
-				if (lang=="eng" || lang=="lat") feedTitleText = "NASA Astronomy Picture of the Day Feed on this Page";
-				if (lang=="rus") feedTitleText = "NASA Astronomy Picture of the Day Строка на этой Странице";
-				Img2.setAttribute('title', feedTitleText);
-				Img2.setAttribute('valign', "bottom");
-				a.appendChild(Img2);
-				ImgCaption.appendChild(a);
+					Img.setAttribute('width', feedMediaWidth);
+					Img.setAttribute('align', 'top');
+					Img.setAttribute('style', 'padding-right:10px;padding-bottom:5px;');
+					Img.onload = function () {
+						if (toSave==1) {
+							imgWidth=Img.width;
+							imgHeight=Img.height;
+							ratio = 450.0 / imgWidth;
+							var canvas = document.createElement("canvas");
+							canvas.width = 450;
+							canvas.height = imgHeight*ratio;
+							var ctx = canvas.getContext("2d");
+							ctx.drawImage(Img, 0, 0, canvas.width, canvas.height);
+							canvas.toBlob(function (blob) {
+								localforage.setItem(entry["enclosures"][0].url, blob);
+								scrollDivHeight=calcScrollDivHeightMax();
+								document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+								adjustScrollDiv();
+							}, 'image/jpeg');
+						} else {
+							scrollDivHeight=calcScrollDivHeightMax();
+							document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+							adjustScrollDiv();
+						}
 
-				Div=document.createElement("div");
-				Div.innerHTML = "<br>";
-				var a2 = document.createElement('a');
-				a2.setAttribute('href', feedLink);
-				a2.setAttribute('class', 'standardb_'+textColor.split("_")[0]);
-				a2.setAttribute('target', '_blank');
-				if (lang=="rus") textImage = "Картинка";
-				if (lang=="eng") textImage = "Image";
-				if (lang=="lat") textImage = "Imagio";
-				a2.innerHTML = textImage;
-				Div.appendChild(a2);
-				Div.innerHTML = Div.innerHTML + " #1. "+feedSummary;
-				Div.setAttribute('class', "text_"+textColor);
-				Div.setAttribute('style', 'font-weight: normal;');
-				ImgCaption.appendChild(Div);
+						// remove unusedRecords
+						localforage.keys(function (err, keys) {
+							var objToRemove=[];
+							for (j=0; j<keys.length;  j++) {			
+								recordExists=0;
+								for (j2=0; j2<totalEntries;  j2++) {			
+									if (result.feed.entries[j2]["enclosures"][0].url == keys[j]) {
+										recordExists=1;
+										break;
+									}
+								}
+								if (recordExists==0) objToRemove.push(keys[j]);
+							}
+							for (j=0;j<objToRemove.length;j++) {	
+								localforage.removeItem(objToRemove[j], function (err) {});
+							}
+						});
 
-				Figure.appendChild(ImgCaption);
+					}
 
-				rowLoading.deleteCell(0);
-				var cellLoading = rowLoading.insertCell(0);
-				cellLoading.className = 'text_'+textColor;
-				cellLoading.appendChild(Figure);
+					Figure.appendChild(Img);
+
+					ImgCaption=document.createElement("figcaption");
+					ImgCaption.setAttribute('class', "nimetus2_"+textColor);
+					ImgCaption.innerHTML = "NASA Astronomy Picture of the Day ";
+					var a = document.createElement('a');
+					a.setAttribute('href', "/news_nasa_"+lang+".html?type=picture");
+					a.setAttribute('class', 'standardb_blue');
+					a.setAttribute('target', '_blank');
+					Img2=document.createElement("img");
+					Img2.setAttribute('src', "images/icons/feed/feed_icon.png");
+					Img2.setAttribute('class', "thumbnail_image_both");
+					if (lang=="eng" || lang=="lat") feedTitleText = "NASA Astronomy Picture of the Day Feed on this Page";
+					if (lang=="rus") feedTitleText = "NASA Astronomy Picture of the Day Строка на этой Странице";
+					Img2.setAttribute('title', feedTitleText);
+					Img2.setAttribute('valign', "bottom");
+					a.appendChild(Img2);
+					ImgCaption.appendChild(a);
+
+					Div=document.createElement("div");
+					Div.innerHTML = "<br>";
+					var a2 = document.createElement('a');
+					a2.setAttribute('href', feedLink);
+					a2.setAttribute('class', 'standardb_'+textColor.split("_")[0]);
+					a2.setAttribute('target', '_blank');
+					if (lang=="rus") textImage = "Картинка";
+					if (lang=="eng") textImage = "Image";
+					if (lang=="lat") textImage = "Imagio";
+					a2.innerHTML = textImage;
+					Div.appendChild(a2);
+					Div.innerHTML = Div.innerHTML + " #1. "+feedSummary;
+					Div.setAttribute('class', "text_"+textColor);
+					Div.setAttribute('style', 'font-weight: normal;');
+					ImgCaption.appendChild(Div);
+
+					Figure.appendChild(ImgCaption);
+
+					rowLoading.deleteCell(0);
+					var cellLoading = rowLoading.insertCell(0);
+					cellLoading.className = 'text_'+textColor;
+					cellLoading.appendChild(Figure);
+
+				});
 
 			});
 
