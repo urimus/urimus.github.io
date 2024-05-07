@@ -82,6 +82,7 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_star_wars_eng.html#book_boba_fett" class = "standardb_black" data-added="05th of Jan, 2022." data-genre="Star Wars" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Book of Boba Fett</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_star_wars_eng.html#obi_wan_kenobi" class = "standardb_black" data-added="04th of Aug, 2022." data-genre="Star Wars" data-country="usa" data-year="2022" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Obi-Wan Kenobi</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_star_wars_eng.html#forces_destiny" class = "standardb_black" data-added="31st of Jan, 2024." data-genre="Star Wars" data-country="usa" data-year="2017" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Star Wars Forces of Destiny</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_star_wars_eng.html#tales_empire" class = "standardb_black" data-added="07th of May, 2024." data-genre="Star Wars" data-country="usa" data-year="2024" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Star Wars: Tales of the Empire</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_star_wars_eng.html#visions" class = "standardb_black" data-added="23rd of Mar, 2022." data-genre="Star Wars" data-country="usa;japan" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Star Wars: Visions</a>
 
 <P>&nbsp;&#9679; <a href="series_superhero_eng.html#series_superhero" class = "standardb_black" data-added="17th of Jan, 2020." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Superhero</a>
