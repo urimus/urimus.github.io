@@ -2692,61 +2692,69 @@ if (lang=="eng") {
 	wholeMenu["Series ⚘ Forbidden ⚘"].html = "Series <font color='MediumSlateBlue'><sup>&#9880; Forbidden &#9880;</sup></font>";
 
 
-	wholeMenu["Animation"] = {};
-	wholeMenu["Animation"].id = "27_1";
-	wholeMenu["Animation"].color = "black";
-	wholeMenu["Animation"].hasSub = 0;
-	wholeMenu["Animation"].link = "series_animation_eng.html";
-	wholeMenu["Animation"].html = 'Animation';
+	wholeMenu["● By Genre"] = {};
+	wholeMenu["● By Genre"].id = "27_1";
+	wholeMenu["● By Genre"].color = "black";
+	wholeMenu["● By Genre"].hasSub = 1;
+	wholeMenu["● By Genre"].link = "";
+	wholeMenu["● By Genre"].html = '&#9679; By Genre';
+
 
 	wholeMenu["Body Horror"] = {};
-	wholeMenu["Body Horror"].id = "27_3";
+	wholeMenu["Body Horror"].id = "27_1_1";
 	wholeMenu["Body Horror"].color = "black";
 	wholeMenu["Body Horror"].hasSub = 0;
 	wholeMenu["Body Horror"].link = "series_body_horror_eng.html";
 	wholeMenu["Body Horror"].html = 'Body Horror';
 
 	wholeMenu["Fantasy"] = {};
-	wholeMenu["Fantasy"].id = "27_5";
+	wholeMenu["Fantasy"].id = "27_1_2";
 	wholeMenu["Fantasy"].color = "black";
 	wholeMenu["Fantasy"].hasSub = 0;
 	wholeMenu["Fantasy"].link = "series_fantasy_eng.html";
 	wholeMenu["Fantasy"].html = 'Fantasy';
 
 	wholeMenu["Historical Fiction"] = {};
-	wholeMenu["Historical Fiction"].id = "27_6";
+	wholeMenu["Historical Fiction"].id = "27_1_3";
 	wholeMenu["Historical Fiction"].color = "black";
 	wholeMenu["Historical Fiction"].hasSub = 0;
 	wholeMenu["Historical Fiction"].link = "series_historical_fiction_eng.html";
 	wholeMenu["Historical Fiction"].html = 'Historical Fiction';
 
 	wholeMenu["Space Opera"] = {};
-	wholeMenu["Space Opera"].id = "27_7";
+	wholeMenu["Space Opera"].id = "27_1_4";
 	wholeMenu["Space Opera"].color = "black";
 	wholeMenu["Space Opera"].hasSub = 0;
 	wholeMenu["Space Opera"].link = "series_space_opera_eng.html";
 	wholeMenu["Space Opera"].html = 'Space Opera';
 
+	wholeMenu["Supernatural"] = {};
+	wholeMenu["Supernatural"].id = "27_1_5";
+	wholeMenu["Supernatural"].color = "black";
+	wholeMenu["Supernatural"].hasSub = 0;
+	wholeMenu["Supernatural"].link = "series_supernatural_eng.html";
+	wholeMenu["Supernatural"].html = 'Supernatural';
+
+	wholeMenu["Animation"] = {};
+	wholeMenu["Animation"].id = "27_2";
+	wholeMenu["Animation"].color = "black";
+	wholeMenu["Animation"].hasSub = 0;
+	wholeMenu["Animation"].link = "series_animation_eng.html";
+	wholeMenu["Animation"].html = 'Animation';
+
 	wholeMenu["Star Wars"] = {};
-	wholeMenu["Star Wars"].id = "27_9";
+	wholeMenu["Star Wars"].id = "27_3";
 	wholeMenu["Star Wars"].color = "black";
 	wholeMenu["Star Wars"].hasSub = 0;
 	wholeMenu["Star Wars"].link = "series_star_wars_eng.html";
 	wholeMenu["Star Wars"].html = 'Star Wars <font color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font>';
 
 	wholeMenu["Superhero"] = {};
-	wholeMenu["Superhero"].id = "27_2";
+	wholeMenu["Superhero"].id = "27_4";
 	wholeMenu["Superhero"].color = "black";
 	wholeMenu["Superhero"].hasSub = 0;
 	wholeMenu["Superhero"].link = "series_superhero_eng.html";
 	wholeMenu["Superhero"].html = 'Superhero';
-
-	wholeMenu["Supernatural"] = {};
-	wholeMenu["Supernatural"].id = "27_8";
-	wholeMenu["Supernatural"].color = "black";
-	wholeMenu["Supernatural"].hasSub = 0;
-	wholeMenu["Supernatural"].link = "series_supernatural_eng.html";
-	wholeMenu["Supernatural"].html = 'Supernatural';
 
 }
 
@@ -2759,61 +2767,68 @@ if (lang=="rus") {
 	wholeMenu["Сериалы ⚘ Forbidden ⚘"].link = "";
 	wholeMenu["Сериалы ⚘ Forbidden ⚘"].html = "Сериалы <font color='MediumSlateBlue'><sup>&#9880; Forbidden &#9880;</sup></font>";
 
-	wholeMenu["Мультипликация"] = {};
-	wholeMenu["Мультипликация"].id = "27_1";
-	wholeMenu["Мультипликация"].color = "black";
-	wholeMenu["Мультипликация"].hasSub = 0;
-	wholeMenu["Мультипликация"].link = "series_animation_rus.html";
-	wholeMenu["Мультипликация"].html = 'Мультипликация';
+	wholeMenu["● По Жанрам"] = {};
+	wholeMenu["● По Жанрам"].id = "27_1";
+	wholeMenu["● По Жанрам"].color = "black";
+	wholeMenu["● По Жанрам"].hasSub = 1;
+	wholeMenu["● По Жанрам"].link = "";
+	wholeMenu["● По Жанрам"].html = '&#9679; По Жанрам';
 
 	wholeMenu["Боди-Хоррор"] = {};
-	wholeMenu["Боди-Хоррор"].id = "27_3";
+	wholeMenu["Боди-Хоррор"].id = "27_1_1";
 	wholeMenu["Боди-Хоррор"].color = "black";
 	wholeMenu["Боди-Хоррор"].hasSub = 0;
 	wholeMenu["Боди-Хоррор"].link = "series_body_horror_rus.html";
 	wholeMenu["Боди-Хоррор"].html = 'Боди-Хоррор';
 
 	wholeMenu["Фэнтези"] = {};
-	wholeMenu["Фэнтези"].id = "27_5";
+	wholeMenu["Фэнтези"].id = "27_1_2";
 	wholeMenu["Фэнтези"].color = "black";
 	wholeMenu["Фэнтези"].hasSub = 0;
 	wholeMenu["Фэнтези"].link = "series_fantasy_rus.html";
 	wholeMenu["Фэнтези"].html = 'Фэнтези';
 
 	wholeMenu["Историческая Фантастика"] = {};
-	wholeMenu["Историческая Фантастика"].id = "27_6";
+	wholeMenu["Историческая Фантастика"].id = "27_1_3";
 	wholeMenu["Историческая Фантастика"].color = "black";
 	wholeMenu["Историческая Фантастика"].hasSub = 0;
 	wholeMenu["Историческая Фантастика"].link = "series_historical_fiction_rus.html";
 	wholeMenu["Историческая Фантастика"].html = 'Историческая Фантастика';
 
 	wholeMenu["Космическая Опера"] = {};
-	wholeMenu["Космическая Опера"].id = "27_7";
+	wholeMenu["Космическая Опера"].id = "27_1_4";
 	wholeMenu["Космическая Опера"].color = "black";
 	wholeMenu["Космическая Опера"].hasSub = 0;
 	wholeMenu["Космическая Опера"].link = "series_space_opera_rus.html";
 	wholeMenu["Космическая Опера"].html = 'Космическая Опера';
 
+	wholeMenu["Сверхъестественное"] = {};
+	wholeMenu["Сверхъестественное"].id = "27_1_5";
+	wholeMenu["Сверхъестественное"].color = "black";
+	wholeMenu["Сверхъестественное"].hasSub = 0;
+	wholeMenu["Сверхъестественное"].link = "series_supernatural_rus.html";
+	wholeMenu["Сверхъестественное"].html = 'Сверхъестественное';
+
+	wholeMenu["Мультипликация"] = {};
+	wholeMenu["Мультипликация"].id = "27_2";
+	wholeMenu["Мультипликация"].color = "black";
+	wholeMenu["Мультипликация"].hasSub = 0;
+	wholeMenu["Мультипликация"].link = "series_animation_rus.html";
+	wholeMenu["Мультипликация"].html = 'Мультипликация';
+
 	wholeMenu["Звёздные Войны"] = {};
-	wholeMenu["Звёздные Войны"].id = "27_9";
+	wholeMenu["Звёздные Войны"].id = "27_3";
 	wholeMenu["Звёздные Войны"].color = "black";
 	wholeMenu["Звёздные Войны"].hasSub = 0;
 	wholeMenu["Звёздные Войны"].link = "series_star_wars_rus.html";
 	wholeMenu["Звёздные Войны"].html = 'Звёздные Войны <font color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font>';
 
 	wholeMenu["Супергеройские"] = {};
-	wholeMenu["Супергеройские"].id = "27_2";
+	wholeMenu["Супергеройские"].id = "27_4";
 	wholeMenu["Супергеройские"].color = "black";
 	wholeMenu["Супергеройские"].hasSub = 0;
 	wholeMenu["Супергеройские"].link = "series_superhero_rus.html";
 	wholeMenu["Супергеройские"].html = 'Супергеройские';
-
-	wholeMenu["Сверхъестественное"] = {};
-	wholeMenu["Сверхъестественное"].id = "27_8";
-	wholeMenu["Сверхъестественное"].color = "black";
-	wholeMenu["Сверхъестественное"].hasSub = 0;
-	wholeMenu["Сверхъестественное"].link = "series_supernatural_rus.html";
-	wholeMenu["Сверхъестественное"].html = 'Сверхъестественное';
 
 }
 

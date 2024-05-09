@@ -1,24 +1,5 @@
 ﻿
-Animation
-- Blade Runner: Black Lotus
-- Castlevania
-- The Cuphead Show!
-- The Dark Crystal: Age of Resistance
-- Dragon Age: Absolution
-- Dug Days
-- Final Space
-- Hammer and Bolter
-- Hazbin Hotel
-- Hit-Monkey
-- I Am Groot
-- Inside Job
-- Kid Cosmic
-- Love, Death & Robots
-- Scavengers Reign
-- Strange Planet
-- Vixen
-- What If...?
-- Wizards: Tales of Arcadia
+By Genre:----------------------------------------------------------
 
 Body Horror
 - Altered Carbon
@@ -75,23 +56,6 @@ Space Opera
 - Salvage Marines
 - The Silent Sea
 
-Star Wars
-- Ahsoka
-- Andor
-- The Book of Boba Fett
-- Obi-Wan Kenobi
-- Star Wars Forces of Destiny
-- Star Wars: Tales of the Empire
-- Star Wars: Visions
-
-Superhero
-- Cowboy Bebop
-- Hawkeye
-- Moon Knight
-- Swamp Thing
-- Vagrant Queen
-- WandaVision
-
 Supernatural
 - All the Light We Cannot See
 - Devs
@@ -101,3 +65,45 @@ Supernatural
 - Raised by Wolves
 - Resident Evil
 - Supermax
+
+End of By Genre:----------------------------------------------------------
+
+
+Animation
+- Blade Runner: Black Lotus
+- Castlevania
+- The Cuphead Show!
+- The Dark Crystal: Age of Resistance
+- Dragon Age: Absolution
+- Dug Days
+- Final Space
+- Hammer and Bolter
+- Hazbin Hotel
+- Hit-Monkey
+- I Am Groot
+- Inside Job
+- Kid Cosmic
+- Love, Death & Robots
+- Scavengers Reign
+- Strange Planet
+- Vixen
+- What If...?
+- Wizards: Tales of Arcadia
+
+Star Wars
+- Ahsoka
+- Andor
+- The Book of Boba Fett
+- Obi-Wan Kenobi
+- Star Wars Forces of Destiny
+- Star Wars: Tales of the Empire
+- Star Wars: Visions
+
+
+Superhero
+- Cowboy Bebop
+- Hawkeye
+- Moon Knight
+- Swamp Thing
+- Vagrant Queen
+- WandaVision
