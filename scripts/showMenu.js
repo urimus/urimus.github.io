@@ -2735,12 +2735,26 @@ if (lang=="eng") {
 	wholeMenu["Supernatural"].link = "series_supernatural_eng.html";
 	wholeMenu["Supernatural"].html = 'Supernatural';
 
-	wholeMenu["Animation"] = {};
-	wholeMenu["Animation"].id = "27_2";
-	wholeMenu["Animation"].color = "black";
-	wholeMenu["Animation"].hasSub = 0;
-	wholeMenu["Animation"].link = "series_animation_eng.html";
-	wholeMenu["Animation"].html = 'Animation';
+	wholeMenu["● Animation"] = {};
+	wholeMenu["● Animation"].id = "27_2";
+	wholeMenu["● Animation"].color = "black";
+	wholeMenu["● Animation"].hasSub = 1;
+	wholeMenu["● Animation"].link = "";
+	wholeMenu["● Animation"].html = '&#9679; Animation';
+
+	wholeMenu["For Adults"] = {};
+	wholeMenu["For Adults"].id = "27_2_1";
+	wholeMenu["For Adults"].color = "black";
+	wholeMenu["For Adults"].hasSub = 0;
+	wholeMenu["For Adults"].link = "series_animation_for_adults_eng.html";
+	wholeMenu["For Adults"].html = 'For Adults';
+
+	wholeMenu["For Children"] = {};
+	wholeMenu["For Children"].id = "27_2_2";
+	wholeMenu["For Children"].color = "black";
+	wholeMenu["For Children"].hasSub = 0;
+	wholeMenu["For Children"].link = "series_animation_for_children_eng.html";
+	wholeMenu["For Children"].html = 'For Children';
 
 	wholeMenu["Star Wars"] = {};
 	wholeMenu["Star Wars"].id = "27_3";
@@ -2809,12 +2823,26 @@ if (lang=="rus") {
 	wholeMenu["Сверхъестественное"].link = "series_supernatural_rus.html";
 	wholeMenu["Сверхъестественное"].html = 'Сверхъестественное';
 
-	wholeMenu["Мультипликация"] = {};
-	wholeMenu["Мультипликация"].id = "27_2";
-	wholeMenu["Мультипликация"].color = "black";
-	wholeMenu["Мультипликация"].hasSub = 0;
-	wholeMenu["Мультипликация"].link = "series_animation_rus.html";
-	wholeMenu["Мультипликация"].html = 'Мультипликация';
+	wholeMenu["● Мультипликация"] = {};
+	wholeMenu["● Мультипликация"].id = "27_2";
+	wholeMenu["● Мультипликация"].color = "black";
+	wholeMenu["● Мультипликация"].hasSub = 1;
+	wholeMenu["● Мультипликация"].link = "";
+	wholeMenu["● Мультипликация"].html = '&#9679; Мультипликация';
+
+	wholeMenu["Для Взрослых"] = {};
+	wholeMenu["Для Взрослых"].id = "27_2_1";
+	wholeMenu["Для Взрослых"].color = "black";
+	wholeMenu["Для Взрослых"].hasSub = 0;
+	wholeMenu["Для Взрослых"].link = "series_animation_for_adults_rus.html";
+	wholeMenu["Для Взрослых"].html = 'Для Взрослых';
+
+	wholeMenu["Для Детей"] = {};
+	wholeMenu["Для Детей"].id = "27_2_2";
+	wholeMenu["Для Детей"].color = "black";
+	wholeMenu["Для Детей"].hasSub = 0;
+	wholeMenu["Для Детей"].link = "series_animation_for_children_rus.html";
+	wholeMenu["Для Детей"].html = 'For Детей';
 
 	wholeMenu["Звёздные Войны"] = {};
 	wholeMenu["Звёздные Войны"].id = "27_3";

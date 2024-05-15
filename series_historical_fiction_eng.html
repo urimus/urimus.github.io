@@ -361,20 +361,14 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	<tr>
 		<td align="left" >
 		  <div id="menu_27_2"
-		  onMouseOver="showSubMenu(this);" 
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
 		  onMouseOut="this.className='menu_not_selected_black'" 
-		  onClick="
-		    this.className='menu_not_selected_black';
-			if (event.ctrlKey==1){
-				window.open('series_animation_eng.html');
-			} else {
-				window.location.href='series_animation_eng.html';
-			};"
+		  onClick="showSubMenu(this, 'eng', 'series');"		 		  
 		  class="menu_not_selected_black"
 		  style="padding-left: 5px;">
-	     &bull; Animation</div>
+		  &#9679; Animation</div>
         </td>
-	</tr>
+	</tr>	
 
 
 	<tr>

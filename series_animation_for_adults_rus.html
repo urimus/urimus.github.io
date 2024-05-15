@@ -26,7 +26,7 @@
 <script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
 <script>
-var menuHeight=23*31;
+var menuHeight=23*33;
 var imgBgSrc="images/icons/background/anime_movie.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
 </script>
@@ -65,9 +65,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_not_selected'"
 			onClick="
 				if (event.ctrlKey==1){
-					window.open('series_animation_eng.html' + window.location.hash);
+					window.open('series_animation_for_adults_eng.html' + window.location.hash);
 				} else {
-					window.location.href='series_animation_eng.html' + window.location.hash;
+					window.location.href='series_animation_for_adults_eng.html' + window.location.hash;
 				};"		 	
 			
 			class="flag_not_selected"
@@ -81,9 +81,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_selected'"
 			onClick="
 				if (event.ctrlKey==1){
-					window.open('series_animation_rus.html' + window.location.hash);
+					window.open('series_animation_for_adults_rus.html' + window.location.hash);
 				} else {
-					window.location.href='series_animation_rus.html' + window.location.hash;
+					window.location.href='series_animation_for_adults_rus.html' + window.location.hash;
 				};"
 			class="flag_selected"
 		>
@@ -255,25 +255,60 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>	
 
 
+	
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_2"
+		  onMouseOver="showSubMenu(this, 'rus', 'series');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'rus', 'series');"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; Мультипликация</div>
+        </td>
+	</tr>	
+
 
 
 	<tr>
 		<td align="left" >
-		  <div id="menu_27_2"
+		  <div id="menu_27_2_1"
 		  onMouseOver="showSubMenu(this);" 
 		  onMouseOut="this.className='menu_selected'" 
 		  onClick="
 		    this.className='menu_selected';
 			if (event.ctrlKey==1){
-				window.open('series_animation_rus.html');
+				window.open('series_animation_for_adults_rus.html');
 			} else {
-				window.location.href='series_animation_rus.html';
-			};"
+				window.location.href='series_animation_for_adults_rus.html';
+			};"		 		  
 		  class="menu_selected"
-		  style="padding-left: 5px;">
-	     &bull; Мультипликация</div>
+		  style="padding-left: 15px;">
+		  &bull; Для Взрослых</div>
         </td>
 	</tr>
+	
+	
+	
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_2_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_animation_for_children_rus.html');
+			} else {
+				window.location.href='series_animation_for_children_rus.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+	     &bull; Для Детей</div>
+        </td>
+	</tr>
+
+
 
 
 	<tr>
@@ -584,7 +619,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
 <!-- Table with search, name and languages -->
 	<tr> 
-		<td  class="title_black" style="width: 530px;"><a name="welcome">Сериалы &blacktriangleright; Мультипликация</a></td>
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Сериалы &blacktriangleright; Мультипликация &blacktriangleright; Для Взрослых</a></td>
 	</tr>
 
 	<tr>
@@ -596,7 +631,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 <!-- For scroll inside div -->
-<div id="scrollDiv" style="height:713px;overflow:auto;" onMouseOver="hideSubMenu();">
+<div id="scrollDiv" style="height:759px;overflow:auto;" onMouseOver="hideSubMenu();">
 
 
 <table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
@@ -714,66 +749,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
         </td>
 		</tr>
-
-
-
-
-
-
-
-		
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="blade_runner">Бегущий по Лезвию: Чёрный Лотос (англ. Blade Runner: Black Lotus)</a></td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/blade_runner.jpg" alt="Бегущий по Лезвию: Чёрный Лотос (англ. Blade Runner: Black Lotus)" title="Бегущий по Лезвию: Чёрный Лотос (англ. Blade Runner: Black Lotus)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P>«<b>Бегущий по лезвию: Чёрный лотос</b>» (англ. Blade Runner: Black Lotus) — аниме-сериал, являющийся частью научно-фантастической медиафраншизы «Бегущий по лезвию». Премьера состоялась 14 ноября 2021 года.
-
-					
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-			</tr>
-			
-
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/Бегущий_по_лезвию:_Чёрный_лотос" class = "standardb_black" target="_blank">Wikipedia Бегущий по лезвию: Чёрный лотос</a> - <b>Бегущий по Лезвию: Чёрный Лотос (англ. Blade Runner: Black Lotus)</b> на Wikipedia.
-			</td>
-			</tr>
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=kYZesVfaOqU" class = "standardb_black" target="_blank">Бегущий по Лезвию: Чёрный Лотос (англ. Blade Runner: Black Lotus)</a> - Официальный Трейлер (яп., с субт.).
-			</td>
-			</tr>
-
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					28е Апр, 2024.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-		
-
 
 
 
@@ -1017,74 +992,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="dug_days">Будни Дага (англ. Dug Days)</a></td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/dug_days.jpg" alt="Будни Дага (англ. Dug Days)" title="Будни Дага (англ. Dug Days)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-
-
-<P><b>Dug Days</b> (also known as <b>Up: Dug Days</b>) is an American computer-animated streaming television series of shorts produced by Pixar Animation Studios for Disney+. The series is set immediately after the 2009 CGI film Up, following its main characters, dog Dug, voiced by Bob Peterson and his owner, 78-year-old Carl Fredricksen, voiced by Ed Asner in one of his last performances. It was created, written and directed by Peterson, and produced by Peterson and Kim Collins.
-
-<P>The series was announced in December 2020, during Disney's Investor Day, with Peterson pitched the series centering on Dug following his work on Forky Asks a Question. The animators created new animation rigging, textures, and hair for the characters in order to update their original designs due to advances in CG animation ever since the original film's release. Due to the COVID-19 pandemic in the United States, most of the final results from the animating process were done from the crew's homes, and the cast remotely recorded their dialogue.
-
-<P>Dug Days premiered with five episodes on September 1, 2021, on Disney+. It received generally positive reviews for its voice performance, message, role models, humor and emotional depth.
-
-<P>On December 19, 2022, it was announced that the final short, titled Carl's Date, will premiere exclusively in theaters with Pixar's Elemental (2023) on June 16, 2023.
-
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-			</tr>
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Dug_Days" class = "standardb_black" target="_blank">Wikipedia Dug Days</a> - <b>Будни Дага (англ. Dug Days)</b> на Wikipedia (англ.).
-			</td>
-			</tr>
-
-
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=0W3jzK8N5jM" class = "standardb_black" target="_blank">Будни Дага (англ. Dug Days)</a> - Официальный Трейлер.
-			</td>
-			</tr>
-
-
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					18е Июн, 2023.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-
-
-
-
-
-
-
 
         <tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
@@ -1148,68 +1055,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
         </td>
 		</tr>
-
-
-
-
-
-
-
-
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="hammer_bolter">Молот и Болтер (англ. Hammer and Bolter)</a></td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/hammer_bolter.jpg" alt="Молот и Болтер (англ. Hammer and Bolter)" title="Молот и Болтер (англ. Hammer and Bolter)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P><b>Hammer and Bolter</b> is an animated series based on the Warhammer 40,000 games. 14 episodes were broadcast from August 2021 to May 2023.
-
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-			</tr>
-
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Hammer_and_Bolter" class = "standardb_black" target="_blank">Wikipedia Hammer and Bolter</a> - <b>Молот и Болтер (англ. Hammer and Bolter)</b> на Wikipedia (англ.).
-			</td>
-			</tr>
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=qWnYnXLR9rM" class = "standardb_black" target="_blank">Молот и Болтер (англ. Hammer and Bolter)</a> - Официальный Трейлер (англ.).
-			</td>
-			</tr>
-
-
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					12е Июн, 2023.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-
-
 
 
 
@@ -1458,68 +1303,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-
-
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="kid_cosmic">Космобой (англ. Kid Cosmic)</a></td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/kid_cosmic.jpg" alt="Космобой (англ. Kid Cosmic)" title="Космобой (англ. Kid Cosmic)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P><b>Kid Cosmic</b> is an American animated superhero television series created by Craig McCracken for Netflix. The show is based on his 2009 comic The Kid From Planet Earth. Produced in-house by Netflix Animation, the show is McCracken's first to have a serialized format, as well as his second foray into the superhero genre, having previously created The Powerpuff Girls. Illustrated in a "retro 2D" style inspired by comics such as Dennis the Menace and The Adventures of Tintin, the series follows Kid, a young boy who gets a chance to become a superhero and fight evil aliens alongside other characters with different abilities.
-
-<P>The first season of the series was released on February 2, 2021. The second season, subtitled The Intergalactic Truckstop!, was released on September 7, 2021. The third and final season, subtitled The Global Heroes!, was released on February 3, 2022.
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-			</tr>
-
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Kid_Cosmic" class = "standardb_black" target="_blank">Wikipedia Kid Cosmic</a> - <b>Космобой (англ. Kid Cosmic)</b> на Wikipedia (англ.).
-			</td>
-			</tr>
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=nJ7086R8A5E" class = "standardb_black" target="_blank">Космобой (англ. Kid Cosmic)</a> - Официальный Трейлер.
-			</td>
-			</tr>
-
-
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					10е Сен, 2022.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-
-
-
-
-
-
-
 		
         <tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
@@ -1750,64 +1533,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
         </td>
 		</tr>
 		
-
-
-
-		
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td width="250" height="100%" class="nimetus_black"><a name="wizards">Волшебники: Истории Аркадии (англ. Wizards: Tales of Arcadia)</a></td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/wizards.jpg" alt="Волшебники: Истории Аркадии (англ. Wizards: Tales of Arcadia)" title="Волшебники: Истории Аркадии (англ. Wizards: Tales of Arcadia)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P>«<b>Волшебники: Истории Аркадии</b>» (англ. Wizards: Tales of Arcadia) — американо-мексиканский компьютерный мультсериал, созданный Гильермо дель Торо для Netflix и спродюсированный DreamWorks Animation. Третий и последний сериал из трилогии Истории Аркадии. Первый сериал трилогии — Охотники на троллей: Истории Аркадии, а второй — Трое с небес: Истории Аркадии. За трилогией последует предстоящий полнометражный мультфильм Охотники на троллей: Восстание титанов. Сериал был полностью выпущен 7 августа 2020 года.
-
-
-
-					
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-			</tr>
-			
-
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/Волшебники:_Истории_Аркадии" class = "standardb_black" target="_blank">Wikipedia Волшебники: Истории Аркадии</a> - <b>Волшебники: Истории Аркадии (англ. Wizards: Tales of Arcadia)</b> на Wikipedia.
-			</td>
-			</tr>
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=nb_Y_r821vg" class = "standardb_black" target="_blank">Волшебники: Истории Аркадии (англ. Wizards: Tales of Arcadia)</a> - Официальный Трейлер (англ.).
-			</td>
-			</tr>
-
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					15е Июн, 2022.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-		
-
 
 
 
