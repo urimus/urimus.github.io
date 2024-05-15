@@ -920,6 +920,9 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 			}
 			if (mediaURL!="") {
+				qPos=mediaURL.indexOf("?");
+				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
+
 				result.entries[i].media.url=mediaURL;
 				result.entries[i].media.comment=mediaComment;
 
