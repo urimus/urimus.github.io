@@ -383,8 +383,7 @@ function showEntry2(type, source, lang, items, i, imagesrc, tableMainRow, toSave
 		}
 	}
 	Img.onerror= function () {
-		if (source=="yahoo") Img.src="images/icons/feed/yahoo_news.jpg";
-		if (source=="nasa") Img.src="images/icons/feed/nasa_news.png";
+		Img.src="images/icons/error/no_image.jpg";
 	}
 	cell1.appendChild(Img);
 
