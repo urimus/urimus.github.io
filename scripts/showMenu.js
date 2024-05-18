@@ -2452,12 +2452,12 @@ if (lang=="eng") {
 	wholeMenu["For Children"].html = 'For Children';
 
 
-	wholeMenu["Superhero"] = {};
-	wholeMenu["Superhero"].id = "8_3_4";
-	wholeMenu["Superhero"].color = "black";
-	wholeMenu["Superhero"].hasSub = 0;
-	wholeMenu["Superhero"].link = "movies_animation_superhero_eng.html";
-	wholeMenu["Superhero"].html = 'Superhero';
+	wholeMenu["DC Universe Animated Movies"] = {};
+	wholeMenu["DC Universe Animated Movies"].id = "8_3_4";
+	wholeMenu["DC Universe Animated Movies"].color = "black";
+	wholeMenu["DC Universe Animated Movies"].hasSub = 0;
+	wholeMenu["DC Universe Animated Movies"].link = "movies_animation_dc_animated_movies_eng.html";
+	wholeMenu["DC Universe Animated Movies"].html = 'DC Universe Animated Movies';
 
 	wholeMenu["● Superhero"] = {};
 	wholeMenu["● Superhero"].id = "8_5";
@@ -2631,13 +2631,12 @@ if (lang=="rus") {
 	wholeMenu["Для Детей"].link = "movies_animation_for_children_rus.html";
 	wholeMenu["Для Детей"].html = 'For Детей';
 
-
-	wholeMenu["Супергеройские"] = {};
-	wholeMenu["Супергеройские"].id = "8_3_4";
-	wholeMenu["Супергеройские"].color = "black";
-	wholeMenu["Супергеройские"].hasSub = 0;
-	wholeMenu["Супергеройские"].link = "movies_animation_superhero_rus.html";
-	wholeMenu["Супергеройские"].html = 'Супергеройские';
+	wholeMenu["Анимационные Фильмы DC"] = {};
+	wholeMenu["Анимационные Фильмы DC"].id = "8_3_4";
+	wholeMenu["Анимационные Фильмы DC"].color = "black";
+	wholeMenu["Анимационные Фильмы DC"].hasSub = 0;
+	wholeMenu["Анимационные Фильмы DC"].link = "movies_animation_dc_animated_movies_rus.html";
+	wholeMenu["Анимационные Фильмы DC"].html = 'Анимационные Фильмы DC';
 
 	wholeMenu["● Супергеройские"] = {};
 	wholeMenu["● Супергеройские"].id = "8_5";
