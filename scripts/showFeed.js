@@ -382,6 +382,10 @@ function showEntry2(type, source, lang, items, i, imagesrc, tableMainRow, toSave
 			adjustScrollDiv();
 		}
 	}
+	Img.onerror= function () {
+		if (source=="yahoo") Img.src="images/icons/feed/yahoo_news.jpg";
+		if (source=="nasa") Img.src="images/icons/feed/nasa_news.png";
+	}
 	cell1.appendChild(Img);
 
 	if (entry.summary!=null) {
