@@ -69,6 +69,7 @@ function processPageResize(isLoad, orientationChanged){
 			document.getElementById("scrollDiv").setAttribute("style", "height:"+(scrollDivHeight-feedTitleHeight-4)+"px;width: 710px; overflow:auto;");
 			adjustScrollDiv();
 		} else if (window.location.pathname.substr(0, 9)=="/about_me") { // nothing
+		} else if (window.location.pathname.substr(0, 6)=="/index") { // nothing
 
 		} else {
 			document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
