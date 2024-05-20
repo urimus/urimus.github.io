@@ -255,7 +255,7 @@ function sortByDate(fileContentsL, lang, textColor){
 }
 
 
-function sortByFlag(fileContentsL, lang){       
+function sortByFlag(fileContentsL, lang, textColor){       
 	
 	var myFlags = [];
 	var myTextFlags = [];
