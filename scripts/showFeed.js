@@ -359,7 +359,7 @@ function showEntry2(type, source, lang, items, i, imagesrc, tableMainRow, toSave
 	Img.setAttribute('src', imagesrc);
 	if (toSave==1) Img.setAttribute('crossorigin', 'anonymous');
 	Img.onload = function () {
-		if (toSave==1 && imagesrc!="images/icons/feed/nasa_news.png" && imagesrc!="images/icons/feed/yahoo_news.jpg") {
+		if (toSave==1 && imagesrc!="images/icons/feed/nasa_news.png" && imagesrc!="images/icons/feed/yahoo_news.jpg" && imagesrc!="images/icons/error/no_image.jpg") {
 			imgWidth=Img.width;
 			imgHeight=Img.height;
 			ratio = 450.0 / imgWidth;
