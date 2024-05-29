@@ -384,7 +384,8 @@ function showEntry2(type, source, lang, items, i, imagesrc, tableMainRow, toSave
 	}
 	Img.onerror= function () {
 		console.log("Loading Error - "+Img.src);
-		Img.src="images/icons/error/no_image.jpg";
+		imagesrc = "images/icons/error/no_image.jpg";
+		Img.src = imagesrc;
 	}
 	cell1.appendChild(Img);
 
