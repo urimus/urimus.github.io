@@ -4680,12 +4680,12 @@ if (lang=="eng") {
 	wholeMenu["Matrix ⚡ Evil ⚡"].link = "stuff_matrix_eng.html";
 	wholeMenu["Matrix ⚡ Evil ⚡"].html = 'Matrix <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 
-	wholeMenu["Warlock"] = {};
-	wholeMenu["Warlock"].id = "14_6";
-	wholeMenu["Warlock"].color = "black";
-	wholeMenu["Warlock"].hasSub = 0;
-	wholeMenu["Warlock"].link = "stuff_warlock_eng.html";
-	wholeMenu["Warlock"].html = 'Warlock';
+	wholeMenu["Star Trek: Discovery"] = {};
+	wholeMenu["Star Trek: Discovery"].id = "14_6";
+	wholeMenu["Star Trek: Discovery"].color = "black";
+	wholeMenu["Star Trek: Discovery"].hasSub = 0;
+	wholeMenu["Star Trek: Discovery"].link = "stuff_star_trek_discovery_eng.html";
+	wholeMenu["Star Trek: Discovery"].html = 'Star Trek: Discovery';
 }
 
 if (lang=="rus") {
@@ -4733,12 +4733,12 @@ if (lang=="rus") {
 	wholeMenu["Матрица ⚡ Evil ⚡"].link = "stuff_matrix_rus.html";
 	wholeMenu["Матрица ⚡ Evil ⚡"].html = 'Матрица <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 
-	wholeMenu["Чернокнижник"] = {};
-	wholeMenu["Чернокнижник"].id = "14_6";
-	wholeMenu["Чернокнижник"].color = "black";
-	wholeMenu["Чернокнижник"].hasSub = 0;
-	wholeMenu["Чернокнижник"].link = "stuff_warlock_rus.html";
-	wholeMenu["Чернокнижник"].html = 'Чернокнижник';
+	wholeMenu["Star Trek: Discovery"] = {};
+	wholeMenu["Star Trek: Discovery"].id = "14_6";
+	wholeMenu["Star Trek: Discovery"].color = "black";
+	wholeMenu["Star Trek: Discovery"].hasSub = 0;
+	wholeMenu["Star Trek: Discovery"].link = "stuff_star_trek_discovery_rus.html";
+	wholeMenu["Star Trek: Discovery"].html = 'Star Trek: Discovery';
 
 }
 
@@ -4788,12 +4788,12 @@ if (lang=="lat") {
 	wholeMenu["Matrix ⚡ Evil ⚡"].link = "stuff_matrix_lat.html";
 	wholeMenu["Matrix ⚡ Evil ⚡"].html = 'Matrix <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 
-	wholeMenu["Veneficus"] = {};
-	wholeMenu["Veneficus"].id = "14_6";
-	wholeMenu["Veneficus"].color = "black";
-	wholeMenu["Veneficus"].hasSub = 0;
-	wholeMenu["Veneficus"].link = "stuff_warlock_lat.html";
-	wholeMenu["Veneficus"].html = 'Veneficus';
+	wholeMenu["Star Trek: Discovery"] = {};
+	wholeMenu["Star Trek: Discovery"].id = "14_6";
+	wholeMenu["Star Trek: Discovery"].color = "black";
+	wholeMenu["Star Trek: Discovery"].hasSub = 0;
+	wholeMenu["Star Trek: Discovery"].link = "stuff_star_trek_discovery_lat.html";
+	wholeMenu["Star Trek: Discovery"].html = 'Star Trek: Discovery';
 }
 
 
