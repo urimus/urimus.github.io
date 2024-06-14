@@ -560,7 +560,11 @@ function showContents(type, sortby, lang) {
 						});
 
 					}
-
+					Img.onerror = function () {
+						console.log("Loading Error - "+Img.src);
+						toSave=0;
+						Img.src = "images/icons/error/no_image.jpg";
+					}
 					Figure.appendChild(Img);
 
 					ImgCaption=document.createElement("figcaption");
