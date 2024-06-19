@@ -116,7 +116,6 @@
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="music_psychedelic_rock_rus.html#linda" class = "standardb_black" data-added="01е Сен, 2021." data-genre="Психоделический Рок" data-country="russia" data-established="1993" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Линда</a>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="music_psychedelic_trance_rus.html#psychedelic_trance" class = "standardb_black" data-added="30е Июн, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Психоделический Транс</a>
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="music_psychedelic_trance_rus.html#infected_mushroom" class = "standardb_black" data-added="30е Июн, 2016." data-genre="Психоделический Транс" data-country="israel" data-established="1998" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Infected Mushroom</a>
-<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="music_psychedelic_trance_rus.html#nexxus_604" class = "standardb_black" data-added="13е Апр, 2024." data-genre="Психоделический Транс" data-country="usa" data-established="2023" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Nexxus 604</a>
 
 <P>&nbsp;&#9679; <b class="text_black_blue" data-added="01е Июл, 2016.">Панк <font color="purple"><sup>&#9765; Vampiric &#9765;</sup></font> <font color="deeppink"><sup>&#9876; Zombiefied &#9876;</sup></font></b>
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="music_punk_horror_rus.html#punk_horror" class = "standardb_black" data-added="03е Сен, 2022." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Хоррор-Панк</a>
