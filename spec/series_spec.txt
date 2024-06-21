@@ -106,6 +106,7 @@ Superhero
 - Cowboy Bebop
 - Doom Patrol
 - Hawkeye
+- Jupiter's Legacy
 - Moon Knight
 - Swamp Thing
 - Vagrant Queen
