@@ -1057,13 +1057,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			if (mediaURL!="") {
 				qPos=mediaURL.indexOf("?");
 				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
-
 				result.entries[i].media.url=mediaURL;
 				locStUpdateData[entry_link].mediaUrl=mediaURL;
-			} else {
-				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
-				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
-				result.entries[i].media.url="images/icons/error/not_available.jpg";
 			}
 
 			corsProxyVer=1;
