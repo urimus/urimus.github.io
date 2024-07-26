@@ -1,0 +1,2265 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Домашняя страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*38;
+var imgBgSrc="images/icons/background/body_horror.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('images/icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="processPageResize(1);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+                       <div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+                </td>
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_body_horror_eng.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_body_horror_eng.html' + window.location.hash;
+				};"		 	
+			
+			class="flag_not_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('movies_genre_body_horror_rus.html' + window.location.hash);
+				} else {
+					window.location.href='movies_genre_body_horror_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_black">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'rus', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Карта Сайта</div>
+        </td>
+        </tr>   
+
+
+ 
+        <tr>
+                <td align="center">
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_rus.html');
+                        } else {
+                                window.location.href='about_me_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Обо мне</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center">
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_rus.html');
+                        } else {
+                                window.location.href='about_work_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  О моей работе</div>
+        </td>
+        </tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_phd_rus.html');
+			} else {
+				window.location.href='about_phd_rus.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  О моём PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_rus.html');
+                        } else {
+                                window.location.href='links_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Ссылки</div>
+        </td>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'rus', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'music');"		  
+		  class="menu_not_selected_black">
+		  Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>	
+	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'rus', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'rus', 'movies');"		  		  
+		  class="menu_selected">
+		  Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+        </td>
+	</tr>	
+	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_1"
+		  onMouseOver="showSubMenu(this, 'rus', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; По Актёрам <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2"
+		  onMouseOver="showSubMenu(this, 'rus', 'movies');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'rus', 'movies');"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; По Жанрам</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_action_horror_rus.html');
+			} else {
+				window.location.href='movies_genre_action_horror_rus.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Экшн-Хоррор</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_body_horror_rus.html');
+			} else {
+				window.location.href='movies_genre_body_horror_rus.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 15px;">
+		  &bull; Боди-Хоррор</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_dystopia_rus.html');
+			} else {
+				window.location.href='movies_genre_dystopia_rus.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Антиутопия</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_7"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_post_apocalyptic_rus.html');
+			} else {
+				window.location.href='movies_genre_post_apocalyptic_rus.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Постапокалиптика</div>
+        </td>
+	</tr>
+
+
+
+	
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_9"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_short_rus.html');
+			} else {
+				window.location.href='movies_genre_short_rus.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Короткометражные</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_10"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_sitcom_rus.html');
+			} else {
+				window.location.href='movies_genre_sitcom_rus.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Ситуационная Комедия</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_2_11"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('movies_genre_space_opera_rus.html');
+			} else {
+				window.location.href='movies_genre_space_opera_rus.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+		  &bull; Космическая Опера</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_3"
+		  onMouseOver="showSubMenu(this, 'rus', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Мультипликация</div>
+        </td>
+	</tr>	
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_8_5"
+		  onMouseOver="showSubMenu(this, 'rus', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'movies');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Супергеройские</div>
+        </td>
+	</tr>
+
+
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'rus', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'series');"  
+		  class="menu_not_selected_black">
+		  Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'rus', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'games');"  
+		  class="menu_not_selected_black">
+		  Игры</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'rus', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'rus', 'books');"  
+		  class="menu_not_selected_red">
+		  Книги</div>
+        </td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'rus', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'rus', 'photos');"  
+		  class="menu_not_selected_red">
+		  Фото/Картинки</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'rus', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('junk_rus.html');
+			} else {
+				window.location.href='junk_rus.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Мусор</div>
+        </td>
+	</tr>			
+	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'rus', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'rus', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'rus', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Анекдоты</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_rus.html');
+                        } else {
+                                window.location.href='heffalump_rus.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>              		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'rus', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Вещества Для Расслабления</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'software');"  
+		  class="menu_not_selected_white">
+		  Разработка Программ</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'rus', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Сатанизм</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_rus.html');
+                        } else {
+                                window.location.href='satanism_wicca_rus.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Викка</div>
+        </td>
+        </tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_rus.html');
+			} else {
+				window.location.href='falsifiability_rus.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Фальсифицируемость</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'rus', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Психология</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'rus', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Страны</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('totalitarianism_rus.html');
+			} else {
+				window.location.href='totalitarianism_rus.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Тоталитаризм</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'rus', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Деятели</div>
+        </td>
+	</tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'rus', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'news');"               
+                  class="menu_not_selected_red">
+                  Новости</div>
+        </td>
+        </tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" valign="top" align="center" >&hairsp;</td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table with search, name and languages -->
+        <tr class="title_black"> 
+                <td  class="title_black" style="width: 100%;"><a name="series">Фильмы &blacktriangleright; Боди-Хоррор</a></td>
+        </tr>
+
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:874px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="body_horror">Боди-Хоррор</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_black">Описание Жанра</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/body_horror.jpg" alt="Боди-Хоррор" title="Боди-Хоррор" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					
+
+<P><b>Боди-хоррор</b> (англ. body horror, букв. «телесный ужас», «телесный хоррор»), известный также как органик-хоррор (organic horror) и биохоррор (biological horror) — поджанр ужасов в кино и литературе ужасов, для которого характерно особое внимание к человеческому телу и его трансформациям. Типичные мотивы боди-хоррора — разнообразные болезни, гниение, паразитизм, мутации и превращения, эксперименты с человеческим телом и создание монстров вроде чудовища Франкенштейна.
+
+
+
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%B4%D0%B8-%D1%85%D0%BE%D1%80%D1%80%D0%BE%D1%80" class = "standardb_black" target="_blank">Wikipedia Боди-Хоррор</a> - <b>Боди-Хоррор</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					05е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="antlers">Оленьи Рога (англ. Antlers)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/antlers.jpg" alt="Оленьи Рога (англ. Antlers)" title="Оленьи Рога (англ. Antlers)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Оленьи рога</b>» (англ. Antlers) — научно-фантастический фильм ужасов режиссёра Скотта Купера. Фильм основан на рассказе Ника Антоски «Тихий мальчик», который был опубликован в интернет-журнале Guernica.
+
+<P>Релиз фильма был запланирован на 17 апреля 2020 года компанией Searchlight Pictures. Однако выпуск фильма был отменён в марте 2020 года из-за пандемии COVID-19 с намерением перенести его позднее в 2020 году. Сообщалось, что фильм будет выпущен 19 февраля 2021 года компанией Searchlight Pictures, однако, в январе 2021 года релиз был перенесён на 29 октября 2021 года.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Оленьи_рога_(фильм)" class = "standardb_black" target="_blank">Wikipedia Оленьи рога (фильм)</a> - <b>Оленьи Рога (англ. Antlers)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=YsyNU6LodIQ" class = "standardb_black" target="_blank">Оленьи Рога (англ. Antlers)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30е Янв, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="complex">Комплекс: Карантин (англ. The Complex: Lockdown)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/complex.jpg" alt="Комплекс: Карантин (англ. The Complex: Lockdown)" title="Комплекс: Карантин (англ. The Complex: Lockdown)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> The Complex: Lockdown
+
+<P><b>Storyline:</b> After a major bio-weapon attack on London, two scientists debate whether to save a suspected terrorist's life. However, assassins have infiltrated the building, and soon the scientists find themselves with time, and options, running out.
+
+<P><b>Genres:</b> Sci-Fi, Thriller
+
+<P><b>Actor:</b> Michelle Mylett, Al Weaver, Kim Adis
+
+<P><b>Director:</b> Paul Raschid
+
+<P><b>Country:</b> United Kingdom
+
+<P><b>Duration:</b> 78 min
+
+<P><b>Release:</b> July 27, 2020 (United Kingdom)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt12550060/" class = "standardb_black" target="_blank">IMDB The Complex: Lockdown (2020)</a> - <b>Комплекс: Карантин (англ. The Complex: Lockdown)</b> на IMDb.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=eSV73mNArBA" class = "standardb_black" target="_blank">Комплекс: Карантин (англ. The Complex: Lockdown)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					09е Июн, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="cryo">Крио (англ. Cryo)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/cryo.jpg" alt="Крио (англ. Cryo)" title="Крио (англ. Cryo)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Cryo
+
+<P><b>Storyline:</b> In an underground facility, five scientists wake from cryosleep with no memory of who they are or how long they've been asleep. They soon make a shocking realization: a killer is hunting them down there, and may even be hiding among them.
+
+<P><b>Genres:</b> Mystery, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Jyllian Petrie, Emily Marie Palmer, Mason D. Davis
+
+<P><b>Director:</b> Barrett Burgin
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 118 min
+
+<P><b>Release:</b> April 28, 2022 (Russia)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt8814500/" class = "standardb_black" target="_blank">IMDB Cryo (2022)</a> - <b>Крио (англ. Cryo)</b> на IMDb (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=O9Cv6LXFHys" class = "standardb_black" target="_blank">Крио (англ. Cryo)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					06е Июн, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="dropa">Дропа (англ. Dropa)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/dropa.jpg" alt="Дропа (англ. Dropa)" title="Дропа (англ. Dropa)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Dropa
+
+<P><b>Storyline:</b> The hunt is on as a government assassin comes out of retirement to track down a killer extraterrestrial murdering the former members of his team in this science fiction thriller set in an alternate future America.
+
+<P><b>Genres:</b> Drama, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Jason Douglas, David Matranga, James Hong
+
+<P><b>Director:</b> Wayne Slaten
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 101 min
+
+<P><b>Release:</b> 6 December 2019 (USA)
+
+
+			
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt1822395/" class = "standardb_black" target="_blank">IMDb Dropa (2019)</a> - <b>Дропа (англ. Dropa)</b> на IMDb (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=QJiszUQ2pUE" class = "standardb_black" target="_blank">Дропа (англ. Dropa)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22е Мая, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="entangled">Мультивселенная (англ. Entagled)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/entangled.jpg" alt="Мультивселенная (англ. Entagled)" title="Мультивселенная (англ. Entagled)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Entagled
+
+<P><b>Storyline:</b> Four brilliant university students are forced to confront themselves in terrifying ways when their Quantum Physics experiment leads to an entangled parallel existence that leaves them questioning who they are and what is real.
+
+<P><b>Genres:</b> Drama, Sci-Fi
+
+<P><b>Actor:</b> Munro Chambers, Sandra Mae Frank, Paloma Kwiatkowski
+
+<P><b>Director:</b> Gaurav Seth
+
+<P><b>Country:</b> Canada
+
+<P><b>Duration:</b> 90 min
+
+<P><b>Release:</b> October 15, 2019 (Poland)
+
+
+
+			
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt8953768/" class = "standardb_black" target="_blank">IMDb Entangled (2019)</a> - <b>Мультивселенная (англ. Entagled)</b> на IMDb (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=0nfQY0ZG3_A" class = "standardb_black" target="_blank">Мультивселенная (англ. Entagled)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					15е Июн, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="existenz">Экзистенция</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/existenz.jpg" alt="Экзистенция" title="Экзистенция" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>«Экзистенция»</b> (англ. eXistenZ) — научно-фантастический/психологический триллер 1999 года режиссёра Дэвида Кроненберга. В главных ролях Джуд Лоу и Дженнифер Джейсон Ли.
+
+<br><br>
+<P><b>Новелизации:</b>
+
+<P>Кристофер Прист написал одноимённый роман для сопровождения фильма «Экзистенция», тема которого имеет много общего c темами его собственных произведений.
+
+<P>Продюсеры фильма, венгры Андраш Хамори (H&aacute;mori Andr&aacute;s) и Роберт Лантош (Lantos R&oacute;bert), сообщили, что буквы X и Z выделены не случайно, между ними стоит слово «isten», которое в переводе с венгерского означает «Бог».
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D0%B7%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%86%D0%B8%D1%8F_%28%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%29" class = "standardb_black" target="_blank">Wikipedia Экзистенция (фильм)</a> - <b>Экзистенция</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=HAdbdUt_h9M" class = "standardb_black" target="_blank">Экзистенция</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					05е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="gray_matter">Серое Вещество (англ. Gray Matter)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/gray_matter.jpg" alt="Серое Вещество (англ. Gray Matter)" title="Серое Вещество (англ. Gray Matter)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Gray Matter
+
+<P><b>Storyline:</b> Aurora has known all her life from her mother that the superhuman abilities they have also make them dangerous. Now, Aurora will discover if her mother was speaking the truth on one fateful and fatal night.
+
+<P><b>Genres:</b> Drama, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Mia Isaac, Jessica Frances Dukes, Garret Dillahunt
+
+<P><b>Director:</b> Meko Winbush
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 87 min
+
+<P><b>Release:</b> July 13, 2023 (United States)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt25947954/" class = "standardb_black" target="_blank">IMDB Gray Matter (2023)</a> - <b>Серое Вещество (англ. Gray Matter)</b> на IMDb (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=w-JAJRcx5S0" class = "standardb_black" target="_blank">Серое Вещество (англ. Gray Matter)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					27е Сен, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="hive">Рой (англ. The Hive)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/hive.jpg" alt="Рой (англ. The Hive)" title="Рой (англ. The Hive)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>«<b>Рой</b>» (англ. The Hive) — американский триллер с элементами научной фантастики, снятый режиссёром Дэвидом Яровески по собственному сценарию. Впервые картина была показана 19 сентября 2014г. на кинофестивале Fantastic Festruen. Мировая премьера состоялась на San Diego Comic-Con International в июле 2015г.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B9_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2014)" class = "standardb_black" target="_blank">Wikipedia Рой (фильм, 2014)</a> - <b>Рой (англ. The Hive)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=txdd4UaiJJg" class = "standardb_black" target="_blank">Рой (англ. The Hive)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					31е Июл, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="implanted">Имплантированная (англ. Implanted)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/implanted.jpg" alt="Имплантированная (англ. Implanted)" title="Имплантированная (англ. Implanted)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Implanted
+
+<P><b>Storyline:</b> Sarah, a struggling young woman living in Brooklyn, agrees to volunteer as an experimental test subject for a pharmaceutical company called Dynamic Health Cure to be implanted with the LEXX nanochip. Sarah hopes that the money received for her participation will solve her financial troubles and help her to take care of her mother who has Alzheimer's. A nanochip is implanted in her cerebral cortex. It is designed with artificial intelligence technology to take control of the body at the inception of any disease or illness. When the implant turns sinister and orders her to commit crimes, Sarah is plunged into a murderous spiral with only one choice: to live or die.
+
+<P><b>Genres:</b> Sci-Fi, Thriller
+
+<P><b>Actor:</b> Michelle Girolami, Nader Boussandel, Scott Broughton
+
+<P><b>Director:</b> Fabien Dufils
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 96 min
+
+<P><b>Release:</b> October 1, 2021 (United States)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt9786896/" class = "standardb_black" target="_blank">IMDB Implanted (2021)</a> - <b>Имплантированная (англ. Implanted)</b> на IMDb (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=D-XEKMVk_E8" class = "standardb_black" target="_blank">Имплантированная (англ. Implanted)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					12е Окт, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="ink">Чернила (англ. Ink)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/ink.jpg" alt="Чернила (англ. Ink)" title="Чернила (англ. Ink)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Инк</b>» (англ. Ink) — фильм режиссёра Джеймина Уайнэнса. Фильм создан независимой компанией Double Edge Films, принадлежащей режиссёру.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Чернила_(фильм)" class = "standardb_black" target="_blank">Wikipedia Чернила (фильм)</a> - <b>Чернила (англ. Ink)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ZBGeErufQdY" class = "standardb_black" target="_blank">Чернила (англ. Ink)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30е Ноя, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="outside_wire">Смертельная Зона (англ. Outside the Wire)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/outside_wire.jpg" alt="Смертельная Зона (англ. Outside the Wire)" title="Смертельная Зона (англ. Outside the Wire)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Смертельная зона</b>» (англ. Outside the Wire) — американский научно-фантастический фильм, режиссёра Микаэля Хофстрёма. Фильм вышел на Netflix 15 января 2021 года.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B5%D1%80%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B7%D0%BE%D0%BD%D0%B0" class = "standardb_black" target="_blank">Wikipedia Смертельная зона</a> - <b>Смертельная Зона (англ. Outside the Wire)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=izBkt_ycsXE" class = "standardb_black" target="_blank">Смертельная Зона (англ. Outside the Wire)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					21е Мар, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="overlord">Оверлорд (англ. Overlord)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/overlord.jpg" alt="Оверлорд (англ. Overlord)" title="Оверлорд (англ. Overlord)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Оверлорд</b>» (англ. Overlord) — американский военный фильм ужасов 2018 года режиссёра Джулиуса Эйвери. Сюжет фильма вращается вокруг нескольких американских солдат, которые, после уничтожения авиации участвовавшей в операции высадки в Нормандии (операция «Оверлорд»), оказываются в тылу врага и обнаруживают тайные эксперименты нацистов.
+
+<P>Сценарий фильма написали Билли Рэй и Марк Смит. Главные роли в фильме исполняют Джован Адепо, Джейкоб Андерсон, Пилу Асбек, Иэн Де Кэскер, Джон Магаро, Уайатт Рассел и Букем Вудбайн. Джей Джей Абрамс через свою компанию Bad Robot Productions выступил вместе с Линдси Уэбер продюсером фильма.
+
+<P>Фильм был выпущен в прокат в Соединённых Штатах компанией Paramount Pictures 9 ноября 2018 года. 
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B2%D0%B5%D1%80%D0%BB%D0%BE%D1%80%D0%B4_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC)" class = "standardb_black" target="_blank">Wikipedia Оверлорд (фильм)</a> - <b>Оверлорд (англ. Overlord)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ccpHw098ps8" class = "standardb_black" target="_blank">Оверлорд (англ. Overlord)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22е Дек, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="oxygen">Кислород (фр. Oxygène)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/oxygen.jpg" alt="Кислород (фр. Oxygène)" title="Кислород (фр. Oxygène)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Кислород</b>» (англ. Oxygen) — научно-фантастический фильм режиссёра Александра Ажа с Мелани Лоран в главной роли. Премьера фильма состоялась на Netflix 12 мая 2021 года. 
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D1%80%D0%BE%D0%B4_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2021)" class = "standardb_black" target="_blank">Wikipedia Кислород (фильм, 2021)</a> - <b>Кислород (фр. Oxygène)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=leDZMhqIg3Y" class = "standardb_black" target="_blank">Кислород (фр. Oxygène)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14е Мая, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="radius">Радиус (англ. Radius)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/radius.jpg" alt="Радиус (англ. Radius)" title="Радиус (англ. Radius)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Radius</b> is a 2017 Canadian science fiction thriller film directed and written by Caroline Labrèche and Steeve Léonard. It stars Diego Klattenhoff, Charlotte Sullivan, and Brett Donahue. Klattenhoff and Sullivan play two survivors of a car accident who discover that one causes the death of anyone who comes within a certain radius of him, and the other has the ability to nullify this effect.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Radius_(film)" class = "standardb_black" target="_blank">Wikipedia Radius (film)</a> - <b>Радиус (англ. Radius)</b> на Wikipedia (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=NExqMxRRM64" class = "standardb_black" target="_blank">Радиус (англ. Radius)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					07е Янв, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="reminiscence">Воспоминания (англ. Reminiscence)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/reminiscence.jpg" alt="Воспоминания (англ. Reminiscence)" title="Воспоминания (англ. Reminiscence)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P>«<b>Воспоминания</b>» (англ. Reminiscence) — американский научно-фантастический фильм. Полнометражный режиссёрский дебют Лизы Джой.
+
+<P>Фильм вышел в международный прокат 25 августа 2021 года.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%81%D0%BF%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%BD%D0%B8%D1%8F_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2021)" class = "standardb_black" target="_blank">Wikipedia Воспоминания (фильм, 2021)</a> - <b>Воспоминания (англ. Reminiscence)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=WnKPm-3Wbow" class = "standardb_black" target="_blank">Воспоминания (англ. Reminiscence)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					26е Авг, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="ria">Шоу Андроидов (англ. R.I.A.)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/ria.jpg" alt="Шоу Андроидов (англ. R.I.A.)" title="Шоу Андроидов (англ. R.I.A.)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> R.I.A.
+
+<P><b>Storyline:</b> In 2040, a female humanoid A.I. is hacked by her husband and forced to kidnap the U.S. vice president's son and execute him on live television.
+
+<P><b>Genres:</b> Crime, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Luke Goss, Dean Cain, Amar Adatia
+
+<P><b>Director:</b> Richard Colton
+
+<P><b>Country:</b> United Kingdom
+
+<P><b>Duration:</b> 95 min
+
+<P><b>Release:</b> December 17, 2021 (Russia)
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt9126944/" class = "standardb_black" target="_blank">IMDB R.I.A. (2021)</a> - <b>Шоу Андроидов (англ. R.I.A.)</b> на IMDb (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=5SI9SXqLMjw" class = "standardb_black" target="_blank">Шоу Андроидов (англ. R.I.A.)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					26е Янв, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="tabernacle">Скиния 101 (англ. Tabernacle 101)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/tabernacle.jpg" alt="Скиния 101 (англ. Tabernacle 101)" title="Скиния 101 (англ. Tabernacle 101)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Tabernacle 101
+
+<P><b>Storyline:</b> It is about two Atheists who run a video blog debunking Psychics, Mediums and religious beliefs. However, a death experiment goes totally wrong and as a result they attract evil entities that stalk and haunt them.
+
+<P><b>Genres:</b> Drama, Fantasy, Horror, Mystery, Sci-Fi, Thriller
+
+<P><b>Actor:</b> David Hov, Mikaela Franco, Elly Hiraani Clapin
+
+<P><b>Director:</b> Colm O'Murchu
+
+<P><b>Country:</b> Australia
+
+<P><b>Duration:</b> 98 min
+
+<P><b>Release:</b> 30 August 2019 (USA)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt5265980/" class = "standardb_black" target="_blank">IMDB Tabernacle 101 (2019)</a> - <b>Tabernacle 101</b> на IMDb (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=5d0G2rISdbg" class = "standardb_black" target="_blank">Скиния 101 (англ. Tabernacle 101)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					13е Июл, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="terminus">Вокзал (англ. Terminus)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/terminus.jpg" alt="Вокзал (англ. Terminus)" title="Вокзал (англ. Terminus)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Terminus</b> is a 2015 Australian science-fiction drama film directed by Marc Furmie, who wrote it with Shiyan Zheng and Gabriel Dowrick. It stars Jai Koutrae, Todd Lasance, Bren Foster, and Kendra Appleton. Terminus tells the story of David, a small-town American who has a near-fatal accident after coming in contact with a meteorite. The meteorite has properties that have enormous implications for mankind.
+
+<P>The film was made on a small budget in Sydney, with a predominantly Australian cast. It has been praised for its character introspection and classic sci-fi feel.
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Terminus_(2015_film)" class = "standardb_black" target="_blank">Wikipedia Terminus (2015 film)</a> - <b>Вокзал (англ. Terminus)</b> на Wikipedia (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=lqSncc3uDWk" class = "standardb_black" target="_blank">Вокзал (англ. Terminus)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					24е Июл, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="victor_frankenstein">Виктор Франкенштейн (англ. Victor Frankenstein)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/victor_frankenstein.jpg" alt="Виктор Франкенштейн (англ. Victor Frankenstein)" title="Виктор Франкенштейн (англ. Victor Frankenstein)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Виктор Франкенштейн</b>» (англ. Victor Frankenstein) — американский драматический фильм ужасов режиссёра Пола Макгигана. Сценарий фильма был написан Максом Лэндисом, основанный на романе английской писательницы Мэри Шелли «Франкенштейн, или Современный Прометей», выпущенном в 1818 году. В фильме снялись Джеймс Макэвой в роли молодого учёного Виктора Франкенштейна и Дэниел Редклифф в роли его помощника Игоря. Мировая премьера фильма состоялась 25 ноября 2015 года, премьера в РФ — 26 ноября. Дата выхода на диске 8 марта.
+
+<P>История рассказывается от лица Игоря. В фильме показываются его дружба с молодым учёным Виктором фон Франкенштейном, а также становление Франкенштейна как человека-легенды.
+
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%B5%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC)" class = "standardb_black" target="_blank">Wikipedia Виктор Франкенштейн (фильм)</a> - <b>Виктор Франкенштейн (англ. Victor Frankenstein)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=fPVlSDKrXn0" class = "standardb_black" target="_blank">Виктор Франкенштейн (англ. Victor Frankenstein)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30е Авг, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="volition">Кольцо Времени (англ. Volition)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/volition.jpg" alt="Кольцо Времени (англ. Volition)" title="Кольцо Времени (англ. Volition)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Volition</b> is a 2019 Canadian science fiction thriller film written by Tony and Ryan W. Smith and directed by Tony Dean Smith. The film stars Adrian Glynn McMorran, Magda Apanowicz, John Cassini, Frank Cassini, Aleks Paunovic, and Bill Marchant. The film premiered at the 2019 Philip K. Dick Science Fiction Film Festival.
+
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Volition_(film)" class = "standardb_black" target="_blank">Wikipedia Volition (film)</a> - <b>Кольцо Времени (англ. Volition)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ZYSk4gcH0CM" class = "standardb_black" target="_blank">Кольцо Времени (англ. Volition)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14е Июл, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="william">Уильям. Последний Неандерталец (англ. William)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/william.jpg" alt="Уильям. Последний Неандерталец (англ. William)" title="Уильям. Последний Неандерталец (англ. William)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> William
+
+<P><b>Storyline:</b> Julian Reed and Barbara Sullivan create a Neanderthal baby using ancient Neanderthal DNA from a Neanderthal bog body. William must learn to exist in a world where he is the ultimate outsider, the only Neanderthal on the planet.
+
+<P><b>Genres:</b> Adventure, Drama, Family, Sci-Fi
+
+<P><b>Actor:</b> Brody Wilkinson, Connor Wilkinson, Obada Adnan
+
+<P><b>Director:</b> Tim Disney
+
+<P><b>Country:</b> USA
+
+<P><b>Duration:</b> 90 min
+
+<P><b>Release:</b> April 26, 2019 (United States)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt6316816/" class = "standardb_black" target="_blank">IMDB William (2019)</a> - <b>Уильям. Последний Неандерталец (англ. William)</b> на IMDb (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=dCaDmjMiHMU" class = "standardb_black" target="_blank">Уильям. Последний Неандерталец (англ. William)</a> - Официальный трейлер.			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					31е Дек, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="witches">Ведьмы (англ. The Witches)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/witches.jpg" alt="Ведьмы (англ. The Witches)" title="Ведьмы (англ. The Witches)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Ведьмы</b>» (англ. The Witches) — американо-мексиканский кинофильм Роберта Земекиса. В главной роли: Энн Хэтэуэй. Выход фильма состоялся 29 октября 2020 года.
+
+
+	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Ведьмы_(фильм,_2020)" class = "standardb_black" target="_blank">Wikipedia Ведьмы (фильм, 2020)</a> - <b>Ведьмы (англ. The Witches)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=IV_d3RfmTcg" class = "standardb_black" target="_blank">Ведьмы (англ. The Witches)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					09е Янв, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
