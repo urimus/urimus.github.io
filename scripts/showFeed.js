@@ -1049,6 +1049,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				if (lang=="rus") description="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 				result.entries[i].summary=description;
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
+				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
 
 			mediaURL="";
