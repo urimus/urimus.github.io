@@ -261,8 +261,6 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		textMore="Ещё >>";
 		textLocalCopy="Локальная Копия";
 		textObtainedBy="Получено через";
-		textLoadingImage="Загружается Картинка";
-		textLoadingError="Ошибка Загрузки Картинки. Перезагрузка x";
 	}
 
 	if (lang == "eng" || lang == "lat"){
@@ -274,8 +272,6 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		textMore="More >>";
 		textLocalCopy="Local Copy";
 		textObtainedBy="Obtained by";
-		textLoadingImage="Loading Image";
-		textLoadingError="Image Loading Error. ReLoading x";
 	}
 
 	if (lang == "lat"){
@@ -301,12 +297,16 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	var cell1 = row.insertCell(0);
 	cell1.className = 'text_red';
 	cell1.style = 'padding-left:10px; padding-right:10px;';
+	
+	imagesrc=entry.media.url;
+	if (source=="nasa") imagesrc=entry.media.url+"?w=450";
 
 	if (source=="yahoo" || source=="nasa") {
 		var messageDiv = document.createElement('div');
 		messageDiv.setAttribute('class', "text_red");
 		messageDiv.dataset.loadingAttempt = 0;
-		messageDiv.innerHTML="<P>"+textLoadingImage+" <span class='loadingDiv'>.</span>";
+		if (lang == "eng" || lang == "lat") messageDiv.innerHTML="<P>Loading <a href='"+imagesrc+"' class='standardb_red' target='_blank'>Image</a>"+" <span class='loadingDiv'>.</span>";
+		if (lang == "rus") messageDiv.innerHTML="<P>Загружается <a href='"+imagesrc+"' class='standardb_red' target='_blank'>Картинка</a>"+" <span class='loadingDiv'>.</span>";
 		cell1.appendChild(messageDiv);
 	}
 
@@ -321,11 +321,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	Img.setAttribute('width', entry.media.width);
 	Img.setAttribute('style', 'padding-right:5px;');
 	Img.setAttribute('loading', 'lazy');
-	if (source=="nasa") {
-		Img.setAttribute('src', entry.media.url+"?w=450");
-	} else {
-		Img.setAttribute('src', entry.media.url);
-	}
+	Img.setAttribute('src', imagesrc);
 	Img.onload = function () {
 		if (source=="yahoo" || source=="nasa") messageDiv.style.display = "none";
 		var scrollDiv = document.getElementById('scrollDiv');
@@ -343,7 +339,9 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		} else {
 			if (source=="yahoo") {
 				messageDiv.dataset.loadingAttempt=parseInt(messageDiv.dataset.loadingAttempt)+1;
-				messageDiv.innerHTML="<P>"+textLoadingError+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
+				if (lang == "eng" || lang == "lat") messageDiv.innerHTML="<P><a href='"+imagesrc+"' class='standardb_red' target='_blank'>Image</a> Loading Error. ReLoading x"+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
+				if (lang == "rus") messageDiv.innerHTML="<P>Ошибка Загрузки <a href='"+imagesrc+"' class='standardb_red' target='_blank'>Картинки</a>. Перезагрузка x"+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
+//				messageDiv.innerHTML="<P>"+textLoadingError+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
 				messageDiv.style.display = "block";
 			}
 			Img.src = Img.src;
