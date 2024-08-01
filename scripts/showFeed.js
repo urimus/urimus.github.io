@@ -339,8 +339,8 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		} else {
 			if (source=="yahoo") {
 				messageDiv.dataset.loadingAttempt=parseInt(messageDiv.dataset.loadingAttempt)+1;
-				if (lang == "eng" || lang == "lat") messageDiv.innerHTML="<P><a href='"+imagesrc+"' class='standardb_red' target='_blank'>Image</a> Loading Error. ReLoading x"+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
-				if (lang == "rus") messageDiv.innerHTML="<P>Ошибка Загрузки <a href='"+imagesrc+"' class='standardb_red' target='_blank'>Картинки</a>. Перезагрузка x"+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
+				if (lang == "eng" || lang == "lat") messageDiv.innerHTML="<P><a href='"+Img.src+"' class='standardb_red' target='_blank'>Image</a> Loading Error. ReLoading x"+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
+				if (lang == "rus") messageDiv.innerHTML="<P>Ошибка Загрузки <a href='"+Img.src+"' class='standardb_red' target='_blank'>Картинки</a>. Перезагрузка x"+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
 				messageDiv.style.display = "block";
 			}
 			Img.src = Img.src;
