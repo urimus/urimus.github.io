@@ -302,12 +302,41 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	if (source=="nasa") imagesrc=entry.media.url+"?w=450";
 
 	if (source=="yahoo" || source=="nasa") {
-		var messageDiv = document.createElement('div');
-		messageDiv.setAttribute('class', "text_red");
-		messageDiv.dataset.loadingAttempt = 0;
-		if (lang == "eng" || lang == "lat") messageDiv.innerHTML="<P>Loading <a href='"+imagesrc+"' class='standardb_red' target='_blank'>Image</a>"+" <span class='loadingDiv'>.</span>";
-		if (lang == "rus") messageDiv.innerHTML="<P>Загружается <a href='"+imagesrc+"' class='standardb_red' target='_blank'>Картинка</a>"+" <span class='loadingDiv'>.</span>";
-		cell1.appendChild(messageDiv);
+		var messageDiv1 = document.createElement('span');
+		messageDiv1.setAttribute('class', "text_red");
+		messageDiv1.dataset.loadingAttempt = 0;
+		if (lang == "eng" || lang == "lat") messageDiv1.innerHTML="Loading ";
+		if (lang == "rus") messageDiv1.innerHTML="Загружается ";
+		cell1.appendChild(messageDiv1);
+
+		var aImage = document.createElement('a');
+		aImage.setAttribute('href', "'"+imagesrc+"'");
+		aImage.setAttribute('class', 'standardb_red');
+		aImage.setAttribute('target', '_blank');
+		if (lang == "eng" || lang == "lat") aImage.innerHTML = "Image ";
+		if (lang == "rus") aImage.innerHTML = "Картинка ";
+		cell1.appendChild(aImage);
+
+		var messageDiv2 = document.createElement('span');
+		messageDiv2.setAttribute('class', "text_red");
+		messageDiv2.innerHTML=" ";
+		cell1.appendChild(messageDiv2);
+
+		var aReload = document.createElement('a');
+		aReload.setAttribute('href', "javascript:void(0);");
+		aReload.setAttribute('class', 'standardb_red');
+		if (lang == "eng" || lang == "lat") aReload.setAttribute('title', 'Reload');
+		if (lang == "rus") aReload.setAttribute('title', 'Перезагрузить');
+		aReload.innerHTML = "&circlearrowleft;";
+		aReload.onclick = function () {
+			Img.onerror();
+		}
+		cell1.appendChild(aReload);
+
+		var messageDiv3 = document.createElement('span');
+		messageDiv3.setAttribute('class', "text_red");
+		messageDiv3.innerHTML=" <span class='loadingDiv'>.</span>";
+		cell1.appendChild(messageDiv3);
 	}
 
 
@@ -323,7 +352,15 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	Img.setAttribute('loading', 'lazy');
 	Img.setAttribute('src', imagesrc);
 	Img.onload = function () {
-		if (source=="yahoo" || source=="nasa") messageDiv.style.display = "none";
+
+		if (source=="yahoo" || source=="nasa") {
+			messageDiv1.style.display = "none";
+			aImage.style.display = "none";
+			messageDiv2.style.display = "none";
+			aReload.style.display = "none";
+			messageDiv3.style.display = "none";
+		}
+
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 		if (hasVerticalScrollbar) {
@@ -338,10 +375,25 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 			Img.src = "images/icons/error/error.jpg";
 		} else {
 			if (source=="yahoo") {
-				messageDiv.dataset.loadingAttempt=parseInt(messageDiv.dataset.loadingAttempt)+1;
-				if (lang == "eng" || lang == "lat") messageDiv.innerHTML="<P><a href='"+Img.src+"' class='standardb_red' target='_blank'>Image</a> Loading Error. ReLoading x"+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
-				if (lang == "rus") messageDiv.innerHTML="<P>Ошибка Загрузки <a href='"+Img.src+"' class='standardb_red' target='_blank'>Картинки</a>. Перезагрузка x"+messageDiv.dataset.loadingAttempt+" <span class='loadingDiv'>.</span>";
-				messageDiv.style.display = "block";
+				messageDiv1.dataset.loadingAttempt=parseInt(messageDiv1.dataset.loadingAttempt)+1;
+
+				if (lang == "eng" || lang == "lat") messageDiv1.innerHTML="";
+				if (lang == "rus") messageDiv1.innerHTML="Ошибка Загрузки ";
+
+				if (lang == "rus") aImage.innerHTML = "Картинки ";
+
+				if (lang == "eng" || lang == "lat") messageDiv2.innerHTML=" Loading Error. ReLoading x";
+				if (lang == "rus") messageDiv2.innerHTML=". Перезагрузка x";
+				messageDiv2.innerHTML=messageDiv2.innerHTML+messageDiv1.dataset.loadingAttempt+" ";
+
+				aReload.onclick = function () {
+					Img.src = Img.src;
+					messageDiv1.dataset.loadingAttempt=parseInt(messageDiv1.dataset.loadingAttempt)+1;
+						if (lang == "eng" || lang == "lat") messageDiv2.innerHTML=" Loading Error. ReLoading x";
+						if (lang == "rus") messageDiv2.innerHTML=". Перезагрузка x";
+						messageDiv2.innerHTML=messageDiv2.innerHTML+messageDiv1.dataset.loadingAttempt+" ";
+				}
+
 			}
 			Img.src = Img.src;
 		}
