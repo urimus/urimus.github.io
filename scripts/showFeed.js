@@ -313,8 +313,8 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		aImage.setAttribute('href', "'"+imagesrc+"'");
 		aImage.setAttribute('class', 'standardb_red');
 		aImage.setAttribute('target', '_blank');
-		if (lang == "eng" || lang == "lat") aImage.innerHTML = "Image ";
-		if (lang == "rus") aImage.innerHTML = "Картинка ";
+		if (lang == "eng" || lang == "lat") aImage.innerHTML = "Image";
+		if (lang == "rus") aImage.innerHTML = "Картинка";
 		cell1.appendChild(aImage);
 
 		var messageDiv2 = document.createElement('span');
@@ -380,7 +380,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 				if (lang == "eng" || lang == "lat") messageDiv1.innerHTML="";
 				if (lang == "rus") messageDiv1.innerHTML="Ошибка Загрузки ";
 
-				if (lang == "rus") aImage.innerHTML = "Картинки ";
+				if (lang == "rus") aImage.innerHTML = "Картинки";
 
 				if (lang == "eng" || lang == "lat") messageDiv2.innerHTML=" Loading Error. ReLoading x";
 				if (lang == "rus") messageDiv2.innerHTML=". Перезагрузка x";
