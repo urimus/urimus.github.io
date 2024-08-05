@@ -349,7 +349,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	Img.setAttribute('align', 'left');
 	Img.setAttribute('width', entry.media.width);
 	Img.setAttribute('style', 'padding-right:5px;');
-	Img.setAttribute('loading', 'lazy');
+//	Img.setAttribute('loading', 'lazy');
 	Img.setAttribute('src', imagesrc);
 	Img.onload = function () {
 
