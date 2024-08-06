@@ -947,6 +947,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
 				result.entries[i].media.url="images/icons/error/not_available.jpg";
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
+				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
 
 			corsProxyVer=1;
