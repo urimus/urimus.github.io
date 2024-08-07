@@ -1835,7 +1835,7 @@ function processSearch(lang) {
 								}
 								onClickLink="html_editor_"+lang+".html?pattern="+encodeURIComponent(getParameterByName('pattern'))+"&i="+j;
 								onClick="if (event.ctrlKey==1){window.open('"+onClickLink+"');} else {window.location.href='"+onClickLink+"';};";
-								filesContText=filesContText+"<a href=\""+onClickLink+"\" onClick=\""+onClick+"\"  class = \"standardb_"+colorShow+"\" title=\""+dir[j]['correctDir']+dir[j]['basename']+"\">"+a+"</a>&ensp;";
+								filesContText=filesContText+"<a href=\"javascript:void(0)\" onClick=\""+onClick+"\"  class = \"standardb_"+colorShow+"\" title=\""+dir[j]['correctDir']+dir[j]['basename']+"\">"+a+"</a>&ensp;";
 								if (typeof alphabetFilesLength[firstLetter]==='undefined') alphabetFilesLength[firstLetter]=0;
 								c=alphabetFilesLength[firstLetter];
 								c=c+(a.toString()).length+1;
@@ -1868,7 +1868,7 @@ function processSearch(lang) {
 									}
 									onClickLink="html_editor_"+lang+".html?pattern="+encodeURIComponent(getParameterByName('pattern'))+"&i="+alphabetFilesFirstIndex[key];
 									onClick="if (event.ctrlKey==1){window.open('"+onClickLink+"');} else {window.location.href='"+onClickLink+"';};";
-									filesContAlphabetText=filesContAlphabetText+"<a href=\""+onClickLink+"\" onClick=\""+onClick+"\" class = \"standardb_"+color+"\">"+key+"</a>&ensp;";
+									filesContAlphabetText=filesContAlphabetText+"<a href=\"javascript:void(0)\" onClick=\""+onClick+"\" class = \"standardb_"+color+"\">"+key+"</a>&ensp;";
 									c=c+key.length+1;
 								}
 							}
