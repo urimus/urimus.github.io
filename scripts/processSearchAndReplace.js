@@ -1833,7 +1833,9 @@ function processSearch(lang) {
 									alphabetFilesHighlightedLetter=firstLetter;
 									colorShow="red";
 								}
-								filesContText=filesContText+"<a href=\"html_editor_"+lang+".html?pattern="+encodeURIComponent(getParameterByName('pattern'))+"&i="+j+"\" class = \"standardb_"+colorShow+"\" title=\""+dir[j]['correctDir']+dir[j]['basename']+"\">"+a+"</a>&ensp;";
+								onClickLink="html_editor_"+lang+".html?pattern="+encodeURIComponent(getParameterByName('pattern'))+"&i="+j;
+								onClick="if (event.ctrlKey==1){window.open('"+onClickLink+"');} else {window.location.href='"+onClickLink+"';};";
+								filesContText=filesContText+"<a href=\""+onClickLink+"\" onClick=\""+onClick+"\"  class = \"standardb_"+colorShow+"\" title=\""+dir[j]['correctDir']+dir[j]['basename']+"\">"+a+"</a>&ensp;";
 								if (typeof alphabetFilesLength[firstLetter]==='undefined') alphabetFilesLength[firstLetter]=0;
 								c=alphabetFilesLength[firstLetter];
 								c=c+(a.toString()).length+1;
@@ -1841,6 +1843,7 @@ function processSearch(lang) {
 									filesContText=filesContText+"<br>";
 									c=0;
 								}
+
 								alphabetFiles[firstLetter]=filesContText;
 								alphabetFilesLength[firstLetter]=c;
 								alphabetFilesCount[firstLetter]++;
@@ -1863,7 +1866,9 @@ function processSearch(lang) {
 									} else {
 										color="blue";
 									}
-									filesContAlphabetText=filesContAlphabetText+"<a href=\"html_editor_"+lang+".html?pattern="+encodeURIComponent(getParameterByName('pattern'))+"&i="+alphabetFilesFirstIndex[key]+"\" class = \"standardb_"+color+"\">"+key+"</a>&ensp;";
+									onClickLink="html_editor_"+lang+".html?pattern="+encodeURIComponent(getParameterByName('pattern'))+"&i="+alphabetFilesFirstIndex[key];
+									onClick="if (event.ctrlKey==1){window.open('"+onClickLink+"');} else {window.location.href='"+onClickLink+"';};";
+									filesContAlphabetText=filesContAlphabetText+"<a href=\""+onClickLink+"\" onClick=\""+onClick+"\" class = \"standardb_"+color+"\">"+key+"</a>&ensp;";
 									c=c+key.length+1;
 								}
 							}
