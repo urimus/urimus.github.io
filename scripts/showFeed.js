@@ -745,6 +745,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 					q1Pos=desc2.indexOf('"', imgPos+1);
 					q2Pos=desc2.indexOf('"', q1Pos+1);
 					result.entries[i].media.url=desc2.substring(q1Pos+1, q2Pos);
+					result.entries[i].media.comment="";
 				}
 			}
 			result.entries[i].summary=entry.summary;
