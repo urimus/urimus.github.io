@@ -738,7 +738,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				entry.description=entry.summary;
 				imgPos = desc2.indexOf("<img");
 				if (imgPos==-1) {
-					result.entries[i].media.url="images/icons/error/not_available.jpg";
+//					result.entries[i].media.url="images/icons/error/not_available.jpg";
+					result.entries[i].media.url="https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo-1200x1200.png";
 					if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
 					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
 				} else {
