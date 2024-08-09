@@ -148,7 +148,7 @@ function formatDate(date, lang) {
 function adjustTextareaAndEncodings() {
 	scrollDiv=document.getElementById('scrollDiv');
 	encodingDiv=document.getElementById("encoding_div");
-	if (scrollDiv.offsetParent === null || encodingDiv.offsetParent === null) return;
+	if (typeof scrollDiv.==="undefined" || scrollDiv.offsetParent === null || encodingDiv.offsetParent === null) return;
 	$("#encoding_div" ).css("width", "600px");
 // -------------- Automatic ScrollBar for Encodings Adjustment  Step 1------------- // - Adding Scroll Bar to Horizontal Scroll Div
 	var hasHorizontalScrollbarInit = scrollDiv.scrollWidth > scrollDiv.clientWidth;

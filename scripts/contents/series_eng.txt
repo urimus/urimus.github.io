@@ -20,7 +20,6 @@
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="series_body_horror_eng.html#peripheral" class = "standardb_black" data-added="27th of Nov, 2022." data-genre="Body Horror" data-country="usa" data-year="2022" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Peripheral</a> 
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="series_body_horror_eng.html#russian_doll" class = "standardb_black" data-added="22nd of Aug, 2022." data-genre="Body Horror" data-country="usa" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Russian Doll</a> 
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="series_body_horror_eng.html#see" class = "standardb_black" data-added="07th of Oct, 2022." data-genre="Body Horror" data-country="usa" data-year="2019" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">See</a> 
-<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="series_body_horror_eng.html#severance" class = "standardb_black" data-added="24th of Sep, 2023." data-genre="Body Horror" data-country="usa" data-year="2022" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Severance</a> 
 
 <P>&nbsp;&nbsp;&nbsp;&#9900; <a href="series_fantasy_eng.html#fantasy" class = "standardb_black" data-added="17th of Jun, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Fantasy</a>
 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a href="series_fantasy_eng.html#into_badlands" class = "standardb_black" data-added="14th of Jan, 2024." data-genre="Fantasy" data-country="usa" data-year="2015" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Into the Badlands</a> 

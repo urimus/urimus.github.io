@@ -1645,12 +1645,13 @@ function logout(lang) {
 	xhr.send();
 }
 
-$("#search_pattern").on('keyup', function (e) {
+/*
+$("#search_pattern").on('keydown', function (e) {
     if (e.keyCode == 13) {
         searchPattern();
     }
 });
-
+*/
 
 function searchPattern(lang) {
 	pattern=document.getElementById('search_pattern').value;
