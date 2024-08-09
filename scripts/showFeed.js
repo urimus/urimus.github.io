@@ -300,9 +300,9 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	cell1.style = 'padding-left:10px; padding-right:10px;';
 	
 	imagesrc=entry.media.url;
-	if (source=="nasa") imagesrc=entry.media.url+"?w=450";
+	if (source=="nasa" || source=="koreatimes") imagesrc=entry.media.url+"?w=450";
 
-	if (source=="yahoo" || source=="nasa") {
+	if (source=="yahoo" || source=="nasa" || source=="koreatimes") {
 		var messageDiv1 = document.createElement('span');
 		messageDiv1.setAttribute('class', "text_red");
 		messageDiv1.dataset.loadingAttempt = 0;
@@ -354,7 +354,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	Img.setAttribute('src', imagesrc);
 	Img.onload = function () {
 
-		if (source=="yahoo" || source=="nasa") {
+		if (source=="yahoo" || source=="nasa" || source=="koreatimes") {
 			messageDiv1.style.display = "none";
 			aImage.style.display = "none";
 			messageDiv2.style.display = "none";
@@ -372,7 +372,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		}
 	}
 	Img.onerror= function () {
-		if (source=="nasa") {
+		if (source=="nasa" || source=="koreatimes") {
 			Img.src = "images/icons/error/error.jpg";
 		} else {
 			if (source=="yahoo") {
