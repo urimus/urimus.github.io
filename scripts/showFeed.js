@@ -298,48 +298,6 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	var cell1 = row.insertCell(0);
 	cell1.className = 'text_red';
 	cell1.style = 'padding-left:10px; padding-right:10px;';
-	
-	imagesrc=entry.media.url;
-	if (source=="nasa" || source=="koreatimes") imagesrc=entry.media.url+"?w=450";
-
-	if (source=="yahoo" || source=="nasa" || source=="koreatimes") {
-		var messageDiv1 = document.createElement('span');
-		messageDiv1.setAttribute('class', "text_red");
-		messageDiv1.dataset.loadingAttempt = 0;
-		if (lang == "eng" || lang == "lat") messageDiv1.innerHTML="Loading ";
-		if (lang == "rus") messageDiv1.innerHTML="Загружается ";
-		cell1.appendChild(messageDiv1);
-
-		var aImage = document.createElement('a');
-		aImage.setAttribute('href', "'"+imagesrc+"'");
-		aImage.setAttribute('class', 'standardb_red');
-		aImage.setAttribute('target', '_blank');
-		if (lang == "eng" || lang == "lat") aImage.innerHTML = "Image";
-		if (lang == "rus") aImage.innerHTML = "Картинка";
-		cell1.appendChild(aImage);
-
-		var messageDiv2 = document.createElement('span');
-		messageDiv2.setAttribute('class', "text_red");
-		messageDiv2.innerHTML=" ";
-		cell1.appendChild(messageDiv2);
-
-		var aReload = document.createElement('a');
-		aReload.setAttribute('href', "javascript:void(0);");
-		aReload.setAttribute('class', 'standardb_red');
-		if (lang == "eng" || lang == "lat") aReload.setAttribute('title', 'Reload');
-		if (lang == "rus") aReload.setAttribute('title', 'Перезагрузить');
-		aReload.innerHTML = "&circlearrowleft;";
-		aReload.onclick = function () {
-			Img.onerror();
-		}
-		cell1.appendChild(aReload);
-
-		var messageDiv3 = document.createElement('span');
-		messageDiv3.setAttribute('class', "text_red");
-		messageDiv3.innerHTML=" <span class='loadingDiv'>.</span>";
-		cell1.appendChild(messageDiv3);
-	}
-
 
 	var Img=document.createElement("img");
 	Img.setAttribute('class', "text_red");
@@ -350,18 +308,12 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	Img.setAttribute('align', 'left');
 	Img.setAttribute('width', entry.media.width);
 	Img.setAttribute('style', 'padding-right:5px;');
-//	Img.setAttribute('loading', 'lazy');
-	Img.setAttribute('src', imagesrc);
+	if (source=="nasa" || source=="koreatimes") {
+		Img.setAttribute('src', entry.media.url+"?w=450");
+	} else {
+		Img.setAttribute('src', entry.media.url);
+	}
 	Img.onload = function () {
-
-		if (source=="yahoo" || source=="nasa" || source=="koreatimes") {
-			messageDiv1.style.display = "none";
-			aImage.style.display = "none";
-			messageDiv2.style.display = "none";
-			aReload.style.display = "none";
-			messageDiv3.style.display = "none";
-		}
-
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 		if (hasVerticalScrollbar) {
@@ -375,27 +327,6 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		if (source=="nasa" || source=="koreatimes") {
 			Img.src = "images/icons/error/error.jpg";
 		} else {
-			if (source=="yahoo") {
-				messageDiv1.dataset.loadingAttempt=parseInt(messageDiv1.dataset.loadingAttempt)+1;
-
-				if (lang == "eng" || lang == "lat") messageDiv1.innerHTML="";
-				if (lang == "rus") messageDiv1.innerHTML="Ошибка Загрузки ";
-
-				if (lang == "rus") aImage.innerHTML = "Картинки";
-
-				if (lang == "eng" || lang == "lat") messageDiv2.innerHTML=" Loading Error. ReLoading x";
-				if (lang == "rus") messageDiv2.innerHTML=". Перезагрузка x";
-				messageDiv2.innerHTML=messageDiv2.innerHTML+messageDiv1.dataset.loadingAttempt+" ";
-
-				aReload.onclick = function () {
-					Img.src = Img.src;
-					messageDiv1.dataset.loadingAttempt=parseInt(messageDiv1.dataset.loadingAttempt)+1;
-						if (lang == "eng" || lang == "lat") messageDiv2.innerHTML=" Loading Error. ReLoading x";
-						if (lang == "rus") messageDiv2.innerHTML=". Перезагрузка x";
-						messageDiv2.innerHTML=messageDiv2.innerHTML+messageDiv1.dataset.loadingAttempt+" ";
-				}
-
-			}
 			Img.src = Img.src;
 		}
 	}
