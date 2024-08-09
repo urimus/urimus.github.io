@@ -17,6 +17,7 @@
 <!-- RSS FEED Reading online -->
 <script src="scripts/feednami/feednami-client-v1.1.js"></script>
 
+
 <!-- RSS Feed -->
 <script src="scripts/functionsAndConstants.js"></script> <!-- Functions And Variables -->
 <script src="scripts/showFeed.js"></script>
@@ -41,7 +42,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 </head>
 
-<body style="background: #FFFFFF url('images/icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="newsLoad('nasa', 'rus');"> <!-- Right background image -->
+<body style="background: #FFFFFF url('images/icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="newsLoad('koreatimes', 'rus');"> <!-- Right background image -->
 
  
 <!-- Header Image Table -->
@@ -75,9 +76,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
                         onMouseOut="this.className='flag_not_selected'"
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_lat.html?type='+encodeURIComponent(getParameterByName('type')));
+                                window.open('news_koreatimes_lat.html?type='+encodeURIComponent(getParameterByName('type')));
                         } else {
-                                window.location.href='news_nasa_lat.html?type='+encodeURIComponent(getParameterByName('type'));
+                                window.location.href='news_koreatimes_lat.html?type='+encodeURIComponent(getParameterByName('type'));
                         };"                       
                         class="flag_not_selected"
                 >
@@ -93,9 +94,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
                         onMouseOut="this.className='flag_not_selected'"
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_eng.html?type='+encodeURIComponent(getParameterByName('type')));
+                                window.open('news_koreatimes_eng.html?type='+encodeURIComponent(getParameterByName('type')));
                         } else {
-                                window.location.href='news_nasa_eng.html?type='+encodeURIComponent(getParameterByName('type'));
+                                window.location.href='news_koreatimes_eng.html?type='+encodeURIComponent(getParameterByName('type'));
                         };"   
                         class="flag_not_selected"
                 >
@@ -108,9 +109,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
                         onMouseOut="this.className='flag_selected'"
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_rus.html?type='+encodeURIComponent(getParameterByName('type')));
+                                window.open('news_koreatimes_rus.html?type='+encodeURIComponent(getParameterByName('type')));
                         } else {
-                                window.location.href='news_nasa_rus.html?type='+encodeURIComponent(getParameterByName('type'));
+                                window.location.href='news_koreatimes_rus.html?type='+encodeURIComponent(getParameterByName('type'));
                         };"   
                         class="flag_selected"
                 >
@@ -538,9 +539,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<td align="left" >
 		  <div id="menu_26_4"
 		  onMouseOver="showSubMenu(this, 'rus', 'news');" 
-		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onMouseOut="this.className='menu_selected'" 
 		  onClick="showSubMenu(this, 'rus', 'news');"		 			  
-		  class="menu_not_selected_red"
+		  class="menu_selected"
 		  style="padding-left: 5px;">
 		  &#9679; KoreaTimes RSS Строка</div>
         </td>
@@ -552,9 +553,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<td align="left" >
 		  <div id="menu_26_2"
 		  onMouseOver="showSubMenu(this, 'rus', 'news');" 
-		  onMouseOut="this.className='menu_selected'" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
 		  onClick="showSubMenu(this, 'rus', 'news');"		 			  
-		  class="menu_selected"
+		  class="menu_not_selected_red"
 		  style="padding-left: 5px;">
 		  &#9679; NASA RSS Строка</div>
         </td>
@@ -592,7 +593,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#F9D4D4">
 <!-- Table with search, name and languages -->
         <tr> 
-                <td  class="title_red" style="width: 530px;"><a name="welcome">Новости &blacktriangleright; NASA RSS Строка</a></td>
+                <td  class="title_red" style="width: 530px;"><a name="welcome">Новости &blacktriangleright; KoreaTimes RSS Строка</a></td>
         </tr>
  
         <tr>
@@ -617,119 +618,144 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
          <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse"  onMouseOver="hideSubMenu();">
 
 
+
+
 	<tr>
 	<td align="center" width="20%" >
-		  <div id="feed_releases" 
+		  <div id="feed_all" 
 		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('releases', encodeURIComponent(getParameterByName('type')));" 
+		  onMouseOut="mouseOut('all', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_rus.html?type=releases');
+                                window.open('news_koreatimes_rus.html?type=all');
                         } else {
-                                window.location.href='news_nasa_rus.html?type=releases';
+                                window.location.href='news_koreatimes_rus.html?type=all';
                         };"   
 		  class="menu_not_selected_red">
-		  News Releases</div>
+		  All News</div>
         </td>
 	<td align="center" width="20%" >
-		  <div id="feed_recent" 
+		  <div id="feed_world" 
 		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('recent', encodeURIComponent(getParameterByName('type')));"
+		  onMouseOut="mouseOut('world', encodeURIComponent(getParameterByName('type')));"
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_rus.html?type=recent');
+                                window.open('news_koreatimes_rus.html?type=world');
                         } else {
-                                window.location.href='news_nasa_rus.html?type=recent';
+                                window.location.href='news_koreatimes_rus.html?type=world';
                         };"   
 		  class="menu_not_selected_red">
-		  Recent</div>
+		  World</div>
         </td>
 	<td align="center" width="20%" >
-		  <div id="feed_image" 
-		  onMouseOver="this.className='menu_selected';" 
-          onMouseOut="mouseOut('image', encodeURIComponent(getParameterByName('type')));" 
+		  <div id="feed_northkorea" 
+			onMouseOver="this.className='menu_selected';" 
+		 	onMouseOut="mouseOut('northkorea', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_rus.html?type=image');
+                                window.open('news_koreatimes_rus.html?type=northkorea');
                         } else {
-                                window.location.href='news_nasa_rus.html?type=image';
+                                window.location.href='news_koreatimes_rus.html?type=northkorea';
                         };"   
 		  class="menu_not_selected_red">
-		  Image of the Day</div>
+		  North Korea</div>
         </td>
 	<td align="center" width="20%" >
-		  <div id="feed_technology" 
+		  <div id="feed_entertainment" 
 		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('technology', encodeURIComponent(getParameterByName('type')));" 
+		  onMouseOut="mouseOut('entertainment', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_rus.html?type=technology');
+                                window.open('news_koreatimes_rus.html?type=entertainment');
                         } else {
-                                window.location.href='news_nasa_rus.html?type=technology';
+                                window.location.href='news_koreatimes_rus.html?type=entertainment';
                         };"   
 		  class="menu_not_selected_red">
-		  Technology</div>
+		  Entertainment</div>
         </td>
 	<td align="center" width="20%" >
-		  <div id="feed_aeronautics" 
+		  <div id="feed_opinion" 
 		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('aeronautics', encodeURIComponent(getParameterByName('type')));" 
+		  onMouseOut="mouseOut('opinion', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_rus.html?type=aeronautics');
+                                window.open('news_koreatimes_rus.html?type=opinion');
                         } else {
-                                window.location.href='news_nasa_rus.html?type=aeronautics';
+                                window.location.href='news_koreatimes_rus.html?type=opinion';
                         };"   
 		  class="menu_not_selected_red">
-		  Aeronautics</div>
+		  Opinion</div>
         </td>
 	</tr>
 	<tr>
 	<td align="center" width="20%" >
-		  <div id="feed_iss" 
+		  <div id="feed_national" 
 		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('iss', encodeURIComponent(getParameterByName('type')));" 
+		  onMouseOut="mouseOut('national', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_rus.html?type=iss');
+                                window.open('news_koreatimes_rus.html?type=national');
                         } else {
-                                window.location.href='news_nasa_rus.html?type=iss';
+                                window.location.href='news_koreatimes_rus.html?type=national';
+                        };"   
+		  class="menu_not_selected_red">
+		  National</div>
+        </td>
+	<td align="center" width="20%" >
+		  <div id="feed_economy" 
+		  onMouseOver="this.className='menu_selected';" 
+		  onMouseOut="mouseOut('economy', encodeURIComponent(getParameterByName('type')));" 
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('news_koreatimes_rus.html?type=economy');
+                        } else {
+                                window.location.href='news_koreatimes_rus.html?type=economy';
                         };"     
 		  class="menu_not_selected_red">
-		  Space Station</div>
+		  Economy</div>
         </td>
 
 	<td align="center" width="20%" >
-		  <div id="feed_artemis" 
+		  <div id="feed_biztech" 
 		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('artemis', encodeURIComponent(getParameterByName('type')));" 
+		  onMouseOut="mouseOut('biztech', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_rus.html?type=artemis');
+                                window.open('news_koreatimes_rus.html?type=biztech');
                         } else {
-                                window.location.href='news_nasa_rus.html?type=artemis';
+                                window.location.href='news_koreatimes_rus.html?type=biztech';
                         };"     
 		  class="menu_not_selected_red">
-		  Artemis</div>
+		  Biz & Tech</div>
         </td>
-
-
 	<td align="center" width="20%" >
-		  <div id="feed_picture" 
+		  <div id="feed_culture" 
 		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('picture', encodeURIComponent(getParameterByName('type')));" 
+		  onMouseOut="mouseOut('culture', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_nasa_rus.html?type=picture');
+                                window.open('news_koreatimes_rus.html?type=culture');
                         } else {
-                                window.location.href='news_nasa_rus.html?type=picture';
+                                window.location.href='news_koreatimes_rus.html?type=culture';
+                        };"   
+		  class="menu_not_selected_red">
+		  Culture</div>
+        </td>
+	<td align="center" width="20%" >
+		  <div id="feed_sports" 
+		  onMouseOver="this.className='menu_selected';" 
+		  onMouseOut="mouseOut('sports', encodeURIComponent(getParameterByName('type')));" 
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('news_koreatimes_rus.html?type=sports');
+                        } else {
+                                window.location.href='news_koreatimes_rus.html?type=sports';
                         };"     
 		  class="menu_not_selected_red">
-		  Picture of the Day</div>
+		  Sports</div>
         </td>
-
-
 	</tr>
+
 
 	<tr id="feed_title_row" style="display:none;">
 	<td align="left" width="100%" colspan="5">

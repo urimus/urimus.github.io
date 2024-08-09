@@ -15,6 +15,8 @@
 <!-- RSS FEED Reading online -->
 <script src="scripts/feednami/feednami-client-v1.1.js"></script>
 
+
+
 <!-- RSS Feed -->
 <script src="scripts/functionsAndConstants.js"></script> <!-- Functions And Variables -->
 <script src="scripts/showFeed.js"></script>
@@ -35,7 +37,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 </head>
 
-<body style="background: #FFFFFF url('images/icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="newsLoad('yahoo', 'eng');"> <!-- Right background image -->
+<body style="background: #FFFFFF url('images/icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="newsLoad('koreatimes', 'eng');"> <!-- Right background image -->
 
 <!-- Header Image Table -->
 <table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
@@ -66,9 +68,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
                         onMouseOut="this.className='flag_not_selected'"
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_yahoo_lat.html?type='+encodeURIComponent(getParameterByName('type')));
+                                window.open('news_koreatimes_lat.html?type='+encodeURIComponent(getParameterByName('type')));
                         } else {
-                                window.location.href='news_yahoo_lat.html?type='+encodeURIComponent(getParameterByName('type'));
+                                window.location.href='news_koreatimes_lat.html?type='+encodeURIComponent(getParameterByName('type'));
                         };"                     
                         class="flag_not_selected"
                 >
@@ -84,9 +86,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_selected'"
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type='+encodeURIComponent(getParameterByName('type')));
+                                window.open('news_koreatimes_eng.html?type='+encodeURIComponent(getParameterByName('type')));
                         } else {
-                                window.location.href='news_yahoo_eng.html?type='+encodeURIComponent(getParameterByName('type'));
+                                window.location.href='news_koreatimes_eng.html?type='+encodeURIComponent(getParameterByName('type'));
                         };"       
 			class="flag_selected"
 		>
@@ -99,9 +101,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_not_selected'"
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_yahoo_rus.html?type='+encodeURIComponent(getParameterByName('type')));
+                                window.open('news_koreatimes_rus.html?type='+encodeURIComponent(getParameterByName('type')));
                         } else {
-                                window.location.href='news_yahoo_rus.html?type='+encodeURIComponent(getParameterByName('type'));
+                                window.location.href='news_koreatimes_rus.html?type='+encodeURIComponent(getParameterByName('type'));
                         };"       
 			class="flag_not_selected"
 		>
@@ -397,7 +399,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<td align="center" >
 		  <div id="menu_19"
 		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
-
 		  onMouseOut="this.className='menu_not_selected_green'" 
 		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
 		  class="menu_not_selected_green">
@@ -527,20 +528,17 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
         </td>
 	</tr>
 
-
-
 	<tr>
 		<td align="left" >
 		  <div id="menu_26_4"
 		  onMouseOver="showSubMenu(this, 'eng', 'news');" 
-		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onMouseOut="this.className='menu_selected'" 
 		  onClick="showSubMenu(this, 'eng', 'news');"		 			  
-		  class="menu_not_selected_red"
+		  class="menu_selected"
 		  style="padding-left: 5px;">
 		  &#9679; KoreaTimes RSS Feed</div>
         </td>
 	</tr>
-
 
 
 	<tr>
@@ -560,13 +558,14 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<td align="left" >
 		  <div id="menu_26_3"
 		  onMouseOver="showSubMenu(this, 'eng', 'news');" 
-		  onMouseOut="this.className='menu_selected'" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
 		  onClick="showSubMenu(this, 'eng', 'news');"		 			  
-		  class="menu_selected"
+		  class="menu_not_selected_red"
 		  style="padding-left: 5px;">
 		  &#9679; Yahoo RSS Feed</div>
         </td>
 	</tr>
+
 
 
 
@@ -589,7 +588,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#F9D4D4">
 <!-- Table with search, name and languages -->
 	<tr> 
-		<td  class="title_red" style="width: 530px;"><a name="welcome">News &blacktriangleright; Yahoo RSS Feed</a></td>
+		<td  class="title_red" style="width: 530px;"><a name="welcome">News &blacktriangleright; KoreaTimes RSS Feed</a></td>
 	</tr>
 
 	<tr>
@@ -617,17 +616,17 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 	<tr>
 	<td align="center" width="20%" >
-		  <div id="feed_top" 
+		  <div id="feed_all" 
 		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('top', encodeURIComponent(getParameterByName('type')));" 
+		  onMouseOut="mouseOut('all', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=top');
+                                window.open('news_koreatimes_eng.html?type=all');
                         } else {
-                                window.location.href='news_yahoo_eng.html?type=top';
+                                window.location.href='news_koreatimes_eng.html?type=all';
                         };"   
 		  class="menu_not_selected_red">
-		  Top</div>
+		  All News</div>
         </td>
 	<td align="center" width="20%" >
 		  <div id="feed_world" 
@@ -635,92 +634,25 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		  onMouseOut="mouseOut('world', encodeURIComponent(getParameterByName('type')));"
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=world');
+                                window.open('news_koreatimes_eng.html?type=world');
                         } else {
-                                window.location.href='news_yahoo_eng.html?type=world';
+                                window.location.href='news_koreatimes_eng.html?type=world';
                         };"   
 		  class="menu_not_selected_red">
 		  World</div>
         </td>
 	<td align="center" width="20%" >
-		  <div id="feed_us" 
-		  onMouseOver="this.className='menu_selected';" 
-          onMouseOut="mouseOut('us', encodeURIComponent(getParameterByName('type')));" 
+		  <div id="feed_northkorea" 
+			onMouseOver="this.className='menu_selected';" 
+		 	onMouseOut="mouseOut('northkorea', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=us');
+                                window.open('news_koreatimes_eng.html?type=northkorea');
                         } else {
-                                window.location.href='news_yahoo_eng.html?type=us';
+                                window.location.href='news_koreatimes_eng.html?type=northkorea';
                         };"   
 		  class="menu_not_selected_red">
-		  US</div>
-        </td>
-	<td align="center" width="20%" >
-		  <div id="feed_politics" 
-		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('politics', encodeURIComponent(getParameterByName('type')));" 
-                  	 onClick="
-                        if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=politics');
-                        } else {
-                                window.location.href='news_yahoo_eng.html?type=politics';
-                        };"   
-		  class="menu_not_selected_red">
-		  Politics</div>
-        </td>
-	<td align="center" width="20%" >
-		  <div id="feed_health" 
-		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('health', encodeURIComponent(getParameterByName('type')));" 
-                  	 onClick="
-                        if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=health');
-                        } else {
-                                window.location.href='news_yahoo_eng.html?type=health';
-                        };"   
-		  class="menu_not_selected_red">
-		  Health</div>
-        </td>
-	</tr>
-	<tr>
-	<td align="center" width="20%" >
-		  <div id="feed_finance" 
-		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('finance', encodeURIComponent(getParameterByName('type')));" 
-                  	 onClick="
-                        if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=finance');
-                        } else {
-                                window.location.href='news_yahoo_eng.html?type=finance';
-                        };"   
-		  class="menu_not_selected_red">
-		  Finance</div>
-        </td>
-	<td align="center" width="20%" >
-		  <div id="feed_science" 
-		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('science', encodeURIComponent(getParameterByName('type')));" 
-                  	 onClick="
-                        if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=science');
-                        } else {
-                                window.location.href='news_yahoo_eng.html?type=science';
-                        };"     
-		  class="menu_not_selected_red">
-		  Science</div>
-        </td>
-	<td align="center" width="20%" >
-		  <div id="feed_sports" 
-		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('sports', encodeURIComponent(getParameterByName('type')));" 
-                  	 onClick="
-                        if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=sports');
-                        } else {
-                                window.location.href='news_yahoo_eng.html?type=sports';
-                        };"   
-		  class="menu_not_selected_red">
-		  Sports</div>
+		  North Korea</div>
         </td>
 	<td align="center" width="20%" >
 		  <div id="feed_entertainment" 
@@ -728,25 +660,93 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		  onMouseOut="mouseOut('entertainment', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=entertainment');
+                                window.open('news_koreatimes_eng.html?type=entertainment');
                         } else {
-                                window.location.href='news_yahoo_eng.html?type=entertainment';
-                        };"     
+                                window.location.href='news_koreatimes_eng.html?type=entertainment';
+                        };"   
 		  class="menu_not_selected_red">
 		  Entertainment</div>
         </td>
 	<td align="center" width="20%" >
-		  <div id="feed_lifestyle" 
+		  <div id="feed_opinion" 
 		  onMouseOver="this.className='menu_selected';" 
-		  onMouseOut="mouseOut('lifestyle', encodeURIComponent(getParameterByName('type')));" 
+		  onMouseOut="mouseOut('opinion', encodeURIComponent(getParameterByName('type')));" 
                   	 onClick="
                         if (event.ctrlKey==1){
-                                window.open('news_yahoo_eng.html?type=lifestyle');
+                                window.open('news_koreatimes_eng.html?type=opinion');
                         } else {
-                                window.location.href='news_yahoo_eng.html?type=lifestyle';
+                                window.location.href='news_koreatimes_eng.html?type=opinion';
+                        };"   
+		  class="menu_not_selected_red">
+		  Opinion</div>
+        </td>
+	</tr>
+	<tr>
+	<td align="center" width="20%" >
+		  <div id="feed_national" 
+		  onMouseOver="this.className='menu_selected';" 
+		  onMouseOut="mouseOut('national', encodeURIComponent(getParameterByName('type')));" 
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('news_koreatimes_eng.html?type=national');
+                        } else {
+                                window.location.href='news_koreatimes_eng.html?type=national';
+                        };"   
+		  class="menu_not_selected_red">
+		  National</div>
+        </td>
+	<td align="center" width="20%" >
+		  <div id="feed_economy" 
+		  onMouseOver="this.className='menu_selected';" 
+		  onMouseOut="mouseOut('economy', encodeURIComponent(getParameterByName('type')));" 
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('news_koreatimes_eng.html?type=economy');
+                        } else {
+                                window.location.href='news_koreatimes_eng.html?type=economy';
                         };"     
 		  class="menu_not_selected_red">
-		  Lifestyle</div>
+		  Economy</div>
+        </td>
+
+	<td align="center" width="20%" >
+		  <div id="feed_biztech" 
+		  onMouseOver="this.className='menu_selected';" 
+		  onMouseOut="mouseOut('biztech', encodeURIComponent(getParameterByName('type')));" 
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('news_koreatimes_eng.html?type=biztech');
+                        } else {
+                                window.location.href='news_koreatimes_eng.html?type=biztech';
+                        };"     
+		  class="menu_not_selected_red">
+		  Biz & Tech</div>
+        </td>
+	<td align="center" width="20%" >
+		  <div id="feed_culture" 
+		  onMouseOver="this.className='menu_selected';" 
+		  onMouseOut="mouseOut('culture', encodeURIComponent(getParameterByName('type')));" 
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('news_koreatimes_eng.html?type=culture');
+                        } else {
+                                window.location.href='news_koreatimes_eng.html?type=culture';
+                        };"   
+		  class="menu_not_selected_red">
+		  Culture</div>
+        </td>
+	<td align="center" width="20%" >
+		  <div id="feed_sports" 
+		  onMouseOver="this.className='menu_selected';" 
+		  onMouseOut="mouseOut('sports', encodeURIComponent(getParameterByName('type')));" 
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('news_koreatimes_eng.html?type=sports');
+                        } else {
+                                window.location.href='news_koreatimes_eng.html?type=sports';
+                        };"     
+		  class="menu_not_selected_red">
+		  Sports</div>
         </td>
 	</tr>
 

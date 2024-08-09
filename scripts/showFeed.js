@@ -12,6 +12,7 @@ function newsLoad(source, lang) {
 	typeL=getParameterByName('type');
 	if (typeL && typeL!="") {
 		if (source=="bbc" && (typeL=="top" || typeL=="world" || typeL=="uk" || typeL=="business" || typeL=="politics" || typeL=="health" || typeL=="education" || typeL=="science" || typeL=="technology" || typeL=="entertainment") 
+		|| source=="koreatimes" && (typeL=="all" || typeL=="world" || typeL=="northkorea" || typeL=="entertainment" || typeL=="opinion" || typeL=="national" || typeL=="economy" || typeL=="biztech" || typeL=="culture" || typeL=="sports") 
 		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis" || typeL=="picture") 
 		|| source=="yahoo" && (typeL=="top" || typeL=="world" || typeL=="us" || typeL=="politics" || typeL=="health" || typeL=="finance" || typeL=="science" || typeL=="sports" || typeL=="entertainment" || typeL=="lifestyle"))  {
 			type=typeL;
@@ -30,6 +31,9 @@ function newsLoad(source, lang) {
 	if (toRedirect==1) { // restore
 	    	if (source=="bbc") {
 			window.location.href='news_bbc_'+lang+'.html?type=top';
+		}
+	    	if (source=="koreatimes") {
+			window.location.href='news_koreatimes_'+lang+'.html?type=all';
 		}
 	    	if (source=="nasa") {
 			window.location.href='news_nasa_'+lang+'.html?type=releases';
@@ -59,16 +63,13 @@ function refreshFeedTabs(feedTypeL, col) {
 	if (feedType=="technology" || feedTypeL=="technology") mouseOut("technology", feedTypeL, col);
 	if (feedType=="entertainment" || feedTypeL=="entertainment") mouseOut("entertainment", feedTypeL, col);
 
-	if (feedType=="1" || feedTypeL=="1") mouseOut("1", feedTypeL, col);
-	if (feedType=="2" || feedTypeL=="2") mouseOut("2", feedTypeL, col);
-	if (feedType=="3" || feedTypeL=="3") mouseOut("3", feedTypeL, col);
-	if (feedType=="4" || feedTypeL=="4") mouseOut("4", feedTypeL, col);
-	if (feedType=="5" || feedTypeL=="5") mouseOut("5", feedTypeL, col);
-	if (feedType=="6" || feedTypeL=="6") mouseOut("6", feedTypeL, col);
-	if (feedType=="7" || feedTypeL=="7") mouseOut("7", feedTypeL, col);
-	if (feedType=="8" || feedTypeL=="8") mouseOut("8", feedTypeL, col);
-	if (feedType=="9" || feedTypeL=="9") mouseOut("9", feedTypeL, col);
-	if (feedType=="10" || feedTypeL=="10") mouseOut("10", feedTypeL, col);
+	if (feedType=="all" || feedTypeL=="all") mouseOut("all", feedTypeL, col);
+	if (feedType=="northkorea" || feedTypeL=="northkorea") mouseOut("northkorea", feedTypeL, col);
+	if (feedType=="opinion" || feedTypeL=="opinion") mouseOut("opinion", feedTypeL, col);
+	if (feedType=="national" || feedTypeL=="national") mouseOut("national", feedTypeL, col);
+	if (feedType=="economy" || feedTypeL=="economy") mouseOut("economy", feedTypeL, col);
+	if (feedType=="biztech" || feedTypeL=="biztech") mouseOut("biztech", feedTypeL, col);
+	if (feedType=="culture" || feedTypeL=="culture") mouseOut("culture", feedTypeL, col);
 
 	if (feedType=="us" || feedTypeL=="us") mouseOut("us", feedTypeL, col);
 	if (feedType=="finance" || feedTypeL=="finance") mouseOut("finance", feedTypeL, col);
@@ -112,7 +113,7 @@ function processShowFeedTitle(type, source, lang, result) {
 	// Records Text is in getRecordsText function
 	if (lang == "rus"){
 		textRssFeed="RSS Строка";
-		if (source == "bbc" || source == "nasa" || source == "yahoo") textRssFeed=textRssFeed+" (англ.)";
+		if (source == "bbc" || source == "koreatimes" || source == "nasa" || source == "yahoo") textRssFeed=textRssFeed+" (англ.)";
 		textZero="Нет";
 		textLocalCopy="Локальная Копия";
 		textObtainedBy="Получено через";
@@ -168,7 +169,7 @@ function processShowFeedTitle(type, source, lang, result) {
 
 		document.getElementById("feed_title").innerHTML=document.getElementById("feed_title").innerHTML+"&nbsp;"+textRssFeed;
 
-		if (source == "bbc" || source == "nasa" || source == "yahoo") {
+		if (source == "bbc" || source == "nasa" || source == "yahoo" || source == "koreatimes") {
 			var a = document.createElement('a');
 			a.setAttribute('href', result.feedXML);
 			a.setAttribute('class', 'standardb_red');
@@ -218,7 +219,7 @@ function processShowFeedTitle(type, source, lang, result) {
 				locStPar=source+"_"+type+"_images";
 				locStUpdateData=getLocalStorageData(locStPar);
 				updateImages(0, source, type, result, locStUpdateData, lang);
-			} else if (source=="bbc" || (source=="yahoo" && type=="sports") || (source=="nasa" && (type=="image" || type=="picture"))) {
+			} else if (source=="bbc" || source == "koreatimes" || (source=="yahoo" && type=="sports") || (source=="nasa" && (type=="image" || type=="picture"))) {
 				processShowFeedData(type, source, lang, result);
 			}  else if (source=="yahoo" && type!="sports") {
 				locStPar=source+"_"+type+"_descriptions";
@@ -567,10 +568,20 @@ function showFeed(type, source, lang) {
 		if (type=="science") feedURL="http://feeds.bbci.co.uk/news/science_and_environment/rss.xml";
 		if (type=="technology") feedURL="http://feeds.bbci.co.uk/news/technology/rss.xml";
 		if (type=="entertainment") feedURL="http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml";
-
 	}
 
-
+	if (source == "koreatimes") {
+		if (type=="all") feedURL="https://www.koreatimes.co.kr/www/rss/rss.xml";
+		if (type=="world") feedURL="https://www.koreatimes.co.kr/www/rss/world.xml";
+		if (type=="northkorea") feedURL="https://www.koreatimes.co.kr/www/rss/northkorea.xml";
+		if (type=="entertainment") feedURL="https://www.koreatimes.co.kr/www/rss/entertainment.xml";
+		if (type=="opinion") feedURL="https://www.koreatimes.co.kr/www/rss/opinion.xml";
+		if (type=="national") feedURL="https://www.koreatimes.co.kr/www/rss/nation.xml";
+		if (type=="economy") feedURL="https://www.koreatimes.co.kr/www/rss/biz.xml";
+		if (type=="biztech") feedURL="https://www.koreatimes.co.kr/www/rss/tech.xml";
+		if (type=="culture") feedURL="https://www.koreatimes.co.kr/www/rss/arts.xml";
+		if (type=="sports") feedURL="https://www.koreatimes.co.kr/www/rss/sports.xml";
+	}
 
 	if (source == "nasa") {
 		if (type=="releases") feedURL="https://www.nasa.gov/news-release/feed/";
@@ -597,7 +608,6 @@ function showFeed(type, source, lang) {
 		if (type=="lifestyle") feedURL="https://www.yahoo.com/lifestyle/rss";
 
 	}
-
 
 	feednami.load(feedURL, function(result){
 		if(result.error){
@@ -683,6 +693,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	result.feedXML=resultOrig.feedXML;
 	if (source == "yahoo") result.image="images/icons/feed/yahoo_news_logo.png";
 	if (source == "bbc") result.image="images/icons/feed/bbc_news_logo.png";
+	if (source == "koreatimes") result.image="images/icons/feed/korea_times_logo.png";
 	if (source == "nasa") result.image="images/icons/feed/NASA_Worm_logo.png";
 
 	result.entries=[];
@@ -690,7 +701,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 
 	if (source == "bbc" || source == "yahoo") result.title=resultOrig.feed.meta.image.title;
-	if (source == "nasa") result.title=resultOrig.feed.meta["rss:title"]["#"];
+	if (source == "nasa" || source == "koreatimes") result.title=resultOrig.feed.meta["rss:title"]["#"];
 	result.link=resultOrig.feed.meta.link;
 
 	items=resultOrig.feed.entries;
@@ -707,6 +718,17 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			result.entries[i].media.width=entry["media:thumbnail"]["@"].width;
 			result.entries[i].summary=entry.description;
 		}
+		if (source == "koreatimes") {
+			if (entry["media:content"]==null) {
+				result.entries[i].media.url="https://www.koreatimes.co.kr/www/images/KT_news_20221025.jpg";
+				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
+			} else {
+				result.entries[i].media.url=entry["media:content"]["@"].url;
+			}
+			result.entries[i].media.width=450;
+			result.entries[i].summary=entry.description;
+		}
 		if (source == "nasa") {
 			if (type=="image") {
 				result.entries[i].media.url=entry["enclosures"][0].url;
@@ -718,8 +740,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				result.entries[i].summary=entry["rss:description"]["#"]+".";
 			} else {
 				result.entries[i].media.url="images/icons/error/not_available.jpg";
-					if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
-					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
+				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
 				result.entries[i].media.width=450;
 				result.entries[i].summary=entry["rss:description"]["#"];
 			}
@@ -727,8 +749,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		if (source == "yahoo") {
 			if (entry["media:content"]==null) {
 				result.entries[i].media.url="images/icons/error/not_available.jpg";
-					if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
-					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
+				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
 			} else {
 				result.entries[i].media.url=entry["media:content"]["@"].url;
 			}
@@ -738,7 +760,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				entry.description=entry.summary;
 				imgPos = desc2.indexOf("<img");
 				if (imgPos==-1) {
-//					result.entries[i].media.url="images/icons/error/not_available.jpg";
 					result.entries[i].media.url="https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo-1200x1200.png";
 					if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
 					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
@@ -773,6 +794,13 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				}
 			}
 		}
+		if (typeof entry["rss:author"]!=="undefined") {
+			result.entries[i].creator=[];
+			if (typeof entry["rss:author"]["#"]!=="undefined") {
+				result.entries[i].creator[0]=entry["rss:author"].email;
+			}
+		}
+
 
 		if (typeof entry["rss:category"]!=="undefined") {
 			result.entries[i].category=[];

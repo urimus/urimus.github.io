@@ -10,6 +10,17 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="news_bbc_rus.html?type=science" class = "standardb_red" data-added="05е Июл, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Science</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="news_bbc_rus.html?type=technology" class = "standardb_red" data-added="05е Июл, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Technology</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="news_bbc_rus.html?type=entertainment" class = "standardb_red" data-added="05е Июл, 2016." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Entertainment</a>
+<P>&nbsp;&#9679; <b class = "text_red_blue" data-added="09е Авг, 2024.">KoreaTimes RSS Строка</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=all" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">All News</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=world" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">World</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=northkorea" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">North Korea</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=entertainment" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Entertainment</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=opinion" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Opinion</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=national" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">National</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=economy" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Economy</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=biztech" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Biz & Tech</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=culture" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Culture</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="news_koreatimes_rus.html?type=sports" class = "standardb_red" data-added="09е Авг, 2024." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Sports</a>
 <P>&nbsp;&#9679; <b class = "text_red_blue" data-added="17е Авг, 2023.">NASA RSS Строка</b>
 <P>&nbsp;&nbsp;&nbsp;- <a href="news_nasa_rus.html?type=releases" class = "standardb_red" data-added="17е Авг, 2023." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Releases</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="news_nasa_rus.html?type=recent" class = "standardb_red" data-added="17е Авг, 2023." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Recent</a>
