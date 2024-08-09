@@ -891,7 +891,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			property=doc.head.querySelector('meta[property="og:image:alt"]');
 			if (property != null) mediaComment=property.content;
 
-			if (mediaURL!="") {
+			if (mediaURL!="" && mediaURL!="/nasa-social-logo.webp") {
 				qPos=mediaURL.indexOf("?");
 				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
 
@@ -906,7 +906,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			} else {
 				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
 				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
-				result.entries[i].media.url="images/icons/error/not_available.jpg";
+				result.entries[i].media.url="https://science.nasa.gov/nasa-social-logo.webp";
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
