@@ -60,10 +60,7 @@ function processPageResize(isLoad, orientationChanged){
 	scrollDivHeight=calcScrollDivHeightMax();
 
 	if (isLoad==0) {  // not isLoad
-		// for html_editor_*.html only
-		if (window.location.pathname.substr(0, 12)=="/html_editor") {
-			adjustTextareaAndEncodings();
-		} else if (window.location.pathname.substr(0, 5)=="/news") {
+		if (window.location.pathname.substr(0, 5)=="/news") {
 			var scrollDiv = document.getElementById('scrollDiv');
 			var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 			if (hasVerticalScrollbar) {
@@ -72,6 +69,8 @@ function processPageResize(isLoad, orientationChanged){
 				scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-feedTitleHeight-4)+"px;width: 710px; overflow:auto;");
 				adjustScrollDiv();
 			}
+		} else if (window.location.pathname.substr(0, 12)=="/html_editor") {
+//			adjustTextareaAndEncodings();
 		} else if (window.location.pathname.substr(0, 9)=="/about_me") { // nothing
 		} else if (window.location.pathname.substr(0, 6)=="/index") { // nothing
 

@@ -1835,8 +1835,7 @@ function processSearch(lang) {
 									colorShow="red";
 								}
 								onClickLink="html_editor_"+lang+".html?pattern="+encodeURIComponent(getParameterByName('pattern'))+"&i="+j;
-								onClick="if (event.ctrlKey==1){window.open('"+onClickLink+"');} else {window.location.href='"+onClickLink+"';};";
-								filesContText=filesContText+"<a href=\"javascript:void(0)\" onClick=\""+onClick+"\"  class = \"standardb_"+colorShow+"\" title=\""+dir[j]['correctDir']+dir[j]['basename']+"\">"+a+"</a>&ensp;";
+								filesContText=filesContText+"<a href=\""+onClickLink+"\"  class = \"standardb_"+colorShow+"\" title=\""+dir[j]['correctDir']+dir[j]['basename']+"\">"+a+"</a>&ensp;";
 								if (typeof alphabetFilesLength[firstLetter]==='undefined') alphabetFilesLength[firstLetter]=0;
 								c=alphabetFilesLength[firstLetter];
 								c=c+(a.toString()).length+1;
@@ -1868,8 +1867,7 @@ function processSearch(lang) {
 										color="blue";
 									}
 									onClickLink="html_editor_"+lang+".html?pattern="+encodeURIComponent(getParameterByName('pattern'))+"&i="+alphabetFilesFirstIndex[key];
-									onClick="if (event.ctrlKey==1){window.open('"+onClickLink+"');} else {window.location.href='"+onClickLink+"';};";
-									filesContAlphabetText=filesContAlphabetText+"<a href=\"javascript:void(0)\" onClick=\""+onClick+"\" class = \"standardb_"+color+"\">"+key+"</a>&ensp;";
+									filesContAlphabetText=filesContAlphabetText+"<a href=\""+onClickLink+"\" class = \"standardb_"+color+"\">"+key+"</a>&ensp;";
 									c=c+key.length+1;
 								}
 							}
@@ -2248,4 +2246,88 @@ function processSearchAndReplace(lang) {
 
 }
 // ----------------------- End of processMenu PHP --------- //
+
+
+function adjustTextareaAndEncodings() {
+	scrollDiv=document.getElementById('scrollDiv');
+	encodingDiv=document.getElementById("encoding_div");
+	if (scrollDiv === null || encodingDiv === null || scrollDiv.offsetParent === null || encodingDiv.offsetParent === null) return;
+	$("#encoding_div" ).css("width", "600px");
+// -------------- Automatic ScrollBar for Encodings Adjustment  Step 1------------- // - Adding Scroll Bar to Horizontal Scroll Div
+	var hasHorizontalScrollbarInit = scrollDiv.scrollWidth > scrollDiv.clientWidth;
+	if (!hasHorizontalScrollbarInit)  {
+		hasHorizontalScrollbar=0;
+		while (!hasHorizontalScrollbar) {
+			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) + 5) + "px");
+			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
+		}
+	}
+// -------------- End of Automatic ScrollBar for Encodings Adjustment  Step 1 ------------- //
+scrollBarWidth=scrollDiv.offsetHeight - scrollDiv.clientHeight;
+
+// -------------- Automatic Text Area Height To Fit Screen  ------------- //
+	var scrollDiv= document.getElementById('scrollDiv');
+	var hasVerticalScrollbarInit = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+	if (hasVerticalScrollbarInit) {
+		hasVerticalScrollbar=1;
+		while (hasVerticalScrollbar) {
+			$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) - 5) + "px");
+			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+		}
+		for(i=0; i<5;i++) {
+			$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) + 1) + "px");
+			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+			if (hasVerticalScrollbar) {$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) - 1) + "px"); break;}
+		}
+	} else {
+		hasVerticalScrollbar=0;
+		while (!hasVerticalScrollbar) {
+			$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) + 5) + "px");
+			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+		}
+		for(i=0; i<5;i++) {
+			$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) - 1) + "px");
+			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+			if (!hasVerticalScrollbar) {break;}
+		}
+	}
+// -------------- End of Automatic Text Area Height To Fit Screen  ------------- //
+
+// -------------- Automatic ScrollBar for Encodings Adjustment  Step 2------------- //  Again Full version
+	var hasHorizontalScrollbarInit = scrollDiv.scrollWidth > scrollDiv.clientWidth;
+	if (hasHorizontalScrollbarInit) {
+		hasHorizontalScrollbar=1;
+		while (hasHorizontalScrollbar) {
+			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) - 5) + "px");
+			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
+		}
+		for(i=0; i<5;i++) {
+			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) + 1) + "px");
+			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
+			if (hasHorizontalScrollbar) {$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) - 1) + "px"); break;}
+		}
+	} else {
+		hasHorizontalScrollbar=0;
+		while (!hasHorizontalScrollbar) {
+			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) + 5) + "px");
+			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
+		}
+		for(i=0; i<5;i++) {
+			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) - 1) + "px");
+			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
+			if (!hasHorizontalScrollbar) {break;}
+		}
+	}
+// -------------- End of Automatic ScrollBar for Encodings Adjustment  Step 2 ------------- //
+
+// -------------- Manual ScrollBar for TextArea Height Adjustment ------------- //
+$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) + scrollBarWidth) + "px");
+// -------------- End of Manual ScrollBar for TextArea Height Adjustment ------------- //
+
+	// set correct scoll position too
+	// selEncodingPixelPosInEncodings - pixels from left to sel. encoding
+	// encodingDiv.scrollWidth - total pixels in encodings
+	// encodingDiv.clientWidth - adjusted encoding div width
+	encodingDiv.scrollLeft = selEncodingPixelPosInEncodings - encodingDiv.clientWidth/2;
+}
 
