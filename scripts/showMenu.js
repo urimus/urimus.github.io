@@ -5661,7 +5661,7 @@ if (lang=="eng") {
 	wholeMenu["KoreaHerald RSS Feed Life&Culture"].html = 'Life&Culture';
 
 	wholeMenu["KoreaHerald RSS Feed Sports"] = {};
-	wholeMenu["KoreaHerald  RSS Feed Sports"].id = "26_4_6";
+	wholeMenu["KoreaHerald RSS Feed Sports"].id = "26_4_6";
 	wholeMenu["KoreaHerald RSS Feed Sports"].color = "red";
 	wholeMenu["KoreaHerald RSS Feed Sports"].hasSub = 0;
 	wholeMenu["KoreaHerald RSS Feed Sports"].link = "news_koreaherald_eng.html?type=sports";
@@ -5956,7 +5956,7 @@ if (lang=="rus") {
 	wholeMenu["KoreaHerald RSS Строка Life&Culture"].html = 'Life&Culture';
 
 	wholeMenu["KoreaHerald RSS Строка Sports"] = {};
-	wholeMenu["KoreaHerald  RSS Строка Sports"].id = "26_4_6";
+	wholeMenu["KoreaHerald RSS Строка Sports"].id = "26_4_6";
 	wholeMenu["KoreaHerald RSS Строка Sports"].color = "red";
 	wholeMenu["KoreaHerald RSS Строка Sports"].hasSub = 0;
 	wholeMenu["KoreaHerald RSS Строка Sports"].link = "news_koreaherald_rus.html?type=sports";
@@ -6249,7 +6249,7 @@ if (lang=="lat") {
 	wholeMenu["KoreaHerald RSS Acies Life&Culture"].html = 'Life&Culture';
 
 	wholeMenu["KoreaHerald RSS Acies Sports"] = {};
-	wholeMenu["KoreaHerald  RSS Acies Sports"].id = "26_4_6";
+	wholeMenu["KoreaHerald RSS Acies Sports"].id = "26_4_6";
 	wholeMenu["KoreaHerald RSS Acies Sports"].color = "red";
 	wholeMenu["KoreaHerald RSS Acies Sports"].hasSub = 0;
 	wholeMenu["KoreaHerald RSS Acies Sports"].link = "news_koreaherald_lat.html?type=sports";
