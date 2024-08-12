@@ -647,7 +647,7 @@ console.log(resultOrig);
 		}
 		if (source == "koreaherald") {
 			if (entry["rss:image"]==null) {
-				result.entries[i].media.url="images/icons/error/not_available.jpg";
+				result.entries[i].media.url="https://images.koreaherald.com/koreaherald/version03/www/images/share.jpg";
 				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
 				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
 			} else {
