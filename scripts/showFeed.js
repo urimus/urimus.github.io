@@ -675,7 +675,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 		if (source == "yahoo") {
 			if (entry["media:content"]==null) {
-				result.entries[i].media.url="images/icons/error/not_available.jpg";
+				result.entries[i].media.url="https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo-1200x1200.png";
 				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
 				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
 			} else {
@@ -864,9 +864,9 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					return;
 				} else {
 					corsProxyVer=1;
-					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
-					if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
-					result.entries[i].media.url="images/icons/error/not_available.jpg";
+					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Time-out";
+					if (lang=="rus") result.entries[i].media.comment="Тайм-аут Обновления";
+					result.entries[i].media.url="images/icons/error/timeout.jpg";
 					updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				}
@@ -887,8 +887,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			} else {
 				mediaURL=result.entries[i].media.url;
-				if (lang=="eng" || lang=="lat") mediaComment="Image Undefined";
-				if (lang=="rus") mediaComment="Картинка не Определена";
+				mediaComment=result.entries[i].media.comment;
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
@@ -1013,9 +1012,9 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
-					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
-					if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
-					result.entries[i].media.url="images/icons/error/not_available.jpg";
+					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Time-out";
+					if (lang=="rus") result.entries[i].media.comment="Тайм-аут Обновления";
+					result.entries[i].media.url="images/icons/error/timeout.jpg";
 					if (lang=="eng" || lang=="lat") result.entries[i].summary="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].summary="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
