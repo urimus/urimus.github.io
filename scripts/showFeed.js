@@ -666,7 +666,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				result.entries[i].media.width=450;
 				result.entries[i].summary=entry["rss:description"]["#"]+".";
 			} else {
-				result.entries[i].media.url="images/icons/error/not_available.jpg";
+				result.entries[i].media.url="https://science.nasa.gov/nasa-social-logo.webp";
 				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
 				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
 				result.entries[i].media.width=450;
@@ -886,7 +886,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			} else {
-				mediaURL="https://science.nasa.gov/nasa-social-logo.webp";
+				mediaURL=result.entries[i].media.url;
 				if (lang=="eng" || lang=="lat") mediaComment="Image Undefined";
 				if (lang=="rus") mediaComment="Картинка не Определена";
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
