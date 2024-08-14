@@ -2160,6 +2160,14 @@ function processSearchAndReplace(lang) {
 	$("#error_message").text(message1);
 	$("#error_message_row").show();
 
+	var ua = navigator.userAgent.toLowerCase();
+	isAndroid = ua.indexOf("android") && ua.indexOf("mobile") > -1; 
+	if (isAndroid) {
+		$("#error_message").text("HTML Editor is not supported for Android OS.");
+		document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px;width: 718px; overflow:auto;");
+		return true; 
+	}
+
 	processPageResize(1);
 
 // -------------- Authorization ------------- //
