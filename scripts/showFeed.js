@@ -884,22 +884,21 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			if (mediaURL!="" && mediaURL!="/nasa-social-logo.webp") {
 				qPos=mediaURL.indexOf("?");
 				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
-
-				result.entries[i].media.url=mediaURL;
-				result.entries[i].media.comment=mediaComment;
-
-				locStUpdateData[entry_link]={};
-				locStUpdateData[entry_link].mediaUrl=mediaURL;
-				locStUpdateData[entry_link].mediaComment=mediaComment;
-				localStorage[source+"_"+type+"_images"]=JSON.stringify(locStUpdateData);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			} else {
-				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
-				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
-				result.entries[i].media.url="https://science.nasa.gov/nasa-social-logo.webp";
+				mediaURL="https://science.nasa.gov/nasa-social-logo.webp";
+				if (lang=="eng" || lang=="lat") mediaComment="Image Undefined";
+				if (lang=="rus") mediaComment="Картинка не Определена";
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
+
+			result.entries[i].media.url=mediaURL;
+			result.entries[i].media.comment=mediaComment;
+			locStUpdateData[entry_link]={};
+			locStUpdateData[entry_link].mediaUrl=mediaURL;
+			locStUpdateData[entry_link].mediaComment=mediaComment;
+			localStorage[source+"_"+type+"_images"]=JSON.stringify(locStUpdateData);
 
 			corsProxyVer=1;
 			updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
@@ -1040,15 +1039,10 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 
 			if (description!="") {
-				result.entries[i].summary=description;
-				locStUpdateData[entry_link]={};
-				locStUpdateData[entry_link].summary=description;
-				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			} else {
 				if (lang=="eng" || lang=="lat") description="Description Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 				if (lang=="rus") description="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-				result.entries[i].summary=description;
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
@@ -1059,10 +1053,16 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			if (mediaURL!="") {
 				qPos=mediaURL.indexOf("?");
 				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
-				result.entries[i].media.url=mediaURL;
-				if (typeof locStUpdateData[entry_link]=== "undefined") locStUpdateData[entry_link]={};
-				locStUpdateData[entry_link].mediaUrl=mediaURL;
+			} else {
+				mediaURL=result.entries[i].media.url;
 			}
+
+			result.entries[i].summary=description;
+			locStUpdateData[entry_link]={};
+			locStUpdateData[entry_link].summary=description;
+			result.entries[i].media.url=mediaURL;
+			locStUpdateData[entry_link].mediaUrl=mediaURL;
+			localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
 
 			corsProxyVer=1;
 			updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
