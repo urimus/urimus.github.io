@@ -613,7 +613,7 @@ function getLocalStorageData(par) {
 
 function optimizeUpdateResult(type, source, lang, resultOrig) {
 
-console.log(resultOrig);
+//console.log(resultOrig);
 
 
 	result={};
@@ -1060,6 +1060,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				qPos=mediaURL.indexOf("?");
 				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
 				result.entries[i].media.url=mediaURL;
+				if (typeof locStUpdateData[entry_link]=== "undefined") locStUpdateData[entry_link]={};
 				locStUpdateData[entry_link].mediaUrl=mediaURL;
 			}
 
