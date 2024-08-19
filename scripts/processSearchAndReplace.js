@@ -1343,9 +1343,9 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 		prompt2 ="Введите Новую Ширину Картинки (в пикселях).";
 		message3 = "Фаил '";
 		message4 = "' Существует. Заменить ?";
-		message5 = "Преобразовать ";
+		message5 = "Преобразовать формат ";
 		message6 = " (Отмена=Нет)";
-		message7 = " формат в .jpg в Файле '";
+		message7 = " в формат jpg в Файле '";
 
 	}
 	if (lang.localeCompare('eng')==0) {
@@ -1354,9 +1354,9 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 		message1 = "How-To &blacktriangleright; HTML Editor";
 		message3 = "File '";
 		message4 = "' Exists. Overwrite ?";
-		message5 = "Transfer ";
+		message5 = "Transfer format ";
 		message6 = " (Cancel=No)";
-		message7 = " format to .jpg in File '";
+		message7 = " to format jpg in File '";
 
 	}
 
