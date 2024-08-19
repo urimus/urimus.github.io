@@ -1268,21 +1268,6 @@ function saveas(lang, encoding) {
 
 function upload(lang) {
 	
-/* useful code
-
-			imgWidth=Img.width;
-			imgHeight=Img.height;
-			ratio = 450.0 / imgWidth;
-			var canvas = document.createElement("canvas");
-			canvas.width = 450;
-			canvas.height = imgHeight*ratio;
-			var ctx = canvas.getContext("2d");
-			ctx.drawImage(Img, 0, 0, canvas.width, canvas.height);
-			canvas.toBlob(function (blob) {
-				localforage.setItem(entry.media.url, blob);
-			}, 'image/jpeg');
-
-*/
 	createFolder=0;
 
 	if (lang.localeCompare('rus')==0) {
@@ -1357,7 +1342,6 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 		prompt1 = "Имя Файла на Сервере ?";
 		prompt2 ="Введите Новую Ширину Картинки (в пикселях).";
 		message1 = "How-To &blacktriangleright; HTML Редактор";
-		message2 = "Фаил Загружается. Подождите ";
 		message3 = "Фаил '";
 		message4 = "' Существует. Заменить ?";
 		message5 = "Преобразовать ";
@@ -1369,7 +1353,6 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 		prompt1 = "Filename on Server ?";
 		prompt2="Enter New Image Width (in pixels).";
 		message1 = "How-To &blacktriangleright; HTML Editor";
-		message2 = "File is Uploading. Wait ";
 		message3 = "File '";
 		message4 = "' Exists. Overwrite ?";
 		message5 = "Transfer ";
@@ -1381,50 +1364,29 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 	if (i==totalFiles) return;
 	file=allFiles[i];
 
-	filename=allFiles[i].name;
+	filename=file.name;
+	filetype=file.type;
 
-
-	let dataArray = new FormData();
-	dataArray.append('file', allFiles[i]);
-
-//	document.getElementById("caption_div").innerHTML=message2;
-	$("#caption_div").html("<div id='loadingDiv'>"+message2+".</div>");
-
-
-
-	if (window.XMLHttpRequest) {
-		// code for IE7+, Firefox, Chrome, Opera, Safari
-		xhr=new XMLHttpRequest();
-	} else {  // code for IE6, IE5
-		xhr=new ActiveXObject("Microsoft.XMLHTTP");
+	isImage=0;
+	imagetype="";
+	if (filetype.substr(0,5)=="image") {
+		isImage=1;
+		imagetype=filetype.substr(6);
 	}
-	xhr.onreadystatechange = function(){
-        	if (this.readyState==4 && this.status==200) {
 
-			$("#caption_div").html(message1);
-
-			if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
-//			console.log(removeBom(this.responseText));
-
-			fileDesc = JSON.parse(removeBom(this.responseText));
-
-	if(fileDesc['isImage']) {
-		if (!(fileDesc['type']==1 || fileDesc['type']==2 || fileDesc['type']==3 || fileDesc['type']==6 || fileDesc['type']==15 || fileDesc['type']==16 || fileDesc['type']==18)) {
-			fileDesc['isImage']=0;
-		}
-	}
-	if(fileDesc['isImage']) {
-
+	if (isImage==1) {
 
 		var confirmToJpg=0;
 		confirm2=0;
-		if (fileDesc['type']!=2) {
-			confirm2=window.confirm(message5 + fileDesc['mime'] + message7 + filename + "'?" + message6);
+		if (imagetype!="jpg" && imagetype!="jpeg") {
+			confirm2=window.confirm(message5 + imagetype + message7 + filename + "'?" + message6);
 			if (confirm2) confirmToJpg=1;
+		} else {
+			confirmToJpg=1;
 		}
 
 
-		if (confirm2) {
+		if (confirmToJpg) {
 			dotPos=filename.lastIndexOf(".");
 			if (dotPos==-1) {
 				filename=filename+".jpg";
@@ -1437,36 +1399,56 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 		filename = prompt(prompt1, filename);
 		if (filename == null ) {return;}
 
-//   	// setting up the reader
-//   	var reader = new FileReader();
-//   	reader.readAsText(file,'UTF-8');
+		var _URL = window.URL || window.webkitURL;
+        	img = new Image();
+        	var objectUrl = _URL.createObjectURL(file);
+		img.onload = function () {
+			imageWidth=this.width;
+			imageHeight=this.height;
+			_URL.revokeObjectURL(objectUrl);
 
+			newImageWidth = prompt(message3+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
+			if (newImageWidth == null ) return;
+			newImageWidth = parseInt(newImageWidth);
+			if (newImageWidth == 0) return;
 
+			ratio = newImageWidth / imageWidth;
+			var canvas = document.createElement("canvas");
+			canvas.width = newImageWidth;
+			canvas.height = imageHeight*ratio;
+			var ctx = canvas.getContext("2d");
+			ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-		imageWidth=fileDesc['width'];
+			blobtype=filetype;
+			if (confirmToJpg==1) blobtype='image/jpeg';
+			canvas.toBlob(function (blob) {
+				file2 = new File([blob], filename, blob);
+				let dataArray = new FormData();
+				dataArray.append('file', file2);
 
-			$.ajax({
-    				url:"../../"+newFilePath+"/"+filename,
-    				type:'HEAD',
-   				error: function()
-    				{
-					newImageWidth = prompt(message3+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
-					if (newImageWidth == null ) {return;}
-					//file not exists
-					uploadFile(lang, allFiles, i, totalFiles, newFilePath, 1, newImageWidth, confirmToJpg, filename, createFolder);
- 			 	},
-    				success: function()
-    				{
-        				//file exists
-					var confirm = window.confirm(message3+newFilePath+"/"+filename+message4);
-					if (!confirm) return;
-					newImageWidth = prompt(message3+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
-					if (newImageWidth == null ) {return;}
-					uploadFile(lang, allFiles, i, totalFiles, newFilePath, 1, newImageWidth, confirmToJpg, filename, createFolder);
-    				}
-			});
-
+				$.ajax({
+	    				url:"../../"+newFilePath+"/"+filename,
+	    				type:'HEAD',
+   					error: function()
+    					{
+						//file not exists
+						uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, 1);
+ 				 	},
+    					success: function()
+    					{
+        					//file exists
+						var confirm = window.confirm(message3+newFilePath+"/"+filename+message4);
+						if (!confirm) return;
+						uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, 1);
+    					}
+				});
+			}, blobtype);
+		};
+        	img.src = objectUrl;
 	} else {
+
+		let dataArray = new FormData();
+		dataArray.append('file', file);
 
 		$.ajax({
     			url:"../../"+newFilePath+"/"+filename,
@@ -1474,30 +1456,17 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
    			error: function()
     			{
 				//file not exists
-				uploadFile(lang, allFiles, i, totalFiles, newFilePath, 0, 0, 0, filename, createFolder);
+				uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, 0);
 		 	},
     			success: function()
     			{
         			//file exists
 				var confirm = window.confirm(message3+newFilePath+"/"+filename+message4);
 				if (!confirm) return;
-				uploadFile(lang, allFiles, i, totalFiles, newFilePath, 0, 0, 0, filename, createFolder);
+				uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, 0);
 			}
 		});
 	}
-
-        	}
-	};
-	xhr.open("POST", "scripts/php/getImageType.php", true);
-	xhr.send(dataArray);
-/*
-   	// here we tell the reader what to do when it's done reading...
-   	reader.onload = readerEvent => {
-   		var content = readerEvent.target.result; // this is the content!
-		console.log( content );
-   	}
-*/
-
 
 }
 
@@ -1505,31 +1474,22 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 
 
 
-function uploadFile(lang, allFiles, i, totalFiles, newFilePath, isImage, newImageWidth, confirmToJpg, filename, createFolder) {
+function uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, isImage) {
 
 
 	if (lang.localeCompare('rus')==0) {
 		messageF="Фаил";
 		message0="не Загружен.";
 		message1="Загружен Успешно.";
-		message2="Загружен Успешно. Картинка Преобразована в Width=";
 		message3 = "Хочешь Просмотреть Картинку?";
-		message4 = "Хочешь Просмотреть Преобразованную и/или Переименованную Картинку?";
 	}
 	if (lang.localeCompare('eng')==0) {
 		messageF="File";
 		message0="not Uploaded.";
 		message1="Uploaded Successfully.";
-		message2="Uploaded Successfully. Image Resized to Width=";
 		message3 = "Do you Want to View Image?";
-		message4 = "Do you Want to View Resized and/or Renamed Image?";
 	}
 
-/*
-
-	let dataArray = new FormData();
-	dataArray.append('file', allFiles[i]);
-*/
 
 	if (window.XMLHttpRequest) {
 		// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -1547,19 +1507,14 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, isImage, newImag
 				alert(messageF+" '"+newFilePath+"/"+filename+"' "+message0);
 				upload2(lang, allFiles, i+1, totalFiles, newFilePath, createFolder);
 			} else if (removeBom(this.responseText)==1) {
-				alert(messageF+" '"+newFilePath+"/"+filename+"' "+message1);
-				upload2(lang, allFiles, i+1, totalFiles, newFilePath, createFolder);
-			} else if (removeBom(this.responseText)==2) {
-				fullMessage=messageF+" '"+newFilePath+"/"+filename+"' "+message1;
-				fullMessage=fullMessage+"\n"+message3;
-				var confirm = window.confirm(fullMessage);
-				if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
-				upload2(lang, allFiles, i+1, totalFiles, newFilePath, createFolder);
-			} else if (removeBom(this.responseText)==3) {
-				fullMessage=messageF+" '"+newFilePath+"/"+filename+"' "+message2+newImageWidth+"px.";
-				fullMessage=fullMessage+"\n"+message4;
-				var confirm = window.confirm(fullMessage);
-				if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
+				if (isImage) {
+					fullMessage=messageF+" '"+newFilePath+"/"+filename+"' "+message1;
+					fullMessage=fullMessage+"\n"+message3;
+					var confirm = window.confirm(fullMessage);
+					if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
+				} else {
+					alert(messageF+" '"+newFilePath+"/"+filename+"' "+message1);
+				}
 				upload2(lang, allFiles, i+1, totalFiles, newFilePath, createFolder);
 			} else {
 				alert(removeBom(this.responseText));
@@ -1569,12 +1524,9 @@ function uploadFile(lang, allFiles, i, totalFiles, newFilePath, isImage, newImag
 	};
 
 
-		xhr.open("GET", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&isImage="+encodeURIComponent(isImage)+"&width="+encodeURIComponent(newImageWidth)+"&toJpg="+encodeURIComponent(confirmToJpg)+"&filename="+encodeURIComponent(filename)+"&createFolder="+encodeURIComponent(createFolder), true);
-		xhr.send();
-/*
-	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&isImage="+encodeURIComponent(isImage)+"&width="+encodeURIComponent(newImageWidth)+"&toJpg="+encodeURIComponent(confirmToJpg)+"&filename="+encodeURIComponent(filename)+"&createFolder="+encodeURIComponent(createFolder), true);
+	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&filename="+encodeURIComponent(filename)+"&createFolder="+encodeURIComponent(createFolder), true);
 	xhr.send(dataArray);
-*/
+
 }
 
 
