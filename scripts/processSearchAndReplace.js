@@ -1342,20 +1342,18 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 		prompt1 = "Имя Файла на Сервере ?";
 		prompt2 ="Введите Новую Ширину Картинки (в пикселях).";
 		message1 = "Фаил '";
-		message2 = "' Существует. Заменить ?";
-		message3 = "Преобразовать формат ";
-		message4 = " (Отмена=Нет)";
-		message5 = " в формат jpg в Файле '";
+		message2 = "Преобразовать формат ";
+		message3 = " (Отмена=Нет)";
+		message4 = " в формат jpg в Файле '";
 
 	}
 	if (lang.localeCompare('eng')==0) {
 		prompt1 = "Filename on Server ?";
 		prompt2="Enter New Image Width (in pixels).";
 		message1 = "File '";
-		message2 = "' Exists. Overwrite ?";
-		message3 = "Transfer format ";
-		message4 = " (Cancel=No)";
-		message5 = " to format jpg in File '";
+		message2 = "Transfer format ";
+		message3 = " (Cancel=No)";
+		message4 = " to format jpg in File '";
 
 	}
 
@@ -1377,7 +1375,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 		var confirmToJpg=0;
 		confirm2=0;
 		if (imagetype!="jpg" && imagetype!="jpeg") {
-			confirm2=window.confirm(message3 + imagetype + message5 + filename + "'?" + message4);
+			confirm2=window.confirm(message2 + imagetype + message4 + filename + "'?" + message3);
 			if (confirm2) confirmToJpg=1;
 		} else {
 			confirmToJpg=1;
@@ -1420,79 +1418,81 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 			blobtype=filetype;
 			if (confirmToJpg==1) blobtype='image/jpeg';
 			canvas.toBlob(function (blob) {
+
 				file2 = new File([blob], filename, blob);
+				uploadFile(file2, lang, allFiles, i, totalFiles, newFilePath, createFolder);
 
-				let dataArray = new FormData();
-				dataArray.append('file', file2);
-
-				$.ajax({
-	    				url:"../../"+newFilePath+"/"+filename,
-	    				type:'HEAD',
-   					error: function()
-    					{
-						//file not exists
-						uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 1);
- 				 	},
-    					success: function()
-    					{
-        					//file exists
-						var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
-						if (!confirm) return;
-						uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 1);
-    					}
-				});
 			}, blobtype);
 		};
         	img.src = objectUrl;
 	} else {
-
-		let dataArray = new FormData();
-		dataArray.append('file', file);
-
-		$.ajax({
-    			url:"../../"+newFilePath+"/"+filename,
-    			type:'HEAD',
-   			error: function()
-    			{
-				//file not exists
-				uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 0);
-		 	},
-    			success: function()
-    			{
-        			//file exists
-				var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
-				if (!confirm) return;
-				uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 0);
-			}
-		});
+		uploadFile(file, lang, allFiles, i, totalFiles, newFilePath, createFolder);
 	}
 
 }
 
 
+function uploadFile(file, lang, allFiles, i, totalFiles, newFilePath, createFolder) {
+
+	if (lang.localeCompare('rus')==0) {
+		message1 = "Фаил '";
+		message2 = "' Существует. Заменить ?";
+	}
+	if (lang.localeCompare('eng')==0) {
+		message1 = "File '";
+		message2 = "' Exists. Overwrite ?";
+	}
 
 
+	filename=file.name;
 
-function uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, isImage) {
+	$.ajax({
+    		url:"../../"+newFilePath+"/"+filename,
+    		type:'HEAD',
+   		error: function()
+    		{
+			//file not exists
+			uploadFile2(file, lang, allFiles, i, totalFiles, newFilePath, createFolder);
+	 	},
+    		success: function()
+    		{
+        		//file exists
+			var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
+			if (!confirm) return;
+			uploadFile2(file, lang, allFiles, i, totalFiles, newFilePath, createFolder);
+		}
+	});
+}
+
+
+function uploadFile(file, lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 
 	if (lang.localeCompare('rus')==0) {
 		messageF="Фаил";
 		message0="не Загружен.";
 		message1="Загружен Успешно.";
 		message2 = "Хочешь Просмотреть Картинку?";
-		message3 = "Фаил Загружается. Подождите ";
+		message3 = "Фаил Загружается ";
 		message4 = "How-To &blacktriangleright; HTML Редактор";
 	}
 	if (lang.localeCompare('eng')==0) {
 		messageF="File";
 		message0="not Uploaded.";
 		message1="Uploaded Successfully.";
-		message2 = "File is Uploading. Wait ";
+		message2 = "File is Uploading ";
 		message3 = "Do you Want to View Image?";
 		message4 = "How-To &blacktriangleright; HTML Editor";
 	}
 
-	$("#caption_div").html("<div id='loadingDiv'>"+message3+".</div>");
+	$("#caption_div").html("<div id='loadingDiv'>"+message3+formatBytes(file.size)+" .</div>");
+
+	filename=file.name;
+	isImage=0;
+	if (file.type.substr(0,5)=="image") isImage=1;
+
+	let dataArray = new FormData();
+	dataArray.append('file', file);
+
 
 	if (window.XMLHttpRequest) {
 		// code for IE7+, Firefox, Chrome, Opera, Safari
