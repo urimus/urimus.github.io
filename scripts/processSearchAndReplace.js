@@ -1341,22 +1341,21 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 	if (lang.localeCompare('rus')==0) {
 		prompt1 = "Имя Файла на Сервере ?";
 		prompt2 ="Введите Новую Ширину Картинки (в пикселях).";
-		message3 = "Фаил '";
-		message4 = "' Существует. Заменить ?";
-		message5 = "Преобразовать формат ";
-		message6 = " (Отмена=Нет)";
-		message7 = " в формат jpg в Файле '";
+		message1 = "Фаил '";
+		message2 = "' Существует. Заменить ?";
+		message3 = "Преобразовать формат ";
+		message4 = " (Отмена=Нет)";
+		message5 = " в формат jpg в Файле '";
 
 	}
 	if (lang.localeCompare('eng')==0) {
 		prompt1 = "Filename on Server ?";
 		prompt2="Enter New Image Width (in pixels).";
-		message1 = "How-To &blacktriangleright; HTML Editor";
-		message3 = "File '";
-		message4 = "' Exists. Overwrite ?";
-		message5 = "Transfer format ";
-		message6 = " (Cancel=No)";
-		message7 = " to format jpg in File '";
+		message1 = "File '";
+		message2 = "' Exists. Overwrite ?";
+		message3 = "Transfer format ";
+		message4 = " (Cancel=No)";
+		message5 = " to format jpg in File '";
 
 	}
 
@@ -1378,7 +1377,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 		var confirmToJpg=0;
 		confirm2=0;
 		if (imagetype!="jpg" && imagetype!="jpeg") {
-			confirm2=window.confirm(message5 + imagetype + message7 + filename + "'?" + message6);
+			confirm2=window.confirm(message3 + imagetype + message5 + filename + "'?" + message4);
 			if (confirm2) confirmToJpg=1;
 		} else {
 			confirmToJpg=1;
@@ -1406,7 +1405,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 			imageHeight=this.height;
 			_URL.revokeObjectURL(objectUrl);
 
-			newImageWidth = prompt(message3+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
+			newImageWidth = prompt(message1+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
 			if (newImageWidth == null ) return;
 			newImageWidth = parseInt(newImageWidth);
 			if (newImageWidth == 0) return;
@@ -1437,7 +1436,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
     					success: function()
     					{
         					//file exists
-						var confirm = window.confirm(message3+newFilePath+"/"+filename+message4);
+						var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
 						if (!confirm) return;
 						uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 1);
     					}
@@ -1461,7 +1460,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
     			success: function()
     			{
         			//file exists
-				var confirm = window.confirm(message3+newFilePath+"/"+filename+message4);
+				var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
 				if (!confirm) return;
 				uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 0);
 			}
@@ -1490,6 +1489,7 @@ function uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, creat
 		message1="Uploaded Successfully.";
 		message2 = "File is Uploading. Wait ";
 		message3 = "Do you Want to View Image?";
+		message4 = "How-To &blacktriangleright; HTML Editor";
 	}
 
 	$("#caption_div").html("<div id='loadingDiv'>"+message3+".</div>");
