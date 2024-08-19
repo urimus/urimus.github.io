@@ -1407,6 +1407,10 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 			if (newImageWidth == null ) return;
 			newImageWidth = parseInt(newImageWidth);
 			if (newImageWidth == 0) return;
+			
+			if (confirmToJpg==0 && imageWidth==newImageWidth) {
+				uploadFile(file, filename, lang, allFiles, i, totalFiles, newFilePath, createFolder);
+			}
 
 			ratio = newImageWidth / imageWidth;
 			var canvas = document.createElement("canvas");
@@ -1420,19 +1424,24 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 			canvas.toBlob(function (blob) {
 
 				file2 = new File([blob], filename, blob);
-				uploadFile(file2, lang, allFiles, i, totalFiles, newFilePath, createFolder);
+				uploadFile(file2, filename, lang, allFiles, i, totalFiles, newFilePath, createFolder);
 
 			}, blobtype);
 		};
         	img.src = objectUrl;
+
 	} else {
-		uploadFile(file, lang, allFiles, i, totalFiles, newFilePath, createFolder);
+
+		filename = prompt(prompt1, filename);
+		if (filename == null ) {return;}
+		uploadFile(file, filename, lang, allFiles, i, totalFiles, newFilePath, createFolder);
 	}
 
 }
 
 
-function uploadFile(file, lang, allFiles, i, totalFiles, newFilePath, createFolder) {
+function uploadFile(file, filename, lang, allFiles, i, totalFiles, newFilePath, createFolder) {
+
 
 	if (lang.localeCompare('rus')==0) {
 		message1 = "Фаил '";
@@ -1444,28 +1453,26 @@ function uploadFile(file, lang, allFiles, i, totalFiles, newFilePath, createFold
 	}
 
 
-	filename=file.name;
-
 	$.ajax({
     		url:"../../"+newFilePath+"/"+filename,
     		type:'HEAD',
    		error: function()
     		{
 			//file not exists
-			uploadFile2(file, lang, allFiles, i, totalFiles, newFilePath, createFolder);
+			uploadFile2(file, filename, lang, allFiles, i, totalFiles, newFilePath, createFolder);
 	 	},
     		success: function()
     		{
         		//file exists
 			var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
 			if (!confirm) return;
-			uploadFile2(file, lang, allFiles, i, totalFiles, newFilePath, createFolder);
+			uploadFile2(file, filename, lang, allFiles, i, totalFiles, newFilePath, createFolder);
 		}
 	});
 }
 
 
-function uploadFile(file, lang, allFiles, i, totalFiles, newFilePath, createFolder) {
+function uploadFile2(file, filename, lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 
 	if (lang.localeCompare('rus')==0) {
 		messageF="Фаил";
@@ -1484,14 +1491,13 @@ function uploadFile(file, lang, allFiles, i, totalFiles, newFilePath, createFold
 		message4 = "How-To &blacktriangleright; HTML Editor";
 	}
 
-	$("#caption_div").html("<div id='loadingDiv'>"+message3+formatBytes(file.size)+" .</div>");
+	$("#caption_div").html("<div id='loadingDiv'>"+message3+"("+formatBytes(file.size)+") .</div>");
 
-	filename=file.name;
 	isImage=0;
 	if (file.type.substr(0,5)=="image") isImage=1;
 
 	let dataArray = new FormData();
-	dataArray.append('file', file);
+	dataArray.append('file', file, filename);
 
 
 	if (window.XMLHttpRequest) {
