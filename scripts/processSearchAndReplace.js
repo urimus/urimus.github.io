@@ -1422,6 +1422,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 			if (confirmToJpg==1) blobtype='image/jpeg';
 			canvas.toBlob(function (blob) {
 				file2 = new File([blob], filename, blob);
+
 				let dataArray = new FormData();
 				dataArray.append('file', file2);
 
@@ -1431,14 +1432,14 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
    					error: function()
     					{
 						//file not exists
-						uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, 1);
+						uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 1);
  				 	},
     					success: function()
     					{
         					//file exists
 						var confirm = window.confirm(message3+newFilePath+"/"+filename+message4);
 						if (!confirm) return;
-						uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, 1);
+						uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 1);
     					}
 				});
 			}, blobtype);
@@ -1455,14 +1456,14 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
    			error: function()
     			{
 				//file not exists
-				uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, 0);
+				uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 0);
 		 	},
     			success: function()
     			{
         			//file exists
 				var confirm = window.confirm(message3+newFilePath+"/"+filename+message4);
 				if (!confirm) return;
-				uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, 0);
+				uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, 0);
 			}
 		});
 	}
@@ -1473,7 +1474,7 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 
 
 
-function uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, isImage) {
+function uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, createFolder, isImage) {
 
 	if (lang.localeCompare('rus')==0) {
 		messageF="Фаил";
@@ -1528,7 +1529,7 @@ function uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filen
 	};
 
 
-	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&filename="+encodeURIComponent(filename)+"&createFolder="+encodeURIComponent(createFolder), true);
+	xhr.open("POST", "scripts/php/upload.php?path="+encodeURIComponent(newFilePath)+"&createFolder="+encodeURIComponent(createFolder), true);
 	xhr.send(dataArray);
 
 }
