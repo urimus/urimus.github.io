@@ -10,15 +10,6 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
 	return;
 }
 
-// check if logged in
-if (!isset($_SESSION)) {
-    session_start();
-}
-if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
-	echo "not logged in";
-	return;
-}
-
 
 //get the filename, ... from POST
 $path=$_GET["path"];

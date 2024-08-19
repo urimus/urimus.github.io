@@ -1341,7 +1341,6 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 	if (lang.localeCompare('rus')==0) {
 		prompt1 = "Имя Файла на Сервере ?";
 		prompt2 ="Введите Новую Ширину Картинки (в пикселях).";
-		message1 = "How-To &blacktriangleright; HTML Редактор";
 		message3 = "Фаил '";
 		message4 = "' Существует. Заменить ?";
 		message5 = "Преобразовать ";
@@ -1476,20 +1475,23 @@ function upload2(lang, allFiles, i, totalFiles, newFilePath, createFolder) {
 
 function uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filename, createFolder, isImage) {
 
-
 	if (lang.localeCompare('rus')==0) {
 		messageF="Фаил";
 		message0="не Загружен.";
 		message1="Загружен Успешно.";
-		message3 = "Хочешь Просмотреть Картинку?";
+		message2 = "Хочешь Просмотреть Картинку?";
+		message3 = "Фаил Загружается. Подождите ";
+		message4 = "How-To &blacktriangleright; HTML Редактор";
 	}
 	if (lang.localeCompare('eng')==0) {
 		messageF="File";
 		message0="not Uploaded.";
 		message1="Uploaded Successfully.";
+		message2 = "File is Uploading. Wait ";
 		message3 = "Do you Want to View Image?";
 	}
 
+	$("#caption_div").html("<div id='loadingDiv'>"+message3+".</div>");
 
 	if (window.XMLHttpRequest) {
 		// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -1500,6 +1502,8 @@ function uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filen
 	xhr.onreadystatechange = function(){
         	if (this.readyState==4 && this.status==200) {
 
+			$("#caption_div").html(message4);
+
 			if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
 //			console.log(this.responseText);
 
@@ -1509,7 +1513,7 @@ function uploadFile(lang, allFiles, i, totalFiles, dataArray, newFilePath, filen
 			} else if (removeBom(this.responseText)==1) {
 				if (isImage) {
 					fullMessage=messageF+" '"+newFilePath+"/"+filename+"' "+message1;
-					fullMessage=fullMessage+"\n"+message3;
+					fullMessage=fullMessage+"\n"+message2;
 					var confirm = window.confirm(fullMessage);
 					if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
 				} else {
