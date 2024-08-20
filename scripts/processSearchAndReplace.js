@@ -1410,7 +1410,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			if (newImageWidth == 0) return;
 			
 			if (confirmToJpg==0 && imageWidth==newImageWidth) {
-				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
+				upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			}
 
 			ratio = newImageWidth / imageWidth;
@@ -1425,7 +1425,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			canvas.toBlob(function (blob) {
 
 				file2 = new File([blob], filename, blob);
-				uploadFile(file2, filename, lang, allFiles, i, newFilePath, createFolder);
+				upload3(file2, filename, lang, allFiles, i, newFilePath, createFolder);
 
 			}, blobtype);
 		};
@@ -1435,13 +1435,13 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 
 		filename = prompt(prompt1, filename);
 		if (filename == null ) {return;}
-		uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
+		upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
 	}
 
 }
 
 
-function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder) {
+function upload3(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 
 
 	if (lang.localeCompare('rus')==0) {
@@ -1460,20 +1460,20 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
    		error: function()
     		{
 			//file not exists
-			uploadFile2(file, filename, lang, allFiles, i, newFilePath, createFolder);
+			uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 	 	},
     		success: function()
     		{
         		//file exists
 			var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
 			if (!confirm) return;
-			uploadFile2(file, filename, lang, allFiles, i, newFilePath, createFolder);
+			uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 		}
 	});
 }
 
 
-function uploadFile2(file, filename, lang, allFiles, i, newFilePath, createFolder) {
+function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 
 	if (lang.localeCompare('rus')==0) {
 		messageF="Фаил";
