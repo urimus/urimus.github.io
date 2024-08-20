@@ -1411,6 +1411,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			
 			if (confirmToJpg==0 && imageWidth==newImageWidth) {
 				upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
+				return;
 			}
 
 			ratio = newImageWidth / imageWidth;
