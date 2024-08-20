@@ -1373,17 +1373,18 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 
 	if (isImage==1) {
 
-		var confirmToJpg=0;
+		var isJpg=0;
+		var toJpg=0;
 		confirm2=0;
 		if (imagetype!="jpg" && imagetype!="jpeg") {
 			confirm2=window.confirm(message2 + imagetype + message4 + filename + "'?" + message3);
-			if (confirm2) confirmToJpg=1;
+			if (confirm2) toJpg=1;
 		} else {
-			confirmToJpg=1;
+			isJpg=1;
 		}
 
 
-		if (confirmToJpg) {
+		if (toJpg==1 || isJpg==1) {
 			dotPos=filename.lastIndexOf(".");
 			if (dotPos==-1) {
 				filename=filename+".jpg";
@@ -1409,7 +1410,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			newImageWidth = parseInt(newImageWidth);
 			if (newImageWidth == 0) return;
 			
-			if (confirmToJpg==0 && imageWidth==newImageWidth) {
+			if (isJpg==0 && imageWidth==newImageWidth) {
 				upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
 				return;
 			}
@@ -1422,7 +1423,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
 			blobtype=filetype;
-			if (confirmToJpg==1) blobtype='image/jpeg';
+			if (toJpg==1 || isJpg==1) blobtype='image/jpeg';
 			canvas.toBlob(function (blob) {
 
 				file2 = new File([blob], filename, blob);
