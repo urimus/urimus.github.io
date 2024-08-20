@@ -1477,22 +1477,18 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 
 	if (lang.localeCompare('rus')==0) {
 		messageF="Фаил";
-		message0="не Загружен.";
-		message1="Загружен Успешно.";
-		message2 = "Хочешь Просмотреть Картинку?";
-		message3 = "Фаил Загружается ";
-		message4 = "How-To &blacktriangleright; HTML Редактор";
+		message1="Загружен Успешно.\nХочешь Просмотреть Картинку?";
+		message2 = "Фаил Загружается ";
+		message3 = "How-To &blacktriangleright; HTML Редактор";
 	}
 	if (lang.localeCompare('eng')==0) {
 		messageF="File";
-		message0="not Uploaded.";
-		message1="Uploaded Successfully.";
+		message1="Uploaded Successfully.\nDo you Want to View Image?";
 		message2 = "File is Uploading ";
-		message3 = "Do you Want to View Image?";
-		message4 = "How-To &blacktriangleright; HTML Editor";
+		message3 = "How-To &blacktriangleright; HTML Editor";
 	}
 
-	$("#caption_div").html("<div id='loadingDiv'>"+message3+"("+formatBytes(file.size)+") .</div>");
+	$("#caption_div").html("<div id='loadingDiv'>"+message2+"("+formatBytes(file.size)+") .</div>");
 
 	isImage=0;
 	if (file.type.substr(0,5)=="image") isImage=1;
@@ -1510,19 +1506,14 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	xhr.onreadystatechange = function(){
         	if (this.readyState==4 && this.status==200) {
 
-			$("#caption_div").html(message4);
+			$("#caption_div").html(message3);
 
 			if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
 //			console.log(this.responseText);
 
-			if (removeBom(this.responseText)==0) {
-				alert(messageF+" '"+newFilePath+"/"+filename+"' "+message0);
-				upload2(lang, allFiles, i+1, newFilePath, createFolder);
-			} else if (removeBom(this.responseText)==1) {
+			if (removeBom(this.responseText)==1) {
 				if (isImage) {
-					fullMessage=messageF+" '"+newFilePath+"/"+filename+"' "+message1;
-					fullMessage=fullMessage+"\n"+message2;
-					var confirm = window.confirm(fullMessage);
+					var confirm = window.confirm(messageF+" '"+newFilePath+"/"+filename+"' "+message1);
 					if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
 				} else {
 					alert(messageF+" '"+newFilePath+"/"+filename+"' "+message1);
