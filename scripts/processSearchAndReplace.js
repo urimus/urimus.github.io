@@ -1477,13 +1477,15 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 
 	if (lang.localeCompare('rus')==0) {
 		messageF="Фаил";
-		message1="Загружен Успешно.\nХочешь Просмотреть Картинку?";
+		message11="Загружен Успешно.\nХочешь Просмотреть Картинку?";
+		message12="Загружен Успешно.";
 		message2 = "Фаил Загружается ";
 		message3 = "How-To &blacktriangleright; HTML Редактор";
 	}
 	if (lang.localeCompare('eng')==0) {
 		messageF="File";
-		message1="Uploaded Successfully.\nDo you Want to View Image?";
+		message11="Uploaded Successfully.\nDo you Want to View Image?";
+		message12="Uploaded Successfully.";
 		message2 = "File is Uploading ";
 		message3 = "How-To &blacktriangleright; HTML Editor";
 	}
@@ -1513,10 +1515,10 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 
 			if (removeBom(this.responseText)==1) {
 				if (isImage) {
-					var confirm = window.confirm(messageF+" '"+newFilePath+"/"+filename+"' "+message1);
+					var confirm = window.confirm(messageF+" '"+newFilePath+"/"+filename+"' "+message11);
 					if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
 				} else {
-					alert(messageF+" '"+newFilePath+"/"+filename+"' "+message1);
+					alert(messageF+" '"+newFilePath+"/"+filename+"' "+message12);
 				}
 				upload2(lang, allFiles, i+1, newFilePath, createFolder);
 			} else {
