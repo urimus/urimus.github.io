@@ -2086,6 +2086,15 @@ function setLineAndColumnNumber(lang) {
 
 }
 // ----------------------- processMenu PHP --------- //
+
+function getLocalStorageData(par) {
+	if (typeof localStorage[par]==="undefined") {
+		return {};
+	} else {
+		return JSON.parse(localStorage[par]);
+	}
+}
+
 function processSearchAndReplace(lang) {
 
 
@@ -2150,7 +2159,19 @@ function processSearchAndReplace(lang) {
 			};
 
 			if (JSON.parse(respNoBOM)[0]!=1){
-				username = prompt(prompt1, "");
+
+				locStPar="HTML_editor";
+				HTMLEditorData=getLocalStorageData(locStPar);
+				username1="";
+				if (typeof HTMLEditorData["username"]!== "undefined") username1=HTMLEditorData["username"];
+
+				username = prompt(prompt1, username1);
+
+				if (username != null) {
+					HTMLEditorData["username"]=username;
+					localStorage["HTML_editor"]=JSON.stringify(HTMLEditorData);
+				}
+
 				if (username == null || username .localeCompare( "")==0) {
 					$("#search_col1").hide();
 					$("#search_col2").hide();
