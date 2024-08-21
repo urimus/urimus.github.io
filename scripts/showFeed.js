@@ -322,7 +322,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		}
 	}
 	Img.onerror= function () {
-		if (source=="nasa" || source=="koreaherald") {
+		if (source=="nasa") {
 			Img.src = "images/icons/error/error.jpg";
 		} else {
 			Img.src = Img.src;
