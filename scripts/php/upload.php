@@ -22,7 +22,5 @@ if ($createFolder && !is_dir("../../".$path."/")) mkdir("../../".$path."/", 0777
 copy($_FILES['file']['tmp_name'], "../../".$path."/".$_FILES['file']['name']);
 
 echo 1;
-return;
-
 
 ?>
