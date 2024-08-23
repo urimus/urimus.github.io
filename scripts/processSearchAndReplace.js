@@ -1362,7 +1362,6 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	file=allFiles[i];
 
 	filename=file.name;
-	filetype=file.type;
 
 //	get file type using magic numbers - more accurate
 //	Magic numbers - https://gist.github.com/leommoore/f9e57ba2aa4bf197ebc5
@@ -1372,9 +1371,10 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		arrayBuffer = event.target.result;
 		arr1 = new Uint8Array(arrayBuffer );
 		var bytes = [];
-		for (let i = 0; i < 10; i++) {
+		for (let i = 0; i < 12; i++) {
 			bytes[i]=arr1[i].toString(16);
 		}
+
 
 		isImage=0;
 		imagetype="";
@@ -1395,6 +1395,11 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		if (bytes[0]=="67" && bytes[1]=="69" && bytes[2]=="6d" && bytes[3]=="70" && bytes[4]=="20" && bytes[5]=="78" && bytes[6]=="63" && bytes[7]=="66" && bytes[8]=="20" && bytes[9]=="76") {isImage=1; imagetype="xcf";}
 		if (bytes[0]=="23" && bytes[1]=="46" && bytes[2]=="49" && bytes[3]=="47") {isImage=1; imagetype="fig";}
 		if (bytes[0]=="2f" && bytes[1]=="2a" && bytes[2]=="20" && bytes[3]=="58" && bytes[4]=="50" && bytes[5]=="4d" && bytes[6]=="20" && bytes[7]=="2a" && bytes[8]=="2f") {isImage=1; imagetype="xpm";}
+
+		if (bytes[0]=="52" && bytes[1]=="49" && bytes[2]=="46" && bytes[3]=="46") {isImage=1; imagetype="webp";}
+		if (bytes[0]=="57" && bytes[1]=="45" && bytes[2]=="42" && bytes[3]=="50") {isImage=1; imagetype="webp";}
+		if (bytes[0]=="0" && bytes[1]=="0" && bytes[2]=="0" && bytes[3]=="1c" && bytes[4]=="66" && bytes[5]=="74" && bytes[6]=="79" && bytes[7]=="70" && bytes[8]=="61" && bytes[9]=="76" && bytes[10]=="69" && bytes[11]=="66") {isImage=1; imagetype="avif";}
+		if (bytes[0]=="0" && bytes[1]=="0" && bytes[2]=="0" && bytes[3]=="20" && bytes[4]=="66" && bytes[5]=="74" && bytes[6]=="79" && bytes[7]=="70" && bytes[8]=="61" && bytes[9]=="76" && bytes[10]=="69" && bytes[11]=="66") {isImage=1; imagetype="avif";}
 
 		if (isImage==0) {
 			filename = prompt(prompt1, filename);
@@ -1452,7 +1457,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			var ctx = canvas.getContext("2d");
 			ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-			blobtype=filetype;
+			blobtype='image/'+imagetype;
 			if (toJpg==1 || isJpg==1) blobtype='image/jpeg';
 			canvas.toBlob(function (blob) {
 
@@ -1464,7 +1469,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
         	img.src = objectUrl;
 
 	};
-	fileReader.readAsArrayBuffer(file.slice(0,10));
+	fileReader.readAsArrayBuffer(file.slice(0,12));
 
 }
 
