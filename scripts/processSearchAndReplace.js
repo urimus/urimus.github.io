@@ -1361,7 +1361,8 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	if (i==totalFiles) return;
 	file=allFiles[i];
 
-/* code to get file type using magic numbers
+/* code to get file type using magic numbers 
+//Magic numbers - https://gist.github.com/leommoore/f9e57ba2aa4bf197ebc5
 console.log(file);
 console.log(file.slice(0,10));
 
@@ -1369,7 +1370,11 @@ console.log(file.slice(0,10));
 	fileReader.onload = function(event) {
 		arrayBuffer = event.target.result;
 		arr1 = new Uint8Array(arrayBuffer );
-		console.log(arr1[0]);
+		var bytes = [];
+		for (let i = 0; i < 10; i++) {
+			bytes[i]=arr1[i].toString(16);
+		}
+		console.log(bytes);
 	};
 	fileReader.readAsArrayBuffer(file.slice(0,10));
 */
