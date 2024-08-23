@@ -1445,7 +1445,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			newImageWidth = parseInt(newImageWidth);
 			if (newImageWidth == 0) return;
 			
-			if (isJpg==0 && imageWidth==newImageWidth) {
+			if ((isJpg==1 || toJpg==0) && imageWidth==newImageWidth) {
 				upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
 				return;
 			}
