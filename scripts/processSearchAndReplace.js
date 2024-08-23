@@ -1361,6 +1361,8 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	if (i==totalFiles) return;
 	file=allFiles[i];
 
+//console.log(file);
+
 	filename=file.name;
 
 //	get file type using magic numbers - more accurate
@@ -1375,6 +1377,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			bytes[i]=arr1[i].toString(16);
 		}
 
+//console.log(bytes);
 
 		isImage=0;
 		imagetype="";
