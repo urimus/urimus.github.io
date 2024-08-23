@@ -312,6 +312,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		Img.setAttribute('src', entry.media.url);
 	}
 	Img.onload = function () {
+		if (Img.naturalWidth<Img.width) Img.width=Img.naturalWidth;
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 		if (hasVerticalScrollbar) {
