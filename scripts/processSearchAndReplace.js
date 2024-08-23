@@ -1339,18 +1339,20 @@ function upload(lang) {
 function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	
 	if (lang.localeCompare('rus')==0) {
-		prompt1 = "Имя Файла на Сервере ?";
+		prompt11 = "Имя Файла на Сервере ?";
+		prompt12 = "Имя Картинки на Сервере ?";
 		prompt2 ="Введите Новую Ширину Картинки (в пикселях).";
-		message1 = "Фаил '";
+		message1 = "Картинка '";
 		message2 = "Преобразовать формат ";
 		message3 = " (Отмена=Нет)";
 		message4 = " в формат jpg в Файле '";
 
 	}
 	if (lang.localeCompare('eng')==0) {
-		prompt1 = "Filename on Server ?";
+		prompt11 = "Filename on Server ?";
+		prompt12 = "Image Name on Server ?";
 		prompt2="Enter New Image Width (in pixels).";
-		message1 = "File '";
+		message1 = "Image '";
 		message2 = "Transfer format ";
 		message3 = " (Cancel=No)";
 		message4 = " to format jpg in File '";
@@ -1405,7 +1407,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		if (bytes[0]=="0" && bytes[1]=="0" && bytes[2]=="0" && bytes[3]=="20" && bytes[4]=="66" && bytes[5]=="74" && bytes[6]=="79" && bytes[7]=="70" && bytes[8]=="61" && bytes[9]=="76" && bytes[10]=="69" && bytes[11]=="66") {isImage=1; imagetype="avif";}
 
 		if (isImage==0) {
-			filename = prompt(prompt1, filename);
+			filename = prompt(prompt11, filename);
 			if (filename == null ) {return;}
 			upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			return;
@@ -1432,7 +1434,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		}
 
 
-		filename = prompt(prompt1, filename);
+		filename = prompt(prompt12, filename);
 		if (filename == null ) {return;}
 
 		var _URL = window.URL || window.webkitURL;
@@ -1479,13 +1481,17 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 
 function upload3(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 
+	isImage=0;
+	if (file.type.substr(0,5)=="image") isImage=1;
 
 	if (lang.localeCompare('rus')==0) {
-		message1 = "Фаил '";
+		if (isImage==0) message1 = "Фаил '";
+		if (isImage==1) message1 = "Картинка '";
 		message2 = "' Существует. Заменить ?";
 	}
 	if (lang.localeCompare('eng')==0) {
-		message1 = "File '";
+		if (isImage==0) message1 = "File '";
+		if (isImage==1) message1 = "Image '";
 		message2 = "' Exists. Overwrite ?";
 	}
 
@@ -1511,15 +1517,20 @@ function upload3(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 
 function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 
+	isImage=0;
+	if (file.type.substr(0,5)=="image") isImage=1;
+
 	if (lang.localeCompare('rus')==0) {
-		messageF="Фаил";
-		message11="Загружен Успешно.\nХочешь Просмотреть Картинку?";
+		if (isImage==0) messageF="Фаил";
+		if (isImage==1) messageF="Картинка";
+		message11="Загруженa Успешно.\nХочешь Просмотреть Картинку?";
 		message12="Загружен Успешно.";
 		message2 = "Фаил Загружается ";
 		message3 = "How-To &blacktriangleright; HTML Редактор";
 	}
 	if (lang.localeCompare('eng')==0) {
-		messageF="File";
+		if (isImage==0) messageF="File";
+		if (isImage==1) messageF="Image";
 		message11="Uploaded Successfully.\nDo you Want to View Image?";
 		message12="Uploaded Successfully.";
 		message2 = "File is Uploading ";
@@ -1527,9 +1538,6 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	}
 
 	$("#caption_div").html("<div id='loadingDiv'>"+message2+"("+formatBytes(file.size)+") .</div>");
-
-	isImage=0;
-	if (file.type.substr(0,5)=="image") isImage=1;
 
 	let dataArray = new FormData();
 	dataArray.append('file', file, filename);
