@@ -1361,10 +1361,11 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	if (i==totalFiles) return;
 	file=allFiles[i];
 
-/* code to get file type using magic numbers 
-//Magic numbers - https://gist.github.com/leommoore/f9e57ba2aa4bf197ebc5
-console.log(file);
-console.log(file.slice(0,10));
+	filename=file.name;
+	filetype=file.type;
+
+//	get file type using magic numbers - more accurate
+//	Magic numbers - https://gist.github.com/leommoore/f9e57ba2aa4bf197ebc5
 
 	var fileReader = new FileReader();
 	fileReader.onload = function(event) {
@@ -1374,33 +1375,44 @@ console.log(file.slice(0,10));
 		for (let i = 0; i < 10; i++) {
 			bytes[i]=arr1[i].toString(16);
 		}
-		console.log(bytes);
-	};
-	fileReader.readAsArrayBuffer(file.slice(0,10));
-*/
 
-	filename=file.name;
-	filetype=file.type;
+		isImage=0;
+		imagetype="";
+		if (bytes[0]=="42" && bytes[1]=="4d") {isImage=1; imagetype="bmp";}
+		if (bytes[0]=="53" && bytes[1]=="49" && bytes[2]=="4d" && bytes[3]=="50" && bytes[4]=="4c" && bytes[5]=="45") {isImage=1; imagetype="fits";}
+		if (bytes[0]=="47" && bytes[1]=="49" && bytes[2]=="46" && bytes[3]=="38") {isImage=1; imagetype="gif";}
+		if (bytes[0]=="47" && bytes[1]=="4b" && bytes[2]=="53" && bytes[3]=="4d") {isImage=1; imagetype="gks";}
+		if (bytes[0]=="01" && bytes[1]=="da") {isImage=1; imagetype="rgb";}
+		if (bytes[0]=="f1" && bytes[1]=="00" && bytes[2]=="40" && bytes[3]=="bb") {isImage=1; imagetype="itc";}
+		if (bytes[0]=="ff" && bytes[1]=="d8" && bytes[2]=="ff" && bytes[3]=="e0") {isImage=1; imagetype="jpg";}
+		if (bytes[0]=="49" && bytes[1]=="49" && bytes[2]=="4e" && bytes[3]=="31") {isImage=1; imagetype="nif";}
+		if (bytes[0]=="56" && bytes[1]=="49" && bytes[2]=="45" && bytes[3]=="57") {isImage=1; imagetype="pm";}
+		if (bytes[0]=="89" && bytes[1]=="50" && bytes[2]=="4e" && bytes[3]=="47") {isImage=1; imagetype="png";}
+		if (bytes[0]=="25" && bytes[1]=="21") {isImage=1; imagetype="[e]ps";}
+		if (bytes[0]=="59" && bytes[1]=="a6" && bytes[2]=="6a" && bytes[3]=="95") {isImage=1; imagetype="ras";}
+		if (bytes[0]=="4d" && bytes[1]=="4d" && bytes[2]=="00" && bytes[3]=="2a") {isImage=1; imagetype="tif";}
+		if (bytes[0]=="49" && bytes[1]=="49" && bytes[2]=="2a" && bytes[3]=="00") {isImage=1; imagetype="tif";}
+		if (bytes[0]=="67" && bytes[1]=="69" && bytes[2]=="6d" && bytes[3]=="70" && bytes[4]=="20" && bytes[5]=="78" && bytes[6]=="63" && bytes[7]=="66" && bytes[8]=="20" && bytes[9]=="76") {isImage=1; imagetype="xcf";}
+		if (bytes[0]=="23" && bytes[1]=="46" && bytes[2]=="49" && bytes[3]=="47") {isImage=1; imagetype="fig";}
+		if (bytes[0]=="2f" && bytes[1]=="2a" && bytes[2]=="20" && bytes[3]=="58" && bytes[4]=="50" && bytes[5]=="4d" && bytes[6]=="20" && bytes[7]=="2a" && bytes[8]=="2f") {isImage=1; imagetype="xpm";}
 
-	isImage=0;
-	imagetype="";
-	if (filetype.substr(0,5)=="image") {
-		isImage=1;
-		imagetype=filetype.substr(6);
-	}
+		if (isImage==0) {
+			filename = prompt(prompt1, filename);
+			if (filename == null ) {return;}
+			upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
+			return;
+		}
 
-	if (isImage==1) {
 
 		var isJpg=0;
 		var toJpg=0;
 		confirm2=0;
-		if (imagetype!="jpg" && imagetype!="jpeg") {
+		if (imagetype!="jpg") {
 			confirm2=window.confirm(message2 + imagetype + message4 + filename + "'?" + message3);
 			if (confirm2) toJpg=1;
 		} else {
 			isJpg=1;
 		}
-
 
 		if (toJpg==1 || isJpg==1) {
 			dotPos=filename.lastIndexOf(".");
@@ -1451,12 +1463,8 @@ console.log(file.slice(0,10));
 		};
         	img.src = objectUrl;
 
-	} else {
-
-		filename = prompt(prompt1, filename);
-		if (filename == null ) {return;}
-		upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
-	}
+	};
+	fileReader.readAsArrayBuffer(file.slice(0,10));
 
 }
 
