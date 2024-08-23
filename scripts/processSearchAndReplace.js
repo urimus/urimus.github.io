@@ -1345,7 +1345,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		message1 = "Картинка '";
 		message2 = "Преобразовать формат ";
 		message3 = " (Отмена=Нет)";
-		message4 = " в формат jpg в Файле '";
+		message4 = " в формат jpg в Картинке в Файле '";
 
 	}
 	if (lang.localeCompare('eng')==0) {
@@ -1355,7 +1355,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		message1 = "Image '";
 		message2 = "Transfer format ";
 		message3 = " (Cancel=No)";
-		message4 = " to format jpg in File '";
+		message4 = " to format jpg in Image in File '";
 
 	}
 
