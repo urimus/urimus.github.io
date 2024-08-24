@@ -1332,8 +1332,22 @@ function upload(lang) {
 
 }
 
+function isSignatureMatch(bytes, sig) {
 
+	if (Array.isArray(sig)) {
+		for (let i = 0; i < sig.length; i++) {
+			if (bytes[i] != sig[i]) return false;
+		}
+	}
 
+	if (typeof sig === "string") {
+		for (let i = 0; i < sig.length; i++) {
+			if (bytes[i] != sig.charCodeAt(i).toString(16)) return false;
+		}
+	}
+
+	return true;
+}
 
 
 function upload2(lang, allFiles, i, newFilePath, createFolder) {
@@ -1381,30 +1395,32 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 
 //console.log(bytes);
 
+
+
 		isImage=0;
 		imagetype="";
-		if (bytes[0]=="42" && bytes[1]=="4d") {isImage=1; imagetype="bmp";}
-		if (bytes[0]=="53" && bytes[1]=="49" && bytes[2]=="4d" && bytes[3]=="50" && bytes[4]=="4c" && bytes[5]=="45") {isImage=1; imagetype="fits";}
-		if (bytes[0]=="47" && bytes[1]=="49" && bytes[2]=="46" && bytes[3]=="38") {isImage=1; imagetype="gif";}
-		if (bytes[0]=="47" && bytes[1]=="4b" && bytes[2]=="53" && bytes[3]=="4d") {isImage=1; imagetype="gks";}
-		if (bytes[0]=="01" && bytes[1]=="da") {isImage=1; imagetype="rgb";}
-		if (bytes[0]=="f1" && bytes[1]=="00" && bytes[2]=="40" && bytes[3]=="bb") {isImage=1; imagetype="itc";}
-		if (bytes[0]=="ff" && bytes[1]=="d8" && bytes[2]=="ff" && bytes[3]=="e0") {isImage=1; imagetype="jpg";}
-		if (bytes[0]=="49" && bytes[1]=="49" && bytes[2]=="4e" && bytes[3]=="31") {isImage=1; imagetype="nif";}
-		if (bytes[0]=="56" && bytes[1]=="49" && bytes[2]=="45" && bytes[3]=="57") {isImage=1; imagetype="pm";}
-		if (bytes[0]=="89" && bytes[1]=="50" && bytes[2]=="4e" && bytes[3]=="47") {isImage=1; imagetype="png";}
-		if (bytes[0]=="25" && bytes[1]=="21") {isImage=1; imagetype="[e]ps";}
-		if (bytes[0]=="59" && bytes[1]=="a6" && bytes[2]=="6a" && bytes[3]=="95") {isImage=1; imagetype="ras";}
-		if (bytes[0]=="4d" && bytes[1]=="4d" && bytes[2]=="00" && bytes[3]=="2a") {isImage=1; imagetype="tif";}
-		if (bytes[0]=="49" && bytes[1]=="49" && bytes[2]=="2a" && bytes[3]=="00") {isImage=1; imagetype="tif";}
-		if (bytes[0]=="67" && bytes[1]=="69" && bytes[2]=="6d" && bytes[3]=="70" && bytes[4]=="20" && bytes[5]=="78" && bytes[6]=="63" && bytes[7]=="66" && bytes[8]=="20" && bytes[9]=="76") {isImage=1; imagetype="xcf";}
-		if (bytes[0]=="23" && bytes[1]=="46" && bytes[2]=="49" && bytes[3]=="47") {isImage=1; imagetype="fig";}
-		if (bytes[0]=="2f" && bytes[1]=="2a" && bytes[2]=="20" && bytes[3]=="58" && bytes[4]=="50" && bytes[5]=="4d" && bytes[6]=="20" && bytes[7]=="2a" && bytes[8]=="2f") {isImage=1; imagetype="xpm";}
+		if (isSignatureMatch(bytes, "BM")) {isImage=1; imagetype="bmp";}
+		if (isSignatureMatch(bytes, "SIMPLE")) {isImage=1; imagetype="fits";}
+		if (isSignatureMatch(bytes, "GIF8")) {isImage=1; imagetype="gif";}
+		if (isSignatureMatch(bytes, "GKSM")) {isImage=1; imagetype="gks";}
+		if (isSignatureMatch(bytes, ["01", "da"])) {isImage=1; imagetype="rgb";}
+		if (isSignatureMatch(bytes, ["f1", "00", "40", "bb"])) {isImage=1; imagetype="itc";}
+		if (isSignatureMatch(bytes, ["ff", "d8", "ff", "e0"])) {isImage=1; imagetype="jpg";}
+		if (isSignatureMatch(bytes, "IIN1")) {isImage=1; imagetype="nif";}
+		if (isSignatureMatch(bytes, "VIEW")) {isImage=1; imagetype="pm";}
+		if (isSignatureMatch(bytes, ["89", "50", "4e", "47"])) {isImage=1; imagetype="png";}
+		if (isSignatureMatch(bytes, "%!")) {isImage=1; imagetype="[e]ps";}
+		if (isSignatureMatch(bytes, ["59", "a6", "6a", "95"])) {isImage=1; imagetype="ras";}
+		if (isSignatureMatch(bytes, ["4d", "4d", "00", "2a"])) {isImage=1; imagetype="tif";}
+		if (isSignatureMatch(bytes, ["49", "49", "2a", "00"])) {isImage=1; imagetype="tif";}
+		if (isSignatureMatch(bytes, "gimp xcf")) {isImage=1; imagetype="xcf";}
+		if (isSignatureMatch(bytes, "#FIG")) {isImage=1; imagetype="fig";}
+		if (isSignatureMatch(bytes, "/* XPM */")) {isImage=1; imagetype="xpm";}
 
-		if (bytes[0]=="52" && bytes[1]=="49" && bytes[2]=="46" && bytes[3]=="46") {isImage=1; imagetype="webp";}
-		if (bytes[0]=="57" && bytes[1]=="45" && bytes[2]=="42" && bytes[3]=="50") {isImage=1; imagetype="webp";}
-		if (bytes[0]=="0" && bytes[1]=="0" && bytes[2]=="0" && bytes[3]=="1c" && bytes[4]=="66" && bytes[5]=="74" && bytes[6]=="79" && bytes[7]=="70" && bytes[8]=="61" && bytes[9]=="76" && bytes[10]=="69" && bytes[11]=="66") {isImage=1; imagetype="avif";}
-		if (bytes[0]=="0" && bytes[1]=="0" && bytes[2]=="0" && bytes[3]=="20" && bytes[4]=="66" && bytes[5]=="74" && bytes[6]=="79" && bytes[7]=="70" && bytes[8]=="61" && bytes[9]=="76" && bytes[10]=="69" && bytes[11]=="66") {isImage=1; imagetype="avif";}
+		if (isSignatureMatch(bytes, "RIFF")) {isImage=1; imagetype="webp";}
+		if (isSignatureMatch(bytes, "WEBP")) {isImage=1; imagetype="webp";}
+		if (isSignatureMatch(bytes, ["0", "0", "0", "1c", "66", "74", "79", "70", "61", "76", "69", "66"])) {isImage=1; imagetype="avif";}
+		if (isSignatureMatch(bytes, ["0", "0", "0", "20", "66", "74", "79", "70", "61", "76", "69", "66"])) {isImage=1; imagetype="avif";}
 
 		if (isImage==0) {
 			filename = prompt(prompt11, filename);
