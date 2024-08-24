@@ -1338,15 +1338,17 @@ function isSignatureMatch(bytes, sig) {
 		for (let i = 0; i < sig.length; i++) {
 			if (bytes[i] != sig[i]) return false;
 		}
+		return true;
 	}
 
 	if (typeof sig === "string") {
 		for (let i = 0; i < sig.length; i++) {
 			if (bytes[i] != sig.charCodeAt(i).toString(16)) return false;
 		}
+		return true;
 	}
 
-	return true;
+	return false;
 }
 
 
