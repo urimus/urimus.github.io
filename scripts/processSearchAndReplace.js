@@ -1371,8 +1371,8 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		isImage=1;
 		imagetype=filetype.substr(6);
 	}
-console.log(isImage);
-console.log(imagetype);
+//console.log(isImage);
+//console.log(imagetype);
 
 	if (isImage==0) {
 		filename = prompt(prompt11, filename);
