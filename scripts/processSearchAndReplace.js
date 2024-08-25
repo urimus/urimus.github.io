@@ -1332,25 +1332,6 @@ function upload(lang) {
 
 }
 
-function isSignatureMatch(bytes, sig) {
-
-	if (Array.isArray(sig)) {
-		for (let i = 0; i < sig.length; i++) {
-			if (bytes[i] != sig[i]) return false;
-		}
-		return true;
-	}
-
-	if (typeof sig === "string") {
-		for (let i = 0; i < sig.length; i++) {
-			if (bytes[i] != sig.charCodeAt(i).toString(16)) return false;
-		}
-		return true;
-	}
-
-	return false;
-}
-
 
 function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	
@@ -1382,117 +1363,83 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 //console.log(file);
 
 	filename=file.name;
+	filetype=file.type;
 
-//	get file type using magic numbers - more accurate
-//	Magic numbers - https://gist.github.com/leommoore/f9e57ba2aa4bf197ebc5
+	isImage=0;
+	imagetype="";
+	if (filetype.substr(0, 5)=="image") {
+		isImage=1;
+		imagetype=filetype.substr(6);
+	}
+console.log(isImage);
+console.log(imagetype);
 
-	var fileReader = new FileReader();
-	fileReader.onload = function(event) {
-		arrayBuffer = event.target.result;
-		arr1 = new Uint8Array(arrayBuffer );
-		var bytes = [];
-		for (let i = 0; i < 12; i++) {
-			bytes[i]=arr1[i].toString(16);
+	if (isImage==0) {
+		filename = prompt(prompt11, filename);
+		if (filename == null ) {return;}
+		upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
+		return;
+	}
+
+
+	var isJpg=0;
+	var toJpg=0;
+	confirm2=0;
+	if (imagetype!="jpeg") {
+		confirm2=window.confirm(message2 + imagetype + message4 + filename + "'?" + message3);
+		if (confirm2) toJpg=1;
+	} else {
+		isJpg=1;
+	}
+
+	if (toJpg==1 || isJpg==1) {
+		dotPos=filename.lastIndexOf(".");
+		if (dotPos==-1) {
+			filename=filename+".jpg";
+		} else {
+			filename=filename.substr(0,dotPos)+".jpg";
 		}
-
-//console.log(bytes);
-
+	}
 
 
-		isImage=0;
-		imagetype="";
-		if (isSignatureMatch(bytes, "BM")) {isImage=1; imagetype="bmp";}
-		if (isSignatureMatch(bytes, "SIMPLE")) {isImage=1; imagetype="fits";}
-		if (isSignatureMatch(bytes, "GIF8")) {isImage=1; imagetype="gif";}
-		if (isSignatureMatch(bytes, "GKSM")) {isImage=1; imagetype="gks";}
-		if (isSignatureMatch(bytes, ["01", "da"])) {isImage=1; imagetype="rgb";}
-		if (isSignatureMatch(bytes, ["f1", "00", "40", "bb"])) {isImage=1; imagetype="itc";}
-		if (isSignatureMatch(bytes, ["ff", "d8", "ff", "e0"])) {isImage=1; imagetype="jpg";}
-		if (isSignatureMatch(bytes, "IIN1")) {isImage=1; imagetype="nif";}
-		if (isSignatureMatch(bytes, "VIEW")) {isImage=1; imagetype="pm";}
-		if (isSignatureMatch(bytes, ["89", "50", "4e", "47"])) {isImage=1; imagetype="png";}
-		if (isSignatureMatch(bytes, "%!")) {isImage=1; imagetype="[e]ps";}
-		if (isSignatureMatch(bytes, ["59", "a6", "6a", "95"])) {isImage=1; imagetype="ras";}
-		if (isSignatureMatch(bytes, ["4d", "4d", "00", "2a"])) {isImage=1; imagetype="tif";}
-		if (isSignatureMatch(bytes, ["49", "49", "2a", "00"])) {isImage=1; imagetype="tif";}
-		if (isSignatureMatch(bytes, "gimp xcf")) {isImage=1; imagetype="xcf";}
-		if (isSignatureMatch(bytes, "#FIG")) {isImage=1; imagetype="fig";}
-		if (isSignatureMatch(bytes, "/* XPM */")) {isImage=1; imagetype="xpm";}
+	filename = prompt(prompt12, filename);
+	if (filename == null ) {return;}
 
-		if (isSignatureMatch(bytes, "RIFF")) {isImage=1; imagetype="webp";}
-		if (isSignatureMatch(bytes, "WEBP")) {isImage=1; imagetype="webp";}
-		if (isSignatureMatch(bytes, ["0", "0", "0", "1c", "66", "74", "79", "70", "61", "76", "69", "66"])) {isImage=1; imagetype="avif";}
-		if (isSignatureMatch(bytes, ["0", "0", "0", "20", "66", "74", "79", "70", "61", "76", "69", "66"])) {isImage=1; imagetype="avif";}
+	var _URL = window.URL || window.webkitURL;
+       	img = new Image();
+       	var objectUrl = _URL.createObjectURL(file);
+	img.onload = function () {
+		imageWidth=this.width;
+		imageHeight=this.height;
+		_URL.revokeObjectURL(objectUrl);
 
-		if (isImage==0) {
-			filename = prompt(prompt11, filename);
-			if (filename == null ) {return;}
+		newImageWidth = prompt(message1+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
+		if (newImageWidth == null ) return;
+		newImageWidth = parseInt(newImageWidth);
+		if (newImageWidth == 0) return;
+			
+		if ((isJpg==1 || toJpg==0) && imageWidth==newImageWidth) {
 			upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			return;
 		}
 
+		ratio = newImageWidth / imageWidth;
+		var canvas = document.createElement("canvas");
+		canvas.width = newImageWidth;
+		canvas.height = imageHeight*ratio;
+		var ctx = canvas.getContext("2d");
+		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-		var isJpg=0;
-		var toJpg=0;
-		confirm2=0;
-		if (imagetype!="jpg") {
-			confirm2=window.confirm(message2 + imagetype + message4 + filename + "'?" + message3);
-			if (confirm2) toJpg=1;
-		} else {
-			isJpg=1;
-		}
+		blobtype=filetype;
+		if (toJpg==1 || isJpg==1) blobtype='image/jpeg';
+		canvas.toBlob(function (blob) {
 
-		if (toJpg==1 || isJpg==1) {
-			dotPos=filename.lastIndexOf(".");
-			if (dotPos==-1) {
-				filename=filename+".jpg";
-			} else {
-				filename=filename.substr(0,dotPos)+".jpg";
-			}
-		}
+			file2 = new File([blob], filename, blob);
+			upload3(file2, filename, lang, allFiles, i, newFilePath, createFolder);
 
-
-		filename = prompt(prompt12, filename);
-		if (filename == null ) {return;}
-
-		var _URL = window.URL || window.webkitURL;
-        	img = new Image();
-        	var objectUrl = _URL.createObjectURL(file);
-		img.onload = function () {
-			imageWidth=this.width;
-			imageHeight=this.height;
-			_URL.revokeObjectURL(objectUrl);
-
-			newImageWidth = prompt(message1+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
-			if (newImageWidth == null ) return;
-			newImageWidth = parseInt(newImageWidth);
-			if (newImageWidth == 0) return;
-			
-			if ((isJpg==1 || toJpg==0) && imageWidth==newImageWidth) {
-				upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
-				return;
-			}
-
-			ratio = newImageWidth / imageWidth;
-			var canvas = document.createElement("canvas");
-			canvas.width = newImageWidth;
-			canvas.height = imageHeight*ratio;
-			var ctx = canvas.getContext("2d");
-			ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-			blobtype='image/'+imagetype;
-			if (toJpg==1 || isJpg==1) blobtype='image/jpeg';
-			canvas.toBlob(function (blob) {
-
-				file2 = new File([blob], filename, blob);
-				upload3(file2, filename, lang, allFiles, i, newFilePath, createFolder);
-
-			}, blobtype);
-		};
-        	img.src = objectUrl;
-
+		}, blobtype);
 	};
-	fileReader.readAsArrayBuffer(file.slice(0,12));
+       	img.src = objectUrl;
 
 }
 
