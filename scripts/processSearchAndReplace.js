@@ -1392,18 +1392,21 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		isJpg=1;
 	}
 
-	if (toJpg==1 || isJpg==1) {
-		dotPos=filename.lastIndexOf(".");
-		if (dotPos==-1) {
-			filename=filename+".jpg";
-		} else {
-			filename=filename.substr(0,dotPos)+".jpg";
-		}
-	}
-
+	extension="";
+	dotPos=filename.lastIndexOf(".");
+	if (dotPos!=-1) extension=filename.substr(dotPos);
 
 	filename = prompt(prompt12, filename);
 	if (filename == null ) {return;}
+
+	dotPos=filename.lastIndexOf(".");
+	if (dotPos==-1) {
+		if (toJpg==1 || isJpg==1) {
+			filename=filename+".jpg";
+		} else {
+			filename=filename+extension;
+		}
+	}
 
 	var _URL = window.URL || window.webkitURL;
        	img = new Image();
