@@ -1371,12 +1371,16 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		isImage=1;
 		imagetype=filetype.substr(6);
 	}
-//console.log(isImage);
-//console.log(imagetype);
+
 
 	if (isImage==0) {
 		filename = prompt(prompt11, filename);
-		if (filename == null ) {return;}
+	} else {
+		filename = prompt(prompt12, filename);
+	}
+	if (filename == null ) {return;}
+
+	if (isImage==0) {
 		upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
 		return;
 	}
@@ -1390,22 +1394,6 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		if (confirm2) toJpg=1;
 	} else {
 		isJpg=1;
-	}
-
-	extension="";
-	dotPos=filename.lastIndexOf(".");
-	if (dotPos!=-1) extension=filename.substr(dotPos);
-
-	filename = prompt(prompt12, filename);
-	if (filename == null ) {return;}
-
-	dotPos=filename.lastIndexOf(".");
-	if (dotPos==-1) {
-		if (toJpg==1 || isJpg==1) {
-			filename=filename+".jpg";
-		} else {
-			filename=filename+extension;
-		}
 	}
 
 	var _URL = window.URL || window.webkitURL;
