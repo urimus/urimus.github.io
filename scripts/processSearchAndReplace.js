@@ -1338,21 +1338,19 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	if (lang.localeCompare('rus')==0) {
 		prompt11 = "Имя Файла на Сервере ?";
 		prompt12 = "Имя Картинки на Сервере ?";
-		prompt2 ="Введите Новую Ширину Картинки (в пикселях).";
-		message1 = "Картинка '";
-		message2 = "Преобразовать формат ";
+		message1 = "Преобразовать формат ";
+		message2 = " в формат jpg в Картинке в Файле '";
 		message3 = " (Отмена=Нет)";
-		message4 = " в формат jpg в Картинке в Файле '";
+
 
 	}
 	if (lang.localeCompare('eng')==0) {
 		prompt11 = "Filename on Server ?";
 		prompt12 = "Image Name on Server ?";
-		prompt2="Enter New Image Width (in pixels).";
-		message1 = "Image '";
-		message2 = "Transfer format ";
+		message1 = "Transfer format ";
+		message2 = " to format jpg in Image in File '";
 		message3 = " (Cancel=No)";
-		message4 = " to format jpg in Image in File '";
+
 
 	}
 
@@ -1381,7 +1379,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	if (filename == null ) {return;}
 
 	if (isImage==0) {
-		upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
+		upload4(file, filename, lang, allFiles, i, newFilePath, createFolder);
 		return;
 	}
 
@@ -1390,11 +1388,42 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	var toJpg=0;
 	confirm2=0;
 	if (imagetype!="jpeg") {
-		confirm2=window.confirm(message2 + imagetype + message4 + filename + "'?" + message3);
+		confirm2=window.confirm(message1 + imagetype + message2 + filename + "'?" + message3);
 		if (confirm2) toJpg=1;
+		upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, createFolder);
 	} else {
-		isJpg=1;
+		// check additionally if image is really jpg using magic numbers
+		var fileReader = new FileReader();
+		fileReader.onload = function(event) {
+			arrayBuffer = event.target.result;
+			arr1 = new Uint8Array(arrayBuffer );
+			var bytes = [];
+			bytes[0]=arr1[0].toString(16);
+			bytes[1]=arr1[1].toString(16);
+			if (bytes[0]=="ff" && bytes[1]=="d8") {
+				isJpg=1;
+			} else {
+				toJpg=1;
+			}
+			upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, createFolder);
+		};
+		fileReader.readAsArrayBuffer(file.slice(0,2));
 	}
+
+}
+
+function upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, createFolder) {
+
+	if (lang.localeCompare('rus')==0) {
+		prompt1 ="Введите Новую Ширину Картинки (в пикселях).";
+		message1 = "Картинка '";
+	}
+	if (lang.localeCompare('eng')==0) {
+		prompt1="Enter New Image Width (in pixels).";
+		message1 = "Image '";
+	}
+
+	filetype=file.type;
 
 	var _URL = window.URL || window.webkitURL;
        	img = new Image();
@@ -1404,13 +1433,13 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		imageHeight=this.height;
 		_URL.revokeObjectURL(objectUrl);
 
-		newImageWidth = prompt(message1+newFilePath+"/"+filename+"'. "+prompt2, imageWidth);
+		newImageWidth = prompt(message1+newFilePath+"/"+filename+"'. "+prompt1, imageWidth);
 		if (newImageWidth == null ) return;
 		newImageWidth = parseInt(newImageWidth);
 		if (newImageWidth == 0) return;
 			
 		if ((isJpg==1 || toJpg==0) && imageWidth==newImageWidth) {
-			upload3(file, filename, lang, allFiles, i, newFilePath, createFolder);
+			upload4(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			return;
 		}
 
@@ -1426,7 +1455,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 		canvas.toBlob(function (blob) {
 
 			file2 = new File([blob], filename, blob);
-			upload3(file2, filename, lang, allFiles, i, newFilePath, createFolder);
+			upload4(file2, filename, lang, allFiles, i, newFilePath, createFolder);
 
 		}, blobtype);
 	};
@@ -1435,7 +1464,8 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 }
 
 
-function upload3(file, filename, lang, allFiles, i, newFilePath, createFolder) {
+
+function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 
 	isImage=0;
 	if (file.type.substr(0,5)=="image") isImage=1;
