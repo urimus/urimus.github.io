@@ -111,6 +111,7 @@ Superhero
 - Cowboy Bebop
 - Doom Patrol
 - Hawkeye
+- The Imperfects
 - Jupiter's Legacy
 - Moon Knight
 - Swamp Thing
