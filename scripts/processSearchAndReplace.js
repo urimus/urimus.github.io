@@ -1513,6 +1513,14 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 		message12="Загружен Успешно.";
 		message2 = "Фаил Загружается ";
 		message3 = "How-To &blacktriangleright; HTML Редактор";
+		summary0="Сводка:";
+		summary1="Расположение Файла: ";
+		summary2="Фаил: ";
+		summary3="Картинка?: ";
+		summary41="Да";
+		summary42="Нет";
+		summary5="Тип: ";
+		summary6="Продолжить Загрузку?";
 	}
 	if (lang.localeCompare('eng')==0) {
 		if (isImage==0) messageF="File";
@@ -1521,7 +1529,29 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 		message12="Uploaded Successfully.";
 		message2 = "File is Uploading ";
 		message3 = "How-To &blacktriangleright; HTML Editor";
+		summary0="Summary:";
+		summary1="File Location: ";
+		summary2="File: ";
+		summary3="is Image?: ";
+		summary41="Yes";
+		summary42="No";
+		summary5="Type: ";
+		summary6="Continue Upload?";
 	}
+
+	summary=summary0+"\n\n";
+	summary=summary+summary1+newFilePath+"\n";
+	summary=summary+summary2+file.name+"\n";
+	summary=summary+summary3;
+	if (isImage) {
+		summary=summary+summary41+"\n";
+	} else {
+		summary=summary+summary42+"\n";
+	}
+	summary=summary+summary5+file.type+"\n\n";
+	summary=summary+summary6;
+	var confirm = window.confirm(summary);
+	if (!confirm) return;
 
 	$("#caption_div").html("<div id='loadingDiv'>"+message2+"("+formatBytes(file.size)+") .</div>");
 
