@@ -540,7 +540,6 @@ function download(lang, encoding, filename) {
 	}
 	value = document.getElementById('textarea_area').value;
 
-
 // ----------------------- Extensions to MIME --------- //
 
         // List of mime types
@@ -1111,9 +1110,6 @@ function download(lang, encoding, filename) {
 ];
 
 
-
-
-
 	filetype="text/*";
 	for (var i = 0; i < extToMIME.length; i++) {
 		if (extToMIME[i][0].localeCompare(filename.substring(filename.lastIndexOf(".")))==0) {
@@ -1124,15 +1120,26 @@ function download(lang, encoding, filename) {
 
 // ----------------------- End of Extensions to MIME --------- //
 
-
 	var pom = document.createElement('a');
-	if (getBOM(encoding)) {
-		pom.setAttribute('href', 'data: '+filetype+';charset='+encoding+';,' + '\ufeff' + encodeURIComponent(value)); // Added BOM too
-	} else {
-		pom.setAttribute('href', 'data: '+filetype+';charset='+encoding+';,' + encodeURIComponent(value));
-	}
 
+/*
+	if (getBOM(encoding)) {
+		pom.setAttribute('href', 'data: '+filetype+';charset='+encoding+';,' + '\ufeff' + value); // Added BOM too
+	} else {
+		pom.setAttribute('href', 'data: '+filetype+';charset='+encoding+';,' + value);
+	}
 	pom.setAttribute('download', filename);
+*/
+	if (getBOM(encoding)) {
+		blobObject = new Blob(['\ufeff'+value], { encoding: encoding, type: filetype+";charset="+encoding}); // Added BOM too
+	} else {
+		blobObject = new Blob([value], { encoding: encoding, type: filetype+";charset="+encoding });
+	}
+	var blobUrl = URL.createObjectURL(blobObject);
+	pom.href = blobUrl;
+	pom.download = filename;
+	pom.click();
+/*
 	if (document.createEvent) {
 		if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) { // IE
 			if (getBOM(encoding)) {
@@ -1140,7 +1147,6 @@ function download(lang, encoding, filename) {
 			} else {
 				blobObject = new Blob([value], { type: filetype+";charset="+encoding+";" });
 			}
-
 			window.navigator.msSaveBlob(blobObject, filename);
 		} else { // FF, Chrome
 			var event = document.createEvent('MouseEvents');
@@ -1153,7 +1159,7 @@ function download(lang, encoding, filename) {
     } else { // For Any Case
 		pom.click();
 	}
-
+*/
 }
 
 function save(lang, encoding, filename, showMessage, message) {
