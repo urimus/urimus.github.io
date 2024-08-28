@@ -1434,7 +1434,7 @@ function upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, c
 		_URL.revokeObjectURL(objectUrl);
 
 		newImageWidth = prompt(message1+newFilePath+"/"+filename+"'. "+prompt1, imageWidth);
-		if (newImageWidth == null ) return;
+		if (newImageWidth == null ) newImageWidth=imageWidth;
 		newImageWidth = parseInt(newImageWidth);
 		if (newImageWidth == 0) return;
 			
