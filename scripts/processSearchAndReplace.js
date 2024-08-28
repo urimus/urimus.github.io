@@ -1543,7 +1543,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 
 	summary=summary0+"\n\n";
 	summary=summary+summary1+newFilePath+"\n";
-	summary=summary+summary2+file.name+"\n";
+	summary=summary+summary2+filename+"\n";
 	summary=summary+summary3;
 	if (isImage) {
 		summary=summary+summary41+"\n";
