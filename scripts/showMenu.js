@@ -6453,7 +6453,6 @@ function  loadMenuContentsLink(ele, lang) {
 					if (type=="series" && (anchors[1]=="animation" || anchors[1]=="body_horror" || anchors[1]=="space_opera")) {
 						type2="movies";
 					}
-					if (type=="junk") type2="different";
 					wholeMenu["Image"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" title="'+title+'"/>';
 				}
 			}
@@ -6566,7 +6565,6 @@ function  loadMenuContentsLink(ele, lang) {
 					if (type=="series" && (anchors[1]=="animation" || anchors[1]=="body_horror" || anchors[1]=="space_opera")) {
 						type2="movies";
 					}
-					if (type=="junk") type2="different";
 					wholeMenu["Картинка"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" title="'+title+'"/>';
 				}
 			}
@@ -6680,7 +6678,6 @@ function  loadMenuContentsLink(ele, lang) {
 					if (type=="series" && (anchors[1]=="animation" || anchors[1]=="body_horror" || anchors[1]=="space_opera")) {
 						type2="movies";
 					}
-					if (type=="junk") type2="different";
 					wholeMenu["Imago"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" title="'+title+'"/>';
 				}
 			}
