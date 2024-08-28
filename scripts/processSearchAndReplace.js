@@ -1131,14 +1131,17 @@ function download(lang, encoding, filename) {
 	pom.setAttribute('download', filename);
 */
 	if (getBOM(encoding)) {
-		blobObject = new Blob(['\ufeff'+value], { encoding: encoding, type: filetype+";charset="+encoding}); // Added BOM too
+		blobObject = new Blob(['\ufeff'+value], { encoding: encoding, type: filetype}); // Added BOM too
 	} else {
-		blobObject = new Blob([value], { encoding: encoding, type: filetype+";charset="+encoding });
+		blobObject = new Blob([value], { encoding: encoding, type: filetype });
 	}
-	var blobUrl = URL.createObjectURL(blobObject);
+
+	var _URL = window.URL || window.webkitURL;
+	var blobUrl = _URL.createObjectURL(blobObject);
 	pom.href = blobUrl;
 	pom.download = filename;
 	pom.click();
+	_URL.revokeObjectURL(blobUrl);
 /*
 	if (document.createEvent) {
 		if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) { // IE
