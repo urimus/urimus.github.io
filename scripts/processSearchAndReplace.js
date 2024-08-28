@@ -1520,7 +1520,8 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 		summary41="Да";
 		summary42="Нет";
 		summary5="Тип: ";
-		summary6="Продолжить Загрузку?";
+		summary6="Размер: ";
+		summary7="Продолжить Загрузку?";
 	}
 	if (lang.localeCompare('eng')==0) {
 		if (isImage==0) messageF="File";
@@ -1536,7 +1537,8 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 		summary41="Yes";
 		summary42="No";
 		summary5="Type: ";
-		summary6="Continue Upload?";
+		summary6="Size: ";
+		summary7="Continue Upload?";
 	}
 
 	summary=summary0+"\n\n";
@@ -1548,8 +1550,9 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	} else {
 		summary=summary+summary42+"\n";
 	}
-	summary=summary+summary5+file.type+"\n\n";
-	summary=summary+summary6;
+	summary=summary+summary5+file.type+"\n";
+	summary=summary+summary6+formatBytes(file.size)+"\n\n";
+	summary=summary+summary7;
 	var confirm = window.confirm(summary);
 	if (!confirm) return;
 
