@@ -808,9 +808,12 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
 	}
+
+	if (lang=="eng" || lang=="lat") textUpdateSkipped="Update Skipped.";
+	if (lang=="rus") textUpdateSkipped="Обновление Отменено.";
+
 	if (skipUpdates==1) {
-		if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Skipped";
-		if (lang=="rus") result.entries[i].media.comment="Обновление Отменено";
+		result.entries[i].media.comment=textUpdateSkipped;
 		result.entries[i].media.url="images/icons/error/skipped.jpg";
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
@@ -826,8 +829,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	a.innerText = textSkip;
 	a.onclick = function () {
 		skipUpdates=1;
-		if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Skipped";
-		if (lang=="rus") result.entries[i].media.comment="Обновление Отменено";
+		result.entries[i].media.comment=textUpdateSkipped;
 		result.entries[i].media.url="images/icons/error/skipped.jpg";
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
@@ -960,8 +962,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 
 	if (skipUpdates==1) {
 		result.entries[i].summary=textUpdateSkipped;
-		if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Skipped";
-		if (lang=="rus") result.entries[i].media.comment="Обновление Отменено";
+		result.entries[i].media.comment=textUpdateSkipped;
 		result.entries[i].media.url="images/icons/error/skipped.jpg";
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
@@ -978,8 +979,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	a.onclick = function () {
 		skipUpdates=1;
 		result.entries[i].summary=textUpdateSkipped;
-		if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Skipped";
-		if (lang=="rus") result.entries[i].media.comment="Обновление Отменено";
+		result.entries[i].media.comment=textUpdateSkipped;
 		result.entries[i].media.url="images/icons/error/skipped.jpg";
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
