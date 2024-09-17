@@ -1380,14 +1380,10 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	}
 
 
-	if (isImage==0) {
-		filename = prompt(prompt11, filename);
-	} else {
-		filename = prompt(prompt12, filename);
-	}
-	if (filename == null ) {return;}
 
 	if (isImage==0) {
+		filename = prompt(prompt11, filename);
+		if (filename == null ) {return;}
 		upload4(file, filename, lang, allFiles, i, newFilePath, createFolder);
 		return;
 	}
@@ -1399,6 +1395,8 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	if (imagetype!="jpeg") {
 		confirm2=window.confirm(message1 + imagetype + message2 + filename + "'?" + message3);
 		if (confirm2) toJpg=1;
+		filename = prompt(prompt12, filename);
+		if (filename == null ) {return;}
 		upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, createFolder);
 	} else {
 		// check additionally if image is really jpg using magic numbers
@@ -1414,6 +1412,8 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			} else {
 				toJpg=1;
 			}
+			filename = prompt(prompt12, filename);
+			if (filename == null ) {return;}
 			upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, createFolder);
 		};
 		fileReader.readAsArrayBuffer(file.slice(0,2));
