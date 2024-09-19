@@ -270,12 +270,12 @@ function formatSummaryDiv(summaryDiv, entry) {
 	currentLineTop=0;
 
 	linesToShow=4;
-	linesCount=0;
+	linesCount=1;
 
 
 	var summarySpan = document.createElement('span');
 	summarySpan.setAttribute('class', "text_red");
-	summarySpan.innerHTML="<P>";
+	summarySpan.innerHTML="";
 	summaryDiv.innerHTML="";
 	summaryDiv.appendChild(summarySpan);
 
@@ -285,12 +285,12 @@ function formatSummaryDiv(summaryDiv, entry) {
 	extensionA.onclick  = function () { 
 		// ▼- &#9660;   ▲- &#9650;
 		if (this.innerHTML=="[▼]") { // expand
-			summarySpan.innerHTML="&nbsp;"+summaryDiv.dataset.summary;
+			summarySpan.innerHTML="&emsp;"+summaryDiv.dataset.summary;
 			this.innerHTML="[&#9650;]";
 		} else if (this.innerHTML=="[▲]") { // collapse
 			wordsCount=summaryDiv.dataset.wordsCount;
 			summary_words=summaryDiv.dataset.summary.split(" ");
-			summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+			summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, wordsCount);
 			this.innerHTML="[&#9660;]";
 		}
 	}
@@ -300,9 +300,10 @@ function formatSummaryDiv(summaryDiv, entry) {
 	summaryDiv.appendChild(Pointer);
 
 	// show linesToShow lines of summary
-	currentLineTop=Pointer.offsetTop;
+//	currentLineTop=Pointer.offsetTop;
 	for (k=0; k<summary_words.length; k++) {
-		summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, k+1);
+		summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, k+1);
+		if (k==0) currentLineTop=Pointer.offsetTop;
 		if (Pointer.offsetTop!=currentLineTop) {
 			if (linesCount==linesToShow) {  // new pointer should be set
 				summarySpan.innerHTML="";
@@ -312,15 +313,16 @@ function formatSummaryDiv(summaryDiv, entry) {
 				linesCount=1;
 
 				// 2nd time with normal ponter
-				currentLineTop=extensionA.offsetTop;
+//				currentLineTop=extensionA.offsetTop;
 				for (k2=0; k2<summary_words.length; k2++) {
 					wordsCount++;
-					summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+					summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, wordsCount);
+					if (k2==0) currentLineTop=extensionA.offsetTop;
 					if (extensionA.offsetTop!=currentLineTop) {
 						if (linesCount==linesToShow) {  // remove last word
 							wordsCount--;
 							summaryDiv.dataset.wordsCount=wordsCount;
-							summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+							summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, wordsCount);
 							break;
 						} else {
 							currentLineTop=extensionA.offsetTop;
@@ -337,7 +339,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	}
 	if (k==summary_words.length) {
 		summaryDiv.removeChild(Pointer);
-		summarySpan.innerHTML="&nbsp;"+summaryDiv.dataset.summary;
+		summarySpan.innerHTML="&emsp;"+summaryDiv.dataset.summary;
 	}
 }
 
