@@ -62,7 +62,7 @@ function processPageResize(isLoad, orientationChanged){
 	if (isLoad==0) {  // not isLoad
 		if (window.location.pathname.substr(0, 5)=="/news") {
 			var scrollDiv = document.getElementById('scrollDiv');
-			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null)
+			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
 				var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 				if (hasVerticalScrollbar) {
 					feedTitleHeight=parseInt($( "#feed_title" ).css( "height" ));
