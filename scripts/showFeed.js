@@ -260,7 +260,7 @@ function formatSummary(summary_arr, words) {
 }
 
 
-function formatSummaryDiv(summaryDiv, entry) {
+function formatSummaryDiv(summaryDiv, entry, linesToShow) {
 
 
 	summaryDiv.dataset.summary=entry.summary;
@@ -269,7 +269,6 @@ function formatSummaryDiv(summaryDiv, entry) {
 	wordsCount=0;
 	currentLineTop=0;
 
-	linesToShow=4;
 	linesCount=1;
 
 
@@ -413,7 +412,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	Img.onload = function () {
 		if (Img.naturalWidth<Img.width) Img.width=Img.naturalWidth;
 
-		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(summaryDiv, entry);
+		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(summaryDiv, entry, 4);
 
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
@@ -434,7 +433,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 			Img.src = Img.src;
 		}
 
-		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(summaryDiv, entry);
+		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(summaryDiv, entry, 4);
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 		if (hasVerticalScrollbar) {
@@ -518,7 +517,13 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	var cell1=tableMainRow.insertCell(i);
 	cell1.appendChild(newsTable1Record);
 
-	if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(summaryDiv, entry);
+	if (entry.summary != null && (source == "nasa" || source == "yahoo")) {
+		if (i==0) {
+			formatSummaryDiv(summaryDiv, entry, 3);
+		} else {
+			formatSummaryDiv(summaryDiv, entry, 4);
+		}
+	}
 	if (i+1 < totalEntries) showEntry(type, source, lang, items, i+1, tableMainRow);
 }
 
