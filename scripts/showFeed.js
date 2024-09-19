@@ -422,10 +422,13 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 			adjustScrollDiv();
 		}
 	}
+	failedAttempts=0;
 	Img.onerror= function () {
 		if (source=="nasa") {
 			Img.src = "images/icons/error/error.jpg";
 		} else {
+			failedAttempts++;
+			if (failedAttempts==10) Img.src = "images/icons/error/error.jpg";
 			Img.src = Img.src;
 		}
 
@@ -512,6 +515,8 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 
 	var cell1=tableMainRow.insertCell(i);
 	cell1.appendChild(newsTable1Record);
+
+	if (entry.summary != null) formatSummaryDiv(summaryDiv, entry);
 	if (i+1 < totalEntries) showEntry(type, source, lang, items, i+1, tableMainRow);
 }
 
