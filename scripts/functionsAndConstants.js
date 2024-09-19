@@ -323,7 +323,6 @@ function updateAboutMeImage(lang, random) {
 
 				var summarySpan = document.createElement('span');
 				summarySpan.setAttribute('class', "text_blue");
-				summarySpan.setAttribute('id', "summary_span");
 				summarySpan.innerHTML="&nbsp;";
 				Div.appendChild(summarySpan);
 
