@@ -62,12 +62,14 @@ function processPageResize(isLoad, orientationChanged){
 	if (isLoad==0) {  // not isLoad
 		if (window.location.pathname.substr(0, 5)=="/news") {
 			var scrollDiv = document.getElementById('scrollDiv');
-			var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-			if (hasVerticalScrollbar) {
-				feedTitleHeight=parseInt($( "#feed_title" ).css( "height" ));
-//				$( "#scrollDiv" ).css( "height", (scrollDivHeight-feedTitleHeight-4) + "px");
-				scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-feedTitleHeight-4)+"px;width: 710px; overflow:auto;");
-				adjustScrollDiv();
+			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null)
+				var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+				if (hasVerticalScrollbar) {
+					feedTitleHeight=parseInt($( "#feed_title" ).css( "height" ));
+//					$( "#scrollDiv" ).css( "height", (scrollDivHeight-feedTitleHeight-4) + "px");
+					scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-feedTitleHeight-4)+"px;width: 710px; overflow:auto;");
+					adjustScrollDiv();
+				}
 			}
 		} else if (window.location.pathname.substr(0, 12)=="/html_editor") {
 //			adjustTextareaAndEncodings();

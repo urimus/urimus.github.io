@@ -246,6 +246,19 @@ function processShowFeedData(type, source, lang, result) {
 }
 
 
+function formatSummary(summary_arr, words) {
+	var summaryToShow="";
+	var j;
+	for (j=0; j<words&& j<summary_arr.length;  j++) {
+		if (j==summary_arr.length-1) {
+			summaryToShow=summaryToShow+summary_arr[j];
+		} else {
+			summaryToShow=summaryToShow+summary_arr[j]+" ";
+		}
+	}
+	return summaryToShow;
+}
+
 function showEntry(type, source, lang, items, i, tableMainRow) {
 
 
@@ -313,6 +326,88 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	}
 	Img.onload = function () {
 		if (Img.naturalWidth<Img.width) Img.width=Img.naturalWidth;
+
+		if (entry.summary != null) {
+
+			summaryDiv.dataset.summary=entry.summary;
+
+			summary_words=entry.summary.split(" ");
+			wordsCount=0;
+			currentLineTop=0;
+
+			linesToShow=4;
+			linesCount=0;
+
+
+			var summarySpan = document.createElement('span');
+			summarySpan.setAttribute('class', "text_red");
+			summarySpan.innerHTML="<P>";
+			summaryDiv.innerHTML="";
+			summaryDiv.appendChild(summarySpan);
+
+			var extensionA = document.createElement('a');
+			extensionA.setAttribute('href', "javascript:void(0);");
+			extensionA.setAttribute('class', 'standardb_red');
+			extensionA.onclick  = function () { 
+				// ▼- &#9660;   ▲- &#9650;
+				if (this.innerHTML=="[▼]") { // expand
+					summarySpan.innerHTML="&nbsp;"+summaryDiv.dataset.summary;
+					this.innerHTML="[&#9650;]";
+				} else if (this.innerHTML=="[▲]") { // collapse
+					wordsCount=summaryDiv.dataset.wordsCount;
+					summary_words=summaryDiv.dataset.summary.split(" ");
+					summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+					this.innerHTML="[&#9660;]";
+				}
+			}
+			extensionA.innerHTML = "[&#9660;]";
+
+			var Pointer = document.createElement('a');
+			summaryDiv.appendChild(Pointer);
+
+			// show linesToShow lines of summary
+			currentLineTop=Pointer.offsetTop;
+			for (k=0; k<summary_words.length; k++) {
+				summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, k+1);
+				if (Pointer.offsetTop!=currentLineTop) {
+					if (linesCount==linesToShow) {  // new pointer should be set
+						summarySpan.innerHTML="";
+						summaryDiv.removeChild(Pointer);
+						summaryDiv.appendChild(extensionA);
+						wordsCount=0;
+						linesCount=1;
+
+						// 2nd time with normal ponter
+						currentLineTop=extensionA.offsetTop;
+						for (k2=0; k2<summary_words.length; k2++) {
+							wordsCount++;
+							summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+							if (extensionA.offsetTop!=currentLineTop) {
+								if (linesCount==linesToShow) {  // remove last word
+									wordsCount--;
+									summaryDiv.dataset.wordsCount=wordsCount;
+									summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+									break;
+								} else {
+									currentLineTop=extensionA.offsetTop;
+									linesCount++;
+								}
+							}
+						}
+						break;
+					} else {
+						currentLineTop=Pointer.offsetTop;
+						linesCount++;
+					}
+				}
+			}
+			if (k==summary_words.length) {
+				summaryDiv.removeChild(Pointer);
+				summarySpan.innerHTML="&nbsp;"+summaryDiv.dataset.summary;
+			}
+		}
+
+
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 		if (hasVerticalScrollbar) {
@@ -332,14 +427,10 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	cell1.appendChild(Img);
 
 	if (entry.summary!=null) {
-		var Div = document.createElement('div');
-		Div.setAttribute('class', "text_red");
-		if (entry.summary==null) {
-			Div.innerHTML="";
-		} else {
-			Div.innerHTML="<P>"+entry.summary;
-		}
-		cell1.appendChild(Div);
+		var summaryDiv = document.createElement('div');
+		summaryDiv.setAttribute('class', "text_red");
+		summaryDiv.innerHTML="<P>"+entry.summary;
+		cell1.appendChild(summaryDiv);
 	}
 	if (typeof entry.source!=="undefined" && typeof entry.source.title!=="undefined") {
 		var Div = document.createElement('div');
