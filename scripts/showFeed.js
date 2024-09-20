@@ -283,6 +283,7 @@ function formatSummaryDiv(lang, summaryDiv, entry, linesToShow) {
 
 	linesCount=1;
 
+	summaryDiv.replaceChildren();
 
 	var summarySpan = document.createElement('span');
 	summarySpan.setAttribute('class', "text_red");
