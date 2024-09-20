@@ -260,8 +260,20 @@ function formatSummary(summary_arr, words) {
 }
 
 
-function formatSummaryDiv(summaryDiv, entry, linesToShow) {
+function formatSummaryDiv(lang, summaryDiv, entry, linesToShow) {
 
+	if (lang=="rus") {
+		textExpand="Развернуть";
+		textCollapse="Свернуть";
+	}
+	if (lang=="eng") {
+		textExpand="Expand";
+		textCollapse="Collapse";
+	}
+	if (lang=="lat") {
+		textExpand="Expando";
+		textCollapse="Ruina";
+	}
 
 	summaryDiv.dataset.summary=entry.summary;
 
@@ -281,15 +293,18 @@ function formatSummaryDiv(summaryDiv, entry, linesToShow) {
 	var extensionA = document.createElement('a');
 	extensionA.setAttribute('href', "javascript:void(0);");
 	extensionA.setAttribute('class', 'standardb_red');
+	extensionA.setAttribute('title', textExpand);
 	extensionA.onclick  = function () { 
 		// ▼- &#9660;   ▲- &#9650;
 		if (this.innerHTML=="[▼]") { // expand
 			summarySpan.innerHTML="&emsp;"+summaryDiv.dataset.summary;
+			this.setAttribute('title', textCollapse);
 			this.innerHTML="[&#9650;]";
 		} else if (this.innerHTML=="[▲]") { // collapse
 			wordsCount=summaryDiv.dataset.wordsCount;
 			summary_words=summaryDiv.dataset.summary.split(" ");
 			summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, wordsCount);
+			this.setAttribute('title', textExpand);
 			this.innerHTML="[&#9660;]";
 		}
 	}
@@ -412,7 +427,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	Img.onload = function () {
 		if (Img.naturalWidth<Img.width) Img.width=Img.naturalWidth;
 
-		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(summaryDiv, entry, 4);
+		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(lang, summaryDiv, entry, 4);
 
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
@@ -433,7 +448,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 			Img.src = Img.src;
 		}
 
-		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(summaryDiv, entry, 4);
+		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(lang, summaryDiv, entry, 4);
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 		if (hasVerticalScrollbar) {
@@ -519,9 +534,9 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 
 	if (entry.summary != null && (source == "nasa" || source == "yahoo")) {
 		if (i==0) {
-			formatSummaryDiv(summaryDiv, entry, 3);
+			formatSummaryDiv(lang, summaryDiv, entry, 3);
 		} else {
-			formatSummaryDiv(summaryDiv, entry, 4);
+			formatSummaryDiv(lang, summaryDiv, entry, 4);
 		}
 	}
 	if (i+1 < totalEntries) showEntry(type, source, lang, items, i+1, tableMainRow);

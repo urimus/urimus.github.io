@@ -215,18 +215,24 @@ function updateAboutMeImage(lang, random) {
 		textLoadingImage="Читается Картинка";
 		textSkip="Отменить";
 		textImage="Картинка";
+		textExpand="Развернуть";
+		textCollapse="Свернуть";
 	}
 	if (lang=="eng") {
 		textLoadingFeed="Reading News Feed";
 		textLoadingImage="Reading Image";
 		textSkip="Skip";
 		textImage="Image";
+		textExpand="Expand";
+		textCollapse="Collapse";
 	}
 	if (lang=="lat") {
 		textLoadingFeed="Lectio Nuntium Acies";
 		textLoadingImage="Lectio Imagibus";
 		textSkip="Saltus";
 		textImage="Imagio";
+		textExpand="Expando";
+		textCollapse="Ruina";
 	}
 
 	toSkip=0;
@@ -329,13 +335,16 @@ function updateAboutMeImage(lang, random) {
 				var extensionA = document.createElement('a');
 				extensionA.setAttribute('href', "javascript:void(0);");
 				extensionA.setAttribute('class', 'standardb_blue');
+				extensionA.setAttribute('title', textExpand);
 				extensionA.onclick  = function () { 
 					// ▼- &#9660;   ▲- &#9650;
 					if (this.innerHTML=="[▼]") { // expand
-					summarySpan.innerHTML="&nbsp;"+item.summary;
+						summarySpan.innerHTML="&nbsp;"+item.summary;
+						this.setAttribute('title', textCollapse);
 						this.innerHTML="[&#9650;]";
 					} else if (this.innerHTML=="[▲]") { // collapse
 						summarySpan.innerHTML="&nbsp;"+formatSummary(summary_words, wordsCount);
+						this.setAttribute('title', textExpand);
 						this.innerHTML="[&#9660;]";
 					}
 					scrollDivHeight=calcScrollDivHeightMax();
