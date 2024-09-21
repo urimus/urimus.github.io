@@ -217,9 +217,9 @@ function processShowFeedTitle(type, source, lang, result) {
 				locStPar=source+"_"+type+"_images";
 				locStUpdateData=getLocalStorageData(locStPar);
 				updateImages(0, source, type, result, locStUpdateData, lang);
-			} else if (source=="bbc" || source == "koreaherald" || (source=="yahoo" && type=="sports") || (source=="nasa" && (type=="image" || type=="picture"))) {
+			} else if (source=="bbc" || (source=="yahoo" && type=="sports") || (source=="nasa" && (type=="image" || type=="picture"))) {
 				processShowFeedData(type, source, lang, result);
-			}  else if (source=="yahoo" && type!="sports") {
+			}  else if ((source=="yahoo" && type!="sports") || source == "koreaherald") {
 				locStPar=source+"_"+type+"_descriptions";
 				locStUpdateData=getLocalStorageData(locStPar);
 				updateDescription(0, source, type, result, locStUpdateData, lang);
@@ -428,7 +428,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	Img.onload = function () {
 		if (Img.naturalWidth<Img.width) Img.width=Img.naturalWidth;
 
-		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(lang, summaryDiv, entry, 4);
+		if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "koreaherald")) formatSummaryDiv(lang, summaryDiv, entry, 4);
 
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
@@ -449,7 +449,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 			Img.src = Img.src;
 		}
 
-		if (entry.summary != null && (source == "nasa" || source == "yahoo")) formatSummaryDiv(lang, summaryDiv, entry, 4);
+		if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "koreaherald")) formatSummaryDiv(lang, summaryDiv, entry, 4);
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 		if (hasVerticalScrollbar) {
@@ -533,7 +533,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	var cell1=tableMainRow.insertCell(i);
 	cell1.appendChild(newsTable1Record);
 
-	if (entry.summary != null && (source == "nasa" || source == "yahoo")) {
+	if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "koreaherald")) {
 		if (i==0) {
 			formatSummaryDiv(lang, summaryDiv, entry, 3);
 		} else {
@@ -897,8 +897,6 @@ function removeUnusedUpdates(type2, source, type, result, locStUpdateData) {
 		objInUse=0;
 		for (i=0;i<result.entries.length;i++) {
 			entry_link=result.entries[i].link;
-			matchPosQ=entry_link.indexOf("?");
-			if (matchPosQ!=-1) entry_link=result.entries[i].link.substr(0, matchPosQ);
 			if (key==entry_link) {
 				objInUse=1;
 				break;
@@ -929,8 +927,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 
 
 	entry_link=result.entries[i].link;
-	matchPosQ=entry_link.indexOf("?");
-	if (matchPosQ!=-1) entry_link=result.entries[i].link.substr(0, matchPosQ);
 
 	if (typeof locStUpdateData[entry_link]!== "undefined") {
 		if (typeof locStUpdateData[entry_link].mediaUrl!== "undefined") {
@@ -1003,7 +999,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					corsProxyVer=1;
 					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Time-out";
 					if (lang=="rus") result.entries[i].media.comment="Тайм-аут Обновления";
-					result.entries[i].media.url="images/icons/error/timeout.jpg";
+//					result.entries[i].media.url="images/icons/error/timeout.jpg";
 					updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				}
@@ -1072,15 +1068,14 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (typeof corsProxyVer==="undefined") corsProxyVer=1;
 	if (typeof skipUpdates==="undefined") skipUpdates=0;
 
+/*
 	if (typeof result.entries[i].summary!== "undefined" && result.entries[i].summary!= null) {
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
 	}
-
+*/
 
 	entry_link=result.entries[i].link;
-	matchPosQ=entry_link.indexOf("?");
-	if (matchPosQ!=-1) entry_link=result.entries[i].link.substr(0, matchPosQ);
 
 	if (typeof locStUpdateData[entry_link]!== "undefined") {
 		result.entries[i].summary=locStUpdateData[entry_link].summary;
@@ -1095,9 +1090,13 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (lang=="rus") textUpdateSkipped="Обновление Отменено.";
 
 	if (skipUpdates==1) {
-		result.entries[i].summary=textUpdateSkipped;
+		if (typeof result.entries[i].summary=== "undefined" || result.entries[i].summary== null) {
+			result.entries[i].summary=textUpdateSkipped;
+		}
+/*
 		result.entries[i].media.comment=textUpdateSkipped;
 		result.entries[i].media.url="images/icons/error/skipped.jpg";
+*/
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
 	}
@@ -1112,9 +1111,13 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	a.innerText = textSkip;
 	a.onclick = function () {
 		skipUpdates=1;
-		result.entries[i].summary=textUpdateSkipped;
+		if (typeof result.entries[i].summary=== "undefined" || result.entries[i].summary== null) {
+			result.entries[i].summary=textUpdateSkipped;
+		}
+/*
 		result.entries[i].media.comment=textUpdateSkipped;
 		result.entries[i].media.url="images/icons/error/skipped.jpg";
+*/
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
@@ -1194,8 +1197,10 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			result.entries[i].summary=description;
 			locStUpdateData[entry_link]={};
 			locStUpdateData[entry_link].summary=description;
-			result.entries[i].media.url=mediaURL;
-			locStUpdateData[entry_link].mediaUrl=mediaURL;
+			if (source=="yahoo") {
+				result.entries[i].media.url=mediaURL;
+				locStUpdateData[entry_link].mediaUrl=mediaURL;
+			}
 			localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
 
 			corsProxyVer=1;
