@@ -260,7 +260,7 @@ function formatSummary(summary_arr, words) {
 }
 
 
-function formatSummaryDiv(lang, summaryDiv, entry, linesToShow) {
+function formatSummaryDiv(lang, summaryDiv, entry) {
 
 	if (lang=="rus") {
 		textExpand="Развернуть";
@@ -282,6 +282,7 @@ function formatSummaryDiv(lang, summaryDiv, entry, linesToShow) {
 	currentLineTop=0;
 
 	linesCount=1;
+	linesToShow=4;
 
 	summaryDiv.replaceChildren();
 
@@ -428,7 +429,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	Img.onload = function () {
 		if (Img.naturalWidth<Img.width) Img.width=Img.naturalWidth;
 
-		if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "koreaherald")) formatSummaryDiv(lang, summaryDiv, entry, 4);
+		if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "koreaherald")) formatSummaryDiv(lang, summaryDiv, entry);
 
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
@@ -449,7 +450,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 			Img.src = Img.src;
 		}
 
-		if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "koreaherald")) formatSummaryDiv(lang, summaryDiv, entry, 4);
+		if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "koreaherald")) formatSummaryDiv(lang, summaryDiv, entry);
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 		if (hasVerticalScrollbar) {
@@ -532,12 +533,15 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 
 	var cell1=tableMainRow.insertCell(i);
 	cell1.appendChild(newsTable1Record);
-
 	if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "koreaherald")) {
 		if (i==0) {
-			formatSummaryDiv(lang, summaryDiv, entry, 3);
+			var cell2=tableMainRow.insertCell(1);
+			newsTable1Record2 = newsTable1Record.cloneNode(true);
+			cell2.appendChild(newsTable1Record2);
+			formatSummaryDiv(lang, summaryDiv, entry);
+			cell2.removeChild(cell2.lastElementChild);
 		} else {
-			formatSummaryDiv(lang, summaryDiv, entry, 4);
+			formatSummaryDiv(lang, summaryDiv, entry);
 		}
 	}
 	if (i+1 < totalEntries) showEntry(type, source, lang, items, i+1, tableMainRow);
