@@ -1009,8 +1009,8 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					return;
 				} else {
 					corsProxyVer=1;
-					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Time-out";
-					if (lang=="rus") result.entries[i].media.comment="Тайм-аут Обновления";
+					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Time-out.";
+					if (lang=="rus") result.entries[i].media.comment="Тайм-аут Обновления.";
 					result.entries[i].media.url="images/icons/error/timeout.jpg";
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
