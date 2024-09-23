@@ -955,6 +955,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	if (skipUpdates==1) {
 		result.entries[i].media.comment=textUpdateSkipped;
 		result.entries[i].media.url="images/icons/error/skipped.jpg";
+		result.entries[i].error=textUpdateSkipped;
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
 	}
