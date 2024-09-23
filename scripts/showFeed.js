@@ -462,10 +462,17 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	}
 	cell1.appendChild(Img);
 
-	if (entry.summary!=null) {
+	if (typeof result.entries[i].error!== "undefined" && entry.error!=null) {
+		var Div = document.createElement('div');
+		Div.setAttribute('class', "text_red");
+		Div.innerHTML=entry.error;
+		cell1.appendChild(Div);
+	}
+
+	if (typeof result.entries[i].summary!== "undefined" && entry.summary!=null) {
 		var summaryDiv = document.createElement('div');
 		summaryDiv.setAttribute('class', "text_red");
-		summaryDiv.innerHTML="<P>"+entry.summary;
+		summaryDiv.innerHTML="&emsp;"+entry.summary;
 		cell1.appendChild(summaryDiv);
 	}
 	if (typeof entry.source!=="undefined" && typeof entry.source.title!=="undefined") {
@@ -929,7 +936,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	if (typeof corsProxyVer==="undefined") corsProxyVer=1;
 	if (typeof skipUpdates==="undefined") skipUpdates=0;
 
-
 	entry_link=result.entries[i].link;
 
 	if (typeof locStUpdateData[entry_link]!== "undefined") {
@@ -965,6 +971,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 		skipUpdates=1;
 		result.entries[i].media.comment=textUpdateSkipped;
 		result.entries[i].media.url="images/icons/error/skipped.jpg";
+		result.entries[i].error=textUpdateSkipped;
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
@@ -1003,7 +1010,9 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					corsProxyVer=1;
 					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Time-out";
 					if (lang=="rus") result.entries[i].media.comment="Тайм-аут Обновления";
-//					result.entries[i].media.url="images/icons/error/timeout.jpg";
+					result.entries[i].media.url="images/icons/error/timeout.jpg";
+					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+					if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				}
@@ -1072,13 +1081,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (typeof corsProxyVer==="undefined") corsProxyVer=1;
 	if (typeof skipUpdates==="undefined") skipUpdates=0;
 
-/*
-	if (typeof result.entries[i].summary!== "undefined" && result.entries[i].summary!= null) {
-		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-		return;
-	}
-*/
-
 	entry_link=result.entries[i].link;
 
 	if (typeof locStUpdateData[entry_link]!== "undefined") {
@@ -1094,13 +1096,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (lang=="rus") textUpdateSkipped="Обновление Отменено.";
 
 	if (skipUpdates==1) {
-		if (typeof result.entries[i].summary=== "undefined" || result.entries[i].summary== null) {
-			result.entries[i].summary=textUpdateSkipped;
-		}
-/*
-		result.entries[i].media.comment=textUpdateSkipped;
-		result.entries[i].media.url="images/icons/error/skipped.jpg";
-*/
+		result.entries[i].error=textUpdateSkipped;
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
 	}
@@ -1115,13 +1111,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	a.innerText = textSkip;
 	a.onclick = function () {
 		skipUpdates=1;
-		if (typeof result.entries[i].summary=== "undefined" || result.entries[i].summary== null) {
-			result.entries[i].summary=textUpdateSkipped;
-		}
-/*
-		result.entries[i].media.comment=textUpdateSkipped;
-		result.entries[i].media.url="images/icons/error/skipped.jpg";
-*/
+		result.entries[i].error=textUpdateSkipped;
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
@@ -1154,11 +1144,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
-					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Time-out";
-					if (lang=="rus") result.entries[i].media.comment="Тайм-аут Обновления";
-					// result.entries[i].media.url="images/icons/error/timeout.jpg";
-					if (lang=="eng" || lang=="lat") result.entries[i].summary="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-					if (lang=="rus") result.entries[i].summary="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+					if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
 					updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1182,8 +1169,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			if (description!="") {
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			} else {
-				if (lang=="eng" || lang=="lat") description="Description Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-				if (lang=="rus") description="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+				if (lang=="eng" || lang=="lat") result.entries[i].error="Description Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+				if (lang=="rus") result.entries[i].error="Обновление Описания не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
@@ -1198,9 +1185,9 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				mediaURL=result.entries[i].media.url;
 			}
 
-			result.entries[i].summary=description;
+			if (description!="") result.entries[i].summary=description;
 			locStUpdateData[entry_link]={};
-			locStUpdateData[entry_link].summary=description;
+			if (description!="") locStUpdateData[entry_link].summary=description;
 			if (source=="yahoo") {
 				result.entries[i].media.url=mediaURL;
 				locStUpdateData[entry_link].mediaUrl=mediaURL;
