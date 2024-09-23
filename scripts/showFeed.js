@@ -1156,7 +1156,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				} else {
 					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Time-out";
 					if (lang=="rus") result.entries[i].media.comment="Тайм-аут Обновления";
-					result.entries[i].media.url="images/icons/error/timeout.jpg";
+					// result.entries[i].media.url="images/icons/error/timeout.jpg";
 					if (lang=="eng" || lang=="lat") result.entries[i].summary="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].summary="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
