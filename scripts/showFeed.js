@@ -321,6 +321,10 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 		summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, k+1);
 		if (k==0) currentLineTop=Pointer.offsetTop;
 		if (Pointer.offsetTop!=currentLineTop) {
+			if (Math.abs(Pointer.offsetTop-currentLineTop)<2) {
+				currentLineTop=Pointer.offsetTop;
+				continue;
+			}
 			if (linesCount==linesToShow) {  // new pointer should be set
 				summarySpan.innerHTML="";
 				summaryDiv.removeChild(Pointer);
@@ -335,6 +339,10 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 					summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, wordsCount);
 					if (k2==0) currentLineTop=extensionA.offsetTop;
 					if (extensionA.offsetTop!=currentLineTop) {
+						if (Math.abs(extensionA.offsetTop-currentLineTop)<2) {
+							currentLineTop=extensionA.offsetTop;
+							continue;
+						}
 						if (linesCount==linesToShow) {  // remove last word
 							wordsCount--;
 							summaryDiv.dataset.wordsCount=wordsCount;
