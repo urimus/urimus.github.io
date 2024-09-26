@@ -1092,7 +1092,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 
 	entry_link=result.entries[i].link;
 
-	if (typeof locStUpdateData[entry_link]!== "undefined") {
+	if (typeof locStUpdateData[entry_link]!== "undefined" && typeof locStUpdateData[entry_link].summary!== "undefined") {
 		result.entries[i].summary=locStUpdateData[entry_link].summary;
 		if (typeof locStUpdateData[entry_link].mediaUrl!== "undefined") {
 			result.entries[i].media.url=locStUpdateData[entry_link].mediaUrl;
