@@ -1092,7 +1092,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 
 	entry_link=result.entries[i].link;
 
-	if (typeof locStUpdateData[entry_link]!== "undefined" && typeof locStUpdateData[entry_link].summary!== "undefined") {
+	if (typeof locStUpdateData[entry_link]!== "undefined") {
 		result.entries[i].summary=locStUpdateData[entry_link].summary;
 		if (typeof locStUpdateData[entry_link].mediaUrl!== "undefined") {
 			result.entries[i].media.url=locStUpdateData[entry_link].mediaUrl;
@@ -1194,14 +1194,16 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				mediaURL=result.entries[i].media.url;
 			}
 
-			if (description!="") result.entries[i].summary=description;
-			locStUpdateData[entry_link]={};
-			if (description!="") locStUpdateData[entry_link].summary=description;
-			if (source=="yahoo") {
-				result.entries[i].media.url=mediaURL;
-				locStUpdateData[entry_link].mediaUrl=mediaURL;
+			if (description!="") {
+				result.entries[i].summary=description;
+				locStUpdateData[entry_link]={};
+				locStUpdateData[entry_link].summary=description;
+				if (source=="yahoo") {
+					result.entries[i].media.url=mediaURL;
+					locStUpdateData[entry_link].mediaUrl=mediaURL;
+				}
+				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
 			}
-			localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
 
 			corsProxyVer=1;
 			updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
