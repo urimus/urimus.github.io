@@ -472,7 +472,7 @@ function showContents(type, sortby, lang) {
 // ------------- Loading Feed Image ----------- //
 
 
-			feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://apod.com/feed.rss";
+			feedURL="https://apod.com/feed.rss";
 			feednami.load(feedURL, function(result) {
 
 				if(result.error){
