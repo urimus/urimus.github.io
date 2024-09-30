@@ -665,14 +665,14 @@ function showFeed(type, source, lang) {
 	}
 
 	if (source == "nasa") {
-		if (type=="releases") feedURL="https://www.nasa.gov/news-release/feed/";
-		if (type=="recent") feedURL="https://www.nasa.gov/feed/";
-		if (type=="image") feedURL="https://www.nasa.gov/feeds/iotd-feed/";
-		if (type=="technology") feedURL="https://www.nasa.gov/technology/feed/";
-		if (type=="aeronautics") feedURL="https://www.nasa.gov/aeronautics/feed/";
-		if (type=="iss") feedURL="https://www.nasa.gov/missions/station/feed/";
-		if (type=="artemis") feedURL="https://www.nasa.gov/missions/artemis/feed/";
-		if (type=="picture") feedURL="https://apod.com/feed.rss";
+		if (type=="releases") feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://www.nasa.gov/news-release/feed/";
+		if (type=="recent") feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://www.nasa.gov/feed/";
+		if (type=="image") feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://www.nasa.gov/feeds/iotd-feed/";
+		if (type=="technology") feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://www.nasa.gov/technology/feed/";
+		if (type=="aeronautics") feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://www.nasa.gov/aeronautics/feed/";
+		if (type=="iss") feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://www.nasa.gov/missions/station/feed/";
+		if (type=="artemis") feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://www.nasa.gov/missions/artemis/feed/";
+		if (type=="picture") feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://apod.com/feed.rss";
 	}
 
 

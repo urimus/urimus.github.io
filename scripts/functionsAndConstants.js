@@ -258,7 +258,7 @@ function updateAboutMeImage(lang, random) {
 	loadingDivTitle.innerHTML = textLoadingFeed+". ";
 	loadingDivTitle.appendChild(aSkip);
 
-	feedURL="https://www.nasa.gov/feeds/iotd-feed/";
+	feedURL="https://api.codetabs.com/v1/proxy/?quest="+"https://www.nasa.gov/feeds/iotd-feed/";
 	feednami.load(feedURL, function(result){
 
 		if(result.error){
