@@ -457,8 +457,6 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 			if (failedAttempts==10) Img.src = "images/icons/error/error.jpg";
 			Img.src = Img.src;
 		}
-
-		if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "koreaherald")) formatSummaryDiv(lang, summaryDiv, entry);
 		var scrollDiv = document.getElementById('scrollDiv');
 		var hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 		if (hasVerticalScrollbar) {
