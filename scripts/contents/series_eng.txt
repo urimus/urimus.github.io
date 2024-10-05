@@ -93,6 +93,9 @@
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_animation_for_children_eng.html#kid_cosmic" class = "standardb_black" data-added="10th of Sep, 2022." data-genre="Animation, For Children" data-country="usa" data-year="2021" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Kid Cosmic</a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_animation_for_children_eng.html#wizards" class = "standardb_black" data-added="15th of Jun, 2022." data-genre="Animation, For Children" data-country="usa" data-year="2020" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Wizards: Tales of Arcadia</a>
 
+<P>&nbsp;&#9679; <a href="series_fallout_eng.html#fallout_franchise" class = "standardb_black" data-added="05th of Oct, 2024." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Fallout (franchise)</a>
+<P>&nbsp;&nbsp;&nbsp;- <a href="series_fallout_eng.html#fallout" class = "standardb_black" data-added="05th of Oct, 2024." data-genre="Fallout" data-country="usa" data-year="2024" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Fallout</a> 
+
 <P>&nbsp;&#9679; <a href="series_star_wars_eng.html#star_wars" class = "standardb_black" data-added="21st of Feb, 2022." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Star Wars <font color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></a>
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_star_wars_eng.html#acolyte" class = "standardb_black" data-added="17th of Jul, 2024." data-genre="Star Wars" data-country="usa" data-year="2024" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Acolyte</a> 
 <P>&nbsp;&nbsp;&nbsp;- <a href="series_star_wars_eng.html#ahsoka" class = "standardb_black" data-added="13th of Oct, 2023." data-genre="Star Wars" data-country="usa" data-year="2023" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Ahsoka</a> 

@@ -2755,6 +2755,13 @@ if (lang=="eng") {
 	wholeMenu["For Children"].link = "series_animation_for_children_eng.html";
 	wholeMenu["For Children"].html = 'For Children';
 
+	wholeMenu["Fallout"] = {};
+	wholeMenu["Fallout"].id = "27_5";
+	wholeMenu["Fallout"].color = "black";
+	wholeMenu["Fallout"].hasSub = 0;
+	wholeMenu["Fallout"].link = "series_fallout_eng.html";
+	wholeMenu["Fallout"].html = 'Fallout';
+
 	wholeMenu["Star Wars"] = {};
 	wholeMenu["Star Wars"].id = "27_3";
 	wholeMenu["Star Wars"].color = "black";
@@ -2842,6 +2849,13 @@ if (lang=="rus") {
 	wholeMenu["Для Детей"].hasSub = 0;
 	wholeMenu["Для Детей"].link = "series_animation_for_children_rus.html";
 	wholeMenu["Для Детей"].html = 'For Детей';
+
+	wholeMenu["Фоллаут"] = {};
+	wholeMenu["Фоллаут"].id = "27_5";
+	wholeMenu["Фоллаут"].color = "black";
+	wholeMenu["Фоллаут"].hasSub = 0;
+	wholeMenu["Фоллаут"].link = "series_fallout_rus.html";
+	wholeMenu["Фоллаут"].html = 'Фоллаут';
 
 	wholeMenu["Звёздные Войны"] = {};
 	wholeMenu["Звёздные Войны"].id = "27_3";
