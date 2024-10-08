@@ -6956,6 +6956,8 @@ function  showSubMenu(ele, lang, type, newTableId) {
 			divSM.setAttribute('class', 'menu_selected');
 			if (type!="contentsLink") {
 				divSM.setAttribute('style', 'width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
+				divSM.setAttribute('id', 'menu_'+wholeMenu[key].id);
+				divSM.setAttribute('onMouseOver', "hideSubMenu(this);");
 			} else {
 				divSM.setAttribute('style', 'cursor:auto; border-spacing: 0px; padding-left:5px; padding-right:5px;');
 			}
