@@ -47,44 +47,6 @@ function newsLoad(source, lang) {
 	processPageResize(1);
 }
 
-
-function refreshFeedTabs(feedTypeL, col) {
-
-	feedType=getParameterByName('type');
-
-	if (feedType=="top" || feedTypeL=="top") mouseOut("top", feedTypeL, col);
-	if (feedType=="world" || feedTypeL=="world") mouseOut("world", feedTypeL, col);
-	if (feedType=="uk" || feedTypeL=="uk") mouseOut("uk", feedTypeL, col);
-	if (feedType=="business" || feedTypeL=="business") mouseOut("business", feedTypeL, col);
-	if (feedType=="politics" || feedTypeL=="politics") mouseOut("politics", feedTypeL, col);
-	if (feedType=="health" || feedTypeL=="health") mouseOut("health", feedTypeL, col);
-	if (feedType=="education" || feedTypeL=="education") mouseOut("education", feedTypeL, col);
-	if (feedType=="science" || feedTypeL=="science") mouseOut("science", feedTypeL, col);
-	if (feedType=="technology" || feedTypeL=="technology") mouseOut("technology", feedTypeL, col);
-	if (feedType=="entertainment" || feedTypeL=="entertainment") mouseOut("entertainment", feedTypeL, col);
-
-	if (feedType=="all" || feedTypeL=="all") mouseOut("all", feedTypeL, col);
-	if (feedType=="national" || feedTypeL=="national") mouseOut("national", feedTypeL, col);
-	if (feedType=="life" || feedTypeL=="life") mouseOut("life", feedTypeL, col);
-	if (feedType=="opinion" || feedTypeL=="opinion") mouseOut("opinion", feedTypeL, col);
-	if (feedType=="kpop" || feedTypeL=="kpop") mouseOut("kpop", feedTypeL, col);
-
-	if (feedType=="us" || feedTypeL=="us") mouseOut("us", feedTypeL, col);
-	if (feedType=="finance" || feedTypeL=="finance") mouseOut("finance", feedTypeL, col);
-	if (feedType=="sports" || feedTypeL=="sports") mouseOut("sports", feedTypeL, col);
-	if (feedType=="lifestyle" || feedTypeL=="lifestyle") mouseOut("lifestyle", feedTypeL, col);
-
-	if (feedType=="releases" || feedTypeL=="releases") mouseOut("releases", feedTypeL, col);
-	if (feedType=="recent" || feedTypeL=="recent") mouseOut("recent", feedTypeL, col);
-	if (feedType=="image" || feedTypeL=="image") mouseOut("image", feedTypeL, col);
-	if (feedType=="aeronautics" || feedTypeL=="aeronautics") mouseOut("aeronautics", feedTypeL, col);
-	if (feedType=="iss" || feedTypeL=="iss") mouseOut("iss", feedTypeL, col);
-	if (feedType=="artemis" || feedTypeL=="artemis") mouseOut("artemis", feedTypeL, col);
-	if (feedType=="picture" || feedTypeL=="picture") mouseOut("picture", feedTypeL, col);
-
-}
-
-
 function showRecordsNum(type, recordsNum, lang, newCaption) {
 	document.getElementById('feed_'+type).setAttribute("title", recordsNum+" "+getRecordsText(lang, recordsNum));
 	if (typeof newCaption !== 'undefined') {
@@ -687,7 +649,11 @@ function generateTabs(type, source, lang) {
 		cell1.style.textAlign = 'center';
 
 		var Div = document.createElement('div');
-		Div.setAttribute('class', "menu_not_selected_red");
+		if (type==keys[i]) {
+			Div.setAttribute('class', "menu_selected");
+		} else {
+			Div.setAttribute('class', "menu_not_selected_red");
+		}
 		Div.setAttribute('id', "feed_"+keys[i]);
 		Div.setAttribute('onMouseOver', "this.className='menu_selected';");
 		Div.setAttribute('onMouseOut', "mouseOut('"+keys[i]+"', encodeURIComponent(getParameterByName('type')));");
@@ -720,7 +686,6 @@ function generateTabs(type, source, lang) {
 function showFeed(type, source, lang) {
 
 	generateTabs(type, source, lang);
-	refreshFeedTabs(type);
 
 	var table = document.getElementById("feedtable");
 	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
