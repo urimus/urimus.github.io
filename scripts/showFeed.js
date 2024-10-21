@@ -622,9 +622,104 @@ function processEmptyFeed(type, source, lang, feedXML) {
 
 }
 
+function generateTabs(type, source, lang) {
+
+	tabs={};
+	if (source=="bbc") {
+		tabs["top"]="Top";
+		tabs["world"]="World";
+		tabs["uk"]="UK";
+		tabs["business"]="Business";
+		tabs["politics"]="Politics";
+		tabs["health"]="Health";
+		tabs["education"]="Education";
+		tabs["science"]="Science";
+		tabs["technology"]="Technology";
+		tabs["entertainment"]="Entertainment";
+	}
+
+	if (source=="koreaherald") {
+		tabs["all"]="All Stories";
+		tabs["world"]="World";
+		tabs["national"]="National";
+		tabs["business"]="Business";
+		tabs["life"]="Life&Culture";
+		tabs["sports"]="Sports";
+		tabs["opinion"]="Opinion";
+		tabs["kpop"]="K-pop";
+	}
+
+	if (source=="nasa") {
+		tabs["releases"]="News Releases";
+		tabs["recent"]="Recent";
+		tabs["image"]="Image of the Day";
+		tabs["technology"]="Technology";
+		tabs["aeronautics"]="Aeronautics";
+		tabs["iss"]="Space Station";
+		tabs["artemis"]="Artemis";
+		tabs["picture"]="Picture of the Day";
+	}
+
+	if (source=="yahoo") {
+		tabs["top"]="Top";
+		tabs["world"]="World";
+		tabs["us"]="US";
+		tabs["politics"]="Politics";
+		tabs["health"]="Health";
+		tabs["finance"]="Finance";
+		tabs["science"]="Science";
+		tabs["sports"]="Sports";
+		tabs["entertainment"]="Entertainment";
+		tabs["lifestyle"]="Lifestyle";
+	}
+
+	keys=Object.keys(tabs);
+
+	var table = document.getElementById("tabstable");
+	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
+
+	for (var i = 0; i<keys.length; i++) {
+		if (i%5==0) {
+			var row = table.insertRow(-1);
+		}
+		var cell1 = row.insertCell(i%5);
+		cell1.style.width = '20%';
+		cell1.style.textAlign = 'center';
+
+		var Div = document.createElement('div');
+		Div.setAttribute('class', "menu_not_selected_red");
+		Div.setAttribute('id', "feed_"+keys[i]);
+		Div.setAttribute('onMouseOver', "this.className='menu_selected';");
+		Div.setAttribute('onMouseOut', "mouseOut('"+keys[i]+"', encodeURIComponent(getParameterByName('type')));");
+		Div.setAttribute('onClick', "if (event.ctrlKey==1){ window.open('news_"+source+"_"+lang+".html?type="+keys[i]+"'); } else { window.location.href='news_"+source+"_"+lang+".html?type="+keys[i]+"'; };" );
+		Div.innerHTML=tabs[keys[i]];
+		cell1.appendChild(Div);
+	}
+
+
+/*
+
+	<tr>
+	<td align="center" width="20%" >
+		  <div id="feed_top" 
+		  onMouseOver="this.className='menu_selected';" 
+		  onMouseOut="mouseOut('top', encodeURIComponent(getParameterByName('type')));" 
+                  	 onClick="
+                        if (event.ctrlKey==1){
+                                window.open('news_bbc_eng.html?type=top');
+                        } else {
+                                window.location.href='news_bbc_eng.html?type=top';
+                        };"   
+		  class="menu_not_selected_red">
+		  Top</div>
+        </td>
+*/
+}
+
 
 function showFeed(type, source, lang) {
 
+	generateTabs(type, source, lang);
 	refreshFeedTabs(type);
 
 	var table = document.getElementById("feedtable");
@@ -1207,10 +1302,10 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		}
 	}
+
 	if (corsProxyVer==1) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
 	if (corsProxyVer==2) link2="https://corsproxy.org/?"+encodeURIComponent(result.entries[i].link);
 	if (corsProxyVer==3) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
-
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
