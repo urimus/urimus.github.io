@@ -656,8 +656,9 @@ function generateTabs(type, source, lang) {
 		}
 		Div.setAttribute('id', "feed_"+keys[i]);
 		Div.setAttribute('onMouseOver', "this.className='menu_selected';");
-		Div.setAttribute('onMouseOut', "mouseOut('"+keys[i]+"', encodeURIComponent(getParameterByName('type')));");
-		Div.setAttribute('onClick', "if (event.ctrlKey==1){ window.open('news_"+source+"_"+lang+".html?type="+keys[i]+"'); } else { window.location.href='news_"+source+"_"+lang+".html?type="+keys[i]+"'; };" );
+		Div.setAttribute('onMouseOut', "mouseOut('"+keys[i]+"', '"+type+"');");
+		divLink="news_"+source+"_"+lang+".html?type="+keys[i];
+		Div.setAttribute('onClick', "if (event.ctrlKey==1){ window.open('"+divLink+"'); } else { window.location.href='"+divLink+"'; };" );
 		Div.innerHTML=tabs[keys[i]];
 		cell1.appendChild(Div);
 	}
