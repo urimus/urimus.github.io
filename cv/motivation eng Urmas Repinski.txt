@@ -1,0 +1,25 @@
+Hello,
+
+The project I worked on at the Tallinn Technical University - Forensic - was in C++, a scientific project. Sufficient description in the Summary, link in English http://www.informatik.uni-bremen.de/agra/eng/forensic.php
+
+I have a home page on GitHub, fully functioning: https://urimus.github.io/about_me_eng.html
+The page is also a portfolio.
+
+Basically, the page code consists of Html + JavaScript, a little PHP (does not work on GitHub). Each HTML page uses a script https://urimus.github.io/scripts/pageResize.js
+To display the Appearing Menu, the script https://urimus.github.io/scripts/showMenu.js is used.
+
+Sections you may be interested in:
+1. Site Map - https://urimus.github.io/index_eng.html?type=aboutme&sortby=name. JavaScript Code that makes this section work - https://urimus.github.io/scripts/showContents.js
+
+2. News - News Feed NASA - https://urimus.github.io/news_eng.html?source=nasa&type=releases (also exists BBC, CBS, The Korea Herald and Yahoo!). Relevant Code - https://urimus.github.io/scripts/showFeed.js. To read the Feed, the feednami library (https://toolkit.sekando.com/docs/en/feednami) is used, which runs on JavaScript.
+
+3. The most voluminous section is the HTML editor, which allows you to modify the content of this site online directly from the same website. For the editor to work (https://urimus.github.io/html_editor_eng.html?pattern=spec/mo*&i=0) PHP support and also a password are required; it does not function on GitHub, but the corresponding JavaScript files are required to work on server that supports PHP further:
+a. https://urimus.github.io/scripts/processSearchAndReplace.js
+b. https://urimus.github.io/scripts/functionsAndConstants.js
+
+Also know C++, JavaScript, PHP, HTML, Css, MySQL well, and studying Python.
+
+Thank you,
+Urmas Repinski.
+
+Pdf CV - https://urimus.github.io/cv/CV_English_Urmas_Repinski.pdf

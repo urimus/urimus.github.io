@@ -1,0 +1,1543 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+
+<!-- Foto Gallery -->
+<script src="scripts/jquery/jquery.js"></script>
+<script src="scripts/galleria/galleria-1.4.2.min.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<!-- Background Images Script -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*35;
+var imgBgSrc="images/icons/background/animation.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: #FFFFFF url('images/icons/background/brick_wall.jpg'); background-attachment: fixed;" onload="processPageResize(1);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+                       <div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+                </td>
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('series_animation_for_adults_eng.html' + window.location.hash);
+				} else {
+					window.location.href='series_animation_for_adults_eng.html' + window.location.hash;
+				};"		 	
+			
+			class="flag_not_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('series_animation_for_adults_rus.html' + window.location.hash);
+				} else {
+					window.location.href='series_animation_for_adults_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="13" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_black">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'rus', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Карта Сайта</div>
+        </td>
+        </tr>   
+ 
+        <tr>
+                <td align="center">
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_rus.html');
+                        } else {
+                                window.location.href='about_me_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Обо мне</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center">
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_rus.html');
+                        } else {
+                                window.location.href='about_work_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  О моей работе</div>
+        </td>
+        </tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_phd_rus.html');
+			} else {
+				window.location.href='about_phd_rus.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  О моём PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_rus.html');
+                        } else {
+                                window.location.href='links_rus.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Ссылки</div>
+        </td>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'rus', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'rus', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'rus', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'music');"		  
+		  class="menu_not_selected_black">
+		  Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>	
+	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'rus', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'movies');"		  		  
+		  class="menu_not_selected_black">
+		  Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+        </td>
+	</tr>	
+	
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'rus', 'series');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'rus', 'series');"  
+		  class="menu_selected">
+		  Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_1"
+		  onMouseOver="showSubMenu(this, 'rus', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'series');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; По Жанрам</div>
+        </td>
+	</tr>	
+
+
+	
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_2"
+		  onMouseOver="showSubMenu(this, 'rus', 'series');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'rus', 'series');"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; Мультипликация</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_2_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('series_animation_for_adults_rus.html');
+			} else {
+				window.location.href='series_animation_for_adults_rus.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 15px;">
+		  &bull; Для Взрослых</div>
+        </td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_2_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_animation_for_children_rus.html');
+			} else {
+				window.location.href='series_animation_for_children_rus.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+	     &bull; Для Детей</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_4"
+		  onMouseOver="showSubMenu(this, 'rus', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'series');"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; Супергеройские</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_5"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_fallout_rus.html');
+			} else {
+				window.location.href='series_fallout_rus.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Фоллаут</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_gotham_rus.html');
+			} else {
+				window.location.href='series_gotham_rus.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Готэм-Сити</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_27_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('series_star_wars_rus.html');
+			} else {
+				window.location.href='series_star_wars_rus.html';
+			};"
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+	     &bull; Звёздные Войны <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'rus', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'games');"  
+		  class="menu_not_selected_black">
+		  Игры</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'rus', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'rus', 'books');"  
+		  class="menu_not_selected_red">
+		  Книги</div>
+        </td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'rus', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'rus', 'photos');"  
+		  class="menu_not_selected_red">
+		  Фото/Картинки</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'rus', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('junk_rus.html');
+			} else {
+				window.location.href='junk_rus.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Мусор</div>
+        </td>
+	</tr>			
+	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'rus', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'rus', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'rus', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'rus', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Анекдоты</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_rus.html');
+                        } else {
+                                window.location.href='heffalump_rus.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>              		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'rus', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Вещества Для Расслабления</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'rus', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'rus', 'software');"  
+		  class="menu_not_selected_white">
+		  Разработка Программ</div>
+        </td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'rus', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Сатанизм</div>
+        </td>
+	</tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_rus.html');
+                        } else {
+                                window.location.href='satanism_wicca_rus.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Викка</div>
+        </td>
+        </tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_rus.html');
+			} else {
+				window.location.href='falsifiability_rus.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Фальсифицируемость</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'rus', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Психология</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'rus', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Страны</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('totalitarianism_rus.html');
+			} else {
+				window.location.href='totalitarianism_rus.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Тоталитаризм</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'rus', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'rus', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Деятели</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'rus', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'rus', 'news');"               
+                  class="menu_not_selected_red">
+                  Новости</div>
+        </td>
+        </tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Сериалы &blacktriangleright; Мультипликация &blacktriangleright; Для Взрослых</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:805px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="series">Сериалы</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_black">Описание Жанра</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/series.jpg" alt="Сериалы" title="Сериалы" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					
+
+<P>A <b>film series</b> is more than one film, each depicting parts of a larger story. Sometimes the work is conceived from the beginning as a multiple-film work, for example the Three Colours series, but in most cases the success of the original film inspires further films to be made. Individual sequels are relatively common, but are not always successful enough to spawn further installments.
+
+<P>The Marvel Cinematic Universe is the most highest grossing film series in unadjusted US Dollar figures surpassing the Harry Potter, Star Wars and James Bond series. However Peter Jackson's The Lord of the Rings has the highest average box office intake.
+
+
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Film_series" class = "standardb_black" target="_blank">Wikipedia Film series</a> - <b>Сериалы</b> на Wikipedia (англ.).
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					29е Июл, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="animation">Мультипликация</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_black">Описание Жанра</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/animation.jpg" alt="Мультипликация" title="Мультипликация" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					
+
+
+<P><b>Мультипликация</b> (от лат. multiplicatio — умножение, увеличение, возрастание, размножение) — технические приёмы создания иллюзии движущихся изображений (движения и/или изменения формы объектов — морфинга) с помощью последовательности неподвижных изображений (кадров), сменяющих друг друга с некоторой частотой. <b>Анимация</b> (от фр. animation: оживление, одушевление) — западное название мультипликации: вид киноискусства и его произведение (анимационный фильм и, в частности, мультфильм), а также семейство соответствующих технологий.
+
+<P>По мнению известного мультипликатора Фёдора Хитрука, использование в СССР терминов «мультипликация», «мультипликатор» связано с технологией, использовавшейся до внедрения классической рисованной анимации — созданием изображений при помощи наложения на лист элементов персонажей, что сродни аппликации. По созвучию с этим словом эта отрасль кинематографа была названа мультипликацией.
+
+<P>В искусстве мультипликацией называют разновидность искусства, как правило, использующую технологию мультипликации как основной элемент творчества.
+
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F" class = "standardb_black" target="_blank">Wikipedia Мультипликация</a> - <b>Мультипликация</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					30е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="castlevania">Кастлвания (англ. Castlevania)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/castlevania.jpg" alt="Кастлвания (англ. Castlevania)" title="Кастлвания (англ. Castlevania)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Кастлвания</b>» (англ. Castlevania) — американский мультсериал Уоррена Эллиса, основанный на видеоигре Konami Castlevania III: Dracula’s Curse 1989 года.
+
+<P>Премьера сериала состоялась на платформе Netflix 7 июля 2017 года. В тот же день сериал был продлён на второй сезон из 8 эпизодов, премьера которого состоялась 26 октября 2018 года. Вскоре после выпуска второго сезона сериал был продлён на третий сезон из 10 эпизодов, который появился на Netflix 5 марта 2020 года. 27 марта 2020 года было объявлено о продлении на четвёртый сезон.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%81%D1%82%D0%BB%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" class = "standardb_black" target="_blank">Wikipedia Кастлвания</a> - <b>Кастлвания (англ. Castlevania)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Kbb8zPQBmOw" class = "standardb_black" target="_blank">Кастлвания (англ. Castlevania)</a> - Официальный Трейлер (англ.).
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					20е Фев, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="cuphead_show">Шоу Чашека! (англ. The Cuphead Show!)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/cuphead_show.jpg" alt="Шоу Чашека! (англ. The Cuphead Show!)" title="Шоу Чашека! (англ. The Cuphead Show!)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P>«<b>Шоу Чашека!</b>» (англ. The Cuphead Show!) — американский анимационный телесериал, разработанный Дэйвом Вассоном для Netflix на основе видеоигры «Cuphead» от компании Studio MDHR. Чад и Джаред Мольденхауэры, создатели игры, являются исполнительными продюсерами наряду с Уоссоном и С. Дж. Кеттлер.
+
+<P>Премьера первого сезона состоялась на стриминговом сервисе Netflix 18 февраля 2022 года. Второй сезон вышел в эфир 19 августа 2022 года. Третий сезон вышел в эфир 18 ноября 2022 года.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Шоу_Чашека!" class = "standardb_black" target="_blank">Wikipedia Шоу Чашека!</a> - <b>Шоу Чашека! (англ. The Cuphead Show!)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=pA-htkVUZYQ" class = "standardb_black" target="_blank">Шоу Чашека! (англ. The Cuphead Show!)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					13е Мар, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="dark_crystal">Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/dark_crystal.jpg" alt="Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)" title="Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>«<b>Тёмный кристалл: Эпоха сопротивления</b>» (англ. The Dark Crystal: Age of Resistance) — американский кукольный веб-сериал жанра приключения и тёмное фэнтези, созданный по мотивам вселенной фильма 1982 года — «Тёмный кристалл». Сериал подробнее исследует вселенную данного фильма, выступая одновременно его приквелом. Основной сюжет завязан на том, что гельфлинги формируют восстание против скексисов в стремлении спасти родной мир от надвигающейся катастрофы. Выход сериала на сайте Netflix состоялся 30 августа 2019 года.
+
+<P>Сериал был создан с использованием кукол-аниматроников, это по состоянию на 2019 год самый дорогостоящий и масштабный проект с привлечением марионеток. Сеттинг и дизайн персонажей максимально приближен к фильму-первоисточнику 1982 года. Идея создать сериал исходила от того, что оригинальный фильм оставил после себя множество сюжетных дыр и «неразгаданных тайн». Сериал же призван существенно раскрыть подробности вселенной Тра и культуры гельфлингов. Определённое участие в команде создателей также принимали сценаристы, дизайнеры и кукловоды кинофраншизы о маппетах.
+
+<P>Сериал получил в целом признание критиков, которые назвали «Эпоху сопротивления» масштабным, красивым и эпическим шоу, «шедевром» кукольного искусства. История, по их мнению, в полной мере раскрывает сеттинг мира «Тёмного Кристалла». Одновременно марионетки были признаны и главным недостатком, так как они могут вызвать отторжение у потенциальных зрителей. Помимо прочего, критики указали и на неопределённость охвата целевой аудитории, вполне детский и наивный сюжет соседствует с жестокими сценами насилия и убийств.
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%91%D0%BC%D0%BD%D1%8B%D0%B9_%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BB%D0%BB:_%D0%AD%D0%BF%D0%BE%D1%85%D0%B0_%D1%81%D0%BE%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" class = "standardb_black" target="_blank">Wikipedia Тёмный кристалл: Эпоха сопротивления</a> - <b>Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=YwolPn4JBoA" class = "standardb_black" target="_blank">Тёмный Кристалл: Эпоха Сопротивления (англ. The Dark Crystal: Age of Resistance)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					29е Апр, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="dragon_age">Эпоха Дракона: Искупление (англ. Dragon Age: Absolution)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/dragon_age.jpg" alt="Эпоха Дракона: Искупление (англ. Dragon Age: Absolution)" title="Эпоха Дракона: Искупление (англ. Dragon Age: Absolution)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Dragon Age: Absolution</b> is an adult animated fantasy streaming television series created by Mairghread Scott. Produced by Red Dog Culture House under the supervision of BioWare, the series was released on Netflix on December 9, 2022. Set in BioWare's Dragon Age fictional universe, it focuses on the fallout from a heist gone wrong in the Tevinter Imperium.
+
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Dragon_Age:_Absolution" class = "standardb_black" target="_blank">Wikipedia Dragon Age: Absolution</a> - <b>Эпоха Дракона: Искупление (англ. Dragon Age: Absolution)</b> на Wikipedia (англ.).
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=35o3bNyi6hw" class = "standardb_black" target="_blank">Эпоха Дракона: Искупление (англ. Dragon Age: Absolution)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22е Дек, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="final_space">Крайний Космос (англ. Final Space)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/final_space.jpg" alt="Крайний Космос (англ. Final Space)" title="Крайний Космос (англ. Final Space)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Крайний космос</b> (англ. Final Space, рус. Космо-рубеж, Космический рубеж) — американский телевизионный мультсериал, созданный Оланом Роджерсом и Дэвидом Саксом  (англ.)рус.. Сюжет первого сезона повествует о Гэри, отбывающем тюремный срок в космосе, и Мункейке, таинственном пришельце, который привязался к Гэри и представляет угрозу всей вселенной.
+
+<P>Показ серий начался на сайте Reddit 15 февраля 2018 года. В этот же день первые две серии были показаны на сайте американского телеканала TBS. 17 февраля 2018 года серии были показаны по сестринскому телеканалу TNT. Официальная премьера состоялась 26 февраля 2018 года, премьера второго сезона, состоящего из 13 серий, состоялась 24 июня 2019 года на канале Adult Swim.
+
+<P>Сериал был продлён на третий сезон 1 октября 2019 года, спустя неделю после окончания второго сезона. Премьера третьего сезона состоялась 20 марта 2021 года.
+
+<P>Шоу закрыли после третьего сезона. Об этом сообщил автор сериала Олан Роджерс в видео «Goodbye Final Space», которое вышло 10 сентября 2021 года.
+
+<P>После безуспешных переговоров с Warner Bros., 15 июня 2022 года Олан Роджерс объявил о сборе средств на короткометражный анимационный эпизод «Godspeed», который будет вдохновлён оригинальным шоу.
+
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Крайний_космос" class = "standardb_black" target="_blank">Wikipedia Крайний космос</a> - <b>Крайний Космос (англ. Final Space)</b> на Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=u8y_g2JgIuY" class = "standardb_black" target="_blank">Крайний Космос (англ. Final Space)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					04е Мая, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="hazbin_hotel">Отель Хазбин (англ. Hazbin Hotel)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/hazbin_hotel.jpg" alt="Отель Хазбин (англ. Hazbin Hotel)" title="Отель Хазбин (англ. Hazbin Hotel)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P>«<b>Отель „Хазбин“</b>» (англ. Hazbin Hotel) — американский анимационный сериал, созданный сальвадоро-американской художницей и аниматором Вивьен Медрано. Официальный пилотный эпизод был выпущен на YouTube 28 октября 2019 года на канале «Vivziepop». 6 ноября 2019 года было объявлено о сборе средств на Patreon, а также поиске спонсоров для продолжения работы над анимационным проектом. К августу 2020 года проект сформировал вокруг себя крупную международную фанатскую базу, а пилотный выпуск набрал более 73 миллионов просмотров, что привлекло внимание множества анимационных новостных издательств, а также кинодистрибьюторских компаний. В России по рейтингу результатов поиска в Яндексе за 2019 год «Отель „Хазбин“» вошёл в первую десятку среди мультфильмов.
+
+<P>Так, 7 августа 2020 года американская независимая компания A24 заявила о том, что та берёт под свою опеку проект Hazbin Hotel и его спин-оффы в качестве полноценного телесериала. А также заявили, что они уже выкупили право на трансляцию на телевидении. Премьера первого сезона состоялась 19 января 2024 года.
+
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Отель_Хазбин" class = "standardb_black" target="_blank">Wikipedia Отель Хазбин</a> - <b>Отель Хазбин (англ. Hazbin Hotel)</b> на Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Qo4hNCQ9xws" class = "standardb_black" target="_blank">Отель Хазбин (англ. Hazbin Hotel)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					09е Апр, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="hit_monkey">Хит-Манки (англ. Hit-Monkey)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/hit_monkey.jpg" alt="Хит-Манки (англ. Hit-Monkey)" title="Хит-Манки (англ. Hit-Monkey)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Хит-Манки</b>» (<b>Marvel's Hit-Monkey</b>) — американский анимационный сериал для взрослой аудитории, созданный для стримингового сервиса Hulu, основанный на одноимённом персонаже комиксов Marvel.
+
+<P>Первый сезон мультсериала был выпущен 17 ноября 2021 года. 2 февраля 2023 года мультсериал был продлён на второй сезон. Выпуск второго сезона состоялся 15 июля 2024 года.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Хит-Манки_(мультсериал)" class = "standardb_black" target="_blank">Wikipedia Хит-Манки (мультсериал)</a> - <b>Хит-Манки (англ. Hit-Monkey)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Q927CuKw9hU" class = "standardb_black" target="_blank">Хит-Манки (англ. Hit-Monkey)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					02е Ноя, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="i_am_groot">Я Есть Грут (англ. I Am Groot)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/i_am_groot.jpg" alt="Я Есть Грут (англ. I Am Groot)" title="Я Есть Грут (англ. I Am Groot)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P>«<b>Я есть Грут</b>» (англ. I Am Groot) — американский короткометражный мультсериал, созданный Кирстен Лепор для стримингового сервиса Disney+, основанный на одноимённом персонаже Marvel Comics. В нём представлены персонажи из медиафраншизы «Кинематографическая вселенная Marvel» (КВМ). Производством занималась компания Marvel Studios Animation. Сериал состоит из двух сезонов по пять короткометражек, рассказывающих о приключениях Малыша Грута между событиями фильма «Стражи Галактики» (2014) и четвёртой сцены после титров фильма «Стражи Галактики. Часть 2» (2017). Лепор выступает главным сценаристом и режиссёром.
+
+<P>Вин Дизель повторяет свою роль Малыша Грута из фильмов КВМ, также в озвучке принял участие Брэдли Купер. «Я есть Грут» был анонсирован в декабре 2020 года. Производство фотореалистичной анимации началось в августе 2021 года, а Лепор была назначена режиссёром в ноябре 2021 года.
+
+<P>Премьера первого сезона «Я есть Грут» состоялась 10 августа 2022 года. Он стал частью Четвёртой фазы КВМ. Второй сезон вышел 6 сентября 2023 года, он стал частью Пятой фазы КВМ.
+
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Я_есть_Грут_(мультсериал)" class = "standardb_black" target="_blank">Wikipedia Я есть Грут (мультсериал)</a> - <b>Я Есть Грут (англ. I Am Groot)</b> на Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=5R3Bq5ydvZw" class = "standardb_black" target="_blank">Я Есть Грут (англ. I Am Groot)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					17е Ноя, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="inside_job">Корпорация «Заговор» (англ. Inside Job)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/inside_job.jpg" alt="Корпорация «Заговор» (англ. Inside Job)" title="Корпорация «Заговор» (англ. Inside Job)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Корпорация „Заговор“</b>» (англ. Inside Job) — американский анимационный телесериал для взрослой аудитории, созданный Сион Такэути для потокового сервиса Netflix. Алекс Хирш, создатель мультсериала «Гравити Фолз», выступает в качестве исполнительного продюсера вместе с Сион Такэути.
+
+<P>Премьера первого сезона сериала состоялась 22 октября 2021 года на Netflix.
+
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Корпорация_«Заговор»" class = "standardb_black" target="_blank">Wikipedia Корпорация «Заговор»</a> - <b>Корпорация «Заговор» (англ. Inside Job)</b> на Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ZOzraPZTOjM" class = "standardb_black" target="_blank">Корпорация «Заговор» (англ. Inside Job)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					01е Янв, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="love_death_robots">Любовь. Смерть. Роботы (англ. Love, Death & Robots)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/love_death_robots.jpg" alt="Любовь. Смерть. Роботы (англ. Love, Death & Robots)" title="Любовь. Смерть. Роботы (англ. Love, Death & Robots)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P>«<b>Любовь. Смерть. Роботы</b>» (англ. Love, Death & Robots, стилизованно под LOVE DEATH + ROBOTS) — американский анимационный сериал-антология, выпущенный в потоковом сервисе Netflix и состоящий из короткометражных анимационных фильмов разной продолжительности, созданных с расчётом на взрослую аудиторию. Первый сезон, состоящий из 18 эпизодов, вышел 15 марта 2019 года.
+
+<P>Исполнительными продюсерами сериала выступили Дэвид Финчер, Тим Миллер, Джошуа Донен и Дженнифер Миллер. Каждый эпизод был создан разными командами и студиями из разных стран мира, а большинство из них использует собственные типы анимации, за исключением эпизода «Ледниковый период», где снялись живые актёры — Мэри Элизабет Уинстэд и Тофер Грейс. Сериал находился в разработке больше 10 лет, а источником вдохновения для Финчера и Миллера послужили комиксы и рассказы из журнала <a href="movies_animation_for_adults_rus.html#heavy_metal" class = "standardb_black" target="_blank">Heavy Metal</a>.
+
+<P>В июне 2019 года Netflix объявил о продлении сериала на второй сезон.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9B%D1%8E%D0%B1%D0%BE%D0%B2%D1%8C._%D0%A1%D0%BC%D0%B5%D1%80%D1%82%D1%8C._%D0%A0%D0%BE%D0%B1%D0%BE%D1%82%D1%8B" class = "standardb_black" target="_blank">Wikipedia Любовь. Смерть. Роботы</a> - <b>Любовь. Смерть. Роботы (англ. Love, Death & Robots)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=wUFwunMKa4E" class = "standardb_black" target="_blank">Любовь. Смерть. Роботы (англ. Love, Death & Robots)</a> - Официальный Трейлер (англ.).
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					10е Мар, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+		
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="scavengers_reign">Царство Падальщиков (англ. Scavengers Reign)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/scavengers_reign.jpg" alt="Царство Падальщиков (англ. Scavengers Reign)" title="Царство Падальщиков (англ. Scavengers Reign)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P>«<b>Царство падальщиков</b>» (англ. Scavengers Reign) — американский анимационный научно-фантастический телесериал для взрослых. Создан Джозефом Беннеттом и Чарльзом Гюттнером для сервиса Max на основе их короткометражного фильма «Падальщики» 2016 года. Сериал был заказан в июне 2022 года, а премьера первого сезона из 12 серий состоялась 19 октября 2023 года.
+
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Царство_падальщиков" class = "standardb_black" target="_blank">Wikipedia Царство падальщиков</a> - <b>Царство Падальщиков (англ. Scavengers Reign)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=xQJNNFQ9GHs" class = "standardb_black" target="_blank">Царство Падальщиков (англ. Scavengers Reign)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					26е Апр, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+		
+        <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="vixen">Виксен (англ. Vixen)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/series/vixen.jpg" alt="Виксен (англ. Vixen)" title="Виксен (англ. Vixen)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Виксен</b> (англ. Vixen) — американский анимационный веб-сериал, созданный Марком Гуггенхаймом. Премьера состоялась 25 августа 2015 года, когда эпизоды «Виксен» были показаны на канале CW Seed, дочернем канале сети The CW, предназначенном для детской аудитории. Все события анимационного веб-сериала, по заявлениям создателей, происходят в Телевизионной Вселенной DC канала The CW. В центре сюжета находится Мари МакКейб/Виксен, супергероиня комиксов издательства DC Comics, способная имитировать способности различных животных.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Виксен_(веб-сериал)" class = "standardb_black" target="_blank">Wikipedia Виксен (веб-сериал)</a> - <b>Виксен (англ. Vixen)</b> на Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=gbyUWuyQjWo" class = "standardb_black" target="_blank">Виксен (англ. Vixen)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					27е Сен, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+		
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Урмас Репинский, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+
