@@ -20,6 +20,7 @@
 <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
 
 <script>
+var menuHeight=200;
 var imgBgSrc="images/icons/background/language_select.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
 </script>
@@ -57,29 +58,39 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 </table>
 
+<table cellspacing="0" cellpadding="0" width="1000px" border="0" bgcolor="#d0e7f7" align="center">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
 
-<table cellspacing="0" cellpadding="2" width="1000px"  align="center">
-	<tr>
-	<td  width="1000px" style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
-		<table cellspacing="0" cellpadding="0" width="100%"  align="center" style = "border: #84bde4 1px solid;  background-color: #d0e7f7">				
-			<tr>
-				<td  align="center">
-					<a href="/about_me_lat.html" class="standardb_blue"><img src="lang/spqr.gif" alt="latina" title="latina" width="150px" class="thumbnail_image_both"/></a>
-				</td>
-				<td  align="center">
-					<a href="/about_me_eng.html" class="standardb_blue"><img src="lang/eng.gif" alt="english" title="english" width="150px" class="thumbnail_image_both"/></a>
-				</td>
-				<td  align="center">
-					<a href="/about_me_rus.html" class="standardb_blue"><img src="lang/rus.gif" alt="русский" title="русский" width="150px" class="thumbnail_image_both"/></a>
-				</td>
-			</tr>
-		</table>
-	</td>
-	</tr>
+<!-- For scroll inside div 433 -->
+<div id="scrollDiv" style="height:450px; width:100%; overflow:auto;">
 
-  </table> <!-- End of Func area -->
+	<table cellspacing="0" cellpadding="2" width="1000px" height="100%" align="center">
+		<tr>
+		<td  width="1000px" style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
 
+			<table cellspacing="0" cellpadding="0" width="100%" height="100%" align="center" style = "border: #84bde4 1px solid;  background-color: #d0e7f7">				
+				<tr>
+					<td  align="center">
+						<a href="/about_me_lat.html" class="standardb_blue"><img src="lang/spqr.gif" alt="latina" title="latina" width="150px" class="thumbnail_image_both"/></a>
+					</td>
+					<td  align="center">
+						<a href="/about_me_eng.html" class="standardb_blue"><img src="lang/eng.gif" alt="english" title="english" width="150px" class="thumbnail_image_both"/></a>
+					</td>
+					<td  align="center">
+						<a href="/about_me_rus.html" class="standardb_blue"><img src="lang/rus.gif" alt="русский" title="русский" width="150px" class="thumbnail_image_both"/></a>
+					</td>
+				</tr>
+			</table>
 
+		</td>
+		</tr>
+	  </table>
+
+</div> <!-- End of scroll inside div -->	
+
+</td></tr>
+</table><!-- End of Table where search, name and languages and func area-->
 
 <!-- Bottom Copyright Table --> 
 <table cellspacing="0" cellpadding="0" width="1000px"  align="center" border="0">

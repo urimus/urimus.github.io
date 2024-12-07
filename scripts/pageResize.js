@@ -36,7 +36,11 @@ function calcScrollDivHeightMax(){
 //   End of Header Image
 
 	var h = Math.min(window.innerHeight, document.documentElement.clientHeight);
-	var noScrollHeightMax=h-hImgHeight-84;//84
+	if (window.location.pathname!="/" && window.location.pathname!="/index.html") {
+		var noScrollHeightMax=h-hImgHeight-84;//84
+	} else {
+		var noScrollHeightMax=h-hImgHeight-65;//65
+	}
 	var scrollDivHeight=menuHeight;
 	if (noScrollHeightMax>scrollDivHeight) {scrollDivHeight=noScrollHeightMax;}
 	return scrollDivHeight;
@@ -56,9 +60,8 @@ function processPageResize(isLoad, orientationChanged){
 	if (isAndroid && isLoad==0 && orientationChanged==0) return true; 
 // ------------------------- End of For Android ------------------------//
 
-	if (window.location.pathname!="/index.html" && window.location.pathname!="/") {
-		scrollDivHeight=calcScrollDivHeightMax();
-	}
+	scrollDivHeight=calcScrollDivHeightMax();
+
 	if (isLoad==0) {  // not isLoad
 		if (window.location.pathname.substr(0, 5)=="/news") {
 			var scrollDiv = document.getElementById('scrollDiv');
@@ -75,37 +78,42 @@ function processPageResize(isLoad, orientationChanged){
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 				adjustScrollDiv();
 			}
-		} else if (window.location.pathname.substr(0, 6)=="/index") {
-			if (window.location.pathname!="/index.html") {
-				scrollDiv = document.getElementById('scrollDiv');
-				if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
-					tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-					scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
-					adjustScrollDiv();
-				}
+		} else if (window.location.pathname.substr(0, 7)=="/index_") {
+			scrollDiv = document.getElementById('scrollDiv');
+			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
+				tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
+				scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
+				adjustScrollDiv();
 			}
-		} else if (window.location.pathname=="/") {
-			
+		} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {
+			scrollDiv = document.getElementById('scrollDiv');
+			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
+				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+			}			
 		} else {
 			scrollDiv = document.getElementById('scrollDiv');
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
-				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 				adjustScrollDiv();
 			}
 		}
 	} else { // isLoad
 		// for regular htmls only (not html_editor, not index and not news)
 		if (!(window.location.pathname.substr(0, 12)=="/html_editor"
-		||  window.location.pathname.substr(0, 6)=="/index"
-		||  window.location.pathname=="/"
+		||  window.location.pathname.substr(0, 7)=="/index_"
 		||  window.location.pathname.substr(0, 9)=="/about_me"
 		|| window.location.pathname.substr(0, 5)=="/news")) {
-			document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-			if (typeof galleria2!=='undefined') {
-				Galleria.ready(function() {adjustScrollDiv();});
-			} else {
-				adjustScrollDiv();
-			} 
+			scrollDiv = document.getElementById('scrollDiv');
+			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
+				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+			}
+			if (window.location.pathname!="/" && window.location.pathname!="/index.html") {
+				if (typeof galleria2!=='undefined') {
+					Galleria.ready(function() {adjustScrollDiv();});
+				} else {
+					adjustScrollDiv();
+				}
+			}
 		} 
 	}
 
