@@ -15,13 +15,30 @@ $action=$_GET["action"];
 $fileNum=$_GET["fileNum"];
 
 include 'saveClass.php';
-$file_contents=file_get_contents($filename) or die("Unable to open file! - '".$filename."'");
 // ---------- log -------- //
 date_default_timezone_set('UTC');
 if ($fileNum==0) {
     file_put_contents("../logs/".$action.".log", "\n--------------" .date("dS")." of ".date("F, Y, H:i:s")." UTC --------------\n");//, FILE_APPEND | LOCK_EX);    
 }
 // ---------- end of log -------- //
+
+if (substr($filename, -10)=="index.html") { // skip
+	$out = array();
+	$out['modified']=filemtime($filename);
+	$out['statisticsTimesReplaced']=0;
+	
+	// ---------- log -------- //
+	$status="Skipped";
+	$replacementInfo="";
+	file_put_contents("../logs/".$action.".log", ($fileNum+1).". ".$status." - ".substr($filename, 6).$replacementInfo.".\n", FILE_APPEND | LOCK_EX);
+	// ---------- end of log -------- //
+	
+	echo (json_encode($out)); 
+	return;
+}
+
+$file_contents=file_get_contents($filename) or die("Unable to open file! - '".$filename."'");
+
 
 /// --------------- on the top
 $matchPos = strpos($file_contents, "var menuHeight=");
