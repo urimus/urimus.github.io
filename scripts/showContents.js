@@ -614,6 +614,7 @@ function showContents(type, sortby, lang) {
 
 				entry=result.feed.entries[0];
 				loadingDivTitle.innerHTML = textLoadingImage;
+				loadingDivTitle.appendChild(aSkip);
 
 				feedMediaUrl=entry["enclosures"][0].url+"?w=450";
 				feedMediaWidth=450;
@@ -647,7 +648,7 @@ function showContents(type, sortby, lang) {
 					if (lang=="eng" || lang=="lat") feedTitleText = "NASA Astronomy Picture of the Day Feed on this Page";
 					if (lang=="rus") feedTitleText = "NASA Astronomy Picture of the Day Строка на этой Странице";
 					Img2.setAttribute('title', feedTitleText);
-					Img2.setAttribute('valign', "bottom");
+					Img2.setAttribute('valign', "middle");
 					a.appendChild(Img2);
 					ImgCaption.appendChild(a);
 
