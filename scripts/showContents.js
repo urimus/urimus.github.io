@@ -613,7 +613,7 @@ function showContents(type, sortby, lang) {
 				if (toSkip==1) return;
 
 				entry=result.feed.entries[0];
-				loadingDivTitle.innerHTML = textLoadingImage;
+				loadingDivTitle.innerHTML = textLoadingImage+". ";
 				loadingDivTitle.appendChild(aSkip);
 
 				feedMediaUrl=entry["enclosures"][0].url+"?w=450";
@@ -631,6 +631,8 @@ function showContents(type, sortby, lang) {
 				Img.setAttribute('title', feedMediaTitle);
 				Img.setAttribute('width', feedMediaWidth);
 				Img.onload = function () {
+					if (toSkip==1) return;
+
 					Figure=document.createElement("figure");
 					Figure.setAttribute('style', 'display: flex; margin: 0px; padding-left:10px; padding-right:10px;');
 					Figure.appendChild(Img);
