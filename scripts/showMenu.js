@@ -3271,55 +3271,6 @@ if (lang=="eng") {
 	wholeMenu["Books"].link = "";
 	wholeMenu["Books"].html = 'Books';
 
-	wholeMenu["● France"] = {};
-	wholeMenu["● France"].id = "10_1";
-	wholeMenu["● France"].color = "red";
-	wholeMenu["● France"].hasSub = 1;
-	wholeMenu["● France"].link = "";
-	wholeMenu["● France"].html = '&#9679; France';
-
-	wholeMenu["Francis Carsac"] = {};
-	wholeMenu["Francis Carsac"].id = "10_1_1";
-	wholeMenu["Francis Carsac"].color = "red";
-	wholeMenu["Francis Carsac"].hasSub = 0;
-	wholeMenu["Francis Carsac"].link = "books_carsac_eng.html";
-	wholeMenu["Francis Carsac"].html = 'Francis Carsac';
-
-	wholeMenu["● Russia"] = {};
-	wholeMenu["● Russia"].id = "10_2";
-	wholeMenu["● Russia"].color = "red";
-	wholeMenu["● Russia"].hasSub = 1;
-	wholeMenu["● Russia"].link = "";
-	wholeMenu["● Russia"].html = '&#9679; Russia';
-
-	wholeMenu["Maks Fraj"] = {};
-	wholeMenu["Maks Fraj"].id = "10_2_1";
-	wholeMenu["Maks Fraj"].color = "red";
-	wholeMenu["Maks Fraj"].hasSub = 0;
-	wholeMenu["Maks Fraj"].link = "books_fraj_eng.html";
-	wholeMenu["Maks Fraj"].html = 'Maks Fraj';
-
-	wholeMenu["Andrei Livadnyj"] = {};
-	wholeMenu["Andrei Livadnyj"].id = "10_2_2";
-	wholeMenu["Andrei Livadnyj"].color = "red";
-	wholeMenu["Andrei Livadnyj"].hasSub = 0;
-	wholeMenu["Andrei Livadnyj"].link = "books_livadnyj_eng.html";
-	wholeMenu["Andrei Livadnyj"].html = 'Andrei Livadnyj';
-
-	wholeMenu["Sergei Lukjanenko"] = {};
-	wholeMenu["Sergei Lukjanenko"].id = "10_2_3";
-	wholeMenu["Sergei Lukjanenko"].color = "red";
-	wholeMenu["Sergei Lukjanenko"].hasSub = 0;
-	wholeMenu["Sergei Lukjanenko"].link = "books_lukjanenko_eng.html";
-	wholeMenu["Sergei Lukjanenko"].html = 'Sergei Lukjanenko';
-
-	wholeMenu["Sergei Tarmashev"] = {};
-	wholeMenu["Sergei Tarmashev"].id = "10_2_4";
-	wholeMenu["Sergei Tarmashev"].color = "red";
-	wholeMenu["Sergei Tarmashev"].hasSub = 0;
-	wholeMenu["Sergei Tarmashev"].link = "books_tarmashev_eng.html";
-	wholeMenu["Sergei Tarmashev"].html = 'Sergei Tarmashev';
-
 	wholeMenu["● USSR"] = {};
 	wholeMenu["● USSR"].id = "10_3";
 	wholeMenu["● USSR"].color = "red";
@@ -3456,55 +3407,6 @@ if (lang=="rus") {
 	wholeMenu["Книги"].hasSub = 1;
 	wholeMenu["Книги"].link = "";
 	wholeMenu["Книги"].html = 'Книги';
-
-	wholeMenu["● Франция"] = {};
-	wholeMenu["● Франция"].id = "10_1";
-	wholeMenu["● Франция"].color = "red";
-	wholeMenu["● Франция"].hasSub = 1;
-	wholeMenu["● Франция"].link = "";
-	wholeMenu["● Франция"].html = '&#9679; Франция';
-
-	wholeMenu["Франсис Карсак"] = {};
-	wholeMenu["Франсис Карсак"].id = "10_1_1";
-	wholeMenu["Франсис Карсак"].color = "red";
-	wholeMenu["Франсис Карсак"].hasSub = 0;
-	wholeMenu["Франсис Карсак"].link = "books_carsac_rus.html";
-	wholeMenu["Франсис Карсак"].html = 'Франсис Карсак';
-
-	wholeMenu["● Россия"] = {};
-	wholeMenu["● Россия"].id = "10_2";
-	wholeMenu["● Россия"].color = "red";
-	wholeMenu["● Россия"].hasSub = 1;
-	wholeMenu["● Россия"].link = "";
-	wholeMenu["● Россия"].html = '&#9679; Россия';
-
-	wholeMenu["Макс Фрай"] = {};
-	wholeMenu["Макс Фрай"].id = "10_2_1";
-	wholeMenu["Макс Фрай"].color = "red";
-	wholeMenu["Макс Фрай"].hasSub = 0;
-	wholeMenu["Макс Фрай"].link = "books_fraj_rus.html";
-	wholeMenu["Макс Фрай"].html = 'Макс Фрай';
-
-	wholeMenu["Андрей Ливадный"] = {};
-	wholeMenu["Андрей Ливадный"].id = "10_2_2";
-	wholeMenu["Андрей Ливадный"].color = "red";
-	wholeMenu["Андрей Ливадный"].hasSub = 0;
-	wholeMenu["Андрей Ливадный"].link = "books_livadnyj_rus.html";
-	wholeMenu["Андрей Ливадный"].html = 'Андрей Ливадный';
-
-	wholeMenu["Сергей Лукьяненко"] = {};
-	wholeMenu["Сергей Лукьяненко"].id = "10_2_3";
-	wholeMenu["Сергей Лукьяненко"].color = "red";
-	wholeMenu["Сергей Лукьяненко"].hasSub = 0;
-	wholeMenu["Сергей Лукьяненко"].link = "books_lukjanenko_rus.html";
-	wholeMenu["Сергей Лукьяненко"].html = 'Сергей Лукьяненко';
-
-	wholeMenu["Сергей Тармашев"] = {};
-	wholeMenu["Сергей Тармашев"].id = "10_2_4";
-	wholeMenu["Сергей Тармашев"].color = "red";
-	wholeMenu["Сергей Тармашев"].hasSub = 0;
-	wholeMenu["Сергей Тармашев"].link = "books_tarmashev_rus.html";
-	wholeMenu["Сергей Тармашев"].html = 'Сергей Тармашев';
 
 	wholeMenu["● СССР"] = {};
 	wholeMenu["● СССР"].id = "10_3";
