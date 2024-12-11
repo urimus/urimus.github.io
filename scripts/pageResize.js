@@ -82,7 +82,7 @@ function processPageResize(isLoad, orientationChanged){
 			scrollDiv = document.getElementById('scrollDiv');
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
 				tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-				scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-11)+"px; overflow:auto;");
+				scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
 				adjustScrollDiv();
 			}
 		} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {

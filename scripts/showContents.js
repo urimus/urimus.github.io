@@ -430,7 +430,12 @@ function generateTabs(type, lang) {
 	tabsColor["news"]="red";
 
 	contentsTitle=document.getElementById("contentsTitle");
-	contentsTitle.innerHTML=contentsTitle.innerHTML+" &blacktriangleright; "+tabs[type];
+	tabtype2=tabs[type];
+	fontPos=tabs[type].indexOf("<font");
+	if (fontPos !== -1) {
+		tabtype2=tabs[type].substr(0,fontPos-1);
+	}
+	contentsTitle.innerHTML=contentsTitle.innerHTML+" &blacktriangleright; "+tabtype2;
 
 	keys=Object.keys(tabs);
 
@@ -485,12 +490,13 @@ function generateTabs(type, lang) {
     </td>
 */
 }
-function adjustContentsScrollDiv() {
+function adjustContentsScrollDiv(adj) {
+	if (typeof adj === 'undefined') adj=0;
 	scrollDiv = document.getElementById('scrollDiv');
 	scrollDivHeight=calcScrollDivHeightMax();
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-11)+"px; overflow:auto;");
-	adjustScrollDiv();
+	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
+	if (adj==1) adjustScrollDiv();
 }
 
 function showContents(type, sortby, lang) {
@@ -520,7 +526,6 @@ function showContents(type, sortby, lang) {
 		textSkip="Saltus";
 		textImage = "Imagio";
 	}
-
 
 	var xmlhttp;
 	var lines;
@@ -575,7 +580,7 @@ function showContents(type, sortby, lang) {
 			cellLoading.innerHTML = "<b><div id='loadingDivTitle'>"+textLoadingFeed+". "+"</div><div id='loadingDiv'>.</div></b>";
 			loadingDivTitle=document.getElementById("loadingDivTitle");
 
-			adjustContentsScrollDiv()
+			adjustContentsScrollDiv(0);
 
 			toSkip=0;
 			var aSkip = document.createElement('a');
@@ -584,7 +589,7 @@ function showContents(type, sortby, lang) {
 			aSkip.innerText = textSkip;
 			aSkip.onclick = function () {
 				rowLoading.deleteCell(0);
-				adjustContentsScrollDiv()
+				adjustContentsScrollDiv();
 				toSkip=1;
 				return;
 			}
@@ -598,7 +603,7 @@ function showContents(type, sortby, lang) {
 
 				if(result.error){
 					rowLoading.deleteCell(0);
-					adjustContentsScrollDiv()
+					adjustContentsScrollDiv();
 					return;
 				}
 
@@ -666,12 +671,12 @@ function showContents(type, sortby, lang) {
 					cellLoading.className = 'text_'+textColor+"_blue";
 					cellLoading.appendChild(Figure);
 
-					adjustContentsScrollDiv()
+					adjustContentsScrollDiv();
 				}
 				Img.onerror = function () {
 					console.log("Loading Error - "+Img.src);
 					rowLoading.deleteCell(0);
-					adjustContentsScrollDiv()
+					adjustContentsScrollDiv();
 				}
 			});
 
@@ -698,7 +703,7 @@ function showContents(type, sortby, lang) {
 			date_div.innerHTML = formatDate(modStr, lang);
 			cell1.appendChild(date_div);
 
-			adjustContentsScrollDiv()
+			adjustContentsScrollDiv();
 
 
 		}
