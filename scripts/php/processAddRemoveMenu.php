@@ -52,8 +52,6 @@ $menuHeightInt2=intval($menuHeightInit2);
 if ($action=="addMenu") $menuHeightInt2_new=$menuHeightInit2+1;
 if ($action=="removeMenu") $menuHeightInt2_new=$menuHeightInit2-1;
 
-$menuHeightInt=$menuHeightInt1*$menuHeightInt2_new;
-
 $lineNrs = array();
 
 $statisticsTimesReplaced=0;
@@ -63,24 +61,20 @@ if ($matchPos!==false) {
 	$file_contents=substr($file_contents, 0, $matchPos)."var menuHeight=".$menuHeightInt1."*".$menuHeightInt2_new.substr($file_contents, $matchPos3);
 }
 
-if ($menuHeightInt<522) $menuHeightInt=522;
-
-// ---------- substract upper intend
-$matchPos4 = strpos($file_contents, "var upperIntend=");
-if ($matchPos4!==false) {
-    $matchPos5 = strpos($file_contents, ";", $matchPos4);
-    $upperIntendInit=substr($file_contents, $matchPos4+strlen("var upperIntend="), $matchPos5-$matchPos4-strlen("var upperIntend="));
-    $upperIntendInt=intval($upperIntendInit);
-    $menuHeightInt=$menuHeightInt-$upperIntendInt;
-}
-
-
+$menuHeightInt=$menuHeightInt1*$menuHeightInt2_new;
+if ($menuHeightInt<450) $menuHeightInt=450;
 
 // ---------------- second part
 $matchPos4 = strpos($file_contents, "style=\"height:");
 $matchPos5 = strpos($file_contents, "px;", $matchPos4);
 $menuHeightInitBottom1=substr($file_contents, $matchPos4+strlen("style=\"height:"), $matchPos5-$matchPos4-strlen("style=\"height:"));
 $menuHeightIntBottom1=intval($menuHeightInitBottom1);
+
+if ($menuHeightInt>450) {
+	if ($action=="addMenu") $menuHeightInt=$menuHeightIntBottom1+$menuHeightInt1;
+	if ($action=="removeMenu") $menuHeightInt=$menuHeightIntBottom1-$menuHeightInt1;
+}
+
 
 
 if ($matchPos4!==false) {
