@@ -485,7 +485,13 @@ function generateTabs(type, lang) {
     </td>
 */
 }
-
+function adjustContentsScrollDiv() {
+	scrollDiv = document.getElementById('scrollDiv');
+	scrollDivHeight=calcScrollDivHeightMax();
+	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
+	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-11)+"px; overflow:auto;");
+	adjustScrollDiv();
+}
 
 function showContents(type, sortby, lang) {
 
@@ -569,11 +575,7 @@ function showContents(type, sortby, lang) {
 			cellLoading.innerHTML = "<b><div id='loadingDivTitle'>"+textLoadingFeed+". "+"</div><div id='loadingDiv'>.</div></b>";
 			loadingDivTitle=document.getElementById("loadingDivTitle");
 
-			scrollDiv = document.getElementById('scrollDiv');
-			scrollDivHeight=calcScrollDivHeightMax();
-			tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-			scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
-			adjustScrollDiv();
+			adjustContentsScrollDiv()
 
 			toSkip=0;
 			var aSkip = document.createElement('a');
@@ -582,13 +584,7 @@ function showContents(type, sortby, lang) {
 			aSkip.innerText = textSkip;
 			aSkip.onclick = function () {
 				rowLoading.deleteCell(0);
-
-				scrollDiv = document.getElementById('scrollDiv');
-				scrollDivHeight=calcScrollDivHeightMax();
-				tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-				scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
-				adjustScrollDiv();
-
+				adjustContentsScrollDiv()
 				toSkip=1;
 				return;
 			}
@@ -602,11 +598,7 @@ function showContents(type, sortby, lang) {
 
 				if(result.error){
 					rowLoading.deleteCell(0);
-					scrollDiv = document.getElementById('scrollDiv');
-					scrollDivHeight=calcScrollDivHeightMax();
-					tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-					scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
-					adjustScrollDiv();
+					adjustContentsScrollDiv()
 					return;
 				}
 
@@ -674,20 +666,12 @@ function showContents(type, sortby, lang) {
 					cellLoading.className = 'text_'+textColor+"_blue";
 					cellLoading.appendChild(Figure);
 
-					scrollDiv = document.getElementById('scrollDiv');
-					scrollDivHeight=calcScrollDivHeightMax();
-					tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-					scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
-					adjustScrollDiv();
+					adjustContentsScrollDiv()
 				}
 				Img.onerror = function () {
 					console.log("Loading Error - "+Img.src);
 					rowLoading.deleteCell(0);
-					scrollDiv = document.getElementById('scrollDiv');
-					scrollDivHeight=calcScrollDivHeightMax();
-					tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-					scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
-					adjustScrollDiv();
+					adjustContentsScrollDiv()
 				}
 			});
 
@@ -714,11 +698,7 @@ function showContents(type, sortby, lang) {
 			date_div.innerHTML = formatDate(modStr, lang);
 			cell1.appendChild(date_div);
 
-			scrollDiv = document.getElementById('scrollDiv');
-			scrollDivHeight=calcScrollDivHeightMax();
-			tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-			scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
-			adjustScrollDiv();
+			adjustContentsScrollDiv()
 
 
 		}
