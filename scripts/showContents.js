@@ -491,7 +491,7 @@ function generateTabs(type, lang) {
 */
 }
 function adjustContentsScrollDiv(adj) {
-	if (typeof adj === 'undefined') adj=0;
+	if (typeof adj === 'undefined') adj=1;
 	scrollDiv = document.getElementById('scrollDiv');
 	scrollDivHeight=calcScrollDivHeightMax();
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
