@@ -6691,7 +6691,13 @@ function  loadMenuContentsLink(ele, lang) {
 					title=ele.innerHTML.trim();
 					if (title.indexOf("<font")!=-1) title=title.substring(0, title.indexOf("<font")-1).trim();
 					type2=type;
-					if (type=="series" && (anchors[1]=="animation" || anchors[1]=="body_horror" || anchors[1]=="space_opera")) {
+					if (type=="series" && (
+						anchors[1]=="animation" || 
+						anchors[1]=="body_horror" || 
+						anchors[1]=="space_opera" || 
+						anchors[1]=="movies_superhero" || 
+						anchors[1]=="dc_extended_universe" || 
+						anchors[1]=="marvel_cinematic_universe")) {
 						type2="movies";
 					}
 					wholeMenu["Image"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" title="'+title+'"/>';
@@ -6803,7 +6809,13 @@ function  loadMenuContentsLink(ele, lang) {
 					title=ele.innerHTML.trim();
 					if (title.indexOf("<font")!=-1) title=title.substring(0, title.indexOf("<font")-1).trim();
 					type2=type;
-					if (type=="series" && (anchors[1]=="animation" || anchors[1]=="body_horror" || anchors[1]=="space_opera")) {
+					if (type=="series" && (
+						anchors[1]=="animation" || 
+						anchors[1]=="body_horror" || 
+						anchors[1]=="space_opera" || 
+						anchors[1]=="movies_superhero" || 
+						anchors[1]=="dc_extended_universe" || 
+						anchors[1]=="marvel_cinematic_universe")) {
 						type2="movies";
 					}
 					wholeMenu["Картинка"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" title="'+title+'"/>';
@@ -6916,7 +6928,13 @@ function  loadMenuContentsLink(ele, lang) {
 					title=ele.innerHTML.trim();
 					if (title.indexOf("<font")!=-1) title=title.substring(0, title.indexOf("<font")-1).trim();
 					type2=type;
-					if (type=="series" && (anchors[1]=="animation" || anchors[1]=="body_horror" || anchors[1]=="space_opera")) {
+					if (type=="series" && (
+						anchors[1]=="animation" || 
+						anchors[1]=="body_horror" || 
+						anchors[1]=="space_opera" || 
+						anchors[1]=="movies_superhero" || 
+						anchors[1]=="dc_extended_universe" || 
+						anchors[1]=="marvel_cinematic_universe")) {
 						type2="movies";
 					}
 					wholeMenu["Imago"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" title="'+title+'"/>';
