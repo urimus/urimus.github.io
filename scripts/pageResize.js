@@ -61,10 +61,10 @@ function processPageResize(isLoad, orientationChanged){
 // ------------------------- End of For Android ------------------------//
 
 	scrollDivHeight=calcScrollDivHeightMax();
+	var scrollDiv = document.getElementById('scrollDiv');
 
 	if (isLoad==0) {  // not isLoad
 		if (window.location.pathname.substr(0, 5)=="/news") {
-			var scrollDiv = document.getElementById('scrollDiv');
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
 				feedTitleHeight=parseInt($( "#titletable" ).css( "height" ));
 				tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
@@ -73,25 +73,21 @@ function processPageResize(isLoad, orientationChanged){
 		} else if (window.location.pathname.substr(0, 12)=="/html_editor") { // nothing
 //			adjustTextareaAndEncodings();
 		} else if (window.location.pathname.substr(0, 9)=="/about_me") {
-			scrollDiv = document.getElementById('scrollDiv');
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 				adjustScrollDiv();
 			}
 		} else if (window.location.pathname.substr(0, 7)=="/index_") {
-			scrollDiv = document.getElementById('scrollDiv');
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
 				tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 				scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
 				adjustScrollDiv();
 			}
 		} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {
-			scrollDiv = document.getElementById('scrollDiv');
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			}			
 		} else {
-			scrollDiv = document.getElementById('scrollDiv');
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 				adjustScrollDiv();
@@ -103,7 +99,6 @@ function processPageResize(isLoad, orientationChanged){
 		||  window.location.pathname.substr(0, 7)=="/index_"
 		||  window.location.pathname.substr(0, 9)=="/about_me"
 		|| window.location.pathname.substr(0, 5)=="/news")) {
-			scrollDiv = document.getElementById('scrollDiv');
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			}
