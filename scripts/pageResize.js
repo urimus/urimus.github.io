@@ -78,11 +78,7 @@ function processPageResize(isLoad, orientationChanged){
 				adjustScrollDiv();
 			}
 		} else if (window.location.pathname.substr(0, 7)=="/index_") {
-			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
-				tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-				scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
-				adjustScrollDiv();
-			}
+			adjustContentsScrollDiv();
 		} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");

@@ -567,7 +567,8 @@ function showContents(type, sortby, lang) {
 			 var row = table.insertRow(-1);
 			 var cell1 = row.insertCell(0);
 			cell1.className = 'text_'+textColor+"_blue";
-			 cell1.innerHTML = fileContents[0];
+			cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;');
+			 cell1.innerHTML = fileContents[0].substr(3);
 
 
 
