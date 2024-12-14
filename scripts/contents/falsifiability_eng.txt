@@ -1,3 +1,3 @@
 ﻿<b class="text_green_blue">Falsifiability</b>
-&nbsp;&#9679; <a href="falsifiability_eng.html" class = "standardb_green" data-added="17th of Nov, 2019." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Falsifiability</a>
+&#9679; <a href="falsifiability_eng.html" class = "standardb_green" data-added="17th of Nov, 2019." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Falsifiability</a>
 
