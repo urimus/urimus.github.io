@@ -1,7 +1,7 @@
-﻿<P><b class="text_black_blue">Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font></b>
-<P>&nbsp;&#9679; <a href="stuff_different_lat.html" class = "standardb_black" data-added="20th of Jun, 2016." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Miscellanea</a>
-<P>&nbsp;&#9679; <a href="stuff_chupacabra_lat.html" class = "standardb_black" data-added="14th of Dec, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Chupacabra (his. Chupacabras)</a>
-<P>&nbsp;&#9679; <a href="stuff_hyperspace_lat.html" class = "standardb_black" data-added="18th of Jul, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Hyperspace</a>
-<P>&nbsp;&#9679; <a href="stuff_images_general_lat.html" class = "standardb_black" data-added="21st of Jul, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Imaginibus</a>
-<P>&nbsp;&#9679; <a href="stuff_matrix_lat.html#matrix" class = "standardb_black" data-added="10th of May, 2023." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Matrix <font color="red"><sup>&#9889; Evil &#9889;</sup></font></a>
-<P>&nbsp;&#9679; <a href="stuff_star_trek_discovery_lat.html" class = "standardb_black" data-added="30th of May, 2024." data-country="usa" data-year="2017" onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Star Trek: Discovery</a>
+﻿<b class="text_black_blue">Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font></b>
+&nbsp;&#9679; <a href="stuff_different_lat.html" class = "standardb_black" data-added="20th of Jun, 2016." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Miscellanea</a>
+&nbsp;&#9679; <a href="stuff_chupacabra_lat.html" class = "standardb_black" data-added="14th of Dec, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Chupacabra (his. Chupacabras)</a>
+&nbsp;&#9679; <a href="stuff_hyperspace_lat.html" class = "standardb_black" data-added="18th of Jul, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Hyperspace</a>
+&nbsp;&#9679; <a href="stuff_images_general_lat.html" class = "standardb_black" data-added="21st of Jul, 2017." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Imaginibus</a>
+&nbsp;&#9679; <a href="stuff_matrix_lat.html#matrix" class = "standardb_black" data-added="10th of May, 2023." onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Matrix <font color="red"><sup>&#9889; Evil &#9889;</sup></font></a>
+&nbsp;&#9679; <a href="stuff_star_trek_discovery_lat.html" class = "standardb_black" data-added="30th of May, 2024." data-country="usa" data-year="2017" onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Star Trek: Discovery</a>

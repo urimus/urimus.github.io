@@ -1,9 +1,9 @@
-﻿<P><b class="text_white_blue">Substances For Relaxation</b>
-<P>&nbsp;&#9679; <a href="substances_for_relaxation_cacao_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Cacao</a>
-<P>&nbsp;&#9679; <a href="substances_for_relaxation_cannabis_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Cannabis</a>
-<P>&nbsp;&#9679; <a href="substances_for_relaxation_cigarettes_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Cigarettes</a>
-<P>&nbsp;&#9679; <a href="substances_for_relaxation_coffee_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Coffee</a>
-<P>&nbsp;&#9679; <a href="substances_for_relaxation_energy_drinks_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Energy Drinks</a>
-<P>&nbsp;&#9679; <a href="substances_for_relaxation_psilocybin_mushrooms_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Psilocybin Mushrooms</a>
-<P>&nbsp;&#9679; <a href="substances_for_relaxation_tea_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Tea</a>
-<P>&nbsp;&#9679; <a href="substances_for_relaxation_tobacco_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Tobaccoo</a>
+﻿<b class="text_white_blue">Substances For Relaxation</b>
+&nbsp;&#9679; <a href="substances_for_relaxation_cacao_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Cacao</a>
+&nbsp;&#9679; <a href="substances_for_relaxation_cannabis_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Cannabis</a>
+&nbsp;&#9679; <a href="substances_for_relaxation_cigarettes_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Cigarettes</a>
+&nbsp;&#9679; <a href="substances_for_relaxation_coffee_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Coffee</a>
+&nbsp;&#9679; <a href="substances_for_relaxation_energy_drinks_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Energy Drinks</a>
+&nbsp;&#9679; <a href="substances_for_relaxation_psilocybin_mushrooms_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Psilocybin Mushrooms</a>
+&nbsp;&#9679; <a href="substances_for_relaxation_tea_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Tea</a>
+&nbsp;&#9679; <a href="substances_for_relaxation_tobacco_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Tobaccoo</a>

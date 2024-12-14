@@ -568,7 +568,7 @@ function showContents(type, sortby, lang) {
 			 var cell1 = row.insertCell(0);
 			cell1.className = 'text_'+textColor+"_blue";
 			cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;');
-			 cell1.innerHTML = fileContents[0].substr(3);
+			 cell1.innerHTML = fileContents[0];
 
 
 
@@ -683,12 +683,12 @@ function showContents(type, sortby, lang) {
 
 // ------------- End of Loading Feed Image ----------- //
 
-			 var row = table.insertRow(-1);
-			 var cell1 = row.insertCell(0);
-			cell1.className = 'text_'+textColor+"_blue";
-
 			 for (var i = 1; i < fileContents.length; i++) { 
-				cell1.innerHTML = cell1.innerHTML+fileContents[i]+"\n";
+				 var row = table.insertRow(-1);
+				 var cell1 = row.insertCell(0);
+				cell1.className = 'text_'+textColor+"_blue";
+				cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;');
+				cell1.innerHTML = cell1.innerHTML+fileContents[i];
 			 }
 
 
