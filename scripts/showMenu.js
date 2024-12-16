@@ -4476,13 +4476,6 @@ if (lang=="eng") {
 	wholeMenu["2013 &amp; 2014"].link = "amv_2013_2014_eng.html";
 	wholeMenu["2013 &amp; 2014"].html = '2013 &amp; 2014';
 
-	wholeMenu["y2020"] = {};
-	wholeMenu["y2020"].id = "12_3";
-	wholeMenu["y2020"].color = "black";
-	wholeMenu["y2020"].hasSub = 0;
-	wholeMenu["y2020"].link = "amv_2020_eng.html";
-	wholeMenu["y2020"].html = '2020';
-
 	wholeMenu["y2021"] = {};
 	wholeMenu["y2021"].id = "12_4";
 	wholeMenu["y2021"].color = "black";
@@ -4535,13 +4528,6 @@ if (lang=="rus") {
 	wholeMenu["2013 &amp; 2014"].hasSub = 0;
 	wholeMenu["2013 &amp; 2014"].link = "amv_2013_2014_rus.html";
 	wholeMenu["2013 &amp; 2014"].html = '2013 &amp; 2014';
-
-	wholeMenu["y2020"] = {};
-	wholeMenu["y2020"].id = "12_3";
-	wholeMenu["y2020"].color = "black";
-	wholeMenu["y2020"].hasSub = 0;
-	wholeMenu["y2020"].link = "amv_2020_rus.html";
-	wholeMenu["y2020"].html = '2020';
 
 	wholeMenu["y2021"] = {};
 	wholeMenu["y2021"].id = "12_4";
@@ -4596,13 +4582,6 @@ if (lang=="lat") {
 	wholeMenu["2013 &amp; 2014"].hasSub = 0;
 	wholeMenu["2013 &amp; 2014"].link = "amv_2013_2014_lat.html";
 	wholeMenu["2013 &amp; 2014"].html = '2013 &amp; 2014';
-
-	wholeMenu["y2020"] = {};
-	wholeMenu["y2020"].id = "12_3";
-	wholeMenu["y2020"].color = "black";
-	wholeMenu["y2020"].hasSub = 0;
-	wholeMenu["y2020"].link = "amv_2020_lat.html";
-	wholeMenu["y2020"].html = '2020';
 
 	wholeMenu["y2021"] = {};
 	wholeMenu["y2021"].id = "12_4";
