@@ -106,13 +106,29 @@ function refreshSortByTabs(typeL, sortbyTypeL, lang) {
 	}
 }
 
-
+function removeSpan(line){      
+	var spanStpos = line.indexOf("<span");
+	if (spanStpos!= -1) {
+		var spanStpos2 = line.indexOf(">", 5);
+		if (spanStpos2!= -1) {
+			var spanEndpos = line.indexOf("</span>");
+			if (spanEndpos!= -1) {
+				line = line.substr(spanStpos2+1, spanEndpos-spanStpos2-1);
+			}
+		}
+	}
+	return line;
+}
 
 function sortByDate(fileContentsL, lang, textColor){       
 	
 	var myDates = [];
 	
 	for (var i = 1; i < fileContentsL.length; i++) {
+
+		// remove span
+		fileContentsL[i]=removeSpan(fileContentsL[i]);
+
 		str=fileContentsL[i];
 	    // get date value
 		var addedpos = str.indexOf("data-added=");
@@ -233,6 +249,10 @@ function sortByFlag(fileContentsL, lang, textColor){
 	zeroContents = [];
 
 	for (var i = 1; i < fileContentsL.length; i++) {
+
+		// remove span
+		fileContentsL[i]=removeSpan(fileContentsL[i]);
+
 		str=fileContentsL[i];
 	    // get date value
 		var flagpos = str.indexOf("data-country=");
