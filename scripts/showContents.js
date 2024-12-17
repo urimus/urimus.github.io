@@ -214,11 +214,11 @@ function sortByDate(fileContentsL, lang, textColor){
 	for (var i = len-2; i>=0; i--) {
 		if (myDates[i+1]=="0") continue;
 		if(myDates[i+1].getFullYear()!=myDates[i].getFullYear()) {
-			textYearHTML="<table>";
+			textYearHTML="<table cellpadding='0' cellspacing='0'>";
 			textYearHTML+="<tr>";
-			textYearHTML+="<td width='50%'><table width='100%' cellpadding='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
-			textYearHTML+="<td><div class='nimetus2_"+textColor+"'>"+myDates[i+1].getFullYear()+"</div></td>";
-			textYearHTML+="<td width='100%'><table width='100%' cellpadding='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
+			textYearHTML+="<td width='50%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
+			textYearHTML+="<td><div class='nimetus2_"+textColor+"' style='padding-left:2px; padding-right:2px;'>"+myDates[i+1].getFullYear()+"</div></td>";
+			textYearHTML+="<td width='100%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
 			textYearHTML+="</tr>";
 			textYearHTML+="</table>";
 			fileContentsL.splice(i+2, 0, textYearHTML);
@@ -226,15 +226,21 @@ function sortByDate(fileContentsL, lang, textColor){
 	}
 
 	if (len>1) {
-		textYearHTML="<table>";
+		textYearHTML="<table cellpadding='0' cellspacing='0'>";
 		textYearHTML+="<tr>";
-		textYearHTML+="<td width='50%'><table width='100%' cellpadding='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
-		textYearHTML+="<td><div class='nimetus2_"+textColor+"'>"+myDates[0].getFullYear()+"</div></td>";
-		textYearHTML+="<td width='100%'><table width='100%' cellpadding='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
+		textYearHTML+="<td width='50%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
+		textYearHTML+="<td><div class='nimetus2_"+textColor+"' style='padding-left:2px; padding-right:2px;'>"+myDates[0].getFullYear()+"</div></td>";
+		textYearHTML+="<td width='100%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
 		textYearHTML+="</tr>";
 		textYearHTML+="</table>";
 		fileContentsL.splice(1, 0, textYearHTML);
 	}
+
+	// add padding
+	for (var i = 1; i < fileContentsL.length; i++) {
+		fileContentsL[i]="<div style='padding-left:5px;'>"+fileContentsL[i]+"</div>";
+	}
+
 	return fileContentsL;
 }
 
@@ -305,13 +311,13 @@ function sortByFlag(fileContentsL, lang, textColor){
 	for (var i = len-2; i>=0; i--) {
 		if (myFlags[i+1]=="") continue;
 		if(myFlags[i+1]!=myFlags[i]) {
-			textFlagHTML="<table>";
+			textFlagHTML="<table cellpadding='0' cellspacing='0'>";
 			textFlagHTML+="<tr>";
-			textFlagHTML+="<td width='50%'><table width='100%' cellpadding='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
-			textFlagHTML+="<td><div class='nimetus2_"+textColor+"'>";
+			textFlagHTML+="<td width='50%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
+			textFlagHTML+="<td><div class='nimetus2_"+textColor+"' style='padding-left:2px; padding-right:2px;'>";
 			textFlagHTML+='<img src="lang/all/'+myTextFlags[i+1]+'.gif" width="22" height="14"  title="'+myFlags[i+1]+'"style="vertical-align:middle;"/>' 
 			textFlagHTML+="</div></td>";
-			textFlagHTML+="<td width='100%'><table width='100%' cellpadding='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
+			textFlagHTML+="<td width='100%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
 			textFlagHTML+="</tr>";
 			textFlagHTML+="</table>";
 			fileContentsL2.splice(i+2, 0, textFlagHTML);
@@ -320,13 +326,13 @@ function sortByFlag(fileContentsL, lang, textColor){
 
 	if (len>1) {
 		if (myFlags[0]!="") {
-			textFlagHTML="<table>";
+			textFlagHTML="<table cellpadding='0' cellspacing='0'>";
 			textFlagHTML+="<tr>";
-			textFlagHTML+="<td width='50%'><table width='100%' cellpadding='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
-			textFlagHTML+="<td><div class='nimetus2_"+textColor+"'>";
+			textFlagHTML+="<td width='50%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
+			textFlagHTML+="<td><div class='nimetus2_"+textColor+"' style='padding-left:2px; padding-right:2px;'>";
 			textFlagHTML+='<img src="lang/all/'+myTextFlags[0]+'.gif" width="22" height="14"  title="'+myFlags[0]+'"style="vertical-align:middle;"/>' 
 			textFlagHTML+="</div></td>";
-			textFlagHTML+="<td width='100%'><table width='100%' cellpadding='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
+			textFlagHTML+="<td width='100%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
 			textFlagHTML+="</tr>";
 			textFlagHTML+="</table>";
 			fileContentsL2.splice(1, 0, textFlagHTML);
@@ -336,12 +342,17 @@ function sortByFlag(fileContentsL, lang, textColor){
 	// if no coutry set then should be last
 	textFlagHTML="<table width='100%'>";
 	textFlagHTML+="<tr width='100%'>";
-	textFlagHTML+="<td width='100%'><table width='100%' cellpadding='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
+	textFlagHTML+="<td width='100%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 1px solid;'></td></tr></table></td>";
 	textFlagHTML+="</tr>";
 	textFlagHTML+="</table>";
 	fileContentsL2.push(textFlagHTML);
 	for (var i = 0; i < zeroContents.length; i++) {
 		fileContentsL2.push(zeroContents[i]);
+	}
+
+	// add padding
+	for (var i = 1; i < fileContentsL2.length; i++) {
+		fileContentsL2[i]="<div style='padding-left:5px;'>"+fileContentsL2[i]+"</div>";
 	}
 
 	return fileContentsL2;
