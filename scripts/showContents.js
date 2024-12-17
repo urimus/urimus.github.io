@@ -696,7 +696,7 @@ function showContents(type, sortby, lang) {
 
 			var row = table.insertRow(-1);
 			var cell1 = row.insertCell(0);
-			cell1.style = 'padding-left:10px; padding-right:10px; vertical-align: bottom;';
+			cell1.style = 'padding-left:10px; padding-right:10px; padding-bottom:2px;';
 			cell1.style.textAlign = 'right';
 			var date_div =  document.createElement("div");
 			date_div.className = 'textsmall_'+textColor+"_blue";
