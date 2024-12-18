@@ -106,7 +106,9 @@ function refreshSortByTabs(typeL, sortbyTypeL, lang) {
 	}
 }
 
-function removeSpan(line){      
+function correctPadding(line){
+
+	// remove init padding
 	var spanStpos = line.indexOf("<span");
 	if (spanStpos!= -1) {
 		var spanStpos2 = line.indexOf(">", 5);
@@ -117,6 +119,9 @@ function removeSpan(line){
 			}
 		}
 	}
+
+	// add padding
+	line="<span style='padding-left:10px;'>"+line+"</span>";
 	return line;
 }
 
@@ -126,8 +131,7 @@ function sortByDate(fileContentsL, lang, textColor){
 	
 	for (var i = 1; i < fileContentsL.length; i++) {
 
-		// remove span
-		fileContentsL[i]=removeSpan(fileContentsL[i]);
+		fileContentsL[i]=correctPadding(fileContentsL[i]);
 
 		str=fileContentsL[i];
 	    // get date value
@@ -236,11 +240,6 @@ function sortByDate(fileContentsL, lang, textColor){
 		fileContentsL.splice(1, 0, textYearHTML);
 	}
 
-	// add padding
-	for (var i = 1; i < fileContentsL.length; i++) {
-		fileContentsL[i]="<div style='padding-left:5px;'>"+fileContentsL[i]+"</div>";
-	}
-
 	return fileContentsL;
 }
 
@@ -256,8 +255,7 @@ function sortByFlag(fileContentsL, lang, textColor){
 
 	for (var i = 1; i < fileContentsL.length; i++) {
 
-		// remove span
-		fileContentsL[i]=removeSpan(fileContentsL[i]);
+		fileContentsL[i]=correctPadding(fileContentsL[i]);
 
 		str=fileContentsL[i];
 	    // get date value
@@ -350,13 +348,7 @@ function sortByFlag(fileContentsL, lang, textColor){
 		fileContentsL2.push(zeroContents[i]);
 	}
 
-	// add padding
-	for (var i = 1; i < fileContentsL2.length; i++) {
-		fileContentsL2[i]="<div style='padding-left:5px;'>"+fileContentsL2[i]+"</div>";
-	}
-
 	return fileContentsL2;
-	
 }
 
 
