@@ -2,51 +2,33 @@
 By Genre:----------------------------------------------------------
 
 Body Horror
-- Altered Carbon
-- BrainDead
-- Code 404
-- Dahmer – Monster: The Jeffrey Dahmer Story
 - Dark Matter
 - Death's Game
 - Don't Look Deeper
-- The Feed
 - Grid
-- Guillermo del Toro's Cabinet of Curiosities
 - The Last of Us
-- Parasyte: The Grey
-- The Patient
 - The Peripheral
-- Russian Doll
-- See
 
 Fantasy
 - Carnival Row
-- Into the Badlands
 - Miracle Workers
 - The New Legends of Monkey
 - Shadow and Bone
-- The Shannara Chronicles
 - The Spiderwick Chronicles
-- The Watch
 - The Wheel of Time
 - The Witcher
 
 Historical Fiction
 - 12 Monkeys
 - Black Knight
-- Britannia
-- Chernobyl
 - The Continental: From the World of John Wick
 - Crossbones
 - Knightfall
-- The Lazarus Project
-- The Mosquito Coast
 - Snowpiercer
 - Vikings: Valhalla
 
 Space Opera
 - The 100
-- 3 Body Problem
 - The Ark
 - Beacon 23
 - Debris
@@ -56,10 +38,7 @@ Space Opera
 - Halo
 - Hello Tomorrow!
 - Moonhaven
-- The Orville
 - Pandora
-- Salvage Marines
-- The Silent Sea
 
 Supernatural
 - All the Light We Cannot See
@@ -77,12 +56,9 @@ a. For Adults
 - Castlevania
 - The Cuphead Show!
 - The Dark Crystal: Age of Resistance
-- Dragon Age: Absolution
 - Final Space
 - Hazbin Hotel
 - Hit-Monkey
-- I Am Groot
-- Inside Job
 - Love, Death & Robots
 - Scavengers Reign
 - Vixen
@@ -90,9 +66,25 @@ a. For Adults
 b. For Children
 - Blade Runner: Black Lotus
 - Dug Days
-- Hammer and Bolter
 - Kid Cosmic
 - Wizards: Tales of Arcadia
+
+Superhero
+a. DC Comics
+- Doom Patrol
+- The Sandman
+- Swamp Thing
+
+b. Marvel Comics
+- Hawkeye
+- Moon Knight
+- WandaVision
+
+c. Other
+- Cowboy Bebop
+- The Imperfects
+- Jupiter's Legacy
+- Vagrant Queen
 
 Fallout
 - Fallout
@@ -108,21 +100,3 @@ Star Wars
 - Star Wars Forces of Destiny
 - Star Wars: Tales of the Empire
 - Star Wars: Visions
-
-Superhero
-a. DC Comics
-- Doom Patrol
-- The Sandman
-- Swamp Thing
-
-b. Marvel Comics
-- Hawkeye
-- Moon Knight
-- WandaVision
-
-c. Other
-- 4400 (2021)
-- Cowboy Bebop
-- The Imperfects
-- Jupiter's Legacy
-- Vagrant Queen
