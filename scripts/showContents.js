@@ -313,7 +313,7 @@ function sortByFlag(fileContentsL, lang, textColor){
 			textFlagHTML+="<tr>";
 			textFlagHTML+="<td width='50%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 4px double; border-top: transparent 4px double;'></td></tr></table></td>";
 			textFlagHTML+="<td><div class='nimetus2_"+textColor+"' style='padding-left:2px; padding-right:2px;'>";
-			textFlagHTML+='<img src="lang/all/'+myTextFlags[i+1]+'.gif" width="22" height="14"  title="'+myFlags[i+1]+'"style="vertical-align:middle;"/>' 
+			textFlagHTML+='<img src="lang/all/'+myTextFlags[i+1]+'.gif" width="30" title="'+myFlags[i+1]+'"style="vertical-align:middle;"/>' 
 			textFlagHTML+="</div></td>";
 			textFlagHTML+="<td width='100%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 4px double; border-top: transparent 4px double;'></td></tr></table></td>";
 			textFlagHTML+="</tr>";
@@ -328,7 +328,7 @@ function sortByFlag(fileContentsL, lang, textColor){
 			textFlagHTML+="<tr>";
 			textFlagHTML+="<td width='50%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 4px double; border-top: transparent 4px double;'></td></tr></table></td>";
 			textFlagHTML+="<td><div class='nimetus2_"+textColor+"' style='padding-left:2px; padding-right:2px;'>";
-			textFlagHTML+='<img src="lang/all/'+myTextFlags[0]+'.gif" width="22" height="14"  title="'+myFlags[0]+'"style="vertical-align:middle;"/>' 
+			textFlagHTML+='<img src="lang/all/'+myTextFlags[0]+'.gif" width="30" title="'+myFlags[0]+'"style="vertical-align:middle;"/>' 
 			textFlagHTML+="</div></td>";
 			textFlagHTML+="<td width='100%'><table width='100%' cellpadding='0' cellspacing='0'><tr><td style='border-bottom: #ff8a00 4px double; border-top: transparent 4px double;'></td></tr></table></td>";
 			textFlagHTML+="</tr>";
