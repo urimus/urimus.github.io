@@ -836,7 +836,7 @@ function showFeed(type, source, lang) {
 
 	feednami.load(feedURL, function(result){
 		if(result.error){
-			document.getElementById("loadingDivTitle").innerHTML =  result.error;
+			document.getElementById("loadingDivTitle").innerHTML =  result.error.message +"  "+feedIconText;
 			return;
 		}
 		if (result.feed.entries.length==0) {
