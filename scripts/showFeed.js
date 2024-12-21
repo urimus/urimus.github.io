@@ -11,7 +11,7 @@ function newsLoad(lang) {
 	
 	sourceL=getParameterByName('source');
 	if (sourceL && sourceL!="") {
-		if (sourceL=="bbc" || sourceL=="cbs" || sourceL=="koreaherald" || sourceL=="nasa" || sourceL=="yahoo")  {
+		if (sourceL=="bbc" || sourceL=="cbs" || sourceL=="nasa" || sourceL=="yahoo" || sourceL=="yonhap")  {
 			source=sourceL;
 		}
 	} else {
@@ -38,9 +38,9 @@ function newsLoad(lang) {
 	if (typeL && typeL!="") {
 		if (source=="bbc" && (typeL=="top" || typeL=="world" || typeL=="uk" || typeL=="business" || typeL=="politics" || typeL=="health" || typeL=="education" || typeL=="science" || typeL=="technology" || typeL=="entertainment") 
 		|| source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
-		|| source=="koreaherald" && (typeL=="all" || typeL=="world" || typeL=="national" || typeL=="business" || typeL=="life" || typeL=="sports" || typeL=="opinion" || typeL=="kpop") 
 		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis" || typeL=="picture") 
-		|| source=="yahoo" && (typeL=="top" || typeL=="world" || typeL=="us" || typeL=="politics" || typeL=="health" || typeL=="finance" || typeL=="science" || typeL=="sports" || typeL=="entertainment" || typeL=="lifestyle"))  {
+		|| source=="yahoo" && (typeL=="top" || typeL=="world" || typeL=="us" || typeL=="politics" || typeL=="health" || typeL=="finance" || typeL=="science" || typeL=="sports" || typeL=="entertainment" || typeL=="lifestyle")
+		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports") )  {
 			type=typeL;
 		}
 	} else {
@@ -60,14 +60,14 @@ function newsLoad(lang) {
 	    	if (source=="cbs") {
 			window.location.href='news_'+lang+'.html?source=cbs&type=top';
 		}
-	    	if (source=="koreaherald") {
-			window.location.href='news_'+lang+'.html?source=koreaherald&type=all';
-		}
 	    	if (source=="nasa") {
 			window.location.href='news_'+lang+'.html?source=nasa&type=releases';
 		}
 	    	if (source=="yahoo") {
 			window.location.href='news_'+lang+'.html?source=yahoo&type=top';
+		}
+	    	if (source=="yonhap") {
+			window.location.href='news_'+lang+'.html?source=yonhap&type=all';
 		}
 		return;
 	}
@@ -102,7 +102,7 @@ function processShowFeedTitle(type, source, lang, result) {
 	// Records Text is in getRecordsText function
 	if (lang == "rus"){
 		textRssFeed="RSS Строка";
-		if (source == "bbc" || source == "cbs" || source == "koreaherald" || source == "nasa" || source == "yahoo") textRssFeed=textRssFeed+" (англ.)";
+		if (source == "bbc" || source == "cbs" || source == "nasa" || source == "yahoo" || source == "yonhap") textRssFeed=textRssFeed+" (англ.)";
 		textZero="Нет";
 		textLocalCopy="Локальная Копия";
 		textObtainedBy="Получено через";
@@ -163,7 +163,7 @@ function processShowFeedTitle(type, source, lang, result) {
 
 		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+textRssFeed;
 
-		if (source == "bbc" || source == "cbs" || source == "nasa" || source == "koreaherald" || source == "yahoo") {
+		if (source == "bbc" || source == "cbs" || source == "nasa" || source == "yahoo" || source == "yonhap") {
 			var a = document.createElement('a');
 			a.setAttribute('href', result.feedXML);
 			a.setAttribute('class', 'standardb_red');
@@ -213,7 +213,7 @@ function processShowFeedTitle(type, source, lang, result) {
 				updateImages(0, source, type, result, locStUpdateData, lang);
 			} else if (source=="bbc" || (source=="nasa" && (type=="image" || type=="picture")) || (source=="yahoo" && type=="sports")) {
 				processShowFeedData(type, source, lang, result);
-			}  else if (source == "koreaherald" || (source=="yahoo" && type!="sports")) {
+			}  else if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
 				locStPar=source+"_"+type+"_descriptions";
 				locStUpdateData=getLocalStorageData(locStPar);
 				updateDescription(0, source, type, result, locStUpdateData, lang);
@@ -425,7 +425,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 
 	var preloadImg=document.createElement("img");
 	preloadImg.dataset.failedAttempts=0;
-	if (source=="nasa" || source=="koreaherald") {
+	if (source=="nasa") {
 		preloadImg.setAttribute('src', entry.media.url+"?w=450");
 	} else {
 		preloadImg.setAttribute('src', entry.media.url);
@@ -433,7 +433,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	preloadImg.onload = function () {
 		if (preloadImg.naturalWidth<preloadImg.width) {
 			Img.width=preloadImg.naturalWidth;
-			if (entry.summary != null && (source == "nasa"|| source == "koreaherald"|| source == "yahoo" || source == "cbs")) {
+			if (entry.summary != null && (source == "nasa"|| source == "yahoo" || source == "cbs"|| source == "yonhap")) {
 				formatSummaryDiv(lang, summaryDiv, entry);
 			}
 		}
@@ -529,7 +529,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 
 	var cell1=tableMainRow.insertCell(i);
 	cell1.appendChild(newsTable1Record);
-	if (entry.summary != null && (source == "nasa" || source == "koreaherald" || source == "yahoo" || source == "cbs")) {
+	if (entry.summary != null && (source == "nasa" || source == "yahoo" || source == "cbs" || source == "yonhap")) {
 		if (i==0) {
 			var cell2=tableMainRow.insertCell(1);
 			newsTable1Record2 = newsTable1Record.cloneNode(true);
@@ -635,17 +635,6 @@ function generateTabs(type, source, lang) {
 		tabs["entertainment"]="Entertainment";
 		tabs["space"]="Space";
 	}
-	if (source=="koreaherald") {
-		tabs["all"]="All Stories";
-		tabs["world"]="World";
-		tabs["national"]="National";
-		tabs["business"]="Business";
-		tabs["life"]="Life&Culture";
-		tabs["sports"]="Sports";
-		tabs["opinion"]="Opinion";
-		tabs["kpop"]="K-pop";
-	}
-
 	if (source=="nasa") {
 		tabs["releases"]="News Releases";
 		tabs["recent"]="Recent";
@@ -670,6 +659,16 @@ function generateTabs(type, source, lang) {
 		tabs["lifestyle"]="Lifestyle";
 	}
 
+	if (source=="yonhap") {
+		tabs["all"]="All News";
+		tabs["national"]="National";
+		tabs["northkorea"]="North Korea";
+		tabs["economy"]="Economy/Finance";
+		tabs["biz"]="BIZ";
+		tabs["culture"]="Culture/K-pop";
+		tabs["sports"]="Sports";
+	}
+
 	if (source == "bbc") {
 		textFeedSource = "BBC";
 		menuDiv=document.getElementById("menu_26_1");
@@ -678,10 +677,6 @@ function generateTabs(type, source, lang) {
 		textFeedSource = "CBS";
 		menuDiv=document.getElementById("menu_26_3");
 	}
-	if (source == "koreaherald") {
-		textFeedSource = "The Korea Herald";
-		menuDiv=document.getElementById("menu_26_4");
-	}
 	if (source == "nasa") {
 		textFeedSource = "NASA";
 		menuDiv=document.getElementById("menu_26_2");
@@ -689,6 +684,10 @@ function generateTabs(type, source, lang) {
 	if (source == "yahoo") {
 		textFeedSource = "Yahoo";
 		menuDiv=document.getElementById("menu_26_5");
+	}
+	if (source == "yonhap") {
+		textFeedSource = "Yonhap News Agency";
+		menuDiv=document.getElementById("menu_26_4");
 	}
 
 	menuDiv.setAttribute('class', "menu_selected");
@@ -785,16 +784,6 @@ function showFeed(type, source, lang) {
 		if (type=="entertainment") feedURL="https://www.cbsnews.com/latest/rss/entertainment";
 		if (type=="space") feedURL="https://www.cbsnews.com/latest/rss/space";
 	}
-	if (source == "koreaherald") {
-		if (type=="all") feedURL="https://www.koreaherald.com/common/rss_xml.php?ct=101";
-		if (type=="world") feedURL="https://www.koreaherald.com/common/rss_xml.php?ct=107";
-		if (type=="national") feedURL="https://www.koreaherald.com/common/rss_xml.php?ct=102";
-		if (type=="business") feedURL="https://www.koreaherald.com/common/rss_xml.php?ct=103";
-		if (type=="life") feedURL="https://www.koreaherald.com/common/rss_xml.php?ct=104";
-		if (type=="sports") feedURL="https://www.koreaherald.com/common/rss_xml.php?ct=106";
-		if (type=="opinion") feedURL="https://www.koreaherald.com/common/rss_xml.php?ct=108";
-		if (type=="kpop") feedURL="https://www.koreaherald.com/common/rss_xml.php?ct=105";
-	}
 
 	if (source == "nasa") {
 		if (type=="releases") feedURL="https://www.nasa.gov/news-release/feed/";
@@ -818,6 +807,16 @@ function showFeed(type, source, lang) {
 		if (type=="sports") feedURL="https://sports.yahoo.com/cycling/rss";
 		if (type=="entertainment") feedURL="https://www.yahoo.com/entertainment/rss";
 		if (type=="lifestyle") feedURL="https://www.yahoo.com/lifestyle/rss";
+	}
+
+	if (source == "yonhap") {
+		if (type=="all") feedURL="https://en.yna.co.kr/RSS/news.xml";
+		if (type=="national") feedURL="https://en.yna.co.kr/RSS/national.xml";
+		if (type=="northkorea") feedURL="https://en.yna.co.kr/RSS/nk.xml";
+		if (type=="economy") feedURL="https://en.yna.co.kr/RSS/economy-finance.xml";
+		if (type=="biz") feedURL="https://en.yna.co.kr/RSS/biz.xml";
+		if (type=="culture") feedURL="https://en.yna.co.kr/RSS/culture.xml";
+		if (type=="sports") feedURL="https://en.yna.co.kr/RSS/sports.xml";
 	}
 
 	feedIconText="<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_both'  valign='middle'></a>";
@@ -911,23 +910,22 @@ function getLocalStorageData(par) {
 
 function optimizeUpdateResult(type, source, lang, resultOrig) {
 
-//console.log(resultOrig);
-
+console.log(resultOrig);
 
 	result={};
 	result.feedXML=resultOrig.feedXML;
 	if (source == "bbc") result.image="images/icons/feed/bbc_news_logo.png";
 	if (source == "cbs") result.image="images/icons/feed/cbs_news_logo.png";
-	if (source == "koreaherald") result.image="images/icons/feed/korea_herald_logo.png";
 	if (source == "nasa") result.image="images/icons/feed/NASA_Worm_logo.png";
 	if (source == "yahoo") result.image="images/icons/feed/yahoo_news_logo.png";
+	if (source == "yonhap") result.image="images/icons/feed/yonhap_news_logo.png";
 
 	result.entries=[];
 	if (resultOrig.feed.entries.length==0) return result;
 
 
-	if (source == "bbc" || source == "koreaherald" || source == "yahoo") result.title=resultOrig.feed.meta.image.title;
-	if (source == "cbs" || source == "nasa") result.title=resultOrig.feed.meta["rss:title"]["#"];
+	if (source == "bbc" || source == "yahoo") result.title=resultOrig.feed.meta.image.title;
+	if (source == "cbs" || source == "nasa" || source == "yonhap") result.title=resultOrig.feed.meta["rss:title"]["#"];
 	result.link=resultOrig.feed.meta.link;
 
 	items=resultOrig.feed.entries;
@@ -946,17 +944,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 		if (source == "cbs") {
 			result.entries[i].media.url=entry["rss:image"]["#"];
-			result.entries[i].media.width=450;
-			result.entries[i].summary=entry.description;
-		}
-		if (source == "koreaherald") {
-			if (entry["rss:image"]==null) {
-				result.entries[i].media.url="https://images.koreaherald.com/koreaherald/version03/www/images/share.jpg";
-				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
-				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
-			} else {
-				result.entries[i].media.url=entry["rss:image"]["#"];
-			}
 			result.entries[i].media.width=450;
 			result.entries[i].summary=entry.description;
 		}
@@ -1002,8 +989,15 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				}
 			}
 			result.entries[i].summary=entry.summary;
-
 		}
+		if (source == "yonhap") {
+			result.entries[i].media.url="https://r.yna.co.kr/global/home/v01/img/yonhapnews_logo_1200x800_en01.jpg"; 
+			if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
+			if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
+			result.entries[i].media.width=450;
+			result.entries[i].summary=entry.description;
+		}
+
 		if (result.entries[i].media.width>=450) result.entries[i].media.width=450;
 
 		if (entry.comments!=null) {
@@ -1039,7 +1033,24 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 
 		result.entries[i].link=entry.link;
-		result.entries[i].date_ms=entry.date_ms;
+		if (source != "yonhap"){
+			result.entries[i].date_ms=entry.date_ms;
+		} else {
+			feeddate=entry["rss:pubdate"]["#"];
+			mydate=new Date();
+			mydate.setFullYear(feeddate.substr(0,4));
+			mydate.setMonth(feeddate.substr(4,2)-1);
+			mydate.setDate(feeddate.substr(6,2));
+			mydate.setHours(feeddate.substr(8,2));
+			mydate.setMinutes(feeddate.substr(10,2));
+			mydate.setSeconds(feeddate.substr(12,2));
+			mydate.setMilliseconds(0);
+
+			// subsr KST +9
+			mydate.setTime(mydate.getTime() - (9*60*60*1000));
+
+			result.entries[i].date_ms=mydate.getTime();
+		}
 
 	}
 /* Feed can be stored locally
@@ -1180,6 +1191,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					return;
 				}
 			}
+
 			var doc = (new DOMParser).parseFromString(data, "text/html");
 
 			mediaURL="";
@@ -1259,6 +1271,10 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (lang=="rus") textUpdateSkipped="Обновление Отменено.";
 
 	if (skipUpdates==1) {
+		if (source=="yonhap") {
+			result.entries[i].media.comment=textUpdateSkipped;
+			result.entries[i].media.url="images/icons/error/skipped.jpg";
+		}
 		result.entries[i].error=textUpdateSkipped;
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
@@ -1274,6 +1290,10 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	a.innerText = textSkip;
 	a.onclick = function () {
 		skipUpdates=1;
+		if (source=="yonhap") {
+			result.entries[i].media.comment=textUpdateSkipped;
+			result.entries[i].media.url="images/icons/error/skipped.jpg";
+		}
 		result.entries[i].error=textUpdateSkipped;
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
@@ -1315,18 +1335,42 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				}
 			}
 
-			var doc = (new DOMParser).parseFromString(data, "text/html");
+			if (source!="yonhap") {
+				var doc = (new DOMParser).parseFromString(data, "text/html");
 
-			description="";
-			property=doc.head.querySelector('meta[name="description"]');
-			if (property != null) description=property.content;
-			if (description=="") {
-				property=doc.head.querySelector('meta[property="og:description"]');
+				description="";
+				property=doc.head.querySelector('meta[name="description"]');
 				if (property != null) description=property.content;
-			}
-			if (description=="") {
-				property=doc.head.querySelector('meta[name="twitter:description"]');
-				if (property != null) description=property.content;
+				if (description=="") {
+					property=doc.head.querySelector('meta[property="og:description"]');
+					if (property != null) description=property.content;
+				}
+				if (description=="") {
+					property=doc.head.querySelector('meta[name="twitter:description"]');
+					if (property != null) description=property.content;
+				}
+
+				mediaURL="";
+				property=doc.head.querySelector('meta[property="og:image"]');
+				if (property != null) mediaURL=property.content;
+				if (mediaURL!="") {
+					qPos=mediaURL.indexOf("?");
+					if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
+				} else {
+					mediaURL=result.entries[i].media.url;
+				}
+			} else {
+				description="";
+				mediaURL="";
+				contentsPos=data.indexOf("CONTENT_DATA");
+				if (contentsPos!=-1) {
+					jsonPosSt=data.indexOf("JSON.stringify", contentsPos+1);
+					jsonPosEd=data.indexOf("});", jsonPosSt+1);
+					jsonText=data.substr(jsonPosSt+15, jsonPosEd-jsonPosSt-14);
+					jsonDATA = JSON.parse(jsonText);
+					mediaURL=jsonDATA.IMG;
+					description=jsonDATA.BODY;
+				}
 			}
 
 			if (description!="") {
@@ -1338,24 +1382,19 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
 
-			mediaURL="";
-			property=doc.head.querySelector('meta[property="og:image"]');
-			if (property != null) mediaURL=property.content;
-			if (mediaURL!="") {
-				qPos=mediaURL.indexOf("?");
-				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
-			} else {
-				mediaURL=result.entries[i].media.url;
-			}
-
 			if (description!="") {
 				result.entries[i].summary=description;
 				locStUpdateData[entry_link]={};
 				locStUpdateData[entry_link].summary=description;
-				if (source=="yahoo") {
+				if (source=="yahoo" || source=="yonhap") {
 					result.entries[i].media.origUrl=result.entries[i].media.url;
-					result.entries[i].media.url=mediaURL;
-					locStUpdateData[entry_link].mediaUrl=mediaURL;
+					if (mediaURL!="") {
+						result.entries[i].media.url=mediaURL;
+						locStUpdateData[entry_link].mediaUrl=mediaURL;
+						result.entries[i].media.comment="";
+						locStUpdateData[entry_link].mediaComment="";
+
+					}
 				}
 				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
 			}

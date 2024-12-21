@@ -5684,69 +5684,6 @@ if (lang=="eng") {
 	wholeMenu["CBS RSS Feed Space"].link = "news_eng.html?source=cbs&type=space";
 	wholeMenu["CBS RSS Feed Space"].html = 'Space';
 
-	wholeMenu["● KoreaHerald RSS Feed"] = {};
-	wholeMenu["● KoreaHerald RSS Feed"].id = "26_4";
-	wholeMenu["● KoreaHerald RSS Feed"].color = "red";
-	wholeMenu["● KoreaHerald RSS Feed"].hasSub = 1;
-	wholeMenu["● KoreaHerald RSS Feed"].link = "";
-	wholeMenu["● KoreaHerald RSS Feed"].html = '&#9679; KoreaHerald RSS Feed';
-
-	wholeMenu["KoreaHerald RSS Feed All Stories"] = {};
-	wholeMenu["KoreaHerald RSS Feed All Stories"].id = "26_4_1";
-	wholeMenu["KoreaHerald RSS Feed All Stories"].color = "red";
-	wholeMenu["KoreaHerald RSS Feed All Stories"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Feed All Stories"].link = "news_eng.html?source=koreaherald&type=all";
-	wholeMenu["KoreaHerald RSS Feed All Stories"].html = 'All Stories';
-
-	wholeMenu["KoreaHerald RSS Feed World"] = {};
-	wholeMenu["KoreaHerald RSS Feed World"].id = "26_4_2";
-	wholeMenu["KoreaHerald RSS Feed World"].color = "red";
-	wholeMenu["KoreaHerald RSS Feed World"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Feed World"].link = "news_eng.html?source=koreaherald&type=world";
-	wholeMenu["KoreaHerald RSS Feed World"].html = 'World';
-
-	wholeMenu["KoreaHerald RSS Feed National"] = {};
-	wholeMenu["KoreaHerald RSS Feed National"].id = "26_4_3";
-	wholeMenu["KoreaHerald RSS Feed National"].color = "red";
-	wholeMenu["KoreaHerald RSS Feed National"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Feed National"].link = "news_eng.html?source=koreaherald&type=national";
-	wholeMenu["KoreaHerald RSS Feed National"].html = 'National';
-
-	wholeMenu["KoreaHerald RSS Feed Business"] = {};
-	wholeMenu["KoreaHerald RSS Feed Business"].id = "26_4_4";
-	wholeMenu["KoreaHerald RSS Feed Business"].color = "red";
-	wholeMenu["KoreaHerald RSS Feed Business"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Feed Business"].link = "news_eng.html?source=koreaherald&type=business";
-	wholeMenu["KoreaHerald RSS Feed Business"].html = 'Business';
-
-	wholeMenu["KoreaHerald RSS Feed Life&Culture"] = {};
-	wholeMenu["KoreaHerald RSS Feed Life&Culture"].id = "26_4_5";
-	wholeMenu["KoreaHerald RSS Feed Life&Culture"].color = "red";
-	wholeMenu["KoreaHerald RSS Feed Life&Culture"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Feed Life&Culture"].link = "news_eng.html?source=koreaherald&type=life";
-	wholeMenu["KoreaHerald RSS Feed Life&Culture"].html = 'Life&Culture';
-
-	wholeMenu["KoreaHerald RSS Feed Sports"] = {};
-	wholeMenu["KoreaHerald RSS Feed Sports"].id = "26_4_6";
-	wholeMenu["KoreaHerald RSS Feed Sports"].color = "red";
-	wholeMenu["KoreaHerald RSS Feed Sports"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Feed Sports"].link = "news_eng.html?source=koreaherald&type=sports";
-	wholeMenu["KoreaHerald RSS Feed Sports"].html = 'Sports';
-
-	wholeMenu["KoreaHerald RSS Feed Opinion"] = {};
-	wholeMenu["KoreaHerald RSS Feed Opinion"].id = "26_4_7";
-	wholeMenu["KoreaHerald RSS Feed Opinion"].color = "red";
-	wholeMenu["KoreaHerald RSS Feed Opinion"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Feed Opinion"].link = "news_eng.html?source=koreaherald&type=opinion";
-	wholeMenu["KoreaHerald RSS Feed Opinion"].html = 'Opinion';
-
-	wholeMenu["KoreaHerald RSS Feed K-pop"] = {};
-	wholeMenu["KoreaHerald RSS Feed K-pop"].id = "26_4_8";
-	wholeMenu["KoreaHerald RSS Feed K-pop"].color = "red";
-	wholeMenu["KoreaHerald RSS Feed K-pop"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Feed K-pop"].link = "news_eng.html?source=koreaherald&type=kpop";
-	wholeMenu["KoreaHerald RSS Feed K-pop"].html = 'K-pop';
-
 	wholeMenu["● NASA RSS Feed"] = {};
 	wholeMenu["● NASA RSS Feed"].id = "26_2";
 	wholeMenu["● NASA RSS Feed"].color = "red";
@@ -5886,6 +5823,62 @@ if (lang=="eng") {
 	wholeMenu["Yahoo RSS Feed Lifestyle"].hasSub = 0;
 	wholeMenu["Yahoo RSS Feed Lifestyle"].link = "news_eng.html?source=yahoo&type=lifestyle";
 	wholeMenu["Yahoo RSS Feed Lifestyle"].html = 'Lifestyle';
+
+	wholeMenu["● Yonhap RSS Feed"] = {};
+	wholeMenu["● Yonhap RSS Feed"].id = "26_4";
+	wholeMenu["● Yonhap RSS Feed"].color = "red";
+	wholeMenu["● Yonhap RSS Feed"].hasSub = 1;
+	wholeMenu["● Yonhap RSS Feed"].link = "";
+	wholeMenu["● Yonhap RSS Feed"].html = '&#9679; Yonhap RSS Feed';
+
+	wholeMenu["Yonhap RSS Feed All News"] = {};
+	wholeMenu["Yonhap RSS Feed All News"].id = "26_4_1";
+	wholeMenu["Yonhap RSS Feed All News"].color = "red";
+	wholeMenu["Yonhap RSS Feed All News"].hasSub = 0;
+	wholeMenu["Yonhap RSS Feed All News"].link = "news_eng.html?source=yonhap&type=all";
+	wholeMenu["Yonhap RSS Feed All News"].html = 'All News';
+
+	wholeMenu["Yonhap RSS Feed National"] = {};
+	wholeMenu["Yonhap RSS Feed National"].id = "26_4_2";
+	wholeMenu["Yonhap RSS Feed National"].color = "red";
+	wholeMenu["Yonhap RSS Feed National"].hasSub = 0;
+	wholeMenu["Yonhap RSS Feed National"].link = "news_eng.html?source=yonhap&type=national";
+	wholeMenu["Yonhap RSS Feed National"].html = 'National';
+
+	wholeMenu["Yonhap RSS Feed North Korea"] = {};
+	wholeMenu["Yonhap RSS Feed North Korea"].id = "26_4_3";
+	wholeMenu["Yonhap RSS Feed North Korea"].color = "red";
+	wholeMenu["Yonhap RSS Feed North Korea"].hasSub = 0;
+	wholeMenu["Yonhap RSS Feed North Korea"].link = "news_eng.html?source=yonhap&type=northkorea";
+	wholeMenu["Yonhap RSS Feed North Korea"].html = 'North Korea';
+
+	wholeMenu["Yonhap RSS Feed Economy/Finance"] = {};
+	wholeMenu["Yonhap RSS Feed Economy/Finance"].id = "26_4_4";
+	wholeMenu["Yonhap RSS Feed Economy/Finance"].color = "red";
+	wholeMenu["Yonhap RSS Feed Economy/Finance"].hasSub = 0;
+	wholeMenu["Yonhap RSS Feed Economy/Finance"].link = "news_eng.html?source=yonhap&type=economy";
+	wholeMenu["Yonhap RSS Feed Economy/Finance"].html = 'Economy/Finance';
+
+	wholeMenu["Yonhap RSS Feed BIZ"] = {};
+	wholeMenu["Yonhap RSS Feed BIZ"].id = "26_4_5";
+	wholeMenu["Yonhap RSS Feed BIZ"].color = "red";
+	wholeMenu["Yonhap RSS Feed BIZ"].hasSub = 0;
+	wholeMenu["Yonhap RSS Feed BIZ"].link = "news_eng.html?source=yonhap&type=biz";
+	wholeMenu["Yonhap RSS Feed BIZ"].html = 'BIZ';
+
+	wholeMenu["Yonhap RSS Feed Culture/K-pop"] = {};
+	wholeMenu["Yonhap RSS Feed Culture/K-pop"].id = "26_4_6";
+	wholeMenu["Yonhap RSS Feed Culture/K-pop"].color = "red";
+	wholeMenu["Yonhap RSS Feed Culture/K-pop"].hasSub = 0;
+	wholeMenu["Yonhap RSS Feed Culture/K-pop"].link = "news_eng.html?source=yonhap&type=culture";
+	wholeMenu["Yonhap RSS Feed Culture/K-pop"].html = 'Culture/K-pop';
+
+	wholeMenu["Yonhap RSS Feed Sports"] = {};
+	wholeMenu["Yonhap RSS Feed Sports"].id = "26_4_7";
+	wholeMenu["Yonhap RSS Feed Sports"].color = "red";
+	wholeMenu["Yonhap RSS Feed Sports"].hasSub = 0;
+	wholeMenu["Yonhap RSS Feed Sports"].link = "news_eng.html?source=yonhap&type=sports";
+	wholeMenu["Yonhap RSS Feed Sports"].html = 'Sports';
 
 }
 
@@ -6056,69 +6049,6 @@ if (lang=="rus") {
 	wholeMenu["CBS RSS Строка Space"].link = "news_rus.html?source=cbs&type=space";
 	wholeMenu["CBS RSS Строка Space"].html = 'Space';
 
-	wholeMenu["● KoreaHerald RSS Строка"] = {};
-	wholeMenu["● KoreaHerald RSS Строка"].id = "26_4";
-	wholeMenu["● KoreaHerald RSS Строка"].color = "red";
-	wholeMenu["● KoreaHerald RSS Строка"].hasSub = 1;
-	wholeMenu["● KoreaHerald RSS Строка"].link = "";
-	wholeMenu["● KoreaHerald RSS Строка"].html = '&#9679; KoreaHerald RSS Строка';
-
-	wholeMenu["KoreaHerald RSS Строка All Stories"] = {};
-	wholeMenu["KoreaHerald RSS Строка All Stories"].id = "26_4_1";
-	wholeMenu["KoreaHerald RSS Строка All Stories"].color = "red";
-	wholeMenu["KoreaHerald RSS Строка All Stories"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Строка All Stories"].link = "news_rus.html?source=koreaherald&type=all";
-	wholeMenu["KoreaHerald RSS Строка All Stories"].html = 'All Stories';
-
-	wholeMenu["KoreaHerald RSS Строка World"] = {};
-	wholeMenu["KoreaHerald RSS Строка World"].id = "26_4_2";
-	wholeMenu["KoreaHerald RSS Строка World"].color = "red";
-	wholeMenu["KoreaHerald RSS Строка World"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Строка World"].link = "news_rus.html?source=koreaherald&type=world";
-	wholeMenu["KoreaHerald RSS Строка World"].html = 'World';
-
-	wholeMenu["KoreaHerald RSS Строка National"] = {};
-	wholeMenu["KoreaHerald RSS Строка National"].id = "26_4_3";
-	wholeMenu["KoreaHerald RSS Строка National"].color = "red";
-	wholeMenu["KoreaHerald RSS Строка National"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Строка National"].link = "news_rus.html?source=koreaherald&type=national";
-	wholeMenu["KoreaHerald RSS Строка National"].html = 'National';
-
-	wholeMenu["KoreaHerald RSS Строка Business"] = {};
-	wholeMenu["KoreaHerald RSS Строка Business"].id = "26_4_4";
-	wholeMenu["KoreaHerald RSS Строка Business"].color = "red";
-	wholeMenu["KoreaHerald RSS Строка Business"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Строка Business"].link = "news_rus.html?source=koreaherald&type=business";
-	wholeMenu["KoreaHerald RSS Строка Business"].html = 'Business';
-
-	wholeMenu["KoreaHerald RSS Строка Life&Culture"] = {};
-	wholeMenu["KoreaHerald RSS Строка Life&Culture"].id = "26_4_5";
-	wholeMenu["KoreaHerald RSS Строка Life&Culture"].color = "red";
-	wholeMenu["KoreaHerald RSS Строка Life&Culture"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Строка Life&Culture"].link = "news_rus.html?source=koreaherald&type=life";
-	wholeMenu["KoreaHerald RSS Строка Life&Culture"].html = 'Life&Culture';
-
-	wholeMenu["KoreaHerald RSS Строка Sports"] = {};
-	wholeMenu["KoreaHerald RSS Строка Sports"].id = "26_4_6";
-	wholeMenu["KoreaHerald RSS Строка Sports"].color = "red";
-	wholeMenu["KoreaHerald RSS Строка Sports"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Строка Sports"].link = "news_rus.html?source=koreaherald&type=sports";
-	wholeMenu["KoreaHerald RSS Строка Sports"].html = 'Sports';
-
-	wholeMenu["KoreaHerald RSS Строка Opinion"] = {};
-	wholeMenu["KoreaHerald RSS Строка Opinion"].id = "26_4_7";
-	wholeMenu["KoreaHerald RSS Строка Opinion"].color = "red";
-	wholeMenu["KoreaHerald RSS Строка Opinion"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Строка Opinion"].link = "news_rus.html?source=koreaherald&type=opinion";
-	wholeMenu["KoreaHerald RSS Строка Opinion"].html = 'Opinion';
-
-	wholeMenu["KoreaHerald RSS Строка K-pop"] = {};
-	wholeMenu["KoreaHerald RSS Строка K-pop"].id = "26_4_8";
-	wholeMenu["KoreaHerald RSS Строка K-pop"].color = "red";
-	wholeMenu["KoreaHerald RSS Строка K-pop"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Строка K-pop"].link = "news_rus.html?source=koreaherald&type=kpop";
-	wholeMenu["KoreaHerald RSS Строка K-pop"].html = 'K-pop';
-
 	wholeMenu["● NASA RSS Строка"] = {};
 	wholeMenu["● NASA RSS Строка"].id = "26_2";
 	wholeMenu["● NASA RSS Строка"].color = "red";
@@ -6258,6 +6188,63 @@ if (lang=="rus") {
 	wholeMenu["Yahoo RSS Строка Lifestyle"].hasSub = 0;
 	wholeMenu["Yahoo RSS Строка Lifestyle"].link = "news_rus.html?source=yahoo&type=lifestyle";
 	wholeMenu["Yahoo RSS Строка Lifestyle"].html = 'Lifestyle';
+
+	wholeMenu["● Yonhap RSS Строка"] = {};
+	wholeMenu["● Yonhap RSS Строка"].id = "26_4";
+	wholeMenu["● Yonhap RSS Строка"].color = "red";
+	wholeMenu["● Yonhap RSS Строка"].hasSub = 1;
+	wholeMenu["● Yonhap RSS Строка"].link = "";
+	wholeMenu["● Yonhap RSS Строка"].html = '&#9679; Yonhap RSS Строка';
+
+	wholeMenu["Yonhap RSS Строка All News"] = {};
+	wholeMenu["Yonhap RSS Строка All News"].id = "26_4_1";
+	wholeMenu["Yonhap RSS Строка All News"].color = "red";
+	wholeMenu["Yonhap RSS Строка All News"].hasSub = 0;
+	wholeMenu["Yonhap RSS Строка All News"].link = "news_rus.html?source=yonhap&type=all";
+	wholeMenu["Yonhap RSS Строка All News"].html = 'All News';
+
+	wholeMenu["Yonhap RSS Строка National"] = {};
+	wholeMenu["Yonhap RSS Строка National"].id = "26_4_2";
+	wholeMenu["Yonhap RSS Строка National"].color = "red";
+	wholeMenu["Yonhap RSS Строка National"].hasSub = 0;
+	wholeMenu["Yonhap RSS Строка National"].link = "news_rus.html?source=yonhap&type=national";
+	wholeMenu["Yonhap RSS Строка National"].html = 'National';
+
+	wholeMenu["Yonhap RSS Строка North Korea"] = {};
+	wholeMenu["Yonhap RSS Строка North Korea"].id = "26_4_3";
+	wholeMenu["Yonhap RSS Строка North Korea"].color = "red";
+	wholeMenu["Yonhap RSS Строка North Korea"].hasSub = 0;
+	wholeMenu["Yonhap RSS Строка North Korea"].link = "news_rus.html?source=yonhap&type=northkorea";
+	wholeMenu["Yonhap RSS Строка North Korea"].html = 'North Korea';
+
+	wholeMenu["Yonhap RSS Строка Economy/Finance"] = {};
+	wholeMenu["Yonhap RSS Строка Economy/Finance"].id = "26_4_4";
+	wholeMenu["Yonhap RSS Строка Economy/Finance"].color = "red";
+	wholeMenu["Yonhap RSS Строка Economy/Finance"].hasSub = 0;
+	wholeMenu["Yonhap RSS Строка Economy/Finance"].link = "news_rus.html?source=yonhap&type=economy";
+	wholeMenu["Yonhap RSS Строка Economy/Finance"].html = 'Economy/Finance';
+
+	wholeMenu["Yonhap RSS Строка BIZ"] = {};
+	wholeMenu["Yonhap RSS Строка BIZ"].id = "26_4_5";
+	wholeMenu["Yonhap RSS Строка BIZ"].color = "red";
+	wholeMenu["Yonhap RSS Строка BIZ"].hasSub = 0;
+	wholeMenu["Yonhap RSS Строка BIZ"].link = "news_rus.html?source=yonhap&type=biz";
+	wholeMenu["Yonhap RSS Строка BIZ"].html = 'BIZ';
+
+	wholeMenu["Yonhap RSS Строка Culture/K-pop"] = {};
+	wholeMenu["Yonhap RSS Строка Culture/K-pop"].id = "26_4_6";
+	wholeMenu["Yonhap RSS Строка Culture/K-pop"].color = "red";
+	wholeMenu["Yonhap RSS Строка Culture/K-pop"].hasSub = 0;
+	wholeMenu["Yonhap RSS Строка Culture/K-pop"].link = "news_rus.html?source=yonhap&type=culture";
+	wholeMenu["Yonhap RSS Строка Culture/K-pop"].html = 'Culture/K-pop';
+
+	wholeMenu["Yonhap RSS Строка Sports"] = {};
+	wholeMenu["Yonhap RSS Строка Sports"].id = "26_4_7";
+	wholeMenu["Yonhap RSS Строка Sports"].color = "red";
+	wholeMenu["Yonhap RSS Строка Sports"].hasSub = 0;
+	wholeMenu["Yonhap RSS Строка Sports"].link = "news_rus.html?source=yonhap&type=sports";
+	wholeMenu["Yonhap RSS Строка Sports"].html = 'Sports';
+
 
 }
 
@@ -6426,69 +6413,6 @@ if (lang=="lat") {
 	wholeMenu["CBS RSS Acies Space"].link = "news_lat.html?source=cbs&type=space";
 	wholeMenu["CBS RSS Acies Space"].html = 'Space';
 
-	wholeMenu["● KoreaHerald RSS Acies"] = {};
-	wholeMenu["● KoreaHerald RSS Acies"].id = "26_4";
-	wholeMenu["● KoreaHerald RSS Acies"].color = "red";
-	wholeMenu["● KoreaHerald RSS Acies"].hasSub = 1;
-	wholeMenu["● KoreaHerald RSS Acies"].link = "";
-	wholeMenu["● KoreaHerald RSS Acies"].html = '&#9679; KoreaHerald RSS Acies';
-
-	wholeMenu["KoreaHerald RSS Acies All Stories"] = {};
-	wholeMenu["KoreaHerald RSS Acies All Stories"].id = "26_4_1";
-	wholeMenu["KoreaHerald RSS Acies All Stories"].color = "red";
-	wholeMenu["KoreaHerald RSS Acies All Stories"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Acies All Stories"].link = "news_lat.html?source=koreaherald&type=all";
-	wholeMenu["KoreaHerald RSS Acies All Stories"].html = 'All Stories';
-
-	wholeMenu["KoreaHerald RSS Acies World"] = {};
-	wholeMenu["KoreaHerald RSS Acies World"].id = "26_4_2";
-	wholeMenu["KoreaHerald RSS Acies World"].color = "red";
-	wholeMenu["KoreaHerald RSS Acies World"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Acies World"].link = "news_lat.html?source=koreaherald&type=world";
-	wholeMenu["KoreaHerald RSS Acies World"].html = 'World';
-
-	wholeMenu["KoreaHerald RSS Acies National"] = {};
-	wholeMenu["KoreaHerald RSS Acies National"].id = "26_4_3";
-	wholeMenu["KoreaHerald RSS Acies National"].color = "red";
-	wholeMenu["KoreaHerald RSS Acies National"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Acies National"].link = "news_lat.html?source=koreaherald&type=national";
-	wholeMenu["KoreaHerald RSS Acies National"].html = 'National';
-
-	wholeMenu["KoreaHerald RSS Acies Business"] = {};
-	wholeMenu["KoreaHerald RSS Acies Business"].id = "26_4_4";
-	wholeMenu["KoreaHerald RSS Acies Business"].color = "red";
-	wholeMenu["KoreaHerald RSS Acies Business"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Acies Business"].link = "news_lat.html?source=koreaherald&type=business";
-	wholeMenu["KoreaHerald RSS Acies Business"].html = 'Business';
-
-	wholeMenu["KoreaHerald RSS Acies Life&Culture"] = {};
-	wholeMenu["KoreaHerald RSS Acies Life&Culture"].id = "26_4_5";
-	wholeMenu["KoreaHerald RSS Acies Life&Culture"].color = "red";
-	wholeMenu["KoreaHerald RSS Acies Life&Culture"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Acies Life&Culture"].link = "news_lat.html?source=koreaherald&type=life";
-	wholeMenu["KoreaHerald RSS Acies Life&Culture"].html = 'Life&Culture';
-
-	wholeMenu["KoreaHerald RSS Acies Sports"] = {};
-	wholeMenu["KoreaHerald RSS Acies Sports"].id = "26_4_6";
-	wholeMenu["KoreaHerald RSS Acies Sports"].color = "red";
-	wholeMenu["KoreaHerald RSS Acies Sports"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Acies Sports"].link = "news_lat.html?source=koreaherald&type=sports";
-	wholeMenu["KoreaHerald RSS Acies Sports"].html = 'Sports';
-
-	wholeMenu["KoreaHerald RSS Acies Opinion"] = {};
-	wholeMenu["KoreaHerald RSS Acies Opinion"].id = "26_4_7";
-	wholeMenu["KoreaHerald RSS Acies Opinion"].color = "red";
-	wholeMenu["KoreaHerald RSS Acies Opinion"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Acies Opinion"].link = "news_lat.html?source=koreaherald&type=opinion";
-	wholeMenu["KoreaHerald RSS Acies Opinion"].html = 'Opinion';
-
-	wholeMenu["KoreaHerald RSS Acies K-pop"] = {};
-	wholeMenu["KoreaHerald RSS Acies K-pop"].id = "26_4_8";
-	wholeMenu["KoreaHerald RSS Acies K-pop"].color = "red";
-	wholeMenu["KoreaHerald RSS Acies K-pop"].hasSub = 0;
-	wholeMenu["KoreaHerald RSS Acies K-pop"].link = "news_lat.html?source=koreaherald&type=kpop";
-	wholeMenu["KoreaHerald RSS Acies K-pop"].html = 'K-pop';
-
 	wholeMenu["● NASA RSS Acies"] = {};
 	wholeMenu["● NASA RSS Acies"].id = "26_2";
 	wholeMenu["● NASA RSS Acies"].color = "red";
@@ -6629,6 +6553,61 @@ if (lang=="lat") {
 	wholeMenu["Yahoo RSS Acies Lifestyle"].link = "news_lat.html?source=yahoo&type=lifestyle";
 	wholeMenu["Yahoo RSS Acies Lifestyle"].html = 'Lifestyle';
 
+	wholeMenu["● Yonhap RSS Acies"] = {};
+	wholeMenu["● Yonhap RSS Acies"].id = "26_4";
+	wholeMenu["● Yonhap RSS Acies"].color = "red";
+	wholeMenu["● Yonhap RSS Acies"].hasSub = 1;
+	wholeMenu["● Yonhap RSS Acies"].link = "";
+	wholeMenu["● Yonhap RSS Acies"].html = '&#9679; Yonhap RSS Acies';
+
+	wholeMenu["Yonhap RSS Acies All News"] = {};
+	wholeMenu["Yonhap RSS Acies All News"].id = "26_4_1";
+	wholeMenu["Yonhap RSS Acies All News"].color = "red";
+	wholeMenu["Yonhap RSS Acies All News"].hasSub = 0;
+	wholeMenu["Yonhap RSS Acies All News"].link = "news_lat.html?source=yonhap&type=all";
+	wholeMenu["Yonhap RSS Acies All News"].html = 'All News';
+
+	wholeMenu["Yonhap RSS Acies National"] = {};
+	wholeMenu["Yonhap RSS Acies National"].id = "26_4_2";
+	wholeMenu["Yonhap RSS Acies National"].color = "red";
+	wholeMenu["Yonhap RSS Acies National"].hasSub = 0;
+	wholeMenu["Yonhap RSS Acies National"].link = "news_lat.html?source=yonhap&type=national";
+	wholeMenu["Yonhap RSS Acies National"].html = 'National';
+
+	wholeMenu["Yonhap RSS Acies North Korea"] = {};
+	wholeMenu["Yonhap RSS Acies North Korea"].id = "26_4_3";
+	wholeMenu["Yonhap RSS Acies North Korea"].color = "red";
+	wholeMenu["Yonhap RSS Acies North Korea"].hasSub = 0;
+	wholeMenu["Yonhap RSS Acies North Korea"].link = "news_lat.html?source=yonhap&type=northkorea";
+	wholeMenu["Yonhap RSS Acies North Korea"].html = 'North Korea';
+
+	wholeMenu["Yonhap RSS Acies Economy/Finance"] = {};
+	wholeMenu["Yonhap RSS Acies Economy/Finance"].id = "26_4_4";
+	wholeMenu["Yonhap RSS Acies Economy/Finance"].color = "red";
+	wholeMenu["Yonhap RSS Acies Economy/Finance"].hasSub = 0;
+	wholeMenu["Yonhap RSS Acies Economy/Finance"].link = "news_lat.html?source=yonhap&type=economy";
+	wholeMenu["Yonhap RSS Acies Economy/Finance"].html = 'Economy/Finance';
+
+	wholeMenu["Yonhap RSS Acies BIZ"] = {};
+	wholeMenu["Yonhap RSS Acies BIZ"].id = "26_4_5";
+	wholeMenu["Yonhap RSS Acies BIZ"].color = "red";
+	wholeMenu["Yonhap RSS Acies BIZ"].hasSub = 0;
+	wholeMenu["Yonhap RSS Acies BIZ"].link = "news_lat.html?source=yonhap&type=biz";
+	wholeMenu["Yonhap RSS Acies BIZ"].html = 'BIZ';
+
+	wholeMenu["Yonhap RSS Acies Culture/K-pop"] = {};
+	wholeMenu["Yonhap RSS Acies Culture/K-pop"].id = "26_4_6";
+	wholeMenu["Yonhap RSS Acies Culture/K-pop"].color = "red";
+	wholeMenu["Yonhap RSS Acies Culture/K-pop"].hasSub = 0;
+	wholeMenu["Yonhap RSS Acies Culture/K-pop"].link = "news_lat.html?source=yonhap&type=culture";
+	wholeMenu["Yonhap RSS Acies Culture/K-pop"].html = 'Culture/K-pop';
+
+	wholeMenu["Yonhap RSS Acies Sports"] = {};
+	wholeMenu["Yonhap RSS Acies  Sports"].id = "26_4_7";
+	wholeMenu["Yonhap RSS Acies Sports"].color = "red";
+	wholeMenu["Yonhap RSS Acies Sports"].hasSub = 0;
+	wholeMenu["Yonhap RSS Acies Sports"].link = "news_lat.html?source=yonhap&type=sports";
+	wholeMenu["Yonhap RSS Acies Sports"].html = 'Sports';
 
 
 }

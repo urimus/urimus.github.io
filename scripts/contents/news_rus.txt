@@ -23,16 +23,6 @@
 <span style="padding-left:10px;">- <a href="news_rus.html?source=cbs&type=entertainment" class = "standardb_red" data-added="31е Окт, 2024." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Entertainment</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=cbs&type=space" class = "standardb_red" data-added="31е Окт, 2024." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Space</a></span>
 
-&#9679; <b class = "text_red_blue" data-added="09е Авг, 2024." data-country="south_korea">The Korea Herald RSS Строка</b>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=koreaherald&type=all" class = "standardb_red" data-added="10е Авг, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">All Stories</a></span>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=koreaherald&type=world" class = "standardb_red" data-added="10е Авг, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">World</a></span>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=koreaherald&type=national" class = "standardb_red" data-added="10е Авг, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">National</a></span>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=koreaherald&type=business" class = "standardb_red" data-added="10е Авг, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Business</a></span>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=koreaherald&type=life" class = "standardb_red" data-added="10е Авг, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Life&Culture</a></span>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=koreaherald&type=sports" class = "standardb_red" data-added="10е Авг, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Sports</a></span>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=koreaherald&type=opinion" class = "standardb_red" data-added="10е Авг, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Opinion</a></span>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=koreaherald&type=kpop" class = "standardb_red" data-added="10е Авг, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">K-pop</a></span>
-
 &#9679; <b class = "text_red_blue" data-added="17е Авг, 2023." data-country="usa">NASA RSS Строка</b>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=releases" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Releases</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=recent" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Recent</a></span>
@@ -54,3 +44,12 @@
 <span style="padding-left:10px;">- <a href="news_rus.html?source=yahoo&type=sports" class = "standardb_red" data-added="19е Дек, 2021." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Sports</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=yahoo&type=entertainment" class = "standardb_red" data-added="19е Дек, 2021." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Entertainment</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=yahoo&type=lifestyle" class = "standardb_red" data-added="19е Дек, 2021." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Lifestyle</a></span>
+
+&#9679; <b class = "text_red_blue" data-added="21е Дек, 2024." data-country="south_korea">Yonhap News Agency RSS Строка</b>
+<span style="padding-left:10px;">- <a href="news_rus.html?source=yonhap&type=all" class = "standardb_red" data-added="21е Дек, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">All News</a></span>
+<span style="padding-left:10px;">- <a href="news_rus.html?source=yonhap&type=national" class = "standardb_red" data-added="21е Дек, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">National</a></span>
+<span style="padding-left:10px;">- <a href="news_rus.html?source=yonhap&type=northkorea" class = "standardb_red" data-added="21е Дек, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">North Korea</a></span>
+<span style="padding-left:10px;">- <a href="news_rus.html?source=yonhap&type=economy" class = "standardb_red" data-added="21е Дек, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Economy/Finance</a></span>
+<span style="padding-left:10px;">- <a href="news_rus.html?source=yonhap&type=biz" class = "standardb_red" data-added="21е Дек, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">BIZ</a></span>
+<span style="padding-left:10px;">- <a href="news_rus.html?source=yonhap&type=culture" class = "standardb_red" data-added="21е Дек, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Culture/K-pop</a></span>
+<span style="padding-left:10px;">- <a href="news_rus.html?source=yonhap&type=sports" class = "standardb_red" data-added="21е Дек, 2024." data-country="south_korea" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Sports</a></span>
