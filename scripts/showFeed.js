@@ -910,7 +910,7 @@ function getLocalStorageData(par) {
 
 function optimizeUpdateResult(type, source, lang, resultOrig) {
 
-console.log(resultOrig);
+//console.log(resultOrig);
 
 	result={};
 	result.feedXML=resultOrig.feedXML;
@@ -1262,6 +1262,9 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 		if (typeof locStUpdateData[entry_link].mediaUrl!== "undefined") {
 			result.entries[i].media.origUrl=result.entries[i].media.url;
 			result.entries[i].media.url=locStUpdateData[entry_link].mediaUrl;
+		}
+		if (typeof locStUpdateData[entry_link].mediaComment!== "undefined") {
+			result.entries[i].media.comment=locStUpdateData[entry_link].mediaComment;
 		}
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
