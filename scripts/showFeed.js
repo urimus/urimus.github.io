@@ -442,9 +442,9 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	preloadImg.onerror= function () {
 		preloadImg.dataset.failedAttempts=parseInt(preloadImg.dataset.failedAttempts)+1;
 		if (parseInt(preloadImg.dataset.failedAttempts)>10) {
-			if (typeof result.entries[i].media.origUrl!== 'undefined' && result.entries[i].media.origUrl!=result.entries[i].media.url) {
+			if (typeof entry.media.origUrl!== 'undefined' && entry.media.origUrl!=entry.media.url) {
 				preloadImg.dataset.failedAttempts=0;
-				preloadImg.src=result.entries[i].media.origUrl;
+				preloadImg.src=entry.media.origUrl;
 			} else {
 				Img.src = "images/icons/error/error.jpg";
 			}
@@ -453,14 +453,14 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		}
 	}
 
-	if (typeof result.entries[i].error!== "undefined" && entry.error!=null) {
+	if (typeof entry.error!== "undefined" && entry.error!=null) {
 		var Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
 		Div.innerHTML=entry.error;
 		cell1.appendChild(Div);
 	}
 
-	if (typeof result.entries[i].summary!== "undefined" && entry.summary!=null) {
+	if (typeof entry.summary!== "undefined" && entry.summary!=null) {
 		var summaryDiv = document.createElement('div');
 		summaryDiv.setAttribute('class', "text_red");
 		summaryDiv.innerHTML="&emsp;"+entry.summary;
