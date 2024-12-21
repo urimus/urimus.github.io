@@ -1372,7 +1372,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					jsonText=data.substr(jsonPosSt+15, jsonPosEd-jsonPosSt-14);
 					jsonDATA = JSON.parse(jsonText);
 					mediaURL=jsonDATA.IMG;
-					description=jsonDATA.BODY;
+					description=jsonDATA.BODY.split("\n").join("<br>&emsp;");
 				}
 			}
 
