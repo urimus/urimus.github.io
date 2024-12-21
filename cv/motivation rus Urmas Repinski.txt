@@ -11,7 +11,7 @@
 Вас заинтересовать могут разделы:
 1. Карта Сайта - https://urimus.github.io/index_rus.html?type=aboutme&sortby=name . JavaScript Код, который обеспечивает работу этого раздела - https://urimus.github.io/scripts/showContents.js
 
-2. Новости - Строка Новостей NASA - https://urimus.github.io/news_rus.html?source=nasa&type=releases (имеется ещё BBC, CBS, The Korea Herald и Yahoo!). Соответственный Код - https://urimus.github.io/scripts/showFeed.js . Для чтения Строки используется библиотека feednami (https://toolkit.sekando.com/docs/en/feednami) которая работает на JavaScript.
+2. Новости - Строка Новостей NASA - https://urimus.github.io/news_rus.html?source=nasa&type=releases (имеется ещё BBC, CBS, Yahoo! и Yonhap). Соответственный Код - https://urimus.github.io/scripts/showFeed.js . Для чтения Строки используется библиотека feednami (https://toolkit.sekando.com/docs/en/feednami) которая работает на JavaScript.
 
 3. Наиболее Объёмный раздел - HTML редактор, который позволяет модифицировать содержание данного сайта онлайн прямо с этого же веб-сайта. Для работы редактора (https://urimus.github.io/html_editor_rus.html?pattern=spec/mo*&i=0) требуется поддержка PHP и, так-же, пароль, на GitHub он не функционирует, но соответственные JavaScript файлы для работы на сервере, поддерживающем PHP далее:
 a. https://urimus.github.io/scripts/processSearchAndReplace.js
