@@ -995,7 +995,9 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
 			if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
 			result.entries[i].media.width=450;
-			result.entries[i].summary=entry.description;
+			if (entry.description!="(END)") {
+				result.entries[i].summary=entry.description;
+			}
 		}
 
 		if (result.entries[i].media.width>=450) result.entries[i].media.width=450;
@@ -1372,7 +1374,11 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					jsonText=data.substr(jsonPosSt+15, jsonPosEd-jsonPosSt-14);
 					jsonDATA = JSON.parse(jsonText);
 					mediaURL=jsonDATA.IMG;
-					description=jsonDATA.BODY.split("\n").join("<br>&emsp;");
+					if (jsonDATA.BODY=="\n") {
+						description="";
+					} else {
+						description=jsonDATA.BODY.replace("\n", " <br>&emsp;");
+					}
 				}
 			}
 
