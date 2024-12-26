@@ -40,5 +40,39 @@ function getBom($encoding='UTF-8'){
 	return $bom;
 }
 
+function removeBom($text){
+    $bom = UTF8_BOM;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF32_BIG_ENDIAN_BOM;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF32_LITTLE_ENDIAN_BOM;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF16_BIG_ENDIAN_BOM;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF16_LITTLE_ENDIAN_BOM;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF7_BOM1;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF7_BOM2;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF7_BOM3;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF7_BOM4;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF7_BOM5;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTF1_BOM;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = UTFEBCDIC_BOM;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = SCSU_BOM;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = BOCU1_BOM;
+    return preg_replace("/^$bom/", '', $text);
+    $bom = GB18030_BOM;
+    return preg_replace("/^$bom/", '', $text);
+ 	
+
+}
 
 ?>

@@ -33,7 +33,7 @@ class Save {
 
 		if ($encoding!==null) {
 		    $data2 = mb_convert_encoding($data, $encoding_c);
-		    fwrite($myfile, getBom($encoding_c).$data2);
+		    fwrite($myfile, getBom($encoding_c).removeBom($data2));
 		} else {
 		    fwrite($myfile, $data);
 		}
