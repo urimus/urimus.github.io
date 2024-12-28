@@ -210,9 +210,20 @@ function flashText() {
 	}
 }
 
+/*
 window.onerror = function(e, url, lineNr, columnNr, errorObj) {
 	console.log(e+" in "+url+" at line "+lineNr+" column "+columnNr+".");
+};
+*/
 
+/*
+var promise = Promise.reject("Oops! I am rejected");
+promise.then(() => {
+    console.log("Hello World");
+});
+*/
+
+window.onunhandledrejection = (event) => {
 	var table = document.getElementById("feedtable");
 	if (table) {
 		while(table.childNodes.length>0){table.removeChild(table.lastChild);}
@@ -220,10 +231,9 @@ window.onerror = function(e, url, lineNr, columnNr, errorObj) {
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
 		cell1.style.textAlign = 'center';
-		cell1.innerHTML = e+" in "+url+" at line "+lineNr+" column "+columnNr+".";
+		cell1.innerHTML = "<b>"+event.reason.stack+"</b><br><a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 	}
-};
-
+}
 
 function loading() {
 	if (document.getElementById("loadingDiv")) {
