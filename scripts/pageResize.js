@@ -211,8 +211,9 @@ function flashText() {
 }
 
   window.onerror = function(e, url, lineNr, columnNr, errorObj) {
-	if (document.getElementById("loadingDivTitle")) {
-		$("#loadingDivTitle").text(e+" in "+url+" at line "+lineNr+" column "+columnNr+".");
+	console.log(e+" in "+url+" at line "+lineNr+" column "+columnNr+".");
+	if (document.getElementById("loadingDiv")) {
+		$("#loadingDiv").text(e+" in "+url+" at line "+lineNr+" column "+columnNr+".");
 	}
     };
 
