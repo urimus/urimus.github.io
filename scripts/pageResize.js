@@ -210,12 +210,19 @@ function flashText() {
 	}
 }
 
-  window.onerror = function(e, url, lineNr, columnNr, errorObj) {
+window.onerror = function(e, url, lineNr, columnNr, errorObj) {
 	console.log(e+" in "+url+" at line "+lineNr+" column "+columnNr+".");
-	if (document.getElementById("loadingDiv")) {
-		$("#loadingDiv").text(e+" in "+url+" at line "+lineNr+" column "+columnNr+".");
+
+	var table = document.getElementById("feedtable");
+	if (table) {
+		while(table.childNodes.length>0){table.removeChild(table.lastChild);}
+		var row = table.insertRow(-1);
+		var cell1 = row.insertCell(0);
+		cell1.className = 'text_red';
+		cell1.style.textAlign = 'center';
+		cell1.innerHTML = e+" in "+url+" at line "+lineNr+" column "+columnNr+".";
 	}
-    };
+};
 
 
 function loading() {
