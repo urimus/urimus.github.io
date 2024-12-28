@@ -820,6 +820,19 @@ function showFeed(type, source, lang) {
 	cell1.style.textAlign = 'center';
 	cell1.innerHTML = readingText;
 
+	window.onunhandledrejection = (event) => {
+		var table2 = document.getElementById("feedtable");
+		if (table2) {
+			while(table2.childNodes.length>0){table2.removeChild(table2.lastChild);}
+			var row = table2.insertRow(-1);
+			var cell1 = row.insertCell(0);
+			cell1.className = 'text_red';
+			cell1.style.textAlign = 'center';
+			cell1.innerHTML = "<b>"+event.reason.stack+"</b><br><a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+			cell1.innerHTML = "<b>"+event.reason.stack+"</b><br><a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+		}
+	}
+
 
 	feednami.load(feedURL, function(result){
 		if(result.error){
