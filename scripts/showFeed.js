@@ -1430,8 +1430,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 						result.entries[i].category=[];
 						locStUpdateData[entry_link].category=[];
 						for (var j=0; j<categories.length; j++) {
-							result.entries[i].category[j]=categories[j].content;
-							locStUpdateData[entry_link].category[j]=categories[j].content;
+							result.entries[i].category=result.entries[i].category.concat(categories[j].content.split(","));
+							locStUpdateData[entry_link].category=locStUpdateData[entry_link].category.concat(categories[j].content.split(","));
 						}
 					}
 					if (authors!="") {
