@@ -487,10 +487,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		Div.setAttribute('class', "text_red");
 		var outHTML="";
 		if (entry.author.length>1) {
-			outHTML="<P><b>"+textAuthors+"</b>"+entry.author[0];
-			for (var j = 1; j < entry.author.length; j++) {
-				outHTML=outHTML+", "+entry.author[j];
-			}
+			outHTML="<P><b>"+textAuthors+"</b>"+entry.author.join(", ");
 		} else {
 			outHTML="<P><b>"+textAuthor+"</b>"+entry.author[0];
 		}
@@ -502,10 +499,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		Div.setAttribute('class', "text_red");
 		var outHTML="";
 		if (entry.creator.length>1) {
-			outHTML="<P><b>"+textCreators+"</b>"+entry.creator[0];
-			for (var j = 1; j < entry.creator.length; j++) {
-				outHTML=outHTML+", "+entry.creator[j];
-			}
+			outHTML="<P><b>"+textCreators+"</b>"+entry.creator.join(", ");
 		} else {
 			outHTML="<P><b>"+textCreator+"</b>"+entry.creator[0];
 		}
@@ -517,10 +511,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		Div.setAttribute('class', "text_red");
 		var outHTML="";
 		if (entry.category.length>1) {
-			outHTML="<P><b>"+textCategories+"</b>"+entry.category[0];
-			for (var j = 1; j < entry.category.length; j++) {
-				outHTML=outHTML+", "+entry.category[j];
-			}
+			outHTML="<P><b>"+textCategories+"</b>"+entry.category.join(", ");
 		} else {
 			outHTML="<P><b>"+textCategory+"</b>"+entry.category[0];
 		}
