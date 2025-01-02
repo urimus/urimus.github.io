@@ -2192,8 +2192,7 @@ function detectBom(bytes) {
 }
 
 function detectBomCheckSoFar(bytes) {
-	// re - an array of bytes
-	
+
 	// UTF-8 - EF BB BF - 239 187 191
 	// UTF-16 (BE) - FE FF - 254 255
 	// UTF-16 (LE) - FF FE - 255 254
@@ -2210,10 +2209,10 @@ function detectBomCheckSoFar(bytes) {
 	// BOCU-1 - FB EE 28 - 251 238 40
 	// GB-18030 - 84 31 95 33 - 132 49 149 51
 	
-
 	if (typeof bytes[1] !== 'undefined') { // first 2 bytes exists
 		if (bytes[0]=="fe" && bytes[1]=="ff") return 2; // UTF-16 (BE)
 		if (bytes[0]=="ff" && bytes[1]=="fe") return 2; // UTF-16 (LE)
+		if (bytes[0]=="ff" && bytes[1]=="d8") return 2; // JPG
 	} 
 	if (typeof bytes[2] !== 'undefined') { // first 3 bytes exists
 		if (bytes[0]=="ef" && bytes[1]=="bb" && bytes[2]=="bf") return 3; // UTF-8
