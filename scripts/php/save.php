@@ -17,11 +17,16 @@ $data=$_POST["q"];
 $encoding=$_POST["encoding"];
 
 include 'saveClass.php';
+include 'detectEncodingClass.php';
 
-
+$out = array();
 
 $modified = Save::saveFile("../../".$filename, $encoding, $data);
-echo $modified;
+$first10bytes=DetectEncoding::first10bytes("../../".$filename);
+
+$out["modified"]=$modified;
+$out["first10bytes"]=$first10bytes;
+echo (json_encode($out)); 
 
 
 

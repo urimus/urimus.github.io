@@ -1198,12 +1198,15 @@ function save(lang, encoding, filename, showMessage, message) {
 
 			if (removeBom(this.responseText).substring(0,20).localeCompare('Unable to open file!')==0) {
 				alert(removeBom(this.responseText));
+				return;
 			} else {
 				if (showMessage) {
 					alert(message1);
 				}
 				if (document.getElementById("fileName").getAttribute("href").localeCompare(filename)==0) {
-					document.getElementById("dateModified_lbl").innerHTML=formatDate(removeBom(this.responseText)*1000, lang);
+					ret=JSON.parse(removeBom(this.responseText));
+					document.getElementById("dateModified_lbl").innerHTML=formatDate(removeBom(ret["modified"])*1000, lang);
+					setBOM(ret["first10bytes"]);
 				}
 				return;
 
@@ -2010,7 +2013,7 @@ function loadAndShowFile(lang, filename, modified, encoding, first10bytes, total
 			adjustTextareaAndEncodings();
 			setLinksValues(lang, encoding, totalFiles);
 			document.getElementById("textarea_area").focus();
-			setBOM(lang, first10bytes);
+			setBOM(first10bytes);
 			setLineAndColumnNumber(lang);
 /*
 			save(lang, encoding, filename, 0);
@@ -2176,7 +2179,7 @@ function setLineAndColumnNumber(lang) {
 
 }
 
-function setBOM(lang, first10bytes) {
+function setBOM(first10bytes) {
 	bomDiv=document.getElementById("bom_div");
 	bomDiv.innerHTML="";
 	for (var i=0; i<first10bytes.length-1; i++) {
