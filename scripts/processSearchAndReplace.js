@@ -2184,11 +2184,11 @@ function setLineAndColumnNumber(lang) {
 
 function detectBom(bytes) {
 	for (var c = 0; c < bytes.length; c++ ) {
-		if (c==5) return; // nothing found
+		if (c==5) return null; // nothing found
 		bytesDetected=detectBomCheckSoFar(bytes.slice(c,c+5));
 		if (bytesDetected>0) return bytes.slice(c,c+bytesDetected).concat(detectBom(bytes.slice(bytesDetected)));
 	}
-	return; // nothing found
+	return null; // nothing found
 }
 
 function detectBomCheckSoFar(bytes) {
@@ -2241,16 +2241,25 @@ function detectBomCheckSoFar(bytes) {
 
 function setBOM(first10bytes) {
 
+	var i=0;
 	bomDetected=detectBom(first10bytes);
-	bomDetected.pop();
-	if (bomDetected.length==0) bomDetected[0]="none";
 
-	bomDiv=document.getElementById("bom_div");
-	bomDiv.innerHTML="";
-	for (var i=0; i<bomDetected.length-1; i++) {
-		bomDiv.innerHTML=bomDiv.innerHTML+bomDetected[i]+" ";
+	if (bomDetected) {
+		bomDetected.pop();
+		bomDiv=document.getElementById("bom_div");
+		bomDiv.innerHTML="";
+		for (i=0; i<bomDetected.length; i++) {
+			bomDiv.innerHTML=bomDiv.innerHTML+bomDetected[i]+"&nbsp;";
+		}
 	}
-	bomDiv.innerHTML=bomDiv.innerHTML+bomDetected[bomDetected.length-1];
+
+	bomDiv2=document.getElementById("bom_div2");
+	bomDiv2.innerHTML="";
+	for (var j=i; j<first10bytes.length; j++) {
+		bomDiv2.innerHTML=bomDiv2.innerHTML+first10bytes[j]+"&nbsp;";
+	}
+	bomDiv2.innerHTML=bomDiv2.innerHTML+"...";
+
 }
 
 
