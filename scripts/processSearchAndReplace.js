@@ -519,7 +519,7 @@ function getBOM(encoding) {
 	if (encoding == 'UTF-7-3') return 'UTF7_BOM3';
 	if (encoding == 'UTF-7-5') return 'UTF7_BOM4';
 	if (encoding == 'UTF-7-1') return 'UTF7_BOM5';
-	if (encoding == 'UTF-1') return '\uf7644c';
+	if (encoding == 'UTF-1') return 'UTF-1';
 	if (encoding == 'UTF-EBCDIC') return 'UTFEBCDIC_BOM';
 	if (encoding == 'SCSU') return 'SCSU_BOM';
 	if (encoding == 'BOCU-1') return 'BOCU1_BOM';
@@ -2179,13 +2179,78 @@ function setLineAndColumnNumber(lang) {
 
 }
 
+
+
+
+function detectBom(bytes) {
+	for (var c = 0; c < bytes.length; c++ ) {
+		if (c==5) return; // nothing found
+		bytesDetected=detectBomCheckSoFar(bytes.slice(c,c+5));
+		if (bytesDetected>0) return bytes.slice(c,c+bytesDetected).concat(detectBom(bytes.slice(bytesDetected)));
+	}
+	return; // nothing found
+}
+
+function detectBomCheckSoFar(bytes) {
+	// re - an array of bytes
+	
+	// UTF-8 - EF BB BF - 239 187 191
+	// UTF-16 (BE) - FE FF - 254 255
+	// UTF-16 (LE) - FF FE - 255 254
+	// UTF-32 (BE) - 00 00 FE FF - 0 0 254 255
+	// UTF-32 (LE) - FF FE 00 00 - 255 254 0 0
+	// UTF-7 - 1 - 2B 2F 76 38 - 43 47 118 56
+	// UTF-7 - 2 - 2B 2F 76 39 - 43 47 118 57
+	// UTF-7 - 3 - 2B 2F 76 2B - 43 47 118 43
+	// UTF-7 - 4 - 2B 2F 76 2F - 43 47 118 47
+	// UTF-7 - 5 - 2B 2F 76 38 2D - 43 47 118 56 45
+	// UTF-1 - F7 64 4C - 247 100 76
+	// UTF-EBCDIC - DD 73 66 73 - 221 115 102 115
+	// SCSU - 0E FE FF - 14 254 255
+	// BOCU-1 - FB EE 28 - 251 238 40
+	// GB-18030 - 84 31 95 33 - 132 49 149 51
+	
+
+	if (typeof bytes[1] !== 'undefined') { // first 2 bytes exists
+		if (bytes[0]=="fe" && bytes[1]=="ff") return 2; // UTF-16 (BE)
+		if (bytes[0]=="ff" && bytes[1]=="fe") return 2; // UTF-16 (LE)
+	} 
+	if (typeof bytes[2] !== 'undefined') { // first 3 bytes exists
+		if (bytes[0]=="ef" && bytes[1]=="bb" && bytes[2]=="bf") return 3; // UTF-8
+		if (bytes[0]=="f7" && bytes[1]=="64" && bytes[2]=="4c") return 3; // UTF-1
+		if (bytes[0]=="0e" && bytes[1]=="fe" && bytes[2]=="ff") return 3; // SCSU
+		if (bytes[0]=="fb" && bytes[1]=="ee" && bytes[2]=="28") return 3; // BOCU-1
+	}
+	if (typeof bytes[3] !== 'undefined') { // first 4 bytes exists
+		if (bytes[0]=="0" && bytes[1]=="0" && bytes[2]=="fe" && bytes[3]=="ff") return 4; // UTF-32 (BE)
+		if (bytes[0]=="ff" && bytes[1]=="fe" && bytes[2]=="0" && bytes[3]=="0") return 4; // UTF-32 (LE)
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="38") return 4; // UTF-7 - 1
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="39") return 4; // UTF-7 - 2
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="2b") return 4; // UTF-7 - 3
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="2f") return 4; // UTF-7 - 4
+		if (bytes[0]=="dd" && bytes[1]=="73" && bytes[2]=="66" && bytes[3]=="73") return 4; // UTF-EBCDIC
+		if (bytes[0]=="84" && bytes[1]=="31" && bytes[2]=="95" && bytes[3]=="33") return 4; // GB-18030
+	}
+	if (typeof bytes[4] !== 'undefined') { // first 5 bytes exists
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="38" && bytes[4]=="2d") return 5; // UTF-7 - 5
+	}
+	return 0;
+}
+
+
+
 function setBOM(first10bytes) {
+
+	bomDetected=detectBom(first10bytes);
+	bomDetected.pop();
+	if (bomDetected.length==0) bomDetected[0]="none";
+
 	bomDiv=document.getElementById("bom_div");
 	bomDiv.innerHTML="";
-	for (var i=0; i<first10bytes.length; i++) {
-		bomDiv.innerHTML=bomDiv.innerHTML+first10bytes[i]+" ";
+	for (var i=0; i<bomDetected.length-1; i++) {
+		bomDiv.innerHTML=bomDiv.innerHTML+bomDetected[i]+" ";
 	}
-	bomDiv.innerHTML=bomDiv.innerHTML+"...";
+	bomDiv.innerHTML=bomDiv.innerHTML+bomDetected[bomDetected.length-1];
 }
 
 
