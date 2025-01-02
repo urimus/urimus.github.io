@@ -2182,10 +2182,10 @@ function setLineAndColumnNumber(lang) {
 function setBOM(first10bytes) {
 	bomDiv=document.getElementById("bom_div");
 	bomDiv.innerHTML="";
-	for (var i=0; i<first10bytes.length-1; i++) {
+	for (var i=0; i<first10bytes.length; i++) {
 		bomDiv.innerHTML=bomDiv.innerHTML+first10bytes[i]+" ";
 	}
-	bomDiv.innerHTML=bomDiv.innerHTML+first10bytes[9];
+	bomDiv.innerHTML=bomDiv.innerHTML+"...";
 }
 
 
