@@ -1912,7 +1912,7 @@ function processSearch(lang) {
 
 // -------------- LOAD FILE ------------- //
 							if (!dir[i]['encoding'] || typeof dir[i]['encoding']==='undefined') dir[i]['encoding']="Windows-1252"; // default
-							loadAndShowFile(lang, dir[i]['correctDir']+dir[i]['basename'], dir[i]['modified'], dir[i]['encoding'], dir.length);
+							loadAndShowFile(lang, dir[i]['correctDir']+dir[i]['basename'], dir[i]['modified'], dir[i]['encoding'], dir[i]['first10bytes'], dir.length);
 // -------------- End of LOAD FILE ------------- //
 									
 						} else {
@@ -1968,9 +1968,7 @@ function processSearch(lang) {
 
 
 
-function loadAndShowFile(lang, filename, modified, encoding, totalFiles){
-
-
+function loadAndShowFile(lang, filename, modified, encoding, first10bytes, totalFiles){
 
 
 	if (lang.localeCompare('rus')==0) {
@@ -2012,6 +2010,7 @@ function loadAndShowFile(lang, filename, modified, encoding, totalFiles){
 			adjustTextareaAndEncodings();
 			setLinksValues(lang, encoding, totalFiles);
 			document.getElementById("textarea_area").focus();
+			setBOM(lang, first10bytes);
 			setLineAndColumnNumber(lang);
 /*
 			save(lang, encoding, filename, 0);
@@ -2176,6 +2175,17 @@ function setLineAndColumnNumber(lang) {
 	document.getElementById("column_number_div").innerHTML=columnIndex;
 
 }
+
+function setBOM(lang, first10bytes) {
+	bomDiv=document.getElementById("bom_div");
+	bomDiv.innerHTML="";
+	for (var i=0; i<first10bytes.length-1; i++) {
+		bomDiv.innerHTML=bomDiv.innerHTML+first10bytes[i]+" ";
+	}
+	bomDiv.innerHTML=bomDiv.innerHTML+first10bytes[9];
+}
+
+
 // ----------------------- processMenu PHP --------- //
 
 function getLocalStorageData(par) {

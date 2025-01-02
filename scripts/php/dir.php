@@ -22,7 +22,7 @@ foreach (array_filter(glob($q, GLOB_BRACE), 'is_file')  as $filename) {
 	$encoding_array = DetectEncoding::from_file($correctDir2.$out_l["basename"]);
 	if (!isset($encoding_array[0])) $encoding_array[0]="Windows-1252";
 	$out_l["encoding"]=$encoding_array[0];
-//	$out_l["guesses"]=$encoding_array;
+	$out_l["first10bytes"]=DetectEncoding::first10bytes($correctDir2.$out_l["basename"]);
 	$out[] = $out_l;
 }
 echo (json_encode($out)); 

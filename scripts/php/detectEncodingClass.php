@@ -86,6 +86,17 @@ class DetectEncoding {
 //	    return self::from_string(file_get_contents($filename,'r')); // - too slow
 	    return self::from_string(fgets(fopen($filename,'r')));
 	}
+	
+	static function first10bytes($filename)  {
+//	    return self::from_string(file_get_contents($filename,'r')); // - too slow
+		$bytesStr = substr(fgets(fopen($filename,'r')), 0, 10);
+		$out = array();
+		
+		for ($i = 0; $i < strlen($bytesStr); $i++){
+			$out[$i]=dechex(ord($bytesStr[$i]));
+		}
+		return $out;
+	}
 
 }
 ?>
