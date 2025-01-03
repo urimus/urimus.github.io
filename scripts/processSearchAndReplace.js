@@ -1241,35 +1241,41 @@ function saveas(lang, encoding) {
 		// return false;
 	} else {
 
-		$.ajax({
-    			url:"../../"+newFileName,
-    			type:'HEAD',
-   			error: function()
-    			{
-				//file not exists
-				if (filename_orig_dir.localeCompare(newFileName_dir)==0) {
-					message_show=message1;
-				} else {
-					message_show=message2;
+		if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xhr=new XMLHttpRequest();
+		} else {  // code for IE6, IE5
+			xhr=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xhr.onreadystatechange = function(){
+			if (this.readyState==4 && this.status==200) {
+				//console.log(this.responseText);
+				fileExists = JSON.parse(removeBom(this.responseText));
+				if (fileExists[0]==0) { //file not exists
+					if (filename_orig_dir.localeCompare(newFileName_dir)==0) {
+						message_show=message1;
+					} else {
+						message_show=message2;
+					}
+					save(lang, encoding, newFileName, 1, message_show);
+				} else { //file exists
+					if (lang.localeCompare("eng")==0) {
+						message3 = "File '";
+						message4 = "' Exists. Overwrite ?";
+					}
+					if (lang.localeCompare("rus")==0) {
+						message3 = "Фаил '";
+						message4 = "' Существует. Заменить ?";
+					}
+					var confirm = window.confirm(message3+newFileName+message4);
+					if (!confirm) return;
+					save(lang, encoding, newFileName, 1, message2);
 				}
-				save(lang, encoding, newFileName, 1, message_show);
-   		 	},
-    			success: function()
-    			{
-        			//file exists
-				if (lang.localeCompare("eng")==0) {
-					message3 = "File '";
-					message4 = "' Exists. Overwrite ?";
-				}
-				if (lang.localeCompare("rus")==0) {
-					message3 = "Фаил '";
-					message4 = "' Существует. Заменить ?";
-				}
-				var confirm = window.confirm(message3+newFileName+message4);
-				if (!confirm) return;
-				save(lang, encoding, newFileName, 1, message2);
-    			}
-		});
+			}
+		};
+		xhr.open("GET","scripts/php/fileExists.php?q="+"../../"+encodeURIComponent(newFileName),true);
+		xhr.send();
+
 	}
 }
 
@@ -1317,26 +1323,27 @@ function upload(lang) {
 		if (newFilePath.substring(newFilePath.length - 1, newFilePath.length)=="/") newFilePath=newFilePath.substring(0, newFilePath.length - 1);
 
 
-
-
-		$.ajax({
-    			url:"../../"+newFilePath,
-    			type:'HEAD',
-   			error: function()
-    			{
-				//newFilePath not exists
-				createFolder=window.confirm(message1 + newFilePath+ message2);
-				if (!createFolder) {return;}
-				upload2(lang, allFiles, 0, newFilePath, createFolder);
-   			 },
-    			success: function()
-    			{
-        			//newFilePath exists
-				upload2(lang, allFiles, 0, newFilePath, createFolder);
-    			}
-		});
-
-		
+		if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xhr=new XMLHttpRequest();
+		} else {  // code for IE6, IE5
+			xhr=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xhr.onreadystatechange = function(){
+			if (this.readyState==4 && this.status==200) {
+				//console.log(this.responseText);
+				dirExists = JSON.parse(removeBom(this.responseText));
+				if (dirExists[0]==0) { //newFilePath not exists
+					createFolder=window.confirm(message1 + newFilePath+ message2);
+					if (!createFolder) {return;}
+					upload2(lang, allFiles, 0, newFilePath, createFolder);
+				} else { //newFilePath exists
+					upload2(lang, allFiles, 0, newFilePath, createFolder);
+				}
+			}
+		};
+		xhr.open("GET","scripts/php/dirExists.php?q="+"../../"+encodeURIComponent(newFilePath),true);
+		xhr.send();
 
 	}
 
@@ -1493,23 +1500,29 @@ function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 		message2 = "' Exists. Overwrite ?";
 	}
 
-
-	$.ajax({
-    		url:"../../"+newFilePath+"/"+filename,
-    		type:'HEAD',
-   		error: function()
-    		{
-			//file not exists
-			uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
-	 	},
-    		success: function()
-    		{
-        		//file exists
-			var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
-			if (!confirm) return;
-			uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
+	if (window.XMLHttpRequest) {
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		xhr=new XMLHttpRequest();
+	} else {  // code for IE6, IE5
+		xhr=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xhr.onreadystatechange = function(){
+		if (this.readyState==4 && this.status==200) {
+			//console.log(this.responseText);
+			fileExists = JSON.parse(removeBom(this.responseText));
+			if (fileExists[0]==0) { //file not exists
+				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
+			} else { //file exists
+				var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
+				if (!confirm) return;
+				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
+			}
 		}
-	});
+	};
+	xhr.open("GET","scripts/php/fileExists.php?q="+"../../"+encodeURIComponent(newFilePath)+"/"+encodeURIComponent(filename),true);
+	xhr.send();
+
+
 }
 
 
