@@ -80,15 +80,23 @@ class DetectEncoding {
 	
 	/**
 	 * Try to detect all provable encodings from a given file
+	 * By first 15 bytes of file
 	 * @return array with encoding guesses
+	 * return self::from_string(file_get_contents($filename,'r')); // too slow
+	 * return self::from_string(fgets(fopen($filename,'r'))); // first line
 	 */
 	static function from_file($filename)  {
-//	    return self::from_string(file_get_contents($filename,'r')); // - too slow
-	    return self::from_string(fgets(fopen($filename,'r')));
+	    return self::from_string(fread(fopen($filename,'r'), 15)); // first 15 bytes
 	}
 	
+	/**
+	 * Read first 10 bytes of file and return them as hex array
+	 * @return hex array
+	 * file_get_contents($filename,'r'); // too slow
+	 * fgets(fopen($filename,'r')); // first line
+	 */
 	static function first10bytes($filename)  {
-		$bytesStr = substr(fgets(fopen($filename,'r')), 0, 10);
+		$bytesStr = fread(fopen($filename,'r'), 10);
 		$out = array();
 		for ($i = 0; $i < strlen($bytesStr); $i++){
 			$byte=dechex(ord($bytesStr[$i]));
