@@ -2234,8 +2234,8 @@ function detectBomCheckSoFar(bytes) {
 		if (bytes[0]=="fb" && bytes[1]=="ee" && bytes[2]=="28") return 3; // BOCU-1
 	}
 	if (typeof bytes[3] !== 'undefined') { // first 4 bytes exists
-		if (bytes[0]=="0" && bytes[1]=="0" && bytes[2]=="fe" && bytes[3]=="ff") return 4; // UTF-32 (BE)
-		if (bytes[0]=="ff" && bytes[1]=="fe" && bytes[2]=="0" && bytes[3]=="0") return 4; // UTF-32 (LE)
+		if (bytes[0]=="00" && bytes[1]=="00" && bytes[2]=="fe" && bytes[3]=="ff") return 4; // UTF-32 (BE)
+		if (bytes[0]=="ff" && bytes[1]=="fe" && bytes[2]=="00" && bytes[3]=="00") return 4; // UTF-32 (LE)
 		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="38") return 4; // UTF-7 - 1
 		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="39") return 4; // UTF-7 - 2
 		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="2b") return 4; // UTF-7 - 3

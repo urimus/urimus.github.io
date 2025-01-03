@@ -88,12 +88,11 @@ class DetectEncoding {
 	}
 	
 	static function first10bytes($filename)  {
-//	    return self::from_string(file_get_contents($filename,'r')); // - too slow
 		$bytesStr = substr(fgets(fopen($filename,'r')), 0, 10);
 		$out = array();
-		
 		for ($i = 0; $i < strlen($bytesStr); $i++){
-			$out[$i]=dechex(ord($bytesStr[$i]));
+			$byte=dechex(ord($bytesStr[$i]));
+			$out[]=str_repeat('0', 2 - strlen($byte)).$byte;
 		}
 		return $out;
 	}
