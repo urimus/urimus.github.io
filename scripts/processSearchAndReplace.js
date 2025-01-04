@@ -1201,16 +1201,15 @@ function save(lang, encoding, filename, showMessage, message) {
 				alert(removeBom(this.responseText));
 				return;
 			} else {
-				if (showMessage) {
-					alert(message1);
-				}
 				if (document.getElementById("fileName").getAttribute("href").localeCompare(filename)==0) {
 					ret=JSON.parse(removeBom(this.responseText));
 					document.getElementById("dateModified_lbl").innerHTML=formatDate(removeBom(ret["modified"])*1000, lang);
 					setBOM(ret["first10bytes"]);
+					if (showMessage) setTimeout(function() { alert(message1); }, 50); // timeout to ensure changes applied
+				} else {
+					if (showMessage) alert(message1); // no changes to apply
 				}
 				return;
-
 			}
 
         }
