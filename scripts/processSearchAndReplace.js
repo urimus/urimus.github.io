@@ -236,6 +236,7 @@ function processReplace(lang, action, dir, i, replaceWhat, replaceTo, statistics
 
 				if (document.getElementById("fileName").getAttribute("href").localeCompare(dir[i]['correctDir']+dir[i]['basename'])==0) {
 					document.getElementById("dateModified_lbl").innerHTML=formatDate(removeBom(modified)*1000, lang);
+					setBOM(ret["first10bytes"]);
 
 					if (window.XMLHttpRequest) {
 						// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -248,7 +249,6 @@ function processReplace(lang, action, dir, i, replaceWhat, replaceTo, statistics
 							if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
 							lines = this.responseText;    //*here we get all lines from text file*
 							document.getElementById("textarea_area").value=lines;
-							setBOM(ret["first10bytes"]);
 						}
 					}
 					xhrMod.open("GET","scripts/php/getFileContents.php?filename="+"../../"+encodeURIComponent(document.getElementById("fileName").getAttribute("href")),true);
@@ -281,7 +281,6 @@ function processReplace(lang, action, dir, i, replaceWhat, replaceTo, statistics
 					}
 					return;
 				}
-
 			} else {
 				i++;
 				processReplace(lang, action, dir, i, replaceWhat, replaceTo, statisticsTimesReplaced, statisticsFilesProcessed);
