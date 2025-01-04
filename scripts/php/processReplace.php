@@ -56,9 +56,12 @@ if ($statisticsTimesReplaced>0) {
 } else {
     $modified=filemtime($filename);
 }
+$first10bytes=DetectEncoding::first10bytes($filename);
+
 $out = array();
 $out['modified']=$modified;
 $out['statisticsTimesReplaced']=$statisticsTimesReplaced;
+$out["first10bytes"]=$first10bytes;
 
 // ---------- log -------- //
 $replacementInfo="";

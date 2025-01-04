@@ -248,6 +248,7 @@ function processReplace(lang, action, dir, i, replaceWhat, replaceTo, statistics
 							if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
 							lines = this.responseText;    //*here we get all lines from text file*
 							document.getElementById("textarea_area").value=lines;
+							setBOM(ret["first10bytes"]);
 						}
 					}
 					xhrMod.open("GET","scripts/php/getFileContents.php?filename="+"../../"+encodeURIComponent(document.getElementById("fileName").getAttribute("href")),true);
