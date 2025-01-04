@@ -266,21 +266,22 @@ function processReplace(lang, action, dir, i, replaceWhat, replaceTo, statistics
 				$("#addMenu_div").show();
 				$("#removeMenu_div").show();
 				$("#resizeFolderImages_div").show();
-				$("#resizeImage_div").show();
+				$("#resizeImage_div").show(50, function() { // some delay to ensure changes applied
+					var confirm = window.confirm(fullMessage);
+					if (confirm) {
+						if (action.localeCompare("replace")==0) {
+							window.open('html_editor_'+lang+'.html?pattern=scripts/logs/replace.log'+'&i=0');
+						}
+						if (action.localeCompare("addMenu")==0) {
+							window.open('html_editor_'+lang+'.html?pattern=scripts/logs/addMenu.log'+'&i=0');
+						}
+						if (action.localeCompare("removeMenu")==0) {
+							window.open('html_editor_'+lang+'.html?pattern=scripts/logs/removeMenu.log'+'&i=0');
+						}
+						return;
+					}
+				});
 
-				var confirm = window.confirm(fullMessage);
-				if (confirm) {
-					if (action.localeCompare("replace")==0) {
-						window.open('html_editor_'+lang+'.html?pattern=scripts/logs/replace.log'+'&i=0');
-					}
-					if (action.localeCompare("addMenu")==0) {
-						window.open('html_editor_'+lang+'.html?pattern=scripts/logs/addMenu.log'+'&i=0');
-					}
-					if (action.localeCompare("removeMenu")==0) {
-						window.open('html_editor_'+lang+'.html?pattern=scripts/logs/removeMenu.log'+'&i=0');
-					}
-					return;
-				}
 			} else {
 				i++;
 				processReplace(lang, action, dir, i, replaceWhat, replaceTo, statisticsTimesReplaced, statisticsFilesProcessed);
