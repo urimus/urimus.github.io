@@ -929,7 +929,13 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		result.entries[i].media={};
 		result.entries[i].media.comment="";
 		if (source == "cbs") {
-			result.entries[i].media.url=entry["rss:image"]["#"];
+			if (entry["rss:image"]!=null) {
+				result.entries[i].media.url=entry["rss:image"]["#"];
+			} else {
+				result.entries[i].media.url="https://assets1.cbsnewsstatic.com/hub/i/r/2015/04/29/340c23e5-e5a3-40ef-bf68-dcc84ef47c4b/thumbnail/1200x630/6e2e666786e7a06c8786e0cd609401f5/restrictedimagesub.jpg";
+				if (lang=="rus") result.entries[i].media.comment="Картинка не Определена";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Undefined";
+			}
 			result.entries[i].media.width=450;
 			result.entries[i].summary=entry.description;
 		}
