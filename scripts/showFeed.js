@@ -1192,7 +1192,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			property=doc.head.querySelector('meta[property="og:image"]');
 			if (property != null) mediaURL=property.content;
 
-			mediaComment="";
+			mediaComment=result.entries[i].media.comment;
 			property=doc.head.querySelector('meta[property="og:image:alt"]');
 			if (property != null) mediaComment=property.content;
 
@@ -1202,7 +1202,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
 			} else {
 				mediaURL=result.entries[i].media.url;
-				mediaComment=result.entries[i].media.comment;
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
