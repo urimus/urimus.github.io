@@ -9,11 +9,15 @@ include_once 'getBom.php';
  * $encoding_array = DetectEncoding::from_file("path/to/some/file.txt");
  */
 class DetectEncoding {
+	
+	private static $first10bytes;	
+	private static $first15bytes;
+	
 	/**
 	 * Try to detect non UTF encodings
 	 * @return array all provable encodings
 	 */
-	static private function detect_non_uft_encoding($text) {
+	private static function detect_non_uft_encoding($text) {
 		$guesses = array();
 		foreach(mb_list_encodings() as $item) {
 			//avoid checking for UTF, 'pass' & 'auto' encodings
@@ -79,14 +83,30 @@ class DetectEncoding {
 	}
 	
 	/**
+	 * Save file 10 and 15 bytes to save time
+	 * @return none
+	 */
+	static function setbytes($filename) {
+		if (!isset(self::$first10bytes) || !isset(self::$first15bytes)) {
+			$file=fopen($filename,'r');
+			self::$first10bytes = fread($file, 10);
+			rewind($file);
+			self::$first15bytes = fread($file, 15);
+			fclose($file);
+		}
+	}
+	
+	
+	/**
 	 * Try to detect all provable encodings from a given file
 	 * By first 15 bytes of file
 	 * @return array with encoding guesses
 	 * return self::from_string(file_get_contents($filename,'r')); // too slow
 	 * return self::from_string(fgets(fopen($filename,'r'))); // first line
 	 */
-	static function from_file($filename)  {
-	    return self::from_string(fread(fopen($filename,'r'), 15)); // first 15 bytes
+	static function from_file($filename) {
+		self::setbytes($filename);
+	    return self::from_string(self::$first15bytes); // first 15 bytes
 	}
 	
 	/**
@@ -95,11 +115,11 @@ class DetectEncoding {
 	 * file_get_contents($filename,'r'); // too slow
 	 * fgets(fopen($filename,'r')); // first line
 	 */
-	static function first10bytes($filename)  {
-		$bytesStr = fread(fopen($filename,'r'), 10);
+	static function first10bytes($filename) {
+		self::setbytes($filename);
 		$out = array();
-		for ($i = 0; $i < strlen($bytesStr); $i++){
-			$byte=dechex(ord($bytesStr[$i]));
+		for ($i = 0; $i < strlen(self::$first10bytes); $i++){
+			$byte=dechex(ord(self::$first10bytes[$i]));
 			$out[]=str_repeat('0', 2 - strlen($byte)).$byte;
 		}
 		return $out;
