@@ -10,6 +10,7 @@ include_once 'getBom.php';
  */
 class DetectEncoding {
 	
+	private static $filename;
 	private static $first10bytes;	
 	private static $first15bytes;
 	
@@ -87,7 +88,8 @@ class DetectEncoding {
 	 * @return none
 	 */
 	static function setbytes($filename) {
-		if (!isset(self::$first10bytes) || !isset(self::$first15bytes)) {
+		if (!isset(self::$filename) || self::$filename !== $filename || !isset(self::$first10bytes) || !isset(self::$first15bytes)) {
+			self::$filename = $filename;
 			$file=fopen($filename,'r');
 			self::$first10bytes = fread($file, 10);
 			rewind($file);
