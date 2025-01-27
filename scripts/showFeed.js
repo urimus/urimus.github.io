@@ -1224,7 +1224,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 				locStUpdateData[entry_link]={};
 				locStUpdateData[entry_link].updateStatus="failed";
-				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
+				localStorage[source+"_"+type+"_images"]=JSON.stringify(locStUpdateData);
 				console.log("Update Failed. Record # "+(i+1)+", data="+data);
 			}
 
@@ -1233,9 +1233,9 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 
 		}
 	}
-	if (corsProxyVer==1) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==2) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==3) link2="https://corsproxy.io/?"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==1) link2="https://corsproxy.io/?"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==2) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==3) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
@@ -1486,9 +1486,10 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		}
 	}
-	if (corsProxyVer==1) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==2) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==3) link2="https://corsproxy.io/?"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==1) link2="https://corsproxy.io/?"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==2) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==3) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
+
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
