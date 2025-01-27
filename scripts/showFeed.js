@@ -1102,12 +1102,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	entry_link=result.entries[i].link;
 
 	if (typeof locStUpdateData[entry_link]!== "undefined") {
-		if (locStUpdateData[entry_link].updateStatus== "failed") {
-			if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed.";
-			if (lang=="rus") result.entries[i].error="Обновление Не Удалось.";
-			updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-			return;
-		}
 		if (typeof locStUpdateData[entry_link].mediaUrl!== "undefined") {
 			result.entries[i].media.origUrl=result.entries[i].media.url;
 			result.entries[i].media.url=locStUpdateData[entry_link].mediaUrl;
@@ -1179,7 +1173,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			}
 			if (data=="") { // timeout
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
-				if (corsProxyVer==1 || corsProxyVer==2) {
+				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1206,6 +1200,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			if (property != null) mediaComment=property.content;
 
 			if (mediaURL!="") {
+				// update passed
 				qPos=mediaURL.indexOf("?");
 				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
@@ -1216,26 +1211,36 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				locStUpdateData[entry_link]={};
 				locStUpdateData[entry_link].mediaUrl=mediaURL;
 				locStUpdateData[entry_link].mediaComment=mediaComment;
-				locStUpdateData[entry_link].updateStatus="ok";
 				localStorage[source+"_"+type+"_images"]=JSON.stringify(locStUpdateData);
+				corsProxyVer=1;
+				updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+				return;
 			} else {
-				if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed.";
-				if (lang=="rus") result.entries[i].error="Обновление Не Удалось.";
+				// update failed
+				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
-				locStUpdateData[entry_link]={};
-				locStUpdateData[entry_link].updateStatus="failed";
-				localStorage[source+"_"+type+"_images"]=JSON.stringify(locStUpdateData);
-				console.log("Update Failed. Record # "+(i+1)+", data="+data);
+				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+					corsProxyVer++;
+					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+					return;
+				} else {
+					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+					if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
+					result.entries[i].media.url="images/icons/error/timeout.jpg";
+					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+					corsProxyVer=1;
+					updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+					return;
+				}
 			}
-
-			corsProxyVer=1;
-			updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-
 		}
 	}
-	if (corsProxyVer==1) link2="https://corsproxy.io/?"+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==2) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==3) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
+	
+	if (corsProxyVer==1) link2="https://corsproxy.io/"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
@@ -1267,12 +1272,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	entry_link=result.entries[i].link;
 
 	if (typeof locStUpdateData[entry_link]!== "undefined") {
-		if (locStUpdateData[entry_link].updateStatus== "failed") {
-			if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed.";
-			if (lang=="rus") result.entries[i].error="Обновление Не Удалось.";
-			updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-			return;
-		}
 		result.entries[i].summary=locStUpdateData[entry_link].summary;
 		if (typeof locStUpdateData[entry_link].mediaUrl!== "undefined") {
 			result.entries[i].media.origUrl=result.entries[i].media.url;
@@ -1361,13 +1360,13 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 			if (data=="") { // timeout
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
-				if (corsProxyVer==1 || corsProxyVer==2) {
+				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
-					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-					if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
 					updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1470,25 +1469,31 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 						}
 					}
 				}
-				locStUpdateData[entry_link].updateStatus="ok";
 				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
+				corsProxyVer=1;
+				updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 			} else {
-				if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed.";
-				if (lang=="rus") result.entries[i].error="Обновление Не Удалось.";
+				// update failed
+				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
-				locStUpdateData[entry_link]={};
-				locStUpdateData[entry_link].updateStatus="failed";
-				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
-				console.log("Update Failed. Record # "+(i+1)+", data="+data);
+				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+					corsProxyVer++;
+					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+					return;
+				} else {
+					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+					corsProxyVer=1;
+					updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+					return;
+				}
 			}
-
-			corsProxyVer=1;
-			updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		}
 	}
-	if (corsProxyVer==1) link2="https://corsproxy.io/?"+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==2) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==3) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==1) link2="https://corsproxy.io/"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
+	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
 
 
 	xmlhttp.timeout = timeoutVal;
