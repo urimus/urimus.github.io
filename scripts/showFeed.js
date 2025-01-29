@@ -1173,7 +1173,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			}
 			if (data=="") { // timeout
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
-				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1219,13 +1219,14 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				// update failed
 				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
-				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
 					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
 					if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
+					result.entries[i].media.origUrl=result.entries[i].media.url;
 					result.entries[i].media.url="images/icons/error/timeout.jpg";
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
@@ -1240,7 +1241,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	if (corsProxyVer==1) link2="https://corsproxy.io/"+encodeURIComponent(result.entries[i].link);
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+encodeURIComponent(result.entries[i].link);
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
+//	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
@@ -1309,8 +1310,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (skipUpdates==1) {
 		if (source=="yonhap") {
 			result.entries[i].media.comment=textUpdateSkipped;
+			result.entries[i].media.origUrl=result.entries[i].media.url;
 			result.entries[i].media.url="images/icons/error/skipped.jpg";
-			result.entries[i].media.origUrl="images/icons/error/skipped.jpg";
 		}
 		result.entries[i].error=textUpdateSkipped;
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
@@ -1329,8 +1330,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 		skipUpdates=1;
 		if (source=="yonhap") {
 			result.entries[i].media.comment=textUpdateSkipped;
+			result.entries[i].media.origUrl=result.entries[i].media.url;
 			result.entries[i].media.url="images/icons/error/skipped.jpg";
-			result.entries[i].media.origUrl="images/icons/error/skipped.jpg";
 		}
 		result.entries[i].error=textUpdateSkipped;
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
@@ -1360,7 +1361,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 			if (data=="") { // timeout
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
-				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1476,13 +1477,19 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				// update failed
 				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
 				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
-				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+					if (source=="yonhap") {
+						if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+						if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
+						result.entries[i].media.origUrl=result.entries[i].media.url;
+						result.entries[i].media.url="images/icons/error/timeout.jpg";
+					}
 					corsProxyVer=1;
 					updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1493,7 +1500,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (corsProxyVer==1) link2="https://corsproxy.io/"+encodeURIComponent(result.entries[i].link);
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+encodeURIComponent(result.entries[i].link);
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(result.entries[i].link);
-	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
+//	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+encodeURIComponent(result.entries[i].link);
 
 
 	xmlhttp.timeout = timeoutVal;
