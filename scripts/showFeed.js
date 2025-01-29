@@ -1368,6 +1368,12 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				} else {
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+					if (source=="yonhap") {
+						if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+						if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
+						result.entries[i].media.origUrl=result.entries[i].media.url;
+						result.entries[i].media.url="images/icons/error/timeout.jpg";
+					}
 					corsProxyVer=1;
 					updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
