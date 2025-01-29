@@ -1119,8 +1119,8 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	if (skipUpdates==1) {
 		if (source=="nasa") {
 			result.entries[i].media.comment=textUpdateSkipped;
+			result.entries[i].media.origUrl=result.entries[i].media.url;
 			result.entries[i].media.url="images/icons/error/skipped.jpg";
-			result.entries[i].media.origUrl="images/icons/error/skipped.jpg";
 		}
 		result.entries[i].error=textUpdateSkipped;
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
@@ -1139,8 +1139,8 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 		skipUpdates=1;
 		if (source=="nasa") {
 			result.entries[i].media.comment=textUpdateSkipped;
+			result.entries[i].media.origUrl=result.entries[i].media.url;
 			result.entries[i].media.url="images/icons/error/skipped.jpg";
-			result.entries[i].media.origUrl="images/icons/error/skipped.jpg";
 		}
 		result.entries[i].error=textUpdateSkipped;
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
@@ -1179,9 +1179,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					return;
 				} else {
 					corsProxyVer=1;
-					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Time-out.";
-					if (lang=="rus") result.entries[i].media.comment="Тайм-аут Обновления.";
-					result.entries[i].media.url="images/icons/error/timeout.jpg";
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
@@ -1224,10 +1221,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
-					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
-					if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-					result.entries[i].media.origUrl=result.entries[i].media.url;
-					result.entries[i].media.url="images/icons/error/timeout.jpg";
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
@@ -1368,12 +1361,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				} else {
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-					if (source=="yonhap") {
-						if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
-						if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-						result.entries[i].media.origUrl=result.entries[i].media.url;
-						result.entries[i].media.url="images/icons/error/timeout.jpg";
-					}
 					corsProxyVer=1;
 					updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1490,12 +1477,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				} else {
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-					if (source=="yonhap") {
-						if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
-						if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-						result.entries[i].media.origUrl=result.entries[i].media.url;
-						result.entries[i].media.url="images/icons/error/timeout.jpg";
-					}
 					corsProxyVer=1;
 					updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
