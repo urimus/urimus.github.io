@@ -504,8 +504,14 @@ function generateTabs(type, lang) {
 
 	var Img = document.createElement('img');
 	Img.setAttribute('src', "images/icons/different/information.png");
-	Img.setAttribute('alt', "Version Information.");
-	Img.setAttribute('title', "Version Information.");
+	if (lang=="eng" || lang=="lat") {
+		Img.setAttribute('alt', "Version Information.");
+		Img.setAttribute('title', "Version Information.");
+	}
+	if (lang=="rus") {
+		Img.setAttribute('alt', "Информация о Версии.");
+		Img.setAttribute('title', "Информация о Версии.");
+	}
 	Img.setAttribute('id', "information_img");
 	Img.setAttribute('width', "30");
 	Img.setAttribute('height', "30");
