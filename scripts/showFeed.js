@@ -742,8 +742,57 @@ function generateTabs(type, source, lang) {
 	}
 
 
+	var Div = document.createElement('div');
+	Div.setAttribute('id', "information_div");
+
+	var a = document.createElement('a');
+	a.setAttribute('href', "javascript:showInformation('"+lang+"');");
+
+	var Img = document.createElement('img');
+	Img.setAttribute('src', "images/icons/different/information.png");
+	if (lang=="eng" || lang=="lat") {
+		Img.setAttribute('alt', "Version Information.");
+		Img.setAttribute('title', "Version Information.");
+	}
+	if (lang=="rus") {
+		Img.setAttribute('alt', "Информация о Версии.");
+		Img.setAttribute('title', "Информация о Версии.");
+	}
+	Img.setAttribute('id', "information_img");
+	Img.setAttribute('width', "30");
+	Img.setAttribute('height', "30");
+	Img.setAttribute('class', "thumbnail_image_png");
+
+	a.appendChild(Img);
+	Div.appendChild(a);
+	table.appendChild(Div);
+
+	table.style.position = 'relative';
+	Div.style.position = 'absolute';
+	Div.style.right = '0px';
+	Div.style.bottom = '-30px';
+
 }
 
+function showInformation(lang) {
+	if (window.XMLHttpRequest) {
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		xhr=new XMLHttpRequest();
+	} else {  // code for IE6, IE5
+		xhr=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xhr.onreadystatechange = function(){
+		if (this.readyState==4 && this.status==200) {
+			console.log(this.responseText);
+			dir_ = JSON.parse(removeBom(this.responseText));
+			if (lang=='rus') infoText="Строка Новостей Версия 1.0. Создано - 22е Янв, 2018, Последнее Изменение - ";
+			if (lang=='eng' || lang=='lat') infoText="News Feed Version 1.0. Created At - 22nd of Jan, 2018, Last Modification - ";
+			alert(infoText+formatDate(dir_[0]['modified']*1000, lang)+".");
+		}
+	};
+	xhr.open("GET","scripts/php/dir.php?q="+encodeURIComponent("scripts/showFeed.js"),true);
+	xhr.send();
+}
 
 function showFeed(type, source, lang) {
 

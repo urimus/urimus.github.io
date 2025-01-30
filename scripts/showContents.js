@@ -495,6 +495,31 @@ function generateTabs(type, lang) {
 		cell1.appendChild(Div);
 	}
 
+
+	var Div = document.createElement('div');
+	Div.setAttribute('id', "information_div");
+
+	var a = document.createElement('a');
+	a.setAttribute('href', "javascript:showInformation('"+lang+"');");
+
+	var Img = document.createElement('img');
+	Img.setAttribute('src', "images/icons/different/information.png");
+	Img.setAttribute('alt', "Version Information.");
+	Img.setAttribute('title', "Version Information.");
+	Img.setAttribute('id', "information_img");
+	Img.setAttribute('width', "30");
+	Img.setAttribute('height', "30");
+	Img.setAttribute('class', "thumbnail_image_png");
+
+	a.appendChild(Img);
+	Div.appendChild(a);
+	table.appendChild(Div);
+
+	table.style.position = 'relative';
+	Div.style.position = 'absolute';
+	Div.style.right = '0px';
+	Div.style.bottom = '-30px';
+
 	return tabsColor[type];
 /*
 
@@ -513,6 +538,30 @@ function generateTabs(type, lang) {
     </td>
 */
 }
+
+
+function showInformation(lang) {
+	if (window.XMLHttpRequest) {
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		xhr=new XMLHttpRequest();
+	} else {  // code for IE6, IE5
+		xhr=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xhr.onreadystatechange = function(){
+		if (this.readyState==4 && this.status==200) {
+			console.log(this.responseText);
+			dir_ = JSON.parse(removeBom(this.responseText));
+			if (lang=='rus') infoText="Карта Сайта Версия 1.0. Создано - 22е Янв, 2018, Последнее Изменение - ";
+			if (lang=='eng' || lang=='lat') infoText="Site Map Version 1.0. Created At - 22nd of Jan, 2018, Last Modification - ";
+			alert(infoText+formatDate(dir_[0]['modified']*1000, lang)+".");
+		}
+	};
+	xhr.open("GET","scripts/php/dir.php?q="+encodeURIComponent("scripts/showContents.js"),true);
+	xhr.send();
+}
+
+
+
 function adjustContentsScrollDiv(adj) {
 	if (typeof adj === 'undefined') adj=1;
 	scrollDiv = document.getElementById('scrollDiv');
@@ -594,17 +643,6 @@ function showContents(type, sortby, lang) {
 				cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;');
 				cell1.innerHTML = fileContents[i];
 			}
-
-			modStr=xmlhttp.getResponseHeader('Last-Modified');
-			var row = table.insertRow(-1);
-			var cell1 = row.insertCell(0);
-			cell1.style = 'padding-left:10px; padding-right:10px; padding-bottom:2px;';
-			cell1.style.textAlign = 'right';
-			var date_div =  document.createElement("div");
-			date_div.className = 'textsmall_'+textColor+"_blue";
-			date_div.style.textAlign = 'right';
-			date_div.innerHTML = formatDate(modStr, lang);
-			cell1.appendChild(date_div);
 
 			adjustContentsScrollDiv();
 
