@@ -1160,18 +1160,13 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 //console.log("data="+data);
 
 			loadingSummary=document.getElementById("loadingSummary");
-			if (loadingSummary.innerHTML=="") {
-				loadingSummary.innerHTML="#"+(i+1)+"&nbsp;-&nbsp;";
-			} else {
-				loadingSummary.innerHTML=loadingSummary.innerHTML+", #"+(i+1)+"&nbsp;-&nbsp;";
-			}
 			if (data=="") { // timeout
-				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
 				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
+					loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10062;";
 					corsProxyVer=1;
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
@@ -1194,7 +1189,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				// update passed
 				qPos=mediaURL.indexOf("?");
 				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
-				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
+				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#9989;";
 
 				result.entries[i].media.origUrl=result.entries[i].media.url;
 				result.entries[i].media.url=mediaURL;
@@ -1209,12 +1204,12 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			} else {
 				// update failed
 				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
-				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
+					loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10062;";
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
@@ -1336,23 +1331,17 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 		if (xmlhttp.readyState == 4) {
 
 			if (skipUpdates==1) return;
-
 			data= xmlhttp.responseText;
 //console.log(data);
 
 			loadingSummary=document.getElementById("loadingSummary");
-			if (loadingSummary.innerHTML=="") {
-				loadingSummary.innerHTML="#"+(i+1)+"&nbsp;-&nbsp;";
-			} else {
-				loadingSummary.innerHTML=loadingSummary.innerHTML+", #"+(i+1)+"&nbsp;-&nbsp;";
-			}
 			if (data=="") { // timeout
-				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10008;";
 				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
+					loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10062;";
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
@@ -1418,7 +1407,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 
 			if (updateFailed==0) {
-				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10004;";
+				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#9989;";
 				result.entries[i].summary=description;
 				locStUpdateData[entry_link]={};
 				locStUpdateData[entry_link].summary=description;
@@ -1463,12 +1452,12 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			} else {
 				// update failed
 				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
-				loadingSummary.innerHTML=loadingSummary.innerHTML+"?";
 				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
+					loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10062;";
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
