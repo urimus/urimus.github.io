@@ -37,7 +37,7 @@ function newsLoad(lang) {
 	typeL=getParameterByName('type');
 	if (typeL && typeL!="") {
 		if (source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
-		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis" || typeL=="picture") 
+		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis") 
 		|| source=="yahoo" && (typeL=="top" || typeL=="world" || typeL=="us" || typeL=="politics" || typeL=="health" || typeL=="finance" || typeL=="science" || typeL=="sports" || typeL=="entertainment" || typeL=="lifestyle")
 		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports") )  {
 			type=typeL;
@@ -203,11 +203,11 @@ function processShowFeedTitle(type, source, lang, result) {
 		}
 
 		if (totalEntries>0) {
-			if (source=="cbs" || (source=="nasa" && type!="image"&& type!="picture")) {
+			if (source=="cbs" || (source=="nasa" && type!="image")) {
 				locStPar=source+"_"+type+"_images";
 				locStUpdateData=getLocalStorageData(locStPar);
 				updateImages(0, source, type, result, locStUpdateData, lang);
-			} else if ((source=="nasa" && (type=="image" || type=="picture")) || (source=="yahoo" && type=="sports")) {
+			} else if ((source=="nasa" && type=="image") || (source=="yahoo" && type=="sports")) {
 				processShowFeedData(type, source, lang, result);
 			}  else if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
 				locStPar=source+"_"+type+"_descriptions";
@@ -655,7 +655,6 @@ function generateTabs(type, source, lang) {
 		tabs["aeronautics"]="Aeronautics";
 		tabs["iss"]="Space Station";
 		tabs["artemis"]="Artemis";
-		tabs["picture"]="Picture of the Day";
 	}
 
 	if (source=="yahoo") {
@@ -772,7 +771,6 @@ function showFeed(type, source, lang) {
 		if (type=="aeronautics") feedURL="https://www.nasa.gov/aeronautics/feed/";
 		if (type=="iss") feedURL="https://www.nasa.gov/missions/station/feed/";
 		if (type=="artemis") feedURL="https://www.nasa.gov/missions/artemis/feed/";
-		if (type=="picture") feedURL="https://apod.com/feed.rss";
 	}
 
 	if (source == "yahoo") {
@@ -944,10 +942,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				result.entries[i].media.url=entry["enclosures"][0].url;
 				result.entries[i].media.width=450;
 				result.entries[i].summary=entry.description;
-			}  else if (type=="picture") {
-				result.entries[i].media.url=entry["enclosures"][0].url;
-				result.entries[i].media.width=450;
-				result.entries[i].summary=entry["rss:description"]["#"]+".";
 			} else {
 				result.entries[i].media.url="https://www.nasa.gov/wp-content/uploads/2024/08/meatball-w-black-background.webp";
 				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";

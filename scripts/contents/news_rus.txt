@@ -20,7 +20,6 @@
 <span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=aeronautics" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Aeronautics</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=iss" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Space Station</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=artemis" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Artemis</a></span>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=picture" class = "standardb_red" data-added="04е Янв, 2024." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Picture of the Day</a></span>
 
 &#9679; <b class = "text_red_blue" data-added="19е Дек, 2021." data-country="usa">Yahoo RSS Строка</b>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=yahoo&type=top" class = "standardb_red" data-added="19е Дек, 2021." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Top</a></span>

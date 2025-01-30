@@ -20,7 +20,6 @@
 <span style="padding-left:10px;">- <a href="news_lat.html?source=nasa&type=aeronautics" class = "standardb_red" data-added="17th of Aug, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Aeronautics</a></span>
 <span style="padding-left:10px;">- <a href="news_lat.html?source=nasa&type=iss" class = "standardb_red" data-added="17th of Aug, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Space Station</a></span>
 <span style="padding-left:10px;">- <a href="news_lat.html?source=nasa&type=artemis" class = "standardb_red" data-added="17th of Aug, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Artemis</a></span>
-<span style="padding-left:10px;">- <a href="news_lat.html?source=nasa&type=picture" class = "standardb_red" data-added="04th of Jan, 2024." data-country="usa" onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Picture of the Day</a></span>
 
 &#9679; <b class = "text_red_blue" data-added="19th of Dec, 2021." data-country="usa">Yahoo RSS Acies</b>
 <span style="padding-left:10px;">- <a href="news_lat.html?source=yahoo&type=top" class = "standardb_red" data-added="19th of Dec, 2021." data-country="usa" onMouseOver="showSubMenu(this, 'lat', 'contentsLink');">Top</a></span>

@@ -5642,13 +5642,6 @@ if (lang=="eng") {
 	wholeMenu["NASA RSS Feed Artemis"].link = "news_eng.html?source=nasa&type=artemis";
 	wholeMenu["NASA RSS Feed Artemis"].html = 'Artemis';
 
-	wholeMenu["NASA RSS Feed Picture"] = {};
-	wholeMenu["NASA RSS Feed Picture"].id = "26_2_8";
-	wholeMenu["NASA RSS Feed Picture"].color = "red";
-	wholeMenu["NASA RSS Feed Picture"].hasSub = 0;
-	wholeMenu["NASA RSS Feed Picture"].link = "news_eng.html?source=nasa&type=picture";
-	wholeMenu["NASA RSS Feed Picture"].html = 'Picture of the Day';
-
 	wholeMenu["● Yahoo RSS Feed"] = {};
 	wholeMenu["● Yahoo RSS Feed"].id = "26_5";
 	wholeMenu["● Yahoo RSS Feed"].color = "red";
@@ -5930,13 +5923,6 @@ if (lang=="rus") {
 	wholeMenu["NASA RSS Строка Artemis"].link = "news_rus.html?source=nasa&type=artemis";
 	wholeMenu["NASA RSS Строка Artemis"].html = 'Artemis';
 
-	wholeMenu["NASA RSS Строка Picture"] = {};
-	wholeMenu["NASA RSS Строка Picture"].id = "26_2_8";
-	wholeMenu["NASA RSS Строка Picture"].color = "red";
-	wholeMenu["NASA RSS Строка Picture"].hasSub = 0;
-	wholeMenu["NASA RSS Строка Picture"].link = "news_rus.html?source=nasa&type=picture";
-	wholeMenu["NASA RSS Строка Picture"].html = 'Picture of the Day';
-
 	wholeMenu["● Yahoo RSS Строка"] = {};
 	wholeMenu["● Yahoo RSS Строка"].id = "26_5";
 	wholeMenu["● Yahoo RSS Строка"].color = "red";
@@ -6216,13 +6202,6 @@ if (lang=="lat") {
 	wholeMenu["NASA RSS Acies Artemis"].hasSub = 0;
 	wholeMenu["NASA RSS Acies Artemis"].link = "news_lat.html?source=nasa&type=artemis";
 	wholeMenu["NASA RSS Acies Artemis"].html = 'Artemis';
-
-	wholeMenu["NASA RSS Acies Picture"] = {};
-	wholeMenu["NASA RSS Acies Picture"].id = "26_2_8";
-	wholeMenu["NASA RSS Acies Picture"].color = "red";
-	wholeMenu["NASA RSS Acies Picture"].hasSub = 0;
-	wholeMenu["NASA RSS Acies Picture"].link = "news_lat.html?source=nasa&type=picture";
-	wholeMenu["NASA RSS Acies Picture"].html = 'Picture of the Day';
 
 	wholeMenu["● Yahoo RSS Acies"] = {};
 	wholeMenu["● Yahoo RSS Acies"].id = "26_5";
