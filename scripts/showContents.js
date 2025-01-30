@@ -571,152 +571,31 @@ function showContents(type, sortby, lang) {
 	xmlhttp.onreadystatechange = function () {               
 		if (xmlhttp.readyState == 4) {                   
 
-			 lines = xmlhttp.responseText;    //*here we get all lines from text file*
-			 var fileContents = lines.split('\n'); 
+			lines = xmlhttp.responseText;    //*here we get all lines from text file*
+			var fileContents = lines.split('\n'); 
 
-			 for (var i = 0; i < fileContents.length; i++) { 
-				 if (fileContents[i]== "") {
+			for (var i = 0; i < fileContents.length; i++) { 
+				if (fileContents[i]== "") {
 						fileContents.splice(i, 1);
 						i--;
 				}
-			 }
-
-			 if (sortby=="date") fileContents=sortByDate(fileContents, lang, textColor+"_blue");
-			 if (sortby=="flag" && (type=="music" || type=="movies" || type=="series" || type=="books" || type=="junk" || type=="news")) fileContents=sortByFlag(fileContents, lang, textColor+"_blue");
-
-			 var table = document.getElementById("contentstable");
-			 while(table.childNodes.length>0){table.removeChild(table.lastChild);}
-
-			 var row = table.insertRow(-1);
-			 var cell1 = row.insertCell(0);
-			cell1.className = 'text_'+textColor+"_blue";
-			cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;');
-			 cell1.innerHTML = fileContents[0];
-
-
-
-// ------------- Showing Feed Image ----------- //
-			var rowLoading = table.insertRow(-1);
-			var cellLoading = rowLoading.insertCell(0);
-			cellLoading.className = 'text_'+textColor+"_blue";
-			cellLoading.style.textAlign = 'center';
-
-			cellLoading.innerHTML = "<b><div id='loadingDivTitle'>"+textLoadingFeed+". "+"</div><div id='loadingDiv'>.</div></b>";
-			loadingDivTitle=document.getElementById("loadingDivTitle");
-
-			adjustContentsScrollDiv(0);
-
-			toSkip=0;
-			var aSkip = document.createElement('a');
-			aSkip.setAttribute('href', "javascript:void(0);");
-			aSkip.setAttribute('class', 'standardb_'+textColor);
-			aSkip.innerText = textSkip;
-			aSkip.onclick = function () {
-				rowLoading.deleteCell(0);
-				adjustContentsScrollDiv();
-				toSkip=1;
-				return;
 			}
-			loadingDivTitle.appendChild(aSkip);
-// ------------- End of Showing Feed Image ----------- //
-// ------------- Loading Feed Image ----------- //
 
+			if (sortby=="date") fileContents=sortByDate(fileContents, lang, textColor+"_blue");
+			if (sortby=="flag" && (type=="music" || type=="movies" || type=="series" || type=="books" || type=="junk" || type=="news")) fileContents=sortByFlag(fileContents, lang, textColor+"_blue");
 
-			feedURL="https://apod.com/feed.rss";
-			feednami.load(feedURL, function(result) {
+			var table = document.getElementById("contentstable");
+			while(table.childNodes.length>0){table.removeChild(table.lastChild);}
 
-				if(result.error){
-					rowLoading.deleteCell(0);
-					adjustContentsScrollDiv();
-					return;
-				}
-
-				if (toSkip==1) return;
-
-				entry=result.feed.entries[0];
-				loadingDivTitle.innerHTML = textLoadingImage+". ";
-				loadingDivTitle.appendChild(aSkip);
-
-				feedMediaUrl=entry["enclosures"][0].url+"?w=450";
-				feedMediaWidth=450;
-				feedMediaTitle=entry.title;
-
-				feedSummary=entry["rss:description"]["#"]+".";
-				feedLink=entry.link;
-
-				var Img=null;
-				Img=document.createElement("img");
-				Img.setAttribute('align', 'top');
-				Img.setAttribute('style', 'padding-right:10px;padding-bottom:5px;');
-				Img.setAttribute('src', feedMediaUrl);
-				Img.setAttribute('title', feedMediaTitle);
-				Img.setAttribute('width', feedMediaWidth);
-				Img.onload = function () {
-					if (toSkip==1) return;
-
-					Figure=document.createElement("figure");
-					Figure.setAttribute('style', 'display: flex; margin: 0px; padding-left:10px; padding-right:10px;');
-					Figure.appendChild(Img);
-
-					ImgCaption=document.createElement("figcaption");
-					ImgCaption.setAttribute('class', "nimetus2_"+textColor+"_blue");
-					ImgCaption.innerHTML = "NASA Astronomy Picture of the Day ";
-					var a = document.createElement('a');
-					a.setAttribute('href', "/news_"+lang+".html?source=nasa&type=picture");
-					a.setAttribute('class', 'standardb_blue');
-					a.setAttribute('target', '_blank');
-					Img2=document.createElement("img");
-					Img2.setAttribute('src', "images/icons/feed/feed_icon.png");
-					Img2.setAttribute('class', "thumbnail_image_both");
-					if (lang=="eng" || lang=="lat") feedTitleText = "NASA Astronomy Picture of the Day Feed on this Page";
-					if (lang=="rus") feedTitleText = "NASA Astronomy Picture of the Day Строка на этой Странице";
-					Img2.setAttribute('title', feedTitleText);
-					Img2.setAttribute('valign', "middle");
-					a.appendChild(Img2);
-					ImgCaption.appendChild(a);
-
-					Div=document.createElement("div");
-					Div.innerHTML = "<br>";
-					var a2 = document.createElement('a');
-					a2.setAttribute('href', feedLink);
-					a2.setAttribute('class', 'standardb_'+textColor);
-					a2.setAttribute('target', '_blank');
-					a2.innerHTML = textImage+ " #1";
-					Div.appendChild(a2);
-					Div.innerHTML = Div.innerHTML + ". "+feedSummary;
-					Div.setAttribute('class', "text_"+textColor+"_blue");
-					Div.setAttribute('style', 'font-weight: normal;');
-					ImgCaption.appendChild(Div);
-
-					Figure.appendChild(ImgCaption);
-
-					rowLoading.deleteCell(0);
-					var cellLoading = rowLoading.insertCell(0);
-					cellLoading.className = 'text_'+textColor+"_blue";
-					cellLoading.appendChild(Figure);
-
-					adjustContentsScrollDiv();
-				}
-				Img.onerror = function () {
-					console.log("Loading Error - "+Img.src);
-					rowLoading.deleteCell(0);
-					adjustContentsScrollDiv();
-				}
-			});
-
-// ------------- End of Loading Feed Image ----------- //
-
-			 for (var i = 1; i < fileContents.length; i++) { 
-				 var row = table.insertRow(-1);
-				 var cell1 = row.insertCell(0);
+			for (var i = 0; i < fileContents.length; i++) { 
+				var row = table.insertRow(-1);
+				var cell1 = row.insertCell(0);
 				cell1.className = 'text_'+textColor+"_blue";
 				cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;');
-				cell1.innerHTML = cell1.innerHTML+fileContents[i];
-			 }
-
+				cell1.innerHTML = fileContents[i];
+			}
 
 			modStr=xmlhttp.getResponseHeader('Last-Modified');
-
 			var row = table.insertRow(-1);
 			var cell1 = row.insertCell(0);
 			cell1.style = 'padding-left:10px; padding-right:10px; padding-bottom:2px;';
