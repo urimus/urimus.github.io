@@ -543,21 +543,21 @@ function generateTabs(type, lang) {
 function showInformation(lang) {
 	if (window.XMLHttpRequest) {
 		// code for IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp=new XMLHttpRequest();
+		var xmlhttp2=new XMLHttpRequest();
 	} else {  // code for IE6, IE5
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		var xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
 	}
-	xmlhttp.onreadystatechange = function(){
+	xmlhttp2.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
-			modStr=xmlhttp.getResponseHeader('Last-Modified');
+			modStr=xmlhttp2.getResponseHeader('Last-Modified');
 			if (lang=='rus') infoText="Карта Сайта Версия 1.0. Создано - 22е Янв, 2018, Последнее Изменение - ";
 			if (lang=='eng' || lang=='lat') infoText="Site Map Version 1.0. Created At - 22nd of Jan, 2018, Last Modification - ";
 			alert(infoText+formatDate(modStr, lang)+".");
 		}
 	};
 	var dataFileName="scripts/showContents.js";
-	xmlhttp.open("GET", dataFileName, true);
-	xmlhttp.send();
+	xmlhttp2.open("GET", dataFileName, true);
+	xmlhttp2.send();
 }
 
 
