@@ -777,22 +777,23 @@ function generateTabs(type, source, lang) {
 function showInformation(lang) {
 	if (window.XMLHttpRequest) {
 		// code for IE7+, Firefox, Chrome, Opera, Safari
-		xhr=new XMLHttpRequest();
+		xmlhttp=new XMLHttpRequest();
 	} else {  // code for IE6, IE5
-		xhr=new ActiveXObject("Microsoft.XMLHTTP");
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	}
-	xhr.onreadystatechange = function(){
+	xmlhttp.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
-			console.log(this.responseText);
-			dir_ = JSON.parse(removeBom(this.responseText));
-			if (lang=='rus') infoText="Строка Новостей Версия 1.0. Создано - 22е Янв, 2018, Последнее Изменение - ";
-			if (lang=='eng' || lang=='lat') infoText="News Feed Version 1.0. Created At - 22nd of Jan, 2018, Last Modification - ";
-			alert(infoText+formatDate(dir_[0]['modified']*1000, lang)+".");
+			modStr=xmlhttp.getResponseHeader('Last-Modified');
+			if (lang=='rus') infoText="Карта Сайта Версия 1.0. Создано - 22е Янв, 2018, Последнее Изменение - ";
+			if (lang=='eng' || lang=='lat') infoText="Site Map Version 1.0. Created At - 22nd of Jan, 2018, Last Modification - ";
+			alert(infoText+formatDate(modStr, lang)+".");
 		}
 	};
-	xhr.open("GET","scripts/php/dir.php?q="+encodeURIComponent("scripts/showFeed.js"),true);
-	xhr.send();
+	var dataFileName="scripts/showFeed.js";
+	xmlhttp.open("GET", dataFileName, true);
+	xmlhttp.send();
 }
+
 
 function showFeed(type, source, lang) {
 
