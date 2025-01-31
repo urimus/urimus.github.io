@@ -749,7 +749,7 @@ function generateTabs(type, source, lang) {
 	a.setAttribute('href', "javascript:showInformation('"+lang+"');");
 
 	var Img = document.createElement('img');
-	Img.setAttribute('src', "images/icons/different/information.png");
+	Img.setAttribute('src', "images/icons/different/information_red.png");
 	if (lang=="eng" || lang=="lat") {
 		Img.setAttribute('alt', "Version Information.");
 		Img.setAttribute('title', "Version Information.");
