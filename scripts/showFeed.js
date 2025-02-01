@@ -1499,6 +1499,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				localStorage[source+"_"+type+"_descriptions"]=JSON.stringify(locStUpdateData);
 				corsProxyVer=1;
 				updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+				return;
 			} else {
 				// update failed
 				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
