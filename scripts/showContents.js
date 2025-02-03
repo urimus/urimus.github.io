@@ -607,7 +607,7 @@ function showContents(type, sortby, lang) {
 
 	var xmlhttp;
 	var lines;
-
+/*
 	var table = document.getElementById("contentstable");
 	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
 
@@ -616,6 +616,7 @@ function showContents(type, sortby, lang) {
 	cell1.className = 'text_'+textColor+"_blue";
 	cell1.style.textAlign = 'center';
 	cell1.innerHTML = "<b><div id='loadingDivTitle'>"+textLoadingContents+"</div><div id='loadingDiv'>.</div></b>";
+*/
 
 	if (window.XMLHttpRequest) {
 		xmlhttp = new XMLHttpRequest();               
@@ -646,7 +647,11 @@ function showContents(type, sortby, lang) {
 				var row = table.insertRow(-1);
 				var cell1 = row.insertCell(0);
 				cell1.className = 'text_'+textColor+"_blue";
-				cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;');
+				if (i==0) {
+					cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;text-align: center;');
+				} else {
+					cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;');
+				}
 				cell1.innerHTML = fileContents[i];
 			}
 
