@@ -583,51 +583,16 @@ function showContents(type, sortby, lang) {
 	textColor=generateTabs(type, lang);
 	refreshSortByTabs(type, sortby, lang);
 
-	if (lang=="rus") {
-		textLoadingContents="Читается Содержание";
-		textLoadingFeed="Читается Строка Новостей";
-		textLoadingImage="Читается Картинка";
-		textSkip="Отменить";
-		textImage = "Картинка";
-	}
-	if (lang=="eng") {
-		textLoadingContents="Reading Contents";
-		textLoadingFeed="Reading News Feed";
-		textLoadingImage="Reading Image";
-		textSkip="Skip";
-		textImage = "Image";
-	}
-	if (lang=="lat") {
-		textLoadingContents="Lectio Illa";
-		textLoadingFeed="Lectio Nuntium Acies";
-		textLoadingImage="Lectio Imagibus";
-		textSkip="Saltus";
-		textImage = "Imagio";
-	}
-
-	var xmlhttp;
-	var lines;
-/*
-	var table = document.getElementById("contentstable");
-	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
-
-	var row = table.insertRow(-1);
-	var cell1 = row.insertCell(0);
-	cell1.className = 'text_'+textColor+"_blue";
-	cell1.style.textAlign = 'center';
-	cell1.innerHTML = "<b><div id='loadingDivTitle'>"+textLoadingContents+"</div><div id='loadingDiv'>.</div></b>";
-*/
-
 	if (window.XMLHttpRequest) {
-		xmlhttp = new XMLHttpRequest();               
+		var xmlhttp = new XMLHttpRequest();               
 	} else {               
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
+		var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
 	}
 
 	xmlhttp.onreadystatechange = function () {               
 		if (xmlhttp.readyState == 4) {                   
 
-			lines = xmlhttp.responseText;    //*here we get all lines from text file*
+			var lines = xmlhttp.responseText;    //*here we get all lines from text file*
 			var fileContents = lines.split('\n'); 
 
 			for (var i = 0; i < fileContents.length; i++) { 
