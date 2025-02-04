@@ -1158,6 +1158,9 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 		if (typeof locStUpdateData[entry_link].mediaComment!== "undefined") {
 			result.entries[i].media.comment=locStUpdateData[entry_link].mediaComment;
 		}
+		
+		passedCount=document.getElementById("passedCount");
+		passedCount.innerHTML=parseInt(passedCount.innerHTML)+1;
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
 	}
@@ -1339,6 +1342,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 		}
 
+		passedCount=document.getElementById("passedCount");
+		passedCount.innerHTML=parseInt(passedCount.innerHTML)+1;
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
 	}
@@ -1464,7 +1469,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 
 			if (updateFailed==0) {
-				fpassedCount=document.getElementById("passedCount");
+				passedCount=document.getElementById("passedCount");
 				passedCount.innerHTML=parseInt(passedCount.innerHTML)+1;
 				result.entries[i].summary=description;
 				locStUpdateData[entry_link]={};
