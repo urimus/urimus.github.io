@@ -846,10 +846,15 @@ function showFeed(type, source, lang) {
 		if (type=="sports") feedURL="https://en.yna.co.kr/RSS/sports.xml";
 	}
 
+
 	feedIconText="<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_both'  valign='middle'></a>";
-	if (lang=="rus") readingText = "<b><div id='loadingDivTitle'>Читается Строка Новостей "+feedIconText+"</div><div id='loadingDiv'>.</div><div id='loadingSummary' style='padding-left:5px; padding-right:5px;'></div></b>";
-	if (lang=="eng") readingText = "<b><div id='loadingDivTitle'>Reading News Feed "+feedIconText+"</div><div id='loadingDiv'>.</div><div id='loadingSummary' style='padding-left:5px; padding-right:5px;'></div></b>";
-	if (lang=="lat") readingText = "<b><div id='loadingDivTitle'>Lectio Nuntium Acies "+feedIconText+"</div><div id='loadingDiv'>.</div><div id='loadingSummary' style='padding-left:5px; padding-right:5px;'></div></b>";
+	// passed - &#9989;
+	// failed - &#10062;
+	infoText="<div id='loadingDiv'>.</div><div>#&#9989;: <span id='passedCount'>0</span></div><div>#&#10062;: <span id='failedCount'>0</span></div>";
+
+	if (lang=="rus") readingText = "<b><div id='loadingDivTitle'>Читается Строка Новостей "+feedIconText+"</div>"+infoText+"</b>";
+	if (lang=="eng") readingText = "<b><div id='loadingDivTitle'>Reading News Feed "+feedIconText+"</div>"+infoText+"</b>";
+	if (lang=="lat") readingText = "<b><div id='loadingDivTitle'>Lectio Nuntium Acies "+feedIconText+"</div>"+infoText+"</b>";
 
 	var table = document.getElementById("feedtable");
 	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
@@ -1209,14 +1214,14 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			data= xmlhttp.responseText;  
 //console.log("data="+data);
 
-			loadingSummary=document.getElementById("loadingSummary");
 			if (data=="") { // timeout
 				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
-					loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10062;";
+					failedCount=document.getElementById("failedCount");
+					failedCount.innerHTML=parseInt(failedCount.innerHTML)+1;
 					corsProxyVer=1;
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
@@ -1239,7 +1244,8 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				// update passed
 				qPos=mediaURL.indexOf("?");
 				if (qPos!=-1) mediaURL=mediaURL.substr(0, qPos);
-				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#9989;";
+				passedCount=document.getElementById("passedCount");
+				passedCount.innerHTML=parseInt(passedCount.innerHTML)+1;
 
 				result.entries[i].media.origUrl=result.entries[i].media.url;
 				result.entries[i].media.url=mediaURL;
@@ -1259,7 +1265,8 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
-					loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10062;";
+					failedCount=document.getElementById("failedCount");
+					failedCount.innerHTML=parseInt(failedCount.innerHTML)+1;
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
@@ -1384,14 +1391,14 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			data= xmlhttp.responseText;
 //console.log(data);
 
-			loadingSummary=document.getElementById("loadingSummary");
 			if (data=="") { // timeout
 				if (corsProxyVer==1 || corsProxyVer==2) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
-					loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10062;";
+					failedCount=document.getElementById("failedCount");
+					failedCount.innerHTML=parseInt(failedCount.innerHTML)+1;
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
@@ -1457,7 +1464,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			}
 
 			if (updateFailed==0) {
-				loadingSummary.innerHTML=loadingSummary.innerHTML+"&#9989;";
+				fpassedCount=document.getElementById("passedCount");
+				passedCount.innerHTML=parseInt(passedCount.innerHTML)+1;
 				result.entries[i].summary=description;
 				locStUpdateData[entry_link]={};
 				locStUpdateData[entry_link].summary=description;
@@ -1508,7 +1516,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
 				} else {
-					loadingSummary.innerHTML=loadingSummary.innerHTML+"&#10062;";
+					failedCount=document.getElementById("failedCount");
+					failedCount.innerHTML=parseInt(failedCount.innerHTML)+1;
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
