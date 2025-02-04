@@ -206,12 +206,16 @@ function processShowFeedTitle(type, source, lang, result) {
 			if (source=="cbs" || (source=="nasa" && type!="image")) {
 				locStPar=source+"_"+type+"_images";
 				locStUpdateData=getLocalStorageData(locStPar);
+				document.getElementById("passedDiv").setAttribute("style", "display:block;");
+				document.getElementById("failedDiv").setAttribute("style", "display:block;");
 				updateImages(0, source, type, result, locStUpdateData, lang);
 			} else if ((source=="nasa" && type=="image") || (source=="yahoo" && type=="sports")) {
 				processShowFeedData(type, source, lang, result);
 			}  else if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
 				locStPar=source+"_"+type+"_descriptions";
 				locStUpdateData=getLocalStorageData(locStPar);
+				document.getElementById("passedDiv").setAttribute("style", "display:block;");
+				document.getElementById("failedDiv").setAttribute("style", "display:block;");
 				updateDescription(0, source, type, result, locStUpdateData, lang);
 			}
 		}
@@ -850,7 +854,7 @@ function showFeed(type, source, lang) {
 	feedIconText="<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_both'  valign='middle'></a>";
 	// passed - &#9989;
 	// failed - &#10062;
-	infoText="<div id='loadingDiv'>.</div><div>#&#9989;: <span id='passedCount'>0</span></div><div>#&#10062;: <span id='failedCount'>0</span></div>";
+	infoText="<div id='loadingDiv'>.</div><div id='passedDiv' style='display:none'>#&#9989;: <span id='passedCount'>0</span></div><div id='failedDiv' style='display:none'>#&#10062;: <span id='failedCount'>0</span></div>";
 
 	if (lang=="rus") readingText = "<b><div id='loadingDivTitle'>Читается Строка Новостей "+feedIconText+"</div>"+infoText+"</b>";
 	if (lang=="eng") readingText = "<b><div id='loadingDivTitle'>Reading News Feed "+feedIconText+"</div>"+infoText+"</b>";
