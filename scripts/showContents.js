@@ -556,6 +556,7 @@ function showInformation(lang) {
 	xmlhttp2.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
 			modStr=xmlhttp2.getResponseHeader('Last-Modified');
+			// console.log(xmlhttp2.getAllResponseHeaders());
 			if (lang=='rus') infoText="Карта Сайта Версия 1.0. Создано - 22е Янв, 2018, Последнее Изменение - ";
 			if (lang=='eng' || lang=='lat') infoText="Site Map Version 1.0. Created At - 22nd of Jan, 2018, Last Modification - ";
 			alert(infoText+formatDate(modStr, lang)+".");
