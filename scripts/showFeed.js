@@ -211,13 +211,13 @@ function processShowFeedTitle(type, source, lang, result) {
 		}
 
 		if (totalEntries>0) {
-			if (source=="cbs" || (source=="nasa" && type!="image") || source == "phys.org") {
+			if (source=="cbs" || (source=="nasa" && type!="image")) {
 				locStPar=source+"_"+type+"_images";
 				locStUpdateData=getLocalStorageData(locStPar);
 				document.getElementById("passedDiv").setAttribute("style", "display:block;");
 				document.getElementById("failedDiv").setAttribute("style", "display:block;");
 				updateImages(0, source, type, result, locStUpdateData, lang);
-			} else if ((source=="nasa" && type=="image") || (source=="yahoo" && type=="sports")) {
+			} else if ((source=="nasa" && type=="image") || (source=="yahoo" && type=="sports") || source == "phys.org") {
 				processShowFeedData(type, source, lang, result);
 			}  else if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
 				locStPar=source+"_"+type+"_descriptions";
@@ -455,8 +455,9 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 		Img.src = preloadImg.src;
 	}
 	preloadImg.onerror= function () {
-		preloadImg.dataset.failedAttempts=parseInt(preloadImg.dataset.failedAttempts)+1;
-		if (parseInt(preloadImg.dataset.failedAttempts)>10) {
+		failedAttemptsInt=parseInt(preloadImg.dataset.failedAttempts);
+		preloadImg.dataset.failedAttempts=failedAttemptsInt+1;
+		if (failedAttemptsInt>10) {
 			if (typeof entry.media.origUrl!== 'undefined' && entry.media.origUrl!=entry.media.url) {
 				preloadImg.dataset.failedAttempts=0;
 				preloadImg.src=entry.media.origUrl;
@@ -464,7 +465,19 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 				Img.src = "images/icons/error/error.jpg";
 			}
 		} else {
-			preloadImg.src = preloadImg.src;
+			if (source == "phys.org") {
+				slashPos= preloadImg.src.lastIndexOf("/");
+				if (slashPos!=-1) {
+					d = new Date();
+					year = d.getFullYear();
+					filename=preloadImg.src.substr(slashPos+1);
+					preloadImg.src="https://scx2.b-cdn.net/gfx/news/"+(year-failedAttemptsInt)+"/"+filename;
+				} else {
+					preloadImg.src = preloadImg.src;
+				}
+			} else {
+				preloadImg.src = preloadImg.src;
+			}
 		}
 	}
 
@@ -1048,7 +1061,13 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 		if (source == "phys.org") {
 			if (entry["media:thumbnail"]!=null) {
-				result.entries[i].media.url=entry["media:thumbnail"]["@"].url
+				result.entries[i].media.url=entry["media:thumbnail"]["@"].url;
+				// auto update for phys.org
+				slashPos= result.entries[i].media.url.lastIndexOf("/");
+				if (slashPos!=-1) {
+					filename=result.entries[i].media.url.substr(slashPos+1);
+					result.entries[i].media.url="https://scx2.b-cdn.net/gfx/news/2025/"+filename;
+				}
 			} else {
 				result.entries[i].media.url=""; // todo
 				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
