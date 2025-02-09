@@ -21,6 +21,18 @@
 <span style="padding-left:10px;">- <a href="news_eng.html?source=nasa&type=iss" class = "standardb_red" data-added="17th of Aug, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Space Station</a></span>
 <span style="padding-left:10px;">- <a href="news_eng.html?source=nasa&type=artemis" class = "standardb_red" data-added="17th of Aug, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Artemis</a></span>
 
+&#9679; <b class = "text_red_blue" data-added="09th of Feb, 2025." data-country="usa">Phys.org RSS Feed</b>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=all" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">All Stories</a></span>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=environment" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Environment</a></span>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=archaeology" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Archaeology</a></span>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=bio" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Bio & Medicine</a></span>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=nanomaterials" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Nanomaterials</a></span>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=nanophysics" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Nanophysics</a></span>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=astrobiology" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Astrobiology</a></span>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=astronomy" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Astronomy</a></span>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=planetary" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Planetary Sciences</a></span>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=phys.org&type=space" class = "standardb_red" data-added="09th of Feb, 2025." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Space Exploration</a></span>
+
 &#9679; <b class = "text_red_blue" data-added="19th of Dec, 2021." data-country="usa">Yahoo RSS Feed</b>
 <span style="padding-left:10px;">- <a href="news_eng.html?source=yahoo&type=top" class = "standardb_red" data-added="19th of Dec, 2021." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Top</a></span>
 <span style="padding-left:10px;">- <a href="news_eng.html?source=yahoo&type=world" class = "standardb_red" data-added="19th of Dec, 2021." data-country="usa" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">World</a></span>

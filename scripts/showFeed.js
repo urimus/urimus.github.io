@@ -11,7 +11,7 @@ function newsLoad(lang) {
 	
 	sourceL=getParameterByName('source');
 	if (sourceL && sourceL!="") {
-		if (sourceL=="cbs" || sourceL=="nasa" || sourceL=="yahoo" || sourceL=="yonhap")  {
+		if (sourceL=="cbs" || sourceL=="nasa" || sourceL=="phys.org" || sourceL=="yahoo" || sourceL=="yonhap")  {
 			source=sourceL;
 		}
 	} else {
@@ -38,6 +38,7 @@ function newsLoad(lang) {
 	if (typeL && typeL!="") {
 		if (source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
 		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis") 
+		|| source=="phys.org" && (typeL=="all" || typeL=="environment" || typeL=="archaeology" || typeL=="bio" || typeL=="nanomaterials" || typeL=="nanophysics" || typeL=="astrobiology" || typeL=="astronomy" || typeL=="planetary" || typeL=="space") 
 		|| source=="yahoo" && (typeL=="top" || typeL=="world" || typeL=="us" || typeL=="politics" || typeL=="health" || typeL=="finance" || typeL=="science" || typeL=="sports" || typeL=="entertainment" || typeL=="lifestyle")
 		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports") )  {
 			type=typeL;
@@ -58,6 +59,9 @@ function newsLoad(lang) {
 		}
 	    	if (source=="nasa") {
 			window.location.href='news_'+lang+'.html?source=nasa&type=releases';
+		}
+	    	if (source=="phys.org") {
+			window.location.href='news_'+lang+'.html?source=phys.org&type=all';
 		}
 	    	if (source=="yahoo") {
 			window.location.href='news_'+lang+'.html?source=yahoo&type=top';
@@ -98,22 +102,26 @@ function processShowFeedTitle(type, source, lang, result) {
 	// Records Text is in getRecordsText function
 	if (lang == "rus"){
 		textRssFeed="RSS Строка";
-		if (source == "cbs" || source == "nasa" || source == "yahoo" || source == "yonhap") textRssFeed=textRssFeed+" (англ.)";
+		if (source == "cbs" || source == "nasa" || source == "phys.org" || source == "yahoo" || source == "yonhap") textRssFeed=textRssFeed+" (англ.)";
 		textZero="Нет";
 		textLocalCopy="Локальная Копия";
 		textObtainedBy="Получено через";
 	}
 
 	if (lang == "eng" || lang == "lat"){
-		textRssFeed="RSS Feed";
-		textZero="No";
 		textLocalCopy="Local Copy";
 		textObtainedBy="Obtained by";
 	}
 
+	if (lang == "eng"){
+		textRssFeed="RSS Feed";
+		textZero="No";
+	}
+
 	if (lang == "lat"){
-		textZero="Non";
 		textRssFeed="RSS Acies";
+		if (source == "cbs" || source == "nasa" || source == "phys.org" || source == "yahoo" || source == "yonhap") textRssFeed=textRssFeed+" (angl.)";
+		textZero="Non";
 	}
 
 	// ------------- End of Setting Texts ---------------- //
@@ -159,7 +167,7 @@ function processShowFeedTitle(type, source, lang, result) {
 
 		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+textRssFeed;
 
-		if (source == "cbs" || source == "nasa" || source == "yahoo" || source == "yonhap") {
+		if (source == "cbs" || source == "nasa" || source == "phys.org" || source == "yahoo" || source == "yonhap") {
 			var a = document.createElement('a');
 			a.setAttribute('href', result.feedXML);
 			a.setAttribute('class', 'standardb_red');
@@ -203,7 +211,7 @@ function processShowFeedTitle(type, source, lang, result) {
 		}
 
 		if (totalEntries>0) {
-			if (source=="cbs" || (source=="nasa" && type!="image")) {
+			if (source=="cbs" || (source=="nasa" && type!="image") || source == "phys.org") {
 				locStPar=source+"_"+type+"_images";
 				locStUpdateData=getLocalStorageData(locStPar);
 				document.getElementById("passedDiv").setAttribute("style", "display:block;");
@@ -440,7 +448,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 	preloadImg.onload = function () {
 		if (preloadImg.naturalWidth<450) { // preloadImg.width
 			Img.width=preloadImg.naturalWidth;
-			if (source == "nasa"|| source == "yahoo" || source == "cbs"|| source == "yonhap") {
+			if (source == "nasa"|| source == "yahoo" || source == "phys.org" || source == "cbs"|| source == "yonhap") {
 				if (typeof entry.summary!== "undefined" && entry.summary!=null && entry.summary!="") formatSummaryDiv(lang, summaryDiv, entry);
 			}
 		}
@@ -559,7 +567,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 
 	var cell1=tableMainRow.insertCell(i);
 	cell1.appendChild(newsTable1Record);
-	if (source == "nasa" || source == "yahoo" || source == "cbs" || source == "yonhap") {
+	if (source == "nasa" || source == "phys.org" || source == "yahoo" || source == "cbs" || source == "yonhap") {
 		if (i==0) {
 			var cell2=tableMainRow.insertCell(1);
 			newsTable1Record2 = newsTable1Record.cloneNode(true);
@@ -660,7 +668,18 @@ function generateTabs(type, source, lang) {
 		tabs["iss"]="Space Station";
 		tabs["artemis"]="Artemis";
 	}
-
+	if (source=="phys.org") {
+		tabs["all"]="All Stories";
+		tabs["environment"]="Environment";
+		tabs["archaeology"]="Archaeology";
+		tabs["bio"]="Bio & Medicine";
+		tabs["nanomaterials"]="Nanomaterials";
+		tabs["nanophysics"]="Nanophysics";
+		tabs["astrobiology"]="Astrobiology";
+		tabs["astronomy"]="Astronomy";
+		tabs["planetary"]="Planetary Sciences";
+		tabs["space"]="Space Exploration";
+	}
 	if (source=="yahoo") {
 		tabs["top"]="Top";
 		tabs["world"]="World";
@@ -691,6 +710,10 @@ function generateTabs(type, source, lang) {
 	if (source == "nasa") {
 		textFeedSource = "NASA";
 		menuDiv=document.getElementById("menu_26_2");
+	}
+	if (source=="phys.org") {
+		textFeedSource = "Phys.org";
+		menuDiv=document.getElementById("menu_26_1");
 	}
 	if (source == "yahoo") {
 		textFeedSource = "Yahoo! News";
@@ -827,6 +850,19 @@ function showFeed(type, source, lang) {
 		if (type=="artemis") feedURL="https://www.nasa.gov/missions/artemis/feed/";
 	}
 
+	if (source == "phys.org") {
+		if (type=="all") feedURL="https://phys.org/rss-feed/";
+		if (type=="environment") feedURL="https://phys.org/rss-feed/earth-news/environment/";
+		if (type=="archaeology") feedURL="https://phys.org/rss-feed/science-news/archaeology-fossils/";
+		if (type=="bio") feedURL="https://phys.org/rss-feed/nanotech-news/bio-medicine/";
+		if (type=="nanomaterials") feedURL="https://phys.org/rss-feed/nanotech-news/nano-materials/";
+		if (type=="nanophysics") feedURL="https://phys.org/rss-feed/nanotech-news/nano-physics/";
+		if (type=="astrobiology") feedURL="https://phys.org/rss-feed/space-news/astrobiology/";
+		if (type=="astronomy") feedURL="https://phys.org/rss-feed/space-news/astronomy/";
+		if (type=="planetary") feedURL="https://phys.org/rss-feed/space-news/planetary-sciences/";
+		if (type=="space") feedURL="https://phys.org/rss-feed/space-news/space-exploration/";
+	}
+
 	if (source == "yahoo") {
 		if (type=="top") feedURL="https://www.yahoo.com/news/rss";
 		if (type=="world") feedURL="https://news.yahoo.com/rss/world";
@@ -959,21 +995,22 @@ function getLocalStorageData(par) {
 
 function optimizeUpdateResult(type, source, lang, resultOrig) {
 
-//console.log(resultOrig);
+console.log(resultOrig);
 
 	result={};
 	result.feedXML=resultOrig.feedXML;
 	if (source == "cbs") result.image="images/icons/feed/cbs_news_logo.png";
 	if (source == "nasa") result.image="images/icons/feed/NASA_Worm_logo.png";
+	if (source == "phys.org") result.image="images/icons/feed/phys_org_logo.png";
 	if (source == "yahoo") result.image="images/icons/feed/yahoo_news_logo.png";
 	if (source == "yonhap") result.image="images/icons/feed/yonhap_news_logo.png";
+
 
 	result.entries=[];
 	if (resultOrig.feed.entries.length==0) return result;
 
-
 	if (source == "yahoo") result.title=resultOrig.feed.meta.image.title;
-	if (source == "cbs" || source == "nasa" || source == "yonhap") result.title=resultOrig.feed.meta["rss:title"]["#"];
+	if (source == "cbs" || source == "nasa" || source == "phys.org" || source == "yonhap") result.title=resultOrig.feed.meta["rss:title"]["#"];
 	result.link=resultOrig.feed.meta.link;
 
 	items=resultOrig.feed.entries;
@@ -1008,6 +1045,17 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				result.entries[i].media.width=450;
 				result.entries[i].summary=entry["rss:description"]["#"];
 			}
+		}
+		if (source == "phys.org") {
+			if (entry["media:thumbnail"]!=null) {
+				result.entries[i].media.url=entry["media:thumbnail"]["@"].url
+			} else {
+				result.entries[i].media.url=""; // todo
+				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+			}
+			result.entries[i].media.width=450;
+			result.entries[i].summary=entry.description;
 		}
 		if (source == "yahoo") {
 			if (entry["media:content"]==null) {
