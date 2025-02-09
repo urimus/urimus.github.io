@@ -995,7 +995,7 @@ function getLocalStorageData(par) {
 
 function optimizeUpdateResult(type, source, lang, resultOrig) {
 
-console.log(resultOrig);
+//console.log(resultOrig);
 
 	result={};
 	result.feedXML=resultOrig.feedXML;
