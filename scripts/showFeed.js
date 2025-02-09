@@ -440,7 +440,7 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 
 	var preloadImg=document.createElement("img");
 	preloadImg.dataset.failedAttempts=0;
-	if (source=="nasa") {
+	if (source=="nasa" || source=="phys.org") {
 		preloadImg.setAttribute('src', entry.media.url+"?w=450");
 	} else {
 		preloadImg.setAttribute('src', entry.media.url);
