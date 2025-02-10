@@ -847,7 +847,24 @@ function generateTabs(type, source, lang) {
 	scrollDivHeight=scrollDivHeight-rowsCount*27-8;
 	document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 
-console.log(rowsCount);
+	if (source=="phys.org") {
+		var row = table.insertRow(-1);
+		var cell1 = row.insertCell(0);
+
+		cell1.setAttribute('style', "width: 280px; display: inline-block; textAlign: left; margin:2px;");
+		var Div = document.createElement('div');
+		Div.setAttribute('id', "menu_26_1");
+		Div.setAttribute('onMouseOver', "showSubMenu(this, '"+lang+"', 'news');");
+//		Div.setAttribute('onMouseOver', "console.log(this);");
+		Div.setAttribute('onMouseOut', "this.className='menu_not_selected_red'");
+		Div.setAttribute('onClick', "showSubMenu(this, 'eng', 'news');" );
+		Div.setAttribute('class', "menu_not_selected_red");
+		Div.setAttribute('style', "padding-left: 5px; margin:2px;");
+		if (lang=="eng") Div.innerHTML="&#9679; Phys.org RSS Feed";
+		if (lang=="rus") Div.innerHTML="&#9679; Phys.org RSS Строка";
+		if (lang=="eng") Div.innerHTML="&#9679; Phys.org RSS Acies";
+		cell1.appendChild(Div);
+	}
 
 	for (var i = 0; i<keys.length; i++) {
 		if (i%5==0) {
@@ -855,6 +872,7 @@ console.log(rowsCount);
 		}
 		var cell1 = row.insertCell(i%5);
 		cell1.style.width = '20%';
+		cell1.style.display= 'inline-block';
 		cell1.style.textAlign = 'center';
 
 		var Div = document.createElement('div');
