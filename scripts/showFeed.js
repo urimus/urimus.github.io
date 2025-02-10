@@ -698,7 +698,8 @@ function generateTabs(type, source, lang) {
 		}
 		if (type=="archaeology" || type=="economics" || type=="education" || type=="mathematics" || type=="other" || type=="political"  || type=="social") {
 			tabs["archaeology"]="Archaeology";
-			tabs["economics"]="Economics & Business";
+			tabs2["economics"]="Economics & Business";
+			tabs["economics"]="Economics";
 			tabs["education"]="Education";
 			tabs["mathematics"]="Mathematics";
 			tabs["other"]="Other";
@@ -808,6 +809,7 @@ function generateTabs(type, source, lang) {
 		}
 		if (type=="archaeology" || type=="economics" || type=="education" || type=="mathematics" || type=="other" || type=="political"  || type=="social") {
 			tabtype2="Other Sciences"+" &blacktriangleright; "+tabs[type];
+			if (type=="economics") tabtype2="Other Sciences"+" &blacktriangleright; "+tabs2[type];
 		}
 		if (type=="bio" || type=="nanomaterials" || type=="nanophysics") {
 			tabtype2="Nanotechnology"+" &blacktriangleright; "+tabs[type];
@@ -826,7 +828,7 @@ function generateTabs(type, source, lang) {
 		}
 		if (type=="analytical" || type=="biochemistry" || type=="materials" || type=="otherc" || type=="polymers") {
 			tabtype2="Chemistry"+" &blacktriangleright; "+tabs[type];
-			if (type=="analytical") tabtype2="Biology"+" &blacktriangleright; "+tabs2[type];
+			if (type=="analytical") tabtype2="Chemistry"+" &blacktriangleright; "+tabs2[type];
 		}
 	} else {
 		tabtype2=tabs[type];
