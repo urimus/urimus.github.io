@@ -96,6 +96,15 @@ function showRecordsNum(type, recordsNum, lang, newCaption) {
 // ------------- End of Initial ---------------- //
 
 
+function adjustFeedScrollDiv(adj) {
+	if (typeof adj === 'undefined') adj=1;
+	scrollDiv = document.getElementById('scrollDiv');
+	scrollDivHeight=calcScrollDivHeightMax();
+	feedTitleHeight=parseInt($( "#titletable" ).css( "height" ));
+	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
+	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-feedTitleHeight-tabsHeight-8)+"px;width: 711px; overflow:auto;");
+	if (adj==1) adjustScrollDiv();
+}
 
 // ------------- Show Feed ---------------- //
 
@@ -162,15 +171,7 @@ function processShowFeedTitle(type, source, lang, result) {
 		cell1.appendChild(aLogo);
 		cell1.setAttribute('style', 'padding-top:5px;padding-bottom:5px;display: -webkit-flex;display: flex;align-items: center;');
 
-		tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-		newHeight=document.getElementById("scrollDiv").offsetHeight-this.height-tabsHeight+29;
-		document.getElementById("scrollDiv").setAttribute("style", "height:"+newHeight+"px;width: 711px; overflow:auto;");
-
-/*
-		feedTitleHeight=parseInt($( "#feed_title" ).css( "height" ));
-		scrollDivHeight=calcScrollDivHeightMax();
-		document.getElementById("scrollDiv").setAttribute("style", "height:"+(scrollDivHeight - (feedTitleHeight+4))+"px;width: 711px; overflow:auto;");
-*/
+		adjustFeedScrollDiv(0);
 
 		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+textRssFeed;
 
@@ -667,6 +668,7 @@ function processEmptyFeed(type, source, lang, feedXML) {
 function generateTabs(type, source, lang) {
 
 	tabs={};
+	tabs2={};
 	if (source=="cbs") {
 		tabs["top"]="Top Stories";
 		tabs["us"]="U.S.";
@@ -726,17 +728,22 @@ function generateTabs(type, source, lang) {
 		if (type=="agriculture" || type=="biotechnology" || type=="cell" || type=="ecology" || type=="evolution" || type=="molecular" || type=="otherb" || type=="paleontology" || type=="plants" || type=="veterinary") {
 			tabs["agriculture"]="Agriculture";
 			tabs["biotechnology"]="Biotechnology";
-			tabs["cell"]="Cell & Microbiology";
+			tabs2["cell"]="Cell & Microbiology";
+			tabs["cell"]="Cell";
 			tabs["ecology"]="Ecology";
 			tabs["evolution"]="Evolution";
-			tabs["molecular"]="Molecular & Computational biology";
+			tabs2["molecular"]="Molecular & Computational Biology";
+			tabs["molecular"]="Molecular";
 			tabs["otherb"]="Other";
-			tabs["paleontology"]="Paleontology & Fossils";
+			tabs2["paleontology"]="Paleontology & Fossils";
+			tabs["molecular"]="Molecular";
 			tabs["plants"]="Plants & Animals";
-			tabs["veterinary"]="Veterinary Medicine";
+			tabs2["veterinary"]="Veterinary Medicine";
+			tabs["veterinary"]="Veterinary";
 		}
 		if (type=="analytical" || type=="biochemistry" || type=="materials" || type=="otherc" || type=="polymers") {
-			tabs["analytical"]="Analytical Chemistry";
+			tabs2["analytical"]="Analytical Chemistry";
+			tabs["analytical"]="Analytical";
 			tabs["biochemistry"]="Biochemistry";
 			tabs["materials"]="Materials Science";
 			tabs["otherc"]="Other";
@@ -813,9 +820,13 @@ function generateTabs(type, source, lang) {
 		}
 		if (type=="agriculture" || type=="biotechnology" || type=="cell" || type=="ecology" || type=="evolution" || type=="molecular" || type=="otherb" || type=="paleontology" || type=="plants" || type=="veterinary") {
 			tabtype2="Biology"+" &blacktriangleright; "+tabs[type];
+			if (type=="cell" || type=="molecular" || type=="paleontology" || type=="veterinary") {
+				tabtype2="Biology"+" &blacktriangleright; "+tabs2[type];
+			}
 		}
 		if (type=="analytical" || type=="biochemistry" || type=="materials" || type=="otherc" || type=="polymers") {
 			tabtype2="Chemistry"+" &blacktriangleright; "+tabs[type];
+			if (type=="analytical") tabtype2="Biology"+" &blacktriangleright; "+tabs2[type];
 		}
 	} else {
 		tabtype2=tabs[type];
@@ -833,6 +844,8 @@ function generateTabs(type, source, lang) {
 	scrollDivHeight=calcScrollDivHeightMax();
 	scrollDivHeight=scrollDivHeight-rowsCount*27-8;
 	document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+
+console.log(rowsCount);
 
 	for (var i = 0; i<keys.length; i++) {
 		if (i%5==0) {
