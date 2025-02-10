@@ -843,6 +843,7 @@ function generateTabs(type, source, lang) {
 	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
 	
 	rowsCount=Math.ceil(keys.length/5);
+	if (source=="phys.org") rowsCount++;
 	scrollDivHeight=calcScrollDivHeightMax();
 	scrollDivHeight=scrollDivHeight-rowsCount*27-8;
 	document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
@@ -855,11 +856,10 @@ function generateTabs(type, source, lang) {
 		var Div = document.createElement('div');
 		Div.setAttribute('id', "menu_26_1");
 		Div.setAttribute('onMouseOver', "showSubMenu(this, '"+lang+"', 'news');");
-//		Div.setAttribute('onMouseOver', "console.log(this);");
 		Div.setAttribute('onMouseOut', "this.className='menu_not_selected_red'");
 		Div.setAttribute('onClick', "showSubMenu(this, 'eng', 'news');" );
 		Div.setAttribute('class', "menu_not_selected_red");
-		Div.setAttribute('style', "padding-left: 5px; margin:2px;");
+		Div.setAttribute('style', "padding-left: 5px;");
 		if (lang=="eng") Div.innerHTML="&#9679; Phys.org RSS Feed";
 		if (lang=="rus") Div.innerHTML="&#9679; Phys.org RSS Строка";
 		if (lang=="eng") Div.innerHTML="&#9679; Phys.org RSS Acies";
