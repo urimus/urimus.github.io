@@ -356,6 +356,7 @@ function sortByFlag(fileContentsL, lang, textColor){
 function generateTabs(type, lang) {
 
 	tabs={};
+	tabs2={};
 	if (lang=="rus") {
 		tabs["aboutme"]="Обо мне";
 		tabs["aboutwork"]="О Моей Работе";
@@ -373,7 +374,9 @@ function generateTabs(type, lang) {
 		tabs["stuff"]='Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 		tabs["anecdotes"]="Анекдоты";
 		tabs["heffalump"]='Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Crimin &#9760;</sup></font>';
+		tabs2["relaxation"]="Вещества Для Расслабления";
 		tabs["relaxation"]="Расслабление";
+		tabs2["software"]="Разработка Программного Обеспечения";
 		tabs["software"]="Программы";
 		tabs["satanism"]="Сатанизм";
 		tabs["wicca"]="Викка";
@@ -401,7 +404,9 @@ function generateTabs(type, lang) {
 		tabs["stuff"]='Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 		tabs["anecdotes"]="Anecdotes";
 		tabs["heffalump"]='Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font>';
+		tabs2["relaxation"]="Substances For Relaxation";
 		tabs["relaxation"]="Relaxation";
+		tabs2["software"]="Software Development";
 		tabs["software"]="Software";
 		tabs["satanism"]="Satanism";
 		tabs["wicca"]="Wicca";
@@ -454,9 +459,10 @@ function generateTabs(type, lang) {
 
 	contentsTitle=document.getElementById("contentsTitle");
 	tabtype2=tabs[type];
-	fontPos=tabs[type].indexOf("<font");
+	if (type=="software" || type=="relaxation") tabtype2=tabs2[type];
+	fontPos=tabtype2.indexOf("<font");
 	if (fontPos !== -1) {
-		tabtype2=tabs[type].substr(0,fontPos-1);
+		tabtype2=tabtype2.substr(0,fontPos-1);
 	}
 	contentsTitle.innerHTML=contentsTitle.innerHTML+" &blacktriangleright; "+tabtype2;
 
