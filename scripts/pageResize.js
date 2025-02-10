@@ -66,9 +66,7 @@ function processPageResize(isLoad, orientationChanged){
 	if (isLoad==0) {  // not isLoad
 		if (window.location.pathname.substr(0, 5)=="/news") {
 			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
-				feedTitleHeight=parseInt($( "#titletable" ).css( "height" ));
-				tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
-				scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-feedTitleHeight-tabsHeight-8)+"px;width: 711px; overflow:auto;");
+				adjustFeedScrollDiv(0);
 			}
 		} else if (window.location.pathname.substr(0, 12)=="/html_editor") { // nothing
 //			adjustTextareaAndEncodings();

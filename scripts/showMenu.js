@@ -5656,68 +5656,320 @@ if (lang=="eng") {
 	wholeMenu["Phys.org RSS Feed All Stories"].link = "news_eng.html?source=phys.org&type=all";
 	wholeMenu["Phys.org RSS Feed All Stories"].html = 'All Stories';
 
+	wholeMenu["● Earth"] = {};
+	wholeMenu["● Earth"].id = "26_1_2";
+	wholeMenu["● Earth"].color = "red";
+	wholeMenu["● Earth"].hasSub = 1;
+	wholeMenu["● Earth"].link = "";
+	wholeMenu["● Earth"].html = '&#9679; Earth';
+
+	wholeMenu["Phys.org RSS Feed Earth Sciences"] = {};
+	wholeMenu["Phys.org RSS Feed Earth Sciences"].id = "26_1_2_1";
+	wholeMenu["Phys.org RSS Feed Earth Sciences"].color = "red";
+	wholeMenu["Phys.org RSS Feed Earth Sciences"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Earth Sciences"].link = "news_eng.html?source=phys.org&type=earth";
+	wholeMenu["Phys.org RSS Feed Earth Sciences"].html = 'Earth Sciences';
+
 	wholeMenu["Phys.org RSS Feed Environment"] = {};
-	wholeMenu["Phys.org RSS Feed Environment"].id = "26_1_2";
+	wholeMenu["Phys.org RSS Feed Environment"].id = "26_1_2_2";
 	wholeMenu["Phys.org RSS Feed Environment"].color = "red";
 	wholeMenu["Phys.org RSS Feed Environment"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Environment"].link = "news_eng.html?source=phys.org&type=environment";
 	wholeMenu["Phys.org RSS Feed Environment"].html = 'Environment';
 
+	wholeMenu["● Other Sciences"] = {};
+	wholeMenu["● Other Sciences"].id = "26_1_3";
+	wholeMenu["● Other Sciences"].color = "red";
+	wholeMenu["● Other Sciences"].hasSub = 1;
+	wholeMenu["● Other Sciences"].link = "";
+	wholeMenu["● Other Sciences"].html = '&#9679; Other Sciences';
+
 	wholeMenu["Phys.org RSS Feed Archaeology"] = {};
-	wholeMenu["Phys.org RSS Feed Archaeology"].id = "26_1_3";
+	wholeMenu["Phys.org RSS Feed Archaeology"].id = "26_1_3_1";
 	wholeMenu["Phys.org RSS Feed Archaeology"].color = "red";
 	wholeMenu["Phys.org RSS Feed Archaeology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Archaeology"].link = "news_eng.html?source=phys.org&type=archaeology";
 	wholeMenu["Phys.org RSS Feed Archaeology"].html = 'Archaeology';
 
+	wholeMenu["Phys.org RSS Feed Economics & Business"] = {};
+	wholeMenu["Phys.org RSS Feed Economics & Business"].id = "26_1_3_2";
+	wholeMenu["Phys.org RSS Feed Economics & Business"].color = "red";
+	wholeMenu["Phys.org RSS Feed Economics & Business"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Economics & Business"].link = "news_eng.html?source=phys.org&type=economics";
+	wholeMenu["Phys.org RSS Feed Economics & Business"].html = 'Economics & Business';
+
+	wholeMenu["Phys.org RSS Feed Education"] = {};
+	wholeMenu["Phys.org RSS Feed Education"].id = "26_1_3_3";
+	wholeMenu["Phys.org RSS Feed Education"].color = "red";
+	wholeMenu["Phys.org RSS Feed Education"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Education"].link = "news_eng.html?source=phys.org&type=education";
+	wholeMenu["Phys.org RSS Feed Education"].html = 'Education';
+
+	wholeMenu["Phys.org RSS Feed Mathematics"] = {};
+	wholeMenu["Phys.org RSS Feed Mathematics"].id = "26_1_3_4";
+	wholeMenu["Phys.org RSS Feed Mathematics"].color = "red";
+	wholeMenu["Phys.org RSS Feed Mathematics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Mathematics"].link = "news_eng.html?source=phys.org&type=mathematics";
+	wholeMenu["Phys.org RSS Feed Mathematics"].html = 'Mathematics';
+
+	wholeMenu["Phys.org RSS Feed Other"] = {};
+	wholeMenu["Phys.org RSS Feed Other"].id = "26_1_3_5";
+	wholeMenu["Phys.org RSS Feed Other"].color = "red";
+	wholeMenu["Phys.org RSS Feed Other"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Other"].link = "news_eng.html?source=phys.org&type=other";
+	wholeMenu["Phys.org RSS Feed Other"].html = 'Other';
+
+	wholeMenu["Phys.org RSS Feed Political Science"] = {};
+	wholeMenu["Phys.org RSS Feed Political Science"].id = "26_1_3_6";
+	wholeMenu["Phys.org RSS Feed Political Science"].color = "red";
+	wholeMenu["Phys.org RSS Feed Political Science"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Political Science"].link = "news_eng.html?source=phys.org&type=political";
+	wholeMenu["Phys.org RSS Feed Political Science"].html = 'Political Science';
+
+	wholeMenu["Phys.org RSS Feed Political Social Sciences"] = {};
+	wholeMenu["Phys.org RSS Feed Political Social Sciences"].id = "26_1_3_7";
+	wholeMenu["Phys.org RSS Feed Political Social Sciences"].color = "red";
+	wholeMenu["Phys.org RSS Feed Political Social Sciences"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Political Social Sciences"].link = "news_eng.html?source=phys.org&type=social";
+	wholeMenu["Phys.org RSS Feed Political Social Sciences"].html = 'Social Sciences';
+
+	wholeMenu["● Nanotechnology"] = {};
+	wholeMenu["● Nanotechnology"].id = "26_1_4";
+	wholeMenu["● Nanotechnology"].color = "red";
+	wholeMenu["● Nanotechnology"].hasSub = 1;
+	wholeMenu["● Nanotechnology"].link = "";
+	wholeMenu["● Nanotechnology"].html = '&#9679; Nanotechnology';
+
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"] = {};
-	wholeMenu["Phys.org RSS Feed Bio & Medicine"].id = "26_1_4";
+	wholeMenu["Phys.org RSS Feed Bio & Medicine"].id = "26_1_4_1";
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"].color = "red";
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"].link = "news_eng.html?source=phys.org&type=bio";
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"].html = 'Bio & Medicine';
 
 	wholeMenu["Phys.org RSS Feed Nanomaterials"] = {};
-	wholeMenu["Phys.org RSS Feed Nanomaterials"].id = "26_1_5";
+	wholeMenu["Phys.org RSS Feed Nanomaterials"].id = "26_1_4_2";
 	wholeMenu["Phys.org RSS Feed Nanomaterials"].color = "red";
 	wholeMenu["Phys.org RSS Feed Nanomaterials"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Nanomaterials"].link = "news_eng.html?source=phys.org&type=nanomaterials";
 	wholeMenu["Phys.org RSS Feed Nanomaterials"].html = 'Nanomaterials';
 
 	wholeMenu["Phys.org RSS Feed Nanophysics"] = {};
-	wholeMenu["Phys.org RSS Feed Nanophysics"].id = "26_1_6";
+	wholeMenu["Phys.org RSS Feed Nanophysics"].id = "26_1_4_3";
 	wholeMenu["Phys.org RSS Feed Nanophysics"].color = "red";
 	wholeMenu["Phys.org RSS Feed Nanophysics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Nanophysics"].link = "news_eng.html?source=phys.org&type=nanophysics";
 	wholeMenu["Phys.org RSS Feed Nanophysics"].html = 'Nanophysics';
 
+	wholeMenu["● Physics"] = {};
+	wholeMenu["● Physics"].id = "26_1_5";
+	wholeMenu["● Physics"].color = "red";
+	wholeMenu["● Physics"].hasSub = 1;
+	wholeMenu["● Physics"].link = "";
+	wholeMenu["● Physics"].html = '&#9679; Physics';
+
+	wholeMenu["Phys.org RSS Feed Condensed Matter"] = {};
+	wholeMenu["Phys.org RSS Feed Condensed Matter"].id = "26_1_5_1";
+	wholeMenu["Phys.org RSS Feed Condensed Matter"].color = "red";
+	wholeMenu["Phys.org RSS Feed Condensed Matter"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Condensed Matter"].link = "news_eng.html?source=phys.org&type=condensed";
+	wholeMenu["Phys.org RSS Feed Condensed Matter"].html = 'Condensed Matter';
+
+	wholeMenu["Phys.org RSS Feed General Physics"] = {};
+	wholeMenu["Phys.org RSS Feed General Physics"].id = "26_1_5_2";
+	wholeMenu["Phys.org RSS Feed General Physics"].color = "red";
+	wholeMenu["Phys.org RSS Feed General Physics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed General Physics"].link = "news_eng.html?source=phys.org&type=general";
+	wholeMenu["Phys.org RSS Feed General Physics"].html = 'General Physics';
+
+	wholeMenu["Phys.org RSS Feed Optics & Photonics"] = {};
+	wholeMenu["Phys.org RSS Feed Optics & Photonics"].id = "26_1_5_3";
+	wholeMenu["Phys.org RSS Feed Optics & Photonics"].color = "red";
+	wholeMenu["Phys.org RSS Feed Optics & Photonics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Optics & Photonics"].link = "news_eng.html?source=phys.org&type=optics";
+	wholeMenu["Phys.org RSS Feed Optics & Photonics"].html = 'Optics & Photonics';
+
+	wholeMenu["Phys.org RSS Feed Plasma Physics"] = {};
+	wholeMenu["Phys.org RSS Feed Plasma Physics"].id = "26_1_5_4";
+	wholeMenu["Phys.org RSS Feed Plasma Physics"].color = "red";
+	wholeMenu["Phys.org RSS Feed Plasma Physics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Plasma Physics"].link = "news_eng.html?source=phys.org&type=plasma";
+	wholeMenu["Phys.org RSS Feed Plasma Physics"].html = 'Plasma Physics';
+
+	wholeMenu["Phys.org RSS Feed Quantum Physics"] = {};
+	wholeMenu["Phys.org RSS Feed Quantum Physics"].id = "26_1_5_5";
+	wholeMenu["Phys.org RSS Feed Quantum Physics"].color = "red";
+	wholeMenu["Phys.org RSS Feed Quantum Physics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Quantum Physics"].link = "news_eng.html?source=phys.org&type=quantum";
+	wholeMenu["Phys.org RSS Feed Quantum Physics"].html = 'Quantum Physics';
+
+	wholeMenu["Phys.org RSS Feed Soft Matter"] = {};
+	wholeMenu["Phys.org RSS Feed Soft Matter"].id = "26_1_5_6";
+	wholeMenu["Phys.org RSS Feed Soft Matter"].color = "red";
+	wholeMenu["Phys.org RSS Feed Soft Matter"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Soft Matter"].link = "news_eng.html?source=phys.org&type=soft";
+	wholeMenu["Phys.org RSS Feed Soft Matter"].html = 'Soft Matter';
+
+	wholeMenu["Phys.org RSS Feed Superconductivity"] = {};
+	wholeMenu["Phys.org RSS Feed Superconductivity"].id = "26_1_5_7";
+	wholeMenu["Phys.org RSS Feed Superconductivity"].color = "red";
+	wholeMenu["Phys.org RSS Feed Superconductivity"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Superconductivity"].link = "news_eng.html?source=phys.org&type=superconductivity";
+	wholeMenu["Phys.org RSS Feed Superconductivity"].html = 'Superconductivity';
+
+	wholeMenu["● Astronomy & Space"] = {};
+	wholeMenu["● Astronomy & Space"].id = "26_1_6";
+	wholeMenu["● Astronomy & Space"].color = "red";
+	wholeMenu["● Astronomy & Space"].hasSub = 1;
+	wholeMenu["● Astronomy & Space"].link = "";
+	wholeMenu["● Astronomy & Space"].html = '&#9679; Astronomy & Space';
+
 	wholeMenu["Phys.org RSS Feed Astrobiology"] = {};
-	wholeMenu["Phys.org RSS Feed Astrobiology"].id = "26_1_7";
+	wholeMenu["Phys.org RSS Feed Astrobiology"].id = "26_1_6_1";
 	wholeMenu["Phys.org RSS Feed Astrobiology"].color = "red";
 	wholeMenu["Phys.org RSS Feed Astrobiology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Astrobiology"].link = "news_eng.html?source=phys.org&type=astrobiology";
 	wholeMenu["Phys.org RSS Feed Astrobiology"].html = 'Astrobiology';
 
 	wholeMenu["Phys.org RSS Feed Astronomy"] = {};
-	wholeMenu["Phys.org RSS Feed Astronomy"].id = "26_1_8";
+	wholeMenu["Phys.org RSS Feed Astronomy"].id = "26_1_6_2";
 	wholeMenu["Phys.org RSS Feed Astronomy"].color = "red";
 	wholeMenu["Phys.org RSS Feed Astronomy"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Astronomy"].link = "news_eng.html?source=phys.org&type=astronomy";
 	wholeMenu["Phys.org RSS Feed Astronomy"].html = 'Astronomy';
 
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"] = {};
-	wholeMenu["Phys.org RSS Feed Planetary Sciences"].id = "26_1_9";
+	wholeMenu["Phys.org RSS Feed Planetary Sciences"].id = "26_1_6_3";
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"].link = "news_eng.html?source=phys.org&type=planetary";
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"].html = 'Planetary Sciences';
 
 	wholeMenu["Phys.org RSS Feed Space Exploration"] = {};
-	wholeMenu["Phys.org RSS Feed Space Exploration"].id = "26_1_10";
+	wholeMenu["Phys.org RSS Feed Space Exploration"].id = "26_1_6_4";
 	wholeMenu["Phys.org RSS Feed Space Exploration"].color = "red";
 	wholeMenu["Phys.org RSS Feed Space Exploration"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Space Exploration"].link = "news_eng.html?source=phys.org&type=space";
 	wholeMenu["Phys.org RSS Feed Space Exploration"].html = 'Space Exploration';
+
+	wholeMenu["● Biology"] = {};
+	wholeMenu["● Biology"].id = "26_1_7";
+	wholeMenu["● Biology"].color = "red";
+	wholeMenu["● Biology"].hasSub = 1;
+	wholeMenu["● Biology"].link = "";
+	wholeMenu["● Biology"].html = '&#9679; Biology';
+
+	wholeMenu["Phys.org RSS Feed Agriculture"] = {};
+	wholeMenu["Phys.org RSS Feed Agriculture"].id = "26_1_7_1";
+	wholeMenu["Phys.org RSS Feed Agriculture"].color = "red";
+	wholeMenu["Phys.org RSS Feed Agriculture"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Agriculture"].link = "news_eng.html?source=phys.org&type=agriculture";
+	wholeMenu["Phys.org RSS Feed Agriculture"].html = 'Agriculture';
+
+	wholeMenu["Phys.org RSS Feed Biotechnology"] = {};
+	wholeMenu["Phys.org RSS Feed Biotechnology"].id = "26_1_7_2";
+	wholeMenu["Phys.org RSS Feed Biotechnology"].color = "red";
+	wholeMenu["Phys.org RSS Feed Biotechnology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Biotechnology"].link = "news_eng.html?source=phys.org&type=biotechnology";
+	wholeMenu["Phys.org RSS Feed Biotechnology"].html = 'Biotechnology';
+
+	wholeMenu["Phys.org RSS Feed Cell & Microbiology"] = {};
+	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].id = "26_1_7_3";
+	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].color = "red";
+	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].link = "news_eng.html?source=phys.org&type=cell";
+	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].html = 'Cell & Microbiology';
+
+	wholeMenu["Phys.org RSS Feed Ecology"] = {};
+	wholeMenu["Phys.org RSS Feed Ecology"].id = "26_1_7_4";
+	wholeMenu["Phys.org RSS Feed Ecology"].color = "red";
+	wholeMenu["Phys.org RSS Feed Ecology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Ecology"].link = "news_eng.html?source=phys.org&type=ecology";
+	wholeMenu["Phys.org RSS Feed Ecology"].html = 'Ecology';
+
+	wholeMenu["Phys.org RSS Feed Evolution"] = {};
+	wholeMenu["Phys.org RSS Feed Evolution"].id = "26_1_7_5";
+	wholeMenu["Phys.org RSS Feed Evolution"].color = "red";
+	wholeMenu["Phys.org RSS Feed Evolution"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Evolution"].link = "news_eng.html?source=phys.org&type=evolution";
+	wholeMenu["Phys.org RSS Feed Evolution"].html = 'Evolution';
+
+	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"] = {};
+	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].id = "26_1_7_6";
+	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].color = "red";
+	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].link = "news_eng.html?source=phys.org&type=molecular";
+	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].html = 'Molecular & Computational Biology';
+
+	wholeMenu["Phys.org RSS Feed OtherB"] = {};
+	wholeMenu["Phys.org RSS Feed OtherB"].id = "26_1_7_7";
+	wholeMenu["Phys.org RSS Feed OtherB"].color = "red";
+	wholeMenu["Phys.org RSS Feed OtherB"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed OtherB"].link = "news_eng.html?source=phys.org&type=otherb";
+	wholeMenu["Phys.org RSS Feed OtherB"].html = 'Other';
+
+	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"] = {};
+	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].id = "26_1_7_8";
+	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].color = "red";
+	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].link = "news_eng.html?source=phys.org&type=paleontology";
+	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].html = 'Paleontology & Fossils';
+
+	wholeMenu["Phys.org RSS Feed Plants & Animals"] = {};
+	wholeMenu["Phys.org RSS Feed Plants & Animals"].id = "26_1_7_9";
+	wholeMenu["Phys.org RSS Feed Plants & Animals"].color = "red";
+	wholeMenu["Phys.org RSS Feed Plants & Animals"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Plants & Animals"].link = "news_eng.html?source=phys.org&type=plants";
+	wholeMenu["Phys.org RSS Feed Plants & Animals"].html = 'Plants & Animals';
+
+	wholeMenu["Phys.org RSS Feed Veterinary Medicine"] = {};
+	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].id = "26_1_7_10";
+	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].color = "red";
+	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].link = "news_eng.html?source=phys.org&type=veterinary";
+	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].html = 'Veterinary Medicine';
+
+	wholeMenu["● Chemistry"] = {};
+	wholeMenu["● Chemistry"].id = "26_1_8";
+	wholeMenu["● Chemistry"].color = "red";
+	wholeMenu["● Chemistry"].hasSub = 1;
+	wholeMenu["● Chemistry"].link = "";
+	wholeMenu["● Chemistry"].html = '&#9679; Chemistry';
+
+	wholeMenu["Phys.org RSS Feed Analytical Chemistry"] = {};
+	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].id = "26_1_8_1";
+	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].color = "red";
+	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].link = "news_eng.html?source=phys.org&type=analytical";
+	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].html = 'Analytical Chemistry';
+
+	wholeMenu["Phys.org RSS Feed Biochemistry"] = {};
+	wholeMenu["Phys.org RSS Feed Biochemistry"].id = "26_1_8_2";
+	wholeMenu["Phys.org RSS Feed Biochemistry"].color = "red";
+	wholeMenu["Phys.org RSS Feed Biochemistry"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Biochemistry"].link = "news_eng.html?source=phys.org&type=biochemistry";
+	wholeMenu["Phys.org RSS Feed Biochemistry"].html = 'Biochemistry';
+
+	wholeMenu["Phys.org RSS Feed Materials Science"] = {};
+	wholeMenu["Phys.org RSS Feed Materials Science"].id = "26_1_8_3";
+	wholeMenu["Phys.org RSS Feed Materials Science"].color = "red";
+	wholeMenu["Phys.org RSS Feed Materials Science"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Materials Science"].link = "news_eng.html?source=phys.org&type=materials";
+	wholeMenu["Phys.org RSS Feed Materials Science"].html = 'Materials Science';
+
+	wholeMenu["Phys.org RSS Feed OtherC"] = {};
+	wholeMenu["Phys.org RSS Feed OtherC"].id = "26_1_8_4";
+	wholeMenu["Phys.org RSS Feed OtherC"].color = "red";
+	wholeMenu["Phys.org RSS Feed OtherC"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed OtherC"].link = "news_eng.html?source=phys.org&type=otherc";
+	wholeMenu["Phys.org RSS Feed OtherC"].html = 'Other';
+
+	wholeMenu["Phys.org RSS Feed Polymers"] = {};
+	wholeMenu["Phys.org RSS Feed Polymers"].id = "26_1_8_5";
+	wholeMenu["Phys.org RSS Feed Polymers"].color = "red";
+	wholeMenu["Phys.org RSS Feed Polymers"].hasSub = 0;
+	wholeMenu["Phys.org RSS Feed Polymers"].link = "news_eng.html?source=phys.org&type=polymers";
+	wholeMenu["Phys.org RSS Feed Polymers"].html = 'Polymers';
 
 	wholeMenu["● Yahoo RSS Feed"] = {};
 	wholeMenu["● Yahoo RSS Feed"].id = "26_5";
@@ -6014,68 +6266,320 @@ if (lang=="rus") {
 	wholeMenu["Phys.org RSS Строка All Stories"].link = "news_rus.html?source=phys.org&type=all";
 	wholeMenu["Phys.org RSS Строка All Stories"].html = 'All Stories';
 
+	wholeMenu["● Earth"] = {};
+	wholeMenu["● Earth"].id = "26_1_2";
+	wholeMenu["● Earth"].color = "red";
+	wholeMenu["● Earth"].hasSub = 1;
+	wholeMenu["● Earth"].link = "";
+	wholeMenu["● Earth"].html = '&#9679; Earth';
+
+	wholeMenu["Phys.org RSS Строка Earth Sciences"] = {};
+	wholeMenu["Phys.org RSS Строка Earth Sciences"].id = "26_1_2_1";
+	wholeMenu["Phys.org RSS Строка Earth Sciences"].color = "red";
+	wholeMenu["Phys.org RSS Строка Earth Sciences"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Earth Sciences"].link = "news_rus.html?source=phys.org&type=earth";
+	wholeMenu["Phys.org RSS Строка Earth Sciences"].html = 'Earth Sciences';
+
 	wholeMenu["Phys.org RSS Строка Environment"] = {};
-	wholeMenu["Phys.org RSS Строка Environment"].id = "26_1_2";
+	wholeMenu["Phys.org RSS Строка Environment"].id = "26_1_2_2";
 	wholeMenu["Phys.org RSS Строка Environment"].color = "red";
 	wholeMenu["Phys.org RSS Строка Environment"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Environment"].link = "news_rus.html?source=phys.org&type=environment";
 	wholeMenu["Phys.org RSS Строка Environment"].html = 'Environment';
 
+	wholeMenu["● Other Sciences"] = {};
+	wholeMenu["● Other Sciences"].id = "26_1_3";
+	wholeMenu["● Other Sciences"].color = "red";
+	wholeMenu["● Other Sciences"].hasSub = 1;
+	wholeMenu["● Other Sciences"].link = "";
+	wholeMenu["● Other Sciences"].html = '&#9679; Other Sciences';
+
 	wholeMenu["Phys.org RSS Строка Archaeology"] = {};
-	wholeMenu["Phys.org RSS Строка Archaeology"].id = "26_1_3";
+	wholeMenu["Phys.org RSS Строка Archaeology"].id = "26_1_3_1";
 	wholeMenu["Phys.org RSS Строка Archaeology"].color = "red";
 	wholeMenu["Phys.org RSS Строка Archaeology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Archaeology"].link = "news_rus.html?source=phys.org&type=archaeology";
 	wholeMenu["Phys.org RSS Строка Archaeology"].html = 'Archaeology';
 
+	wholeMenu["Phys.org RSS Строка Economics & Business"] = {};
+	wholeMenu["Phys.org RSS Строка Economics & Business"].id = "26_1_3_2";
+	wholeMenu["Phys.org RSS Строка Economics & Business"].color = "red";
+	wholeMenu["Phys.org RSS Строка Economics & Business"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Economics & Business"].link = "news_rus.html?source=phys.org&type=economics";
+	wholeMenu["Phys.org RSS Строка Economics & Business"].html = 'Economics & Business';
+
+	wholeMenu["Phys.org RSS Строка Education"] = {};
+	wholeMenu["Phys.org RSS Строка Education"].id = "26_1_3_3";
+	wholeMenu["Phys.org RSS Строка Education"].color = "red";
+	wholeMenu["Phys.org RSS Строка Education"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Education"].link = "news_rus.html?source=phys.org&type=education";
+	wholeMenu["Phys.org RSS Строка Education"].html = 'Education';
+
+	wholeMenu["Phys.org RSS Строка Mathematics"] = {};
+	wholeMenu["Phys.org RSS Строка Mathematics"].id = "26_1_3_4";
+	wholeMenu["Phys.org RSS Строка Mathematics"].color = "red";
+	wholeMenu["Phys.org RSS Строка Mathematics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Mathematics"].link = "news_rus.html?source=phys.org&type=mathematics";
+	wholeMenu["Phys.org RSS Строка Mathematics"].html = 'Mathematics';
+
+	wholeMenu["Phys.org RSS Строка Other"] = {};
+	wholeMenu["Phys.org RSS Строка Other"].id = "26_1_3_5";
+	wholeMenu["Phys.org RSS Строка Other"].color = "red";
+	wholeMenu["Phys.org RSS Строка Other"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Other"].link = "news_rus.html?source=phys.org&type=other";
+	wholeMenu["Phys.org RSS Строка Other"].html = 'Other';
+
+	wholeMenu["Phys.org RSS Строка Political Science"] = {};
+	wholeMenu["Phys.org RSS Строка Political Science"].id = "26_1_3_6";
+	wholeMenu["Phys.org RSS Строка Political Science"].color = "red";
+	wholeMenu["Phys.org RSS Строка Political Science"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Political Science"].link = "news_rus.html?source=phys.org&type=political";
+	wholeMenu["Phys.org RSS Строка Political Science"].html = 'Political Science';
+
+	wholeMenu["Phys.org RSS Строка Political Social Sciences"] = {};
+	wholeMenu["Phys.org RSS Строка Political Social Sciences"].id = "26_1_3_7";
+	wholeMenu["Phys.org RSS Строка Political Social Sciences"].color = "red";
+	wholeMenu["Phys.org RSS Строка Political Social Sciences"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Political Social Sciences"].link = "news_rus.html?source=phys.org&type=social";
+	wholeMenu["Phys.org RSS Строка Political Social Sciences"].html = 'Social Sciences';
+
+	wholeMenu["● Nanotechnology"] = {};
+	wholeMenu["● Nanotechnology"].id = "26_1_4";
+	wholeMenu["● Nanotechnology"].color = "red";
+	wholeMenu["● Nanotechnology"].hasSub = 1;
+	wholeMenu["● Nanotechnology"].link = "";
+	wholeMenu["● Nanotechnology"].html = '&#9679; Nanotechnology';
+
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"] = {};
-	wholeMenu["Phys.org RSS Строка Bio & Medicine"].id = "26_1_4";
+	wholeMenu["Phys.org RSS Строка Bio & Medicine"].id = "26_1_4_1";
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"].color = "red";
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"].link = "news_rus.html?source=phys.org&type=bio";
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"].html = 'Bio & Medicine';
 
 	wholeMenu["Phys.org RSS Строка Nanomaterials"] = {};
-	wholeMenu["Phys.org RSS Строка Nanomaterials"].id = "26_1_5";
+	wholeMenu["Phys.org RSS Строка Nanomaterials"].id = "26_1_4_2";
 	wholeMenu["Phys.org RSS Строка Nanomaterials"].color = "red";
 	wholeMenu["Phys.org RSS Строка Nanomaterials"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Nanomaterials"].link = "news_rus.html?source=phys.org&type=nanomaterials";
 	wholeMenu["Phys.org RSS Строка Nanomaterials"].html = 'Nanomaterials';
 
 	wholeMenu["Phys.org RSS Строка Nanophysics"] = {};
-	wholeMenu["Phys.org RSS Строка Nanophysics"].id = "26_1_6";
+	wholeMenu["Phys.org RSS Строка Nanophysics"].id = "26_1_4_3";
 	wholeMenu["Phys.org RSS Строка Nanophysics"].color = "red";
 	wholeMenu["Phys.org RSS Строка Nanophysics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Nanophysics"].link = "news_rus.html?source=phys.org&type=nanophysics";
 	wholeMenu["Phys.org RSS Строка Nanophysics"].html = 'Nanophysics';
 
+	wholeMenu["● Physics"] = {};
+	wholeMenu["● Physics"].id = "26_1_5";
+	wholeMenu["● Physics"].color = "red";
+	wholeMenu["● Physics"].hasSub = 1;
+	wholeMenu["● Physics"].link = "";
+	wholeMenu["● Physics"].html = '&#9679; Physics';
+
+	wholeMenu["Phys.org RSS Строка Condensed Matter"] = {};
+	wholeMenu["Phys.org RSS Строка Condensed Matter"].id = "26_1_5_1";
+	wholeMenu["Phys.org RSS Строка Condensed Matter"].color = "red";
+	wholeMenu["Phys.org RSS Строка Condensed Matter"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Condensed Matter"].link = "news_rus.html?source=phys.org&type=condensed";
+	wholeMenu["Phys.org RSS Строка Condensed Matter"].html = 'Condensed Matter';
+
+	wholeMenu["Phys.org RSS Строка General Physics"] = {};
+	wholeMenu["Phys.org RSS Строка General Physics"].id = "26_1_5_2";
+	wholeMenu["Phys.org RSS Строка General Physics"].color = "red";
+	wholeMenu["Phys.org RSS Строка General Physics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка General Physics"].link = "news_rus.html?source=phys.org&type=general";
+	wholeMenu["Phys.org RSS Строка General Physics"].html = 'General Physics';
+
+	wholeMenu["Phys.org RSS Строка Optics & Photonics"] = {};
+	wholeMenu["Phys.org RSS Строка Optics & Photonics"].id = "26_1_5_3";
+	wholeMenu["Phys.org RSS Строка Optics & Photonics"].color = "red";
+	wholeMenu["Phys.org RSS Строка Optics & Photonics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Optics & Photonics"].link = "news_rus.html?source=phys.org&type=optics";
+	wholeMenu["Phys.org RSS Строка Optics & Photonics"].html = 'Optics & Photonics';
+
+	wholeMenu["Phys.org RSS Строка Plasma Physics"] = {};
+	wholeMenu["Phys.org RSS Строка Plasma Physics"].id = "26_1_5_4";
+	wholeMenu["Phys.org RSS Строка Plasma Physics"].color = "red";
+	wholeMenu["Phys.org RSS Строка Plasma Physics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Plasma Physics"].link = "news_rus.html?source=phys.org&type=plasma";
+	wholeMenu["Phys.org RSS Строка Plasma Physics"].html = 'Plasma Physics';
+
+	wholeMenu["Phys.org RSS Строка Quantum Physics"] = {};
+	wholeMenu["Phys.org RSS Строка Quantum Physics"].id = "26_1_5_5";
+	wholeMenu["Phys.org RSS Строка Quantum Physics"].color = "red";
+	wholeMenu["Phys.org RSS Строка Quantum Physics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Quantum Physics"].link = "news_rus.html?source=phys.org&type=quantum";
+	wholeMenu["Phys.org RSS Строка Quantum Physics"].html = 'Quantum Physics';
+
+	wholeMenu["Phys.org RSS Строка Soft Matter"] = {};
+	wholeMenu["Phys.org RSS Строка Soft Matter"].id = "26_1_5_6";
+	wholeMenu["Phys.org RSS Строка Soft Matter"].color = "red";
+	wholeMenu["Phys.org RSS Строка Soft Matter"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Soft Matter"].link = "news_rus.html?source=phys.org&type=soft";
+	wholeMenu["Phys.org RSS Строка Soft Matter"].html = 'Soft Matter';
+
+	wholeMenu["Phys.org RSS Строка Superconductivity"] = {};
+	wholeMenu["Phys.org RSS Строка Superconductivity"].id = "26_1_5_7";
+	wholeMenu["Phys.org RSS Строка Superconductivity"].color = "red";
+	wholeMenu["Phys.org RSS Строка Superconductivity"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Superconductivity"].link = "news_rus.html?source=phys.org&type=superconductivity";
+	wholeMenu["Phys.org RSS Строка Superconductivity"].html = 'Superconductivity';
+
+	wholeMenu["● Astronomy & Space"] = {};
+	wholeMenu["● Astronomy & Space"].id = "26_1_6";
+	wholeMenu["● Astronomy & Space"].color = "red";
+	wholeMenu["● Astronomy & Space"].hasSub = 1;
+	wholeMenu["● Astronomy & Space"].link = "";
+	wholeMenu["● Astronomy & Space"].html = '&#9679; Astronomy & Space';
+
 	wholeMenu["Phys.org RSS Строка Astrobiology"] = {};
-	wholeMenu["Phys.org RSS Строка Astrobiology"].id = "26_1_7";
+	wholeMenu["Phys.org RSS Строка Astrobiology"].id = "26_1_6_1";
 	wholeMenu["Phys.org RSS Строка Astrobiology"].color = "red";
 	wholeMenu["Phys.org RSS Строка Astrobiology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Astrobiology"].link = "news_rus.html?source=phys.org&type=astrobiology";
 	wholeMenu["Phys.org RSS Строка Astrobiology"].html = 'Astrobiology';
 
 	wholeMenu["Phys.org RSS Строка Astronomy"] = {};
-	wholeMenu["Phys.org RSS Строка Astronomy"].id = "26_1_8";
+	wholeMenu["Phys.org RSS Строка Astronomy"].id = "26_1_6_2";
 	wholeMenu["Phys.org RSS Строка Astronomy"].color = "red";
 	wholeMenu["Phys.org RSS Строка Astronomy"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Astronomy"].link = "news_rus.html?source=phys.org&type=astronomy";
 	wholeMenu["Phys.org RSS Строка Astronomy"].html = 'Astronomy';
 
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"] = {};
-	wholeMenu["Phys.org RSS Строка Planetary Sciences"].id = "26_1_9";
+	wholeMenu["Phys.org RSS Строка Planetary Sciences"].id = "26_1_6_3";
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"].link = "news_rus.html?source=phys.org&type=planetary";
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"].html = 'Planetary Sciences';
 
 	wholeMenu["Phys.org RSS Строка Space Exploration"] = {};
-	wholeMenu["Phys.org RSS Строка Space Exploration"].id = "26_1_10";
+	wholeMenu["Phys.org RSS Строка Space Exploration"].id = "26_1_6_4";
 	wholeMenu["Phys.org RSS Строка Space Exploration"].color = "red";
 	wholeMenu["Phys.org RSS Строка Space Exploration"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Space Exploration"].link = "news_rus.html?source=phys.org&type=space";
 	wholeMenu["Phys.org RSS Строка Space Exploration"].html = 'Space Exploration';
+
+	wholeMenu["● Biology"] = {};
+	wholeMenu["● Biology"].id = "26_1_7";
+	wholeMenu["● Biology"].color = "red";
+	wholeMenu["● Biology"].hasSub = 1;
+	wholeMenu["● Biology"].link = "";
+	wholeMenu["● Biology"].html = '&#9679; Biology';
+
+	wholeMenu["Phys.org RSS Строка Agriculture"] = {};
+	wholeMenu["Phys.org RSS Строка Agriculture"].id = "26_1_7_1";
+	wholeMenu["Phys.org RSS Строка Agriculture"].color = "red";
+	wholeMenu["Phys.org RSS Строка Agriculture"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Agriculture"].link = "news_rus.html?source=phys.org&type=agriculture";
+	wholeMenu["Phys.org RSS Строка Agriculture"].html = 'Agriculture';
+
+	wholeMenu["Phys.org RSS Строка Biotechnology"] = {};
+	wholeMenu["Phys.org RSS Строка Biotechnology"].id = "26_1_7_2";
+	wholeMenu["Phys.org RSS Строка Biotechnology"].color = "red";
+	wholeMenu["Phys.org RSS Строка Biotechnology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Biotechnology"].link = "news_rus.html?source=phys.org&type=biotechnology";
+	wholeMenu["Phys.org RSS Строка Biotechnology"].html = 'Biotechnology';
+
+	wholeMenu["Phys.org RSS Строка Cell & Microbiology"] = {};
+	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].id = "26_1_7_3";
+	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].color = "red";
+	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].link = "news_rus.html?source=phys.org&type=cell";
+	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].html = 'Cell & Microbiology';
+
+	wholeMenu["Phys.org RSS Строка Ecology"] = {};
+	wholeMenu["Phys.org RSS Строка Ecology"].id = "26_1_7_4";
+	wholeMenu["Phys.org RSS Строка Ecology"].color = "red";
+	wholeMenu["Phys.org RSS Строка Ecology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Ecology"].link = "news_rus.html?source=phys.org&type=ecology";
+	wholeMenu["Phys.org RSS Строка Ecology"].html = 'Ecology';
+
+	wholeMenu["Phys.org RSS Строка Evolution"] = {};
+	wholeMenu["Phys.org RSS Строка Evolution"].id = "26_1_7_5";
+	wholeMenu["Phys.org RSS Строка Evolution"].color = "red";
+	wholeMenu["Phys.org RSS Строка Evolution"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Evolution"].link = "news_rus.html?source=phys.org&type=evolution";
+	wholeMenu["Phys.org RSS Строка Evolution"].html = 'Evolution';
+
+	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"] = {};
+	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].id = "26_1_7_6";
+	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].color = "red";
+	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].link = "news_rus.html?source=phys.org&type=molecular";
+	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].html = 'Molecular & Computational Biology';
+
+	wholeMenu["Phys.org RSS Строка OtherB"] = {};
+	wholeMenu["Phys.org RSS Строка OtherB"].id = "26_1_7_7";
+	wholeMenu["Phys.org RSS Строка OtherB"].color = "red";
+	wholeMenu["Phys.org RSS Строка OtherB"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка OtherB"].link = "news_rus.html?source=phys.org&type=otherb";
+	wholeMenu["Phys.org RSS Строка OtherB"].html = 'Other';
+
+	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"] = {};
+	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].id = "26_1_7_8";
+	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].color = "red";
+	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].link = "news_rus.html?source=phys.org&type=paleontology";
+	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].html = 'Paleontology & Fossils';
+
+	wholeMenu["Phys.org RSS Строка Plants & Animals"] = {};
+	wholeMenu["Phys.org RSS Строка Plants & Animals"].id = "26_1_7_9";
+	wholeMenu["Phys.org RSS Строка Plants & Animals"].color = "red";
+	wholeMenu["Phys.org RSS Строка Plants & Animals"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Plants & Animals"].link = "news_rus.html?source=phys.org&type=plants";
+	wholeMenu["Phys.org RSS Строка Plants & Animals"].html = 'Plants & Animals';
+
+	wholeMenu["Phys.org RSS Строка Veterinary Medicine"] = {};
+	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].id = "26_1_7_10";
+	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].color = "red";
+	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].link = "news_rus.html?source=phys.org&type=veterinary";
+	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].html = 'Veterinary Medicine';
+
+	wholeMenu["● Chemistry"] = {};
+	wholeMenu["● Chemistry"].id = "26_1_8";
+	wholeMenu["● Chemistry"].color = "red";
+	wholeMenu["● Chemistry"].hasSub = 1;
+	wholeMenu["● Chemistry"].link = "";
+	wholeMenu["● Chemistry"].html = '&#9679; Chemistry';
+
+	wholeMenu["Phys.org RSS Строка Analytical Chemistry"] = {};
+	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].id = "26_1_8_1";
+	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].color = "red";
+	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].link = "news_rus.html?source=phys.org&type=analytical";
+	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].html = 'Analytical Chemistry';
+
+	wholeMenu["Phys.org RSS Строка Biochemistry"] = {};
+	wholeMenu["Phys.org RSS Строка Biochemistry"].id = "26_1_8_2";
+	wholeMenu["Phys.org RSS Строка Biochemistry"].color = "red";
+	wholeMenu["Phys.org RSS Строка Biochemistry"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Biochemistry"].link = "news_rus.html?source=phys.org&type=biochemistry";
+	wholeMenu["Phys.org RSS Строка Biochemistry"].html = 'Biochemistry';
+
+	wholeMenu["Phys.org RSS Строка Materials Science"] = {};
+	wholeMenu["Phys.org RSS Строка Materials Science"].id = "26_1_8_3";
+	wholeMenu["Phys.org RSS Строка Materials Science"].color = "red";
+	wholeMenu["Phys.org RSS Строка Materials Science"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Materials Science"].link = "news_rus.html?source=phys.org&type=materials";
+	wholeMenu["Phys.org RSS Строка Materials Science"].html = 'Materials Science';
+
+	wholeMenu["Phys.org RSS Строка OtherC"] = {};
+	wholeMenu["Phys.org RSS Строка OtherC"].id = "26_1_8_4";
+	wholeMenu["Phys.org RSS Строка OtherC"].color = "red";
+	wholeMenu["Phys.org RSS Строка OtherC"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка OtherC"].link = "news_rus.html?source=phys.org&type=otherc";
+	wholeMenu["Phys.org RSS Строка OtherC"].html = 'Other';
+
+	wholeMenu["Phys.org RSS Строка Polymers"] = {};
+	wholeMenu["Phys.org RSS Строка Polymers"].id = "26_1_8_5";
+	wholeMenu["Phys.org RSS Строка Polymers"].color = "red";
+	wholeMenu["Phys.org RSS Строка Polymers"].hasSub = 0;
+	wholeMenu["Phys.org RSS Строка Polymers"].link = "news_rus.html?source=phys.org&type=polymers";
+	wholeMenu["Phys.org RSS Строка Polymers"].html = 'Polymers';
 
 	wholeMenu["● Yahoo RSS Строка"] = {};
 	wholeMenu["● Yahoo RSS Строка"].id = "26_5";
@@ -6371,68 +6875,320 @@ if (lang=="lat") {
 	wholeMenu["Phys.org RSS Acies All Stories"].link = "news_lat.html?source=phys.org&type=all";
 	wholeMenu["Phys.org RSS Acies All Stories"].html = 'All Stories';
 
+	wholeMenu["● Earth"] = {};
+	wholeMenu["● Earth"].id = "26_1_2";
+	wholeMenu["● Earth"].color = "red";
+	wholeMenu["● Earth"].hasSub = 1;
+	wholeMenu["● Earth"].link = "";
+	wholeMenu["● Earth"].html = '&#9679; Earth';
+
+	wholeMenu["Phys.org RSS Acies Earth Sciences"] = {};
+	wholeMenu["Phys.org RSS Acies Earth Sciences"].id = "26_1_2_1";
+	wholeMenu["Phys.org RSS Acies Earth Sciences"].color = "red";
+	wholeMenu["Phys.org RSS Acies Earth Sciences"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Earth Sciences"].link = "news_lat.html?source=phys.org&type=earth";
+	wholeMenu["Phys.org RSS Acies Earth Sciences"].html = 'Earth Sciences';
+
 	wholeMenu["Phys.org RSS Acies Environment"] = {};
-	wholeMenu["Phys.org RSS Acies Environment"].id = "26_1_2";
+	wholeMenu["Phys.org RSS Acies Environment"].id = "26_1_2_2";
 	wholeMenu["Phys.org RSS Acies Environment"].color = "red";
 	wholeMenu["Phys.org RSS Acies Environment"].hasSub = 0;
 	wholeMenu["Phys.org RSS Acies Environment"].link = "news_lat.html?source=phys.org&type=environment";
 	wholeMenu["Phys.org RSS Acies Environment"].html = 'Environment';
 
+	wholeMenu["● Other Sciences"] = {};
+	wholeMenu["● Other Sciences"].id = "26_1_3";
+	wholeMenu["● Other Sciences"].color = "red";
+	wholeMenu["● Other Sciences"].hasSub = 1;
+	wholeMenu["● Other Sciences"].link = "";
+	wholeMenu["● Other Sciences"].html = '&#9679; Other Sciences';
+
 	wholeMenu["Phys.org RSS Acies Archaeology"] = {};
-	wholeMenu["Phys.org RSS Acies Archaeology"].id = "26_1_3";
+	wholeMenu["Phys.org RSS Acies Archaeology"].id = "26_1_3_1";
 	wholeMenu["Phys.org RSS Acies Archaeology"].color = "red";
 	wholeMenu["Phys.org RSS Acies Archaeology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Acies Archaeology"].link = "news_lat.html?source=phys.org&type=archaeology";
 	wholeMenu["Phys.org RSS Acies Archaeology"].html = 'Archaeology';
 
+	wholeMenu["Phys.org RSS Acies Economics & Business"] = {};
+	wholeMenu["Phys.org RSS Acies Economics & Business"].id = "26_1_3_2";
+	wholeMenu["Phys.org RSS Acies Economics & Business"].color = "red";
+	wholeMenu["Phys.org RSS Acies Economics & Business"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Economics & Business"].link = "news_lat.html?source=phys.org&type=economics";
+	wholeMenu["Phys.org RSS Acies Economics & Business"].html = 'Economics & Business';
+
+	wholeMenu["Phys.org RSS Acies Education"] = {};
+	wholeMenu["Phys.org RSS Acies Education"].id = "26_1_3_3";
+	wholeMenu["Phys.org RSS Acies Education"].color = "red";
+	wholeMenu["Phys.org RSS Acies Education"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Education"].link = "news_lat.html?source=phys.org&type=education";
+	wholeMenu["Phys.org RSS Acies Education"].html = 'Education';
+
+	wholeMenu["Phys.org RSS Acies Mathematics"] = {};
+	wholeMenu["Phys.org RSS Acies Mathematics"].id = "26_1_3_4";
+	wholeMenu["Phys.org RSS Acies Mathematics"].color = "red";
+	wholeMenu["Phys.org RSS Acies Mathematics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Mathematics"].link = "news_lat.html?source=phys.org&type=mathematics";
+	wholeMenu["Phys.org RSS Acies Mathematics"].html = 'Mathematics';
+
+	wholeMenu["Phys.org RSS Acies Other"] = {};
+	wholeMenu["Phys.org RSS Acies Other"].id = "26_1_3_5";
+	wholeMenu["Phys.org RSS Acies Other"].color = "red";
+	wholeMenu["Phys.org RSS Acies Other"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Other"].link = "news_lat.html?source=phys.org&type=other";
+	wholeMenu["Phys.org RSS Acies Other"].html = 'Other';
+
+	wholeMenu["Phys.org RSS Acies Political Science"] = {};
+	wholeMenu["Phys.org RSS Acies Political Science"].id = "26_1_3_6";
+	wholeMenu["Phys.org RSS Acies Political Science"].color = "red";
+	wholeMenu["Phys.org RSS Acies Political Science"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Political Science"].link = "news_lat.html?source=phys.org&type=political";
+	wholeMenu["Phys.org RSS Acies Political Science"].html = 'Political Science';
+
+	wholeMenu["Phys.org RSS Acies Political Social Sciences"] = {};
+	wholeMenu["Phys.org RSS Acies Political Social Sciences"].id = "26_1_3_7";
+	wholeMenu["Phys.org RSS Acies Political Social Sciences"].color = "red";
+	wholeMenu["Phys.org RSS Acies Political Social Sciences"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Political Social Sciences"].link = "news_lat.html?source=phys.org&type=social";
+	wholeMenu["Phys.org RSS Acies Political Social Sciences"].html = 'Social Sciences';
+
+	wholeMenu["● Nanotechnology"] = {};
+	wholeMenu["● Nanotechnology"].id = "26_1_4";
+	wholeMenu["● Nanotechnology"].color = "red";
+	wholeMenu["● Nanotechnology"].hasSub = 1;
+	wholeMenu["● Nanotechnology"].link = "";
+	wholeMenu["● Nanotechnology"].html = '&#9679; Nanotechnology';
+
 	wholeMenu["Phys.org RSS Acies Bio & Medicine"] = {};
-	wholeMenu["Phys.org RSS Acies Bio & Medicine"].id = "26_1_4";
+	wholeMenu["Phys.org RSS Acies Bio & Medicine"].id = "26_1_4_1";
 	wholeMenu["Phys.org RSS Acies Bio & Medicine"].color = "red";
 	wholeMenu["Phys.org RSS Acies Bio & Medicine"].hasSub = 0;
 	wholeMenu["Phys.org RSS Acies Bio & Medicine"].link = "news_lat.html?source=phys.org&type=bio";
 	wholeMenu["Phys.org RSS Acies Bio & Medicine"].html = 'Bio & Medicine';
 
 	wholeMenu["Phys.org RSS Acies Nanomaterials"] = {};
-	wholeMenu["Phys.org RSS Acies Nanomaterials"].id = "26_1_5";
+	wholeMenu["Phys.org RSS Acies Nanomaterials"].id = "26_1_4_2";
 	wholeMenu["Phys.org RSS Acies Nanomaterials"].color = "red";
 	wholeMenu["Phys.org RSS Acies Nanomaterials"].hasSub = 0;
 	wholeMenu["Phys.org RSS Acies Nanomaterials"].link = "news_lat.html?source=phys.org&type=nanomaterials";
 	wholeMenu["Phys.org RSS Acies Nanomaterials"].html = 'Nanomaterials';
 
 	wholeMenu["Phys.org RSS Acies Nanophysics"] = {};
-	wholeMenu["Phys.org RSS Acies Nanophysics"].id = "26_1_6";
+	wholeMenu["Phys.org RSS Acies Nanophysics"].id = "26_1_4_3";
 	wholeMenu["Phys.org RSS Acies Nanophysics"].color = "red";
 	wholeMenu["Phys.org RSS Acies Nanophysics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Acies Nanophysics"].link = "news_lat.html?source=phys.org&type=nanophysics";
 	wholeMenu["Phys.org RSS Acies Nanophysics"].html = 'Nanophysics';
 
+	wholeMenu["● Physics"] = {};
+	wholeMenu["● Physics"].id = "26_1_5";
+	wholeMenu["● Physics"].color = "red";
+	wholeMenu["● Physics"].hasSub = 1;
+	wholeMenu["● Physics"].link = "";
+	wholeMenu["● Physics"].html = '&#9679; Physics';
+
+	wholeMenu["Phys.org RSS Acies Condensed Matter"] = {};
+	wholeMenu["Phys.org RSS Acies Condensed Matter"].id = "26_1_5_1";
+	wholeMenu["Phys.org RSS Acies Condensed Matter"].color = "red";
+	wholeMenu["Phys.org RSS Acies Condensed Matter"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Condensed Matter"].link = "news_lat.html?source=phys.org&type=condensed";
+	wholeMenu["Phys.org RSS Acies Condensed Matter"].html = 'Condensed Matter';
+
+	wholeMenu["Phys.org RSS Acies General Physics"] = {};
+	wholeMenu["Phys.org RSS Acies General Physics"].id = "26_1_5_2";
+	wholeMenu["Phys.org RSS Acies General Physics"].color = "red";
+	wholeMenu["Phys.org RSS Acies General Physics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies General Physics"].link = "news_lat.html?source=phys.org&type=general";
+	wholeMenu["Phys.org RSS Acies General Physics"].html = 'General Physics';
+
+	wholeMenu["Phys.org RSS Acies Optics & Photonics"] = {};
+	wholeMenu["Phys.org RSS Acies Optics & Photonics"].id = "26_1_5_3";
+	wholeMenu["Phys.org RSS Acies Optics & Photonics"].color = "red";
+	wholeMenu["Phys.org RSS Acies Optics & Photonics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Optics & Photonics"].link = "news_lat.html?source=phys.org&type=optics";
+	wholeMenu["Phys.org RSS Acies Optics & Photonics"].html = 'Optics & Photonics';
+
+	wholeMenu["Phys.org RSS Acies Plasma Physics"] = {};
+	wholeMenu["Phys.org RSS Acies Plasma Physics"].id = "26_1_5_4";
+	wholeMenu["Phys.org RSS Acies Plasma Physics"].color = "red";
+	wholeMenu["Phys.org RSS Acies Plasma Physics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Plasma Physics"].link = "news_lat.html?source=phys.org&type=plasma";
+	wholeMenu["Phys.org RSS Acies Plasma Physics"].html = 'Plasma Physics';
+
+	wholeMenu["Phys.org RSS Acies Quantum Physics"] = {};
+	wholeMenu["Phys.org RSS Acies Quantum Physics"].id = "26_1_5_5";
+	wholeMenu["Phys.org RSS Acies Quantum Physics"].color = "red";
+	wholeMenu["Phys.org RSS Acies Quantum Physics"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Quantum Physics"].link = "news_lat.html?source=phys.org&type=quantum";
+	wholeMenu["Phys.org RSS Acies Quantum Physics"].html = 'Quantum Physics';
+
+	wholeMenu["Phys.org RSS Acies Soft Matter"] = {};
+	wholeMenu["Phys.org RSS Acies Soft Matter"].id = "26_1_5_6";
+	wholeMenu["Phys.org RSS Acies Soft Matter"].color = "red";
+	wholeMenu["Phys.org RSS Acies Soft Matter"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Soft Matter"].link = "news_lat.html?source=phys.org&type=soft";
+	wholeMenu["Phys.org RSS Acies Soft Matter"].html = 'Soft Matter';
+
+	wholeMenu["Phys.org RSS Acies Superconductivity"] = {};
+	wholeMenu["Phys.org RSS Acies Superconductivity"].id = "26_1_5_7";
+	wholeMenu["Phys.org RSS Acies Superconductivity"].color = "red";
+	wholeMenu["Phys.org RSS Acies Superconductivity"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Superconductivity"].link = "news_lat.html?source=phys.org&type=superconductivity";
+	wholeMenu["Phys.org RSS Acies Superconductivity"].html = 'Superconductivity';
+
+	wholeMenu["● Astronomy & Space"] = {};
+	wholeMenu["● Astronomy & Space"].id = "26_1_6";
+	wholeMenu["● Astronomy & Space"].color = "red";
+	wholeMenu["● Astronomy & Space"].hasSub = 1;
+	wholeMenu["● Astronomy & Space"].link = "";
+	wholeMenu["● Astronomy & Space"].html = '&#9679; Astronomy & Space';
+
 	wholeMenu["Phys.org RSS Acies Astrobiology"] = {};
-	wholeMenu["Phys.org RSS Acies Astrobiology"].id = "26_1_7";
+	wholeMenu["Phys.org RSS Acies Astrobiology"].id = "26_1_6_1";
 	wholeMenu["Phys.org RSS Acies Astrobiology"].color = "red";
 	wholeMenu["Phys.org RSS Acies Astrobiology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Acies Astrobiology"].link = "news_lat.html?source=phys.org&type=astrobiology";
 	wholeMenu["Phys.org RSS Acies Astrobiology"].html = 'Astrobiology';
 
 	wholeMenu["Phys.org RSS Acies Astronomy"] = {};
-	wholeMenu["Phys.org RSS Acies Astronomy"].id = "26_1_8";
+	wholeMenu["Phys.org RSS Acies Astronomy"].id = "26_1_6_2";
 	wholeMenu["Phys.org RSS Acies Astronomy"].color = "red";
 	wholeMenu["Phys.org RSS Acies Astronomy"].hasSub = 0;
 	wholeMenu["Phys.org RSS Acies Astronomy"].link = "news_lat.html?source=phys.org&type=astronomy";
 	wholeMenu["Phys.org RSS Acies Astronomy"].html = 'Astronomy';
 
 	wholeMenu["Phys.org RSS Acies Planetary Sciences"] = {};
-	wholeMenu["Phys.org RSS Acies Planetary Sciences"].id = "26_1_9";
+	wholeMenu["Phys.org RSS Acies Planetary Sciences"].id = "26_1_6_3";
 	wholeMenu["Phys.org RSS Acies Planetary Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Acies Planetary Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Acies Planetary Sciences"].link = "news_lat.html?source=phys.org&type=planetary";
 	wholeMenu["Phys.org RSS Acies Planetary Sciences"].html = 'Planetary Sciences';
 
 	wholeMenu["Phys.org RSS Acies Space Exploration"] = {};
-	wholeMenu["Phys.org RSS Acies Space Exploration"].id = "26_1_10";
+	wholeMenu["Phys.org RSS Acies Space Exploration"].id = "26_1_6_4";
 	wholeMenu["Phys.org RSS Acies Space Exploration"].color = "red";
 	wholeMenu["Phys.org RSS Acies Space Exploration"].hasSub = 0;
 	wholeMenu["Phys.org RSS Acies Space Exploration"].link = "news_lat.html?source=phys.org&type=space";
 	wholeMenu["Phys.org RSS Acies Space Exploration"].html = 'Space Exploration';
+
+	wholeMenu["● Biology"] = {};
+	wholeMenu["● Biology"].id = "26_1_7";
+	wholeMenu["● Biology"].color = "red";
+	wholeMenu["● Biology"].hasSub = 1;
+	wholeMenu["● Biology"].link = "";
+	wholeMenu["● Biology"].html = '&#9679; Biology';
+
+	wholeMenu["Phys.org RSS Acies Agriculture"] = {};
+	wholeMenu["Phys.org RSS Acies Agriculture"].id = "26_1_7_1";
+	wholeMenu["Phys.org RSS Acies Agriculture"].color = "red";
+	wholeMenu["Phys.org RSS Acies Agriculture"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Agriculture"].link = "news_lat.html?source=phys.org&type=agriculture";
+	wholeMenu["Phys.org RSS Acies Agriculture"].html = 'Agriculture';
+
+	wholeMenu["Phys.org RSS Acies Biotechnology"] = {};
+	wholeMenu["Phys.org RSS Acies Biotechnology"].id = "26_1_7_2";
+	wholeMenu["Phys.org RSS Acies Biotechnology"].color = "red";
+	wholeMenu["Phys.org RSS Acies Biotechnology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Biotechnology"].link = "news_lat.html?source=phys.org&type=biotechnology";
+	wholeMenu["Phys.org RSS Acies Biotechnology"].html = 'Biotechnology';
+
+	wholeMenu["Phys.org RSS Acies Cell & Microbiology"] = {};
+	wholeMenu["Phys.org RSS Acies Cell & Microbiology"].id = "26_1_7_3";
+	wholeMenu["Phys.org RSS Acies Cell & Microbiology"].color = "red";
+	wholeMenu["Phys.org RSS Acies Cell & Microbiology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Cell & Microbiology"].link = "news_lat.html?source=phys.org&type=cell";
+	wholeMenu["Phys.org RSS Acies Cell & Microbiology"].html = 'Cell & Microbiology';
+
+	wholeMenu["Phys.org RSS Acies Ecology"] = {};
+	wholeMenu["Phys.org RSS Acies Ecology"].id = "26_1_7_4";
+	wholeMenu["Phys.org RSS Acies Ecology"].color = "red";
+	wholeMenu["Phys.org RSS Acies Ecology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Ecology"].link = "news_lat.html?source=phys.org&type=ecology";
+	wholeMenu["Phys.org RSS Acies Ecology"].html = 'Ecology';
+
+	wholeMenu["Phys.org RSS Acies Evolution"] = {};
+	wholeMenu["Phys.org RSS Acies Evolution"].id = "26_1_7_5";
+	wholeMenu["Phys.org RSS Acies Evolution"].color = "red";
+	wholeMenu["Phys.org RSS Acies Evolution"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Evolution"].link = "news_lat.html?source=phys.org&type=evolution";
+	wholeMenu["Phys.org RSS Acies Evolution"].html = 'Evolution';
+
+	wholeMenu["Phys.org RSS Acies Molecular & Computational Biology"] = {};
+	wholeMenu["Phys.org RSS Acies Molecular & Computational Biology"].id = "26_1_7_6";
+	wholeMenu["Phys.org RSS Acies Molecular & Computational Biology"].color = "red";
+	wholeMenu["Phys.org RSS Acies Molecular & Computational Biology"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Molecular & Computational Biology"].link = "news_lat.html?source=phys.org&type=molecular";
+	wholeMenu["Phys.org RSS Acies Molecular & Computational Biology"].html = 'Molecular & Computational Biology';
+
+	wholeMenu["Phys.org RSS Acies OtherB"] = {};
+	wholeMenu["Phys.org RSS Acies OtherB"].id = "26_1_7_7";
+	wholeMenu["Phys.org RSS Acies OtherB"].color = "red";
+	wholeMenu["Phys.org RSS Acies OtherB"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies OtherB"].link = "news_lat.html?source=phys.org&type=otherb";
+	wholeMenu["Phys.org RSS Acies OtherB"].html = 'Other';
+
+	wholeMenu["Phys.org RSS Acies Paleontology & Fossils"] = {};
+	wholeMenu["Phys.org RSS Acies Paleontology & Fossils"].id = "26_1_7_8";
+	wholeMenu["Phys.org RSS Acies Paleontology & Fossils"].color = "red";
+	wholeMenu["Phys.org RSS Acies Paleontology & Fossils"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Paleontology & Fossils"].link = "news_lat.html?source=phys.org&type=paleontology";
+	wholeMenu["Phys.org RSS Acies Paleontology & Fossils"].html = 'Paleontology & Fossils';
+
+	wholeMenu["Phys.org RSS Acies Plants & Animals"] = {};
+	wholeMenu["Phys.org RSS Acies Plants & Animals"].id = "26_1_7_9";
+	wholeMenu["Phys.org RSS Acies Plants & Animals"].color = "red";
+	wholeMenu["Phys.org RSS Acies Plants & Animals"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Plants & Animals"].link = "news_lat.html?source=phys.org&type=plants";
+	wholeMenu["Phys.org RSS Acies Plants & Animals"].html = 'Plants & Animals';
+
+	wholeMenu["Phys.org RSS Acies Veterinary Medicine"] = {};
+	wholeMenu["Phys.org RSS Acies Veterinary Medicine"].id = "26_1_7_10";
+	wholeMenu["Phys.org RSS Acies Veterinary Medicine"].color = "red";
+	wholeMenu["Phys.org RSS Acies Veterinary Medicine"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Veterinary Medicine"].link = "news_lat.html?source=phys.org&type=veterinary";
+	wholeMenu["Phys.org RSS Acies Veterinary Medicine"].html = 'Veterinary Medicine';
+
+	wholeMenu["● Chemistry"] = {};
+	wholeMenu["● Chemistry"].id = "26_1_8";
+	wholeMenu["● Chemistry"].color = "red";
+	wholeMenu["● Chemistry"].hasSub = 1;
+	wholeMenu["● Chemistry"].link = "";
+	wholeMenu["● Chemistry"].html = '&#9679; Chemistry';
+
+	wholeMenu["Phys.org RSS Acies Analytical Chemistry"] = {};
+	wholeMenu["Phys.org RSS Acies Analytical Chemistry"].id = "26_1_8_1";
+	wholeMenu["Phys.org RSS Acies Analytical Chemistry"].color = "red";
+	wholeMenu["Phys.org RSS Acies Analytical Chemistry"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Analytical Chemistry"].link = "news_lat.html?source=phys.org&type=analytical";
+	wholeMenu["Phys.org RSS Acies Analytical Chemistry"].html = 'Analytical Chemistry';
+
+	wholeMenu["Phys.org RSS Acies Biochemistry"] = {};
+	wholeMenu["Phys.org RSS Acies Biochemistry"].id = "26_1_8_2";
+	wholeMenu["Phys.org RSS Acies Biochemistry"].color = "red";
+	wholeMenu["Phys.org RSS Acies Biochemistry"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Biochemistry"].link = "news_lat.html?source=phys.org&type=biochemistry";
+	wholeMenu["Phys.org RSS Acies Biochemistry"].html = 'Biochemistry';
+
+	wholeMenu["Phys.org RSS Acies Materials Science"] = {};
+	wholeMenu["Phys.org RSS Acies Materials Science"].id = "26_1_8_3";
+	wholeMenu["Phys.org RSS Acies Materials Science"].color = "red";
+	wholeMenu["Phys.org RSS Acies Materials Science"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Materials Science"].link = "news_lat.html?source=phys.org&type=materials";
+	wholeMenu["Phys.org RSS Acies Materials Science"].html = 'Materials Science';
+
+	wholeMenu["Phys.org RSS Acies OtherC"] = {};
+	wholeMenu["Phys.org RSS Acies OtherC"].id = "26_1_8_4";
+	wholeMenu["Phys.org RSS Acies OtherC"].color = "red";
+	wholeMenu["Phys.org RSS Acies OtherC"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies OtherC"].link = "news_lat.html?source=phys.org&type=otherc";
+	wholeMenu["Phys.org RSS Acies OtherC"].html = 'Other';
+
+	wholeMenu["Phys.org RSS Acies Polymers"] = {};
+	wholeMenu["Phys.org RSS Acies Polymers"].id = "26_1_8_5";
+	wholeMenu["Phys.org RSS Acies Polymers"].color = "red";
+	wholeMenu["Phys.org RSS Acies Polymers"].hasSub = 0;
+	wholeMenu["Phys.org RSS Acies Polymers"].link = "news_lat.html?source=phys.org&type=polymers";
+	wholeMenu["Phys.org RSS Acies Polymers"].html = 'Polymers';
 
 	wholeMenu["● Yahoo RSS Acies"] = {};
 	wholeMenu["● Yahoo RSS Acies"].id = "26_5";
@@ -7197,7 +7953,7 @@ function  showSubMenu(ele, lang, type, newTableId) {
 
 function  hideSubMenu(ele, manual) {
 
-	maxSubCount=2;
+	maxSubCount=3;
 
 	if (typeof manual==="undefined") manual=0;
 	eleID="";

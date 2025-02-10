@@ -38,7 +38,14 @@ function newsLoad(lang) {
 	if (typeL && typeL!="") {
 		if (source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
 		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis") 
-		|| source=="phys.org" && (typeL=="all" || typeL=="environment" || typeL=="archaeology" || typeL=="bio" || typeL=="nanomaterials" || typeL=="nanophysics" || typeL=="astrobiology" || typeL=="astronomy" || typeL=="planetary" || typeL=="space") 
+		|| source=="phys.org" && (typeL=="all" 
+										|| typeL=="earth" || typeL=="environment"
+										|| typeL=="archaeology" || typeL=="economics" || typeL=="education" || typeL=="mathematics" || typeL=="other" || typeL=="political"  || typeL=="social"
+										|| typeL=="bio" || typeL=="nanomaterials" || typeL=="nanophysics"
+										|| typeL=="condensed" || typeL=="general" || typeL=="optics" || typeL=="plasma" || typeL=="quantum" || typeL=="soft" || typeL=="superconductivity"
+										|| typeL=="astrobiology" || typeL=="astronomy" || typeL=="planetary" || typeL=="space"
+										|| typeL=="agriculture" || typeL=="biotechnology" || typeL=="cell" || typeL=="ecology" || typeL=="evolution" || typeL=="molecular" || typeL=="otherb" || typeL=="paleontology" || typeL=="plants" || typeL=="veterinary"
+										|| typeL=="analytical" || typeL=="biochemistry" || typeL=="materials" || typeL=="otherc" || typeL=="polymers")
 		|| source=="yahoo" && (typeL=="top" || typeL=="world" || typeL=="us" || typeL=="politics" || typeL=="health" || typeL=="finance" || typeL=="science" || typeL=="sports" || typeL=="entertainment" || typeL=="lifestyle")
 		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports") )  {
 			type=typeL;
@@ -682,16 +689,59 @@ function generateTabs(type, source, lang) {
 		tabs["artemis"]="Artemis";
 	}
 	if (source=="phys.org") {
-		tabs["all"]="All Stories";
-		tabs["environment"]="Environment";
-		tabs["archaeology"]="Archaeology";
-		tabs["bio"]="Bio & Medicine";
-		tabs["nanomaterials"]="Nanomaterials";
-		tabs["nanophysics"]="Nanophysics";
-		tabs["astrobiology"]="Astrobiology";
-		tabs["astronomy"]="Astronomy";
-		tabs["planetary"]="Planetary Sciences";
-		tabs["space"]="Space Exploration";
+//		tabs["all"]="All Stories";
+		if (type=="earth" || type=="environment") {
+			tabs["earth"]="Earth Sciences";
+			tabs["environment"]="Environment";
+		}
+		if (type=="archaeology" || type=="economics" || type=="education" || type=="mathematics" || type=="other" || type=="political"  || type=="social") {
+			tabs["archaeology"]="Archaeology";
+			tabs["economics"]="Economics & Business";
+			tabs["education"]="Education";
+			tabs["mathematics"]="Mathematics";
+			tabs["other"]="Other";
+			tabs["political"]="Political Science";
+			tabs["social"]="Social Sciences";
+		}
+		if (type=="bio" || type=="nanomaterials" || type=="nanophysics") {
+			tabs["bio"]="Bio & Medicine";
+			tabs["nanomaterials"]="Nanomaterials";
+			tabs["nanophysics"]="Nanophysics";
+		}
+		if (type=="condensed" || type=="general" || type=="optics" || type=="plasma" || type=="quantum" || type=="soft" || type=="superconductivity") {
+			tabs["condensed"]="Condensed Matter";
+			tabs["general"]="General Physics";
+			tabs["optics"]="Optics & Photonics";
+			tabs["plasma"]="Plasma Physics";
+			tabs["quantum"]="Quantum Physics";
+			tabs["soft"]="Soft Matter";
+			tabs["superconductivity"]="Superconductivity";
+		}
+		if (type=="astrobiology" || type=="astronomy" || type=="planetary" || type=="space") {
+			tabs["astrobiology"]="Astrobiology";
+			tabs["astronomy"]="Astronomy";
+			tabs["planetary"]="Planetary Sciences";
+			tabs["space"]="Space Exploration";
+		}
+		if (type=="agriculture" || type=="biotechnology" || type=="cell" || type=="ecology" || type=="evolution" || type=="molecular" || type=="otherb" || type=="paleontology" || type=="plants" || type=="veterinary") {
+			tabs["agriculture"]="Agriculture";
+			tabs["biotechnology"]="Biotechnology";
+			tabs["cell"]="Cell & Microbiology";
+			tabs["ecology"]="Ecology";
+			tabs["evolution"]="Evolution";
+			tabs["molecular"]="Molecular & Computational biology";
+			tabs["otherb"]="Other";
+			tabs["paleontology"]="Paleontology & Fossils";
+			tabs["plants"]="Plants & Animals";
+			tabs["veterinary"]="Veterinary Medicine";
+		}
+		if (type=="analytical" || type=="biochemistry" || type=="materials" || type=="otherc" || type=="polymers") {
+			tabs["analytical"]="Analytical Chemistry";
+			tabs["biochemistry"]="Biochemistry";
+			tabs["materials"]="Materials Science";
+			tabs["otherc"]="Other";
+			tabs["polymers"]="Polymers";
+		}
 	}
 	if (source=="yahoo") {
 		tabs["top"]="Top";
@@ -744,8 +794,35 @@ function generateTabs(type, source, lang) {
 	if (lang == "eng") textRssFeed="RSS Feed";
 	if (lang == "lat") textRssFeed="RSS Acies";
 
+	if (source=="phys.org") {
+		if (type=="all") tabtype2="All Stories";
+		if (type=="earth" || type=="environment") {
+			tabtype2="Earth"+" &blacktriangleright; "+tabs[type];
+		}
+		if (type=="archaeology" || type=="economics" || type=="education" || type=="mathematics" || type=="other" || type=="political"  || type=="social") {
+			tabtype2="Other Sciences"+" &blacktriangleright; "+tabs[type];
+		}
+		if (type=="bio" || type=="nanomaterials" || type=="nanophysics") {
+			tabtype2="Nanotechnology"+" &blacktriangleright; "+tabs[type];
+		}
+		if (type=="condensed" || type=="general" || type=="optics" || type=="plasma" || type=="quantum" || type=="soft" || type=="superconductivity") {
+			tabtype2="Physics"+" &blacktriangleright; "+tabs[type];
+		}
+		if (type=="astrobiology" || type=="astronomy" || type=="planetary" || type=="space") {
+			tabtype2="Astronomy & Space"+" &blacktriangleright; "+tabs[type];
+		}
+		if (type=="agriculture" || type=="biotechnology" || type=="cell" || type=="ecology" || type=="evolution" || type=="molecular" || type=="otherb" || type=="paleontology" || type=="plants" || type=="veterinary") {
+			tabtype2="Biology"+" &blacktriangleright; "+tabs[type];
+		}
+		if (type=="analytical" || type=="biochemistry" || type=="materials" || type=="otherc" || type=="polymers") {
+			tabtype2="Chemistry"+" &blacktriangleright; "+tabs[type];
+		}
+	} else {
+		tabtype2=tabs[type];
+	}
+
 	feedTitle=document.getElementById("feedTitle");
-	feedTitle.innerHTML=feedTitle.innerHTML+" &blacktriangleright; "+textFeedSource +" "+textRssFeed+" &blacktriangleright; "+tabs[type];
+	feedTitle.innerHTML=feedTitle.innerHTML+" &blacktriangleright; "+textFeedSource +" "+textRssFeed+" &blacktriangleright; "+tabtype2;
 
 	keys=Object.keys(tabs);
 
@@ -865,15 +942,51 @@ function showFeed(type, source, lang) {
 
 	if (source == "phys.org") {
 		if (type=="all") feedURL="https://phys.org/rss-feed/";
+
+		if (type=="earth") feedURL="https://phys.org/rss-feed/earth-news/earth-sciences/";
 		if (type=="environment") feedURL="https://phys.org/rss-feed/earth-news/environment/";
+
 		if (type=="archaeology") feedURL="https://phys.org/rss-feed/science-news/archaeology-fossils/";
+		if (type=="economics") feedURL="https://phys.org/rss-feed/science-news/economics-business/";
+		if (type=="education") feedURL="https://phys.org/rss-feed/science-news/education/";
+		if (type=="mathematics") feedURL="https://phys.org/rss-feed/science-news/mathematics/";
+		if (type=="other") feedURL="https://phys.org/rss-feed/science-news/sci-other/";
+		if (type=="political") feedURL="https://phys.org/rss-feed/science-news/political-science/";
+		if (type=="social") feedURL="https://phys.org/rss-feed/science-news/social-sciences/";
+
 		if (type=="bio") feedURL="https://phys.org/rss-feed/nanotech-news/bio-medicine/";
 		if (type=="nanomaterials") feedURL="https://phys.org/rss-feed/nanotech-news/nano-materials/";
 		if (type=="nanophysics") feedURL="https://phys.org/rss-feed/nanotech-news/nano-physics/";
+
+		if (type=="condensed") feedURL="https://phys.org/rss-feed/physics-news/materials/";
+		if (type=="general") feedURL="https://phys.org/rss-feed/physics-news/physics/";
+		if (type=="optics") feedURL="https://phys.org/rss-feed/physics-news/optics-photonics/";
+		if (type=="plasma") feedURL="https://phys.org/rss-feed/physics-news/plasma/";
+		if (type=="quantum") feedURL="https://phys.org/rss-feed/physics-news/quantum-physics/";
+		if (type=="soft") feedURL="https://phys.org/rss-feed/physics-news/soft-matter/";
+		if (type=="superconductivity") feedURL="https://phys.org/rss-feed/physics-news/superconductivity/";
+
 		if (type=="astrobiology") feedURL="https://phys.org/rss-feed/space-news/astrobiology/";
 		if (type=="astronomy") feedURL="https://phys.org/rss-feed/space-news/astronomy/";
 		if (type=="planetary") feedURL="https://phys.org/rss-feed/space-news/planetary-sciences/";
 		if (type=="space") feedURL="https://phys.org/rss-feed/space-news/space-exploration/";
+
+		if (type=="agriculture") feedURL="https://phys.org/rss-feed/biology-news/agriculture/";
+		if (type=="biotechnology") feedURL="https://phys.org/rss-feed/biology-news/biotechnology/";
+		if (type=="cell") feedURL="https://phys.org/rss-feed/biology-news/microbiology/";
+		if (type=="ecology") feedURL="https://phys.org/rss-feed/biology-news/ecology/";
+		if (type=="evolution") feedURL="https://phys.org/rss-feed/biology-news/evolution/";
+		if (type=="molecular") feedURL="https://phys.org/rss-feed/biology-news/molecular-computational/";
+		if (type=="otherb") feedURL="https://phys.org/rss-feed/biology-news/biology-other/";
+		if (type=="paleontology") feedURL="https://phys.org/rss-feed/biology-news/paleontology/";
+		if (type=="plants") feedURL="https://phys.org/rss-feed/biology-news/plants-animals/";
+		if (type=="veterinary") feedURL="https://phys.org/rss-feed/biology-news/veterinary-medicine/";
+
+		if (type=="analytical") feedURL="https://phys.org/rss-feed/chemistry-news/analytical-chemistry/";
+		if (type=="biochemistry") feedURL="https://phys.org/rss-feed/chemistry-news/biochemistry/";
+		if (type=="materials") feedURL="https://phys.org/rss-feed/chemistry-news/materials-science/";
+		if (type=="otherc") feedURL="https://phys.org/rss-feed/chemistry-news/chemistry-other/";
+		if (type=="polymers") feedURL="https://phys.org/rss-feed/chemistry-news/polymers/";
 	}
 
 	if (source == "yahoo") {
