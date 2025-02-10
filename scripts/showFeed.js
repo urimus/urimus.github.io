@@ -857,7 +857,7 @@ function generateTabs(type, source, lang) {
 		Div.setAttribute('id', "menu_26_1");
 		Div.setAttribute('onMouseOver', "showSubMenu(this, '"+lang+"', 'news');");
 		Div.setAttribute('onMouseOut', "this.className='menu_not_selected_red'");
-		Div.setAttribute('onClick', "showSubMenu(this, 'eng', 'news');" );
+		Div.setAttribute('onClick', "showSubMenu(this, '"+lang+"', 'news');" );
 		Div.setAttribute('class', "menu_not_selected_red");
 		Div.setAttribute('style', "padding-left: 5px;");
 		if (lang=="eng") Div.innerHTML="&#9679; Phys.org RSS Feed";
