@@ -7971,7 +7971,7 @@ function  hideSubMenu(ele, manual) {
 		for (var i =maxSubCount-1; i>=0; i--) {
 			if (tables[i]) {
 				if (eleID.indexOf(tables[i].dataset.id)==-1) {
-					ele.setAttribute('onClick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
+					document.getElementById(tables[i].dataset.id).setAttribute('onClick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
 			    		tables[i].style.display = "none";
 			     		document.body.removeChild(tables[i]);
 				}
