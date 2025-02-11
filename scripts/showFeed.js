@@ -862,7 +862,7 @@ function generateTabs(type, source, lang) {
 		Div.setAttribute('style', "padding-left: 5px;");
 		if (lang=="eng") Div.innerHTML="&#9679; Phys.org RSS Feed";
 		if (lang=="rus") Div.innerHTML="&#9679; Phys.org RSS Строка";
-		if (lang=="eng") Div.innerHTML="&#9679; Phys.org RSS Acies";
+		if (lang=="lat") Div.innerHTML="&#9679; Phys.org RSS Acies";
 		cell1.appendChild(Div);
 	}
 
