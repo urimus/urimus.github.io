@@ -64,25 +64,19 @@ function processPageResize(isLoad, orientationChanged){
 	var scrollDiv = document.getElementById('scrollDiv');
 
 	if (isLoad==0) {  // not isLoad
-		if (window.location.pathname.substr(0, 5)=="/news") {
-			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
-				adjustFeedScrollDiv(0);
-			}
-		} else if (window.location.pathname.substr(0, 12)=="/html_editor") { // nothing
-//			adjustTextareaAndEncodings();
-		} else if (window.location.pathname.substr(0, 9)=="/about_me") {
-			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
+		if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
+			if (window.location.pathname.substr(0, 5)=="/news") {
+				if (document.getElementById('feedtable').innerHTML!="") adjustFeedScrollDiv(0);
+			} else if (window.location.pathname.substr(0, 12)=="/html_editor") {
+				if (document.getElementById('textarea_area').value!="") adjustTextareaAndEncodings();
+			} else if (window.location.pathname.substr(0, 9)=="/about_me") {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 				adjustScrollDiv();
-			}
-		} else if (window.location.pathname.substr(0, 7)=="/index_") {
-			adjustContentsScrollDiv();
-		} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {
-			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
+			} else if (window.location.pathname.substr(0, 7)=="/index_") {
+				if (document.getElementById('contentstable').innerHTML!="") adjustContentsScrollDiv(1);
+			} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-			}			
-		} else {
-			if (typeof(scrollDiv) !== 'undefined' && scrollDiv != null) {
+			} else {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 				adjustScrollDiv();
 			}
