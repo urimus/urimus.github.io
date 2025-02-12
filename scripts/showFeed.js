@@ -1212,7 +1212,9 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				slashPos= result.entries[i].media.url.lastIndexOf("/");
 				if (slashPos!=-1) {
 					filename=result.entries[i].media.url.substr(slashPos+1);
-					result.entries[i].media.url="https://scx2.b-cdn.net/gfx/news/2025/"+filename;
+					d = new Date();
+					year = d.getFullYear();
+					result.entries[i].media.url="https://scx2.b-cdn.net/gfx/news/"+year+"/"+filename;
 				}
 			} else {
 				result.entries[i].media.url=""; // todo
