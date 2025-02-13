@@ -699,7 +699,7 @@ function generateTabs(type, source, lang) {
 		if (type=="archaeology" || type=="economics" || type=="education" || type=="mathematics" || type=="other" || type=="political"  || type=="social") {
 			tabs["archaeology"]="Archaeology";
 			tabs2["economics"]="Economics & Business";
-			tabs["economics"]="Economics";
+			tabs["economics"]="Economics &";
 			tabs["education"]="Education";
 			tabs["mathematics"]="Mathematics";
 			tabs["other"]="Other";
@@ -730,14 +730,14 @@ function generateTabs(type, source, lang) {
 			tabs["agriculture"]="Agriculture";
 			tabs["biotechnology"]="Biotechnology";
 			tabs2["cell"]="Cell & Microbiology";
-			tabs["cell"]="Cell";
+			tabs["cell"]="Cell &";
 			tabs["ecology"]="Ecology";
 			tabs["evolution"]="Evolution";
 			tabs2["molecular"]="Molecular & Computational Biology";
-			tabs["molecular"]="Molecular";
+			tabs["molecular"]="Molecular &";
 			tabs["otherb"]="Other";
 			tabs2["paleontology"]="Paleontology & Fossils";
-			tabs["molecular"]="Molecular";
+			tabs["paleontology"]="Paleontology &";
 			tabs["plants"]="Plants & Animals";
 			tabs2["veterinary"]="Veterinary Medicine";
 			tabs["veterinary"]="Veterinary";
@@ -885,7 +885,7 @@ function generateTabs(type, source, lang) {
 		}
 		var subcell = subrow.insertCell(i%5);
 		subcell.style.width = '20%';
-		if (type=="earth" || type=="environment" || type=="bio" || type=="nanomaterials" || type=="nanophysics" || type=="astrobiology" || type=="astronomy" || type=="planetary" || type=="space") {
+		if (source=="phys.org" && (type=="earth" || type=="environment" || type=="bio" || type=="nanomaterials" || type=="nanophysics" || type=="astrobiology" || type=="astronomy" || type=="planetary" || type=="space")) {
 			subcell.style.display= 'inline-block';
 		}
 		subcell.style.textAlign = 'center';
