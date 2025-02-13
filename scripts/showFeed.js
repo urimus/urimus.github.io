@@ -831,6 +831,8 @@ function generateTabs(type, source, lang) {
 			tabtype2="Chemistry"+" &blacktriangleright; "+tabs[type];
 			if (type=="analytical") tabtype2="Chemistry"+" &blacktriangleright; "+tabs2[type];
 		}
+	} else if (source=="nasa" && type=="recent") {
+		tabtype2=tabs2[type];
 	} else {
 		tabtype2=tabs[type];
 	}
