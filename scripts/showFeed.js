@@ -876,6 +876,8 @@ function generateTabs(type, source, lang) {
 		cell1.style.textAlign = 'center';
 
 		var Div = document.createElement('div');
+		Div.dataset.shortTitle=tabs[keys[i]];
+		if (typeof tabs2[keys[i]]!=="undefined") Div.dataset.fullTitle=tabs2[keys[i]];
 		Div.style.margin = '2px';
 		if (type==keys[i]) {
 			Div.setAttribute('class', "menu_selected");
@@ -883,8 +885,8 @@ function generateTabs(type, source, lang) {
 			Div.setAttribute('class', "menu_not_selected_red");
 		}
 		Div.setAttribute('id', "feed_"+keys[i]);
-		Div.setAttribute('onMouseOver', "this.className='menu_selected';");
-		Div.setAttribute('onMouseOut', "mouseOut('"+keys[i]+"', '"+type+"');");
+		Div.setAttribute('onMouseOver', "this.className='menu_selected'; if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.fullTitle;");
+		Div.setAttribute('onMouseOut', "mouseOut('"+keys[i]+"', '"+type+"'); if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.shortTitle;");
 		divLink="news_"+lang+".html?source="+source+"&type="+keys[i];
 		Div.setAttribute('onClick', "if (event.ctrlKey==1){ window.open('"+divLink+"'); } else { window.location.href='"+divLink+"'; };" );
 		Div.innerHTML=tabs[keys[i]];
