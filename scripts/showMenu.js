@@ -5605,7 +5605,7 @@ if (lang=="eng") {
 	wholeMenu["NASA RSS Feed Recent"].color = "red";
 	wholeMenu["NASA RSS Feed Recent"].hasSub = 0;
 	wholeMenu["NASA RSS Feed Recent"].link = "news_eng.html?source=nasa&type=recent";
-	wholeMenu["NASA RSS Feed Recent"].html = 'Recent';
+	wholeMenu["NASA RSS Feed Recent"].html = 'Recently Published Content';
 
 	wholeMenu["NASA RSS Feed Image"] = {};
 	wholeMenu["NASA RSS Feed Image"].id = "26_2_3";
@@ -6215,7 +6215,7 @@ if (lang=="rus") {
 	wholeMenu["NASA RSS Строка Recent"].color = "red";
 	wholeMenu["NASA RSS Строка Recent"].hasSub = 0;
 	wholeMenu["NASA RSS Строка Recent"].link = "news_rus.html?source=nasa&type=recent";
-	wholeMenu["NASA RSS Строка Recent"].html = 'Recent';
+	wholeMenu["NASA RSS Строка Recent"].html = 'Recently Published Content';
 
 	wholeMenu["NASA RSS Строка Image"] = {};
 	wholeMenu["NASA RSS Строка Image"].id = "26_2_3";
@@ -6824,7 +6824,7 @@ if (lang=="lat") {
 	wholeMenu["NASA RSS Acies Recent"].color = "red";
 	wholeMenu["NASA RSS Acies Recent"].hasSub = 0;
 	wholeMenu["NASA RSS Acies Recent"].link = "news_lat.html?source=nasa&type=recent";
-	wholeMenu["NASA RSS Acies Recent"].html = 'Recent';
+	wholeMenu["NASA RSS Acies Recent"].html = 'Recently Published Content';
 
 	wholeMenu["NASA RSS Acies Image"] = {};
 	wholeMenu["NASA RSS Acies Image"].id = "26_2_3";

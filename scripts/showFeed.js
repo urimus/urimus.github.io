@@ -683,7 +683,8 @@ function generateTabs(type, source, lang) {
 	}
 	if (source=="nasa") {
 		tabs["releases"]="News Releases";
-		tabs["recent"]="Recent";
+		tabs["recent"]="Recently";
+		tabs2["recent"]="Recently Published Content";
 		tabs["image"]="Image of the Day";
 		tabs["technology"]="Technology";
 		tabs["aeronautics"]="Aeronautics";

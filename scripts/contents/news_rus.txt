@@ -14,7 +14,7 @@
 
 &#9679; <b class = "text_red_blue" data-added="17е Авг, 2023." data-country="usa">NASA RSS Строка</b>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=releases" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Releases</a></span>
-<span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=recent" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Recent</a></span>
+<span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=recent" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Recently Published Content</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=image" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Image of the Day</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=technology" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Technology</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=nasa&type=aeronautics" class = "standardb_red" data-added="17е Авг, 2023." data-country="usa" onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Aeronautics</a></span>
