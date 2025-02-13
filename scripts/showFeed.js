@@ -852,7 +852,14 @@ function generateTabs(type, source, lang) {
 		var row = table.insertRow(-1);
 		var cell1 = row.insertCell(0);
 
-		cell1.setAttribute('style', "width: 280px; display: inline-block; textAlign: left; margin:2px;");
+		var tabssubtable1 = document.createElement('table');
+		tabssubtable1.setAttribute('cellpadding', "0px;");
+		tabssubtable1.setAttribute('cellspacing', "0px;");
+		tabssubtable1.setAttribute('width', "100%;");
+		var subrow = tabssubtable1 .insertRow(-1);
+		var subcell = subrow.insertCell(0);
+
+		subcell.setAttribute('style', "width: 280px; display: inline-block; textAlign: left; margin:2px;");
 		var Div = document.createElement('div');
 		Div.setAttribute('id', "menu_26_1");
 		Div.setAttribute('onMouseOver', "showSubMenu(this, '"+lang+"', 'news');");
@@ -863,17 +870,25 @@ function generateTabs(type, source, lang) {
 		if (lang=="eng") Div.innerHTML="&#9679; Phys.org RSS Feed";
 		if (lang=="rus") Div.innerHTML="&#9679; Phys.org RSS Строка";
 		if (lang=="lat") Div.innerHTML="&#9679; Phys.org RSS Acies";
-		cell1.appendChild(Div);
+		subcell.appendChild(Div);
+		cell1.appendChild(tabssubtable1);
 	}
+
+	var tabssubtable2 = document.createElement('table');
+	tabssubtable2.setAttribute('cellpadding', "0px;");
+	tabssubtable2.setAttribute('cellspacing', "0px;");
+	tabssubtable2.setAttribute('width', "100%;");
 
 	for (var i = 0; i<keys.length; i++) {
 		if (i%5==0) {
-			var row = table.insertRow(-1);
+			var subrow = tabssubtable2.insertRow(-1);
 		}
-		var cell1 = row.insertCell(i%5);
-		cell1.style.width = '20%';
-		cell1.style.display= 'inline-block';
-		cell1.style.textAlign = 'center';
+		var subcell = subrow.insertCell(i%5);
+		subcell.style.width = '20%';
+		if (type=="earth" || type=="environment" || type=="bio" || type=="nanomaterials" || type=="nanophysics" || type=="astrobiology" || type=="astronomy" || type=="planetary" || type=="space") {
+			subcell.style.display= 'inline-block';
+		}
+		subcell.style.textAlign = 'center';
 
 		var Div = document.createElement('div');
 		Div.dataset.shortTitle=tabs[keys[i]];
@@ -890,9 +905,12 @@ function generateTabs(type, source, lang) {
 		divLink="news_"+lang+".html?source="+source+"&type="+keys[i];
 		Div.setAttribute('onClick', "if (event.ctrlKey==1){ window.open('"+divLink+"'); } else { window.location.href='"+divLink+"'; };" );
 		Div.innerHTML=tabs[keys[i]];
-		cell1.appendChild(Div);
+		subcell.appendChild(Div);
 	}
 
+	var row = table.insertRow(-1);
+	var cell1 = row.insertCell(0);
+	cell1.appendChild(tabssubtable2);
 
 	var Div = document.createElement('div');
 	Div.setAttribute('id', "information_div");
