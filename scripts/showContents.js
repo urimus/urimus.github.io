@@ -373,7 +373,7 @@ function generateTabs(type, lang) {
 		tabs["junk"]="Мусор";
 		tabs["stuff"]='Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 		tabs["anecdotes"]="Анекдоты";
-		tabs["heffalump"]='Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Crimin &#9760;</sup></font>';
+		tabs["heffalump"]='Слонопотам <font class="blinking_text" style="font-size:98%;" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font>';
 		tabs2["relaxation"]="Вещества Для Расслабления";
 		tabs["relaxation"]="Вещества Для";
 		tabs2["software"]="Разработка Программного Обеспечения";
