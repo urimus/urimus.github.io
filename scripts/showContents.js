@@ -405,9 +405,8 @@ function generateTabs(type, lang) {
 		tabs["anecdotes"]="Anecdotes";
 		tabs["heffalump"]='Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font>';
 		tabs2["relaxation"]="Substances For Relaxation";
-		tabs["relaxation"]="Relaxation";
-		tabs2["software"]="Software Development";
-		tabs["software"]="Software";
+		tabs["relaxation"]="Substances For";
+		tabs["software"]="Software Development";
 		tabs["satanism"]="Satanism";
 		tabs["wicca"]="Wicca";
 		tabs["falsifiability"]="Falsifiability";
