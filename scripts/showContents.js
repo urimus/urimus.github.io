@@ -458,7 +458,7 @@ function generateTabs(type, lang) {
 
 	contentsTitle=document.getElementById("contentsTitle");
 	tabtype2=tabs[type];
-	if (type=="relaxation" || (lang=="rus" || type=="software")) tabtype2=tabs2[type];
+	if (type=="relaxation" || (lang=="rus" && type=="software")) tabtype2=tabs2[type];
 	fontPos=tabtype2.indexOf("<font");
 	if (fontPos !== -1) {
 		tabtype2=tabtype2.substr(0,fontPos-1);
