@@ -888,9 +888,7 @@ function generateTabs(type, source, lang) {
 		}
 		var subcell = subrow.insertCell(i%5);
 		subcell.style.width = '20%';
-		if (source=="phys.org" && (type=="earth" || type=="environment" || type=="bio" || type=="nanomaterials" || type=="nanophysics" || type=="astrobiology" || type=="astronomy" || type=="planetary" || type=="space")) {
-			subcell.style.display= 'inline-block';
-		}
+		if (keys.length<5) subcell.style.display= 'inline-block';
 		subcell.style.textAlign = 'center';
 
 		var Div = document.createElement('div');
