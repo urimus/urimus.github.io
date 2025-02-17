@@ -245,11 +245,11 @@ P {text-indent: 10px; margin: 0px; padding-top:0px;}
 
 a.standardb_blue:link {
 	font-family: Verdana; font-size: 14px; color: #448CCB; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #448CCB;
 }
 a.standardb_blue:visited {
 	font-family: Verdana; font-size: 14px; color: #448CCB; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #448CCB;
 }
 a.standardb_blue:hover {
 	font-family: Verdana; font-size: 14px; color: #ff8a00; text-decoration: none; font-weight: bold;
@@ -257,18 +257,18 @@ a.standardb_blue:hover {
 }
 a.standardb_blue:active {
 	font-family: Verdana; font-size: 14px; color: #448CCB; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #448CCB;
 }
 
 
 	
 a.standardb_black:link {
 	font-family: Verdana; font-size: 14px; color: #707070; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #707070;
 }
 a.standardb_black:visited {
 	font-family: Verdana; font-size: 14px; color: #707070; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #707070;
 }
 a.standardb_black:hover {
 	font-family: Verdana; font-size: 14px; color: #ff8a00; text-decoration: none; font-weight: bold;
@@ -276,73 +276,17 @@ a.standardb_black:hover {
 }
 a.standardb_black:active {
 	font-family: Verdana; font-size: 14px; color: #707070; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
-}
-
-
-a.smallb_black:link {
-	font-size: 12px; color: #707070; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
-}
-a.smallb_black:visited {
-	font-size: 12px; color: #707070; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
-}
-a.smallb_black:hover {
-	font-size: 12px; color: #ff8a00; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #ff8a00;
-}
-a.smallb_black:active {
-	font-size: 12px; color: #707070; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
-}
-
-
-
-a.smallb_white:link {
-	font-size: 12px; color: #A9A9A9; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
-}
-a.smallb_white:visited {
-	font-size: 12px; color: #A9A9A9; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
-}
-a.smallb_white:hover {
-	font-size: 12px; color: #ff8a00; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #ff8a00;
-}
-a.smallb_white:active {
-	font-size: 12px; color: #A9A9A9; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
-}
-
-
-
-a.smallb_green:link {
-	font-size: 12px; color: #008040; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
-}
-a.smallb_green:visited {
-	font-size: 12px; color: #008040; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
-}
-a.smallb_green:hover {
-	font-size: 12px; color: #ff8a00; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #ff8a00;
-}
-a.smallb_green:active {
-	font-size: 12px; color: #008040; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #707070;
 }
 
 
 a.standardb_red:link {
 	font-family: Verdana; font-size: 14px; color: #CE3535; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #CE3535;
 }
 a.standardb_red:visited {
 	font-family: Verdana; font-size: 14px; color: #CE3535; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #CE3535;
 }
 a.standardb_red:hover {
 	font-family: Verdana; font-size: 14px; color: #ff8a00; text-decoration: none; font-weight: bold;
@@ -350,17 +294,17 @@ a.standardb_red:hover {
 }
 a.standardb_red:active {
 	font-family: Verdana; font-size: 14px; color: #CE3535; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #CE3535;
 }
 
 
 a.standardb_green:link {
 	font-family: Verdana; font-size: 14px; color: #008040; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #008040;
 }
 a.standardb_green:visited {
 	font-family: Verdana; font-size: 14px; color: #008040; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #008040;
 }
 a.standardb_green:hover {
 	font-family: Verdana; font-size: 14px; color: #ff8a00; text-decoration: none; font-weight: bold;
@@ -368,17 +312,17 @@ a.standardb_green:hover {
 }
 a.standardb_green:active {
 	font-family: Verdana; font-size: 14px; color: #008040; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #008040;
 }
 
 
 a.standardb_white:link {
 	font-family: Verdana; font-size: 14px; color: #A9A9A9; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #A9A9A9;
 }
 a.standardb_white:visited {
 	font-family: Verdana; font-size: 14px; color: #A9A9A9; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #A9A9A9;
 }
 a.standardb_white:hover {
 	font-family: Verdana; font-size: 14px; color: #ff8a00; text-decoration: none; font-weight: bold;
@@ -386,9 +330,84 @@ a.standardb_white:hover {
 }
 a.standardb_white:active {
 	font-family: Verdana; font-size: 14px; color: #A9A9A9; text-decoration: none; font-weight: bold;
- text-shadow: 2px 2px 4px #888888;
+ text-shadow: 2px 2px 4px #A9A9A9;
 }
 
+
+
+a.smallb_black:link {
+	font-size: 12px; color: #707070; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #707070;
+}
+a.smallb_black:visited {
+	font-size: 12px; color: #707070; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #707070;
+}
+a.smallb_black:hover {
+	font-size: 12px; color: #ff8a00; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #ff8a00;
+}
+a.smallb_black:active {
+	font-size: 12px; color: #707070; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #707070;
+}
+
+
+
+a.smallb_white:link {
+	font-size: 12px; color: #A9A9A9; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #A9A9A9;
+}
+a.smallb_white:visited {
+	font-size: 12px; color: #A9A9A9; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #A9A9A9;
+}
+a.smallb_white:hover {
+	font-size: 12px; color: #ff8a00; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #ff8a00;
+}
+a.smallb_white:active {
+	font-size: 12px; color: #A9A9A9; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #A9A9A9;
+}
+
+
+
+a.smallb_green:link {
+	font-size: 12px; color: #008040; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #008040;
+}
+a.smallb_green:visited {
+	font-size: 12px; color: #008040; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #008040;
+}
+a.smallb_green:hover {
+	font-size: 12px; color: #ff8a00; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #ff8a00;
+}
+a.smallb_green:active {
+	font-size: 12px; color: #008040; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #008040;
+}
+
+
+
+a.smallb_red:link {
+	font-size: 12px; color: #CE3535; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #CE3535;
+}
+a.smallb_red:visited {
+	font-size: 12px; color: #CE3535; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #CE3535;
+}
+a.smallb_red:hover {
+	font-size: 12px; color: #ff8a00; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #ff8a00;
+}
+a.smallb_red:active {
+	font-size: 12px; color: #CE3535; text-decoration: none; font-weight: bold;
+ text-shadow: 2px 2px 4px #CE3535;
+}
 
 
 .thumbnail_image {
