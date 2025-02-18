@@ -522,7 +522,7 @@ function generateTabs(type, lang) {
 	Img.setAttribute('id', "information_img");
 	Img.setAttribute('width', "30");
 	Img.setAttribute('height', "30");
-	Img.setAttribute('class', "thumbnail_image_png");
+	Img.setAttribute('class', "thumbnail_image_blue_png");
 
 	a.appendChild(Img);
 	Div.appendChild(a);

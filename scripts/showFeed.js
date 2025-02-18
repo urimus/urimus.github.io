@@ -160,7 +160,7 @@ function processShowFeedTitle(type, source, lang, result) {
 
 	var Img=document.createElement("img");
 	Img.setAttribute('src', result.image);
-	Img.setAttribute('class', "thumbnail_image_png");
+	Img.setAttribute('class', "thumbnail_image_red_png");
 	Img.setAttribute('alt', result.title);
 	Img.setAttribute('title', result.title);
 	Img.setAttribute('align', 'left');
@@ -182,7 +182,7 @@ function processShowFeedTitle(type, source, lang, result) {
 			a.setAttribute('target', '_blank');
 
 			var Img=document.createElement("img");
-			Img.setAttribute('class', "thumbnail_image_both");
+			Img.setAttribute('class', "thumbnail_image_red_both");
 			Img.setAttribute('src', "images/icons/feed/feed_icon.png");
 			Img.setAttribute('align', 'left');
 			if (typeof result.localCopy!=="undefined" && totalEntries>0) {
@@ -932,7 +932,7 @@ function generateTabs(type, source, lang) {
 	Img.setAttribute('id', "information_img");
 	Img.setAttribute('width', "30");
 	Img.setAttribute('height', "30");
-	Img.setAttribute('class', "thumbnail_image_png");
+	Img.setAttribute('class', "thumbnail_image_red_png");
 
 	a.appendChild(Img);
 	Div.appendChild(a);
@@ -1067,7 +1067,7 @@ function showFeed(type, source, lang) {
 	}
 
 
-	feedIconText="<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_both'  valign='middle'></a>";
+	feedIconText="<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_red_both'  valign='middle'></a>";
 	// passed - &#9989;
 	// failed - &#10062;
 	infoText="<div id='loadingDiv'>.</div><div id='passedDiv' style='display:none'>#&#9989;: <span id='passedCount'>0</span></div><div id='failedDiv' style='display:none'>#&#10062;: <span id='failedCount'>0</span></div>";
