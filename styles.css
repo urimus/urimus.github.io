@@ -434,6 +434,60 @@ box-shadow: 0px -10px 10px -5px #888888 inset, 0px 5px 5px #888888;
 box-shadow: 0px -10px 10px -5px #ff8a00 inset, 0px 5px 5px #ff8a00; 
 }
 
+
+
+.thumbnail_image_blue {
+box-shadow: 0px 10px 5px #448CCB;
+}
+
+.thumbnail_image_blue:hover {
+box-shadow: 0px 10px 5px #ff8a00;
+}
+
+.thumbnail_image_blue_png {
+box-shadow: 0px -10px 10px -5px #448CCB inset; 
+}
+
+.thumbnail_image_blue_png:hover {
+box-shadow: 0px -10px 10px -5px #ff8a00 inset; 
+}
+
+.thumbnail_image_blue_both {
+box-shadow: 0px -10px 10px -5px #448CCB inset, 0px 5px 5px #448CCB; 
+}
+
+.thumbnail_image_blue_both:hover {
+box-shadow: 0px -10px 10px -5px #ff8a00 inset, 0px 5px 5px #ff8a00; 
+}
+
+
+
+.thumbnail_image_red {
+box-shadow: 0px 10px 5px #CE3535;
+}
+
+.thumbnail_image_red:hover {
+box-shadow: 0px 10px 5px #ff8a00;
+}
+
+.thumbnail_image_red_png {
+box-shadow: 0px -10px 10px -5px #CE3535 inset; 
+}
+
+.thumbnail_image_red_png:hover {
+box-shadow: 0px -10px 10px -5px #ff8a00 inset; 
+}
+
+.thumbnail_image_red_both {
+box-shadow: 0px -10px 10px -5px #CE3535 inset, 0px 5px 5px #CE3535; 
+}
+
+.thumbnail_image_red_both:hover {
+box-shadow: 0px -10px 10px -5px #ff8a00 inset, 0px 5px 5px #ff8a00; 
+}
+
+
+
 // ------------------------------------------------------------ Font ---------------------------------------------//
 /* cyrillic-ext */
 @font-face {
