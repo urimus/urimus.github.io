@@ -1071,7 +1071,7 @@ function showFeed(type, source, lang) {
 	feedIconText="<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_red_both'  valign='middle'></a>";
 	// passed - &#9989;
 	// failed - &#10062;
-	infoText="<div id='loadingDiv'>.</div><div id='processedDiv' style='display:none'>#&#128202;: <span id='processedCount'>0</span></div><div id='passedDiv' style='display:none'>#&#9989;: <span id='passedCount'>0</span></div><div id='failedDiv' style='display:none'>#&#10062;: <span id='failedCount'>0</span></div>";
+	infoText="<div id='loadingDiv'>.</div><div id='processedDiv' style='display:none'>#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span></div><div id='passedDiv' style='display:none'>#&#9989;: <span id='passedCount'>0</span></div><div id='failedDiv' style='display:none'>#&#10062;: <span id='failedCount'>0</span></div>";
 
 	if (lang=="rus") readingText = "<b><div id='loadingDivTitle'>Читается Строка Новостей "+feedIconText+"</div>"+infoText+"</b>";
 	if (lang=="eng") readingText = "<b><div id='loadingDivTitle'>Reading News Feed "+feedIconText+"</div>"+infoText+"</b>";
@@ -1411,8 +1411,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		localStorage[source+"_"+type]=result_str;
 	}
 */
-	processedCount=document.getElementById("processedCount");
-	processedCount.innerHTML=result.totalUpdated;
+	document.getElementById("processedCount").innerHTML=result.totalUpdated;
+	document.getElementById("leftCount").innerHTML=result.entries.length-result.totalUpdated;
 	processShowFeedTitle(type, source, lang, result, locStUpdateData);
 }
 // ------------- End of Optimize---------------- //
@@ -1532,6 +1532,8 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					failedCount.innerHTML=parseInt(failedCount.innerHTML)+1;
 					processedCount=document.getElementById("processedCount");
 					processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+					document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
+
 					corsProxyVer=1;
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
@@ -1558,6 +1560,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 				passedCount.innerHTML=parseInt(passedCount.innerHTML)+1;
 				processedCount=document.getElementById("processedCount");
 				processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+				document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
 
 				result.entries[i].media.origUrl=result.entries[i].media.url;
 				result.entries[i].media.url=mediaURL;
@@ -1581,6 +1584,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					failedCount.innerHTML=parseInt(failedCount.innerHTML)+1;
 					processedCount=document.getElementById("processedCount");
 					processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+					document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
@@ -1687,6 +1691,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					failedCount.innerHTML=parseInt(failedCount.innerHTML)+1;
 					processedCount=document.getElementById("processedCount");
 					processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+					document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
@@ -1756,6 +1761,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				passedCount.innerHTML=parseInt(passedCount.innerHTML)+1;
 				processedCount=document.getElementById("processedCount");
 				processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+				document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
 				result.entries[i].summary=description;
 				locStUpdateData[entry_link]={};
 				locStUpdateData[entry_link].summary=description;
@@ -1810,6 +1816,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					failedCount.innerHTML=parseInt(failedCount.innerHTML)+1;
 					processedCount=document.getElementById("processedCount");
 					processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+					document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
 					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
 					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
 					corsProxyVer=1;
