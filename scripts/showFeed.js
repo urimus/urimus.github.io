@@ -1424,32 +1424,35 @@ function removeUnusedUpdates(type2, source, type, result, locStUpdateData, lang)
 
 	if (lang=="rus") textPostprocessing="Постобработка";
 	if (lang=="eng" || lang=="lat") textPostprocessing="Postprocessing";
-	document.getElementById("loadingDivTitle").innerHTML = textPostprocessing+".";
+	document.getElementById("loadingDivTitle").innerHTML = textPostprocessing;
 
-	var objToRemove=[];
-	var i;
-	for (var key in locStUpdateData) {
-		objInUse=0;
-		for (i=0;i<result.entries.length;i++) {
-			entry_link=result.entries[i].link;
-			if (key==entry_link) {
-				objInUse=1;
-				break;
+	setTimeout(function() {  // timeout to ensure changes applied
+		var objToRemove=[];
+		var i;
+		for (var key in locStUpdateData) {
+			objInUse=0;
+			for (i=0;i<result.entries.length;i++) {
+				entry_link=result.entries[i].link;
+				if (key==entry_link) {
+					objInUse=1;
+					break;
+				}
 			}
+			if (objInUse==0) objToRemove.push(key);
 		}
-		if (objInUse==0) objToRemove.push(key);
-	}
-	for (i=0;i<objToRemove.length;i++) {	
-		delete locStUpdateData[objToRemove[i]];
-	}
-	localStorage[source+"_"+type+type2]=JSON.stringify(locStUpdateData);
+		for (i=0;i<objToRemove.length;i++) {	
+			delete locStUpdateData[objToRemove[i]];
+		}
+		localStorage[source+"_"+type+type2]=JSON.stringify(locStUpdateData);
+		processShowFeedData(type, source, lang, result);
+	}, 50);
+
 }
 
 
 function updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates) {
 	if ((i+1)>=result.entries.length) {
 		removeUnusedUpdates("_images", source, type, result, locStUpdateData, lang);
-		processShowFeedData(type, source, lang, result);
 	} else {
 		updateImages(i+1, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
@@ -1608,7 +1611,6 @@ function updateNextDescription(i, source, type, result, locStUpdateData, lang, c
 			localStorage[source+"_"+type]=result_str;
 		}
 */
-		processShowFeedData(type, source, lang, result);
 	} else {
 		updateDescription(i+1, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
