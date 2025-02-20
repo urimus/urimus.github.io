@@ -1420,7 +1420,11 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 
 // ------------- Update ---------------- //
-function removeUnusedUpdates(type2, source, type, result, locStUpdateData) {
+function removeUnusedUpdates(type2, source, type, result, locStUpdateData, lang) {
+
+	if (lang=="rus") textPostprocessing="Постобработка";
+	if (lang=="eng" || lang=="lat") textPostprocessing="Postprocessing";
+	document.getElementById("loadingDivTitle").innerHTML = textPostprocessing+".";
 
 	var objToRemove=[];
 	var i;
@@ -1444,7 +1448,7 @@ function removeUnusedUpdates(type2, source, type, result, locStUpdateData) {
 
 function updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates) {
 	if ((i+1)>=result.entries.length) {
-		removeUnusedUpdates("_images", source, type, result, locStUpdateData);
+		removeUnusedUpdates("_images", source, type, result, locStUpdateData, lang);
 		processShowFeedData(type, source, lang, result);
 	} else {
 		updateImages(i+1, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
@@ -1597,7 +1601,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 
 function updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates) {
 	if ((i+1)>= result.entries.length) {
-		removeUnusedUpdates("_descriptions", source, type, result, locStUpdateData);
+		removeUnusedUpdates("_descriptions", source, type, result, locStUpdateData, lang);
 /*
 		if (source=="yahoo" && type=="world") {
 			result_str=JSON.stringify(result);
