@@ -219,18 +219,18 @@ function processShowFeedTitle(type, source, lang, result, locStUpdateData) {
 		}
 
 		if (totalEntries>0) {
-			if (source=="cbs" || (source=="nasa" && type!="image")) {
-				document.getElementById("processedDiv").setAttribute("style", "display:block;");
-				document.getElementById("passedDiv").setAttribute("style", "display:block;");
-				document.getElementById("failedDiv").setAttribute("style", "display:block;");
-				updateImages(0, source, type, result, locStUpdateData, lang);
-			} else if ((source=="nasa" && type=="image") || (source=="yahoo" && type=="sports") || source == "phys.org") {
+			if (result.totalUpdated == result.entries.length || (source=="nasa" && type=="image") || (source=="yahoo" && type=="sports") || source == "phys.org") {
 				processShowFeedData(type, source, lang, result);
-			}  else if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
+			} else {
 				document.getElementById("processedDiv").setAttribute("style", "display:block;");
 				document.getElementById("passedDiv").setAttribute("style", "display:block;");
 				document.getElementById("failedDiv").setAttribute("style", "display:block;");
-				updateDescription(0, source, type, result, locStUpdateData, lang);
+				if (source=="cbs" || (source=="nasa" && type!="image")) {
+					updateImages(0, source, type, result, locStUpdateData, lang);
+				}
+				if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
+					updateDescription(0, source, type, result, locStUpdateData, lang);
+				}
 			}
 		}
 	}
@@ -1422,8 +1422,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 // ------------- Update ---------------- //
 function removeUnusedUpdates(type2, source, type, result, locStUpdateData, lang) {
 
-	if (lang=="rus") textPostprocessing="Постобработка";
-	if (lang=="eng" || lang=="lat") textPostprocessing="Postprocessing";
+	if (lang=="rus") textPostprocessing="Постобработка Обновления";
+	if (lang=="eng" || lang=="lat") textPostprocessing="Update Postprocessing";
 	document.getElementById("loadingDivTitle").innerHTML = textPostprocessing;
 
 	setTimeout(function() {  // timeout to ensure changes applied
