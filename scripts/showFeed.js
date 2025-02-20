@@ -108,7 +108,7 @@ function adjustFeedScrollDiv(adj) {
 
 // ------------- Show Feed ---------------- //
 
-function processShowFeedTitle(type, source, lang, result) {
+function processShowFeedTitle(type, source, lang, result, locStUpdateData) {
 
 
 // console.log(result);
@@ -220,8 +220,6 @@ function processShowFeedTitle(type, source, lang, result) {
 
 		if (totalEntries>0) {
 			if (source=="cbs" || (source=="nasa" && type!="image")) {
-				locStPar=source+"_"+type+"_images";
-				locStUpdateData=getLocalStorageData(locStPar);
 				document.getElementById("processedDiv").setAttribute("style", "display:block;");
 				document.getElementById("passedDiv").setAttribute("style", "display:block;");
 				document.getElementById("failedDiv").setAttribute("style", "display:block;");
@@ -229,8 +227,6 @@ function processShowFeedTitle(type, source, lang, result) {
 			} else if ((source=="nasa" && type=="image") || (source=="yahoo" && type=="sports") || source == "phys.org") {
 				processShowFeedData(type, source, lang, result);
 			}  else if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
-				locStPar=source+"_"+type+"_descriptions";
-				locStUpdateData=getLocalStorageData(locStPar);
 				document.getElementById("processedDiv").setAttribute("style", "display:block;");
 				document.getElementById("passedDiv").setAttribute("style", "display:block;");
 				document.getElementById("failedDiv").setAttribute("style", "display:block;");
@@ -606,6 +602,9 @@ function showEntry(type, source, lang, items, i, tableMainRow) {
 
 
 function processEmptyFeed(type, source, lang, feedXML) {
+
+	alert("Empty Feed");
+	return;
 
 	locStPar=source+"_"+type;
 	if (typeof localStorage[locStPar]!=="undefined") {
@@ -1187,6 +1186,16 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	if (source == "yahoo") result.image="images/icons/feed/yahoo_news_logo.png";
 	if (source == "yonhap") result.image="images/icons/feed/yonhap_news_logo.png";
 
+	result.totalUpdated=0;
+	locStUpdateData={};
+	if (source=="cbs" || (source=="nasa" && type!="image")) {
+		locStPar=source+"_"+type+"_images";
+		locStUpdateData=getLocalStorageData(locStPar);
+	}
+	if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
+		locStPar=source+"_"+type+"_descriptions";
+		locStUpdateData=getLocalStorageData(locStPar);
+	}
 
 	result.entries=[];
 	if (resultOrig.feed.entries.length==0) return result;
@@ -1234,6 +1243,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				// auto update for phys.org
 				slashPos= result.entries[i].media.url.lastIndexOf("/");
 				if (slashPos!=-1) {
+					result.entries[i].updatedProcessed=1;
+					result.totalUpdated++;
 					filename=result.entries[i].media.url.substr(slashPos+1);
 					d = new Date();
 					year = d.getFullYear();
@@ -1337,6 +1348,59 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			result.entries[i].date_ms=mydate.getTime();
 		}
 
+		// ---------------- Prevous Updates Load --------------------- //
+
+		result.entries[i].updateProcessed=0;
+
+		if (source=="cbs" || (source=="nasa" && type!="image")) {
+			if (typeof locStUpdateData[entry.link] !== "undefined") {
+				result.entries[i].updateProcessed=1;
+				result.totalUpdated++;
+				if (typeof locStUpdateData[entry.link].mediaUrl !== "undefined") {
+					result.entries[i].media.origUrl=result.entries[i].media.url;
+					result.entries[i].media.url=locStUpdateData[entry.link].mediaUrl;
+				}
+				if (typeof locStUpdateData[entry.link].mediaComment !== "undefined") {
+					result.entries[i].media.comment=locStUpdateData[entry.link].mediaComment;
+				}
+			}
+		}  
+
+		if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
+			if (typeof locStUpdateData[entry.link] !== "undefined") {
+				result.entries[i].updateProcessed=1;
+				result.totalUpdated++;
+				result.entries[i].summary=locStUpdateData[entry.link].summary;
+				if (typeof locStUpdateData[entry.link].mediaUrl !== "undefined") {
+					result.entries[i].media.origUrl=result.entries[i].media.url;
+					result.entries[i].media.url=locStUpdateData[entry.link].mediaUrl;
+				}
+				if (typeof locStUpdateData[entry.link].mediaComment !== "undefined") {
+					result.entries[i].media.comment=locStUpdateData[entry.link].mediaComment;
+				}
+				if (typeof locStUpdateData[entry.link].category !== "undefined") {
+					result.entries[i].category=[];
+					for (var j=0; j<locStUpdateData[entry.link].category.length; j++) {
+						result.entries[i].category[j]=locStUpdateData[entry.link].category[j];
+					}
+				}
+				if (typeof locStUpdateData[entry.link].author !== "undefined") {
+					result.entries[i].author=[];
+					for (var j=0; j<locStUpdateData[entry.link].author.length; j++) {
+						result.entries[i].author[j]=locStUpdateData[entry.link].author[j];
+					}
+				}
+				if (typeof locStUpdateData[entry.link].seeAlso !== "undefined") {
+					result.entries[i].seeAlso=[];
+					for (var j=0; j<locStUpdateData[entry.link].seeAlso.length; j++) {
+						result.entries[i].seeAlso[j]=locStUpdateData[entry.link].seeAlso[j];
+					}
+				}
+			}
+		}
+
+		// ---------------- End of Prevous Updates Load --------------------- //
+
 	}
 /* Feed can be stored locally
 	if (source=="yahoo" && type=="world") {
@@ -1347,7 +1411,9 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		localStorage[source+"_"+type]=result_str;
 	}
 */
-	processShowFeedTitle(type, source, lang, result);
+	processedCount=document.getElementById("processedCount");
+	processedCount.innerHTML=result.totalUpdated;
+	processShowFeedTitle(type, source, lang, result, locStUpdateData);
 }
 // ------------- End of Optimize---------------- //
 
@@ -1392,17 +1458,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 
 	entry_link=result.entries[i].link;
 
-	if (typeof locStUpdateData[entry_link]!== "undefined") {
-		if (typeof locStUpdateData[entry_link].mediaUrl!== "undefined") {
-			result.entries[i].media.origUrl=result.entries[i].media.url;
-			result.entries[i].media.url=locStUpdateData[entry_link].mediaUrl;
-		}
-		if (typeof locStUpdateData[entry_link].mediaComment!== "undefined") {
-			result.entries[i].media.comment=locStUpdateData[entry_link].mediaComment;
-		}
-		
-		processedCount=document.getElementById("processedCount");
-		processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+	if (result.entries[i].updateProcessed == 1) {
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
 	}
@@ -1562,36 +1618,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 
 	entry_link=result.entries[i].link;
 
-	if (typeof locStUpdateData[entry_link]!== "undefined") {
-		result.entries[i].summary=locStUpdateData[entry_link].summary;
-		if (typeof locStUpdateData[entry_link].mediaUrl!== "undefined") {
-			result.entries[i].media.origUrl=result.entries[i].media.url;
-			result.entries[i].media.url=locStUpdateData[entry_link].mediaUrl;
-		}
-		if (typeof locStUpdateData[entry_link].mediaComment!== "undefined") {
-			result.entries[i].media.comment=locStUpdateData[entry_link].mediaComment;
-		}
-		if (typeof locStUpdateData[entry_link].category!== "undefined") {
-			result.entries[i].category=[];
-			for (var j=0; j<locStUpdateData[entry_link].category.length; j++) {
-				result.entries[i].category[j]=locStUpdateData[entry_link].category[j];
-			}
-		}
-		if (typeof locStUpdateData[entry_link].author!== "undefined") {
-			result.entries[i].author=[];
-			for (var j=0; j<locStUpdateData[entry_link].author.length; j++) {
-				result.entries[i].author[j]=locStUpdateData[entry_link].author[j];
-			}
-		}
-		if (typeof locStUpdateData[entry_link].seeAlso!== "undefined") {
-			result.entries[i].seeAlso=[];
-			for (var j=0; j<locStUpdateData[entry_link].seeAlso.length; j++) {
-				result.entries[i].seeAlso[j]=locStUpdateData[entry_link].seeAlso[j];
-			}
-		}
-
-		processedCount=document.getElementById("processedCount");
-		processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+	if (result.entries[i].updateProcessed == 1) {
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
 	}
