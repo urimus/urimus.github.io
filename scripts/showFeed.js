@@ -223,8 +223,6 @@ function processShowFeedTitle(type, source, lang, result, locStUpdateData) {
 				processShowFeedData(type, source, lang, result);
 			} else {
 				document.getElementById("processedDiv").setAttribute("style", "display:block;");
-				document.getElementById("passedDiv").setAttribute("style", "display:block;");
-				document.getElementById("failedDiv").setAttribute("style", "display:block;");
 				if (source=="cbs" || (source=="nasa" && type!="image")) {
 					updateImages(0, source, type, result, locStUpdateData, lang);
 				}
@@ -1071,7 +1069,7 @@ function showFeed(type, source, lang) {
 	feedIconText="<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_red_both'  valign='middle'></a>";
 	// passed - &#9989;
 	// failed - &#10062;
-	infoText="<div id='loadingDiv'>.</div><div id='processedDiv' style='display:none'>#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span></div><div id='passedDiv' style='display:none'>#&#9989;: <span id='passedCount'>0</span></div><div id='failedDiv' style='display:none'>#&#10062;: <span id='failedCount'>0</span></div>";
+	infoText="<div id='loadingDiv'>.</div><div id='processedDiv' style='display:none'><div>#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span></div><div>#&#9989;: <span id='passedCount'>0</span></div><div>#&#10062;: <span id='failedCount'>0</span></div></div>";
 
 	if (lang=="rus") readingText = "<b><div id='loadingDivTitle'>Читается Строка Новостей "+feedIconText+"</div>"+infoText+"</b>";
 	if (lang=="eng") readingText = "<b><div id='loadingDivTitle'>Reading News Feed "+feedIconText+"</div>"+infoText+"</b>";
