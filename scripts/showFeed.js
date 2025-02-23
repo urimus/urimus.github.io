@@ -1482,6 +1482,13 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 		return;
 	}
 
+	if (window.XMLHttpRequest) {
+		xmlhttp = new XMLHttpRequest();               
+	} 
+	else {               
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
+	}
+
 	if (lang=="rus") {textUpdateRecord="Обновление Записи"; textSkip="Отменить";}
 	if (lang=="eng") {textUpdateRecord="Updating Record"; textSkip="Skip";}
 	if (lang=="lat") {textUpdateRecord="Updating Monumentum"; textSkip="Saltus";}
@@ -1498,18 +1505,12 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			result.entries[i].media.url="images/icons/error/skipped.jpg";
 		}
 		result.entries[i].error=textUpdateSkipped;
+		xmlhttp.abort();
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
 	document.getElementById("loadingDivTitle").appendChild(a);
 
-
-	if (window.XMLHttpRequest) {
-		xmlhttp = new XMLHttpRequest();               
-	} 
-	else {               
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
-	}
 
 	xmlhttp.onreadystatechange = function () {
 		if (xmlhttp.readyState == 4) {
@@ -1645,6 +1646,13 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 		return;
 	}
 
+	if (window.XMLHttpRequest) {
+		xmlhttp = new XMLHttpRequest();               
+	}  else {               
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
+	}
+
+
 	if (lang=="rus") {textUpdateRecord="Обновление Записи"; textSkip="Отменить";}
 	if (lang=="eng") {textUpdateRecord="Updating Record"; textSkip="Skip";}
 	if (lang=="lat") {textUpdateRecord="Updating Monumentum"; textSkip="Saltus";}
@@ -1661,16 +1669,11 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			result.entries[i].media.url="images/icons/error/skipped.jpg";
 		}
 		result.entries[i].error=textUpdateSkipped;
+		xmlhttp.abort();
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
 	document.getElementById("loadingDivTitle").appendChild(a);
-
-	if (window.XMLHttpRequest) {
-		xmlhttp = new XMLHttpRequest();               
-	}  else {               
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
-	}
 
 	xmlhttp.onreadystatechange = function () {
 		if (xmlhttp.readyState == 4) {
