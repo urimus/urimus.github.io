@@ -1327,24 +1327,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 
 		result.entries[i].link=entry.link;
-		if (source != "yonhap"){
-			result.entries[i].date_ms=entry.date_ms;
-		} else {
-			feeddate=entry["rss:pubdate"]["#"];
-			mydate=new Date();
-			mydate.setUTCFullYear(feeddate.substr(0,4));
-			mydate.setUTCMonth(feeddate.substr(4,2)-1);
-			mydate.setUTCDate(feeddate.substr(6,2));
-			mydate.setUTCHours(feeddate.substr(8,2));
-			mydate.setUTCMinutes(feeddate.substr(10,2));
-			mydate.setUTCSeconds(feeddate.substr(12,2));
-			mydate.setUTCMilliseconds(0);
-
-			// subsr KST +9
-			mydate.setTime(mydate.getTime() - (9*60*60*1000));
-
-			result.entries[i].date_ms=mydate.getTime();
-		}
+		result.entries[i].date_ms=entry.date_ms;
 
 		// ---------------- Prevous Updates Load --------------------- //
 
