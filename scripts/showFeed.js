@@ -1228,6 +1228,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				result.entries[i].media.width=450;
 				result.entries[i].summary=entry.description;
 			} else {
+				// https://www.nasa.gov/wp-content/uploads/2024/04/nasa_meatball_4.png
 				result.entries[i].media.url="https://www.nasa.gov/wp-content/uploads/2024/08/meatball-w-black-background.webp";
 				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
 				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
