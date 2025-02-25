@@ -969,9 +969,23 @@ function showInformation(lang) {
 	xmlhttp2.send();
 }
 
+function loadFeednami(type, source, lang, feedIconText, feedURL) {
+	feednami.load(feedURL, function(result){
+		if(result.error){
+			document.getElementById("loadingDivTitle").innerHTML =  result.error.message +"  "+feedIconText;
+			return;
+		}
+		if (result.feed.entries.length==0) {
+			processEmptyFeed(type, source, lang, feedURL);
+		} else {
+			result.feedXML=feedURL;
+			optimizeUpdateResult(type, source, lang, result);
+		}
+	});
+}
 
-function showFeed(type, source, lang, loadAttempt) {
-	if (typeof loadAttempt === 'undefined') loadAttempt=1;
+
+function showFeed(type, source, lang) {
 
 	generateTabs(type, source, lang);
 
@@ -1089,9 +1103,11 @@ function showFeed(type, source, lang, loadAttempt) {
 	cell1.style.textAlign = 'center';
 	cell1.innerHTML = readingText;
 
+	loadAttempt=1;
 	window.onunhandledrejection = (event) => {
 		if (loadAttempt<10) {
-			showFeed(type, source, lang, loadAttempt+1);
+			loadAttempt++;
+			loadFeednami(type, source, lang, feedIconText, feedURL);
 		} else {
 			var table2 = document.getElementById("feedtable");
 			if (table2) {
@@ -1106,19 +1122,7 @@ function showFeed(type, source, lang, loadAttempt) {
 		}
 	}
 
-
-	feednami.load(feedURL, function(result){
-		if(result.error){
-			document.getElementById("loadingDivTitle").innerHTML =  result.error.message +"  "+feedIconText;
-			return;
-		}
-		if (result.feed.entries.length==0) {
-			processEmptyFeed(type, source, lang, feedURL);
-		} else {
-			result.feedXML=feedURL;
-			optimizeUpdateResult(type, source, lang, result);
-		}
-	});
+	loadFeednami(type, source, lang, feedIconText, feedURL);
 }
 
 // ------------- End of ShowFeed ---------------- //
