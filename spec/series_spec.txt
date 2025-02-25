@@ -90,6 +90,7 @@ Fallout
 - Fallout
 
 Gotham City
+- Batman: Caped Crusader
 - The Penguin
 
 Star Wars
