@@ -969,7 +969,25 @@ function showInformation(lang) {
 	xmlhttp2.send();
 }
 
-function loadFeednami(type, source, lang, feedIconText, feedURL) {
+function loadFeednami(type, source, lang, feedIconText, feedURL, loadAttempt) {
+	window.onunhandledrejection = (event) => {
+		if (loadAttempt<10) {
+			loadAttempt++;
+			loadFeednami(type, source, lang, feedIconText, feedURL, loadAttempt);
+		} else {
+			var table2 = document.getElementById("feedtable");
+			if (table2) {
+				while(table2.childNodes.length>0){table2.removeChild(table2.lastChild);}
+				var row = table2.insertRow(-1);
+				var cell1 = row.insertCell(0);
+				cell1.className = 'text_red';
+				cell1.style.textAlign = 'center';
+				cell1.innerHTML = "<b>"+event.reason.stack+"</b><br><a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+				cell1.innerHTML = "<b>"+event.reason.stack+"</b><br><a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+			}
+		}
+		return;
+	}
 	feednami.load(feedURL, function(result){
 		if(result.error){
 			document.getElementById("loadingDivTitle").innerHTML =  result.error.message +"  "+feedIconText;
@@ -1103,26 +1121,7 @@ function showFeed(type, source, lang) {
 	cell1.style.textAlign = 'center';
 	cell1.innerHTML = readingText;
 
-	loadAttempt=1;
-	window.onunhandledrejection = (event) => {
-		if (loadAttempt<10) {
-			loadAttempt++;
-			loadFeednami(type, source, lang, feedIconText, feedURL);
-		} else {
-			var table2 = document.getElementById("feedtable");
-			if (table2) {
-				while(table2.childNodes.length>0){table2.removeChild(table2.lastChild);}
-				var row = table2.insertRow(-1);
-				var cell1 = row.insertCell(0);
-				cell1.className = 'text_red';
-				cell1.style.textAlign = 'center';
-				cell1.innerHTML = "<b>"+event.reason.stack+"</b><br><a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-				cell1.innerHTML = "<b>"+event.reason.stack+"</b><br><a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-			}
-		}
-	}
-
-	loadFeednami(type, source, lang, feedIconText, feedURL);
+	loadFeednami(type, source, lang, feedIconText, feedURL, 1);
 }
 
 // ------------- End of ShowFeed ---------------- //
