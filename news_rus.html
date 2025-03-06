@@ -625,11 +625,16 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
                 <td style = "border: #CE3535 1px solid;  background-color: #F9D4D4">
 
 
-  	 <table id="tabstable" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse"></table>
+  	 <table id="tabstable" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+	</table>
 
-  	 <table id="titletable" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse"  onMouseOver="hideSubMenu();"></table>
+  	 <table id="titletable" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse"  onMouseOver="hideSubMenu();">
+        </table>
 
-	<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse" id="messagetable"></table>
+ <!-- For sticky messagetable -->
+<div style="position:relative;" onMouseOver="hideSubMenu();">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse; position: absolute; top:0;" id="messagetable"></table>
 
  <!-- For scroll inside div 582 -->
 <div id="scrollDiv" style="height:728px;overflow:auto;" onMouseOver="hideSubMenu();">
@@ -640,6 +645,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 </div> <!-- End of scroll inside div -->
 
+</div>  <!-- End of For sticky messagetable -->
 
                 </td>
         </tr>

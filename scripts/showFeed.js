@@ -103,7 +103,7 @@ function adjustFeedScrollDiv(adj) {
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 	feedTitleHeight=parseInt($( "#titletable" ).css( "height" ));
 	feedMessageHeight=parseInt($( "#messagetable" ).css( "height" ));
-	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px;width: 711px; overflow:auto;");
+	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px;width: 711px; overflow:auto;padding-top: "+feedMessageHeight+"px;");
 	if (adj==1) adjustScrollDiv();
 }
 
@@ -235,25 +235,20 @@ function processShowFeedData(type, source, lang, result, locStUpdateData) {
 
 	if (totalEntries>0) {
 		if (result.totalUpdated == result.entries.length || (source=="nasa" && type=="image") || (source=="yahoo" && type=="sports") || source == "phys.org") {
-			document.getElementById("processedDiv").setAttribute("style", "display:none; padding-bottom: 10px;");
+			document.getElementById("processedDiv").setAttribute("style", "display:none;");
 			var table2 = document.getElementById("messagetable");
 			while(table2.childNodes.length>0){table2.removeChild(table2.lastChild);}
-
-			setTimeout(function() {  // timeout to ensure changes applied
-				adjustFeedScrollDiv(0);
-				for (i=0; i<totalEntries;  i++) {
-					showEntry(type, source, lang, items[i], i, 1);
-				}
-			}, 50);
+			adjustFeedScrollDiv(0);
+			for (i=0; i<totalEntries;  i++) {
+				showEntry(type, source, lang, items[i], i, 1);
+			}
 		} else {
 			for (i=0; i<totalEntries;  i++) {
 				if (result.entries[i].updateProcessed==1) {
 					showEntry(type, source, lang, items[i], i, 1);
 				}
 			}
-			document.getElementById("processedDiv").setAttribute("style", "display:block; padding-bottom: 10px;");
-			adjustFeedScrollDiv(0);
-
+			document.getElementById("processedDiv").setAttribute("style", "display:block;");
 			if (source=="cbs" || (source=="nasa" && type!="image")) {
 				updateImages(0, source, type, result, locStUpdateData, lang);
 			}
@@ -957,7 +952,6 @@ function generateTabs(type, source, lang) {
 	Div.style.bottom = '-35px';
 
 	adjustFeedScrollDiv(0);
-
 }
 
 function showInformation(lang) {
@@ -1119,7 +1113,7 @@ function showFeed(type, source, lang) {
 	feedIconText="<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_red_both'  valign='middle'></a>";
 	// passed - &#9989;
 	// failed - &#10062;
-	infoText="<div id='loadingDiv'>.</div><div id='processedDiv' style='display:none; padding-bottom: 10px;'><div>#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span></div><div>#&#9989;: <span id='passedCount'>0</span></div><div>#&#10062;: <span id='failedCount'>0</span></div></div>";
+	infoText="<div id='loadingDiv'>.</div><div id='processedDiv' style='display:none'><div>#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span></div><div>#&#9989;: <span id='passedCount'>0</span></div><div>#&#10062;: <span id='failedCount'>0</span></div></div>";
 
 	if (lang=="rus") readingText = "<b><div id='loadingDivTitle'>Читается Строка Новостей "+feedIconText+"</div>"+infoText+"</b>";
 	if (lang=="eng") readingText = "<b><div id='loadingDivTitle'>Reading News Feed "+feedIconText+"</div>"+infoText+"</b>";
@@ -1130,13 +1124,10 @@ function showFeed(type, source, lang) {
 	var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
 	cell1.className = 'text_red';
-	cell1.setAttribute("style", "text-align: center;");
+	cell1.setAttribute("style", "text-align: center; padding-bottom: 10px;");
 	cell1.innerHTML = readingText;
 
-	setTimeout(function() {  // timeout to ensure changes applied
-		adjustFeedScrollDiv(0);
-		loadFeednami(type, source, lang, feedIconText, feedURL, 1);
-	}, 50);
+	loadFeednami(type, source, lang, feedIconText, feedURL, 1);
 }
 
 // ------------- End of ShowFeed ---------------- //
@@ -1457,12 +1448,10 @@ function removeUnusedUpdates(type2, source, type, result, locStUpdateData, lang)
 		}
 		localStorage[source+"_"+type+type2]=JSON.stringify(locStUpdateData);
 
-		document.getElementById("processedDiv").setAttribute("style", "display:none; padding-bottom: 10px;");
+		document.getElementById("processedDiv").setAttribute("style", "display:none;");
 		var table2 = document.getElementById("messagetable");
 		while(table2.childNodes.length>0){table2.removeChild(table2.lastChild);}
-		setTimeout(function() {  // timeout to ensure changes applied
-			adjustFeedScrollDiv(0);
-		}, 50);
+		adjustFeedScrollDiv(0);
 	}, 50);
 }
 
