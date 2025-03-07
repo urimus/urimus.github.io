@@ -109,7 +109,7 @@ function adjustFeedScrollDiv(adj) {
 
 // ------------- Show Feed ---------------- //
 
-function processShowFeedTitle(type, source, lang, result) {
+function showFeedTitle(type, source, lang, result) {
 
 
 // console.log(result);
@@ -222,7 +222,7 @@ function processShowFeedTitle(type, source, lang, result) {
 
 
 
-function processShowFeedData(type, source, lang, result, locStUpdateData) {
+function showFeedData(type, source, lang, result, locStUpdateData) {
 
 	var items=result.entries;
 	var totalEntries=items.length;
@@ -249,6 +249,7 @@ function processShowFeedData(type, source, lang, result, locStUpdateData) {
 				}
 			}
 			document.getElementById("processedDiv").setAttribute("style", "display:block;");
+			adjustFeedScrollDiv(0);
 			if (source=="cbs" || (source=="nasa" && type!="image")) {
 				updateImages(0, source, type, result, locStUpdateData, lang);
 			}
@@ -600,72 +601,6 @@ function showEntry(type, source, lang, entry, i, appendEntry) {
 
 }
 
-
-function processEmptyFeed(type, source, lang, feedXML) {
-
-	alert("Empty Feed");
-	return;
-
-	locStPar=source+"_"+type;
-	if (typeof localStorage[locStPar]!=="undefined") {
-		var result= {}
-		var result= JSON.parse(localStorage[locStPar]);
-		result.localCopy.is=1;
-		processShowFeedTitle(type, source, lang, result);
-		return;
-	} 
-
-	if (window.XMLHttpRequest) {
-		xmlhttp = new XMLHttpRequest();               
-	} 
-	else {               
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
-	}
-
-	xmlhttp.onreadystatechange = function () { 
-		if (xmlhttp.readyState == 4) {
-
-			data=xmlhttp.responseText;
-//			data=JSON.parse(xmlhttp.responseText).contents;  
-
-			if (data=="") {
-				if (lang=="rus") textTimeout='Чтение '+feedXML+' неудачно - Тайм-аут '+(timeoutVal/1000)+'с. <a href="javascript:location.reload();" class = "standardb_red">Обновите Страницу</a>.';
-				if (lang=="eng") textTimeout='Reading '+feedXML+' failed - Time-out'+(timeoutVal/1000)+'s. <a href="javascript:location.reload();" class = "standardb_red">Reload Page</a>.';
-				if (lang=="lat") textTimeout='Lectio '+feedXML+' defecit - Time-out'+(timeoutVal/1000)+'s. <a href="javascript:location.reload();" class = "standardb_red">Reload Page</a>.';
-				document.getElementById("loadingDivTitle").innerHTML = textTimeout;
-/*
-				scrollDivHeight=calcScrollDivHeightMax();
-				document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-				adjustScrollDiv();
-*/
-				return;
-			}
-
-			parser = new DOMParser();
-			xmlDoc = parser.parseFromString(data,"text/xml");
-			items=xmlDoc.getElementsByTagName("item");
-			itemsCount=xmlDoc.getElementsByTagName("item").length;
-
-			var result= {}
-			result.feedXML=feedXML;
-			result.title=xmlDoc.getElementsByTagName("channel")[0].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-			result.link=xmlDoc.getElementsByTagName("channel")[0].getElementsByTagName("link")[0].childNodes[0].nodeValue;
-			if (source == "nasa") result.image="images/icons/feed/NASA_Worm_logo.png";
-			if (source == "yahoo") result.image="images/icons/feed/yahoo_news_logo.png";
-			result.entries=[];
-			processShowFeedTitle(type, source, lang, result);
-		}
-	}
-
-	Link="https://api.allorigins.win/raw?url="+encodeURIComponent(feedXML);
-//	Link="https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(feedXML);
-//	Link="https://corsproxy.org/?"+encodeURIComponent(feedXML);
-	xmlhttp.open("GET", Link, true);
-	xmlhttp.timeout = timeoutVal;
-	xmlhttp.send();
-
-}
-
 function generateTabs(type, source, lang) {
 
 	tabs={};
@@ -999,12 +934,8 @@ function loadFeednami(type, source, lang, feedIconText, feedURL, loadAttempt) {
 			document.getElementById("loadingDivTitle").innerHTML =  result.error.message +"  "+feedIconText;
 			return;
 		}
-		if (result.feed.entries.length==0) {
-			processEmptyFeed(type, source, lang, feedURL);
-		} else {
-			result.feedXML=feedURL;
-			optimizeUpdateResult(type, source, lang, result);
-		}
+		result.feedXML=feedURL;
+		optimizeUpdateResult(type, source, lang, result);
 	});
 }
 
@@ -1414,8 +1345,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 */
 	document.getElementById("processedCount").innerHTML=result.totalUpdated;
 	document.getElementById("leftCount").innerHTML=result.entries.length-result.totalUpdated;
-	processShowFeedTitle(type, source, lang, result);
-	processShowFeedData(type, source, lang, result, locStUpdateData);
+	showFeedTitle(type, source, lang, result);
+	showFeedData(type, source, lang, result, locStUpdateData);
 }
 // ------------- End of Optimize---------------- //
 
