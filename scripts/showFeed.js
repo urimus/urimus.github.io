@@ -1310,31 +1310,28 @@ function removeUnusedUpdates(type2, source, type, result, locStUpdateData, lang)
 	if (lang=="eng" || lang=="lat") textPostprocessing="Update Postprocessing";
 	document.getElementById("loadingDivTitle").innerHTML = textPostprocessing;
 
-	setTimeout(function() {  // timeout to ensure changes applied
-
-		var objToRemove=[];
-		var i;
-		for (var key in locStUpdateData) {
-			objInUse=0;
-			for (i=0;i<result.entries.length;i++) {
-				entry_link=result.entries[i].link;
-				if (key==entry_link) {
-					objInUse=1;
-					break;
-				}
+	var objToRemove=[];
+	var i;
+	for (var key in locStUpdateData) {
+		objInUse=0;
+		for (i=0;i<result.entries.length;i++) {
+			entry_link=result.entries[i].link;
+			if (key==entry_link) {
+				objInUse=1;
+				break;
 			}
-			if (objInUse==0) objToRemove.push(key);
 		}
-		for (i=0;i<objToRemove.length;i++) {	
-			delete locStUpdateData[objToRemove[i]];
-		}
-		localStorage[source+"_"+type+type2]=JSON.stringify(locStUpdateData);
+		if (objInUse==0) objToRemove.push(key);
+	}
+	for (i=0;i<objToRemove.length;i++) {	
+		delete locStUpdateData[objToRemove[i]];
+	}
+	localStorage[source+"_"+type+type2]=JSON.stringify(locStUpdateData);
 
-		document.getElementById("processedDiv").setAttribute("style", "display:none;");
-		var table2 = document.getElementById("messagetable");
-		while(table2.childNodes.length>0){table2.removeChild(table2.lastChild);}
-		adjustFeedScrollDiv(0);
-	}, 50);
+	document.getElementById("processedDiv").setAttribute("style", "display:none;");
+	var table2 = document.getElementById("messagetable");
+	while(table2.childNodes.length>0){table2.removeChild(table2.lastChild);}
+	adjustFeedScrollDiv(0);
 }
 
 
