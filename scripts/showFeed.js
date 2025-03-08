@@ -103,7 +103,7 @@ function adjustFeedScrollDiv(adj) {
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 	feedTitleHeight=parseInt($( "#titletable" ).css( "height" ));
 	feedMessageHeight=parseInt($( "#messagetable" ).css( "height" ));
-	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px;width: 711px; overflow:auto;padding-top: "+feedMessageHeight+"px;");
+	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px;width: 711px; overflow:auto;");
 	if (adj==1) adjustScrollDiv();
 }
 
@@ -227,13 +227,12 @@ function showFeedData(type, source, lang, result, locStUpdateData) {
 	var items=result.entries;
 	var totalEntries=items.length;
 
-	var table = document.getElementById("feedtable");
-	var tableMainRow = table.insertRow(-1);
-	tableMainRow.setAttribute('style', 'vertical-align:top; padding-top:10px;');
-	tableMainRow.setAttribute('id', 'tableMainRow');
-
-
 	if (totalEntries>0) {
+		var table = document.getElementById("feedtable");
+		var tableMainRow = table.insertRow(-1);
+		tableMainRow.setAttribute('style', 'vertical-align:top; padding-top:10px;');
+		tableMainRow.setAttribute('id', 'tableMainRow');
+
 		if (result.totalUpdated == result.entries.length || (source=="nasa" && type=="image") || (source=="yahoo" && type=="sports") || source == "phys.org") {
 			document.getElementById("processedDiv").setAttribute("style", "display:none;");
 			var table2 = document.getElementById("messagetable");
@@ -249,7 +248,12 @@ function showFeedData(type, source, lang, result, locStUpdateData) {
 				}
 			}
 			document.getElementById("processedDiv").setAttribute("style", "display:block;");
+			if (lang=="rus") {textUpdateRecords="Обновление Записей";}
+			if (lang=="eng") {textUpdateRecords="Updating Records";}
+			if (lang=="lat") {textUpdateRecords="Updating Monumentum";}
+			document.getElementById("loadingDivTitle").innerHTML = textUpdateRecords;
 			adjustFeedScrollDiv(0);
+
 			if (source=="cbs" || (source=="nasa" && type!="image")) {
 				updateImages(0, source, type, result, locStUpdateData, lang);
 			}
@@ -1057,6 +1061,7 @@ function showFeed(type, source, lang) {
 	cell1.className = 'text_red';
 	cell1.setAttribute("style", "text-align: center; padding-bottom: 10px;");
 	cell1.innerHTML = readingText;
+	adjustFeedScrollDiv(0);
 
 	loadFeednami(type, source, lang, feedIconText, feedURL, 1);
 }
@@ -1451,7 +1456,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
 	document.getElementById("loadingDivTitle").appendChild(a);
 
-
 	xmlhttp.onreadystatechange = function () {
 		if (xmlhttp.readyState == 4) {
 
@@ -1624,6 +1628,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	}
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
 	document.getElementById("loadingDivTitle").appendChild(a);
+
+
 
 	xmlhttp.onreadystatechange = function () {
 		if (xmlhttp.readyState == 4) {
