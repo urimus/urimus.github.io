@@ -109,7 +109,7 @@ function adjustFeedScrollDiv(adj) {
 
 // ------------- Show Feed ---------------- //
 
-function showFeedTitle(type, source, lang, result) {
+function showFeedTitle(type, source, lang, result, feedIconText) {
 
 
 // console.log(result);
@@ -118,16 +118,8 @@ function showFeedTitle(type, source, lang, result) {
 	// ------------- Setting Texts ---------------- //
 	// Records Text is in getRecordsText function
 	if (lang == "rus"){
-		textRssFeed="RSS Строка";
-		if (source == "cbs" || source == "nasa" || source == "phys.org" || source == "yahoo" || source == "yonhap") textRssFeed=textRssFeed+" (англ.)";
+		textRssFeed="RSS Строка (англ.)";
 		textZero="Нет";
-		textLocalCopy="Локальная Копия";
-		textObtainedBy="Получено через";
-	}
-
-	if (lang == "eng" || lang == "lat"){
-		textLocalCopy="Local Copy";
-		textObtainedBy="Obtained by";
 	}
 
 	if (lang == "eng"){
@@ -136,8 +128,7 @@ function showFeedTitle(type, source, lang, result) {
 	}
 
 	if (lang == "lat"){
-		textRssFeed="RSS Acies";
-		if (source == "cbs" || source == "nasa" || source == "phys.org" || source == "yahoo" || source == "yonhap") textRssFeed=textRssFeed+" (angl.)";
+		textRssFeed="RSS Acies (angl.)";
 		textZero="Non";
 	}
 
@@ -173,50 +164,13 @@ function showFeedTitle(type, source, lang, result) {
 
 		adjustFeedScrollDiv(0);
 
-		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+textRssFeed;
+		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+textRssFeed+"&nbsp;"+feedIconText;
 
-		if (source == "cbs" || source == "nasa" || source == "phys.org" || source == "yahoo" || source == "yonhap") {
-			var a = document.createElement('a');
-			a.setAttribute('href', result.feedXML);
-			a.setAttribute('class', 'standardb_red');
-			a.setAttribute('target', '_blank');
-
-			var Img=document.createElement("img");
-			Img.setAttribute('class', "thumbnail_image_red_both");
-			Img.setAttribute('src', "images/icons/feed/feed_icon.png");
-			Img.setAttribute('align', 'left');
-			if (typeof result.localCopy!=="undefined" && totalEntries>0) {
-				textObtainedBy2="";
-				if (result.localCopy.is==1) {
-					textObtainedBy2=textObtainedBy+" "+textLocalCopy;
-				} else {
-					textObtainedBy2=textObtainedBy+" "+result.localCopy.type;
-				}
-				Img.setAttribute('alt', textObtainedBy2);
-				Img.setAttribute('title', textObtainedBy2);
-			}
-			a.appendChild(Img);
-			cell1.innerHTML=cell1.innerHTML+"&nbsp;";
-			cell1.appendChild(a);
-		} 
 		totalEntriesText=totalEntries;
 		if (totalEntries==0) totalEntriesText=textZero;
 
 		cell1.innerHTML=cell1.innerHTML+",&nbsp;"+totalEntriesText+"&nbsp;"+getRecordsText(lang, totalEntries)+"<span id='failedCountTitle'></span>.";
 
-		if (typeof result.localCopy!=="undefined" && result.localCopy.is==1) {
-			textLocalCopy2=textLocalCopy+", "+formatDate(result.localCopy.recivedTime, lang)+", "+result.localCopy.type;
-
-			var Img=document.createElement("img");
-			Img.setAttribute('class', "text_red");
-			Img.setAttribute('src', "images/icons/feed/local_copy.png");
-			Img.setAttribute('alt', textLocalCopy2);
-			Img.setAttribute('title', textLocalCopy2);
-
-			cell1.innerHTML=cell1.innerHTML+"&nbsp;";
-			cell1.appendChild(Img);
-
-		}
 	}
 }
 
@@ -405,7 +359,6 @@ function showEntry(type, source, lang, entry, i, appendEntry) {
 		textMore="Ещё &#9658;"; // ►
 		textSeeAlso="Смотри Так-же:&nbsp;";
 		textLocalCopy="Локальная Копия";
-		textObtainedBy="Получено через";
 	}
 
 	if (lang == "eng" || lang == "lat"){
@@ -419,7 +372,6 @@ function showEntry(type, source, lang, entry, i, appendEntry) {
 		textMore="More &#9658;"; // ►
 		textSeeAlso="See Also:&nbsp;";
 		textLocalCopy="Local Copy";
-		textObtainedBy="Obtained by";
 	}
 
 	if (lang == "lat"){
@@ -939,7 +891,7 @@ function loadFeednami(type, source, lang, feedIconText, feedURL, loadAttempt) {
 			return;
 		}
 		result.feedXML=feedURL;
-		optimizeUpdateResult(type, source, lang, result);
+		optimizeUpdateResult(type, source, lang, result, feedIconText);
 	});
 }
 
@@ -1127,7 +1079,7 @@ function getLocalStorageData(par) {
 // ------------- Optimize ---------------- //
 
 
-function optimizeUpdateResult(type, source, lang, resultOrig) {
+function optimizeUpdateResult(type, source, lang, resultOrig, feedIconText) {
 
 //console.log(resultOrig);
 
@@ -1339,18 +1291,10 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		// ---------------- End of Prevous Updates Load --------------------- //
 
 	}
-/* Feed can be stored locally
-	if (source=="yahoo" && type=="world") {
-		result.localCopy={};
-		result.localCopy.recivedTime=Date.now();
-		result.localCopy.type="Feednami";
-		result_str=JSON.stringify(result);
-		localStorage[source+"_"+type]=result_str;
-	}
-*/
+
 	document.getElementById("processedCount").innerHTML=result.totalUpdated;
 	document.getElementById("leftCount").innerHTML=result.entries.length-result.totalUpdated;
-	showFeedTitle(type, source, lang, result);
+	showFeedTitle(type, source, lang, result, feedIconText);
 	showFeedData(type, source, lang, result, locStUpdateData);
 }
 // ------------- End of Optimize---------------- //
@@ -1562,12 +1506,6 @@ function updateNextDescription(i, source, type, result, locStUpdateData, lang, c
 	if (result.entries[i].updateProcessed == 0) showEntry(type, source, lang, result.entries[i], i, 0);
 	if ((i+1)>= result.entries.length) {
 		removeUnusedUpdates("_descriptions", source, type, result, locStUpdateData, lang);
-/*
-		if (source=="yahoo" && type=="world") {
-			result_str=JSON.stringify(result);
-			localStorage[source+"_"+type]=result_str;
-		}
-*/
 	} else {
 		updateDescription(i+1, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
