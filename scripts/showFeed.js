@@ -2,6 +2,10 @@
 timeoutVal=10000; // 10s
 // ------------- End of Global Variables ---------------- //
 
+function feedIconText(feedURL) {
+	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_red_both'  valign='middle' oload='javascript:adjustFeedScrollDiv(0);'></a>";
+}
+
 // ------------- Initial ---------------- //
 function newsLoad(lang) {
 
@@ -109,7 +113,7 @@ function adjustFeedScrollDiv(adj) {
 
 // ------------- Show Feed ---------------- //
 
-function showFeedTitle(type, source, lang, result, feedIconText) {
+function showFeedTitle(type, source, lang, result) {
 
 
 // console.log(result);
@@ -164,7 +168,7 @@ function showFeedTitle(type, source, lang, result, feedIconText) {
 
 		adjustFeedScrollDiv(0);
 
-		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+textRssFeed+"&nbsp;"+feedIconText;
+		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+textRssFeed+"&nbsp;"+feedIconText(result.feedXML);
 
 		totalEntriesText=totalEntries;
 		if (totalEntries==0) totalEntriesText=textZero;
@@ -866,11 +870,11 @@ function showInformation(lang) {
 	xmlhttp2.send();
 }
 
-function loadFeednami(type, source, lang, feedIconText, feedURL, loadAttempt) {
+function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 	window.onunhandledrejection = (event) => {
 		if (loadAttempt<10) {
 			loadAttempt++;
-			loadFeednami(type, source, lang, feedIconText, feedURL, loadAttempt);
+			loadFeednami(type, source, lang, feedURL, loadAttempt);
 		} else {
 			var table2 = document.getElementById("messagetable");
 			if (table2) {
@@ -887,11 +891,11 @@ function loadFeednami(type, source, lang, feedIconText, feedURL, loadAttempt) {
 	}
 	feednami.load(feedURL, function(result){
 		if(result.error){
-			document.getElementById("loadingDivTitle").innerHTML =  result.error.message +"  "+feedIconText;
+			document.getElementById("loadingDivTitle").innerHTML =  result.error.message +"  "+feedIconText(feedURL);
 			return;
 		}
 		result.feedXML=feedURL;
-		optimizeUpdateResult(type, source, lang, result, feedIconText);
+		optimizeUpdateResult(type, source, lang, result,);
 	});
 }
 
@@ -996,15 +1000,13 @@ function showFeed(type, source, lang) {
 		if (type=="sports") feedURL="https://en.yna.co.kr/RSS/sports.xml";
 	}
 
-
-	feedIconText="<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_red_both'  valign='middle' oload='javascript:adjustFeedScrollDiv(0);'></a>";
 	// passed - &#9989;
 	// failed - &#10062;
 	infoText="<div id='loadingDiv'>.</div><div id='processedDiv' style='display:none'><div>#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span></div><div>#&#9989;: <span id='passedCount'>0</span></div><div>#&#10062;: <span id='failedCount'>0</span></div></div>";
 
-	if (lang=="rus") readingText = "<b><div id='loadingDivTitle'>Читается Строка Новостей "+feedIconText+"</div>"+infoText+"</b>";
-	if (lang=="eng") readingText = "<b><div id='loadingDivTitle'>Reading News Feed "+feedIconText+"</div>"+infoText+"</b>";
-	if (lang=="lat") readingText = "<b><div id='loadingDivTitle'>Lectio Nuntium Acies "+feedIconText+"</div>"+infoText+"</b>";
+	if (lang=="rus") readingText = "<b><div id='loadingDivTitle'>Читается Строка Новостей "+feedIconText(feedURL)+"</div>"+infoText+"</b>";
+	if (lang=="eng") readingText = "<b><div id='loadingDivTitle'>Reading News Feed "+feedIconText(feedURL)+"</div>"+infoText+"</b>";
+	if (lang=="lat") readingText = "<b><div id='loadingDivTitle'>Lectio Nuntium Acies "+feedIconText(feedURL)+"</div>"+infoText+"</b>";
 
 	var table = document.getElementById("messagetable");
 	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
@@ -1015,7 +1017,7 @@ function showFeed(type, source, lang) {
 	cell1.innerHTML = readingText;
 	adjustFeedScrollDiv(0);
 
-	loadFeednami(type, source, lang, feedIconText, feedURL, 1);
+	loadFeednami(type, source, lang, feedURL, 1);
 }
 
 // ------------- End of ShowFeed ---------------- //
@@ -1079,7 +1081,7 @@ function getLocalStorageData(par) {
 // ------------- Optimize ---------------- //
 
 
-function optimizeUpdateResult(type, source, lang, resultOrig, feedIconText) {
+function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 //console.log(resultOrig);
 
@@ -1294,7 +1296,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig, feedIconText) {
 
 	document.getElementById("processedCount").innerHTML=result.totalUpdated;
 	document.getElementById("leftCount").innerHTML=result.entries.length-result.totalUpdated;
-	showFeedTitle(type, source, lang, result, feedIconText);
+	showFeedTitle(type, source, lang, result);
 	showFeedData(type, source, lang, result, locStUpdateData);
 }
 // ------------- End of Optimize---------------- //
