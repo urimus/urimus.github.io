@@ -247,11 +247,11 @@ function showFeedData(type, source, lang, result, locStUpdateData) {
 					showEntry(type, source, lang, items[i], i, 1);
 				}
 			}
-			document.getElementById("processedDiv").setAttribute("style", "display:block;");
-			if (lang=="rus") {textUpdateRecords="Обновление Записей";}
-			if (lang=="eng") {textUpdateRecords="Updating Records";}
-			if (lang=="lat") {textUpdateRecords="Updating Monumentum";}
+			if (lang=="rus") textUpdateRecords="Обновление Записей";
+			if (lang=="eng") textUpdateRecords="Updating Records";
+			if (lang=="lat") textUpdateRecords="Updating Monumentum";
 			document.getElementById("loadingDivTitle").innerHTML = textUpdateRecords;
+			document.getElementById("processedDiv").setAttribute("style", "display:block;");
 			adjustFeedScrollDiv(0);
 
 			if (source=="cbs" || (source=="nasa" && type!="image")) {
