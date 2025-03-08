@@ -3,7 +3,7 @@ timeoutVal=10000; // 10s
 // ------------- End of Global Variables ---------------- //
 
 function feedIconText(feedURL) {
-	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_red_both'  valign='middle' oload='javascript:adjustFeedScrollDiv(0);'></a>";
+	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' class='thumbnail_image_red_both'  valign='middle' onload='javascript:adjustFeedScrollDiv(0);'></a>";
 }
 
 // ------------- Initial ---------------- //
