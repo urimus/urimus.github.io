@@ -7718,7 +7718,7 @@ function  addTableRow(tableSM, menu, key, lang, type, newTableId) {
 
 	var row = tableSM.insertRow(-1);
 	var cell1 = row.insertCell(0);
-	cell1 .setAttribute('style', 'padding:0px');
+	cell1.setAttribute('style', 'padding:0px;');
 	var divSM=document.createElement("div");
 	divSM.setAttribute('id', 'menu_'+menu.id);
 	divSM.align = "left";
@@ -7854,12 +7854,12 @@ function  showSubMenu(ele, lang, type, newTableId) {
      				left_s=(parseFloat(rect.left)+270.0);
 			}
 
-     			tableSM.setAttribute('style', 'border: 1px #ff8a00 solid; border-spacing: 0px; position: absolute; top: '+top_s+'px; left: '+left_s+'px;');
+     			tableSM.setAttribute('style', 'z-index: 100000; position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; top: '+top_s+'px; left: '+left_s+'px;');
 
 			// caption 
 			var row = tableSM.insertRow(-1);
 			var cell1 = row.insertCell(0);
-			cell1 .setAttribute('style', 'padding:0px;');
+			cell1.setAttribute('style', 'padding:0px;');
 			var divSM=document.createElement("div");
 			divSM.setAttribute('id', 'div-1'+wholeMenu[key].id);
 			divSM.align = "left";
@@ -7900,7 +7900,7 @@ function  showSubMenu(ele, lang, type, newTableId) {
 
 				if (rect.top<0) {
 	     				top_s=document.documentElement.scrollTop || document.body.scrollTop;
-	     				tableSM.setAttribute('style', 'border: 1px #ff8a00 solid; border-spacing: 0px; position: absolute; top: '+top_s+'px; left: '+left_s+'px;');
+	     				tableSM.setAttribute('style', 'z-index: 100000; position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; top: '+top_s+'px; left: '+left_s+'px;');
 				} else if (rect.bottom>h) {
 					// works too - top_s from definition
 					// top_s=top_s-(rect.bottom-h);
@@ -7908,7 +7908,7 @@ function  showSubMenu(ele, lang, type, newTableId) {
 	     				top_s=document.documentElement.scrollTop || document.body.scrollTop;
 					top_s=top_s+h-rect.height;
 
-	     				tableSM.setAttribute('style', 'border: 1px #ff8a00 solid; border-spacing: 0px; position: absolute; top: '+top_s+'px; left: '+left_s+'px;');
+	     				tableSM.setAttribute('style', 'z-index: 100000; position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; top: '+top_s+'px; left: '+left_s+'px;');
 				}
 			}
 
@@ -7919,14 +7919,14 @@ function  showSubMenu(ele, lang, type, newTableId) {
      				top_s=(parseFloat(rect.top)+top_s-(matchC-1)*11.5-1-imageHeight/2-5);
 				left_s=(parseFloat(rect.right)+10.0);
 
-	     			tableSM.setAttribute('style', 'border: 1px #ff8a00 solid; border-spacing: 0px; position: absolute; top: '+top_s+'px; left: '+left_s+'px;');
+	     			tableSM.setAttribute('style', 'z-index: 100000; position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; top: '+top_s+'px; left: '+left_s+'px;');
 				bottom_s=tableSM.getBoundingClientRect().bottom;
 
 	  			var h = Math.max(window.innerHeight, document.documentElement.clientHeight);
 
 				if (top_s<0) {
 	     				top_s=document.documentElement.scrollTop || document.body.scrollTop;
-	     				tableSM.setAttribute('style', 'border: 1px #ff8a00 solid; border-spacing: 0px; position: absolute; top: '+top_s+'px; left: '+left_s+'px;');
+	     				tableSM.setAttribute('style', 'z-index: 100000; position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; top: '+top_s+'px; left: '+left_s+'px;');
 				} else if (bottom_s>h) {
 					// works too - top_s from definition
 					// top_s=top_s-(rect.bottom-h);
@@ -7934,9 +7934,9 @@ function  showSubMenu(ele, lang, type, newTableId) {
 	     				top_s=document.documentElement.scrollTop || document.body.scrollTop;
 					top_s=top_s+h-(matchC-1)*23-imageHeight-10-23;
 
-	     				tableSM.setAttribute('style', 'border: 1px #ff8a00 solid; border-spacing: 0px; position: absolute; top: '+top_s+'px; left: '+left_s+'px;');
+	     				tableSM.setAttribute('style', 'z-index: 100000; position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; top: '+top_s+'px; left: '+left_s+'px;');
 				} else {
-		     			tableSM.setAttribute('style', 'border: 1px #ff8a00 solid; border-spacing: 0px; position: absolute; top: '+top_s+'px; left: '+left_s+'px;');
+		     			tableSM.setAttribute('style', 'z-index: 100000; position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; top: '+top_s+'px; left: '+left_s+'px;');
 				}
 
 			});
