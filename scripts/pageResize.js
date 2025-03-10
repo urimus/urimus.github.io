@@ -82,6 +82,12 @@ function processPageResize(isLoad, orientationChanged){
 			}
 		}
 	} else { // isLoad
+		if (window.location.protocol == "https:") {
+			var meta = document.createElement('meta');
+			meta.httpEquiv = "Content-Security-Policy";
+			meta.content = "upgrade-insecure-requests";
+			document.getElementsByTagName('head')[0].appendChild(meta);
+		}
 		// for regular htmls only (not html_editor, not index and not news)
 		if (!(window.location.pathname.substr(0, 12)=="/html_editor"
 		||  window.location.pathname.substr(0, 7)=="/index_"
