@@ -77,8 +77,10 @@ function processPageResize(isLoad, orientationChanged){
 			} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			} else {
-				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-				adjustScrollDiv();
+				if (typeof galleria2==='undefined') {
+					scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+					adjustScrollDiv();
+				}
 			}
 		}
 	} else { // isLoad
