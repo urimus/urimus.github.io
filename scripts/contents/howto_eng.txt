@@ -1,0 +1,9 @@
+﻿<b class="text_blue">How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></b>
+&#9679; <a href="howto_add_feed_eng.html" class = "standardb_blue" data-added="07th of Oct, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Add News Feed <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></a>
+<span style="padding-left:10px;">- <a href="howto_add_feed_eng.html#add_feed_javascript" class = "standardb_blue" data-added="16th of Jan, 2021." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Using Javascript</a></span>
+<span style="padding-left:10px;">- <a href="howto_add_feed_eng.html#add_feed_php" class = "standardb_blue" data-added="11th of Oct, 2017." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Using PHP <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></a></span>
+&#9679; <a href="howto_download_file_eng.html" class = "standardb_blue" data-added="24th of Feb, 2018." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Download File</a>
+<span style="padding-left:10px;">- <a href="howto_download_file_eng.html#download_file" class = "standardb_blue" data-added="24th of Feb, 2018." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">How To Download File Using Javascript</a></span>
+&#9679; <a href="html_editor_eng.html?pattern=*.html&i=0" class = "standardb_blue" data-added="22nd of Jan, 2018." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">HTML Editor</a>
+&#9679; <a href="howto_launch_program_eng.html" class = "standardb_blue" data-added="10th of Mar, 2018." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Launch Program</a>
+<span style="padding-left:10px;">- <a href="howto_launch_program_eng.html#launch_program" class = "standardb_blue" data-added="10th of Mar, 2018." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">How To Launch PHP Program using JavaScript</a></span>

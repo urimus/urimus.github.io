@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet title="XSL_formatting" type="text/xsl" href="/shared/bsp/xsl/rss/nolsol.xsl"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title><![CDATA[BBC News - Русская Служба]]></title>
+        <description><![CDATA[BBC News - Русская Служба]]></description>
+        <link>https://www.bbc.com/russian</link>
+        <image>
+            <url>http://news.bbcimg.co.uk/nol/shared/img/bbc_news_120x60.gif</url>
+            <title>BBC News - Русская Служба</title>
+            <link>https://www.bbc.com/russian</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Fri, 18 May 2018 10:30:26 GMT</lastBuildDate>
+        <copyright><![CDATA[Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.]]></copyright>
+        <language><![CDATA[ru]]></language>
+        <ttl>42</ttl>
+        <item>
+            <title><![CDATA["Идеальные условия". Нынешняя пандемия Covid-19 - не последняя]]></title>
+            <description><![CDATA[Нынешняя пандемия побудила ученых выступить с предостережением о том, что наша деятельность создает идеальные условия для возникновения новых инфекций.]]></description>
+            <link>https://www.bbc.com/russian/features-52951297</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52951297</guid>
+            <pubDate>2 часа назад</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Демпартия США определилась с соперником Трампа на выборах]]></title>
+            <description><![CDATA[Бывший вице-президент США стал официальным кандидатом от Демократической партии на президентских выборах, которые пройдут в ноябре. Дональд Трамп сказал, что с нетерпением ждет схватки со своим соперником.]]></description>
+            <link>https://www.bbc.com/russian/news-52951299</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/news-52951299</guid>
+            <pubDate>5 минут назад</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Коронавирус: Индия обошла Италию по числу заболевших, Франция быстрыми темпами выходит из локдауна]]></title>
+            <description><![CDATA[Статистика заболевших и умерших в Индии пошла резко вверх. Эпидемия не останавливает участников антирасистских протестов по всему миру. Франция быстрее других стран выходит из локдауна. Эти и другие новости о Covid-19 в мире - в нашей ежедневной подборке.]]></description>
+            <link>https://www.bbc.com/russian/features-52947705</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52947705</guid>
+            <pubDate>7 часов назад</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Коронавирусный отпуск. Где и как россияне смогут отдохнуть этим летом?]]></title>
+            <description><![CDATA[Летний туристический сезон многие курортные города встречают закрытыми отелями и пляжами. Одновременно, несмотря на режим самоизоляции, уже с конца апреля россияне все более активно ищут направления для отдыха, билеты и информацию о том, когда будут открыты границы. Как будут выглядеть отели и перелеты в этом сезоне и останутся ли еще компании, которые смогут отвезти россиян на отдых?]]></description>
+            <link>https://www.bbc.com/russian/features-52929735</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52929735</guid>
+            <pubDate>6 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Коронавирус в России: почти 9 тыс. новых случаев заражения и ярмарка на Красной площади]]></title>
+            <description><![CDATA[За последние сутки в России выявлено 8855 новых случаев заражения коронавирусом, из них 1992 - в Москве. За сутки в стране умерло 197 заболевших Covid-19. На Красной площади, несмотря на карантин и запрет на массовые мероприятия, проходит Книжная ярмарка, которую, как ожидается, посетят тысячи человек.]]></description>
+            <link>https://www.bbc.com/russian/features-52947698</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52947698</guid>
+            <pubDate>6 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[<span role="text"><span class="VisuallyHiddenText-sc-1yjwwa5-0 ldFJPH">Видео<!-- -->, </span><span>"Лондон на карантине": как приспособятся университеты и что ждет студентов</span><span class="VisuallyHiddenText-sc-1yjwwa5-0 ldFJPH">, 12,20</span></span>]]></title>
+            <description><![CDATA[В Британии смягчают карантин, но ситуация с вирусом сильно повлияла на тех, кто учится в местных вузах. Смогут ли студенты отложить начало учебы до 2021 года и стоит ли это делать?]]></description>
+            <link>https://www.bbc.com/russian/media-52938841</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/media-52938841</guid>
+            <pubDate>6 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Слишком хорошо, чтобы быть правдой. История американки, которая 4 года играла в фейковом оркестре]]></title>
+            <description><![CDATA[Джессика Хиндман гастролировала по США и появлялась на телевидении, играя на скрипке в оркестре, музыканты которого притворялись, что исполняют классику, а сами лишь двигались под "фанеру".]]></description>
+            <link>https://www.bbc.com/russian/features-52937242</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52937242</guid>
+            <pubDate>9 часов назад</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["Мы потеряли мечту, а Маск ее вернул". Как запуск "Драгона" повлияет на будущее космонавтики?]]></title>
+            <description><![CDATA[Программа SpaceX Илона Маска и запуск космического коробля "Драгон" могут вдохнуть в мировую космонавтику новую жизнь. Космонавтика вновь может стать привлекательной для инвесторов и начать бурно развиваться. Выиграет ли от этого Россия?]]></description>
+            <link>https://www.bbc.com/russian/features-52937042</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52937042</guid>
+            <pubDate>6 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Чисто английское меню. Норфолк: ангелы и демоны, крабы из Кромера и заяц в кувшине]]></title>
+            <description><![CDATA[Сандрингем и мамонты, Эйнштейн и Покахонтас, яблочный пирог и заяц в кувшине - чем знаменито графство Норфолк, когда-то самое богатое в Королевстве.]]></description>
+            <link>https://www.bbc.com/russian/features-52926227</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52926227</guid>
+            <pubDate>6 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Статистика коронавируса в мире: карта, графика, данные по странам]]></title>
+            <description><![CDATA[Число случаев заболевания коронавирусом продолжает расти. На периодически обновляемой карте показаны наиболее крупные очаги возбудителя Covid-19, количество заболевших и смертельных случаев.]]></description>
+            <link>https://www.bbc.com/russian/news-51706538</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/news-51706538</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Коронавирус: насколько опасна ваша профессия]]></title>
+            <description><![CDATA[Коронавирус усадил миллионы людей по домам. Однако в разных странах правительство предлагает тем, кто не может работать из дома, выходить на работу - в том случае, если это безопасно. Насколько безопасна ваша работа по сравнению с другими?]]></description>
+            <link>https://www.bbc.com/russian/features-52770878</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52770878</guid>
+            <pubDate>26 мая 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Что такое коронавирус? А локдаун? Как долго длится болезнь? Объясняем все про Covid-19]]></title>
+            <description><![CDATA[Мы создали для вас виртуального консультанта по всему, что касается коронавируса. Он расскажет вам, что значат новые слова, появившиеся с начала пандемии, и ответит на ваши вопросы.]]></description>
+            <link>https://www.bbc.com/russian/in-depth-52679554</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/in-depth-52679554</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Как сделать маску из подручных материалов. Схемы и инструкции]]></title>
+            <description><![CDATA[Жителям Англии, Шотландии и Северной Ирландии теперь рекомендуется носить маски в магазинах и общественном транспорте. В Москве и Санкт-Петербурге обязательный "масочный режим" вступает в силу во вторник.]]></description>
+            <link>https://www.bbc.com/russian/features-52630336</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52630336</guid>
+            <pubDate>12 мая 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[<span role="text"><span class="VisuallyHiddenText-sc-1yjwwa5-0 ldFJPH">Аудио<!-- -->, </span><span>"Что это было". Спецвыпуск: как стать бердвотчером на карантине?</span><span class="VisuallyHiddenText-sc-1yjwwa5-0 ldFJPH">, 31,59</span></span>]]></title>
+            <description><![CDATA[Как и зачем люди наблюдают за птицами, и можно ли это делать, не выходя из квартиры?]]></description>
+            <link>https://www.bbc.com/russian/media-52684937</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/media-52684937</guid>
+            <pubDate>22 мая 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Снова жесткий брексит. После бед от коронавируса Британию может ждать полный разрыв с ЕС]]></title>
+            <description><![CDATA[Решающий раунд переговоров Британии и ЕС об условиях дальнейшей совместной жизни закончился ничем, и перед Британией вдобавок к экономическому кризису из-за пандемии снова встала перспектива жесткого разрыва связей с Евросоюзом.]]></description>
+            <link>https://www.bbc.com/russian/news-52939706</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/news-52939706</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[В экономике все плохо, говорят власти. Но можно ли верить статистике эпохи карантина?]]></title>
+            <description><![CDATA[Прогнозы худшего экономического кризиса за столетие сыпятся со всех сторон. Они основаны на текущей статистике. Но насколько она точна? Ведь коронавирус поставил жизнь и работу на паузу - кто и как в таких условиях способен измерить температуру больной экономики методами мирного времени?]]></description>
+            <link>https://www.bbc.com/russian/features-52900457</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52900457</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Прага спорит о "чумном столбе". Зачем в Чехии восстановили статую Девы Марии, которую 100 лет назад снесла толпа?]]></title>
+            <description><![CDATA[Староместскую площадь в историческом центре Праги вновь украсила 14-метровая колонна, увенчанная двухметровой позолоченной статуей Девы Марии. Почему этот монумент вызывает такие сильные эмоции и как приведшая к ее появлению война помогла сформировать современный мир.]]></description>
+            <link>https://www.bbc.com/russian/news-52941935</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/news-52941935</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Около Рады шумные пикеты против главы МВД Авакова. Кто он такой и почему из-за него такие страсти]]></title>
+            <description><![CDATA[Министр внутренних дел Украины, один из самых влиятельных людей страны Арсен Аваков отчитался перед Верховной Радой о своей деятельности. Во время отчета сотни людей требовали его отставки под стенами парламента.]]></description>
+            <link>https://www.bbc.com/russian/features-52936259</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52936259</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["Вежливые люди" в Вашингтоне: силовики без знаков различия породили слухи и критику]]></title>
+            <description><![CDATA[Во вторник на улицах американской столицы появились люди в военной форме без знаков различия. Их присутствие породило слухи о ЧВК и критику со стороны демократов в конгрессе.]]></description>
+            <link>https://www.bbc.com/russian/features-52929371</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52929371</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Воры в законе и сходки. Украина приняла закон против воровских авторитетов]]></title>
+            <description><![CDATA[Согласно закону, одобренному Верховной Радой в четверг, создание и руководство криминальными группировками карается тюремным заключением на срок от 12 до 15 лет с конфискацией имущества.]]></description>
+            <link>https://www.bbc.com/russian/news-52929989</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/news-52929989</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["Существование сумасшедших идей беспокоит". Билл Гейтс - о чипировании и вакцине против коронавируса]]></title>
+            <description><![CDATA[Миллиардер и филантроп Билл Гейтс в интервью Би-би-си рассказал, что думает о теориях заговора, а также поделился своим видением о борьбе с коронавирусом и всеобщей вакцинации.]]></description>
+            <link>https://www.bbc.com/russian/features-52878763</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52878763</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Пандемия пандемией, а война по расписанию. НАТО и Россия возобновляют военные игры]]></title>
+            <description><![CDATA[До победы над коронавирусом еще далеко, в большинстве европейских стран все еще запрещены массовые увеселительные мероприятия, но военные НАТО и России постепенно возобновляют большие военные игры.]]></description>
+            <link>https://www.bbc.com/russian/news-52921358</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/news-52921358</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Исчезновение Мадлен Макканн: в деле есть подозреваемый, прокуратура Германии считает, что она мертва]]></title>
+            <description><![CDATA[Прокуратура в Германии обнародовала новые подробности об исчезновении Мадлен Макканн - одном из самых громких и загадочных преступлений в современной истории. Спустя 13 лет после того, как родители последний раз видели трехлетнюю британку во время отдыха в Португалии, в деле появился подозреваемый. Немецкие прокуроры также предположили, что Мадлен мертва.]]></description>
+            <link>https://www.bbc.com/russian/news-52921360</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/news-52921360</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[<span role="text"><span class="VisuallyHiddenText-sc-1yjwwa5-0 ldFJPH">Видео<!-- -->, </span><span>Экологическая катастрофа в Норильске: видео с дрона и фото из космоса</span><span class="VisuallyHiddenText-sc-1yjwwa5-0 ldFJPH">, 2,11</span></span>]]></title>
+            <description><![CDATA[В Норильске произошел разлив более 20 тысяч тонн топлива. Чтобы полностью справиться с последствиями аварии, по словам экологов, уйдут годы.]]></description>
+            <link>https://www.bbc.com/russian/media-52944438</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/media-52944438</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Как коронавирус распространился по России. Карта и графики]]></title>
+            <description><![CDATA[Первые случаи заболевания Covid-19 на территории России были зафиксированы в конце января.]]></description>
+            <link>https://www.bbc.com/russian/features-51979104</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-51979104</guid>
+            <pubDate>6 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["Хотел поменять мышление верхушки". Как сотрудник центра "Э" стал "омбудсменом полиции" и критиком МВД]]></title>
+            <description><![CDATA[Бывший полицейский и основатель паблика "Омбудсмен полиции" Владимир Воронцов почти месяц сидит под арестом. Против него возбуждают все новые и новые дела. Би-би-си разбиралась, за что Воронцова хвалят и за что критикуют рядовые полицейские, и кто мог быть заинтересован в его аресте.]]></description>
+            <link>https://www.bbc.com/russian/features-52934722</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52934722</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[<span role="text"><span class="VisuallyHiddenText-sc-1yjwwa5-0 ldFJPH">Видео<!-- -->, </span><span>"Непонятно как это работает": москвичи против "Социального мониторинга"</span><span class="VisuallyHiddenText-sc-1yjwwa5-0 ldFJPH">, 5,01</span></span>]]></title>
+            <description><![CDATA[Приложение должно следить за соблюдением карантина, но многие пользователи жалуются на необоснованные штрафы.]]></description>
+            <link>https://www.bbc.com/russian/media-52800762</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/media-52800762</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Без работы и без родины: как живут мигранты в Москве в условиях карантина]]></title>
+            <description><![CDATA[От пандемии и мер борьбы с ней работающие в России трудовые мигранты страдают сильнее местных жителей: доход потерять проще, своего жилья нет, на помощь государства рассчитывать вряд ли приходится. Би-би-си выяснила, как выживают мигранты в Москве в условиях карантина.]]></description>
+            <link>https://www.bbc.com/russian/features-52926298</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52926298</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["Катастрофа для Арктики". Что известно о разливе топлива в Норильске]]></title>
+            <description><![CDATA[Почти неделю назад в Норильске произошел разлив дизельного топлива из резервуара дочерней компании "Норникеля". Экологи называют это крупнейшей для Арктики экологической катастрофой. Как будут ликвидировать последствия аварии и кто за нее ответит?]]></description>
+            <link>https://www.bbc.com/russian/features-52926977</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52926977</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Декларация полунамеков: кого и за что Россия готова обстреливать ядерными ракетами]]></title>
+            <description><![CDATA[В начале июня президент подписал "Основы государственной политики в области ядерного сдерживания", документ стал новой ядерной политикой России. Что в нем сказано?]]></description>
+            <link>https://www.bbc.com/russian/features-52917327</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52917327</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[В Карачаево-Черкесию отправили прокуроров из Москвы из-за жалоб медиков. Что там происходит?]]></title>
+            <description><![CDATA[В Карачаево-Черкесии медики начали жаловаться на нехватку СИЗ и невыплаты "путинских" денег за работу с ковид-больными. Скандал вышел на федеральный уровень, и в республику поехали следователи и прокуроры из Москвы. В регионе даже возбудили уголовное дело по статье о халатности из-за невыплат. Русская служба Би-би-си рассказывает, что происходит в регионе.]]></description>
+            <link>https://www.bbc.com/russian/news-52919458</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/news-52919458</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[YouTube удалил ролик с "геями", агитирующий за поправки в Конституцию]]></title>
+            <description><![CDATA[Видео-платформа YouTube удалила агитационный ролик за поправки в российскую Конституцию, в котором изображалась гей-пара. Сервис посчитал, что в нем содержатся дискриминационные высказывания.]]></description>
+            <link>https://www.bbc.com/russian/news-52922546</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/news-52922546</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Остановить "сирийский экспресс" России. Почему аналитики предлагают НАТО усилить посты в Черном море]]></title>
+            <description><![CDATA[Этой весной силы НАТО должны были провести крупнейшие учения Альянса в Европе за последние 25 лет. Маневры в итоге отменили из-за коронавируса, но специалисты влиятельного Центра анализа европейской политики призывают НАТО существенно пересмотреть свою стратегию близ границ России вплоть до размещения новых баз, ракет и кораблей в Черном море.]]></description>
+            <link>https://www.bbc.com/russian/features-52938079</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52938079</guid>
+            <pubDate>5 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Хафтар отступил. Что происходит в Ливии, и станет ли она второй Сирией?]]></title>
+            <description><![CDATA[Иностранные державы поддерживают разные стороны гражданской войны в Ливии, особый интерес к конфликту проявляют Турция и Россия. До этого они сталкивались в Сирии. Есть ли риск повторения противостояния, на этот раз в Африке?]]></description>
+            <link>https://www.bbc.com/russian/features-52884434</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52884434</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Книжная ярмарка на Красной площади: кто разрешил и почему отказываются издательства]]></title>
+            <description><![CDATA[В Москве на Красной площади 6 июня начнется книжная ярмарка, которую за три дня смогут посетить до 18 000 человек - хотя в столице действует запрет на массовые мероприятия. Как удалось получить разрешение и почему некоторые издательства отказались участвовать в нем?]]></description>
+            <link>https://www.bbc.com/russian/features-52894513</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52894513</guid>
+            <pubDate>2 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Столетняя рана. Венгры вспоминают, как стали самой разделенной нацией Европы]]></title>
+            <description><![CDATA[Ровно сто лет назад во дворце Большой Трианон во французском Версале был подписан договор, по которому Венгрия - часть проигравшей Первую мировую войну Австро-Венгрии - лишилась примерно двух третей своей территории и населения.]]></description>
+            <link>https://www.bbc.com/russian/features-52878765</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52878765</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["Акула" даркнета: как израильские киберразведчики помогают Сбербанку]]></title>
+            <description><![CDATA[Компания SixGill, исторически связанная с "подразделением 8200", занимающимся радиоэлектронной разведкой в израильской армии, оказывает Сбербанку "информационные услуги" по выявлению угроз в даркнете и Telegram. Ряд других российских банков тоже использует инструменты для мониторинга даркнета, показал опрос Би-би-си.]]></description>
+            <link>https://www.bbc.com/russian/features-52775156</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52775156</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["Не признавал ошибок". Почему мир решил, что Швеция сожалеет об отказе от локдауна?]]></title>
+            <description><![CDATA[Главный эпидемиолог Швеции Андерс Тегнелл дал короткое интервью местной радиостанции и привлек к себе внимание всего мира: журналисты интерпретировали его слова как признание ошибок, совершенных правительством в борьбе с коронавирусом.]]></description>
+            <link>https://www.bbc.com/russian/features-52915870</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52915870</guid>
+            <pubDate>4 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Война во время пандемии. Почему мир не перестал воевать в карантин?]]></title>
+            <description><![CDATA[Человечество борется с коронавирусом, поэтому все войны нужно поставить на паузу, увещевал в конце марта генсек ООН. Мир не внял его призывам и продолжил воевать, за исключением пары конфликтов. Почему?]]></description>
+            <link>https://www.bbc.com/russian/features-52886159</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52886159</guid>
+            <pubDate>3 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["Он нас убивает". Как Бразилия стала новым эпицентром коронавируса]]></title>
+            <description><![CDATA[Бразилия ставит печальные рекорды по смертности от Covid-19, при этом в городах отменяют карантин. В стране заразилось полмиллиона человек, больше 30 тысяч умерло. Но эксперты предполагают, что зараженных может быть в 15 раз больше, так как массового тестирования в стране не проводится. Хуже всего приходится самым бедным - жителям фавел и коренному населению.]]></description>
+            <link>https://www.bbc.com/russian/features-52870093</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52870093</guid>
+            <pubDate>3 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Довирусный портрет человечества. Лучшие снимки фотоконкурса]]></title>
+            <description><![CDATA[В шортлист международного конкурса фотографии "Портрет человечества" в этом году попали 200 работ, сделанных по всему миру еще до пандемии коронавируса и всеобщего карантина. Организаторы конкурса и авторы фотографий в очередной раз пытаются доказать, что, несмотря на разногласия, у людей в разных уголках планеты очень много общего.]]></description>
+            <link>https://www.bbc.com/russian/features-52907638</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/features-52907638</guid>
+            <pubDate>3 июня 2020</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[U2: концерт в Лондоне]]></title>
+            <description><![CDATA[В сопровождении оркестра и хора U2 исполняет избранные хиты с их альбома Songs of Experience в эксклюзивных симфонических аранжировках.]]></description>
+            <link>https://www.bbc.com/russian/media-52458869</link>
+            <guid isPermaLink="true">https://www.bbc.com/russian/media-52458869</guid>
+            <pubDate>28 апреля 2020</pubDate>
+        </item>
+    </channel>
+</rss>
