@@ -126,15 +126,15 @@ function showFeedTitle(type, source, lang, result, locStUpdateData) {
 	// ------------- Setting Texts ---------------- //
 	if (lang == "rus") {
 		textRssFeed="RSS Строка (англ.)";
-		textOutputRecords="Вывод Записей";
+		textOutputRecords="Вывод Строки Новостей";
 	}
 	if (lang == "eng") {
 		textRssFeed="RSS Feed";
-		textOutputRecords="Outputing Records";
+		textOutputRecords="Outputing News Feed";
 	}
 	if (lang == "lat") {
 		textRssFeed="RSS Acies (angl.)";
-		textOutputRecords="Produco Monumentum";
+		textOutputRecords="Produco Nuntium Acies";
 	}
 	// ------------- End of Setting Texts ---------------- //
 
