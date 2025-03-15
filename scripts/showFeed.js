@@ -1012,16 +1012,19 @@ function showFeed(type, source, lang) {
 	if (lang=="eng") readingText = "<b><div id='loadingDivTitle'>Reading News Feed "+feedIconText(feedURL, lang)+"</div>"+infoText+"</b>";
 	if (lang=="lat") readingText = "<b><div id='loadingDivTitle'>Lectio Nuntium Acies "+feedIconText(feedURL, lang)+"</div>"+infoText+"</b>";
 
-	var table = document.getElementById("messagetable");
-	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
-	var row = table.insertRow(-1);
-	var cell1 = row.insertCell(0);
-	cell1.className = 'text_red';
-	cell1.setAttribute("style", "text-align: center; padding-bottom: 10px;");
-	cell1.innerHTML = readingText;
-	adjustFeedScrollDiv(0);
-
-	loadFeednami(type, source, lang, feedURL, 1);
+	var preloadImg=document.createElement("img");
+	preloadImg.setAttribute('src', 'images/icons/feed/feed_icon.png');
+	preloadImg.onload = function () {
+		var table = document.getElementById("messagetable");
+		while(table.childNodes.length>0){table.removeChild(table.lastChild);}
+		var row = table.insertRow(-1);
+		var cell1 = row.insertCell(0);
+		cell1.className = 'text_red';
+		cell1.setAttribute("style", "text-align: center; padding-bottom: 10px;");
+		cell1.innerHTML = readingText;
+		adjustFeedScrollDiv(0);
+		loadFeednami(type, source, lang, feedURL, 1);
+	}
 }
 
 // ------------- End of ShowFeed ---------------- //
