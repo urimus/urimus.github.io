@@ -531,7 +531,7 @@ function generateTabs(type, lang) {
 	table.style.position = 'relative';
 	Div.style.position = 'absolute';
 	Div.style.right = '2px';
-	Div.style.bottom = '-35px';
+	Div.style.bottom = '-7px';
 
 	return tabsColor[type];
 /*
