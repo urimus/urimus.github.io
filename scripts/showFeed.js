@@ -858,7 +858,11 @@ function generateTabs(type, source, lang) {
 	table.style.position = 'relative';
 	Div.style.position = 'absolute';
 	Div.style.right = '2px';
-	Div.style.bottom = '-35px';
+	if (keys.length%5==0) {
+		Div.style.bottom = '-35px';
+	} else {
+		Div.style.bottom = '-7px';
+	}
 
 	adjustFeedScrollDiv(0);
 }
