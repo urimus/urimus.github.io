@@ -1,0 +1,9 @@
+﻿<b class="text_blue">How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></b>
+&#9679; <a href="howto_add_feed_rus.html" class = "standardb_blue" data-added="07е Окт, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Добавить Строку Новостей <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></a>
+<span style="padding-left:10px;">- <a href="howto_add_feed_rus.html#add_feed_javascript" class = "standardb_blue" data-added="16е Янв, 2021." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Используя Javascript</a></span>
+<span style="padding-left:10px;">- <a href="howto_add_feed_rus.html#add_feed_php" class = "standardb_blue" data-added="11е Окт, 2017." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Используя PHP <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></a></span>
+&#9679; <a href="howto_download_file_rus.html" class = "standardb_blue" data-added="24е Фев, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Скачать Фаил</a>
+<span style="padding-left:10px;">- <a href="howto_download_file_rus.html#download_file" class = "standardb_blue" data-added="24е Фев, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Как Скачать Фаил используя JavaScript</a></span>
+&#9679; <a href="html_editor_rus.html?pattern=*.html&i=0" class = "standardb_blue" data-added="22е Янв, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">HTML Редактор</a>
+&#9679; <a href="howto_launch_program_rus.html" class = "standardb_blue" data-added="10е Мар, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Запустить Программу</a>
+<span style="padding-left:10px;">- <a href="howto_launch_program_rus.html#launch_program" class = "standardb_blue" data-added="10е Мар, 2018." onMouseOver="showSubMenu(this, 'rus', 'contentsLink');">Как Запустить PHP Программу используя JavaScript</a></span>
