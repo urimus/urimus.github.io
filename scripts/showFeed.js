@@ -451,7 +451,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	preloadImg.onerror= function () {
 		failedAttemptsInt=parseInt(preloadImg.dataset.failedAttempts)+1;
 		preloadImg.dataset.failedAttempts=failedAttemptsInt;
-		if (failedAttemptsInt>10) {
+		if (failedAttemptsInt>=10) {
 			if (typeof entry.media.origUrl!== 'undefined' && entry.media.origUrl!=entry.media.url) {
 				Img.setAttribute('alt', textLoadingAttempt+"1");
 				Img.setAttribute('title', textLoadingAttempt+"1");
