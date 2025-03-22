@@ -358,8 +358,6 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		textCategories="Категории:&nbsp;";
 		textCreator="Создатель:&nbsp;";
 		textCreators="Создатели:&nbsp;";
-		textAuthor="Автор:&nbsp;";
-		textAuthors="Авторы:&nbsp;";
 		textMore="Ещё &#9658;"; // ►
 		textSeeAlso="Смотри Так-же:&nbsp;";
 		textLoadingAttempt="Попытка Загрузки: ";
@@ -371,8 +369,6 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		textCategories="Categories:&nbsp;";
 		textCreator="Creator:&nbsp;";
 		textCreators="Creators:&nbsp;";
-		textAuthor="Author:&nbsp;";
-		textAuthors="Authors:&nbsp;";
 		textMore="More &#9658;"; // ►
 		textSeeAlso="See Also:&nbsp;";
 		textLoadingAttempt="Loading Attempt: ";
@@ -500,18 +496,6 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		a.innerText = entry.source.title;
 		Div.appendChild(a);
 		Div.innerHTML="<P><b>"+textSource+"</b>"+Div.innerHTML;
-		contentsDiv.appendChild(Div);
-	}
-	if (typeof entry.author!=="undefined" && entry.author.length>0 && typeof entry.author[0]!=="undefined") {
-		var Div = document.createElement('div');
-		Div.setAttribute('class', "text_red");
-		var outHTML="";
-		if (entry.author.length>1) {
-			outHTML="<P><b>"+textAuthors+"</b>"+entry.author.join(", ");
-		} else {
-			outHTML="<P><b>"+textAuthor+"</b>"+entry.author[0];
-		}
-		Div.innerHTML=outHTML;
 		contentsDiv.appendChild(Div);
 	}
 	if (typeof entry.creator!=="undefined" && entry.creator.length>0 && typeof entry.creator[0]!=="undefined") {
@@ -1297,12 +1281,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 						result.entries[i].category[j]=locStUpdateData[entry.link].category[j];
 					}
 				}
-				if (typeof locStUpdateData[entry.link].author !== "undefined") {
-					result.entries[i].author=[];
-					for (var j=0; j<locStUpdateData[entry.link].author.length; j++) {
-						result.entries[i].author[j]=locStUpdateData[entry.link].author[j];
-					}
-				}
 				if (typeof locStUpdateData[entry.link].seeAlso !== "undefined") {
 					result.entries[i].seeAlso=[];
 					for (var j=0; j<locStUpdateData[entry.link].seeAlso.length; j++) {
@@ -1649,7 +1627,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 				description="";
 				mediaURL="";
 				categories="";
-				authors="";
 				seeAlso="";
 				contentsPos=data.indexOf("CONTENT_DATA");
 				if (contentsPos!=-1) {
@@ -1666,8 +1643,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 
 					properties=doc.head.querySelectorAll('meta[property="article:section"]');
 					if (properties != null) categories=properties;
-					properties=doc.head.querySelectorAll('meta[name="author"]');
-					if (properties!= null) authors=properties;
 					properties=doc.head.querySelectorAll('meta[property="og:see_also"]');
 					if (properties!= null) seeAlso=properties;
 				} else {
@@ -1700,14 +1675,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 						for (var j=0; j<categories.length; j++) {
 							result.entries[i].category=result.entries[i].category.concat(categories[j].content.split(","));
 							locStUpdateData[entry_link].category=locStUpdateData[entry_link].category.concat(categories[j].content.split(","));
-						}
-					}
-					if (authors!="") {
-						result.entries[i].author=[];
-						locStUpdateData[entry_link].author=[];
-						for (var j=0; j<authors.length; j++) {
-							result.entries[i].author[j]=authors[j].content;
-							locStUpdateData[entry_link].author[j]=authors[j].content;
 						}
 					}
 					if (seeAlso!="") {
