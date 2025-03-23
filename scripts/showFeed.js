@@ -418,6 +418,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 
 	var preloadImg=document.createElement("img");
 	preloadImg.dataset.failedAttempts=0;
+	preloadImg.dataset.isOrigUrl=0;
 	if (source=="nasa" || source=="phys.org") {
 		preloadImg.setAttribute('src', entry.media.url+"?w=450");
 	} else {
@@ -446,13 +447,15 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	}
 	preloadImg.onerror= function () {
 		failedAttemptsInt=parseInt(preloadImg.dataset.failedAttempts)+1;
+		isOrigUrl=parseInt(preloadImg.dataset.isOrigUrl);
 		preloadImg.dataset.failedAttempts=failedAttemptsInt;
 		if (failedAttemptsInt>=10) {
-			if (typeof entry.media.origUrl!== 'undefined' && entry.media.origUrl!=entry.media.url) {
+			if (typeof entry.media.origUrl!== 'undefined' && entry.media.origUrl!=entry.media.url && isOrigUrl==0) {
 				Img.setAttribute('alt', textLoadingAttempt+"1");
 				Img.setAttribute('title', textLoadingAttempt+"1");
 				Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, 0.0);');
 				preloadImg.dataset.failedAttempts=0;
+				preloadImg.dataset.isOrigUrl=1;
 				preloadImg.src=entry.media.origUrl;
 			} else {
 				Img.setAttribute('alt', '');
