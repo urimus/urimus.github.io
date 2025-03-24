@@ -476,7 +476,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 			} else {
 				Img.setAttribute('alt', textLoadingAttempt+(failedAttemptsInt+1));
 				Img.setAttribute('title', textLoadingAttempt+(failedAttemptsInt+1));
-				Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, '+failedAttemptsInt/10.0+');');
+				Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, '+failedAttemptsInt/9.0+');');
 				preloadImg.src = preloadImg.src;
 			}
 		}
