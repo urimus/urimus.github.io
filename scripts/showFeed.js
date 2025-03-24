@@ -1,5 +1,5 @@
 ﻿// ------------- Global Variables ---------------- //
-timeoutVal=2000; // 2s
+timeoutVal=3000; // 3s
 loadedCount=0;
 // ------------- End of Global Variables ---------------- //
 
