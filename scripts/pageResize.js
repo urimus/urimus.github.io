@@ -1,4 +1,16 @@
-﻿function dispatchOrientationChange() {
+﻿function checkIfHideSubMenu(event) {
+	target=getTarget(event);
+	if (typeof target !== "undefined" && (target.tagName=="BODY" || target.id=="imgBg" || target.id=="imgBgStar")) {
+		hideSubMenu();
+	}
+}
+
+function getTarget(event) {
+    var el = event.target || event.srcElement;
+    return el.nodeType == 1? el : el.parentNode;
+}
+
+function dispatchOrientationChange() {
 	if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
 		var evt = document.createEvent('UIEvents');
 		evt.initUIEvent('change', true, false, screen.orientation, 0);
