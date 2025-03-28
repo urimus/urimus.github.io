@@ -1634,7 +1634,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					if (jsonDATA.BODY=="\n") {
 						description="";
 					} else {
-						description=jsonDATA.BODY.replaceAll("\n", " <br>&emsp;");
+						description="&emsp;"+jsonDATA.BODY.replaceAll("\n", " <br>&emsp;");
 					}
 
 					properties=doc.head.querySelectorAll('meta[property="article:section"]');
