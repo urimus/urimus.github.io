@@ -276,13 +276,13 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 	extensionA.onclick  = function () { 
 		// ▼- &#9660;   ▲- &#9650;
 		if (this.innerHTML=="[▼]") { // expand
-			summarySpan.innerHTML="&emsp;"+summaryDiv.dataset.summary;
+			summarySpan.innerHTML=summaryDiv.dataset.summary;
 			this.setAttribute('title', textCollapse);
 			this.innerHTML="[&#9650;]";
 		} else if (this.innerHTML=="[▲]") { // collapse
 			wordsCount=summaryDiv.dataset.wordsCount;
 			summary_words=summaryDiv.dataset.summary.split(" ");
-			summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, wordsCount);
+			summarySpan.innerHTML=formatSummary(summary_words, wordsCount);
 			this.setAttribute('title', textExpand);
 			this.innerHTML="[&#9660;]";
 		}
@@ -295,7 +295,7 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 	// show linesToShow lines of summary
 //	currentLineTop=Pointer.offsetTop;
 	for (k=0; k<summary_words.length; k++) {
-		summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, k+1);
+		summarySpan.innerHTML=formatSummary(summary_words, k+1);
 		if (k==0) currentLineTop=Pointer.offsetTop;
 		if (Pointer.offsetTop!=currentLineTop) {
 			if (Math.abs(Pointer.offsetTop-currentLineTop)<2) {
@@ -313,7 +313,7 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 //				currentLineTop=extensionA.offsetTop;
 				for (k2=0; k2<summary_words.length; k2++) {
 					wordsCount++;
-					summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, wordsCount);
+					summarySpan.innerHTML=formatSummary(summary_words, wordsCount);
 					if (k2==0) currentLineTop=extensionA.offsetTop;
 					if (extensionA.offsetTop!=currentLineTop) {
 						if (Math.abs(extensionA.offsetTop-currentLineTop)<2) {
@@ -323,7 +323,7 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 						if (linesCount==linesToShow) {  // remove last word
 							wordsCount--;
 							summaryDiv.dataset.wordsCount=wordsCount;
-							summarySpan.innerHTML="&emsp;"+formatSummary(summary_words, wordsCount);
+							summarySpan.innerHTML=formatSummary(summary_words, wordsCount);
 							break;
 						} else {
 							currentLineTop=extensionA.offsetTop;
@@ -340,7 +340,7 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 	}
 	if (k==summary_words.length) {
 		summaryDiv.removeChild(Pointer);
-		summarySpan.innerHTML="&emsp;"+summaryDiv.dataset.summary;
+		summarySpan.innerHTML=summaryDiv.dataset.summary;
 	}
 }
 
@@ -485,7 +485,6 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	if (typeof entry.summary!== "undefined" && entry.summary!=null && entry.summary!="") {
 		var summaryDiv = document.createElement('div');
 		summaryDiv.setAttribute('class', "text_red");
-		summaryDiv.innerHTML="&emsp;"+entry.summary;
 		contentsDiv.appendChild(summaryDiv);
 		formatSummaryDiv(lang, summaryDiv, entry);
 	}
@@ -498,31 +497,27 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		a.setAttribute('target', '_blank');
 		a.innerText = entry.source.title;
 		Div.appendChild(a);
-		Div.innerHTML="<P><b>"+textSource+"</b>"+Div.innerHTML;
+		Div.innerHTML="<b>"+textSource+"</b>"+Div.innerHTML;
 		contentsDiv.appendChild(Div);
 	}
 	if (typeof entry.creator!=="undefined" && entry.creator.length>0 && typeof entry.creator[0]!=="undefined") {
 		var Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
-		var outHTML="";
 		if (entry.creator.length>1) {
-			outHTML="<P><b>"+textCreators+"</b>"+entry.creator.join(", ");
+			Div.innerHTML="<b>"+textCreators+"</b>"+entry.creator.join(", ");
 		} else {
-			outHTML="<P><b>"+textCreator+"</b>"+entry.creator[0];
+			Div.innerHTML="<b>"+textCreator+"</b>"+entry.creator[0];
 		}
-		Div.innerHTML=outHTML;
 		contentsDiv.appendChild(Div);
 	}
 	if (typeof entry.category!=="undefined" && entry.category.length>0 && typeof entry.category[0]!=="undefined") {
 		var Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
-		var outHTML="";
 		if (entry.category.length>1) {
-			outHTML="<P><b>"+textCategories+"</b>"+entry.category.join(", ");
+			Div.innerHTML="<b>"+textCategories+"</b>"+entry.category.join(", ");
 		} else {
-			outHTML="<P><b>"+textCategory+"</b>"+entry.category[0];
+			Div.innerHTML="<b>"+textCategory+"</b>"+entry.category[0];
 		}
-		Div.innerHTML=outHTML;
 		contentsDiv.appendChild(Div);
 	}
 
@@ -534,7 +529,6 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	a.setAttribute('target', '_blank');
 	a.innerHTML = textMore;
 	Div.appendChild(a);
-	Div.innerHTML="<P>"+Div.innerHTML;
 	contentsDiv.appendChild(Div);
 
 	if (typeof entry.seeAlso!=="undefined" && entry.seeAlso.length>0 && typeof entry.seeAlso[0]!=="undefined") {
@@ -550,7 +544,6 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 			a.innerHTML = "&#9658;"; // ►
 			Div.appendChild(a);
 		}
-		Div.innerHTML="<P>"+Div.innerHTML;
 		contentsDiv.appendChild(Div);
 	}
 				
