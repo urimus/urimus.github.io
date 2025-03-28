@@ -1634,9 +1634,12 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					if (jsonDATA.BODY=="\n") {
 						description="";
 					} else {
-						description="&emsp;"+jsonDATA.BODY.replaceAll("\n", " <br>&emsp;");
+						descriptions=jsonDATA.BODY.split("\n");
+						for (var j=0; j<descriptions.length; j++) {
+							descriptions[j]=descriptions[j].trim();
+						}
+						description="&emsp;"+descriptions.join(" <br>&emsp;");
 					}
-
 					properties=doc.head.querySelectorAll('meta[property="article:section"]');
 					if (properties != null) categories=properties;
 					properties=doc.head.querySelectorAll('meta[property="og:see_also"]');
