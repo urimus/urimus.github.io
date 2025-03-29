@@ -73,13 +73,13 @@ function processPageResize(isLoad, orientationChanged){
 			scrollForeColor="#b0b0b0";
 			scrollBackColor="#e2e2e2";
 		} else if (pathname.substr(0, 6)=="/books" || pathname.substr(0, 6)=="/fotos" || pathname.substr(0, 9)=="/anekdots" || pathname.substr(0, 10)=="/heffalump" || pathname.substr(0, 5)=="/news") {
-			scrollForeColor="#CE3535";
+			scrollForeColor="#de8e8e";
 			scrollBackColor="#F9D4D4";
 		} else if (pathname.substr(0, 11)=="/substances" || pathname.substr(0, 9)=="/software") {
-			scrollForeColor="#A9A9A9";
+			scrollForeColor="#dbd9d9";
 			scrollBackColor="#ffffff";
 		} else if (pathname.substr(0, 9)=="/satanism" || pathname.substr(0, 15)=="/falsifiability" || pathname.substr(0, 11)=="/psychology" || pathname.substr(0, 10)=="/countries" || pathname.substr(0, 16)=="/totalitarianism" || pathname.substr(0, 14)=="/personalities") {
-			scrollForeColor="#008040";
+			scrollForeColor="#68c496";
 			scrollBackColor="#DAF28E";
 		} else {
 			scrollForeColor="#84bde4";
