@@ -67,10 +67,10 @@ function processPageResize(isLoad, orientationChanged){
 	if (isLoad==1) {
 		pathname=window.location.pathname;
 		if (pathname.substr(0, 6)=="/index" || pathname.substr(0, 6)=="/about" || pathname.substr(0, 6)=="/howto" || pathname.substr(0, 5)=="/html") {
-			scrollForeColor="#448CCB";
+			scrollForeColor="#84bde4";
 			scrollBackColor="#d0e7f7";
 		} else if (pathname.substr(0, 6)=="/music" || pathname.substr(0, 7)=="/movies" || pathname.substr(0, 7)=="/series" || pathname.substr(0, 6)=="/games" || pathname.substr(0, 4)=="/amv" || pathname.substr(0, 5)=="/junk" || pathname.substr(0, 6)=="/stuff") {
-			scrollForeColor="#707070";
+			scrollForeColor="#b0b0b0";
 			scrollBackColor="#e2e2e2";
 		} else if (pathname.substr(0, 6)=="/books" || pathname.substr(0, 6)=="/fotos" || pathname.substr(0, 9)=="/anekdots" || pathname.substr(0, 10)=="/heffalump" || pathname.substr(0, 5)=="/news") {
 			scrollForeColor="#CE3535";
@@ -82,7 +82,7 @@ function processPageResize(isLoad, orientationChanged){
 			scrollForeColor="#008040";
 			scrollBackColor="#DAF28E";
 		} else {
-			scrollForeColor="#448CCB";
+			scrollForeColor="#84bde4";
 			scrollBackColor="#d0e7f7";
 		}
 		root = document.querySelector(":root");
