@@ -391,7 +391,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		var cell1=tableMainRow.insertCell(i);
 	}
 	var contentsDiv = document.createElement('div');
-	contentsDiv.setAttribute('style', "display:inline-block; width:"+entry.media.width+"px; padding:10px; border: 1px solid #CE3535;");	
+	contentsDiv.setAttribute('style', "display:inline-block; width:"+entry.media.width+"px; padding:10px; border: 1px solid #de8e8e;");	
 	cell1.appendChild(contentsDiv);
 
 	if (typeof entry.error!== "undefined" && entry.error!=null) {
@@ -433,7 +433,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		}
 		if (preloadImg.naturalWidth<450) { // preloadImg.width
 			Img.width=preloadImg.naturalWidth;
-			contentsDiv.setAttribute('style', "display:inline-block; width:"+Img.width+"px; padding:10px; border: 1px solid #CE3535;");
+			contentsDiv.setAttribute('style', "display:inline-block; width:"+Img.width+"px; padding:10px; border: 1px solid #de8e8e;");
 			if (source == "nasa"|| source == "yahoo" || source == "phys.org" || source == "cbs"|| source == "yonhap") {
 				if (typeof entry.summary!== "undefined" && entry.summary!=null && entry.summary!="") {
 					formatSummaryDiv(lang, summaryDiv, entry);
