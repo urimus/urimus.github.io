@@ -7,7 +7,7 @@ function feedIconText(feedURL, lang) {
 	if (lang == "rus") textRssFeed="RSS Строка (англ.)";
 	if (lang == "eng") textRssFeed="RSS Feed";
 	if (lang == "lat") textRssFeed="RSS Acies (angl.)";
-	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' title='"+textRssFeed+"' class='thumbnail_image_red_both'  valign='middle' onload='javascript:adjustFeedScrollDiv(0);'></a>";
+	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' title='"+textRssFeed+"' class='thumbnail_image_red_both'  valign='middle' onload='javascript:adjustFeedScrollDiv();'></a>";
 }
 
 // ------------- Initial ---------------- //
@@ -104,15 +104,13 @@ function showRecordsNum(type, recordsNum, lang, newCaption) {
 // ------------- End of Initial ---------------- //
 
 
-function adjustFeedScrollDiv(adj) {
-	if (typeof adj === 'undefined') adj=1;
+function adjustFeedScrollDiv() {
 	scrollDiv = document.getElementById('scrollDiv');
 	scrollDivHeight=calcScrollDivHeightMax();
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 	feedTitleHeight=parseInt($( "#titletable" ).css( "height" ));
 	feedMessageHeight=parseInt($( "#messagetable" ).css( "height" ));
 	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px;width: 711px; overflow:auto;");
-	if (adj==1) adjustScrollDiv();
 }
 
 // ------------- Show Feed ---------------- //
@@ -171,11 +169,11 @@ function showFeedTitle(type, source, lang, result, locStUpdateData) {
 
 		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+textRssFeed+"&nbsp;"+feedIconText(result.feedXML, lang);
 		cell1.innerHTML=cell1.innerHTML+",&nbsp;<span id='loadedCount'>0/</span>"+totalEntries+"&nbsp;"+getRecordsText(lang, totalEntries)+"<span id='failedCountTitle'></span>.";
-		adjustFeedScrollDiv(0);
+		adjustFeedScrollDiv();
 		showFeedData(type, source, lang, result, locStUpdateData);
 	}
 
-	adjustFeedScrollDiv(0);
+	adjustFeedScrollDiv();
 }
 
 
@@ -195,7 +193,7 @@ function showFeedData(type, source, lang, result, locStUpdateData) {
 			document.getElementById("processedDiv").setAttribute("style", "display:none;");
 			var table2 = document.getElementById("messagetable");
 			while(table2.childNodes.length>0){table2.removeChild(table2.lastChild);}
-			adjustFeedScrollDiv(0);
+			adjustFeedScrollDiv();
 			for (i=0; i<totalEntries;  i++) {
 				showEntry(type, source, lang, items[i], totalEntries, i, 1);
 			}
@@ -210,7 +208,7 @@ function showFeedData(type, source, lang, result, locStUpdateData) {
 			if (lang=="lat") textUpdateRecords="Updating Monumentum";
 			document.getElementById("loadingDivTitle").innerHTML = textUpdateRecords;
 			document.getElementById("processedDiv").setAttribute("style", "display:block;");
-			adjustFeedScrollDiv(0);
+			adjustFeedScrollDiv();
 
 			if (source=="cbs" || (source=="nasa" && type!="image")) {
 				updateImages(0, source, type, result, locStUpdateData, lang);
@@ -844,7 +842,7 @@ function generateTabs(type, source, lang) {
 		Div.style.bottom = '-9px';
 	}
 
-	adjustFeedScrollDiv(0);
+	adjustFeedScrollDiv();
 }
 
 function showInformation(lang) {
@@ -1017,7 +1015,7 @@ function showFeed(type, source, lang) {
 		cell1.className = 'text_red';
 		cell1.setAttribute("style", "text-align: center; padding-bottom: 10px;");
 		cell1.innerHTML = readingText;
-		adjustFeedScrollDiv(0);
+		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL, 1);
 	}
 }
@@ -1195,9 +1193,13 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			result.entries[i].summary=entry.summary;
 		}
 		if (source == "yonhap") {
-			result.entries[i].media.url="https://r.yna.co.kr/global/home/v01/img/yonhapnews_logo_1200x800_en01.jpg"; 
-			if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-			if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+			if (typeof entry.enclosures === "undefined" || typeof entry.enclosures[0] === "undefined" || entry.enclosures[0].url==null) {
+				result.entries[i].media.url="https://r.yna.co.kr/global/home/v01/img/yonhapnews_logo_1200x800_en01.jpg"; 
+				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+			} else {
+				result.entries[i].media.url=entry.enclosures[0].url;
+			}
 			result.entries[i].media.width=450;
 			if (entry.description!="(END)") {
 				result.entries[i].summary=entry.description;
@@ -1326,7 +1328,7 @@ function removeUnusedUpdates(type2, source, type, result, locStUpdateData, lang)
 	document.getElementById("processedDiv").setAttribute("style", "display:none;");
 	var table2 = document.getElementById("messagetable");
 	while(table2.childNodes.length>0){table2.removeChild(table2.lastChild);}
-	adjustFeedScrollDiv(0);
+	adjustFeedScrollDiv();
 }
 
 
@@ -1522,11 +1524,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (lang=="rus") textUpdateSkipped="Обновление Отменено.";
 
 	if (skipUpdates==1) {
-		if (source=="yonhap") {
-			result.entries[i].media.comment=textUpdateSkipped;
-			result.entries[i].media.origUrl=result.entries[i].media.url;
-			result.entries[i].media.url="images/icons/error/skipped.jpg";
-		}
 		result.entries[i].error=textUpdateSkipped;
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 		return;
@@ -1549,11 +1546,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	a.innerText = textSkip;
 	a.onclick = function () {
 		skipUpdates=1;
-		if (source=="yonhap") {
-			result.entries[i].media.comment=textUpdateSkipped;
-			result.entries[i].media.origUrl=result.entries[i].media.url;
-			result.entries[i].media.url="images/icons/error/skipped.jpg";
-		}
 		result.entries[i].error=textUpdateSkipped;
 		xmlhttp.abort();
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);

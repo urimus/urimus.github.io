@@ -197,7 +197,6 @@ function showErrorImage(lang, type) {
 	ImgE.onload  = function () { 
 		scrollDivHeight=calcScrollDivHeightMax();
 		document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-		adjustScrollDiv();
 	}
 	cell1.appendChild(ImgE);
 }
@@ -295,7 +294,6 @@ function updateAboutMeImage(lang, random) {
 			loadingDivTitle.innerHTML = textError;
 			scrollDivHeight=calcScrollDivHeightMax();
 			document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-			adjustScrollDiv();
 		}
 		Img.onload  = function () { 
 
@@ -350,7 +348,6 @@ function updateAboutMeImage(lang, random) {
 					}
 					scrollDivHeight=calcScrollDivHeightMax();
 					document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-					adjustScrollDiv();
 				}
 				extensionA.innerHTML = "[&#9660;]";
 
@@ -412,8 +409,6 @@ function updateAboutMeImage(lang, random) {
 
 			scrollDivHeight=calcScrollDivHeightMax();
 			document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-			adjustScrollDiv();
-
 		}
 	});
 }

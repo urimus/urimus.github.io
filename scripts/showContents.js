@@ -577,13 +577,11 @@ function showInformation(lang) {
 
 
 
-function adjustContentsScrollDiv(adj) {
-	if (typeof adj === 'undefined') adj=1;
+function adjustContentsScrollDiv() {
 	scrollDiv = document.getElementById('scrollDiv');
 	scrollDivHeight=calcScrollDivHeightMax();
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
-	if (adj==1) adjustScrollDiv();
 }
 
 function showContents(type, sortby, lang) {

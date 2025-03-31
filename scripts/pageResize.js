@@ -104,22 +104,20 @@ function processPageResize(isLoad, orientationChanged){
 		if (isLoad==0) {  // not isLoad
 			if (window.location.pathname.substr(0, 5)=="/news") {
 				feedTable=document.getElementById('feedtable');
-				if (typeof feedTable !== 'undefined' && feedTable != null && feedTable.innerHTML!="") adjustFeedScrollDiv(0);
+				if (typeof feedTable !== 'undefined' && feedTable != null && feedTable.innerHTML!="") adjustFeedScrollDiv();
 			} else if (window.location.pathname.substr(0, 12)=="/html_editor") {
 				textArea=document.getElementById('textarea_area');
 				if (typeof textArea !== 'undefined' && textArea != null && textArea.value!="") adjustTextareaAndEncodings();
 			} else if (window.location.pathname.substr(0, 9)=="/about_me") {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-				adjustScrollDiv();
 			} else if (window.location.pathname.substr(0, 7)=="/index_") {
 				contentsTable=document.getElementById('contentstable');
-				if (typeof contentsTable !== 'undefined' && contentsTable != null && contentsTable.innerHTML!="") adjustContentsScrollDiv(1);
+				if (typeof contentsTable !== 'undefined' && contentsTable != null && contentsTable.innerHTML!="") adjustContentsScrollDiv();
 			} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			} else {
 				if (typeof galleria2==='undefined') {
 					scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-					adjustScrollDiv();
 				}
 			}
 		} else { // isLoad
@@ -128,16 +126,7 @@ function processPageResize(isLoad, orientationChanged){
 			||  window.location.pathname.substr(0, 7)=="/index_"
 			||  window.location.pathname.substr(0, 9)=="/about_me"
 			|| window.location.pathname.substr(0, 5)=="/news")) {
-				if (typeof scrollDiv !== 'undefined' && scrollDiv != null) {
-					scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-				}
-				if (window.location.pathname!="/" && window.location.pathname!="/index.html") {
-					if (typeof galleria2!=='undefined') {
-						Galleria.ready(function() {adjustScrollDiv();});
-					} else {
-						adjustScrollDiv();
-					}
-				}
+				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			}
 		} 
 	}
@@ -181,36 +170,6 @@ function processPageResize(isLoad, orientationChanged){
 	}
 }
 
-
-function adjustScrollDiv() {
-	var scrollDiv= document.getElementById('scrollDiv');
-
-	var hasVerticalScrollbarInit = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-// -------------- Automatic Contents Scroll Div Adjustment  ------------- //
-	scrollDivHeightInit=parseInt($( "#scrollDiv" ).css( "height" ));
-	if (!hasVerticalScrollbarInit) {
-		hasVerticalScrollbar=0;
-		// 1. getting scrollbar
-		while (!hasVerticalScrollbar) {
-			var scrollDivHeightBeforeScrollBar=parseInt($( "#scrollDiv" ).css( "height" ));
-			$( "#scrollDiv" ).css( "height", (parseInt($( "#scrollDiv" ).css( "height" )) - 5) + "px");
-			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-		}
-		// 2. setting value init, setting value before scrollbar appear and getting scrollbar with step 1
-		$( "#scrollDiv" ).css( "height", scrollDivHeightBeforeScrollBar+ "px");
-
-		hasVerticalScrollbar=0;
-		while (!hasVerticalScrollbar) {
-			var scrollDivHeightBeforeScrollBar=parseInt($( "#scrollDiv" ).css( "height" ));
-			$( "#scrollDiv" ).css( "height", (parseInt($( "#scrollDiv" ).css( "height" )) - 1) + "px");
-			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-		}
-		// 3. setting valueinit, setting value before scrollbar appear
-//		$( "#scrollDiv" ).animate({height: scrollDivHeightInit + "px"}); // animate
-		$( "#scrollDiv" ).css({height: scrollDivHeightBeforeScrollBar+ "px"});
-	}
-// -------------- End of Contents Scroll Div Adjustment  ------------- //
-}
 
 function flashText() {
 	if (document.getElementsByClassName("blinking_text")) {
