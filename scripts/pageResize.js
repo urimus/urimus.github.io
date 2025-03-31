@@ -124,7 +124,6 @@ function processPageResize(isLoad, orientationChanged){
 			// for regular htmls only (not html_editor, not index and not news)
 			if (!(window.location.pathname.substr(0, 12)=="/html_editor"
 			||  window.location.pathname.substr(0, 7)=="/index_"
-			||  window.location.pathname.substr(0, 9)=="/about_me"
 			|| window.location.pathname.substr(0, 5)=="/news")) {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			}
