@@ -116,9 +116,7 @@ function processPageResize(isLoad, orientationChanged){
 			} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			} else {
-				if (typeof galleria2==='undefined') {
-					scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-				}
+				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			}
 		} else { // isLoad
 			// for regular htmls only (not html_editor, not index and not news)
