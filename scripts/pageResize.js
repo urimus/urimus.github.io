@@ -108,15 +108,13 @@ function processPageResize(isLoad, orientationChanged){
 			} else if (window.location.pathname.substr(0, 12)=="/html_editor") {
 				textArea=document.getElementById('textarea_area');
 				if (typeof textArea !== 'undefined' && textArea != null && textArea.value!="") adjustTextareaAndEncodings();
-			} else if (window.location.pathname.substr(0, 9)=="/about_me") {
-				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			} else if (window.location.pathname.substr(0, 7)=="/index_") {
 				contentsTable=document.getElementById('contentstable');
 				if (typeof contentsTable !== 'undefined' && contentsTable != null && contentsTable.innerHTML!="") adjustContentsScrollDiv();
-			} else if (window.location.pathname=="/" || window.location.pathname=="/index.html") {
-				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 			} else {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+				var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+				if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; overflow:auto;");
 			}
 		} else { // isLoad
 			// for regular htmls only (not html_editor, not index and not news)
@@ -124,6 +122,8 @@ function processPageResize(isLoad, orientationChanged){
 			||  window.location.pathname.substr(0, 7)=="/index_"
 			|| window.location.pathname.substr(0, 5)=="/news")) {
 				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+				var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+				if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; overflow:auto;");
 			}
 		} 
 	}

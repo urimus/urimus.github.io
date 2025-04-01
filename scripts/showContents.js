@@ -582,6 +582,8 @@ function adjustContentsScrollDiv() {
 	scrollDivHeight=calcScrollDivHeightMax();
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
+	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+	if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; overflow:auto;");
 }
 
 function showContents(type, sortby, lang) {

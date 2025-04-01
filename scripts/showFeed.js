@@ -110,7 +110,9 @@ function adjustFeedScrollDiv() {
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 	feedTitleHeight=parseInt($( "#titletable" ).css( "height" ));
 	feedMessageHeight=parseInt($( "#messagetable" ).css( "height" ));
-	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px;width: 711px; overflow:auto;");
+	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
+	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+	if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; width: 711px; overflow:auto;");
 }
 
 // ------------- Show Feed ---------------- //
@@ -442,6 +444,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		Img.setAttribute('title', entry.media.comment);
 		Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, 0.0);');
 		Img.src = preloadImg.src;
+		adjustFeedScrollDiv();
 	}
 	preloadImg.onerror= function () {
 		failedAttemptsInt=parseInt(preloadImg.dataset.failedAttempts)+1;
@@ -459,18 +462,15 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				Img.setAttribute('alt', '');
 				Img.setAttribute('title', '');
 				Img.src = "images/icons/error/error.jpg";
+				adjustFeedScrollDiv();
 			}
 		} else {
 			if (source == "phys.org") {
 				slashPos= preloadImg.src.lastIndexOf("/");
-				if (slashPos!=-1) {
-					d = new Date();
-					year = d.getFullYear();
-					filename=preloadImg.src.substr(slashPos+1);
-					preloadImg.src="https://scx2.b-cdn.net/gfx/news/"+(year-failedAttemptsInt)+"/"+filename;
-				} else {
-					preloadImg.src = preloadImg.src;
-				}
+				d = new Date();
+				year = d.getFullYear();
+				filename=preloadImg.src.substr(slashPos+1);
+				preloadImg.src="https://scx2.b-cdn.net/gfx/news/"+(year-failedAttemptsInt)+"/"+filename;
 			} else {
 				Img.setAttribute('alt', textLoadingAttempt+(failedAttemptsInt+1));
 				Img.setAttribute('title', textLoadingAttempt+(failedAttemptsInt+1));
@@ -550,6 +550,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	date.setAttribute("style", "text-align:right; padding-right:10px;");
 	date.innerHTML = formatDate(entry.date_ms, lang);
 	contentsDiv.appendChild(date);
+	adjustFeedScrollDiv();
 
 }
 
