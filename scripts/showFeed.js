@@ -112,7 +112,12 @@ function adjustFeedScrollDiv() {
 	feedMessageHeight=parseInt($( "#messagetable" ).css( "height" ));
 	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
 	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-	if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; width: 711px; overflow:auto;");
+	if (!hasVerticalScrollBar) {
+		scrollDiv.setAttribute("style", "height:100%; width: 711px; overflow:auto;");
+		if ((parseInt($( "#scrollDiv" ).css( "height" ))+tabsHeight+feedTitleHeight+feedMessageHeight+8)<menuHeight) {
+			scrollDiv.setAttribute("style", "height:"+(menuHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
+		}
+	}
 }
 
 // ------------- Show Feed ---------------- //

@@ -583,7 +583,12 @@ function adjustContentsScrollDiv() {
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
 	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-	if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; overflow:auto;");
+	if (!hasVerticalScrollBar) {
+		scrollDiv.setAttribute("style", "height:100%; overflow:auto;");
+		if ((parseInt($( "#scrollDiv" ).css( "height" ))+tabsHeight+8)<menuHeight) {
+			scrollDiv.setAttribute("style", "height:"+(menuHeight-tabsHeight-8)+"px; overflow:auto;");
+		}
+	}
 }
 
 function showContents(type, sortby, lang) {
