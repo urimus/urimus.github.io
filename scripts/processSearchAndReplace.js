@@ -2546,80 +2546,12 @@ function processSearchAndReplace(lang) {
 function adjustTextareaAndEncodings() {
 	scrollDiv=document.getElementById('scrollDiv');
 	encodingDiv=document.getElementById("encoding_div");
+	textArea=document.getElementById("textarea_area");
 	if (scrollDiv === null || encodingDiv === null || scrollDiv.offsetParent === null || encodingDiv.offsetParent === null) return;
-	$("#encoding_div" ).css("width", "500px");
-// -------------- Automatic ScrollBar for Encodings Adjustment  Step 1------------- // - Adding Scroll Bar to Horizontal Scroll Div
-	var hasHorizontalScrollbarInit = scrollDiv.scrollWidth > scrollDiv.clientWidth;
-	if (!hasHorizontalScrollbarInit)  {
-		hasHorizontalScrollbar=0;
-		while (!hasHorizontalScrollbar) {
-			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) + 5) + "px");
-			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
-		}
-	}
-// -------------- End of Automatic ScrollBar for Encodings Adjustment  Step 1 ------------- //
-scrollBarWidth=scrollDiv.offsetHeight - scrollDiv.clientHeight;
+	encodingDiv.style.setProperty("width", "445px"); 
+	textArea.style.setProperty("height", "530px");
 
-// -------------- Automatic Text Area Height To Fit Screen  ------------- //
-	var scrollDiv= document.getElementById('scrollDiv');
-	var hasVerticalScrollbarInit = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-	if (hasVerticalScrollbarInit) {
-		hasVerticalScrollbar=1;
-		while (hasVerticalScrollbar) {
-			$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) - 5) + "px");
-			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-		}
-		for(i=0; i<5;i++) {
-			$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) + 1) + "px");
-			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-			if (hasVerticalScrollbar) {$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) - 1) + "px"); break;}
-		}
-	} else {
-		hasVerticalScrollbar=0;
-		while (!hasVerticalScrollbar) {
-			$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) + 5) + "px");
-			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-		}
-		for(i=0; i<5;i++) {
-			$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) - 1) + "px");
-			hasVerticalScrollbar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-			if (!hasVerticalScrollbar) {break;}
-		}
-	}
-// -------------- End of Automatic Text Area Height To Fit Screen  ------------- //
-
-// -------------- Automatic ScrollBar for Encodings Adjustment  Step 2------------- //  Again Full version
-	var hasHorizontalScrollbarInit = scrollDiv.scrollWidth > scrollDiv.clientWidth;
-	if (hasHorizontalScrollbarInit) {
-		hasHorizontalScrollbar=1;
-		while (hasHorizontalScrollbar) {
-			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) - 5) + "px");
-			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
-		}
-		for(i=0; i<5;i++) {
-			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) + 1) + "px");
-			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
-			if (hasHorizontalScrollbar) {$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) - 1) + "px"); break;}
-		}
-	} else {
-		hasHorizontalScrollbar=0;
-		while (!hasHorizontalScrollbar) {
-			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) + 5) + "px");
-			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
-		}
-		for(i=0; i<5;i++) {
-			$( "#encoding_div" ).css( "width", (parseInt($( "#encoding_div" ).css( "width" )) - 1) + "px");
-			hasHorizontalScrollbar = scrollDiv.scrollWidth > scrollDiv.clientWidth;
-			if (!hasHorizontalScrollbar) {break;}
-		}
-	}
-// -------------- End of Automatic ScrollBar for Encodings Adjustment  Step 2 ------------- //
-
-// -------------- Manual ScrollBar for TextArea Height Adjustment ------------- //
-$( "#textarea_area" ).css( "height", (parseInt($( "#textarea_area" ).css( "height" )) + scrollBarWidth) + "px");
-// -------------- End of Manual ScrollBar for TextArea Height Adjustment ------------- //
-
-	// set correct scoll position too
+	// set correct scoll position
 	// selEncodingPixelPosInEncodings - pixels from left to sel. encoding
 	// encodingDiv.scrollWidth - total pixels in encodings
 	// encodingDiv.clientWidth - adjusted encoding div width
