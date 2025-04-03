@@ -21,16 +21,32 @@
 var menuHeight=23*33;
 var imgBgSrc="images/icons/background/amv.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
+
+
+function setIframes() {
+
+	iframes=[];
+	iframes[0]='https://drive.google.com/file/d/1ZgMr2BfvqSIi2lZbg3SiPiPRoJpjB8iL/preview';
+	iframes[1]='https://drive.google.com/file/d/1228R59cYePa43hM6w8-yYee6QUCh9WwS/preview';
+	iframes[2]='https://drive.google.com/file/d/1xVAnwNyVcAX4sKNEJ3i2TIi-tACPDi4O/preview';
+	iframes[3]='https://drive.google.com/file/d/1dhhdUxeTXMcjgOsq1rFGFoSsmR2tMN_s/preview';
+	iframes[4]='https://drive.google.com/file/d/1D1d34mrlgSoOgUoWPC0GcnerrfoXButT/preview';
+	iframes[5]='https://drive.google.com/file/d/1RUjYTNwySKJhQsXyUmKduQ9cKfSNfNaH/preview';
+	iframes[6]='https://drive.google.com/file/d/1ZhZB2UV285t-poD0VVPSoQFuPsiKQA5_/preview';
+
+
+
+	const collection=document.getElementsByTagName("iframe");
+	for (let i = 0; i < collection.length; i++) {
+		collection[i].src=iframes[i];
+	}
+}
 </script>
 <!-- End of Background Images Script -->
 
-
-  <!-- Load Facebook SDK for JavaScript -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0" nonce="gmNbn45h"></script>
-
 </head>
 
-<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);setIframes();" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
 
 
 <!-- Header Image Table -->
@@ -727,10 +743,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-<!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/10216578735932957/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/10216578735932957/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
--->
-<iframe src="https://drive.google.com/file/d/1ZgMr2BfvqSIi2lZbg3SiPiPRoJpjB8iL/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Batman: Hush, Audio - Игорь Корнелюк - Знал бы Прикуп - Жил бы в Сочи.<br>
 
@@ -783,10 +796,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-<!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/10216578735932957/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/10216578735932957/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
--->
-<iframe src="https://drive.google.com/file/d/1228R59cYePa43hM6w8-yYee6QUCh9WwS/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Constantine City of Demons: The Movie, Audio - Фактор 2 - Ночь.<br>
 
@@ -842,10 +852,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-<!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/10216578735932957/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/10216578735932957/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
--->
-<iframe src="https://drive.google.com/file/d/1xVAnwNyVcAX4sKNEJ3i2TIi-tACPDi4O/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Injustice, Audio - Ария - Колизей.<br>
 
@@ -900,10 +907,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-<!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/10216578735932957/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/10216578735932957/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
--->
-<iframe src="https://drive.google.com/file/d/1dhhdUxeTXMcjgOsq1rFGFoSsmR2tMN_s/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Love, Death & Robots, Season 1, Episode 10 - Shape-Shifters, Audio - Владимир Высоцкий - Песня Про Стукача.<br>
 
@@ -958,10 +962,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-<!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/10216578735932957/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/10216578735932957/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
--->
-<iframe src="https://drive.google.com/file/d/1D1d34mrlgSoOgUoWPC0GcnerrfoXButT/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Love, Death & Robots, Season 2, Episode 4 - Snow in the Desert, Audio - Дельфин - Дверь.<br>
 
@@ -1017,10 +1018,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-<!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/10216578735932957/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/10216578735932957/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
--->
-<iframe src="https://drive.google.com/file/d/1RUjYTNwySKJhQsXyUmKduQ9cKfSNfNaH/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Suicide Squad: Hell to Pay, Audio - Влад Сташевский - Пуэрто-Рико.<br>
 
@@ -1075,10 +1073,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-<!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/10216578735932957/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/10216578735932957/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
--->
-<iframe src="https://drive.google.com/file/d/1ZhZB2UV285t-poD0VVPSoQFuPsiKQA5_/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Thru the Moebius Strip, Audio - Rabia Sorda - Indestructible.<br>
 

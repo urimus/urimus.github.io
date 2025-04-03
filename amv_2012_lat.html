@@ -24,16 +24,29 @@
 var menuHeight=23*16;
 var imgBgSrc="images/icons/background/amv.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
+
+function setIframes() {
+	iframes=[];
+
+	iframes[0]='https://drive.google.com/file/d/1qXr920KFxv6909HL6a8Yprws3CT9yhOs/preview';
+	iframes[1]='https://drive.google.com/file/d/1MIncVXpKa2T2MmQsrkh2IJGn-1u3HeoQ/preview';
+	iframes[2]='https://drive.google.com/file/d/1NnvHdQhqm8RGgEN7tjdXZMbZvJ4HPT2H/preview';
+	iframes[3]='https://drive.google.com/file/d/1imzwF0YR_Ha_YhKUtT3Ouj9lDVnx97XA/preview';
+	iframes[4]='https://drive.google.com/file/d/1Xb50Vvizneyi6I2lEBkWGPh0zFPHgxZI/preview';
+	iframes[5]='https://drive.google.com/file/d/1-MyATasktTY0dTYGsxD7vLsylQ58C_vM/preview';
+
+	const collection=document.getElementsByTagName("iframe");
+	for (let i = 0; i < collection.length; i++) {
+		collection[i].src=iframes[i];
+	}
+}
 </script>
 <!-- End of Background Images Script -->
-
-  <!-- Load Facebook SDK for JavaScript -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0" nonce="gmNbn45h"></script>
 
 
 </head>
 
-<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);setIframes();" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
 
 
 <!-- Header Image Table -->
@@ -490,10 +503,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-  <!-- Your embedded video player code 
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/4616675987007/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/4616675987007/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
--->
-<iframe src="https://drive.google.com/file/d/1qXr920KFxv6909HL6a8Yprws3CT9yhOs/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Cowboy Beebop, Audio - Green Day - Peacemaker.<br>
 
@@ -549,10 +559,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-  <!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/4616640746126/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/4616640746126/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
- -->
-<iframe src="https://drive.google.com/file/d/1MIncVXpKa2T2MmQsrkh2IJGn-1u3HeoQ/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Futurama, Season 4, Godfellas, Audio - Static-X - Skinnyman.<br>
 
@@ -605,10 +612,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
- <!-- Your embedded video player code
-					<iframe width="640" height="480" src="http://www.youtube.com/embed/QdVKtR7XwcM" frameborder="0" allowfullscreen></iframe>			
- -->
-<iframe src="https://drive.google.com/file/d/1NnvHdQhqm8RGgEN7tjdXZMbZvJ4HPT2H/preview" width="640" height="480"></iframe>
+
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Thundercats, Audio - Звери - Герои (Zveri - Geroi).<br>
 
@@ -661,10 +667,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-  <!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/4616613585447/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/4616613585447/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
- -->
-<iframe src="https://drive.google.com/file/d/1imzwF0YR_Ha_YhKUtT3Ouj9lDVnx97XA/preview" width="640" height="480"></iframe>
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Trigun - Badlands Rumble, Audio - HammerFall - Fury of the Wild.<br>
 
@@ -719,12 +723,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
 
-
-
-  <!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/4616563584197/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/4616563584197/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
- -->
-<iframe src="https://drive.google.com/file/d/1Xb50Vvizneyi6I2lEBkWGPh0zFPHgxZI/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Trinity Blood, Audio - Terminal Choice - Menschenbrecher.<br>
 
@@ -775,10 +774,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-  <!-- Your embedded video player code
-<div class="fb-video" data-href="https://www.facebook.com/urepinski/videos/4704999875049/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/urepinski/videos/4704999875049/" class="fb-xfbml-parse-ignore">Loading...</blockquote></div>
- -->
-<iframe src="https://drive.google.com/file/d/1-MyATasktTY0dTYGsxD7vLsylQ58C_vM/preview" width="640" height="480"></iframe>
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Witch Hunter Robin, Audio - Garbage - Untouchable.<br>
 

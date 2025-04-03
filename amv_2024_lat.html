@@ -24,15 +24,25 @@
 var menuHeight=23*16;
 var imgBgSrc="images/icons/background/amv.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
+
+function setIframes() {
+	iframes=[];
+	iframes[0]='https://drive.google.com/file/d/1bZKKN_ZjjahV9T6y1DYS9SNTtDodW1OM/preview';
+	iframes[1]='https://drive.google.com/file/d/1zEFzHWKV0FPS8aBH4rrDl9wEoxOlRTG5/preview';
+	iframes[2]='https://drive.google.com/file/d/1pfk7pxrbCU_qWv5M-VJpAJ_3E6xkg64G/preview';
+	iframes[3]='https://drive.google.com/file/d/1F-aFgHlMl1m2ZV6TsAIjUgjwZkIkxNyU/preview';
+	iframes[4]='https://drive.google.com/file/d/18GZyWBEZERKkuOjSxcDbhPP3zppvn3-5/preview';
+	const collection=document.getElementsByTagName("iframe");
+	for (let i = 0; i < collection.length; i++) {
+		collection[i].src=iframes[i];
+	}
+}
 </script>
 <!-- End of Background Images Script -->
 
-  <!-- Load Facebook SDK for JavaScript -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0" nonce="gmNbn45h"></script>
-
 </head>
 
-<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);setIframes();" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
 
 
 <!-- Header Image Table -->
@@ -495,7 +505,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
 
-<iframe src="https://drive.google.com/file/d/1bZKKN_ZjjahV9T6y1DYS9SNTtDodW1OM/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Babylon 5: The Road Home, Audio - Белое Золото - Города.<br>
 
@@ -547,7 +557,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
-<iframe src="https://drive.google.com/file/d/1zEFzHWKV0FPS8aBH4rrDl9wEoxOlRTG5/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Dead Space: Downfall, Audio - Мистер Кредо - Воздушный Шар.<br>
 
@@ -603,7 +613,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
 
-<iframe src="https://drive.google.com/file/d/1pfk7pxrbCU_qWv5M-VJpAJ_3E6xkg64G/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Metalocalypse: Army of the Doomstar, Audio - Ленинград - Колокола.<br>
 
@@ -660,7 +670,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
 
-<iframe src="https://drive.google.com/file/d/1F-aFgHlMl1m2ZV6TsAIjUgjwZkIkxNyU/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - Scavengers Reign, Audio - Гражданская Оборона - Слово-Товарищ.<br>
 
@@ -715,7 +725,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
 
 
-<iframe src="https://drive.google.com/file/d/18GZyWBEZERKkuOjSxcDbhPP3zppvn3-5/preview" width="640" height="480"></iframe>
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
 
 						<P>Video - The Second Best Hospital in the Galaxy, Season 1, Episodes 7-8, Audio - Мальчишник - Я Вам не Верю.<br>
 
