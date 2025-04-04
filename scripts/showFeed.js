@@ -107,9 +107,17 @@ function showRecordsNum(type, recordsNum, lang, newCaption) {
 function adjustFeedScrollDiv() {
 	scrollDiv = document.getElementById('scrollDiv');
 	scrollDivHeight=calcScrollDivHeightMax();
+
+/*
+	tabsHeight=document.getElementById('tabstable').offsetHeight;
+	feedTitleHeight=document.getElementById('titletable').offsetHeight;
+	feedMessageHeight=document.getElementById('messagetable').offsetHeight;
+*/
+
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 	feedTitleHeight=parseInt($( "#titletable" ).css( "height" ));
 	feedMessageHeight=parseInt($( "#messagetable" ).css( "height" ));
+
 	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
 	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 	if (!hasVerticalScrollBar) {
