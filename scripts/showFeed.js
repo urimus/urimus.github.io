@@ -1131,8 +1131,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				result.entries[i].media.url=entry["rss:image"]["#"];
 			} else {
 				result.entries[i].media.url="https://assets1.cbsnewsstatic.com/hub/i/r/2015/04/29/340c23e5-e5a3-40ef-bf68-dcc84ef47c4b/thumbnail/1200x630/6e2e666786e7a06c8786e0cd609401f5/restrictedimagesub.jpg";
-				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+				if (lang=="rus") result.entries[i].media.comment="Картинка Отсутствует.";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Absent.";
 			}
 			result.entries[i].media.width=450;
 			result.entries[i].summary=entry.description;
@@ -1145,8 +1145,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			} else {
 				// https://www.nasa.gov/wp-content/uploads/2024/04/nasa_meatball_4.png
 				result.entries[i].media.url="https://www.nasa.gov/wp-content/uploads/2024/08/meatball-w-black-background.webp";
-				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+				if (lang=="rus") result.entries[i].media.comment="Картинка Отсутствует.";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Absent.";
 				result.entries[i].media.width=450;
 				result.entries[i].summary=entry["rss:description"]["#"];
 			}
@@ -1166,8 +1166,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				}
 			} else {
 				result.entries[i].media.url=""; // todo
-				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+				if (lang=="rus") result.entries[i].media.comment="Картинка Отсутствует.";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Absent.";
 			}
 			result.entries[i].media.width=450;
 			result.entries[i].summary=entry.description;
@@ -1175,8 +1175,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		if (source == "yahoo") {
 			if (entry["media:content"]==null) {
 				result.entries[i].media.url="https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo-1200x1200.png";
-				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+				if (lang=="rus") result.entries[i].media.comment="Картинка Отсутствует.";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Absent.";
 			} else {
 				result.entries[i].media.url=entry["media:content"]["@"].url;
 			}
@@ -1187,8 +1187,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				imgPos = desc2.indexOf("<img");
 				if (imgPos==-1) {
 					result.entries[i].media.url="https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo-1200x1200.png";
-					if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+					if (lang=="rus") result.entries[i].media.comment="Картинка Отсутствует.";
+					if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Absent.";
 				} else {
 					q1Pos=desc2.indexOf('"', imgPos+1);
 					q2Pos=desc2.indexOf('"', q1Pos+1);
@@ -1201,8 +1201,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		if (source == "yonhap") {
 			if (typeof entry.enclosures === "undefined" || typeof entry.enclosures[0] === "undefined" || entry.enclosures[0].url==null) {
 				result.entries[i].media.url="https://r.yna.co.kr/global/home/v01/img/yonhapnews_logo_1200x800_en01.jpg"; 
-				if (lang=="rus") result.entries[i].media.comment="Обновление Не Удалось.";
-				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Update Failed.";
+				if (lang=="rus") result.entries[i].media.comment="Картинка Отсутствует.";
+				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Absent.";
 			} else {
 				result.entries[i].media.url=entry.enclosures[0].url;
 			}
