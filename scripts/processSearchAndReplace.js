@@ -261,7 +261,7 @@ function replacePHP(lang, action) {
 				}
 			}
 		};
-		xhr.open("GET","scripts/php/dir.php?q="+encodeURIComponent(searchPatt)+"&fileToShow="+getParameterByName('i'),true);
+		xhr.open("GET","scripts/php/dir.php?q="+encodeURIComponent(searchPatt)+"&fileToShow="+parseInt(getParameterByName('i')),true);
 		xhr.send();
 	} else {
 		//window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent('*.html')+'&i=0';
@@ -1742,7 +1742,7 @@ function del(lang, totalFiles) {
 			if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
 			if (this.responseText==1) {
 				alert(message2);
-				i = getParameterByName('i');
+				i = parseInt(getParameterByName('i'));
 				if (i!=0 && i==(totalFiles-1)) i--;
 				textAreaChanged=0;
 				window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(getParameterByName('pattern'))+'&i='+ encodeURIComponent(i);
@@ -1772,7 +1772,7 @@ function logout(lang) {
 			document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px;width: 719px; overflow:auto;");
 //			console.log(this.responseText);
 //			alert(this.responseText);
-			window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(getParameterByName('pattern'))+'&i='+ encodeURIComponent(getParameterByName('i'));
+			window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(getParameterByName('pattern'))+'&i='+ parseInt(getParameterByName('i'));
 			return;
         	}
 	};
@@ -1883,8 +1883,8 @@ function processSearch(lang) {
 		}
 
 
-		i=getParameterByName('i'); 
-		if (i && i!="") {
+		i=parseInt(getParameterByName('i'));
+		if (i!=null) {
 			if (window.XMLHttpRequest) {
 				// code for IE7+, Firefox, Chrome, Opera, Safari
 				xhr=new XMLHttpRequest();
@@ -2061,7 +2061,7 @@ function processSearch(lang) {
 					}
 				}
 			};
-			xhr.open("GET","scripts/php/dir.php?q="+encodeURIComponent(searchPatt)+"&fileToShow="+getParameterByName('i'),true);
+			xhr.open("GET","scripts/php/dir.php?q="+encodeURIComponent(searchPatt)+"&fileToShow="+parseInt(getParameterByName('i')),true);
 			xhr.send();
 
 
@@ -2126,7 +2126,7 @@ function loadAndShowFile(lang, filename, modified, encoding, first10bytes, total
 /*
 			save(lang, encoding, filename, 0);
 			searchPatt=getParameterByName('pattern'); 
-			i=getParameterByName('i'); 
+			i=parseInt(getParameterByName('i')); 
 			if (parseInt(i)+1<totalFiles) window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(searchPatt)+'&i='+encodeURIComponent(parseInt(i)+1);
 */
 		}
@@ -2134,7 +2134,7 @@ function loadAndShowFile(lang, filename, modified, encoding, first10bytes, total
 			alert("An HTTP error occurred: " + xhr.status);
 /*
 			searchPatt=getParameterByName('pattern'); 
-			i=getParameterByName('i'); 
+			i=parseInt(getParameterByName('i')); 
 			if (parseInt(i)+1<totalFiles) window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(searchPatt)+'&i='+encodeURIComponent(parseInt(i)+1);
 */
 		}
@@ -2445,6 +2445,8 @@ function processSearchAndReplace(lang) {
 
 	processPageResize(1);
 
+	document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px;width: 719px; overflow:auto;");
+
 // -------------- Authorization ------------- //
 
 	if (window.XMLHttpRequest) {
@@ -2548,7 +2550,6 @@ function adjustTextareaAndEncodings() {
 	scrollDiv=document.getElementById('scrollDiv');
 	encodingDiv=document.getElementById("encoding_div");
 	if (scrollDiv === null || encodingDiv === null || scrollDiv.offsetParent === null || encodingDiv.offsetParent === null) return;
-
 
 	if (window.devicePixelRatio ==0.25) {
 		encodingDiv.style.setProperty("max-width", "400px");
