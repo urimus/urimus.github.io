@@ -471,10 +471,11 @@ function generateTabs(type, lang) {
 	while(table.childNodes.length>0){table.removeChild(table.lastChild);}
 	
 	rowsCount=Math.ceil(keys.length/4);
+/*
 	scrollDivHeight=calcScrollDivHeightMax();
 	scrollDivHeight=scrollDivHeight-rowsCount*27-8;
 	document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-
+*/
 	for (var i = 0; i<keys.length; i++) {
 		if (i%4==0) {
 			var row = table.insertRow(-1);
@@ -532,6 +533,8 @@ function generateTabs(type, lang) {
 	Div.style.position = 'absolute';
 	Div.style.right = '2px';
 	Div.style.bottom = '-9px';
+
+	adjustContentsScrollDiv();
 
 	return tabsColor[type];
 /*

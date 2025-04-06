@@ -134,7 +134,6 @@ function showFeedTitle(type, source, lang, result, locStUpdateData) {
 
 
 // console.log(result);
-	document.getElementById("scrollDiv").setAttribute("style", "height: "+(parseInt($( "#scrollDiv" ).css( "height" )))+"px; width: 711px; overflow:auto;");
 
 	// ------------- Setting Texts ---------------- //
 	if (lang == "rus") {
@@ -912,6 +911,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 
 
 function showFeed(type, source, lang) {
+
 
 	generateTabs(type, source, lang);
 
