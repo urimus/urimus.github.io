@@ -1769,7 +1769,6 @@ function logout(lang) {
 	}
 	xhr.onreadystatechange = function(){
         	if (this.readyState==4 && this.status==200) {
-			document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px; overflow:auto;");
 //			console.log(this.responseText);
 //			alert(this.responseText);
 			window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(getParameterByName('pattern'))+'&i='+ parseInt(getParameterByName('i'));
@@ -2439,13 +2438,10 @@ function processSearchAndReplace(lang) {
 	isAndroid = ua.indexOf("android") && ua.indexOf("mobile") > -1; 
 	if (isAndroid) {
 		$("#error_message").text("HTML Editor is not supported for Android OS.");
-		document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px; overflow:auto;");
 		return true; 
 	}
 
 	processPageResize(1);
-
-	document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px; overflow:auto;");
 
 // -------------- Authorization ------------- //
 
@@ -2463,7 +2459,6 @@ function processSearchAndReplace(lang) {
 			var respNoBOM=removeBom(this.responseText);
 			if (respNoBOM.substring(0, 2) == "<?") {
 				$("#error_message").text("PHP is not supported, HTML Editor is not functioning.");
-				document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px; overflow:auto;");
 				return;
 			};
 
@@ -2495,7 +2490,6 @@ function processSearchAndReplace(lang) {
 					$("#error_message_with_logout_row").hide();
 					$("#error_message").text(err1);
 					$("#error_message_row").show();
-					document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px; overflow:auto;");
 					return false;
 				}
 				
@@ -2518,21 +2512,14 @@ function processSearchAndReplace(lang) {
 							$("#error_message_with_logout_row").hide();
 							$("#error_message").text(err2);
 							$("#error_message_row").show();
-							document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px; overflow:auto;");
 							return false;
 						}
-//						scrollDivHeight=calcScrollDivHeightMax();
-						document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px; overflow:auto;");
 						processSearch(lang);
 					}
 				};
-
 				xhr.open("GET","scripts/php/checkUsernamePassword.php?username="+encodeURIComponent(username), true);
 				xhr.send();
-
 			} else {
-//				scrollDivHeight=calcScrollDivHeightMax();
-				document.getElementById("scrollDiv").setAttribute("style", "height:"+menuHeight+"px; overflow:auto;");
 				processSearch(lang);
 			}
         	}
