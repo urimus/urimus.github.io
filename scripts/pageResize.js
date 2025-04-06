@@ -59,6 +59,15 @@ function calcScrollDivHeightMax(){
 }
 
 
+function adjustScrollDiv(){
+	scrollDivHeight=calcScrollDivHeightMax();
+	var scrollDiv = document.getElementById('scrollDiv');
+	scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+	if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; overflow:auto;");
+}
+
+
 function processPageResize(isLoad, orientationChanged){
 
 	if (typeof isLoad === "undefined") isLoad=1;
@@ -105,25 +114,21 @@ function processPageResize(isLoad, orientationChanged){
 			if (window.location.pathname.substr(0, 5)=="/news") {
 				feedTable=document.getElementById('feedtable');
 				if (typeof feedTable !== 'undefined' && feedTable != null && feedTable.innerHTML!="") adjustFeedScrollDiv();
-			} else if (window.location.pathname.substr(0, 12)=="/html_editor") {
-				textArea=document.getElementById('textarea_area');
-				if (typeof textArea !== 'undefined' && textArea != null && textArea.value!="") adjustTextareaAndEncodings();
 			} else if (window.location.pathname.substr(0, 7)=="/index_") {
 				contentsTable=document.getElementById('contentstable');
 				if (typeof contentsTable !== 'undefined' && contentsTable != null && contentsTable.innerHTML!="") adjustContentsScrollDiv();
+			} else if (window.location.pathname.substr(0, 12)=="/html_editor") {
+				textArea=document.getElementById('textarea_area');
+				if (typeof textArea !== 'undefined' && textArea != null && textArea.value!="") adjustTextareaAndEncodings();
 			} else {
-				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-				var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-				if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; overflow:auto;");
+				adjustScrollDiv();
 			}
 		} else { // isLoad
 			// for regular htmls only (not html_editor, not index and not news)
 			if (!(window.location.pathname.substr(0, 12)=="/html_editor"
 			||  window.location.pathname.substr(0, 7)=="/index_"
 			|| window.location.pathname.substr(0, 5)=="/news")) {
-				scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
-				var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
-				if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; overflow:auto;");
+				adjustScrollDiv();
 			}
 		} 
 	}

@@ -195,8 +195,7 @@ function showErrorImage(lang, type) {
 	ImgE.setAttribute('title', imageDesc);
 	ImgE.setAttribute('width', '100%');
 	ImgE.onload  = function () { 
-		scrollDivHeight=calcScrollDivHeightMax();
-		document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+		adjustScrollDiv();
 	}
 	cell1.appendChild(ImgE);
 }
@@ -292,8 +291,7 @@ function updateAboutMeImage(lang, random) {
 		Img.setAttribute('width', '100%');
 		Img.onerror  = function () { 
 			loadingDivTitle.innerHTML = textError;
-			scrollDivHeight=calcScrollDivHeightMax();
-			document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+			adjustScrollDiv();
 		}
 		Img.onload  = function () { 
 
@@ -346,8 +344,7 @@ function updateAboutMeImage(lang, random) {
 						this.setAttribute('title', textExpand);
 						this.innerHTML="[&#9660;]";
 					}
-					scrollDivHeight=calcScrollDivHeightMax();
-					document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+					adjustScrollDiv();
 				}
 				extensionA.innerHTML = "[&#9660;]";
 
@@ -407,8 +404,7 @@ function updateAboutMeImage(lang, random) {
 			Div.innerHTML=formatDate(item.date_ms, lang);
 			cell1.appendChild(Div);
 
-			scrollDivHeight=calcScrollDivHeightMax();
-			document.getElementById("scrollDiv").setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
+			adjustScrollDiv();
 		}
 	});
 }
