@@ -89,6 +89,7 @@
 
 &#9679; <a href="series_gotham_eng.html#gotham_city" class = "standardb_black" data-added="27th of Nov, 2024." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Gotham City</a>
 <span style="padding-left:10px;">- <a href="series_gotham_eng.html#batman_caped" class = "standardb_black" data-added="25th of Feb, 2025." data-genre="Gotham City" data-country="usa" data-year="2024" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Batman: Caped Crusader</a></span> 
+<span style="padding-left:10px;">- <a href="series_gotham_eng.html#kite_man" class = "standardb_black" data-added="07th of Apr, 2025." data-genre="Gotham City" data-country="usa" data-year="2024" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Kite Man: Hell Yeah!</a></span> 
 <span style="padding-left:10px;">- <a href="series_gotham_eng.html#penguin" class = "standardb_black" data-added="27th of Nov, 2024." data-genre="Gotham City" data-country="usa" data-year="2024" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">The Penguin</a></span> 
 
 &#9679; <a href="series_star_wars_eng.html#star_wars" class = "standardb_black" data-added="21st of Feb, 2022." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Star Wars <font color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></a>
