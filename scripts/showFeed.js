@@ -1275,7 +1275,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			}
 		}  
 
-		if (source == "yonhap" || (source=="yahoo" && type!="sports")) {
+		if (source == "yonhap" || (source=="yahoo" && type!="sports")) { 
 			if (typeof locStUpdateData[entry.link] !== "undefined") {
 				result.entries[i].updateProcessed=1;
 				result.totalUpdated++;
@@ -1305,6 +1305,19 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		// ---------------- End of Prevous Updates Load --------------------- //
 
 	}
+
+	// ---------------- Sort Yahoo Feed by Date Desc --------------------- //
+	var len = result.entries.length;
+	for (var i = len-1; i>=0; i--){
+		for(var j = 1; j<=i; j++){
+			if(result.entries[j-1].date_ms<result.entries[j].date_ms){
+				var temp = result.entries[j-1];
+				result.entries[j-1] = result.entries[j];
+				result.entries[j] = temp;
+			}
+		}
+	}
+	// ---------------- End of Sort Yahoo Feed by Date Desc --------------------- //
 
 	document.getElementById("processedCount").innerHTML=result.totalUpdated;
 	document.getElementById("leftCount").innerHTML=result.entries.length-result.totalUpdated;
