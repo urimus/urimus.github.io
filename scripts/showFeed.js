@@ -1155,7 +1155,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			if (entry["media:thumbnail"]!=null) {
 				result.entries[i].media.url=entry["media:thumbnail"]["@"].url;
 				// auto update for phys.org
-				tmbPos= result.entries[i].media.url.lastIndexOf("tmb/");
+				tmbPos= result.entries[i].media.url.indexOf("tmb/");
 				if (tmbPos!=-1) {
 					result.entries[i].updateProcessed=1;
 					result.totalUpdated++;
