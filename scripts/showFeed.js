@@ -477,18 +477,10 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				adjustFeedScrollDiv();
 			}
 		} else {
-			if (source == "phys.org") {
-				slashPos= preloadImg.src.lastIndexOf("/");
-				d = new Date();
-				year = d.getFullYear();
-				filename=preloadImg.src.substr(slashPos+1);
-				preloadImg.src="https://scx2.b-cdn.net/gfx/news/"+(year-failedAttemptsInt)+"/"+filename;
-			} else {
-				Img.setAttribute('alt', textLoadingAttempt+(failedAttemptsInt+1));
-				Img.setAttribute('title', textLoadingAttempt+(failedAttemptsInt+1));
-				Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, '+failedAttemptsInt/9.0+');');
-				preloadImg.src = preloadImg.src;
-			}
+			Img.setAttribute('alt', textLoadingAttempt+(failedAttemptsInt+1));
+			Img.setAttribute('title', textLoadingAttempt+(failedAttemptsInt+1));
+			Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, '+failedAttemptsInt/9.0+');');
+			preloadImg.src = preloadImg.src;
 		}
 	}
 
@@ -1163,14 +1155,12 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			if (entry["media:thumbnail"]!=null) {
 				result.entries[i].media.url=entry["media:thumbnail"]["@"].url;
 				// auto update for phys.org
-				slashPos= result.entries[i].media.url.lastIndexOf("/");
-				if (slashPos!=-1) {
+				tmbPos= result.entries[i].media.url.lastIndexOf("tmb/");
+				if (tmbPos!=-1) {
 					result.entries[i].updateProcessed=1;
 					result.totalUpdated++;
-					filename=result.entries[i].media.url.substr(slashPos+1);
-					d = new Date();
-					year = d.getFullYear();
-					result.entries[i].media.url="https://scx2.b-cdn.net/gfx/news/"+year+"/"+filename;
+					filename=result.entries[i].media.url.substr(tmbPos+4);
+					result.entries[i].media.url="https://scx2.b-cdn.net/gfx/news/"+filename;
 				}
 			} else {
 				result.entries[i].media.url=""; // todo
