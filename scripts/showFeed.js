@@ -117,12 +117,13 @@ function adjustFeedScrollDiv() {
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
 	feedTitleHeight=parseInt($( "#titletable" ).css( "height" ));
 	feedMessageHeight=parseInt($( "#messagetable" ).css( "height" ));
+	feedHeight=parseInt($( "#feedtable" ).css( "height" ));
 
 	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
 	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 	if (!hasVerticalScrollBar) {
 		scrollDiv.setAttribute("style", "height:100%; width: 711px; overflow:auto;");
-		if ((parseInt($( "#scrollDiv" ).css( "height" ))+tabsHeight+feedTitleHeight+feedMessageHeight+8)<menuHeight) {
+		if (feedHeight==0 && (parseInt($( "#scrollDiv" ).css( "height" ))+tabsHeight+feedTitleHeight+feedMessageHeight+8)<menuHeight) {
 			scrollDiv.setAttribute("style", "height:"+(menuHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
 		}
 	}
