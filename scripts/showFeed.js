@@ -1159,6 +1159,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				if (tmbPos!=-1) {
 					result.entries[i].updateProcessed=1;
 					result.totalUpdated++;
+					result.entries[i].media.origUrl=result.entries[i].media.url;
 					filename=result.entries[i].media.url.substr(tmbPos+4);
 					result.entries[i].media.url="https://scx2.b-cdn.net/gfx/news/"+filename;
 				}
