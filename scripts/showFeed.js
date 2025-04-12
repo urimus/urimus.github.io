@@ -119,6 +119,27 @@ function adjustFeedScrollDiv() {
 	feedMessageHeight=parseInt($( "#messagetable" ).css( "height" ));
 	feedHeight=parseInt($( "#feedtable" ).css( "height" ));
 
+	// 1. Setting ScrollDiv to menuHeight
+	// 2. If has scrollDiv then to Max
+	// 3. If does not have scrollDiv then to 100%
+
+	// 1
+	scrollDiv.setAttribute("style", "height:"+(menuHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
+
+	// 2
+	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+	if (hasVerticalScrollBar) {
+		scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
+		// 3
+		var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+		if (!hasVerticalScrollBar) {
+			scrollDiv.setAttribute("style", "height:100%; width: 711px; overflow:auto;");
+		}
+	} else if (feedHeight!=0) {
+		scrollDiv.setAttribute("style", "height:100%; width: 711px; overflow:auto;");
+	}
+
+/*
 	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
 	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 	if (!hasVerticalScrollBar) {
@@ -127,6 +148,7 @@ function adjustFeedScrollDiv() {
 			scrollDiv.setAttribute("style", "height:"+(menuHeight-tabsHeight-feedTitleHeight-feedMessageHeight-8)+"px; width: 711px; overflow:auto;");
 		}
 	}
+*/
 }
 
 // ------------- Show Feed ---------------- //

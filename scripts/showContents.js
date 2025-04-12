@@ -584,6 +584,26 @@ function adjustContentsScrollDiv() {
 	scrollDiv = document.getElementById('scrollDiv');
 	scrollDivHeight=calcScrollDivHeightMax();
 	tabsHeight=parseInt($( "#tabstable" ).css( "height" ));
+
+	// 1. Setting ScrollDiv to menuHeight
+	// 2. If has scrollDiv then to Max
+	// 3. If does not have scrollDiv then to 100%
+
+	// 1
+	scrollDiv.setAttribute("style", "height:"+(menuHeight-tabsHeight-8)+"px; overflow:auto;");
+
+	// 2
+	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+	if (hasVerticalScrollBar) {
+		scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
+		// 3
+		var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
+		if (!hasVerticalScrollBar) {
+			scrollDiv.setAttribute("style", "height:100%; width: 711px; overflow:auto;");
+		}
+	}
+
+/*
 	scrollDiv.setAttribute("style", "height:"+(scrollDivHeight-tabsHeight-8)+"px; overflow:auto;");
 	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 	if (!hasVerticalScrollBar) {
@@ -592,6 +612,7 @@ function adjustContentsScrollDiv() {
 			scrollDiv.setAttribute("style", "height:"+(menuHeight-tabsHeight-8)+"px; overflow:auto;");
 		}
 	}
+*/
 }
 
 function showContents(type, sortby, lang) {
