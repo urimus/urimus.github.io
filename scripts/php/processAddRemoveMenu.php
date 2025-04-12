@@ -65,7 +65,6 @@ if ($matchPos!==false) {
 }
 
 $menuHeightInt=$menuHeightInt1*$menuHeightInt2_new;
-if ($menuHeightInt<450) $menuHeightInt=450;
 
 // ---------------- second part
 $matchPos4 = strpos($file_contents, "style=\"height:");
@@ -73,10 +72,8 @@ $matchPos5 = strpos($file_contents, "px;", $matchPos4);
 $menuHeightInitBottom1=substr($file_contents, $matchPos4+strlen("style=\"height:"), $matchPos5-$matchPos4-strlen("style=\"height:"));
 $menuHeightIntBottom1=intval($menuHeightInitBottom1);
 
-if ($menuHeightInt>450) {
-	if ($action=="addMenu") $menuHeightInt=$menuHeightIntBottom1+$menuHeightInt1;
-	if ($action=="removeMenu") $menuHeightInt=$menuHeightIntBottom1-$menuHeightInt1;
-}
+if ($action=="addMenu") $menuHeightInt=$menuHeightIntBottom1+$menuHeightInt1;
+if ($action=="removeMenu") $menuHeightInt=$menuHeightIntBottom1-$menuHeightInt1;
 
 
 
