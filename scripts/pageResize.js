@@ -58,13 +58,20 @@ function calcScrollDivHeightMax(){
 	return scrollDivHeight;
 }
 
-
-function adjustScrollDiv(){
+function adjustScrollDiv2(){
 	scrollDivHeight=calcScrollDivHeightMax();
 	var scrollDiv = document.getElementById('scrollDiv');
 	scrollDiv.setAttribute("style", "height:"+scrollDivHeight+"px; overflow:auto;");
 	var hasVerticalScrollBar = scrollDiv.scrollHeight > scrollDiv.clientHeight;
 	if (!hasVerticalScrollBar) scrollDiv.setAttribute("style", "height:100%; overflow:auto;");
+}
+
+function adjustScrollDiv(){
+	if (typeof galleria2!=='undefined') {
+			Galleria.ready(function() {adjustScrollDiv2();});
+	} else {
+		adjustScrollDiv2();
+	}
 }
 
 
