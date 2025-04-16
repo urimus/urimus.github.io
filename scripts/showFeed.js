@@ -479,6 +479,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		Img.setAttribute('title', entry.media.comment);
 		Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, 0.0);');
 		Img.src = preloadImg.src;
+		clearInterval(preloadInterval);
 		adjustFeedScrollDiv();
 	}
 	preloadImg.onerror= function () {
@@ -497,6 +498,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				Img.setAttribute('alt', '');
 				Img.setAttribute('title', '');
 				Img.src = "images/icons/error/error.jpg";
+				clearInterval(preloadInterval);
 				adjustFeedScrollDiv();
 			}
 		} else {
@@ -506,6 +508,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 			preloadImg.src = preloadImg.src;
 		}
 	}
+	const preloadInterval=setInterval(preloadImg.onerror, 5000);
 
 	if (typeof entry.summary!== "undefined" && entry.summary!=null && entry.summary!="") {
 		var summaryDiv = document.createElement('div');
