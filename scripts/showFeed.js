@@ -494,6 +494,8 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				preloadImg.dataset.failedAttempts=0;
 				preloadImg.dataset.isOrigUrl=1;
 				preloadImg.src=entry.media.origUrl;
+				clearInterval(preloadInterval);
+				preloadInterval=setInterval(preloadImg.onerror, 5000);
 			} else {
 				Img.setAttribute('alt', '');
 				Img.setAttribute('title', '');
@@ -506,9 +508,11 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 			Img.setAttribute('title', textLoadingAttempt+(failedAttemptsInt+1));
 			Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, '+failedAttemptsInt/9.0+');');
 			preloadImg.src = preloadImg.src;
+			clearInterval(preloadInterval);
+			preloadInterval=setInterval(preloadImg.onerror, 5000);
 		}
 	}
-	const preloadInterval=setInterval(preloadImg.onerror, 5000);
+	var preloadInterval=setInterval(preloadImg.onerror, 5000);
 
 	if (typeof entry.summary!== "undefined" && entry.summary!=null && entry.summary!="") {
 		var summaryDiv = document.createElement('div');
