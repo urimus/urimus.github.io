@@ -507,7 +507,16 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 			Img.setAttribute('alt', textLoadingAttempt+(failedAttemptsInt+1));
 			Img.setAttribute('title', textLoadingAttempt+(failedAttemptsInt+1));
 			Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, '+failedAttemptsInt/9.0+');');
-			preloadImg.src = preloadImg.src;
+			if (isOrigUrl==0) {
+				if (source=="nasa" || source=="phys.org") {
+					preloadImg.setAttribute('src', entry.media.url+"?w=450#"+new Date().getTime());
+				} else {
+					preloadImg.setAttribute('src', entry.media.url+"#"+new Date().getTime());
+				}
+			} else {
+				preloadImg.setAttribute('src', entry.media.origUrl+"#"+new Date().getTime());
+			}
+//			preloadImg.src = preloadImg.src;
 			clearInterval(preloadInterval);
 			preloadInterval=setInterval(preloadImg.onerror, 5000);
 		}
