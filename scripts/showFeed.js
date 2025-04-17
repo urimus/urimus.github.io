@@ -445,7 +445,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	Img.setAttribute('class', "text_red");
 	Img.setAttribute('align', 'left');
 	Img.setAttribute('width', entry.media.width);
-	Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, 0.0);');
+	Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
 	Img.setAttribute('src', "images/icons/feed/loading.gif");
 	Img.setAttribute('alt', textLoadingAttempt+"1");
 	Img.setAttribute('title', textLoadingAttempt+"1");
@@ -477,7 +477,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		}
 		Img.setAttribute('alt', entry.media.comment);
 		Img.setAttribute('title', entry.media.comment);
-		Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, 0.0);');
+		Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
 		Img.src = preloadImg.src;
 		clearInterval(preloadInterval);
 		adjustFeedScrollDiv();
@@ -490,7 +490,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 			if (typeof entry.media.origUrl!== 'undefined' && entry.media.origUrl!=entry.media.url && isOrigUrl==0) {
 				Img.setAttribute('alt', textLoadingAttempt+"1");
 				Img.setAttribute('title', textLoadingAttempt+"1");
-				Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, 0.0);');
+				Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
 				preloadImg.dataset.failedAttempts=0;
 				preloadImg.dataset.isOrigUrl=1;
 				preloadImg.src=entry.media.origUrl;
@@ -506,7 +506,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		} else {
 			Img.setAttribute('alt', textLoadingAttempt+(failedAttemptsInt+1));
 			Img.setAttribute('title', textLoadingAttempt+(failedAttemptsInt+1));
-			Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(206, 53, 53, '+failedAttemptsInt/9.0+');');
+			Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, '+failedAttemptsInt/9.0+');');
 			if (isOrigUrl==0) {
 				if (source=="nasa" || source=="phys.org") {
 					preloadImg.setAttribute('src', entry.media.url+"?w=450#"+new Date().getTime());
