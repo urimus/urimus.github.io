@@ -1,0 +1,1795 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Foto Gallery -->
+<script src="scripts/jquery/jquery.js"></script>
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<!-- Background Images Script -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*39;
+var imgBgSrc="images/icons/background/rock.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+        <tr> 
+                <td  height="3"></td>
+        </tr>   
+        <tr>
+                <td width="1000">
+                        <img src="images/icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+                </td>
+        </tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+        <tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_rock_eng.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_rock_eng.html' + window.location.hash;
+                                };"             
+                        class="flag_selected"
+                >
+                        <img src="lang/eng.gif" alt="english" title="english" width="22" height="17" style="display: block;"/>
+                </div>
+        </td>
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_rock_rus.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_rock_rus.html' + window.location.hash;
+                                };"             
+                        class="flag_not_selected"
+                >
+                        <img src="lang/rus.gif" alt="русский" title="русский" width="22" height="17" style="display: block;"/>
+                </div>
+        </td>
+        </tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+        <tr> 
+
+        <td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+        <tr> 
+                <td  align="center" class="title_gradient_black">Menu</td>
+        </tr>
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_eng.html');
+                        } else {
+                                window.location.href='about_me_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About me</div>
+        </td>
+        </tr>   
+        <tr>
+                <td align="center" >
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_eng.html');
+                        } else {
+                                window.location.href='about_work_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my work</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_phd_eng.html');
+                        } else {
+                                window.location.href='about_phd_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my PhD</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_7"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"               
+                  class="menu_selected">
+                  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_1"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_chanson_eng.html');
+                        } else {
+                                window.location.href='music_chanson_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Chanson <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_country_eng.html');
+                        } else {
+                                window.location.href='music_country_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Country <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_disco_eng.html');
+                        } else {
+                                window.location.href='music_disco_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Disco</div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_5"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Electronic</div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Industrial</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_7"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Metal <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+
+
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_9"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_pop_eng.html');
+                        } else {
+                                window.location.href='music_pop_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Pop <font class="blinking_text" color="slateblue"><sup>&smashp; Abstract &smashp;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_10"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Psychedelic <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_11"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'"
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_12"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_rap_eng.html');
+                        } else {
+                                window.location.href='music_rap_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Rap <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_reggae_eng.html');
+                        } else {
+                                window.location.href='music_reggae_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Reggae</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_14"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_selected'"
+                  onClick="
+                    this.className='menu_selected';
+                        if (event.ctrlKey==1){
+                                window.open('music_rock_eng.html');
+                        } else {
+                                window.location.href='music_rock_eng.html';
+                        };"                               
+                  class="menu_selected"
+		  style="padding-left: 5px;">
+                  &#9679; Rock <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+
+
+
+
+                
+        <tr>
+                <td align="center" >
+                  <div id="menu_8"
+                  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'movies');"                               
+                  class="menu_not_selected_black">
+                  Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+        </td>
+        </tr>
+
+
+<tr>
+                <td align="center" >
+                  <div id="menu_27"
+                  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'series');"                               
+                  class="menu_not_selected_black">
+                  Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_9"
+                  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'games');"  
+                  class="menu_not_selected_black">
+                  Games</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_10"
+                  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'books');"  
+                  class="menu_not_selected_red">
+                  Books</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_11"
+                  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'photos');"  
+                  class="menu_not_selected_red">
+                  Photos/Images</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_12"
+                  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'amv');"                                               
+                  class="menu_not_selected_black">
+                  AMV</div>
+        </td>
+        </tr>           
+        <tr>
+                <td align="center" >
+                  <div id="menu_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('junk_eng.html');
+                        } else {
+                                window.location.href='junk_eng.html';
+                        };"                                               
+                  class="menu_not_selected_black">
+                  Junk</div>
+        </td>
+        </tr>                   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_14"
+                  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'stuff');"                                       
+                  class="menu_not_selected_black">
+                  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_15"
+                  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+                  class="menu_not_selected_red">
+                  Anecdotes</div>
+        </td>
+        </tr>           
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_17"
+                  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+                  class="menu_not_selected_white">
+                  Substances For Relaxation</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_18"
+                  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'software');"  
+                  class="menu_not_selected_white">
+                  Software Development</div>
+        </td>
+        </tr>   
+        
+        
+        
+        
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_19"
+                  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'satanism');"                                       
+                  class="menu_not_selected_green">
+                  Satanism</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_21"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('falsifiability_eng.html');
+                        } else {
+                                window.location.href='falsifiability_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Falsifiability</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_22"
+                  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'psychology');"                                       
+                  class="menu_not_selected_green">
+                  Psychology</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_23"
+                  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'countries');"                                       
+                  class="menu_not_selected_green">
+                  Countries</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_24"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('totalitarianism_eng.html');
+                        } else {
+                                window.location.href='totalitarianism_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Totalitarianism</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_25"
+                  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'personalities');"                                       
+                  class="menu_not_selected_green">
+                  Personalities</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+
+
+
+
+
+</table>
+
+        
+
+                </td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+        <tr> 
+                <td  class="title_black" style="width: 530px;"><a name="welcome">Music &blacktriangleright; Rock</a></td>
+        </tr>
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:897px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="rock">Rock Music <font class="blinking_text" color="crimson"><sup>&#191; Inadequate &#191;</sup></font> <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></a></td>
+                        </tr>
+                        <tr>
+                                <td width="350" height="100%" class="nimetus_black">Genre Description</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/rock.jpg" alt="Rock Music" title="Rock Music" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+                                        
+
+
+<P><b>Rock music</b> is a genre of popular music that originated as "rock and roll" in the United States in the 1950s, and developed into a range of different styles in the 1960s and later, particularly in the United Kingdom and the United States. It has its roots in 1940s' and 1950s' rock and roll, itself heavily influenced by blues, rhythm and blues and country music. Rock music also drew strongly on a number of other genres such as electric blues and folk, and incorporated influences from jazz, classical and other musical sources.
+
+<P>Musically, rock has centered on the electric guitar, usually as part of a rock group with electric bass guitar and drums. Typically, rock is song-based music usually with a 4/4 time signature using a verse-chorus form, but the genre has become extremely diverse. Like pop music, lyrics often stress romantic love but also address a wide variety of other themes that are frequently social or political in emphasis. The dominance of rock by white, male musicians has been seen as one of the key factors shaping the themes explored in rock music. Rock places a higher degree of emphasis on musicianship, live performance, and an ideology of authenticity than pop music.
+
+<P>By the late 1960s, referred to as the "golden age" or "classic rock" period, a number of distinct rock music subgenres had emerged, including hybrids like blues rock, folk rock, country rock, raga rock, and jazz-rock, many of which contributed to the development of psychedelic rock, which was influenced by the countercultural psychedelic scene. New genres that emerged from this scene included progressive rock, which extended the artistic elements; glam rock, which highlighted showmanship and visual style; and the diverse and enduring subgenre of heavy metal, which emphasized volume, power, and speed. In the second half of the 1970s, punk rock reacted against the perceived overblown, inauthentic and overly mainstream aspects of these genres to produce a stripped-down, energetic form of music valuing raw expression and often lyrically characterised by social and political critiques. Punk was an influence into the 1980s on the subsequent development of other subgenres, including new wave, post-punk and eventually the alternative rock movement. From the 1990s alternative rock began to dominate rock music and break through into the mainstream in the form of grunge, Britpop, and indie rock. Further fusion subgenres have since emerged, including pop punk, rap rock, and rap metal, as well as conscious attempts to revisit rock's history, including the garage rock/post-punk and synthpop revivals at the beginning of the new millennium.
+
+                                        
+                                </td>
+                        </tr>
+                        
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Rock_music" class = "standardb_black" target="_blank">Wikipedia Rock Music</a> - <b>Rock Music</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+                        
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                       19th of Jul, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="aria">Aria (rus. Ария)</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="images/icons/music/aria.jpg" alt="Aria (rus. Ария)" title="Aria (rus. Ария)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Aria</b> (Russian: Ария, romanized: Ariya) is a Russian heavy metal band that was formed in 1985 in Moscow. Although it was not the first Soviet band to play heavy music, Aria was the first to break through to mainstream media and commercial success. According to several public polls, Aria ranks among top 10 most popular Russian rock bands. Their sound resembled that of NWOBHM bands, for which they were dubbed the "Russian Iron Maiden" in the media.
+
+<P>The band has most of its lyrics written by professional poets, Margarita Pushkina and Alexander Yelin commonly, and not by its band members. Since the band was founded, several of its founder members have gone on to form bands of their own resulting in Aria becoming the root of the so-called "Aria Family". Master, a band formed by four ex-members of Aria, is one of the most influential Russian metal bands. Kipelov is another example of a band formed by lead vocalist Valery Kipelov, who remained with the band til 2002.
+
+
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://en.wikipedia.org/wiki/Aria_(band)" class = "standardb_black" target="_blank">Wikipedia Aria (band)</a> - <b>Aria (rus. Ария)</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://aria.ru" class = "standardb_black" target="_blank">Aria (rus. Ария)</a> - Official Website (rus.).
+                        </td>
+                        </tr>
+
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria0">
+          <a href="https://www.youtube.com/watch?v=ePkvOeVszbc"><img src="images/icons/playlists/aria1.jpg" data-title="Ария - Еще Повоюем"   data-description="<a href='https://www.youtube.com/watch?v=ePkvOeVszbc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>23rd of Mar, 2023."></a>
+        </div>
+
+
+
+        <script>
+
+            Galleria.run('.galleria0', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        21st of Jan, 2023.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+				
+				
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="association">Association for the Promotion of Snivelling among the Young (rus. Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели)</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="images/icons/music/association.jpg" alt="Association for the Promotion of Snivelling among the Young (rus. Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели)" title="Association for the Promotion of Snivelling among the Young (rus. Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Ассоциация содействия возвращению заблудшей молодёжи на стезю добродетели</b> (кратко <b>Ассоциация</b>) — советская рок-группа, созданная в 1986 году в Свердловске Алексеем Могилевским и Николаем Петровым. «Ассоциация» записала шесть альбомов и прекратила своё существование в середине 90-х. Коллектив был возрожден в 2014-м году.
+
+<P>Name is taken from <a href="books_wells_eng.html" class = "standardb_black" target="_blank">Herbert George Wells</a>, book <a href="books_wells_eng.html#mr_ledbetters_vacation" class = "standardb_black" target="_blank">Mr. Ledbetter's Vacation</a>.
+
+
+<br><br>
+<P><b>Состав Группы:</b>
+<P>&nbsp;&bull; Алексей Могилевский — вокал, клавишные, саксофон, аккордеон, гитара
+<P>&nbsp;&bull; Валерий Кузин — гитара, бэк-вокал
+<P>&nbsp;&bull; Евгений Звидённый — бас-гитара
+									
+									
+<br><br>
+<P><b>Дискография:</b>
+<P>&nbsp;&bull; 1986 — «Угол»
+<P>&nbsp;&bull; 1987 — «Команда 33» (песни из одноимённого фильма)
+<P>&nbsp;&bull; 1988 — «Калейдоскопия»
+<P>&nbsp;&bull; 1989 — «Клетка для маленьких»
+<P>&nbsp;&bull; 1990 — «Сторона»
+<P>&nbsp;&bull; 1991 — «Щелкунчик»
+<P>&nbsp;&bull; 1996 — «Greatest Hits» (сборник)
+									
+									
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F_%D1%81%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F_%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D1%8E_%D0%B7%D0%B0%D0%B1%D0%BB%D1%83%D0%B4%D1%88%D0%B5%D0%B9_%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%91%D0%B6%D0%B8_%D0%BD%D0%B0_%D1%81%D1%82%D0%B5%D0%B7%D1%8E_%D0%B4%D0%BE%D0%B1%D1%80%D0%BE%D0%B4%D0%B5%D1%82%D0%B5%D0%BB%D0%B8" class = "standardb_black" target="_blank">Wikipedia Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели</a> - <b>Association for the Promotion of Snivelling among the Young (rus. Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели)</b> on Wikipedia (rus.).
+                        </td>
+                        </tr>
+                        
+
+						
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://vk.com/a_mogilevsky" class = "standardb_black" target="_blank">ВКонтакте Алексей Могилевский и "Ассоциация"</a> - <b>Association for the Promotion of Snivelling among the Young (rus. Ассоциация Содействию Возвращения Заблудшей Молодёжи на Стезю Добродетели)</b> in ВКонтакте (rus.).
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        21st of Oct, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="chizh">Chizh &amp; Co (rus. Чиж & Co) <font class="blinking_text" color="crimson"><sup>&#191; Inadequate &#191;</sup></font></a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="images/icons/music/chizh.jpg" alt="Chizh &amp; Co (rus. Чиж & Co)" title="Chizh &amp; Co (rus. Чиж & Co)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Чиж & Co</b> or <b>Chizh & Co</b> is a Russian rock band. It was named The Band of a Year by Rock-Fuzz magazine in 1997.
+
+
+<br><br>
+<P><b>Discography:</b>
+
+
+<P>&nbsp;&bull; 1993 - Chizh (rus. Чиж, eng. Chizh)
+<P>&nbsp;&bull; 1994 - Live  (rus. Live, eng. Live)
+<P>&nbsp;&bull; 1995 - Perekryostok (rus. Перекресток, eng. Crossroad)
+<P>&nbsp;&bull; 1995 - O Lyubvi (rus. О любви, eng. About Love)
+<P>&nbsp;&bull; 1995 - Greatest Hits (rus. Greatest Hits, eng. Greatest Hits)
+<P>&nbsp;&bull; 1996 - Erogennaya Zona (rus. Эрогенная зона, eng. Erogenous Zone
+<P>&nbsp;&bull; 1996 - Polonez (rus. Полонез, eng. Polonaise)
+<P>&nbsp;&bull; 1997 - Bombardirovschiki (rus. Бомбардировщики, eng. Bombers)
+<P>&nbsp;&bull; 1997 - Lutshie Blyuzy i Ballady (rus. Лучшие блюзы и баллады, eng. The Best of Blues and Ballads)
+<P>&nbsp;&bull; 1998 - Noviy Ierusalim (rus. Новый Иерусалим, eng. New Jerusalem)
+<P>&nbsp;&bull; 1998 - V 20:00 po Grinvichu (rus. В 20:00 по Гринвичу, eng. At 20:00 GMT)
+<P>&nbsp;&bull; 1999 - Nechego Teryat' (rus. Нечего терять, eng. Nothing to Lose)
+<P>&nbsp;&bull; 2001 - Gaidnom Budu (rus. Гайдном буду, eng. I'll be Haydn)
+<P>&nbsp;&bull; 2005 - SorokChetyre (rus. 44, eng. 44)
+<P>&nbsp;&bull; 2007 - Na grani izumruda (rus. На грани изумруда, eng. On the Verge of Emerald)
+
+
+
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://en.wikipedia.org/wiki/Chizh_%26_Co" class = "standardb_black" target="_blank">Wikipedia Chizh &amp; Co</a> - <b>Chizh &amp; Co (rus. Чиж & Co)</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.chizh.net/" class = "standardb_black" target="_blank">Chizh &amp; Co (rus. Чиж & Co)</a> - Official Website (rus.).
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria">
+          <a href="https://www.youtube.com/watch?v=ranLC5m8sfU"><img src="images/icons/playlists/chizh3.jpg" data-title="Чиж &amp; Co - Еду, Еду"   data-description="<a href='https://www.youtube.com/watch?v=ranLC5m8sfU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>23rd of Oct, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=wyiibtKb0VI"><img src="images/icons/playlists/chizh1.jpg" data-title="Чиж &amp; Co - Жёлтый дождь"   data-description="<a href='https://www.youtube.com/watch?v=wyiibtKb0VI' class = 'smallb_black' target='_blank'>YouTube</a> Links.<br>08th of Aug, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=zpnF1i3oVlU"><img src="images/icons/playlists/chizh2.jpg" data-title="Чиж &amp; Co - Она Не Вышла Замуж"   data-description="<a href='https://www.youtube.com/watch?v=zpnF1i3oVlU' class = 'smallb_black' target='_blank'>YouTube</a> Links.<br>08th of Aug, 2017."></a>
+        </div>
+
+
+
+        <script>
+            var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/azur/galleria.azur.js');
+
+            Galleria.run('.galleria', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        08th of Aug, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="kukryniksy">Kukryniksy (rus. Кукрыниксы)</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="images/icons/music/kukryniksy.jpg" alt="Kukryniksy (rus. Кукрыниксы)" title="Kukryniksy (rus. Кукрыниксы)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>«<b>Кукрыниксы</b>» — российская рок-группа, основанная Алексеем Горшенёвым («Ягодой»), младшим братом Михаила Горшенёва («Горшка»), лидера группы «Король и Шут».
+
+<P>Название группы происходит от трио советских карикатуристов Кукрыниксы.
+
+<P>Музыкальный стиль группы, в целом укладывающийся в рок, со временем менялся. В первых альбомах группа играла панк-рок, в более поздних — отошла от панка, демонстрируя некоторое влияние постпанка.
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/Кукрыниксы_(группа)" class = "standardb_black" target="_blank">Wikipedia Кукрыниксы (группа)</a> - <b>Kukryniksy (rus. Кукрыниксы)</b> on Wikipedia (rus.).
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.kukry.ru" class = "standardb_black" target="_blank">Kukryniksy (rus. Кукрыниксы)</a> - Official Website (rus.).
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        31st of Dec, 2021.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="maidanov">Denis Maidanov (rus. Денис Майданов)</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="images/icons/music/maidanov.jpg" alt="Denis Maidanov (rus. Денис Майданов)" title="Denis Maidanov (rus. Денис Майданов)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Denis Vasilievich Maidanov</b> (Russian: Денис Васильевич Майдaнов, born 17 February 1976) is a Russian singer, songwriter, actor, and politician. An accomplished artist known throughout Russia, Maidanov also serves in the Russian State Duma as a representative of the Odintsovo constituency of Odintsovsky District, Moscow Oblast since 2021. He is a member of United Russia. Maidanov's accolades as an artist include the title of Merited Artist of the Russian Federation, as well as the Golden Gramophone, song of the year, and chanson of the year. In his political career, Maidanov has vocally supported the policies of Vladimir Putin, and supported the invasion of Ukraine. In 2022 he was sanctioned by the European Union.
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://en.wikipedia.org/wiki/Denis_Maidanov" class = "standardb_black" target="_blank">Wikipedia Denis Maidanov</a> - <b>Denis Maidanov (rus. Денис Майданов)</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://maydanov.ru" class = "standardb_black" target="_blank">Denis Maidanov (rus. Денис Майданов)</a> - Official Website (rus.).
+                        </td>
+                        </tr>
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        16th of Dec, 2022.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="matov">Aleksei Matov (rus. Алексей Матов)</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="images/icons/music/matov.jpg" alt="Aleksei Matov (rus. Алексей Матов)" title="Aleksei Matov (rus. Алексей Матов)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Известные официальные данные:</b>
+<P>&nbsp;&bull; Творческий псевдоним: Алексей Матов;
+<P>&nbsp;&bull; Дата рождения: 1973-й год, 3 ноября;
+<P>&nbsp;&bull; Знак зодиака: Скорпион;
+<P>&nbsp;&bull; Род деятельности: певец, клипмейкер, автор музыки и текстов.
+
+<br><br>
+<P><b>Биография и творчество:</b>
+<P>Сам бард не любит откровенничать про начало жизни, говоря: «Будет ли отрада читающему, если расскажу про обычное детство?» Кстати, Матов – это не настоящая фамилия певца, а псевдоним, присоединенный к имени. Классно сказал про неопределенность в знаниях о кумире один из поклонников Алексея, Сергей Аникеев: «Ну, распишет биографию – и все! Пропадет интрига, не будет гибкости для фантазии». И его же слова: «Распространять биографию Матова, на мой взгляд, вредно. Главное – аморального он ничего не делал».
+
+<P>Но сквозь строчки в соц. сетях можно кое-что просмотреть о том, как жил подросток, потом юноша, и уже взрослый мужчина. Взял гитару в руки, потому что популярное хобби: играть на гитаре – не обошло и его. «Подобрал несколько песен и понял: надо писать и петь свое, а не чье-то. Сначала выходило не слишком гладко, потом – лучше, но песни начали рождаться целыми блоками», – со слов Матова из интервью на встрече игроков «WOW» в Голицыно. Первое произведение родилось, по словам автора, когда ему было 13 лет.
+
+<P>Начало 2010-х – расцвет творчества Алексея Матова. Регулярные релизы песен и альбомов, выступления перед живой публикой создали ему славу искреннего, эмоционального исполнителя собственных талантливых произведений. Большинство синглов посвящено военной тематике, например:
+
+<P>&nbsp;&bull; «Полверсты смерти и огня», почти 2 млн просмотров на youtube;
+<P>&nbsp;&bull; «На последнем рубеже»; около 3 млн просмотров на ютубе;
+<P>&nbsp;&bull; «Аврора».
+
+
+<P>Есть у него и лирические синглы, например – «Много ли котенку надо». По стилю иногда Алексея Матова сравнивали с Виктором Цоем, но поклонники певца не соглашались: «Это эпоха похожа: перестроечная лихая молодость, полунищее начало жизни – а песни разные!» В 2016-м году бурно развивавшуюся карьеру барда прервала болезнь – Алексей пережил тяжелый инсульт. После болезни государство назначило певцу пенсию: ее Сергею Матову хватает на питание, на оплату коммунальных услуг. В 2020-м году, пока не появляясь на публике, Алексей уже активно занимается творчеством, занимаясь ремастерингом старых песен, выпуская новые альбомы.
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://mir-znamenitostej.ru/aleksej-matov-biografiya-tvorchestvo/" class = "standardb_black" target="_blank">Мир Знаменитостей Алексей Матов</a> - <b>Aleksei Matov (rus. Алексей Матов)</b> on Мир Знаменитостей.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.alekseymatov.ru/" class = "standardb_black" target="_blank">Aleksei Matov (rus. Алексей Матов)</a> - Official Website (rus.).
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria4">
+          <a href="https://www.youtube.com/watch?v=zp4h0lR6OkM"><img src="images/icons/playlists/aleksei_matov1.jpg" data-title="Алексей Матов - Не Верится"   data-description="<a href='https://www.youtube.com/watch?v=zp4h0lR6OkM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Jan, 2021."></a>
+          <a href="https://www.youtube.com/watch?v=GQe-uKm6SQc"><img src="images/icons/playlists/aleksei_matov2.jpg" data-title="Алексей Матов - Три Танкиста"   data-description="<a href='https://www.youtube.com/watch?v=GQe-uKm6SQc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Jan, 2021."></a>
+          <a href="https://www.youtube.com/watch?v=Nd7mP9AF234"><img src="images/icons/playlists/aleksei_matov3.jpg" data-title="Алексей Матов - Второй Фронт"   data-description="<a href='https://www.youtube.com/watch?v=Nd7mP9AF234' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Jan, 2021."></a>
+        </div>
+
+
+
+        <script>
+            Galleria.run('.galleria4', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        03rd of Jan, 2021.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+                
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="nensi">Nensi (rus. Нэнси) <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="images/icons/music/nensi.jpg" alt="Nensi (rus. Нэнси)" title="Nensi (rus. Нэнси)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P>Nensi (Нэнси) is a Ukrainian-Russian musical band founded in 1992 in the city of Kostiantynivka (Donetsk Oblast) by the singer-songwriter Anatoly Bondarenko. The band is best known for its song "Dym sigaret s mentolom" ("Дым сигарет с ментолом").
+
+<P>Nensi received positive feedback from music critics, being credited as a successful project of contemporary pop-culture.
+
+<P>On 31 January 2016, one of the band members, Sergey Bondarenko, was arrested in Sheremetyevo International Airport, when returning to Russia from Germany, being accused of security threats to Russia. Later he was deported back to Germany with an interdiction to not re-enter Russia until 2018.
+
+<P>On 18 October 2018, Sergey Bondarenko died at the age of 31.
+
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://en.wikipedia.org/wiki/Nensi" class = "standardb_black" target="_blank">Wikipedia Nensi</a> - <b>Nensi (rus. Нэнси)</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        06th of Dec, 2018.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="vasja_oblomov">Vasja Oblomov (rus. Вася Обломов)</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="images/icons/music/vasja_oblomov.jpg" alt="Vasja Oblomov (rus. Вася Обломов)" title="Vasja Oblomov (rus. Вася Обломов)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Василий Владимирович Гончаров</b> (род. 21 марта 1984, Ростов-на-Дону, СССР) — российский музыкант, вокалист, поэт, композитор и музыкальный продюсер. Основатель и лидер группы «Чебоза». Более известен как <b>Вася Обломов</b> в связи с созданием одноимённого музыкального проекта. Один из основателей и участник музыкально-поэтического проекта «Господин хороший». Общественный деятель.
+
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%81%D1%8F_%D0%9E%D0%B1%D0%BB%D0%BE%D0%BC%D0%BE%D0%B2" class = "standardb_black" target="_blank">Wikipedia Вася Обломов</a> - <b>Vasja Oblomov (rus. Вася Обломов)</b> on Wikipedia (rus.).
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://vasyaoblomov.ru/" class = "standardb_black" target="_blank">Vasja Oblomov (rus. Вася Обломов)</a> - Official Site (rus.).
+                        </td>
+                        </tr>
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        16th of Jul, 2019.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="serga">SerGa (rus. СерьГа) <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                    <img src="images/icons/music/serga.jpg" alt="SerGa (rus. СерьГа)" title="SerGa (rus. СерьГа)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P>«<b>СерьГа</b>» — российская рок-группа, образованная в 1994 году Сергеем Галаниным. Девиз группы — «Для тех, у кого есть уши».
+
+<br><br>
+<P><b>Состав:</b>
+<P>&nbsp;&bull; Сергей Галанин — вокал, акустическая гитара, электрогитара, электроакустическая гавайская гитара.
+<P>&nbsp;&bull; Андрей Кифияк — соло-гитара
+<P>&nbsp;&bull; Сергей Левитин — ритм-гитара
+<P>&nbsp;&bull; Сергей «Sungy» Поляков — барабаны.
+<P>&nbsp;&bull; Сергей Крынский — бас-гитара, бэк-вокал
+
+
+<br><br>
+<P><b>Дискография:</b>
+
+<P>&nbsp;&bull; Собачий вальс, 1994
+<P>&nbsp;&bull; СерьГа, 1995
+<P>&nbsp;&bull; Долина глаз, 1997
+<P>&nbsp;&bull; Дорога в ночь, 1997
+<P>&nbsp;&bull; Живая коллекция, 1998
+<P>&nbsp;&bull; Страна чудес, 1999
+<P>&nbsp;&bull; Лучшие песни, 2001
+<P>&nbsp;&bull; Я такой, как все, 2003
+<P>&nbsp;&bull; Ночная дорога в страну чудес, 2005
+<P>&nbsp;&bull; Нормальный человек, 2006
+<P>&nbsp;&bull; Детское сердце, 2011
+<P>&nbsp;&bull; Природа, свобода и любовь, 2011
+<P>&nbsp;&bull; Чистота, 2015
+
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D1%8C%D0%93%D0%B0" class = "standardb_black" target="_blank">Wikipedia СерьГа</a> - <b>SerGa (rus. СерьГа)</b> on Wikipedia (rus.).
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.serga.ru/" class = "standardb_black" target="_blank">SerGa (rus. СерьГа)</a> - Official Site (rus.).
+                        </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria6">
+          <a href="https://www.youtube.com/watch?v=DcXPVBe0F_w"><img src="images/icons/playlists/serga1.jpg" data-title="СерьГа - Страна Чудес"   data-description="<a href='https://www.youtube.com/watch?v=DcXPVBe0F_w' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=6qWoT1M8GfA"><img src="images/icons/playlists/serga2.jpg" data-title="СерьГа - А Что Нам Надо"   data-description="About <a href='countries_ussr_communism_eng.html' class = 'smallb_black' target='_blank'>Soviet</a> <a href='countries_ussr_communism_eng.html' class = 'smallb_black' target='_blank'>Communist Ideology</a>.<br><a href='https://www.youtube.com/watch?v=6qWoT1M8GfA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=uNSRl-9cYr4"><img src="images/icons/playlists/serga3.jpg" data-title="СерьГа - Не Повезло"   data-description="About Crosses, Berlin Homeless and Drug Addicted and About Islam.<br><a href='https://www.youtube.com/watch?v=uNSRl-9cYr4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=XvL-xybk9Wo"><img src="images/icons/playlists/serga4.jpg" data-title="СерьГа - Песня Про Радость"   data-description="and Also <a href='https://www.youtube.com/watch?v=TA-G59CTre8' class = 'smallb_black' target='_blank'>Холодное Море Молчит</a> - About Themselfs.<br><a href='https://www.youtube.com/watch?v=XvL-xybk9Wo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=7BY1CF68WiY"><img src="images/icons/playlists/serga5.jpg" data-title="СерьГа - Детское Сердце"   data-description="About Band Peste Noire.<br><a href='https://www.youtube.com/watch?v=7BY1CF68WiY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>18th of Apr, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=dabvWNVVnN4"><img src="images/icons/playlists/serga6.jpg" data-title="СерьГа - Ты Не Придёшь"   data-description="About <a href='music_pop_eng.html#dion' class = 'smallb_black' target='_blank'>Celine Dion</a> (Creation).<br><a href='https://www.youtube.com/watch?v=dabvWNVVnN4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>02nd of May, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=If2bsBl8Lao"><img src="images/icons/playlists/serga6.jpg" data-title="СерьГа - С Днём Рождения"   data-description="About Band <a href='music_psychedelic_rock_eng.html#auktyon' class = 'smallb_black' target='_blank'>Auktyon (rus. АукцЫон)</a>.<br><a href='https://www.youtube.com/watch?v=If2bsBl8Lao' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>16th of May, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=UKAEnbdcJPY"><img src="images/icons/playlists/serga7.jpg" data-title="СерьГа - Дорога в Ночь"   data-description="About Mikhail Krug (rus. Михаил Круг) (Creation).<br><a href='https://www.youtube.com/watch?v=UKAEnbdcJPY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Jun, 2017."></a>
+        </div>
+
+
+
+        <script>
+            Galleria.run('.galleria6', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        11th of Apr, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+                
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="zveri">Zveri (rus. Звери)</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+                                     <img src="images/icons/music/zveri.jpg" alt="Zveri (rus. Звери)" title="Zveri (rus. Звери)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Zveri</b> (Beasts; Russian: Звери) is a Russian pop rock band.
+
+<br><br>
+<P><b>Discography:</b>
+
+<P>&nbsp;&bull; 2003 - Голод (Golod, Hunger)
+<P>&nbsp;&bull; 2004 - Районы-кварталы (Rayoni-Kvartali, Districts And Blocks)
+<P>&nbsp;&bull; 2006 - Когда мы вместе никто не круче (Kogda Mi Vmeste Nikto Ne Kruche,When We Are Together No One Is Better)
+<P>&nbsp;&bull; 2008 - Дальше (Dal'she, Then)
+<P>&nbsp;&bull; 2011 - Музы (Muzi, Muses)
+<P>&nbsp;&bull; 2014 - Один на один (Odin na odin, One on one)
+
+                                    
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Zveri" class = "standardb_black" target="_blank">Wikipedia Zveri</a> - <b>Zveri (rus. Звери)</b> on Wikipedia.
+                        </td>
+
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.zve.ru/" class = "standardb_black" target="_blank">Zveri (rus. Звери)</a> - Official Website (rus.).
+                        </td>
+                        </tr>
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        
+
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria9">
+          <a href="https://www.youtube.com/watch?v=Ezfv3J0jsnY"><img src="images/icons/playlists/zveri1.jpg" data-title="Звери - Районы-Кварталы"   data-description="About the End of Things/Projects.<br><a href='https://www.youtube.com/watch?v=Ezfv3J0jsnY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Dec, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=mrV-SjSolxk"><img src="images/icons/playlists/zveri2.jpg" data-title="Звери - Я с Тобой"   data-description="About the End of Things/Projects.<br><a href='https://www.youtube.com/watch?v=mrV-SjSolxk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Sep, 2017."></a>
+        </div>
+
+
+
+        <script>
+
+            Galleria.run('.galleria9', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        22nd of Dec, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+                
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+        </tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+        <tr>
+          <td class="title_black" >
+            &copy; Urmas Repinski, urrimus@hotmail.com
+          </td>
+        </tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+
+

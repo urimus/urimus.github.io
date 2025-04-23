@@ -1,0 +1,1828 @@
+﻿
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Foto Gallery -->
+<script src="scripts/jquery/jquery.js"></script>
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<!-- Background Images Script -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*42;
+var imgBgSrc="images/icons/background/industrial.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+        <tr> 
+                <td  height="3"></td>
+        </tr>   
+        <tr>
+                <td width="1000">
+                        <img src="images/icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+                </td>
+        </tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+        <tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_industrial_electro_eng.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_industrial_electro_eng.html' + window.location.hash;
+                                };"             
+                        class="flag_selected"
+                >
+                        <img src="lang/eng.gif" alt="english" title="english" width="22" height="17" style="display: block;"/>
+                </div>
+        </td>
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('music_industrial_electro_rus.html' + window.location.hash);
+                                } else {
+                                        window.location.href='music_industrial_electro_rus.html' + window.location.hash;
+                                };"             
+                        class="flag_not_selected"
+                >
+                        <img src="lang/rus.gif" alt="русский" title="русский" width="22" height="17" style="display: block;"/>
+                </div>
+        </td>
+        </tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+        <tr> 
+
+        <td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+        <tr> 
+                <td  align="center" class="title_gradient_black">Menu</td>
+        </tr>
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_me_eng.html');
+                        } else {
+                                window.location.href='about_me_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About me</div>
+        </td>
+        </tr>   
+        <tr>
+                <td align="center" >
+                  <div id="menu_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_work_eng.html');
+                        } else {
+                                window.location.href='about_work_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my work</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('about_phd_eng.html');
+                        } else {
+                                window.location.href='about_phd_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  About my PhD</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_7"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"               
+                  class="menu_selected">
+                  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_1"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_chanson_eng.html');
+                        } else {
+                                window.location.href='music_chanson_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Chanson <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_country_eng.html');
+                        } else {
+                                window.location.href='music_country_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Country <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_4"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_disco_eng.html');
+                        } else {
+                                window.location.href='music_disco_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Disco</div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_5"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Electronic</div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_selected"
+		  style="padding-left: 5px;">
+                  &#9679; Industrial</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_6_1"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="
+                    this.className='menu_selected';
+                        if (event.ctrlKey==1){
+                                window.open('music_industrial_electro_eng.html');
+                        } else {
+                                window.location.href='music_industrial_electro_eng.html';
+                        };"                               
+                  class="menu_selected"
+		  style="padding-left: 15px;">
+                  &bull; Electro-</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_6_2"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_industrial_metal_eng.html');
+                        } else {
+                                window.location.href='music_industrial_metal_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+                  &bull; Metal</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_6_3"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_industrial_rock_eng.html');
+                        } else {
+                                window.location.href='music_industrial_rock_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 15px;">
+                  &bull; Rock</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_7"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Metal <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_9"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_pop_eng.html');
+                        } else {
+                                window.location.href='music_pop_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Pop <font class="blinking_text" color="slateblue"><sup>&smashp; Abstract &smashp;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_10"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Psychedelic <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_11"
+                  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+                  onMouseOut="this.className='menu_not_selected_black'"
+                  onClick="showSubMenu(this, 'eng', 'music');"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_12"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_rap_eng.html');
+                        } else {
+                                window.location.href='music_rap_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Rap <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_reggae_eng.html');
+                        } else {
+                                window.location.href='music_reggae_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Reggae</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="left" >
+                  <div id="menu_7_14"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'"
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('music_rock_eng.html');
+                        } else {
+                                window.location.href='music_rock_eng.html';
+                        };"                               
+                  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+                  &#9679; Rock <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+        </td>
+        </tr>   
+
+
+
+
+
+
+
+                
+        <tr>
+                <td align="center" >
+                  <div id="menu_8"
+                  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'movies');"                               
+                  class="menu_not_selected_black">
+                  Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+        </td>
+        </tr>
+
+
+<tr>
+                <td align="center" >
+                  <div id="menu_27"
+                  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'series');"                               
+                  class="menu_not_selected_black">
+                  Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_9"
+                  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'games');"  
+                  class="menu_not_selected_black">
+                  Games</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_10"
+                  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'books');"  
+                  class="menu_not_selected_red">
+                  Books</div>
+        </td>
+        </tr>   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_11"
+                  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'photos');"  
+                  class="menu_not_selected_red">
+                  Photos/Images</div>
+        </td>
+        </tr>   
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_12"
+                  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'amv');"                                               
+                  class="menu_not_selected_black">
+                  AMV</div>
+        </td>
+        </tr>           
+        <tr>
+                <td align="center" >
+                  <div id="menu_13"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="
+                    this.className='menu_not_selected_black';
+                        if (event.ctrlKey==1){
+                                window.open('junk_eng.html');
+                        } else {
+                                window.location.href='junk_eng.html';
+                        };"                                               
+                  class="menu_not_selected_black">
+                  Junk</div>
+        </td>
+        </tr>                   
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_14"
+                  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+                  onMouseOut="this.className='menu_not_selected_black'" 
+                  onClick="showSubMenu(this, 'eng', 'stuff');"                                       
+                  class="menu_not_selected_black">
+                  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_15"
+                  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+                  class="menu_not_selected_red">
+                  Anecdotes</div>
+        </td>
+        </tr>           
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_17"
+                  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+                  class="menu_not_selected_white">
+                  Substances For Relaxation</div>
+        </td>
+        </tr>   
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_18"
+                  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+                  onMouseOut="this.className='menu_not_selected_white'" 
+                  onClick="showSubMenu(this, 'eng', 'software');"  
+                  class="menu_not_selected_white">
+                  Software Development</div>
+        </td>
+        </tr>   
+        
+        
+        
+        
+        
+        <tr>
+                <td align="center" >
+                  <div id="menu_19"
+                  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'satanism');"                                       
+                  class="menu_not_selected_green">
+                  Satanism</div>
+        </td>
+        </tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_21"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('falsifiability_eng.html');
+                        } else {
+                                window.location.href='falsifiability_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Falsifiability</div>
+        </td>
+        </tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_22"
+                  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'psychology');"                                       
+                  class="menu_not_selected_green">
+                  Psychology</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_23"
+                  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'countries');"                                       
+                  class="menu_not_selected_green">
+                  Countries</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_24"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('totalitarianism_eng.html');
+                        } else {
+                                window.location.href='totalitarianism_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Totalitarianism</div>
+        </td>
+        </tr>
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_25"
+                  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="showSubMenu(this, 'eng', 'personalities');"                                       
+                  class="menu_not_selected_green">
+                  Personalities</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+
+</table>
+
+        
+
+                </td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+        <tr> 
+                <td  class="title_black" style="width: 530px;"><a name="welcome">Music &blacktriangleright; Industrial &blacktriangleright; Electro-Industrial</a></td>
+        </tr>
+
+        <tr>
+                <td height="3" bgcolor="#ff8a00"></td>
+        </tr>   
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:966px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+                
+                
+        <tr align="center">
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="industrial">Industrial Music</a></td>
+                        </tr>
+                        <tr>
+                                <td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/industrial.jpg" alt="Industrial Music" title="Industrial Music" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Industrial music</b> is a genre of experimental/electronic music that draws on transgressive and provocative themes. The term was coined in the mid-1970s with the founding of Industrial Records by Genesis P-Orridge of Throbbing Gristle and Monte Cazazza; on Throbbing Gristle's debut album The Second Annual Report, they coined the slogan "industrial music for industrial people". In general, the style is harsh and challenging. AllMusic defines industrial as the "most abrasive and aggressive fusion of rock and electronic music"; "initially a blend of avant-garde electronics experiments (tape music, musique concr&egrave; te, white noise, synthesizers, sequencers, etc.) and punk provocation".
+
+<P>The first industrial artists experimented with noise and aesthetically controversial topics, musically and visually, such as fascism, serial killers and the occult. Their production was not limited to music, but included mail art, performance art, installation pieces and other art forms. Prominent industrial musicians include Throbbing Gristle, Monte Cazazza, SPK, Boyd Rice, Cabaret Voltaire, and Z'EV. The precursors that influenced the development of the genre included acts such as electronic group Kraftwerk, experimental rock acts such as The Velvet Underground and Frank Zappa, psychedelic rock artists such as Jimi Hendrix, and composers such as John Cage. Musicians also cite writers such as William S. Burroughs, and philosophers such as Friedrich Nietzsche as influences.
+
+<P>While the term was self-applied by a small coterie of groups and individuals associated with Industrial Records in the 1970s, it was broadened to include artists influenced by the original movement or using an "industrial" aesthetic. These artists expanded the genre by pushing it into noisier and more electronic directions. Over time, its influence spread into and blended with styles including ambient and rock, all of which now fall under the post-industrial music label. Electro-industrial music is a primary subgenre that developed in the 1980s. The two other most notable hybrid genres are industrial rock and industrial metal, which include bands such as Nine Inch Nails and Ministry, both of which released platinum-selling albums in the 1990s. These three distinct genres are often referred to as simply industrial.
+
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Industrial_music" class = "standardb_black" target="_blank">Wikipedia Industrial Music</a> - <b>Industrial Music</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+                        
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        28th of Jun, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+
+                
+        <tr align="center">
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+                        <tr >
+                                <td width="100%" height="100%" class="nimetus2_black"><a name="electro_industrial">Electro-Industrial</a></td>
+                        </tr>
+                        <tr>
+                                <td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/electro_industrial.jpg" alt="Electro-Industrial" title="Electro-Industrial" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Electro-industrial</b> is a music genre drawing on EBM and post-industrial that developed in the mid-1980s. While EBM has a minimal structure and clean production, Electro-industrial has a deep, complex and layered sound. The style was pioneered by Skinny Puppy, Front Line Assembly, and other groups, either from Canada or the Benelux. In the early 1990s, the style spawned the dark electro genre, and in the mid-/late-1990s, the aggrotech offshoot. The fan base for the style is linked to the rivethead subculture.
+
+<br><br>
+<P><b>Characteristics:</b>
+
+<P>After the EBM movement faded in the early 1990s, Electro-industrial increasingly attained popularity in the international club scene. In contrast to the straight EBM style, Electro-industrial groups use harsher beats and raspy, distorted, or digitized vocals. In contrast to Industrial rock, Electro-industrial groups mostly avoided guitars, other than Skinny Puppy, who used E-Guitar Elements since the mid 80s in Songs like Testure or Dig It.
+
+<P>Electro-industrial was anticipated by 1980s groups such as SPK, Die Form, Borghesia, Klinik, Skinny Puppy, and Front Line Assembly.
+
+<P>Prominent Electro-industrial groups of the 1990s include Mentallo and the Fixer, Yeht Mae, Velvet Acid Christ, KMFDM and Pulse Legion (U.S.); Numb and Decoded Feedback (Canada); X Marks the Pedwalk, Plastic Noise Experience, :wumpscut:, Haujobb, Forma Tadre, and Putrefy Factor 7 (Germany); Le&aelig;ther Strip from Denmark; and early Hocico, Cenobita and Amduscia from Mexico.
+
+<P>Since the mid-1990s, some Electro-industrial groups added guitars and became associated with industrial metal; other groups, e. g. Skinny Puppy, Download, Gridlock and Haujobb, have incorporated elements of experimental electronic music styles like drum and bass, IDM, Glitch and other Electronica Genres.
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Electro-industrial" class = "standardb_black" target="_blank">Wikipedia Electro-Industrial</a> - <b>Electro-Industrial</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+                        
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        28th of Jun, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="agonoize">Agonoize</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/agonoize.jpg" alt="Agonoize" title="Agonoize" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Agonoize</b> is a German Aggrotech band consisting of Mike Johnson (composition, programming, production and mastering), Oliver Senger (composition and programming) and Chris L (lyrics and vocals).
+
+
+<br><br>
+<P><b>Discography:</b>
+
+<P>&nbsp;&bull; Paranoid Destruction EP (BLC Productions, 2003)
+<P>&nbsp;&bull; Assimilation: Chapter One CD (BLC Productions, 2004)
+<P>&nbsp;&bull; Open The Gate To Paradise EP (BLC Productions, 2004)
+<P>&nbsp;&bull; 999 2CD (Out of Line Music, 2005)
+<P>&nbsp;&bull; Evil Gets an Upgrade EP (Out of Line Music, 2005)
+<P>&nbsp;&bull; Assimilation: Chapter Two (Out of Line Music, 2006) - reissue of 'Assimilation' with bonus CD
+<P>&nbsp;&bull; Ultraviolent Six EP (Out of Line Music, 2006)
+<P>&nbsp;&bull; Sieben 2CD (Out Of Line Music, 2007) (a 3CD edition was issued titled 'Sieben (Maximum Permissible Dose)
+<P>&nbsp;&bull; For The Sick And Disturbed EP (Out of Line Music, 2008)
+<P>&nbsp;&bull; Bis Das Blut Gefriert EP (Out of Line Music, 2009)
+<P>&nbsp;&bull; Hexakosioihexekontahexa (Out of Line Music, 2009)
+<P>&nbsp;&bull; Wahre Liebe (2012)
+<P>&nbsp;&bull; Apokalypse EP (2014)
+<P>&nbsp;&bull; Apokalypse (2014)
+                        
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://en.wikipedia.org/wiki/Agonoize" class = "standardb_black" target="_blank">Wikipedia Agonoize</a> - <b>Agonoize</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.agonoize.de/" class = "standardb_black" target="_blank">Agonoize</a> - Official Website (engl., ger.).
+                        </td>
+                        </tr>
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria">
+          <a href="https://www.youtube.com/watch?v=KNNmuBHLJbo"><img src="images/icons/playlists/agonoize1.jpg" data-title="Agonoize - The True Church Of God" data-description="<a href='https://www.youtube.com/watch?v=KNNmuBHLJbo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>28th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=v3mFCNlci-Q"><img src="images/icons/playlists/agonoize2.jpg" data-title="Agonoize – Sexual Violation" data-description="<a href='https://www.youtube.com/watch?v=v3mFCNlci-Q' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>28th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=0QQIkz7cdwc"><img src="images/icons/playlists/agonoize3.jpg" data-title="Agonoize – Sacrilege" data-description="<a href='https://www.youtube.com/watch?v=0QQIkz7cdwc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>28th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=a9OniFXd96s"><img src="images/icons/playlists/agonoize4.jpg" data-title="Agonoize – Poisoned Earth" data-description="<a href='https://www.youtube.com/watch?v=a9OniFXd96s' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>18th of Mar, 2017."></a>
+        </div>
+
+
+        <script>
+            var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/azur/galleria.azur.js');
+
+            Galleria.run('.galleria', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        10th of Jan, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="alien_vampires">Alien Vampires</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/alien_vampires.jpg" alt="Alien Vampires" title="Alien Vampires" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+                                                
+<P><b>Alien Vampires</b> is an electro-industrial band formed in 2000. The band has recorded half a dozen studio releases, and has collaborated with numerous other groups, including Suicide Commando, In Slaughter Natives, and Noisuf-X. 
+
+
+
+                                                
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://www.facebook.com/AlienVampires" class = "standardb_black" target="_blank">Facebook Alien Vampires</a> - <b>Alien Vampires</b> on Facebook.
+                        </td>
+                        </tr>
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://myspace.com/alienvampires666" class = "standardb_black" target="_blank">Myspace Alien Vampires</a> - <b>Alien Vampires</b> on Myspace.
+                        </td>
+                        </tr>
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        28th of Jun, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+
+
+
+                
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="das_ich">Das Ich</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/das_ich.jpg" alt="Das Ich" title="Das Ich" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+                                                
+
+
+                                        <P><b>Das Ich</b> is a German electronic music group formed in 1989. The group, fronted by Stefan Ackermann and Bruno Kramm, were one of the prominent founders of and contributors to &quot;Neue Deutsche Todeskunst&quot; (New German Death Art) a musical movement in the early 1990s. The German term das Ich makes reference to the Freudian concept James Strachey translated as &quot;ego&quot; (lit. &quot;The I&quot;).                                        
+
+                                        <br><br><P><b>History</b>
+
+                                        <P>In 1989, the members of Das Ich founded the Danse Macabre record label. Their first full-length album, Die Propheten, was released in Germany in 1991 and was reissued in the US in 1997, selling over thirty thousand copies. In 1996, the album Egodram saw the group moving towards a more rhythmic, industrial dance-oriented sound, resulting in the club singles &quot;Kindgott&quot; and &quot;Destillat&quot;. The album was followed by an American tour in 1996 and 1997. This was followed by 1998's Morgue, a concept album based on the work of Gottfried Benn.
+
+                                        <P>In 1999, they released a remix album, Re-Laborat, that included work done by popular electro-industrial bands. Bruno Kramm released his solo spin off Coeur in 2000.
+
+                                        <P>In 2001, Das Ich released the album Antichrist, which is a critical reflection on world politics. In 2002 the Best Of Album Relikt was released.
+
+                                        <P>In 2004, they released the double album Lava, made of:
+                                        <P>&nbsp;&bull; Lava:Glut: Disc with more instrumental than industrial tracks.
+                                        <P>&nbsp;&bull; Lava:Asche: Disco with dance versions of song from Lava:Glut.
+
+                                        <P>In 2006, they released an additional dual album:
+                                        <P>&nbsp;&bull; Cabaret: Disc with circus style songs, like the name implies, and more instrumental.
+                                        <P>&nbsp;&bull; Variete: Disc with remix versions of Cabaret, made by bands like Stillste Stund, Metallspurunde, FabrikC.etc.
+
+                                        <P>In the same year, they released a new DVD, Panopticum.
+
+                                        <P>Since 2010 the band underwent a hiatus due to the health problems of the lead singer, Stefan Ackermann. They had their Comeback at the Wave-Gotik-Treffen in 2013
+
+
+                                        
+
+                                                
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Das_Ich" class = "standardb_black" target="_blank">Wikipedia Das Ich</a> - <b>Das Ich</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.dasich.de/" class = "standardb_black" target="_blank">Das Ich</a> - Official Website (ger.).
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria2">
+      <a href="https://www.youtube.com/watch?v=-emQ5Fn63Sg"><img src="images/icons/playlists/das_ich1.jpg" data-title="Das Ich - Krieg Im Paradies" data-description="About Germany.<br><a href='https://www.youtube.com/watch?v=-emQ5Fn63Sg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>26th of Jan, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=n_uQT80jSd8"><img src="images/icons/playlists/das_ich1.jpg" data-title="Das Ich - Lugen Und Das Ich" data-description="Parody on  <a href='music_country_eng.html#belomorkanal' class = 'smallb_black' target='_blank'>Belomorkanal band</a>.<br><a href='https://www.youtube.com/watch?v=n_uQT80jSd8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11st of Jul, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=hCli_Gjgoew"><img src="images/icons/playlists/das_ich2.jpg" data-title="Das Ich - Destillat" data-description="Good Music, parody on <a href='music_disco_eng.html' class = 'smallb_black' target='_blank'>Disco</a> and Philosophy in general, and also Similar to <a href='music_country_eng.html#belomorkanal' class = 'smallb_black' target='_blank'>Беломорканал</a> - <a href='https://www.youtube.com/watch?v=JjXObQDSUJs' class = 'smallb_black' target='_blank'>Побег</a>, this means about imposing own views, ignoring other's.<br><a href='https://www.youtube.com/watch?v=hCli_Gjgoew' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11st of Jul, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=GatqVP0qcXg"><img src="images/icons/playlists/das_ich3.jpg" data-title="Das Ich - Kindgott" data-description="<a href='https://www.youtube.com/watch?v=GatqVP0qcXg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=82OIIIO8emo"><img src="images/icons/playlists/das_ich4.jpg" data-title="Das Ich - Schwarzes Gift" data-description="About Germany.<br><a href='https://www.youtube.com/watch?v=82OIIIO8emo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=QPg3zpAJzUM"><img src="images/icons/playlists/das_ich5.jpg" data-title="Das Ich - Es Ist Ja Krieg" data-description="About <a href='software_development_c++_eng.html' class = 'smallb_black' target='_blank'>IT</a>.<br><a href='https://www.youtube.com/watch?v=QPg3zpAJzUM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Aug, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=C8BpZYAPy9s"><img src="images/icons/playlists/das_ich6.jpg" data-title="Das Ich - Sehnsuht" data-description="About Vampirism.<br><a href='https://www.youtube.com/watch?v=C8BpZYAPy9s' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Sep, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=Riz9eCYdrbY"><img src="images/icons/playlists/das_ich4.jpg" data-title="Das Ich - Macht" data-description="About Drug Addicted.<br><a href='https://www.youtube.com/watch?v=Riz9eCYdrbY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Sep, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=_eMGYDTktOk"><img src="images/icons/playlists/das_ich7.jpg" data-title="Das Ich - Grund der Seele" data-description="About Alternative Culture.<br><a href='https://www.youtube.com/watch?v=_eMGYDTktOk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>27th of Sep, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=2SxGWruH0Bc"><img src="images/icons/playlists/das_ich4.jpg" data-title="Das Ich - Cabaret" data-description="About Book <a href='books_pavlov_eng.html' class = 'smallb_black' target='_blank'>Sergey Pavlov (rus. Сергей Павлов)</a> - <a href='books_pavlov_eng.html#lunnaja_raduga' class = 'smallb_black' target='_blank'>By the Black Following (rus. По Чёрному Следу) (Moon Rainbow (rus. Лунная Радуга), Part 1)</a>, &quot;Bamboo&quot; (rus. &quot;Бамбук&quot;) Restaurant, Part 2, Chapter 1 and About Movie <a href='movies_actor_schwarzenegger_eng.html#total_recall' class = 'smallb_black' target='_blank'>Total Recall</a>.<br><a href='https://www.youtube.com/watch?v=2SxGWruH0Bc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>20th of Oct, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=0TH3nX4yww8"><img src="images/icons/playlists/das_ich8.jpg" data-title="Das Ich - Aura" data-description="About <a href='about_phd_eng.html' class = 'smallb_black' target='_blank'>PhD</a>.<br><a href='https://www.youtube.com/watch?v=0TH3nX4yww8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>05th of Dec, 2016."></a>
+          <a href="https://www.youtube.com/watch?v=7F5AOcj7rsU"><img src="images/icons/playlists/das_ich9.jpg" data-title="Das Ich - Kain und Abel" data-description="About <a href='movies_genre_anime_eng.html' class = 'smallb_black' target='_blank'>Anime</a>.<br><a href='https://www.youtube.com/watch?v=7F5AOcj7rsU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Mar, 2017."></a>
+        </div>
+
+
+        <script>
+
+            Galleria.run('.galleria2', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        28th of Jun, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="diary_dreams">Diary of Dreams</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/diary_dreams.jpg" alt="Diary of Dreams" title="Diary of Dreams" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Diary of Dreams</b> is a German darkwave band. The lead singer and founding member Adrian Hates has produced most of the albums by himself or with minimal help from others. He rarely uses a full band, except when on tour.
+
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/Diary_of_Dreams" class = "standardb_black" target="_blank">Wikipedia Diary of Dreams</a> - <b>Diary of Dreams</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://www.diaryofdreams.de/en/" class = "standardb_black" target="_blank">Diary of Dreams</a> - Official Website.
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria5">
+			<a href="https://www.youtube.com/watch?v=jetv6SEscG0"><img src="images/icons/playlists/diary_dreams4.jpg" data-title="Diary of Dreams - The Plague" data-description="<a href='https://www.youtube.com/watch?v=jetv6SEscG0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Jul, 2024."></a>
+		    <a href="https://www.youtube.com/watch?v=jUR-wWhmsS8"><img src="images/icons/playlists/diary_dreams3.jpg" data-title="Diary of Dreams - The Curse" data-description="<a href='https://www.youtube.com/watch?v=jUR-wWhmsS8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Jul, 2024."></a>
+			<a href="https://www.youtube.com/watch?v=Ntk6B81kfH4"><img src="images/icons/playlists/diary_dreams2.jpg" data-title="Diary of Dreams - Butterfly Dance" data-description="<a href='https://www.youtube.com/watch?v=Ntk6B81kfH4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Jul, 2024."></a>
+			<a href="https://www.youtube.com/watch?v=dlSWykvqM6Y"><img src="images/icons/playlists/diary_dreams1.jpg" data-title="Diary of Dreams - Endless Nights" data-description="<a href='https://www.youtube.com/watch?v=dlSWykvqM6Y' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>11th of Jul, 2024."></a>
+        </div>
+
+
+        <script>
+
+            Galleria.run('.galleria5', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        28th of May, 2021.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="la_magra">La Magra</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/la_magra.jpg" alt="La Magra" title="La Magra" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>La Magra</b> was founded by Louis Cyphre in 2001. Dark electronic sounds covered by dark vocals about death, love and immortality. The first releases were burned on CD-R’s and distributed to friends and people who liked this stuff.
+
+<P>The first release was called “Taste my blood” followed by the first full-time CD-R “Sounds of blasphemy”. The second full-time CD-R release was called “ Sinfonien des Grauens”. There was an apocalyptic theme performed. Few times later the third CD-R was released, called “ Troops of tomorrow”. After that, the CD-R releases were stopped.
+
+<P>In 2006 La Magra became a member of the “Rupal” record-label and started remix works for Wynardtage, Acylum, May-Fly & A7ie. In August ..06 it was time for the debut CD called “Music for the living dead”. The third Longplayer "Paradise Lost" was released in november 2009... This was the first Release wih Singer "Clodi". At May 2010 La Magra played their first Gig on the WGT-Frestival in Leipzig (GER) with this new Line Up.
+
+
+
+                                        
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://www.facebook.com/lamagra.official/" class = "standardb_black" target="_blank">Facebook La Magra</a> - <b>La Magra</b> on Facebook.
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://lamagra.bandcamp.com/" class = "standardb_black" target="_blank">La Magra</a> - Official Website.
+                        </td>
+                        </tr>
+
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria3">
+          <a href="https://www.youtube.com/watch?v=z0xcYlFRdWI"><img src="images/icons/playlists/la_magra1.jpg" data-title="La Magra - Man on the Wooden Cross" data-description="About <a href='music_psychedelic_trance_eng.html' class = 'smallb_black' target='_blank'>Psychedelic Music</a> and Literature.<br><a href='https://www.youtube.com/watch?v=z0xcYlFRdWI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Feb, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=0vz6dXoyuuE"><img src="images/icons/playlists/la_magra2.jpg" data-title="La Magra - Vampire Dinner" data-description="About <a href='music_disco_eng.html' class = 'smallb_black' target='_blank'>Disco Music</a>.<br><a href='https://www.youtube.com/watch?v=0vz6dXoyuuE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01st of Feb, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=SPYognv4GrE"><img src="images/icons/playlists/la_magra1.jpg" data-title="La Magra - Breath Of Death" data-description="About the German Police.<br><a href='https://www.youtube.com/watch?v=SPYognv4GrE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Feb, 2017."></a>
+          <a href="https://www.youtube.com/watch?v=UklZ5YWXORY"><img src="images/icons/playlists/la_magra1.jpg" data-title="La Magra - Join Me" data-description="About Game <a href='games_strategy_turn_based_eng.html#heroes_v' class = 'smallb_black' target='_blank'>Heroes Of Might And Magic V</a>.<br><a href='https://www.youtube.com/watch?v=UklZ5YWXORY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>16th of Feb, 2017."></a>
+        </div>
+
+
+        <script>
+
+            Galleria.run('.galleria3', {
+            transition: 'fade',
+            imageCrop: true,
+            height : 500,
+            width : 670
+            });
+        </script>
+
+
+                        </td>
+                        </tr>
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        10th of Jan, 2017.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="miss_construction">Miss Construction</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/miss_construction.jpg" alt="Miss Construction" title="Miss Construction" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>Miss Construction</b> is a Germany electronic music band from Berlin.
+
+<br><br>
+<P><b>History:</b>
+
+<P><b>Miss Construction</b> was formed by singer Chris Pohl in 2008. Pohl had long used up all his resources for unleashing Electro-Industrial/Noise Project Tumor (Tumor is Dead). Miss Construction is seen as an emulation of Tumor, the new official succession from Chris Pohl. Needing a partner in crime, Chris turned to his fellow Terminal Choice collaborator Gordon M. The project is also slated to perform as a live band.
+
+<P>The first release was the new version of “Totes Fleisch”, a cover from Terminal Choice, followed by the debut album Kunstprodukt, released on 28 April 2008 by Out of Line sublabel Fear Section. The Project was debuted at WGT 2008 in Leipzig. In November 2013 the band released its second full-length album United Trash - The Z Files via Out of Line Music.
+                                        
+<br><br>
+<P><b>Discography, Albums:</b>
+
+<P>&nbsp;&bull; 2008: Kunstprodukt
+<P>&nbsp;&bull; 2013: United Trash - The Z Files
+
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://en.wikipedia.org/wiki/Miss_Construction" class = "standardb_black" target="_blank">Wikipedia Miss Construction</a> - <b>Miss Construction</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Recommend:
+                                </td>
+                        </tr>
+                        
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <div class="text_black"><b>Miss Construction - Zombiefied.</b> <a href='https://www.youtube.com/watch?v=MtU_YmZtJvA' class = 'standardb_black' target='_blank'>Youtube</a> Link.</div>
+                          <iframe width="640" height="480" src="https://www.youtube.com/embed/MtU_YmZtJvA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+			  <div class="text_black">About Band <a href="music_punk_ska_eng.html#sektor_gaza" class = "standardb_black" target="_blank">Sektor Gaza (rus. Сектор Газа)</a>.</div>
+                        </td>
+                        </tr>
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        28th of Jun, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="rabia_sorda">Rabia Sorda</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/rabia_sorda.jpg" alt="Rabia Sorda" title="Rabia Sorda" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Rabia Sorda</b> (translated: "Deaf Rage") is the side project of Erk Aicrag, lead singer of the Mexican aggrotech band Hocico. Rabia Sorda, like Hocico, is electronic music, though it is somewhat less aggressive and noisy than Hocico. While his main project, Hocico, goes down a certain path, Aicrag uses Rabia Sorda as a vehicle for his own musical creativity. He mixes different aspects ranging from ethnic influences to 1980s-style melodies and punky attitude to aggressive electronic music. 
+
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://en.wikipedia.org/wiki/Rabia_Sorda" class = "standardb_black" target="_blank">Wikipedia Rabia Sorda</a> - <b>Rabia Sorda</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://www.rabiasorda.com/" class = "standardb_black" target="_blank">Rabia Sorda</a> - Official Website.
+                        </td>
+                        </tr>
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        22nd of Aug, 2021.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="roman_rain">Roman Rain</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/roman_rain.jpg" alt="Roman Rain" title="Roman Rain" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+
+<P><b>Roman Rain</b> — российская музыкальная группа, играющая в жанре индастриал и дарквейв.
+
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="https://ru.wikipedia.org/wiki/Roman_Rain" class = "standardb_black" target="_blank">Wikipedia Roman Rain</a> - <b>Roman Rain</b> on Wikipedia (rus.).
+                        </td>
+                        </tr>
+                        
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://roman-rain.com" class = "standardb_black" target="_blank">Roman Rain</a> - Official Website (rus.).
+                        </td>
+                        </tr>
+
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Recommend:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+
+
+
+        <div class="galleria4">
+	  <a href="https://www.youtube.com/watch?v=24uXFJbOohg"><img src="images/icons/playlists/roman_rain1.jpg" data-title="Roman Rain - Грустное Танго" data-description="<a href='https://www.youtube.com/watch?v=24uXFJbOohg' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>07th of Jul, 2023."></a>
+	  <a href="https://www.youtube.com/watch?v=QeDO2_zf4pA"><img src="images/icons/playlists/roman_rain2.jpg" data-title="Roman Rain - Королева" data-description="<a href='https://www.youtube.com/watch?v=QeDO2_zf4pA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Jul, 2023."></a>
+	  <a href="https://www.youtube.com/watch?v=PxEljkC6RoU"><img src="images/icons/playlists/roman_rain1.jpg" data-title="Roman Rain - Goodbye My Love" data-description="<a href='https://www.youtube.com/watch?v=PxEljkC6RoU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>13th of Jul, 2023."></a>
+	          </div>
+
+
+        <script>
+	    Galleria.run('.galleria4', {
+	    transition: 'fade',
+	    imageCrop: true,
+	    height : 500,
+	    width : 670
+	    });
+        </script>
+
+
+			</td>
+			</tr>
+
+
+
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        03rd of Jul, 2023.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="vnv_nation">VNV Nation</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/vnv_nation.jpg" alt="VNV Nation" title="VNV Nation" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P><b>VNV Nation</b> is an Irish alternative electronic project led by Ronan Harris in the roles of singer, songwriter, and producer.
+
+<P>VNV Nation's sound blends poetic and thought provoking lyrics with a sound that ranges from melodic industrial dance anthems, to haunting ballads and post-classical soundtrack pieces. The live shows are known for their energy and positive emotion, drawing a devoted fanbase from across the musical spectrum to sold out tours and headline appearances at festivals in Europe and America.
+
+<P>Over the course of the project's career, VNV Nation's success has continued to grow, with its last three albums charting top 10 in Germany, and its 2015 album Resonance: Music For Orchestra Vol. 1 achieving #4 Classical & #3 Classical Crossover Billboard chart positions in the US.
+
+<P>Ronan Harris was born in Dublin, Ireland, and lives in Hamburg, Germany.
+
+<P>The "VNV" in the name stands for "Victory Not Vengeance", in keeping with the group's motto, "One should strive to achieve, not sit in bitter regret."
+
+<P>On 16 November 2017 in was announced that Mark Jackson, who had participated as live drummer at concerts since the mid-1990s, had left VNV Nation.
+
+                                                
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/VNV_Nation" class = "standardb_black" target="_blank">Wikipedia VNV Nation</a> - <b>VNV Nation</b> on Wikipedia.
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                          <a href="http://www.vnvnation.com/" class = "standardb_black" target="_blank">VNV Nation</a> - Official Website.
+                        </td>
+                        </tr>
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        06th of May, 2021.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+
+
+
+
+
+
+
+
+        <tr align="center" >
+                <td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+                        <table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+                        <tr >
+                                <td width="350" height="100%" class="nimetus_black"><a name="xperiment">Xperiment</a></td>
+                        </tr>
+                        <tr>
+                                <td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <img src="images/icons/music/xperiment.jpg" alt="Xperiment" title="Xperiment" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+
+<P><b>Xperiment</b> is a Spanish Harsh Electro / Industrial band. Their sound is a mix of several music styles combined with a dark electro influence in order to give a new point of diversity into the scene. This touch bring a fresh and unique style in each new song.
+
+<P>The new album is called 'Visions Of Destruction'. Includes 11 new songs and a bonus CD with remixes from bands like Say Just Words, Antythesys, Decayed Reflection, Red-Line, Hydra Division V... a versus with X-Tropeaos band and the unreleased old song 'Desaf&iacute;o'.
+
+
+
+                                                
+                                        
+                                </td>
+                        </tr>
+                        
+                        <tr>
+                                <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        <br><br>                                
+                                        Links:
+                                </td>
+                        </tr>
+                        
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://www.facebook.com/xperimentmusic/" class = "standardb_black" target="_blank">Facebook Xperiment</a> - <b>Xperiment</b> on Facebook.
+                        </td>
+                        </tr>
+                        
+
+
+                        <tr> <!-- Modified -->
+                                <td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+                                        28th of Jun, 2016.
+                                </td>
+                        </tr>
+                        </table>
+
+
+        </td>
+                </tr>
+                
+
+
+
+
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+        </tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+        <tr>
+          <td class="title_black" >
+            &copy; Urmas Repinski, urrimus@hotmail.com
+          </td>
+        </tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

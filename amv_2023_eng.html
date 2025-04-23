@@ -1,0 +1,1387 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*33;
+var imgBgSrc="images/icons/background/amv.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+
+function setIframes() {
+
+	iframes=[];
+	iframes[0]='https://drive.google.com/file/d/1E0SXaHYhcWyjtsFu--9Rbbn88-De01f9/preview';
+	iframes[1]='https://drive.google.com/file/d/1GQoWnaqUUgFNAZlc7-h_2sl__oJoV1o2/preview';
+	iframes[2]='https://drive.google.com/file/d/12YICilKKdB0eCqkpQKdu64fIM18B6Mvp/preview';
+	iframes[3]='https://drive.google.com/file/d/1Nu3DTTLbo9c3euq9xe2WyvU2XnZ5LlvK/preview';
+	iframes[4]='https://drive.google.com/file/d/1e1rf_ovgk8Gbeo5zKq8IEztUT-sIQ0aZ/preview';
+	iframes[5]='https://drive.google.com/file/d/17NOJR8DtwYVzaFNPJIHLRBGmiwRcYFOF/preview';
+	iframes[6]='https://drive.google.com/file/d/1b-VA-evoWuKraF9wi_9GIrWhCouBQWOv/preview';
+	iframes[7]='https://drive.google.com/file/d/1tjUn2oI-PUgtlb9DQqrryyFxDcDaVH2e/preview';
+	iframes[8]='https://drive.google.com/file/d/1corkTJofiCuym7nZ3KEnSslatgawr5GK/preview';
+	iframes[9]='https://drive.google.com/file/d/1dzqGDWksqXqquA2R2lIbyI3P1VCo6nAf/preview';
+	iframes[10]='https://drive.google.com/file/d/1AzfzMHKASOs-v0BVzhDvlUF_zsnmLPkD/preview';
+
+	const collection=document.getElementsByTagName("iframe");
+	for (let i = 0; i < collection.length; i++) {
+		collection[i].src=iframes[i];
+	}
+}
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);setIframes();" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+                <td  bgcolor="#e2e2e2" width="100%">
+                       <div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+                </td>
+
+    <td align="center" valign="bottom">
+                <div 
+                        onMouseOver="this.className='flag_selected'"
+                        onMouseOut="this.className='flag_not_selected'"
+                        onClick="
+                                if (event.ctrlKey==1){
+                                        window.open('amv_2023_lat.html' + window.location.hash);
+                                } else {
+                                        window.location.href='amv_2023_lat.html' + window.location.hash;
+                                };"                     
+                        class="flag_not_selected"
+                >
+                        <img src="lang/spqr.gif" alt="latina" title="latina" width="22" height="17" style="display: block;"/>
+                </div>
+        </td>
+
+
+
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('amv_2023_eng.html' + window.location.hash);
+				} else {
+					window.location.href='amv_2023_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="17" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('amv_2023_rus.html' + window.location.hash);
+				} else {
+					window.location.href='amv_2023_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="17" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_phd_eng.html');
+			} else {
+				window.location.href='about_phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+	
+	
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_not_selected_blue">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+	
+	
+	
+	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_not_selected_black">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_not_selected_black">
+		  Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+        </td>
+	</tr>	
+
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"		  		  
+		  class="menu_not_selected_black">
+		  Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_selected">
+		  AMV</div>
+        </td>
+	</tr>		
+	<tr>
+		<td align="left" >
+		  <div id="menu_12_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('amv_2012_eng.html');
+			} else {
+				window.location.href='amv_2012_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; 2012</div>
+        </td>
+	</tr>		
+	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_12_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('amv_2013_2014_eng.html');
+			} else {
+				window.location.href='amv_2013_2014_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; 2013 &amp; 2014</div>
+        </td>
+	</tr>	
+	
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_12_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('amv_2021_eng.html');
+			} else {
+				window.location.href='amv_2021_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; 2021</div>
+        </td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_12_5"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('amv_2022_eng.html');
+			} else {
+				window.location.href='amv_2022_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; 2022</div>
+        </td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_12_6"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('amv_2023_eng.html');
+			} else {
+				window.location.href='amv_2023_eng.html';
+			};"		 		  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; 2023</div>
+        </td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_12_7"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('amv_2024_eng.html');
+			} else {
+				window.location.href='amv_2024_eng.html';
+			};"		 		  
+		  class="menu_not_selected_black"
+		  style="padding-left: 5px;">
+		  &#9679; 2024</div>
+        </td>
+	</tr>
+
+
+
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('junk_eng.html');
+			} else {
+				window.location.href='junk_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Junk</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>
+
+
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Psychology</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">AMV - Anime Movie Videos &blacktriangleright; 2023</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:759px;overflow:auto;" onMouseOver="hideSubMenuNotCont();">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+		
+
+
+
+
+        <tr align="center" onMouseOver="contentsAreaOver=1;">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="contents">AMV - Anime Movie Videos &blacktriangleright; 2023</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Contents</td>
+			</tr>			
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/different/amv_small.png" alt="AMV - Anime Movie Videos" title="AMV - Anime Movie Videos" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>- <a href="#avatar" class = "standardb_black" data-added="09th of Jun, 2023." data-video="Avatar: The Way of Water" data-audio="Денис Майданов - ВДВ" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Avatar: The Way of Water</a>
+<P>- <a href="#catwoman" class = "standardb_black" data-added="02nd of Apr, 2023." data-video="Catwoman: Hunted" data-audio="Линда - Золотая Вода" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Catwoman: Hunted</a>
+<P>- <a href="#riddick" class = "standardb_black" data-added="04th of Oct, 2023." data-video="The Chronicles of Riddick: Dark Fury" data-audio="Гарик Сукачёв - Коля Огонёк" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV The Chronicles of Riddick: Dark Fury</a>
+<P>- <a href="#green_latern" class = "standardb_black" data-added="10th of Oct, 2023." data-video="Green Lantern: Emerald Knights" data-audio="Маленький Принц - Осень" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Green Lantern: Emerald Knights</a>
+<P>- <a href="#interrogator" class = "standardb_black" data-added="03rd of Jan, 2023." data-video="Interrogator" data-audio="Гражданская Оборона - Кабуки" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Interrogator</a>
+<P>- <a href="#invader_zim" class = "standardb_black" data-added="16th of Jul, 2023." data-video="Invader ZIM: Enter the Florpus" data-audio="Агата Кристи - Ни Там Ни Тут" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Invader ZIM: Enter the Florpus</a>
+<P>- <a href="#invincible_atom_eve" class = "standardb_black" data-added="16th of Sep, 2023." data-video="Invincible: Atom Eve" data-audio="Complex Numbers - Неизбежность" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Invincible: Atom Eve</a>
+<P>- <a href="#justice_league_warworld" class = "standardb_black" data-added="22nd of Nov, 2023." data-video="Justice League: Warworld" data-audio="Fizica - Готэм" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Justice League: Warworld</a>
+<P>- <a href="#ruin" class = "standardb_black" data-added="14th of Jul, 2023." data-video="Ruin" data-audio="Виктор Петлюра - Ленка" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Ruin</a>
+<P>- <a href="#starship_troopers_invasion" class = "standardb_black" data-added="18th of Feb, 2023." data-video="Starship Troopers: Invasion" data-audio="Мафик - Пятихатка" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Starship Troopers: Invasion</a>
+<P>- <a href="#titan_a_e" class = "standardb_black" data-added="31st of Aug, 2023." data-video="Titan A.E." data-audio="Беломорканал - Кресты" data-author="Urmas Repinski" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">AMV Titan A.E.</a>
+
+
+
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					03rd of Jan, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="avatar">AMV Avatar: The Way of Water</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Avatar: The Way of Water, Audio - Денис Майданов - ВДВ.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/1E0SXaHYhcWyjtsFu--9Rbbn88-De01f9/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1ec4vsZbMZDaUiov_b3iUM7O_WbcNaa1z/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					09th of Jun, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+	
+
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="catwoman">AMV Catwoman: Hunted</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Catwoman: Hunted, Audio - Линда - Золотая Вода.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/1GQoWnaqUUgFNAZlc7-h_2sl__oJoV1o2/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1wKhLY7v_fTy1eQkUgv8YDaUPYmaENe4M/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					02nd of Apr, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+	
+
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="riddick">AMV The Chronicles of Riddick: Dark Fury</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - The Chronicles of Riddick: Dark Fury, Audio - Гарик Сукачёв - Коля Огонёк.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/12YICilKKdB0eCqkpQKdu64fIM18B6Mvp/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1WNcngPZtWtMpIUVBLb44GI7bq4WVTM0Y/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					04th of Oct, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+
+
+
+
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="green_latern">AMV Green Lantern: Emerald Knights</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Green Lantern: Emerald Knights, Audio - Маленький Принц - Осень.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/1Nu3DTTLbo9c3euq9xe2WyvU2XnZ5LlvK/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1iqQBx89i0UQgJ5nznnUHpBh4WaeI9bxT/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					10th of Oct, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="interrogator">AMV Interrogator</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Interrogator, Audio - Гражданская Оборона - Кабуки.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/1e1rf_ovgk8Gbeo5zKq8IEztUT-sIQ0aZ/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1k8VmAw8-v5UQjYFkrKEMH9MLolOo94bd/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					03rd of Jan, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+	
+
+		
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="invader_zim">AMV Invader ZIM: Enter the Florpus</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Invader ZIM: Enter the Florpus, Audio - Агата Кристи - Ни Там Ни Тут.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/17NOJR8DtwYVzaFNPJIHLRBGmiwRcYFOF/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1NuzCu7gPppGka8oFflAz9fuoX59-4-gk/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					16th of Jul, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+	
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="invincible_atom_eve">AMV Invincible: Atom Eve</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Invincible: Atom Eve, Audio - Complex Numbers - Неизбежность.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/1b-VA-evoWuKraF9wi_9GIrWhCouBQWOv/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/106qqlNu6ezC8sYIkXIGuh8rXYDfLkdfP/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					16th of Sep, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+	
+
+
+
+
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="justice_league_warworld">AMV Justice League: Warworld</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Justice League: Warworld, Audio - Fizica - Готэм.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/1tjUn2oI-PUgtlb9DQqrryyFxDcDaVH2e/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1ab_JMnNp0qy_dz2baOfJaWdUwtgAEMMq/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					22nd of Nov, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+	
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="ruin">AMV Ruin</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Ruin, Audio - Виктор Петлюра - Ленка.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/1corkTJofiCuym7nZ3KEnSslatgawr5GK/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1MPVomm_3UzfSjEqGD7YcvWwnEjsZaTvU/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					14th of Jun, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+	
+
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="starship_troopers_invasion">AMV Starship Troopers: Invasion</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Starship Troopers: Invasion, Audio - Мафик - Пятихатка.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/1dzqGDWksqXqquA2R2lIbyI3P1VCo6nAf/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1rqaLjFD1cIdkwwKH0qg4J_4nGxN_0xW4/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					18th of Feb, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+	
+
+		
+
+
+
+
+
+
+        <tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="titan_a_e">AMV Titan A.E.</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+
+<iframe src="" width="640" height="480" style = "border: #b0b0b0 1px solid;" allowfullscreen></iframe>
+
+						<P>Video - Titan A.E., Audio - Беломорканал - Кресты.<br>
+
+					<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
+<a href="https://drive.google.com/file/d/1AzfzMHKASOs-v0BVzhDvlUF_zsnmLPkD/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_wmv2.png"></a>
+<a href="https://drive.google.com/file/d/1fnZrTioMryQXBAINOqSCmW4P8F_7Bf_1/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Google Drive Link" class="thumbnail_image_both" src="cv/icons/google_drive_avi2.png"></a>
+ - Google Drive Links.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
+					31st of Aug, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		
+		
+		</tr>	
+	
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_black" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

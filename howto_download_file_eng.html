@@ -1,0 +1,1368 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="google-site-verification" content="v6u7i24jgVhRRKYDwtq6zl5T86g4v9C7nzJ_UYw1LiU" />
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+<!-- Background Images Script -->
+<script src="scripts/jquery/jquery.js"></script> <!-- For Getting Scroll Bar Width Only -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*31;
+var imgBgSrc="images/icons/background/howto.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1);" onMouseOver="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" onMouseOver="hideSubMenu();" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0">
+
+	<tr align="right" bgcolor="#d0e7f7"> 
+                <td  bgcolor="#d0e7f7" width="100%">
+                       <div class="nimetus2_blue"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+                </td>
+
+	
+	
+	
+
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('howto_download_file_eng.html' + window.location.hash);
+				} else {
+					window.location.href='howto_download_file_eng.html' + window.location.hash;
+				};"		
+			class="flag_selected"
+		>
+			<img src="lang/eng.gif" alt="english" title="english" width="22" height="17" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			onMouseOver="this.className='flag_selected'"
+			onMouseOut="this.className='flag_not_selected'"
+			onClick="
+				if (event.ctrlKey==1){
+					window.open('howto_download_file_rus.html' + window.location.hash);
+				} else {
+					window.location.href='howto_download_file_rus.html' + window.location.hash;
+				};"		
+			class="flag_not_selected"
+		>
+			<img src="lang/rus.gif" alt="русский" title="русский" width="22" height="17" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#d0e7f7" valign="top"> 
+
+
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr> 
+		<td  align="center" class="title_gradient_blue">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+	
+        <tr>
+                <td align="center">
+                  <div id="menu_1"
+                  onMouseOver="showSubMenu(this, 'eng', 'sitemap');" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="showSubMenu(this, 'eng', 'sitemap');"               
+                  class="menu_not_selected_blue">
+                  Site Map</div>
+        </td>
+        </tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_2"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_me_eng.html');
+			} else {
+				window.location.href='about_me_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About me</div>
+        </td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		  <div id="menu_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_work_eng.html');
+			} else {
+				window.location.href='about_work_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my work</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('about_phd_eng.html');
+			} else {
+				window.location.href='about_phd_eng.html';
+			};"		  
+		  class="menu_not_selected_blue">
+		  About my PhD</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_5"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_blue'" 
+                  onClick="
+                    this.className='menu_not_selected_blue';
+                        if (event.ctrlKey==1){
+                                window.open('links_eng.html');
+                        } else {
+                                window.location.href='links_eng.html';
+                        };"               
+                  class="menu_not_selected_blue">
+                  Links</div>
+        </td>
+        </tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_6"
+                  onMouseOver="showSubMenu(this, 'eng', 'howto');" 
+                  onMouseOut="this.className='menu_selected'" 
+                  onClick="showSubMenu(this, 'eng', 'howto');"               
+                  class="menu_selected">
+                  How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+        </tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_6_1"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('howto_add_feed_eng.html');
+			} else {
+				window.location.href='howto_add_feed_eng.html';
+			};"		 			  
+		  class="menu_not_selected_blue"
+		  style="padding-left: 5px;">
+		  &#9679; Add News Feed <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+        </td>
+	</tr>
+
+
+	
+	<tr>
+		<td align="left" >
+		  <div id="menu_6_3"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_selected'" 
+		  onClick="
+		    this.className='menu_selected';
+			if (event.ctrlKey==1){
+				window.open('howto_download_file_eng.html');
+			} else {
+				window.location.href='howto_download_file_eng.html';
+			};"		 			  
+		  class="menu_selected"
+		  style="padding-left: 5px;">
+		  &#9679; Dowload File</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_6_4"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"		 			  
+		  class="menu_not_selected_blue"
+		  style="padding-left: 5px;">
+		  &#9679; HTML Editor</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		  <div id="menu_6_5"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_blue'" 
+		  onClick="
+		    this.className='menu_not_selected_blue';
+			if (event.ctrlKey==1){
+				window.open('howto_launch_program_eng.html');
+			} else {
+				window.location.href='howto_launch_program_eng.html';
+			};"		 			  
+		  class="menu_not_selected_blue"
+		  style="padding-left: 5px;">
+		  &#9679; Launch Program</div>
+        </td>
+	</tr>
+
+
+		
+	<tr>
+		<td align="center" >
+		  <div id="menu_7"
+		  onMouseOver="showSubMenu(this, 'eng', 'music');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'music');"		  
+		  class="menu_not_selected_black">
+		  Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_8"
+		  onMouseOver="showSubMenu(this, 'eng', 'movies');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'movies');"		  		  
+		  class="menu_not_selected_black">
+		  Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+        </td>
+	</tr>	
+
+
+<tr>
+		<td align="center" >
+		  <div id="menu_27"
+		  onMouseOver="showSubMenu(this, 'eng', 'series');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'series');"		  		  
+		  class="menu_not_selected_black">
+		  Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_9"
+		  onMouseOver="showSubMenu(this, 'eng', 'games');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'games');"  
+		  class="menu_not_selected_black">
+		  Games</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_10"
+		  onMouseOver="showSubMenu(this, 'eng', 'books');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'books');"  
+		  class="menu_not_selected_red">
+		  Books</div>
+        </td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_11"
+		  onMouseOver="showSubMenu(this, 'eng', 'photos');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'photos');"  
+		  class="menu_not_selected_red">
+		  Photos/Images</div>
+        </td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_12"
+		  onMouseOver="showSubMenu(this, 'eng', 'amv');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'amv');"		  		  		  
+		  class="menu_not_selected_black">
+		  AMV</div>
+        </td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_13"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="
+		    this.className='menu_not_selected_black';
+			if (event.ctrlKey==1){
+				window.open('junk_eng.html');
+			} else {
+				window.location.href='junk_eng.html';
+			};"		 				  
+		  class="menu_not_selected_black">
+		  Junk</div>
+        </td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_14"
+		  onMouseOver="showSubMenu(this, 'eng', 'stuff');" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onClick="showSubMenu(this, 'eng', 'stuff');"		 			  
+		  class="menu_not_selected_black">
+		  Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+        </td>
+	</tr>
+
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_15"
+		  onMouseOver="showSubMenu(this, 'eng', 'anecdotes');" 
+		  onMouseOut="this.className='menu_not_selected_red'" 
+		  onClick="showSubMenu(this, 'eng', 'anecdotes');"  
+		  class="menu_not_selected_red">
+		  Anecdotes</div>
+        </td>
+	</tr>		
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_16"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="
+                    this.className='menu_not_selected_red';
+                        if (event.ctrlKey==1){
+                                window.open('heffalump_eng.html');
+                        } else {
+                                window.location.href='heffalump_eng.html';
+                        };"  
+                  class="menu_not_selected_red">
+                  Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+        </td>
+        </tr>                      		
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_17"
+		  onMouseOver="showSubMenu(this, 'eng', 'relaxation');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'relaxation');"  
+		  class="menu_not_selected_white">
+		  Substances For Relaxation</div>
+        </td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_18"
+		  onMouseOver="showSubMenu(this, 'eng', 'software');" 
+		  onMouseOut="this.className='menu_not_selected_white'" 
+		  onClick="showSubMenu(this, 'eng', 'software');"  
+		  class="menu_not_selected_white">
+		  Software Development</div>
+        </td>
+	</tr>	
+	
+	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		  <div id="menu_19"
+		  onMouseOver="showSubMenu(this, 'eng', 'satanism');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'satanism');"		 			  
+		  class="menu_not_selected_green">
+		  Satanism</div>
+        </td>
+	</tr>
+
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_20"
+                  onMouseOver="showSubMenu(this);" 
+                  onMouseOut="this.className='menu_not_selected_green'" 
+                  onClick="
+                    this.className='menu_not_selected_green';
+                        if (event.ctrlKey==1){
+                                window.open('satanism_wicca_eng.html');
+                        } else {
+                                window.location.href='satanism_wicca_eng.html';
+                        };"                                       
+                  class="menu_not_selected_green">
+                  Wicca</div>
+        </td>
+        </tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_21"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('falsifiability_eng.html');
+			} else {
+				window.location.href='falsifiability_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Falsifiability</div>
+        </td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_22"
+		  onMouseOver="showSubMenu(this, 'eng', 'psychology');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'psychology');"		 			  
+		  class="menu_not_selected_green">
+		  Psychology</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_23"
+		  onMouseOver="showSubMenu(this, 'eng', 'countries');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'countries');"		 			  
+		  class="menu_not_selected_green">
+		  Countries</div>
+        </td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_24"
+		  onMouseOver="showSubMenu(this);" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="
+		    this.className='menu_not_selected_green';
+			if (event.ctrlKey==1){
+				window.open('totalitarianism_eng.html');
+			} else {
+				window.location.href='totalitarianism_eng.html';
+			};"		 			  
+		  class="menu_not_selected_green">
+		  Totalitarianism</div>
+        </td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		  <div id="menu_25"
+		  onMouseOver="showSubMenu(this, 'eng', 'personalities');" 
+		  onMouseOut="this.className='menu_not_selected_green'" 
+		  onClick="showSubMenu(this, 'eng', 'personalities');"		 			  
+		  class="menu_not_selected_green">
+		  Personalities</div>
+        </td>
+	</tr>
+
+
+        <tr>
+                <td align="center" >
+                  <div id="menu_26"
+                  onMouseOver="showSubMenu(this, 'eng', 'news');" 
+                  onMouseOut="this.className='menu_not_selected_red'" 
+                  onClick="showSubMenu(this, 'eng', 'news');"               
+                  class="menu_not_selected_red">
+                  News</div>
+        </td>
+        </tr>
+
+</table>
+
+
+		</td>
+		<td bgcolor="#d0e7f7" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#d0e7f7" height="100%"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#d0e7f7">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_blue" style="width: 530px;"><a name="welcome">How-To</a> &blacktriangleright; Download File</td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:713px;overflow:auto;" onMouseOver="hideSubMenu();">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_blue"><a name="howto">How-To</a></td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_blue" STYLE="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/different/howto.jpg" alt="How-To" title="How-To" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+<P>A <b>how-to</b> is an informal, often short, description of how to accomplish a specific task. A how-to is usually meant to help non-experts, may leave out details that are only important to experts, and may also be greatly simplified from an overall discussion of the topic.
+
+<P>One of the earliest how-to books was published in 1569 and entitled, A booke of the arte and maner, how to plant and graffe all sortes of trees: With divers other new practise, by one of the Abbey of Saint Vincent in Fraunce by Leonard Mascall.
+
+<P>Perhaps the best known full-length book in the genre is How to Win Friends and Influence People, written by Dale Carnegie in 1936.
+
+<P>A similar concept can be seen in many of the <i>[topic] For Dummies</i> series of tutorials and also in many other introductory surveys entitled with the suffix "101" (based on academic numberings of entry-level courses).
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_blue" STYLE="padding-left:10px; padding-right:10px;">
+				        <br><br>
+					Links:
+				</td>
+			</tr>
+			
+
+                        <tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+                        <td width="100%" height="100%" align="center" class="text_blue" STYLE="padding-left:10px; padding-right:10px;">
+                                <a href="https://en.wikipedia.org/wiki/How-to" class = "standardb_blue" target="_blank">Wikipedia How-to</a> - <b>How-To</b> on Wikipedia.
+                        </td>
+                        </tr>
+
+			
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_blue" STYLE="padding-left:10px; padding-right:10px;">
+					07th of Oct, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+
+
+        <tr align="center" >
+		<td style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus_blue"><a name="download_file">How To Download File using JavaScript</a></td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_blue" STYLE="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/different/download_file.jpg" alt="How To Download File using JavaScript" title="How To Download File using JavaScript" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+
+<P>Hello.
+<br><br>
+
+
+<P>Most Complete and Working (Tested) Code for Downloading Data For FireFox, Chrome and IE Code is Following. Assume that Data is in <i>texarea</i> field, that has <i>id='textarea_area'</i> and <i>filename</i> is name of file where data will be downloaded.
+
+<br><br>
+<P><b>The JavaScript File:</b>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; width:640px;"><pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">function</span> download(filename) {
+    	<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #008800; font-weight: bold">typeof</span> filename<span style="color: #333333">===</span><span style="background-color: #fff0f0">&#39;undefined&#39;</span>) filename <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;&quot;</span>; <span style="color: #888888">// default</span>
+    	value <span style="color: #333333">=</span> <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;textarea_area&#39;</span>).value;
+    
+    	filetype<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text/*&quot;</span>;
+    	extension<span style="color: #333333">=</span>filename.substring(filename.lastIndexOf(<span style="background-color: #fff0f0">&quot;.&quot;</span>));
+    	<span style="color: #008800; font-weight: bold">for</span> (<span style="color: #008800; font-weight: bold">var</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> extToMIME.length; i<span style="color: #333333">++</span>) {
+    		<span style="color: #008800; font-weight: bold">if</span> (extToMIME[i][<span style="color: #0000DD; font-weight: bold">0</span>].localeCompare(extension)<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>) {
+    			filetype<span style="color: #333333">=</span>extToMIME[i][<span style="color: #0000DD; font-weight: bold">1</span>];
+    			<span style="color: #008800; font-weight: bold">break</span>;
+    		}
+    	}
+    
+    
+    	<span style="color: #008800; font-weight: bold">var</span> pom <span style="color: #333333">=</span> <span style="color: #007020">document</span>.createElement(<span style="background-color: #fff0f0">&#39;a&#39;</span>);
+    	pom.setAttribute(<span style="background-color: #fff0f0">&#39;href&#39;</span>, <span style="background-color: #fff0f0">&#39;data: &#39;</span><span style="color: #333333">+</span>filetype<span style="color: #333333">+</span><span style="background-color: #fff0f0">&#39;;charset=utf-8,&#39;</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&#39;\ufeff&#39;</span> <span style="color: #333333">+</span> <span style="color: #007020">encodeURIComponent</span>(value)); <span style="color: #888888">// Added BOM too</span>
+    	pom.setAttribute(<span style="background-color: #fff0f0">&#39;download&#39;</span>, filename);
+    
+    
+    	<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #007020">document</span>.createEvent) {
+    		<span style="color: #008800; font-weight: bold">if</span> (navigator.userAgent.indexOf(<span style="background-color: #fff0f0">&#39;MSIE&#39;</span>) <span style="color: #333333">!==</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">||</span> navigator.appVersion.indexOf(<span style="background-color: #fff0f0">&#39;Trident/&#39;</span>) <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span>) { <span style="color: #888888">// IE</span>
+    			blobObject <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Blob([<span style="background-color: #fff0f0">&#39;\ufeff&#39;</span><span style="color: #333333">+</span>value]);
+    			<span style="color: #007020">window</span>.navigator.msSaveBlob(blobObject, filename);
+    		} <span style="color: #008800; font-weight: bold">else</span> { <span style="color: #888888">// FF, Chrome</span>
+    			<span style="color: #008800; font-weight: bold">var</span> event <span style="color: #333333">=</span> <span style="color: #007020">document</span>.createEvent(<span style="background-color: #fff0f0">&#39;MouseEvents&#39;</span>);
+    			event.initEvent(<span style="background-color: #fff0f0">&#39;click&#39;</span>, <span style="color: #008800; font-weight: bold">true</span>, <span style="color: #008800; font-weight: bold">true</span>);
+    			pom.dispatchEvent(event);
+    		}
+    	} <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>( <span style="color: #007020">document</span>.createEventObject ) { <span style="color: #888888">// Have No Idea</span>
+    		<span style="color: #008800; font-weight: bold">var</span> evObj <span style="color: #333333">=</span> <span style="color: #007020">document</span>.createEventObject();
+    		pom.fireEvent( <span style="background-color: #fff0f0">&#39;onclick&#39;</span> , evObj );
+        } <span style="color: #008800; font-weight: bold">else</span> { <span style="color: #888888">// For Any Case</span>
+    		pom.click();
+    	}
+    
+    }
+</pre></div>
+
+<P>and then just call 
+
+<br><br>
+<P><b>The HTML Page:</b>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; width:640px;"><pre style="margin: 0; line-height: 125%">    <span style="color: #007700">&lt;a</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;javascript:download();&quot;</span><span style="color: #007700">&gt;</span>Download<span style="color: #007700">&lt;/a&gt;</span>
+</pre></div>
+
+
+
+
+<P>for Download Initiating.
+
+<br><br>
+<P>Array for setting correct MIME type for download dialog CAN BE following:
+
+<br><br>
+<P><b>JavaScript File:</b> , Again
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; width:640px;"><pre style="margin: 0; line-height: 125%">    <span style="color: #888888">// ----------------------- Extensions to MIME --------- //</span>
+
+            <span style="color: #888888">// List of mime types</span>
+            <span style="color: #888888">// combination of values from Windows 7 Registry and </span>
+            <span style="color: #888888">// from C:\Windows\System32\inetsrv\config\applicationHost.config</span>
+            <span style="color: #888888">// some added, including .7z and .dat</span>
+    	<span style="color: #008800; font-weight: bold">var</span> extToMIME <span style="color: #333333">=</span> [
+            [<span style="background-color: #fff0f0">&quot;.323&quot;</span>, <span style="background-color: #fff0f0">&quot;text/h323&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.3g2&quot;</span>, <span style="background-color: #fff0f0">&quot;video/3gpp2&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.3gp&quot;</span>, <span style="background-color: #fff0f0">&quot;video/3gpp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.3gp2&quot;</span>, <span style="background-color: #fff0f0">&quot;video/3gpp2&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.3gpp&quot;</span>, <span style="background-color: #fff0f0">&quot;video/3gpp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.7z&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-7z-compressed&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.aa&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/audible&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.AAC&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/aac&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.aaf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.aax&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/vnd.audible.aax&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ac3&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/ac3&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.aca&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.accda&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess.addin&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.accdb&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.accdc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess.cab&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.accde&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.accdr&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess.runtime&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.accdt&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.accdw&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess.webapplication&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.accft&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess.ftemplate&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.acx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/internet-property-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.AddIn&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ade&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.adobebridge&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-bridge-url&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.adp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ADT&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/vnd.dlna.adts&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ADTS&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/aac&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.afm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ai&quot;</span>, <span style="background-color: #fff0f0">&quot;application/postscript&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.aif&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-aiff&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.aifc&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/aiff&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.aiff&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/aiff&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.air&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.adobe.air-application-installer-package+zip&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.amc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.application&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-ms-application&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.art&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-jg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.asa&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.asax&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ascx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.asd&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.asf&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ms-asf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ashx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.asi&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.asm&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.asmx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.aspx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.asr&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ms-asf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.asx&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ms-asf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.atom&quot;</span>, <span style="background-color: #fff0f0">&quot;application/atom+xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.au&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/basic&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.avi&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-msvideo&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.axs&quot;</span>, <span style="background-color: #fff0f0">&quot;application/olescript&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.bas&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.bcpio&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-bcpio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.bin&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.bmp&quot;</span>, <span style="background-color: #fff0f0">&quot;image/bmp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.c&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cab&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.caf&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-caf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.calx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-office.calx&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cat&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-pki.seccat&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cc&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cd&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cdda&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/aiff&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cdf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-cdf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cer&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-x509-ca-cert&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.chm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.class&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-java-applet&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.clp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msclip&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cmx&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-cmx&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cnf&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cod&quot;</span>, <span style="background-color: #fff0f0">&quot;image/cis-cod&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.config&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.contact&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-ms-contact&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.coverage&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cpio&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-cpio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cpp&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.crd&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-mscardfile&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.crl&quot;</span>, <span style="background-color: #fff0f0">&quot;application/pkix-crl&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.crt&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-x509-ca-cert&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cs&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.csdproj&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.csh&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-csh&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.csproj&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.css&quot;</span>, <span style="background-color: #fff0f0">&quot;text/css&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.csv&quot;</span>, <span style="background-color: #fff0f0">&quot;text/csv&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cur&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.cxx&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dat&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.datasource&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dbproj&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dcr&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-director&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.def&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.deploy&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.der&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-x509-ca-cert&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dgml&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dib&quot;</span>, <span style="background-color: #fff0f0">&quot;image/bmp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dif&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-dv&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dir&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-director&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.disco&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dll&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msdownload&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dll.config&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dlm&quot;</span>, <span style="background-color: #fff0f0">&quot;text/dlm&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.doc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msword&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.docm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-word.document.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.docx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dot&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msword&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dotm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-word.template.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dotx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.template&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dsp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dsw&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dtd&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dtsConfig&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dv&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-dv&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dvi&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-dvi&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dwf&quot;</span>, <span style="background-color: #fff0f0">&quot;drawing/x-dwf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dwp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.dxr&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-director&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.eml&quot;</span>, <span style="background-color: #fff0f0">&quot;message/rfc822&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.emz&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.eot&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.eps&quot;</span>, <span style="background-color: #fff0f0">&quot;application/postscript&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.etl&quot;</span>, <span style="background-color: #fff0f0">&quot;application/etl&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.etx&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-setext&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.evy&quot;</span>, <span style="background-color: #fff0f0">&quot;application/envoy&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.exe&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.exe.config&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.fdf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.fdf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.fif&quot;</span>, <span style="background-color: #fff0f0">&quot;application/fractals&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.filters&quot;</span>, <span style="background-color: #fff0f0">&quot;Application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.fla&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.flr&quot;</span>, <span style="background-color: #fff0f0">&quot;x-world/x-vrml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.flv&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-flv&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.fsscript&quot;</span>, <span style="background-color: #fff0f0">&quot;application/fsharp-script&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.fsx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/fsharp-script&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.generictest&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.gif&quot;</span>, <span style="background-color: #fff0f0">&quot;image/gif&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.group&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-ms-group&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.gsm&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-gsm&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.gtar&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-gtar&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.gz&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-gzip&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.h&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hdf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-hdf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hdml&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-hdml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hhc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-oleobject&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hhk&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hhp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hlp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/winhlp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hpp&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hqx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/mac-binhex40&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hta&quot;</span>, <span style="background-color: #fff0f0">&quot;application/hta&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.htc&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-component&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.htm&quot;</span>, <span style="background-color: #fff0f0">&quot;text/html&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.html&quot;</span>, <span style="background-color: #fff0f0">&quot;text/html&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.htt&quot;</span>, <span style="background-color: #fff0f0">&quot;text/webviewhtml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxa&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxd&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxe&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxh&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxi&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxk&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxq&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxr&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxs&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxt&quot;</span>, <span style="background-color: #fff0f0">&quot;text/html&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxv&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxw&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.hxx&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.i&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ico&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-icon&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ics&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.idl&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ief&quot;</span>, <span style="background-color: #fff0f0">&quot;image/ief&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.iii&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-iphone&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.inc&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.inf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.inl&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ins&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-internet-signup&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ipa&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-itunes-ipa&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ipg&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-itunes-ipg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ipproj&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ipsw&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-itunes-ipsw&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.iqy&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-ms-iqy&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.isp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-internet-signup&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ite&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-itunes-ite&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.itlp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-itunes-itlp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.itms&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-itunes-itms&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.itpc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-itunes-itpc&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.IVF&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ivf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jar&quot;</span>, <span style="background-color: #fff0f0">&quot;application/java-archive&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.java&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jck&quot;</span>, <span style="background-color: #fff0f0">&quot;application/liquidmotion&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jcz&quot;</span>, <span style="background-color: #fff0f0">&quot;application/liquidmotion&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jfif&quot;</span>, <span style="background-color: #fff0f0">&quot;image/pjpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jnlp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-java-jnlp-file&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jpb&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jpe&quot;</span>, <span style="background-color: #fff0f0">&quot;image/jpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jpeg&quot;</span>, <span style="background-color: #fff0f0">&quot;image/jpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jpg&quot;</span>, <span style="background-color: #fff0f0">&quot;image/jpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.js&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-javascript&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.json&quot;</span>, <span style="background-color: #fff0f0">&quot;application/json&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jsx&quot;</span>, <span style="background-color: #fff0f0">&quot;text/jscript&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.jsxbin&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.latex&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-latex&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.library-ms&quot;</span>, <span style="background-color: #fff0f0">&quot;application/windows-library+xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.lit&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-ms-reader&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.loadtest&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.lpk&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.lsf&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-la-asf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.lst&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.lsx&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-la-asf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.lzh&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m13&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msmediaview&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m14&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msmediaview&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m1v&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m2t&quot;</span>, <span style="background-color: #fff0f0">&quot;video/vnd.dlna.mpeg-tts&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m2ts&quot;</span>, <span style="background-color: #fff0f0">&quot;video/vnd.dlna.mpeg-tts&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m2v&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m3u&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-mpegurl&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m3u8&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-mpegurl&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m4a&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/m4a&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m4b&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/m4b&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m4p&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/m4p&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m4r&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-m4r&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.m4v&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-m4v&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mac&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-macpaint&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mak&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.man&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-troff-man&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.manifest&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-ms-manifest&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.map&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.master&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mda&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mdb&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msaccess&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mde&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msaccess&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mdp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.me&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-troff-me&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mfp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-shockwave-flash&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mht&quot;</span>, <span style="background-color: #fff0f0">&quot;message/rfc822&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mhtml&quot;</span>, <span style="background-color: #fff0f0">&quot;message/rfc822&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mid&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/mid&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.midi&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/mid&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mix&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mk&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mmf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-smaf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mno&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mny&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msmoney&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mod&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mov&quot;</span>, <span style="background-color: #fff0f0">&quot;video/quicktime&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.movie&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-sgi-movie&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mp2&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mp2v&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mp3&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mp4&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mp4&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mp4v&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mp4&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mpa&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mpe&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mpeg&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mpf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-mediapackage&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mpg&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mpp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-project&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mpv2&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mqv&quot;</span>, <span style="background-color: #fff0f0">&quot;video/quicktime&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ms&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-troff-ms&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.msi&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mso&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mts&quot;</span>, <span style="background-color: #fff0f0">&quot;video/vnd.dlna.mpeg-tts&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mtx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mvb&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msmediaview&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mvc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-miva-compiled&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.mxp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-mmxp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.nc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-netcdf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.nsc&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ms-asf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.nws&quot;</span>, <span style="background-color: #fff0f0">&quot;message/rfc822&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ocx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.oda&quot;</span>, <span style="background-color: #fff0f0">&quot;application/oda&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.odc&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-ms-odc&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.odh&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.odl&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.odp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.oasis.opendocument.presentation&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ods&quot;</span>, <span style="background-color: #fff0f0">&quot;application/oleobject&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.odt&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.oasis.opendocument.text&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.one&quot;</span>, <span style="background-color: #fff0f0">&quot;application/onenote&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.onea&quot;</span>, <span style="background-color: #fff0f0">&quot;application/onenote&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.onepkg&quot;</span>, <span style="background-color: #fff0f0">&quot;application/onenote&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.onetmp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/onenote&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.onetoc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/onenote&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.onetoc2&quot;</span>, <span style="background-color: #fff0f0">&quot;application/onenote&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.orderedtest&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.osdx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/opensearchdescription+xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.p10&quot;</span>, <span style="background-color: #fff0f0">&quot;application/pkcs10&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.p12&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-pkcs12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.p7b&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-pkcs7-certificates&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.p7c&quot;</span>, <span style="background-color: #fff0f0">&quot;application/pkcs7-mime&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.p7m&quot;</span>, <span style="background-color: #fff0f0">&quot;application/pkcs7-mime&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.p7r&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-pkcs7-certreqresp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.p7s&quot;</span>, <span style="background-color: #fff0f0">&quot;application/pkcs7-signature&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pbm&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-portable-bitmap&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pcast&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-podcast&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pct&quot;</span>, <span style="background-color: #fff0f0">&quot;image/pict&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pcx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pcz&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pdf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/pdf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pfb&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pfm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pfx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-pkcs12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pgm&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-portable-graymap&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pic&quot;</span>, <span style="background-color: #fff0f0">&quot;image/pict&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pict&quot;</span>, <span style="background-color: #fff0f0">&quot;image/pict&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pkgdef&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pkgundef&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pko&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-pki.pko&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pls&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/scpls&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pma&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-perfmon&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pmc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-perfmon&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pml&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-perfmon&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pmr&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-perfmon&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pmw&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-perfmon&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.png&quot;</span>, <span style="background-color: #fff0f0">&quot;image/png&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pnm&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-portable-anymap&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pnt&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-macpaint&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pntg&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-macpaint&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pnz&quot;</span>, <span style="background-color: #fff0f0">&quot;image/png&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pot&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.potm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint.template.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.potx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.openxmlformats-officedocument.presentationml.template&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ppa&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ppam&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint.addin.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ppm&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-portable-pixmap&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pps&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ppsm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint.slideshow.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ppsx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.openxmlformats-officedocument.presentationml.slideshow&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ppt&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pptm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint.presentation.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pptx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.openxmlformats-officedocument.presentationml.presentation&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.prf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/pics-rules&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.prm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.prx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ps&quot;</span>, <span style="background-color: #fff0f0">&quot;application/postscript&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.psc1&quot;</span>, <span style="background-color: #fff0f0">&quot;application/PowerShell&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.psd&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.psess&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.psm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.psp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pub&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-mspublisher&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.pwz&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.qht&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-html-insertion&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.qhtm&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-html-insertion&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.qt&quot;</span>, <span style="background-color: #fff0f0">&quot;video/quicktime&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.qti&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-quicktime&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.qtif&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-quicktime&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.qtl&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-quicktimeplayer&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.qxd&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ra&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-pn-realaudio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ram&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-pn-realaudio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rar&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ras&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-cmu-raster&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rat&quot;</span>, <span style="background-color: #fff0f0">&quot;application/rat-file&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rc&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rc2&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rct&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rdlc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.resx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rf&quot;</span>, <span style="background-color: #fff0f0">&quot;image/vnd.rn-realflash&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rgb&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-rgb&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rgs&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.rn-realmedia&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rmi&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/mid&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rmp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.rn-rn_music_package&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.roff&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-troff&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rpm&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-pn-realaudio-plugin&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rqy&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-ms-rqy&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rtf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/rtf&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.rtx&quot;</span>, <span style="background-color: #fff0f0">&quot;text/richtext&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ruleset&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.s&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.safariextz&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-safari-safariextz&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.scd&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msschedule&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sct&quot;</span>, <span style="background-color: #fff0f0">&quot;text/scriptlet&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sd2&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-sd2&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sdp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/sdp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sea&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.searchConnector-ms&quot;</span>, <span style="background-color: #fff0f0">&quot;application/windows-search-connector+xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.setpay&quot;</span>, <span style="background-color: #fff0f0">&quot;application/set-payment-initiation&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.setreg&quot;</span>, <span style="background-color: #fff0f0">&quot;application/set-registration-initiation&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.settings&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sgimb&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-sgimb&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sgml&quot;</span>, <span style="background-color: #fff0f0">&quot;text/sgml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sh&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-sh&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.shar&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-shar&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.shtml&quot;</span>, <span style="background-color: #fff0f0">&quot;text/html&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sit&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-stuffit&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sitemap&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.skin&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sldm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-powerpoint.slide.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sldx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.openxmlformats-officedocument.presentationml.slide&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.slk&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sln&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.slupkg-ms&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-ms-license&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.smd&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-smd&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.smi&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.smx&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-smd&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.smz&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-smd&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.snd&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/basic&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.snippet&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.snp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sol&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sor&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.spc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-pkcs7-certificates&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.spl&quot;</span>, <span style="background-color: #fff0f0">&quot;application/futuresplash&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.src&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-wais-source&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.srf&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.SSISDeploymentManifest&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ssm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/streamingmedia&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sst&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-pki.certstore&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.stl&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-pki.stl&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sv4cpio&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-sv4cpio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.sv4crc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-sv4crc&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.svc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.swf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-shockwave-flash&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.t&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-troff&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tar&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-tar&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tcl&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-tcl&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.testrunconfig&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.testsettings&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tex&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-tex&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.texi&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-texinfo&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.texinfo&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-texinfo&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tgz&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-compressed&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.thmx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-officetheme&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.thn&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tif&quot;</span>, <span style="background-color: #fff0f0">&quot;image/tiff&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tiff&quot;</span>, <span style="background-color: #fff0f0">&quot;image/tiff&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tlh&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tli&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.toc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tr&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-troff&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.trm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msterminal&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.trx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ts&quot;</span>, <span style="background-color: #fff0f0">&quot;video/vnd.dlna.mpeg-tts&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tsv&quot;</span>, <span style="background-color: #fff0f0">&quot;text/tab-separated-values&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ttf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.tts&quot;</span>, <span style="background-color: #fff0f0">&quot;video/vnd.dlna.mpeg-tts&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.txt&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.u32&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.uls&quot;</span>, <span style="background-color: #fff0f0">&quot;text/iuls&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.user&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.ustar&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-ustar&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vb&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vbdproj&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vbk&quot;</span>, <span style="background-color: #fff0f0">&quot;video/mpeg&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vbproj&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vbs&quot;</span>, <span style="background-color: #fff0f0">&quot;text/vbscript&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vcf&quot;</span>, <span style="background-color: #fff0f0">&quot;text/x-vcard&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vcproj&quot;</span>, <span style="background-color: #fff0f0">&quot;Application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vcs&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vcxproj&quot;</span>, <span style="background-color: #fff0f0">&quot;Application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vddproj&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vdp&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vdproj&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vdx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-visio.viewer&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vml&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vscontent&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsct&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsd&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.visio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsi&quot;</span>, <span style="background-color: #fff0f0">&quot;application/ms-vsi&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsix&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vsix&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsixlangpack&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsixmanifest&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsmdi&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vspscc&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vss&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.visio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsscc&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vssettings&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vssscc&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vst&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.visio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vstemplate&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsto&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-ms-vsto&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsw&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.visio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vsx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.visio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.vtx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.visio&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wav&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/wav&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wave&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/wav&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wax&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-ms-wax&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wbk&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msword&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wbmp&quot;</span>, <span style="background-color: #fff0f0">&quot;image/vnd.wap.wbmp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wcm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-works&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wdb&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-works&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wdp&quot;</span>, <span style="background-color: #fff0f0">&quot;image/vnd.ms-photo&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.webarchive&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-safari-webarchive&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.webtest&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wiq&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wiz&quot;</span>, <span style="background-color: #fff0f0">&quot;application/msword&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wks&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-works&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.WLMP&quot;</span>, <span style="background-color: #fff0f0">&quot;application/wlmoviemaker&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wlpginstall&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-wlpg-detect&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wlpginstall3&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-wlpg3-detect&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wm&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ms-wm&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wma&quot;</span>, <span style="background-color: #fff0f0">&quot;audio/x-ms-wma&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wmd&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-ms-wmd&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wmf&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-msmetafile&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wml&quot;</span>, <span style="background-color: #fff0f0">&quot;text/vnd.wap.wml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wmlc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.wap.wmlc&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wmls&quot;</span>, <span style="background-color: #fff0f0">&quot;text/vnd.wap.wmlscript&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wmlsc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.wap.wmlscriptc&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wmp&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ms-wmp&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wmv&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ms-wmv&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wmx&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ms-wmx&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wmz&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-ms-wmz&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wpl&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-wpl&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wps&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-works&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wri&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-mswrite&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wrl&quot;</span>, <span style="background-color: #fff0f0">&quot;x-world/x-vrml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wrz&quot;</span>, <span style="background-color: #fff0f0">&quot;x-world/x-vrml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wsc&quot;</span>, <span style="background-color: #fff0f0">&quot;text/scriptlet&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wsdl&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.wvx&quot;</span>, <span style="background-color: #fff0f0">&quot;video/x-ms-wvx&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.x&quot;</span>, <span style="background-color: #fff0f0">&quot;application/directx&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xaf&quot;</span>, <span style="background-color: #fff0f0">&quot;x-world/x-vrml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xaml&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xaml+xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xap&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-silverlight-app&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xbap&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-ms-xbap&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xbm&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-xbitmap&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xdr&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xht&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xhtml+xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xhtml&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xhtml+xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xla&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xlam&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel.addin.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xlc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xld&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xlk&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xll&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xlm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xls&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xlsb&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel.sheet.binary.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xlsm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel.sheet.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xlsx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xlt&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xltm&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel.template.macroEnabled.12&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xltx&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.template&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xlw&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-excel&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xml&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xmta&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xof&quot;</span>, <span style="background-color: #fff0f0">&quot;x-world/x-vrml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.XOML&quot;</span>, <span style="background-color: #fff0f0">&quot;text/plain&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xpm&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-xpixmap&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xps&quot;</span>, <span style="background-color: #fff0f0">&quot;application/vnd.ms-xpsdocument&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xrm-ms&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xsc&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xsd&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xsf&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xsl&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xslt&quot;</span>, <span style="background-color: #fff0f0">&quot;text/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xsn&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xss&quot;</span>, <span style="background-color: #fff0f0">&quot;application/xml&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xtp&quot;</span>, <span style="background-color: #fff0f0">&quot;application/octet-stream&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.xwd&quot;</span>, <span style="background-color: #fff0f0">&quot;image/x-xwindowdump&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.z&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-compress&quot;</span>],
+            [<span style="background-color: #fff0f0">&quot;.zip&quot;</span>, <span style="background-color: #fff0f0">&quot;application/x-zip-compressed&quot;</span>]
+    ];
+
+    <span style="color: #888888">// ----------------------- End of Extensions to MIME --------- //</span>
+</pre></div>
+
+
+<br><br>
+<P>Thank You.
+
+					
+				</td>
+			</tr>
+			
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_blue" STYLE="padding-left:10px; padding-right:10px;">
+					24th of Feb, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+        </td>
+		</tr>
+
+
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	  <td class="title_blue" >
+	    &copy; Urmas Repinski, urrimus@hotmail.com
+	  </td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
