@@ -206,6 +206,13 @@ function showFeedTitle(type, source, lang, result, locStUpdateData) {
 
 		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+textRssFeed+"&nbsp;"+feedIconText(result.feedXML, lang);
 		cell1.innerHTML=cell1.innerHTML+",&nbsp;<span id='loadedCount'>0/</span>"+totalEntries+"&nbsp;"+getRecordsText(lang, totalEntries)+"<span id='failedCountTitle'></span>.";
+
+		var table2 = document.getElementById("messagetable");
+		if (table2) {
+				var cell1 = table2.rows[0].cells[0];
+				cell1.setAttribute("style", "text-align: center; padding-bottom: 10px;");
+		}
+
 		adjustFeedScrollDiv();
 		showFeedData(type, source, lang, result, locStUpdateData);
 	}
@@ -922,7 +929,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 				var row = table2.insertRow(-1);
 				var cell1 = row.insertCell(0);
 				cell1.className = 'text_red';
-				cell1.style.textAlign = 'center';
+				cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
 				if (lang=="eng" || lang=="lat") textReload="Reload Page";
 				if (lang=="rus") textReload="Обновите Страницу";
 				cell1.innerHTML = "<b>"+event.reason.stack+"</b><br><a href='javascript:location.reload();' class = 'standardb_red'>"+textReload+"</a>";
@@ -1058,7 +1065,7 @@ function showFeed(type, source, lang) {
 		var row = table.insertRow(-1);
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
-		cell1.setAttribute("style", "text-align: center; padding-bottom: 10px;");
+		cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
 		cell1.innerHTML = readingText;
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL, 1);
