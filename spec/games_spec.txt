@@ -3,6 +3,7 @@
 1. Action-adventure: games_action_adventure
 Armor Mayhem
 Assasins Creed
+Dying Light
 No Man's Sky
 Prince of Persia
 
