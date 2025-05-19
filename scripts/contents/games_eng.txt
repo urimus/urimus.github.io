@@ -3,7 +3,6 @@
 &#9679; <a href="games_action_adventure_eng.html#action_adventure" class = "standardb_black" data-added="27th of Jul, 2016." onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Action-Adventure</a>
 <span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#armor_mayhem" class = "standardb_black" data-added="19th of Aug, 2016." data-genre="Action-Adventure" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Armor Mayhem</a></span>
 <span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#assasins_creed" class = "standardb_black" data-added="27th of Jul, 2016." data-genre="Action-Adventure" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Assassin’s Creed II</a></span>
-<span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#dying_light" class = "standardb_black" data-added="18th of May, 2025." data-genre="Action-Adventure" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Dying Light</a></span>
 <span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#no_mans_sky" class = "standardb_black" data-added="08th of Feb, 2018." data-genre="Action-Adventure" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">No Man's Sky</a></span>
 <span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#prince_of_persia" class = "standardb_black" data-added="01st of May, 2012." data-genre="Action-Adventure" onMouseOver="showSubMenu(this, 'eng', 'contentsLink');">Price of Persia: The Forgotten Sands</a></span>
 
