@@ -18,7 +18,6 @@ Need for Speed
 
 5. RPG: games_rpg
 -- Action RPG -- games_rpg_action
-Atlas Fallen
 Mass Effect
 Nox
 Torchlight 2
