@@ -1463,6 +1463,10 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	xmlhttp.onreadystatechange = function () {
 		if (xmlhttp.readyState == 4) {
 
+			if (xmlhttp.status != 200) {
+				console.log("An error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
+			}
+
 			if (skipUpdates==1) return;
 			mediaURL="";
 
@@ -1622,6 +1626,10 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	xmlhttp.onreadystatechange = function () {
 		if (xmlhttp.readyState == 4) {
 
+			if (xmlhttp.status != 200) {
+				console.log("An error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
+			}
+
 			if (skipUpdates==1) return;
 			data= xmlhttp.responseText;
 //console.log(data);
@@ -1776,7 +1784,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
 	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+entry_link;
-
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
