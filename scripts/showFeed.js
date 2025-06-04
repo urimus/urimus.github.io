@@ -1471,20 +1471,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 
 			if (xmlhttp.status != 200) {
 				console.log("Update error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
-				failedCount=document.getElementById("failedCount");
-				failedCountInt=parseInt(failedCount.innerHTML)+1;
-				failedCount.innerHTML=failedCountInt;
-				failedCountTitle=document.getElementById("failedCountTitle");
-				failedCountTitle.innerHTML="&nbsp;(#&#10062;: "+failedCountInt+")";
-
-				processedCount=document.getElementById("processedCount");
-				processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
-				document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
-				if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-				if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-				corsProxyVer=1;
-				updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-				return;
 			}
 
 			if (skipUpdates==1) return;
@@ -1648,20 +1634,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 
 			if (xmlhttp.status != 200) {
 				console.log("Update error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
-				failedCount=document.getElementById("failedCount");
-				failedCountInt=parseInt(failedCount.innerHTML)+1;
-				failedCount.innerHTML=failedCountInt;
-				failedCountTitle=document.getElementById("failedCountTitle");
-				failedCountTitle.innerHTML="&nbsp;(#&#10062;: "+failedCountInt+")";
-
-				processedCount=document.getElementById("processedCount");
-				processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
-				document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
-				if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-				if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-				corsProxyVer=1;
-				updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-				return;
 			}
 
 			if (skipUpdates==1) return;
