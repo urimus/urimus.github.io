@@ -1480,7 +1480,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 //console.log("data="+data);
 
 			if (data=="") { // timeout
-				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+				if (corsProxyVer>=1 && corsProxyVer<=4) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1536,7 +1536,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			} else {
 				// update failed
 				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
-				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+				if (corsProxyVer>=1 && corsProxyVer<=4) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1565,7 +1565,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
 	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
-//	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+entry_link;
+	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
@@ -1642,7 +1642,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 //console.log(data);
 
 			if (data=="") { // timeout
-				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+				if (corsProxyVer>=1 && corsProxyVer<=4) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1763,7 +1763,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			} else {
 				// update failed
 				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
-				if (corsProxyVer==1 || corsProxyVer==2 || corsProxyVer==3) {
+				if (corsProxyVer>=1 && corsProxyVer<=4) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1791,7 +1791,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
 	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
-//	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+entry_link;
+	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
