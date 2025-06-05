@@ -1564,7 +1564,8 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
-	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+entry_link;
+	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
+//	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+entry_link;
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
@@ -1789,7 +1790,8 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
-	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+entry_link;
+	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
+//	if (corsProxyVer==4) link2="https://api.allorigins.win/raw?url="+entry_link;
 
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
