@@ -1455,14 +1455,15 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 		xmlhttp.abort();
 		updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
-	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
+	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+"/"+corsProxyVer+".&nbsp;";
 	document.getElementById("loadingDivTitle").appendChild(a);
 
+	corsProxyVerMax=4;
 	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
 	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
-	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
+//	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
 
 
 	$.ajax({
@@ -1477,7 +1478,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 //console.log("data="+data);
 
 			if (data=="") { // timeout
-				if (corsProxyVer>=1 && corsProxyVer<=4) {
+				if (corsProxyVer>=1 && corsProxyVer<corsProxyVerMax) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1533,7 +1534,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			} else {
 				// update failed
 				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
-				if (corsProxyVer>=1 && corsProxyVer<=4) {
+				if (corsProxyVer>=1 && corsProxyVer<corsProxyVerMax) {
 					corsProxyVer++;
 					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1557,8 +1558,11 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 			}
 		},
 		error: function(xhr){
+
+			if (skipUpdates==1) return;
+
 			console.log("Update error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
-			if (corsProxyVer>=1 && corsProxyVer<=4) {
+			if (corsProxyVer>=1 && corsProxyVer<corsProxyVerMax) {
 				corsProxyVer++;
 				updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 				return;
@@ -1631,15 +1635,15 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 		xmlhttp.abort();
 		updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 	}
-	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
+	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+"/"+corsProxyVer+".&nbsp;";
 	document.getElementById("loadingDivTitle").appendChild(a);
 
-
+	corsProxyVerMax=4;
 	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
 	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
-	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
+//	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
 
 
 	$.ajax({
@@ -1653,7 +1657,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 //console.log(data);
 
 			if (data=="") { // timeout
-				if (corsProxyVer>=1 && corsProxyVer<=4) {
+				if (corsProxyVer>=1 && corsProxyVer<corsProxyVerMax) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1774,7 +1778,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			} else {
 				// update failed
 				console.log("Update Failed. Record # "+(i+1)+", corsProxyVer="+corsProxyVer+", data="+data);
-				if (corsProxyVer>=1 && corsProxyVer<=4) {
+				if (corsProxyVer>=1 && corsProxyVer<corsProxyVerMax) {
 					corsProxyVer++;
 					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 					return;
@@ -1798,8 +1802,11 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 
 		},
 		error: function(xhr){
+
+			if (skipUpdates==1) return;
+
 			console.log("Update error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
-			if (corsProxyVer>=1 && corsProxyVer<=4) {
+			if (corsProxyVer>=1 && corsProxyVer<corsProxyVerMax) {
 				corsProxyVer++;
 				updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
 				return;
