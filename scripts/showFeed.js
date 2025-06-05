@@ -1,5 +1,4 @@
 ﻿// ------------- Global Variables ---------------- //
-timeoutVal=3000; // 3s
 loadedCount=0;
 // ------------- End of Global Variables ---------------- //
 
@@ -1437,13 +1436,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 		return;
 	}
 
-	if (window.XMLHttpRequest) {
-		xmlhttp = new XMLHttpRequest();               
-	} 
-	else {               
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
-	}
-
 	if (lang=="rus") {textUpdateRecord="Обновление Записи"; textSkip="Отменить";}
 	if (lang=="eng") {textUpdateRecord="Updating Record"; textSkip="Skip";}
 	if (lang=="lat") {textUpdateRecord="Updating Monumentum"; textSkip="Saltus";}
@@ -1466,17 +1458,22 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+".&nbsp;";
 	document.getElementById("loadingDivTitle").appendChild(a);
 
-	xmlhttp.onreadystatechange = function () {
-		if (xmlhttp.readyState == 4) {
+	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
+	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
+	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
+	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
+	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
 
-			if (xmlhttp.status != 200) {
-				console.log("Update error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
-			}
+
+	$.ajax({
+		type: "GET",
+		url: link2,
+		cache: false,
+		success: function(data){
 
 			if (skipUpdates==1) return;
 			mediaURL="";
 
-			data= xmlhttp.responseText;  
 //console.log("data="+data);
 
 			if (data=="") { // timeout
@@ -1558,18 +1555,33 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 					return;
 				}
 			}
-		}
-	}
-	
-	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
-	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
-	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
-	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
-	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
+		},
+		error: function(xhr){
+			console.log("Update error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
+			if (corsProxyVer>=1 && corsProxyVer<=4) {
+				corsProxyVer++;
+				updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+				return;
+			} else {
+				failedCount=document.getElementById("failedCount");
+				failedCountInt=parseInt(failedCount.innerHTML)+1;
+				failedCount.innerHTML=failedCountInt;
+				failedCountTitle=document.getElementById("failedCountTitle");
+				failedCountTitle.innerHTML="&nbsp;(#&#10062;: "+failedCountInt+")";
 
-	xmlhttp.timeout = timeoutVal;
-	xmlhttp.open("GET", link2, true);
-	xmlhttp.send();
+				processedCount=document.getElementById("processedCount");
+				processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+				document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
+
+				corsProxyVer=1;
+				if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+				if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+				updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+				return;
+			}
+		}
+	});	
+
 
 }
 
@@ -1604,12 +1616,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 		return;
 	}
 
-	if (window.XMLHttpRequest) {
-		xmlhttp = new XMLHttpRequest();               
-	}  else {               
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
-	}
-
 
 	if (lang=="rus") {textUpdateRecord="Обновление Записи"; textSkip="Отменить";}
 	if (lang=="eng") {textUpdateRecord="Updating Record"; textSkip="Skip";}
@@ -1629,16 +1635,21 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	document.getElementById("loadingDivTitle").appendChild(a);
 
 
+	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
+	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
+	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
+	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
+	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
 
-	xmlhttp.onreadystatechange = function () {
-		if (xmlhttp.readyState == 4) {
 
-			if (xmlhttp.status != 200) {
-				console.log("Update error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
-			}
+	$.ajax({
+		type: "GET",
+		url: link2,
+		cache: false,
+		success: function(data){
 
 			if (skipUpdates==1) return;
-			data= xmlhttp.responseText;
+
 //console.log(data);
 
 			if (data=="") { // timeout
@@ -1784,23 +1795,33 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 					return;
 				}
 			}
+
+		},
+		error: function(xhr){
+			console.log("Update error occurred. Record # "+(i+1)+", corsProxyVer="+corsProxyVer);
+			if (corsProxyVer>=1 && corsProxyVer<=4) {
+				corsProxyVer++;
+				updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+				return;
+			} else {
+				failedCount=document.getElementById("failedCount");
+				failedCountInt=parseInt(failedCount.innerHTML)+1;
+				failedCount.innerHTML=failedCountInt;
+				failedCountTitle=document.getElementById("failedCountTitle");
+				failedCountTitle.innerHTML="&nbsp;(#&#10062;: "+failedCountInt+")";
+
+				processedCount=document.getElementById("processedCount");
+				processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
+				document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
+				if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
+				if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
+				corsProxyVer=1;
+				updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
+				return;
+			}
 		}
-	}
 
-	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
-	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
-	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
-	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
-	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
-
-	xmlhttp.timeout = timeoutVal;
-	xmlhttp.open("GET", link2, true);
-	xmlhttp.send();
-
-$.get(link2, function(data, status) { 
-	console.log("jquery get. Record # "+(i+1)+",  corsProxyVer="+corsProxyVer+", status="+status); 
-	console.log("data - "+data); 
-}); 
+	}); 
 
 }
 // ------------- End of Update---------------- //
