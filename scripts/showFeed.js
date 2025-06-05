@@ -1458,12 +1458,12 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+"/"+corsProxyVer+".&nbsp;";
 	document.getElementById("loadingDivTitle").appendChild(a);
 
-	corsProxyVerMax=4;
+	corsProxyVerMax=5;
 	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
 	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
-//	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
+	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
 
 
 	$.ajax({
@@ -1638,12 +1638,12 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	document.getElementById("loadingDivTitle").innerHTML = textUpdateRecord+" #"+(i+1)+"/"+corsProxyVer+".&nbsp;";
 	document.getElementById("loadingDivTitle").appendChild(a);
 
-	corsProxyVerMax=4;
+	corsProxyVerMax=5;
 	if (corsProxyVer==1) link2="https://corsproxy.io/"+entry_link;
 	if (corsProxyVer==2) link2="https://test.cors.workers.dev/?"+entry_link;
 	if (corsProxyVer==3) link2="https://api.codetabs.com/v1/proxy/?quest="+entry_link;
 	if (corsProxyVer==4) link2="http://www.whateverorigin.org/get?url="+entry_link;
-//	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
+	if (corsProxyVer==5) link2="https://api.allorigins.win/raw?url="+entry_link;
 
 
 	$.ajax({
