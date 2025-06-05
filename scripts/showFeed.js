@@ -1796,5 +1796,11 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	xmlhttp.timeout = timeoutVal;
 	xmlhttp.open("GET", link2, true);
 	xmlhttp.send();
+
+$.get(link2, function(data, status) { 
+	console.log("jquery get. Record # "+(i+1)+",  corsProxyVer="+corsProxyVer+", status="+status); 
+	console.log("data - "+data); 
+}); 
+
 }
 // ------------- End of Update---------------- //
