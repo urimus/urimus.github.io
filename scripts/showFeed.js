@@ -1477,29 +1477,6 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 
 //console.log("data="+data);
 
-			if (data=="") { // timeout
-				if (corsProxyVer>=1 && corsProxyVer<corsProxyVerMax) {
-					corsProxyVer++;
-					updateImages(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-					return;
-				} else {
-					failedCount=document.getElementById("failedCount");
-					failedCountInt=parseInt(failedCount.innerHTML)+1;
-					failedCount.innerHTML=failedCountInt;
-					failedCountTitle=document.getElementById("failedCountTitle");
-					failedCountTitle.innerHTML="&nbsp;(#&#10062;: "+failedCountInt+")";
-
-					processedCount=document.getElementById("processedCount");
-					processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
-					document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
-
-					corsProxyVer=1;
-					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Time-out. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-					if (lang=="rus") result.entries[i].error="Тайм-аут Обновления. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-					updateNextImage(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-					return;
-				}
-			}
 
 			var doc = (new DOMParser).parseFromString(data, "text/html");
 
@@ -1655,29 +1632,6 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 			if (skipUpdates==1) return;
 
 //console.log(data);
-
-			if (data=="") { // timeout
-				if (corsProxyVer>=1 && corsProxyVer<corsProxyVerMax) {
-					corsProxyVer++;
-					updateDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-					return;
-				} else {
-					failedCount=document.getElementById("failedCount");
-					failedCountInt=parseInt(failedCount.innerHTML)+1;
-					failedCount.innerHTML=failedCountInt;
-					failedCountTitle=document.getElementById("failedCountTitle");
-					failedCountTitle.innerHTML="&nbsp;(#&#10062;: "+failedCountInt+")";
-
-					processedCount=document.getElementById("processedCount");
-					processedCount.innerHTML=parseInt(processedCount.innerHTML)+1;
-					document.getElementById("leftCount").innerHTML=result.entries.length-parseInt(processedCount.innerHTML);
-					if (lang=="eng" || lang=="lat") result.entries[i].error="Update Failed. <a href='javascript:location.reload();' class = 'standardb_red'>Reload Page</a>";
-					if (lang=="rus") result.entries[i].error="Обновление Не Удалось. <a href='javascript:location.reload();' class = 'standardb_red'>Обновите Страницу</a>";
-					corsProxyVer=1;
-					updateNextDescription(i, source, type, result, locStUpdateData, lang, corsProxyVer, skipUpdates);
-					return;
-				}
-			}
 
 			var updateFailed=0;
 			var doc = (new DOMParser).parseFromString(data, "text/html");
