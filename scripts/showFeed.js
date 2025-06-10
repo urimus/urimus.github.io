@@ -820,6 +820,7 @@ function generateTabs(type, source, lang) {
 		if (lang=="lat") Div.innerHTML="&#9679; Phys.org RSS Acies";
 		subcell.appendChild(Div);
 		cell1.appendChild(tabssubtable1);
+		document.getElementById("tabstable").setAttribute("onMouseOver", "");
 	}
 
 	var tabssubtable2 = document.createElement('table');
