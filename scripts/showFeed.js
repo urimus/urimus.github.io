@@ -1470,7 +1470,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	$.ajax({
 		type: "GET",
 		url: link2,
-		cache: false,
+		cache: true,
 		success: function(data){
 
 			if (skipUpdates==1) return;
@@ -1627,7 +1627,7 @@ function updateDescription(i, source, type, result, locStUpdateData, lang, corsP
 	$.ajax({
 		type: "GET",
 		url: link2,
-		cache: false,
+		cache: true,
 		success: function(data){
 
 			if (skipUpdates==1) return;
