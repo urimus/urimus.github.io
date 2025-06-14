@@ -1,5 +1,7 @@
 ﻿
 
+
+
 <!DOCTYPE html>
 
 <html>
@@ -12,17 +14,20 @@
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 
-<!-- jQuery -->
+
+<!-- Foto Gallery -->
 <script src="scripts/jquery/jquery.js"></script>
-<!-- End of jQuery -->
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
 
 <!-- Background Images Script -->
 <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
 <script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
 <script>
-var menuHeight=23*39;
-var imgBgSrc="images/icons/background/succubus.png";
+var menuHeight=23*34;
+var imgBgSrc="images/icons/background/alien.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
 </script>
 <!-- End of Background Images Script -->
@@ -60,9 +65,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_not_selected'"
 			onClick="
 				if (event.ctrlKey==1){
-					window.open('series_fantasy_eng.html' + window.location.hash);
+					window.open('series_alien_eng.html' + window.location.hash);
 				} else {
-					window.location.href='series_fantasy_eng.html' + window.location.hash;
+					window.location.href='series_alien_eng.html' + window.location.hash;
 				};"		 	
 			
 			class="flag_not_selected"
@@ -76,9 +81,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onMouseOut="this.className='flag_selected'"
 			onClick="
 				if (event.ctrlKey==1){
-					window.open('series_fantasy_rus.html' + window.location.hash);
+					window.open('series_alien_rus.html' + window.location.hash);
 				} else {
-					window.location.href='series_fantasy_rus.html' + window.location.hash;
+					window.location.href='series_alien_rus.html' + window.location.hash;
 				};"
 			class="flag_selected"
 		>
@@ -104,7 +109,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	<tr>
 		<td height="3" bgcolor="#ff8a00"></td>
 	</tr>	
-
 
 
 
@@ -213,7 +217,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
         </td>
 	</tr>	
 	
-	
+
 	<tr>
 		<td align="center" >
 		  <div id="menu_8"
@@ -225,9 +229,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
         </td>
 	</tr>	
 	
-
-
-
 <tr>
 		<td align="center" >
 		  <div id="menu_27"
@@ -245,116 +246,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<td align="left" >
 		  <div id="menu_27_1"
 		  onMouseOver="showSubMenu(this, 'rus', 'series');" 
-		  onMouseOut="this.className='menu_selected'" 
+		  onMouseOut="this.className='menu_not_selected_black'" 
 		  onClick="showSubMenu(this, 'rus', 'series');"		 		  
-		  class="menu_selected"
+		  class="menu_not_selected_black"
 		  style="padding-left: 5px;">
 		  &#9679; По Жанрам</div>
         </td>
-
-
-
-	<tr>
-		<td align="left" >
-		  <div id="menu_27_1_1"
-		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_not_selected_black'" 
-		  onClick="
-		    this.className='menu_not_selected_black';
-			if (event.ctrlKey==1){
-				window.open('series_body_horror_rus.html');
-			} else {
-				window.location.href='series_body_horror_rus.html';
-			};"
-		  class="menu_not_selected_black"
-		  style="padding-left: 15px;">
-	     &bull; Боди-Хоррор</div>
-        </td>
-	</tr>
-
-
-
-
-	<tr>
-		<td align="left" >
-		  <div id="menu_27_1_2"
-		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_selected'" 
-		  onClick="
-		    this.className='menu_selected';
-			if (event.ctrlKey==1){
-				window.open('series_fantasy_rus.html');
-			} else {
-				window.location.href='series_fantasy_rus.html';
-			};"
-		  class="menu_selected"
-		  style="padding-left: 15px;">
-	     &bull; Фэнтези</div>
-        </td>
-	</tr>
-
-
-
-	<tr>
-		<td align="left" >
-		  <div id="menu_27_1_3"
-		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_not_selected_black'" 
-		  onClick="
-		    this.className='menu_not_selected_black';
-			if (event.ctrlKey==1){
-				window.open('series_historical_fiction_rus.html');
-			} else {
-				window.location.href='series_historical_fiction_rus.html';
-			};"
-		  class="menu_not_selected_black"
-		  style="padding-left: 15px;">
-	     &bull; Историческая Фантастика</div>
-        </td>
-	</tr>
-
-
-
-
-	<tr>
-		<td align="left" >
-		  <div id="menu_27_1_4"
-		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_not_selected_black'" 
-		  onClick="
-		    this.className='menu_not_selected_black';
-			if (event.ctrlKey==1){
-				window.open('series_space_opera_rus.html');
-			} else {
-				window.location.href='series_space_opera_rus.html';
-			};"
-		  class="menu_not_selected_black"
-		  style="padding-left: 15px;">
-	     &bull; Космическая Опера</div>
-        </td>
-	</tr>
-
-
-
-
-
-	<tr>
-		<td align="left" >
-		  <div id="menu_27_1_5"
-		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_not_selected_black'" 
-		  onClick="
-		    this.className='menu_not_selected_black';
-			if (event.ctrlKey==1){
-				window.open('series_supernatural_rus.html');
-			} else {
-				window.location.href='series_supernatural_rus.html';
-			};"
-		  class="menu_not_selected_black"
-		  style="padding-left: 15px;">
-	     &bull; Сверхъестественное</div>
-        </td>
-	</tr>
+	</tr>	
 
 
 
@@ -371,6 +269,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>	
 
 
+
 	<tr>
 		<td align="left" >
 		  <div id="menu_27_4"
@@ -384,19 +283,20 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>	
 
 
+
 	<tr>
 		<td align="left" >
 		  <div id="menu_27_7"
 		  onMouseOver="showSubMenu(this);" 
-		  onMouseOut="this.className='menu_not_selected_black'" 
+		  onMouseOut="this.className='menu_selected'" 
 		  onClick="
-		    this.className='menu_not_selected_black';
+		    this.className='menu_selected';
 			if (event.ctrlKey==1){
 				window.open('series_alien_rus.html');
 			} else {
 				window.location.href='series_alien_rus.html';
 			};"
-		  class="menu_not_selected_black"
+		  class="menu_selected"
 		  style="padding-left: 5px;">
 	     &bull; Чужой</div>
         </td>
@@ -424,7 +324,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>
 
 
-
 	<tr>
 		<td align="left" >
 		  <div id="menu_27_6"
@@ -442,8 +341,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	     &bull; Готэм-Сити</div>
         </td>
 	</tr>
-
-
 
 
 	<tr>
@@ -509,6 +406,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		  AMV</div>
         </td>
 	</tr>		
+
+
 	<tr>
 		<td align="center" >
 		  <div id="menu_13"
@@ -537,7 +436,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		  Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
         </td>
 	</tr>
-
 
 
 	<tr>
@@ -595,6 +493,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>	
 
 
+
 	<tr>
 		<td align="center" >
 		  <div id="menu_19"
@@ -605,6 +504,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		  Сатанизм</div>
         </td>
 	</tr>
+
 
 
 
@@ -628,7 +528,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-
 	<tr>
 		<td align="center" >
 		  <div id="menu_21"
@@ -646,6 +545,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
         </td>
 	</tr>
 
+
 	<tr>
 		<td align="center" >
 		  <div id="menu_22"
@@ -657,8 +557,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
         </td>
 	</tr>
 
-
-
 	<tr>
 		<td align="center" >
 		  <div id="menu_23"
@@ -669,6 +567,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		  Страны</div>
         </td>
 	</tr>
+
 
 	<tr>
 		<td align="center" >
@@ -727,30 +626,26 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <tr><td>
 
 
-
-
-
-<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
 <!-- Table with search, name and languages -->
-        <tr class="title_black"> 
-                <td  class="title_black" style="width: 530px;"><a name="series">Сериалы &blacktriangleright; Фэнтези</a></td>
-        </tr>
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Сериалы &blacktriangleright; Чужой</a></td>
+	</tr>
 
-</table>
-<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
 
-        <tr>
-                <td height="3" bgcolor="#ff8a00"></td>
-        </tr>   
 </table>
 
 
 
 <!-- For scroll inside div -->
-<div id="scrollDiv" style="height:897px;overflow:auto;" onMouseOver="hideSubMenu();">
+<div id="scrollDiv" style="height:782px;overflow:auto;" onMouseOver="hideSubMenu();">
 
 
 <table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
 
 
 
@@ -811,28 +706,26 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-
-
         <tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
 			<tr >
-				<td width="100%" height="100%" class="nimetus2_black"><a name="fantasy">Фэнтези</a></td>
+				<td width="100%" height="100%" class="nimetus2_black"><a name="alien_franchise">Чужой (франшиза)</a></td>
 			</tr>
 			<tr>
 				<td width="250" height="100%" class="nimetus_black">Описание Жанра</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/fantasy.jpg" alt="Фэнтези" title="Фэнтези" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					<img src="images/icons/series/alien_franchise.jpg" alt="Чужой (франшиза)" title="Чужой (франшиза)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
 					
 
-<P><b>Фэнтези</b> (англ. fantasy — «фантазия») — жанр современного искусства, разновидность фантастики. Фэнтези основывается на использовании мифологических и сказочных мотивов в современном виде. Жанр сформировался примерно в начале XV века. В середине XX века наиболее значительное влияние на формирование современного облика классического фэнтези оказали английские писатели Джон Рональд Руэл Толкин, автор романа «Властелин колец» и Клайв Стейплз Льюис (Хроники Нарнии).
 
-<P>Произведения фэнтези нередко напоминают историко-приключенческий роман, действие которого происходит в вымышленном мире, близком к реальному Средневековью или (реже) эпохе Возрождения, герои которого сталкиваются со сверхъестественными явлениями и существами. Зачастую фэнтези построено на основе архетипических сюжетов.
+<P>«<b>Чужой</b>» (англ. Alien) — медиафраншиза в жанрах научно-фантастических ужасов и боевика, состоящая из оригинальной серии четырёх фильмов, которая рассказывает об уорент-офицере Эллен Рипли (Сигурни Уивер) и её битвах с внеземной формой жизни, известной как Чужой («Ксеноморф»), и серии приквелов из двух фильмов, рассказывающей об андроиде Дэвиде 8 (Майкл Фассбендер) и инопланетянах, известных как «Инженеры». Во франшизе состоят также несколько романов, комиксов и компьютерных игр.
 
-<P>В отличие от научной фантастики, фэнтези не стремится объяснить мир, в котором происходит действие произведения, с научной точки зрения. Сам этот мир существует гипотетически, часто его местоположение относительно нашей реальности никак не оговаривается: это может быть как параллельный мир, так и другая планета, а его физические законы могут отличаться от земных. В таком мире допустимо существование богов, магии, мифических существ вроде драконов, великанов, фей и т. д. В то же время, принципиальное отличие фэнтези от сказок заключается в том, что чудеса в фэнтези являются нормой описываемого мира и действуют так же системно, как и законы природы в реальном мире.
+<P>Производством и дистрибуцией франшизы занимается кинокомпания 20th Century Studios. Серия началась с фильма Ридли Скотта «Чужой», к которому потом вышло 3 продолжения: «Чужие» Джеймса Кэмерона, «Чужой 3» Дэвида Финчера и «Чужой: Воскрешение» Жан-Пьера Жёне. Скотт также снял серию приквелов: «Прометей» и «Чужой: Завет». Последним на данный момент вышел фильм Феде Альвареса «Чужой: Ромул», действие которого происходит между первыми двумя фильмами. В 2025 году на FX on Hulu выйдет сериал «Чужой: Земля».
 
+<P>Также выпущена неканоничная франшиза-кроссовер с «Хищником» — «Чужой против Хищника» из двух фильмов, а также различных серий комиксов, книг и компьютерных игр.
 					
 				</td>
 			</tr>
@@ -848,7 +741,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/%D0%A4%D1%8D%D0%BD%D1%82%D0%B5%D0%B7%D0%B8" class = "standardb_black" target="_blank">Wikipedia Фэнтези</a> - <b>Фэнтези</b> на Wikipedia.
+				<a href="https://ru.wikipedia.org/wiki/Чужой_(франшиза)" class = "standardb_black" target="_blank">Wikipedia Чужой (франшиза)</a> - <b>Чужой (франшиза)</b> на Wikipedia.
 			</td>
 			</tr>
 			
@@ -856,7 +749,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					17е Июн, 2021.
+					14е Июн, 2025.
 				</td>
 			</tr>
 			</table>
@@ -876,195 +769,19 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				<td>
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="carnival_row">Карнивал Роу (англ. Carnival Row)</a></td>
+							<td width="100%" height="100%" class="nimetus_black"><a name="fallout">Фоллаут (англ. Fallout)</a></td>
 						</tr>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/carnival_row.jpg" alt="Карнивал Роу (англ. Carnival Row)" title="Карнивал Роу (англ. Carnival Row)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
+					<img src="images/icons/series/fallout.jpg" alt="Фоллаут (англ. Fallout)" title="Фоллаут (англ. Fallout)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
 
 
-<P>«<b>Карнавал Роу</b>» (англ. Carnival Row) — американский фэнтезийный телесериал, создателями которого выступают Рене Эчеваррия и Трэвис Бичем. Главные роли исполняют Орландо Блум и Кара Делевинь. Премьера первого сезона состоялась на Amazon Video 30 августа 2019 года.
+<P>«<b>Фоллаут</b>» (англ. Fallout) — американский постапокалиптический телесериал, основанный на одноименной игровой франшизе, созданной Тимом Кейном и Леонардом Боярским. Главные роли в нём исполнили Элла Пернелл, Аарон Мотен, Кайл Маклахлен, Мойзес Ариас, Кселия Мендес-Джонс и Уолтон Гоггинс. Премьера первого сезона состоялась на стриминговой платформе Prime Video 10 апреля 2024 года. В том же месяце сериал был продлён на второй сезон.
 
-<P>27 июля 2019 года стало известно, что Amazon продлил телесериал на второй сезон. Премьера второго и финального сезона состоялась 17 февраля 2023 года.
-
-
-
-
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/Карнивал_Роу" class = "standardb_black" target="_blank">Wikipedia Карнивал Роу</a> - <b>Карнивал Роу (англ. Carnival Row)</b> на Wikipedia.
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=_Ra-JzbdrFQ" class = "standardb_black" target="_blank">Карнивал Роу (англ. Carnival Row)</a> - Официальный трейлер.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					25е Окт, 2024.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-
-
-
-
-
-
-
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="changeling">Подменыш (англ. The Changeling)</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/changeling.jpg" alt="Подменыш (англ. The Changeling)" title="Подменыш (англ. The Changeling)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P><b>The Changeling</b> is an American horror fantasy television series created by Kelly Marcel and directed by Melina Matsoukas based on the novel of the same name by Victor LaValle for Apple TV+. It premiered on September 8, 2023, with the first three episodes.
-
-
-
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/The_Changeling_(TV_series)" class = "standardb_black" target="_blank">Wikipedia The Changeling (TV series)</a> - <b>Подменыш (англ. The Changeling)</b> на Wikipedia (англ.).
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=gJse3JJoQw4" class = "standardb_black" target="_blank">Подменыш (англ. The Changeling)</a> - Официальный трейлер.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					10е Мар, 2025.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-
-
-
-
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="shadow_bone">Тень и Кость (англ. Shadow and Bone)</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/shadow_bone.jpg" alt="Тень и Кость (англ. Shadow and Bone)" title="Тень и Кость (англ. Shadow and Bone)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P>«<b>Тень и Кость</b>» — сериал компании Netflix, основанный на романах американской фэнтези-писательницы Ли Бардуго «Тень и Кость» и «Шестерка Воронов». Съёмки начались в 2019 году в Будапеште, а завершились в феврале 2020 года. Премьера первого сезона состоялась 23 апреля 2021 года. 7 июня 2021 года сериал был продлен на второй сезон. В ноябре 2023 года сериал был закрыт после двух сезонов.
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/Тень_и_Кость_(телесериал)" class = "standardb_black" target="_blank">Wikipedia Тень и Кость (телесериал)</a> - <b>Тень и Кость (англ. Shadow and Bone)</b> на Wikipedia.
-			</td>
-			</tr>
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=X2Zg6olnMZs" class = "standardb_black" target="_blank">Тень и Кость (англ. Shadow and Bone)</a> - Официальный трейлер.
-			</td>
-			</tr>
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					25е Ноя, 2023.
-				</td>
-			</tr>
-			</table>
-
-
-        </td>
-		</tr>
-
-
-
-
-
-
-        <tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="spiderwick">Хроники Спайдервика (англ. The Spiderwick Chronicles)</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/spiderwick.jpg" alt="Хроники Спайдервика (англ. The Spiderwick Chronicles)" title="Хроники Спайдервика (англ. The Spiderwick Chronicles)" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px;">
-
-
-<P>«<b>Спайдервик: Хроники</b>» (англ. The Spiderwick Chronicles) — американский фэнтезийный сериал, снятый по мотивам одноимённого цикла книг Холли Блэк и Тони ДиТерлицци. Главные роли в нём сыграли Лайон Дэниелс, Ноа Коттрелл и Михаэла Ли, в одной из ролей снялся Кристиан Слейтер. Премьерный показ начался 19 апреля 2024 года на потоковом сервисе The Roku Channel.
+<P>Компания Amazon приобрела права на производство сериала по мотивам серии видеоигр Fallout в 2020 году. Шоураннерами стали Дженива Робертсон-Дуорет и Грэм Вагнер. Телесериал получил высокие оценки критиков, отметивших актёрскую игру, сценарий, визуальные эффекты, работу художника-постановщика и соответствие первоисточнику.
 
 
 
@@ -1081,20 +798,17 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/Хроники_Спайдервика_(сериал)" class = "standardb_black" target="_blank">Wikipedia Хроники Спайдервика (сериал)</a> - <b>Хроники Спайдервика (англ. The Spiderwick Chronicles)</b> на Wikipedia.
+				<a href="https://ru.wikipedia.org/wiki/Фоллаут_(телесериал)" class = "standardb_black" target="_blank">Wikipedia Фоллаут (телесериал)</a> - <b>Фоллаут (англ. Fallout)</b> на Wikipedia.
 			</td>
 			</tr>
-
-
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" STYLE="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=g-EnpVJoATk" class = "standardb_black" target="_blank">Хроники Спайдервика (англ. The Spiderwick Chronicles)</a> - Официальный трейлер.
+				<a href="https://www.youtube.com/watch?v=bvPDyLStYVo" class = "standardb_black" target="_blank">Фоллаут (англ. Fallout)</a> - Официальный трейлер.
 			</td>
 			</tr>
-
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" STYLE="padding-left:10px; padding-right:10px;">
-					22е Июл, 2024.
+					05е Окт, 2024.
 				</td>
 			</tr>
 			</table>
@@ -1107,6 +821,9 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
+
+
+		
   </table> <!-- End of Func area -->
 
 </div> <!-- End of scroll inside div -->
@@ -1128,7 +845,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	  <td class="title_black" >
 	    &copy; Урмас Репинский, urrimus@hotmail.com
 	  </td>
-
 	</tr>
 </table>
 <!-- End of Bottom Copyright Table --> 
@@ -1138,7 +854,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 </body>
 </html>
-
 
 
 
