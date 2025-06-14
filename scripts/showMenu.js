@@ -2821,6 +2821,13 @@ if (lang=="eng") {
 	wholeMenu["Other"].link = "series_superhero_other_eng.html";
 	wholeMenu["Other"].html = 'Other';
 
+	wholeMenu["Alien"] = {};
+	wholeMenu["Alien"].id = "27_7";
+	wholeMenu["Alien"].color = "black";
+	wholeMenu["Alien"].hasSub = 0;
+	wholeMenu["Alien"].link = "series_alien_eng.html";
+	wholeMenu["Alien"].html = 'Alien';
+
 	wholeMenu["Fallout"] = {};
 	wholeMenu["Fallout"].id = "27_5";
 	wholeMenu["Fallout"].color = "black";
@@ -2943,6 +2950,13 @@ if (lang=="rus") {
 	wholeMenu["Другие"].hasSub = 0;
 	wholeMenu["Другие"].link = "series_superhero_other_rus.html";
 	wholeMenu["Другие"].html = 'Другие';
+
+	wholeMenu["Чужой"] = {};
+	wholeMenu["Чужой"].id = "27_7";
+	wholeMenu["Чужой"].color = "black";
+	wholeMenu["Чужой"].hasSub = 0;
+	wholeMenu["Чужой"].link = "series_alien_rus.html";
+	wholeMenu["Чужой"].html = 'Чужой';
 
 	wholeMenu["Фоллаут"] = {};
 	wholeMenu["Фоллаут"].id = "27_5";
