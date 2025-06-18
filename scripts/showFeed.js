@@ -465,6 +465,8 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	} else {
 		preloadImg.setAttribute('src', entry.media.url);
 	}
+	preloadImg.setAttribute('alt', entry.media.comment);
+	preloadImg.setAttribute('title', entry.media.comment);
 	preloadImg.onload = function () {
 		loadedCount++;
 		if (loadedCount==totalEntries) {
@@ -481,8 +483,8 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				}
 			}
 		}
-		Img.setAttribute('alt', entry.media.comment);
-		Img.setAttribute('title', entry.media.comment);
+		Img.setAttribute('alt', preloadImg.alt);
+		Img.setAttribute('title', preloadImg.title);
 		Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
 		Img.src = preloadImg.src;
 		clearInterval(preloadInterval);
@@ -500,6 +502,8 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				preloadImg.dataset.failedAttempts=0;
 				preloadImg.dataset.isOrigUrl=1;
 				preloadImg.src=entry.media.origUrl;
+				preloadImg.alt=result.entries[i].media.origComment;
+				preloadImg.title=result.entries[i].media.origComment;
 				clearInterval(preloadInterval);
 				preloadInterval=setInterval(preloadImg.onerror, 5000);
 			} else {
@@ -1313,6 +1317,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 					result.entries[i].media.url=locStUpdateData[entry.link].mediaUrl;
 				}
 				if (typeof locStUpdateData[entry.link].mediaComment !== "undefined") {
+					result.entries[i].media.origComment=result.entries[i].media.comment;
 					result.entries[i].media.comment=locStUpdateData[entry.link].mediaComment;
 				}
 			}
@@ -1328,6 +1333,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 					result.entries[i].media.url=locStUpdateData[entry.link].mediaUrl;
 				}
 				if (typeof locStUpdateData[entry.link].mediaComment !== "undefined") {
+					result.entries[i].media.origComment=result.entries[i].media.comment;
 					result.entries[i].media.comment=locStUpdateData[entry.link].mediaComment;
 				}
 				if (typeof locStUpdateData[entry.link].category !== "undefined") {
@@ -1428,6 +1434,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 
 	if (skipUpdates==1) {
 		if (source=="nasa") {
+			result.entries[i].media.origComment=result.entries[i].media.comment;
 			result.entries[i].media.comment=textUpdateSkipped;
 			result.entries[i].media.origUrl=result.entries[i].media.url;
 			result.entries[i].media.url="images/icons/error/skipped.jpg";
@@ -1448,6 +1455,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 	a.onclick = function () {
 		skipUpdates=1;
 		if (source=="nasa") {
+			result.entries[i].media.origComment=result.entries[i].media.comment;
 			result.entries[i].media.comment=textUpdateSkipped;
 			result.entries[i].media.origUrl=result.entries[i].media.url;
 			result.entries[i].media.url="images/icons/error/skipped.jpg";
@@ -1502,6 +1510,7 @@ function updateImages(i, source, type, result, locStUpdateData, lang, corsProxyV
 
 				result.entries[i].media.origUrl=result.entries[i].media.url;
 				result.entries[i].media.url=mediaURL;
+				result.entries[i].media.origComment=result.entries[i].media.comment;
 				result.entries[i].media.comment=mediaComment;
 				locStUpdateData[entry_link]={};
 				locStUpdateData[entry_link].mediaUrl=mediaURL;
