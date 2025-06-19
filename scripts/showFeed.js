@@ -487,7 +487,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		Img.setAttribute('title', preloadImg.title);
 		Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
 		Img.src = preloadImg.src;
-		clearInterval(preloadInterval);
+		if (source=="yahoo") clearInterval(preloadInterval);
 		adjustFeedScrollDiv();
 	}
 	preloadImg.onerror= function () {
@@ -504,13 +504,15 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				preloadImg.src=entry.media.origUrl;
 				preloadImg.alt=result.entries[i].media.origComment;
 				preloadImg.title=result.entries[i].media.origComment;
-				clearInterval(preloadInterval);
-				if (source=="yahoo") preloadInterval=setInterval(preloadImg.onerror, 5000);
+				if (source=="yahoo")  {
+					clearInterval(preloadInterval);
+					preloadInterval=setInterval(preloadImg.onerror, 5000);
+				}
 			} else {
 				Img.setAttribute('alt', '');
 				Img.setAttribute('title', '');
 				Img.src = "images/icons/error/error.jpg";
-				clearInterval(preloadInterval);
+				if (source=="yahoo") clearInterval(preloadInterval);
 				adjustFeedScrollDiv();
 			}
 		} else {
@@ -527,8 +529,10 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				preloadImg.setAttribute('src', entry.media.origUrl+"#"+new Date().getTime());
 			}
 //			preloadImg.src = preloadImg.src;
-			clearInterval(preloadInterval);
-			if (source=="yahoo") preloadInterval=setInterval(preloadImg.onerror, 5000);
+			if (source=="yahoo")  {
+				clearInterval(preloadInterval);
+				preloadInterval=setInterval(preloadImg.onerror, 5000);
+			}
 		}
 	}
 	if (source=="yahoo") var preloadInterval=setInterval(preloadImg.onerror, 5000);
