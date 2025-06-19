@@ -505,7 +505,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				preloadImg.alt=result.entries[i].media.origComment;
 				preloadImg.title=result.entries[i].media.origComment;
 				clearInterval(preloadInterval);
-				preloadInterval=setInterval(preloadImg.onerror, 5000);
+				if (source=="yahoo") preloadInterval=setInterval(preloadImg.onerror, 5000);
 			} else {
 				Img.setAttribute('alt', '');
 				Img.setAttribute('title', '');
@@ -528,10 +528,10 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 			}
 //			preloadImg.src = preloadImg.src;
 			clearInterval(preloadInterval);
-			preloadInterval=setInterval(preloadImg.onerror, 5000);
+			if (source=="yahoo") preloadInterval=setInterval(preloadImg.onerror, 5000);
 		}
 	}
-	var preloadInterval=setInterval(preloadImg.onerror, 5000);
+	if (source=="yahoo") var preloadInterval=setInterval(preloadImg.onerror, 5000);
 
 	if (typeof entry.summary!== "undefined" && entry.summary!=null && entry.summary!="") {
 		var summaryDiv = document.createElement('div');
