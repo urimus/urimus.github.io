@@ -951,9 +951,11 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 		}
 		return;
 	}
+
 	feednami.load(feedURL, function(result){
 		if(result.error){
 			document.getElementById("loadingDivTitle").innerHTML =  result.error.message +"  "+feedIconText(feedURL, lang);
+			document.getElementById("loadingDiv").setAttribute("style", "display:none");
 			return;
 		}
 		result.feedXML=feedURL;
