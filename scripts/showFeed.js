@@ -480,7 +480,11 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 					Img2.setAttribute('align', 'left');
 					Img2.setAttribute('width', entry.media.width);
 					Img2.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
-					Img2.setAttribute('src', entry.additMediaUrl[j]);
+					if (source=="nasa" || source=="phys.org"|| source=="yonhap") {
+						Img2.setAttribute('src', entry.additMediaUrl[j]+"?w=450");
+					} else {
+						Img2.setAttribute('src', entry.additMediaUrl[j]);
+					}
 					Img2.onload = function () {
 						additImgWidth=Img.width;
 						if (this.naturalWidth<Img.width) additImgWidth=this.naturalWidth;
@@ -510,13 +514,13 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		imageDiv.appendChild(showMoreDiv);
 
 		// preload
-		Img2=[];
+		preloadImgArr=[];
 		for (var j=0; j<entry.additMediaUrl.length; j++) {
-			Img2[j]=document.createElement("img");
+			preloadImgArr[j]=document.createElement("img");
 			if (source=="nasa" || source=="phys.org"|| source=="yonhap") {
-				Img2[j].setAttribute('src', entry.additMediaUrl[j]+"?w=450");
+				preloadImgArr[j].setAttribute('src', entry.additMediaUrl[j]+"?w=450");
 			} else {
-				Img2[j].setAttribute('src', entry.additMediaUrl[j]);
+				preloadImgArr[j].setAttribute('src', entry.additMediaUrl[j]);
 			}
 		}
 	}
