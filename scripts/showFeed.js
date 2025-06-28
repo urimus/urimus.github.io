@@ -462,7 +462,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	var preloadImg=document.createElement("img");
 	preloadImg.dataset.failedAttempts=0;
 	preloadImg.dataset.isOrigUrl=0;
-	if (source=="nasa" || source=="phys.org") {
+	if (source=="nasa" || source=="phys.org"|| source=="yonhap") {
 		preloadImg.setAttribute('src', entry.media.url+"?w=450");
 	} else {
 		preloadImg.setAttribute('src', entry.media.url);
