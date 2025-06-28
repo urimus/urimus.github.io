@@ -447,6 +447,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	Div.innerHTML= (i+1)+". "+entry.title;
 	contentsDiv.appendChild(Div);
 
+	var imageDiv = document.createElement('div');
 	var Img=document.createElement("img");
 	Img.setAttribute('class', "text_red");
 	Img.setAttribute('align', 'left');
@@ -455,7 +456,8 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	Img.setAttribute('src', "images/icons/feed/loading.gif");
 	Img.setAttribute('alt', textLoadingAttempt+"1");
 	Img.setAttribute('title', textLoadingAttempt+"1");
-	contentsDiv.appendChild(Img);
+	imageDiv.appendChild(Img);
+	contentsDiv.appendChild(imageDiv);
 
 	var preloadImg=document.createElement("img");
 	preloadImg.dataset.failedAttempts=0;
@@ -488,6 +490,23 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
 		Img.src = preloadImg.src;
 		if (source=="yahoo") clearInterval(preloadInterval);
+
+		if (typeof entry.additMediaUrl!== "undefined") {
+			Img2=[];
+			for (var j=0; j<entry.additMediaUrl.length; j++) {
+				Img2[j]=document.createElement("img");
+				Img2[j].setAttribute('class', "text_red");
+				Img2[j].setAttribute('align', 'left');
+				Img2[j].setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0); display:inline-block;');
+				Img2[j].setAttribute('src', entry.additMediaUrl[j]);
+				Img2[j].onload = function () {
+					if (this.naturalWidth>Img.width) this.width=Img.width;
+				}
+				imageDiv.appendChild(Img2[j]);
+			}
+		}
+
+
 		adjustFeedScrollDiv();
 	}
 	preloadImg.onerror= function () {
@@ -540,6 +559,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	if (typeof entry.summary!== "undefined" && entry.summary!=null && entry.summary!="") {
 		var summaryDiv = document.createElement('div');
 		summaryDiv.setAttribute('class', "text_red");
+		summaryDiv.setAttribute('style', 'display:inline-block;');
 		contentsDiv.appendChild(summaryDiv);
 		formatSummaryDiv(lang, summaryDiv, entry);
 	}
@@ -1266,6 +1286,12 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				if (lang=="eng" || lang=="lat") result.entries[i].media.comment="Image Absent.";
 			} else {
 				result.entries[i].media.url=entry.enclosures[0].url;
+				if (entry.enclosures.length>1) {
+					result.entries[i].additMediaUrl=[];
+					for (var j=1; j<entry.enclosures.length; j++) {
+						result.entries[i].additMediaUrl[j-1]=entry.enclosures[j].url;
+					}
+				}
 			}
 			result.entries[i].media.width=450;
 			if (entry.description!="(END)") {
