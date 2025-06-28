@@ -539,7 +539,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 			Img.setAttribute('title', textLoadingAttempt+(failedAttemptsInt+1));
 			Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, '+failedAttemptsInt/9.0+');');
 			if (isOrigUrl==0) {
-				if (source=="nasa" || source=="phys.org") {
+				if (source=="nasa" || source=="phys.org" || source=="yonhap") {
 					preloadImg.setAttribute('src', entry.media.url+"?w=450#"+new Date().getTime());
 				} else {
 					preloadImg.setAttribute('src', entry.media.url+"#"+new Date().getTime());
