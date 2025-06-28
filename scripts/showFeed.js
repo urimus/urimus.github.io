@@ -399,9 +399,11 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		textCategories="Категории:&nbsp;";
 		textCreator="Создатель:&nbsp;";
 		textCreators="Создатели:&nbsp;";
-		textMore="Ещё &#9658;"; // ►
+		textMore="Ещё";
 		textSeeAlso="Смотри Так-же:&nbsp;";
 		textLoadingAttempt="Попытка Загрузки: ";
+		textShow="Показать";
+		textHide="Скрыть";
 	}
 
 	if (lang == "eng" || lang == "lat"){
@@ -410,14 +412,18 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		textCategories="Categories:&nbsp;";
 		textCreator="Creator:&nbsp;";
 		textCreators="Creators:&nbsp;";
-		textMore="More &#9658;"; // ►
+		textMore="More";
 		textSeeAlso="See Also:&nbsp;";
 		textLoadingAttempt="Loading Attempt: ";
+		textShow="Show";
+		textHide="Hide";
 	}
 
 	if (lang == "lat"){
-		textMore="Plus &#9658;"; // ►
+		textMore="Plus";
 		textSeeAlso="Vide Etiam:&nbsp;";
+		textShow="Demonstrare";
+		textHide="Abscondere";
 	}
 
 	// ------------- End of Setting Texts ---------------- //
@@ -460,17 +466,58 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	Img.setAttribute('title', textLoadingAttempt+"1");
 	imageDiv.appendChild(Img);
 
-
 	if (typeof entry.additMediaUrl!== "undefined") {
+		var extensionImgA = document.createElement('a');
+		extensionImgA.setAttribute('href', "javascript:void(0);");
+		extensionImgA.setAttribute('class', 'standardb_red');
+		extensionImgA.setAttribute('align', 'right');
+		extensionImgA.onclick  = function () { 
+			// ▼- &#9660;   ▲- &#9650;
+			if (this.innerHTML=="[▼]") { // expand
+				for (var j=0; j<entry.additMediaUrl.length; j++) {
+					Img2=document.createElement("img");
+					Img2.setAttribute('class', "text_red");
+					Img2.setAttribute('align', 'left');
+					Img2.setAttribute('width', entry.media.width);
+					Img2.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
+					Img2.setAttribute('src', entry.additMediaUrl[j]);
+					Img2.onload = function () {
+						additImgWidth=Img.width;
+						if (this.naturalWidth<Img.width) additImgWidth=this.naturalWidth;
+						this.width=additImgWidth;
+					}
+					imageDiv.appendChild(Img2);
+				}
+				this.innerHTML="[&#9650;]";
+				showMoreDiv.innerHTML=textHide+" "+entry.additMediaUrl.length+" "+textMore+" ";
+				showMoreDiv.appendChild(this);
+			} else if (this.innerHTML=="[▲]") { // collapse
+				for (var j=0; j<entry.additMediaUrl.length; j++) {
+					imageDiv.removeChild(imageDiv.lastChild);
+				}
+				this.innerHTML="[&#9660;]";
+				showMoreDiv.innerHTML=textShow+" "+entry.additMediaUrl.length+" "+textMore+" ";
+				showMoreDiv.appendChild(this);
+			}
+		}
+		extensionImgA.innerHTML = "[&#9660;]";
+
+		var showMoreDiv = document.createElement('div');
+		showMoreDiv.setAttribute('class', "text_red");
+		showMoreDiv.setAttribute('style', "text-align: right");
+		showMoreDiv.innerHTML=textShow+" "+entry.additMediaUrl.length+" "+textMore+" ";
+		showMoreDiv.appendChild(extensionImgA);
+		imageDiv.appendChild(showMoreDiv);
+
+		// preload
+		Img2=[];
 		for (var j=0; j<entry.additMediaUrl.length; j++) {
-			Img2=document.createElement("img");
-			Img2.setAttribute('class', "text_red");
-			Img2.setAttribute('align', 'left');
-			Img2.setAttribute('width', entry.media.width);
-			Img2.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
-			Img2.setAttribute('src', "images/icons/feed/loading.gif");
-			Img2.setAttribute('id', "loadingAddit"+i+"_"+j);
-			imageDiv.appendChild(Img2);
+			Img2[j]=document.createElement("img");
+			if (source=="nasa" || source=="phys.org"|| source=="yonhap") {
+				Img2[j].setAttribute('src', entry.additMediaUrl[j]+"?w=450");
+			} else {
+				Img2[j].setAttribute('src', entry.additMediaUrl[j]);
+			}
 		}
 	}
 
@@ -506,27 +553,6 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
 		Img.src = preloadImg.src;
 		if (source=="yahoo") clearInterval(preloadInterval);
-
-		if (typeof entry.additMediaUrl!== "undefined") {
-			preloadImg2=[];
-			for (var j=0; j<entry.additMediaUrl.length; j++) {
-				preloadImg2[j]=document.createElement("img");
-				preloadImg2[j].dataset.j=j;
-				if (source=="nasa" || source=="phys.org"|| source=="yonhap") {
-					preloadImg2[j].setAttribute('src', entry.additMediaUrl[j]+"?w=450");
-				} else {
-					preloadImg2[j].setAttribute('src', entry.additMediaUrl[j]);
-				}
-				preloadImg2[j].onload = function () {
-					j2=parseInt(this.dataset.j);
-					additImg=document.getElementById("loadingAddit"+i+"_"+j2);
-					additImgWidth=Img.width;
-					if (this.naturalWidth<Img.width) additImgWidth=this.naturalWidth;
-					additImg.width=additImgWidth;
-					additImg.src=this.src;
-				}
-			}
-		}
 		adjustFeedScrollDiv();
 	}
 	preloadImg.onerror= function () {
@@ -622,7 +648,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	a.setAttribute('href', entry.link);
 	a.setAttribute('class', 'standardb_red');
 	a.setAttribute('target', '_blank');
-	a.innerHTML = textMore;
+	a.innerHTML = textMore+" &#9658;"; // ►
 	Div.appendChild(a);
 	contentsDiv.appendChild(Div);
 
