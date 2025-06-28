@@ -448,6 +448,8 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	contentsDiv.appendChild(Div);
 
 	var imageDiv = document.createElement('div');
+	contentsDiv.appendChild(imageDiv);
+
 	var Img=document.createElement("img");
 	Img.setAttribute('class', "text_red");
 	Img.setAttribute('align', 'left');
@@ -457,7 +459,21 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 	Img.setAttribute('alt', textLoadingAttempt+"1");
 	Img.setAttribute('title', textLoadingAttempt+"1");
 	imageDiv.appendChild(Img);
-	contentsDiv.appendChild(imageDiv);
+
+
+	if (typeof entry.additMediaUrl!== "undefined") {
+		for (var j=0; j<entry.additMediaUrl.length; j++) {
+			Img2=document.createElement("img");
+			Img2.setAttribute('class', "text_red");
+			Img2.setAttribute('align', 'left');
+			Img2.setAttribute('width', entry.media.width);
+			Img2.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0);');
+			Img2.setAttribute('src', "images/icons/feed/loading.gif");
+			Img2.setAttribute('id', "loadingAddit"+i+"_"+j);
+			imageDiv.appendChild(Img2);
+		}
+	}
+
 
 	var preloadImg=document.createElement("img");
 	preloadImg.dataset.failedAttempts=0;
@@ -492,21 +508,25 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 		if (source=="yahoo") clearInterval(preloadInterval);
 
 		if (typeof entry.additMediaUrl!== "undefined") {
-			Img2=[];
+			preloadImg2=[];
 			for (var j=0; j<entry.additMediaUrl.length; j++) {
-				Img2[j]=document.createElement("img");
-				Img2[j].setAttribute('class', "text_red");
-				Img2[j].setAttribute('align', 'left');
-				Img2[j].setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgb(222, 142, 142, 0.0); display:inline-block;');
-				Img2[j].setAttribute('src', entry.additMediaUrl[j]);
-				Img2[j].onload = function () {
-					if (this.naturalWidth>Img.width) this.width=Img.width;
+				preloadImg2[j]=document.createElement("img");
+				preloadImg2[j].dataset.j=j;
+				if (source=="nasa" || source=="phys.org"|| source=="yonhap") {
+					preloadImg2[j].setAttribute('src', entry.additMediaUrl[j]+"?w=450");
+				} else {
+					preloadImg2[j].setAttribute('src', entry.additMediaUrl[j]);
 				}
-				imageDiv.appendChild(Img2[j]);
+				preloadImg2[j].onload = function () {
+					j2=parseInt(this.dataset.j);
+					additImg=document.getElementById("loadingAddit"+i+"_"+j2);
+					additImgWidth=Img.width;
+					if (this.naturalWidth<Img.width) additImgWidth=this.naturalWidth;
+					additImg.width=additImgWidth;
+					additImg.src=this.src;
+				}
 			}
 		}
-
-
 		adjustFeedScrollDiv();
 	}
 	preloadImg.onerror= function () {
