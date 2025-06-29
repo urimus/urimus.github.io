@@ -327,6 +327,7 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 			this.setAttribute('title', textExpand);
 			this.innerHTML="[&#9660;]";
 		}
+		adjustFeedScrollDiv();
 	}
 	extensionA.innerHTML = "[&#9660;]";
 
@@ -489,6 +490,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 						additImgWidth=Img.width;
 						if (this.naturalWidth<Img.width) additImgWidth=this.naturalWidth;
 						this.width=additImgWidth;
+						adjustFeedScrollDiv();
 					}
 					imageDiv.appendChild(Img2);
 				}
@@ -505,6 +507,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				showMoreDiv.setAttribute('style', "padding-bottom:5px; text-align: right;");
 				showMoreDiv.appendChild(this);
 			}
+			adjustFeedScrollDiv();
 		}
 		extensionImgA.innerHTML = "[&#9660;]";
 
