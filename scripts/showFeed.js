@@ -494,6 +494,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				}
 				this.innerHTML="[&#9650;]";
 				showMoreDiv.innerHTML=textHide+" "+entry.additMediaUrl.length+" "+textMore+" ";
+				showMoreDiv.setAttribute('style', "text-align: right;");
 				showMoreDiv.appendChild(this);
 			} else if (this.innerHTML=="[▲]") { // collapse
 				for (var j=0; j<entry.additMediaUrl.length; j++) {
@@ -501,6 +502,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 				}
 				this.innerHTML="[&#9660;]";
 				showMoreDiv.innerHTML=textShow+" "+entry.additMediaUrl.length+" "+textMore+" ";
+				showMoreDiv.setAttribute('style', "padding-bottom:5px; text-align: right;");
 				showMoreDiv.appendChild(this);
 			}
 		}
@@ -508,7 +510,7 @@ function showEntry(type, source, lang, entry, totalEntries, i, appendEntry) {
 
 		var showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
-		showMoreDiv.setAttribute('style', "text-align: right");
+		showMoreDiv.setAttribute('style', "padding-bottom:5px; text-align: right;");
 		showMoreDiv.innerHTML=textShow+" "+entry.additMediaUrl.length+" "+textMore+" ";
 		showMoreDiv.appendChild(extensionImgA);
 		imageDiv.appendChild(showMoreDiv);
