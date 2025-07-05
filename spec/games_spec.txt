@@ -3,7 +3,6 @@
 1. Action-adventure: games_action_adventure
 Armor Mayhem
 Assasins Creed
-No Man's Sky
 Prince of Persia
 
 2. Card: games_card
