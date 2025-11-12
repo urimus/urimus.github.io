@@ -45,7 +45,7 @@ function showErrorImage(lang, type) {
 }
 
 function showInformation(lang) {
-	$.getJSON('https://api.github.com/repos/urimus3/urimus3.github.io/commits', function (data) {
+	$.getJSON('https://api.github.com/repos/urimus/urimus.github.io/commits', function (data) {
 		var lastCommit = formatDate(new Date(data[0].commit.author.date).getTime(), lang);
 		var infoText;
 		if (lang == 'rus') infoText = "Домашняя Страница Урмаса Репинского. Последнее Изменение - ";
