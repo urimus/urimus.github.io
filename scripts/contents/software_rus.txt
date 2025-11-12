@@ -1,0 +1,44 @@
+﻿<b class="text_white_blue">Разработка Программного Обеспечения</b>
+
+&#9679; <a href="software_development_audiovideo_rus.html" class = "standardb_white" data-added="18е Мая, 2021." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Обработка Аудио/Видео</a>
+<span style="padding-left:10px;">- <a href="software_development_audiovideo_rus.html#goldvawe" class = "standardb_white" data-added="01е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">GoldWave</a></span>
+<span style="padding-left:10px;">- <a href="software_development_audiovideo_rus.html#movie_maker_online" class = "standardb_white" data-added="01е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Movie Maker Online</a></span>
+<span style="padding-left:10px;">- <a href="software_development_audiovideo_rus.html#windows_movie_maker" class = "standardb_white" data-added="01е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Windows Movie Maker</a></span>
+
+&#9679; <a href="software_development_data_rus.html" class = "standardb_white" data-added="18е Мая, 2021." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Обработка Данных</a>
+<span style="padding-left:10px;">- <a href="software_development_data_rus.html#mathcad" class = "standardb_white" data-added="01е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">MathCAd</a></span>
+<span style="padding-left:10px;">- <a href="software_development_data_rus.html#matlab" class = "standardb_white" data-added="01е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">MatLab</a></span>
+
+&#9679; <a href="software_development_drawing_rus.html" class = "standardb_white" data-added="18е Мая, 2021." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Рисование</a>
+<span style="padding-left:10px;">- <a href="software_development_drawing_rus.html#coreldraw" class = "standardb_white" data-added="02е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">CorelDraw</a></span>
+<span style="padding-left:10px;">- <a href="software_development_drawing_rus.html#gimp" class = "standardb_white" data-added="02е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Gimp (Linux)</a></span>
+<span style="padding-left:10px;">- <a href="software_development_drawing_rus.html#paint" class = "standardb_white" data-added="02е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Microsoft Paint</a></span>
+<span style="padding-left:10px;">- <a href="software_development_drawing_rus.html#photoshop" class = "standardb_white" data-added="02е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Photoshop</a></span>
+
+&#9679; <a href="software_development_ide_rus.html" class = "standardb_white" data-added="18е Мая, 2021." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">IDE</a>
+<span style="padding-left:10px;">- <a href="software_development_ide_rus.html#eclipse" class = "standardb_white" data-added="02е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Eclipse</a></span>
+<span style="padding-left:10px;">- <a href="software_development_ide_rus.html#netbeans" class = "standardb_white" data-added="02е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">NetBeans</a></span>
+
+&#9679; <a href="software_development_programming_languages_rus.html" class = "standardb_white" data-added="18е Мая, 2021." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Языки Программирования</a>
+<span style="padding-left:10px;">- <a href="software_development_programming_languages_rus.html#visual_basic" class = "standardb_white" data-added="28е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Visual Basic</a></span>
+<span style="padding-left:10px;">- <a href="software_development_programming_languages_rus.html#c++" class = "standardb_white" data-added="28е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">C++</a></span>
+<span style="padding-left:10px;">- <a href="software_development_programming_languages_rus.html#fortran" class = "standardb_white" data-added="28е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Fortran</a></span>
+<span style="padding-left:10px;">- <a href="software_development_programming_languages_rus.html#javascript" class = "standardb_white" data-added="28е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Java/JavaScript</a></span>
+<span style="padding-left:10px;">- <a href="software_development_programming_languages_rus.html#html" class = "standardb_white" data-added="28е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Html</a></span>
+<span style="padding-left:10px;">- <a href="software_development_programming_languages_rus.html#laravel" class = "standardb_white" data-added="28е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Laravel</a></span>
+<span style="padding-left:10px;">- <a href="software_development_programming_languages_rus.html#php" class = "standardb_white" data-added="28е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">PHP/MySql</a></span>
+<span style="padding-left:10px;">- <a href="software_development_programming_languages_rus.html#python" class = "standardb_white" data-added="28е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Python</a></span>
+<span style="padding-left:10px;">- <a href="software_development_programming_languages_rus.html#ruby_on_rails" class = "standardb_white" data-added="28е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Ruby On Rails</a></span>
+
+&#9679; <a href="software_development_text_rus.html" class = "standardb_white" data-added="18е Мая, 2021." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Обработка Текста</a>
+<span style="padding-left:10px;">- <a href="software_development_text_rus.html#latex" class = "standardb_white" data-added="03е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Latex</a></span>
+<span style="padding-left:10px;">- <a href="software_development_text_rus.html#microsoft_office" class = "standardb_white" data-added="03е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Microsoft Office</a></span>
+<span style="padding-left:10px;">- <a href="software_development_text_rus.html#notepad++" class = "standardb_white" data-added="03е Мар, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Notepad++</a></span>
+
+&#9679; <a href="software_development_it_music_rus.html" class = "standardb_white" data-added="20е Мая, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Музыка Про IT</a>
+
+&#9679; <a href="software_development_it_movies_rus.html" class = "standardb_white" data-added="20е Мая, 2017." data-genre="Фильмы Про IT" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Фильмы Про IT</a>
+<span style="padding-left:10px;">- <a href="software_development_it_movies_rus.html#one" class = "standardb_white" data-added="24е Июн, 2018." data-genre="Фильмы Про IT" data-country="usa" data-year="2001" data-lang="eng" data-title_orig="The One" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Противостояние</a></span>
+<span style="padding-left:10px;">- <a href="software_development_it_movies_rus.html#primer" class = "standardb_white" data-added="31е Мая, 2019." data-genre="Фильмы Про IT" data-country="usa" data-year="2004" data-lang="eng" data-title_orig="Primer" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Детонатор</a></span>
+<span style="padding-left:10px;">- <a href="software_development_it_movies_rus.html#scavengers" class = "standardb_white" data-added="24е Июн, 2018." data-genre="Фильмы Про IT" data-country="usa" data-year="2013" data-lang="eng" data-title_orig="Scavengers" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Стервятники</a></span>
+<span style="padding-left:10px;">- <a href="software_development_it_movies_rus.html#sequence_break" class = "standardb_white" data-added="05е Июл, 2019." data-genre="Фильмы Про IT" data-country="usa" data-year="2018" data-lang="eng" data-title_orig="Sequence Break" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Разрыв Последовательности</a></span>

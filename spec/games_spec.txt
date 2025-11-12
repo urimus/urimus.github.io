@@ -1,0 +1,63 @@
+﻿Games:
+
+1. Action-adventure: games_action_adventure
+Armor Mayhem
+Assasins Creed
+Prince of Persia
+
+2. Card: games_card
+Preferans
+
+3. Puzzle: games_puzzle
+Diamond Digger Saga
+Lines
+
+4. Racing: games_racing
+Need for Speed
+
+5. RPG: games_rpg
+-- Action RPG -- games_rpg_action
+Mass Effect
+Nox
+Torchlight 2
+
+-- Breakout RPG -- games_rpg_breakout
+Alphabounce
+
+-- MMORPG -- games_rpg_mmorpg
+Dragonica
+
+-- RPG
+Dragon Quest
+Pillars of Eternity
+
+6. Simulation: games_simulation
+-- Business Simulation -- games_simulation_business
+Theme Hospital
+
+-- Simulation -- games_simulation
+FarmVille
+Simutrans
+
+-- Space Flight
+Everspace
+
+7. Strategy: games_strategy_turn_based
+-- Real-time -- games_strategy_real_time
+Age of Empires
+Commando
+Settlers
+Stronghold
+
+-- Tower Defense -- games_tower_defense
+GemCraft
+
+-- Turn-Based -- games_strategy_turn_based
+Battle for Wesnoth
+Heroes of Might and Magic
+Ufo
+
+8. Not Video
+Football (Soccer)
+Snooker
+Volleyball

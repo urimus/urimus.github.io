@@ -1,0 +1,56 @@
+﻿<b class="text_black_blue">Игры</b>
+
+&#9679; <a href="games_action_adventure_rus.html#action_adventure" class = "standardb_black" data-added="27е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Action-Adventure</a>
+<span style="padding-left:10px;">- <a href="games_action_adventure_rus.html#armor_mayhem" class = "standardb_black" data-added="19е Авг, 2016." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Armor Mayhem</a></span>
+<span style="padding-left:10px;">- <a href="games_action_adventure_rus.html#assasins_creed" class = "standardb_black" data-added="27е Июл, 2016." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Assassin’s Creed II</a></span>
+<span style="padding-left:10px;">- <a href="games_action_adventure_rus.html#prince_of_persia" class = "standardb_black" data-added="01е Мая, 2012." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Price of Persia: The Forgotten Sands</a></span>
+
+&#9679; <a href="games_card_rus.html#card" class = "standardb_black" data-added="13е Июл, 2018." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Карточные</a>
+<span style="padding-left:10px;">- <a href="games_card_rus.html#preferans" class = "standardb_black" data-added="13е Июл, 2018." data-genre="Карточные" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Преферанс</a></span>
+
+&#9679; <a href="games_puzzle_rus.html#puzzle" class = "standardb_black" data-added="27е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Головоломка</a>
+<span style="padding-left:10px;">- <a href="games_puzzle_rus.html#diamond_digger_saga" class = "standardb_black" data-added="27е Июл, 2016." data-genre="Головоломка" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Diamond Digger Saga</a></span>
+<span style="padding-left:10px;">- <a href="games_puzzle_rus.html#lines" class = "standardb_black" data-added="30е Июн, 2017." data-genre="Головоломка" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Lines</a></span>
+
+&#9679; <a href="games_racing_rus.html#racing" class = "standardb_black" data-added="27е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Автосимулятор</a>
+<span style="padding-left:10px;">- <a href="games_racing_rus.html#need_for_speed" class = "standardb_black" data-added="01е Мая, 2012." data-genre="Автосимулятор" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Need for Speed: Hot Pursuit</a></span>
+
+&#9679; <b class="text_black_blue" data-added="26е Июл, 2016.">Ролевая игра (РПГ)</b>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_action_rus.html#rpg_action" class = "standardb_black" data-added="27е Июл, 2016." data-genre="Ролевая игра (РПГ)" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Action РПГ</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_action_rus.html#mass_effect" class = "standardb_black" data-added="01е Мая, 2012." data-genre="Action РПГ" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Mass Effect 3</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_action_rus.html#nox" class = "standardb_black" data-added="21е Сен, 2019." data-genre="Action РПГ" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Nox</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_action_rus.html#torchlight2" class = "standardb_black" data-added="25е Авг, 2018." data-genre="Action РПГ" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Torchlight II</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_breakout_rus.html#rpg_breakout" class = "standardb_black" data-added="27е Июл, 2016." data-genre="Ролевая игра (РПГ)" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Breakout РПГ</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_breakout_rus.html#alphabounce" class = "standardb_black" data-added="27е Июл, 2016." data-genre="Breakout РПГ" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Alphabounce</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_mmorpg_rus.html#rpg_mmorpg" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Ролевая игра (РПГ)" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Массовая многопользовательская ролевая онлайн-игра (ММОРПГ)</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_mmorpg_rus.html#dragonica" class = "standardb_black" data-added="26е Июл, 2016." data-genre="ММОРПГ" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Dragonica</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_rus.html" class = "standardb_black" data-added="26е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Ролевая игра (РПГ)</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_rus.html#dragon_quest" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Ролевая игра (РПГ)" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Dragon Quest</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_rus.html#pillars_eternity" class = "standardb_black" data-added="14е Дек, 2021." data-genre="Ролевая игра (РПГ)" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Pillars of Eternity</a></span>
+
+&#9679; <b class="text_black_blue" data-added="26е Июл, 2016.">Симулятор</b>
+<span style="padding-left:10px;">&#9900; <a href="games_simulation_business_rus.html#simulation_business" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Экономический Симулятор" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Экономический Симулятор</a></span>
+<span style="padding-left:20px;">- <a href="games_simulation_business_rus.html#theme_hospital" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Экономический Симулятор" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Theme Hospital</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_simulation_rus.html#simulation" class = "standardb_black" data-added="26е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Симулятор</a></span>
+<span style="padding-left:20px;">- <a href="games_simulation_rus.html#farmville" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Симулятор" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">FarmVille</a></span>
+<span style="padding-left:20px;">- <a href="games_simulation_rus.html#simutrans" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Симулятор" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Simutrans</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_simulation_space_flight_rus.html#simulation_space_flight" class = "standardb_black" data-added="22е Окт, 2019." data-genre="Космический Симулятор" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Космический Симулятор</a></span>
+<span style="padding-left:20px;">- <a href="games_simulation_space_flight_rus.html#everspace" class = "standardb_black" data-added="22е Окт, 2019." data-genre="Космический Симулятор" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Everspace</a></span>
+
+&#9679; <b class="text_black_blue" data-added="26е Июл, 2016.">Стратегия</b>
+<span style="padding-left:10px;">&#9900; <a href="games_strategy_real_time_rus.html#strategy_real_time" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Стратегия" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Стратегия в реальном времени</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_real_time_rus.html#age_of_empires" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Стратегия в реальном времени" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Age of Empires</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_real_time_rus.html#commandos" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Стратегия в реальном времени" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Commandos</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_real_time_rus.html#settlers" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Стратегия в реальном времени" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Settlers</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_real_time_rus.html#stronghold" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Стратегия в реальном времени" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Stronghold</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_strategy_tower_defense_rus.html#strategy_tower_defense" class = "standardb_black" data-added="19е Авг, 2016." data-genre="Стратегия" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Tower Defense</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_tower_defense_rus.html#gemcraft" class = "standardb_black" data-added="19е Авг, 2016." data-genre="Tower Defense" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">GemCraft</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_strategy_turn_based_rus.html#strategy_turn_based" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Стратегия" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Пошаговая Стратегия</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_turn_based_rus.html#wesnoth" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Пошаговая Стратегия" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Battle for Wesnoth</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_turn_based_rus.html#heroes_v" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Пошаговая Стратегия" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Heroes of Might and Magic V</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_turn_based_rus.html#ufo" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Пошаговая Стратегия" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">X-COM: Terror From The Deep</a></span>
+
+&#9679; <b class="text_black_blue" data-added="29е Июн, 2017.">Не Видео</b>
+<span style="padding-left:10px;">- <a href="games_not_video_rus.html#football" class = "standardb_black" data-added="29е Июн, 2017." data-genre="Не Видео" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Футбол</a></span>
+<span style="padding-left:10px;">- <a href="games_not_video_rus.html#snooker" class = "standardb_black" data-added="29е Июн, 2017." data-genre="Не Видео" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Снукер</a></span>
+<span style="padding-left:10px;">- <a href="games_not_video_rus.html#volleyball" class = "standardb_black" data-added="29е Июн, 2017." data-genre="Не Видео" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Волейбол</a></span>

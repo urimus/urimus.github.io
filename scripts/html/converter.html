@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>JS Menu Converter</title>
+<style>
+body { font-family: monospace; background: #121212; color: #eee; padding: 20px; }
+textarea { width: 100%; height: 250px; background: #1e1e1e; color: #ddd; border: 1px solid #333; padding: 10px; font-size: 13px; }
+button { background: #2196f3; color: white; border: none; padding: 10px 15px; margin: 5px 5px 10px 0; border-radius: 6px; cursor: pointer; font-weight: bold; }
+button:hover { background: #1976d2; }
+#output { height: 250px; white-space: pre; }
+</style>
+</head>
+<body>
+
+<h3>JavaScript → Compact Menu Converter</h3>
+
+<textarea id="input" placeholder="Вставь сюда код с wholeMenu[...]"></textarea><br>
+<button onclick="convert()">Конвертировать</button>
+<button onclick="copyOutput()">📋 Копировать результат</button>
+
+<textarea id="output" placeholder="Результат появится здесь..."></textarea>
+
+<script>
+function convert() {
+  const text = document.getElementById('input').value;
+  const lines = text.split(/\r?\n/);
+  let result = "";
+  let currentKey = null;
+  let currentObj = {};
+
+  const flush = () => {
+    if (currentKey) {
+      const props = Object.entries(currentObj)
+        .map(([k, v]) => `${k}:${v}`)
+        .join(', ');
+      result += `wholeMenu[${currentKey}] = { ${props} };\n`;
+    }
+    currentKey = null;
+    currentObj = {};
+  };
+
+  for (let line of lines) {
+    line = line.trim();
+    if (!line) continue;
+
+    const startMatch = line.match(/^wholeMenu\[(.+?)\]\s*=\s*\{\};/);
+    if (startMatch) {
+      flush();
+      currentKey = startMatch[1];
+      continue;
+    }
+
+    const propMatch = line.match(/^wholeMenu\[(.+?)\]\.(\w+)\s*=\s*(.+?);$/);
+    if (propMatch) {
+      const [, key, prop, val] = propMatch;
+      if (key !== currentKey) {
+        flush();
+        currentKey = key;
+      }
+      currentObj[prop] = val;
+    }
+  }
+  flush();
+  document.getElementById('output').value = result.trim();
+}
+
+function copyOutput() {
+  const out = document.getElementById('output');
+  out.select();
+  document.execCommand('copy');
+  alert("Результат скопирован!");
+}
+</script>
+
+</body>
+</html>

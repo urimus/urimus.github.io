@@ -1,0 +1,2 @@
+﻿<b class="text_blue">About My Work</b>
+&#9679; <a href="about_work_eng.html" class = "standardb_blue" data-added="02nd of Apr, 2014." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">About My Work</a>
