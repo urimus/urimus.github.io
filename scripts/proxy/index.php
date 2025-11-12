@@ -2,7 +2,6 @@
 $allowedOrigins = [
 	"https://urimus.wasmer.app",
 	"https://urimus.github.io",
-	"https://urimus3.github.io",
 	"http://urimus2.royalwebhosting.net",
 	"https://proxy.wasmer.app"
 ];
