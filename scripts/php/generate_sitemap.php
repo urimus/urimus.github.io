@@ -1,44 +1,32 @@
 <?php
-// Путь к корню сайта
-$rootDir = __DIR__; // текущая папка
-$baseURL = "https://urimus.wasmer.app/"; // базовый URL сайта
+$dir = __DIR__;
+$sitemapFile = 'sitemap.xml';
+$baseUrl = 'https://urimus.wasmer.app/';
 
-$urls = [];
+$files = scandir($dir);
 
-// Рекурсивная функция для поиска HTML-файлов
-function scanDirForHTML($dir, &$urls, $baseURL, $rootDir) {
-    $files = scandir($dir);
-    foreach ($files as $file) {
-        if ($file === '.' || $file === '..') continue;
-        $fullPath = $dir . DIRECTORY_SEPARATOR . $file;
+$xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
 
-        if (is_dir($fullPath)) {
-            scanDirForHTML($fullPath, $urls, $baseURL, $rootDir);
-        } elseif (pathinfo($file, PATHINFO_EXTENSION) === 'html') {
-            $relativePath = str_replace($rootDir, '', $fullPath);
-            $relativePath = str_replace(DIRECTORY_SEPARATOR, '/', $relativePath);
-            $urls[] = rtrim($baseURL, '/') . $relativePath;
-        }
-    }
+foreach ($files as $file) {
+	if ($file === '.' || $file === '..' || $file === $sitemapFile) continue;
+	if (is_file($dir . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) === 'html') {
+		$url = $xml->addChild('url');
+		$url->addChild('loc', $baseUrl . $file);
+		$url->addChild('lastmod', date('Y-m-d', filemtime($dir . '/' . $file)));
+	}
 }
 
-// Сканируем папку
-scanDirForHTML($rootDir, $urls, $baseURL, $rootDir);
+$dom = new DOMDocument('1.0', 'UTF-8');
+$dom->preserveWhiteSpace = false;
+$dom->formatOutput = true;
+$dom->loadXML($xml->asXML());
+$xmlString = $dom->saveXML();
 
-// Генерация sitemap.xml
-$sitemap  = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-$sitemap .= "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n";
+// Приводим отступы к табуляции и добавляем переносы строк
+$xmlString = preg_replace('/^(\s+)/m', str_repeat("\t", 1), $xmlString);
+$xmlString = str_replace(array("\r\n", "\r"), "\n", $xmlString);
 
-foreach ($urls as $url) {
-    $sitemap .= "  <url>\n";
-    $sitemap .= "    <loc>$url</loc>\n";
-    $sitemap .= "  </url>\n";
-}
+file_put_contents($dir . '/' . $sitemapFile, $xmlString);
 
-$sitemap .= "</urlset>";
-
-// Сохраняем файл sitemap.xml
-file_put_contents($rootDir . DIRECTORY_SEPARATOR . "sitemap2.xml", $sitemap);
-
-echo "Готово! Найдено " . count($urls) . " HTML страниц.\n";
+echo "Sitemap сгенерирован с читаемыми отступами и переносами строк!";
 ?>
