@@ -79,67 +79,67 @@ function adjustScrollDiv(){
 	}
 }
 
-function enableKeyboardScroll(scrollDiv) {
-	document.addEventListener('keydown', (e) => {
-		const step = 474; // шаг стрелок
-		const pageStep = scrollDiv.clientHeight; // шаг PageUp/PageDown
 
-		// Вертикальный скролл
+
+function enableKeyboardScroll(scrollDiv) {
+	const step = 474;
+
+	document.addEventListener('keydown', (e) => {
+		const pageStep = scrollDiv.clientHeight;
+		const behavior = e.repeat ? 'auto' : 'smooth';
+
 		if (!e.shiftKey) {
 			if (e.key === 'ArrowUp') {
-				scrollDiv.scrollBy({ top: -step, behavior: 'smooth' });
+				scrollDiv.scrollBy({ top: -step, behavior });
 				e.preventDefault();
 			} else if (e.key === 'ArrowDown') {
-				scrollDiv.scrollBy({ top: step, behavior: 'smooth' });
+				scrollDiv.scrollBy({ top: step, behavior });
 				e.preventDefault();
 			}
 		}
 
-		// Горизонтальный скролл (ArrowLeft/ArrowRight или Shift + ArrowUp/ArrowDown)
 		if (e.key === 'ArrowLeft') {
-			scrollDiv.scrollBy({ left: -step, behavior: 'smooth' });
+			scrollDiv.scrollBy({ left: -step, behavior });
 			e.preventDefault();
 		} else if (e.key === 'ArrowRight') {
-			scrollDiv.scrollBy({ left: step, behavior: 'smooth' });
+			scrollDiv.scrollBy({ left: step, behavior });
 			e.preventDefault();
 		} else if (e.shiftKey && e.key === 'ArrowUp') {
-			scrollDiv.scrollBy({ left: -step, behavior: 'smooth' });
+			scrollDiv.scrollBy({ left: -step, behavior });
 			e.preventDefault();
 		} else if (e.shiftKey && e.key === 'ArrowDown') {
-			scrollDiv.scrollBy({ left: step, behavior: 'smooth' });
+			scrollDiv.scrollBy({ left: step, behavior });
 			e.preventDefault();
 		}
 
-		// PageUp/PageDown
 		if (!e.shiftKey) {
 			if (e.key === 'PageUp') {
-				scrollDiv.scrollBy({ top: -pageStep, behavior: 'smooth' });
+				scrollDiv.scrollBy({ top: -pageStep, behavior });
 				e.preventDefault();
 			} else if (e.key === 'PageDown') {
-				scrollDiv.scrollBy({ top: pageStep, behavior: 'smooth' });
+				scrollDiv.scrollBy({ top: pageStep, behavior });
 				e.preventDefault();
 			}
 		} else {
-			// Shift + PageUp/PageDown → горизонтальный скролл
 			if (e.key === 'PageUp') {
-				scrollDiv.scrollBy({ left: -pageStep, behavior: 'smooth' });
+				scrollDiv.scrollBy({ left: -pageStep, behavior });
 				e.preventDefault();
 			} else if (e.key === 'PageDown') {
-				scrollDiv.scrollBy({ left: pageStep, behavior: 'smooth' });
+				scrollDiv.scrollBy({ left: pageStep, behavior });
 				e.preventDefault();
 			}
 		}
 
-		// Home / End
 		if (e.key === 'Home') {
-			scrollDiv.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+			scrollDiv.scrollTo({ top: 0, left: 0, behavior });
 			e.preventDefault();
 		} else if (e.key === 'End') {
-			scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth, behavior: 'smooth' });
+			scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth, behavior });
 			e.preventDefault();
 		}
 	});
 }
+
 
 
 function processPageResize(isLoad, orientationChanged){
