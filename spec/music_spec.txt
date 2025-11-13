@@ -20,9 +20,8 @@
 1. Bad Boys Blue
 2. C. C. Catch
 3. Mr. Credo
-4. Roxette
-5. Sinatra, Frank
-6. Твой День
+4. Sinatra, Frank
+5. Твой День
 ---------------------------------- Disko End ---------------------------------------------
 
 
@@ -30,8 +29,6 @@
 ---------------------------------- Electronic music -------------------------------------- **** Done
 a. Electronic Body Music (EBM)
 1. And One
-2. Apoptygma Bizerk
-3. Covenant
 
 b. Electronic Dance Music (EDM)
 1. Complex Numbers
@@ -86,12 +83,11 @@ c. Death Metal
 4. Sinaya
 
 d. Gothic Metal
-1. Dark Princess
-2. Deathstars
-3. Elysion
-4. Poisonblack
-5. Sirenia
-6. To/Die/For
+1. Deathstars
+2. Elysion
+3. Poisonblack
+4. Sirenia
+5. To/Die/For
 
 e. Power Metal:
 1. Battle Beast
@@ -99,8 +95,7 @@ e. Power Metal:
 3. Sabaton
 
 f. Symphonic Metal:
-1. Nightwish
-2. Therion
+1. Therion
 ---------------------------------- Metal End -------------------------------------------
 
 
@@ -121,7 +116,6 @@ a. Psychedelic Rock
 1. The Doors
 2. Gregorian
 3. Линда 
-
 
 b. Psychedelic Trance:
 1. Infected Mushroom
