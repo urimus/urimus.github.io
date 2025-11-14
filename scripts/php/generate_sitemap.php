@@ -12,12 +12,12 @@ $url->addChild('loc', $baseUrl);
 $url->addChild('lastmod', date('Y-m-d'));
 
 foreach ($files as $file) {
-    if ($file === '.' || $file === '..' || $file === $sitemapFile) continue;
-    if (is_file($dir . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) === 'html') {
-        $url = $xml->addChild('url');
-        $url->addChild('loc', $baseUrl . $file);
-        $url->addChild('lastmod', date('Y-m-d', filemtime($dir . '/' . $file)));
-    }
+	if ($file === '.' || $file === '..' || $file === $sitemapFile) continue;
+	if (is_file($dir . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) === 'html') {
+		$url = $xml->addChild('url');
+		$url->addChild('loc', $baseUrl . $file);
+		$url->addChild('lastmod', date('Y-m-d', filemtime($dir . '/' . $file)));
+	}
 }
 
 $dom = new DOMDocument('1.0', 'UTF-8');
@@ -27,6 +27,7 @@ $dom->loadXML($xml->asXML());
 
 file_put_contents($dir . '/' . $sitemapFile, $dom->saveXML());
 
+echo "Sitemap сгенерирован!\n";
 echo $dom->saveXML();
-echo "\nSitemap сгенерирован!";
+
 ?>
