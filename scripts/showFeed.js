@@ -1112,11 +1112,11 @@ function generateTabs(type, source, lang) {
 	var Img = document.createElement('img');
 	if (lang=="eng" || lang=="lat") {
 		Img.setAttribute('alt', "Version Information");
-		Img.setAttribute('title', "Version Information.<div style='width: 100%; border: 1px solid #ff8a00; margin-top: 5px; margin-bottom: 5px;'></div>Tip: Use Arrows, Home/End for Contents Scroll.");
+		Img.setAttribute('title', "Version Information");
 	}
 	if (lang=="rus") {
 		Img.setAttribute('alt', "Информация о Версии");
-		Img.setAttribute('title', "Информация о Версии.<div style='width: 100%; border: 1px solid #ff8a00; margin-top: 5px; margin-bottom: 5px;'></div>Совет: Используйте Стрелки, Home/End для Прокрутки Содержимого.");
+		Img.setAttribute('title', "Информация о Версии");
 	}
 	Img.setAttribute('id', "information_img");
 	Img.setAttribute('class', "thumbnail_image_red_png");
@@ -1130,6 +1130,23 @@ function generateTabs(type, source, lang) {
 	Div.style.right='2px';
 	if (keys.length%5==0) Div.style.bottom='-36px';
 	else Div.style.bottom='-9px';
+
+	var Img = document.createElement('img');
+	if (lang=="eng" || lang=="lat") {
+		Img.setAttribute('alt', "Quick Tips");
+		Img.setAttribute('title', "Tip: Use Arrows, Home/End for Contents Scroll");
+	}
+	if (lang=="rus") {
+		Img.setAttribute('alt', "Быстрые Советы");
+		Img.setAttribute('title', "Совет: Используйте Стрелки, Home/End для Прокрутки Содержимого");
+	}
+	Img.setAttribute('src', "images/icons/feed/tips.png");
+	table.appendChild(Img);
+
+	Img.style.position='absolute';
+	Img.style.right='34px';
+	if (keys.length%5==0) Img.style.bottom='-32px';
+	else Img.style.bottom='-3px';
 
 	adjustFeedScrollDiv();
 }
