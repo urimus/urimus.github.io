@@ -620,7 +620,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 
 	result.entries[i].storage.loadingImg=Img;
 	result.entries[i].storage.contentsDiv=contentsDiv;
-	preloadImage(type, source, lang, result);
+	// preload later
 
 	// ------------- Additional Images Show/Hide -------------- //
 	if (typeof entry.additMediaUrl !== "undefined") {
@@ -739,10 +739,12 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 		imageDiv.appendChild(showMoreDiv);
 
 		// preload
-		var v = document.createElement("video");
-		v.preload = "auto";
-		v.src = entry.video;
-		v.load();
+		if (source!="cbs") {
+			var v = document.createElement("video");
+			v.preload = "auto";
+			v.src = entry.video;
+			v.load();
+		}
 	}
 	// ------------- End of Video Show/Hide -------------- //
 
@@ -754,6 +756,9 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 		formatSummaryDiv(lang, summaryDiv, entry);
 		result.entries[i].storage.summaryDiv=summaryDiv;
 	}
+
+	// preload and ensured that result.entries[i].storage.summaryDiv is set
+	preloadImage(type, source, lang, result);
 
 	if (typeof entry.subject !== "undefined" && entry.subject != null && entry.subject != "") {
 		var Div = document.createElement('div');
