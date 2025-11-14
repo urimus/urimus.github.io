@@ -482,22 +482,6 @@ function preloadImage(type, source, lang, result) {
 		}
 		if (loadedCount == totalEntries) {
 			document.getElementById("loadedCount").innerHTML = "";
-
-			// start preloading other images
-			for (var j = 0; j < preloadCache.length; j++) {
-				if (preloadCache[j].dataset.type != "") {
-					if (preloadCache[j].dataset.type=="image") {
-						preloadCache[j].src=preloadCache[j].dataset.src;
-						preloadCache[j].dataset.type="";
-					}
-					if (preloadCache[j].dataset.type=="video") {
-						preloadCache[j].src=preloadCache[j].dataset.src;
-						preloadCache[j].preload = "auto";
-						preloadCache[j].load();
-						preloadCache[j].dataset.type="";
-					}
-				}
-			}
 		} else {
 			document.getElementById("loadedCount").innerHTML = loadedCount + "/";
 		}
@@ -513,6 +497,29 @@ function preloadImage(type, source, lang, result) {
 		loadingImg.alt=preloadImg.alt;
 		loadingImg.title=preloadImg.title;
 		loadingImg.src=preloadImg.src;
+
+		// preloading additional images and video
+		if (typeof entry.additMediaUrl !== "undefined") {
+			for (var j = 0; j < entry.additMediaUrl.length; j++) {
+				let preloadImg2 = new Image();
+				if (source == "nasa" || source == "phys.org" || source == "yonhap") {
+					newUrl = entry.additMediaUrl[j];
+					preloadImg2.src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
+				} else {
+					preloadImg2.src=entry.additMediaUrl[j];
+				}
+				preloadCache.push(preloadImg2);
+			}
+		}
+		if (typeof entry.video!== "undefined") {
+			if (!isEmbed(entry.video) && source!="cbs") {
+				let v = document.createElement("video");
+				v.src = entry.video;
+				v.preload = "auto";
+				v.load();
+				preloadCache.push(v);
+			}
+		}
 		adjustFeedScrollDiv();
 		preloadImage(type, source, lang, result);
 	}
@@ -573,7 +580,6 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 	// ------------- Setting Texts ---------------- //
 	// Records Text is in getRecordsText function
 	var textSource, textCategory, textCategories, textCreator, textCreators, textSubject, textMore, textSeeAlso, textShow, textHide, textVideo;
-	var newUrl;
 
 	if (lang == "rus") {
 		textSource = "Источник:&nbsp;";
@@ -677,7 +683,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 						adjustFeedScrollDiv();
 					}
 					if (source == "nasa" || source == "phys.org" || source == "yonhap") {
-						newUrl = entry.additMediaUrl[j];
+						var newUrl = entry.additMediaUrl[j];
 						Img2.src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
 					} else {
 						Img2.src=entry.additMediaUrl[j];
@@ -708,18 +714,6 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 		showMoreDiv.innerHTML = textShow + " " + entry.additMediaUrl.length + " " + textMore + " ";
 		showMoreDiv.appendChild(extensionImgA);
 		imageDiv.appendChild(showMoreDiv);
-
-		for (var j = 0; j < entry.additMediaUrl.length; j++) {
-			let preloadImg = new Image();
-			if (source == "nasa" || source == "phys.org" || source == "yonhap") {
-				newUrl = entry.additMediaUrl[j];
-				preloadImg.dataset.src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
-			} else {
-				preloadImg.dataset.src=entry.additMediaUrl[j];
-			}
-			preloadImg.dataset.type="image";
-			preloadCache.push(preloadImg);
-		}
 	}
 	// ------------- End of Additional Images Show/Hide -------------- //
 
@@ -770,14 +764,6 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 		showMoreDiv.innerHTML=textShow+" "+textVideo+" ";
 		showMoreDiv.appendChild(extensionVideoA);
 		imageDiv.appendChild(showMoreDiv);
-
-		// preload
-		if (!isEmbed(entry.video) && source!="cbs") {
-			let v = document.createElement("video");
-			v.dataset.src = entry.video;
-			v.dataset.type = "video";
-			preloadCache.push(v);
-		}
 	}
 	// ------------- End of Video Show/Hide -------------- //
 
