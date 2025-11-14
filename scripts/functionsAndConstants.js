@@ -21,6 +21,36 @@ function mouseOut(tabType, feedTypeL, col) {
 	}
 }
 
+
+function detectBomCheckSoFar(bytes) {
+	if (typeof bytes[1] !== 'undefined') {
+		if (bytes[0]=="fe" && bytes[1]=="ff") return 2;
+		if (bytes[0]=="ff" && bytes[1]=="fe") return 2;
+		if (bytes[0]=="ff" && bytes[1]=="d8") return 2;
+	} 
+	if (typeof bytes[2] !== 'undefined') {
+		if (bytes[0]=="ef" && bytes[1]=="bb" && bytes[2]=="bf") return 3;
+		if (bytes[0]=="f7" && bytes[1]=="64" && bytes[2]=="4c") return 3;
+		if (bytes[0]=="0e" && bytes[1]=="fe" && bytes[2]=="ff") return 3;
+		if (bytes[0]=="fb" && bytes[1]=="ee" && bytes[2]=="28") return 3;
+	}
+	if (typeof bytes[3] !== 'undefined') {
+		if (bytes[0]=="00" && bytes[1]=="00" && bytes[2]=="fe" && bytes[3]=="ff") return 4;
+		if (bytes[0]=="ff" && bytes[1]=="fe" && bytes[2]=="00" && bytes[3]=="00") return 4;
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="38") return 4;
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="39") return 4;
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="2b") return 4;
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="2f") return 4;
+		if (bytes[0]=="dd" && bytes[1]=="73" && bytes[2]=="66" && bytes[3]=="73") return 4;
+		if (bytes[0]=="84" && bytes[1]=="31" && bytes[2]=="95" && bytes[3]=="33") return 4;
+	}
+	if (typeof bytes[4] !== 'undefined') {
+		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="38" && bytes[4]=="2d") return 5;
+	}
+	return 0;
+}
+
+
 function removeBom(str) {
 	var ch, st, re = [], j=0;
 	for (var c = 0; c < str.length; c++ ) {
@@ -29,7 +59,7 @@ function removeBom(str) {
 		if(ch < 127)
 		{
 			re[j++] = ch & 0xFF;
-			if (removeBomCheckSoFar(re)) return removeBom(str.substr(c+1));
+			if (detectBomCheckSoFar(re)>0) return removeBom(str.substr(c+1));
 		}
 		else
 		{
@@ -44,38 +74,12 @@ function removeBom(str) {
 			st = st.reverse();
 			for(var k=0;k<st.length; ++k)
 				re[j++] = st[k];
-			if (removeBomCheckSoFar(re)) return removeBom(str.substr(c+1));
+			if (detectBomCheckSoFar(re)>0) return removeBom(str.substr(c+1));
 		}
 	}
 	return str; // nothing found
 }
 
-function removeBomCheckSoFar(re) {
-	if (typeof re[1] !== 'undefined') { // first 2 bytes exists
-		if (re[0]==254 && re[1]==255) return 1; // UTF-16 (BE)
-		if (re[0]==255 && re[1]==254) return 1; // UTF-16 (LE)
-	} 
-	if (typeof re[2] !== 'undefined') { // first 3 bytes exists
-		if (re[0]==239 && re[1]==187 && re[2]==191) return 1; // UTF-8
-		if (re[0]==247 && re[1]==100 && re[2]==76) return 1; // UTF-1
-		if (re[0]==14 && re[1]==254 && re[2]==255) return 1; // SCSU
-		if (re[0]==251 && re[1]==238 && re[2]==40) return 1; // BOCU-1
-	}
-	if (typeof re[3] !== 'undefined') { // first 4 bytes exists
-		if (re[0]==0 && re[1]==0 && re[2]==254 && re[3]==255) return 1; // UTF-32 (BE)
-		if (re[0]==255 && re[1]==254 && re[2]==0 && re[3]==0) return 1; // UTF-32 (LE)
-		if (re[0]==43 && re[1]==47 && re[2]==118 && re[3]==56) return 1; // UTF-7 - 1
-		if (re[0]==43 && re[1]==47 && re[2]==118 && re[3]==57) return 1; // UTF-7 - 2
-		if (re[0]==43 && re[1]==47 && re[2]==118 && re[3]==43) return 1; // UTF-7 - 3
-		if (re[0]==43 && re[1]==47 && re[2]==118 && re[3]==47) return 1; // UTF-7 - 4
-		if (re[0]==221 && re[1]==115 && re[2]==102 && re[3]==115) return 1; // UTF-EBCDIC
-		if (re[0]==132 && re[1]==49 && re[2]==149 && re[3]==51) return 1; // GB-18030
-	}
-	if (typeof re[4] !== 'undefined') { // first 5 bytes exists
-		if (re[0]==43 && re[1]==47 && re[2]==118 && re[3]==56 && re[4]==-45) return 1; // UTF-7 - 5
-	}
-	return 0;
-}
 
 function formatDate(date, lang) {
 	if (typeof lang==="undefined") var lang="eng";
