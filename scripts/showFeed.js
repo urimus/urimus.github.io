@@ -439,6 +439,21 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 }
 
 // ------------- Image Preload -------------- //
+
+function isEmbed(url) {
+	try {
+		const u = new URL(url);
+		const path = u.pathname;
+		return (
+			path.includes("/embed/") ||
+			path.includes("/player/") ||
+			path.includes("/iframe/")
+		);
+	} catch {
+		return false;
+	}
+}
+
 function preloadImage(type, source, lang, result) {
 	// 5 preloads simultaneously only
 
@@ -553,22 +568,6 @@ function preloadImage(type, source, lang, result) {
 	preloadImg.src=newUrl;
 }
 // ------------- End of Image Preload -------------- //
-
-function isEmbed(url) {
-	try {
-		const u = new URL(url);
-		const path = u.pathname;
-
-		return (
-			path.includes("/embed/") ||
-			path.includes("/player/") ||
-			path.includes("/iframe/")
-		);
-	} catch {
-		return false;
-	}
-}
-
 
 function showEntry(type, source, lang, result, i, appendEntry) {
 
