@@ -1,5 +1,9 @@
 ﻿"use strict";
 
+// ------------- Global Variables ---------------- //
+var preloadCache = [];
+// ------------- End of Global Variables ---------------- //
+
 function contentsLoad(lang) {
 
 	var typeL="";
@@ -573,6 +577,7 @@ function showContents(type, sortby, lang) {
 							}
 							let preloadImg = new Image();
 							preloadImg.src = "images/icons/"+type2+"/"+anchors[1]+".jpg";
+							preloadCache.push(preloadImg);
 						}
 					}
 				}

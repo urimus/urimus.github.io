@@ -2,6 +2,7 @@
 
 // ------------- Global Variables ---------------- //
 var skipUpdates=0;
+var preloadCache = [];
 // ------------- End of Global Variables ---------------- //
 
 function feedIconText(feedURL, lang) {
@@ -692,15 +693,15 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 		showMoreDiv.appendChild(extensionImgA);
 		imageDiv.appendChild(showMoreDiv);
 
-		var preloadImgArr = [];
 		for (var j = 0; j < entry.additMediaUrl.length; j++) {
-			preloadImgArr[j] = new Image();
+			let preloadImg = new Image();
 			if (source == "nasa" || source == "phys.org" || source == "yonhap") {
 				newUrl = entry.additMediaUrl[j];
-				preloadImgArr[j].src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
+				preloadImg.src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
 			} else {
-				preloadImgArr[j].src=entry.additMediaUrl[j];
+				preloadImg.src=entry.additMediaUrl[j];
 			}
+			preloadCache.push(preloadImg);
 		}
 	}
 	// ------------- End of Additional Images Show/Hide -------------- //
@@ -755,10 +756,11 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 
 		// preload
 		if (!isEmbed(entry.video) && source!="cbs") {
-			var v = document.createElement("video");
+			let v = document.createElement("video");
 			v.preload = "auto";
 			v.src = entry.video;
 			v.load();
+			preloadCache.push(v);
 		}
 	}
 	// ------------- End of Video Show/Hide -------------- //
