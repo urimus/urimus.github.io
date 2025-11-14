@@ -556,6 +556,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 	// ------------- Setting Texts ---------------- //
 	// Records Text is in getRecordsText function
 	var textSource, textCategory, textCategories, textCreator, textCreators, textSubject, textMore, textSeeAlso, textShow, textHide, textVideo;
+	var newUrl;
 
 	if (lang == "rus") {
 		textSource = "Источник:&nbsp;";
@@ -659,9 +660,10 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 						adjustFeedScrollDiv();
 					}
 					if (source == "nasa" || source == "phys.org" || source == "yonhap") {
-						Img2.setAttribute('src', entry.additMediaUrl[j] + "?w=450");
+						newUrl = entry.additMediaUrl[j];
+						Img2.src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
 					} else {
-						Img2.setAttribute('src', entry.additMediaUrl[j]);
+						Img2.src=entry.additMediaUrl[j];
 					}
 					imageDiv.appendChild(Img2);
 				}
@@ -694,7 +696,8 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 		for (var j = 0; j < entry.additMediaUrl.length; j++) {
 			preloadImgArr[j] = new Image();
 			if (source == "nasa" || source == "phys.org" || source == "yonhap") {
-				preloadImgArr[j].src=entry.additMediaUrl[j] + "?w=450";
+				newUrl = entry.additMediaUrl[j];
+				preloadImgArr[j].src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
 			} else {
 				preloadImgArr[j].src=entry.additMediaUrl[j];
 			}
