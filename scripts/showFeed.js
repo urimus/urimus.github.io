@@ -486,7 +486,6 @@ function preloadImage(type, source, lang, result) {
 		}
 
 		if (preloadImg.naturalWidth < 450) {
-			result.entries[preloadIndex].media.naturalWidth=preloadImg.naturalWidth;
 			loadingImg.setAttribute('width', preloadImg.naturalWidth);
 			contentsDiv.setAttribute('style', "display:inline-block; width:" + loadingImg.width + "px; padding:10px; border: 1px solid #de8e8e;");
 			if (typeof summaryDiv !== "undefined" && typeof entry.summary !== "undefined" && entry.summary != null && entry.summary != "") {
@@ -651,7 +650,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					var Img2 = document.createElement("img");
 					Img2.setAttribute('class', "text_red");
 					Img2.setAttribute('align', 'left');
-					Img2.setAttribute('width', entry.media.width);
+					Img2.setAttribute('width', Img.width);
 					Img2.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgba(222, 142, 142, 0.0);');
 					Img2.onload = function () {
 						var additImgWidth = Img.width;
@@ -715,11 +714,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 			        var ifrm = document.createElement("iframe");
 				ifrm.setAttribute('class', "text_red");
 				ifrm.setAttribute('align', 'left');
-				if (typeof result.entries[i].media.naturalWidth !== "undefined") {
-					ifrm.setAttribute('width', entry.media.naturalWidth);
-				} else {
-					ifrm.setAttribute('width', entry.media.width);
-				}
+				ifrm.setAttribute('width', Img.width);
 				ifrm.setAttribute('style', 'margin-top:5px; margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
 				ifrm.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture');
 				if (source=="cbs") {
