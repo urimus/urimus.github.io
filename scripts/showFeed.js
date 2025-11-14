@@ -469,8 +469,8 @@ function preloadImage(type, source, lang, result) {
 	var summaryDiv=entry.storage.summaryDiv;
 
 	var preloadImg = new Image();
-	preloadImg.setAttribute('alt', entry.media.comment);
-	preloadImg.setAttribute('title', entry.media.comment);
+	preloadImg.alt=entry.media.comment;
+	preloadImg.title=entry.media.comment;
 	preloadImg.onload = function () {
 		var loadedCount=0;
 		result.entries[preloadIndex].storage.preloadPF=1;
@@ -493,9 +493,9 @@ function preloadImage(type, source, lang, result) {
 			}
 		}
 
-		loadingImg.setAttribute('alt', preloadImg.alt);
-		loadingImg.setAttribute('title', preloadImg.title);
-		loadingImg.setAttribute('src', preloadImg.src);
+		loadingImg.alt=preloadImg.alt;
+		loadingImg.title=preloadImg.title;
+		loadingImg.src=preloadImg.src;
 		adjustFeedScrollDiv();
 		preloadImage(type, source, lang, result);
 	}
@@ -503,20 +503,20 @@ function preloadImage(type, source, lang, result) {
 		// try origUrl if set
 		newUrl = entry.media.origUrl;
 		if (typeof newUrl !== 'undefined' && isOrigUrl == 0 && newUrl != preloadImg.src) {
-			preloadImg.setAttribute('alt', entry.media.origComment);
-			preloadImg.setAttribute('title', entry.media.origComment);
+			preloadImg.alt=entry.media.origComment;
+			preloadImg.title=entry.media.origComment;
 			if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.setAttribute('src', newUrl); return; }
 			if (source=="yahoo") newUrl = "https://proxy.wasmer.app?url="+entry.media.url;
 			if (source == "nasa" || source == "phys.org" || source == "yonhap") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
-			preloadImg.setAttribute('src', newUrl);
+			preloadImg.src=newUrl;
 			isOrigUrl = 1;
 		} else {
 			result.entries[preloadIndex].storage.preloadPF=0;
 			result.entries[preloadIndex].storage.preloadStarted=0;
 			result.entries[preloadIndex].storage.loadingImg=null;
-			loadingImg.setAttribute('alt', '');
-			loadingImg.setAttribute('title', '');
-			loadingImg.setAttribute('src', "images/icons/error/error.jpg");
+			loadingImg.alt='';
+			loadingImg.title='';
+			loadingImg.src="images/icons/error/error.jpg";
 			adjustFeedScrollDiv();
 			preloadImage(type, source, lang, result);
 		}
@@ -526,7 +526,7 @@ function preloadImage(type, source, lang, result) {
 	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.setAttribute('src', newUrl); return; }
 	if (source=="yahoo") newUrl = "https://proxy.wasmer.app?url="+entry.media.url;
 	if (source == "nasa" || source == "phys.org" || source == "yonhap") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
-	preloadImg.setAttribute('src', newUrl);
+	preloadImg.src=newUrl;
 }
 // ------------- End of Image Preload -------------- //
 
@@ -631,7 +631,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 	Img.setAttribute('width', entry.media.width);
 	Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px;');
 	Img.onload = function () { adjustFeedScrollDiv(); }
-	Img.setAttribute('src', "images/icons/feed/loading.gif");
+	Img.setAttribute.src="images/icons/feed/loading.gif";
 	imageDiv.appendChild(Img);
 
 	result.entries[i].storage.loadingImg=Img;
@@ -694,9 +694,9 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 		for (var j = 0; j < entry.additMediaUrl.length; j++) {
 			preloadImgArr[j] = new Image();
 			if (source == "nasa" || source == "phys.org" || source == "yonhap") {
-				preloadImgArr[j].setAttribute('src', entry.additMediaUrl[j] + "?w=450");
+				preloadImgArr[j].src=entry.additMediaUrl[j] + "?w=450";
 			} else {
-				preloadImgArr[j].setAttribute('src', entry.additMediaUrl[j]);
+				preloadImgArr[j].src=entry.additMediaUrl[j];
 			}
 		}
 	}
