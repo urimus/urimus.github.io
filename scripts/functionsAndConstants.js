@@ -56,10 +56,12 @@ function removeBom(str) {
 	for (var c = 0; c < str.length; c++ ) {
 		if (c==5) return str; // nothing found
 		var ch = str.charCodeAt(c);
+		var detectedBomL = 0;
 		if(ch < 127)
 		{
 			re[j++] = ch & 0xFF;
-			if (detectBomCheckSoFar(re)>0) return removeBom(str.substr(c+1));
+			detectedBomL = detectBomCheckSoFar(re);
+			if (detectedBomL > 0) return removeBom(str.substr(c+detectedBomL));
 		}
 		else
 		{
@@ -74,7 +76,8 @@ function removeBom(str) {
 			st = st.reverse();
 			for(var k=0;k<st.length; ++k)
 				re[j++] = st[k];
-			if (detectBomCheckSoFar(re)>0) return removeBom(str.substr(c+1));
+			detectedBomL = detectBomCheckSoFar(re);
+			if (detectedBomL > 0) return removeBom(str.substr(c+detectedBomL));
 		}
 	}
 	return str; // nothing found
