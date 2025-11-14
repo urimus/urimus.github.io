@@ -486,6 +486,7 @@ function preloadImage(type, source, lang, result) {
 		}
 
 		if (preloadImg.naturalWidth < 450) {
+			result.entries[preloadIndex].media.naturalWidth=preloadImg.naturalWidth;
 			loadingImg.setAttribute('width', preloadImg.naturalWidth);
 			contentsDiv.setAttribute('style', "display:inline-block; width:" + loadingImg.width + "px; padding:10px; border: 1px solid #de8e8e;");
 			if (typeof summaryDiv !== "undefined" && typeof entry.summary !== "undefined" && entry.summary != null && entry.summary != "") {
@@ -529,6 +530,22 @@ function preloadImage(type, source, lang, result) {
 	preloadImg.setAttribute('src', newUrl);
 }
 // ------------- End of Image Preload -------------- //
+
+function isEmbed(url) {
+	try {
+		const u = new URL(url);
+		const path = u.pathname;
+
+		return (
+			path.includes("/embed/") ||
+			path.includes("/player/") ||
+			path.includes("/iframe/")
+		);
+	} catch {
+		return false;
+	}
+}
+
 
 function showEntry(type, source, lang, result, i, appendEntry) {
 
@@ -698,10 +715,13 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 			        var ifrm = document.createElement("iframe");
 				ifrm.setAttribute('class', "text_red");
 				ifrm.setAttribute('align', 'left');
-				ifrm.setAttribute('width', entry.media.width);
+				if (typeof result.entries[i].media.naturalWidth !== "undefined") {
+					ifrm.setAttribute('width', entry.media.naturalWidth);
+				} else {
+					ifrm.setAttribute('width', entry.media.width);
+				}
 				ifrm.setAttribute('style', 'margin-top:5px; margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
-				ifrm.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; fullscreen; gyroscope; picture-in-picture');
-				ifrm.setAttribute('allowfullscreen', '');
+				ifrm.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture');
 				if (source=="cbs") {
 					ifrm.setAttribute("src", "https://www.livereacting.com/tools/hls-player-embed?url="+entry.video);
 //					ifrm.setAttribute("src", "https://hlsplayer.net/embed?type=m3u8&src="+entry.video);
@@ -710,9 +730,6 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					ifrm.setAttribute("src", entry.video);
 				}
 				ifrm.onload = function () {
-					var videoWidth=Img.width;
-					if (this.naturalWidth<Img.width) videoWidth=this.naturalWidth;
-					this.width=videoWidth;
 					adjustFeedScrollDiv();
 				}
 				imageDiv.appendChild(ifrm);
@@ -739,7 +756,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 		imageDiv.appendChild(showMoreDiv);
 
 		// preload
-		if (source!="cbs") {
+		if (!isEmbed(entry.video) && source!="cbs") {
 			var v = document.createElement("video");
 			v.preload = "auto";
 			v.src = entry.video;
