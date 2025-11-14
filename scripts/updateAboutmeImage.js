@@ -125,7 +125,7 @@ function updateAboutMeImage(lang, random) {
 		if (lang == "lat") textError = "Imago #" + (i + 1) + " Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
 
 		var item = items[i];
-		loadingDivTitle.innerHTML = textLoadingImage + " #" + (i + 1) + ". ";
+		loadingDivTitle.innerHTML = textLoadingImage + " #" + (i + 1) +" ("+formatBytes(item.enclosures[0].length)+"). ";
 
 		var Img = document.createElement("img");
 		Img.setAttribute('class', "text_blue");
