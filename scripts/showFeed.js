@@ -1146,7 +1146,7 @@ function generateTabs(type, source, lang) {
 	Img.style.position='absolute';
 	Img.style.right='34px';
 	if (keys.length%5==0) Img.style.bottom='-32px';
-	else Img.style.bottom='-3px';
+	else Img.style.bottom='-5px';
 
 	adjustFeedScrollDiv();
 }
