@@ -526,14 +526,12 @@ function preloadImage(type, source, lang, result) {
 				preloadCache.push(preloadImg2);
 			}
 		}
-		if (typeof entry.video!== "undefined") {
-			if (!isEmbed(entry.video) && source!="cbs") {
-				let v = document.createElement("video");
-				v.src = entry.video;
-				v.preload = "auto";
-				v.load();
-				preloadCache.push(v);
-			}
+		if (source!="cbs" && typeof entry.video!== "undefined" && !isEmbed(entry.video)) {
+			let v = document.createElement("video");
+			v.src = entry.video;
+			v.preload = "auto";
+			v.load();
+			preloadCache.push(v);
 		}
 		adjustFeedScrollDiv();
 		preloadImage(type, source, lang, result);
