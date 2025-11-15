@@ -82,11 +82,24 @@ function adjustScrollDiv(){
 
 
 function enableKeyboardScroll(scrollDiv) {
-	const step = 474;
+
+	var stepRepeat = 0;
+	var stepNoRepat = 474;
+	var pageStep = scrollDiv.clientHeight;
+	var step;
 
 	document.addEventListener('keydown', (e) => {
-		const pageStep = scrollDiv.clientHeight;
-		const behavior = e.repeat ? 'auto' : 'smooth';
+
+		var behavior;
+		if (e.repeat) {
+			behavior = 'auto';
+			stepRepeat += 10;
+			step = stepRepeat;
+		} else {
+			behavior = 'smooth';
+			stepRepeat  = 0;
+			step = stepNoRepat;
+		}
 
 		if (!e.shiftKey) {
 			if (e.key === 'ArrowUp') {
