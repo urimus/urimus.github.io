@@ -654,7 +654,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 	Img.setAttribute('width', entry.media.width);
 	Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px;');
 	Img.onload = function () { adjustFeedScrollDiv(); }
-	Img.setAttribute.src="images/icons/feed/loading.gif";
+	Img.src="images/icons/feed/loading.gif";
 	imageDiv.appendChild(Img);
 
 	result.entries[i].storage.loadingImg=Img;
