@@ -1155,11 +1155,11 @@ function generateTabs(type, source, lang) {
 	var Img = document.createElement('img');
 	if (lang=="eng" || lang=="lat") {
 		Img.setAttribute('alt', "Quick Tips");
-		Img.setAttribute('title', "Tip: Use Arrows, Home/End for Contents Scroll");
+		Img.setAttribute('title', "Tip: Use Navigation Keys (Arrows, <kbd>Home/End</kbd>, <kbd>Page Up/Page Down</kbd>) and <kbd>Shift</kbd> for Contents Scroll");
 	}
 	if (lang=="rus") {
 		Img.setAttribute('alt', "Быстрые Советы");
-		Img.setAttribute('title', "Совет: Используйте Стрелки, Home/End для Прокрутки Содержимого");
+		Img.setAttribute('title', "Совет: Используйте Клавиши Навигации (Стрелки, <kbd>Home/End</kbd>, <kbd>Page Up/Page Down</kbd>) и <kbd>Shift</kbd> для Прокрутки Содержимого");
 	}
 	Img.setAttribute('src', "images/icons/feed/tips.png");
 	table.appendChild(Img);

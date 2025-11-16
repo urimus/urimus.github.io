@@ -8140,7 +8140,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 		if (type == "contentsLink") {
 			left_shift = rect.right + 10.0;
 		} else {
-			left_shift = rect.left + 270.0;
+			left_shift = rect.right - 10.0;
 		}
 
 		tableStyle = "";
