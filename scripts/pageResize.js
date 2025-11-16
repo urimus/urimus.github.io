@@ -86,11 +86,11 @@ function enableKeyboardScroll(scrollDiv) {
 	var stepRepeat = 0;
 	var stepNoRepat = 474;
 	var pageStep = scrollDiv.clientHeight;
-	var step;
 
 	document.addEventListener('keydown', (e) => {
 
 		var behavior;
+		var step;
 		if (e.repeat) {
 			behavior = 'auto';
 			stepRepeat += 10;
