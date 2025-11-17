@@ -1806,12 +1806,12 @@ if (lang=="rus") {
 	wholeMenu["How-To ✶ No Entry ✶"].link = "";
 	wholeMenu["How-To ✶ No Entry ✶"].html = 'How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
 
-	wholeMenu["Доб. Строку Новостей ✶ No Entry ✶"] = {};
-	wholeMenu["Доб. Строку Новостей ✶ No Entry ✶"].id = "6_1";
-	wholeMenu["Доб. Строку Новостей ✶ No Entry ✶"].color = "blue";
-	wholeMenu["Доб. Строку Новостей ✶ No Entry ✶"].hasSub = 0;
-	wholeMenu["Доб. Строку Новостей ✶ No Entry ✶"].link = "howto_add_feed_rus.html";
-	wholeMenu["Доб. Строку Новостей ✶ No Entry ✶"].html = 'Доб. Строку Новостей <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
+	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"] = {};
+	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].id = "6_1";
+	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].color = "blue";
+	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].hasSub = 0;
+	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].link = "howto_add_feed_rus.html";
+	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].html = 'Добавить Строку Новостей <font color="fuchsia"><sup>&#10038;No Entry&#10038;</sup></font>';
 
 	wholeMenu["HTML Редактор"] = {};
 	wholeMenu["HTML Редактор"].id = "6_2";
