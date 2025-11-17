@@ -161,45 +161,43 @@ $(function() {
 		},
 		open: function() {
 			(function waitAndApply(attemptsLeft) {
-				requestAnimationFrame(() => {
-					var tooltipEl = $(".ui-tooltip.custom-tooltip").last()[0];
-					if (!tooltipEl) {
-						if (attemptsLeft > 0) waitAndApply(attemptsLeft - 1);
-						return;
+				var tooltipEl = $(".ui-tooltip.custom-tooltip").last()[0];
+				if (!tooltipEl) {
+					if (attemptsLeft > 0) requestAnimationFrame(() => { waitAndApply(attemptsLeft - 1); });
+					return;
+				}
+				if (typeof targetEl.dataset.ttcolor !== "undefined") {
+					if (origColor == null) {
+						var styles = window.getComputedStyle(tooltipEl);
+						origBackground = styles.background;
+						origColor = styles.color;
 					}
-					if (typeof targetEl.dataset.ttcolor !== "undefined") {
-						if (origColor == null) {
-							var styles = window.getComputedStyle(tooltipEl);
-							origBackground = styles.background;
-							origColor = styles.color;
-						}
-						var colorScheme = targetEl.dataset.ttcolor;
-						if (colorScheme == "blue") {
-							tooltipEl.style.color = "#448CCB";
-							tooltipEl.style.background = "linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)";
-						} else if (colorScheme == "black") {
-							tooltipEl.style.color = "#707070";
-							tooltipEl.style.background = "linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)";
-						} else if (colorScheme == "red") {
-							tooltipEl.style.color = "#CE3535";
-							tooltipEl.style.background = "linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%)";
-						} else if (colorScheme == "white") {
-							tooltipEl.style.color = "#A9A9A9";
-							tooltipEl.style.background = "linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)";
-						} else if (colorScheme == "green") {
-							tooltipEl.style.color = "#008080";
-							tooltipEl.style.background = "linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)";
-						}
-					} else {
-						if (origColor != null) {
-							tooltipEl.style.color = origColor;
-							tooltipEl.style.background = origBackground;
-							origColor = null;
-							origBackground = null;
-						}
+					var colorScheme = targetEl.dataset.ttcolor;
+					if (colorScheme == "blue") {
+						tooltipEl.style.color = "#448CCB";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)";
+					} else if (colorScheme == "black") {
+						tooltipEl.style.color = "#707070";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)";
+					} else if (colorScheme == "red") {
+						tooltipEl.style.color = "#CE3535";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%)";
+					} else if (colorScheme == "white") {
+						tooltipEl.style.color = "#A9A9A9";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)";
+					} else if (colorScheme == "green") {
+						tooltipEl.style.color = "#008080";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)";
 					}
-				});
-
+				} else {
+					if (origColor != null) {
+						tooltipEl.style.color = origColor;
+						tooltipEl.style.background = origBackground;
+						origColor = null;
+						origBackground = null;
+					}
+				}
+				
 				prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null };
 				isDirty = false;
 				var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -211,7 +209,7 @@ $(function() {
 				document.body.appendChild(svgEl);
 				positionTTAndUpdateL();
 				requestAnimationFrame(() => { svgEl.style.opacity = "1"; });
-			})(3);
+			})(4);
 		},
 		close: function() {
 			$("svg.tooltip-svg").each(function() {
