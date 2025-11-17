@@ -199,19 +199,19 @@ $(function() {
 						}
 					}
 				});
-			})(3);
 
-			prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null };
-			isDirty = false;
-			var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-			svgEl.setAttribute("class", "tooltip-svg");
-			svgEl.setAttribute(
-				"style",
-				"position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 0.2s linear;"
-			);
-			document.body.appendChild(svgEl);
-			positionTTAndUpdateL();
-			requestAnimationFrame(() => { svgEl.style.opacity = "1"; });
+				prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null };
+				isDirty = false;
+				var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+				svgEl.setAttribute("class", "tooltip-svg");
+				svgEl.setAttribute(
+					"style",
+					"position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 0.2s linear;"
+				);
+				document.body.appendChild(svgEl);
+				positionTTAndUpdateL();
+				requestAnimationFrame(() => { svgEl.style.opacity = "1"; });
+			})(3);
 		},
 		close: function() {
 			$("svg.tooltip-svg").each(function() {
