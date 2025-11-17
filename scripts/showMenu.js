@@ -1785,26 +1785,12 @@ if (lang=="eng") {
 	wholeMenu["Add News Feed ✶ No Entry ✶"].link = "howto_add_feed_eng.html";
 	wholeMenu["Add News Feed ✶ No Entry ✶"].html = 'Add News Feed <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
 
-	wholeMenu["Dowload File"] = {};
-	wholeMenu["Dowload File"].id = "6_3";
-	wholeMenu["Dowload File"].color = "blue";
-	wholeMenu["Dowload File"].hasSub = 0;
-	wholeMenu["Dowload File"].link = "howto_download_file_eng.html";
-	wholeMenu["Dowload File"].html = 'Dowload File';
-
 	wholeMenu["HTML Editor"] = {};
-	wholeMenu["HTML Editor"].id = "6_4";
+	wholeMenu["HTML Editor"].id = "6_2";
 	wholeMenu["HTML Editor"].color = "blue";
 	wholeMenu["HTML Editor"].hasSub = 0;
 	wholeMenu["HTML Editor"].link = "html_editor_eng.html?pattern=*.html&i=0";
 	wholeMenu["HTML Editor"].html = 'HTML Editor';
-
-	wholeMenu["Launch Program"] = {};
-	wholeMenu["Launch Program"].id = "6_5";
-	wholeMenu["Launch Program"].color = "blue";
-	wholeMenu["Launch Program"].hasSub = 0;
-	wholeMenu["Launch Program"].link = "howto_launch_program_eng.html";
-	wholeMenu["Launch Program"].html = 'Launch Program';
 
 }
 
@@ -1827,26 +1813,12 @@ if (lang=="rus") {
 	wholeMenu["Доб. Строку Новостей ✶ No Entry ✶"].link = "howto_add_feed_rus.html";
 	wholeMenu["Доб. Строку Новостей ✶ No Entry ✶"].html = 'Доб. Строку Новостей <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
 
-	wholeMenu["Скачать Фаил"] = {};
-	wholeMenu["Скачать Фаил"].id = "6_3";
-	wholeMenu["Скачать Фаил"].color = "blue";
-	wholeMenu["Скачать Фаил"].hasSub = 0;
-	wholeMenu["Скачать Фаил"].link = "howto_download_file_rus.html";
-	wholeMenu["Скачать Фаил"].html = 'Скачать Фаил';
-
 	wholeMenu["HTML Редактор"] = {};
-	wholeMenu["HTML Редактор"].id = "6_4";
+	wholeMenu["HTML Редактор"].id = "6_2";
 	wholeMenu["HTML Редактор"].color = "blue";
 	wholeMenu["HTML Редактор"].hasSub = 0;
 	wholeMenu["HTML Редактор"].link = "html_editor_rus.html?pattern=*.html&i=0";
 	wholeMenu["HTML Редактор"].html = 'HTML Редактор';
-
-	wholeMenu["Запустить Программу"] = {};
-	wholeMenu["Запустить Программу"].id = "6_5";
-	wholeMenu["Запустить Программу"].color = "blue";
-	wholeMenu["Запустить Программу"].hasSub = 0;
-	wholeMenu["Запустить Программу"].link = "howto_launch_program_rus.html";
-	wholeMenu["Запустить Программу"].html = 'Запустить Программу';
 
 }
 
