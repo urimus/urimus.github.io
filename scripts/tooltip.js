@@ -160,42 +160,46 @@ $(function() {
 			return $(this).attr('title');
 		},
 		open: function() {
-			if (typeof targetEl.dataset.ttcolor!== "undefined") {
-				if (origColor==null) {
-					var tooltipEl = document.querySelector('.ui-tooltip.custom-tooltip');
-					if (tooltipEl) {
-						var styles = window.getComputedStyle(tooltipEl);
-  						origBackground = styles.background;
-  						origColor = styles.color;
+			(function waitAndApply(attemptsLeft) {
+				requestAnimationFrame(() => {
+					var tooltipEl = $(".ui-tooltip.custom-tooltip").last()[0];
+					if (!tooltipEl) {
+						if (attemptsLeft > 0) waitAndApply(attemptsLeft - 1);
+						return;
 					}
-				}
-				var colorScheme=targetEl.dataset.ttcolor;
-				var style = document.createElement('style');
-				if (colorScheme=="blue") {	
-					style.textContent = ".ui-tooltip.custom-tooltip { color:#448CCB; background: linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%); }";
-					document.head.appendChild(style);
-				} else if (colorScheme=="black") {
-					style.textContent = ".ui-tooltip.custom-tooltip { color:#707070; background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%); }";
-					document.head.appendChild(style);
-				} else if (colorScheme=="red") {
-					style.textContent = ".ui-tooltip.custom-tooltip { color:#CE3535; background: linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%); }";
-					document.head.appendChild(style);
-				} else if (colorScheme=="white") {
-					style.textContent = ".ui-tooltip.custom-tooltip { color:#A9A9A9; background: linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%); }";
-					document.head.appendChild(style);
-				} else if (colorScheme=="green") {
-					style.textContent = ".ui-tooltip.custom-tooltip { color:#008080; background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%); }";
-					document.head.appendChild(style);
-				}
-			} else {
-				if (origColor!=null) {
-					var style = document.createElement('style');
-					style.textContent = `.ui-tooltip.custom-tooltip { color: ${origColor}; background: ${origBackground}; }`;
-					document.head.appendChild(style);
-					origColor=null;
-					origBackground=null;
-				}
-			}
+					if (typeof targetEl.dataset.ttcolor !== "undefined") {
+						if (origColor == null) {
+							var styles = window.getComputedStyle(tooltipEl);
+							origBackground = styles.background;
+							origColor = styles.color;
+						}
+						var colorScheme = targetEl.dataset.ttcolor;
+						if (colorScheme == "blue") {
+							tooltipEl.style.color = "#448CCB";
+							tooltipEl.style.background = "linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)";
+						} else if (colorScheme == "black") {
+							tooltipEl.style.color = "#707070";
+							tooltipEl.style.background = "linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)";
+						} else if (colorScheme == "red") {
+							tooltipEl.style.color = "#CE3535";
+							tooltipEl.style.background = "linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%)";
+						} else if (colorScheme == "white") {
+							tooltipEl.style.color = "#A9A9A9";
+							tooltipEl.style.background = "linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)";
+						} else if (colorScheme == "green") {
+							tooltipEl.style.color = "#008080";
+							tooltipEl.style.background = "linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)";
+						}
+					} else {
+						if (origColor != null) {
+							tooltipEl.style.color = origColor;
+							tooltipEl.style.background = origBackground;
+							origColor = null;
+							origBackground = null;
+						}
+					}
+				});
+			})(3);
 
 			prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null };
 			isDirty = false;
