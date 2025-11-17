@@ -8132,6 +8132,14 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableSM.dataset.origLeft = ele.getBoundingClientRect().left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
+
+		rect = ele.getBoundingClientRect();
+		if (type == "contentsLink") {
+			left_shift = rect.right + 10.0;
+		} else {
+			left_shift = rect.right - 10.0;
+		}
+		tableSM.style.left=left_shift+"px";
 	}
 
 	// caption
