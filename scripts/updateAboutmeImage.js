@@ -33,7 +33,7 @@ function showErrorImage(lang, type) {
 	var cell1 = tableRow.insertCell(0);
 	var ImgE = document.createElement("img");
 	ImgE.setAttribute('class', "text_blue");
-	if (type == "skipped") ImgE.setAttribute('src', "images/icons/error/no_image_blue.jpg");
+	if (type == "skipped") ImgE.setAttribute('src', "images/icons/error/no_image_blue.png");
 	if (type == "error") ImgE.setAttribute('src', "images/icons/error/error.jpg");
 	ImgE.setAttribute('alt', imageDesc);
 	ImgE.setAttribute('title', imageDesc);
