@@ -8051,7 +8051,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	// additional case
 	if (lastSubMenu!=null) {
 		rectT=lastSubMenu.getBoundingClientRect();
-		if (lastRect.left-rectT.left==1) lastSubMenu = hideSubMenu(ele, 0, lastSubMenu.dataset.id);
+		if (lastRect.left-rectT.left>=1) lastSubMenu = hideSubMenu(ele, 0, lastSubMenu.dataset.id);
 	}
 
 	tablex = document.getElementById("table" + newTableId);
