@@ -8132,14 +8132,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableSM.dataset.origLeft = ele.getBoundingClientRect().left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
-
-		rect = ele.getBoundingClientRect();
-		if (type == "contentsLink") {
-			left_shift = rect.right + 10.0;
-		} else {
-			left_shift = rect.right - 10.0;
-		}
-		tableSM.style.left=left_shift+"px";
 	}
 
 	// caption
@@ -8204,9 +8196,15 @@ function showSubMenu(ele, lang, type, newTableId) {
 			} else if (shiftTransitionStart+rectT.height - top_scroll > h) {
 				shiftTransitionStart=top_scroll + h - rectT.height;
 			}
-			tableSM.style.top=(shiftTransitionStart)+"px";
+			tableSM.style.top=shiftTransitionStart+"px";
 			tableSM.offsetHeight;
-			tableSM.style.transition = "top 0.2s ease-out, opacity 0.2s linear";
+			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
+			if (type == "contentsLink") {
+				left_shift = rect.right + 10.0;
+			} else {
+				left_shift = rect.right - 10.0;
+			}
+			tableSM.style.left=left_shift+"px";
 		}
 		tableSM.style.top=top_shift+"px";
 		lastRect=rect;
@@ -8237,9 +8235,15 @@ function showSubMenu(ele, lang, type, newTableId) {
 				} else if (shiftTransitionStart+rectT.height  - top_scroll > h) {
 					shiftTransitionStart=top_scroll + h - rectT.height;
 				}
-				tableSM.style.top=(shiftTransitionStart)+"px";
+				tableSM.style.top=shiftTransitionStart+"px";
 				tableSM.offsetHeight;
-				tableSM.style.transition = "top 0.2s ease-out, opacity 0.2s linear";
+				tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
+				if (type == "contentsLink") {
+					left_shift = rect.right + 10.0;
+				} else {
+					left_shift = rect.right - 10.0;
+				}
+				tableSM.style.left=left_shift+"px";
 			}
 			tableSM.style.top=top_shift+"px";
 			lastRect=rect;
