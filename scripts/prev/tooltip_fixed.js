@@ -1,0 +1,222 @@
+﻿"use strict";
+
+$(function() {
+	var r = 4;
+	var lineColor = "#ff8a00";
+	var targetEl = null;
+	var prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null };
+	var isDirty = false;
+	var origBackground=null;
+	var origColor=null;
+
+	var scrollDiv = document.getElementById('scrollDiv');
+	if (scrollDiv) scrollDiv.addEventListener('scroll', positionTTAndUpdateL, { passive: true });
+	window.addEventListener('scroll', positionTTAndUpdateL, { passive: true });
+	window.addEventListener('resize', positionTTAndUpdateL, { passive: true });
+
+	var style = document.createElement('style');
+	style.textContent = `.ui-tooltip.custom-tooltip { border: ${r/2}px solid ${lineColor}; border-radius: ${r}px; }`;
+	document.head.appendChild(style);
+
+	function crisp(value) {
+		var ratio = window.devicePixelRatio || 1;
+		return Math.round(value * ratio) / ratio;
+	}
+
+	function drawLine() {
+		isDirty = false;
+
+		var tooltipEl = $(".ui-tooltip:visible").last()[0];
+		if (!tooltipEl || !targetEl) return;
+
+		var svg = $("svg.tooltip-svg").last()[0];
+		if (!svg) return;
+
+		var targetRect = targetEl.getBoundingClientRect();
+		var tooltipRect = tooltipEl.getBoundingClientRect();
+
+		var targetX = targetRect.left + targetRect.width / 2;
+		var targetY = targetRect.top + targetRect.height / 2;
+
+		var distances = {
+			left: Math.hypot(tooltipRect.left - targetX, targetY - (tooltipRect.top + tooltipRect.height / 2)),
+			right: Math.hypot(tooltipRect.right - targetX, targetY - (tooltipRect.top + tooltipRect.height / 2)),
+			top: Math.hypot(targetX - (tooltipRect.left + tooltipRect.width / 2), tooltipRect.top - targetY),
+			bottom: Math.hypot(targetX - (tooltipRect.left + tooltipRect.width / 2), tooltipRect.bottom - targetY)
+		};
+
+		var tooltipX, tooltipY, d;
+		var minSide = Object.keys(distances).reduce((a, b) => distances[a] < distances[b] ? a : b);
+
+		switch (minSide) {
+			case 'left':
+				tooltipX = crisp(tooltipRect.left);
+				tooltipY = tooltipRect.top + tooltipRect.height / 2;
+				d = `M ${tooltipX} ${tooltipY + r} A ${r} ${r} 0 0 0 ${tooltipX} ${tooltipY - r} Z`;
+				break;
+			case 'right':
+				tooltipX = crisp(tooltipRect.right);
+				tooltipY = tooltipRect.top + tooltipRect.height / 2;
+				d = `M ${tooltipX} ${tooltipY - r} A ${r} ${r} 0 0 0 ${tooltipX} ${tooltipY + r} Z`;
+				break;
+			case 'top':
+				tooltipX = tooltipRect.left + tooltipRect.width / 2;
+				tooltipY = crisp(tooltipRect.top);
+				d = `M ${tooltipX + r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX - r} ${tooltipY} Z`;
+				break;
+			case 'bottom':
+				tooltipX = tooltipRect.left + tooltipRect.width / 2;
+				tooltipY = crisp(tooltipRect.bottom);
+				d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX + r} ${tooltipY} Z`;
+				break;
+		}
+
+		if (
+			prevCoords.tooltipX === tooltipX &&
+			prevCoords.tooltipY === tooltipY &&
+			prevCoords.targetX === targetX &&
+			prevCoords.targetY === targetY
+		) return;
+
+		var line = $(svg).find('line')[0];
+		if (!line) {
+			line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+			line.setAttribute("stroke", lineColor);
+			line.setAttribute("shape-rendering", "geometricPrecision");
+			svg.appendChild(line);
+		}
+		line.setAttribute("stroke-width", r / 2);
+		line.setAttribute("stroke", lineColor);
+
+		if (prevCoords.tooltipX === null) {
+			var length = Math.hypot(tooltipX - targetX, tooltipY - targetY);
+			var speed = 200;
+			var duration = length / speed;
+			line.setAttribute("stroke-dasharray", length);
+			line.setAttribute("stroke-dashoffset", length);
+			line.style.transition = `stroke-dashoffset ${duration}s ease-out`;
+		}
+
+		line.setAttribute("x1", targetX);
+		line.setAttribute("y1", targetY);
+		line.setAttribute("x2", tooltipX);
+		line.setAttribute("y2", tooltipY);
+
+		var startCircle = $(svg).find('.startCircle')[0];
+		if (!startCircle) {
+			startCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+			startCircle.setAttribute("class", "startCircle");
+			startCircle.setAttribute("shape-rendering", "geometricPrecision");
+			svg.appendChild(startCircle);
+		}
+		startCircle.setAttribute("r", r);
+		startCircle.setAttribute("fill", lineColor);
+		startCircle.setAttribute("cx", targetX);
+		startCircle.setAttribute("cy", targetY);
+
+		var endCircle = $(svg).find('.endCircle')[0];
+		if (!endCircle) {
+			endCircle = document.createElementNS("http://www.w3.org/2000/svg", "path");
+			endCircle.setAttribute("class", "endCircle");
+			endCircle.setAttribute("shape-rendering", "geometricPrecision");
+			svg.appendChild(endCircle);
+		}
+		endCircle.setAttribute("d", d);
+		endCircle.setAttribute("fill", lineColor);
+
+		prevCoords = { tooltipX, tooltipY, targetX, targetY };
+
+		requestAnimationFrame(() => {
+			line.setAttribute("stroke-dashoffset", "0");
+		});
+	}
+
+	function positionTTAndUpdateL() {
+		if (!isDirty) {
+			isDirty = true;
+			requestAnimationFrame(() => {
+				var tooltipEl = $(".ui-tooltip:visible").last();
+				if (tooltipEl.length && targetEl) {
+					tooltipEl.position({
+						my: "center bottom",
+						at: `center top-${r}`,
+						of: targetEl,
+						collision: "flipfit"
+					});
+				}
+				drawLine();
+			});
+		}
+	}
+
+	$(document).tooltip({
+		track: false,
+		position: { my: "center bottom", at: `center top-${r}`, collision: "flipfit" },
+		classes: { "ui-tooltip": "custom-tooltip" },
+		show: function() { $(this).fadeIn(200); },
+		hide: { effect: "fade", duration: 200 },
+		content: function() {
+			targetEl = this;
+			return $(this).attr('title');
+		},
+		open: function() {
+			(function waitAndApply(attemptsLeft) {
+				var tooltipEl = $(".ui-tooltip.custom-tooltip").last()[0];
+				if (!tooltipEl) {
+					if (attemptsLeft > 0) requestAnimationFrame(() => { waitAndApply(attemptsLeft - 1); });
+					return;
+				}
+				if (typeof targetEl.dataset.ttcolor !== "undefined") {
+					if (origColor == null) {
+						var styles = window.getComputedStyle(tooltipEl);
+						origBackground = styles.background;
+						origColor = styles.color;
+					}
+					var colorScheme = targetEl.dataset.ttcolor;
+					if (colorScheme == "blue") {
+						tooltipEl.style.color = "#448CCB";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)";
+					} else if (colorScheme == "black") {
+						tooltipEl.style.color = "#707070";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)";
+					} else if (colorScheme == "red") {
+						tooltipEl.style.color = "#CE3535";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%)";
+					} else if (colorScheme == "white") {
+						tooltipEl.style.color = "#A9A9A9";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)";
+					} else if (colorScheme == "green") {
+						tooltipEl.style.color = "#008080";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)";
+					}
+				} else {
+					if (origColor != null) {
+						tooltipEl.style.color = origColor;
+						tooltipEl.style.background = origBackground;
+						origColor = null;
+						origBackground = null;
+					}
+				}
+				
+				prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null };
+				isDirty = false;
+				var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+				svgEl.setAttribute("class", "tooltip-svg");
+				svgEl.setAttribute(
+					"style",
+					"position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 0.2s linear;"
+				);
+				document.body.appendChild(svgEl);
+				positionTTAndUpdateL();
+				requestAnimationFrame(() => { svgEl.style.opacity = "1"; });
+			})(4);
+		},
+		close: function() {
+			$("svg.tooltip-svg").each(function() {
+				let svg = this;
+				requestAnimationFrame(() => { svg.style.opacity = "0"; });
+				setTimeout(() => { svg.remove(); }, 200);
+			});
+		}
+	});
+});
