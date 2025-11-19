@@ -12,7 +12,7 @@ $(function() {
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	svgEl.setAttribute("class", "tooltip-svg");
 
-	var zIndex = "z-index: 2;"
+	var zIndex = "z-index: 1;"
 	if (typeof galleria2 !== 'undefined') zIndex = "z-index: 10001;";
 	svgEl.setAttribute("style", "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;opacity:1;"+zIndex);
 	document.body.appendChild(svgEl);
