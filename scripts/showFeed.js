@@ -1521,7 +1521,11 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		if (source == "phys.org") {
 			var tmbPos, filename;
 			if (entry["media:thumbnail"] != null) {
-				result.entries[i].media.url = entry["media:thumbnail"]["@"].url;
+				// do not store small images
+				// result.entries[i].media.url = entry["media:thumbnail"]["@"].url;
+				result.entries[i].media.url = "images/icons/error/no_image.png";
+				if (lang == "rus") result.entries[i].media.comment = "Картинка Отсутствует";
+				if (lang == "eng" || lang == "lat") result.entries[i].media.comment = "Image Absent";
 				tmbPos = result.entries[i].media.url.indexOf("tmb/");
 				if (tmbPos != -1) {
 					result.entries[i].storage.updateProcessed = 1;
@@ -1816,8 +1820,9 @@ function checkProcessedCount(source, type, result, lang, pf) {
 		failedCountTitle = document.getElementById("failedCountTitle");
 		failedCountTitle.innerHTML = "&nbsp;(#&#10062;: " + failedCountInt + ")";
 		processedCount = document.getElementById("processedCount");
-		processedCount.innerHTML = parseInt(processedCount.innerHTML) + 1;
-		document.getElementById("leftCount").innerHTML = result.entries.length - parseInt(processedCount.innerHTML);
+		result.totalUpdated++;
+		processedCount.innerHTML = (result.totalUpdated + 1);
+		document.getElementById("leftCount").innerHTML = (result.entries.length - result.totalUpdated);
 	}
 
 	processedCount = 0;
@@ -1844,8 +1849,9 @@ function checkProcessedCount(source, type, result, lang, pf) {
 			passedCount = document.getElementById("passedCount");
 			passedCount.innerHTML = parseInt(passedCount.innerHTML) + 1;
 			processedCount = document.getElementById("processedCount");
-			processedCount.innerHTML = parseInt(processedCount.innerHTML) + 1;
-			document.getElementById("leftCount").innerHTML = result.entries.length - parseInt(processedCount.innerHTML);
+			result.totalUpdated++;
+			processedCount.innerHTML = (result.totalUpdated + 1);
+			document.getElementById("leftCount").innerHTML = (result.entries.length - result.totalUpdated);
 		}
 		if (nextUpdateRecordSet == 1) {
 			result.entries[nextUpdateRecord].storage.updateInitiated = 1;
