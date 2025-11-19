@@ -1520,25 +1520,21 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		// --- phys.org ---
 		if (source == "phys.org") {
 			var tmbPos, filename;
+			result.entries[i].media.url = "images/icons/error/no_image.png";
+			if (lang == "rus") result.entries[i].media.comment = "Картинка Отсутствует";
+			if (lang == "eng" || lang == "lat") result.entries[i].media.comment = "Image Absent";
 			if (entry["media:thumbnail"] != null) {
 				// do not store small images
 				// result.entries[i].media.url = entry["media:thumbnail"]["@"].url;
-				result.entries[i].media.url = "images/icons/error/no_image.png";
-				if (lang == "rus") result.entries[i].media.comment = "Картинка Отсутствует";
-				if (lang == "eng" || lang == "lat") result.entries[i].media.comment = "Image Absent";
-				tmbPos = result.entries[i].media.url.indexOf("tmb/");
+				tmbPos = entry["media:thumbnail"]["@"].url.indexOf("tmb/");
 				if (tmbPos != -1) {
 					result.entries[i].storage.updateProcessed = 1;
 					result.totalUpdated++;
 					result.entries[i].media.origUrl = result.entries[i].media.url;
 					result.entries[i].media.origComment = "";
-					filename = result.entries[i].media.url.substr(tmbPos + 4);
+					filename = entry["media:thumbnail"]["@"].url.substr(tmbPos + 4);
 					result.entries[i].media.url = "https://scx2.b-cdn.net/gfx/news/" + filename;
 				}
-			} else {
-				result.entries[i].media.url = "images/icons/error/no_image.png";
-				if (lang == "rus") result.entries[i].media.comment = "Картинка Отсутствует";
-				if (lang == "eng" || lang == "lat") result.entries[i].media.comment = "Image Absent";
 			}
 			result.entries[i].media.width = 450;
 			result.entries[i].summary = entry.description;
