@@ -517,7 +517,7 @@ function preloadImage(type, source, lang, result) {
 		if (typeof entry.additMediaUrl !== "undefined") {
 			for (var j = 0; j < entry.additMediaUrl.length; j++) {
 				let preloadImg2 = new Image();
-				if (source == "nasa" || source == "phys.org" || source == "yonhap") {
+				if (source == "nasa") {
 					newUrl = entry.additMediaUrl[j];
 					preloadImg2.src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
 				} else {
@@ -544,7 +544,7 @@ function preloadImage(type, source, lang, result) {
 			preloadImg.title=entry.media.origComment;
 			if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.setAttribute('src', newUrl); return; }
 			if (source=="yahoo") newUrl = "https://proxy.wasmer.app?url="+entry.media.url;
-			if (source == "nasa" || source == "phys.org" || source == "yonhap") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
+			if (source == "nasa") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
 			preloadImg.src=newUrl;
 			isOrigUrl = 1;
 		} else {
@@ -562,7 +562,7 @@ function preloadImage(type, source, lang, result) {
 	result.entries[preloadIndex].storage.preloadStarted=1;
 	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.setAttribute('src', newUrl); return; }
 	if (source=="yahoo") newUrl = "https://proxy.wasmer.app?url="+entry.media.url;
-	if (source == "nasa" || source == "phys.org" || source == "yonhap") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
+	if (source == "nasa") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
 	preloadImg.src=newUrl;
 }
 // ------------- End of Image Preload -------------- //
@@ -679,7 +679,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 						this.width = additImgWidth;
 						adjustFeedScrollDiv();
 					}
-					if (source == "nasa" || source == "phys.org" || source == "yonhap") {
+					if (source == "nasa") {
 						var newUrl = entry.additMediaUrl[j];
 						Img2.src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
 					} else {
