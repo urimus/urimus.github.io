@@ -723,23 +723,37 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 		extensionVideoA.onclick  = function () { 
 			// ▼- &#9660;   ▲- &#9650;
 			if (this.innerHTML=="[▼]") { // expand
-			        var ifrm = document.createElement("iframe");
-				ifrm.setAttribute('class', "text_red");
-				ifrm.setAttribute('align', 'left');
-				ifrm.setAttribute('width', Img.width);
-				ifrm.setAttribute('style', 'margin-top:5px; margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
-				ifrm.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture');
-				if (source=="cbs") {
-					ifrm.setAttribute("src", "https://www.livereacting.com/tools/hls-player-embed?url="+entry.video);
-//					ifrm.setAttribute("src", "https://hlsplayer.net/embed?type=m3u8&src="+entry.video);
-//					ifrm.setAttribute("src", "https://cdn.theoplayer.com/demos/iframe/theoplayer.html?autoplay=false&muted=false&preload=none&src="+entry.video);
+				if (source=="cbs" || isEmbed(entry.video)) {
+			        	var ifrm = document.createElement("iframe");
+					ifrm.setAttribute('class', "text_red");
+					ifrm.setAttribute('align', 'left');
+					ifrm.setAttribute('width', Img.width);
+					ifrm.setAttribute('style', 'margin-top:5px; margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
+					ifrm.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture');
+					if (source=="cbs") {
+						ifrm.setAttribute("src", "https://www.livereacting.com/tools/hls-player-embed?url="+entry.video);
+//						ifrm.setAttribute("src", "https://hlsplayer.net/embed?type=m3u8&src="+entry.video);
+//						ifrm.setAttribute("src", "https://cdn.theoplayer.com/demos/iframe/theoplayer.html?autoplay=false&muted=false&preload=none&src="+entry.video);
+					} else if (isEmbed(entry.video)) {
+						ifrm.src=entry.video;
+					}
+					ifrm.onload = function () {
+						adjustFeedScrollDiv();
+					}
+					imageDiv.appendChild(ifrm);
 				} else {
-					ifrm.setAttribute("src", entry.video);
+					var video = document.createElement('video');
+					video.controls = true;
+					video.width = Img.width;
+					var source = document.createElement('source');
+					source.src = entry.video;
+					source.type = 'video/mp4';
+					video.appendChild(source);
+					video.onload = function () {
+						adjustFeedScrollDiv();
+					}
+					imageDiv.appendChild(video);
 				}
-				ifrm.onload = function () {
-					adjustFeedScrollDiv();
-				}
-				imageDiv.appendChild(ifrm);
 				this.innerHTML="[&#9650;]";
 				showMoreDiv.innerHTML=textHide+" "+textVideo+" ";
 				showMoreDiv.setAttribute('style', "text-align: right;");
