@@ -658,7 +658,6 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 	result.entries[i].storage.loadingImg=Img;
 	result.entries[i].storage.contentsDiv=contentsDiv;
 	// preload later
-
 	// ------------- Additional Images Show/Hide -------------- //
 	if (typeof entry.additMediaUrl !== "undefined") {
 		var extensionImgA = document.createElement('a');
@@ -679,7 +678,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 						this.width = additImgWidth;
 						adjustFeedScrollDiv();
 					}
-					if (source == "nasa") {
+					if (source== "nasa") {
 						var newUrl = entry.additMediaUrl[j];
 						Img2.src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
 					} else {
@@ -731,9 +730,9 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					ifrm.setAttribute('style', 'margin-top:5px; margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
 					ifrm.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture');
 					if (source=="cbs") {
-						ifrm.setAttribute("src", "https://www.livereacting.com/tools/hls-player-embed?url="+entry.video);
-//						ifrm.setAttribute("src", "https://hlsplayer.net/embed?type=m3u8&src="+entry.video);
-//						ifrm.setAttribute("src", "https://cdn.theoplayer.com/demos/iframe/theoplayer.html?autoplay=false&muted=false&preload=none&src="+entry.video);
+						ifrm.src="https://www.livereacting.com/tools/hls-player-embed?url="+entry.video;
+//						ifrm.src="https://hlsplayer.net/embed?type=m3u8&src="+entry.video;
+//						ifrm.src="https://cdn.theoplayer.com/demos/iframe/theoplayer.html?autoplay=false&muted=false&preload=none&src="+entry.video;
 					} else if (isEmbed(entry.video)) {
 						ifrm.src=entry.video;
 					}
@@ -745,10 +744,10 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					var video = document.createElement('video');
 					video.controls = true;
 					video.width = Img.width;
-					var source = document.createElement('source');
-					source.src = entry.video;
-					source.type = 'video/mp4';
-					video.appendChild(source);
+					var source2 = document.createElement('source');
+					source2.src = entry.video;
+					source2.type = 'video/mp4';
+					video.appendChild(source2);
 					video.onload = function () {
 						adjustFeedScrollDiv();
 					}
