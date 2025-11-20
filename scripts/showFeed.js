@@ -9,7 +9,7 @@ function feedIconText(feedURL, lang) {
 	if (lang == "rus") var textRssFeed="RSS Строка (англ.)";
 	if (lang == "eng") var textRssFeed="RSS Feed";
 	if (lang == "lat") var textRssFeed="RSS Acies (angl.)";
-	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' title='"+textRssFeed+"' class='thumbnail_image_red_both'  valign='middle' onload='javascript:adjustNewsScrollDiv();'></a>";
+	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' title='"+textRssFeed+"' class='thumbnail_image_red_both'  valign='middle' onload='javascript:adjustFeedScrollDiv();'></a>";
 }
 
 // ------------- Initial ---------------- //
@@ -112,8 +112,8 @@ function showRecordsNum(type, recordsNum, lang, newCaption) {
 }
 // ------------- End of Initial ---------------- //
 
-function adjustNewsScrollDiv() {
-	var newsScrollDiv = document.getElementById('newsScrollDiv');
+function adjustFeedScrollDiv() {
+	var scrollDiv = document.getElementById('scrollDiv');
 
 	var tabsHeight = document.getElementById('tabstable').offsetHeight;
 	var feedTitleHeight = document.getElementById('titletable').offsetHeight;
@@ -124,17 +124,17 @@ function adjustNewsScrollDiv() {
 	var ua = navigator.userAgent.toLowerCase();
 	var isAndroid = ua.indexOf("android") && ua.indexOf("mobile") > -1; 
 	if (isAndroid) {
-		newsScrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";
-		newsScrollDiv.style.height = "100%";
+		scrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";
+		scrollDiv.style.height = "100%";
 		return;
 	}
 // -------- End of For Android ------ //
 
 	// use max-height: max(screen, menu)
-	newsScrollDiv.style.maxHeight="max(calc(100svh - " + (getScrollDivOffset() + totalHeight + 8) + "px), "+(menuHeight - totalHeight - 8)+"px)";
+	scrollDiv.style.maxHeight="max(calc(100svh - " + (getScrollDivOffset() + totalHeight + 8) + "px), "+(menuHeight - totalHeight - 8)+"px)";
 
-	newsScrollDiv.style.height = (document.getElementById('feedtable').offsetHeight==0)
-		? newsScrollDiv.style.maxHeight
+	scrollDiv.style.height = (document.getElementById('feedtable').offsetHeight==0)
+		? scrollDiv.style.maxHeight
 		: "100%";
 }
 
@@ -190,9 +190,9 @@ function showFeedTitle(type, source, lang, result) {
 		if (lang == "rus") textLastBuildDate="Последняя Сборка:&nbsp;";
 		if (lang == "eng") textLastBuildDate="Last Build:&nbsp;";
 		if (lang == "lat") textLastBuildDate="Ultima Aedificatio:&nbsp;";
-		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+"<img src='images/icons/feed/build.png' title='"+textLastBuildDate+formatDate(result.date_ms, lang)+"' valign='middle' onload='javascript:adjustNewsScrollDiv();'>";
+		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+"<img src='images/icons/feed/build.png' title='"+textLastBuildDate+formatDate(result.date_ms, lang)+"' valign='middle' onload='javascript:adjustFeedScrollDiv();'>";
 		if (result.copyright!= null) {
-			cell1.innerHTML=cell1.innerHTML+"&nbsp;"+"<img src='images/icons/feed/copyright.png' title='"+result.copyright+"' valign='middle' onload='javascript:adjustNewsScrollDiv();'>";
+			cell1.innerHTML=cell1.innerHTML+"&nbsp;"+"<img src='images/icons/feed/copyright.png' title='"+result.copyright+"' valign='middle' onload='javascript:adjustFeedScrollDiv();'>";
 		}
 		cell1.innerHTML=cell1.innerHTML+".";
 
@@ -210,11 +210,11 @@ function showFeedTitle(type, source, lang, result) {
 			cell1.setAttribute("style", "text-align: center; padding-bottom: 10px;");
 		}
 
-		adjustNewsScrollDiv();
+		adjustFeedScrollDiv();
 		showFeedData(type, source, lang, result);
 	}
 	preloadImg.setAttribute('src', result.image);
-	adjustNewsScrollDiv();
+	adjustFeedScrollDiv();
 }
 
 function showFeedData(type, source, lang, result) {
@@ -233,11 +233,11 @@ function showFeedData(type, source, lang, result) {
 			$("#processedDiv").hide();
 			var table2 = document.getElementById("messagetable");
 			table2.replaceChildren();
-			adjustNewsScrollDiv();
+			adjustFeedScrollDiv();
 			for (var i = 0; i < totalEntries; i++) {
 				showEntry(type, source, lang, result, i, 1);
 			}
-			adjustNewsScrollDiv();
+			adjustFeedScrollDiv();
 		} else {
 			for (var i = 0; i < totalEntries; i++) {
 				if (result.entries[i].storage.updateProcessed == 1) {
@@ -284,7 +284,7 @@ function showFeedData(type, source, lang, result) {
 			};
 			document.getElementById("loadingDivTitleSkip").appendChild(a);
 			$("#processedDiv").show();
-			adjustNewsScrollDiv();
+			adjustFeedScrollDiv();
 			// 10 updates simultaneously only
 			if (source == "cbs" || (source=="nasa" && type!="image") || source == "yonhap" || source=="yahoo") {
 				removeUnusedUpdates(source, type, result);
@@ -378,7 +378,7 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 			summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
 			this.innerHTML = "[▼]";
 		}
-		adjustNewsScrollDiv();
+		adjustFeedScrollDiv();
 	};
 	extensionA.innerHTML = "[▼]";
 
@@ -533,7 +533,7 @@ function preloadImage(type, source, lang, result) {
 			v.load();
 			preloadCache.push(v);
 		}
-		adjustNewsScrollDiv();
+		adjustFeedScrollDiv();
 		preloadImage(type, source, lang, result);
 	}
 	preloadImg.onerror = function () {
@@ -554,7 +554,7 @@ function preloadImage(type, source, lang, result) {
 			loadingImg.alt='';
 			loadingImg.title='';
 			loadingImg.src="images/icons/error/error.jpg";
-			adjustNewsScrollDiv();
+			adjustFeedScrollDiv();
 			preloadImage(type, source, lang, result);
 		}
 	}
@@ -651,7 +651,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 	Img.setAttribute('align', 'left');
 	Img.setAttribute('width', entry.media.width);
 	Img.setAttribute('style', 'margin-top:5px; margin-bottom:5px;');
-	Img.onload = function () { adjustNewsScrollDiv(); }
+	Img.onload = function () { adjustFeedScrollDiv(); }
 	Img.src="images/icons/feed/loading.gif";
 	imageDiv.appendChild(Img);
 
@@ -676,7 +676,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 						var additImgWidth = Img.width;
 						if (this.naturalWidth < Img.width) additImgWidth = this.naturalWidth;
 						this.width = additImgWidth;
-						adjustNewsScrollDiv();
+						adjustFeedScrollDiv();
 					}
 					if (source== "nasa") {
 						var newUrl = entry.additMediaUrl[j];
@@ -700,7 +700,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 				showMoreDiv.setAttribute('style', "padding-bottom:5px; text-align: right;");
 				showMoreDiv.appendChild(this);
 			}
-			adjustNewsScrollDiv();
+			adjustFeedScrollDiv();
 		}
 		extensionImgA.innerHTML = "[▼]";
 
@@ -737,7 +737,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 						ifrm.src=entry.video;
 					}
 					ifrm.onload = function () {
-						adjustNewsScrollDiv();
+						adjustFeedScrollDiv();
 					}
 					imageDiv.appendChild(ifrm);
 				} else {
@@ -749,7 +749,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					source2.type = 'video/mp4';
 					video.appendChild(source2);
 					video.onload = function () {
-						adjustNewsScrollDiv();
+						adjustFeedScrollDiv();
 					}
 					imageDiv.appendChild(video);
 				}
@@ -764,7 +764,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 				showMoreDiv.setAttribute('style', "padding-bottom:5px; text-align: right;");
 				showMoreDiv.appendChild(this);
 			}
-			adjustNewsScrollDiv();
+			adjustFeedScrollDiv();
 		}
 		extensionVideoA.innerHTML = "[&#9660;]";
 
@@ -878,7 +878,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 	date.innerHTML = formatDate(entry.date_ms, lang);
 	contentsDiv.appendChild(date);
 
-	adjustNewsScrollDiv();
+	adjustFeedScrollDiv();
 }
 
 function generateTabs(type, source, lang) {
@@ -1182,7 +1182,7 @@ function generateTabs(type, source, lang) {
 	if (keys.length%5==0) Img.style.bottom='-32px';
 	else Img.style.bottom='-5px';
 
-	adjustNewsScrollDiv();
+	adjustFeedScrollDiv();
 }
 
 
@@ -1390,7 +1390,7 @@ function showFeed(type, source, lang) {
 		cell1.className = 'text_red';
 		cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
 		cell1.innerHTML = readingText;
-		adjustNewsScrollDiv();
+		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL, 1);
 	}
 	preloadImg.setAttribute('src', 'images/icons/feed/feed_icon.png');
@@ -1818,7 +1818,7 @@ function checkProcessedCount(source, type, result, lang, pf) {
 		var table2 = document.getElementById("messagetable");
 		table2.replaceChildren();
 		$("#processedDiv").hide();
-		adjustNewsScrollDiv();
+		adjustFeedScrollDiv();
 		return;
 	}
 
@@ -1851,7 +1851,7 @@ function checkProcessedCount(source, type, result, lang, pf) {
 		var table2 = document.getElementById("messagetable");
 		table2.replaceChildren();
 		$("#processedDiv").hide();
-		adjustNewsScrollDiv();
+		adjustFeedScrollDiv();
 		return;
 	} else {
 		// passed

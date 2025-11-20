@@ -18,8 +18,6 @@ $(function() {
 
 	var scrollDiv = document.getElementById('scrollDiv');
 	if (scrollDiv) scrollDiv.addEventListener('scroll', positionTTAndUpdateL, { passive: true });
-	var newsScrollDiv = document.getElementById('newsScrollDiv');
-	if (newsScrollDiv) newsScrollDiv.addEventListener('scroll', positionTTAndUpdateL, { passive: true });
 	window.addEventListener('scroll', positionTTAndUpdateL, { passive: true });
 	window.addEventListener('resize', positionTTAndUpdateL, { passive: true });
 
