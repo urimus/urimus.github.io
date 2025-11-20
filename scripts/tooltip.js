@@ -109,58 +109,49 @@ $(function() {
 
 		if (prevCoords.tooltipX === tooltipX && prevCoords.tooltipY === tooltipY && prevCoords.targetX === targetX && prevCoords.targetY === targetY) return;
 
-		var line = tooltipEl._line;
-		if (!line) {
-			line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+		if (!tooltipEl._line) {
+			var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
 			line.setAttribute("stroke", lineColor);
 			line.setAttribute("shape-rendering", "geometricPrecision");
-			line.style.opacity = "0";
-			svgEl.appendChild(line);
-			tooltipEl._line = line;
-
+			line.setAttribute("stroke-width", r / 2);
 			var length = Math.hypot(tooltipX - targetX, tooltipY - targetY);
 			line.setAttribute("stroke-dasharray", length);
 			line.setAttribute("stroke-dashoffset", length);
-			line.style.transition = "stroke-dashoffset 0.4s ease-out, opacity 0.2s ease";
+			line.style.opacity = "0";
+			line.style.transition = "stroke-dashoffset 0.4s ease-out, opacity 0.2s linear";
+			svgEl.appendChild(line);
+			tooltipEl._line = line;
 			line.style.opacity = "1";
 			requestAnimationFrame(() => { line.setAttribute("stroke-dashoffset", "0"); });
-		} else {
-			line.setAttribute("stroke-dasharray", "0");
-			line.setAttribute("stroke-dashoffset", "0");
-			line.style.transition = "opacity 0.2s ease";
-		}
+		};
+		tooltipEl._line.setAttribute("x1", targetX);
+		tooltipEl._line.setAttribute("y1", targetY);
+		tooltipEl._line.setAttribute("x2", tooltipX);
+		tooltipEl._line.setAttribute("y2", tooltipY);
 
-		line.setAttribute("stroke-width", r / 2);
-		line.setAttribute("x1", targetX);
-		line.setAttribute("y1", targetY);
-		line.setAttribute("x2", tooltipX);
-		line.setAttribute("y2", tooltipY);
-
-		var startCircle = tooltipEl._startCircle;
-		if (!startCircle) {
-			startCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+		if (!tooltipEl._startCircle) {
+			var startCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 			startCircle.setAttribute("r", r);
 			startCircle.setAttribute("fill", lineColor);
 			startCircle.style.opacity = "0";
+			startCircle.style.transition = "opacity 0.2s linear";
 			svgEl.appendChild(startCircle);
 			tooltipEl._startCircle = startCircle;
-		}
-		startCircle.setAttribute("cx", targetX);
-		startCircle.setAttribute("cy", targetY);
-		startCircle.style.transition = "opacity 0.2s ease";
-		startCircle.style.opacity = "1";
+			startCircle.style.opacity = "1";
+		};
+		tooltipEl._startCircle.setAttribute("cx", targetX);
+		tooltipEl._startCircle.setAttribute("cy", targetY);
 
-		var endCircle = tooltipEl._endCircle;
-		if (!endCircle) {
-			endCircle = document.createElementNS("http://www.w3.org/2000/svg", "path");
+		if (!tooltipEl._endCircle) {
+			var endCircle = document.createElementNS("http://www.w3.org/2000/svg", "path");
 			endCircle.setAttribute("fill", lineColor);
 			endCircle.style.opacity = "0";
+			endCircle.style.transition = "opacity 0.2s linear";
 			svgEl.appendChild(endCircle);
 			tooltipEl._endCircle = endCircle;
-		}
-		endCircle.setAttribute("d", d);
-		endCircle.style.transition = "opacity 0.2s ease";
-		endCircle.style.opacity = "1";
+			endCircle.style.opacity = "1";
+		};
+		tooltipEl._endCircle.setAttribute("d", d);
 
 		prevCoords = { tooltipX, tooltipY, targetX, targetY };
 	}
@@ -249,9 +240,9 @@ $(function() {
 				var startCircle = this._startCircle;
 				var endCircle = this._endCircle;
 
-				if (line) { line.style.transition = "opacity 0.2s ease"; line.style.opacity = "0"; }
-				if (startCircle) { startCircle.style.opacity = "0"; startCircle.style.transition = "opacity 0.2s ease"; }
-				if (endCircle) { endCircle.style.opacity = "0"; endCircle.style.transition = "opacity 0.2s ease"; }
+				if (line) line.style.opacity = "0";
+				if (startCircle) startCircle.style.opacity = "0";
+				if (endCircle) endCircle.style.opacity = "0";
 
 				setTimeout(() => {
 					if (line) line.remove();
