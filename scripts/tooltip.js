@@ -11,10 +11,9 @@ $(function() {
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	svgEl.setAttribute("class", "tooltip-svg");
-
-	var zIndex = "z-index: 1;"
+	var zIndex = "z-index: 1;";
 	if (typeof galleria2 !== 'undefined') zIndex = "z-index: 10001;";
-	svgEl.setAttribute("style", "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;opacity:1;"+zIndex);
+	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; " + zIndex);
 	document.body.appendChild(svgEl);
 
 	var scrollDiv = document.getElementById('scrollDiv');
@@ -23,7 +22,7 @@ $(function() {
 	window.addEventListener('resize', positionTTAndUpdateL, { passive: true });
 
 	var style = document.createElement('style');
-	style.textContent = `.ui-tooltip.custom-tooltip { border: ${r/2}px solid ${lineColor}; border-radius: ${r}px; }`;
+	style.textContent = `.ui-tooltip.custom-tooltip { border: ${r / 2}px solid ${lineColor}; border-radius: ${r}px; }`;
 	document.head.appendChild(style);
 
 	function crisp(value) {
@@ -54,7 +53,7 @@ $(function() {
 		switch (minSide) {
 			case 'left':
 				tooltipX = crisp(tooltipRect.left);
-				tooltipY = tooltipRect.top + tooltipRect.height / 2;
+				tooltipY = tooltipRect.height / 2 + tooltipRect.top;
 				d = `M ${tooltipX} ${tooltipY + r} A ${r} ${r} 0 0 0 ${tooltipX} ${tooltipY - r} Z`;
 				break;
 			case 'right':
@@ -74,11 +73,7 @@ $(function() {
 				break;
 		}
 
-		if (prevCoords.tooltipX === tooltipX &&
-			prevCoords.tooltipY === tooltipY &&
-			prevCoords.targetX === targetX &&
-			prevCoords.targetY === targetY
-		) return;
+		if (prevCoords.tooltipX === tooltipX && prevCoords.tooltipY === tooltipY && prevCoords.targetX === targetX && prevCoords.targetY === targetY) return;
 
 		var line = tooltipEl._line;
 		if (!line) {
@@ -94,7 +89,6 @@ $(function() {
 			line.setAttribute("stroke-dashoffset", length);
 			line.style.transition = "stroke-dashoffset 0.4s ease-out, opacity 0.2s ease";
 			line.style.opacity = "1";
-
 			requestAnimationFrame(() => { line.setAttribute("stroke-dashoffset", "0"); });
 		} else {
 			line.setAttribute("stroke-dasharray", "0");
@@ -102,7 +96,7 @@ $(function() {
 			line.style.transition = "opacity 0.2s ease";
 		}
 
-		line.setAttribute("stroke-width", r/2);
+		line.setAttribute("stroke-width", r / 2);
 		line.setAttribute("x1", targetX);
 		line.setAttribute("y1", targetY);
 		line.setAttribute("x2", tooltipX);
@@ -143,8 +137,17 @@ $(function() {
 			requestAnimationFrame(() => {
 				var tooltipEl = $(".ui-tooltip:visible").last();
 				if (tooltipEl.length && targetEl) {
-					tooltipEl.position({ my: "center bottom", at: `center top-${r}`, of: targetEl, collision: "flipfit" });
+					var insideScroll = scrollDiv && targetEl ? scrollDiv.contains(targetEl) : false;
+
+					$(tooltipEl).position({
+						my: "center bottom",
+						at: `center top-${r}`,
+						of: targetEl,
+						within: insideScroll ? scrollDiv : window,
+						collision: "flipfit"
+					});
 				}
+
 				drawLine(tooltipEl[0]);
 			});
 		}
@@ -160,19 +163,26 @@ $(function() {
 		open: function() {
 			(function waitAndApply(attemptsLeft) {
 				var tooltipEl = $(".ui-tooltip.custom-tooltip").last()[0];
-				if (!tooltipEl) { if (attemptsLeft > 0) requestAnimationFrame(() => { waitAndApply(attemptsLeft - 1); }); return; }
+				if (!tooltipEl) { if (attemptsLeft > 0) requestAnimationFrame(() => waitAndApply(attemptsLeft - 1)); return; }
+				var insideScroll = scrollDiv && targetEl ? scrollDiv.contains(targetEl) : false;
 
-				if (typeof targetEl.dataset.ttcolor !== "undefined") {
+				$(tooltipEl).position({
+					my: "center bottom",
+					at: `center top-${r}`,
+					of: targetEl,
+					within: insideScroll ? scrollDiv : window,
+					collision: "flipfit"
+				});
+
+				var colorScheme = targetEl?.dataset?.ttcolor;
+				if (colorScheme) {
 					if (origColor == null) { var styles = window.getComputedStyle(tooltipEl); origBackground = styles.background; origColor = styles.color; }
-					var colorScheme = targetEl.dataset.ttcolor;
 					if (colorScheme == "blue") { tooltipEl.style.color = "#448CCB"; tooltipEl.style.background = "linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)"; }
 					else if (colorScheme == "black") { tooltipEl.style.color = "#707070"; tooltipEl.style.background = "linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)"; }
 					else if (colorScheme == "red") { tooltipEl.style.color = "#CE3535"; tooltipEl.style.background = "linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%)"; }
 					else if (colorScheme == "white") { tooltipEl.style.color = "#A9A9A9"; tooltipEl.style.background = "linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)"; }
 					else if (colorScheme == "green") { tooltipEl.style.color = "#008080"; tooltipEl.style.background = "linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)"; }
-				} else {
-					if (origColor != null) { tooltipEl.style.color = origColor; tooltipEl.style.background = origBackground; origColor = null; origBackground = null; }
-				}
+				} else { if (origColor != null) { tooltipEl.style.color = origColor; tooltipEl.style.background = origBackground; origColor = null; origBackground = null; } }
 
 				prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null };
 				isDirty = false;
