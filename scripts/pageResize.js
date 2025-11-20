@@ -168,26 +168,29 @@ function processPageResize(isLoad, orientationChanged){
 
 	if (typeof scrollDiv !== 'undefined' && scrollDiv != null) {
 		if (isLoad == 0) {
-			if (window.location.pathname.substr(0, 5) == "/news") {
-				var feedTable = document.getElementById('feedtable');
-				if (typeof feedTable !== 'undefined' && feedTable != null && feedTable.innerHTML != "") adjustFeedScrollDiv();
-			} else if (window.location.pathname.substr(0, 7) == "/index_") {
+			if (window.location.pathname.substr(0, 7) == "/index_") {
 				var contentsTable = document.getElementById('contentstable');
 				if (typeof contentsTable !== 'undefined' && contentsTable != null && contentsTable.innerHTML != "") adjustContentsScrollDiv();
 			} else {
 				adjustScrollDiv();
 			}
 		} else {
-			if (!(window.location.pathname.substr(0, 12) == "/html_editor" || window.location.pathname.substr(0, 7) == "/index_" || window.location.pathname.substr(0, 5) == "/news")) {
+			if (window.location.pathname.substr(0, 7) != "/index_") {
 				adjustScrollDiv();
-			} else if (window.location.pathname.substr(0, 5) == "/news") {
-				enableKeyboardScroll(scrollDiv);
 			}
 		}
 	}
 	if (window.location.pathname.substr(0, 12) == "/html_editor" && isLoad == 0) {
 		var textArea = document.getElementById('textarea_area');
 		if (typeof textArea !== 'undefined' && textArea != null && textArea.value != "") adjustTextareaAndEncodings();
+	}
+	if (window.location.pathname.substr(0, 5) == "/news") {
+		if (isLoad == 0) {
+			var feedTable = document.getElementById('feedtable');
+			if (typeof feedTable !== 'undefined' && feedTable != null && feedTable.innerHTML != "") adjustNewsScrollDiv();
+		} else {
+			enableKeyboardScroll(newsScrollDiv);
+		}
 	}
 	if (!isAndroid) {
 		const layoutWidth = document.documentElement.clientWidth;
