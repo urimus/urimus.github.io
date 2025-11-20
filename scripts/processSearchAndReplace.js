@@ -1750,9 +1750,9 @@ function processSearchAndReplace(lang) {
 }
 
 function adjustTextareaAndEncodings() {
-	var scrollDiv=document.getElementById('scrollDiv');
+console.log("textArea adjust");
 	var encodingDiv=document.getElementById("encoding_div");
-	if (scrollDiv === null || encodingDiv === null || scrollDiv.offsetParent === null || encodingDiv.offsetParent === null) return;
+	if (encodingDiv === null || encodingDiv.offsetParent === null) return;
 
 	if (window.devicePixelRatio ==0.25) {
 		encodingDiv.style.setProperty("max-width", "400px");

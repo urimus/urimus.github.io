@@ -174,9 +174,6 @@ function processPageResize(isLoad, orientationChanged){
 			} else if (window.location.pathname.substr(0, 7) == "/index_") {
 				var contentsTable = document.getElementById('contentstable');
 				if (typeof contentsTable !== 'undefined' && contentsTable != null && contentsTable.innerHTML != "") adjustContentsScrollDiv();
-			} else if (window.location.pathname.substr(0, 12) == "/html_editor") {
-				var textArea = document.getElementById('textarea_area');
-				if (typeof textArea !== 'undefined' && textArea != null && textArea.value != "") adjustTextareaAndEncodings();
 			} else {
 				adjustScrollDiv();
 			}
@@ -188,7 +185,10 @@ function processPageResize(isLoad, orientationChanged){
 			}
 		}
 	}
-
+	if (window.location.pathname.substr(0, 12) == "/html_editor" && isLoad == 0) {
+		var textArea = document.getElementById('textarea_area');
+		if (typeof textArea !== 'undefined' && textArea != null && textArea.value != "") adjustTextareaAndEncodings();
+	}
 	if (!isAndroid) {
 		const layoutWidth = document.documentElement.clientWidth;
 		var imageWidth = (layoutWidth - 1000) / 2;
