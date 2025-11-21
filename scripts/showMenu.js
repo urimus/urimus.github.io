@@ -8211,10 +8211,9 @@ function showSubMenu(ele, lang, type, newTableId) {
 			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 			if (type == "contentsLink") {
 				left_shift = rect.right + 10.0;
-			} else {
-				left_shift = rect.right - 10.0;
+				tableSM.style.left=left_shift+"px";
 			}
-			tableSM.style.left=left_shift+"px";
+
 		}
 		tableSM.style.top=top_shift+"px";
 		lastRect=rect;
@@ -8253,10 +8252,8 @@ function showSubMenu(ele, lang, type, newTableId) {
 				tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 				if (type == "contentsLink") {
 					left_shift = rect.right + 10.0;
-				} else {
-					left_shift = rect.right - 10.0;
+					tableSM.style.left=left_shift+"px";
 				}
-				tableSM.style.left=left_shift+"px";
 			}
 			tableSM.style.top=top_shift+"px";
 			lastRect=rect;
