@@ -8027,7 +8027,7 @@ var lastRect="";
 
 function showSubMenu(ele, lang, type, newTableId) {
 	var tablex, wholeMenu, key, keys, tableSM, row, cell1, divSM, rect, top_shift, left_shift, tableStyle;
-	var prevId, top_scroll, h, rectT, popupImage, imageHeight, i;
+	var prevId, top_scroll, h, rectT, popupImage, imageHeight, i, hasHorizontalScrollbar, horizontalScrollbarHeight ;
 	var lastSubMenu = null;
 
 	if (typeof type === "undefined" || type != "contentsLink") ele.setAttribute('class', 'menu_selected');
@@ -8132,13 +8132,11 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
-
 		if (type == "contentsLink") {
 			left_shift = rect.right + 10.0;
-		} else {
-			left_shift = rect.right - 10.0;
+			tableSM.style.left=left_shift+"px";
 		}
-		tableSM.style.left=left_shift+"px";
+		
 	}
 
 	// caption
@@ -8180,7 +8178,9 @@ function showSubMenu(ele, lang, type, newTableId) {
 	}
 
 	top_scroll = document.documentElement.scrollTop ?? document.body.scrollTop;
-	h = Math.max(window.innerHeight, document.documentElement.clientHeight);
+	hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
+	horizontalScrollbarHeight = hasHorizontalScrollbar ? window.innerHeight - document.documentElement.clientHeight : 0;
+	h = Math.max(window.innerHeight, document.documentElement.clientHeight) - horizontalScrollbarHeight;
 	popupImage = document.getElementById("popupImage");
 
 	if (!popupImage) {
@@ -8205,10 +8205,8 @@ function showSubMenu(ele, lang, type, newTableId) {
 			tableSM.style.top=shiftTransitionStart+"px";
 			if (type == "contentsLink") {
 				left_shift = lastRect.right + 10.0;
-			} else {
-				left_shift = lastRect.right - 10.0;
+				tableSM.style.left=left_shift +"px";
 			}
-			tableSM.style.left=left_shift +"px";
 			tableSM.offsetHeight;
 			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 			if (type == "contentsLink") {
@@ -8249,10 +8247,8 @@ function showSubMenu(ele, lang, type, newTableId) {
 				tableSM.style.top=shiftTransitionStart+"px";
 				if (type == "contentsLink") {
 					left_shift = lastRect.right + 10.0;
-				} else {
-					left_shift = lastRect.right - 10.0;
+					tableSM.style.left=left_shift +"px";
 				}
-				tableSM.style.left=left_shift +"px";
 				tableSM.offsetHeight;
 				tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 				if (type == "contentsLink") {
