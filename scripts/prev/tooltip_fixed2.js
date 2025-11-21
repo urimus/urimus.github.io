@@ -195,16 +195,6 @@ $(function() {
 
 				startTooltipTracker(tooltipEl);
 
-				var insideScroll = scrollDiv && scrollDiv.contains(targetEl);
-
-				$(tooltipEl).position({
-					my: "center bottom",
-					at: `center top-${r}`,
-					of: targetEl,
-					within: insideScroll ? scrollDiv : window,
-					collision: "flipfit"
-				});
-
 				var colorScheme = targetEl?.dataset?.ttcolor;
 				if (colorScheme) {
 					if (origColor == null) {
