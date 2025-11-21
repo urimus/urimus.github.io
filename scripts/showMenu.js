@@ -8099,15 +8099,15 @@ function showSubMenu(ele, lang, type, newTableId) {
 	ele.setAttribute('onclick', "hideSubMenu(this, 1);");
 	keys = Object.keys(wholeMenu);
 
+	rect = ele.getBoundingClientRect();
 	if (lastSubMenu==null) {
 		tableSM = document.createElement("table");
 		tableSM.setAttribute('id', "table" + newTableId);
 		tableSM.dataset.id = ele.id;
-		tableSM.dataset.origLeft = ele.getBoundingClientRect().left;
+		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
 
-		rect = ele.getBoundingClientRect();
 		top_shift = -9999;
 		if (type == "contentsLink") {
 			left_shift = rect.right + 10.0;
@@ -8129,9 +8129,16 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableSM.style.transition = "opacity 0.2s linear";
 		tableSM.setAttribute('id', "table" + newTableId);
 		tableSM.dataset.id = ele.id;
-		tableSM.dataset.origLeft = ele.getBoundingClientRect().left;
+		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
+
+		if (type == "contentsLink") {
+			left_shift = rect.right + 10.0;
+		} else {
+			left_shift = rect.right - 10.0;
+		}
+		tableSM.style.left=left_shift+"px";
 	}
 
 	// caption
@@ -8177,7 +8184,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 	popupImage = document.getElementById("popupImage");
 
 	if (!popupImage) {
-		rect = ele.getBoundingClientRect();
 		rectT = tableSM.getBoundingClientRect();
 		top_shift = top_scroll + rect.top + rect.height / 2 - rectT.height / 2;
 		tableSM.style.top=top_shift+"px";
@@ -8197,6 +8203,12 @@ function showSubMenu(ele, lang, type, newTableId) {
 				shiftTransitionStart=top_scroll + h - rectT.height;
 			}
 			tableSM.style.top=shiftTransitionStart+"px";
+			if (type == "contentsLink") {
+				left_shift = lastRect.right + 10.0;
+			} else {
+				left_shift = lastRect.right - 10.0;
+			}
+			tableSM.style.left=left_shift +"px";
 			tableSM.offsetHeight;
 			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 			if (type == "contentsLink") {
@@ -8218,7 +8230,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 		popupImage.onload = function () {
 			if (lastSubMenu!=null) tableSM.style.transition = "opacity 0.2s linear";
 			var imageHeight = popupImage.height;
-			rect = ele.getBoundingClientRect();
 			rectT = tableSM.getBoundingClientRect();
 			top_shift = top_scroll + rect.top + rect.height / 2 - rectT.height / 2;
 			tableSM.style.top=top_shift+"px";
@@ -8236,6 +8247,12 @@ function showSubMenu(ele, lang, type, newTableId) {
 					shiftTransitionStart=top_scroll + h - rectT.height;
 				}
 				tableSM.style.top=shiftTransitionStart+"px";
+				if (type == "contentsLink") {
+					left_shift = lastRect.right + 10.0;
+				} else {
+					left_shift = lastRect.right - 10.0;
+				}
+				tableSM.style.left=left_shift +"px";
 				tableSM.offsetHeight;
 				tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 				if (type == "contentsLink") {
