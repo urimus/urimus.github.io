@@ -17,15 +17,15 @@ $(function() {
 			if (!tooltipEl._tracking) return;
 
 			if (!targetEl || !document.body.contains(targetEl)) {
+				stopTooltipTracker(tooltipEl);
+
 				var line = tooltipEl._line;
 				var startCircle = tooltipEl._startCircle;
 				var endCircle = tooltipEl._endCircle;
 
-				if (line) line.remove();
-				if (startCircle) startCircle.remove();
-				if (endCircle) endCircle.remove();
-
-				stopTooltipTracker(tooltipEl);
+				if (line && line.parentNode === svgEl) svgEl.removeChild(line);
+				if (startCircle && startCircle.parentNode === svgEl) svgEl.removeChild(startCircle);
+				if (endCircle && endCircle.parentNode === svgEl) svgEl.removeChild(endCircle);
 
 				if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
 				return;
@@ -235,9 +235,9 @@ $(function() {
 				if (endCircle) endCircle.style.opacity = "0";
 
 				setTimeout(() => {
-					if (line) line.remove();
-					if (startCircle) startCircle.remove();
-					if (endCircle) endCircle.remove();
+					if (line && line.parentNode === svgEl) svgEl.removeChild(line);
+					if (startCircle && startCircle.parentNode === svgEl) svgEl.removeChild(startCircle);
+					if (endCircle && endCircle.parentNode === svgEl) svgEl.removeChild(endCircle);
 					if (this.parentNode) document.body.removeChild(this);
 				}, 200);
 			});
