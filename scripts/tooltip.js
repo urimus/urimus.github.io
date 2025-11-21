@@ -144,7 +144,7 @@ $(function() {
 
 		var endCircle = tooltipEl._endCircle;
 		if (!endCircle) {
-			var endCircle = document.createElementNS("http://www.w3.org/2000/svg", "path");
+			endCircle = document.createElementNS("http://www.w3.org/2000/svg", "path");
 			endCircle.setAttribute("fill", lineColor);
 			endCircle.style.opacity = "0";
 			endCircle.style.transition = "opacity 0.2s linear";
@@ -181,7 +181,6 @@ $(function() {
 
 	$(document).tooltip({
 		track: false,
-		position: { my: "center bottom", at: `center top-${r}`, collision: "flipfit" },
 		classes: { "ui-tooltip": "custom-tooltip" },
 		show: function() { $(this).fadeIn(200); },
 		hide: { effect: "fade", duration: 200 },
