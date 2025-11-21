@@ -45,8 +45,7 @@ $(function() {
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	svgEl.setAttribute("class", "tooltip-svg");
-	var zIndex = "z-index: 1;";
-	if (typeof galleria2 !== 'undefined') zIndex = "z-index: 10001;";
+	var zIndex = (typeof galleria2 !== 'undefined') ? "z-index: 10001;" : "z-index: 1;";
 	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; " + zIndex);
 	document.body.appendChild(svgEl);
 
@@ -184,7 +183,7 @@ $(function() {
 		classes: { "ui-tooltip": "custom-tooltip" },
 		show: function() { $(this).fadeIn(200); },
 		hide: { effect: "fade", duration: 200 },
-		content: function() { targetEl = this; return $(this).attr('title'); },
+		content: function() { if ($(this).attr('title') != "") targetEl = this; return $(this).attr('title'); },
 		open: function() {
 			(function waitAndApply(attemptsLeft) {
 				var tooltipEl = $(".ui-tooltip.custom-tooltip").last()[0];
