@@ -1209,6 +1209,7 @@ function showInformation(lang) {
 
 function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 	window.onunhandledrejection = (event) => {
+console.log("window.onunhandledrejection. loadAttempt= "+loadAttempt);
 		if (loadAttempt < 10) {
 			loadAttempt++;
 			loadFeednami(type, source, lang, feedURL, loadAttempt);
@@ -1236,6 +1237,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 
 	feednami.load(feedURL, function (result) {
 		if (result.error) {
+console.log("feednami.load error");
 			document.getElementById("loadingSpanTitle").innerHTML = result.error.message + "  " + feedIconText(feedURL, lang);
 			document.getElementById("loadingDiv").setAttribute("style", "display:none");
 			return;
