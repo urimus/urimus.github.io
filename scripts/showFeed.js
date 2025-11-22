@@ -1208,43 +1208,54 @@ function showInformation(lang) {
 }
 
 function loadFeednami(type, source, lang, feedURL, loadAttempt) {
-	window.onunhandledrejection = (event) => {
-console.log("window.onunhandledrejection. loadAttempt= "+loadAttempt);
-		if (loadAttempt < 10) {
-			loadAttempt++;
-			loadFeednami(type, source, lang, feedURL, loadAttempt);
-		} else {
-			var table2 = document.getElementById("messagetable");
-			if (table2) {
+
+	var textReload, textFeed, textLoadAttempt, loadAttemptSpan;
+	if (lang == "eng") {
+		textReload = "Reload Page";
+		textFeed = "News Feed ";
+		textLoadAttempt = "Load Attempt: ";
+	}
+	if (lang == "lat") {
+		textReload = "Paginam Renova";
+		textFeed = "Nuntium Acies ";
+		textLoadAttempt = "Conatus Onerationis: ";
+	}
+	if (lang == "rus") {
+		textReload = "Обновите Страницу";
+		textFeed = "Строка Новостей ";
+		textLoadAttempt = "Попытка Загрузки: ";
+	}
+
+	const apiURL = "https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL);
+	fetch(apiURL)
+		.then(() => {
+			feednami.load(feedURL, function (result) {
+				if (result.error) {
+					document.getElementById("loadingSpanTitle").innerHTML = result.error.message + "  " + feedIconText(feedURL, lang);
+					document.getElementById("loadingDiv").setAttribute("style", "display:none");
+					return;
+				}
+				result.feedXML = feedURL;
+				optimizeUpdateResult(type, source, lang, result);
+			});
+		})
+		.catch((e) => {
+			if (loadAttempt < 10) {
+				loadAttempt++;
+				loadAttemptSpan = document.getElementById("loadAttempt");
+				if (loadAttemptSpan) loadAttemptSpan.innerHTML="<br><b>" + textLoadAttempt +  loadAttempt + "</b>";
+				loadFeednami(type, source, lang, feedURL, loadAttempt);
+			} else {
+				var table2 = document.getElementById("messagetable");
+				if (!table2) return;
 				table2.replaceChildren();
 				var row = table2.insertRow(-1);
 				var cell1 = row.insertCell(0);
 				cell1.className = 'text_red';
 				cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
-				var textReload, textFeed;
-				if (lang == "eng" || lang == "lat") textReload = "Reload Page";
-				if (lang == "rus") {
-					textReload = "Обновите Страницу";
-					textFeed = "Строка Новостей ";
-				}
-				if (lang == "eng") textFeed = "News Feed ";
-				if (lang == "lat") textFeed = "Nuntium Acies ";
-				cell1.innerHTML = textFeed + feedIconText(feedURL, lang) + "<br><b>" + event.reason.stack + "</b><br><a href='javascript:location.reload();' class='standardb_red'>" + textReload + "</a>";
+				cell1.innerHTML = textFeed + feedIconText(feedURL, lang) + "<br><b>" + e.message + "</b><br><a href='javascript:location.reload();' class='standardb_red'>" + textReload + "</a>";
 			}
-		}
-		return;
-	}
-
-	feednami.load(feedURL, function (result) {
-		if (result.error) {
-console.log("feednami.load error");
-			document.getElementById("loadingSpanTitle").innerHTML = result.error.message + "  " + feedIconText(feedURL, lang);
-			document.getElementById("loadingDiv").setAttribute("style", "display:none");
-			return;
-		}
-		result.feedXML = feedURL;
-		optimizeUpdateResult(type, source, lang, result);
-	});
+		});
 }
 
 function showFeed(type, source, lang) {
@@ -1379,9 +1390,9 @@ function showFeed(type, source, lang) {
 
 	var infoText = "<div id='loadingDiv'>.</div><div id='processedDiv' style='display:none'><div>#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span></div><div>#&#9989;: <span id='passedCount'>0</span></div><div>#&#10062;: <span id='failedCount'>0</span></div></div>";
 	var readingText;
-	if (lang == "rus") readingText = "<b><div id='loadingDivTitleSkip'><span id='loadingSpanTitle'>Читается Строка Новостей " + feedIconText(feedURL, lang) + "</span></div>" + infoText + "</b>";
-	if (lang == "eng") readingText = "<b><div id='loadingDivTitleSkip'><span id='loadingSpanTitle'>Reading News Feed " + feedIconText(feedURL, lang) + "</span></div>" + infoText + "</b>";
-	if (lang == "lat") readingText = "<b><div id='loadingDivTitleSkip'><span id='loadingSpanTitle'>Lectio Nuntium Acies " + feedIconText(feedURL, lang) + "</span></div>" + infoText + "</b>";
+	if (lang == "rus") readingText = "<b><div id='loadingDivTitleSkip'><span id='loadingSpanTitle'>Читается Строка Новостей " + feedIconText(feedURL, lang) + "</span><span id='loadAttempt'></span></div>" + infoText + "</b>";
+	if (lang == "eng") readingText = "<b><div id='loadingDivTitleSkip'><span id='loadingSpanTitle'>Reading News Feed " + feedIconText(feedURL, lang) + "</span><span id='loadAttempt'></span></div>" + infoText + "</b>";
+	if (lang == "lat") readingText = "<b><div id='loadingDivTitleSkip'><span id='loadingSpanTitle'>Lectio Nuntium Acies " + feedIconText(feedURL, lang) + "</span><span id='loadAttempt'></span></div>" + infoText + "</b>";
 
 	var preloadImg = new Image();
 	preloadImg.onload = function () {
