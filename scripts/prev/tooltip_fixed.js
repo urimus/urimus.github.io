@@ -19,9 +19,9 @@ $(function() {
 			if (!targetEl || !document.body.contains(targetEl)) {
 				stopTooltipTracker(tooltipEl);
 
-				var line = tooltipEl._line;
-				var startCircle = tooltipEl._startCircle;
-				var endCircle = tooltipEl._endCircle;
+				let line = tooltipEl._line;
+				let startCircle = tooltipEl._startCircle;
+				let endCircle = tooltipEl._endCircle;
 
 				if (line && line.parentNode === svgEl) svgEl.removeChild(line);
 				if (startCircle && startCircle.parentNode === svgEl) svgEl.removeChild(startCircle);
@@ -223,11 +223,12 @@ $(function() {
 		close: function() {
 			var tooltipEls = $(".ui-tooltip.custom-tooltip");
 			tooltipEls.each(function() {
-				stopTooltipTracker(this);
+				let tooltipEl = this;
+				stopTooltipTracker(tooltipEl);
 
-				var line = this._line;
-				var startCircle = this._startCircle;
-				var endCircle = this._endCircle;
+				let line = this._line;
+				let startCircle = this._startCircle;
+				let endCircle = this._endCircle;
 
 				if (line) line.style.opacity = "0";
 				if (startCircle) startCircle.style.opacity = "0";
@@ -237,7 +238,7 @@ $(function() {
 					if (line && line.parentNode === svgEl) svgEl.removeChild(line);
 					if (startCircle && startCircle.parentNode === svgEl) svgEl.removeChild(startCircle);
 					if (endCircle && endCircle.parentNode === svgEl) svgEl.removeChild(endCircle);
-					if (this.parentNode) document.body.removeChild(this);
+					if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
 				}, 200);
 			});
 		}
