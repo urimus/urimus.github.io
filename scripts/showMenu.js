@@ -8189,7 +8189,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 	}
 
-	top_scroll = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+	top_scroll = window.scrollY;
 	h = window.innerHeight;
 	if (!isAndroid()) {
 		hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
