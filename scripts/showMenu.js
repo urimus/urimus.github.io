@@ -8189,10 +8189,14 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 	}
 
-	top_scroll = document.documentElement.scrollTop ?? document.body.scrollTop;
-	hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
-	horizontalScrollbarHeight = hasHorizontalScrollbar ? window.innerHeight - document.documentElement.clientHeight : 0;
-	h = Math.max(window.innerHeight, document.documentElement.clientHeight) - horizontalScrollbarHeight;
+	top_scroll = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+	h = window.innerHeight;
+	if (!isAndroid()) {
+		hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
+		horizontalScrollbarHeight = hasHorizontalScrollbar ? window.innerHeight - document.documentElement.clientHeight : 0;
+		h -= horizontalScrollbarHeight;
+	}
+
 	popupImage = document.getElementById("popupImage");
 
 	if (!popupImage) {
@@ -8200,23 +8204,21 @@ function showSubMenu(ele, lang, type, newTableId) {
 		top_shift = top_scroll + rect.top + rect.height / 2 - rectT.height / 2;
 		tableSM.style.top=top_shift+"px";
 		rectT = tableSM.getBoundingClientRect();
-		if (!isAndroid()) {
-			if (rectT.top < 0) {
-				top_shift = top_scroll;
-			} else if (rectT.bottom > h) {
-				top_shift = top_scroll + h - rectT.height;
-			}
+		if (rectT.top < 0) {
+			top_shift = top_scroll;
+		}
+		if (rectT.bottom > h) {
+			top_shift = top_scroll + h - rectT.height;
 		}
 
 		if (lastSubMenu!=null) {
 			tableSM.style.transition = "opacity 0.2s linear";
 			var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-rectT.height/2;
-			if (!isAndroid()) {
-				if (shiftTransitionStart<0) {
-					shiftTransitionStart=top_scroll ;
-				} else if (shiftTransitionStart+rectT.height - top_scroll > h) {
-					shiftTransitionStart=top_scroll + h - rectT.height;
-				}
+			if (shiftTransitionStart<0) {
+				shiftTransitionStart=top_scroll ;
+			}
+			if (shiftTransitionStart+rectT.height - top_scroll > h) {
+				shiftTransitionStart=top_scroll + h - rectT.height;
 			}
 			tableSM.style.top=shiftTransitionStart+"px";
 			if (type == "contentsLink") {
@@ -8247,21 +8249,19 @@ function showSubMenu(ele, lang, type, newTableId) {
 			top_shift = top_scroll + rect.top + rect.height / 2 - rectT.height / 2;
 			tableSM.style.top=top_shift+"px";
 			rectT = tableSM.getBoundingClientRect();
-			if (!isAndroid()) {
-				if (rectT.top < 0) {
-					top_shift = top_scroll;
-				} else if (rectT.bottom > h) {
-					top_shift = top_scroll + h - rectT.height;
-				}
+			if (rectT.top < 0) {
+				top_shift = top_scroll;
+			}
+			if (rectT.bottom > h) {
+				top_shift = top_scroll + h - rectT.height;
 			}
 			if (lastSubMenu!=null) {
 				var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-rectT.height/2;
-				if (!isAndroid()) {
-					if (shiftTransitionStart<0) {
-						shiftTransitionStart=top_scroll;
-					} else if (shiftTransitionStart+rectT.height  - top_scroll > h) {
-						shiftTransitionStart=top_scroll + h - rectT.height;
-					}
+				if (shiftTransitionStart<0) {
+					shiftTransitionStart=top_scroll;
+				}
+				if (shiftTransitionStart+rectT.height  - top_scroll > h) {
+					shiftTransitionStart=top_scroll + h - rectT.height;
 				}
 				tableSM.style.top=shiftTransitionStart+"px";
 				if (type == "contentsLink") {
