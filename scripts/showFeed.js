@@ -1407,49 +1407,6 @@ function showFeed(type, source, lang) {
 
 // ------------- Functions ---------------- //
 
-function getRecordsText(lang, recordsNum) {
-	var numFeedsTextLast1, numFeedsTextLast2, textRecords;
-
-	if (lang == "rus"){
-		numFeedsTextLast1 = recordsNum.toString().slice(-1);
-		numFeedsTextLast2 = "";
-		if (recordsNum > 9) numFeedsTextLast2 = recordsNum.toString().slice(-2);
-		if (numFeedsTextLast1 == 1) {
-			if (numFeedsTextLast2 != 11) {
-				textRecords = "Запись";
-			} else {
-				textRecords = "Записей";
-			}
-		} else if (numFeedsTextLast1 == 2 || numFeedsTextLast1 == 3 || numFeedsTextLast1 == 4) {
-			if (numFeedsTextLast2 != 12 && numFeedsTextLast2 != 13 && numFeedsTextLast2 != 14) {
-				textRecords = "Записи";
-			} else {
-				textRecords = "Записей";
-			}
-		} else {
-			textRecords = "Записей";
-		}
-	}
-
-	if (lang == "eng"){
-		if (recordsNum == 1) {
-			textRecords = "Record";
-		} else {
-			textRecords = "Records";					
-		}
-	}
-
-	if (lang == "lat"){
-		if (recordsNum == 1) {
-			textRecords = "Monumentum";
-		} else {
-			textRecords = "Tabula";					
-		}
-	}
-
-	return textRecords;
-}
-
 function getLocalStorageData(par) {
 	if (typeof localStorage[par] === "undefined") {
 		return {};
