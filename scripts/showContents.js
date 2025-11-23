@@ -521,7 +521,7 @@ function adjustContentsScrollDiv() {
 }
 
 function showContents(type, sortby, lang) {
-	var textColor, xmlhttp, lines, fileContents, table, row, cell1, dataFileName, classname;
+	var textColor, xmlhttp, lines, fileContents, table, row, cell1, dataFileName, recNum;
 
 	textColor = generateTabs(type, lang);
 	refreshSortByTabs(type, sortby, lang);
@@ -536,8 +536,8 @@ function showContents(type, sortby, lang) {
 		if (xmlhttp.readyState == 4) {
 			lines = xmlhttp.responseText;
 			fileContents = lines.split('\n').filter(lines => lines.length > 0 && lines.charCodeAt(0) !== 13);
-			classname = fileContents[0].match(/"(.*?)"/);
-			fileContents[0] = fileContents[0] + '<b class="'+classname+'"> - '+fileContents.length+' '+getRecordsText(lang, fileContents.length)+'</b>';
+			recNum=fileContents.length-1;
+			fileContents[0] = fileContents[0] + '<b class="'+textColor+'_blue'+'"> - '+recNum+' '+getRecordsText(lang, recNum)+'</b>';
 
 			if (sortby=="date") fileContents = sortByDate(fileContents, lang, textColor+"_blue");
 			if (sortby=="flag" && (type=="music" || type=="movies" || type=="series" || type=="books" || type=="junk" || type=="news")) fileContents = sortByFlag(fileContents, lang, textColor+"_blue");
