@@ -64,6 +64,14 @@ $(function() {
 		var targetX = targetRect.left + targetRect.width / 2;
 		var targetY = targetRect.top + targetRect.height / 2;
 
+		if (scrollDiv && scrollDiv.contains(tooltipEl._targetEl)) {
+			var scrollRect = scrollDiv.getBoundingClientRect();
+			if (targetX < scrollRect.left) targetX = crisp(scrollRect.left + r);
+			else if (targetX > scrollRect.right) targetX = crisp(scrollRect.right - r);
+			if (targetY < scrollRect.top) targetY = crisp(scrollRect.top + r);
+			else if (targetY > scrollRect.bottom) targetY = crisp(scrollRect.bottom - r);
+		}
+
 		var distances = { top: Math.abs(tooltipRect.top - targetY), bottom: Math.abs(tooltipRect.bottom - targetY) };
 		var minSide = Object.keys(distances).reduce((a, b) => distances[a] < distances[b] ? a : b);
 
