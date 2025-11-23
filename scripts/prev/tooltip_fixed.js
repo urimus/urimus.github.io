@@ -66,10 +66,10 @@ $(function() {
 
 		if (scrollDiv && scrollDiv.contains(tooltipEl._targetEl)) {
 			var scrollRect = scrollDiv.getBoundingClientRect();
-			if (targetX < scrollRect.left) targetX = crisp(scrollRect.left + r);
-			else if (targetX > scrollRect.right) targetX = crisp(scrollRect.right - r);
-			if (targetY < scrollRect.top) targetY = crisp(scrollRect.top + r);
-			else if (targetY > scrollRect.bottom) targetY = crisp(scrollRect.bottom - r);
+			if (targetX - r < scrollRect.left) targetX = crisp(scrollRect.left + r);
+			else if (targetX + r > scrollRect.right) targetX = crisp(scrollRect.right - r);
+			if (targetY - r < scrollRect.top) targetY = crisp(scrollRect.top + r);
+			else if (targetY + r > scrollRect.bottom) targetY = crisp(scrollRect.bottom - r);
 		}
 
 		var distances = { top: Math.abs(tooltipRect.top - targetY), bottom: Math.abs(tooltipRect.bottom - targetY) };
