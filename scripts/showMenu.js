@@ -7988,10 +7988,10 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId) {
 			divSM.setAttribute('onclick', "showSubMenu(this, '"+lang+"', '"+type+"');");
 		} else {
 			divSM.setAttribute('onclick', `if (event.ctrlKey==1){
-           	                     window.open('`+menu.link+`');
-                  	      } else {
-                     	           window.location.href='`+menu.link+`';
-             	           };`);
+				window.open('`+menu.link+`');
+			} else {
+				window.location.href='`+menu.link+`';
+			};`);
 		}
 	}
 
@@ -8104,11 +8104,10 @@ function showSubMenu(ele, lang, type, newTableId) {
 		return;
 	}
 
-	if (isAndroid()) {
-		ele.setAttribute('onclick', "");
-	} else {
+	requestAnimationFrame(() => {
 		ele.setAttribute('onclick', "hideSubMenu(this, 1);");
-	}
+	});
+
 	keys = Object.keys(wholeMenu);
 
 	rect = ele.getBoundingClientRect();
@@ -8310,6 +8309,7 @@ function hideSubMenu(ele, manual, additDel) {
 				// use existing table for new contents
 				if (tables[i].dataset.id != additDel && ele.getBoundingClientRect().left == tables[i].dataset.origLeft && eleID!=tables[i].dataset.id || lastSubMenuType == "contentsLink") {
 					ret=tables[i];
+					document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
 					continue;
 				}
 				if (eleID.indexOf(tables[i].dataset.id) == -1 || tables[i].dataset.id == additDel) {
