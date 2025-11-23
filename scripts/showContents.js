@@ -509,15 +509,11 @@ function adjustContentsScrollDiv() {
 	var scrollDiv = document.getElementById('scrollDiv');
 	var tabsHeight = document.getElementById('tabstable').offsetHeight;
 
-// -------- For Android ------ //
-	var ua = navigator.userAgent.toLowerCase();
-	var isAndroid = ua.indexOf("android") && ua.indexOf("mobile") > -1; 
-	if (isAndroid) {
+	if (isAndroid()) {
 		scrollDiv.style.minHeight = (menuHeight - tabsHeight - 8) + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
-// -------- End of For Android ------ //
 
 	scrollDiv.style.minHeight="calc(100svh - " + (getScrollDivOffset() + tabsHeight + 8) + "px)";
 	scrollDiv.style.height=(menuHeight - tabsHeight - 8) + "px";

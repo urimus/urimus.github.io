@@ -120,15 +120,11 @@ function adjustFeedScrollDiv() {
 	var feedMessageHeight = document.getElementById('messagetable').offsetHeight;
 	var totalHeight = tabsHeight+feedTitleHeight+feedMessageHeight;
 
-// -------- For Android ------ //
-	var ua = navigator.userAgent.toLowerCase();
-	var isAndroid = ua.indexOf("android") && ua.indexOf("mobile") > -1; 
-	if (isAndroid) {
+	if (isAndroid()) {
 		scrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
-// -------- End of For Android ------ //
 
 	// use max-height: max(screen, menu)
 	scrollDiv.style.maxHeight="max(calc(100svh - " + (getScrollDivOffset() + totalHeight + 8) + "px), "+(menuHeight - totalHeight - 8)+"px)";

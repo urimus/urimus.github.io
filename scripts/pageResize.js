@@ -45,15 +45,11 @@ function adjustScrollDiv2(){
 	var additIntend = 0;
 	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
 
-// -------- For Android ------ //
-	var ua = navigator.userAgent.toLowerCase();
-	var isAndroid = ua.indexOf("android") && ua.indexOf("mobile") > -1; 
-	if (isAndroid) {
+	if (isAndroid()) {
 		scrollDiv.style.minHeight = (menuHeight - additIntend) + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
-// -------- End of For Android ------ //
 
 	scrollDiv.style.minHeight="calc(100svh - " + (getScrollDivOffset() - additIntend) + "px)";
 	scrollDiv.style.height=(menuHeight + additIntend) + "px";
@@ -153,16 +149,14 @@ function enableKeyboardScroll(scrollDiv) {
 	});
 }
 
-
+function isAndroid(){
+	var ua = navigator.userAgent.toLowerCase();
+	return ua.indexOf("android") && ua.indexOf("mobile") > -1; 
+}
 
 function processPageResize(isLoad, orientationChanged){
 	if (typeof isLoad === "undefined") var isLoad = 1;
 	if (typeof orientationChanged === "undefined") var orientationChanged = 0;
-
-	// For Android
-	var ua = navigator.userAgent.toLowerCase();
-	var isAndroid = ua.indexOf("android") && ua.indexOf("mobile") > -1; 
-//	if (isAndroid && isLoad == 0 && orientationChanged == 0) return true; 
 
 	var scrollDiv = document.getElementById('scrollDiv');
 
@@ -189,7 +183,7 @@ function processPageResize(isLoad, orientationChanged){
 		var textArea = document.getElementById('textarea_area');
 		if (typeof textArea !== 'undefined' && textArea != null && textArea.value != "") adjustTextareaAndEncodings();
 	}
-	if (!isAndroid) {
+	if (!isAndroid()) {
 		const layoutWidth = document.documentElement.clientWidth;
 		var imageWidth = (layoutWidth - 1000) / 2;
 
