@@ -29,27 +29,31 @@ function getScrollDivOffset(){
 	var hImgWidth = newImg.width;
 	hImgHeight = hImgHeight*(1000/hImgWidth);
 	// End of Header Image
-	var offset1 = hImgHeight + 68; // 68
 
-	const hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
-	var offset2 = hasHorizontalScrollbar ? window.innerHeight - document.documentElement.clientHeight : 0;
-
-	return offset1 + offset2;
+	if (!isAndroid()) {
+		var offset1 = hImgHeight + 68; // 68
+		const hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
+		var offset2 = hasHorizontalScrollbar ? window.innerHeight - document.documentElement.clientHeight : 0;
+		return offset1 + offset2;
+	} else {
+		var offset1 = hImgHeight + 68; // 68
+		return offset1;
+	}
 }
 
 function adjustScrollDiv2(){
 
 	var scrollDiv = document.getElementById('scrollDiv');
 
-	// some bugs
-	var additIntend = 0;
-	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
-
 	if (isAndroid()) {
-		scrollDiv.style.minHeight = (menuHeight - additIntend) + "px";
+		scrollDiv.style.minHeight = menuHeight + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
+
+	// some bugs
+	var additIntend = 0;
+	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
 
 	scrollDiv.style.minHeight="calc(100svh - " + (getScrollDivOffset() - additIntend) + "px)";
 	scrollDiv.style.height=(menuHeight + additIntend) + "px";
