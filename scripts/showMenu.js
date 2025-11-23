@@ -8032,11 +8032,17 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 	if (typeof type === "undefined" || type != "contentsLink") ele.setAttribute('class', 'menu_selected');
 
-	if (type != "contentsLink" && lastSubMenuType == "contentsLink" ) hideSubMenu(ele, -1);
-	if (typeof newTableId === "undefined" && typeof ele === "undefined") hideSubMenu(ele, -1);
+	if (type != "contentsLink" && lastSubMenuType == "contentsLink" ) {
+		hideSubMenu(ele, -1);
+	}
+	if (typeof newTableId === "undefined" && typeof ele === "undefined") {
+		hideSubMenu(ele, -1);
+	}
+
 	if (typeof newTableId === "undefined" && typeof ele !== "undefined") {
 		lastSubMenu = hideSubMenu(ele, 0);
 	}
+
 	if (typeof type === "undefined") {
 		hideSubMenu(ele, -1);
 		return;
@@ -8051,7 +8057,9 @@ function showSubMenu(ele, lang, type, newTableId) {
 	// additional case
 	if (lastSubMenu!=null) {
 		rectT=lastSubMenu.getBoundingClientRect();
-		if (lastRect.left-rectT.left>=1) lastSubMenu = hideSubMenu(ele, 0, lastSubMenu.dataset.id);
+		if (lastRect.left-rectT.left>=1) {
+			lastSubMenu = hideSubMenu(ele, 0, lastSubMenu.dataset.id);
+		}
 	}
 
 	tablex = document.getElementById("table" + newTableId);
@@ -8096,7 +8104,11 @@ function showSubMenu(ele, lang, type, newTableId) {
 		return;
 	}
 
-	ele.setAttribute('onclick', "hideSubMenu(this, 1);");
+	if (isAndroid()) {
+		ele.setAttribute('onclick', "");
+	} else {
+		ele.setAttribute('onclick', "hideSubMenu(this, 1);");
+	}
 	keys = Object.keys(wholeMenu);
 
 	rect = ele.getBoundingClientRect();
