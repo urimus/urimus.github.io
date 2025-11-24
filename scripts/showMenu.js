@@ -8155,7 +8155,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 	cell1 = row.insertCell(0);
 	cell1.setAttribute('style', 'padding:0px;');
 	divSM = document.createElement("div");
-	divSM.setAttribute('id', 'div-1' + wholeMenu[key].id);
 	divSM.align = "left";
 	if (wholeMenu[key].subCaption) {
 		divSM.innerHTML = wholeMenu[key].subCaption;
@@ -8166,8 +8165,8 @@ function showSubMenu(ele, lang, type, newTableId) {
 	divSM.setAttribute('class', 'menu_selected');
 	if (type != "contentsLink") {
 		divSM.setAttribute('style', 'width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
-		divSM.setAttribute('id', 'menu_' + wholeMenu[key].id);
-		divSM.setAttribute('onmouseenter', "hideSubMenu(this);");
+		divSM.setAttribute('id', 'menu_' + wholeMenu[key].id+"_cap");
+		divSM.setAttribute('onmouseenter', "hideSubMenu(this, 1);");
 	} else {
 		divSM.setAttribute('style', 'cursor:auto; border-spacing: 0px; padding-left:5px; padding-right:5px;');
 	}
@@ -8331,6 +8330,7 @@ function hideSubMenu(ele, manual, additDel) {
 	if (manual == 1) {
 		for (var i = maxSubCount - 1; i >= 0; i--) {
 			if (tables[i]) {
+				if (eleID == tables[i].dataset.id+"_cap") break; // additional case 
 				document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
 				tables[i].id="";
 				for (var row of tables[i].rows) {
