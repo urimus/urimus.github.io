@@ -8303,12 +8303,14 @@ function hideSubMenu(ele, manual, additDel) {
 
 	// subs with ret
 	if (manual == 0) {
-		for (var i = maxSubCount - 1; i >= 0; i--) {
+		for (let i = maxSubCount - 1; i >= 0; i--) {
 			if (tables[i]) {
 				// use existing table for new contents
 				if (tables[i].dataset.id != additDel && ele.getBoundingClientRect().left == tables[i].dataset.origLeft && eleID!=tables[i].dataset.id || lastSubMenuType == "contentsLink") {
 					ret=tables[i];
-					document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
+					requestAnimationFrame(() => {
+						document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
+					});
 					continue;
 				}
 				if (eleID.indexOf(tables[i].dataset.id) == -1 || tables[i].dataset.id == additDel) {
@@ -8328,10 +8330,12 @@ function hideSubMenu(ele, manual, additDel) {
 
 	// subs no ret
 	if (manual == 1) {
-		for (var i = maxSubCount - 1; i >= 0; i--) {
+		for (let i = maxSubCount - 1; i >= 0; i--) {
 			if (tables[i]) {
 				if (eleID == tables[i].dataset.id+"_cap") break; // additional case 
-				document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
+				requestAnimationFrame(() => {
+					document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
+				});
 				tables[i].id="";
 				for (var row of tables[i].rows) {
   					child = row.cells[0].children[0];
@@ -8347,9 +8351,11 @@ function hideSubMenu(ele, manual, additDel) {
 
 	// all
 	if (manual == -1) {
-		for (var i = maxSubCount - 1; i >= 0; i--) {
+		for (let i = maxSubCount - 1; i >= 0; i--) {
 			if (tables[i]) {
-				document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
+				requestAnimationFrame(() => {
+					document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
+				});
 				tables[i].id="";
 				for (var row of tables[i].rows) {
   					child = row.cells[0].children[0];
