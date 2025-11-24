@@ -30,15 +30,12 @@ function getScrollDivOffset(){
 	hImgHeight = hImgHeight*(1000/hImgWidth);
 	// End of Header Image
 
+	var offset = hImgHeight + 68; // 68
 	if (!isAndroid()) {
-		var offset1 = hImgHeight + 68; // 68
-		const hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
-		var offset2 = hasHorizontalScrollbar ? window.innerHeight - document.documentElement.clientHeight : 0;
-		return offset1 + offset2;
-	} else {
-		var offset1 = hImgHeight + 68; // 68
-		return offset1;
+		var hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
+		offset += hasHorizontalScrollbar ? window.innerHeight - document.documentElement.clientHeight : 0;
 	}
+	return offset;
 }
 
 function adjustScrollDiv2(){
