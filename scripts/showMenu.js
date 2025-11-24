@@ -7985,7 +7985,7 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId) {
 	}
 	if (type != "contentsLink") {
 		if (menu.hasSub) {
-			divSM.setAttribute('onclick', "showSubMenu(this, '"+lang+"', '"+type+"');");
+			divSM.setAttribute('onclick', "showSubMenu(this, '"+lang+"', '"+type+"', "+newTableId+");");
 		} else {
 			divSM.setAttribute('onclick', `if (event.ctrlKey==1){
 				window.open('`+menu.link+`');
@@ -8302,7 +8302,7 @@ function hideSubMenu(ele, manual, additDel) {
 		tables[i] = document.getElementById("table" + (i + 1));
 	}
 
-	// only subs
+	// subs with ret
 	if (manual == 0) {
 		for (var i = maxSubCount - 1; i >= 0; i--) {
 			if (tables[i]) {
@@ -8327,11 +8327,11 @@ function hideSubMenu(ele, manual, additDel) {
 		}
 	}
 
-	// all but ele exists
+	// subs no ret
 	if (manual == 1) {
 		for (var i = maxSubCount - 1; i >= 0; i--) {
 			if (tables[i]) {
-				ele.setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
+				document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
 				tables[i].id="";
 				for (var row of tables[i].rows) {
   					child = row.cells[0].children[0];
