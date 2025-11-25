@@ -535,7 +535,10 @@ function showContents(type, sortby, lang) {
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4) {
 			lines = xmlhttp.responseText;
-			fileContents = lines.split('\n').filter(lines => lines.length > 0 && lines.charCodeAt(0) !== 13);
+			fileContents = lines
+				.split(/\r?\n|\r/)
+				.map(line => line.trim())
+				.filter(line => line.length > 0);
 			recNum=fileContents.length-1;
 			fileContents[0] = fileContents[0] + '<b class="'+textColor+'_blue'+'"> - '+recNum+' '+getRecordsText(lang, recNum)+'</b>';
 
