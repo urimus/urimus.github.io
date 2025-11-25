@@ -26,11 +26,13 @@ function isMobile() {
 }
 
 function getScrollbarWidth(el) {
-    return el ? el.offsetWidth - el.clientWidth : 0;
+	if (!el || isMobile()) return 0;
+	return el.offsetWidth - el.clientWidth;
 }
 
 function getScrollbarHeight(el) {
-    return el ? el.offsetHeight - el.clientHeight : 0;
+	if (!el || isMobile()) return 0;
+	return el.offsetHeight - el.clientHeight;
 }
 
 function getScrollDivOffset(){
@@ -42,7 +44,7 @@ function getScrollDivOffset(){
 	hImgHeight = hImgHeight*(1000/hImgWidth);
 	// End of Header Image
 
-	return hImgHeight + 68 + (isMobile() ? 0 : getScrollbarHeight(document.body)); // 68
+	return hImgHeight + 68 + getScrollbarHeight(document.body); // 68
 }
 
 function adjustScrollDiv2(){
@@ -65,7 +67,7 @@ function adjustScrollDiv2(){
 	var pathname = window.location.pathname;
 	if (pathname.substr(0, 9) == "/about_me") {
 		var informationDiv = document.getElementById('information_div');
-		informationDiv.style.right = ((isMobile() ? 0 : getScrollbarWidth(scrollDiv)) + 5) + 'px';
+		informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 5) + 'px';
 	}
 }
 

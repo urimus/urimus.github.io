@@ -70,8 +70,8 @@ $(function() {
 		var boundingRectArray = {
 			left: boundingRect.left,
 			top: boundingRect.top,
-			right: boundingRect.right - (isMobile() ? 0 : getScrollbarWidth(scrollDiv || document.body)),
-			bottom: boundingRect.bottom - (isMobile() ? 0 : getScrollbarHeight(scrollDiv || document.body))
+			right: boundingRect.right - getScrollbarWidth(scrollDiv || document.body),
+			bottom: boundingRect.bottom - getScrollbarHeight(scrollDiv || document.body)
 		};
 		if (targetX - r < boundingRectArray.left) targetX = crisp(boundingRectArray.left + r);
 		else if (targetX + r > boundingRectArray.right) targetX = crisp(boundingRectArray.right - r);
