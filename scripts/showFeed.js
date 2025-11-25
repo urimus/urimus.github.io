@@ -539,7 +539,6 @@ function preloadImage(type, source, lang, result) {
 			preloadImg.alt=entry.media.origComment;
 			preloadImg.title=entry.media.origComment;
 			if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.setAttribute('src', newUrl); return; }
-			if (source=="yahoo") newUrl = "https://proxy.wasmer.app?url="+entry.media.url;
 			if (source == "nasa") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
 			preloadImg.src=newUrl;
 			isOrigUrl = 1;
@@ -557,7 +556,6 @@ function preloadImage(type, source, lang, result) {
 	newUrl = entry.media.url;
 	result.entries[preloadIndex].storage.preloadStarted=1;
 	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.setAttribute('src', newUrl); return; }
-	if (source=="yahoo") newUrl = "https://proxy.wasmer.app?url="+entry.media.url;
 	if (source == "nasa") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
 	preloadImg.src=newUrl;
 }
@@ -1866,7 +1864,7 @@ function update(i, source, type, result, lang) {
 	}
 	document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + ".&nbsp;";
 
-	link2 = "https://proxy.wasmer.app?url="+result.entries[i].link;
+	link2 = "https://proxy.wasmer.app?url="+encodeURIComponent(result.entries[i].link);
 
 	xhr = $.ajax({
 		type: "GET",
