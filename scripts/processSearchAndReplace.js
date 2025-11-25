@@ -1666,8 +1666,8 @@ function processSearchAndReplace(lang) {
 	$("#error_message").text(message1);
 	$("#error_message_row").show();
 
-	if (isAndroid()) {
-		$("#error_message").text("HTML Editor is not supported for Android OS.");
+	if (isMobile()) {
+		$("#error_message").text("HTML Editor is not supported for Mobile Devices.");
 		return true; 
 	}
 

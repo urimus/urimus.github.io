@@ -21,6 +21,18 @@ screen.orientation.addEventListener('change', function(event) {
 });
 
 
+function isMobile() {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+function getScrollbarWidth(el) {
+    return el ? el.offsetWidth - el.clientWidth : 0;
+}
+
+function getScrollbarHeight(el) {
+    return el ? el.offsetHeight - el.clientHeight : 0;
+}
+
 function getScrollDivOffset(){
 	// Header Image
 	var newImg = new Image();
@@ -30,19 +42,14 @@ function getScrollDivOffset(){
 	hImgHeight = hImgHeight*(1000/hImgWidth);
 	// End of Header Image
 
-	var offset = hImgHeight + 68; // 68
-	if (!isAndroid()) {
-		var hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
-		offset += hasHorizontalScrollbar ? window.innerHeight - document.documentElement.clientHeight : 0;
-	}
-	return offset;
+	return hImgHeight + 68 + getScrollbarHeight(document.body); // 68
 }
 
 function adjustScrollDiv2(){
 
 	var scrollDiv = document.getElementById('scrollDiv');
 
-	if (isAndroid()) {
+	if (isMobile()) {
 		scrollDiv.style.minHeight = menuHeight + "px";
 		scrollDiv.style.height = "100%";
 		return;
@@ -150,11 +157,6 @@ function enableKeyboardScroll(scrollDiv) {
 	});
 }
 
-function isAndroid(){
-	var ua = navigator.userAgent.toLowerCase();
-	return ua.indexOf("android") && ua.indexOf("mobile") > -1; 
-}
-
 function processPageResize(isLoad, orientationChanged){
 	if (typeof isLoad === "undefined") var isLoad = 1;
 	if (typeof orientationChanged === "undefined") var orientationChanged = 0;
@@ -184,7 +186,7 @@ function processPageResize(isLoad, orientationChanged){
 		var textArea = document.getElementById('textarea_area');
 		if (typeof textArea !== 'undefined' && textArea != null && textArea.value != "") adjustTextareaAndEncodings();
 	}
-	if (!isAndroid()) {
+	if (!isMobile()) {
 		const layoutWidth = document.documentElement.clientWidth;
 		var imageWidth = (layoutWidth - 1000) / 2;
 

@@ -8027,7 +8027,7 @@ var lastRect="";
 
 function showSubMenu(ele, lang, type, newTableId) {
 	var tablex, wholeMenu, key, keys, tableSM, row, cell1, divSM, rect, top_shift, left_shift, tableStyle;
-	var prevId, top_scroll, h, rectT, popupImage, imageHeight, i, hasHorizontalScrollbar, horizontalScrollbarHeight ;
+	var prevId, top_scroll, h, rectT, popupImage, imageHeight, i;
 	var lastSubMenu = null;
 
 	if (typeof type === "undefined" || type != "contentsLink") ele.setAttribute('class', 'menu_selected');
@@ -8188,12 +8188,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	}
 
 	top_scroll = window.scrollY;
-	h = window.innerHeight;
-	if (!isAndroid()) {
-		hasHorizontalScrollbar = document.documentElement.scrollWidth > document.documentElement.clientWidth;
-		horizontalScrollbarHeight = hasHorizontalScrollbar ? window.innerHeight - document.documentElement.clientHeight : 0;
-		h -= horizontalScrollbarHeight;
-	}
+	h = window.innerHeight - getScrollbarHeight(document.body);
 
 	popupImage = document.getElementById("popupImage");
 

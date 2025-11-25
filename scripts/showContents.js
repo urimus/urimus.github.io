@@ -509,7 +509,7 @@ function adjustContentsScrollDiv() {
 	var scrollDiv = document.getElementById('scrollDiv');
 	var tabsHeight = document.getElementById('tabstable').offsetHeight;
 
-	if (isAndroid()) {
+	if (isMobile()) {
 		scrollDiv.style.minHeight = (menuHeight - tabsHeight - 8) + "px";
 		scrollDiv.style.height = "100%";
 		return;
