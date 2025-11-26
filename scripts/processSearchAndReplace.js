@@ -1667,7 +1667,12 @@ function processSearchAndReplace(lang) {
 	$("#error_message_row").show();
 
 	if (isMobile()) {
-		$("#error_message").text("HTML Editor is not supported for Mobile Devices.");
+		if (lang=="eng" || lang=="lat") {
+			$("#error_message").text("HTML Editor is not Supported for Mobile Devices.");
+		}
+		if (lang=="rus") {
+			$("#error_message").text("HTML Редактор не Поддерживается на Мобильных Устройствах.");
+		}
 		return true; 
 	}
 
@@ -1687,7 +1692,7 @@ function processSearchAndReplace(lang) {
 					$("#error_message").text("PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning.");
 				}
 				if (lang=="rus") {
-					$("#error_message").text("PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Действует.");
+					$("#error_message").text("PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует.");
 				}
 
 				return;
