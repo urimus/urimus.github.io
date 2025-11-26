@@ -181,46 +181,61 @@ $(function() {
 			return $(this).attr('title');
 		},
 		open: function() {
-			var tooltipEl = $(".ui-tooltip.custom-tooltip").last()[0];
-			tooltipEl._targetEl = targetEl;
-			tooltipEl._prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null, minSide: null };
-			startTooltipTracker(tooltipEl);
+			(function waitAndApply(attemptsLeft) {
+				var tooltipEl = $(".ui-tooltip.custom-tooltip").last()[0];
+				if (!tooltipEl || !targetEl) {
+					if (attemptsLeft > 0)
+						return requestAnimationFrame(() => waitAndApply(attemptsLeft - 1));
+					return;
+				}
 
-			var colorScheme = tooltipEl._targetEl?.dataset?.ttcolor;
-			if (!tooltipEl._origColor) {
-				var styles = window.getComputedStyle(tooltipEl);
-				tooltipEl._origBackground = styles.background;
-				tooltipEl._origColor = styles.color;
-			}
+				tooltipEl._targetEl = targetEl;
+				tooltipEl._prevCoords = {
+					tooltipX: null,
+					tooltipY: null,
+					targetX: null,
+					targetY: null,
+					minSide: null
+				};
 
-			switch (colorScheme) {
-				case "blue":
-					tooltipEl.style.color = "#448CCB";
-					tooltipEl.style.background = "linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)";
-					break;
-				case "black":
-					tooltipEl.style.color = "#707070";
-					tooltipEl.style.background = "linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)";
-					break;
-				case "red":
-					tooltipEl.style.color = "#CE3535";
-					tooltipEl.style.background = "linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%)";
-					break;
-				case "white":
-					tooltipEl.style.color = "#A9A9A9";
-					tooltipEl.style.background = "linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)";
-					break;
-				case "green":
-					tooltipEl.style.color = "#008080";
-					tooltipEl.style.background = "linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)";
-					break;
-				default:
-					tooltipEl.style.color = tooltipEl._origColor;
-					tooltipEl.style.background = tooltipEl._origBackground;
-			}
+				startTooltipTracker(tooltipEl);
 
-			positionTooltip(tooltipEl);
-			drawLine(tooltipEl);
+				var colorScheme = tooltipEl._targetEl?.dataset?.ttcolor;
+				if (!tooltipEl._origColor) {
+					var styles = window.getComputedStyle(tooltipEl);
+					tooltipEl._origBackground = styles.background;
+					tooltipEl._origColor = styles.color;
+				}
+				switch (colorScheme) {
+					case "blue":
+						tooltipEl.style.color = "#448CCB";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)";
+						break;
+					case "black":
+						tooltipEl.style.color = "#707070";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)";
+						break;
+					case "red":
+						tooltipEl.style.color = "#CE3535";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%)";
+						break;
+					case "white":
+						tooltipEl.style.color = "#A9A9A9";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)";
+						break;
+					case "green":
+						tooltipEl.style.color = "#008080";
+						tooltipEl.style.background = "linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)";
+						break;
+					default:
+						tooltipEl.style.color = tooltipEl._origColor;
+						tooltipEl.style.background = tooltipEl._origBackground;
+				}
+
+				positionTooltip(tooltipEl);
+				drawLine(tooltipEl);
+
+			})(20);
 		},
 		close: function() {
 			$(".ui-tooltip.custom-tooltip").each(function() {
