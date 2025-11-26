@@ -232,11 +232,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
 			this.className='menu_not_selected_blue';
-			patt=encodeURIComponent(getParameterByName('pattern'));
 			if (event.ctrlKey==1){
-				window.open('html_editor_eng.html?pattern=' + ((patt.localeCompare('null')!=0) ? patt : '*.html')+'&i=0');
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
 			} else {
-				window.location.href='html_editor_eng.html?pattern=' + ((patt.localeCompare('null')!=0) ? patt : '*.html')+'&i=0';
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
 			};"
 		class="menu_not_selected_blue">
 		HTML Editor</div>
