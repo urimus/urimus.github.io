@@ -16,10 +16,10 @@ function contentsLoad(lang) {
 	sortbyL=getParameterByName('sortby');
 
 	if (typeL && typeL!="") {
-		if ( (lang=="eng" || lang=="rus") && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="howto" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities" || typeL=="news") || (lang=="lat" && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="news"))) {
+		if ( (lang=="eng" || lang=="rus") && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="htmleditor" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities" || typeL=="news") || (lang=="lat" && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="news"))) {
 			type=typeL;
 		}
-		if (lang=="lat" && (typeL=="howto" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities")) {
+		if (lang=="lat" && (typeL=="htmleditor" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities")) {
 			type="aboutme";
 			toRedirect=1;
 		}
@@ -325,7 +325,7 @@ function generateTabs(type, lang) {
 		tabs["aboutwork"]="О Моей Работе";
 		tabs["aboutphd"]="О моём PhD";
 		tabs["links"]="Ссылки";
-		tabs["howto"]='How-to <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
+		tabs["htmleditor"]='HTML Редактор';
 		tabs["music"]='Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>';
 		tabs["movies"]='Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font>';
 		tabs["series"]='Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font>';
@@ -355,7 +355,7 @@ function generateTabs(type, lang) {
 		tabs["aboutwork"]="About My Work";
 		tabs["aboutphd"]="About my PhD";
 		tabs["links"]="Links";
-		tabs["howto"]='How-to <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
+		tabs["htmleditor"]='HTML Editor';
 		tabs["music"]='Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>';
 		tabs["movies"]='Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font>';
 		tabs["series"]='Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font>';
@@ -395,7 +395,7 @@ function generateTabs(type, lang) {
 	tabsColor["aboutwork"]="blue";
 	tabsColor["aboutphd"]="blue";
 	tabsColor["links"]="blue";
-	tabsColor["howto"]="blue";
+	tabsColor["htmleditor"]="blue";
 	tabsColor["music"]="black";
 	tabsColor["movies"]="black";
 	tabsColor["series"]="black";

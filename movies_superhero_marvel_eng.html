@@ -222,11 +222,18 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	<tr>
 		<td align="center" >
 		<div id="menu_6"
-		onmouseenter="showSubMenu(this, 'eng', 'howto');" 
+		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
-		onclick="showSubMenu(this, 'eng', 'howto');"
+		onclick="
+			this.className='menu_not_selected_blue';
+			patt=encodeURIComponent(getParameterByName('pattern'));
+			if (event.ctrlKey==1){
+				window.open('html_editor_eng.html?pattern=' + ((patt.localeCompare('null')!=0) ? patt : '*.html')+'&i=0');
+			} else {
+				window.location.href='html_editor_eng.html?pattern=' + ((patt.localeCompare('null')!=0) ? patt : '*.html')+'&i=0';
+			};"
 		class="menu_not_selected_blue">
-		How-To <font class="blinking_text" color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></div>
+		HTML Editor</div>
 	</td>
 	</tr>
 		

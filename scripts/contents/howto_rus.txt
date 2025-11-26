@@ -1,6 +1,0 @@
-﻿<b class="text_blue">How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></b>
-&#9679; <a href="howto_add_feed_rus.html" class = "standardb_blue" data-added="07е Окт, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Добавить Строку Новостей <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></a>
-<span style="padding-left:10px;">- <a href="howto_add_feed_rus.html#add_feed_javascript" class = "standardb_blue" data-added="16е Янв, 2021." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Используя Javascript</a></span>
-<span style="padding-left:10px;">- <a href="howto_add_feed_rus.html#add_feed_php" class = "standardb_blue" data-added="11е Окт, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Используя PHP <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font></a></span>
-&#9679; <a href="html_editor_rus.html?pattern=*.html&i=0" class = "standardb_blue" data-added="22е Янв, 2018." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">HTML Редактор</a>
-

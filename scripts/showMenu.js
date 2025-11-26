@@ -377,26 +377,26 @@ if (lang=="eng") {
 	wholeMenu["42SortBy"].link = "index_eng.html?type=links&sortby=date";
 	wholeMenu["42SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_date.png" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
-	wholeMenu["● How-To ✶ No Entry ✶"] = {};
-	wholeMenu["● How-To ✶ No Entry ✶"].id = "1_5";
-	wholeMenu["● How-To ✶ No Entry ✶"].color = "blue";
-	wholeMenu["● How-To ✶ No Entry ✶"].hasSub = 1;
-	wholeMenu["● How-To ✶ No Entry ✶"].subCaption = '&#9679; How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>, Sort by';
-	wholeMenu["● How-To ✶ No Entry ✶"].link = "";
-	wholeMenu["● How-To ✶ No Entry ✶"].html = '&#9679; How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
+	wholeMenu["● HTML Editor"] = {};
+	wholeMenu["● HTML Editor"].id = "1_5";
+	wholeMenu["● HTML Editor"].color = "blue";
+	wholeMenu["● HTML Editor"].hasSub = 1;
+	wholeMenu["● HTML Editor"].subCaption = '&#9679; HTML Editor, Sort by';
+	wholeMenu["● HTML Editor"].link = "";
+	wholeMenu["● HTML Editor"].html = '&#9679; HTML Editor';
 
 	wholeMenu["51SortBy"] = {};
 	wholeMenu["51SortBy"].id = "1_5_1";
 	wholeMenu["51SortBy"].color = "blue";
 	wholeMenu["51SortBy"].hasSub = 0;
-	wholeMenu["51SortBy"].link = "index_eng.html?type=howto&sortby=name";
+	wholeMenu["51SortBy"].link = "index_eng.html?type=htmleditor&sortby=name";
 	wholeMenu["51SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["52SortBy"] = {};
 	wholeMenu["52SortBy"].id = "1_5_2";
 	wholeMenu["52SortBy"].color = "blue";
 	wholeMenu["52SortBy"].hasSub = 0;
-	wholeMenu["52SortBy"].link = "index_eng.html?type=howto&sortby=date";
+	wholeMenu["52SortBy"].link = "index_eng.html?type=htmleditor&sortby=date";
 	wholeMenu["52SortBy"].html = '<img src="scripts/contents/icons/sortby/sortby_date.png" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Music ☥ Vampiric ☥"] = {};
@@ -1006,26 +1006,26 @@ if (lang=="rus") {
 	wholeMenu["42СортироватьПо"].link = "index_rus.html?type=links&sortby=date";
 	wholeMenu["42СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_date.png" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
-	wholeMenu["● How-To ✶ No Entry ✶"] = {};
-	wholeMenu["● How-To ✶ No Entry ✶"].id = "1_5";
-	wholeMenu["● How-To ✶ No Entry ✶"].color = "blue";
-	wholeMenu["● How-To ✶ No Entry ✶"].hasSub = 1;
-	wholeMenu["● How-To ✶ No Entry ✶"].subCaption = '&#9679; How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>, Сортировать по';
-	wholeMenu["● How-To ✶ No Entry ✶"].link = "";
-	wholeMenu["● How-To ✶ No Entry ✶"].html = '&#9679; How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
+	wholeMenu["● HTML Редактор"] = {};
+	wholeMenu["● HTML Редактор"].id = "1_5";
+	wholeMenu["● HTML Редактор"].color = "blue";
+	wholeMenu["● HTML Редактор"].hasSub = 1;
+	wholeMenu["● HTML Редактор"].subCaption = '&#9679; HTML Редактор, Сортировать по';
+	wholeMenu["● HTML Редактор"].link = "";
+	wholeMenu["● HTML Редактор"].html = '&#9679; HTML Редактор';
 
 	wholeMenu["51СортироватьПо"] = {};
 	wholeMenu["51СортироватьПо"].id = "1_5_1";
 	wholeMenu["51СортироватьПо"].color = "blue";
 	wholeMenu["51СортироватьПо"].hasSub = 0;
-	wholeMenu["51СортироватьПо"].link = "index_rus.html?type=howto&sortby=name";
+	wholeMenu["51СортироватьПо"].link = "index_rus.html?type=htmleditor&sortby=name";
 	wholeMenu["51СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_name.png" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["52СортироватьПо"] = {};
 	wholeMenu["52СортироватьПо"].id = "1_5_2";
 	wholeMenu["52СортироватьПо"].color = "blue";
 	wholeMenu["52СортироватьПо"].hasSub = 0;
-	wholeMenu["52СортироватьПо"].link = "index_rus.html?type=howto&sortby=date";
+	wholeMenu["52СортироватьПо"].link = "index_rus.html?type=htmleditor&sortby=date";
 	wholeMenu["52СортироватьПо"].html = '<img src="scripts/contents/icons/sortby/sortby_date.png" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Музыка ☥ Vampiric ☥"] = {};
@@ -1760,73 +1760,6 @@ if (lang=="lat") {
 
 return wholeMenu;
 }
-
-
-
-
-function  loadMenuHowto(lang) {
-
-var wholeMenu = {};
-
-
-if (lang=="eng") {
-
-	wholeMenu["How-To ✶ No Entry ✶"] = {};
-	wholeMenu["How-To ✶ No Entry ✶"].id = "6";
-	wholeMenu["How-To ✶ No Entry ✶"].color = "blue";
-	wholeMenu["How-To ✶ No Entry ✶"].hasSub = 1;
-	wholeMenu["How-To ✶ No Entry ✶"].link = "";
-	wholeMenu["How-To ✶ No Entry ✶"].html = 'How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
-
-	wholeMenu["Add News Feed ✶ No Entry ✶"] = {};
-	wholeMenu["Add News Feed ✶ No Entry ✶"].id = "6_1";
-	wholeMenu["Add News Feed ✶ No Entry ✶"].color = "blue";
-	wholeMenu["Add News Feed ✶ No Entry ✶"].hasSub = 0;
-	wholeMenu["Add News Feed ✶ No Entry ✶"].link = "howto_add_feed_eng.html";
-	wholeMenu["Add News Feed ✶ No Entry ✶"].html = 'Add News Feed <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
-
-	wholeMenu["HTML Editor"] = {};
-	wholeMenu["HTML Editor"].id = "6_2";
-	wholeMenu["HTML Editor"].color = "blue";
-	wholeMenu["HTML Editor"].hasSub = 0;
-	wholeMenu["HTML Editor"].link = "html_editor_eng.html?pattern=*.html&i=0";
-	wholeMenu["HTML Editor"].html = 'HTML Editor';
-
-}
-
-
-
-
-if (lang=="rus") {
-
-	wholeMenu["How-To ✶ No Entry ✶"] = {};
-	wholeMenu["How-To ✶ No Entry ✶"].id = "6";
-	wholeMenu["How-To ✶ No Entry ✶"].color = "blue";
-	wholeMenu["How-To ✶ No Entry ✶"].hasSub = 1;
-	wholeMenu["How-To ✶ No Entry ✶"].link = "";
-	wholeMenu["How-To ✶ No Entry ✶"].html = 'How-To <font color="fuchsia"><sup>&#10038; No Entry &#10038;</sup></font>';
-
-	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"] = {};
-	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].id = "6_1";
-	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].color = "blue";
-	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].hasSub = 0;
-	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].link = "howto_add_feed_rus.html";
-	wholeMenu["Добавить Строку Новостей ✶ No Entry ✶"].html = 'Добавить Строку Новостей <font color="fuchsia"><sup>&#10038;No Entry&#10038;</sup></font>';
-
-	wholeMenu["HTML Редактор"] = {};
-	wholeMenu["HTML Редактор"].id = "6_2";
-	wholeMenu["HTML Редактор"].color = "blue";
-	wholeMenu["HTML Редактор"].hasSub = 0;
-	wholeMenu["HTML Редактор"].link = "html_editor_rus.html?pattern=*.html&i=0";
-	wholeMenu["HTML Редактор"].html = 'HTML Редактор';
-
-}
-
-
-
-return wholeMenu;
-}
-
 
 
 
@@ -8072,7 +8005,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 	switch(type) {
 		case 'sitemap': wholeMenu = loadMenuSitemap(lang); break;
-		case 'howto': wholeMenu = loadMenuHowto(lang); break;
 		case 'music': wholeMenu = loadMenuMusic(lang); break;
 		case 'movies': wholeMenu = loadMenuMovies(lang); break;
 		case 'series': wholeMenu = loadMenuSeries(lang); break;
