@@ -221,7 +221,7 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 	var message1, message2, message3, message4, message5, message6, message7, message8, message9;
 
 	if (lang == "eng") {
-		message1 = "How-To &blacktriangleright; HTML Editor";
+		message1 = "HTML Editor";
 		message2 = "Progress: ";
 		message3 = "Files Replaced Successfully.";
 		message4 = "File Replaced Successfully.";
@@ -231,7 +231,7 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 		message8 = " File of ";
 		message9 = "Do you Want to View Log File?";
 	} else if (lang == "rus") {
-		message1 = "How-To &blacktriangleright; HTML Редактор";
+		message1 = "HTML Редактор";
 		message2 = "Прогресс: ";
 		message3 = "Файлы Заменены Успешно.";
 		message4 = "Фаил Заменен Успешно.";
@@ -448,7 +448,7 @@ function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcess
 	var message1, message2, message3, message4, message5, message6, message7, message8, message9, message10;
 
 	if (lang == "eng") {
-		message1 = "How-To &blacktriangleright; HTML Editor";
+		message1 = "HTML Editor";
 		message2 = "Progress: ";
 		message3 = "Files Resized Successfully.";
 		message4 = "File Resized Successfully.";
@@ -459,7 +459,7 @@ function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcess
 		message9 = "Do you Want to View Log File?";
 		message10 = "Do you Want to View Resized Image?";
 	} else if (lang == "rus") {
-		message1 = "How-To &blacktrianglerright; HTML Редактор";
+		message1 = "HTML Редактор";
 		message2 = "Прогресс: ";
 		message3 = "Файлы Преобразованы Успешно.";
 		message4 = "Фаил Преобразованы Успешно.";
@@ -1076,7 +1076,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 		message11="Загруженa Успешно.\nХочешь Просмотреть Картинку?";
 		message12="Загружен Успешно.";
 		message2 = "Фаил Загружается ";
-		message3 = "How-To &blacktriangleright; HTML Редактор";
+		message3 = "HTML Редактор";
 		summary0="Сводка:";
 		summary1="Расположение Файла: ";
 		summary2="Фаил: ";
@@ -1093,7 +1093,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 		message11="Uploaded Successfully.\nDo you Want to View Image?";
 		message12="Uploaded Successfully.";
 		message2 = "File is Uploading ";
-		message3 = "How-To &blacktriangleright; HTML Editor";
+		message3 = "HTML Editor";
 		summary0="Summary:";
 		summary1="File Location: ";
 		summary2="File: ";
