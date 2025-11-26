@@ -1683,7 +1683,13 @@ function processSearchAndReplace(lang) {
 		if (this.readyState==4 && this.status==200) {
 			var respNoBOM=removeBom(this.responseText);
 			if (respNoBOM.substring(0, 2) == "<?") {
-				$("#error_message").text("PHP is not supported, HTML Editor is not functioning.");
+				if (lang=="eng" || lang=="lat") {
+					$("#error_message").text("PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning.");
+				}
+				if (lang=="rus") {
+					$("#error_message").text("PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Действует.");
+				}
+
 				return;
 			};
 			if (JSON.parse(respNoBOM)[0]!=1){
