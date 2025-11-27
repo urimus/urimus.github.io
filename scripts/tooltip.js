@@ -49,12 +49,6 @@ $(function() {
 		tooltipEl._tracking = false;
 	}
 
-	function removeTooltipGraphics(tooltipEl) {
-		if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
-		if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
-		if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
-	}
-
 	function drawLine(tooltipEl) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
@@ -238,27 +232,33 @@ $(function() {
 			})(20);
 		},
 		close: function() {
-			$(".ui-tooltip.custom-tooltip").each(function() {
-				var tooltipEl = this;
-
-				if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
-				if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
-				if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
-
-				setTimeout(() => {
-					removeTooltipGraphics(tooltipEl);
-					stopTooltipTracker(tooltipEl);
-					if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
-				}, 200);
-			});
+			removeAllTooltips();
 		}
 	});
-	window.addEventListener("blur", () => {
+
+	function removeTooltipGraphics(tooltipEl) {
+		if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
+		if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
+		if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
+	}
+
+	function removeAllTooltips() {
 		$(".ui-tooltip.custom-tooltip").each(function() {
 			var tooltipEl = this;
-			removeTooltipGraphics(tooltipEl);
-			stopTooltipTracker(tooltipEl);
-			if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
+
+			if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
+			if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
+			if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
+
+			setTimeout(() => {
+				removeTooltipGraphics(tooltipEl);
+				stopTooltipTracker(tooltipEl);
+				if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
+			}, 200);
 		});
+	}
+
+	window.addEventListener("blur", () => {
+		removeAllTooltips();
 	});
 });
