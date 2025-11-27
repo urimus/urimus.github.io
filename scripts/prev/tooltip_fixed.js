@@ -27,7 +27,7 @@ $(function() {
 		tooltipEl._tracking = true;
 
 		function track() {
-			if (!tooltipEl._tracking) return;
+			if (!tooltipEl || !tooltipEl._tracking) return;
 
 			if (!tooltipEl._targetEl || !document.body.contains(tooltipEl._targetEl)) {
 				stopTooltipTracker(tooltipEl);
