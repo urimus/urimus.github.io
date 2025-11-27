@@ -7518,416 +7518,429 @@ return wholeMenu;
 
 function  loadMenuContentsLink(ele, lang) {
 
-		var wholeMenu = {};
+	var wholeMenu = {};
 
-		wholeMenu[ele.innerText.trim()] = {};
-		wholeMenu[ele.innerText.trim()].id = "c";
-		wholeMenu[ele.innerText.trim()].color = ele.className.substr(10);
-		wholeMenu[ele.innerText.trim()].hasSub = 1;
-		wholeMenu[ele.innerText.trim()].link = "";
-		wholeMenu[ele.innerText.trim()].html = ''+ele.innerHTML.trim();
+	wholeMenu[ele.innerText.trim()] = {};
+	wholeMenu[ele.innerText.trim()].id = "c";
+	wholeMenu[ele.innerText.trim()].color = ele.className.substr(10);
+	wholeMenu[ele.innerText.trim()].hasSub = 1;
+	wholeMenu[ele.innerText.trim()].link = "";
+	wholeMenu[ele.innerText.trim()].html = ''+ele.innerHTML.trim();
 
-		var type;
-		if (typeof getParameterByName === "function") { 
-			type = getParameterByName('type');
-		} else {
-			type="";
-		}
+	var type;
+	if (typeof getParameterByName === "function") { 
+		type = getParameterByName('type');
+	} else {
+		type="";
+	}
 
-		var addImage=0;
-		if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") addImage=1;
+	var addImage=0;
+	if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") addImage=1;
 
-
-		if (lang=="eng") {
-			if (addImage) {
-				var anchors=ele.href.split("#");
-				if (anchors.length>1) {
-					wholeMenu["Image"] = {};
-					wholeMenu["Image"].id = "c_0";
-					wholeMenu["Image"].color = ele.className.substr(10);
-					var type2=type;
-					if (type=="series" && (
-						anchors[1]=="animation" || 
-						anchors[1]=="body_horror" || 
-						anchors[1]=="space_opera" || 
-						anchors[1]=="movies_superhero" || 
-						anchors[1]=="dc_extended_universe" || 
-						anchors[1]=="marvel_cinematic_universe")) {
-						type2="movies";
-					}
-					wholeMenu["Image"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" />';
+	if (lang=="eng") {
+		if (addImage) {
+			var anchors=ele.href.split("#");
+			if (anchors.length>1) {
+				wholeMenu["Image"] = {};
+				wholeMenu["Image"].id = "c_0";
+				wholeMenu["Image"].color = ele.className.substr(10);
+				var type2=type;
+				if (type=="series" && (
+					anchors[1]=="animation" || 
+					anchors[1]=="body_horror" || 
+					anchors[1]=="space_opera" || 
+					anchors[1]=="movies_superhero" || 
+					anchors[1]=="dc_extended_universe" || 
+					anchors[1]=="marvel_cinematic_universe")) {
+					type2="movies";
 				}
-			}
-			if (typeof ele.dataset.score!== "undefined") {
-				wholeMenu["Score"] = {};
-				wholeMenu["Score"].id = "c_1";
-				wholeMenu["Score"].color = ele.className.substr(10);
-				wholeMenu["Score"].html = 'Score: <font color="orange">';
-				for (var i =0; i<ele.dataset.score; i++) {
-					wholeMenu["Score"].html=wholeMenu["Score"].html+"&bigstar;"
-				}
-				wholeMenu["Score"].html=wholeMenu["Score"].html+'</font><font color="silver">';
-				for (var i =0; i<5-ele.dataset.score; i++) {
-					wholeMenu["Score"].html=wholeMenu["Score"].html+"&bigstar;"
-				}
-				wholeMenu["Score"].html=wholeMenu["Score"].html+"</font>";
-			}
-			if (typeof ele.dataset.country!== "undefined") {
-				wholeMenu["Country"] = {};
-				wholeMenu["Country"].id = "c_2";
-				wholeMenu["Country"].color = ele.className.substr(10);
-				var countries=ele.dataset.country.split(";");
-				if (countries.length>1) {
-					wholeMenu["Country"].html = 'Countries: ';
-				} else {
-					wholeMenu["Country"].html = 'Country: ';
-				}
-				for (var i = 0; i < countries.length; i++) {
-					wholeMenu["Country"].html=wholeMenu["Country"].html+'<img src="lang/all/'+countries[i]+'.gif" width="22" height="14"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
-				}
-			}
-			if (typeof ele.dataset.title_orig!== "undefined") {
-				wholeMenu["TitleOrig"] = {};
-				wholeMenu["TitleOrig"].id = "c_3";
-				wholeMenu["TitleOrig"].color = ele.className.substr(10);
-				wholeMenu["TitleOrig"].html = 'Title '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.title_orig;
-			}
-			if (typeof ele.dataset.genre !== "undefined") {
-				wholeMenu["Genre"] = {};
-				wholeMenu["Genre"].id = "c_4";
-				wholeMenu["Genre"].color = ele.className.substr(10);
-				wholeMenu["Genre"].html = 'Genre: '+ele.dataset.genre;
-			}
-			if (typeof ele.dataset.actor!== "undefined") {
-				wholeMenu["Actor"] = {};
-				wholeMenu["Actor"].id = "c_5";
-				wholeMenu["Actor"].color = ele.className.substr(10);
-				wholeMenu["Actor"].html = 'Actor: '+ele.dataset.actor;
-			}
-			if (typeof ele.dataset.actor_orig!== "undefined") {
-				wholeMenu["ActorOrig"] = {};
-				wholeMenu["ActorOrig"].id = "c_6";
-				wholeMenu["ActorOrig"].color = ele.className.substr(10);
-				wholeMenu["ActorOrig"].html = 'Actor '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.actor_orig;
-			}
-			if (typeof ele.dataset.video!== "undefined") {
-				wholeMenu["Video"] = {};
-				wholeMenu["Video"].id = "c_7";
-				wholeMenu["Video"].color = ele.className.substr(10);
-				wholeMenu["Video"].html = 'Video: '+ele.dataset.video;
-			}
-			if (typeof ele.dataset.audio!== "undefined") {
-				wholeMenu["Audio"] = {};
-				wholeMenu["Audio"].id = "c_8";
-				wholeMenu["Audio"].color = ele.className.substr(10);
-				wholeMenu["Audio"].html = 'Audio: '+ele.dataset.audio;
-			}
-			if (typeof ele.dataset.author!== "undefined") {
-				wholeMenu["Author"] = {};
-				wholeMenu["Author"].id = "c_9";
-				wholeMenu["Author"].color = ele.className.substr(10);
-				wholeMenu["Author"].html = 'Author: '+ele.dataset.author;
-			}
-			if (typeof ele.dataset.author_orig!== "undefined") {
-				wholeMenu["AuthorOrig"] = {};
-				wholeMenu["AuthorOrig"].id = "c_10";
-				wholeMenu["AuthorOrig"].color = ele.className.substr(10);
-				wholeMenu["AuthorOrig"].html = 'Author '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.author_orig;
-			}
-			if (typeof ele.dataset.year!== "undefined") {
-				wholeMenu["Year"] = {};
-				wholeMenu["Year"].id = "c_11";
-				wholeMenu["Year"].color = ele.className.substr(10);
-				wholeMenu["Year"].html = 'Year: '+ele.dataset.year;
-			}
-			if (typeof ele.dataset.established!== "undefined") {
-				wholeMenu["Established"] = {};
-				wholeMenu["Established"].id = "c_12";
-				wholeMenu["Established"].color = ele.className.substr(10);
-				wholeMenu["Established"].html = 'Established: '+ele.dataset.established;
-			}
-			if (typeof ele.dataset.added!== "undefined") {
-				wholeMenu["Added"] = {};
-				wholeMenu["Added"].id = "c_13";
-				wholeMenu["Added"].color = ele.className.substr(10);
-				wholeMenu["Added"].html = 'Added: '+ele.dataset.added;
+				wholeMenu["Image"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" />';
 			}
 		}
-
-		if (lang=="rus") {
-			if (addImage) {
-				var anchors=ele.href.split("#");
-				if (anchors.length>1) {
-					wholeMenu["Картинка"] = {};
-					wholeMenu["Картинка"].id = "c_0";
-					wholeMenu["Картинка"].color = ele.className.substr(10);
-					var type2=type;
-					if (type=="series" && (
-						anchors[1]=="animation" || 
-						anchors[1]=="body_horror" || 
-						anchors[1]=="space_opera" || 
-						anchors[1]=="movies_superhero" || 
-						anchors[1]=="dc_extended_universe" || 
-						anchors[1]=="marvel_cinematic_universe")) {
-						type2="movies";
-					}
-					wholeMenu["Картинка"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" />';
-				}
+		if (typeof ele.dataset.score!== "undefined") {
+			wholeMenu["Score"] = {};
+			wholeMenu["Score"].id = "c_1";
+			wholeMenu["Score"].color = ele.className.substr(10);
+			wholeMenu["Score"].html = 'Score: <font color="orange">';
+			for (var i =0; i<ele.dataset.score; i++) {
+				wholeMenu["Score"].html=wholeMenu["Score"].html+"&bigstar;"
 			}
-			if (typeof ele.dataset.score!== "undefined") {
-				wholeMenu["Счёт"] = {};
-				wholeMenu["Счёт"].id = "c_1";
-				wholeMenu["Счёт"].color = ele.className.substr(10);
-				wholeMenu["Счёт"].html = 'Счёт: <font color="orange">';
-				for (var i =0; i<ele.dataset.score; i++) {
-					wholeMenu["Счёт"].html=wholeMenu["Счёт"].html+"&bigstar;"
-				}
-				wholeMenu["Счёт"].html=wholeMenu["Счёт"].html+'</font><font color="silver">';
-				for (var i =0; i<5-ele.dataset.score; i++) {
-					wholeMenu["Счёт"].html=wholeMenu["Счёт"].html+"&bigstar;"
-				}
-				wholeMenu["Счёт"].html=wholeMenu["Счёт"].html+"</font>";
+			wholeMenu["Score"].html=wholeMenu["Score"].html+'</font><font color="silver">';
+			for (var i =0; i<5-ele.dataset.score; i++) {
+				wholeMenu["Score"].html=wholeMenu["Score"].html+"&bigstar;"
 			}
-			if (typeof ele.dataset.country!== "undefined") {
-				wholeMenu["Страна"] = {};
-				wholeMenu["Страна"].id = "c_2";
-				wholeMenu["Страна"].color = ele.className.substr(10);
-				var countries=ele.dataset.country.split(";");
-				if (countries.length>1) {
-					wholeMenu["Страна"].html = 'Страны: ';
-				} else {
-					wholeMenu["Страна"].html = 'Страна: ';
-				}
-				for (var i = 0; i < countries.length; i++) {
-					wholeMenu["Страна"].html=wholeMenu["Страна"].html+'<img src="lang/all/'+countries[i]+'.gif" width="22" height="14"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
-				}
+			wholeMenu["Score"].html=wholeMenu["Score"].html+"</font>";
+		}
+		if (typeof ele.dataset.country!== "undefined") {
+			wholeMenu["Country"] = {};
+			wholeMenu["Country"].id = "c_2";
+			wholeMenu["Country"].color = ele.className.substr(10);
+			var countries=ele.dataset.country.split(";");
+			if (countries.length>1) {
+				wholeMenu["Country"].html = 'Countries: ';
+			} else {
+				wholeMenu["Country"].html = 'Country: ';
 			}
-			if (typeof ele.dataset.title_orig!== "undefined") {
-				wholeMenu["НазваниеОриг"] = {};
-				wholeMenu["НазваниеОриг"].id = "c_3";
-				wholeMenu["НазваниеОриг"].color = ele.className.substr(10);
-				wholeMenu["НазваниеОриг"].html = 'Название '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.title_orig;
-			}
-			if (typeof ele.dataset.genre !== "undefined") {
-				wholeMenu["Жанр"] = {};
-				wholeMenu["Жанр"].id = "c_4";
-				wholeMenu["Жанр"].color = ele.className.substr(10);
-				wholeMenu["Жанр"].html = 'Жанр: '+ele.dataset.genre;
-			}
-			if (typeof ele.dataset.actor!== "undefined") {
-				wholeMenu["Актёр"] = {};
-				wholeMenu["Актёр"].id = "c_5";
-				wholeMenu["Актёр"].color = ele.className.substr(10);
-				wholeMenu["Актёр"].html = 'Актёр: '+ele.dataset.actor;
-			}
-			if (typeof ele.dataset.actor_orig!== "undefined") {
-				wholeMenu["АктёрОриг"] = {};
-				wholeMenu["АктёрОриг"].id = "c_6";
-				wholeMenu["АктёрОриг"].color = ele.className.substr(10);
-				wholeMenu["АктёрОриг"].html = 'Актёр '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.actor_orig;
-			}
-			if (typeof ele.dataset.video!== "undefined") {
-				wholeMenu["Видео"] = {};
-				wholeMenu["Видео"].id = "c_7";
-				wholeMenu["Видео"].color = ele.className.substr(10);
-				wholeMenu["Видео"].html = 'Видео: '+ele.dataset.video;
-			}
-			if (typeof ele.dataset.audio!== "undefined") {
-				wholeMenu["Аудио"] = {};
-				wholeMenu["Аудио"].id = "c_8";
-				wholeMenu["Аудио"].color = ele.className.substr(10);
-				wholeMenu["Аудио"].html = 'Аудио: '+ele.dataset.audio;
-			}
-			if (typeof ele.dataset.author!== "undefined") {
-				wholeMenu["Автор"] = {};
-				wholeMenu["Автор"].id = "c_9";
-				wholeMenu["Автор"].color = ele.className.substr(10);
-				wholeMenu["Автор"].html = 'Автор: '+ele.dataset.author;
-			}
-			if (typeof ele.dataset.author_orig!== "undefined") {
-				wholeMenu["АвторОриг"] = {};
-				wholeMenu["АвторОриг"].id = "c_10";
-				wholeMenu["АвторОриг"].color = ele.className.substr(10);
-				wholeMenu["АвторОриг"].html = 'Автор '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.author_orig;
-			}
-			if (typeof ele.dataset.year!== "undefined") {
-				wholeMenu["Год"] = {};
-				wholeMenu["Год"].id = "c_11";
-				wholeMenu["Год"].color = ele.className.substr(10);
-				wholeMenu["Год"].html = 'Год: '+ele.dataset.year;
-			}
-			if (typeof ele.dataset.established!== "undefined") {
-				wholeMenu["Основано"] = {};
-				wholeMenu["Основано"].id = "c_12";
-				wholeMenu["Основано"].color = ele.className.substr(10);
-				wholeMenu["Основано"].html = 'Основано: '+ele.dataset.established;
-			}
-			if (typeof ele.dataset.added!== "undefined") {
-				wholeMenu["Добавлено"] = {};
-				wholeMenu["Добавлено"].id = "c_13";
-				wholeMenu["Добавлено"].color = ele.className.substr(10);
-				wholeMenu["Добавлено"].html = 'Добавлено: '+ele.dataset.added;
+			for (var i = 0; i < countries.length; i++) {
+				wholeMenu["Country"].html=wholeMenu["Country"].html+'<img src="lang/all/'+countries[i]+'.gif" width="22" height="14"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
 			}
 		}
+		if (typeof ele.dataset.title_orig!== "undefined") {
+			wholeMenu["TitleOrig"] = {};
+			wholeMenu["TitleOrig"].id = "c_3";
+			wholeMenu["TitleOrig"].color = ele.className.substr(10);
+			wholeMenu["TitleOrig"].html = 'Title '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.title_orig;
+		}
+		if (typeof ele.dataset.genre !== "undefined") {
+			wholeMenu["Genre"] = {};
+			wholeMenu["Genre"].id = "c_4";
+			wholeMenu["Genre"].color = ele.className.substr(10);
+			wholeMenu["Genre"].html = 'Genre: '+ele.dataset.genre;
+		}
+		if (typeof ele.dataset.actor!== "undefined") {
+			wholeMenu["Actor"] = {};
+			wholeMenu["Actor"].id = "c_5";
+			wholeMenu["Actor"].color = ele.className.substr(10);
+			wholeMenu["Actor"].html = 'Actor: '+ele.dataset.actor;
+		}
+		if (typeof ele.dataset.actor_orig!== "undefined") {
+			wholeMenu["ActorOrig"] = {};
+			wholeMenu["ActorOrig"].id = "c_6";
+			wholeMenu["ActorOrig"].color = ele.className.substr(10);
+			wholeMenu["ActorOrig"].html = 'Actor '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.actor_orig;
+		}
+		if (typeof ele.dataset.video!== "undefined") {
+			wholeMenu["Video"] = {};
+			wholeMenu["Video"].id = "c_7";
+			wholeMenu["Video"].color = ele.className.substr(10);
+			wholeMenu["Video"].html = 'Video: '+ele.dataset.video;
+		}
+		if (typeof ele.dataset.audio!== "undefined") {
+			wholeMenu["Audio"] = {};
+			wholeMenu["Audio"].id = "c_8";
+			wholeMenu["Audio"].color = ele.className.substr(10);
+			wholeMenu["Audio"].html = 'Audio: '+ele.dataset.audio;
+		}
+		if (typeof ele.dataset.author!== "undefined") {
+			wholeMenu["Author"] = {};
+			wholeMenu["Author"].id = "c_9";
+			wholeMenu["Author"].color = ele.className.substr(10);
+			wholeMenu["Author"].html = 'Author: '+ele.dataset.author;
+		}
+		if (typeof ele.dataset.author_orig!== "undefined") {
+			wholeMenu["AuthorOrig"] = {};
+			wholeMenu["AuthorOrig"].id = "c_10";
+			wholeMenu["AuthorOrig"].color = ele.className.substr(10);
+			wholeMenu["AuthorOrig"].html = 'Author '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.author_orig;
+		}
+		if (typeof ele.dataset.year!== "undefined") {
+			wholeMenu["Year"] = {};
+			wholeMenu["Year"].id = "c_11";
+			wholeMenu["Year"].color = ele.className.substr(10);
+			wholeMenu["Year"].html = 'Year: '+ele.dataset.year;
+		}
+		if (typeof ele.dataset.established!== "undefined") {
+			wholeMenu["Established"] = {};
+			wholeMenu["Established"].id = "c_12";
+			wholeMenu["Established"].color = ele.className.substr(10);
+			wholeMenu["Established"].html = 'Established: '+ele.dataset.established;
+		}
+		if (typeof ele.dataset.added!== "undefined") {
+			wholeMenu["Added"] = {};
+			wholeMenu["Added"].id = "c_13";
+			wholeMenu["Added"].color = ele.className.substr(10);
+			wholeMenu["Added"].html = 'Added: '+ele.dataset.added;
+		}
+	}
 
-
-		if (lang=="lat") {
-			if (addImage) {
-				var anchors=ele.href.split("#");
-				if (anchors.length>1) {
-					wholeMenu["Imago"] = {};
-					wholeMenu["Imago"].id = "c_0";
-					wholeMenu["Imago"].color = ele.className.substr(10);
-					var type2=type;
-					if (type=="series" && (
-						anchors[1]=="animation" || 
-						anchors[1]=="body_horror" || 
-						anchors[1]=="space_opera" || 
-						anchors[1]=="movies_superhero" || 
-						anchors[1]=="dc_extended_universe" || 
-						anchors[1]=="marvel_cinematic_universe")) {
-						type2="movies";
-					}
-					wholeMenu["Imago"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" />';
+	if (lang=="rus") {
+		if (addImage) {
+			var anchors=ele.href.split("#");
+			if (anchors.length>1) {
+				wholeMenu["Картинка"] = {};
+				wholeMenu["Картинка"].id = "c_0";
+				wholeMenu["Картинка"].color = ele.className.substr(10);
+				var type2=type;
+				if (type=="series" && (
+					anchors[1]=="animation" || 
+					anchors[1]=="body_horror" || 
+					anchors[1]=="space_opera" || 
+					anchors[1]=="movies_superhero" || 
+					anchors[1]=="dc_extended_universe" || 
+					anchors[1]=="marvel_cinematic_universe")) {
+					type2="movies";
 				}
-			}
-			if (typeof ele.dataset.score!== "undefined") {
-				wholeMenu["Ratio"] = {};
-				wholeMenu["Ratio"].id = "c_1";
-				wholeMenu["Ratio"].color = ele.className.substr(10);
-				wholeMenu["Ratio"].html = 'Ratio: <font color="orange">';
-				for (var i =0; i<ele.dataset.score; i++) {
-					wholeMenu["Ratio"].html=wholeMenu["Ratio"].html+"&bigstar;"
-				}
-				wholeMenu["Ratio"].html=wholeMenu["Ratio"].html+'</font><font color="silver">';
-				for (var i =0; i<5-ele.dataset.score; i++) {
-					wholeMenu["Ratio"].html=wholeMenu["Ratio"].html+"&bigstar;"
-				}
-				wholeMenu["Ratio"].html=wholeMenu["Ratio"].html+"</font>";
-			}
-			if (typeof ele.dataset.country!== "undefined") {
-				wholeMenu["Patriam"] = {};
-				wholeMenu["Patriam"].id = "c_2";
-				wholeMenu["Patriam"].color = ele.className.substr(10);
-				var countries=ele.dataset.country.split(";");
-				if (countries.length>1) {
-					wholeMenu["Patriam"].html = 'Terris: ';
-				} else {
-					wholeMenu["Patriam"].html = 'Patriam: ';
-				}
-				for (var i = 0; i < countries.length; i++) {
-					wholeMenu["Patriam"].html=wholeMenu["Patriam"].html+'<img src="lang/all/'+countries[i]+'.gif" width="22" height="14"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
-				}
-			}
-			if (typeof ele.dataset.title_orig!== "undefined") {
-				wholeMenu["TitulusOrig"] = {};
-				wholeMenu["TitulusOrig"].id = "c_3";
-				wholeMenu["TitulusOrig"].color = ele.className.substr(10);
-				wholeMenu["TitulusOrig"].html = 'Titulus '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.title_orig;
-			}
-			if (typeof ele.dataset.genre !== "undefined") {
-				wholeMenu["Genus"] = {};
-				wholeMenu["Genus"].id = "c_4";
-				wholeMenu["Genus"].color = ele.className.substr(10);
-				wholeMenu["Genus"].html = 'Genus: '+ele.dataset.genre;
-			}
-			if (typeof ele.dataset.actor!== "undefined") {
-				wholeMenu["Actoris"] = {};
-				wholeMenu["Actoris"].id = "c_5";
-				wholeMenu["Actoris"].color = ele.className.substr(10);
-				wholeMenu["Actoris"].html = 'Actoris: '+ele.dataset.actor;
-			}
-			if (typeof ele.dataset.actor_orig!== "undefined") {
-				wholeMenu["ActorisOrig"] = {};
-				wholeMenu["ActorisOrig"].id = "c_6";
-				wholeMenu["ActorisOrig"].color = ele.className.substr(10);
-				wholeMenu["ActorisOrig"].html = 'Actoris '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.actor_orig;
-			}
-			if (typeof ele.dataset.video!== "undefined") {
-				wholeMenu["Video"] = {};
-				wholeMenu["Video"].id = "c_7";
-				wholeMenu["Video"].color = ele.className.substr(10);
-				wholeMenu["Video"].html = 'Video: '+ele.dataset.video;
-			}
-			if (typeof ele.dataset.audio!== "undefined") {
-				wholeMenu["Audio"] = {};
-				wholeMenu["Audio"].id = "c_8";
-				wholeMenu["Audio"].color = ele.className.substr(10);
-				wholeMenu["Audio"].html = 'Audio: '+ele.dataset.audio;
-			}
-			if (typeof ele.dataset.author!== "undefined") {
-				wholeMenu["Auctor"] = {};
-				wholeMenu["Auctor"].id = "c_9";
-				wholeMenu["Auctor"].color = ele.className.substr(10);
-				wholeMenu["Auctor"].html = 'Auctor: '+ele.dataset.author;
-			}
-			if (typeof ele.dataset.author_orig!== "undefined") {
-				wholeMenu["AuctorOrig"] = {};
-				wholeMenu["AuctorOrig"].id = "c_10";
-				wholeMenu["AuctorOrig"].color = ele.className.substr(10);
-				wholeMenu["AuctorOrig"].html = 'Auctor '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.author_orig;
-			}
-			if (typeof ele.dataset.year!== "undefined") {
-				wholeMenu["Annus"] = {};
-				wholeMenu["Annus"].id = "c_11";
-				wholeMenu["Annus"].color = ele.className.substr(10);
-				wholeMenu["Annus"].html = 'Annus: '+ele.dataset.year;
-			}
-			if (typeof ele.dataset.established!== "undefined") {
-				wholeMenu["Statutum"] = {};
-				wholeMenu["Statutum"].id = "c_12";
-				wholeMenu["Statutum"].color = ele.className.substr(10);
-				wholeMenu["Statutum"].html = 'Statutum: '+ele.dataset.established;
-			}
-			if (typeof ele.dataset.added!== "undefined") {
-				wholeMenu["Additae"] = {};
-				wholeMenu["Additae"].id = "c_13";
-				wholeMenu["Additae"].color = ele.className.substr(10);
-				wholeMenu["Additae"].html = 'Additae: '+ele.dataset.added;
+				wholeMenu["Картинка"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" />';
 			}
 		}
+		if (typeof ele.dataset.score!== "undefined") {
+			wholeMenu["Счёт"] = {};
+			wholeMenu["Счёт"].id = "c_1";
+			wholeMenu["Счёт"].color = ele.className.substr(10);
+			wholeMenu["Счёт"].html = 'Счёт: <font color="orange">';
+			for (var i =0; i<ele.dataset.score; i++) {
+				wholeMenu["Счёт"].html=wholeMenu["Счёт"].html+"&bigstar;"
+			}
+			wholeMenu["Счёт"].html=wholeMenu["Счёт"].html+'</font><font color="silver">';
+			for (var i =0; i<5-ele.dataset.score; i++) {
+				wholeMenu["Счёт"].html=wholeMenu["Счёт"].html+"&bigstar;"
+			}
+			wholeMenu["Счёт"].html=wholeMenu["Счёт"].html+"</font>";
+		}
+		if (typeof ele.dataset.country!== "undefined") {
+			wholeMenu["Страна"] = {};
+			wholeMenu["Страна"].id = "c_2";
+			wholeMenu["Страна"].color = ele.className.substr(10);
+			var countries=ele.dataset.country.split(";");
+			if (countries.length>1) {
+				wholeMenu["Страна"].html = 'Страны: ';
+			} else {
+				wholeMenu["Страна"].html = 'Страна: ';
+			}
+			for (var i = 0; i < countries.length; i++) {
+				wholeMenu["Страна"].html=wholeMenu["Страна"].html+'<img src="lang/all/'+countries[i]+'.gif" width="22" height="14"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
+			}
+		}
+		if (typeof ele.dataset.title_orig!== "undefined") {
+			wholeMenu["НазваниеОриг"] = {};
+			wholeMenu["НазваниеОриг"].id = "c_3";
+			wholeMenu["НазваниеОриг"].color = ele.className.substr(10);
+			wholeMenu["НазваниеОриг"].html = 'Название '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.title_orig;
+		}
+		if (typeof ele.dataset.genre !== "undefined") {
+			wholeMenu["Жанр"] = {};
+			wholeMenu["Жанр"].id = "c_4";
+			wholeMenu["Жанр"].color = ele.className.substr(10);
+			wholeMenu["Жанр"].html = 'Жанр: '+ele.dataset.genre;
+		}
+		if (typeof ele.dataset.actor!== "undefined") {
+			wholeMenu["Актёр"] = {};
+			wholeMenu["Актёр"].id = "c_5";
+			wholeMenu["Актёр"].color = ele.className.substr(10);
+			wholeMenu["Актёр"].html = 'Актёр: '+ele.dataset.actor;
+		}
+		if (typeof ele.dataset.actor_orig!== "undefined") {
+			wholeMenu["АктёрОриг"] = {};
+			wholeMenu["АктёрОриг"].id = "c_6";
+			wholeMenu["АктёрОриг"].color = ele.className.substr(10);
+			wholeMenu["АктёрОриг"].html = 'Актёр '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.actor_orig;
+		}
+		if (typeof ele.dataset.video!== "undefined") {
+			wholeMenu["Видео"] = {};
+			wholeMenu["Видео"].id = "c_7";
+			wholeMenu["Видео"].color = ele.className.substr(10);
+			wholeMenu["Видео"].html = 'Видео: '+ele.dataset.video;
+		}
+		if (typeof ele.dataset.audio!== "undefined") {
+			wholeMenu["Аудио"] = {};
+			wholeMenu["Аудио"].id = "c_8";
+			wholeMenu["Аудио"].color = ele.className.substr(10);
+			wholeMenu["Аудио"].html = 'Аудио: '+ele.dataset.audio;
+		}
+		if (typeof ele.dataset.author!== "undefined") {
+			wholeMenu["Автор"] = {};
+			wholeMenu["Автор"].id = "c_9";
+			wholeMenu["Автор"].color = ele.className.substr(10);
+			wholeMenu["Автор"].html = 'Автор: '+ele.dataset.author;
+		}
+		if (typeof ele.dataset.author_orig!== "undefined") {
+			wholeMenu["АвторОриг"] = {};
+			wholeMenu["АвторОриг"].id = "c_10";
+			wholeMenu["АвторОриг"].color = ele.className.substr(10);
+			wholeMenu["АвторОриг"].html = 'Автор '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.author_orig;
+		}
+		if (typeof ele.dataset.year!== "undefined") {
+			wholeMenu["Год"] = {};
+			wholeMenu["Год"].id = "c_11";
+			wholeMenu["Год"].color = ele.className.substr(10);
+			wholeMenu["Год"].html = 'Год: '+ele.dataset.year;
+		}
+		if (typeof ele.dataset.established!== "undefined") {
+			wholeMenu["Основано"] = {};
+			wholeMenu["Основано"].id = "c_12";
+			wholeMenu["Основано"].color = ele.className.substr(10);
+			wholeMenu["Основано"].html = 'Основано: '+ele.dataset.established;
+		}
+		if (typeof ele.dataset.added!== "undefined") {
+			wholeMenu["Добавлено"] = {};
+			wholeMenu["Добавлено"].id = "c_13";
+			wholeMenu["Добавлено"].color = ele.className.substr(10);
+			wholeMenu["Добавлено"].html = 'Добавлено: '+ele.dataset.added;
+		}
+	}
 
-
-return wholeMenu;
+	if (lang=="lat") {
+		if (addImage) {
+			var anchors=ele.href.split("#");
+			if (anchors.length>1) {
+				wholeMenu["Imago"] = {};
+				wholeMenu["Imago"].id = "c_0";
+				wholeMenu["Imago"].color = ele.className.substr(10);
+				var type2=type;
+				if (type=="series" && (
+					anchors[1]=="animation" || 
+					anchors[1]=="body_horror" || 
+					anchors[1]=="space_opera" || 
+					anchors[1]=="movies_superhero" || 
+					anchors[1]=="dc_extended_universe" || 
+					anchors[1]=="marvel_cinematic_universe")) {
+					type2="movies";
+				}
+				wholeMenu["Imago"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" />';
+			}
+		}
+		if (typeof ele.dataset.score!== "undefined") {
+			wholeMenu["Ratio"] = {};
+			wholeMenu["Ratio"].id = "c_1";
+			wholeMenu["Ratio"].color = ele.className.substr(10);
+			wholeMenu["Ratio"].html = 'Ratio: <font color="orange">';
+			for (var i =0; i<ele.dataset.score; i++) {
+				wholeMenu["Ratio"].html=wholeMenu["Ratio"].html+"&bigstar;"
+			}
+			wholeMenu["Ratio"].html=wholeMenu["Ratio"].html+'</font><font color="silver">';
+			for (var i =0; i<5-ele.dataset.score; i++) {
+				wholeMenu["Ratio"].html=wholeMenu["Ratio"].html+"&bigstar;"
+			}
+			wholeMenu["Ratio"].html=wholeMenu["Ratio"].html+"</font>";
+		}
+		if (typeof ele.dataset.country!== "undefined") {
+			wholeMenu["Patriam"] = {};
+			wholeMenu["Patriam"].id = "c_2";
+			wholeMenu["Patriam"].color = ele.className.substr(10);
+			var countries=ele.dataset.country.split(";");
+			if (countries.length>1) {
+				wholeMenu["Patriam"].html = 'Terris: ';
+			} else {
+				wholeMenu["Patriam"].html = 'Patriam: ';
+			}
+			for (var i = 0; i < countries.length; i++) {
+				wholeMenu["Patriam"].html=wholeMenu["Patriam"].html+'<img src="lang/all/'+countries[i]+'.gif" width="22" height="14"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
+			}
+		}
+		if (typeof ele.dataset.title_orig!== "undefined") {
+			wholeMenu["TitulusOrig"] = {};
+			wholeMenu["TitulusOrig"].id = "c_3";
+			wholeMenu["TitulusOrig"].color = ele.className.substr(10);
+			wholeMenu["TitulusOrig"].html = 'Titulus '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.title_orig;
+		}
+		if (typeof ele.dataset.genre !== "undefined") {
+			wholeMenu["Genus"] = {};
+			wholeMenu["Genus"].id = "c_4";
+			wholeMenu["Genus"].color = ele.className.substr(10);
+			wholeMenu["Genus"].html = 'Genus: '+ele.dataset.genre;
+		}
+		if (typeof ele.dataset.actor!== "undefined") {
+			wholeMenu["Actoris"] = {};
+			wholeMenu["Actoris"].id = "c_5";
+			wholeMenu["Actoris"].color = ele.className.substr(10);
+			wholeMenu["Actoris"].html = 'Actoris: '+ele.dataset.actor;
+		}
+		if (typeof ele.dataset.actor_orig!== "undefined") {
+			wholeMenu["ActorisOrig"] = {};
+			wholeMenu["ActorisOrig"].id = "c_6";
+			wholeMenu["ActorisOrig"].color = ele.className.substr(10);
+			wholeMenu["ActorisOrig"].html = 'Actoris '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.actor_orig;
+		}
+		if (typeof ele.dataset.video!== "undefined") {
+			wholeMenu["Video"] = {};
+			wholeMenu["Video"].id = "c_7";
+			wholeMenu["Video"].color = ele.className.substr(10);
+			wholeMenu["Video"].html = 'Video: '+ele.dataset.video;
+		}
+		if (typeof ele.dataset.audio!== "undefined") {
+			wholeMenu["Audio"] = {};
+			wholeMenu["Audio"].id = "c_8";
+			wholeMenu["Audio"].color = ele.className.substr(10);
+			wholeMenu["Audio"].html = 'Audio: '+ele.dataset.audio;
+		}
+		if (typeof ele.dataset.author!== "undefined") {
+			wholeMenu["Auctor"] = {};
+			wholeMenu["Auctor"].id = "c_9";
+			wholeMenu["Auctor"].color = ele.className.substr(10);
+			wholeMenu["Auctor"].html = 'Auctor: '+ele.dataset.author;
+		}
+		if (typeof ele.dataset.author_orig!== "undefined") {
+			wholeMenu["AuctorOrig"] = {};
+			wholeMenu["AuctorOrig"].id = "c_10";
+			wholeMenu["AuctorOrig"].color = ele.className.substr(10);
+			wholeMenu["AuctorOrig"].html = 'Auctor '+getLangShort(ele.dataset.lang, lang)+': '+ele.dataset.author_orig;
+		}
+		if (typeof ele.dataset.year!== "undefined") {
+			wholeMenu["Annus"] = {};
+			wholeMenu["Annus"].id = "c_11";
+			wholeMenu["Annus"].color = ele.className.substr(10);
+			wholeMenu["Annus"].html = 'Annus: '+ele.dataset.year;
+		}
+		if (typeof ele.dataset.established!== "undefined") {
+			wholeMenu["Statutum"] = {};
+			wholeMenu["Statutum"].id = "c_12";
+			wholeMenu["Statutum"].color = ele.className.substr(10);
+			wholeMenu["Statutum"].html = 'Statutum: '+ele.dataset.established;
+		}
+		if (typeof ele.dataset.added!== "undefined") {
+			wholeMenu["Additae"] = {};
+			wholeMenu["Additae"].id = "c_13";
+			wholeMenu["Additae"].color = ele.className.substr(10);
+			wholeMenu["Additae"].html = 'Additae: '+ele.dataset.added;
+		}
+	}
+	return wholeMenu;
 }
 
 
-function addTableRow(tableSM, menu, key, lang, type, newTableId, hasImage) {
+function addTableRow(tableSM, menu, key, lang, type, newTableId, hasImage, isCaption) {
 	var row, cell1, divSM, isImage, lineWidth, lineAlign="";
+	if (typeof isCaption === "undefined") isCaption=0;
 
 	row = tableSM.insertRow(-1);
 	cell1 = row.insertCell(0);
 	cell1.setAttribute('style', 'padding:0px;');
 	divSM = document.createElement("div");
-	divSM.setAttribute('id', 'menu_' + menu.id);
+	if (isCaption==0) {
+		divSM.setAttribute('id', 'menu_' + menu.id);
+	} else {
+		divSM.setAttribute('id', 'menu_' + menu.id+"_cap");
+	}
 	divSM.align = "left";
 
-	if (type != "contentsLink") {
+	if (type != "contentsLink" && isCaption==0) {
 		divSM.setAttribute('onmouseenter', "this.className='menu_selected'; showSubMenu(this, '"+lang+"', '"+type+"', "+newTableId+");");
 		divSM.setAttribute('onmouseleave', "this.className='menu_not_selected_"+menu.color+"';");
 	}
-	if (type != "contentsLink") {
-		if (menu.hasSub) {
-			divSM.setAttribute('onclick', "showSubMenu(this, '"+lang+"', '"+type+"', "+newTableId+");");
-		} else {
-			divSM.setAttribute('onclick', `if (event.ctrlKey==1){
-				window.open('`+menu.link+`');
+	if (isCaption==1) {
+		divSM.setAttribute('onmouseenter', "hideSubMenu(this, 1);");
+	} else {
+		if (type != "contentsLink") {	
+			if (menu.hasSub) {
+				divSM.setAttribute('onclick', "showSubMenu(this, '"+lang+"', '"+type+"', "+newTableId+");");
 			} else {
-				window.location.href='`+menu.link+`';
-			};`);
+				divSM.setAttribute('onclick', `if (event.ctrlKey==1){
+					window.open('`+menu.link+`');
+				} else {
+					window.location.href='`+menu.link+`';
+				};`);
+			}
 		}
 	}
 
-	divSM.innerHTML = menu.html;
+	if (isCaption && typeof menu.subCaption !== "undefined") {
+		divSM.innerHTML = menu.subCaption;
+	} else {
+		divSM.innerHTML = menu.html;
+	}
 	divSM.style.display = "inline-block";
 
 	isImage = 0;
 	if (type == "contentsLink" && (lang == "rus" && key == "Картинка" || lang == "eng" && key == "Image" || lang == "lat" && key == "Imago")) isImage = 1;
 
-	if (!isImage) {
-		divSM.setAttribute('class', 'menu_not_selected_' + menu.color);
+	if (isCaption==1) {
+		divSM.setAttribute('class', 'menu_selected');
 	} else {
-		divSM.setAttribute('class', 'text_' + menu.color);
+		if (!isImage) {
+			divSM.setAttribute('class', 'menu_not_selected_' + menu.color);
+		} else {
+			divSM.setAttribute('class', 'text_' + menu.color);
+		}
 	}
 
 	if (type != "contentsLink") {
@@ -8072,35 +8085,10 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 		
 	}
-
-	// caption
-	row = tableSM.insertRow(-1);
-	cell1 = row.insertCell(0);
-	cell1.setAttribute('style', 'padding:0px;');
-	divSM = document.createElement("div");
-	divSM.align = "left";
-	if (wholeMenu[key].subCaption) {
-		divSM.innerHTML = wholeMenu[key].subCaption;
-	} else {
-		divSM.innerHTML = wholeMenu[key].html;
-	}
-	divSM.style.display = "inline-block";
-	divSM.setAttribute('class', 'menu_selected');
-	if (type != "contentsLink") {
-		divSM.setAttribute('style', 'width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
-		divSM.setAttribute('id', 'menu_' + wholeMenu[key].id+"_cap");
-		divSM.setAttribute('onmouseenter', "hideSubMenu(this, 1);");
-	} else {
-console.log(hasImage);
-		lineWidth="max-width: 280px; ";
-		if (hasImage) lineWidth="max-width: 360px; ";
-		divSM.setAttribute('style', lineWidth+'cursor:auto; border-spacing: 0px; padding-left:5px; padding-right:5px;');
-	}
-
-	cell1.appendChild(divSM);
 	if (lastSubMenu==null) document.body.appendChild(tableSM);
 
-	if (divSM.scrollHeight > divSM.clientHeight) divSM.style.height = "auto";
+	// caption
+	addTableRow(tableSM, wholeMenu[key], key, lang, type, newTableId + 1, hasImage, 1);
 
 	prevId = "";
 	for (i = 0; i < keys.length; i++) {
