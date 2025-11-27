@@ -36,14 +36,15 @@ function getScrollbarHeight(el) {
 }
 
 function getScrollDivOffset(){
-	// Header Image
+/*
 	var newImg = new Image();
 	newImg.src = "images/icons/urmas.jpg";
 	var hImgHeight = newImg.height;
 	var hImgWidth = newImg.width;
+*/
+	var hImgWidth = 851;
+	var hImgHeight = 315;
 	hImgHeight = hImgHeight*(1000/hImgWidth);
-	// End of Header Image
-
 	return hImgHeight + 68 + getScrollbarHeight(document.body); // 68
 }
 
