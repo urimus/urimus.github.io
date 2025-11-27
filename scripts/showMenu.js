@@ -7962,7 +7962,7 @@ var lastRect="";
 
 function showSubMenu(ele, lang, type, newTableId) {
 	var tablex, wholeMenu, key, keys, tableSM, row, cell1, divSM, rect, top_shift, left_shift, tableStyle;
-	var prevId, top_scroll, h, rectT, popupImage, imageHeight, i, hasImage, lineWidth;
+	var prevId, top_scroll, h, rectT, popupImage, imageHeight, i, hasImage;
 	var lastSubMenu = null;
 
 	if (typeof type === "undefined" || type != "contentsLink") ele.setAttribute('class', 'menu_selected');
