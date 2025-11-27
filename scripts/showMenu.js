@@ -7931,7 +7931,7 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId) {
 	}
 
 	if (type != "contentsLink") {
-		divSM.setAttribute('style', 'width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
+		divSM.setAttribute('style', 'max-width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
 	} else {
 		if (!isImage) {
 			divSM.setAttribute('style', 'cursor:auto; border-spacing: 0px; padding-left:5px; padding-right:5px;');
@@ -8086,7 +8086,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	divSM.style.display = "inline-block";
 	divSM.setAttribute('class', 'menu_selected');
 	if (type != "contentsLink") {
-		divSM.setAttribute('style', 'width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
+		divSM.setAttribute('style', 'max-width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
 		divSM.setAttribute('id', 'menu_' + wholeMenu[key].id+"_cap");
 		divSM.setAttribute('onmouseenter', "hideSubMenu(this, 1);");
 	} else {
