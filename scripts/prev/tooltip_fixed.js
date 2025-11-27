@@ -258,7 +258,10 @@ $(function() {
 		});
 	}
 
-	window.addEventListener("blur", () => {
-		removeAllTooltips();
+	window.addEventListener("blur", removeAllTooltips);
+
+	$(window).on('load', function() {
+		$(window).trigger('mousemove');
 	});
+
 });
