@@ -253,13 +253,4 @@ $(function() {
 			});
 		}
 	});
-
-	window.addEventListener("blur", () => {
-		$(".ui-tooltip.custom-tooltip").each(function() {
-			var tooltipEl = this;
-			removeTooltipGraphics(tooltipEl);
-			stopTooltipTracker(tooltipEl);
-			if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
-		});
-	});
 });
