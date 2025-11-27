@@ -7931,7 +7931,7 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId) {
 	}
 
 	if (type != "contentsLink") {
-		divSM.setAttribute('style', 'border-spacing: 0px; padding-left:5px; padding-right:5px;');
+		divSM.setAttribute('style', 'width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
 	} else {
 		if (!isImage) {
 			divSM.setAttribute('style', 'cursor:auto; border-spacing: 0px; padding-left:5px; padding-right:5px;');
@@ -8051,7 +8051,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableStyle = "";
 		if (typeof galleria2 !== 'undefined') tableStyle = "z-index: 10000;";
 		tableStyle += " position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; box-shadow: 2px 2px 4px #ff8a00;";
-		tableStyle += " width: 280px; opacity:0; transition: opacity 0.2s linear;";
+		tableStyle += " opacity:0; transition: opacity 0.2s linear;";
 		tableSM.setAttribute('style', tableStyle);
 		tableSM.style.top=top_shift+"px";
 		tableSM.style.left=left_shift+"px";
@@ -8086,7 +8086,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	divSM.style.display = "inline-block";
 	divSM.setAttribute('class', 'menu_selected');
 	if (type != "contentsLink") {
-		divSM.setAttribute('style', 'border-spacing: 0px; padding-left:5px; padding-right:5px;');
+		divSM.setAttribute('style', 'width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
 		divSM.setAttribute('id', 'menu_' + wholeMenu[key].id+"_cap");
 		divSM.setAttribute('onmouseenter', "hideSubMenu(this, 1);");
 	} else {
