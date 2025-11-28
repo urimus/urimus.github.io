@@ -260,8 +260,13 @@ $(function() {
 
 	window.addEventListener("blur", removeAllTooltips);
 
-	$(window).on('load', function() {
-		$(window).trigger('mousemove');
+	var initTooltipFired = false;
+	$(window).on("pointerover mousemove", function(e) {
+		if (initTooltipFired) return;
+		initTooltipFired  = true;
+		var el = document.elementFromPoint(e.clientX, e.clientY);
+		if (!el || !el.getAttribute || !el.getAttribute('title')) return;
+		targetEl = el;
+		$(el).trigger("mousemove");
 	});
-
 });
