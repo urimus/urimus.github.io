@@ -81,6 +81,7 @@ function replaceScript(lang) {
 		textarea.value = lines2;
 		textarea.focus();
 		textarea.scrollTop = 0;
+		textarea.scrollLeft = 0;
 		textarea.setSelectionRange(0, 0);
 		setLineAndColumnNumber(lang);
 		setTextAreaChanged(lang);
@@ -1477,6 +1478,7 @@ function loadAndShowFile(lang, filename, modified, encoding, first10bytes, total
 			setBOM(first10bytes);
 			textarea.focus();
 			textarea.scrollTop=0;
+			textarea.scrollLeft = 0;
 			textarea.setSelectionRange(0, 0);
 			setLineAndColumnNumber(lang);
 		}
