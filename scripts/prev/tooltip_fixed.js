@@ -266,7 +266,6 @@ $(function() {
 		initTooltipFired  = true;
 		var el = document.elementFromPoint(e.clientX, e.clientY);
 		if (!el || !el.getAttribute || !el.getAttribute('title')) return;
-		targetEl = el;
 		$(el).trigger("mousemove");
 	});
 });
