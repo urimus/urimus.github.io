@@ -293,7 +293,7 @@ if (lang=="eng") {
 	wholeMenu["● About me"].id = "1_1";
 	wholeMenu["● About me"].color = "blue";
 	wholeMenu["● About me"].hasSub = 1;
-	wholeMenu["● About me"].subCaption = "&#9679; About me, Sort by";
+	wholeMenu["● About me"].alternativeCaption = "&#9679; About me, Sort by";
 	wholeMenu["● About me"].link = "";
 	wholeMenu["● About me"].html = '&#9679; About me';
 
@@ -315,7 +315,7 @@ if (lang=="eng") {
 	wholeMenu["● About my work"].id = "1_2";
 	wholeMenu["● About my work"].color = "blue";
 	wholeMenu["● About my work"].hasSub = 1;
-	wholeMenu["● About my work"].subCaption = "&#9679; About my work, Sort by";
+	wholeMenu["● About my work"].alternativeCaption = "&#9679; About my work, Sort by";
 	wholeMenu["● About my work"].link = "";
 	wholeMenu["● About my work"].html = '&#9679; About my work';
 
@@ -337,7 +337,7 @@ if (lang=="eng") {
 	wholeMenu["● About my PhD"].id = "1_3";
 	wholeMenu["● About my PhD"].color = "blue";
 	wholeMenu["● About my PhD"].hasSub = 1;
-	wholeMenu["● About my PhD"].subCaption = "&#9679; About my PhD, Sort by";
+	wholeMenu["● About my PhD"].alternativeCaption = "&#9679; About my PhD, Sort by";
 	wholeMenu["● About my PhD"].link = "";
 	wholeMenu["● About my PhD"].html = '&#9679; About my PhD';
 
@@ -359,7 +359,7 @@ if (lang=="eng") {
 	wholeMenu["● Links"].id = "1_4";
 	wholeMenu["● Links"].color = "blue";
 	wholeMenu["● Links"].hasSub = 1;
-	wholeMenu["● Links"].subCaption = "&#9679; Links, Sort by";
+	wholeMenu["● Links"].alternativeCaption = "&#9679; Links, Sort by";
 	wholeMenu["● Links"].link = "";
 	wholeMenu["● Links"].html = '&#9679; Links';
 
@@ -381,7 +381,7 @@ if (lang=="eng") {
 	wholeMenu["● HTML Editor"].id = "1_5";
 	wholeMenu["● HTML Editor"].color = "blue";
 	wholeMenu["● HTML Editor"].hasSub = 1;
-	wholeMenu["● HTML Editor"].subCaption = '&#9679; HTML Editor, Sort by';
+	wholeMenu["● HTML Editor"].alternativeCaption = '&#9679; HTML Editor, Sort by';
 	wholeMenu["● HTML Editor"].link = "";
 	wholeMenu["● HTML Editor"].html = '&#9679; HTML Editor';
 
@@ -403,7 +403,7 @@ if (lang=="eng") {
 	wholeMenu["● Music ☥ Vampiric ☥"].id = "1_6";
 	wholeMenu["● Music ☥ Vampiric ☥"].color = "black";
 	wholeMenu["● Music ☥ Vampiric ☥"].hasSub = 1;
-	wholeMenu["● Music ☥ Vampiric ☥"].subCaption = '&#9679; Music <font color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>, Sort by';
+	wholeMenu["● Music ☥ Vampiric ☥"].alternativeCaption = '&#9679; Music <font color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>, Sort by';
 	wholeMenu["● Music ☥ Vampiric ☥"].link = "";
 	wholeMenu["● Music ☥ Vampiric ☥"].html = '&#9679; Music <font color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>';
 
@@ -432,7 +432,7 @@ if (lang=="eng") {
 	wholeMenu["● Movies 💎 Unique 💎"].id = "1_7";
 	wholeMenu["● Movies 💎 Unique 💎"].color = "black";
 	wholeMenu["● Movies 💎 Unique 💎"].hasSub = 1;
-	wholeMenu["● Movies 💎 Unique 💎"].subCaption = "&#9679; Movies <font color='DodgerBlue'><sup>&#128142; Unique &#128142;</sup></font>, Sort by";
+	wholeMenu["● Movies 💎 Unique 💎"].alternativeCaption = "&#9679; Movies <font color='DodgerBlue'><sup>&#128142; Unique &#128142;</sup></font>, Sort by";
 	wholeMenu["● Movies 💎 Unique 💎"].link = "";
 	wholeMenu["● Movies 💎 Unique 💎"].html = '&#9679; Movies <font color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font>';
 
@@ -461,7 +461,7 @@ if (lang=="eng") {
 	wholeMenu["● Series ⚘ Forbidden ⚘"].id = "1_27";
 	wholeMenu["● Series ⚘ Forbidden ⚘"].color = "black";
 	wholeMenu["● Series ⚘ Forbidden ⚘"].hasSub = 1;
-	wholeMenu["● Series ⚘ Forbidden ⚘"].subCaption = "&#9679; Series <font color='MediumSlateBlue'><sup>&#9880; Forbidden &#9880;</sup></font>, Sort by";
+	wholeMenu["● Series ⚘ Forbidden ⚘"].alternativeCaption = "&#9679; Series <font color='MediumSlateBlue'><sup>&#9880; Forbidden &#9880;</sup></font>, Sort by";
 	wholeMenu["● Series ⚘ Forbidden ⚘"].link = "";
 	wholeMenu["● Series ⚘ Forbidden ⚘"].html = "&#9679; Series <font color='MediumSlateBlue'><sup>&#9880; Forbidden &#9880;</sup></font>";
 
@@ -490,7 +490,7 @@ if (lang=="eng") {
 	wholeMenu["● Games"].id = "1_8";
 	wholeMenu["● Games"].color = "black";
 	wholeMenu["● Games"].hasSub = 1;
-	wholeMenu["● Games"].subCaption = "&#9679; Games, Sort by";
+	wholeMenu["● Games"].alternativeCaption = "&#9679; Games, Sort by";
 	wholeMenu["● Games"].link = "";
 	wholeMenu["● Games"].html = '&#9679; Games';
 
@@ -512,7 +512,7 @@ if (lang=="eng") {
 	wholeMenu["● Books"].id = "1_9";
 	wholeMenu["● Books"].color = "red";
 	wholeMenu["● Books"].hasSub = 1;
-	wholeMenu["● Books"].subCaption = "&#9679; Books, Sort by";
+	wholeMenu["● Books"].alternativeCaption = "&#9679; Books, Sort by";
 	wholeMenu["● Books"].link = "";
 	wholeMenu["● Books"].html = '&#9679; Books';
 
@@ -541,7 +541,7 @@ if (lang=="eng") {
 	wholeMenu["● Photos/Images"].id = "1_10";
 	wholeMenu["● Photos/Images"].color = "red";
 	wholeMenu["● Photos/Images"].hasSub = 1;
-	wholeMenu["● Photos/Images"].subCaption = "&#9679; Photos/Images, Sort by";
+	wholeMenu["● Photos/Images"].alternativeCaption = "&#9679; Photos/Images, Sort by";
 	wholeMenu["● Photos/Images"].link = "";
 	wholeMenu["● Photos/Images"].html = '&#9679; Photos/Images';
 
@@ -563,7 +563,7 @@ if (lang=="eng") {
 	wholeMenu["● AMV"].id = "1_11";
 	wholeMenu["● AMV"].color = "black";
 	wholeMenu["● AMV"].hasSub = 1;
-	wholeMenu["● AMV"].subCaption = "&#9679; AMV, Sort by";
+	wholeMenu["● AMV"].alternativeCaption = "&#9679; AMV, Sort by";
 	wholeMenu["● AMV"].link = "";
 	wholeMenu["● AMV"].html = '&#9679; AMV';
 
@@ -585,7 +585,7 @@ if (lang=="eng") {
 	wholeMenu["● Junk"].id = "1_12";
 	wholeMenu["● Junk"].color = "black";
 	wholeMenu["● Junk"].hasSub = 1;
-	wholeMenu["● Junk"].subCaption = "&#9679; Junk, Sort by";
+	wholeMenu["● Junk"].alternativeCaption = "&#9679; Junk, Sort by";
 	wholeMenu["● Junk"].link = "";
 	wholeMenu["● Junk"].html = '&#9679; Junk';
 
@@ -614,7 +614,7 @@ if (lang=="eng") {
 	wholeMenu["● Stuff ⚡ Evil ⚡"].id = "1_13";
 	wholeMenu["● Stuff ⚡ Evil ⚡"].color = "black";
 	wholeMenu["● Stuff ⚡ Evil ⚡"].hasSub = 1;
-	wholeMenu["● Stuff ⚡ Evil ⚡"].subCaption = '&#9679; Stuff <font color="red"><sup>&#9889; Evil &#9889;</sup></font>, Sort by';
+	wholeMenu["● Stuff ⚡ Evil ⚡"].alternativeCaption = '&#9679; Stuff <font color="red"><sup>&#9889; Evil &#9889;</sup></font>, Sort by';
 	wholeMenu["● Stuff ⚡ Evil ⚡"].link = "";
 	wholeMenu["● Stuff ⚡ Evil ⚡"].html = '&#9679; Stuff <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 
@@ -636,7 +636,7 @@ if (lang=="eng") {
 	wholeMenu["● Anecdotes"].id = "1_14";
 	wholeMenu["● Anecdotes"].color = "red";
 	wholeMenu["● Anecdotes"].hasSub = 1;
-	wholeMenu["● Anecdotes"].subCaption = "&#9679; Anecdotes, Sort by";
+	wholeMenu["● Anecdotes"].alternativeCaption = "&#9679; Anecdotes, Sort by";
 	wholeMenu["● Anecdotes"].link = "";
 	wholeMenu["● Anecdotes"].html = '&#9679; Anecdotes';
 
@@ -658,7 +658,7 @@ if (lang=="eng") {
 	wholeMenu["● Heffalump ☠ Criminal ☠"].id = "1_15";
 	wholeMenu["● Heffalump ☠ Criminal ☠"].color = "red";
 	wholeMenu["● Heffalump ☠ Criminal ☠"].hasSub = 1;
-	wholeMenu["● Heffalump ☠ Criminal ☠"].subCaption = '&#9679; Heffalump <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font>, Sort by';
+	wholeMenu["● Heffalump ☠ Criminal ☠"].alternativeCaption = '&#9679; Heffalump <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font>, Sort by';
 	wholeMenu["● Heffalump ☠ Criminal ☠"].link = "";
 	wholeMenu["● Heffalump ☠ Criminal ☠"].html = '&#9679; Heffalump <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font>';
 
@@ -680,7 +680,7 @@ if (lang=="eng") {
 	wholeMenu["● Substances For Relaxation"].id = "1_16";
 	wholeMenu["● Substances For Relaxation"].color = "white";
 	wholeMenu["● Substances For Relaxation"].hasSub = 1;
-	wholeMenu["● Substances For Relaxation"].subCaption = "&#9679; Substances For Relaxation, Sort by";
+	wholeMenu["● Substances For Relaxation"].alternativeCaption = "&#9679; Substances For Relaxation, Sort by";
 	wholeMenu["● Substances For Relaxation"].link = "";
 	wholeMenu["● Substances For Relaxation"].html = '&#9679; Substances For Relaxation';
 
@@ -702,7 +702,7 @@ if (lang=="eng") {
 	wholeMenu["● Software Development"].id = "1_17";
 	wholeMenu["● Software Development"].color = "white";
 	wholeMenu["● Software Development"].hasSub = 1;
-	wholeMenu["● Software Development"].subCaption = "&#9679; Software Development, Sort by";
+	wholeMenu["● Software Development"].alternativeCaption = "&#9679; Software Development, Sort by";
 	wholeMenu["● Software Development"].link = "";
 	wholeMenu["● Software Development"].html = '&#9679; Software Development';
 
@@ -724,7 +724,7 @@ if (lang=="eng") {
 	wholeMenu["● Satanism"].id = "1_18";
 	wholeMenu["● Satanism"].color = "green";
 	wholeMenu["● Satanism"].hasSub = 1;
-	wholeMenu["● Satanism"].subCaption = "&#9679; Satanism, Sort by";
+	wholeMenu["● Satanism"].alternativeCaption = "&#9679; Satanism, Sort by";
 	wholeMenu["● Satanism"].link = "";
 	wholeMenu["● Satanism"].html = '&#9679; Satanism';
 
@@ -746,7 +746,7 @@ if (lang=="eng") {
 	wholeMenu["● Wicca"].id = "1_19";
 	wholeMenu["● Wicca"].color = "green";
 	wholeMenu["● Wicca"].hasSub = 1;
-	wholeMenu["● Wicca"].subCaption = "&#9679; Wicca, Sort by";
+	wholeMenu["● Wicca"].alternativeCaption = "&#9679; Wicca, Sort by";
 	wholeMenu["● Wicca"].link = "";
 	wholeMenu["● Wicca"].html = '&#9679; Wicca';
 
@@ -768,7 +768,7 @@ if (lang=="eng") {
 	wholeMenu["● Falsifiability"].id = "1_20";
 	wholeMenu["● Falsifiability"].color = "green";
 	wholeMenu["● Falsifiability"].hasSub = 1;
-	wholeMenu["● Falsifiability"].subCaption = "&#9679; Falsifiability, Sort by";
+	wholeMenu["● Falsifiability"].alternativeCaption = "&#9679; Falsifiability, Sort by";
 	wholeMenu["● Falsifiability"].link = "";
 	wholeMenu["● Falsifiability"].html = '&#9679; Falsifiability';
 
@@ -790,7 +790,7 @@ if (lang=="eng") {
 	wholeMenu["● Psychology"].id = "1_21";
 	wholeMenu["● Psychology"].color = "green";
 	wholeMenu["● Psychology"].hasSub = 1;
-	wholeMenu["● Psychology"].subCaption = "&#9679; Psychology, Sort by";
+	wholeMenu["● Psychology"].alternativeCaption = "&#9679; Psychology, Sort by";
 	wholeMenu["● Psychology"].link = "";
 	wholeMenu["● Psychology"].html = '&#9679; Psychology';
 
@@ -812,7 +812,7 @@ if (lang=="eng") {
 	wholeMenu["● Countries"].id = "1_22";
 	wholeMenu["● Countries"].color = "green";
 	wholeMenu["● Countries"].hasSub = 1;
-	wholeMenu["● Countries"].subCaption = "&#9679; Countries, Sort by";
+	wholeMenu["● Countries"].alternativeCaption = "&#9679; Countries, Sort by";
 	wholeMenu["● Countries"].link = "";
 	wholeMenu["● Countries"].html = '&#9679; Countries';
 
@@ -834,7 +834,7 @@ if (lang=="eng") {
 	wholeMenu["● Totalitarianism"].id = "1_23";
 	wholeMenu["● Totalitarianism"].color = "green";
 	wholeMenu["● Totalitarianism"].hasSub = 1;
-	wholeMenu["● Totalitarianism"].subCaption = "&#9679; Totalitarianism, Sort by";
+	wholeMenu["● Totalitarianism"].alternativeCaption = "&#9679; Totalitarianism, Sort by";
 	wholeMenu["● Totalitarianism"].link = "";
 	wholeMenu["● Totalitarianism"].html = '&#9679; Totalitarianism';
 
@@ -856,7 +856,7 @@ if (lang=="eng") {
 	wholeMenu["● Personalities"].id = "1_24";
 	wholeMenu["● Personalities"].color = "green";
 	wholeMenu["● Personalities"].hasSub = 1;
-	wholeMenu["● Personalities"].subCaption = "&#9679; Personalities, Sort by";
+	wholeMenu["● Personalities"].alternativeCaption = "&#9679; Personalities, Sort by";
 	wholeMenu["● Personalities"].link = "";
 	wholeMenu["● Personalities"].html = '&#9679; Personalities';
 
@@ -878,7 +878,7 @@ if (lang=="eng") {
 	wholeMenu["● News"].id = "1_25";
 	wholeMenu["● News"].color = "red";
 	wholeMenu["● News"].hasSub = 1;
-	wholeMenu["● News"].subCaption = "&#9679; News, Sort by";
+	wholeMenu["● News"].alternativeCaption = "&#9679; News, Sort by";
 	wholeMenu["● News"].link = "";
 	wholeMenu["● News"].html = '&#9679; News';
 
@@ -922,7 +922,7 @@ if (lang=="rus") {
 	wholeMenu["● Обо мне"].id = "1_1";
 	wholeMenu["● Обо мне"].color = "blue";
 	wholeMenu["● Обо мне"].hasSub = 1;
-	wholeMenu["● Обо мне"].subCaption = "&#9679; Обо мне, Сортировать по";
+	wholeMenu["● Обо мне"].alternativeCaption = "&#9679; Обо мне, Сортировать по";
 	wholeMenu["● Обо мне"].link = "";
 	wholeMenu["● Обо мне"].html = '&#9679; Обо мне';
 
@@ -944,7 +944,7 @@ if (lang=="rus") {
 	wholeMenu["● О моей работе"].id = "1_2";
 	wholeMenu["● О моей работе"].color = "blue";
 	wholeMenu["● О моей работе"].hasSub = 1;
-	wholeMenu["● О моей работе"].subCaption = "&#9679; О моей работе, Сортировать по";
+	wholeMenu["● О моей работе"].alternativeCaption = "&#9679; О моей работе, Сортировать по";
 	wholeMenu["● О моей работе"].link = "";
 	wholeMenu["● О моей работе"].html = '&#9679; О моей работе';
 
@@ -966,7 +966,7 @@ if (lang=="rus") {
 	wholeMenu["● О моём PhD"].id = "1_3";
 	wholeMenu["● О моём PhD"].color = "blue";
 	wholeMenu["● О моём PhD"].hasSub = 1;
-	wholeMenu["● О моём PhD"].subCaption = "&#9679; О моём PhD, Сортировать по";
+	wholeMenu["● О моём PhD"].alternativeCaption = "&#9679; О моём PhD, Сортировать по";
 	wholeMenu["● О моём PhD"].link = "";
 	wholeMenu["● О моём PhD"].html = '&#9679; О моём PhD';
 
@@ -988,7 +988,7 @@ if (lang=="rus") {
 	wholeMenu["● Ссылки"].id = "1_4";
 	wholeMenu["● Ссылки"].color = "blue";
 	wholeMenu["● Ссылки"].hasSub = 1;
-	wholeMenu["● Ссылки"].subCaption = "&#9679; Ссылки, Сортировать по";
+	wholeMenu["● Ссылки"].alternativeCaption = "&#9679; Ссылки, Сортировать по";
 	wholeMenu["● Ссылки"].link = "";
 	wholeMenu["● Ссылки"].html = '&#9679; Ссылки';
 
@@ -1010,7 +1010,7 @@ if (lang=="rus") {
 	wholeMenu["● HTML Редактор"].id = "1_5";
 	wholeMenu["● HTML Редактор"].color = "blue";
 	wholeMenu["● HTML Редактор"].hasSub = 1;
-	wholeMenu["● HTML Редактор"].subCaption = '&#9679; HTML Редактор, Сортировать по';
+	wholeMenu["● HTML Редактор"].alternativeCaption = '&#9679; HTML Редактор, Сортировать по';
 	wholeMenu["● HTML Редактор"].link = "";
 	wholeMenu["● HTML Редактор"].html = '&#9679; HTML Редактор';
 
@@ -1032,7 +1032,7 @@ if (lang=="rus") {
 	wholeMenu["● Музыка ☥ Vampiric ☥"].id = "1_6";
 	wholeMenu["● Музыка ☥ Vampiric ☥"].color = "black";
 	wholeMenu["● Музыка ☥ Vampiric ☥"].hasSub = 1;
-	wholeMenu["● Музыка ☥ Vampiric ☥"].subCaption = '&#9679; Музыка <font color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>, Сортировать по';
+	wholeMenu["● Музыка ☥ Vampiric ☥"].alternativeCaption = '&#9679; Музыка <font color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>, Сортировать по';
 	wholeMenu["● Музыка ☥ Vampiric ☥"].link = "";
 	wholeMenu["● Музыка ☥ Vampiric ☥"].html = '&#9679; Музыка <font color="purple"><sup>&#9765; Vampiric &#9765;</sup></font>';
 
@@ -1061,7 +1061,7 @@ if (lang=="rus") {
 	wholeMenu["● Фильмы 💎 Unique 💎"].id = "1_7";
 	wholeMenu["● Фильмы 💎 Unique 💎"].color = "black";
 	wholeMenu["● Фильмы 💎 Unique 💎"].hasSub = 1;
-	wholeMenu["● Фильмы 💎 Unique 💎"].subCaption = "&#9679; Фильмы <font color='DodgerBlue'><sup>&#128142; Unique &#128142;</sup></font>, Сортировать по";
+	wholeMenu["● Фильмы 💎 Unique 💎"].alternativeCaption = "&#9679; Фильмы <font color='DodgerBlue'><sup>&#128142; Unique &#128142;</sup></font>, Сортировать по";
 	wholeMenu["● Фильмы 💎 Unique 💎"].link = "";
 	wholeMenu["● Фильмы 💎 Unique 💎"].html = '&#9679; Фильмы <font color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font>';
 
@@ -1090,7 +1090,7 @@ if (lang=="rus") {
 	wholeMenu["● Сериалы ⚘ Forbidden ⚘"].id = "1_27";
 	wholeMenu["● Сериалы ⚘ Forbidden ⚘"].color = "black";
 	wholeMenu["● Сериалы ⚘ Forbidden ⚘"].hasSub = 1;
-	wholeMenu["● Сериалы ⚘ Forbidden ⚘"].subCaption = "&#9679; Сериалы <font color='MediumSlateBlue'><sup>&#9880; Forbidden &#9880;</sup></font>, Сортировать по";
+	wholeMenu["● Сериалы ⚘ Forbidden ⚘"].alternativeCaption = "&#9679; Сериалы <font color='MediumSlateBlue'><sup>&#9880; Forbidden &#9880;</sup></font>, Сортировать по";
 	wholeMenu["● Сериалы ⚘ Forbidden ⚘"].link = "";
 	wholeMenu["● Сериалы ⚘ Forbidden ⚘"].html = "&#9679; Сериалы <font color='MediumSlateBlue'><sup>&#9880; Forbidden &#9880;</sup></font>";
 
@@ -1119,7 +1119,7 @@ if (lang=="rus") {
 	wholeMenu["● Игры"].id = "1_8";
 	wholeMenu["● Игры"].color = "black";
 	wholeMenu["● Игры"].hasSub = 1;
-	wholeMenu["● Игры"].subCaption = "&#9679; Игры, Сортировать по";
+	wholeMenu["● Игры"].alternativeCaption = "&#9679; Игры, Сортировать по";
 	wholeMenu["● Игры"].link = "";
 	wholeMenu["● Игры"].html = '&#9679; Игры';
 
@@ -1141,7 +1141,7 @@ if (lang=="rus") {
 	wholeMenu["● Книги"].id = "1_9";
 	wholeMenu["● Книги"].color = "red";
 	wholeMenu["● Книги"].hasSub = 1;
-	wholeMenu["● Книги"].subCaption = "&#9679; Книги, Сортировать по";
+	wholeMenu["● Книги"].alternativeCaption = "&#9679; Книги, Сортировать по";
 	wholeMenu["● Книги"].link = "";
 	wholeMenu["● Книги"].html = '&#9679; Книги';
 
@@ -1170,7 +1170,7 @@ if (lang=="rus") {
 	wholeMenu["● Фото/Картинки"].id = "1_10";
 	wholeMenu["● Фото/Картинки"].color = "red";
 	wholeMenu["● Фото/Картинки"].hasSub = 1;
-	wholeMenu["● Фото/Картинки"].subCaption = "&#9679; Фото/Картинки, Сортировать по";
+	wholeMenu["● Фото/Картинки"].alternativeCaption = "&#9679; Фото/Картинки, Сортировать по";
 	wholeMenu["● Фото/Картинки"].link = "";
 	wholeMenu["● Фото/Картинки"].html = '&#9679; Фото/Картинки';
 
@@ -1192,7 +1192,7 @@ if (lang=="rus") {
 	wholeMenu["● AMV"].id = "1_11";
 	wholeMenu["● AMV"].color = "black";
 	wholeMenu["● AMV"].hasSub = 1;
-	wholeMenu["● AMV"].subCaption = "&#9679; AMV, Сортировать по";
+	wholeMenu["● AMV"].alternativeCaption = "&#9679; AMV, Сортировать по";
 	wholeMenu["● AMV"].link = "";
 	wholeMenu["● AMV"].html = '&#9679; AMV';
 
@@ -1214,7 +1214,7 @@ if (lang=="rus") {
 	wholeMenu["● Мусор"].id = "1_12";
 	wholeMenu["● Мусор"].color = "black";
 	wholeMenu["● Мусор"].hasSub = 1;
-	wholeMenu["● Мусор"].subCaption = "&#9679; Мусор, Сортировать по";
+	wholeMenu["● Мусор"].alternativeCaption = "&#9679; Мусор, Сортировать по";
 	wholeMenu["● Мусор"].link = "";
 	wholeMenu["● Мусор"].html = '&#9679; Мусор';
 
@@ -1243,7 +1243,7 @@ if (lang=="rus") {
 	wholeMenu["● Барахло ⚡ Evil ⚡"].id = "1_13";
 	wholeMenu["● Барахло ⚡ Evil ⚡"].color = "black";
 	wholeMenu["● Барахло ⚡ Evil ⚡"].hasSub = 1;
-	wholeMenu["● Барахло ⚡ Evil ⚡"].subCaption = '&#9679; Барахло <font color="red"><sup>&#9889; Evil &#9889;</sup></font>, Сортировать по';
+	wholeMenu["● Барахло ⚡ Evil ⚡"].alternativeCaption = '&#9679; Барахло <font color="red"><sup>&#9889; Evil &#9889;</sup></font>, Сортировать по';
 	wholeMenu["● Барахло ⚡ Evil ⚡"].link = "";
 	wholeMenu["● Барахло ⚡ Evil ⚡"].html = '&#9679; Барахло <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 
@@ -1265,7 +1265,7 @@ if (lang=="rus") {
 	wholeMenu["● Анекдоты"].id = "1_14";
 	wholeMenu["● Анекдоты"].color = "red";
 	wholeMenu["● Анекдоты"].hasSub = 1;
-	wholeMenu["● Анекдоты"].subCaption = "&#9679; Анекдоты, Сортировать по";
+	wholeMenu["● Анекдоты"].alternativeCaption = "&#9679; Анекдоты, Сортировать по";
 	wholeMenu["● Анекдоты"].link = "";
 	wholeMenu["● Анекдоты"].html = '&#9679; Анекдоты';
 
@@ -1287,7 +1287,7 @@ if (lang=="rus") {
 	wholeMenu["● Слонопотам ☠ Criminal ☠"].id = "1_15";
 	wholeMenu["● Слонопотам ☠ Criminal ☠"].color = "red";
 	wholeMenu["● Слонопотам ☠ Criminal ☠"].hasSub = 1;
-	wholeMenu["● Слонопотам ☠ Criminal ☠"].subCaption = '&#9679; Слонопотам <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font>, Сортировать по';
+	wholeMenu["● Слонопотам ☠ Criminal ☠"].alternativeCaption = '&#9679; Слонопотам <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font>, Сортировать по';
 	wholeMenu["● Слонопотам ☠ Criminal ☠"].link = "";
 	wholeMenu["● Слонопотам ☠ Criminal ☠"].html = '&#9679; Слонопотам <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font>';
 
@@ -1309,7 +1309,7 @@ if (lang=="rus") {
 	wholeMenu["● Вещества Для Расслабления"].id = "1_16";
 	wholeMenu["● Вещества Для Расслабления"].color = "white";
 	wholeMenu["● Вещества Для Расслабления"].hasSub = 1;
-	wholeMenu["● Вещества Для Расслабления"].subCaption = "&#9679; Вещества Для Расслабления, Сортировать по";
+	wholeMenu["● Вещества Для Расслабления"].alternativeCaption = "&#9679; Вещества Для Расслабления, Сортировать по";
 	wholeMenu["● Вещества Для Расслабления"].link = "";
 	wholeMenu["● Вещества Для Расслабления"].html = '&#9679; Вещества Для Расслабления';
 
@@ -1331,7 +1331,7 @@ if (lang=="rus") {
 	wholeMenu["● Разработка Программного Обеспечения"].id = "1_17";
 	wholeMenu["● Разработка Программного Обеспечения"].color = "white";
 	wholeMenu["● Разработка Программного Обеспечения"].hasSub = 1;
-	wholeMenu["● Разработка Программного Обеспечения"].subCaption = "&#9679; Разработка Программного Обеспечения, Сортировать по";
+	wholeMenu["● Разработка Программного Обеспечения"].alternativeCaption = "&#9679; Разработка Программного Обеспечения, Сортировать по";
 	wholeMenu["● Разработка Программного Обеспечения"].link = "";
 	wholeMenu["● Разработка Программного Обеспечения"].html = '&#9679; Разработка Программного Обеспечения';
 
@@ -1353,7 +1353,7 @@ if (lang=="rus") {
 	wholeMenu["● Сатанизм"].id = "1_18";
 	wholeMenu["● Сатанизм"].color = "green";
 	wholeMenu["● Сатанизм"].hasSub = 1;
-	wholeMenu["● Сатанизм"].subCaption = "&#9679; Сатанизм, Сортировать по";
+	wholeMenu["● Сатанизм"].alternativeCaption = "&#9679; Сатанизм, Сортировать по";
 	wholeMenu["● Сатанизм"].link = "";
 	wholeMenu["● Сатанизм"].html = '&#9679; Сатанизм';
 
@@ -1375,7 +1375,7 @@ if (lang=="rus") {
 	wholeMenu["● Викка"].id = "1_19";
 	wholeMenu["● Викка"].color = "green";
 	wholeMenu["● Викка"].hasSub = 1;
-	wholeMenu["● Викка"].subCaption = "&#9679; Викка, Сортировать по";
+	wholeMenu["● Викка"].alternativeCaption = "&#9679; Викка, Сортировать по";
 	wholeMenu["● Викка"].link = "";
 	wholeMenu["● Викка"].html = '&#9679; Викка';
 
@@ -1397,7 +1397,7 @@ if (lang=="rus") {
 	wholeMenu["● Фальсифицируемость"].id = "1_20";
 	wholeMenu["● Фальсифицируемость"].color = "green";
 	wholeMenu["● Фальсифицируемость"].hasSub = 1;
-	wholeMenu["● Фальсифицируемость"].subCaption = "&#9679; Фальсифицируемость, Сортировать по";
+	wholeMenu["● Фальсифицируемость"].alternativeCaption = "&#9679; Фальсифицируемость, Сортировать по";
 	wholeMenu["● Фальсифицируемость"].link = "";
 	wholeMenu["● Фальсифицируемость"].html = '&#9679; Фальсифицируемость';
 
@@ -1419,7 +1419,7 @@ if (lang=="rus") {
 	wholeMenu["● Психология"].id = "1_21";
 	wholeMenu["● Психология"].color = "green";
 	wholeMenu["● Психология"].hasSub = 1;
-	wholeMenu["● Психология"].subCaption = "&#9679; Психология, Сортировать по";
+	wholeMenu["● Психология"].alternativeCaption = "&#9679; Психология, Сортировать по";
 	wholeMenu["● Психология"].link = "";
 	wholeMenu["● Психология"].html = '&#9679; Психология';
 
@@ -1441,7 +1441,7 @@ if (lang=="rus") {
 	wholeMenu["● Страны"].id = "1_22";
 	wholeMenu["● Страны"].color = "green";
 	wholeMenu["● Страны"].hasSub = 1;
-	wholeMenu["● Страны"].subCaption = "&#9679; Страны, Сортировать по";
+	wholeMenu["● Страны"].alternativeCaption = "&#9679; Страны, Сортировать по";
 	wholeMenu["● Страны"].link = "";
 	wholeMenu["● Страны"].html = '&#9679; Страны';
 
@@ -1463,7 +1463,7 @@ if (lang=="rus") {
 	wholeMenu["● Тоталитаризм"].id = "1_23";
 	wholeMenu["● Тоталитаризм"].color = "green";
 	wholeMenu["● Тоталитаризм"].hasSub = 1;
-	wholeMenu["● Тоталитаризм"].subCaption = "&#9679; Тоталитаризм, Сортировать по";
+	wholeMenu["● Тоталитаризм"].alternativeCaption = "&#9679; Тоталитаризм, Сортировать по";
 	wholeMenu["● Тоталитаризм"].link = "";
 	wholeMenu["● Тоталитаризм"].html = '&#9679; Тоталитаризм';
 
@@ -1485,7 +1485,7 @@ if (lang=="rus") {
 	wholeMenu["● Деятели"].id = "1_24";
 	wholeMenu["● Деятели"].color = "green";
 	wholeMenu["● Деятели"].hasSub = 1;
-	wholeMenu["● Деятели"].subCaption = "&#9679; Деятели, Сортировать по";
+	wholeMenu["● Деятели"].alternativeCaption = "&#9679; Деятели, Сортировать по";
 	wholeMenu["● Деятели"].link = "";
 	wholeMenu["● Деятели"].html = '&#9679; Деятели';
 
@@ -1507,7 +1507,7 @@ if (lang=="rus") {
 	wholeMenu["● Новости"].id = "1_25";
 	wholeMenu["● Новости"].color = "red";
 	wholeMenu["● Новости"].hasSub = 1;
-	wholeMenu["● Новости"].subCaption = "&#9679; Новости, Сортировать по";
+	wholeMenu["● Новости"].alternativeCaption = "&#9679; Новости, Сортировать по";
 	wholeMenu["● Новости"].link = "";
 	wholeMenu["● Новости"].html = '&#9679; Новости';
 
@@ -1548,7 +1548,7 @@ if (lang=="lat") {
 	wholeMenu["● Circa Mihi"].id = "1_1";
 	wholeMenu["● Circa Mihi"].color = "blue";
 	wholeMenu["● Circa Mihi"].hasSub = 1;
-	wholeMenu["● Circa Mihi"].subCaption = "&#9679; Circa Mihi, Digerere";
+	wholeMenu["● Circa Mihi"].alternativeCaption = "&#9679; Circa Mihi, Digerere";
 	wholeMenu["● Circa Mihi"].link = "";
 	wholeMenu["● Circa Mihi"].html = '&#9679; Circa Mihi';
 
@@ -1570,7 +1570,7 @@ if (lang=="lat") {
 	wholeMenu["● Circa Opus Meum"].id = "1_2";
 	wholeMenu["● Circa Opus Meum"].color = "blue";
 	wholeMenu["● Circa Opus Meum"].hasSub = 1;
-	wholeMenu["● Circa Opus Meum"].subCaption = "&#9679; Circa Opus Meum, Digerere";
+	wholeMenu["● Circa Opus Meum"].alternativeCaption = "&#9679; Circa Opus Meum, Digerere";
 	wholeMenu["● Circa Opus Meum"].link = "";
 	wholeMenu["● Circa Opus Meum"].html = '&#9679; Circa Opus Meum';
 
@@ -1592,7 +1592,7 @@ if (lang=="lat") {
 	wholeMenu["● Circa Mei PhD"].id = "1_3";
 	wholeMenu["● Circa Mei PhD"].color = "blue";
 	wholeMenu["● Circa Mei PhD"].hasSub = 1;
-	wholeMenu["● Circa Mei PhD"].subCaption = "&#9679; Circa Mei PhD, Digerere";
+	wholeMenu["● Circa Mei PhD"].alternativeCaption = "&#9679; Circa Mei PhD, Digerere";
 	wholeMenu["● Circa Mei PhD"].link = "";
 	wholeMenu["● Circa Mei PhD"].html = '&#9679; Circa Mei PhD';
 
@@ -1614,7 +1614,7 @@ if (lang=="lat") {
 	wholeMenu["● Relatio"].id = "1_4";
 	wholeMenu["● Relatio"].color = "blue";
 	wholeMenu["● Relatio"].hasSub = 1;
-	wholeMenu["● Relatio"].subCaption = "&#9679; Relatio, Digerere";
+	wholeMenu["● Relatio"].alternativeCaption = "&#9679; Relatio, Digerere";
 	wholeMenu["● Relatio"].link = "";
 	wholeMenu["● Relatio"].html = '&#9679; Relatio';
 
@@ -1636,7 +1636,7 @@ if (lang=="lat") {
 	wholeMenu["● Photo/Imaginibus"].id = "1_10";
 	wholeMenu["● Photo/Imaginibus"].color = "red";
 	wholeMenu["● Photo/Imaginibus"].hasSub = 1;
-	wholeMenu["● Photo/Imaginibus"].subCaption = "&#9679; Photo/Imaginibus, Digerere";
+	wholeMenu["● Photo/Imaginibus"].alternativeCaption = "&#9679; Photo/Imaginibus, Digerere";
 	wholeMenu["● Photo/Imaginibus"].link = "";
 	wholeMenu["● Photo/Imaginibus"].html = '&#9679; Photo/Imaginibus';
 
@@ -1658,7 +1658,7 @@ if (lang=="lat") {
 	wholeMenu["● AMV"].id = "1_11";
 	wholeMenu["● AMV"].color = "black";
 	wholeMenu["● AMV"].hasSub = 1;
-	wholeMenu["● AMV"].subCaption = "&#9679; AMV, Digerere";
+	wholeMenu["● AMV"].alternativeCaption = "&#9679; AMV, Digerere";
 	wholeMenu["● AMV"].link = "";
 	wholeMenu["● AMV"].html = '&#9679; AMV';
 
@@ -1680,7 +1680,7 @@ if (lang=="lat") {
 	wholeMenu["● Junk"].id = "1_12";
 	wholeMenu["● Junk"].color = "black";
 	wholeMenu["● Junk"].hasSub = 1;
-	wholeMenu["● Junk"].subCaption = "&#9679; Junk, Digerere";
+	wholeMenu["● Junk"].alternativeCaption = "&#9679; Junk, Digerere";
 	wholeMenu["● Junk"].link = "";
 	wholeMenu["● Junk"].html = '&#9679; Junk';
 
@@ -1709,7 +1709,7 @@ if (lang=="lat") {
 	wholeMenu["● Effercio ⚡ Evil ⚡"].id = "1_13";
 	wholeMenu["● Effercio ⚡ Evil ⚡"].color = "black";
 	wholeMenu["● Effercio ⚡ Evil ⚡"].hasSub = 1;
-	wholeMenu["● Effercio ⚡ Evil ⚡"].subCaption = '&#9679; Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font>, Digerere';
+	wholeMenu["● Effercio ⚡ Evil ⚡"].alternativeCaption = '&#9679; Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font>, Digerere';
 	wholeMenu["● Effercio ⚡ Evil ⚡"].link = "";
 	wholeMenu["● Effercio ⚡ Evil ⚡"].html = '&#9679; Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 
@@ -1731,7 +1731,7 @@ if (lang=="lat") {
 	wholeMenu["● Nuntium"].id = "1_25";
 	wholeMenu["● Nuntium"].color = "red";
 	wholeMenu["● Nuntium"].hasSub = 1;
-	wholeMenu["● Nuntium"].subCaption = "&#9679; Nuntium, Digerere";
+	wholeMenu["● Nuntium"].alternativeCaption = "&#9679; Nuntium, Digerere";
 	wholeMenu["● Nuntium"].link = "";
 	wholeMenu["● Nuntium"].html = '&#9679; Nuntium';
 
@@ -5055,7 +5055,7 @@ if (lang=="rus") {
 	wholeMenu["● Разработка Программ"].id = "18";
 	wholeMenu["● Разработка Программ"].color = "white";
 	wholeMenu["● Разработка Программ"].hasSub = 1;
-	wholeMenu["● Разработка Программ"].subCaption = "&#9679; Разработка Программного Обеспечения";
+	wholeMenu["● Разработка Программ"].alternativeCaption = "&#9679; Разработка Программного Обеспечения";
 	wholeMenu["● Разработка Программ"].link = "";
 	wholeMenu["● Разработка Программ"].html = '&#9679; Разработка Программ';
 
@@ -7923,8 +7923,8 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId, hasImage, isCap
 		}
 	}
 
-	if (isCaption && typeof menu.subCaption !== "undefined") {
-		divSM.innerHTML = menu.subCaption;
+	if (isCaption && typeof menu.alternativeCaption !== "undefined") {
+		divSM.innerHTML = menu.alternativeCaption;
 	} else {
 		divSM.innerHTML = menu.html;
 	}
