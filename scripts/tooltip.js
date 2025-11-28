@@ -267,5 +267,6 @@ $(function() {
 		var el = document.elementFromPoint(e.clientX, e.clientY);
 		if (!el || !el.getAttribute || !el.getAttribute('title')) return;
 		$(el).trigger("mousemove");
+		$(el).trigger("mouseenter");
 	});
 });
