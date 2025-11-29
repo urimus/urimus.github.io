@@ -30,7 +30,7 @@ $(function() {
 			if (!tooltipEl || !tooltipEl._tracking) return;
 
 			if (!tooltipEl._targetEl || !document.body.contains(tooltipEl._targetEl)) {
-				removeTooltip(tooltipEl)
+				removeTooltip(tooltipEl, 0);
 				return;
 			}
 
@@ -234,7 +234,9 @@ $(function() {
 		}
 	});
 
-	function removeTooltip(tooltipEl) {
+	function removeTooltip(tooltipEl, timeOut) {
+		if (typeof timeOut === "undefined") timeOut = 200;
+
 		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
 		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
 		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
@@ -245,7 +247,7 @@ $(function() {
 			if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
 			stopTooltipTracker(tooltipEl);
 			if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
-		}, 200);
+		}, timeOut);
 	}
 
 	window.addEventListener("blur", () => {
