@@ -8040,8 +8040,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 		ele.setAttribute('onclick', "hideSubMenu(this, 1);");
 	});
 
-	keys = Object.keys(wholeMenu);
-
 	rect = ele.getBoundingClientRect();
 	if (lastSubMenu==null) {
 		tableSM = document.createElement("table");
@@ -8096,6 +8094,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	addTableRow(tableSM, wholeMenu[key], key, lang, type, newTableId + 1, 1);
 
 	prevId = "";
+	keys = Object.keys(wholeMenu);
 	for (i = 0; i < keys.length; i++) {
 		var id = wholeMenu[keys[i]].id;
 		if (id.lastIndexOf("_") == -1) continue;
