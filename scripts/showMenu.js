@@ -7888,8 +7888,8 @@ function  loadMenuContentsLink(ele, lang) {
 }
 
 
-function addTableRow(tableSM, menu, key, lang, type, newTableId, hasImage, isCaption) {
-	var row, cell1, divSM, isImage, lineWidth, lineAlign="";
+function addTableRow(tableSM, menu, key, lang, type, newTableId, isCaption) {
+	var row, cell1, divSM, isImage, lineAlign="";
 	if (typeof isCaption === "undefined") isCaption=0;
 
 	row = tableSM.insertRow(-1);
@@ -7946,10 +7946,8 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId, hasImage, isCap
 	if (type != "contentsLink") {
 		divSM.setAttribute('style', 'width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
 	} else {
-		lineWidth="max-width: 280px; ";
-		if (hasImage) lineWidth="max-width: 360px; ";
 		if (isImage) lineAlign="text-align: center; padding-top:5px; ";
-		divSM.setAttribute('style', lineWidth+lineAlign+'cursor:auto; border-spacing: 0px; padding-left:5px; padding-right:5px;');
+		divSM.setAttribute('style', lineAlign+'cursor:auto; border-spacing: 0px; padding-left:5px; padding-right:5px;');
 	}
 
 	cell1.appendChild(divSM);
@@ -7962,7 +7960,7 @@ var lastRect="";
 
 function showSubMenu(ele, lang, type, newTableId) {
 	var tablex, wholeMenu, key, keys, tableSM, row, cell1, divSM, rect, top_shift, left_shift, tableStyle;
-	var prevId, top_scroll, h, rectT, popupImage, imageHeight, i, hasImage;
+	var prevId, top_scroll, h, rectT, popupImage, imageHeight, i, tableWidth;
 	var lastSubMenu = null;
 
 	if (typeof type === "undefined" || type != "contentsLink") ele.setAttribute('class', 'menu_selected');
@@ -8043,8 +8041,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 	});
 
 	keys = Object.keys(wholeMenu);
-	hasImage = 0;
-	if (type == "contentsLink" && (lang == "rus" && typeof wholeMenu["Картинка"] !== "undefined" || lang == "eng" && typeof wholeMenu["Image"] !== "undefined" || lang == "lat" && typeof wholeMenu["Imago"] !== "undefined")) hasImage = 1;
 
 	rect = ele.getBoundingClientRect();
 	if (lastSubMenu==null) {
@@ -8066,6 +8062,15 @@ function showSubMenu(ele, lang, type, newTableId) {
 		if (typeof galleria2 !== 'undefined') tableStyle = "z-index: 10000;";
 		tableStyle += " position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; box-shadow: 2px 2px 4px #ff8a00;";
 		tableStyle += " opacity:0; transition: opacity 0.2s linear;";
+		if (type != "contentsLink") {
+			tableStyle += " width: 280px;";
+		} else {
+			tableWidth=" max-width: 280px; ";
+			if (type == "contentsLink" && (lang == "rus" && typeof wholeMenu["Картинка"] !== "undefined" || lang == "eng" && typeof wholeMenu["Image"] !== "undefined" || lang == "lat" && typeof wholeMenu["Imago"] !== "undefined")) {
+				tableWidth=" max-width: 360px; ";
+			}
+			tableStyle += tableWidth;
+		}
 		tableSM.setAttribute('style', tableStyle);
 		tableSM.style.top=top_shift+"px";
 		tableSM.style.left=left_shift+"px";
@@ -8088,7 +8093,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	if (lastSubMenu==null) document.body.appendChild(tableSM);
 
 	// caption
-	addTableRow(tableSM, wholeMenu[key], key, lang, type, newTableId + 1, hasImage, 1);
+	addTableRow(tableSM, wholeMenu[key], key, lang, type, newTableId + 1, 1);
 
 	prevId = "";
 	for (i = 0; i < keys.length; i++) {
@@ -8097,7 +8102,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 		if (id == prevId) continue;
 		prevId = id;
 		if (wholeMenu[key].id == id.substring(0, id.lastIndexOf("_"))) {
-			addTableRow(tableSM, wholeMenu[keys[i]], keys[i], lang, type, newTableId + 1, hasImage);
+			addTableRow(tableSM, wholeMenu[keys[i]], keys[i], lang, type, newTableId + 1);
 		}
 	}
 
