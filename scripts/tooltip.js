@@ -30,9 +30,7 @@ $(function() {
 			if (!tooltipEl || !tooltipEl._tracking) return;
 
 			if (!tooltipEl._targetEl || !document.body.contains(tooltipEl._targetEl)) {
-				stopTooltipTracker(tooltipEl);
-				removeTooltipGraphics(tooltipEl);
-				if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
+				removeTooltip(tooltipEl)
 				return;
 			}
 
@@ -174,9 +172,9 @@ $(function() {
 			if ($(this).attr('title') != "") targetEl = this;
 			return $(this).attr('title');
 		},
-		open: function() {
+		open: function(event, ui) {
 			(function waitAndApply(attemptsLeft) {
-				var tooltipEl = $(".ui-tooltip.custom-tooltip").last()[0];
+				var tooltipEl = ui.tooltip[0];
 				if (!tooltipEl || !targetEl) {
 					if (attemptsLeft > 0)
 						return requestAnimationFrame(() => waitAndApply(attemptsLeft - 1));
@@ -231,34 +229,30 @@ $(function() {
 
 			})(20);
 		},
-		close: function() {
-			removeAllTooltips();
+		close: function(event, ui) {
+			removeTooltip(ui.tooltip[0]);
 		}
 	});
 
-	function removeTooltipGraphics(tooltipEl) {
-		if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
-		if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
-		if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
+	function removeTooltip(tooltipEl) {
+		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
+		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
+		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
+
+		setTimeout(() => {
+			if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
+			if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
+			if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
+			stopTooltipTracker(tooltipEl);
+			if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
+		}, 200);
 	}
 
-	function removeAllTooltips() {
+	window.addEventListener("blur", () => {
 		$(".ui-tooltip.custom-tooltip").each(function() {
-			var tooltipEl = this;
-
-			if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
-			if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
-			if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
-
-			setTimeout(() => {
-				removeTooltipGraphics(tooltipEl);
-				stopTooltipTracker(tooltipEl);
-				if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
-			}, 200);
+			removeTooltip(this);
 		});
-	}
-
-	window.addEventListener("blur", removeAllTooltips);
+	});
 
 	var initTooltipFired = false;
 	$(window).on("pointerover mousemove", function(e) {
