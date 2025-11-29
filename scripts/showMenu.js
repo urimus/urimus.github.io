@@ -7889,7 +7889,7 @@ function  loadMenuContentsLink(ele, lang) {
 
 
 function addTableRow(tableSM, menu, key, lang, type, newTableId, isCaption) {
-	var row, cell1, divSM, isImage, lineAlign="";
+	var row, cell1, divSM, isImage, lineAlign="", cursor="";
 	if (typeof isCaption === "undefined") isCaption=0;
 
 	row = tableSM.insertRow(-1);
@@ -7943,12 +7943,9 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId, isCaption) {
 		}
 	}
 
-	if (type != "contentsLink") {
-		divSM.setAttribute('style', 'width: 280px; border-spacing: 0px; padding-left:5px; padding-right:5px;');
-	} else {
-		if (isImage) lineAlign="text-align: center; padding-top:5px; ";
-		divSM.setAttribute('style', lineAlign+'cursor:auto; border-spacing: 0px; padding-left:5px; padding-right:5px;');
-	}
+	if (isImage) lineAlign="text-align: center; padding-top:5px; ";
+	if (type == "contentsLink") cursor="cursor:auto; ";
+	divSM.setAttribute('style', lineAlign+cursor+"border-spacing: 0px; padding-left:5px; padding-right:5px;");
 
 	cell1.appendChild(divSM);
 
