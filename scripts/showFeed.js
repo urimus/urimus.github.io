@@ -1881,33 +1881,38 @@ function update(i, source, type, result, lang) {
 			property = doc.querySelector('meta[property="og:image"]');
 			if (property != null) mediaURL = property.content;
 
-			description = null;
-			property = doc.head.querySelector('meta[name="description"]');
-			if (property != null) description = property.content;
-			if (description == null) {
-				property = doc.head.querySelector('meta[property="og:description"]');
+			if (source == "nasa") { // do not update NASA description
+				description = result.entries[i].summary;
+			} else {
+				description = null;
+				property = doc.head.querySelector('meta[name="description"]');
 				if (property != null) description = property.content;
+				if (description == null) {
+					property = doc.head.querySelector('meta[property="og:description"]');
+					if (property != null) description = property.content;
+				}
+				if (description == null) {
+					property = doc.head.querySelector('meta[name="twitter:description"]');
+					if (property != null) description = property.content;
+				}
 			}
-			if (description == null) {
-				property = doc.head.querySelector('meta[name="twitter:description"]');
-				if (property != null) description = property.content;
-			}
-
 			if (description == null || mediaURL == null) {
 				searchDoc = doc;
 				mediaURL = null;
 				property = searchDoc.querySelector('meta[property="og:image"]');
 				if (property != null) mediaURL = property.content;
 
-				property = searchDoc.querySelector('meta[name="description"]');
-				if (property != null) description = property.content;
-				if (description == null) {
-					property = searchDoc.head.querySelector('meta[property="og:description"]');
+				if (source != "nasa") { // do not update NASA description
+					property = searchDoc.querySelector('meta[name="description"]');
 					if (property != null) description = property.content;
-				}
-				if (description == null) {
-					property = searchDoc.head.querySelector('meta[name="twitter:description"]');
-					if (property != null) description = property.content;
+					if (description == null) {
+						property = searchDoc.head.querySelector('meta[property="og:description"]');
+						if (property != null) description = property.content;
+					}
+					if (description == null) {
+						property = searchDoc.head.querySelector('meta[name="twitter:description"]');
+						if (property != null) description = property.content;
+					}
 				}
 			} else {
 				searchDoc = doc.head;
