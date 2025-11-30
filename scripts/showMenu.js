@@ -8079,11 +8079,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
-		if (type == "contentsLink") {
-			left_shift = rect.right + 10.0;
-			tableSM.style.left=left_shift+"px";
-		}
-		
 	}
 	if (lastSubMenu==null) document.body.appendChild(tableSM);
 
@@ -8128,10 +8123,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 				shiftTransitionStart=top_scroll + h - rectT.height;
 			}
 			tableSM.style.top=shiftTransitionStart+"px";
-			if (type == "contentsLink") {
-				left_shift = lastRect.right + 10.0;
-				tableSM.style.left=left_shift +"px";
-			}
 			tableSM.offsetHeight;
 			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 			if (type == "contentsLink") {
@@ -8171,10 +8162,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 					shiftTransitionStart=top_scroll + h - rectT.height;
 				}
 				tableSM.style.top=shiftTransitionStart+"px";
-				if (type == "contentsLink") {
-					left_shift = lastRect.right + 10.0;
-					tableSM.style.left=left_shift +"px";
-				}
 				tableSM.offsetHeight;
 				tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 				if (type == "contentsLink") {
