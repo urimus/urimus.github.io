@@ -8062,7 +8062,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 		} else {
 			tableWidth=" max-width: 280px; ";
 			if (type == "contentsLink" && (lang == "rus" && typeof wholeMenu["Картинка"] !== "undefined" || lang == "eng" && typeof wholeMenu["Image"] !== "undefined" || lang == "lat" && typeof wholeMenu["Imago"] !== "undefined")) {
-				tableWidth=" max-width: 360px; ";
+				tableWidth=" max-width: 362px; ";
 			}
 			tableStyle += tableWidth;
 		}
