@@ -159,7 +159,7 @@ $(function() {
 			at: `center top-${r}`,
 			of: tooltipEl._targetEl,
 			within: insideScroll ? scrollDiv : window,
-			collision: "flipfit"
+			collision: insideScroll ? "flipfit" : "fit"
 		});
 	}
 
