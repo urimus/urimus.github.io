@@ -257,12 +257,31 @@ $(function() {
 	});
 
 	var initTooltipFired = false;
-	$(window).on("pointerover mousemove", function(e) {
+	const events = [
+        	// Mouse events
+		"mousemove", "mouseover",
+		"mousedown", "mouseup", "click", "dblclick",
+		"auxclick", "mouseout", "mouseleave",
+		"contextmenu",
+		// Pointer events
+		"pointermove", "pointerover",
+		"pointerdown", "pointerup",
+		"pointerout", "pointerleave",
+		"pointercancel"
+	];
+	function tooltipInitHandler(e) {
 		if (initTooltipFired) return;
+		if (typeof e.clientX !== "number" || typeof e.clientY !== "number") return;
 		initTooltipFired  = true;
 		var el = document.elementFromPoint(e.clientX, e.clientY);
-		if (!el || !el.getAttribute || !el.getAttribute('title')) return;
+		if (!el || !el.getAttribute || !el.getAttribute('title')) { cleanupHandlers(); return; }
 		$(el).trigger("mousemove");
 		$(el).trigger("mouseenter");
-	});
+		cleanupHandlers();
+	};
+	function cleanupHandlers() {
+		$(window).off(events.join(" "), tooltipInitHandler);
+	}
+	$(window).on(events.join(" "), tooltipInitHandler);
+
 });
