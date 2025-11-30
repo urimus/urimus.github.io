@@ -256,32 +256,28 @@ $(function() {
 		});
 	});
 
-	var initTooltipFired = false;
-	const events = [
-        	// Mouse events
-		"mousemove", "mouseover",
-		"mousedown", "mouseup", "click", "dblclick",
-		"auxclick", "mouseout", "mouseleave",
-		"contextmenu",
-		// Pointer events
-		"pointermove", "pointerover",
-		"pointerdown", "pointerup",
-		"pointerout", "pointerleave",
-		"pointercancel"
-	];
-	function tooltipInitHandler(e) {
-		if (initTooltipFired) return;
-		if (typeof e.clientX !== "number" || typeof e.clientY !== "number") return;
-		initTooltipFired  = true;
-		var el = document.elementFromPoint(e.clientX, e.clientY);
-		if (!el || !el.getAttribute || !el.getAttribute('title')) { cleanupHandlers(); return; }
-		$(el).trigger("mousemove");
-		$(el).trigger("mouseenter");
-		cleanupHandlers();
-	};
-	function cleanupHandlers() {
-		$(window).off(events.join(" "), tooltipInitHandler);
-	}
-	$(window).on(events.join(" "), tooltipInitHandler);
+	(() => {
+		let fired = false;
+		const events = [
+			"mousemove","mouseover","mousedown","mouseup","click","dblclick",
+			"auxclick","mouseout","mouseleave","contextmenu",
+			"pointermove","pointerover","pointerdown","pointerup",
+			"pointerout","pointerleave","pointercancel"
+		];
 
+		const handler = ev => {
+			if (fired || typeof ev.clientX !== "number" || typeof ev.clientY !== "number") return;
+			fired = true;
+			const el = document.elementFromPoint(ev.clientX, ev.clientY);
+			if (!el || !el.getAttribute?.("title")) {
+				events.forEach(evt => window.removeEventListener(evt, handler, true));
+				return;
+			}
+			el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
+			el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+			events.forEach(evt => window.removeEventListener(evt, handler, true));
+		};
+
+		events.forEach(evt => window.addEventListener(evt, handler, true));
+	})();
 });
