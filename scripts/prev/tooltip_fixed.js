@@ -256,28 +256,24 @@ $(function() {
 		});
 	});
 
-	(() => {
-		let fired = false;
-		const events = [
-			"mousemove","mouseover","mousedown","mouseup","click","dblclick",
-			"auxclick","mouseout","mouseleave","contextmenu",
-			"pointermove","pointerover","pointerdown","pointerup",
-			"pointerout","pointerleave","pointercancel"
-		];
-
-		const handler = ev => {
-			if (fired || typeof ev.clientX !== "number" || typeof ev.clientY !== "number") return;
-			fired = true;
-			const el = document.elementFromPoint(ev.clientX, ev.clientY);
-			if (!el || !el.getAttribute?.("title")) {
-				events.forEach(evt => window.removeEventListener(evt, handler, true));
-				return;
-			}
-			el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
-			el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+	var fired = false;
+	const events = [
+		"mousemove","mouseover","mousedown","mouseup","click","dblclick",
+		"auxclick","mouseout","mouseleave","contextmenu",
+		"pointermove","pointerover","pointerdown","pointerup",
+		"pointerout","pointerleave","pointercancel"
+	];
+	const handler = ev => {
+		if (fired || typeof ev.clientX !== "number" || typeof ev.clientY !== "number") return;
+		fired = true;
+		const el = document.elementFromPoint(ev.clientX, ev.clientY);
+		if (!el?.getAttribute?.("title")) {
 			events.forEach(evt => window.removeEventListener(evt, handler, true));
-		};
-
-		events.forEach(evt => window.addEventListener(evt, handler, true));
-	})();
+			return;
+		}
+		el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
+		el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+		events.forEach(evt => window.removeEventListener(evt, handler, true));
+	};
+	events.forEach(evt => window.addEventListener(evt, handler, true));
 });
