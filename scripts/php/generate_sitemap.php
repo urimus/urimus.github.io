@@ -13,9 +13,14 @@ $files = scandir($dir);
 
 $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
 
+$indexFile = $dir . '/index.html';
+$lastmodMain = file_exists($indexFile)
+	? date('Y-m-d', filemtime($indexFile))
+	: date('Y-m-d');
+
 $url = $xml->addChild('url');
 $url->addChild('loc', $baseUrl);
-$url->addChild('lastmod', date('Y-m-d'));
+$url->addChild('lastmod', $lastmodMain);
 
 foreach ($files as $file) {
 	if ($file === '.' || $file === '..' || $file === $sitemapFile) continue;
