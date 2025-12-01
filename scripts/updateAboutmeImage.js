@@ -60,24 +60,21 @@ function updateAboutMeImage(lang, random) {
 
 	processPageResize(1);
 
-	var textLoadingFeed, textLoadingImage, textSkip, textImage;
+	var textLoadingFeed, textLoadingImage, textSkip;
 	if (lang == "rus") {
 		textLoadingFeed = "Читается Строка Новостей";
 		textLoadingImage = "Читается Картинка";
 		textSkip = "Отменить";
-		textImage = "Картинка";
 	}
 	if (lang == "eng") {
 		textLoadingFeed = "Reading News Feed";
 		textLoadingImage = "Reading Image";
 		textSkip = "Skip";
-		textImage = "Image";
 	}
 	if (lang == "lat") {
 		textLoadingFeed = "Lectio Nuntium Acies";
 		textLoadingImage = "Lectio Imagibus";
 		textSkip = "Saltus";
-		textImage = "Imagio";
 	}
 
 	var toSkip = 0;
@@ -162,7 +159,7 @@ function updateAboutMeImage(lang, random) {
 			imageA.setAttribute('href', item.link);
 			imageA.setAttribute('class', 'standardb_blue');
 			imageA.setAttribute('target', '_blank');
-			imageA.innerText = textImage + " #" + (i + 1);
+			imageA.innerText = "Image #" + (i + 1);
 			Div.appendChild(imageA);
 			Div.innerHTML = Div.innerHTML + ".";
 
