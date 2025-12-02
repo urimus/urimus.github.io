@@ -1842,7 +1842,7 @@ function update(i, source, type, result, lang, updateAttempt) {
 	if (typeof updateAttempt === "undefined") updateAttempt=1;
 
 	var textUpdateRecord, textUpdateAbsent, textUpdateNA, textReloadPage, textUpdateAttempt="";
-	var link2, xhr, doc, mediaURL, property;
+	var doc, mediaURL, property;
 	var description, searchDoc, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
 	var categories, creators, properties, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
 
@@ -1871,16 +1871,15 @@ function update(i, source, type, result, lang, updateAttempt) {
 	if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
 	document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 
-	link2 = "https://proxy.wasmer.app?url="+encodeURIComponent(result.entries[i].link);
-
-	xhr = $.ajax({
+	$.ajax({
 		type: "GET",
-		url: link2,
+		url: "https://proxy.wasmer.app?url=" + encodeURIComponent(result.entries[i].link),
 		cache: true,
 		success: function(data) {
 
 			if (skipUpdates == 1) return;
-			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + ".&nbsp;";
+			if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
+			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 
 			doc = (new DOMParser).parseFromString(data, "text/html");
 
@@ -2061,7 +2060,8 @@ function update(i, source, type, result, lang, updateAttempt) {
 				console.log("Update Absent. Record # " + (i + 1) + ", data=" + data);
 				consoleMetas(doc);
 
-				document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + ".&nbsp;";
+				if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
+				document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 				result.entries[i].error = textUpdateAbsent+".";
 				if (source == "cbs" || source == "nasa") {
 					result.entries[i].media.origComment = result.entries[i].media.comment;
