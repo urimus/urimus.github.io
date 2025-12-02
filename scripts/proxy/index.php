@@ -65,16 +65,24 @@ curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 curl_setopt($ch, CURLOPT_HEADER, false);
 
 $response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$contentType = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
 
 if (curl_errno($ch)) {
 	http_response_code(500);
 	exit("cURL Error: " . curl_error($ch));
 }
 
-$contentType = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
 curl_close($ch);
 
+if ($httpCode !== 0) {
+	http_response_code($httpCode);
+} else {
+	http_response_code(500);
+}
+
 header("Access-Control-Allow-Origin: " . $origin);
+
 if ($contentType) {
 	header("Content-Type: " . $contentType);
 }
