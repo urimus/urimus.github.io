@@ -1224,6 +1224,8 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 	fetch(apiURL)
 		.then(() => {
 			feednami.load(feedURL, function (result) {
+				loadAttemptSpan = document.getElementById("loadAttempt");
+				if (loadAttemptSpan) loadAttemptSpan.innerHTML="";
 				if (result.error) {
 					document.getElementById("loadingSpanTitle").innerHTML = result.error.message + "  " + feedIconText(feedURL, lang);
 					document.getElementById("loadingDiv").setAttribute("style", "display:none");
