@@ -1841,7 +1841,7 @@ function update(i, source, type, result, lang, updateAttempt) {
 
 	if (typeof updateAttempt === "undefined") updateAttempt=1;
 
-	var textUpdateRecord, textUpdateAbsent, textUpdateTimedOut, textReloadPage;
+	var textUpdateRecord, textUpdateAbsent, textUpdateNA, textReloadPage;
 	var link2, xhr, doc, mediaURL, property;
 	var description, searchDoc, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
 	var categories, creators, properties, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
@@ -1852,19 +1852,19 @@ function update(i, source, type, result, lang, updateAttempt) {
 	if (lang == "rus") {
 		textUpdateRecord = "Обновление Записи";
 		textUpdateAbsent = "Обновление Отсутствует";
-		textUpdateTimedOut = "Тайм-Аут Обновления";
+		textUpdateNA = "Обновление Не Доступно";
 		textReloadPage = "Обновите Страницу";
 	}
 	if (lang == "eng") {
 		textUpdateRecord = "Updating Record";
 		textUpdateAbsent = "Update Absent";
-		textUpdateTimedOut = "Update Time-Out";
+		textUpdateNA = "Update Not Available";
 		textReloadPage = "Reload Page";
 	}
 	if (lang == "lat") {
 		textUpdateRecord = "Updating Monumentum";
 		textUpdateAbsent = "Renovatio Abest";
-		textUpdateTimedOut = "Renovatio Tempore Expleta";
+		textUpdateNA = "Renovatio Non Disponibilis Est";
 		textReloadPage = "Paginam Reficere";
 	}
 	document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + ".&nbsp;";
@@ -2079,15 +2079,15 @@ function update(i, source, type, result, lang, updateAttempt) {
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
 			}
-			console.log("Update Time-Out Occurred. Record # " + (i + 1));
+			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1));
 			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
-				result.entries[i].media.comment = textUpdateTimedOut;
+				result.entries[i].media.comment = textUpdateNA + " (" + xhr.status + ")";
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = "images/icons/error/no_image.png";
 			}
-			result.entries[i].error = textUpdateTimedOut+". <a href='javascript:location.reload();' class='standardb_red'>"+textReloadPage+"</a>";
+			result.entries[i].error = textUpdateNA + " (" + xhr.status + "). <a href='javascript:location.reload();' class='standardb_red'>"+textReloadPage+"</a>";
 			showEntry(type, source, lang, result, i, 0);
 			result.entries[i].storage.updateProcessed = 1;
 			checkProcessedCount(source, type, result, lang, 0);
