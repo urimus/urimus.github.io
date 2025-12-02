@@ -1841,7 +1841,7 @@ function update(i, source, type, result, lang, updateAttempt) {
 
 	if (typeof updateAttempt === "undefined") updateAttempt=1;
 
-	var textUpdateRecord, textUpdateAbsent, textUpdateNA, textReloadPage;
+	var textUpdateRecord, textUpdateAbsent, textUpdateNA, textReloadPage, textUpdateAttempt="";
 	var link2, xhr, doc, mediaURL, property;
 	var description, searchDoc, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
 	var categories, creators, properties, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
@@ -1867,7 +1867,9 @@ function update(i, source, type, result, lang, updateAttempt) {
 		textUpdateNA = "Renovatio Non Disponibilis Est";
 		textReloadPage = "Paginam Reficere";
 	}
-	document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + ".&nbsp;";
+
+	if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
+	document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 
 	link2 = "https://proxy.wasmer.app?url="+encodeURIComponent(result.entries[i].link);
 
@@ -2075,11 +2077,11 @@ function update(i, source, type, result, lang, updateAttempt) {
 		},
 		error: function(xhr) {
 			if (skipUpdates == 1) return;
-			if (updateAttempt < 10) { // 10 time-out attempts
+			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1) + ", updateAttempt=" + updateAttempt);
+			if (updateAttempt < 10) { // 10 404 attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
 			}
-			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1));
 			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
