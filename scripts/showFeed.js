@@ -1837,7 +1837,10 @@ function checkProcessedCount(source, type, result, lang, pf) {
 }
 
 
-function update(i, source, type, result, lang) {
+function update(i, source, type, result, lang, updateAttempt) {
+
+	if (typeof updateAttempt === "undefined") updateAttempt=1;
+
 	var textUpdateRecord, textUpdateAbsent, textUpdateTimedOut, textReloadPage;
 	var link2, xhr, doc, mediaURL, property;
 	var description, searchDoc, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
@@ -2072,6 +2075,10 @@ function update(i, source, type, result, lang) {
 		},
 		error: function(xhr) {
 			if (skipUpdates == 1) return;
+			if (updateAttempt < 10) { // 10 time-out attempts
+				update(i, source, type, result, lang, updateAttempt + 1);
+				return;
+			}
 			console.log("Update Time-Out Occurred. Record # " + (i + 1));
 			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
