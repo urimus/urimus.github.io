@@ -2078,11 +2078,12 @@ function update(i, source, type, result, lang, updateAttempt) {
 		error: function(xhr) {
 			if (skipUpdates == 1) return;
 			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1) + ", updateAttempt=" + updateAttempt);
-			if (updateAttempt < 10) { // 10 404 attempts
+			if (updateAttempt < 5) { // 5 404 attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
 			}
-			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + ".&nbsp;";
+			if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
+			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
 				result.entries[i].media.comment = textUpdateNA + " (" + xhr.status + ")";
