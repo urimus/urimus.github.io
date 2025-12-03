@@ -190,8 +190,6 @@ $(function() {
 					minSide: null
 				};
 
-				startTooltipTracker(tooltipEl);
-
 				var colorScheme = tooltipEl._targetEl?.dataset?.ttcolor;
 				if (!tooltipEl._origColor) {
 					var styles = window.getComputedStyle(tooltipEl);
@@ -226,6 +224,7 @@ $(function() {
 
 				positionTooltip(tooltipEl);
 				drawLine(tooltipEl);
+				startTooltipTracker(tooltipEl);
 
 			})(20);
 		},
