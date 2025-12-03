@@ -2083,7 +2083,7 @@ function update(i, source, type, result, lang, updateAttempt) {
 		},
 		error: function(xhr) {
 			if (skipUpdates == 1) return;
-			textUpdateAttempt = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
+			textUpdateAttempt = (xhr.status == 0 || updateAttempt > 1) ? ", updateAttempt = " + updateAttempt : "";
 			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1) + textUpdateAttempt);
 			if (xhr.status == 0 && updateAttempt < 5) { // 5 0-status attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
