@@ -2057,7 +2057,7 @@ function update(i, source, type, result, lang, updateAttempt) {
 				return;
 			} else {
 				// update absent
-				console.log("Update Absent. Record # " + (i + 1) + ", updateAttempt=" + updateAttempt + ", data=" + data);
+				console.log("Update Absent. Record # " + (i + 1) + ", updateAttempt = " + updateAttempt + ", data = " + data);
 				consoleMetas(doc);
 
 				if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
@@ -2077,7 +2077,7 @@ function update(i, source, type, result, lang, updateAttempt) {
 		},
 		error: function(xhr) {
 			if (skipUpdates == 1) return;
-			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1) + ", updateAttempt=" + updateAttempt);
+			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1) + ", updateAttempt = " + updateAttempt);
 			if (updateAttempt < 5) { // 5 404 attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
