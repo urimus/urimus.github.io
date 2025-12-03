@@ -2057,7 +2057,7 @@ function update(i, source, type, result, lang, updateAttempt) {
 				return;
 			} else {
 				// update absent
-				console.log("Update Absent. Record # " + (i + 1) + ", data=" + data);
+				console.log("Update Absent. Record # " + (i + 1) + ", updateAttempt=" + updateAttempt + ", data=" + data);
 				consoleMetas(doc);
 
 				if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
