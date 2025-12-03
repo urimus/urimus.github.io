@@ -1226,9 +1226,11 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 			feednami.load(feedURL, function (result) {
 				loadAttemptSpan = document.getElementById("loadAttempt");
 				if (loadAttemptSpan) loadAttemptSpan.innerHTML="";
+				adjustFeedScrollDiv();
 				if (result.error) {
 					document.getElementById("loadingSpanTitle").innerHTML = result.error.message + "  " + feedIconText(feedURL, lang);
 					document.getElementById("loadingDiv").setAttribute("style", "display:none");
+					adjustFeedScrollDiv();
 					return;
 				}
 				result.feedXML = feedURL;
@@ -1240,7 +1242,9 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 				loadAttempt++;
 				loadAttemptSpan = document.getElementById("loadAttempt");
 				if (loadAttemptSpan) loadAttemptSpan.innerHTML="<br><b>" + textLoadAttempt +  loadAttempt + "</b>";
+				adjustFeedScrollDiv();
 				loadFeednami(type, source, lang, feedURL, loadAttempt);
+				return;
 			} else {
 				var table2 = document.getElementById("messagetable");
 				if (!table2) return;
@@ -1250,6 +1254,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 				cell1.className = 'text_red';
 				cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
 				cell1.innerHTML = textFeed + feedIconText(feedURL, lang) + "<br><b>" + e.message + "</b><br><a href='javascript:location.reload();' class='standardb_red'>" + textReload + "</a>";
+				adjustFeedScrollDiv();
 			}
 		});
 }
@@ -1868,7 +1873,7 @@ function update(i, source, type, result, lang, updateAttempt) {
 		textReloadPage = "Paginam Reficere";
 	}
 
-	if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
+	textUpdateAttempt = updateAttempt > 1 ? "/" + updateAttempt : "";
 	document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 
 	$.ajax({
@@ -2057,10 +2062,11 @@ function update(i, source, type, result, lang, updateAttempt) {
 				return;
 			} else {
 				// update absent
-				console.log("Update Absent. Record # " + (i + 1) + ", updateAttempt = " + updateAttempt + ", data = " + data);
+				textUpdateAttempt = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
+				console.log("Update Absent. Record # " + (i + 1) + textUpdateAttempt + ", data = " + data);
 				consoleMetas(doc);
 
-				if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
+				textUpdateAttempt = updateAttempt > 1 ? "/" + updateAttempt : "";
 				document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 				result.entries[i].error = textUpdateAbsent+".";
 				if (source == "cbs" || source == "nasa") {
@@ -2077,12 +2083,13 @@ function update(i, source, type, result, lang, updateAttempt) {
 		},
 		error: function(xhr) {
 			if (skipUpdates == 1) return;
-			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1) + ", updateAttempt = " + updateAttempt);
-			if (updateAttempt < 5) { // 5 404 attempts
+			textUpdateAttempt = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
+			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1) + textUpdateAttempt);
+			if (xhr.status == 0 && updateAttempt < 5) { // 5 0-status attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
 			}
-			if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
+			textUpdateAttempt = updateAttempt > 1 ? "/" + updateAttempt : "";
 			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
