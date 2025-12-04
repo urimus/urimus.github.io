@@ -200,11 +200,11 @@ $(function() {
 				tooltipEl.style.background = scheme.bg;
 			}
 
-			setTimeout(() => {
+			requestAnimationFrame(() => {
 				positionTooltip(tooltipEl);
 				drawLine(tooltipEl);
 				startTooltipTracker(tooltipEl);
-			}, 0);
+			});
 		},
 		close: function(event, ui) {
 			removeTooltip(ui.tooltip[0]);
