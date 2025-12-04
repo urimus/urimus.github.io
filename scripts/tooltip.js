@@ -26,7 +26,7 @@ $(function() {
 		if (tooltipEl._tracking) return;
 		tooltipEl._tracking = true;
 
-		function track() {
+		tooltipEl._track = function() {
 			if (!tooltipEl || !tooltipEl._tracking) return;
 			if (!tooltipEl._targetEl || !document.body.contains(tooltipEl._targetEl)) {
 				removeTooltip(tooltipEl, true);
@@ -35,26 +35,31 @@ $(function() {
 
 			const rect = tooltipEl._targetEl.getBoundingClientRect();
 			const prev = tooltipEl._prevTargetRect;
-			const rectChanged =
+			const changed =
 				!prev ||
 				rect.top !== prev.top ||
 				rect.left !== prev.left;
 
-			if (rectChanged) {
+			if (changed) {
 				tooltipEl._prevTargetRect = rect;
 				positionTooltip(tooltipEl, rect);
 				drawLine(tooltipEl);
 			}
 
-			requestAnimationFrame(track);
-		}
+			tooltipEl._raf = requestAnimationFrame(tooltipEl._track);
+		};
 
-		requestAnimationFrame(track);
+		tooltipEl._raf = requestAnimationFrame(tooltipEl._track);
 	}
 
 	function stopTooltipTracker(tooltipEl) {
 		tooltipEl._tracking = false;
 		tooltipEl._prevTargetRect = null;
+
+		if (tooltipEl._raf) {
+			cancelAnimationFrame(tooltipEl._raf);
+			tooltipEl._raf = null;
+		}
 	}
 
 	function drawLine(tooltipEl, targetRect) {
@@ -74,6 +79,7 @@ $(function() {
 			right: boundingRect.right - getScrollbarWidth(scrollDiv || document.body),
 			bottom: boundingRect.bottom - getScrollbarHeight(scrollDiv || document.body)
 		};
+
 		if (targetX - r < boundingRectArray.left) targetX = crisp(boundingRectArray.left + r);
 		else if (targetX + r > boundingRectArray.right) targetX = crisp(boundingRectArray.right - r);
 		if (targetY - r < boundingRectArray.top) targetY = crisp(boundingRectArray.top + r);
@@ -95,6 +101,7 @@ $(function() {
 				d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX + r} ${tooltipY} Z`;
 				break;
 		}
+
 		var length = Math.hypot(tooltipX - targetX, tooltipY - targetY);
 
 		var line = tooltipEl._line;
@@ -181,6 +188,7 @@ $(function() {
 				tooltipEl._origBackground = styles.background;
 				tooltipEl._origColor = styles.color;
 			}
+
 			const colorSchemes = {
 				blue:  { color:"#448CCB", bg:"linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)" },
 				black: { color:"#707070", bg:"linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)" },
@@ -188,6 +196,7 @@ $(function() {
 				white: { color:"#A9A9A9", bg:"linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)" },
 				green: { color:"#008080", bg:"linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)" }
 			};
+
 			var schemeName = tooltipEl._targetEl?.dataset?.ttcolor;
 			if (!schemeName || !colorSchemes[schemeName]) {
 				tooltipEl.style.color = tooltipEl._origColor;
@@ -211,6 +220,7 @@ $(function() {
 
 	function removeTooltip(tooltipEl, noAnimation = false) {
 		if (!tooltipEl) return;
+
 		const removeTooltipElements = () => {
 			if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
 			if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
@@ -218,13 +228,16 @@ $(function() {
 			stopTooltipTracker(tooltipEl);
 			if (tooltipEl.parentNode) tooltipEl.parentNode.removeChild(tooltipEl);
 		};
+
 		if (noAnimation) {
 			removeTooltipElements();
 			return;
 		}
+
 		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
 		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
 		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
+
 		setTimeout(() => {
 			removeTooltipElements();
 		}, 200);
