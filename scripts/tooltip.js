@@ -43,8 +43,8 @@ $(function() {
 
 			if (rectChanged) {
 				prevTargetRect = rect;
-				positionTooltip(tooltipEl);
-				drawLine(tooltipEl, rect);
+				positionTooltip(tooltipEl, rect);
+				drawLine(tooltipEl);
 			}
 
 			requestAnimationFrame(track);
@@ -60,50 +60,49 @@ $(function() {
 	function drawLine(tooltipEl, targetRect) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
-		var tooltipRect = tooltipEl.getBoundingClientRect();
-		var prevRect = tooltipEl._prevTooltipRect;
-
-		if (prevRect &&
-			prevRect.top === tooltipRect.top &&
-			prevRect.left === tooltipRect.left &&
-			prevRect.width === tooltipRect.width &&
-			prevRect.height === tooltipRect.height
-		) return;
-
-		tooltipEl._prevTooltipRect = tooltipRect;
-
 		if (!targetRect) targetRect = tooltipEl._targetEl.getBoundingClientRect();
+		var tooltipRect = tooltipEl.getBoundingClientRect();
 		var targetX = targetRect.left + targetRect.width / 2;
 		var targetY = targetRect.top + targetRect.height / 2;
 
 		var boundingRect = scrollDiv && scrollDiv.contains(tooltipEl._targetEl)
 			? scrollDiv.getBoundingClientRect()
 			: document.body.getBoundingClientRect();
-
 		var boundingRectArray = {
 			left: boundingRect.left,
 			top: boundingRect.top,
 			right: boundingRect.right - getScrollbarWidth(scrollDiv || document.body),
 			bottom: boundingRect.bottom - getScrollbarHeight(scrollDiv || document.body)
 		};
-
 		if (targetX - r < boundingRectArray.left) targetX = crisp(boundingRectArray.left + r);
 		else if (targetX + r > boundingRectArray.right) targetX = crisp(boundingRectArray.right - r);
 		if (targetY - r < boundingRectArray.top) targetY = crisp(boundingRectArray.top + r);
 		else if (targetY + r > boundingRectArray.bottom) targetY = crisp(boundingRectArray.bottom - r);
 
-		var tooltipX = tooltipRect.left + tooltipRect.width / 2;
-		var tooltipY = tooltipRect.top < targetY ? tooltipRect.bottom : tooltipRect.top;
+		var distances = { top: Math.abs(tooltipRect.top - targetY), bottom: Math.abs(tooltipRect.bottom - targetY) };
+		var minSide = Object.keys(distances).reduce((a, b) => distances[a] < distances[b] ? a : b);
 
-		var d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX + r} ${tooltipY} Z`;
+		var tooltipX, tooltipY, d;
+		switch (minSide) {
+			case 'top':
+				tooltipX = tooltipRect.left + tooltipRect.width / 2;
+				tooltipY = crisp(tooltipRect.top);
+				d = `M ${tooltipX + r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX - r} ${tooltipY} Z`;
+				break;
+			case 'bottom':
+				tooltipX = tooltipRect.left + tooltipRect.width / 2;
+				tooltipY = crisp(tooltipRect.bottom);
+				d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX + r} ${tooltipY} Z`;
+				break;
+		}
 		var length = Math.hypot(tooltipX - targetX, tooltipY - targetY);
 
 		var line = tooltipEl._line;
 		if (!line) {
 			line = document.createElementNS("http://www.w3.org/2000/svg", "line");
 			line.setAttribute("stroke", lineColor);
-			line.setAttribute("stroke-width", r / 2);
 			line.setAttribute("shape-rendering", "geometricPrecision");
+			line.setAttribute("stroke-width", r / 2);
 			line.setAttribute("stroke-dasharray", length);
 			line.setAttribute("stroke-dashoffset", length);
 			line.style.opacity = "0";
@@ -115,11 +114,12 @@ $(function() {
 				line.setAttribute("stroke-dashoffset", "0");
 			});
 		}
+
+		line.setAttribute("stroke-dasharray", length);
 		line.setAttribute("x1", targetX);
 		line.setAttribute("y1", targetY);
 		line.setAttribute("x2", tooltipX);
 		line.setAttribute("y2", tooltipY);
-		line.setAttribute("stroke-dasharray", length);
 
 		var startCircle = tooltipEl._startCircle;
 		if (!startCircle) {
@@ -174,14 +174,12 @@ $(function() {
 			if (!tooltipEl || !targetEl) return;
 
 			tooltipEl._targetEl = targetEl;
-			tooltipEl._prevTooltipRect = null;
 
 			if (!tooltipEl._origColor) {
 				const styles = window.getComputedStyle(tooltipEl);
 				tooltipEl._origBackground = styles.background;
 				tooltipEl._origColor = styles.color;
 			}
-
 			const colorSchemes = {
 				blue:  { color:"#448CCB", bg:"linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)" },
 				black: { color:"#707070", bg:"linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)" },
@@ -189,7 +187,6 @@ $(function() {
 				white: { color:"#A9A9A9", bg:"linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)" },
 				green: { color:"#008080", bg:"linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)" }
 			};
-
 			var schemeName = tooltipEl._targetEl?.dataset?.ttcolor;
 			if (!schemeName || !colorSchemes[schemeName]) {
 				tooltipEl.style.color = tooltipEl._origColor;
@@ -227,7 +224,9 @@ $(function() {
 		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
 		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
 		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
-		setTimeout(removeTooltipElements, 200);
+		setTimeout(() => {
+			removeTooltipElements();
+		}, 200);
 	}
 
 	window.addEventListener("blur", () => {
