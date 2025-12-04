@@ -1879,7 +1879,8 @@ function update(i, source, type, result, lang, updateAttempt) {
 	$.ajax({
 		type: "GET",
 		url: "https://proxy.wasmer.app?url=" + encodeURIComponent(result.entries[i].link),
-		cache: true,
+		cache: false,
+		dataType: "text",
 		success: function(data) {
 
 			if (skipUpdates == 1) return;
