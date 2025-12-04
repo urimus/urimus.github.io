@@ -25,7 +25,6 @@ $(function() {
 	function startTooltipTracker(tooltipEl) {
 		if (tooltipEl._tracking) return;
 		tooltipEl._tracking = true;
-		var prevTargetRect = null;
 
 		function track() {
 			if (!tooltipEl || !tooltipEl._tracking) return;
@@ -35,14 +34,14 @@ $(function() {
 			}
 
 			const rect = tooltipEl._targetEl.getBoundingClientRect();
-			const rectChanged = !prevTargetRect ||
-				rect.top !== prevTargetRect.top ||
-				rect.left !== prevTargetRect.left ||
-				rect.width !== prevTargetRect.width ||
-				rect.height !== prevTargetRect.height;
+			const prev = tooltipEl._prevTargetRect;
+			const rectChanged =
+				!prev ||
+				rect.top !== prev.top ||
+				rect.left !== prev.left;
 
 			if (rectChanged) {
-				prevTargetRect = rect;
+				tooltipEl._prevTargetRect = rect;
 				positionTooltip(tooltipEl, rect);
 				drawLine(tooltipEl);
 			}
@@ -55,6 +54,7 @@ $(function() {
 
 	function stopTooltipTracker(tooltipEl) {
 		tooltipEl._tracking = false;
+		tooltipEl._prevTargetRect = null;
 	}
 
 	function drawLine(tooltipEl, targetRect) {
@@ -174,6 +174,7 @@ $(function() {
 			if (!tooltipEl || !targetEl) return;
 
 			tooltipEl._targetEl = targetEl;
+			tooltipEl._prevTargetRect = null;
 
 			if (!tooltipEl._origColor) {
 				const styles = window.getComputedStyle(tooltipEl);
