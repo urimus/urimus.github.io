@@ -22,12 +22,16 @@ $(function() {
 		return Math.round(value * ratio) / ratio;
 	}
 
-	function startTooltipTracker(tooltipEl) {
-		if (tooltipEl._tracking) return;
-		tooltipEl._tracking = true;
+	var activeTooltips = new Set();
+	var rafRunning = false;
 
-		tooltipEl._track = function() {
-			if (!tooltipEl || !tooltipEl._tracking) return;
+	function globalTick() {
+		if (activeTooltips.size === 0) {
+			rafRunning = false;
+			return;
+		}
+
+		activeTooltips.forEach(tooltipEl => {
 			if (!tooltipEl._targetEl || !document.body.contains(tooltipEl._targetEl)) {
 				removeTooltip(tooltipEl, true);
 				return;
@@ -35,31 +39,33 @@ $(function() {
 
 			const rect = tooltipEl._targetEl.getBoundingClientRect();
 			const prev = tooltipEl._prevTargetRect;
-			const changed =
-				!prev ||
-				rect.top !== prev.top ||
-				rect.left !== prev.left;
 
-			if (changed) {
+			if (!prev || rect.top !== prev.top || rect.left !== prev.left) {
 				tooltipEl._prevTargetRect = rect;
 				positionTooltip(tooltipEl, rect);
 				drawLine(tooltipEl);
 			}
+		});
 
-			tooltipEl._raf = requestAnimationFrame(tooltipEl._track);
-		};
+		requestAnimationFrame(globalTick);
+	}
 
-		tooltipEl._raf = requestAnimationFrame(tooltipEl._track);
+	function startTooltipTracker(tooltipEl) {
+		if (tooltipEl._tracking) return;
+		tooltipEl._tracking = true;
+		activeTooltips.add(tooltipEl);
+
+		if (!rafRunning) {
+			rafRunning = true;
+			requestAnimationFrame(globalTick);
+		}
 	}
 
 	function stopTooltipTracker(tooltipEl) {
+		if (!tooltipEl._tracking) return;
 		tooltipEl._tracking = false;
 		tooltipEl._prevTargetRect = null;
-
-		if (tooltipEl._raf) {
-			cancelAnimationFrame(tooltipEl._raf);
-			tooltipEl._raf = null;
-		}
+		activeTooltips.delete(tooltipEl);
 	}
 
 	function drawLine(tooltipEl, targetRect) {
@@ -73,6 +79,7 @@ $(function() {
 		var boundingRect = scrollDiv && scrollDiv.contains(tooltipEl._targetEl)
 			? scrollDiv.getBoundingClientRect()
 			: document.body.getBoundingClientRect();
+
 		var boundingRectArray = {
 			left: boundingRect.left,
 			top: boundingRect.top,
@@ -86,20 +93,18 @@ $(function() {
 		else if (targetY + r > boundingRectArray.bottom) targetY = crisp(boundingRectArray.bottom - r);
 
 		var distances = { top: Math.abs(tooltipRect.top - targetY), bottom: Math.abs(tooltipRect.bottom - targetY) };
-		var minSide = Object.keys(distances).reduce((a, b) => distances[a] < distances[b] ? a : b);
+		var minSide = distances.top < distances.bottom ? "top" : "bottom";
 
 		var tooltipX, tooltipY, d;
-		switch (minSide) {
-			case 'top':
-				tooltipX = tooltipRect.left + tooltipRect.width / 2;
-				tooltipY = crisp(tooltipRect.top);
-				d = `M ${tooltipX + r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX - r} ${tooltipY} Z`;
-				break;
-			case 'bottom':
-				tooltipX = tooltipRect.left + tooltipRect.width / 2;
-				tooltipY = crisp(tooltipRect.bottom);
-				d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX + r} ${tooltipY} Z`;
-				break;
+
+		if (minSide === "top") {
+			tooltipX = tooltipRect.left + tooltipRect.width / 2;
+			tooltipY = crisp(tooltipRect.top);
+			d = `M ${tooltipX + r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX - r} ${tooltipY} Z`;
+		} else {
+			tooltipX = tooltipRect.left + tooltipRect.width / 2;
+			tooltipY = crisp(tooltipRect.bottom);
+			d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX + r} ${tooltipY} Z`;
 		}
 
 		var length = Math.hypot(tooltipX - targetX, tooltipY - targetY);
@@ -220,7 +225,6 @@ $(function() {
 
 	function removeTooltip(tooltipEl, noAnimation = false) {
 		if (!tooltipEl) return;
-
 		const removeTooltipElements = () => {
 			if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
 			if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
@@ -228,19 +232,14 @@ $(function() {
 			stopTooltipTracker(tooltipEl);
 			if (tooltipEl.parentNode) tooltipEl.parentNode.removeChild(tooltipEl);
 		};
-
 		if (noAnimation) {
 			removeTooltipElements();
 			return;
 		}
-
 		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
 		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
 		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
-
-		setTimeout(() => {
-			removeTooltipElements();
-		}, 200);
+		setTimeout(removeTooltipElements, 200);
 	}
 
 	window.addEventListener("blur", () => {
