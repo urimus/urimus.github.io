@@ -44,7 +44,7 @@ $(function() {
 			if (rectChanged) {
 				prevTargetRect = rect;
 				positionTooltip(tooltipEl);
-				drawLine(tooltipEl);
+				drawLine(tooltipEl, rect);
 			}
 
 			requestAnimationFrame(track);
@@ -57,10 +57,10 @@ $(function() {
 		tooltipEl._tracking = false;
 	}
 
-	function drawLine(tooltipEl) {
+	function drawLine(tooltipEl, targetRect) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
-		var targetRect = tooltipEl._targetEl.getBoundingClientRect();
+		if (typeof targetRect === "undefined") targetRect = tooltipEl._targetEl.getBoundingClientRect();
 		var tooltipRect = tooltipEl.getBoundingClientRect();
 		var targetX = targetRect.left + targetRect.width / 2;
 		var targetY = targetRect.top + targetRect.height / 2;
@@ -100,8 +100,6 @@ $(function() {
 		if (
 			prev.tooltipX === tooltipX &&
 			prev.tooltipY === tooltipY &&
-			prev.targetX === targetX &&
-			prev.targetY === targetY &&
 			prev.minSide === minSide
 		) return;
 
@@ -157,7 +155,7 @@ $(function() {
 		}
 		endCircle.setAttribute("d", d);
 
-		tooltipEl._prevCoords = { tooltipX, tooltipY, targetX, targetY, minSide };
+		tooltipEl._prevCoords = { tooltipX, tooltipY, minSide };
 	}
 
 	function positionTooltip(tooltipEl) {
@@ -186,7 +184,7 @@ $(function() {
 			if (!tooltipEl || !targetEl) return;
 
 			tooltipEl._targetEl = targetEl;
-			tooltipEl._prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null, minSide: null };
+			tooltipEl._prevCoords = { tooltipX: null, tooltipY: null, minSide: null };
 
 			if (!tooltipEl._origColor) {
 				const styles = window.getComputedStyle(tooltipEl);
