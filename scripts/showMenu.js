@@ -8264,12 +8264,10 @@ function hideSubMenu(ele, manual, additDel) {
 		}
 	}
 	if (objToRemove.length>0) {
-		requestAnimationFrame(() => { 
-			for (let i = 0; i < objToRemove.length; i++) {
-				objToRemove[i].style.opacity = "0";
-				setTimeout(() => { document.body.removeChild(objToRemove[i]); }, 200);
-			}
-		});
+		for (let i = 0; i < objToRemove.length; i++) {
+			objToRemove[i].style.opacity = "0";
+			setTimeout(() => { document.body.removeChild(objToRemove[i]); }, 200);
+		}
 	}
 	return ret;
 }
