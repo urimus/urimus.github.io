@@ -243,8 +243,8 @@ $(function() {
 	}
 
 	window.addEventListener("blur", () => {
-		$(".ui-tooltip.custom-tooltip").each(function() {
-			removeTooltip(this);
+		activeTooltips.forEach(tooltipEl => {
+			removeTooltip(tooltipEl, true);
 		});
 	});
 
