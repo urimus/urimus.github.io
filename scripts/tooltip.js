@@ -25,7 +25,7 @@ $(function() {
 	function startTooltipTracker(tooltipEl) {
 		if (tooltipEl._tracking) return;
 		tooltipEl._tracking = true;
-		let prevTargetRect = null;
+		var prevTargetRect = null;
 
 		function track() {
 			if (!tooltipEl || !tooltipEl._tracking) return;
