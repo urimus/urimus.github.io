@@ -10,6 +10,7 @@ $(function() {
 	var zIndex = (typeof galleria2 !== 'undefined') ? "z-index: 10001;" : "z-index: 1;";
 	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; " + zIndex);
 	document.body.appendChild(svgEl);
+	window.addEventListener("beforeunload", () => svgEl.remove());
 
 	var scrollDiv = document.getElementById('scrollDiv');
 
@@ -25,17 +26,27 @@ $(function() {
 	function startTooltipTracker(tooltipEl) {
 		if (tooltipEl._tracking) return;
 		tooltipEl._tracking = true;
+		let prevTargetRect = null;
 
 		function track() {
 			if (!tooltipEl || !tooltipEl._tracking) return;
-
 			if (!tooltipEl._targetEl || !document.body.contains(tooltipEl._targetEl)) {
 				removeTooltip(tooltipEl, true);
 				return;
 			}
 
-			positionTooltip(tooltipEl);
-			drawLine(tooltipEl);
+			const rect = tooltipEl._targetEl.getBoundingClientRect();
+			const rectChanged = !prevTargetRect || 
+				rect.top !== prevTargetRect.top ||
+				rect.left !== prevTargetRect.left ||
+				rect.width !== prevTargetRect.width ||
+				rect.height !== prevTargetRect.height;
+
+			if (rectChanged) {
+				prevTargetRect = rect;
+				positionTooltip(tooltipEl);
+				drawLine(tooltipEl);
+			}
 
 			requestAnimationFrame(track);
 		}
@@ -52,7 +63,6 @@ $(function() {
 
 		var targetRect = tooltipEl._targetEl.getBoundingClientRect();
 		var tooltipRect = tooltipEl.getBoundingClientRect();
-
 		var targetX = targetRect.left + targetRect.width / 2;
 		var targetY = targetRect.top + targetRect.height / 2;
 
@@ -173,86 +183,68 @@ $(function() {
 			return $(this).attr('title');
 		},
 		open: function(event, ui) {
-			(function waitAndApply(attemptsLeft) {
-				var tooltipEl = ui.tooltip[0];
-				if (!tooltipEl || !targetEl) {
-					if (attemptsLeft > 0)
-						return requestAnimationFrame(() => waitAndApply(attemptsLeft - 1));
-					return;
-				}
+			const tooltipEl = ui.tooltip[0];
+			if (!tooltipEl || !targetEl) return;
 
-				tooltipEl._targetEl = targetEl;
-				tooltipEl._prevCoords = {
-					tooltipX: null,
-					tooltipY: null,
-					targetX: null,
-					targetY: null,
-					minSide: null
-				};
+			tooltipEl._targetEl = targetEl;
+			tooltipEl._prevCoords = { tooltipX: null, tooltipY: null, targetX: null, targetY: null, minSide: null };
 
-				var colorScheme = tooltipEl._targetEl?.dataset?.ttcolor;
-				if (!tooltipEl._origColor) {
-					var styles = window.getComputedStyle(tooltipEl);
-					tooltipEl._origBackground = styles.background;
-					tooltipEl._origColor = styles.color;
-				}
-				switch (colorScheme) {
-					case "blue":
-						tooltipEl.style.color = "#448CCB";
-						tooltipEl.style.background = "linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)";
-						break;
-					case "black":
-						tooltipEl.style.color = "#707070";
-						tooltipEl.style.background = "linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)";
-						break;
-					case "red":
-						tooltipEl.style.color = "#CE3535";
-						tooltipEl.style.background = "linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%)";
-						break;
-					case "white":
-						tooltipEl.style.color = "#A9A9A9";
-						tooltipEl.style.background = "linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)";
-						break;
-					case "green":
-						tooltipEl.style.color = "#008080";
-						tooltipEl.style.background = "linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)";
-						break;
-					default:
-						tooltipEl.style.color = tooltipEl._origColor;
-						tooltipEl.style.background = tooltipEl._origBackground;
-				}
+			if (!tooltipEl._origColor) {
+				const styles = window.getComputedStyle(tooltipEl);
+				tooltipEl._origBackground = styles.background;
+				tooltipEl._origColor = styles.color;
+			}
+			const colorSchemes = {
+				blue:  { color:"#448CCB", bg:"linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)" },
+				black: { color:"#707070", bg:"linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%)" },
+				red:   { color:"#CE3535", bg:"linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%)" },
+				white: { color:"#A9A9A9", bg:"linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%)" },
+				green: { color:"#008080", bg:"linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)" }
+			};
+			var schemeName = tooltipEl._targetEl?.dataset?.ttcolor;
+			if (!schemeName || !colorSchemes[schemeName]) {
+				tooltipEl.style.color = tooltipEl._origColor;
+				tooltipEl.style.background = tooltipEl._origBackground;
+			} else {
+				const scheme = colorSchemes[schemeName];
+				tooltipEl.style.color = scheme.color;
+				tooltipEl.style.background = scheme.bg;
+			}
 
+			setTimeout(() => {
 				positionTooltip(tooltipEl);
 				drawLine(tooltipEl);
 				startTooltipTracker(tooltipEl);
-
-			})(20);
+			}, 0);
 		},
 		close: function(event, ui) {
 			removeTooltip(ui.tooltip[0]);
 		}
 	});
 
-	function removeTooltip(tooltipEl, noAnimation) {
-		if (typeof noAnimation === "undefined") noAnimation = false;
-		if (noAnimation) {
+	function removeTooltip(tooltipEl, noAnimation = false) {
+		if (!tooltipEl) return;
+
+		const removeTooltipElements = () => {
 			if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
 			if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
 			if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
 			stopTooltipTracker(tooltipEl);
-			if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
-		} else {
-			if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
-			if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
-			if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
-			setTimeout(() => {
-				if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
-				if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
-				if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
-				stopTooltipTracker(tooltipEl);
-				if (tooltipEl.parentNode) document.body.removeChild(tooltipEl);
-			}, 200);
+			if (tooltipEl.parentNode) tooltipEl.parentNode.removeChild(tooltipEl);
+		};
+
+		if (noAnimation) {
+			removeTooltipElements();
+			return;
 		}
+
+		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
+		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
+		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
+
+		setTimeout(() => {
+			removeTooltipElements();
+		}, 200);
 	}
 
 	window.addEventListener("blur", () => {
@@ -261,24 +253,19 @@ $(function() {
 		});
 	});
 
-	var fired = false;
-	const events = [
-		"mousemove","mouseover","mousedown","mouseup","click","dblclick",
-		"auxclick","mouseout","mouseleave","contextmenu",
-		"pointermove","pointerover","pointerdown","pointerup",
-		"pointerout","pointerleave","pointercancel"
-	];
-	const handler = ev => {
-		if (fired || typeof ev.clientX !== "number" || typeof ev.clientY !== "number") return;
+	let fired = false;
+	const firstHandler = ev => {
+		if (fired || typeof ev.clientX !== "number") return;
 		fired = true;
+
 		const el = document.elementFromPoint(ev.clientX, ev.clientY);
-		if (!el?.getAttribute?.("title")) {
-			events.forEach(evt => window.removeEventListener(evt, handler, true));
-			return;
+
+		if (el?.getAttribute?.("title")) {
+			el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
+			el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
 		}
-		el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
-		el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
-		events.forEach(evt => window.removeEventListener(evt, handler, true));
+
+		window.removeEventListener("pointermove", firstHandler, true);
 	};
-	events.forEach(evt => window.addEventListener(evt, handler, true));
+	window.addEventListener("pointermove", firstHandler, true);
 });
