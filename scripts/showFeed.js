@@ -549,7 +549,7 @@ function preloadImage(type, source, lang, result) {
 		if (typeof newUrl !== 'undefined' && isOrigUrl == 0 && newUrl != preloadImg.src) {
 			preloadImg.alt=entry.media.origComment;
 			preloadImg.title=entry.media.origComment;
-			if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.setAttribute('src', newUrl); return; }
+			if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.src=newUrl; return; }
 			if (source == "nasa") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
 			preloadImg.src=newUrl;
 			isOrigUrl = 1;
@@ -566,7 +566,7 @@ function preloadImage(type, source, lang, result) {
 	}
 	newUrl = entry.media.url;
 	result.entries[preloadIndex].storage.preloadStarted=1;
-	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.setAttribute('src', newUrl); return; }
+	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.src=newUrl; return; }
 	if (source == "nasa") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
 	preloadImg.src=newUrl;
 }
