@@ -23,29 +23,29 @@ $(function() {
 
 	var activeTooltips = new Set();
 	var rafRunning = false;
+	window.addEventListener('resize', () => activeTooltips.forEach(t => t._boundingRect = null));
+	scrollDiv?.addEventListener('scroll', () => activeTooltips.forEach(t => t._boundingRect = null));
 
 	function globalTick() {
 		if (activeTooltips.size === 0) {
 			rafRunning = false;
 			return;
 		}
-
+		const toRemove = [];
 		activeTooltips.forEach(tooltipEl => {
 			if (!tooltipEl._targetEl || !document.body.contains(tooltipEl._targetEl)) {
-				removeTooltip(tooltipEl, true);
+				toRemove.push(tooltipEl);
 				return;
 			}
-
 			const rect = tooltipEl._targetEl.getBoundingClientRect();
-			const prev = tooltipEl._prevTargetRect;
-
-			if (!prev || rect.top !== prev.top || rect.left !== prev.left) {
+			const prev = tooltipEl._prevTargetRect || {};
+			if (prev.top !== rect.top || prev.left !== rect.left || prev.width !== rect.width || prev.height !== rect.height) {
 				tooltipEl._prevTargetRect = rect;
-				positionTooltip(tooltipEl, rect);
-				drawLine(tooltipEl);
+				positionTooltip(tooltipEl);
+				drawLine(tooltipEl, rect);
 			}
 		});
-
+		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl, true));
 		requestAnimationFrame(globalTick);
 	}
 
@@ -70,38 +70,37 @@ $(function() {
 	function drawLine(tooltipEl, targetRect) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
-		if (!targetRect) targetRect = tooltipEl._targetEl.getBoundingClientRect();
 		var tooltipRect = tooltipEl.getBoundingClientRect();
-		var targetX = targetRect.left + targetRect.width / 2;
-		var targetY = targetRect.top + targetRect.height / 2;
+		var targetX = crisp(targetRect.left + targetRect.width / 2);
+		var targetY = crisp(targetRect.top + targetRect.height / 2);
 
-		var boundingRect = scrollDiv && scrollDiv.contains(tooltipEl._targetEl)
-			? scrollDiv.getBoundingClientRect()
-			: document.body.getBoundingClientRect();
+		if (!tooltipEl._boundingRect) {
+			var boundingRect = scrollDiv && scrollDiv.contains(tooltipEl._targetEl)
+				? scrollDiv.getBoundingClientRect()
+				: document.body.getBoundingClientRect();
+			tooltipEl._boundingRect = {
+				left: boundingRect.left,
+				top: boundingRect.top,
+				right: boundingRect.right - getScrollbarWidth(scrollDiv || document.body),
+				bottom: boundingRect.bottom - getScrollbarHeight(scrollDiv || document.body)
+			};
+		}
 
-		var boundingRectArray = {
-			left: boundingRect.left,
-			top: boundingRect.top,
-			right: boundingRect.right - getScrollbarWidth(scrollDiv || document.body),
-			bottom: boundingRect.bottom - getScrollbarHeight(scrollDiv || document.body)
-		};
-
-		if (targetX - r < boundingRectArray.left) targetX = crisp(boundingRectArray.left + r);
-		else if (targetX + r > boundingRectArray.right) targetX = crisp(boundingRectArray.right - r);
-		if (targetY - r < boundingRectArray.top) targetY = crisp(boundingRectArray.top + r);
-		else if (targetY + r > boundingRectArray.bottom) targetY = crisp(boundingRectArray.bottom - r);
+		if (targetX - r < tooltipEl._boundingRect.left) targetX = crisp(tooltipEl._boundingRect.left + r);
+		else if (targetX + r > tooltipEl._boundingRect.right) targetX = crisp(tooltipEl._boundingRect.right - r);
+		if (targetY - r < tooltipEl._boundingRect.top) targetY = crisp(tooltipEl._boundingRect.top + r);
+		else if (targetY + r > tooltipEl._boundingRect.bottom) targetY = crisp(tooltipEl._boundingRect.bottom - r);
 
 		var distances = { top: Math.abs(tooltipRect.top - targetY), bottom: Math.abs(tooltipRect.bottom - targetY) };
 		var minSide = distances.top < distances.bottom ? "top" : "bottom";
 
 		var tooltipX, tooltipY, d;
 
+		tooltipX = crisp(tooltipRect.left + tooltipRect.width / 2);
 		if (minSide === "top") {
-			tooltipX = tooltipRect.left + tooltipRect.width / 2;
 			tooltipY = crisp(tooltipRect.top);
 			d = `M ${tooltipX + r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX - r} ${tooltipY} Z`;
 		} else {
-			tooltipX = tooltipRect.left + tooltipRect.width / 2;
 			tooltipY = crisp(tooltipRect.bottom);
 			d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX + r} ${tooltipY} Z`;
 		}
@@ -118,6 +117,7 @@ $(function() {
 			line.setAttribute("stroke-dashoffset", length);
 			line.style.opacity = "0";
 			line.style.transition = "stroke-dashoffset 0.4s ease-out, opacity 0.2s linear";
+			line.style.pointerEvents = "none";
 			svgEl.appendChild(line);
 			tooltipEl._line = line;
 			requestAnimationFrame(() => {
@@ -139,6 +139,7 @@ $(function() {
 			startCircle.setAttribute("fill", lineColor);
 			startCircle.style.opacity = "0";
 			startCircle.style.transition = "opacity 0.2s linear";
+			startCircle.style.pointerEvents = "none";
 			svgEl.appendChild(startCircle);
 			tooltipEl._startCircle = startCircle;
 			requestAnimationFrame(() => { startCircle.style.opacity = "1"; });
@@ -152,6 +153,7 @@ $(function() {
 			endCircle.setAttribute("fill", lineColor);
 			endCircle.style.opacity = "0";
 			endCircle.style.transition = "opacity 0.2s linear";
+			endCircle.style.pointerEvents = "none";
 			svgEl.appendChild(endCircle);
 			tooltipEl._endCircle = endCircle;
 			requestAnimationFrame(() => { endCircle.style.opacity = "1"; });
@@ -186,12 +188,7 @@ $(function() {
 
 			tooltipEl._targetEl = targetEl;
 			tooltipEl._prevTargetRect = null;
-
-			if (!tooltipEl._origColor) {
-				const styles = window.getComputedStyle(tooltipEl);
-				tooltipEl._origBg = styles.background;
-				tooltipEl._origColor = styles.color;
-			}
+			tooltipEl._boundingRect = null;
 
 			const colorSchemes = {
 				blue:  { color:"#448CCB", bg:"linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%)" },
@@ -201,19 +198,19 @@ $(function() {
 				green: { color:"#008080", bg:"linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%)" }
 			};
 
-			var schemeName = tooltipEl._targetEl?.dataset?.ttcolor;
-			if (!schemeName || !colorSchemes[schemeName]) {
-				tooltipEl.style.color = tooltipEl._origColor;
-				tooltipEl.style.background = tooltipEl._origBg;
-			} else {
+			const schemeName = tooltipEl._targetEl?.dataset?.ttcolor;
+			if (schemeName && colorSchemes[schemeName]) {
 				const scheme = colorSchemes[schemeName];
 				tooltipEl.style.color = scheme.color;
 				tooltipEl.style.background = scheme.bg;
 			}
 
+			const rect = tooltipEl._targetEl.getBoundingClientRect();
+			tooltipEl.style.maxWidth = crisp(Math.max(300, Math.round(rect.width))) + "px";
+
 			requestAnimationFrame(() => {
 				positionTooltip(tooltipEl);
-				drawLine(tooltipEl);
+				drawLine(tooltipEl, rect);
 				startTooltipTracker(tooltipEl);
 			});
 		},
