@@ -6,7 +6,6 @@ $(function() {
 	var targetEl = null;
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-	svgEl.setAttribute("class", "tooltip-svg");
 	var zIndex = (typeof galleria2 !== 'undefined') ? "z-index: 10001;" : "z-index: 1;";
 	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; " + zIndex);
 	document.body.appendChild(svgEl);
