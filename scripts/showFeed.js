@@ -469,7 +469,7 @@ function preloadImage(type, source, lang, result) {
 		textImageLoadError = "Image Load Error";
 	}
 	if (lang == "lat") {
-		textImageLoadError = "Error Onerandae Imaginis";
+		textImageLoadError = "Error Onerationis Imaginis";
 	}
 
 	for (var j = 0; j < totalEntries; j++) {
@@ -1857,7 +1857,7 @@ function update(i, source, type, result, lang, updateAttempt) {
 
 	if (typeof updateAttempt === "undefined") updateAttempt=1;
 
-	var textUpdateRecord, textUpdateAbsent, textUpdateNA, textReloadPage, textUpdateAttempt="";
+	var textUpdateRecord, textUpdateAbsent, textUpdateLoadError, textReloadPage, textUpdateAttempt="";
 	var doc, mediaURL, property;
 	var description, searchDoc, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
 	var categories, creators, properties, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
@@ -1868,19 +1868,19 @@ function update(i, source, type, result, lang, updateAttempt) {
 	if (lang == "rus") {
 		textUpdateRecord = "Обновление Записи";
 		textUpdateAbsent = "Обновление Отсутствует";
-		textUpdateNA = "Обновление Не Доступно";
+		textUpdateLoadError = "Ошибка Загрузки Обновления";
 		textReloadPage = "Обновите Страницу";
 	}
 	if (lang == "eng") {
 		textUpdateRecord = "Updating Record";
 		textUpdateAbsent = "Update Absent";
-		textUpdateNA = "Update Not Available";
+		textUpdateLoadError = "Update Load Error";
 		textReloadPage = "Reload Page";
 	}
 	if (lang == "lat") {
 		textUpdateRecord = "Updating Monumentum";
 		textUpdateAbsent = "Renovatio Abest";
-		textUpdateNA = "Renovatio Non Disponibilis Est";
+		textUpdateLoadError = "Error Onerationis Renovationis";
 		textReloadPage = "Paginam Reficere";
 	}
 
@@ -2105,11 +2105,11 @@ function update(i, source, type, result, lang, updateAttempt) {
 			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
-				result.entries[i].media.comment = textUpdateNA + " (" + xhr.status + ")";
+				result.entries[i].media.comment = textUpdateLoadError + " (" + xhr.status + ")";
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = "images/icons/error/no_image.png";
 			}
-			result.entries[i].error = textUpdateNA + " (" + xhr.status + "). <a href='javascript:location.reload();' class='standardb_red'>"+textReloadPage+"</a>";
+			result.entries[i].error = textUpdateLoadError + " (" + xhr.status + "). <a href='javascript:location.reload();' class='standardb_red'>"+textReloadPage+"</a>";
 			showEntry(type, source, lang, result, i, 0);
 			result.entries[i].storage.updateProcessed = 1;
 			checkProcessedCount(source, type, result, lang, 0);
