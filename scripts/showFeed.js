@@ -454,13 +454,24 @@ function preloadImage(type, source, lang, result) {
 	// 5 preloads simultaneously only
 
 	var isOrigUrl=0;
-	var newUrl;
+	var newUrl, textImageLoadError;
 	var totalEntries = result.entries.length;
 	var preloadStartedCount=0;
 	var preloadPassedCount=0;
 	var preloadFailedCount=0;
 	var preloadSet=0;
 	var preloadIndex=0;
+
+	if (lang == "rus") {
+		textImageLoadError = "Ошибка Загрузки Картинки";
+	}
+	if (lang == "eng") {
+		textImageLoadError = "Image Load Error";
+	}
+	if (lang == "lat") {
+		textImageLoadError = "Error Onerandae Imaginis";
+	}
+
 	for (var j = 0; j < totalEntries; j++) {
 		if (typeof result.entries[j].storage.loadingImg !== "undefined" && result.entries[j].storage.loadingImg != null && result.entries[j].storage.preloadStarted==0 && preloadSet==0) {
 			preloadSet=1;
@@ -546,8 +557,8 @@ function preloadImage(type, source, lang, result) {
 			result.entries[preloadIndex].storage.preloadPF=0;
 			result.entries[preloadIndex].storage.preloadStarted=0;
 			result.entries[preloadIndex].storage.loadingImg=null;
-			loadingImg.alt='';
-			loadingImg.title='';
+			loadingImg.alt=textImageLoadError;
+			loadingImg.title=textImageLoadError;
 			loadingImg.src="images/icons/error/error.jpg";
 			adjustFeedScrollDiv();
 			preloadImage(type, source, lang, result);
