@@ -190,7 +190,7 @@ $(function() {
 
 			if (!tooltipEl._origColor) {
 				const styles = window.getComputedStyle(tooltipEl);
-				tooltipEl._origBackground = styles.background;
+				tooltipEl._origBg = styles.background;
 				tooltipEl._origColor = styles.color;
 			}
 
@@ -205,7 +205,7 @@ $(function() {
 			var schemeName = tooltipEl._targetEl?.dataset?.ttcolor;
 			if (!schemeName || !colorSchemes[schemeName]) {
 				tooltipEl.style.color = tooltipEl._origColor;
-				tooltipEl.style.background = tooltipEl._origBackground;
+				tooltipEl.style.background = tooltipEl._origBg;
 			} else {
 				const scheme = colorSchemes[schemeName];
 				tooltipEl.style.color = scheme.color;
