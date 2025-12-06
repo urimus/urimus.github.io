@@ -40,11 +40,31 @@ $(function() {
 			if (!forScrollDiv || insideScroll) updateTooltip(tooltipEl);
 		});
 	}
+
 	function updateTooltip(tooltipEl, targetRect) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 		if (!targetRect) targetRect = tooltipEl._targetEl.getBoundingClientRect();
-		positionTooltip(tooltipEl);
-		drawLine(tooltipEl,  targetRect);
+
+		const prev = tooltipEl._prevTargetRect || {};
+		const epsilon = 0.5;
+
+		const changed =
+			!prev.top || Math.abs(prev.top - targetRect.top) > epsilon ||
+			!prev.left || Math.abs(prev.left - targetRect.left) > epsilon ||
+			!prev.width || Math.abs(prev.width - targetRect.width) > epsilon ||
+			!prev.height || Math.abs(prev.height - targetRect.height) > epsilon;
+
+		if (changed) {
+			tooltipEl._prevTargetRect = {
+				top: targetRect.top,
+				left: targetRect.left,
+				width: targetRect.width,
+				height: targetRect.height
+			};
+
+			positionTooltip(tooltipEl);
+			drawLine(tooltipEl, targetRect);
+		}
 	}
 
 	function globalTick() {
@@ -58,12 +78,7 @@ $(function() {
 				toRemove.push(tooltipEl);
 				return;
 			}
-			var targetRect = tooltipEl._targetEl.getBoundingClientRect();
-			var prev = tooltipEl._prevTargetRect || {};
-			if (prev.top !==  targetRect.top || prev.left !==  targetRect.left || prev.width !==  targetRect.width || prev.height !==  targetRect.height) {
-				tooltipEl._prevTargetRect =  targetRect;
-				updateTooltip(tooltipEl, targetRect);
-			}
+			updateTooltip(tooltipEl);
 		});
 		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl, true));
 		requestAnimationFrame(globalTick);
