@@ -37,12 +37,12 @@ $(function() {
 				toRemove.push(tooltipEl);
 				return;
 			}
-			const rect = tooltipEl._targetEl.getBoundingClientRect();
-			const prev = tooltipEl._prevTargetRect || {};
-			if (prev.top !== rect.top || prev.left !== rect.left || prev.width !== rect.width || prev.height !== rect.height) {
-				tooltipEl._prevTargetRect = rect;
+			var targetRect = tooltipEl._targetEl.getBoundingClientRect();
+			var prev = tooltipEl._prevTargetRect || {};
+			if (prev.top !==  targetRect.top || prev.left !==  targetRect.left || prev.width !==  targetRect.width || prev.height !==  targetRect.height) {
+				tooltipEl._prevTargetRect =  targetRect;
 				positionTooltip(tooltipEl);
-				drawLine(tooltipEl, rect);
+				drawLine(tooltipEl,  targetRect);
 			}
 		});
 		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl, true));
@@ -205,12 +205,12 @@ $(function() {
 				tooltipEl.style.background = scheme.bg;
 			}
 
-			const rect = tooltipEl._targetEl.getBoundingClientRect();
-			tooltipEl.style.maxWidth = crisp(Math.max(300, Math.round(rect.width)-16)) + "px";
+			var  targetRect = tooltipEl._targetEl.getBoundingClientRect();
+			tooltipEl.style.maxWidth = crisp(Math.max(300, Math.round( targetRect.width)-16)) + "px";
 
 			requestAnimationFrame(() => {
 				positionTooltip(tooltipEl);
-				drawLine(tooltipEl, rect);
+				drawLine(tooltipEl,  targetRect);
 				startTooltipTracker(tooltipEl);
 			});
 		},
