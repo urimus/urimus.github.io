@@ -25,7 +25,7 @@ $(function() {
 
 	window.addEventListener('resize', () => {
 		activeTooltips.forEach(tooltipEl => tooltipEl._boundingRect = null);
-		updateAllTooltips(false); 
+		updateAllTooltips(); 
 	});
 	if (scrollDiv) {
 		const ro = new ResizeObserver(() => updateAllTooltips(true));
