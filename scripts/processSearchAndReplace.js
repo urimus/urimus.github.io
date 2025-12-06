@@ -1761,7 +1761,6 @@ function processSearchAndReplace(lang) {
 }
 
 function adjustTextareaAndEncodings() {
-console.log("textArea adjust");
 	var encodingDiv=document.getElementById("encoding_div");
 	if (encodingDiv === null || encodingDiv.offsetParent === null) return;
 

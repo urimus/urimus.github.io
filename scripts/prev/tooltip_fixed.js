@@ -4,6 +4,8 @@ $(function() {
 	var r = 4;
 	var lineColor = "#ff8a00";
 	var targetEl = null;
+	var activeTooltips = new Set();
+	var rafRunning = false;
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	var zIndex = (typeof galleria2 !== 'undefined') ? "z-index: 10001;" : "z-index: 1;";
@@ -21,10 +23,29 @@ $(function() {
 		return Math.round(value * ratio) / ratio;
 	}
 
-	var activeTooltips = new Set();
-	var rafRunning = false;
-	window.addEventListener('resize', () => activeTooltips.forEach(t => t._boundingRect = null));
-	scrollDiv?.addEventListener('scroll', () => activeTooltips.forEach(t => t._boundingRect = null));
+	window.addEventListener('resize', () => {
+		activeTooltips.forEach(t => t._boundingRect = null);
+		updateAllTooltips(false); 
+	});
+	if (scrollDiv) {
+		const ro = new ResizeObserver(() => updateAllTooltips(true));
+		ro.observe(scrollDiv);
+	}
+	window.addEventListener('scroll', () => updateAllTooltips(), { passive: true });
+	scrollDiv?.addEventListener('scroll', () => updateAllTooltips(true), { passive: true });
+
+	function updateAllTooltips(forScrollDiv = false) {
+		activeTooltips.forEach(tooltipEl => {
+			const insideScroll = scrollDiv && scrollDiv.contains(tooltipEl._targetEl);
+			if (!forScrollDiv || insideScroll) updateTooltip(tooltipEl);
+		});
+	}
+	function updateTooltip(tooltipEl, targetRect) {
+		if (!tooltipEl || !tooltipEl._targetEl) return;
+		if (!targetRect) targetRect = tooltipEl._targetEl.getBoundingClientRect();
+		positionTooltip(tooltipEl);
+		drawLine(tooltipEl,  targetRect);
+	}
 
 	function globalTick() {
 		if (activeTooltips.size === 0) {
@@ -41,8 +62,7 @@ $(function() {
 			var prev = tooltipEl._prevTargetRect || {};
 			if (prev.top !==  targetRect.top || prev.left !==  targetRect.left || prev.width !==  targetRect.width || prev.height !==  targetRect.height) {
 				tooltipEl._prevTargetRect =  targetRect;
-				positionTooltip(tooltipEl);
-				drawLine(tooltipEl,  targetRect);
+				updateTooltip(tooltipEl, targetRect);
 			}
 		});
 		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl, true));
@@ -209,8 +229,7 @@ $(function() {
 			tooltipEl.style.maxWidth = crisp(Math.max(300, Math.round(targetRect.width)-16)) + "px";
 
 			requestAnimationFrame(() => {
-				positionTooltip(tooltipEl);
-				drawLine(tooltipEl,  targetRect);
+				updateTooltip(tooltipEl, targetRect);
 				startTooltipTracker(tooltipEl);
 			});
 		},
