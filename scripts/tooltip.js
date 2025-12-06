@@ -206,7 +206,7 @@ $(function() {
 			}
 
 			var  targetRect = tooltipEl._targetEl.getBoundingClientRect();
-			tooltipEl.style.maxWidth = crisp(Math.max(300, Math.round( targetRect.width)-16)) + "px";
+			tooltipEl.style.maxWidth = crisp(Math.max(300, Math.round(targetRect.width)-16)) + "px";
 
 			requestAnimationFrame(() => {
 				positionTooltip(tooltipEl);
