@@ -24,7 +24,7 @@ $(function() {
 	}
 
 	window.addEventListener('resize', () => {
-		activeTooltips.forEach(t => t._boundingRect = null);
+		activeTooltips.forEach(tooltipEl => tooltipEl._boundingRect = null);
 		updateAllTooltips(false); 
 	});
 	if (scrollDiv) {
