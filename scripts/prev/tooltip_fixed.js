@@ -34,7 +34,10 @@ $(function() {
 		});
 		ro.observe(scrollDiv);
 	}
-	window.addEventListener('scroll', () => updateAllTooltips(), { passive: true });
+	window.addEventListener('scroll', () => {
+		activeTooltips.forEach(tooltipEl => tooltipEl._boundingRect = null);
+		updateAllTooltips(); 
+	});
 	scrollDiv?.addEventListener('scroll', () => updateAllTooltips(true), { passive: true });
 
 	function updateAllTooltips(forScrollDiv = false) {
@@ -125,8 +128,8 @@ $(function() {
 				tooltipEl._boundingRect = {
 					left: 0,
 					top: 0,
-					right: window.innerWidth - getScrollbarWidth(document.body),
-					bottom: window.innerHeight - getScrollbarHeight(document.body)
+					right: document.documentElement.clientWidth,
+					bottom: document.documentElement.clientHeight
 				};
 			}
 		}
