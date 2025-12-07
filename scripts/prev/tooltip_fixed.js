@@ -28,7 +28,10 @@ $(function() {
 		updateAllTooltips(); 
 	});
 	if (scrollDiv) {
-		const ro = new ResizeObserver(() => updateAllTooltips(true));
+		const ro = new ResizeObserver(() => {
+			activeTooltips.forEach(tooltipEl => tooltipEl._boundingRect = null);
+			updateAllTooltips(true);
+		});
 		ro.observe(scrollDiv);
 	}
 	window.addEventListener('scroll', () => updateAllTooltips(), { passive: true });
