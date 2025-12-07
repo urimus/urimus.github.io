@@ -3,7 +3,7 @@
 $(function() {
 	var r = 4;
 	var lineColor = "#ff8a00";
-	var targetEl = null;
+	var currentTooltipTarget = null;
 	var activeTooltips = new Set();
 	var rafRunning = false;
 
@@ -113,17 +113,23 @@ $(function() {
 		var targetY = crisp(targetRect.top + targetRect.height / 2);
 
 		if (!tooltipEl._boundingRect) {
-			var boundingRect = scrollDiv && scrollDiv.contains(tooltipEl._targetEl)
-				? scrollDiv.getBoundingClientRect()
-				: document.body.getBoundingClientRect();
-			tooltipEl._boundingRect = {
-				left: boundingRect.left,
-				top: boundingRect.top,
-				right: boundingRect.right - getScrollbarWidth(scrollDiv || document.body),
-				bottom: boundingRect.bottom - getScrollbarHeight(scrollDiv || document.body)
-			};
+			if (scrollDiv && scrollDiv.contains(tooltipEl._targetEl)) {
+				var boundingRect = scrollDiv.getBoundingClientRect();
+				tooltipEl._boundingRect = {
+					left: boundingRect.left,
+					top: boundingRect.top,
+					right: boundingRect.right - getScrollbarWidth(scrollDiv),
+					bottom: boundingRect.bottom - getScrollbarHeight(scrollDiv)
+				};
+			} else {
+				tooltipEl._boundingRect = {
+					left: 0,
+					top: 0,
+					right: window.innerWidth - getScrollbarWidth(document.body),
+					bottom: window.innerHeight - getScrollbarHeight(document.body)
+				};
+			}
 		}
-
 		if (targetX - r < tooltipEl._boundingRect.left) targetX = crisp(tooltipEl._boundingRect.left + r);
 		else if (targetX + r > tooltipEl._boundingRect.right) targetX = crisp(tooltipEl._boundingRect.right - r);
 		if (targetY - r < tooltipEl._boundingRect.top) targetY = crisp(tooltipEl._boundingRect.top + r);
@@ -217,14 +223,15 @@ $(function() {
 		show: function() { $(this).fadeIn(200); },
 		hide: { effect: "fade", duration: 200 },
 		content: function() {
-			if ($(this).attr('title') != "") targetEl = this;
+			if ($(this).attr('title') != "") currentTooltipTarget = this;
 			return $(this).attr('title');
 		},
 		open: function(event, ui) {
 			const tooltipEl = ui.tooltip[0];
-			if (!tooltipEl || !targetEl) return;
+			if (!tooltipEl || !currentTooltipTarget) return;
 
-			tooltipEl._targetEl = targetEl;
+			tooltipEl._targetEl = currentTooltipTarget;
+			currentTooltipTarget = null;
 			tooltipEl._prevTargetRect = null;
 			tooltipEl._boundingRect = null;
 
