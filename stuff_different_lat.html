@@ -89,7 +89,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div 
 			onmouseenter="this.className='flag_selected'"
 			onmouseleave="this.className='flag_selected'"
-			onclick="				if (event.ctrlKey==1){
+			onclick="				this.onmouseleave = null;
+				if (event.ctrlKey==1) {
 					window.open('stuff_different_lat.html' + window.location.hash);
 				} else {
 					window.location.href='stuff_different_lat.html' + window.location.hash;
@@ -107,7 +108,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div 
 			onmouseenter="this.className='flag_selected'"
 			onmouseleave="this.className='flag_not_selected'"
-			onclick="				if (event.ctrlKey==1){
+			onclick="				this.onmouseleave = null;
+				if (event.ctrlKey==1) {
 					window.open('stuff_different_eng.html' + window.location.hash);
 				} else {
 					window.location.href='stuff_different_eng.html' + window.location.hash;
@@ -122,7 +124,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div 
 			onmouseenter="this.className='flag_selected'"
 			onmouseleave="this.className='flag_not_selected'"
-			onclick="				if (event.ctrlKey==1){
+			onclick="				this.onmouseleave = null;
+				if (event.ctrlKey==1) {
 					window.open('stuff_different_rus.html' + window.location.hash);
 				} else {
 					window.location.href='stuff_different_rus.html' + window.location.hash;
@@ -170,7 +173,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('about_me_lat.html');
 			} else {
 				window.location.href='about_me_lat.html';
@@ -186,7 +190,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('about_work_lat.html');
 			} else {
 				window.location.href='about_work_lat.html';
@@ -204,7 +209,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('about_phd_lat.html');
 			} else {
 				window.location.href='about_phd_lat.html';
@@ -221,7 +227,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('links_lat.html');
 			} else {
 				window.location.href='links_lat.html';
@@ -260,7 +267,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('junk_lat.html');
 			} else {
 				window.location.href='junk_lat.html';
@@ -290,7 +298,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_selected'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('stuff_different_lat.html');
 			} else {
 				window.location.href='stuff_different_lat.html';
@@ -310,7 +319,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('stuff_chupacabra_lat.html');
 			} else {
 				window.location.href='stuff_chupacabra_lat.html';
@@ -332,7 +342,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('stuff_hyperspace_lat.html');
 			} else {
 				window.location.href='stuff_hyperspace_lat.html';
@@ -351,7 +362,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('stuff_images_general_lat.html');
 			} else {
 				window.location.href='stuff_images_general_lat.html';
@@ -372,7 +384,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('stuff_matrix_lat.html');
 			} else {
 				window.location.href='stuff_matrix_lat.html';
@@ -392,7 +405,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('stuff_star_trek_discovery_lat.html');
 			} else {
 				window.location.href='stuff_star_trek_discovery_lat.html';

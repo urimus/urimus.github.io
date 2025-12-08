@@ -104,7 +104,8 @@ function setIframes() {
 			onmouseenter="this.className='flag_selected'"
 			onmouseleave="this.className='flag_not_selected'"
 			onclick="
-				if (event.ctrlKey==1){
+				this.onmouseleave = null;
+				if (event.ctrlKey==1) {
 					window.open('amv_2023_lat.html' + window.location.hash);
 				} else {
 					window.location.href='amv_2023_lat.html' + window.location.hash;
@@ -124,7 +125,8 @@ function setIframes() {
 			onmouseenter="this.className='flag_selected'"
 			onmouseleave="this.className='flag_selected'"
 			onclick="
-				if (event.ctrlKey==1){
+				this.onmouseleave = null;
+				if (event.ctrlKey==1) {
 					window.open('amv_2023_eng.html' + window.location.hash);
 				} else {
 					window.location.href='amv_2023_eng.html' + window.location.hash;
@@ -140,7 +142,8 @@ function setIframes() {
 			onmouseenter="this.className='flag_selected'"
 			onmouseleave="this.className='flag_not_selected'"
 			onclick="
-				if (event.ctrlKey==1){
+				this.onmouseleave = null;
+				if (event.ctrlKey==1) {
 					window.open('amv_2023_rus.html' + window.location.hash);
 				} else {
 					window.location.href='amv_2023_rus.html' + window.location.hash;
@@ -190,7 +193,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('about_me_eng.html');
 			} else {
 				window.location.href='about_me_eng.html';
@@ -205,7 +209,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('about_work_eng.html');
 			} else {
 				window.location.href='about_work_eng.html';
@@ -222,7 +227,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('about_phd_eng.html');
 			} else {
 				window.location.href='about_phd_eng.html';
@@ -239,7 +245,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('links_eng.html');
 			} else {
 				window.location.href='links_eng.html';
@@ -257,7 +264,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('html_editor_eng.html?pattern=*.html&i=0');
 			} else {
 				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
@@ -357,7 +365,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('amv_2012_eng.html');
 			} else {
 				window.location.href='amv_2012_eng.html';
@@ -378,7 +387,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('amv_2013_2014_eng.html');
 			} else {
 				window.location.href='amv_2013_2014_eng.html';
@@ -400,7 +410,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('amv_2021_eng.html');
 			} else {
 				window.location.href='amv_2021_eng.html';
@@ -420,7 +431,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('amv_2022_eng.html');
 			} else {
 				window.location.href='amv_2022_eng.html';
@@ -440,7 +452,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_selected'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('amv_2023_eng.html');
 			} else {
 				window.location.href='amv_2023_eng.html';
@@ -461,7 +474,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('amv_2024_eng.html');
 			} else {
 				window.location.href='amv_2024_eng.html';
@@ -480,7 +494,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('amv_2025_eng.html');
 			} else {
 				window.location.href='amv_2025_eng.html';
@@ -500,7 +515,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('junk_eng.html');
 			} else {
 				window.location.href='junk_eng.html';
@@ -541,7 +557,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_red'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('heffalump_eng.html');
 			} else {
 				window.location.href='heffalump_eng.html';
@@ -597,7 +614,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_green'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('satanism_wicca_eng.html');
 			} else {
 				window.location.href='satanism_wicca_eng.html';
@@ -618,7 +636,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_green'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('falsifiability_eng.html');
 			} else {
 				window.location.href='falsifiability_eng.html';
@@ -657,7 +676,8 @@ function setIframes() {
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_green'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('totalitarianism_eng.html');
 			} else {
 				window.location.href='totalitarianism_eng.html';

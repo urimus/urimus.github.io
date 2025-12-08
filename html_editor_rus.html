@@ -89,7 +89,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="this.className='flag_not_selected'"
 			onclick="				patt=encodeURIComponent(getParameterByName('pattern'));
 				i=encodeURIComponent(getParameterByName('i'));
-				if (event.ctrlKey==1){
+				this.onmouseleave = null;
+				if (event.ctrlKey==1) {
 					window.open('html_editor_eng.html' + ((patt.localeCompare('null')!=0) ? '?pattern='+ patt+'&i='+i : ''));
 				} else {
 					window.location.href='html_editor_eng.html' + ((patt.localeCompare('null')!=0) ? '?pattern='+ patt+'&i='+i : '');
@@ -106,7 +107,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="this.className='flag_selected'"
 			onclick="				patt=encodeURIComponent(getParameterByName('pattern'));
 				i=encodeURIComponent(getParameterByName('i'));
-				if (event.ctrlKey==1){
+				this.onmouseleave = null;
+				if (event.ctrlKey==1) {
 					window.open('html_editor_rus.html' + ((patt.localeCompare('null')!=0) ? '?pattern='+ patt+'&i='+i : ''));
 				} else {
 					window.location.href='html_editor_rus.html' + ((patt.localeCompare('null')!=0) ? '?pattern='+ patt+'&i='+i : '');
@@ -156,7 +158,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('about_me_rus.html');
 			} else {
 				window.location.href='about_me_rus.html';
@@ -172,7 +175,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('about_work_rus.html');
 			} else {
 				window.location.href='about_work_rus.html';
@@ -190,7 +194,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('about_phd_rus.html');
 			} else {
 				window.location.href='about_phd_rus.html';
@@ -206,7 +211,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_blue'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('links_rus.html');
 			} else {
 				window.location.href='links_rus.html';
@@ -224,7 +230,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="this.className='menu_selected'" 
 		onclick="
 			patt=encodeURIComponent(getParameterByName('pattern'));
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('html_editor_rus.html?pattern=' + ((patt.localeCompare('null')!=0) ? patt : '*.html')+'&i=0');
 			} else {
 				window.location.href='html_editor_rus.html?pattern=' + ((patt.localeCompare('null')!=0) ? patt : '*.html')+'&i=0';
@@ -318,7 +325,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_black'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('junk_rus.html');
 			} else {
 				window.location.href='junk_rus.html';
@@ -360,7 +368,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_red'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('heffalump_rus.html');
 			} else {
 				window.location.href='heffalump_rus.html';
@@ -416,7 +425,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_green'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('satanism_wicca_rus.html');
 			} else {
 				window.location.href='satanism_wicca_rus.html';
@@ -436,7 +446,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_green'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('falsifiability_rus.html');
 			} else {
 				window.location.href='falsifiability_rus.html';
@@ -477,7 +488,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="showSubMenu(this);" 
 		onmouseleave="this.className='menu_not_selected_green'" 
 		onclick="
-			if (event.ctrlKey==1){
+			this.onmouseleave = null;
+			if (event.ctrlKey==1) {
 				window.open('totalitarianism_rus.html');
 			} else {
 				window.location.href='totalitarianism_rus.html';
