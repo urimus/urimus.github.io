@@ -217,6 +217,17 @@ function processPageResize(isLoad, orientationChanged){
 			imgBgStar.style.display="none";
 		}
 	}
+
+	if (window.location.pathname.substr(0, 4) == "/amv" && isLoad == 1) {
+		setIframes();
+	}
+}
+
+function setIframes() {
+	const iframes = document.getElementsByTagName("iframe");
+	iframes.forEach(iframe => {
+		iframe.src = iframe.dataset.src;
+	});
 }
 
 function flashText() {
