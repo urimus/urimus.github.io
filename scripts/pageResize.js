@@ -225,9 +225,9 @@ function processPageResize(isLoad, orientationChanged){
 
 function setIframes() {
 	const iframes = document.getElementsByTagName("iframe");
-	iframes.forEach(iframe => {
+	for (const iframe of iframes) {
 		iframe.src = iframe.dataset.src;
-	});
+	}
 }
 
 function flashText() {
