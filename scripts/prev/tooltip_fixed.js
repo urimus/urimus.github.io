@@ -6,17 +6,12 @@ $(function() {
 	var currentTooltipTarget = null;
 	var activeTooltips = new Set();
 	var rafRunning = false;
+	var scrollDiv = document.getElementById('scrollDiv');
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	var zIndex = (typeof galleria2 !== 'undefined') ? "z-index: 10001;" : "z-index: 1;";
 	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; " + zIndex);
 	document.body.appendChild(svgEl);
-
-	var scrollDiv = document.getElementById('scrollDiv');
-
-	var style = document.createElement('style');
-	style.textContent = `.ui-tooltip.custom-tooltip { border: ${r / 2}px solid ${lineColor}; border-radius: ${r}px; }`;
-	document.head.appendChild(style);
 
 	function crisp(value) {
 		var ratio = window.devicePixelRatio || 1;
@@ -112,7 +107,7 @@ $(function() {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
 		var tooltipRect = tooltipEl.getBoundingClientRect();
-		if (tooltipRect.width < 20 || tooltipRect.height < 20) {
+		if (tooltipRect.width < 5 || tooltipRect.height < 5) {
 			tooltipEl._prevTargetRect = null;
 			return;
 		}
