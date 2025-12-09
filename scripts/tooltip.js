@@ -257,10 +257,8 @@ $(function() {
 			var  targetRect = tooltipEl._targetEl.getBoundingClientRect();
 			tooltipEl.style.maxWidth = crisp(Math.max(300, Math.round(targetRect.width)-16)) + "px";
 
-			requestAnimationFrame(() => {
-				updateTooltip(tooltipEl, targetRect);
-				startTooltipTracker(tooltipEl);
-			});
+			updateTooltip(tooltipEl, targetRect);
+			startTooltipTracker(tooltipEl);
 		},
 		close: function(event, ui) {
 			removeTooltip(ui.tooltip[0]);
