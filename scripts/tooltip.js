@@ -118,12 +118,12 @@ $(function() {
 
 		if (!tooltipEl._boundingRect) {
 			if (scrollDiv && scrollDiv.contains(tooltipEl._targetEl)) {
-				var boundingRect = scrollDiv.getBoundingClientRect();
+				var scrollRect = scrollDiv.getBoundingClientRect();
 				tooltipEl._boundingRect = {
-					left: boundingRect.left,
-					top: boundingRect.top,
-					right: boundingRect.right - getScrollbarWidth(scrollDiv),
-					bottom: boundingRect.bottom - getScrollbarHeight(scrollDiv)
+					left: scrollRect.left,
+					top: scrollRect.top,
+					right: scrollRect.left + scrollDiv.clientWidth,
+					bottom: scrollRect.top + scrollDiv.clientHeight
 				};
 			} else {
 				tooltipEl._boundingRect = {
