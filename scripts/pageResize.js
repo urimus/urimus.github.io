@@ -35,6 +35,16 @@ function getScrollbarHeight(el) {
 	return el.offsetHeight - el.clientHeight;
 }
 
+function getViewportWidth() {
+	if (window.visualViewport) return window.visualViewport.width;
+	return document.documentElement.clientWidth || window.innerWidth;
+}
+
+function getViewportHeight() {
+	if (window.visualViewport) return window.visualViewport.height;
+	return document.documentElement.clientHeight || window.innerHeight;
+}
+
 function getScrollDivOffset(){
 /*
 	var newImg = new Image();
@@ -62,8 +72,8 @@ function adjustScrollDiv2(){
 	var additIntend = 0;
 	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
 
-	scrollDiv.style.minHeight="calc(100svh - " + (getScrollDivOffset() - additIntend) + "px)";
-	scrollDiv.style.height=(menuHeight + additIntend) + "px";
+	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset() + additIntend) + "px"
+	scrollDiv.style.height = (menuHeight + additIntend) + "px";
 
 	var pathname = window.location.pathname;
 	if (pathname.substr(0, 9) == "/about_me") {

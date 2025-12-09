@@ -8094,7 +8094,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	}
 
 	top_scroll = window.scrollY;
-	h = window.innerHeight - getScrollbarHeight(document.body);
+	h = getViewportHeight();
 	popupImage = document.getElementById("popupImage");
 
 	if (!popupImage) {

@@ -129,8 +129,8 @@ $(function() {
 				tooltipEl._boundingRect = {
 					left: 0,
 					top: 0,
-					right: document.documentElement.clientWidth,
-					bottom: document.documentElement.clientHeight
+					right: getViewportWidth(),
+					bottom: getViewportHeight()
 				};
 			}
 		}

@@ -514,9 +514,8 @@ function adjustContentsScrollDiv() {
 		scrollDiv.style.height = "100%";
 		return;
 	}
-
-	scrollDiv.style.minHeight="calc(100svh - " + (getScrollDivOffset() + tabsHeight + 8) + "px)";
-	scrollDiv.style.height=(menuHeight - tabsHeight - 8) + "px";
+	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset() - tabsHeight - 8) + "px)";
+	scrollDiv.style.height = (menuHeight - tabsHeight - 8) + "px";
 
 }
 
