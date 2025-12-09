@@ -112,7 +112,10 @@ $(function() {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
 		var tooltipRect = tooltipEl.getBoundingClientRect();
-		if (tooltipRect.left === 0 && tooltipRect.top === 0 && tooltipRect.width === 0 && tooltipRect.height === 0) return;
+		if (tooltipRect.width < 20 || tooltipRect.height < 20) {
+			tooltipEl._prevTargetRect = null;
+			return;
+		}
 		var targetX = crisp(targetRect.left + targetRect.width / 2);
 		var targetY = crisp(targetRect.top + targetRect.height / 2);
 
