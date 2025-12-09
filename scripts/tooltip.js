@@ -157,11 +157,12 @@ $(function() {
 			svgEl.appendChild(line);
 			tooltipEl._line = line;
 			requestAnimationFrame(() => {
-				line.style.opacity = "1";
-				line.setAttribute("stroke-dashoffset", "0");
+				requestAnimationFrame(() => {
+					line.style.opacity = "1";
+					line.setAttribute("stroke-dashoffset", "0");
+				});
 			});
 		}
-
 		line.setAttribute("stroke-dasharray", length);
 		line.setAttribute("x1", targetX);
 		line.setAttribute("y1", targetY);
@@ -178,7 +179,11 @@ $(function() {
 			startCircle.style.pointerEvents = "none";
 			svgEl.appendChild(startCircle);
 			tooltipEl._startCircle = startCircle;
-			requestAnimationFrame(() => { startCircle.style.opacity = "1"; });
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => {
+					startCircle.style.opacity = "1";
+				});
+			});
 		}
 		startCircle.setAttribute("cx", targetX);
 		startCircle.setAttribute("cy", targetY);
@@ -192,7 +197,11 @@ $(function() {
 			endCircle.style.pointerEvents = "none";
 			svgEl.appendChild(endCircle);
 			tooltipEl._endCircle = endCircle;
-			requestAnimationFrame(() => { endCircle.style.opacity = "1"; });
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => {
+					endCircle.style.opacity = "1";
+				});
+			});
 		}
 		endCircle.setAttribute("d", d);
 	}
