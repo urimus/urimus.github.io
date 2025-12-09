@@ -5,7 +5,6 @@ $(function() {
 	var lineColor = "#ff8a00";
 	var currentTooltipTarget = null;
 	var activeTooltips = new Set();
-	var rafRunning = false;
 	var scrollDiv = document.getElementById('scrollDiv');
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -69,37 +68,28 @@ $(function() {
 	}
 
 	function globalTick() {
-		if (activeTooltips.size === 0) {
-			rafRunning = false;
-			return;
-		}
+		if (activeTooltips.size === 0) return;
+
 		const toRemove = [];
 		activeTooltips.forEach(tooltipEl => {
 			if (!tooltipEl._targetEl || !document.body.contains(tooltipEl._targetEl)) {
 				toRemove.push(tooltipEl);
-				return;
+			} else {
+				updateTooltip(tooltipEl);
 			}
-			updateTooltip(tooltipEl);
 		});
 		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl, true));
-		requestAnimationFrame(globalTick);
+		if (activeTooltips.size > 0) requestAnimationFrame(globalTick);
 	}
 
 	function startTooltipTracker(tooltipEl) {
 		if (tooltipEl._tracking) return;
 		tooltipEl._tracking = true;
 		activeTooltips.add(tooltipEl);
-
-		if (!rafRunning) {
-			rafRunning = true;
-			requestAnimationFrame(globalTick);
-		}
+		requestAnimationFrame(globalTick);
 	}
 
 	function stopTooltipTracker(tooltipEl) {
-		if (!tooltipEl._tracking) return;
-		tooltipEl._tracking = false;
-		tooltipEl._prevTargetRect = null;
 		activeTooltips.delete(tooltipEl);
 	}
 
