@@ -7914,7 +7914,7 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId, isCaption) {
 			if (menu.hasSub) {
 				divSM.setAttribute('onclick', "showSubMenu(this, '"+lang+"', '"+type+"', "+newTableId+");");
 			} else {
-				divSM.setAttribute('onclick', "if (event.ctrlKey==1) { window.open('"+menu.link+"'); } else { this.onmouseleave = null; window.location.href='"+menu.link+"'; };");
+				divSM.setAttribute('onclick', "if (event.ctrlKey==1) { window.open('"+menu.link+"'); } else { this.removeAttribute('onmouseleave'); window.location.href='"+menu.link+"'; };");
 			}
 		}
 	}
