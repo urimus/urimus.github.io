@@ -8172,7 +8172,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 }
 
 function hideSubMenu(ele, manual, additDel) {
-	var maxSubCount = 3, eleID, tables, objToRemove=[], child, ret=null;
+	var maxSubCount = 3, eleID, tables, objToRemove=[], ret=null;
 
 	if (typeof manual === "undefined") manual = 0;
 	if (typeof additDel === "undefined") additDel = "";
@@ -8208,12 +8208,12 @@ function hideSubMenu(ele, manual, additDel) {
 				if (eleID.indexOf(tables[i].dataset.id) == -1 || tables[i].dataset.id == additDel) {
 					document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
 					tables[i].id="";
-					for (var row of tables[i].rows) {
-						child = row.cells[0].children[0];
-						child.setAttribute("onmouseenter", "");
-						child.setAttribute("onmouseleave", "");
-						child.setAttribute("onclick", "");
-					}
+					tables[i].querySelectorAll("*").forEach(el => {
+						el.removeAttribute("onclick");
+						el.removeAttribute("onmouseenter");
+						el.removeAttribute("onmouseleave");
+						el.removeAttribute("title");
+					});
 					objToRemove.push(tables[i]);
 				}
 			}
@@ -8229,12 +8229,12 @@ function hideSubMenu(ele, manual, additDel) {
 					document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
 				});
 				tables[i].id="";
-				for (var row of tables[i].rows) {
-  					child = row.cells[0].children[0];
-					child.setAttribute("onmouseenter", "");
-					child.setAttribute("onmouseleave", "");
-					child.setAttribute("onclick", "");
-				}
+				tables[i].querySelectorAll("*").forEach(el => {
+					el.removeAttribute("onclick");
+					el.removeAttribute("onmouseenter");
+					el.removeAttribute("onmouseleave");
+					el.removeAttribute("title");
+				});
 				objToRemove.push(tables[i]);
 				if (eleID == tables[i].dataset.id) break;
 			}
@@ -8249,12 +8249,12 @@ function hideSubMenu(ele, manual, additDel) {
 					document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
 				});
 				tables[i].id="";
-				for (var row of tables[i].rows) {
-  					child = row.cells[0].children[0];
-					child.setAttribute("onmouseenter", "");
-					child.setAttribute("onmouseleave", "");
-					child.setAttribute("onclick", "");
-				}
+				tables[i].querySelectorAll("*").forEach(el => {
+					el.removeAttribute("onclick");
+					el.removeAttribute("onmouseenter");
+					el.removeAttribute("onmouseleave");
+					el.removeAttribute("title");
+				});
 				objToRemove.push(tables[i]);
 			}
 		}
