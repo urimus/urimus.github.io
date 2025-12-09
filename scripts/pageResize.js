@@ -36,13 +36,11 @@ function getScrollbarHeight(el) {
 }
 
 function getViewportWidth() {
-	if (window.visualViewport) return window.visualViewport.width;
-	return document.documentElement.clientWidth || window.innerWidth;
+	return (window.visualViewport?.width) || document.documentElement.clientWidth || window.innerWidth;
 }
 
 function getViewportHeight() {
-	if (window.visualViewport) return window.visualViewport.height;
-	return document.documentElement.clientHeight || window.innerHeight;
+	return (window.visualViewport?.height) || document.documentElement.clientHeight || window.innerHeight;
 }
 
 function getScrollDivOffset(){
