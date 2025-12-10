@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 // ------------- Global Variables ---------------- //
-var preloadCache = [];
+var preloadCache = {};
 // ------------- End of Global Variables ---------------- //
 
 function contentsLoad(lang) {
@@ -520,7 +520,7 @@ function adjustContentsScrollDiv() {
 }
 
 function showContents(type, sortby, lang) {
-	var textColor, xmlhttp, lines, fileContents, table, row, cell1, dataFileName, recNum;
+	var textColor, xmlhttp, lines, fileContents, table, row, cell1, dataFileName, recNum, countries, url;
 
 	textColor = generateTabs(type, lang);
 	refreshSortByTabs(type, sortby, lang);
@@ -572,15 +572,27 @@ function showContents(type, sortby, lang) {
 								anchors[1]=="marvel_cinematic_universe")) {
 								type2="movies";
 							}
-							let preloadImg = new Image();
-							preloadImg.src = "images/icons/"+type2+"/"+anchors[1]+".jpg";
-							preloadCache.push(preloadImg);
+							url = "images/icons/"+type2+"/"+anchors[1]+".jpg";
+							if (!preloadCache[url]) {
+								let img = new Image();
+								img.src = url;
+								preloadCache[url] = img;
+							}
+						}
+						if (typeof link.dataset.country!== "undefined") {
+							countries=link.dataset.country.split(";");
+							for (let j = 0; j < countries.length; j++) {
+								url = "lang/all/"+countries[j]+".gif";
+								if (!preloadCache[url]) {
+									let img = new Image();
+									img.src = url;
+									preloadCache[url] = img;
+								}
+							}
 						}
 					}
 				}
-
 			}
-
 			adjustContentsScrollDiv();
 		}
 	};
