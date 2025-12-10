@@ -227,6 +227,13 @@ $(function() {
 			const tooltipEl = ui.tooltip[0];
 			if (!tooltipEl || !currentTooltipTarget) return;
 
+			const isTransitionRunning = (el, prop = "opacity") => {
+				if (el.style[prop] == "") return false;
+				const computed = getComputedStyle(el)[prop];
+				return computed !== el.style[prop];
+			};
+			if (isTransitionRunning(currentTooltipTarget)) return;
+
 			tooltipEl._targetEl = currentTooltipTarget;
 			currentTooltipTarget = null;
 			tooltipEl._prevTargetRect = null;
