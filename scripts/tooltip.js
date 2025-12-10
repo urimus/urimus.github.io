@@ -43,10 +43,10 @@ $(function() {
 		});
 	}
 
-	function updateTooltip(tooltipEl, targetRect) {
+	function updateTooltip(tooltipEl) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
-		if (!targetRect) targetRect = tooltipEl._targetEl.getBoundingClientRect();
 
+		targetRect = tooltipEl._targetEl.getBoundingClientRect();
 		const prev = tooltipEl._prevTargetRect || {};
 		const epsilon = 0.5;
 
@@ -88,7 +88,7 @@ $(function() {
 		if (tooltipEl._tracking) return;
 		tooltipEl._tracking = true;
 		activeTooltips.add(tooltipEl);
-		requestAnimationFrame(globalTick);
+		globalTick();
 	}
 
 	function stopTooltipTracker(tooltipEl) {
@@ -258,7 +258,6 @@ $(function() {
 			// 16 px - paddingLeft + paddingRight + borderLeft + borderRight
 			if (targetRect.width>316) tooltipEl.style.maxWidth = crisp(Math.round(targetRect.width)-16) + "px";
 
-			updateTooltip(tooltipEl, targetRect);
 			startTooltipTracker(tooltipEl);
 		},
 		close: function(event, ui) {
