@@ -80,7 +80,7 @@ $(function() {
 				updateTooltip(tooltipEl);
 			}
 		});
-		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl, true));
+		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl));
 		if (activeTooltips.size > 0) requestAnimationFrame(globalTick);
 	}
 
@@ -266,29 +266,24 @@ $(function() {
 		}
 	});
 
-	function removeTooltip(tooltipEl, noAnimation = false) {
+	function removeTooltip(tooltipEl) {
 		if (!tooltipEl) return;
-		const removeTooltipElements = () => {
+		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
+		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
+		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
+		setTimeout(() => {
 			if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
 			if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
 			if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
 			stopTooltipTracker(tooltipEl);
 			if (tooltipEl.parentNode) tooltipEl.parentNode.removeChild(tooltipEl);
-		};
-		if (noAnimation) {
-			removeTooltipElements();
-			return;
-		}
-		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
-		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
-		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
-		setTimeout(removeTooltipElements, 200);
+		}, 200);
 	}
 
 	window.addEventListener("blur", () => {
 		suppressTooltipOpen = true;
 		activeTooltips.forEach(tooltipEl => {
-			removeTooltip(tooltipEl, true);
+			removeTooltip(tooltipEl);
 		});
 		if (suppressTimeout !== null) clearTimeout(suppressTimeout);
 		suppressTimeout = setTimeout(() => {
