@@ -4,6 +4,8 @@ $(function() {
 	var r = 4;
 	var lineColor = "#ff8a00";
 	var currentTooltipTarget = null;
+	var suppressTooltipOpen = false;
+	var suppressTimeout = null;
 	var activeTooltips = new Set();
 	var scrollDiv = document.getElementById('scrollDiv');
 
@@ -224,6 +226,10 @@ $(function() {
 			return $(this).attr('title');
 		},
 		open: function(event, ui) {
+			if (suppressTooltipOpen) {
+				ui.tooltip.remove();
+				return;
+			}
 			const tooltipEl = ui.tooltip[0];
 			if (!tooltipEl || !currentTooltipTarget) return;
 
@@ -280,9 +286,15 @@ $(function() {
 	}
 
 	window.addEventListener("blur", () => {
+		suppressTooltipOpen = true;
 		activeTooltips.forEach(tooltipEl => {
 			removeTooltip(tooltipEl, true);
 		});
+		if (suppressTimeout !== null) clearTimeout(suppressTimeout);
+		suppressTimeout = setTimeout(() => {
+			suppressTooltipOpen = false;
+			suppressTimeout = null;
+		}, 200);
 	});
 
 	let fired = false;
