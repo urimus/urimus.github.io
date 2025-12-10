@@ -78,7 +78,7 @@ $(function() {
 				updateTooltip(tooltipEl);
 			}
 		});
-		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl));
+		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl, true));
 		if (activeTooltips.size > 0) requestAnimationFrame(globalTick);
 	}
 
