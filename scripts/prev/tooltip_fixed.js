@@ -100,7 +100,7 @@ $(function() {
 
 		var tooltipRect = tooltipEl.getBoundingClientRect();
 		if (tooltipRect.width < 5 || tooltipRect.height < 5) {
-			tooltipEl._prevTargetRect = null;
+			removeTooltip(tooltipEl, true);
 			return;
 		}
 		var targetX = crisp(targetRect.left + targetRect.width / 2);
@@ -266,19 +266,25 @@ $(function() {
 		}
 	});
 
-	function removeTooltip(tooltipEl) {
+	function removeTooltip(tooltipEl, noAnimation = false) {
 		if (!tooltipEl) return;
-		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
-		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
-		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
-		setTimeout(() => {
+		const removeTooltipElements = () => {
 			if (tooltipEl._line && tooltipEl._line.parentNode === svgEl) svgEl.removeChild(tooltipEl._line);
 			if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
 			if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
 			stopTooltipTracker(tooltipEl);
 			if (tooltipEl.parentNode) tooltipEl.parentNode.removeChild(tooltipEl);
-		}, 200);
+		};
+		if (noAnimation) {
+			removeTooltipElements();
+			return;
+		}
+		if (tooltipEl._line) tooltipEl._line.style.opacity = "0";
+		if (tooltipEl._startCircle) tooltipEl._startCircle.style.opacity = "0";
+		if (tooltipEl._endCircle) tooltipEl._endCircle.style.opacity = "0";
+		setTimeout(removeTooltipElements, 200);
 	}
+
 
 	window.addEventListener("blur", () => {
 		suppressTooltipOpen = true;
