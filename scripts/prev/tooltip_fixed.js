@@ -46,7 +46,7 @@ $(function() {
 	function updateTooltip(tooltipEl) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
-		targetRect = tooltipEl._targetEl.getBoundingClientRect();
+		const targetRect = tooltipEl._targetEl.getBoundingClientRect();
 		const prev = tooltipEl._prevTargetRect || {};
 		const epsilon = 0.5;
 
