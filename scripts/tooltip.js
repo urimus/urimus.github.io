@@ -255,6 +255,7 @@ $(function() {
 			}
 
 			var  targetRect = tooltipEl._targetEl.getBoundingClientRect();
+			tooltipEl.style.padding="4px 6px";
 			const getHorizontalExtras = (el) => {
 				const s = getComputedStyle(el);
 				return {
