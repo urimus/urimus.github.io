@@ -579,7 +579,7 @@ function showContents(type, sortby, lang) {
 								preloadCache[url] = img;
 							}
 						}
-						if (typeof link.dataset.country!== "undefined") {
+						if (typeof link.dataset.country!== "undefined" && sortby!="flag") { // do not cache if sort by flag
 							countries=link.dataset.country.split(";");
 							for (let j = 0; j < countries.length; j++) {
 								url = "lang/all/"+countries[j]+".gif";
