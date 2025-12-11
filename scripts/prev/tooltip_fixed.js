@@ -255,11 +255,21 @@ $(function() {
 			}
 
 			var  targetRect = tooltipEl._targetEl.getBoundingClientRect();
-			// 16 px - paddingLeft + paddingRight + borderLeft + borderRight
+			const getHorizontalExtras = (el) => {
+				const s = getComputedStyle(el);
+				return {
+					paddingLeft:  parseFloat(s.paddingLeft),
+					paddingRight: parseFloat(s.paddingRight),
+					borderLeft:   parseFloat(s.borderLeftWidth),
+					borderRight:  parseFloat(s.borderRightWidth),
+					total: parseFloat(s.paddingLeft) + parseFloat(s.paddingRight) + parseFloat(s.borderLeftWidth) + parseFloat(s.borderRightWidth)
+				};
+			};
+			const exstras = getHorizontalExtras(tooltipEl);
 			if (targetRect.width >= 350) {
-				tooltipEl.style.maxWidth = crisp(Math.round(targetRect.width)-16) + "px";
+				tooltipEl.style.maxWidth = crisp(Math.round(targetRect.width)-exstras.total) + "px";
 			} else {
-				tooltipEl.style.maxWidth = (450-16)+"px";
+				tooltipEl.style.maxWidth = (450-exstras.total)+"px";
 			}
 
 			startTooltipTracker(tooltipEl);
