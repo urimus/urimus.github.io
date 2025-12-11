@@ -520,7 +520,8 @@ function adjustContentsScrollDiv() {
 }
 
 function showContents(type, sortby, lang) {
-	var textColor, xmlhttp, lines, fileContents, table, row, cell1, dataFileName, recNum, countries, url;
+	var textColor, xmlhttp, lines, fileContents, dataFileName, recNum, countries, url;
+	var type2, parser = new DOMParser(), doc, link, anchors;
 
 	textColor = generateTabs(type, lang);
 	refreshSortByTabs(type, sortby, lang);
@@ -541,25 +542,43 @@ function showContents(type, sortby, lang) {
 			recNum=fileContents.length-1;
 			fileContents[0] = fileContents[0] + '<b class="'+textColor+'_blue'+'"> - '+recNum+' '+getRecordsText(lang, recNum)+'</b>';
 
-			if (sortby=="date") fileContents = sortByDate(fileContents, lang, textColor+"_blue");
-			if (sortby=="flag" && (type=="music" || type=="movies" || type=="series" || type=="books" || type=="junk" || type=="news")) fileContents = sortByFlag(fileContents, lang, textColor+"_blue");
+		// -------------- preload ---------- //
+			var preloadCount = 0;
+			var loadedCount = 0;
+			var preloadCacheCounter = {};
 
-			table = document.getElementById("contentstable");
-			table.replaceChildren();
-
-			var imageName=null, type2, parser = new DOMParser(), doc, link, anchors;
 			for (let i = 0; i < fileContents.length; i++) {
-				row = table.insertRow(-1);
-				cell1 = row.insertCell(0);
-				cell1.className = 'text_'+textColor+"_blue";
-				if (i==0) { cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;text-align: center;'); }
-				else { cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;'); }
-				cell1.innerHTML = fileContents[i];
-				// preload
-				if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") {
-					doc = parser.parseFromString(fileContents[i], "text/html");
-					link = doc.querySelector("a");
-					if (link) {
+				doc = parser.parseFromString(fileContents[i], "text/html");
+				link = doc.querySelector("a");
+				if (link) {
+					if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") {
+						anchors=link.href.split("#");
+						if (anchors.length>1) {
+							url = "images/icons/"+type+"/"+anchors[1]+".jpg";
+							if (!preloadCacheCounter[url]) {
+								preloadCacheCounter[url] = "tmp";
+								preloadCount++;
+							}
+						}
+					}
+					if (typeof link.dataset.country!== "undefined") {
+						countries=link.dataset.country.split(";");
+						for (let j = 0; j < countries.length; j++) {
+							url = "lang/all/"+countries[j]+".gif";
+							if (!preloadCacheCounter[url]) {
+								preloadCacheCounter[url] = "tmp";
+								preloadCount++;
+							}
+						}
+					}
+				}
+			}
+
+			for (let i = 0; i < fileContents.length; i++) {
+				doc = parser.parseFromString(fileContents[i], "text/html");
+				link = doc.querySelector("a");
+				if (link) {
+					if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") {
 						anchors=link.href.split("#");
 						if (anchors.length>1) {
 							var type2=type;
@@ -575,25 +594,33 @@ function showContents(type, sortby, lang) {
 							url = "images/icons/"+type2+"/"+anchors[1]+".jpg";
 							if (!preloadCache[url]) {
 								let img = new Image();
+								img.onload = function () {
+									loadedCount++;
+									if (loadedCount == preloadCount) processContents(type, sortby, lang, fileContents, textColor);
+								}
 								img.src = url;
 								preloadCache[url] = img;
 							}
 						}
-						if (typeof link.dataset.country!== "undefined") {
-							countries=link.dataset.country.split(";");
-							for (let j = 0; j < countries.length; j++) {
-								url = "lang/all/"+countries[j]+".gif";
-								if (!preloadCache[url]) {
-									let img = new Image();
-									img.src = url;
-									preloadCache[url] = img;
+					}
+					if (typeof link.dataset.country!== "undefined") {
+						countries=link.dataset.country.split(";");
+						for (let j = 0; j < countries.length; j++) {
+							url = "lang/all/"+countries[j]+".gif";
+							if (!preloadCache[url]) {
+								let img = new Image();
+								img.src = url;
+								img.onload = function () {
+									loadedCount++;
+									if (loadedCount == preloadCount) processContents(type, sortby, lang, fileContents, textColor);
 								}
+								preloadCache[url] = img;
 							}
 						}
 					}
 				}
 			}
-			adjustContentsScrollDiv();
+		// -------------- end of preload ---------- //
 		}
 	};
 
@@ -602,3 +629,21 @@ function showContents(type, sortby, lang) {
 	xmlhttp.send();
 }
 
+function processContents(type, sortby, lang, fileContents, textColor) {
+	var table, row, cell1;
+	if (sortby=="date") fileContents = sortByDate(fileContents, lang, textColor+"_blue");
+	if (sortby=="flag" && (type=="music" || type=="movies" || type=="series" || type=="books" || type=="junk" || type=="news")) fileContents = sortByFlag(fileContents, lang, textColor+"_blue");
+
+	table = document.getElementById("contentstable");
+	table.replaceChildren();
+
+	for (let i = 0; i < fileContents.length; i++) {
+		row = table.insertRow(-1);
+		cell1 = row.insertCell(0);
+		cell1.className = 'text_'+textColor+"_blue";
+		if (i==0) { cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;text-align: center;'); }
+		else { cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;'); }
+		cell1.innerHTML = fileContents[i];
+	}
+	adjustContentsScrollDiv();
+}
