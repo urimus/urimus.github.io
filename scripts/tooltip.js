@@ -88,7 +88,7 @@ $(function() {
 		if (tooltipEl._tracking) return;
 		tooltipEl._tracking = true;
 		activeTooltips.add(tooltipEl);
-		globalTick();
+		if (activeTooltips.size === 1) globalTick();
 	}
 
 	function stopTooltipTracker(tooltipEl) {
@@ -266,11 +266,11 @@ $(function() {
 					total: parseFloat(s.paddingLeft) + parseFloat(s.paddingRight) + parseFloat(s.borderLeftWidth) + parseFloat(s.borderRightWidth)
 				};
 			};
-			const exstras = getHorizontalExtras(tooltipEl);
+			const extras = getHorizontalExtras(tooltipEl);
 			if (targetRect.width >= 350) {
-				tooltipEl.style.maxWidth = crisp(Math.round(targetRect.width)-exstras.total) + "px";
+				tooltipEl.style.maxWidth = crisp(Math.round(targetRect.width)-extras.total) + "px";
 			} else {
-				tooltipEl.style.maxWidth = (450-exstras.total)+"px";
+				tooltipEl.style.maxWidth = (450-extras.total)+"px";
 			}
 
 			startTooltipTracker(tooltipEl);
