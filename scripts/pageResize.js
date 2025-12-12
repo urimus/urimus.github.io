@@ -43,11 +43,6 @@ function getViewportHeight() {
 	return (window.visualViewport?.height) || document.documentElement.clientHeight || window.innerHeight;
 }
 
-function zoomCorr() {
-	var menu1 = document.getElementById("menu_1");
-	return menu1.getBoundingClientRect().height/23;
-}
-
 function getScrollDivOffset(){
 /*
 	var newImg = new Image();
@@ -70,8 +65,12 @@ function adjustScrollDiv2(){
 		return;
 	}
 
-	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset()) * zoomCorr() + "px";
-	scrollDiv.style.height = menuHeight * zoomCorr() + "px";
+	// some bug
+	var additIntend = 0;
+	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
+
+	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset()) + "px";
+	scrollDiv.style.height = (menuHeight + additIntend) + "px";
 
 	var pathname = window.location.pathname;
 	if (pathname.substr(0, 9) == "/about_me") {

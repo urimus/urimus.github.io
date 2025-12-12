@@ -509,12 +509,12 @@ function adjustContentsScrollDiv() {
 	var scrollDiv = document.getElementById('scrollDiv');
 	var tabsHeight = document.getElementById('tabstable').offsetHeight;
 	if (isMobile()) {
-		scrollDiv.style.minHeight = (menuHeight - tabsHeight - 8) * zoomCorr() + "px";
+		scrollDiv.style.minHeight = (menuHeight - tabsHeight - 8) + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
-	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset() - tabsHeight - 8) * zoomCorr() + "px";
-	scrollDiv.style.height = (menuHeight - tabsHeight - 8) * zoomCorr() + "px";
+	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset() - tabsHeight - 8) + "px";
+	scrollDiv.style.height = (menuHeight - tabsHeight - 8) + "px";
 }
 
 function showContents(type, sortby, lang) {

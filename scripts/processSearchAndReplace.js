@@ -1764,7 +1764,11 @@ function adjustTextareaAndEncodings() {
 	var encodingDiv=document.getElementById("encoding_div");
 	if (encodingDiv === null || encodingDiv.offsetParent === null) return;
 
-	encodingDiv.style.setProperty("max-width", "440px");
+	if (window.devicePixelRatio ==0.25) {
+		encodingDiv.style.setProperty("max-width", "400px");
+	} else {
+		encodingDiv.style.setProperty("max-width", "440px");
+	}
 
 	var rowsHeight=document.getElementById('information_row').offsetHeight;
 	rowsHeight+=document.getElementById('line_column_number_row').offsetHeight;
@@ -1772,7 +1776,7 @@ function adjustTextareaAndEncodings() {
 	rowsHeight+=document.getElementById('files_count_row').offsetHeight;
 	rowsHeight+=document.getElementById('butt_row').offsetHeight;
 
-	$( "#textarea_area" ).css( "height", (menuHeight-rowsHeight-19) * zoomCorr() + "px");
+	$( "#textarea_area" ).css( "height", (menuHeight-rowsHeight-19) + "px");
 
 	encodingDiv.scrollLeft = selEncodingPixelPosInEncodings - encodingDiv.clientWidth/2;
 }
