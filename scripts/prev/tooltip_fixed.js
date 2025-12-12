@@ -11,8 +11,7 @@ $(function() {
 	var scrollDiv = document.getElementById('scrollDiv');
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-	var zIndex = (typeof galleria2 !== 'undefined') ? "z-index: 10001;" : "z-index: 1;";
-	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; " + zIndex);
+	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; z-index: 1;");
 	document.body.appendChild(svgEl);
 
 	function crisp(value) {
@@ -142,9 +141,18 @@ $(function() {
 		tooltipX = crisp(tooltipRect.left + tooltipRect.width / 2);
 		if (minSide === "top") {
 			tooltipY = crisp(tooltipRect.top);
-			d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 1 ${tooltipX + r} ${tooltipY}`;
 		} else {
 			tooltipY = crisp(tooltipRect.bottom);
+		}
+
+		if (tooltipX - r < tooltipEl._boundingRect.left) tooltipX = crisp(tooltipEl._boundingRect.left + r);
+		else if (tooltipX + r > tooltipEl._boundingRect.right) tooltipX = crisp(tooltipEl._boundingRect.right - r);
+		if (tooltipY - r < tooltipEl._boundingRect.top) tooltipY = crisp(tooltipEl._boundingRect.top + r);
+		else if (tooltipY + r > tooltipEl._boundingRect.bottom) tooltipY = crisp(tooltipEl._boundingRect.bottom - r);
+
+		if (minSide === "top") {
+			d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 1 ${tooltipX + r} ${tooltipY}`;
+		} else {
 			d = `M ${tooltipX + r} ${tooltipY} A ${r} ${r} 0 0 1 ${tooltipX - r} ${tooltipY}`;
 		}
 
