@@ -22,21 +22,18 @@ $(function() {
 
 	window.addEventListener('resize', () => {
 		activeTooltips.forEach(tooltipEl => tooltipEl._boundingRect = null);
-		updateAllTooltips(); 
 	});
 	if (scrollDiv) {
 		const ro = new ResizeObserver(() => {
 			activeTooltips.forEach(tooltipEl => tooltipEl._boundingRect = null);
-			updateAllTooltips(true);
 		});
 		ro.observe(scrollDiv);
 	}
 	window.addEventListener('scroll', () => {
 		activeTooltips.forEach(tooltipEl => tooltipEl._boundingRect = null);
-		updateAllTooltips(); 
 	});
-	scrollDiv?.addEventListener('scroll', () => updateAllTooltips(true), { passive: true });
 
+	// can be used later
 	function updateAllTooltips(forScrollDiv = false) {
 		activeTooltips.forEach(tooltipEl => {
 			const insideScroll = scrollDiv && scrollDiv.contains(tooltipEl._targetEl);
@@ -71,7 +68,7 @@ $(function() {
 	}
 
 	function globalTick() {
-		if (activeTooltips.size === 0) {
+		if (activeTooltips.size === 0 || !updateLoopRunning) {
 			updateLoopRunning = false;
 			return;
 		}
@@ -100,6 +97,7 @@ $(function() {
 
 	function stopTooltipTracker(tooltipEl) {
 		activeTooltips.delete(tooltipEl);
+		if (activeTooltips.size === 0) updateLoopRunning = false;
 	}
 
 	function drawLine(tooltipEl, targetRect) {
