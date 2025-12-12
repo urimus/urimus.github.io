@@ -105,7 +105,7 @@ $(function() {
 
 		var tooltipRect = tooltipEl.getBoundingClientRect();
 		if (tooltipRect.width < 5 || tooltipRect.height < 5) {
-			removeTooltip(tooltipEl, true);
+			if (tooltipEl.isConnected) removeTooltip(tooltipEl, true);
 			return;
 		}
 		var targetX = crisp(targetRect.left + targetRect.width / 2);
@@ -142,10 +142,10 @@ $(function() {
 		tooltipX = crisp(tooltipRect.left + tooltipRect.width / 2);
 		if (minSide === "top") {
 			tooltipY = crisp(tooltipRect.top);
-			d = `M ${tooltipX + r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX - r} ${tooltipY} Z`;
+			d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 1 ${tooltipX + r} ${tooltipY}`;
 		} else {
 			tooltipY = crisp(tooltipRect.bottom);
-			d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 0 ${tooltipX + r} ${tooltipY} Z`;
+			d = `M ${tooltipX + r} ${tooltipY} A ${r} ${r} 0 0 1 ${tooltipX - r} ${tooltipY}`;
 		}
 
 		var length = Math.hypot(tooltipX - targetX, tooltipY - targetY);
@@ -224,8 +224,8 @@ $(function() {
 	$(document).tooltip({
 		track: false,
 		classes: { "ui-tooltip": "custom-tooltip" },
-		show: function() { $(this).fadeIn(200); },
-		hide: { effect: "fade", duration: 200 },
+		show: function(event, ui) { ui.tooltip.fadeIn(200); },
+		hide: function(event, ui) { ui.tooltip.fadeOut(200); },
 		content: function() {
 			if ($(this).attr('title') != "") currentTooltipTarget = this;
 			return $(this).attr('title');
@@ -275,7 +275,7 @@ $(function() {
 			if (targetRect.width >= 350) {
 				tooltipEl.style.maxWidth = crisp(Math.round(targetRect.width)-extras.total) + "px";
 			} else {
-				tooltipEl.style.maxWidth = (450-extras.total)+"px";
+				tooltipEl.style.maxWidth = crisp(450-extras.total)+"px";
 			}
 
 			startTooltipTracker(tooltipEl);
@@ -292,7 +292,7 @@ $(function() {
 			if (tooltipEl._startCircle && tooltipEl._startCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._startCircle);
 			if (tooltipEl._endCircle && tooltipEl._endCircle.parentNode === svgEl) svgEl.removeChild(tooltipEl._endCircle);
 			stopTooltipTracker(tooltipEl);
-			if (tooltipEl.parentNode) tooltipEl.parentNode.removeChild(tooltipEl);
+			if (tooltipEl?.isConnected) tooltipEl.remove();
 		};
 		if (noAnimation) {
 			removeTooltipElements();
