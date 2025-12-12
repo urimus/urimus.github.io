@@ -7,6 +7,7 @@ $(function() {
 	var suppressTooltipOpen = false;
 	var suppressTimeout = null;
 	var activeTooltips = new Set();
+	var updateLoopRunning = false;
 	var scrollDiv = document.getElementById('scrollDiv');
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -70,7 +71,10 @@ $(function() {
 	}
 
 	function globalTick() {
-		if (activeTooltips.size === 0) return;
+		if (activeTooltips.size === 0) {
+			updateLoopRunning = false;
+			return;
+		}
 
 		const toRemove = [];
 		activeTooltips.forEach(tooltipEl => {
@@ -81,14 +85,17 @@ $(function() {
 			}
 		});
 		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl));
-		if (activeTooltips.size > 0) requestAnimationFrame(globalTick);
+		if (updateLoopRunning) requestAnimationFrame(globalTick);
 	}
 
 	function startTooltipTracker(tooltipEl) {
 		if (tooltipEl._tracking) return;
 		tooltipEl._tracking = true;
 		activeTooltips.add(tooltipEl);
-		if (activeTooltips.size === 1) globalTick();
+		if (!updateLoopRunning) {
+			updateLoopRunning = true;
+			globalTick();
+		}
 	}
 
 	function stopTooltipTracker(tooltipEl) {
