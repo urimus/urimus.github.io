@@ -121,13 +121,13 @@ function adjustFeedScrollDiv() {
 	var totalHeight = tabsHeight+feedTitleHeight+feedMessageHeight;
 
 	if (isMobile()) {
-		scrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";
+		scrollDiv.style.minHeight = (menuHeightCorr() - totalHeight - 8) + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
 
 	// use max-height: Math.max(screen, menu)
-	scrollDiv.style.maxHeight = (Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight) - totalHeight - 8) + "px";
+	scrollDiv.style.maxHeight = (Math.max(getViewportHeight() - getScrollDivOffset(), menuHeightCorr()) - totalHeight - 8) + "px";
 
 	scrollDiv.style.height = (document.getElementById('feedtable').offsetHeight==0)
 		? scrollDiv.style.maxHeight

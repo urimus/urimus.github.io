@@ -43,6 +43,11 @@ function getViewportHeight() {
 	return (window.visualViewport?.height) || document.documentElement.clientHeight || window.innerHeight;
 }
 
+function menuHeightCorr() {
+	var menu1 = document.getElementById("menu_1");
+	return menu1.getBoundingClientRect().height*(menuHeight/23);
+}
+
 function getScrollDivOffset(){
 /*
 	var newImg = new Image();
@@ -57,21 +62,16 @@ function getScrollDivOffset(){
 }
 
 function adjustScrollDiv2(){
-
 	var scrollDiv = document.getElementById('scrollDiv');
 
 	if (isMobile()) {
-		scrollDiv.style.minHeight = menuHeight + "px";
+		scrollDiv.style.minHeight = menuHeightCorr() + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
 
-	// some bug
-	var additIntend = 0;
-	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
-
-	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset()) + "px"
-	scrollDiv.style.height = (menuHeight + additIntend) + "px";
+	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset()) + "px";
+	scrollDiv.style.height = menuHeightCorr() + "px";
 
 	var pathname = window.location.pathname;
 	if (pathname.substr(0, 9) == "/about_me") {
