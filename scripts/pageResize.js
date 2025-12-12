@@ -66,11 +66,11 @@ function adjustScrollDiv2(){
 		return;
 	}
 
-	// some bugs
+	// some bug
 	var additIntend = 0;
 	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
 
-	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset() + additIntend) + "px"
+	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset()) + "px"
 	scrollDiv.style.height = (menuHeight + additIntend) + "px";
 
 	var pathname = window.location.pathname;
