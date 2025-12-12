@@ -43,9 +43,9 @@ function getViewportHeight() {
 	return (window.visualViewport?.height) || document.documentElement.clientHeight || window.innerHeight;
 }
 
-function menuHeightCorr() {
+function zoomCorr() {
 	var menu1 = document.getElementById("menu_1");
-	return menu1.getBoundingClientRect().height*(menuHeight/23);
+	return menu1.getBoundingClientRect().height/23;
 }
 
 function getScrollDivOffset(){
@@ -65,13 +65,13 @@ function adjustScrollDiv2(){
 	var scrollDiv = document.getElementById('scrollDiv');
 
 	if (isMobile()) {
-		scrollDiv.style.minHeight = menuHeightCorr() + "px";
+		scrollDiv.style.minHeight = menuHeight + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
 
-	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset()) + "px";
-	scrollDiv.style.height = menuHeightCorr() + "px";
+	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset()) * zoomCorr() + "px";
+	scrollDiv.style.height = menuHeight * zoomCorr() + "px";
 
 	var pathname = window.location.pathname;
 	if (pathname.substr(0, 9) == "/about_me") {
