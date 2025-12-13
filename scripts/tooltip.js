@@ -104,12 +104,6 @@ $(function() {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
 		var tooltipRect = tooltipEl.getBoundingClientRect();
-		if (tooltipRect.width < 5 || tooltipRect.height < 5) {
-			tooltipEl.isConnected
-				? removeTooltip(tooltipEl, true)
-				: stopTooltipTracker(tooltipEl);
-			return;
-		}
 		var targetX = crisp(targetRect.left + targetRect.width / 2);
 		var targetY = crisp(targetRect.top + targetRect.height / 2);
 
@@ -244,6 +238,12 @@ $(function() {
 			}
 			const tooltipEl = ui.tooltip[0];
 			if (!tooltipEl || !currentTooltipTarget) return;
+
+			var tooltipRect = tooltipEl.getBoundingClientRect();
+			if (tooltipRect.width < 5 || tooltipRect.height < 5) {
+				ui.tooltip.remove();
+				return;
+			}
 
 			tooltipEl._targetEl = currentTooltipTarget;
 			currentTooltipTarget = null;
