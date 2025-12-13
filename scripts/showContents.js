@@ -386,8 +386,8 @@ function generateTabs(type, lang) {
 		tabs["links"]="Relatio";
 		tabs["photos"]="Photo/Imaginibus";
 		tabs["amv"]="AMV";
-		tabs["junk"]="Junk";
-		tabs["stuff"]='Effercio <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font>';
+		tabs["junk"]="Quisquiliae";
+		tabs["stuff"]='Res <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 		tabs["news"]="Nuntium";
 	}
 

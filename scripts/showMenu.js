@@ -1676,13 +1676,13 @@ if (lang=="lat") {
 	wholeMenu["112Digerere"].link = "index_lat.html?type=amv&sortby=date";
 	wholeMenu["112Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
-	wholeMenu["● Junk"] = {};
-	wholeMenu["● Junk"].id = "1_12";
-	wholeMenu["● Junk"].color = "black";
-	wholeMenu["● Junk"].hasSub = 1;
-	wholeMenu["● Junk"].alternativeCaption = "&#9679; Junk, Digerere";
-	wholeMenu["● Junk"].link = "";
-	wholeMenu["● Junk"].html = '&#9679; Junk';
+	wholeMenu["● Quisquiliae"] = {};
+	wholeMenu["● Quisquiliae"].id = "1_12";
+	wholeMenu["● Quisquiliae"].color = "black";
+	wholeMenu["● Quisquiliae"].hasSub = 1;
+	wholeMenu["● Quisquiliae"].alternativeCaption = "&#9679; Quisquiliae, Digerere";
+	wholeMenu["● Quisquiliae"].link = "";
+	wholeMenu["● Quisquiliae"].html = '&#9679; Quisquiliae';
 
 	wholeMenu["121Digerere"] = {};
 	wholeMenu["121Digerere"].id = "1_12_1";
