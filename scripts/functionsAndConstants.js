@@ -93,8 +93,9 @@ function formatDate(date, lang) {
 
 	var month="";
 	var dayEnding="";
-	var dayMonthSep="";
-	if (lang=="eng" || lang=="lat") {
+	var dayMonthSep=" ";
+	var dayPrefix="";
+	if (lang=="eng") {
 		month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][mydate.getUTCMonth()];
 		dayEnding="th";
 		if (mydate.getUTCDate()==1 || mydate.getUTCDate()==21 || mydate.getUTCDate()==31) dayEnding="st";
@@ -102,13 +103,15 @@ function formatDate(date, lang) {
 		if (mydate.getUTCDate()==3 || mydate.getUTCDate()==23) dayEnding="rd";
 		dayMonthSep=" of ";
 	}
+	if (lang=="lat") {
+		month = ["Ian", "Feb", "Mar", "Apr", "Mai", "Iun","Iul", "Aug", "Sep", "Oct", "Nov", "Dec"][mydate.getUTCMonth()];
+		dayPrefix = "Die "
+	}
 	if (lang=="rus") {
 		month = ["Янв", "Фев", "Мар", "Апр", "Мая", "Июн","Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"][mydate.getUTCMonth()];
 		dayEnding="е";
-		dayMonthSep=" ";
 	}
-
-	var out = ("0"+mydate.getUTCDate()).slice(-2) + dayEnding + dayMonthSep + month + ', ' + mydate.getUTCFullYear() + ", " + ("0"+mydate.getUTCHours()).slice(-2) + ":" + ("0"+mydate.getUTCMinutes()).slice(-2) + ":" + ("0"+mydate.getUTCSeconds()).slice(-2) + " UTC";
+	var out = dayPrefix + ("0"+mydate.getUTCDate()).slice(-2) + dayEnding + dayMonthSep + month + ', ' + mydate.getUTCFullYear() + ", " + ("0"+mydate.getUTCHours()).slice(-2) + ":" + ("0"+mydate.getUTCMinutes()).slice(-2) + ":" + ("0"+mydate.getUTCSeconds()).slice(-2) + " UTC";
 	if (mydate.getTimezoneOffset() != 0) {
 		if (invertedOffset>0) out = out + "+"+invertedOffset/60;
 		if (invertedOffset<0) out = out + "-"+ (-invertedOffset/60);
