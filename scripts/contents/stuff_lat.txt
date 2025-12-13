@@ -1,4 +1,4 @@
-﻿<b class="text_black_blue">Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font></b>
+﻿<b class="text_black_blue">Res <font color="red"><sup>&#9889; Evil &#9889;</sup></font></b>
 &#9679; <a href="stuff_different_lat.html" class = "standardb_black" data-added="20th of Jun, 2016." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Miscellanea</a>
 &#9679; <a href="stuff_chupacabra_lat.html" class = "standardb_black" data-added="14th of Dec, 2017." data-lang="sp" data-title_orig="Chupacabras" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Chupacabra</a>
 &#9679; <a href="stuff_hyperspace_lat.html" class = "standardb_black" data-added="18th of Jul, 2017." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Hyperspace</a>

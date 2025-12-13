@@ -1705,13 +1705,13 @@ if (lang=="lat") {
 	wholeMenu["123Digerere"].link = "index_lat.html?type=junk&sortby=flag";
 	wholeMenu["123Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_flag.png" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Patriam';
 
-	wholeMenu["● Effercio ⚡ Evil ⚡"] = {};
-	wholeMenu["● Effercio ⚡ Evil ⚡"].id = "1_13";
-	wholeMenu["● Effercio ⚡ Evil ⚡"].color = "black";
-	wholeMenu["● Effercio ⚡ Evil ⚡"].hasSub = 1;
-	wholeMenu["● Effercio ⚡ Evil ⚡"].alternativeCaption = '&#9679; Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font>, Digerere';
-	wholeMenu["● Effercio ⚡ Evil ⚡"].link = "";
-	wholeMenu["● Effercio ⚡ Evil ⚡"].html = '&#9679; Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
+	wholeMenu["● Res ⚡ Evil ⚡"] = {};
+	wholeMenu["● Res ⚡ Evil ⚡"].id = "1_13";
+	wholeMenu["● Res ⚡ Evil ⚡"].color = "black";
+	wholeMenu["● Res ⚡ Evil ⚡"].hasSub = 1;
+	wholeMenu["● Res ⚡ Evil ⚡"].alternativeCaption = '&#9679; Res <font color="red"><sup>&#9889; Evil &#9889;</sup></font>, Digerere';
+	wholeMenu["● Res ⚡ Evil ⚡"].link = "";
+	wholeMenu["● Res ⚡ Evil ⚡"].html = '&#9679; Res <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 
 	wholeMenu["131Digerere"] = {};
 	wholeMenu["131Digerere"].id = "1_13_1";
@@ -4650,12 +4650,12 @@ if (lang=="rus") {
 
 if (lang=="lat") {
 
-	wholeMenu["● Effercio ⚡ Evil ⚡"] = {};
-	wholeMenu["● Effercio ⚡ Evil ⚡"].id = "14";
-	wholeMenu["● Effercio ⚡ Evil ⚡"].color = "black";
-	wholeMenu["● Effercio ⚡ Evil ⚡"].hasSub = 1;
-	wholeMenu["● Effercio ⚡ Evil ⚡"].link = "";
-	wholeMenu["● Effercio ⚡ Evil ⚡"].html = '&#9679; Effercio <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
+	wholeMenu["● Res ⚡ Evil ⚡"] = {};
+	wholeMenu["● Res ⚡ Evil ⚡"].id = "14";
+	wholeMenu["● Res ⚡ Evil ⚡"].color = "black";
+	wholeMenu["● Res ⚡ Evil ⚡"].hasSub = 1;
+	wholeMenu["● Res ⚡ Evil ⚡"].link = "";
+	wholeMenu["● Res ⚡ Evil ⚡"].html = '&#9679; Res <font color="red"><sup>&#9889; Evil &#9889;</sup></font>';
 
 	wholeMenu["Miscellanea"] = {};
 	wholeMenu["Miscellanea"].id = "14_1";
