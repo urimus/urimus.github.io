@@ -75,13 +75,13 @@ $(function() {
 
 		const toRemove = [];
 		activeTooltips.forEach(tooltipEl => {
-			if (!tooltipEl._targetEl || !document.body.contains(tooltipEl._targetEl)) {
+			if (!tooltipEl._targetEl || !tooltipEl._targetEl.isConnected || tooltipEl._targetEl.offsetParent === null) {
 				toRemove.push(tooltipEl);
 			} else {
 				updateTooltip(tooltipEl);
 			}
 		});
-		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl));
+		toRemove.forEach(tooltipEl => removeTooltip(tooltipEl, true));
 		if (updateLoopRunning) requestAnimationFrame(globalTick);
 	}
 
