@@ -134,13 +134,21 @@ function sortByDate(fileContentsL, lang, textColor) {
 		q2 = str.indexOf("\"", q1+1);
 		textDate=str.substring(q1+1, q2);
 		textDay=textDate.substring(0, 2);
-		if (lang=="eng" || lang=="lat") textMonth=textDate.substring(8, 11);
-		if (lang=="rus") textMonth=textDate.substring(4, 7);
-		if (lang=="eng" || lang=="lat") textYear=textDate.substring(13, 17);
-		if (lang=="rus") textYear=textDate.substring(9, 13);
-
-		if (lang=="eng" || lang=="lat") textAllMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-		if (lang=="rus") textAllMonths = ["Янв", "Фев", "Мар", "Апр", "Мая", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"];
+		if (lang=="eng") {
+			textMonth=textDate.substring(8, 11);
+			textYear=textDate.substring(13, 17);
+			textAllMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+		}
+		if (lang=="lat") {
+			textMonth=textDate.substring(3, 6);
+			textYear=textDate.substring(8, 12);
+			textAllMonths = ["Ian", "Feb", "Mar", "Apr", "Mai", "Iun", "Iul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+		}
+		if (lang=="rus") {
+			textMonth=textDate.substring(4, 7);
+			textYear=textDate.substring(9, 13);
+			textAllMonths = ["Янв", "Фев", "Мар", "Апр", "Мая", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"];
+		}
 
 		for (j = 0; j < textAllMonths.length; j++) {
 			if (textAllMonths[j]==textMonth) {
@@ -213,7 +221,7 @@ function sortByDate(fileContentsL, lang, textColor) {
 		}
 	}
 
-	if (len>1) {
+	if (len>=1) {
 		textYearHTML="<table cellpadding='0' cellspacing='0'>";
 		textYearHTML+="<tr>";
 		textYearHTML+="<td width='50%'><div style='width: 100%; border: #ff8a00 1px solid; margin: 5px;'></div></td>";
