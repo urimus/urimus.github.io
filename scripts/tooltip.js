@@ -105,7 +105,9 @@ $(function() {
 
 		var tooltipRect = tooltipEl.getBoundingClientRect();
 		if (tooltipRect.width < 5 || tooltipRect.height < 5) {
-			if (tooltipEl.isConnected) removeTooltip(tooltipEl, true);
+			tooltipEl.isConnected
+				? removeTooltip(tooltipEl, true)
+				: stopTooltipTracker(tooltipEl);
 			return;
 		}
 		var targetX = crisp(targetRect.left + targetRect.width / 2);
@@ -137,25 +139,21 @@ $(function() {
 		var distances = { top: Math.abs(tooltipRect.top - targetY), bottom: Math.abs(tooltipRect.bottom - targetY) };
 		var minSide = distances.top < distances.bottom ? "top" : "bottom";
 
-		var tooltipX, tooltipY, d;
+		var tooltipX, tooltipY, d, startX, endX;
 
 		tooltipX = crisp(tooltipRect.left + tooltipRect.width / 2);
-		if (minSide === "top") {
-			tooltipY = crisp(tooltipRect.top);
-		} else {
-			tooltipY = crisp(tooltipRect.bottom);
-		}
+		tooltipY = minSide === "top"
+			? crisp(tooltipRect.top)
+			: crisp(tooltipRect.bottom);
 
 		if (tooltipX - r < tooltipEl._boundingRect.left) tooltipX = crisp(tooltipEl._boundingRect.left + r);
 		else if (tooltipX + r > tooltipEl._boundingRect.right) tooltipX = crisp(tooltipEl._boundingRect.right - r);
 		if (tooltipY - r < tooltipEl._boundingRect.top) tooltipY = crisp(tooltipEl._boundingRect.top + r);
 		else if (tooltipY + r > tooltipEl._boundingRect.bottom) tooltipY = crisp(tooltipEl._boundingRect.bottom - r);
 
-		if (minSide === "top") {
-			d = `M ${tooltipX - r} ${tooltipY} A ${r} ${r} 0 0 1 ${tooltipX + r} ${tooltipY}`;
-		} else {
-			d = `M ${tooltipX + r} ${tooltipY} A ${r} ${r} 0 0 1 ${tooltipX - r} ${tooltipY}`;
-		}
+		startX = minSide === "top" ? tooltipX - r : tooltipX + r;
+		endX   = minSide === "top" ? tooltipX + r : tooltipX - r;
+		d = `M ${startX} ${tooltipY} A ${r} ${r} 0 0 1 ${endX} ${tooltipY}`;
 
 		var length = Math.hypot(tooltipX - targetX, tooltipY - targetY);
 
