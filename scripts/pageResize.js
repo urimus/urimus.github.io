@@ -69,8 +69,9 @@ function adjustScrollDiv2(){
 	var additIntend = 0;
 	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
 
-	scrollDiv.style.minHeight = (getViewportHeight() - getScrollDivOffset()) + "px";
-	scrollDiv.style.height = (menuHeight + additIntend) + "px";
+	scrollDiv.style.minHeight = Math.min(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
+	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
+	scrollDiv.style.height = "100%";
 
 	var pathname = window.location.pathname;
 	if (pathname.substr(0, 9) == "/about_me") {
