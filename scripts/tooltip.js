@@ -49,10 +49,10 @@ $(function() {
 		const epsilon = 0.5;
 
 		const changed =
-			!prev.top || Math.abs(prev.top - targetRect.top) > epsilon ||
-			!prev.left || Math.abs(prev.left - targetRect.left) > epsilon ||
-			!prev.width || Math.abs(prev.width - targetRect.width) > epsilon ||
-			!prev.height || Math.abs(prev.height - targetRect.height) > epsilon;
+			typeof prev.top === "undefined" || Math.abs(prev.top - targetRect.top) > epsilon ||
+			typeof prev.left === "undefined" || Math.abs(prev.left - targetRect.left) > epsilon ||
+			typeof prev.width === "undefined" || Math.abs(prev.width - targetRect.width) > epsilon ||
+			typeof prev.height=== "undefined" || Math.abs(prev.height - targetRect.height) > epsilon;
 
 		if (changed) {
 			tooltipEl._prevTargetRect = {
@@ -228,8 +228,10 @@ $(function() {
 		show: function(event, ui) { ui.tooltip.fadeIn(200); },
 		hide: function(event, ui) { ui.tooltip.fadeOut(200); },
 		content: function() {
-			if ($(this).attr('title') != "") currentTooltipTarget = this;
-			return $(this).attr('title');
+			const title = $(this).attr("title");
+			if (!title || !title.trim()) return false;
+			currentTooltipTarget = this;
+			return title;
 		},
 		open: function(event, ui) {
 			if (suppressTooltipOpen) {
@@ -238,12 +240,6 @@ $(function() {
 			}
 			const tooltipEl = ui.tooltip[0];
 			if (!tooltipEl || !currentTooltipTarget) return;
-
-			var tooltipRect = tooltipEl.getBoundingClientRect();
-			if (tooltipRect.width < 5 || tooltipRect.height < 5) {
-				ui.tooltip.remove();
-				return;
-			}
 
 			tooltipEl._targetEl = currentTooltipTarget;
 			currentTooltipTarget = null;
