@@ -16,14 +16,8 @@ $(function() {
 
 	function crisp(value) {
 		var ratio = window.devicePixelRatio || 1;
-		if (ratio == 1) return value;
 		return Math.round(value * ratio) / ratio;
 	}
-	function crisp2(value) {
-		var ratio = window.devicePixelRatio || 1;
-		return Math.round(value * ratio) / ratio;
-	}
-
 
 	window.addEventListener('resize', () => {
 		activeTooltips.forEach(tooltipEl => tooltipEl._boundingRect = null);
@@ -131,13 +125,13 @@ $(function() {
 			}
 		}
 
+		if (targetX - r < tooltipEl._boundingRect.left) targetX = tooltipEl._boundingRect.left + r;
+		else if (targetX + r > tooltipEl._boundingRect.right) targetX = tooltipEl._boundingRect.right - r;
+		if (targetY - r < tooltipEl._boundingRect.top) targetY = tooltipEl._boundingRect.top + r;
+		else if (targetY + r > tooltipEl._boundingRect.bottom) targetY = tooltipEl._boundingRect.bottom - r;
+
 		targetX = crisp(targetX);
 		targetY = crisp(targetY);
-
-		if (targetX - r < tooltipEl._boundingRect.left) targetX = crisp2(tooltipEl._boundingRect.left + r);
-		else if (targetX + r > tooltipEl._boundingRect.right) targetX = crisp2(tooltipEl._boundingRect.right - r);
-		if (targetY - r < tooltipEl._boundingRect.top) targetY = crisp2(tooltipEl._boundingRect.top + r);
-		else if (targetY + r > tooltipEl._boundingRect.bottom) targetY = crisp2(tooltipEl._boundingRect.bottom - r);
 
 		var distances = { top: Math.abs(tooltipRect.top - targetY), bottom: Math.abs(tooltipRect.bottom - targetY) };
 		var minSide = distances.top < distances.bottom ? "top" : "bottom";
@@ -149,13 +143,13 @@ $(function() {
 			? tooltipRect.top
 			: tooltipRect.bottom;
 
+		if (tooltipX - r < tooltipEl._boundingRect.left) tooltipX = tooltipEl._boundingRect.left + r;
+		else if (tooltipX + r > tooltipEl._boundingRect.right) tooltipX = tooltipEl._boundingRect.right - r;
+		if (tooltipY - r < tooltipEl._boundingRect.top) tooltipY = tooltipEl._boundingRect.top + r;
+		else if (tooltipY + r > tooltipEl._boundingRect.bottom) tooltipY = tooltipEl._boundingRect.bottom - r;
+
 		tooltipX = crisp(tooltipX);
 		tooltipY = crisp(tooltipY);
-
-		if (tooltipX - r < tooltipEl._boundingRect.left) tooltipX = crisp2(tooltipEl._boundingRect.left + r);
-		else if (tooltipX + r > tooltipEl._boundingRect.right) tooltipX = crisp2(tooltipEl._boundingRect.right - r);
-		if (tooltipY - r < tooltipEl._boundingRect.top) tooltipY = crisp2(tooltipEl._boundingRect.top + r);
-		else if (tooltipY + r > tooltipEl._boundingRect.bottom) tooltipY = crisp2(tooltipEl._boundingRect.bottom - r);
 
 		startX = minSide === "top" ? tooltipX - r : tooltipX + r;
 		endX   = minSide === "top" ? tooltipX + r : tooltipX - r;
