@@ -16,7 +16,7 @@ $(function() {
 
 	function crisp(value) {
 		var ratio = window.devicePixelRatio || 1;
-		if (ratio == 1) return value;
+		if (ratio <= 1) return value;
 		return Math.round(value * ratio) / ratio;
 	}
 
