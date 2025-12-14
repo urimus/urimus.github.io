@@ -16,7 +16,6 @@ $(function() {
 
 	function crisp(value) {
 		var ratio = window.devicePixelRatio || 1;
-		if (ratio == 1) return value;
 		return Math.round(value * ratio) / ratio;
 	}
 
@@ -104,8 +103,8 @@ $(function() {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
 		var tooltipRect = tooltipEl.getBoundingClientRect();
-		var targetX = crisp(targetRect.left + targetRect.width / 2);
-		var targetY = crisp(targetRect.top + targetRect.height / 2);
+		var targetX = targetRect.left + targetRect.width / 2;
+		var targetY = targetRect.top + targetRect.height / 2;
 
 		if (!tooltipEl._boundingRect) {
 			if (scrollDiv && scrollDiv.contains(tooltipEl._targetEl)) {
@@ -125,31 +124,39 @@ $(function() {
 				};
 			}
 		}
-		if (targetX - r < tooltipEl._boundingRect.left) targetX = crisp(tooltipEl._boundingRect.left + r);
-		else if (targetX + r > tooltipEl._boundingRect.right) targetX = crisp(tooltipEl._boundingRect.right - r);
-		if (targetY - r < tooltipEl._boundingRect.top) targetY = crisp(tooltipEl._boundingRect.top + r);
-		else if (targetY + r > tooltipEl._boundingRect.bottom) targetY = crisp(tooltipEl._boundingRect.bottom - r);
+		if (targetX - r < tooltipEl._boundingRect.left) targetX = tooltipEl._boundingRect.left + r;
+		else if (targetX + r > tooltipEl._boundingRect.right) targetX = tooltipEl._boundingRect.right - r;
+		if (targetY - r < tooltipEl._boundingRect.top) targetY = tooltipEl._boundingRect.top + r;
+		else if (targetY + r > tooltipEl._boundingRect.bottom) targetY = tooltipEl._boundingRect.bottom - r;
+
+		targetX = crisp(targetX);
+		targetY = crisp(targetY);
 
 		var distances = { top: Math.abs(tooltipRect.top - targetY), bottom: Math.abs(tooltipRect.bottom - targetY) };
 		var minSide = distances.top < distances.bottom ? "top" : "bottom";
 
 		var tooltipX, tooltipY, d, startX, endX;
 
-		tooltipX = crisp(tooltipRect.left + tooltipRect.width / 2);
+		tooltipX = tooltipRect.left + tooltipRect.width / 2;
 		tooltipY = minSide === "top"
-			? crisp(tooltipRect.top)
-			: crisp(tooltipRect.bottom);
+			? tooltipRect.top
+			: tooltipRect.bottom;
 
-		if (tooltipX - r < tooltipEl._boundingRect.left) tooltipX = crisp(tooltipEl._boundingRect.left + r);
-		else if (tooltipX + r > tooltipEl._boundingRect.right) tooltipX = crisp(tooltipEl._boundingRect.right - r);
-		if (tooltipY - r < tooltipEl._boundingRect.top) tooltipY = crisp(tooltipEl._boundingRect.top + r);
-		else if (tooltipY + r > tooltipEl._boundingRect.bottom) tooltipY = crisp(tooltipEl._boundingRect.bottom - r);
+
+		if (tooltipX - r < tooltipEl._boundingRect.left) tooltipX = tooltipEl._boundingRect.left + r;
+		else if (tooltipX + r > tooltipEl._boundingRect.right) tooltipX = tooltipEl._boundingRect.right - r;
+		if (tooltipY - r < tooltipEl._boundingRect.top) tooltipY = tooltipEl._boundingRect.top + r;
+		else if (tooltipY + r > tooltipEl._boundingRect.bottom) tooltipY = tooltipEl._boundingRect.bottom - r;
+
+		tooltipX = crisp(tooltipX);
+		tooltipY = crisp(tooltipY);
 
 		startX = minSide === "top" ? tooltipX - r : tooltipX + r;
 		endX   = minSide === "top" ? tooltipX + r : tooltipX - r;
 		d = `M ${startX} ${tooltipY} A ${r} ${r} 0 0 1 ${endX} ${tooltipY}`;
 
 		var length = Math.hypot(tooltipX - targetX, tooltipY - targetY);
+
 
 		var line = tooltipEl._line;
 		if (!line) {
