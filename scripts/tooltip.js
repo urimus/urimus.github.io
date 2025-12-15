@@ -16,13 +16,17 @@ $(function() {
 
 	function undoSnapRect(rect) {
 		// shifting coord back to rect to undo post-snapping geometry
+		const top = Math.min(Math.ceil(rect.top), rect.top + 0.5); // TOP ≈ floor
+		const left = Math.min(Math.ceil(rect.left), rect.left + 0.5); // LEFT ≈ floor
+		const bottom = Math.max(Math.floor(rect.bottom), rect.bottom - 0.5); // BOTTOM ≈ ceil
+		const right = Math.max(Math.floor(rect.right), rect.right - 0.5); // RIGHT ≈ ceil
 		return {
-			top: Math.ceil(rect.top), // TOP ≈ floor
-			left: Math.ceil(rect.left), // LEFT ≈ floor
-			bottom: Math.floor(rect.bottom), // BOTTOM ≈ ceil
-			right: Math.floor(rect.right), // RIGHT ≈ ceil
-			width:  rect.width,
-			height: rect.height
+			top,
+			left,
+			bottom,
+			right,
+			width: right - left,
+			height: bottom - top
 		};
 	}
 
