@@ -734,7 +734,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					ifrm.setAttribute('class', "text_red");
 					ifrm.setAttribute('align', 'left');
 					ifrm.setAttribute('width', Img.width);
-					ifrm.setAttribute('style', 'margin-top:5px; margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
+					ifrm.setAttribute('style', 'margin-top:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
 					ifrm.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture');
 					if (source=="cbs") {
 						ifrm.src="https://www.livereacting.com/tools/hls-player-embed?url="+entry.video;
@@ -751,6 +751,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					var video = document.createElement('video');
 					video.controls = true;
 					video.width = Img.width;
+					video.setAttribute('style', 'margin-top:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
 					var source2 = document.createElement('source');
 					source2.src = entry.video;
 					source2.type = 'video/mp4';
