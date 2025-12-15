@@ -30,6 +30,14 @@ $(function() {
 		};
 	}
 
+	function getBoundingClientRectNoSnap(el) {
+		const rect = el.getBoundingClientRect();
+		const rectNoSnap = undoSnapRect(rect);
+		rectNoSnap.width = el.offsetWidth;
+		rectNoSnap.height = el.offsetHeight;
+		return rectNoSnap;
+	}
+
 	window.addEventListener('resize', () => {
 		activeTooltips.forEach(tooltipEl => tooltipEl._boundingRect = null);
 	});
@@ -54,7 +62,7 @@ $(function() {
 	function updateTooltip(tooltipEl) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
-		const targetRect = undoSnapRect(tooltipEl._targetEl.getBoundingClientRect());
+		const targetRect = getBoundingClientRectNoSnap(tooltipEl._targetEl);
 		const prev = tooltipEl._prevTargetRect || {};
 		const epsilon = 0.5;
 
@@ -113,13 +121,13 @@ $(function() {
 	function drawLine(tooltipEl, targetRect) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
-		var tooltipRect = undoSnapRect(tooltipEl.getBoundingClientRect());
+		var tooltipRect = getBoundingClientRectNoSnap(tooltipEl);
 		var targetX = targetRect.left + targetRect.width / 2;
 		var targetY = targetRect.top + targetRect.height / 2;
 
 		if (!tooltipEl._boundingRect) {
 			if (scrollDiv && scrollDiv.contains(tooltipEl._targetEl)) {
-				var scrollRect = undoSnapRect(scrollDiv.getBoundingClientRect());
+				var scrollRect = getBoundingClientRectNoSnap(scrollDiv);
 				tooltipEl._boundingRect = {
 					left: scrollRect.left,
 					top: scrollRect.top,
@@ -273,7 +281,6 @@ $(function() {
 				tooltipEl.style.background = scheme.bg;
 			}
 
-			var  targetRect = tooltipEl._targetEl.getBoundingClientRect();
 			const getHorizontalExtras = (el) => {
 				const s = getComputedStyle(el);
 				return {
@@ -285,8 +292,8 @@ $(function() {
 				};
 			};
 			const extras = getHorizontalExtras(tooltipEl);
-			if (targetRect.width >= 350) {
-				tooltipEl.style.maxWidth = (Math.round(targetRect.width) - extras.total) + "px";
+			if (tooltipEl._targetEl.offsetWidth >= 350) {
+				tooltipEl.style.maxWidth = (tooltipEl._targetEl.offsetWidth - extras.total) + "px";
 			} else {
 				tooltipEl.style.maxWidth = (450 - extras.total) + "px";
 			}
