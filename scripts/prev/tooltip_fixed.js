@@ -14,10 +14,16 @@ $(function() {
 	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; z-index: 1;");
 	document.body.appendChild(svgEl);
 
-	function crisp(value) {
-		var ratio = window.devicePixelRatio || 1;
-		if (ratio == 1) return value;
-		return Math.round(value * ratio) / ratio;
+	function undoSnapRect(rect) {
+		// shifting coord back to rect to undo post-snapping geometry
+		return {
+			top: Math.ceil(rect.top), // TOP ≈ floor
+			left: Math.ceil(rect.left), // LEFT ≈ floor
+			bottom: Math.floor(rect.bottom), // BOTTOM ≈ ceil
+			right: Math.floor(rect.right), // RIGHT ≈ ceil
+			width:  rect.width,
+			height: rect.height
+		};
 	}
 
 	window.addEventListener('resize', () => {
@@ -44,7 +50,7 @@ $(function() {
 	function updateTooltip(tooltipEl) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
-		const targetRect = tooltipEl._targetEl.getBoundingClientRect();
+		const targetRect = undoSnapRect(tooltipEl._targetEl.getBoundingClientRect());
 		const prev = tooltipEl._prevTargetRect || {};
 		const epsilon = 0.5;
 
@@ -103,13 +109,13 @@ $(function() {
 	function drawLine(tooltipEl, targetRect) {
 		if (!tooltipEl || !tooltipEl._targetEl) return;
 
-		var tooltipRect = tooltipEl.getBoundingClientRect();
+		var tooltipRect = undoSnapRect(tooltipEl.getBoundingClientRect());
 		var targetX = targetRect.left + targetRect.width / 2;
 		var targetY = targetRect.top + targetRect.height / 2;
 
 		if (!tooltipEl._boundingRect) {
 			if (scrollDiv && scrollDiv.contains(tooltipEl._targetEl)) {
-				var scrollRect = scrollDiv.getBoundingClientRect();
+				var scrollRect = undoSnapRect(scrollDiv.getBoundingClientRect());
 				tooltipEl._boundingRect = {
 					left: scrollRect.left,
 					top: scrollRect.top,
@@ -126,14 +132,10 @@ $(function() {
 			}
 		}
 
-		targetX = crisp(targetX);
-		targetY = crisp(targetY);
-
-		// floor/ceil - moving closer to border
-		if (targetX - r < tooltipEl._boundingRect.left) targetX = Math.floor(tooltipEl._boundingRect.left + r);
-		else if (targetX + r > tooltipEl._boundingRect.right) targetX = Math.ceil(tooltipEl._boundingRect.right - r);
-		if (targetY - r < tooltipEl._boundingRect.top) targetY = Math.floor(tooltipEl._boundingRect.top + r);
-		else if (targetY + r > tooltipEl._boundingRect.bottom) targetY = Math.ceil(tooltipEl._boundingRect.bottom - r);
+		if (targetX - r < tooltipEl._boundingRect.left) targetX = tooltipEl._boundingRect.left + r;
+		else if (targetX + r > tooltipEl._boundingRect.right) targetX = tooltipEl._boundingRect.right - r;
+		if (targetY - r < tooltipEl._boundingRect.top) targetY = tooltipEl._boundingRect.top + r;
+		else if (targetY + r > tooltipEl._boundingRect.bottom) targetY = tooltipEl._boundingRect.bottom - r;
 
 		var distances = { top: Math.abs(tooltipRect.top - targetY), bottom: Math.abs(tooltipRect.bottom - targetY) };
 		var minSide = distances.top < distances.bottom ? "top" : "bottom";
@@ -145,14 +147,10 @@ $(function() {
 			? tooltipRect.top
 			: tooltipRect.bottom;
 
-		tooltipX = crisp(tooltipX);
-		tooltipY = crisp(tooltipY);
-
-		// floor/ceil - moving closer to border
-		if (tooltipX - r < tooltipEl._boundingRect.left) tooltipX = Math.floor(tooltipEl._boundingRect.left + r);
-		else if (tooltipX + r > tooltipEl._boundingRect.right) tooltipX = Math.ceil(tooltipEl._boundingRect.right - r);
-		if (tooltipY - r < tooltipEl._boundingRect.top) tooltipY = Math.floor(tooltipEl._boundingRect.top + r);
-		else if (tooltipY + r > tooltipEl._boundingRect.bottom) tooltipY = Math.ceil(tooltipEl._boundingRect.bottom - r);
+		if (tooltipX - r < tooltipEl._boundingRect.left) tooltipX = tooltipEl._boundingRect.left + r;
+		else if (tooltipX + r > tooltipEl._boundingRect.right) tooltipX = tooltipEl._boundingRect.right - r;
+		if (tooltipY - r < tooltipEl._boundingRect.top) tooltipY = tooltipEl._boundingRect.top + r;
+		else if (tooltipY + r > tooltipEl._boundingRect.bottom) tooltipY = tooltipEl._boundingRect.bottom - r;
 
 		startX = minSide === "top" ? tooltipX - r : tooltipX + r;
 		endX   = minSide === "top" ? tooltipX + r : tooltipX - r;
@@ -272,7 +270,6 @@ $(function() {
 			}
 
 			var  targetRect = tooltipEl._targetEl.getBoundingClientRect();
-			// tooltipEl.style.padding="4px 6px";
 			const getHorizontalExtras = (el) => {
 				const s = getComputedStyle(el);
 				return {
@@ -285,9 +282,9 @@ $(function() {
 			};
 			const extras = getHorizontalExtras(tooltipEl);
 			if (targetRect.width >= 350) {
-				tooltipEl.style.maxWidth = crisp(Math.round(targetRect.width)-extras.total) + "px";
+				tooltipEl.style.maxWidth = (Math.round(targetRect.width) - extras.total) + "px";
 			} else {
-				tooltipEl.style.maxWidth = crisp(450-extras.total)+"px";
+				tooltipEl.style.maxWidth = (450 - extras.total) + "px";
 			}
 
 			startTooltipTracker(tooltipEl);
