@@ -678,7 +678,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					Img2.setAttribute('class', "text_red");
 					Img2.setAttribute('align', 'left');
 					Img2.setAttribute('width', Img.width);
-					Img2.setAttribute('style', 'margin-top:5px; margin-bottom:5px; background-color: rgba(222, 142, 142, 0.0);');
+					Img2.setAttribute('style', 'margin-bottom:5px; background-color: rgba(222, 142, 142, 0.0);');
 					Img2.onload = function () {
 						var additImgWidth = Img.width;
 						if (this.naturalWidth < Img.width) additImgWidth = this.naturalWidth;
@@ -695,7 +695,6 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 				}
 				this.innerHTML = "[▲]";
 				showMoreDiv.innerHTML = textHide + " " + entry.additMediaUrl.length + " " + textMore + " ";
-				showMoreDiv.setAttribute('style', "text-align: right;");
 				showMoreDiv.appendChild(this);
 
 			} else {
@@ -704,7 +703,6 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 				}
 				this.innerHTML = "[▼]";
 				showMoreDiv.innerHTML = textShow + " " + entry.additMediaUrl.length + " " + textMore + " ";
-				showMoreDiv.setAttribute('style', "padding-bottom:5px; text-align: right;");
 				showMoreDiv.appendChild(this);
 			}
 			adjustFeedScrollDiv();
@@ -713,7 +711,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 
 		var showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
-		showMoreDiv.setAttribute('style', "padding-bottom:5px; text-align: right;");
+		showMoreDiv.setAttribute('style', "margin-bottom:5px; text-align: right;");
 		showMoreDiv.innerHTML = textShow + " " + entry.additMediaUrl.length + " " + textMore + " ";
 		showMoreDiv.appendChild(extensionImgA);
 		imageDiv.appendChild(showMoreDiv);
@@ -734,7 +732,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					ifrm.setAttribute('class', "text_red");
 					ifrm.setAttribute('align', 'left');
 					ifrm.setAttribute('width', Img.width);
-					ifrm.setAttribute('style', 'margin-top:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
+					ifrm.setAttribute('style', 'margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
 					ifrm.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture');
 					if (source=="cbs") {
 						ifrm.src="https://www.livereacting.com/tools/hls-player-embed?url="+entry.video;
@@ -751,7 +749,6 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					var video = document.createElement('video');
 					video.controls = true;
 					video.width = Img.width;
-					video.setAttribute('style', 'margin-top:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
 					var source2 = document.createElement('source');
 					source2.src = entry.video;
 					source2.type = 'video/mp4';
@@ -763,13 +760,11 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 				}
 				this.innerHTML="[&#9650;]";
 				showMoreDiv.innerHTML=textHide+" "+textVideo+" ";
-				showMoreDiv.setAttribute('style', "text-align: right;");
 				showMoreDiv.appendChild(this);
 			} else if (this.innerHTML=="[▲]") { // collapse
 				imageDiv.removeChild(imageDiv.lastChild);
 				this.innerHTML="[&#9660;]";
 				showMoreDiv.innerHTML=textShow+" "+textVideo+" ";
-				showMoreDiv.setAttribute('style', "padding-bottom:5px; text-align: right;");
 				showMoreDiv.appendChild(this);
 			}
 			adjustFeedScrollDiv();
@@ -778,7 +773,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 
 		var showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
-		showMoreDiv.setAttribute('style', "padding-bottom:5px; text-align: right;");
+		showMoreDiv.setAttribute('style', "margin-bottom:5px; text-align: right;");
 		showMoreDiv.innerHTML=textShow+" "+textVideo+" ";
 		showMoreDiv.appendChild(extensionVideoA);
 		imageDiv.appendChild(showMoreDiv);
