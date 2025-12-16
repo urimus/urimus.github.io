@@ -678,7 +678,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					Img2.setAttribute('class', "text_red");
 					Img2.setAttribute('align', 'left');
 					Img2.setAttribute('width', Img.width);
-					Img2.setAttribute('style', 'margin-bottom:5px; background-color: rgba(222, 142, 142, 0.0);');
+					Img2.setAttribute('style', 'display: block; margin-bottom:5px; background-color: rgba(222, 142, 142, 0.0);');
 					Img2.onload = function () {
 						var additImgWidth = Img.width;
 						if (this.naturalWidth < Img.width) additImgWidth = this.naturalWidth;
@@ -732,7 +732,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					ifrm.setAttribute('class', "text_red");
 					ifrm.setAttribute('align', 'left');
 					ifrm.setAttribute('width', Img.width);
-					ifrm.setAttribute('style', 'margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
+					ifrm.setAttribute('style', 'display: block; margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
 					ifrm.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture');
 					if (source=="cbs") {
 						ifrm.src="https://www.livereacting.com/tools/hls-player-embed?url="+entry.video;
@@ -747,6 +747,7 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 					imageDiv.appendChild(ifrm);
 				} else {
 					var video = document.createElement('video');
+					video.setAttribute('style', 'display: block; margin-bottom:5px;');
 					video.controls = true;
 					video.width = Img.width;
 					var source2 = document.createElement('source');
