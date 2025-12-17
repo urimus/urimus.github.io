@@ -22,7 +22,7 @@ screen.orientation.addEventListener('change', function(event) {
 
 
 function isMobile() {
-    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+	return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
 }
 
 function getScrollbarWidth(el) {
@@ -36,10 +36,11 @@ function getScrollbarHeight(el) {
 }
 
 function getViewportWidth() {
+	if (isMobile()) return Math.max(document.documentElement.clientWidth, window.innerWidth);
 	return (window.visualViewport?.width) || document.documentElement.clientWidth || window.innerWidth;
 }
-
 function getViewportHeight() {
+	if (isMobile()) return Math.max(document.documentElement.clientHeight, window.innerHeight);
 	return (window.visualViewport?.height) || document.documentElement.clientHeight || window.innerHeight;
 }
 
