@@ -129,6 +129,7 @@ function updateAboutMeImage(lang, random) {
 		Img.setAttribute('alt', item.title);
 		Img.setAttribute('title', item.title);
 		Img.setAttribute('width', '100%');
+		Img.setAttribute('style', 'display: block; margin-bottom:5px;');
 		Img.onerror = function () {
 			loadingDivTitle.innerHTML = textError;
 			adjustScrollDiv();
