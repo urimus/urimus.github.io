@@ -175,7 +175,7 @@ function showFeedTitle(type, source, lang, result) {
 		Img.setAttribute('alt', result.description);
 		Img.setAttribute('title', result.description);
 		Img.setAttribute('align', 'left');
-		Img.setAttribute('style', 'padding-bottom:5px;');
+		Img.setAttribute('style', 'padding-bottom:5px; display: block;');
 		aLogo.appendChild(Img);
 		cell1.appendChild(aLogo);
 
@@ -1158,7 +1158,8 @@ function generateTabs(type, source, lang) {
 	}
 	Img.setAttribute('id', "information_img");
 	Img.setAttribute('class', "thumbnail_image_red_png");
-	Img.setAttribute('src', "images/icons/html_editor/information_red.png");
+	Img.setAttribute('style', "display: block;");
+	Img.src="images/icons/html_editor/information_red.png";
 	a.appendChild(Img);
 	Div.appendChild(a);
 	table.appendChild(Div);
@@ -1166,8 +1167,8 @@ function generateTabs(type, source, lang) {
 	table.style.position='relative';
 	Div.style.position='absolute';
 	Div.style.right='2px';
-	if (keys.length%5==0) Div.style.bottom='-36px';
-	else Div.style.bottom='-9px';
+	if (keys.length%5==0) Div.style.bottom='-32px';
+	else Div.style.bottom='-5px';
 
 	var Img = document.createElement('img');
 	if (lang=="eng" || lang=="lat") {
@@ -1178,7 +1179,8 @@ function generateTabs(type, source, lang) {
 		Img.setAttribute('alt', "Быстрые Советы");
 		Img.setAttribute('title', "Совет: Используйте Клавиши Навигации - <kbd>&rlarr;</kbd>, <kbd>Home</kbd>, <kbd>End</kbd>, <kbd>Page Up</kbd>, <kbd>Page Down</kbd> и <kbd>Shift</kbd> для Прокрутки Содержимого");
 	}
-	Img.setAttribute('src', "images/icons/feed/tips.png");
+	Img.setAttribute('style', "display: block;");
+	Img.src="images/icons/feed/tips.png";
 	table.appendChild(Img);
 
 	Img.style.position='absolute';
