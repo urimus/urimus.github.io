@@ -471,11 +471,12 @@ function generateTabs(type, lang) {
 	a.setAttribute('href', "javascript:showInformation('" + lang + "');");
 
 	Img = document.createElement('img');
-	Img.setAttribute('src', "images/icons/html_editor/information.png");
 	if (lang=="eng" || lang=="lat") { Img.setAttribute('alt', "Version Information"); Img.setAttribute('title', "Version Information"); }
 	if (lang=="rus") { Img.setAttribute('alt', "Информация о Версии"); Img.setAttribute('title', "Информация о Версии"); }
 	Img.setAttribute('id', "information_img");
 	Img.setAttribute('class', "thumbnail_image_blue_png");
+	Img.setAttribute('style', "display: block;");
+	Img.src="images/icons/html_editor/information.png";
 
 	a.appendChild(Img);
 	Div.appendChild(a);
@@ -484,7 +485,7 @@ function generateTabs(type, lang) {
 	table.style.position = 'relative';
 	Div.style.position = 'absolute';
 	Div.style.right = '2px';
-	Div.style.bottom = '-9px';
+	Div.style.bottom = '-5px';
 
 	adjustContentsScrollDiv();
 
