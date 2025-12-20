@@ -7988,11 +7988,10 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 	}
 
-	if (isMobile()) ele.setAttribute('onclick', "hideSubMenu(this, 1);");
-
 	tablex = document.getElementById("table" + newTableId);
 	if (tablex && ele.getBoundingClientRect().left == tablex.dataset.origLeft && ele.id==tablex.dataset.id && type != "contentsLink") {
 		// table already exists
+		if (isMobile()) ele.setAttribute('onclick', "hideSubMenu(this, 1);");
 		return;
 	}
 
@@ -8030,6 +8029,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 		return;
 	}
+
 	requestAnimationFrame(() => {
 		ele.setAttribute('onclick', "hideSubMenu(this, 1);");
 		if (isMobile()) {
