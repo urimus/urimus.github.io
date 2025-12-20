@@ -167,8 +167,41 @@ function processPageResize(isLoad, orientationChanged){
 	if (typeof isLoad === "undefined") var isLoad = 1;
 	if (typeof orientationChanged === "undefined") var orientationChanged = 0;
 
-	var scrollDiv = document.getElementById('scrollDiv');
+	if (isLoad == 1) { // correct HTML Editor menu
+		var menu6 = document.getElementById('menu_6');
+		if (menu6) {
+			var xhr;
+			if (window.XMLHttpRequest) {
+				xhr=new XMLHttpRequest();
+			} else {  
+				xhr=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xhr.onreadystatechange = function(){
+				if (this.readyState==4 && this.status==200) {
+					var respNoBOM=removeBom(this.responseText);
+					if (respNoBOM.substring(0, 2) == "<?") {
+						menu6.removeAttribute("onclick");
+						menu6.removeAttribute("onmouseenter");
+						menu6.removeAttribute("onmouseleave");
+						var menu6Title;
+						var lang = window.location.pathname.slice(-8, -5);
+						if (lang=="eng" || lang=="lat") {
+							menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning.";
+						}
+						if (lang=="rus") {
+							menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует.";
+						}
+						menu6.setAttribute("title", menu6Title);
+						menu6.innerHTML = "&#10060;&nbsp;"+menu6.innerHTML.trim();
+					}
+				}
+			};
+			xhr.open("GET","scripts/php/checkLogIn.php", true);
+			xhr.send();
+		}
+	}
 
+	var scrollDiv = document.getElementById('scrollDiv');
 	if (typeof scrollDiv !== 'undefined' && scrollDiv != null) {
 		if (isLoad == 0) {
 			if (window.location.pathname.substr(0, 5) == "/news") {
@@ -228,14 +261,10 @@ function processPageResize(isLoad, orientationChanged){
 	}
 
 	if (window.location.pathname.substr(0, 4) == "/amv" && isLoad == 1) {
-		setIframes();
-	}
-}
-
-function setIframes() {
-	const iframes = document.getElementsByTagName("iframe");
-	for (const iframe of iframes) {
-		iframe.src = iframe.dataset.src;
+		const iframes = document.getElementsByTagName("iframe");
+		for (const iframe of iframes) {
+			iframe.src = iframe.dataset.src;
+		}
 	}
 }
 
