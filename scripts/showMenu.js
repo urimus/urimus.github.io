@@ -8028,9 +8028,16 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 		return;
 	}
-
 	requestAnimationFrame(() => {
 		ele.setAttribute('onclick', "hideSubMenu(this, 1);");
+		// for isMobile
+		ele.setAttribute(
+			"onmouseleave",
+			`this.className='menu_not_selected_${wholeMenu[key].color}';
+								this.setAttribute('onclick', 'showSubMenu(this, "${lang}", "${type}", ${newTableId});');
+								this.setAttribute('onmouseleave', 'this.className="menu_not_selected_${wholeMenu[key].color}";');`
+		);
+
 	});
 
 	rect = ele.getBoundingClientRect();
