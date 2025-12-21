@@ -62,8 +62,9 @@ function contentsLoad(lang) {
 		return;
 	}
 
+	processPageResize(1, 0, lang);
 	showContents(type, sortby, lang);
-	processPageResize(1);
+
 }
 
 function mouseOutSortByName(sortbyTypeL) {

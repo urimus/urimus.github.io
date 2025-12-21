@@ -96,8 +96,8 @@ function newsLoad(lang) {
 		return;
 	}
 
+	processPageResize(1, 0, lang);
 	showFeed(type, source, lang);
-	processPageResize(1);
 }
 
 function showRecordsNum(type, recordsNum, lang, newCaption) {

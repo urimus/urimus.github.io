@@ -1678,7 +1678,7 @@ function processSearchAndReplace(lang) {
 		return true; 
 	}
 
-	processPageResize(1);
+	processPageResize(1, 0, lang);
 
 	var xhr;
 	if (window.XMLHttpRequest) {

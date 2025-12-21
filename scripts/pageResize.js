@@ -163,54 +163,55 @@ function enableKeyboardScroll(scrollDiv) {
 	});
 }
 
-function processPageResize(isLoad, orientationChanged){
+function processPageResize(isLoad, orientationChanged, lang){
 	if (typeof isLoad === "undefined") var isLoad = 1;
 	if (typeof orientationChanged === "undefined") var orientationChanged = 0;
 
 	if (isLoad == 1) { // correct HTML Editor menu
 		var menu6 = document.getElementById('menu_6');
-		var menu6Title;
-		var lang = window.location.pathname.slice(-8, -5);
-		if (isMobile() && menu6) {
-			menu6.removeAttribute("onclick");
-			menu6.removeAttribute("onmouseenter");
-			menu6.removeAttribute("onmouseleave");
-			if (lang=="eng" || lang=="lat") {
-				menu6Title = "HTML Editor is not Supported for Mobile Devices";
-			}
-			if (lang=="rus") {
-				menu6Title = "HTML Редактор не Поддерживается на Мобильных Устройствах";
-			}
-			menu6.setAttribute("title", menu6Title);
-			menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
-
-		} else if (menu6) {
-			var xhr;
-			if (window.XMLHttpRequest) {
-				xhr=new XMLHttpRequest();
-			} else {  
-				xhr=new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xhr.onreadystatechange = function(){
-				if (this.readyState==4 && this.status==200) {
-					var respNoBOM=removeBom(this.responseText);
-					if (respNoBOM.substring(0, 2) == "<?") {
-						menu6.removeAttribute("onclick");
-						menu6.removeAttribute("onmouseenter");
-						menu6.removeAttribute("onmouseleave");
-						if (lang=="eng" || lang=="lat") {
-							menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning";
-						}
-						if (lang=="rus") {
-							menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует";
-						}
-						menu6.setAttribute("title", menu6Title);
-						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
-					}
+		if (menu6) {
+			var menu6Title;
+			if (typeof lang === "undefined") var lang = window.location.pathname.slice(-8, -5);
+			if (isMobile()) {
+				menu6.removeAttribute("onclick");
+				menu6.removeAttribute("onmouseenter");
+				menu6.removeAttribute("onmouseleave");
+				if (lang=="eng" || lang=="lat") {
+					menu6Title = "HTML Editor is not Supported for Mobile Devices";
 				}
-			};
-			xhr.open("GET","scripts/php/checkLogIn.php", true);
-			xhr.send();
+				if (lang=="rus") {
+					menu6Title = "HTML Редактор не Поддерживается на Мобильных Устройствах";
+				}
+				menu6.setAttribute("title", menu6Title);
+				menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
+			} else {
+				var xhr;
+				if (window.XMLHttpRequest) {
+					xhr=new XMLHttpRequest();
+				} else {  
+					xhr=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xhr.onreadystatechange = function(){
+					if (this.readyState==4 && this.status==200) {
+						var respNoBOM=removeBom(this.responseText);
+						if (respNoBOM.substring(0, 2) == "<?") {
+							menu6.removeAttribute("onclick");
+							menu6.removeAttribute("onmouseenter");
+							menu6.removeAttribute("onmouseleave");
+							if (lang=="eng" || lang=="lat") {
+								menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning";
+							}
+							if (lang=="rus") {
+								menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует";
+							}
+							menu6.setAttribute("title", menu6Title);
+							menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
+						}
+					}
+				};
+				xhr.open("GET","scripts/php/checkLogIn.php", true);
+				xhr.send();
+			}
 		}
 	}
 

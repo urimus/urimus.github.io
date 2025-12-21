@@ -58,7 +58,7 @@ function showInformation(lang) {
 function updateAboutMeImage(lang, random) {
 	if (typeof random == "undefined") random = 0;
 
-	processPageResize(1);
+	processPageResize(1, 0, lang);
 
 	var textLoadingFeed, textLoadingImage, textSkip;
 	if (lang == "rus") {
