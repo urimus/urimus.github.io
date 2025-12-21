@@ -9,6 +9,7 @@ $(function() {
 	var activeTooltips = new Set();
 	var updateLoopRunning = false;
 	var scrollDiv = document.getElementById('scrollDiv');
+	var lastViewportScale = window.visualViewport ? window.visualViewport.scale : 1;
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; z-index: 1;");
@@ -66,13 +67,20 @@ $(function() {
 		const prev = tooltipEl._prevTargetRect || {};
 		const epsilon = 0.5;
 
-		const changed =
+		const changedCoords =
 			typeof prev.top === "undefined" || Math.abs(prev.top - targetRect.top) > epsilon ||
 			typeof prev.left === "undefined" || Math.abs(prev.left - targetRect.left) > epsilon ||
 			typeof prev.width === "undefined" || Math.abs(prev.width - targetRect.width) > epsilon ||
 			typeof prev.height=== "undefined" || Math.abs(prev.height - targetRect.height) > epsilon;
+		var changedScale = false;
+		if (window.visualViewport) {
+			var currentScale = window.visualViewport.scale;
+			changedScale = Math.abs(currentScale - lastViewportScale) > 0.001;
+			if (changedScale) lastViewportScale = currentScale;
+		}
+		const changed = changedCoords || changedScale;
 
-		if (changed) {
+		if (changedCoords) {
 			tooltipEl._prevTargetRect = {
 				top: targetRect.top,
 				left: targetRect.left,
@@ -83,6 +91,15 @@ $(function() {
 			positionTooltip(tooltipEl);
 			drawLine(tooltipEl, targetRect);
 		}
+
+		if (changedScale) {
+			tooltipEl._boundingRect = null;
+ 			tooltipEl._prevTargetRect = null;
+			setTooltipMaxWidth(tooltipEl);
+			positionTooltip(tooltipEl);
+			drawLine(tooltipEl, targetRect);
+		}
+
 	}
 
 	function globalTick() {
@@ -281,29 +298,33 @@ $(function() {
 				tooltipEl.style.background = scheme.bg;
 			}
 
-			const getHorizontalExtras = (el) => {
-				const s = getComputedStyle(el);
-				return {
-					paddingLeft:  parseFloat(s.paddingLeft),
-					paddingRight: parseFloat(s.paddingRight),
-					borderLeft:   parseFloat(s.borderLeftWidth),
-					borderRight:  parseFloat(s.borderRightWidth),
-					total: parseFloat(s.paddingLeft) + parseFloat(s.paddingRight) + parseFloat(s.borderLeftWidth) + parseFloat(s.borderRightWidth)
-				};
-			};
-			const extras = getHorizontalExtras(tooltipEl);
-			if (tooltipEl._targetEl.offsetWidth >= 350) {
-				tooltipEl.style.maxWidth = (tooltipEl._targetEl.offsetWidth - extras.total) + "px";
-			} else {
-				tooltipEl.style.maxWidth = (450 - extras.total) + "px";
-			}
-
+			setTooltipMaxWidth(tooltipEl);
 			startTooltipTracker(tooltipEl);
 		},
 		close: function(event, ui) {
 			removeTooltip(ui.tooltip[0]);
 		}
 	});
+
+
+	function setTooltipMaxWidth(tooltipEl) {
+		const getHorizontalExtras = (el) => {
+			const s = getComputedStyle(el);
+			return {
+				paddingLeft:  parseFloat(s.paddingLeft),
+				paddingRight: parseFloat(s.paddingRight),
+				borderLeft:   parseFloat(s.borderLeftWidth),
+				borderRight:  parseFloat(s.borderRightWidth),
+				total: parseFloat(s.paddingLeft) + parseFloat(s.paddingRight) + parseFloat(s.borderLeftWidth) + parseFloat(s.borderRightWidth)
+			};
+		};
+		if (!tooltipEl._horizontalExtras) tooltipEl._horizontalExtras = getHorizontalExtras(tooltipEl);
+		if (tooltipEl._targetEl.offsetWidth >= 350) {
+			tooltipEl.style.maxWidth = (tooltipEl._targetEl.offsetWidth - tooltipEl._horizontalExtras.total) / lastViewportScale + "px";
+		} else {
+			tooltipEl.style.maxWidth = (450 - tooltipEl._horizontalExtras.total) / lastViewportScale + "px";
+		}
+	}
 
 	function removeTooltip(tooltipEl, noAnimation = false) {
 		if (!tooltipEl) return;
