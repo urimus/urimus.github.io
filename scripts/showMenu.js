@@ -2794,12 +2794,12 @@ if (lang=="rus") {
 	wholeMenu["Фэнтези"].link = "series_fantasy_rus.html";
 	wholeMenu["Фэнтези"].html = 'Фэнтези';
 
-	wholeMenu["Истор. Фантастика"] = {};
-	wholeMenu["Истор. Фантастика"].id = "27_1_3";
-	wholeMenu["Истор. Фантастика"].color = "black";
-	wholeMenu["Истор. Фантастика"].hasSub = 0;
-	wholeMenu["Истор. Фантастика"].link = "series_historical_fiction_rus.html";
-	wholeMenu["Истор. Фантастика"].html = 'Истор. Фантастика <font color="OrangeRed"><sup>&#9762; Essential &#9762;</sup></font>';
+	wholeMenu["Историческая Фантастика"] = {};
+	wholeMenu["Историческая Фантастика"].id = "27_1_3";
+	wholeMenu["Историческая Фантастика"].color = "black";
+	wholeMenu["Историческая Фантастика"].hasSub = 0;
+	wholeMenu["Историческая Фантастика"].link = "series_historical_fiction_rus.html";
+	wholeMenu["Историческая Фантастика"].html = 'Историческая Фантастика <font color="OrangeRed"><sup>&#9762; Essential &#9762;</sup></font>';
 
 	wholeMenu["Космическая Опера"] = {};
 	wholeMenu["Космическая Опера"].id = "27_1_4";
