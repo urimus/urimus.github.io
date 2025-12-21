@@ -93,8 +93,6 @@ $(function() {
 		}
 
 		if (changedScale) {
-			tooltipEl._boundingRect = null;
- 			tooltipEl._prevTargetRect = null;
 			setTooltipMaxWidth(tooltipEl);
 			positionTooltip(tooltipEl);
 			drawLine(tooltipEl, targetRect);
