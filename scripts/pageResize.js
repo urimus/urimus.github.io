@@ -182,7 +182,8 @@ function processPageResize(isLoad, orientationChanged){
 				menu6Title = "HTML Редактор не Поддерживается на Мобильных Устройствах";
 			}
 			menu6.setAttribute("title", menu6Title);
-			menu6.innerHTML = "&#10060;&nbsp;"+menu6.innerHTML.trim();
+			menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
+
 		} else if (menu6) {
 			var xhr;
 			if (window.XMLHttpRequest) {
@@ -204,7 +205,7 @@ function processPageResize(isLoad, orientationChanged){
 							menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует";
 						}
 						menu6.setAttribute("title", menu6Title);
-						menu6.innerHTML = "&#10060;&nbsp;"+menu6.innerHTML.trim();
+						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 					}
 				}
 			};
