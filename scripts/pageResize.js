@@ -174,7 +174,7 @@ function processPageResize(isLoad, orientationChanged, lang){
 			if (typeof lang === "undefined") var lang = window.location.pathname.slice(-8, -5);
 			if (isMobile()) {
 				menu6.removeAttribute("onclick");
-				menu6.removeAttribute("onmouseenter");
+				menu6.setAttribute("onmouseenter", "hideSubMenu();");
 				menu6.removeAttribute("onmouseleave");
 				if (lang=="eng" || lang=="lat") {
 					menu6Title = "HTML Editor is not Supported for Mobile Devices";
@@ -197,7 +197,7 @@ function processPageResize(isLoad, orientationChanged, lang){
 						var respNoBOM=removeBom(this.responseText);
 						if (respNoBOM.substring(0, 2) == "<?") {
 							menu6.removeAttribute("onclick");
-							menu6.removeAttribute("onmouseenter");
+							menu6.setAttribute("onmouseenter", "hideSubMenu();");
 							menu6.removeAttribute("onmouseleave");
 							if (lang=="eng" || lang=="lat") {
 								menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning";
