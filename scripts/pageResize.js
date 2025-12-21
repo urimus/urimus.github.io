@@ -171,7 +171,6 @@ function processPageResize(isLoad, orientationChanged, lang){
 		var menu6 = document.getElementById('menu_6');
 		if (menu6) {
 			var menu6Title;
-			if (typeof lang === "undefined") var lang = window.location.pathname.slice(-8, -5);
 			if (isMobile()) {
 				menu6.removeAttribute("onclick");
 				menu6.setAttribute("onmouseenter", "hideSubMenu();");
