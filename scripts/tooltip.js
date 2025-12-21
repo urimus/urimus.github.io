@@ -9,6 +9,7 @@ $(function() {
 	var activeTooltips = new Set();
 	var updateLoopRunning = false;
 	var scrollDiv = document.getElementById('scrollDiv');
+	var lastViewportScale = window.visualViewport ? window.visualViewport.scale : 1;
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; z-index: 1;");
@@ -66,11 +67,18 @@ $(function() {
 		const prev = tooltipEl._prevTargetRect || {};
 		const epsilon = 0.5;
 
-		const changed =
+		const changedCoords =
 			typeof prev.top === "undefined" || Math.abs(prev.top - targetRect.top) > epsilon ||
 			typeof prev.left === "undefined" || Math.abs(prev.left - targetRect.left) > epsilon ||
 			typeof prev.width === "undefined" || Math.abs(prev.width - targetRect.width) > epsilon ||
 			typeof prev.height=== "undefined" || Math.abs(prev.height - targetRect.height) > epsilon;
+		var scaleChanged = false;
+		if (isMobile() && window.visualViewport) {
+			var currentScale = window.visualViewport.scale;
+			scaleChanged = Math.abs(currentScale - lastViewportScale) > 0.0001;
+			if (scaleChanged) lastViewportScale = currentScale;
+		}
+		const changed = changedCoords || scaleChanged;
 
 		if (changed) {
 			tooltipEl._prevTargetRect = {
