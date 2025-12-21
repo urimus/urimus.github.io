@@ -7582,7 +7582,7 @@ function  loadMenuContentsLink(ele, lang) {
 				wholeMenu["Country"].html = 'Country: ';
 			}
 			for (var i = 0; i < countries.length; i++) {
-				wholeMenu["Country"].html=wholeMenu["Country"].html+'<img src="lang/all/'+countries[i]+'.gif" width="22" height="14"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
+				wholeMenu["Country"].html=wholeMenu["Country"].html+'<img src="lang/all/'+countries[i]+'.gif" height="17"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
 			}
 		}
 		if (typeof ele.dataset.title_orig!== "undefined") {
@@ -7698,7 +7698,7 @@ function  loadMenuContentsLink(ele, lang) {
 				wholeMenu["Страна"].html = 'Страна: ';
 			}
 			for (var i = 0; i < countries.length; i++) {
-				wholeMenu["Страна"].html=wholeMenu["Страна"].html+'<img src="lang/all/'+countries[i]+'.gif" width="22" height="14"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
+				wholeMenu["Страна"].html=wholeMenu["Страна"].html+'<img src="lang/all/'+countries[i]+'.gif" height="17"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
 			}
 		}
 		if (typeof ele.dataset.title_orig!== "undefined") {
@@ -7814,7 +7814,7 @@ function  loadMenuContentsLink(ele, lang) {
 				wholeMenu["Patriam"].html = 'Patriam: ';
 			}
 			for (var i = 0; i < countries.length; i++) {
-				wholeMenu["Patriam"].html=wholeMenu["Patriam"].html+'<img src="lang/all/'+countries[i]+'.gif" width="22" height="14"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
+				wholeMenu["Patriam"].html=wholeMenu["Patriam"].html+'<img src="lang/all/'+countries[i]+'.gif" height="17"  title="'+getFlagTitle(countries[i], lang)+'" data-ttcolor="'+ele.className.substr(10)+'" style="vertical-align:middle; margin-right: 5px;"/>';
 			}
 		}
 		if (typeof ele.dataset.title_orig!== "undefined") {
