@@ -175,7 +175,7 @@ function showFeedTitle(type, source, lang, result) {
 		Img.setAttribute('alt', result.description);
 		Img.setAttribute('title', result.description);
 		Img.setAttribute('align', 'left');
-		Img.setAttribute('style', 'padding-bottom:5px; display: block;');
+		Img.setAttribute('style', 'height: 27px; padding-bottom:5px; display: block;');
 		aLogo.appendChild(Img);
 		cell1.appendChild(aLogo);
 
@@ -186,9 +186,9 @@ function showFeedTitle(type, source, lang, result) {
 		if (lang == "rus") textLastBuildDate="Последняя Сборка:&nbsp;";
 		if (lang == "eng") textLastBuildDate="Last Build:&nbsp;";
 		if (lang == "lat") textLastBuildDate="Ultima Aedificatio:&nbsp;";
-		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+"<img src='images/icons/feed/build.png' title='"+textLastBuildDate+formatDate(result.date_ms, lang)+"' valign='middle' onload='javascript:adjustFeedScrollDiv();'>";
+		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+"<img src='images/icons/feed/build.png' title='"+textLastBuildDate+formatDate(result.date_ms, lang)+"' valign='middle' onload='javascript:adjustFeedScrollDiv();' height='27'>";
 		if (result.copyright!= null) {
-			cell1.innerHTML=cell1.innerHTML+"&nbsp;"+"<img src='images/icons/feed/copyright.png' title='"+result.copyright+"' valign='middle' onload='javascript:adjustFeedScrollDiv();'>";
+			cell1.innerHTML=cell1.innerHTML+"<img src='images/icons/feed/copyright.png' title='"+result.copyright+"' valign='middle' onload='javascript:adjustFeedScrollDiv();' height='27'>";
 		}
 		cell1.innerHTML=cell1.innerHTML+".";
 
@@ -1179,14 +1179,14 @@ function generateTabs(type, source, lang) {
 		Img.setAttribute('alt', "Быстрые Советы");
 		Img.setAttribute('title', "Совет: Используйте Клавиши Навигации - <kbd>&rlarr;</kbd>, <kbd>Home</kbd>, <kbd>End</kbd>, <kbd>Page Up</kbd>, <kbd>Page Down</kbd> и <kbd>Shift</kbd> для Прокрутки Содержимого");
 	}
-	Img.setAttribute('style', "display: block;");
+	Img.setAttribute('style',  "height:27px; display: block;");
 	Img.src="images/icons/feed/tips.png";
 	table.appendChild(Img);
 
 	Img.style.position='absolute';
 	Img.style.right='34px';
-	if (keys.length%5==0) Img.style.bottom='-32px';
-	else Img.style.bottom='-5px';
+	if (keys.length%5==0) Img.style.bottom='-28px';
+	else Img.style.bottom='-1px';
 
 	adjustFeedScrollDiv();
 }
