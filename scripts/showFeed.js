@@ -9,7 +9,7 @@ function feedIconText(feedURL, lang) {
 	if (lang == "rus") var textRssFeed="RSS Строка (англ.)";
 	if (lang == "eng") var textRssFeed="RSS Feed";
 	if (lang == "lat") var textRssFeed="RSS Acies (angl.)";
-	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' title='"+textRssFeed+"' class='thumbnail_image_red_both'  valign='middle' onload='javascript:adjustFeedScrollDiv();'></a>";
+	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' title='"+textRssFeed+"' class='thumbnail_image_red_both'  valign='middle' onload='javascript:adjustFeedScrollDiv();' height='27'></a>";
 }
 
 // ------------- Initial ---------------- //
@@ -197,7 +197,7 @@ function showFeedTitle(type, source, lang, result) {
 			if (lang == "rus") textPre="От";
 			if (lang == "eng") textPre="By";
 			if (lang == "lat") textPre="Ab";
-			cell1.innerHTML=cell1.innerHTML+' '+textPre+' Brian Dunbar&nbsp;<a href="mailto:brian.dunbar@nasa.gov" class="standardb_red" target="_blank"><img valign="middle" title="brian.dunbar@nasa.gov" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png"></a>';
+			cell1.innerHTML=cell1.innerHTML+' '+textPre+' Brian Dunbar&nbsp;<a href="mailto:brian.dunbar@nasa.gov" class="standardb_red" target="_blank"><img valign="middle" title="brian.dunbar@nasa.gov" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png" height="27"></a>';
 		}
 
 		var table2 = document.getElementById("messagetable");
@@ -820,18 +820,18 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 			Div.innerHTML = "<b>" + textCreators + "</b>";
 			Div.innerHTML += entry.creator[0];
 			if (typeof entry.creatorEmail !== "undefined" && typeof entry.creatorEmail[0] !== "undefined") {
-				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png"></a>';
+				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png" height="27"></a>';
 			}
 			for (var j = 1; j < entry.creator.length; j++) {
 				Div.innerHTML += ",&nbsp;" + entry.creator[j];
 				if (typeof entry.creatorEmail !== "undefined" && typeof entry.creatorEmail[j] !== "undefined") {
-					Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[j] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[j] + '" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png"></a>';
+					Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[j] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[j] + '" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png" height="27"></a>';
 				}
 			}
 		} else {
 			Div.innerHTML = "<b>" + textCreator + "</b>" + entry.creator[0];
 			if (typeof entry.creatorEmail !== "undefined" && typeof entry.creatorEmail[0] !== "undefined") {
-				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png"></a>';
+				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png" height="27"></a>';
 			}
 		}
 		contentsDiv.appendChild(Div);
@@ -1158,8 +1158,8 @@ function generateTabs(type, source, lang) {
 	}
 	Img.setAttribute('id', "information_img");
 	Img.setAttribute('class', "thumbnail_image_red_png");
-	Img.setAttribute('style', "display: block;");
-	Img.src="images/icons/html_editor/information_red.png";
+	Img.setAttribute('style', "height: 27px; display: block;");
+	Img.src="images/icons/html_editor/information.png";
 	a.appendChild(Img);
 	Div.appendChild(a);
 	table.appendChild(Div);
@@ -1167,8 +1167,8 @@ function generateTabs(type, source, lang) {
 	table.style.position='relative';
 	Div.style.position='absolute';
 	Div.style.right='2px';
-	if (keys.length%5==0) Div.style.bottom='-32px';
-	else Div.style.bottom='-5px';
+	if (keys.length%5==0) Div.style.bottom='-28px';
+	else Div.style.bottom='-1px';
 
 	var Img = document.createElement('img');
 	if (lang=="eng" || lang=="lat") {
