@@ -197,7 +197,7 @@ function showFeedTitle(type, source, lang, result) {
 			if (lang == "rus") textPre="От";
 			if (lang == "eng") textPre="By";
 			if (lang == "lat") textPre="Ab";
-			cell1.innerHTML=cell1.innerHTML+' '+textPre+' Brian Dunbar&nbsp;<a href="mailto:brian.dunbar@nasa.gov" class="standardb_red" target="_blank"><img valign="middle" title="brian.dunbar@nasa.gov" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png" height="27"></a>';
+			cell1.innerHTML=cell1.innerHTML+' '+textPre+' Brian Dunbar&nbsp;<a href="mailto:brian.dunbar@nasa.gov" class="standardb_red" target="_blank"><img valign="middle" title="brian.dunbar@nasa.gov" class="thumbnail_image_red_png" src="images/icons/feed/mailto.png" height="27"></a>';
 		}
 
 		var table2 = document.getElementById("messagetable");
@@ -820,18 +820,18 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 			Div.innerHTML = "<b>" + textCreators + "</b>";
 			Div.innerHTML += entry.creator[0];
 			if (typeof entry.creatorEmail !== "undefined" && typeof entry.creatorEmail[0] !== "undefined") {
-				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png" height="27"></a>';
+				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_png" src="images/icons/feed/mailto.png" height="27"></a>';
 			}
 			for (var j = 1; j < entry.creator.length; j++) {
 				Div.innerHTML += ",&nbsp;" + entry.creator[j];
 				if (typeof entry.creatorEmail !== "undefined" && typeof entry.creatorEmail[j] !== "undefined") {
-					Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[j] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[j] + '" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png" height="27"></a>';
+					Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[j] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[j] + '" class="thumbnail_image_red_png" src="images/icons/feed/mailto.png" height="27"></a>';
 				}
 			}
 		} else {
 			Div.innerHTML = "<b>" + textCreator + "</b>" + entry.creator[0];
 			if (typeof entry.creatorEmail !== "undefined" && typeof entry.creatorEmail[0] !== "undefined") {
-				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_both" src="images/icons/feed/mailto.png" height="27"></a>';
+				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_png" src="images/icons/feed/mailto.png" height="27"></a>';
 			}
 		}
 		contentsDiv.appendChild(Div);
