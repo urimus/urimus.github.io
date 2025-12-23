@@ -1166,7 +1166,7 @@ function generateTabs(type, source, lang) {
 
 	table.style.position='relative';
 	Div.style.position='absolute';
-	Div.style.right='2px';
+	Div.style.right='1px';
 	if (keys.length%5==0) Div.style.bottom='-28px';
 	else Div.style.bottom='-1px';
 
@@ -1184,7 +1184,7 @@ function generateTabs(type, source, lang) {
 	table.appendChild(Img);
 
 	Img.style.position='absolute';
-	Img.style.right='34px';
+	Img.style.right='33px';
 	if (keys.length%5==0) Img.style.bottom='-28px';
 	else Img.style.bottom='-1px';
 
