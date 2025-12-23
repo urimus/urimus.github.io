@@ -12,7 +12,6 @@ function getTarget(event) {
 	return el.nodeType == 1 ? el : el.parentNode;
 }
 
-
 window.addEventListener('resize', function(event) {
 	processPageResize(0);
 });
@@ -20,27 +19,36 @@ screen.orientation.addEventListener('change', function(event) {
 	processPageResize(0, 1);
 });
 
-
 function isMobile() {
 	return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
 }
+function isTouchDevice() {
+	return (
+		'ontouchstart' in window ||
+		navigator.maxTouchPoints > 0
+	);
+}
+function hasHover() {
+	return window.matchMedia('(hover: hover)').matches;
+}
+function isMobileLike() {
+    return isMobile() || (isTouchDevice() && !hasHover());
+}
 
 function getScrollbarWidth(el) {
-	if (!el || isMobile()) return 0;
+	if (!el || isTouchDevice()) return 0;
 	return el.offsetWidth - el.clientWidth;
 }
-
 function getScrollbarHeight(el) {
-	if (!el || isMobile()) return 0;
+	if (!el || isTouchDevice()) return 0;
 	return el.offsetHeight - el.clientHeight;
 }
-
 function getViewportWidth() {
-	if (isMobile()) return Math.max(document.documentElement.clientWidth, window.innerWidth);
+	if (isTouchDevice()) return Math.max(document.documentElement.clientWidth, window.innerWidth);
 	return (window.visualViewport?.width) || document.documentElement.clientWidth || window.innerWidth;
 }
 function getViewportHeight() {
-	if (isMobile()) return Math.max(document.documentElement.clientHeight, window.innerHeight);
+	if (isTouchDevice()) return Math.max(document.documentElement.clientHeight, window.innerHeight);
 	return (window.visualViewport?.height) || document.documentElement.clientHeight || window.innerHeight;
 }
 
@@ -60,7 +68,7 @@ function getScrollDivOffset(){
 function adjustScrollDiv2(){
 	var scrollDiv = document.getElementById('scrollDiv');
 
-	if (isMobile()) {
+	if (isTouchDevice()) {
 		scrollDiv.style.minHeight = menuHeight + "px";
 		scrollDiv.style.height = "100%";
 		return;

@@ -7991,7 +7991,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	tablex = document.getElementById("table" + newTableId);
 	if (tablex && ele.getBoundingClientRect().left == tablex.dataset.origLeft && ele.id==tablex.dataset.id && type != "contentsLink") {
 		// table already exists
-		if (isMobile()) ele.setAttribute('onclick', "hideSubMenu(this, 1);");
+		if (isMobileLike()) ele.setAttribute('onclick', "hideSubMenu(this, 1);");
 		return;
 	}
 
@@ -8032,7 +8032,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 	requestAnimationFrame(() => {
 		ele.setAttribute('onclick', "hideSubMenu(this, 1);");
-		if (isMobile()) {
+		if (isMobileLike()) {
 			ele.setAttribute(
 				"onmouseleave",
 				`this.className='menu_not_selected_${wholeMenu[key].color}';
