@@ -9,7 +9,7 @@ function feedIconText(feedURL, lang) {
 	if (lang == "rus") var textRssFeed="RSS Строка (англ.)";
 	if (lang == "eng") var textRssFeed="RSS Feed";
 	if (lang == "lat") var textRssFeed="RSS Acies (angl.)";
-	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.png' title='"+textRssFeed+"' class='thumbnail_image_red_both'  valign='middle' onload='javascript:adjustFeedScrollDiv();' height='27'></a>";
+	return "<a href='"+feedURL+"' class='standardb_red' target='_blank'><img src='images/icons/feed/feed_icon.svg' title='"+textRssFeed+"' class='thumbnail_image_red_png'  valign='middle' onload='javascript:adjustFeedScrollDiv();' height='27'></a>";
 }
 
 // ------------- Initial ---------------- //
@@ -186,9 +186,9 @@ function showFeedTitle(type, source, lang, result) {
 		if (lang == "rus") textLastBuildDate="Последняя Сборка:&nbsp;";
 		if (lang == "eng") textLastBuildDate="Last Build:&nbsp;";
 		if (lang == "lat") textLastBuildDate="Ultima Aedificatio:&nbsp;";
-		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+"<img src='images/icons/feed/build.png' title='"+textLastBuildDate+formatDate(result.date_ms, lang)+"' valign='middle' onload='javascript:adjustFeedScrollDiv();' height='27'>";
+		cell1.innerHTML=cell1.innerHTML+"&nbsp;"+"<img src='images/icons/feed/build.svg' title='"+textLastBuildDate+formatDate(result.date_ms, lang)+"' valign='middle' onload='javascript:adjustFeedScrollDiv();' height='27'>";
 		if (result.copyright!= null) {
-			cell1.innerHTML=cell1.innerHTML+"<img src='images/icons/feed/copyright.png' title='"+result.copyright+"' valign='middle' onload='javascript:adjustFeedScrollDiv();' height='27'>";
+			cell1.innerHTML=cell1.innerHTML+"<img src='images/icons/feed/copyright.svg' title='"+result.copyright+"' valign='middle' onload='javascript:adjustFeedScrollDiv();' height='27'>";
 		}
 		cell1.innerHTML=cell1.innerHTML+".";
 
@@ -197,7 +197,7 @@ function showFeedTitle(type, source, lang, result) {
 			if (lang == "rus") textPre="От";
 			if (lang == "eng") textPre="By";
 			if (lang == "lat") textPre="Ab";
-			cell1.innerHTML=cell1.innerHTML+' '+textPre+' Brian Dunbar&nbsp;<a href="mailto:brian.dunbar@nasa.gov" class="standardb_red" target="_blank"><img valign="middle" title="brian.dunbar@nasa.gov" class="thumbnail_image_red_png" src="images/icons/feed/mailto.png" height="27"></a>';
+			cell1.innerHTML=cell1.innerHTML+' '+textPre+' Brian Dunbar&nbsp;<a href="mailto:brian.dunbar@nasa.gov" class="standardb_red" target="_blank"><img valign="middle" title="brian.dunbar@nasa.gov" class="thumbnail_image_red_png" src="images/icons/feed/mailto.svg" height="27"></a>';
 		}
 
 		var table2 = document.getElementById("messagetable");
@@ -820,18 +820,18 @@ function showEntry(type, source, lang, result, i, appendEntry) {
 			Div.innerHTML = "<b>" + textCreators + "</b>";
 			Div.innerHTML += entry.creator[0];
 			if (typeof entry.creatorEmail !== "undefined" && typeof entry.creatorEmail[0] !== "undefined") {
-				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_png" src="images/icons/feed/mailto.png" height="27"></a>';
+				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_png" src="images/icons/feed/mailto.svg" height="27"></a>';
 			}
 			for (var j = 1; j < entry.creator.length; j++) {
 				Div.innerHTML += ",&nbsp;" + entry.creator[j];
 				if (typeof entry.creatorEmail !== "undefined" && typeof entry.creatorEmail[j] !== "undefined") {
-					Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[j] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[j] + '" class="thumbnail_image_red_png" src="images/icons/feed/mailto.png" height="27"></a>';
+					Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[j] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[j] + '" class="thumbnail_image_red_png" src="images/icons/feed/mailto.svg" height="27"></a>';
 				}
 			}
 		} else {
 			Div.innerHTML = "<b>" + textCreator + "</b>" + entry.creator[0];
 			if (typeof entry.creatorEmail !== "undefined" && typeof entry.creatorEmail[0] !== "undefined") {
-				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_png" src="images/icons/feed/mailto.png" height="27"></a>';
+				Div.innerHTML += '&nbsp;<a href="mailto:' + entry.creatorEmail[0] + '" class="standardb_red" target="_blank"><img valign="middle" title="' + entry.creatorEmail[0] + '" class="thumbnail_image_red_png" src="images/icons/feed/mailto.svg" height="27"></a>';
 			}
 		}
 		contentsDiv.appendChild(Div);
@@ -1159,7 +1159,7 @@ function generateTabs(type, source, lang) {
 	Img.setAttribute('id', "information_img");
 	Img.setAttribute('class', "thumbnail_image_red_png");
 	Img.setAttribute('style', "height: 27px; display: block;");
-	Img.src="images/icons/html_editor/information.png";
+	Img.src="images/icons/html_editor/information_red.svg";
 	a.appendChild(Img);
 	Div.appendChild(a);
 	table.appendChild(Div);
@@ -1180,7 +1180,7 @@ function generateTabs(type, source, lang) {
 		Img.setAttribute('title', "Совет: Используйте Клавиши Навигации - <kbd>&rlarr;</kbd>, <kbd>Home</kbd>, <kbd>End</kbd>, <kbd>Page Up</kbd>, <kbd>Page Down</kbd> и <kbd>Shift</kbd> для Прокрутки Содержимого");
 	}
 	Img.setAttribute('style',  "height:27px; display: block;");
-	Img.src="images/icons/feed/tips.png";
+	Img.src="images/icons/feed/tips.svg";
 	table.appendChild(Img);
 
 	Img.style.position='absolute';
@@ -1419,7 +1419,7 @@ function showFeed(type, source, lang) {
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL, 1);
 	}
-	preloadImg.setAttribute('src', 'images/icons/feed/feed_icon.png');
+	preloadImg.setAttribute('src', 'images/icons/feed/feed_icon.svg');
 }
 
 // ------------- Functions ---------------- //

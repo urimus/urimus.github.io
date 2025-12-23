@@ -477,7 +477,7 @@ function generateTabs(type, lang) {
 	Img.setAttribute('id', "information_img");
 	Img.setAttribute('class', "thumbnail_image_blue_png");
 	Img.setAttribute('style', "height: 27px; display: block;");
-	Img.src="images/icons/html_editor/information.png";
+	Img.src="images/icons/html_editor/information.svg";
 
 	a.appendChild(Img);
 	Div.appendChild(a);
