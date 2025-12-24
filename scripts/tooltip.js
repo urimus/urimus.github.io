@@ -300,7 +300,7 @@ $(function() {
 				tooltipEl.style.background = scheme.bg;
 			}
 
-			lastViewportScale = window.visualViewport ? window.visualViewport.scale : 1;
+			lastViewportScale = activeTooltips.size === 0 && window.visualViewport ? window.visualViewport.scale : 1;
 			setTooltipMaxWidth(tooltipEl);
 			startTooltipTracker(tooltipEl);
 		},
