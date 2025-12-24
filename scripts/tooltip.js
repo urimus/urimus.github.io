@@ -10,10 +10,15 @@ $(function() {
 	var updateLoopRunning = false;
 	var scrollDiv = document.getElementById('scrollDiv');
 	var lastViewportScale = window.visualViewport ? window.visualViewport.scale : 1;
+	var isOpera = isOpera() ? true : false;
 
 	var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	svgEl.setAttribute("style", "position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:1; z-index: 1;");
 	document.body.appendChild(svgEl);
+
+	function isOpera() {
+		return (!!window.opr && !!window.opr.addons) || navigator.userAgent.includes('OPR') || navigator.userAgent.includes('Opera');
+	}
 
 	function undoSnapRect(rect) {
 		// shifting coord back to rect to undo post-snapping geometry
@@ -73,12 +78,11 @@ $(function() {
 			typeof prev.width === "undefined" || Math.abs(prev.width - targetRect.width) > epsilon ||
 			typeof prev.height=== "undefined" || Math.abs(prev.height - targetRect.height) > epsilon;
 		var changedScale = false;
-		if (window.visualViewport) {
+		if (isOpera && window.visualViewport) {
 			var currentScale = window.visualViewport.scale;
 			changedScale = Math.abs(currentScale - lastViewportScale) > 0.001;
 			if (changedScale) lastViewportScale = currentScale;
 		}
-		const changed = changedCoords || changedScale;
 
 		if (changedCoords) {
 			tooltipEl._prevTargetRect = {
