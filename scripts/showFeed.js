@@ -1164,12 +1164,6 @@ function generateTabs(type, source, lang) {
 	Div.appendChild(a);
 	table.appendChild(Div);
 
-	table.style.position='relative';
-	Div.style.position='absolute';
-	Div.style.right='1px';
-	if (keys.length%5==0) Div.style.bottom='-28px';
-	else Div.style.bottom='-1px';
-
 	var Img = document.createElement('img');
 	if (lang=="eng" || lang=="lat") {
 		Img.setAttribute('alt', "Quick Tips");
@@ -1183,10 +1177,26 @@ function generateTabs(type, source, lang) {
 	Img.src="images/icons/feed/tips.svg";
 	table.appendChild(Img);
 
+	table.style.position='relative';
+	Div.style.position='absolute';
 	Img.style.position='absolute';
-	Img.style.right='33px';
-	if (keys.length%5==0) Img.style.bottom='-28px';
-	else Img.style.bottom='-1px';
+
+	if (keys.length==0) {
+		Div.style.right='1px';
+		Img.style.right='28px';
+		Div.style.bottom='-28px';
+		Img.style.bottom='-28px';
+	} else if (keys.length%5==0) {
+		Div.style.right='2px';
+		Img.style.right='29px';
+		Div.style.bottom='-27px';
+		Img.style.bottom='-27px';
+	} else {
+		Div.style.right='2px';
+		Img.style.right='29px';
+		Div.style.bottom='0px';
+		Img.style.bottom='0px';
+	}
 
 	adjustFeedScrollDiv();
 }
