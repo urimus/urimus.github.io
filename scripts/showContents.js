@@ -99,10 +99,12 @@ function refreshSortByTabs(typeL, sortbyTypeL, lang) {
 	if (typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="books" || typeL=="junk" || typeL=="news") {
 		if (sortbyType=="flag" || sortbyTypeL=="flag") mouseOutSortByFlag(sortbyTypeL);
 	} else {
-		document.getElementById("sortby_flag").onmouseenter="";
-		document.getElementById("sortby_flag").onmouseleave="";
-		document.getElementById("sortby_flag").onclick="";
-		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag3.png";
+		var sortbyFlag = document.getElementById("sortby_flag");
+		sortbyFlag.removeAttribute("onclick");
+		sortbyFlag.removeAttribute("onmouseenter");
+		sortbyFlag.removeAttribute("onmouseleave");
+		sortbyFlag.removeAttribute("title");
+		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag2.svg";
 	}
 }
 
