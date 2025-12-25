@@ -1453,13 +1453,13 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	result = {};
 	result.feedXML = resultOrig.feedXML;
 
-	if (source == "cbs") result.image = "images/icons/feed/cbs_news_logo.png";
-	if (source == "nasa") result.image = "images/icons/feed/NASA_Worm_logo.png";
+	if (source == "cbs") result.image = "images/icons/feed/cbs_news_logo.svg";
+	if (source == "nasa") result.image = "images/icons/feed/nasa_worm_logo.svg";
 	if (source == "phys.org") result.image = "images/icons/feed/phys_org_logo.png";
-	if (source == "space.com") result.image = "images/icons/feed/space_com_logo.png";
-	if (source == "wired") result.image = "images/icons/feed/wired_logo.png";
-	if (source == "yahoo") result.image = "images/icons/feed/yahoo_news_logo.png";
-	if (source == "yonhap") result.image = "images/icons/feed/yonhap_news_logo.png";
+	if (source == "space.com") result.image = "images/icons/feed/space_com_logo.svg";
+	if (source == "wired") result.image = "images/icons/feed/wired_logo.svg";
+	if (source == "yahoo") result.image = "images/icons/feed/yahoo_news_logo.svg";
+	if (source == "yonhap") result.image = "images/icons/feed/yonhap_news_logo.svg";
 
 	result.totalUpdated = 0;
 	var locStUpdateData = {};
