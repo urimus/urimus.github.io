@@ -92,32 +92,32 @@ P {text-indent: 10px; margin: 0px; padding-top:0px;}
 
 
 .title_gradient_blue{
-	background-color: #d0e7f7; background-image: url('images/icons/styles/sunshine2.gif');
+	background-color: #d0e7f7; background-image: url('images/icons/styles/sunshine2_3.gif');
 	background-repeat: no-repeat; background-position: center; background-size: cover;
 	font-size: 14px; font-family: "Verdana"; color:#448CCB;  font-weight:bold; text-align:center; height:20px; width:100%;
 }
 	
 .title_gradient_black{
-	background-color: #e2e2e2; background-image: url('images/icons/styles/sunshine2.gif');
+	background-color: #e2e2e2; background-image: url('images/icons/styles/sunshine2_3.gif');
 	background-repeat: no-repeat; background-position: center; background-size: cover;
 	font-size: 14px; font-family: "Verdana"; color:#707070;  font-weight:bold; text-align:center; height:20px; width:100%;
 }
 
 .title_gradient_red{
-	background-color: #F9D4D4; background-image: url('images/icons/styles/sunshine2.gif');
+	background-color: #F9D4D4; background-image: url('images/icons/styles/sunshine2_3.gif');
 	background-repeat: no-repeat; background-position: center; background-size: cover;
 	font-size: 14px; font-family: "Verdana"; color:#CE3535;  font-weight:bold; text-align:center; height:20px; width:100%;
 }
 
 .title_gradient_green{
-	background-color: #DAF28E; background-image: url('images/icons/styles/sunshine2.gif');
+	background-color: #DAF28E; background-image: url('images/icons/styles/sunshine2_3.gif');
 	background-repeat: no-repeat; background-position: center; background-size: cover;
 	font-size: 14px; font-family: "Verdana"; color:#008080;  font-weight:bold; text-align:center; height:20px; width:100%;
 }
 
 
 .title_gradient_white{
-	background-color: #ffffff; background-image: url('images/icons/styles/sunshine2.gif');
+	background-color: #ffffff; background-image: url('images/icons/styles/sunshine2_3.gif');
 	background-repeat: no-repeat; background-position: center; background-size: cover;
 	font-size: 14px; font-family: "Verdana"; color:#A9A9A9;  font-weight:bold; text-align:center; height:20px; width:100%;
 }
