@@ -167,7 +167,6 @@ function showFeedTitle(type, source, lang, result) {
 		aLogo.setAttribute('href', result.link);
 		aLogo.setAttribute('class', 'standardb_red');
 		aLogo.setAttribute('target', '_blank');
-		aLogo.style = 'padding-top:5px; padding-bottom:5px;';
 
 		var Img = document.createElement("img");
 		Img.setAttribute('src', preloadImg.src);
@@ -175,7 +174,7 @@ function showFeedTitle(type, source, lang, result) {
 		Img.setAttribute('alt', result.description);
 		Img.setAttribute('title', result.description);
 		Img.setAttribute('align', 'left');
-		Img.setAttribute('style', 'height: 27px; padding-bottom:5px; display: block;');
+		Img.setAttribute('style', 'height: 27px; display: block;');
 		aLogo.appendChild(Img);
 		cell1.appendChild(aLogo);
 
