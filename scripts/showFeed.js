@@ -161,7 +161,7 @@ function showFeedTitle(type, source, lang, result) {
 		var row = table.insertRow(-1);	
 		var cell1 = row.insertCell(0);
 		cell1.setAttribute('class', 'nimetus_red');
-		cell1.setAttribute('style', 'padding-top:5px;padding-bottom:5px;display: -webkit-flex;display: flex;align-items: center;');
+		cell1.setAttribute('style', 'padding: 5px 2px; display: -webkit-flex;display: flex; align-items: center;');
 
 		var aLogo = document.createElement('a');
 		aLogo.setAttribute('href', result.link);
