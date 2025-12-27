@@ -73,10 +73,11 @@ function mouseInSortByName() {
 function mouseOutSortByName(sortbyTypeL) {
 	if (sortbyTypeL=="name") {
 		document.getElementById("sortby_name").className = "flag_selected";
+		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_selected.svg";
 	} else {
 		document.getElementById("sortby_name").className = "flag_not_selected";
+		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_black.svg";
 	}
-	document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_black.svg";
 }
 
 function mouseInSortByDate() {
@@ -86,10 +87,11 @@ function mouseInSortByDate() {
 function mouseOutSortByDate(sortbyTypeL) {
 	if (sortbyTypeL=="date") {
 		document.getElementById("sortby_date").className = "flag_selected";
+		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_selected.svg";
 	} else {
 		document.getElementById("sortby_date").className = "flag_not_selected";
+		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_black.svg";
 	}
-	document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_black.svg";
 }
 
 function mouseInSortByFlag() {
@@ -99,10 +101,12 @@ function mouseInSortByFlag() {
 function mouseOutSortByFlag(sortbyTypeL) {
 	if (sortbyTypeL=="flag") {
 		document.getElementById("sortby_flag").className = "flag_selected";
+		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_selected.svg";
 	} else {
 		document.getElementById("sortby_flag").className = "flag_not_selected";
+		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_black.svg";
 	}
-	document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_black.svg";
+
 }
 
 function refreshSortByTabs(typeL, sortbyTypeL, lang) {
@@ -602,17 +606,6 @@ function showContents(type, sortby, lang) {
 								let img = new Image();
 								img.src = url;
 								preloadCache[url] = img;
-							}
-						}
-						if (typeof link.dataset.country!== "undefined" && sortby!="flag") { // do not cache if sort by flag
-							countries=link.dataset.country.split(";");
-							for (let j = 0; j < countries.length; j++) {
-								url = "lang/all/"+countries[j]+".gif";
-								if (!preloadCache[url]) {
-									let img = new Image();
-									img.src = url;
-									preloadCache[url] = img;
-								}
 							}
 						}
 					}

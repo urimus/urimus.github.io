@@ -1,4 +1,48 @@
 ﻿"use strict";
+// ------------- Global Variables ---------------- //
+var preloadCacheGl = {};
+// ------------- End of Global Variables ---------------- //
+
+function preloadImages() {
+	const sortbyIcons = [
+		"date_black","date_blue","date_green","date_red","date_selected","date_white",
+		"flag_black","flag_blue","flag_green","flag_red","flag_selected","flag_white",
+		"name_black","name_blue","name_green","name_red","name_selected","name_white"
+	].map(f => `/scripts/contents/icons/sortby/sortby_${f}.svg`);
+
+	const flags = [
+		"angola","antigua","argentina","aruba","australia","austria","bahrain","belgium","bosnia",
+		"botswana","brazil","brunei","bulgaria","burkina_faso","burundi","cambodia","cameroon",
+		"canada","chad","chile","china","colombia","congo","costa_rica","croatia","cuba","cyprus",
+		"czech","denmark","dominican-rep","east_timor","ecuador","egypt","el_salvador","england",
+		"equatorial_guinea","eritrea","estonia","ethiopia","finland","france","georgia","germany",
+		"ghana","greece","greenland","grenada","guam","guyana","haiti","honduras","hong_kong",
+		"hungary","iceland","indonesia","iran","iraq","ireland","israel","italy","jamaica","japan",
+		"jordan","kazakhstan","kenya","kiribati","kuwait","kyrgyzstan","laos","latvia","lebanon",
+		"lesotho","liberia","libya","liechtenstein","lithuania","luxembourg","macao","macedonia",
+		"madagascar","malawi","malaysia","malta","marshall_islands","mauritania","mauritius","mexico",
+		"micronesia","monaco","montenegro","morocco","namibia","nepal","netherlands","new_zealand",
+		"nicaragua","niger","nigeria","north_mariana_islands","north_korea","norway","olympics","oman",
+		"pakistan","palau","panama","papua_new_guinea","paraguay","peru","philippines","poland","portugal",
+		"puerto_rico","qatar","romania","russia","rwanda","samoa","sanmarino","sao_tome_and_principe",
+		"saudi_arabia","scotland_1","scotland_2","senegal","serbia","singapore","slovakia","slovenia",
+		"solomon_islands","somalia","south_africa","south_korea","spain","spqr","sri_lanka","st_lucia",
+		"sudan","sweden","switzerland","syria","taiwan","tanzania","thailand","togo","tokelau","tonga",
+		"trinidad_and_tobago","tunisia","turkey","turkmenistan","tuvalu","uae","ukraine","ulster",
+		"united_kingdom","uruguay","usa","ussr","vatican","venezuela","virgin_islands","wales",
+		"yugoslavia","afghanistan","aland","albania","algeria","american_samoa"
+	].map(f => `/lang/all/${f}.gif`);
+
+	const images = [...sortbyIcons, ...flags];
+
+	for (let imgSrc of images) {
+		if (!preloadCacheGl[imgSrc]) {
+			const img = new Image();
+			img.src = imgSrc;
+			preloadCacheGl[imgSrc] = img;
+		}
+	}
+}
 
 function checkIfHideSubMenu(event) {
 	var target = getTarget(event);
@@ -175,7 +219,9 @@ function processPageResize(isLoad, orientationChanged, lang){
 	if (typeof isLoad === "undefined") var isLoad = 1;
 	if (typeof orientationChanged === "undefined") var orientationChanged = 0;
 
-	if (isLoad == 1) { // correct HTML Editor menu
+	if (isLoad == 1) { 
+		preloadImages(); // preloadImages
+		// correct HTML Editor menu
 		var menu6 = document.getElementById('menu_6');
 		if (menu6) {
 			var menu6Title;
