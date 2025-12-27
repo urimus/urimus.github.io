@@ -551,61 +551,59 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <!-- Table with search, name and languages -->
 	<tr class="title_blue"> 
 		<td  class="title_blue" style="width: 490px;"><a name="site_map" id="contentsTitle">Карта Сайта</a></td>
-				<td bgcolor="#d0e7f7" width="3"></td>
-				<td  style="width: 150px;">
-				Сортировать По:
-				</td>
+		<td bgcolor="#d0e7f7" width="3"></td>
+		<td  style="width: 150px;">Сортировать По:</td>
 
-				<td>
-				<div id="sortby_name" align="center" style="width: 22px; display: block;"
-					onmouseenter="mouseInSortByName();"
-					onmouseleave="mouseOutSortByName(getParameterByName('sortby'));"
-					onclick="		
-					if (event.ctrlKey==1) {
-							window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name');
-						} else {
-							window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name';
-						};"
-					class="flag_not_selected"
-					title="Имени"
-				>
-					<img src="scripts/contents/icons/sortby/sortby_name_black.svg" id="sortby_name_img" alt="Имени" height="18"  style="display: block;"/>
-				</div>
-				</td>
-
-				<td>
-				<div id="sortby_date" align="center" style="width: 22px; display: block;"
-					onmouseenter="mouseInSortByDate();"
-					onmouseleave="mouseOutSortByDate(getParameterByName('sortby'));"
-					onclick="		
-					if (event.ctrlKey==1) {
-							window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date');
-						} else {
-							window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date';
-						};"
-					class="flag_not_selected"
-					title="Дате"
-				>
-					<img src="scripts/contents/icons/sortby/sortby_date_black.svg" id="sortby_date_img" alt="Дате" height="18" style="display: block;"/>
-				</div>
-				</td>
-
-				<td>
-				<div id="sortby_flag" align="center" style="width: 22px; display: block;"
-					onmouseenter="mouseInSortByFlag();"
-					onmouseleave="mouseOutSortByFlag(getParameterByName('sortby'));"
-					onclick="		
-					if (event.ctrlKey==1) {
-							window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag');
-						} else {
-							window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag';
+		<td>
+			<div id="sortby_name" align="center" style="width: 22px;"
+				onmouseenter="mouseInSortByName();"
+				onmouseleave="mouseOutSortByName(getParameterByName('sortby'));"
+				onclick="		
+				if (event.ctrlKey==1) {
+						window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name');
+					} else {
+						window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name';
 					};"
-					class="flag_not_selected"
-					title="Стране"
-				>
-					<img src="scripts/contents/icons/sortby/sortby_flag_black.svg" id="sortby_flag_img" alt="Стране" height="18" style="display: block;"/>
-				</div>
-				</td>
+				class="flag_not_selected"
+				title="Имени"
+			>
+				<img src="scripts/contents/icons/sortby/sortby_name_black.svg" id="sortby_name_img" alt="Имени" height="18"  style="display: block;"/>
+			</div>
+		</td>
+
+		<td>
+			<div id="sortby_date" align="center" style="width: 22px; display: block;"
+				onmouseenter="mouseInSortByDate();"
+				onmouseleave="mouseOutSortByDate(getParameterByName('sortby'));"
+				onclick="		
+				if (event.ctrlKey==1) {
+						window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date');
+					} else {
+						window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date';
+					};"
+				class="flag_not_selected"
+				title="Дате"
+			>
+				<img src="scripts/contents/icons/sortby/sortby_date_black.svg" id="sortby_date_img" alt="Дате" height="18" style="display: block;"/>
+			</div>
+		</td>
+
+		<td>
+			<div id="sortby_flag" align="center" style="width: 22px; display: block;"
+				onmouseenter="mouseInSortByFlag();"
+				onmouseleave="mouseOutSortByFlag(getParameterByName('sortby'));"
+				onclick="		
+				if (event.ctrlKey==1) {
+						window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag');
+					} else {
+						window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag';
+				};"
+				class="flag_not_selected"
+				title="Стране"
+			>
+				<img src="scripts/contents/icons/sortby/sortby_flag_black.svg" id="sortby_flag_img" alt="Стране" height="18" style="display: block;"/>
+			</div>
+		</td>
 
 	</tr>
 
