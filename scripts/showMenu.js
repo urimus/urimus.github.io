@@ -1557,14 +1557,14 @@ if (lang=="lat") {
 	wholeMenu["11Digerere"].color = "blue";
 	wholeMenu["11Digerere"].hasSub = 0;
 	wholeMenu["11Digerere"].link = "index_lat.html?type=aboutme&sortby=name";
-	wholeMenu["11Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_blue.png" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["11Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_blue.svg" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
 
 	wholeMenu["12Digerere"] = {};
 	wholeMenu["12Digerere"].id = "1_1_2";
 	wholeMenu["12Digerere"].color = "blue";
 	wholeMenu["12Digerere"].hasSub = 0;
 	wholeMenu["12Digerere"].link = "index_lat.html?type=aboutme&sortby=date";
-	wholeMenu["12Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_blue.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["12Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_blue.svg" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Circa Opus Meum"] = {};
 	wholeMenu["● Circa Opus Meum"].id = "1_2";
@@ -1579,14 +1579,14 @@ if (lang=="lat") {
 	wholeMenu["21Digerere"].color = "blue";
 	wholeMenu["21Digerere"].hasSub = 0;
 	wholeMenu["21Digerere"].link = "index_lat.html?type=aboutwork&sortby=name";
-	wholeMenu["21Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_blue.png" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["21Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_blue.svg" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
 
 	wholeMenu["22Digerere"] = {};
 	wholeMenu["22Digerere"].id = "1_2_2";
 	wholeMenu["22Digerere"].color = "blue";
 	wholeMenu["22Digerere"].hasSub = 0;
 	wholeMenu["22Digerere"].link = "index_lat.html?type=aboutwork&sortby=date";
-	wholeMenu["22Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_blue.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["22Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_blue.svg" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Circa Mei PhD"] = {};
 	wholeMenu["● Circa Mei PhD"].id = "1_3";
@@ -1601,14 +1601,14 @@ if (lang=="lat") {
 	wholeMenu["31Digerere"].color = "blue";
 	wholeMenu["31Digerere"].hasSub = 0;
 	wholeMenu["31Digerere"].link = "index_lat.html?type=aboutphd&sortby=name";
-	wholeMenu["31Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_blue.png" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["31Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_blue.svg" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
 
 	wholeMenu["32Digerere"] = {};
 	wholeMenu["32Digerere"].id = "1_3_2";
 	wholeMenu["32Digerere"].color = "blue";
 	wholeMenu["32Digerere"].hasSub = 0;
 	wholeMenu["32Digerere"].link = "index_lat.html?type=aboutphd&sortby=date";
-	wholeMenu["32Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_blue.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["32Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_blue.svg" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Relatio"] = {};
 	wholeMenu["● Relatio"].id = "1_4";
@@ -1623,14 +1623,14 @@ if (lang=="lat") {
 	wholeMenu["41Digerere"].color = "blue";
 	wholeMenu["41Digerere"].hasSub = 0;
 	wholeMenu["41Digerere"].link = "index_lat.html?type=links&sortby=name";
-	wholeMenu["41Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_blue.png" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["41Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_blue.svg" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
 
 	wholeMenu["42Digerere"] = {};
 	wholeMenu["42Digerere"].id = "1_4_2";
 	wholeMenu["42Digerere"].color = "blue";
 	wholeMenu["42Digerere"].hasSub = 0;
 	wholeMenu["42Digerere"].link = "index_lat.html?type=links&sortby=date";
-	wholeMenu["42Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_blue.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["42Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_blue.svg" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Photo/Imaginibus"] = {};
 	wholeMenu["● Photo/Imaginibus"].id = "1_10";
@@ -1645,14 +1645,14 @@ if (lang=="lat") {
 	wholeMenu["101Digerere"].color = "red";
 	wholeMenu["101Digerere"].hasSub = 0;
 	wholeMenu["101Digerere"].link = "index_lat.html?type=photos&sortby=name";
-	wholeMenu["101Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_red.png" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["101Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_red.svg" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
 
 	wholeMenu["102Digerere"] = {};
 	wholeMenu["102Digerere"].id = "1_10_2";
 	wholeMenu["102Digerere"].color = "red";
 	wholeMenu["102Digerere"].hasSub = 0;
 	wholeMenu["102Digerere"].link = "index_lat.html?type=photos&sortby=date";
-	wholeMenu["102Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_red.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["102Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_red.svg" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● AMV"] = {};
 	wholeMenu["● AMV"].id = "1_11";
@@ -1667,14 +1667,14 @@ if (lang=="lat") {
 	wholeMenu["111Digerere"].color = "black";
 	wholeMenu["111Digerere"].hasSub = 0;
 	wholeMenu["111Digerere"].link = "index_lat.html?type=amv&sortby=name";
-	wholeMenu["111Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_black.png" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["111Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_black.svg" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
 
 	wholeMenu["112Digerere"] = {};
 	wholeMenu["112Digerere"].id = "1_11_2";
 	wholeMenu["112Digerere"].color = "black";
 	wholeMenu["112Digerere"].hasSub = 0;
 	wholeMenu["112Digerere"].link = "index_lat.html?type=amv&sortby=date";
-	wholeMenu["112Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_black.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["112Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_black.svg" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Quisquiliae"] = {};
 	wholeMenu["● Quisquiliae"].id = "1_12";
@@ -1689,14 +1689,14 @@ if (lang=="lat") {
 	wholeMenu["121Digerere"].color = "black";
 	wholeMenu["121Digerere"].hasSub = 0;
 	wholeMenu["121Digerere"].link = "index_lat.html?type=junk&sortby=name";
-	wholeMenu["121Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_black.png" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["121Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_black.svg" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
 
 	wholeMenu["122Digerere"] = {};
 	wholeMenu["122Digerere"].id = "1_12_2";
 	wholeMenu["122Digerere"].color = "black";
 	wholeMenu["122Digerere"].hasSub = 0;
 	wholeMenu["122Digerere"].link = "index_lat.html?type=junk&sortby=date";
-	wholeMenu["122Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_black.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["122Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_black.svg" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["123Digerere"] = {};
 	wholeMenu["123Digerere"].id = "1_12_3";
@@ -1718,14 +1718,14 @@ if (lang=="lat") {
 	wholeMenu["131Digerere"].color = "black";
 	wholeMenu["131Digerere"].hasSub = 0;
 	wholeMenu["131Digerere"].link = "index_lat.html?type=stuff&sortby=name";
-	wholeMenu["131Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_black.png" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["131Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_black.svg" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
 
 	wholeMenu["132Digerere"] = {};
 	wholeMenu["132Digerere"].id = "1_13_2";
 	wholeMenu["132Digerere"].color = "black";
 	wholeMenu["132Digerere"].hasSub = 0;
 	wholeMenu["132Digerere"].link = "index_lat.html?type=stuff&sortby=date";
-	wholeMenu["132Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_black.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["132Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_black.svg" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Nuntium"] = {};
 	wholeMenu["● Nuntium"].id = "1_25";
@@ -1740,14 +1740,14 @@ if (lang=="lat") {
 	wholeMenu["251Digerere"].color = "red";
 	wholeMenu["251Digerere"].hasSub = 0;
 	wholeMenu["251Digerere"].link = "index_lat.html?type=news&sortby=name";
-	wholeMenu["251Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_red.png" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["251Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_name_red.svg" alt="Nomine" title="Nomine" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
 
 	wholeMenu["252Digerere"] = {};
 	wholeMenu["252Digerere"].id = "1_25_2";
 	wholeMenu["252Digerere"].color = "red";
 	wholeMenu["252Digerere"].hasSub = 0;
 	wholeMenu["252Digerere"].link = "index_lat.html?type=news&sortby=date";
-	wholeMenu["252Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_red.png" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["252Digerere"].html = '<img src="scripts/contents/icons/sortby/sortby_date_red.svg" alt="Diem" title="Diem" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["253Digerere"] = {};
 	wholeMenu["253Digerere"].id = "1_25_3";
