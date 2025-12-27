@@ -8065,9 +8065,9 @@ function showSubMenu(ele, lang, type, newTableId) {
 		if (isMobileLike()) {
 			ele.setAttribute(
 				"onmouseleave",
-				`mouseOutMenu(this, ${wholeMenu[key].color});
+				`mouseOutMenu(this, "${wholeMenu[key].color}");
 				this.setAttribute('onclick', 'showSubMenu(this, "${lang}", "${type}", ${newTableId});');
-				this.setAttribute('onmouseleave', 'mouseOutMenu(this, ${wholeMenu[key].color});');`
+				this.setAttribute('onmouseleave', 'mouseOutMenu(this, "${wholeMenu[key].color}");');`
 			);
 		}
 	});
