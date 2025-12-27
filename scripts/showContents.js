@@ -66,29 +66,43 @@ function contentsLoad(lang) {
 	showContents(type, sortby, lang);
 
 }
-
+function mouseInSortByName() {
+	document.getElementById("sortby_name").className = "flag_selected";
+	document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_selected.svg";
+}
 function mouseOutSortByName(sortbyTypeL) {
 	if (sortbyTypeL=="name") {
 		document.getElementById("sortby_name").className = "flag_selected";
 	} else {
 		document.getElementById("sortby_name").className = "flag_not_selected";
 	}
+	document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_black.svg";
 }
 
+function mouseInSortByDate() {
+	document.getElementById("sortby_date").className = "flag_selected";
+	document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_selected.svg";
+}
 function mouseOutSortByDate(sortbyTypeL) {
 	if (sortbyTypeL=="date") {
 		document.getElementById("sortby_date").className = "flag_selected";
 	} else {
 		document.getElementById("sortby_date").className = "flag_not_selected";
 	}
+	document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_black.svg";
 }
 
+function mouseInSortByFlag() {
+	document.getElementById("sortby_flag").className = "flag_selected";
+	document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_selected.svg";
+}
 function mouseOutSortByFlag(sortbyTypeL) {
 	if (sortbyTypeL=="flag") {
 		document.getElementById("sortby_flag").className = "flag_selected";
 	} else {
 		document.getElementById("sortby_flag").className = "flag_not_selected";
 	}
+	document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_black.svg";
 }
 
 function refreshSortByTabs(typeL, sortbyTypeL, lang) {
@@ -104,7 +118,7 @@ function refreshSortByTabs(typeL, sortbyTypeL, lang) {
 		sortbyFlag.removeAttribute("onmouseenter");
 		sortbyFlag.removeAttribute("onmouseleave");
 		sortbyFlag.removeAttribute("title");
-		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag2.svg";
+		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_na.svg";
 	}
 }
 

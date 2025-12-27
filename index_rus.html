@@ -558,10 +558,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 				<td style="width: 22px;">
 				<div id="sortby_name" align="center" 
-					onmouseenter="this.className='flag_selected'"
+					onmouseenter="mouseInSortByName();"
 					onmouseleave="mouseOutSortByName(getParameterByName('sortby'));"
 					onclick="		
-				if (event.ctrlKey==1) {
+					if (event.ctrlKey==1) {
 							window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name');
 						} else {
 							window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name';
@@ -569,16 +569,16 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					class="flag_not_selected"
 					title="Имени"
 				>
-					<img src="scripts/contents/icons/sortby/sortby_name.svg" alt="Имени" height="18"  style="display: block;"/>
+					<img src="scripts/contents/icons/sortby/sortby_name_black.svg" id="sortby_name_img" alt="Имени" height="18"  style="display: block;"/>
 				</div>
 				</td>
 
 				<td style="width: 22px;">
 				<div id="sortby_date" align="center" 
-					onmouseenter="this.className='flag_selected'"
+					onmouseenter="mouseInSortByDate();"
 					onmouseleave="mouseOutSortByDate(getParameterByName('sortby'));"
 					onclick="		
-				if (event.ctrlKey==1) {
+					if (event.ctrlKey==1) {
 							window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date');
 						} else {
 							window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date';
@@ -586,16 +586,16 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					class="flag_not_selected"
 					title="Дате"
 				>
-					<img src="scripts/contents/icons/sortby/sortby_date.svg" alt="Дате" height="18" style="display: block;"/>
+					<img src="scripts/contents/icons/sortby/sortby_date_black.svg" id="sortby_date_img" alt="Дате" height="18" style="display: block;"/>
 				</div>
 				</td>
 
 				<td style="width: 22px;">
 				<div id="sortby_flag" align="center" 
-					onmouseenter="this.className='flag_selected'"
+					onmouseenter="mouseInSortByFlag();"
 					onmouseleave="mouseOutSortByFlag(getParameterByName('sortby'));"
 					onclick="		
-				if (event.ctrlKey==1) {
+					if (event.ctrlKey==1) {
 							window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag');
 						} else {
 							window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag';
@@ -603,7 +603,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					class="flag_not_selected"
 					title="Стране"
 				>
-					<img src="scripts/contents/icons/sortby/sortby_flag.svg" id="sortby_flag_img" alt="Стране" height="18" style="display: block;"/>
+					<img src="scripts/contents/icons/sortby/sortby_flag_black.svg" id="sortby_flag_img" alt="Стране" height="18" style="display: block;"/>
 				</div>
 				</td>
 

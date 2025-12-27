@@ -325,10 +325,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 				<td style="width: 22px;">
 				<div id="sortby_name" align="center" 
-					onmouseenter="this.className='flag_selected'"
+					onmouseenter="mouseInSortByName();"
 					onmouseleave="mouseOutSortByName(getParameterByName('sortby'));"
 					onclick="		
-				if (event.ctrlKey==1) {
+					if (event.ctrlKey==1) {
 							window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name');
 						} else {
 							window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name';
@@ -336,16 +336,16 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					class="flag_not_selected"
 					title="Nomine"
 				>
-					<img src="scripts/contents/icons/sortby/sortby_name.svg" alt="Nomine" height="18" style="display: block;"/>
+					<img src="scripts/contents/icons/sortby/sortby_name.svg" id="sortby_name_img" alt="Nomine" height="18" style="display: block;"/>
 				</div>
 				</td>
 
 				<td  style="width: 22px;">
 				<div id="sortby_date" align="center" 
-					onmouseenter="this.className='flag_selected'"
+					onmouseenter="mouseInSortByDate();"
 					onmouseleave="mouseOutSortByDate(getParameterByName('sortby'));"
 					onclick="		
-				if (event.ctrlKey==1) {
+					if (event.ctrlKey==1) {
 							window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date');
 						} else {
 							window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date';
@@ -353,16 +353,16 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					class="flag_not_selected"
 					title="Diem"
 				>
-					<img src="scripts/contents/icons/sortby/sortby_date.svg" alt="Diem" height="18" style="display: block;"/>
+					<img src="scripts/contents/icons/sortby/sortby_date.svg" id="sortby_date_img" alt="Diem" height="18" style="display: block;"/>
 				</div>
 				</td>
 
 				<td style="width: 22px;">
 				<div id="sortby_flag" align="center" 
-					onmouseenter="this.className='flag_selected'"
+					onmouseenter="mouseInSortByFlag();"
 					onmouseleave="mouseOutSortByFlag(getParameterByName('sortby'));"
 					onclick="		
-				if (event.ctrlKey==1) {
+					if (event.ctrlKey==1) {
 							window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag');
 						} else {
 							window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag';

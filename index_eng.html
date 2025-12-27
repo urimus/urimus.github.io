@@ -558,7 +558,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 				<td style="width: 22px;">
 				<div id="sortby_name" align="center" 
-					onmouseenter="this.className='flag_selected'"
+					onmouseenter="mouseInSortByName();"
 					onmouseleave="mouseOutSortByName(getParameterByName('sortby'));"
 					onclick="		
 				if (event.ctrlKey==1) {
@@ -569,13 +569,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					class="flag_not_selected"
 					title="Name"
 				>
-					<img src="scripts/contents/icons/sortby/sortby_name.svg" alt="Name" height="18" style="display: block;"/>
+					<img src="scripts/contents/icons/sortby/sortby_name.svg" id="sortby_name_img" alt="Name" height="18" style="display: block;"/>
 				</div>
 				</td>
 
 				<td style="width: 22px;">
 				<div id="sortby_date" align="center" 
-					onmouseenter="this.className='flag_selected'"
+					onmouseenter="mouseInSortByDate();"
 					onmouseleave="mouseOutSortByDate(getParameterByName('sortby'));"
 					onclick="		
 				if (event.ctrlKey==1) {
@@ -586,13 +586,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 						class="flag_not_selected"
 						title="Date"
 				>
-					<img src="scripts/contents/icons/sortby/sortby_date.svg" alt="Date" height="18" style="display: block;"/>
+					<img src="scripts/contents/icons/sortby/sortby_date.svg" id="sortby_date_img" alt="Date" height="18" style="display: block;"/>
 				</div>
 				</td>
 
 				<td style="width: 22px;">
 				<div id="sortby_flag" align="center" 
-					onmouseenter="this.className='flag_selected'"
+					onmouseenter="mouseInSortByFlag();"
 					onmouseleave="mouseOutSortByFlag(getParameterByName('sortby'));"
 					onclick="		
 				if (event.ctrlKey==1) {
