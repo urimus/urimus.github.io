@@ -7887,14 +7887,11 @@ function  loadMenuContentsLink(ele, lang) {
 	return wholeMenu;
 }
 
-function getUpdatedImagePath(ele, type) {
-	const wrapper = document.createElement('div');
-	wrapper.innerHTML = ele.innerHTML;
-	const img = wrapper.querySelector('img');
-	const text = wrapper.textContent.trim();
-	if (!img) return text;
+function updateImageElement(ele, type) {
+	const img = ele.querySelector('img');
+	if (!img) return;
 
-	const url = new URL(img.src);
+	const url = new URL(img.src, window.location.origin);
 	const dir = url.pathname.slice(0, url.pathname.lastIndexOf('/') + 1);
 	const parts = url.pathname
 		.split('/')
@@ -7902,21 +7899,21 @@ function getUpdatedImagePath(ele, type) {
 		.replace('.svg', '')
 		.split('_');
 	const newFile = [...parts.slice(0, -1), type].join('_') + '.svg';
-	return `<img src="${dir}${newFile}"
-		height="18"
-		style="vertical-align:middle; padding-right: 5px;"/>
-		${text}`;
+
+	img.src = dir + newFile;
+	img.height = 18;
+	img.style.verticalAlign = 'middle';
+	img.style.paddingRight = '5px';
 }
 
 function mouseInMenu(ele) {
 	ele.className = "menu_selected";
-	ele.innerHTML = getUpdatedImagePath(ele, "selected");
+	updateImageElement(ele, "selected");
 }
 function mouseOutMenu(ele, color) {
 	ele.className="menu_not_selected_"+color;
-	ele.innerHTML = getUpdatedImagePath(ele, color);
+	updateImageElement(ele, color);
 }
-
 
 function addTableRow(tableSM, menu, key, lang, type, newTableId, isCaption) {
 	var row, cell1, divSM, isImage, lineAlign="", cursor="";
