@@ -7901,9 +7901,9 @@ function updateImageElement(ele, type) {
 	const newFile = [...parts.slice(0, -1), type].join('_') + '.svg';
 
 	img.src = dir + newFile;
-	img.height = 18;
-	img.style.verticalAlign = 'middle';
-	img.style.paddingRight = '5px';
+//	img.height = 18;
+//	img.style.verticalAlign = 'middle';
+//	img.style.paddingRight = '5px';
 }
 
 function mouseInMenu(ele) {
