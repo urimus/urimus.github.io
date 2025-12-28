@@ -1,7 +1,7 @@
 ﻿html, body {
 	margin: 0; padding: 0;
 }
-P {text-indent: 10px; margin: 0px; padding-top:0px;}
+P {text-indent: 10px; margin: 0px; padding-top:0px; }
 
 .text_blue, .text_blue_blue {
 	font-family: Verdana; font-size:14px; text-align: left; background-color: #d0e7f7; color: #448CCB;
@@ -124,14 +124,13 @@ P {text-indent: 10px; margin: 0px; padding-top:0px;}
 
 
 .flag_not_selected {
-	cursor:default; 
-	font-size: 11px; font-family: "Verdana"; padding-top:2px; padding-left:2px; padding-right:2px;
+	cursor:default; background-color: transparent;
+	padding-top:2px; padding-left:2px; padding-right:2px;
 }
 .flag_selected {
-	background-color: #ff8a00; cursor:pointer; 
-	font-size: 11px; font-family: "Verdana"; color:#707070; padding-top:2px; padding-left:2px; padding-right:2px;
+	cursor:pointer; background-color: #ff8a00;
+	padding-top:2px; padding-left:2px; padding-right:2px;
 }
-
 
 
 .menu_not_selected_blue {
