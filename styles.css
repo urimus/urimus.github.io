@@ -132,6 +132,16 @@ P {text-indent: 10px; margin: 0px; padding-top:0px; }
 	padding-top:2px; padding-left:2px; padding-right:2px;
 }
 
+.sortby_not_selected {
+	cursor:default; background-color: transparent;
+	padding-top:2px; padding-left:2px; padding-right: 2px;
+}
+.sortby_selected {
+	cursor:pointer;  background-color: transparent;
+	padding-top:1px; padding-left:1px; padding-right: 1px;
+	border-top: 1px solid #ffffff; border-left: 1px solid #ffffff; border-right: 1px solid #ffffff;
+}
+
 
 .menu_not_selected_blue {
 	background-color: #d0e7f7; background: linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%);
