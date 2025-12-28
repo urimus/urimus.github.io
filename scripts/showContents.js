@@ -76,7 +76,7 @@ function mouseOutSortByName(sortbyTypeL) {
 		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_selected.svg";
 	} else {
 		document.getElementById("sortby_name").className = "sortby_not_selected";
-		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_black.svg";
+		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_blue.svg";
 	}
 }
 
@@ -90,7 +90,7 @@ function mouseOutSortByDate(sortbyTypeL) {
 		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_selected.svg";
 	} else {
 		document.getElementById("sortby_date").className = "sortby_not_selected";
-		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_black.svg";
+		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_blue.svg";
 	}
 }
 
@@ -104,7 +104,7 @@ function mouseOutSortByFlag(sortbyTypeL) {
 		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_selected.svg";
 	} else {
 		document.getElementById("sortby_flag").className = "sortby_not_selected";
-		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_black.svg";
+		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_blue.svg";
 	}
 
 }
@@ -118,11 +118,9 @@ function refreshSortByTabs(typeL, sortbyTypeL, lang) {
 		if (sortbyType=="flag" || sortbyTypeL=="flag") mouseOutSortByFlag(sortbyTypeL);
 	} else {
 		var sortbyFlag = document.getElementById("sortby_flag");
-		sortbyFlag.removeAttribute("onclick");
-		sortbyFlag.removeAttribute("onmouseenter");
-		sortbyFlag.removeAttribute("onmouseleave");
-		sortbyFlag.removeAttribute("title");
-		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_na.svg";
+		sortbyFlag.remove();
+		var sortbyTitle = document.getElementById("sortby_title");
+		sortbyTitle.style.width="176px";
 	}
 }
 
