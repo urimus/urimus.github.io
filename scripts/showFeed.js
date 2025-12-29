@@ -1417,26 +1417,20 @@ function showFeed(type, source, lang) {
 	var processedDiv = document.createElement("div");
 	processedDiv.id = "processedDiv";
 	processedDiv.style.display = "none";
-
 	var processedLine = document.createElement("div");
 	processedLine.innerHTML = "#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span>";
-
 	var passedLine = document.createElement("div");
 	passedLine.innerHTML = "#&#9989;: <span id='passedCount'>0</span>";
-
 	var failedLine = document.createElement("div");
 	failedLine.innerHTML = "#&#10062;: <span id='failedCount'>0</span>";
-
 	processedDiv.appendChild(processedLine);
 	processedDiv.appendChild(passedLine);
 	processedDiv.appendChild(failedLine);
 
 	var loadingDivTitleSkip = document.createElement("div");
 	loadingDivTitleSkip.id = "loadingDivTitleSkip";
-
 	var loadingSpanTitle = document.createElement("span");
 	loadingSpanTitle.id = "loadingSpanTitle";
-
 	if (lang === "rus") {
 		loadingSpanTitle.innerHTML= "Читается Строка Новостей " + feedIconText(feedURL, lang);
 	} else if (lang === "eng") {
@@ -1444,10 +1438,8 @@ function showFeed(type, source, lang) {
 	} else if (lang === "lat") {
 		loadingSpanTitle.innerHTML = "Lectio Nuntium Acies " + feedIconText(feedURL, lang);
 	}
-
 	var loadAttempt = document.createElement("span");
 	loadAttempt.id = "loadAttempt";
-
 	loadingDivTitleSkip.appendChild(loadingSpanTitle);
 	loadingDivTitleSkip.appendChild(loadAttempt);
 
