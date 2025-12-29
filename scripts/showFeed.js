@@ -1410,11 +1410,51 @@ function showFeed(type, source, lang) {
 		if (yonhapTypes[type]) feedURL = yonhapTypes[type];
 	}
 
-	var infoText = "<div id='loadingDiv'>.</div><div id='processedDiv' style='display:none'><div>#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span></div><div>#&#9989;: <span id='passedCount'>0</span></div><div>#&#10062;: <span id='failedCount'>0</span></div></div>";
-	var readingText;
-	if (lang == "rus") readingText = "<b><div id='loadingDivTitleSkip'><span id='loadingSpanTitle'>Читается Строка Новостей " + feedIconText(feedURL, lang) + "</span><span id='loadAttempt'></span></div>" + infoText + "</b>";
-	if (lang == "eng") readingText = "<b><div id='loadingDivTitleSkip'><span id='loadingSpanTitle'>Reading News Feed " + feedIconText(feedURL, lang) + "</span><span id='loadAttempt'></span></div>" + infoText + "</b>";
-	if (lang == "lat") readingText = "<b><div id='loadingDivTitleSkip'><span id='loadingSpanTitle'>Lectio Nuntium Acies " + feedIconText(feedURL, lang) + "</span><span id='loadAttempt'></span></div>" + infoText + "</b>";
+	var loadingDiv = document.createElement("div");
+	loadingDiv.id = "loadingDiv";
+	loadingDiv.textContent = ".";
+
+	var processedDiv = document.createElement("div");
+	processedDiv.id = "processedDiv";
+	processedDiv.style.display = "none";
+
+	var processedLine = document.createElement("div");
+	processedLine.innerHTML = "#&#128202;: <span id='processedCount'>0</span> | #&#128681;: <span id='leftCount'>0</span>";
+
+	var passedLine = document.createElement("div");
+	passedLine.innerHTML = "#&#9989;: <span id='passedCount'>0</span>";
+
+	var failedLine = document.createElement("div");
+	failedLine.innerHTML = "#&#10062;: <span id='failedCount'>0</span>";
+
+	processedDiv.appendChild(processedLine);
+	processedDiv.appendChild(passedLine);
+	processedDiv.appendChild(failedLine);
+
+	var loadingDivTitleSkip = document.createElement("div");
+	loadingDivTitleSkip.id = "loadingDivTitleSkip";
+
+	var loadingSpanTitle = document.createElement("span");
+	loadingSpanTitle.id = "loadingSpanTitle";
+
+	if (lang === "rus") {
+		loadingSpanTitle.innerHTML= "Читается Строка Новостей " + feedIconText(feedURL, lang);
+	} else if (lang === "eng") {
+		loadingSpanTitle.innerHTML = "Reading News Feed " + feedIconText(feedURL, lang);
+	} else if (lang === "lat") {
+		loadingSpanTitle.innerHTML = "Lectio Nuntium Acies " + feedIconText(feedURL, lang);
+	}
+
+	var loadAttempt = document.createElement("span");
+	loadAttempt.id = "loadAttempt";
+
+	loadingDivTitleSkip.appendChild(loadingSpanTitle);
+	loadingDivTitleSkip.appendChild(loadAttempt);
+
+	var container = document.createElement("b");
+	container.appendChild(loadingDivTitleSkip);
+	container.appendChild(loadingDiv);
+	container.appendChild(processedDiv);
 
 	var preloadImg = new Image();
 	preloadImg.onload = function () {
@@ -1424,7 +1464,7 @@ function showFeed(type, source, lang) {
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
 		cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
-		cell1.innerHTML = readingText;
+		cell1.appendChild(container);
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL, 1);
 	}
