@@ -68,43 +68,43 @@ function contentsLoad(lang) {
 }
 function mouseInSortByName() {
 	document.getElementById("sortby_name").className = "sortby_selected";
-	document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_selected.svg";
+	document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby_name_selected.svg";
 }
 function mouseOutSortByName(sortbyTypeL) {
 	if (sortbyTypeL=="name") {
 		document.getElementById("sortby_name").className = "sortby_selected";
-		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_selected.svg";
+		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby_name_selected.svg";
 	} else {
 		document.getElementById("sortby_name").className = "sortby_not_selected";
-		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby/sortby_name_blue.svg";
+		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby_name_blue.svg";
 	}
 }
 
 function mouseInSortByDate() {
 	document.getElementById("sortby_date").className = "sortby_selected";
-	document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_selected.svg";
+	document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby_date_selected.svg";
 }
 function mouseOutSortByDate(sortbyTypeL) {
 	if (sortbyTypeL=="date") {
 		document.getElementById("sortby_date").className = "sortby_selected";
-		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_selected.svg";
+		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby_date_selected.svg";
 	} else {
 		document.getElementById("sortby_date").className = "sortby_not_selected";
-		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby/sortby_date_blue.svg";
+		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby_date_blue.svg";
 	}
 }
 
 function mouseInSortByFlag() {
 	document.getElementById("sortby_flag").className = "sortby_selected";
-	document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_selected.svg";
+	document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby_flag_selected.svg";
 }
 function mouseOutSortByFlag(sortbyTypeL) {
 	if (sortbyTypeL=="flag") {
 		document.getElementById("sortby_flag").className = "sortby_selected";
-		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_selected.svg";
+		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby_flag_selected.svg";
 	} else {
 		document.getElementById("sortby_flag").className = "sortby_not_selected";
-		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby/sortby_flag_blue.svg";
+		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby_flag_blue.svg";
 	}
 
 }

@@ -8,7 +8,7 @@ function preloadImages() {
 		"date_black","date_blue","date_green","date_red","date_selected","date_white",
 		"flag_black","flag_blue","flag_green","flag_red","flag_selected","flag_white",
 		"name_black","name_blue","name_green","name_red","name_selected","name_white"
-	].map(f => `/scripts/contents/icons/sortby/sortby_${f}.svg`);
+	].map(f => `/scripts/contents/icons/sortby_${f}.svg`);
 
 	const flags = [
 		"angola","antigua","argentina","aruba","australia","austria","bahrain","belgium","bosnia",
