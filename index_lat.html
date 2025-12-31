@@ -329,6 +329,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					if (event.ctrlKey==1) {
 						window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name');
 					} else {
+						this.removeAttribute('onmouseleave');
 						window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name';
 					};"
 				class="sortby_not_selected"
@@ -346,6 +347,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					if (event.ctrlKey==1) {
 						window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date');
 					} else {
+						this.removeAttribute('onmouseleave');
 						window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date';
 					};"
 				class="sortby_not_selected"
@@ -363,6 +365,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					if (event.ctrlKey==1) {
 						window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag');
 					} else {
+						this.removeAttribute('onmouseleave');
 						window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag';
 					};"
 				class="sortby_not_selected"
