@@ -66,56 +66,29 @@ function contentsLoad(lang) {
 	showContents(type, sortby, lang);
 
 }
-function mouseInSortByName() {
-	document.getElementById("sortby_name").className = "sortby_selected";
-	document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby_name_selected.svg";
-}
-function mouseOutSortByName(sortbyTypeL) {
-	if (sortbyTypeL=="name") {
-		document.getElementById("sortby_name").className = "sortby_selected";
-		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby_name_selected.svg";
-	} else {
-		document.getElementById("sortby_name").className = "sortby_not_selected";
-		document.getElementById("sortby_name_img").src="scripts/contents/icons/sortby_name_blue.svg";
-	}
-}
 
-function mouseInSortByDate() {
-	document.getElementById("sortby_date").className = "sortby_selected";
-	document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby_date_selected.svg";
+function mouseInSortBy(funcType) {
+	document.getElementById("sortby_" + funcType).className = "sortby_selected";
+	document.getElementById("sortby_" + funcType + "_img").src="scripts/contents/icons/sortby_" + funcType + "_selected.svg";
 }
-function mouseOutSortByDate(sortbyTypeL) {
-	if (sortbyTypeL=="date") {
-		document.getElementById("sortby_date").className = "sortby_selected";
-		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby_date_selected.svg";
+function mouseOutSortBy(funcType, sortbyType) {
+	if (typeof sortbyType === "undefined") sortbyType = getParameterByName('sortby');
+	if (sortbyType==funcType) {
+		document.getElementById("sortby_" + funcType).className = "sortby_selected";
+		document.getElementById("sortby_" + funcType + "_img").src="scripts/contents/icons/sortby_" + funcType + "_selected.svg";
 	} else {
-		document.getElementById("sortby_date").className = "sortby_not_selected";
-		document.getElementById("sortby_date_img").src="scripts/contents/icons/sortby_date_blue.svg";
+		document.getElementById("sortby_" + funcType).className = "sortby_not_selected";
+		document.getElementById("sortby_" + funcType + "_img").src="scripts/contents/icons/sortby_" + funcType + "_blue.svg";
 	}
-}
-
-function mouseInSortByFlag() {
-	document.getElementById("sortby_flag").className = "sortby_selected";
-	document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby_flag_selected.svg";
-}
-function mouseOutSortByFlag(sortbyTypeL) {
-	if (sortbyTypeL=="flag") {
-		document.getElementById("sortby_flag").className = "sortby_selected";
-		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby_flag_selected.svg";
-	} else {
-		document.getElementById("sortby_flag").className = "sortby_not_selected";
-		document.getElementById("sortby_flag_img").src="scripts/contents/icons/sortby_flag_blue.svg";
-	}
-
 }
 
 function refreshSortByTabs(typeL, sortbyTypeL, lang) {
 	var sortbyType=getParameterByName('sortby');
-	if (sortbyType=="name" || sortbyTypeL=="name") mouseOutSortByName(sortbyTypeL);
-	if (sortbyType=="date" || sortbyTypeL=="date") mouseOutSortByDate(sortbyTypeL);
+	if (sortbyType=="name" || sortbyTypeL=="name") mouseOutSortBy("name", sortbyType);
+	if (sortbyType=="date" || sortbyTypeL=="date") mouseOutSortBy("date", sortbyType);
 
 	if (typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="books" || typeL=="junk" || typeL=="news") {
-		if (sortbyType=="flag" || sortbyTypeL=="flag") mouseOutSortByFlag(sortbyTypeL);
+		if (sortbyType=="flag" || sortbyTypeL=="flag") mouseOutSortBy("flag", sortbyType);
 	} else {
 		var sortbyFlag = document.getElementById("sortby_flag");
 		sortbyFlag.remove();

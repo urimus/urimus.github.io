@@ -323,8 +323,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 		<td>
 			<div id="sortby_name" align="center" style="width: 22px; display: block;"
-				onmouseenter="mouseInSortByName();"
-				onmouseleave="mouseOutSortByName(getParameterByName('sortby'));"
+				onmouseenter="mouseInSortBy('name');"
+				onmouseleave="mouseOutSortBy('name');"
 				onclick="		
 					if (event.ctrlKey==1) {
 						window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name');
@@ -341,8 +341,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 		<td>
 			<div id="sortby_date" align="center" style="width: 22px; display: block;"
-				onmouseenter="mouseInSortByDate();"
-				onmouseleave="mouseOutSortByDate(getParameterByName('sortby'));"
+				onmouseenter="mouseInSortBy('date');"
+				onmouseleave="mouseOutSortBy('date');"
 				onclick="		
 					if (event.ctrlKey==1) {
 						window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date');
@@ -359,8 +359,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 		<td>
 			<div id="sortby_flag" align="center" style="width: 22px; display: block;"
-				onmouseenter="mouseInSortByFlag();"
-				onmouseleave="mouseOutSortByFlag(getParameterByName('sortby'));"
+				onmouseenter="mouseInSortBy('flag');"
+				onmouseleave="mouseOutSortBy('flag');"
 				onclick="		
 					if (event.ctrlKey==1) {
 						window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag');
