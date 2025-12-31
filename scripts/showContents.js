@@ -82,13 +82,12 @@ function mouseOutSortBy(funcType, sortbyType) {
 	}
 }
 
-function refreshSortByTabs(typeL, sortbyTypeL, lang) {
-	var sortbyType=getParameterByName('sortby');
-	if (sortbyType=="name" || sortbyTypeL=="name") mouseOutSortBy("name", sortbyType);
-	if (sortbyType=="date" || sortbyTypeL=="date") mouseOutSortBy("date", sortbyType);
+function refreshSortByTabs(type, sortbyType, lang) {
+	if (sortbyType=="name") mouseOutSortBy("name", sortbyType);
+	if (sortbyType=="date") mouseOutSortBy("date", sortbyType);
 
-	if (typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="books" || typeL=="junk" || typeL=="news") {
-		if (sortbyType=="flag" || sortbyTypeL=="flag") mouseOutSortBy("flag", sortbyType);
+	if (type=="music" || type=="movies" || type=="series" || type=="books" || type=="junk" || type=="news") {
+		if (sortbyType=="flag") mouseOutSortBy("flag", sortbyType);
 	} else {
 		var sortbyFlag = document.getElementById("sortby_flag");
 		sortbyFlag.remove();
