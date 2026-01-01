@@ -43,8 +43,7 @@ d. Synthwave
 2. DeadLife
 3. The Midnight
 4. Night Club
-5. Occams Laser
-6. Scandroid
+5. Scandroid
 ---------------------------------- Electronic music End ----------------------------------
 
 
@@ -64,7 +63,6 @@ b. Industrial Metal:
 c. Industrial Rock
 1. Garbage
 2. Mono Inc.
-3. Chelsea Wolfe
 ---------------------------------- Industrial End -------------------------------
 
 
@@ -91,8 +89,7 @@ d. Gothic Metal
 
 e. Power Metal:
 1. Battle Beast
-2. Civil War
-3. Sabaton
+2. Sabaton
 
 f. Symphonic Metal:
 1. Therion
@@ -102,11 +99,10 @@ f. Symphonic Metal:
 
 ---------------------------------- Pop -------------------------------------------------- **** Done
 1. A-ha
-2. Celine Dion
-3. Igor Kornelyuk
-4. Ovsienko, Tatjana
-5. Britney Spears
-6. Anzhelika Varum
+2. Igor Kornelyuk
+3. Ovsienko, Tatjana
+4. Britney Spears
+5. Anzhelika Varum
 ---------------------------------- Pop End ----------------------------------------------
 
 
