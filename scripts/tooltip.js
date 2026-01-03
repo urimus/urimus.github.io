@@ -85,13 +85,6 @@ $(function() {
 			typeof prev.left === "undefined" || Math.abs(prev.left - targetRect.left) > epsilon ||
 			typeof prev.width === "undefined" || Math.abs(prev.width - targetRect.width) > epsilon ||
 			typeof prev.height=== "undefined" || Math.abs(prev.height - targetRect.height) > epsilon;
-		var changedScale = false;
-		if (isOpera && window.visualViewport) {
-			var currentScale = window.visualViewport.scale;
-			changedScale = Math.abs(currentScale - lastViewportScale) > 0.001;
-			if (changedScale) lastViewportScale = currentScale;
-		}
-
 		if (changedCoords) {
 			tooltipEl._prevTargetRect = {
 				top: targetRect.top,
@@ -99,11 +92,18 @@ $(function() {
 				width: targetRect.width,
 				height: targetRect.height
 			};
+		}
+		var changedScale = false;
+		if (isOpera && window.visualViewport) {
+			var currentScale = window.visualViewport.scale;
+			changedScale = Math.abs(currentScale - lastViewportScale) > 0.001;
+			if (changedScale) {
+				lastViewportScale = currentScale;
+				setTooltipMaxWidth(tooltipEl);
+			}
+		}
 
-			positionTooltip(tooltipEl);
-			drawLine(tooltipEl, targetRect);
-		} else if (changedScale) {
-			setTooltipMaxWidth(tooltipEl);
+		if (changedCoords || changedScale) {
 			positionTooltip(tooltipEl);
 			drawLine(tooltipEl, targetRect);
 		}
