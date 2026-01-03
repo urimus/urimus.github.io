@@ -1,13 +1,12 @@
-<?
+<?php
 // check if logged in
-if (!isset($_SESSION)) {
-    session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+	session_start();
+}
+if (($_SESSION['login'] ?? null) !== 'OK') {
+    exit('not logged in');
 }
 
-if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
-	echo "not logged in";
-	return;
-}
 
 //get the filename, replaceWhat, replaceTo, encoding from GET
 $filename=$_GET["filename"];
@@ -83,5 +82,3 @@ if ($statisticsTimesReplaced>0) {
 
 // ---------- end of log -------- //
 echo (json_encode($out)); 
-
-?>

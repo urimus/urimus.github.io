@@ -1,13 +1,10 @@
-<?
-
-
+<?php
 // check if logged in
-if (!isset($_SESSION)) {
-    session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+	session_start();
 }
-if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
-	echo "not logged in";
-	return;
+if (($_SESSION['login'] ?? null) !== 'OK') {
+    exit('not logged in');
 }
 
 
@@ -23,5 +20,3 @@ if ($createFolder && !is_dir($path."/")) mkdir($path."/", 0777, true);
 copy($_FILES['file']['tmp_name'], $path."/".$_FILES['file']['name']);
 
 echo 1;
-
-?>

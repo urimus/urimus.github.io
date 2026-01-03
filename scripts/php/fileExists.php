@@ -1,4 +1,4 @@
-<?
+<?php
 
 //get the q parameter from URL
 $q=$_GET["q"];
@@ -14,4 +14,3 @@ foreach ($files as $file) {
 	exit;
 }
 echo 0;
-?>

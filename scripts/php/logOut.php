@@ -1,8 +1,8 @@
-<?
-if (!isset($_SESSION)) {
-    session_start();
-}
-$_SESSION['login']="";
-unset($_SESSION['login']);
+<?php
 
-?>
+if (session_status() !== PHP_SESSION_ACTIVE) {
+	session_start();
+}
+
+session_unset();
+session_destroy();

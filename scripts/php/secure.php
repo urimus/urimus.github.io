@@ -8,5 +8,3 @@ function secureFilename(string $filename) {
 	$baseDir = rtrim($baseDir, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
 	return strpos($filePath, $baseDir) === 0;
 }
-
-?>

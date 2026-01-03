@@ -41,4 +41,4 @@ $dom->loadXML($xml->asXML());
 file_put_contents($dir . '/' . $sitemapFile, $dom->saveXML());
 
 echo '<script>alert("Sitemap сгенерирован - ' . $dir . '/' . $sitemapFile . '");</script>';
-?>
+

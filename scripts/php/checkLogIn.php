@@ -1,10 +1,4 @@
-<?
-if (!isset($_SESSION)) {
-    session_start();
-}
-if (isset($_SESSION['login']) && $_SESSION['login'] == "OK") {
-	echo 1;
-} else {
-	echo 0;
-}
-?>
+<?php
+// check if logged in
+if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+exit((($_SESSION['login'] ?? null) === 'OK') ? '1' : '0');

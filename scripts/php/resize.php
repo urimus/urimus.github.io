@@ -1,12 +1,11 @@
-<?
+<?php
 
 // check if logged in
-if (!isset($_SESSION)) {
-    session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+	session_start();
 }
-if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
-	echo "not logged in";
-	return;
+if (($_SESSION['login'] ?? null) !== 'OK') {
+    exit('not logged in');
 }
 
 
@@ -92,5 +91,3 @@ file_put_contents("../logs/resize.log", ($fileNum+1).". Resized to width =".$wid
 // ---------- end of log -------- //
 
 echo 1; 
-
-?>

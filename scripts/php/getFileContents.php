@@ -1,12 +1,10 @@
-<?
-
+<?php
 // check if logged in
-if (!isset($_SESSION)) {
-    session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+	session_start();
 }
-if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
-	echo "not logged in";
-	return;
+if (($_SESSION['login'] ?? null) !== 'OK') {
+    exit('not logged in');
 }
 
 include 'secure.php';
@@ -18,5 +16,3 @@ $filename="../../".$filename; // add path from this script to root
 if (!is_file($filename) || !secureFilename($filename)) die("Unable to open file! - '".$filename."'");
 $file_contents=file_get_contents($filename);
 echo $file_contents;
-
-?>

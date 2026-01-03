@@ -1,13 +1,10 @@
-<?
-
-
+<?php
 // check if logged in
-if (!isset($_SESSION)) {
-    session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+	session_start();
 }
-if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
-	echo "not logged in";
-	return;
+if (($_SESSION['login'] ?? null) !== 'OK') {
+    exit('not logged in');
 }
 
 
@@ -28,7 +25,3 @@ $first10bytes=DetectEncoding::first10bytes($filename);
 $out["modified"]=$modified;
 $out["first10bytes"]=$first10bytes;
 echo (json_encode($out)); 
-
-
-
-?>

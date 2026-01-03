@@ -1,4 +1,4 @@
-<?
+<?php
 
 include_once "getBom.php";
 
@@ -56,6 +56,3 @@ class Save {
 	}
 
 }
-
-
-?>

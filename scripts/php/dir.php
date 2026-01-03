@@ -1,4 +1,4 @@
-<?
+<?php
 
 //get the q parameter from URL
 $q=$_GET["q"];
@@ -57,4 +57,3 @@ if ($c==0) { // try search inside files
 }
 
 echo (json_encode($out)); 
-?>

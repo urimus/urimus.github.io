@@ -1,4 +1,4 @@
-<?
+<?php
 //get the q parameter from URL
 $q=$_GET["q"];
 rrmdir($q);
@@ -18,5 +18,3 @@ rrmdir($q);
      if ($delDir==1) rmdir($dir); 
    }
  }
-
-?>

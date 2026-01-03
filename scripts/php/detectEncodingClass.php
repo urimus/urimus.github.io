@@ -1,4 +1,4 @@
-<?
+<?php
 
 include_once 'getBom.php';
 
@@ -130,4 +130,3 @@ class DetectEncoding {
 	}
 
 }
-?>
