@@ -881,7 +881,7 @@ function upload(lang) {
 		newFilePath="images/icons/movies";
 		if (typeof HTMLEditorData["uploadPath"]!== "undefined") newFilePath=HTMLEditorData["uploadPath"];
 
-		newFilePath = prompt(prompt1, newFilePath);
+		newFilePath = prompt(prompt1, newFilePath + "/");
 		if (newFilePath == null ) return;
 		if (newFilePath.substring(newFilePath.length - 1)=="/") newFilePath=newFilePath.substring(0, newFilePath.length - 1);
 
@@ -1071,6 +1071,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 
 	var messageF, message11, message12, message2, message3;
 	var summary0, summary1, summary2, summary3, summary41, summary42, summary5, summary6, summary7;
+	var textUndefined;
 
 	if (lang=="rus") {
 		if (isImage==0) messageF="Фаил";
@@ -1088,6 +1089,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 		summary5="Тип: ";
 		summary6="Размер: ";
 		summary7="Продолжить Загрузку?";
+		textUndefined = "Не Определён";
 	}
 	if (lang=="eng") {
 		if (isImage==0) messageF="File";
@@ -1105,14 +1107,17 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 		summary5="Type: ";
 		summary6="Size: ";
 		summary7="Continue Upload?";
+		textUndefined = "Undefined";
 	}
-
+	
+	var fileType = file.type;
+	if (fileType == "") fileType = textUndefined;
 	var summary=summary0+"\n\n";
-	summary=summary+summary1+newFilePath+"\n";
+	summary=summary+summary1+newFilePath+"/"+"\n";
 	summary=summary+summary2+filename+"\n";
 	summary=summary+summary3;
 	summary=summary + (isImage ? summary41+"\n" : summary42+"\n");
-	summary=summary+summary5+file.type+"\n";
+	summary=summary+summary5+fileType+"\n";
 	summary=summary+summary6+formatBytes(file.size)+"\n\n";
 	summary=summary+summary7;
 
