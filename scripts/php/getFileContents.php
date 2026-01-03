@@ -9,12 +9,13 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] == "OK")) {
 	return;
 }
 
+include 'secure.php';
 
 //get the filename GET
 $filename=$_GET["filename"];
 $filename="../../".$filename; // add path from this script to root
 
-if (!file_exists($filename) || !is_readable($filename)) die("Unable to open file! - '".$filename."'");
+if (!is_file($filename) || !secureFilename($filename)) die("Unable to open file! - '".$filename."'");
 $file_contents=file_get_contents($filename);
 echo $file_contents;
 

@@ -252,18 +252,18 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 
 	xhr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			var responseText = removeBom(this.responseText);
-			if (responseText == "not logged in") {
+			var response = removeBom(this.responseText);
+			if (response == "not logged in") {
 				processSearchAndReplace(lang);
 				return;
 			}
 
 			document.getElementById("caption_div").innerHTML = message2 + (i + 1) + "/" + dir.length;
 
-			if (responseText.substring(0, 20) == "Unable to open file!") {
-				alert(responseText);
+			if (response.substring(0, 20) == "Unable to open file!") {
+				alert(response);
 			} else {
-				var ret = JSON.parse(responseText);
+				var ret = JSON.parse(response);
 				var modified = ret['modified'];
 				statisticsTimesReplaced = ret['statisticsTimesReplaced'];
 				if (statisticsTimesReplaced > 0) statisticsFilesProcessed++;
@@ -481,15 +481,15 @@ function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcess
 
 	xhr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			var responseText = removeBom(this.responseText);
-			if (responseText == "not logged in") { processSearchAndReplace(lang); return; }
+			var response = removeBom(this.responseText);
+			if (response == "not logged in") { processSearchAndReplace(lang); return; }
 
 			document.getElementById("caption_div").innerHTML = message2 + (i + 1) + "/" + dir.length;
 
-			if (responseText.substring(0, 20) == "Unable to open file!") {
-				alert(responseText);
+			if (response.substring(0, 20) == "Unable to open file!") {
+				alert(response);
 			} else {
-				var ret = responseText;
+				var ret = response;
 				if (ret > 0) statisticsFilesProcessed++;
 			}
 
@@ -765,14 +765,15 @@ function save(lang, encoding, filename, showMessage, message) {
 	}
 	xhr.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
-			if (removeBom(this.responseText)=="not logged in") {alert(message2); return;}
+			var response = removeBom(this.responseText);
+			if (response=="not logged in") {alert(message2); return;}
 
-			if (removeBom(this.responseText).substring(0,20)=="Unable to open file!") {
-				alert(removeBom(this.responseText));
+			if (response.substring(0,20)=="Unable to open file!") {
+				alert(response);
 				return;
 			} else {
 				if (document.getElementById("fileName").getAttribute("href")==filename) {
-					var ret=JSON.parse(removeBom(this.responseText));
+					var ret=JSON.parse(response);
 					document.getElementById("dateModified_lbl").innerHTML=formatDate(removeBom(ret["modified"])*1000, lang);
 					setBOM(ret["first10bytes"]);
 					setTextAreaChanged(lang, 0);
@@ -824,7 +825,7 @@ function saveas(lang, encoding) {
 		if (this.readyState==4 && this.status==200) {
 			var fileExists = JSON.parse(removeBom(this.responseText));
 			var message_show;
-			if (fileExists[0]==0) {
+			if (fileExists==0) {
 				message_show = (filename_orig_dir==newFileName_dir) ? message1 : message2;
 				save(lang, encoding, newFileName, 1, message_show);
 			} else { 
@@ -895,8 +896,8 @@ function upload(lang) {
 		}
 		xhr.onreadystatechange = function(){
 			if (this.readyState==4 && this.status==200) {
-				var dirExists = JSON.parse(removeBom(this.responseText));
-				if (dirExists[0]==0) { 
+				var dirExists = removeBom(this.responseText);
+				if (dirExists==0) { 
 					createFolder=window.confirm(message1 + newFilePath+ message2);
 					if (!createFolder) return;
 					upload2(lang, allFiles, 0, newFilePath, createFolder);
@@ -1050,8 +1051,8 @@ function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 	}
 	xhr.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
-			var fileExists = JSON.parse(removeBom(this.responseText));
-			if (fileExists[0]==0) {
+			var fileExists = removeBom(this.responseText);
+			if (fileExists==0) {
 				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			} else { 
 				var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
@@ -1133,9 +1134,10 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 		if (this.readyState==4 && this.status==200) {
 			$("#caption_div").html(message3);
 
-			if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;}
+			var response = removeBom(this.responseText);
+			if (response=="not logged in") {processSearchAndReplace(lang); return;}
 
-			if (removeBom(this.responseText)==1) {
+			if (response==1) {
 				if (isImage) {
 					var confirm = window.confirm(messageF+" '"+newFilePath+"/"+filename+"' "+message11);
 					if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
@@ -1144,7 +1146,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 				}
 				upload2(lang, allFiles, i+1, newFilePath, createFolder);
 			} else {
-				alert(removeBom(this.responseText));
+				alert(response);
 				return;
 			}
 		}
@@ -1182,8 +1184,9 @@ function del(lang, totalFiles) {
 	}
 	xhr.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
-			if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
-			if (this.responseText==1) {
+			var response = removeBom(this.responseText);
+			if (response=="not logged in") {processSearchAndReplace(lang); return;};
+			if (response==1) {
 				alert(message2);
 				var i =(parseInt(getParameterByName('i'))||0);
 				if (i!=0 && i==(totalFiles-1)) i--;
@@ -1450,9 +1453,10 @@ function loadAndShowFile(lang, filename, modified, encoding, first10bytes, total
 	}
 	xhr.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
-			if (removeBom(this.responseText)=="not logged in") {processSearchAndReplace(lang); return;};
-			if (removeBom(this.responseText).substring(0,20)=="Unable to open file!") {
-				alert(removeBom(this.responseText));
+			var response = removeBom(this.responseText);
+			if (response=="not logged in") {processSearchAndReplace(lang); return;};
+			if (response.substring(0,20)=="Unable to open file!") {
+				alert(response);
 			}
 			var lines=this.responseText;    
 			var textarea=document.getElementById("textarea_area");
@@ -1688,8 +1692,8 @@ function processSearchAndReplace(lang) {
 	}
 	xhr.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
-			var respNoBOM=removeBom(this.responseText);
-			if (respNoBOM.substring(0, 2) == "<?") {
+			var response=removeBom(this.responseText);
+			if (response.substring(0, 2) == "<?") {
 				if (lang=="eng" || lang=="lat") {
 					$("#error_message").text("PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning.");
 				}
@@ -1699,7 +1703,7 @@ function processSearchAndReplace(lang) {
 
 				return;
 			};
-			if (JSON.parse(respNoBOM)[0]!=1){
+			if (response==0){
 				var locStPar="HTML_editor";
 				var HTMLEditorData=getLocalStorageData(locStPar);
 				var username1="";

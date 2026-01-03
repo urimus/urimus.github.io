@@ -1,18 +1,17 @@
 <?
 
-//if (strcmp($out_l["basename"],$out_l["basenameFresh"])!=0) {
-
 //get the q parameter from URL
 $q=$_GET["q"];
 $q="../../".$q; // add path from this script to root
 
-$out = array();
-$fileExists = array_filter(glob($q), 'is_file');
-$out[] = count($fileExists);
-/*
-foreach (array_filter(glob($q, GLOB_ONLYDIR), 'is_file')  as $filename) {
-	$out["dirname"] = $filename;
+include 'secure.php';
+
+$files = glob($q) ?: [];
+foreach ($files as $file) {
+	if (!is_file($file)) continue;
+	if (!secureFilename($file)) continue;
+	echo 1;
+	exit;
 }
-*/
-echo (json_encode($out)); 
+echo 0;
 ?>

@@ -16,7 +16,7 @@ $filename="../../".$filename; // add path from this script to root
 $fileNum=$_GET["fileNum"];
 $width=$_GET["width"];
 
-
+include 'secure.php';
 
 // ---------- log -------- //
 date_default_timezone_set('UTC');
@@ -24,6 +24,7 @@ if ($fileNum==0) {
     file_put_contents("../logs/resize.log", "\n-------------- Width: ".$width."px, ".date("dS")." of ".date("F, Y, H:i:s")." UTC --------------\n");//, FILE_APPEND | LOCK_EX);    
 }
 // ---------- end of log -------- //
+if (!is_file($filename) || !secureFilename($filename)) die("Unable to open file! - '".$filename."'");
 $mime = getimagesize($filename);
 
 if($mime['mime']=='image/png') { 

@@ -17,11 +17,11 @@ $replaceWhat=$_GET["replaceWhat"];
 $replaceTo=$_GET["replaceTo"];
 $filesProcessed=$_GET["filesProcessed"];
 
-
+include 'secure.php';
 include 'saveClass.php';
 include 'detectEncodingClass.php';
 
-if (!file_exists($filename) || !is_readable($filename)) die("Unable to open file! - '".$filename."'");
+if (!is_file($filename) || !secureFilename($filename)) die("Unable to open file! - '".$filename."'");
 $file_contents=file_get_contents($filename);
 
 // ---------- log -------- //

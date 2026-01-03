@@ -15,6 +15,7 @@ $filename="../../".$filename; // add path from this script to root
 $action=$_GET["action"];
 $fileNum=$_GET["fileNum"];
 
+include 'secure.php';
 include 'saveClass.php';
 include 'detectEncodingClass.php';
 
@@ -40,7 +41,7 @@ if (substr($filename, -10)=="index.html") { // skip
 	return;
 }
 
-if (!file_exists($filename) || !is_readable($filename)) die("Unable to open file! - '".$filename."'");
+if (!is_file($filename) || !secureFilename($filename)) die("Unable to open file! - '".$filename."'");
 $file_contents=file_get_contents($filename);
 
 

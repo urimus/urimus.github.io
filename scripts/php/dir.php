@@ -1,7 +1,5 @@
 <?
 
-//if (strcmp($out_l["basename"],$out_l["basenameFresh"])!=0) {
-
 //get the q parameter from URL
 $q=$_GET["q"];
 $qorig=$q;
@@ -9,6 +7,7 @@ $q="../../".$q; // add path from this script to root
 $fileToShow=-1;
 if (isset($_GET["fileToShow"])) $fileToShow=$_GET["fileToShow"];
 
+include 'secure.php';
 include 'detectEncodingClass.php';
 
 $out = array();
@@ -36,13 +35,17 @@ function processFile($filename, $c, $fileToShow){
     return $out_l;
 }
 
-foreach (array_filter(glob($q, GLOB_BRACE), 'is_file')  as $filename) {
+foreach (glob($q, GLOB_BRACE) as $filename) {
+	if (!is_file($filename)) continue;
+    if (!secureFilename($filename)) continue;
 	$out[] = processFile($filename, $c, $fileToShow);
 	$c++;
 }
 
 if ($c==0) { // try search inside files
-	foreach (array_filter(glob("../../*", GLOB_BRACE), 'is_file')  as $filename) {
+	foreach (glob("../../*", GLOB_BRACE) as $filename) {
+		if (!is_file($filename)) continue;
+		if (!secureFilename($filename)) continue;
 		$file_contents=file_get_contents($filename);
 		if ($file_contents===false) continue;
 		$matchPos = strpos($file_contents, $qorig);
