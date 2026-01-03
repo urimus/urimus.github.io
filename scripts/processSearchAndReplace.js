@@ -489,7 +489,7 @@ function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcess
 			if (response.substring(0, 20) == "Unable to open file!") {
 				alert(response);
 			} else {
-				var ret = response;
+				var ret = Number(response);
 				if (ret > 0) statisticsFilesProcessed++;
 			}
 
@@ -825,7 +825,7 @@ function saveas(lang, encoding) {
 		if (this.readyState==4 && this.status==200) {
 			var fileExists = JSON.parse(removeBom(this.responseText));
 			var message_show;
-			if (fileExists==0) {
+			if (fileExists=="0") {
 				message_show = (filename_orig_dir==newFileName_dir) ? message1 : message2;
 				save(lang, encoding, newFileName, 1, message_show);
 			} else { 
@@ -897,7 +897,7 @@ function upload(lang) {
 		xhr.onreadystatechange = function(){
 			if (this.readyState==4 && this.status==200) {
 				var dirExists = removeBom(this.responseText);
-				if (dirExists==0) { 
+				if (dirExists=="0") { 
 					createFolder=window.confirm(message1 + newFilePath+ message2);
 					if (!createFolder) return;
 					upload2(lang, allFiles, 0, newFilePath, createFolder);
@@ -1052,7 +1052,7 @@ function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 	xhr.onreadystatechange = function(){
 		if (this.readyState==4 && this.status==200) {
 			var fileExists = removeBom(this.responseText);
-			if (fileExists==0) {
+			if (fileExists=="0") {
 				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			} else { 
 				var confirm = window.confirm(message1+newFilePath+"/"+filename+message2);
@@ -1137,7 +1137,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 			var response = removeBom(this.responseText);
 			if (response=="not logged in") {processSearchAndReplace(lang); return;}
 
-			if (response==1) {
+			if (response=="1") {
 				if (isImage) {
 					var confirm = window.confirm(messageF+" '"+newFilePath+"/"+filename+"' "+message11);
 					if (confirm) window.open(newFilePath+"/"+filename, '_blank').focus();
@@ -1186,7 +1186,7 @@ function del(lang, totalFiles) {
 		if (this.readyState==4 && this.status==200) {
 			var response = removeBom(this.responseText);
 			if (response=="not logged in") {processSearchAndReplace(lang); return;};
-			if (response==1) {
+			if (response=="1") {
 				alert(message2);
 				var i =(parseInt(getParameterByName('i'))||0);
 				if (i!=0 && i==(totalFiles-1)) i--;
@@ -1703,7 +1703,7 @@ function processSearchAndReplace(lang) {
 
 				return;
 			};
-			if (response==0){
+			if (response=="0"){
 				var locStPar="HTML_editor";
 				var HTMLEditorData=getLocalStorageData(locStPar);
 				var username1="";
@@ -1734,7 +1734,7 @@ function processSearchAndReplace(lang) {
 				
 				xhr.onreadystatechange = function(){
 					if (this.readyState==4 && this.status==200) {
-						if (JSON.parse(removeBom(this.responseText))[0]!=1){
+						if (JSON.parse(removeBom(this.responseText))=="0"){
 							$("#search_col1").hide();
 							$("#search_col2").hide();
 							$("#search_col3").hide();
