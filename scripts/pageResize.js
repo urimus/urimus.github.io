@@ -243,30 +243,20 @@ function processPageResize(isLoad, orientationChanged, lang){
 					type: "GET",
 					url: "scripts/php/checkLogIn.php",
 					success: function(data) {
-						console.log(data);
 						if (data.substring(0, 2) == "<?") {
-							console.log("Ajax - PHP is not supported");
-						} else {
-							console.log("Ajax - PHP is supported");
+							menu6.removeAttribute("onclick");
+							menu6.setAttribute("onmouseenter", "hideSubMenu();");
+							menu6.removeAttribute("onmouseleave");
+							if (lang=="eng" || lang=="lat") {
+								menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning";
+							}
+							if (lang=="rus") {
+								menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует";
+							}
+							menu6.setAttribute("title", menu6Title);
+							menu6.dataset.ttcolor = "blue";
+							menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 						}
-					}
-				});
-				fetch('scripts/php/checkLogIn.php')
-				.then(res => res.text())
-				.then(text => {
-					if (text.substring(0, 2) == "<?") {
-						menu6.removeAttribute("onclick");
-						menu6.setAttribute("onmouseenter", "hideSubMenu();");
-						menu6.removeAttribute("onmouseleave");
-						if (lang=="eng" || lang=="lat") {
-							menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning";
-						}
-						if (lang=="rus") {
-							menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует";
-						}
-						menu6.setAttribute("title", menu6Title);
-						menu6.dataset.ttcolor = "blue";
-						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 					}
 				});
 			}
