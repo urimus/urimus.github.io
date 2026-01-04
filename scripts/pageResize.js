@@ -215,7 +215,7 @@ function enableKeyboardScroll(scrollDiv) {
 	});
 }
 
-function checkMenu6() {
+function checkMenu6(lang) {
 	var menu6 = document.getElementById('menu_6');
 	if (menu6) {
 		var menu6Title;
@@ -263,7 +263,7 @@ function processPageResize(isLoad, orientationChanged, lang) {
 
 	if (isLoad == 1) { 
 		preloadImages(); // preloadImages
-		checkMenu6(); // correct HTML Editor menu
+		checkMenu6(lang); // correct HTML Editor menu
 	}
 
 	var scrollDiv = document.getElementById('scrollDiv');
