@@ -215,52 +215,55 @@ function enableKeyboardScroll(scrollDiv) {
 	});
 }
 
-function processPageResize(isLoad, orientationChanged, lang){
+function checkMenu6() {
+	var menu6 = document.getElementById('menu_6');
+	if (menu6) {
+		var menu6Title;
+		if (isMobile()) {
+			menu6.removeAttribute("onclick");
+			menu6.setAttribute("onmouseenter", "hideSubMenu();");
+			menu6.removeAttribute("onmouseleave");
+			if (lang=="eng" || lang=="lat") {
+				menu6Title = "HTML Editor is not Supported for Mobile Devices";
+			}
+			if (lang=="rus") {
+				menu6Title = "HTML Редактор не Поддерживается на Мобильных Устройствах";
+			}
+			menu6.setAttribute("title", menu6Title);
+			menu6.dataset.ttcolor = "blue";
+			menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
+		} else {
+			$.ajax({
+				type: "GET",
+				url: "scripts/php/checkLogIn.php",
+				success: function(data) {
+					if (data.substring(0, 2) == "<?") {
+						menu6.removeAttribute("onclick");
+						menu6.setAttribute("onmouseenter", "hideSubMenu();");
+						menu6.removeAttribute("onmouseleave");
+						if (lang=="eng" || lang=="lat") {
+							menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning";
+						}
+						if (lang=="rus") {
+							menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует";
+						}
+						menu6.setAttribute("title", menu6Title);
+						menu6.dataset.ttcolor = "blue";
+						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
+					}
+				}
+			});
+		}
+	}
+}
+
+function processPageResize(isLoad, orientationChanged, lang) {
 	if (typeof isLoad === "undefined") var isLoad = 1;
 	if (typeof orientationChanged === "undefined") var orientationChanged = 0;
 
 	if (isLoad == 1) { 
 		preloadImages(); // preloadImages
-		// correct HTML Editor menu
-		var menu6 = document.getElementById('menu_6');
-		if (menu6) {
-			var menu6Title;
-			if (isMobile()) {
-				menu6.removeAttribute("onclick");
-				menu6.setAttribute("onmouseenter", "hideSubMenu();");
-				menu6.removeAttribute("onmouseleave");
-				if (lang=="eng" || lang=="lat") {
-					menu6Title = "HTML Editor is not Supported for Mobile Devices";
-				}
-				if (lang=="rus") {
-					menu6Title = "HTML Редактор не Поддерживается на Мобильных Устройствах";
-				}
-				menu6.setAttribute("title", menu6Title);
-				menu6.dataset.ttcolor = "blue";
-				menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
-			} else {
-				$.ajax({
-					type: "GET",
-					url: "scripts/php/checkLogIn.php",
-					success: function(data) {
-						if (data.substring(0, 2) == "<?") {
-							menu6.removeAttribute("onclick");
-							menu6.setAttribute("onmouseenter", "hideSubMenu();");
-							menu6.removeAttribute("onmouseleave");
-							if (lang=="eng" || lang=="lat") {
-								menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning";
-							}
-							if (lang=="rus") {
-								menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует";
-							}
-							menu6.setAttribute("title", menu6Title);
-							menu6.dataset.ttcolor = "blue";
-							menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
-						}
-					}
-				});
-			}
-		}
+		checkMenu6(); // correct HTML Editor menu
 	}
 
 	var scrollDiv = document.getElementById('scrollDiv');
