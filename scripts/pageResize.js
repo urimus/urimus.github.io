@@ -239,6 +239,18 @@ function processPageResize(isLoad, orientationChanged, lang){
 				menu6.dataset.ttcolor = "blue";
 				menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 			} else {
+				$.ajax({
+					type: "GET",
+					url: "scripts/php/checkLogIn.php",
+					success: function(data) {
+						console.log(data);
+						if (data.substring(0, 2) == "<?") {
+							console.log("Ajax - PHP is not supported");
+						} else {
+							console.log("Ajax - PHP is supported");
+						}
+					}
+				});
 				fetch('scripts/php/checkLogIn.php')
 				.then(res => res.text())
 				.then(text => {
