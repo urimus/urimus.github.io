@@ -239,6 +239,22 @@ function processPageResize(isLoad, orientationChanged, lang){
 				menu6.dataset.ttcolor = "blue";
 				menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 			} else {
+fetch('scripts/php/checkLogIn.php')
+  .then(res => res.text())
+  .then(text => {
+    if (text.substring(0, 2) == "<?") {
+      console.log("PHP НЕ выполняется (отдаётся как текст) с '<?' 1");
+}
+    if (text.includes("<?")) {
+      console.log("PHP НЕ выполняется (отдаётся как текст) с '<?' 2");
+    } else {
+      console.log('PHP выполняется');
+    }
+  })
+  .catch(() => {
+    console.log('Ошибка сети');
+  });
+
 				var xhr;
 				if (window.XMLHttpRequest) {
 					xhr=new XMLHttpRequest();
