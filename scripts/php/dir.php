@@ -37,7 +37,7 @@ function processFile($filename, $c, $fileToShow){
 
 foreach (glob($q, GLOB_BRACE) as $filename) {
 	if (!is_file($filename)) continue;
-    if (!secureFilename($filename)) continue;
+    if (!canReadPath($filename)) continue;
 	$out[] = processFile($filename, $c, $fileToShow);
 	$c++;
 }
@@ -45,7 +45,7 @@ foreach (glob($q, GLOB_BRACE) as $filename) {
 if ($c==0) { // try search inside files
 	foreach (glob("../../*", GLOB_BRACE) as $filename) {
 		if (!is_file($filename)) continue;
-		if (!secureFilename($filename)) continue;
+		if (!canReadPath($filename)) continue;
 		$file_contents=file_get_contents($filename);
 		if ($file_contents===false) continue;
 		$matchPos = strpos($file_contents, $qorig);

@@ -9,7 +9,7 @@ include 'secure.php';
 $files = glob($q) ?: [];
 foreach ($files as $file) {
 	if (!is_file($file)) continue;
-	if (!secureFilename($file)) continue;
+	if (!canReadPath($file)) continue;
 	echo 1;
 	exit;
 }

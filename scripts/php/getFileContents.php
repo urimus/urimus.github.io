@@ -13,6 +13,6 @@ include 'secure.php';
 $filename=$_GET["filename"];
 $filename="../../".$filename; // add path from this script to root
 
-if (!is_file($filename) || !secureFilename($filename)) die("Unable to open file! - '".$filename."'");
+if (!is_file($filename) || !canReadPath($filename)) die("Unable to open file! - '".$filename."'");
 $file_contents=file_get_contents($filename);
 echo $file_contents;

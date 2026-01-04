@@ -20,7 +20,7 @@ include 'secure.php';
 include 'saveClass.php';
 include 'detectEncodingClass.php';
 
-if (!is_file($filename) || !secureFilename($filename)) die("Unable to open file! - '".$filename."'");
+if (!is_file($filename) || !canReadPath($filename)) die("Unable to open file! - '".$filename."'");
 $file_contents=file_get_contents($filename);
 
 // ---------- log -------- //

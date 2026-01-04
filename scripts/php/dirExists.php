@@ -9,7 +9,7 @@ include 'secure.php';
 $dirs = glob($q, GLOB_ONLYDIR) ?: [];
 
 foreach ($dirs as $dir) {
-	if (!secureFilename($dir)) continue;
+	if (!canReadPath($dir)) continue;
 	echo 1;
 	exit;
 }
