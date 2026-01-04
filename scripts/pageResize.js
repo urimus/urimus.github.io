@@ -239,49 +239,24 @@ function processPageResize(isLoad, orientationChanged, lang){
 				menu6.dataset.ttcolor = "blue";
 				menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 			} else {
-fetch('scripts/php/checkLogIn.php')
-  .then(res => res.text())
-  .then(text => {
-    if (text.substring(0, 2) == "<?") {
-      console.log("PHP НЕ выполняется (отдаётся как текст) с '<?' 1");
-}
-    if (text.includes("<?")) {
-      console.log("PHP НЕ выполняется (отдаётся как текст) с '<?' 2");
-    } else {
-      console.log('PHP выполняется');
-    }
-  })
-  .catch(() => {
-    console.log('Ошибка сети');
-  });
-
-				var xhr;
-				if (window.XMLHttpRequest) {
-					xhr=new XMLHttpRequest();
-				} else {  
-					xhr=new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				xhr.onreadystatechange = function(){
-					if (this.readyState==4 && this.status==200) {
-						var respNoBOM=removeBom(this.responseText);
-						if (respNoBOM.substring(0, 2) == "<?") {
-							menu6.removeAttribute("onclick");
-							menu6.setAttribute("onmouseenter", "hideSubMenu();");
-							menu6.removeAttribute("onmouseleave");
-							if (lang=="eng" || lang=="lat") {
-								menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning";
-							}
-							if (lang=="rus") {
-								menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует";
-							}
-							menu6.setAttribute("title", menu6Title);
-							menu6.dataset.ttcolor = "blue";
-							menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
+				fetch('scripts/php/checkLogIn.php')
+				.then(res => res.text())
+				.then(text => {
+					if (text.substring(0, 2) == "<?") {
+						menu6.removeAttribute("onclick");
+						menu6.setAttribute("onmouseenter", "hideSubMenu();");
+						menu6.removeAttribute("onmouseleave");
+						if (lang=="eng" || lang=="lat") {
+							menu6Title = "PHP is not Supported at "+window.location.hostname+", HTML Editor is not Functioning";
 						}
+						if (lang=="rus") {
+							menu6Title = "PHP не Поддерживается в "+window.location.hostname+", HTML Редактор не Функционирует";
+						}
+						menu6.setAttribute("title", menu6Title);
+						menu6.dataset.ttcolor = "blue";
+						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 					}
-				};
-				xhr.open("GET","scripts/php/checkLogIn.php", true);
-				xhr.send();
+				});
 			}
 		}
 	}
@@ -426,61 +401,3 @@ function animatedText() {
 setInterval(function() { loading(); }, 500);
 setInterval(function() { animatedText(); }, 250);
 setInterval(function() { flashText(); }, 50);
-
-function detectBomCheckSoFar(bytes) {
-	if (typeof bytes[1] !== 'undefined') {
-		if (bytes[0]=="fe" && bytes[1]=="ff") return 2;
-		if (bytes[0]=="ff" && bytes[1]=="fe") return 2;
-		if (bytes[0]=="ff" && bytes[1]=="d8") return 2;
-	} 
-	if (typeof bytes[2] !== 'undefined') {
-		if (bytes[0]=="ef" && bytes[1]=="bb" && bytes[2]=="bf") return 3;
-		if (bytes[0]=="f7" && bytes[1]=="64" && bytes[2]=="4c") return 3;
-		if (bytes[0]=="0e" && bytes[1]=="fe" && bytes[2]=="ff") return 3;
-		if (bytes[0]=="fb" && bytes[1]=="ee" && bytes[2]=="28") return 3;
-	}
-	if (typeof bytes[3] !== 'undefined') {
-		if (bytes[0]=="00" && bytes[1]=="00" && bytes[2]=="fe" && bytes[3]=="ff") return 4;
-		if (bytes[0]=="ff" && bytes[1]=="fe" && bytes[2]=="00" && bytes[3]=="00") return 4;
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="38") return 4;
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="39") return 4;
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="2b") return 4;
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="2f") return 4;
-		if (bytes[0]=="dd" && bytes[1]=="73" && bytes[2]=="66" && bytes[3]=="73") return 4;
-		if (bytes[0]=="84" && bytes[1]=="31" && bytes[2]=="95" && bytes[3]=="33") return 4;
-	}
-	if (typeof bytes[4] !== 'undefined') {
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="38" && bytes[4]=="2d") return 5;
-	}
-	return 0;
-}
-
-
-function removeBom(str) {
-	var ch, st, re = [], j=0;
-	for (var c = 0; c < str.length; c++ ) {
-		if (c==5) return str; // nothing found
-		var ch = str.charCodeAt(c);
-		if(ch < 127)
-		{
-			re[j++] = ch & 0xFF;
-			if (detectBomCheckSoFar(re)>0) return removeBom(str.substr(c+1));
-		}
-		else
-		{
-			var st = [];    // clear stack
-			do {
-				st.push( ch & 0xFF );  // push byte to stack
-				ch = ch >> 8;          // shift value down by 1 byte
-			}
-			while ( ch );
-			// add stack contents to result
-			// done because chars have "wrong" endianness
-			st = st.reverse();
-			for(var k=0;k<st.length; ++k)
-				re[j++] = st[k];
-			if (detectBomCheckSoFar(re)>0) return removeBom(str.substr(c+1));
-		}
-	}
-	return str; // nothing found
-}
