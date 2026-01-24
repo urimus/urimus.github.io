@@ -1,0 +1,1387 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*39;
+var imgBgSrc="images/icons/background/arnold_schwarzenegger.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_actor_schwarzenegger_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_actor_schwarzenegger_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_actor_schwarzenegger_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_actor_schwarzenegger_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_selected">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; By Actors <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_bautista_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_bautista_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Dave Bautista</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_diesel_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_diesel_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Vin Diesel</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_douglas_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_douglas_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Michael Douglas</div>
+	</td>
+	</tr>	
+
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_jovovich_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_jovovich_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Milla Jovovich</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_schwarzenegger_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_schwarzenegger_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Arnold Schwarzenegger</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_stallone_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_stallone_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Sylvester Stallone</div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_statham_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_statham_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Jason Statham <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_willis_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_willis_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Bruce Willis</div>
+	</td>
+	</tr>		
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; By Genre</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Animation</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Superhero</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"  
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Movies &blacktriangleright; Arnold Schwarzenegger</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:897px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+		
+		
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="arnold_shwarzenegger">Arnold Schwarzenegger</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Biography</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/arnold_shwarzenegger.jpg" alt="Arnold Schwarzenegger" title="Arnold Schwarzenegger" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+						<P><b>Arnold Alois Schwarzenegger</b> (born July 30, 1947) is an Austrian-American actor, filmmaker, businessman, investor, author, philanthropist, activist, former professional bodybuilder and former politician. He served two terms as the 38th Governor of California from 2003 until 2011.
+
+						<P>Schwarzenegger began weight training at the age of 15. He won the Mr. Universe title at age 20 and went on to win the Mr. Olympia contest seven times. Schwarzenegger has remained a prominent presence in bodybuilding and has written many books and articles on the sport. He is widely considered to be among the greatest bodybuilders of all times as well as its biggest icon. Schwarzenegger gained worldwide fame as a Hollywood action film icon. His breakthrough film was the sword-and-sorcery epic Conan the Barbarian in 1982, which was a box-office hit and resulted in a sequel. In 1984, he appeared in James Cameron's science-fiction thriller film The Terminator, which was a massive critical and box-office success. Schwarzenegger subsequently reprised the Terminator character in the franchise's later installments in 1991, 2003, and 2015. He appeared in a number of successful films, such as Commando (1985), The Running Man (1987), Predator (1987), Twins (1988), Total Recall (1990), Kindergarten Cop (1990) and True Lies (1994). He was nicknamed the "Austrian Oak" in his bodybuilding days, "Arnie" during his acting career, and "The Governator" (a combination of "Governor" and "The Terminator", one of his best-known movie roles) during his political career.
+
+						<P>As a Republican, he was first elected on October 7, 2003, in a special recall election to replace then-Governor Gray Davis. Schwarzenegger was sworn in on November 17, to serve the remainder of Davis's term. Schwarzenegger was then re-elected on November 7, 2006, in the 2006 California gubernatorial election, to serve a full term as governor, defeating Democrat Phil Angelides, who was California State Treasurer at the time. Schwarzenegger was sworn in for his second term on January 5, 2007. In 2011, Schwarzenegger completed his second term as governor.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Arnold_Schwarzenegger" class = "standardb_black" target="_blank">Wikipedia Arnold Schwarzenegger</a> - <b>Arnold Schwarzenegger</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					23rd of May, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+		
+		
+		
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="6th_day">The 6th Day</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/6th_day.jpg" alt="The 6th Day" title="The 6th Day" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+					
+<P><b>The 6th Day</b> is a 2000 American science fiction action film directed by Roger Spottiswoode and starring Arnold Schwarzenegger, Tony Goldwyn, Michael Rapaport and Robert Duvall. In the film, a family man of the future is illegally cloned by accident as part of a vast conspiracy involving a shady billionaire businessman, and is thrust into a struggle to clear his name and protect his family from the conspirators who seek to keep the cloning a secret. The title refers to the Judeo-Christian Genesis creation narrative, where God created mankind on the sixth day.
+
+<P>Schwarzenegger received a salary of $25 million for his role in the film. The film opened at #4 in North America and made $13 million in its opening weekend. It became a box office disappointment and received mixed reviews from critics.
+
+<br><br>
+<P><b>Reception:</b>
+<P>The film received mixed reviews. Rotten Tomatoes, a review aggregator, reports that 41% of 115 surveyed critics gave the film a positive review; the average rating is 5.2/10. The site's consensus reads: "This offering from Arnold Schwarzenegger contains an intriguing, disturbing premise, but the film's execution is too routine and formulaic to make good use of it." Audiences polled by CinemaScore gave the film an average grade of "C" on an A+ to F scale.
+
+<P>Roger Ebert of Chicago Sun-Times gave The 6th Day three out of four stars, remarking that it is not in the same league as Total Recall and Terminator 2: Judgment Day, but that it nevertheless qualifies as a serious science fiction film. He also found problems with the cloning as depicted in film, saying that "[his] problem with both processes is that while the resulting clone ... might know everything I know ... I myself would still be over here in the old container." Kenneth Turan of Los Angeles Times disliked the generic appearance of the movie and Schwarzenegger's typecasting as an action hero. Turan gave the film two out of five stars.
+
+<P>The 6th Day earned three Razzie Award nominations for Schwarzenegger: Worst Actor (as the real Adam), Worst Supporting Actor (as the clone of Adam) and Worst Screen Couple (Schwarzenegger as Adam and Schwarzenegger as the clone), but lost all three to Battlefield Earth. The film was also nominated four times at the 27th Saturn Awards, but lost to X-Men for Best Actor and Best Science Fiction Film, Hollow Man for Best Special Effects and How the Grinch Stole Christmas for Best Make-Up.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://de.wikipedia.org/wiki/The_6th_Day" class = "standardb_black" target="_blank">Wikipedia The 6th Day</a> - <b>The 6th Day</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=0Ca14zvW0jM" class = "standardb_black" target="_blank">Youtube The 6th Day</a> - Movie <b>The 6th Day</b> on Youtube.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.youtube.com/watch?v=Sz-Abh8opLo" class = "standardb_black" target="_blank">The 6th Day</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					14th of Nov, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="maggie">Maggie</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/maggie.jpg" alt="Maggie" title="Maggie" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+	
+
+
+<P><b>Maggie</b> is a 2015 post-apocalyptic horror drama film directed by Henry Hobson, in his directorial debut, written by John Scott 3, and starring Arnold Schwarzenegger, Abigail Breslin and Joely Richardson. Maggie is a dramatic departure for Schwarzenegger, who is better known for his action film roles.
+
+<P>The film was originally set to have its world premiere at the 2014 Toronto International Film Festival, but Lionsgate bought the American distribution rights and pulled the film out of the festival's roster. It instead premiered at the 2015 Tribeca Film Festival on April 23, 2015, as part of their lineup, followed by a limited theatrical release and simultaneous VOD release on May 8, 2015.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="" class = "standardb_black" target="_blank">Wikipedia Maggie (film)</a> - <b>Maggie</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.youtube.com/watch?v=AQ5Vz8qE8R8" class = "standardb_black" target="_blank">Maggie</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					20th of Nov, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="red_heat">Red Heat</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/red_heat.jpg" alt="Red Heat" title="Red Heat" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						<P><b>Red Heat</b> is a 1988 American buddy cop action film directed by Walter Hill. The film stars Arnold Schwarzenegger, as Moscow narc Ivan Danko, and James Belushi, as Chicago detective Art Ridzik. Finding themselves on the same case, Danko and Ridzik work as partners to catch a cunning and deadly Soviet Georgian drug kingpin, Viktor Rostavili (Ed O'Ross), who also happens to be the killer of Danko's previous partner back in Soviet Russia.
+
+						<P>The film was released with the tagline "Moscow's toughest detective. Chicago's craziest cop. There's only one thing more dangerous than making them mad: making them partners." It was the first American film given permission to shoot in Moscow's Red Square - however, most of the scenes set in the USSR (with the exceptions of the establishing shots under the main titles and the final lengthy shot in Red Square behind the end credits) were actually shot in Hungary. Schwarzenegger was paid a salary of $8 million for his role in the film.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Red_Heat" class = "standardb_black" target="_blank">Wikipedia Red Heat</a> - <b>Red Heat</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=14bjUtntk4Q" class = "standardb_black" target="_blank">Red Heat</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					23rd of May, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="total_recall">Total Recall</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/total_recall.jpg" alt="Total Recall" title="Total Recall" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						<P><b>Total Recall</b> is a 1990 American science fiction action film directed by Paul Verhoeven, starring Arnold Schwarzenegger, Rachel Ticotin, and Sharon Stone. The film is loosely based on the Philip K. Dick story "We Can Remember It for You Wholesale". It tells the story of a construction worker who is having troubling dreams about Mars and a mysterious woman there. It was written by Ronald Shusett, Dan O'Bannon, Jon Povill, and Gary Goldman, and won a Special Achievement Academy Award for its visual effects. The original score composed by Jerry Goldsmith won the BMI Film Music Award.
+
+
+						<P>The film was one of the most expensive films made at the time of its release, although estimates of its production budget vary and it is not certain whether it ever actually held the record.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Total_Recall_(1990_film)" class = "standardb_black" target="_blank">Wikipedia Total Recall (1990 film)</a> - <b>Total Recall</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.youtube.com/watch?v=WFMLGEHdIjE" class = "standardb_black" target="_blank">Total Recall</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					09th of Jan, 2011.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+		
+		
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

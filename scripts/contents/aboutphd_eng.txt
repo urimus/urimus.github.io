@@ -1,0 +1,4 @@
+﻿<b class="text_blue">About My PhD</b>
+&#9679; <b class = "text_blue" data-added="08th of Aug, 2016.">About My PhD</b>
+<span style="padding-left:10px;">- <a href="about_phd_eng.html#dissertation" class = "standardb_blue" data-added="08th of Aug, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">My Dissertation</a></span>
+<span style="padding-left:10px;">- <a href="about_phd_eng.html#publications" class = "standardb_blue" data-added="08th of Aug, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">My Scientific Publications</a></span>

@@ -1,0 +1,1601 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*43;
+var imgBgSrc="images/icons/background/chanson.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+		<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_punk_ska_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_punk_ska_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_punk_ska_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_punk_ska_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+	
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_selected">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+	
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_7_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_chanson_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_chanson_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Шансон <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+	
+
+	
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_7_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_country_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_country_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Кантри <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_disco_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_disco_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Диско</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Электронная</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Индастриал</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Метал <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_pop_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_pop_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Поп</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Психоделическая</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Панк <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_punk_horror_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_punk_horror_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Хоррор-Панк</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_punk_pop_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_punk_pop_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Поп-Панк</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_punk_rock_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_punk_rock_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Панк-Рок</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_punk_ska_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_punk_ska_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Ска-Панк <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rap_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rap_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Рэп <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_reggae_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_reggae_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Регги</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rock_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rock_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Рок-музыка <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+
+
+
+
+		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>   
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>   
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+		
+		
+		
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+		
+		
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Музыка &blacktriangleright; Ска-Панк</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:989px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="punk_ska">Ска-Панк <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></a> <font class="blinking_text" color="deeppink"><sup>&#9876; Zombiefied &#9876;</sup></font></a></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Описание Жанра</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/punk_ska.jpg" alt="Ска-Панк" title="Ска-Панк" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+<P><b>Ска-Панк</b> — переходный музыкальный стиль, который объединяет в себе элементы ска и <a href="music_punk_rock_rus.html" class = "standardb_black" target="_blank">панк-рока</a>.
+
+
+<br><br>
+<P><b>Особенности стиля:</b>
+
+<P>В ска-панке к традиционным атрибутам панка добавляются типичные элементы ска, например гитара, играющая в слабую долю, шагающий бас, нехарактерный для панка, и духовые инструменты.
+
+<P>Ска-панк чаще всего играется вживую в небольших музыкальных клубах, но в последние годы приобретают популярность и ска-панк-концерты. Также ска-панк команды все чаще становятся участниками крупных музыкальных фестивалей.
+	
+					
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%B0-%D0%BF%D0%B0%D0%BD%D0%BA" class = "standardb_black" target="_blank">Wikipedia Ска-Панк</a> - <b>Ска-Панк</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+				22е Мар, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="no_doubt">No Doubt <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+				<img src="images/icons/music/no_doubt.jpg" alt="No Dount" title="No Doubt" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>No Doubt</b> (в переводе с англ. — «Без сомнения») — американская ска-панк-группа, образованная в 1986 году в Анахайме, Калифорния, США. Наибольшую известность приобрела после выхода альбома Tragic Kingdom.
+
+<br><br>
+<P><b>Члены группы:</b>
+<br><br>
+<P><b>Текущий состав:</b>
+
+<P>&nbsp;&bull; Гвен Стефани — вокал (1987 — настоящее время), бэк-вокал (1986—1987)
+<P>&nbsp;&bull; Том Дюмон — гитара, клавишные (1988 — настоящее время)
+<P>&nbsp;&bull; Тони Канэл — бас-гитара, клавишные (1987 — настоящее время)
+<P>&nbsp;&bull; Эдриан Янг — барабаны, перкуссия (1989 — настоящее время)
+
+<br><br>
+<P><b>Сессионные:</b>
+
+<P>&nbsp;&bull; Стивен Бредли — клавишные, труба (1995 — нынешнее время)
+<P>&nbsp;&bull; Гэбриэл Макнэр — клавишные, тромбон (1995 — нынешнее время)
+
+<br><br>
+<P><b>Бывшие участники:</b>
+
+<P>&nbsp;&bull; Джон Спенс — сооснователь, вокал (1986—1987)
+<P>&nbsp;&bull; Эрик Стефани — клавишные, гитара (1986—1995)
+<P>&nbsp;&bull; Джерри Макмэхон — гитара (1986—1988)
+<P>&nbsp;&bull; Крис Уэбб — барабаны (1986—1989)
+<P>&nbsp;&bull; Крис Лил — бас-гитара (1986—1987)
+<P>&nbsp;&bull; Алан Мид — труба, вокал (1986—1988)
+<P>&nbsp;&bull; Тони Мид — саксофон (1986—1988)
+<P>&nbsp;&bull; Гэбриэл «Papa Gallo» Гонсалес II — труба (1986—1990)
+<P>&nbsp;&bull; Пол Кейсли — тромбон (1987—1990)
+<P>&nbsp;&bull; Эрик Карпентер — саксофон (1988—1994)
+<P>&nbsp;&bull; Дон Хаммерстедт — труба (1990—1992)
+<P>&nbsp;&bull; Алекс Хендерсон — тромбон (1991—1993)
+<P>&nbsp;&bull; Фил Джордан — труба (1992—1995)
+
+
+
+<br><br>
+<P><b>Дискография, Студийные альбомы:</b>
+<P>&nbsp;&bull; 1992 No Doubt
+<P>&nbsp;&bull; 1995 The Beacon Street Collection
+<P>&nbsp;&bull; 1995 Tragic Kingdom
+<P>&nbsp;&bull; 2000 Return Of Saturn
+<P>&nbsp;&bull; 2001 Rock Steady
+<P>&nbsp;&bull; 2003 The Singles 1992-2003
+<P>&nbsp;&bull; 2012 Push and Shove
+				
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/No_Doubt" class = "standardb_black" target="_blank">Wikipedia No Doubt</a> - <b>No Doubt</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://www.nodoubt.com/" class = "standardb_black" target="_blank">No Doubt</a> - Официальный Сайт (англ.).
+			</td>
+			</tr>
+
+
+
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+
+	<div class="galleria">
+	<a href="https://www.youtube.com/watch?v=rszcrPOlnSk"><img src="images/icons/playlists/no_doubt1.jpg" data-title="No Doubt - One More Summer"   data-description="<a href='https://www.youtube.com/watch?v=rszcrPOlnSk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>21е Сен, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=z26J7eRW45Y"><img src="images/icons/playlists/no_doubt2.jpg" data-title="No Doubt - Panic"   data-description="Про <a href='satanism_theistic_rus.html' class = 'smallb_black' target='_blank'>Сатанизм</a>.<br><a href='https://www.youtube.com/watch?v=z26J7eRW45Y' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>21е Сен, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=wt1YkGO2Ieo"><img src="images/icons/playlists/no_doubt3.jpg" data-title="No Doubt - Hey Baby"   data-description="Про <a href='satanism_theistic_rus.html' class = 'smallb_black' target='_blank'>Сатанизстских</a> Девушек.<br><a href='https://www.youtube.com/watch?v=wt1YkGO2Ieo' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>21е Сен, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=Qf473t2kz9A"><img src="images/icons/playlists/no_doubt4.jpg" data-title="No Doubt – Real Love Survives"   data-description="Про Соединённые Штаты Америки (США).<br><a href='https://www.youtube.com/watch?v=Qf473t2kz9A' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>21е Ноя, 2016."></a>
+	</div>
+
+
+	<script>
+		
+	var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/azur/galleria.azur.js');
+			
+	Galleria.run('.galleria', {
+	transition: 'fade',
+	imageCrop: true,
+	height : 500,
+	width : 670
+	});
+	</script>
+
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					01е Июл, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="sektor_gaza">Сектор Газа <font class="blinking_text" color="deeppink"><sup>&#9876; Zombiefied &#9876;</sup></font></a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/sektor_gaza.jpg" alt="Сектор Газа" title="Сектор Газа" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						
+<P><b>«Сектор Газа»</b> — советская и российская рок-группа, основанная в 1987 году в Воронеже музыкантом, вокалистом и автором песен Юрием Клинских, более известным под псевдонимом Хой. 9 июня 1988 года состоялось первое выступление группы в электрическом составе в местном рок-клубе при ТЭЦ, там группа получила приз зрительских симпатий. Однако традиционно датой основания группы считается 5 декабря 1987 года, когда состоялось первое сольное выступление Юрия Клинских с репертуаром будущего «Сектор Газа» в воронежском рок-клубе. На сегодняшний день группа широко известна на территории всего бывшего СССР.
+
+<br><br>
+<P><b>История, Название и псевдоним:</b>
+
+
+<P>Название группы произошло от индустриального Левобережного района Воронежа, названного в народе в шутку «Сектором газа» из-за обилия дымящих заводов. В этом районе и проживал Юрий Клинских, а также находился воронежский рок-клуб. Название «Сектор Газа» также было навеяно и популярностью одноимённого палестинского региона, ставшего горячей точкой и частым сюжетом советских СМИ той эпохи.
+<br><br>
+<P><i>«…ну, это чисто такое местное название в Воронеже, где был рок-клуб, к которому мы принадлежали. Он находился в очень задымлённом районе, и я его так прозвал — «Сектор газа», и мы в этом клубе постоянно играли, а так как я жил там неподалёку в этом районе, группу я назвал также — «Сектор Газа». Чисто местное название, я ведь не думал тогда, что мы так раскрутимся, я думал, что мы поиграемся и на этом всё закончится, как и многие коллективы, тогда первые в 85—87 году, когда открылись рок-клубы, вы помните, было очень много команд довольно-таки интересных…»</i>
+<P><i> - Юрий (Хой) Клинских</i>
+	
+
+<P>Псевдоним Юрий Хой (или просто Хой) появился совершенно случайно. Выступая на сцене рок-клуба или находясь там, в качестве зрителя, Юрий часто произносил известный среди панков клич. Позднее, когда городская популярность «Сектора Газа» набрала обороты, в квартиру Юрия часто стали названивать незнакомые люди, которые спрашивали Хоя.
+
+<br><br>
+<P><b>Дискография:</b>
+
+<br><br>
+<P><b>Магнитоальбомы:</b>
+<P>&nbsp;&bull; 1989: Плуги-вуги	
+<P>&nbsp;&bull; 1989: Колхозный панк    
+
+<br><br>
+<P><b>Студийные альбомы:</b>
+
+<P>&nbsp;&bull; 1990: Зловещие мертвецы
+<P>&nbsp;&bull; 1990: Ядрёна вошь
+<P>&nbsp;&bull; 1991: Ночь перед Рождеством
+<P>&nbsp;&bull; 1991: Колхозный панк
+<P>&nbsp;&bull; 1992: Гуляй, мужик!
+<P>&nbsp;&bull; 1993: Нажми на газ
+<P>&nbsp;&bull; 1993: Сектор газа       
+<P>&nbsp;&bull; 1994: Танцы после порева
+<P>&nbsp;&bull; 1994: Кащей Бессмертный
+<P>&nbsp;&bull; 1996: Газовая атака
+<P>&nbsp;&bull; 1997: Наркологический университет миллионов
+<P>&nbsp;&bull; 1997: ремейк Сектор газа
+<P>&nbsp;&bull; 2000: Восставший из Ада
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BA%D1%82%D0%BE%D1%80_%D0%93%D0%B0%D0%B7%D0%B0_%28%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0%29" class = "standardb_black" target="_blank">Wikipedia Сектор Сектор Газа (группа)</a> - <b>Сектор Газа</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://sektorgaza.net/" class = "standardb_black" target="_blank">Сектор Газа</a> - Официальный Сайт.
+			</td>
+			</tr>
+
+
+
+
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+
+	<div class="galleria2">
+	<a href="https://www.youtube.com/watch?v=GY75IdZydH4"><img src="images/icons/playlists/sektor_gaza8.jpg" data-title="Сектор Газа - Любовь Раскумаренная"   data-description="<a href='https://www.youtube.com/watch?v=GY75IdZydH4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25е Окт, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=uECmK_Z1_bA"><img src="images/icons/playlists/sektor_gaza1.jpg" data-title="Сектор Газа - Кусок"   data-description="Это про меня, точно.<br><a href='https://www.youtube.com/watch?v=uECmK_Z1_bA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=ChhrEUUByqI"><img src="images/icons/playlists/sektor_gaza2.jpg" data-title="Сектор Газа - Твой Звонок"   data-description="Похоже на <a href='music_country_rus.html#belomorkanal' class = 'smallb_black' target='_blank'>Беломорканал</a> - <a href='https://www.youtube.com/watch?v=JjXObQDSUJs' class = 'smallb_black' target='_blank'>Побег</a>, Про навязывание своего мнения, игнорорование чужого.<br><a href='https://www.youtube.com/watch?v=ChhrEUUByqI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=oZCRHTaDwdE"><img src="images/icons/playlists/sektor_gaza3.jpg" data-title="Сектор Газа - План"   data-description="Про <a href='psychology_true_rus.html' class = 'smallb_black' target='_blank'>Психологию</a>, а так-же про запрещение прослушивания музыки.<br><a href='https://www.youtube.com/watch?v=oZCRHTaDwdE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=FBeUAbFSqjI"><img src="images/icons/playlists/sektor_gaza4.jpg" data-title="Сектор Газа - Сельский Кайф"   data-description="Про <a href='psychology_pseudo_rus.html' class = 'smallb_black' target='_blank'>Псевдопсихологию</a>.<br><a href='https://www.youtube.com/watch?v=FBeUAbFSqjI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=fWHLWMIzSx8"><img src="images/icons/playlists/sektor_gaza5.jpg" data-title="Сектор Газа - Лирика"   data-description="Про <a href='psychology_true_rus.html' class = 'smallb_black' target='_blank'>Психологию</a> и <a href='psychology_pseudo_rus.html' class = 'smallb_black' target='_blank'>Псевдопсихологию</a>.<br><a href='https://www.youtube.com/watch?v=fWHLWMIzSx8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=Ysl9sk4EAcw"><img src="images/icons/playlists/sektor_gaza6.jpg" data-title="Сектор Газа - Скотник"   data-description="Про Кресты.<br><a href='https://www.youtube.com/watch?v=Ysl9sk4EAcw' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15е Окт, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=BDfY2rgV5Z8"><img src="images/icons/playlists/sektor_gaza7.jpg" data-title="Сектор Газа - Ночь Перед Рождеством"   data-description="Про Кресты.<br><a href='https://www.youtube.com/watch?v=BDfY2rgV5Z8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>17е Окт, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=FR_0nGKFFRI"><img src="images/icons/playlists/sektor_gaza2.jpg" data-title="Сектор Газа - Вылазка"   data-description="Про Гетеросексуалов (Прямых).<br><a href='https://www.youtube.com/watch?v=FR_0nGKFFRI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>24е Окт, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=KkHGksZYD40"><img src="images/icons/playlists/sektor_gaza9.jpg" data-title="Сектор Газа - Спокойной Ночи Малыши!"   data-description="Про <a href='music_metal_gothic_rus.html' class = 'smallb_black' target='_blank'>Метал Музыку</a>.<br><a href='https://www.youtube.com/watch?v=KkHGksZYD40' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25е Окт, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=5lRsIptBVvY"><img src="images/icons/playlists/sektor_gaza10.jpg" data-title="Сектор Газа - Оборотень"   data-description="Про <a href='https://ru.wikipedia.org/wiki/%D0%A7%D1%83%D0%BF%D0%B0%D0%BA%D0%B0%D0%B1%D1%80%D0%B0' class = 'smallb_black' target='_blank'>Чупакабру (Wikipedia)</a> и про Германию.<br><a href='https://www.youtube.com/watch?v=5lRsIptBVvY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>03е Ноя, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=0P7bz3PICWI"><img src="images/icons/playlists/sektor_gaza2.jpg" data-title="Сектор Газа - Аванс"   data-description="Про <a href='software_development_c++_rus.html' class = 'smallb_black' target='_blank'>IT</a> и Мобильный Телефон и про Роспись Кровью.<br><a href='https://www.youtube.com/watch?v=0P7bz3PICWI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Ноя, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=dypHhOAXNXE"><img src="images/icons/playlists/sektor_gaza11.jpg" data-title="Сектор Газа - Ядрёна Вошь"   data-description="Про <a href='software_development_c++_rus.html' class = 'smallb_black' target='_blank'>IT</a> и Линукс (Linux).<br><a href='https://www.youtube.com/watch?v=dypHhOAXNXE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Ноя, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=xLxVeg2FRfA"><img src="images/icons/playlists/sektor_gaza12.jpg" data-title="Сектор Газа - Любовь Загробная"   data-description="Про Местных.<br><a href='https://www.youtube.com/watch?v=xLxVeg2FRfA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10е Ноя, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=zWbaCgxo0uk"><img src="images/icons/playlists/sektor_gaza13.jpg" data-title="Сектор Газа - Колыбельная"   data-description="Про Россию.<br><a href='https://www.youtube.com/watch?v=zWbaCgxo0uk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10е Ноя, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=tjDts_VH8ZY"><img src="images/icons/playlists/sektor_gaza14.jpg" data-title="Сектор Газа - Дураки"   data-description="Про Алкоголиков.<br><a href='https://www.youtube.com/watch?v=tjDts_VH8ZY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>18е Ноя, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=f6Xqvdmft7Q"><img src="images/icons/playlists/sektor_gaza15.jpg" data-title="Сектор Газа - Щи"   data-description="Про Группу <a href='music_industrial_rock_rus.html#garbage' class = 'smallb_black' target='_blank'>Garbage</a>.<br><a href='https://www.youtube.com/watch?v=f6Xqvdmft7Q' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Ноя, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=CQ1ID6LPAq4"><img src="images/icons/playlists/sektor_gaza13.jpg" data-title="Сектор Газа - Носки"   data-description="Про Отдых.<br><a href='https://www.youtube.com/watch?v=CQ1ID6LPAq4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Дек, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=j54gZo8UBGA"><img src="images/icons/playlists/sektor_gaza14.jpg" data-title="Сектор Газа - Возле Дома Твоего"   data-description="Про Германию.<br><a href='https://www.youtube.com/watch?v=j54gZo8UBGA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05е Янв, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=V7ybIVCZNeI"><img src="images/icons/playlists/sektor_gaza9.jpg" data-title="Сектор Газа - Злая Ночь"   data-description="Про Соединённые Штаты Америки (Конституция).<br><a href='https://www.youtube.com/watch?v=V7ybIVCZNeI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>12е Янв, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=YK6_zUZVVGY"><img src="images/icons/playlists/sektor_gaza17.jpg" data-title="Сектор Газа - Марш Наркоманов"   data-description="Про Петушню.<br><a href='https://www.youtube.com/watch?v=YK6_zUZVVGY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>27е Янв, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=ihAsw86ZNW4"><img src="images/icons/playlists/sektor_gaza18.jpg" data-title="Сектор Газа - Чёрный Вурдалак"   data-description="Про Чёрно-Белые Плакаты (Фотографии).<br><a href='https://www.youtube.com/watch?v=ihAsw86ZNW4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>27е Янв, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=BkA3MdmOhL0"><img src="images/icons/playlists/sektor_gaza19.jpg" data-title="Сектор Газа - Вампиры"   data-description="Про <a href='psychology_true_rus.html#evolutionary_psychology' class = 'smallb_black' target='_blank'>Эволюционную Психологию</a>.<br><a href='https://www.youtube.com/watch?v=BkA3MdmOhL0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>04е Мар, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=diIwEjT2ZN4"><img src="images/icons/playlists/sektor_gaza20.jpg" data-title="Сектор Газа - Звёздная Болезнь"   data-description="Про Демонов.<br><a href='https://www.youtube.com/watch?v=diIwEjT2ZN4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>13е Мар, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=KcGS9YzOYmE"><img src="images/icons/playlists/sektor_gaza21.jpg" data-title="Сектор Газа - Местные"   data-description="Про Группу Adrian Black или Про Песню <a href='music_disco_rus.html#kombinacija' class = 'smallb_black' target='_blank'>Комбинация</a> - <a href='https://www.youtube.com/watch?v=F0sRVHSL54M' class = 'smallb_black' target='_blank'>Вещи Собрай</a>.<br><a href='https://www.youtube.com/watch?v=KcGS9YzOYmE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>17е Мар, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=etftupLab_o"><img src="images/icons/playlists/sektor_gaza9.jpg" data-title="Сектор Газа - Я Мразь"   data-description="Про Германию.<br><a href='https://www.youtube.com/watch?v=etftupLab_o' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05е Янв, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=AGcufKAdj0c"><img src="images/icons/playlists/sektor_gaza16.jpg" data-title="Сектор Газа - Ява"   data-description="Про <a href='fotos_images_about_mai_ja_rus.html' class = 'smallb_black' target='_blank'>Mai Ja</a> (Творчество).<br><a href='https://www.youtube.com/watch?v=AGcufKAdj0c' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05е Янв, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=-NtRQc7qNSU"><img src="images/icons/playlists/sektor_gaza13.jpg" data-title="Сектор Газа - Караван"   data-description="Про Инженеров.<br><a href='https://www.youtube.com/watch?v=-NtRQc7qNSU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15е Янв, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=k2TNlpbvaLk"><img src="images/icons/playlists/sektor_gaza22.jpg" data-title="Сектор Газа - Голубь"   data-description="Про Развал <a href='countries_ussr_communism_rus.html' class = 'smallb_black' target='_blank'>СССР</a>.<br><a href='https://www.youtube.com/watch?v=k2TNlpbvaLk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16е Янв, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=3IDTpROYgU0"><img src="images/icons/playlists/sektor_gaza13.jpg" data-title="Сектор Газа - Видак"   data-description="Про Лидерство.<br><a href='https://www.youtube.com/watch?v=3IDTpROYgU0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25е Янв, 2018."></a>
+       </div>
+
+
+	<script>
+	Galleria.run('.galleria2', {
+	transition: 'fade',
+	imageCrop: true,
+	height : 500,
+	width : 670
+	});
+	</script>
+
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					01е Июл, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+	
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+	
+
+
+</body>
+</html>
+

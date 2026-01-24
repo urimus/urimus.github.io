@@ -1,0 +1,1487 @@
+﻿
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*45;
+var imgBgSrc="images/icons/background/metal.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_metal_symphonic_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_metal_symphonic_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_metal_symphonic_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_metal_symphonic_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_selected">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_chanson_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_chanson_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Chanson <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+
+
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_7_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_country_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_country_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Country <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_disco_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_disco_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Disco</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Electronic</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Industrial</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');"
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Metal <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_alternative_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_alternative_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Alternative <font class="blinking_text" color="crimson"><sup>&#191; Inadequate &#191;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_black_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_black_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Black</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_death_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_death_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Death <font class="blinking_text" color="blueviolet"><sup>&#9996; Fresh &#9996;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_gothic_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_gothic_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Gothic <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_power_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_power_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Power</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_symphonic_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_symphonic_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Symphonic</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_pop_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_pop_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Pop</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Psychedelic</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'"
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rap_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rap_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Rap <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_reggae_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_reggae_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Reggae</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'"
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rock_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rock_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Rock <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+	</td>
+	</tr>	
+
+
+
+
+
+
+
+		
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Music &blacktriangleright; Metal &blacktriangleright; Symphonic</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:1035px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+		
+	<tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="metal">Metal</a></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/metal.jpg" alt="Metal" title="Metal" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Heavy metal</b> (or simply <b>metal</b>) is a genre of rock music that developed in the late 1960s and early 1970s, largely in the United Kingdom and the United States. With roots in blues rock and psychedelic rock, the bands that created heavy metal developed a thick, massive sound, characterized by highly amplified distortion, extended guitar solos, emphatic beats, and overall loudness. Heavy metal lyrics and performance styles are sometimes associated with masculinity, aggression, and machismo.
+
+<P>The first heavy metal bands such as Led Zeppelin, Black Sabbath and Deep Purple attracted large audiences, though they were often derided by critics, a status common throughout the history of the genre. During the mid-1970s, Judas Priest helped spur the genre's evolution by discarding much of its blues influence; Mot&ouml;rhead introduced a punk rock sensibility and an increasing emphasis on speed. Beginning in the late 1970s, bands in the new wave of British heavy metal such as Iron Maiden and Saxon followed in a similar vein. Before the end of the decade, heavy metal fans became known as "metalheads" or "headbangers".
+
+<P>During the 1980s, glam metal became a commercial force with groups such as M&ouml;tley Cr&uuml;e and Poison. Underground scenes produced an array of more aggressive styles: thrash metal broke into the mainstream with bands such as Metallica, Megadeth, Slayer, and Anthrax, while other extreme subgenres of metal such as death metal and black metal remain subcultural phenomena. Since the mid-1990s popular styles have further expanded the definition of the genre. These include groove metal (with bands such as Pantera) and nu metal (with bands such as Slipknot, Korn and Linkin Park), the latter of which often incorporates elements of grunge and hip hop.
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Heavy_metal_music" class = "standardb_black" target="_blank">Wikipedia Heavy metal music</a> - <b>Metal</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					29th of Jun, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+		
+	<tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="symphonic_metal">Symphonic Metal</a></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/symphonic_metal.jpg" alt="Symphonic Metal" title="Symphonic Metal" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Symphonic metal</b> is a subgenre of metal music which combines the characteristics of this genre, such as heavy drums and guitars, with different elements of classical music including symphonic instruments, choirs and on occasion, a full symphony orchestra. Keyboards reminiscent of power metal also often find a dominant place in this subgenre. Symphonic metal bands often feature classically trained female vocalists, giving rise to the nickname opera metal or operatic metal, and it is not uncommon for them to feature a second vocalist performing growls, a more common characteristic of gothic metal. Perhaps the most typical and prominent examples of symphonic metal bands are Finnish band Nightwish, Dutch bands Within Temptation and Epica, and Swedish band Therion, all four of which place a large focus on elements prevalent in film scores on top of the more basic classical components utilized more widely in the genre.
+
+<br><br>
+<P><b>Musical characteristics:</b>
+
+
+<P>The main musical influences on symphonic metal are early gothic metal, power metal and NWOBHM.
+
+<P>Music workstation keyboards and orchestras are often the focal point of the music, which, in essence, distinguishes the subgenre from other metal subgenres. Other instruments including guitars, bass and drums typically play relatively simple parts in contrast to the complex and nuanced keyboard and/or orchestral parts. Bands that do not use live orchestral instrumentation on their recordings or when playing live typically utilize factory presets on workstation keyboards (i. e., strings, choirs, pianos, pipe organs etc.) to conjure up a "pseudo-orchestral" sound, where parts are played idiomatically according to keyboard technique. This is particularly characteristic of less-known bands on tighter budgets. Some symphonic metal bands abstain from using keyboards entirely, choosing to use orchestral backing tracks, either recorded by a live symphony orchestra and/or choir during an album session, or recorded using virtual software instruments in a sequencer. This is particularly characteristic of bands that feature deeper and more complex arrangements that would be more difficult for one or even two keyboardists to reproduce in a live performance.
+
+<P>It is more difficult to generalise about the guitar and bass work found in this style. As with gothic metal, this can often be described as a synthesis of other rock and metal styles, with black metal, death metal, power metal, and progressive metal elements being the most common; but unlike in gothic metal, elements of classical music are frequently present as well. With varying frequency, the majority of bands in this subgenre employ these instruments (as well as the lead vocals) to play more simple, catchy melodies which arguably makes symphonic metal (along with power metal, which shares this characteristic) one of the more accessible metal subgenres.
+
+<P>Songs are often highly atmospheric, though more upbeat than those of other metal subgenres; even songs with morbid themes routinely feature prominent major-key fanfares. Particularly central to creating mood and atmosphere is the choice of keyboard sounds.
+
+<P>Lyrics cover a broad range of topics. As with two of symphonic metal's otherwise most dissimilar influences, power metal and opera (but also symphonic progressive rock), fantasy and mythological themes are common. Concept albums styled after operas or epic poems are not uncommon.
+
+<P>Bands in this genre often feature a female lead vocalist, most commonly a soprano. There is sometimes a second, male vocalist, as is also common in gothic metal. Growling, death-metal-style vocals are not unknown, but tend to be used less frequently than in other metal genres that make use of this vocal style (however, a notable example of its usage is by Mark Jansen in Epica). Further backup up to and including a full choir is sometimes employed.
+
+<P>It is very common for bands, almost exclusively female-fronted bands, to feature operatic lead vocals. Such bands can be referred to as operatic symphonic metal and include the likes of Nightwish (Tarja Turunen, then Floor Jansen), Epica, Haggard, Therion, Operatika, Dremora, Dol Ammad, Visions of Atlantis, Aesma Daeva, Almora and countless others. The operatic style is not exclusively tied to symphonic metal, and also appears in avant-garde metal, progressive metal, gothic metal and melodic metal.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Symphonic_metal" class = "standardb_black" target="_blank">Wikipedia Symphonic Metal</a> - <b>Symphonic Metal</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					29th of Jun, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="therion">Therion</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/music/therion.jpg" alt="Therion" title="Therion" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Therion</b> (formerly <b>Blitzkrieg</b>, <b>Megatherion</b>) is a Swedish symphonic metal band founded by Christofer Johnsson in 1987. Its name was inspired by the Celtic Frost album To Mega Therion. "To Mega Therion" is Greek for "The Great Beast" and was a title used by occultist Aleister Crowley. Originally a death metal band, Therion adjusted its musical style by adding orchestral elements, including choirs, classical musicians, and even a full orchestra at their concert performances. As a result, it has popularized the symphonic metal genre. In their biography, they state they have been cited as "the most adventurous metal band at present".
+
+<P><b>Therion</b> takes its themes from different mythologies and practices, including occultism, magic and ancient traditions and writings. Thomas Karlsson, the head and founder of the magical order Dragon Rouge, has provided lyrics for the band since 1996.
+
+<br><br>
+<P><b>Members, Current lineup:</b>
+
+<P>&nbsp;&bull; Christofer Johnsson — guitars, keyboards, programing, Hammond organ, orchestral arrangement (1987–present), lead vocals (1987–2009)
+<P>&nbsp;&bull; Thomas Vikstr&ouml;m — lead vocals (2007-2009 (touring), 2009-present (studio))
+<P>&nbsp;&bull; Nalle "Grizzly" P&aring;hlsson — bass guitar (2008–present)
+<P>&nbsp;&bull; Johan Koleberg — drums (2008–present)
+<P>&nbsp;&bull; Christian Vidal — guitar (2009–present)
+<P>&nbsp;&bull; Chiara Malvestiti — vocals (2015–present) (non-official member)
+<P>&nbsp;&bull; Linnea Vikstrom - vocals (2010–present) (non-official member)
+
+<br><br>
+<P><b>Discography:</b>
+<P>&nbsp;&bull; Of Darkness… (1991)
+<P>&nbsp;&bull; Beyond Sanctorum (1992)
+<P>&nbsp;&bull; Ho Drakon Ho Megas (1993)
+<P>&nbsp;&bull; Lepaca Kliffoth (1995)
+<P>&nbsp;&bull; Theli (1996)
+<P>&nbsp;&bull; A’arab Zaraq – Lucid Dreaming (1997)
+<P>&nbsp;&bull; Vovin (1998)
+<P>&nbsp;&bull; Crowning of Atlantis (1999)
+<P>&nbsp;&bull; Deggial (2000)
+<P>&nbsp;&bull; Secret of the Runes (2001)
+<P>&nbsp;&bull; Sirius B (2004)
+<P>&nbsp;&bull; Lemuria (2004)
+<P>&nbsp;&bull; Gothic Kabbalah (2007)
+<P>&nbsp;&bull; Sitra Ahra (2010)
+<P>&nbsp;&bull; Les Fleurs du Mal (2012)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Therion_%28band%29" class = "standardb_black" target="_blank">Wikipedia Therion (band)</a> - <b>Therion</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://therion.se/" class = "standardb_black" target="_blank">Therion</a> - Official Website.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					29th of Jun, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+	
+
+
+
+
+
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

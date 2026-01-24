@@ -1,0 +1,1578 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*39;
+var imgBgSrc="images/icons/background/milla_jovovich.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_actor_jovovich_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_actor_jovovich_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_actor_jovovich_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_actor_jovovich_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_selected">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; By Actors <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_bautista_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_bautista_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Dave Bautista</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_diesel_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_diesel_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Vin Diesel</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_douglas_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_douglas_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Michael Douglas</div>
+	</td>
+	</tr>	
+
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_jovovich_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_jovovich_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Milla Jovovich</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_schwarzenegger_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_schwarzenegger_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Arnold Schwarzenegger</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_stallone_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_stallone_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Sylvester Stallone</div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_statham_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_statham_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Jason Statham <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_willis_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_willis_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Bruce Willis</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; By Genre</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Animation</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Superhero</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"  
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Movies &blacktriangleright; Milla Jovovich</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:897px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+		
+		
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="milla_jovovich">Milla Jovovich</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Biography</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/milla_jovovich.jpg" alt="Milla Jovovich" title="Milla Jovovich" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Milica Bogdanovna "Milla" Jovovich</b> (born December 17, 1975) is a Ukrainian-born American actress, model, musician, and fashion designer. She has appeared in numerous science fiction and action films, leading the music channel VH1 to deem her the "reigning queen of kick-butt" in 2006. Born in Kiev, Jovovich emigrated with her parents to the United States when she was five. In 1987, she began modeling at the age of 12 when Herb Ritts photographed her for the cover of the Italian magazine Lei. Richard Avedon featured her in Revlon's "Most Unforgettable Women in the World" advertisements.
+
+<P>In 1988, Jovovich had her first acting role in the television film The Night Train to Kathmandu, and that year also appeared in her first feature film, Two Moon Junction. Jovovich gained attention for her role in the explicit 1991 romance film Return to the Blue Lagoon, as she was then only 15. She was considered to have a breakthrough with her role in the 1997 French science-fiction film The Fifth Element written and directed by Luc Besson. She and Besson married that year, but soon divorced. She starred as the heroine and martyr in Besson's The Messenger: The Story of Joan of Arc (1999). Jovovich is also well known for playing Alice, the leading character in the Resident Evil film series, adapted from the video game series of the same name. Though the films have been critically panned, they have been commercially successful.
+
+<P>Jovovich released an album, The Divine Comedy, in 1994. She continues to release demos for other songs on her official website and contributes to film soundtracks. In 2003, she and model Carmen Hawk created the clothing line Jovovich-Hawk. Jovovich has her own production company, Creature Entertainment.
+
+					
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Milla_Jovovich" class = "standardb_black" target="_blank">Wikipedia Milla Jovovich</a> - <b>Milla Jovovich</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+		
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="breathe">Breathe</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/breathe.jpg" alt="Breathe" title="Breathe" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Breathe</b> is a 2024 American science fiction thriller film directed by Stefon Bristol, written by Doug Simon, and starring Jennifer Hudson, Milla Jovovich, Quvenzhané Wallis, Common, and Sam Worthington. The film is set in a world where oxygen levels on Earth have dropped making it impossible to live on the planet's surface without specialised equipment. It was released on April 26, 2024.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Breathe_(2024_film)" class = "standardb_black" target="_blank">Wikipedia Breathe (2024 film)</a> - <b>Breathe</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=chaHsowROfQ" class = "standardb_black" target="_blank">Breathe</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					07th of Feb, 2025.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="fith_element">The Fifth Element</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/fith_element.jpg" alt="The Fifth Element" title="The Fifth Element" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						<P><b>The Fifth Element</b> (French: Le Cinquieme Element) is a 1997 English-language French science fiction action film directed and co-written by Luc Besson. It stars Bruce Willis, Gary Oldman and Milla Jovovich. Primarily set in the 23rd century, the film's central plot involves the survival of planet Earth, which becomes the responsibility of Korben Dallas (Willis), a taxicab driver and former special forces major, after a young woman (Jovovich) falls into his cab. Dallas joins forces with her to recover four mystical stones essential for the defence of Earth against an impending attack.
+
+						<P>Besson started writing the story that became The Fifth Element when he was 16 years old; he was 38 when the film opened in cinemas. Besson wanted to shoot the film in France, but suitable locations could not be found; filming took place instead in London and Mauritania. Comics writers Jean "Moebius" Giraud and Jean-Claude Mezieres, whose comics provided inspiration for parts of the film, were hired for production design. Costume design was by Jean Paul Gaultier.
+
+						<P>The Fifth Element received mainly positive reviews, although it tended to polarize critics. It has been called both the best and worst summer blockbuster of all time. The film was a financial success, earning more than $263 million at the box office on a $90 million budget. At the time of its release it was the most expensive European film ever made, and it remained the highest-grossing French film at the international box office until the release of The Intouchables in 2011.						
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Fifth_Element" class = "standardb_black" target="_blank">Wikipedia The Fifth Element</a> - <b>The Fifth Element</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=fQ9RqgcR24g" class = "standardb_black" target="_blank">The Fifth Element</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="fourth_kind">The Fourth Kind</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/fourth_kind.jpg" alt="The Fourth Kind" title="The Fourth Kind" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>The Fourth Kind</b> is a 2009 American science fiction thriller film directed by Olatunde Osunsanmi and featuring a cast of Milla Jovovich, Elias Koteas, Corey Johnson, Will Patton, Charlotte Milchard, Mia Mckenna-Bruce, Yulian Vergov, and Olatunde Osunsanmi. The title is derived from the expansion of J. Allen Hynek's classification of close encounters with aliens, in which the fourth kind denotes alien abductions.
+
+<P>The film is a pseudodocumentary purporting to be based on real events occurring in Nome, Alaska in 2000, in which psychologist Dr. Abigail Emily "Abbey" Tyler uses hypnosis to uncover memories from her patients of alien abduction, and finds evidence suggesting that she may have been abducted as well. The film has two components: dramatization, in which actors portray the individuals involved, and "documentary", in which video footage purports to show the 'actual' victims undergoing hypnosis. Throughout the film, Abbey, played by Charlotte Milchard, is shown purportedly being interviewed on television in 2002, two years after the abductions occurred. At some points in the film, the "documentary" and dramatized footage are presented alongside each other in split-screen.
+
+<P>The film was largely panned by critics but made US$47.71 million in cinemas worldwide. 
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Fourth_Kind" class = "standardb_black" target="_blank">Wikipedia The Fourth Kind</a> - <b>The Fourth Kind</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=JQBU4HvN5MY" class = "standardb_black" target="_blank">The Fourth Kind</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					17th of Aug, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="future_world">Future World</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/future_world.jpg" alt="Future World" title="Future World" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Future World</b> is an American science fiction action western film, directed by James Franco and Bruce Thierry Chung, from a screenplay by Chung and Jay Davis. It stars James Franco, Suki Waterhouse, Jeffrey Wahlberg, Margarita Levieva, Snoop Dogg, George Lewis Jr., Cliff 'Method Man' Smith, Lucy Liu and Milla Jovovich.
+
+<P>The film was released on May 25, 2018, by Lionsgate Premiere.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Future_World_(film)" class = "standardb_black" target="_blank">Wikipedia Future World (film)</a> - <b>Future World</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=uljtvXrkdbc" class = "standardb_black" target="_blank">Future World</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					02nd of Jul, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="hellboy">Hellboy</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/hellboy.jpg" alt="Hellboy" title="Hellboy" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Hellboy</b> is a 2019 American superhero film based on the Dark Horse Comics character of the same name. Directed by Neil Marshall, the film stars David Harbour in the title role, alongside Milla Jovovich, Ian McShane, Sasha Lane, Daniel Dae Kim, and Thomas Haden Church. It is a reboot of the Hellboy film series, and the third live-action film in the franchise. The film draws inspiration from the comic books Darkness Calls, The Wild Hunt, The Storm and the Fury, and Hellboy in Mexico. In the film, Hellboy struggles with his own existential crisis while preventing a resurrected sorceress from conquering the world.
+
+<P>The project began as a sequel to Hellboy II: The Golden Army (2008), with Andrew Cosby and Hellboy creator Mike Mignola writing the script. Guillermo del Toro was not offered the full writer-director role he had performed in the first two films, and Ron Perlman, who had portrayed Hellboy in the previous films, refused to return without del Toro's involvement. The project was turned into an R-rated reboot after Marshall was hired as the director and Harbour cast as Hellboy. Principal photography began in September 2017 in the United Kingdom and Bulgaria and ended in December 2017.
+
+<P>Hellboy was theatrically released on April 12, 2019, to negative reviews and was unfavorably compared to the del Toro films. The film grossed $44.7 million worldwide during its original theatrical run against a $50 million production budget, with several publications calling it a box office bomb.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Hellboy_(2019_film)" class = "standardb_black" target="_blank">Wikipedia Hellboy (2019 film)</a> - <b>Hellboy</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ZsBO4b3tyZg" class = "standardb_black" target="_blank">Hellboy</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					20th of Mar, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="monster_hunter">Monster Hunter</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/monster_hunter.jpg" alt="Monster Hunter" title="Monster Hunter" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+		
+
+
+<P><b>Monster Hunter</b> is a 2020 monster film written, directed, and produced by Paul W. S. Anderson, based on the video game series of the same name by Capcom. The film stars Anderson's wife Milla Jovovich in their fifth outing together as director and lead actor. The other cast members include Tony Jaa, Tip Harris, Meagan Good, Diego Boneta, Josh Helman, Jin Au-Yeung, and Ron Perlman.
+
+<P>A film adaptation based on the series has been in conception since 2012 by director Paul W. S. Anderson. The film was formally announced by Capcom in October 2018, with production starting that month with Constantin Film. Principal photography on the film began on October 5, 2018, and was completed on December 19, 2018, in Cape Town, South Africa.
+
+<P>Monster Hunter was released in China on December 4, 2020, and in the United States on December 18, 2020, by Sony Pictures Releasing (excluding Germany and Japan). The film grossed $43 million worldwide against a production budget of $60 million and received mixed reviews, with praise for its musical score, action sequences, and visual effects, but was criticized for its screenplay, direction, and editing.[6] It received a nomination at the 19th Visual Effects Society Awards, in the category Outstanding Effects Simulations in a Photoreal Feature.
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Monster_Hunter_(film)" class = "standardb_black" target="_blank">Wikipedia Monster Hunter (film)</a> - <b>Monster Hunter</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=3od-kQMTZ9M" class = "standardb_black" target="_blank">Monster Hunter</a> - Official Trailer.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					03rd of Jun, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="resident_evil">Resident Evil (film series)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/resident_evil.jpg" alt="Resident Evil (film series)" title="Resident Evil (film series)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P>The <b>Resident Evil</b> film series consists of science fiction action-horror films loosely based on the Capcom video games of the same name. Constantin Film bought the rights to the first film in January 1997 with Alan B. McElroy and George A. Romero as potential writers. In 2001, Sony Entertainment acquired distribution rights and hired Paul W. S. Anderson as writer and director for Resident Evil (2002). Anderson continued on as writer and producer for the sequels, Resident Evil: Apocalypse (2004) and Resident Evil: Extinction (2007), and returned as the director for Resident Evil: Afterlife (2010) and Resident Evil: Retribution (2012).
+
+<P>The fictional Umbrella Corporation, which acts as the main antagonist in the series, is a bioengineering pharmaceutical company that creates bioweapons. Umbrella was responsible for the zombie apocalypse, which occurred after the corporation's T-virus infected the Earth's population. The films follow protagonist Alice, an original character created for the films portrayed by Milla Jovovich. Alice, who was once a security operative working for Umbrella, becomes an enemy of the corporation. Characters from the Resident Evil video games also appeared in the film series, including Jill Valentine, Carlos Olivera, Claire Redfield, Albert Wesker, Chris Redfield, Barry Burton, Leon S. Kennedy and Ada Wong.
+
+<P>Despite constant negative reviews, with five films released, the Resident Evil film series is the highest-grossing film series to be based on video games of all time, having grossed US$915 million worldwide. It is set to conclude on January 27, 2017 with a sixth film, Resident Evil: The Final Chapter, written and directed by Anderson.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Resident_Evil_%28film_series%29" class = "standardb_black" target="_blank">Wikipedia Resident Evil (film series)</a> - <b>Resident Evil (film series)</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=o3ewAW0Ne94" class = "standardb_black" target="_blank">Resident Evil All Trailers 1 2 3 4 5</a> - Official Trailers.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="ultraviolet">Ultraviolet</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/ultraviolet.jpg" alt="Ultraviolet" title="Ultraviolet" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Ultraviolet</b> is a 2006 American dystopian science fiction action thriller film written and directed by Kurt Wimmer and produced by Screen Gems. It stars Milla Jovovich as Violet Song, Cameron Bright as Six, and Nick Chinlund as Ferdinand Daxus. It was released in North America on March 3, 2006. The film was released on DVD and Blu-ray Disc on June 27, 2006.
+
+<P>The film follows Violet Song Jat Shariff (Jovovich), a woman infected with hemoglophagia, a fictional vampire-like disease, in a future dystopia where anyone infected with the contagious disease is immediately sentenced to death. With her advanced martial arts, a group of rebel hemophages, and a boy named Six (Bright), whose blood may contain a cure for the disease, Violet goes on a mission to overthrow the futuristic government and defeat Ferdinand Daxus (Chinlund).
+
+<P>A novelization of the film was written by Yvonne Navarro, with more back-story and character development. The book differs from the film in a number of ways, including a more ambiguous ending and the removal of some of the more improbable plot twists. An anime series titled Ultraviolet: Code 044 was released by the Japanese anime satellite television network Animax, and created by Madhouse. Because of its many similarities with Equilibrium and because they share the same director, the film is often considered to be Equilibrium's spiritual successor.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Ultraviolet_%28film%29" class = "standardb_black" target="_blank">Wikipedia Ultraviolet (film)</a> - <b>Ultraviolet</b> on Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=lpw5hVAQkgA" class = "standardb_black" target="_blank">Ultraviolet</a> - Official Trailer.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

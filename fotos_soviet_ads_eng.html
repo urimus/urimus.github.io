@@ -1,0 +1,1293 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#de8e8e";
+	var scrollBackColor="#F9D4D4";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#CE3535; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+
+<!-- End of Foto Gallery -->
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*35;
+var imgBgSrc="images/icons/background/photos.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#F9D4D4"> 
+		<td  bgcolor="#F9D4D4" width="100%">
+		<div class="nimetus2_red"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('fotos_soviet_ads_lat.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='fotos_soviet_ads_lat.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="latina"
+			id="flag_lat"
+		>
+			<img src="lang/lat.gif" height="17" alt="latina" style="display: block;"/>
+		</div>
+	</td>
+
+
+
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('fotos_soviet_ads_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='fotos_soviet_ads_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('fotos_soviet_ads_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='fotos_soviet_ads_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#F9D4D4" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_red">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_me_eng.html';
+			};"  
+		class="menu_selected">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>			
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; My Photos</div>
+	</td>
+	</tr>   
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Images - Nicoletta Ceccoli</div>
+	</td>
+	</tr>  
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Images - KuKuLa</div>
+	</td>
+	</tr>  
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Images - Mai Ja</div>
+	</td>
+	</tr>  
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Images - Minjae Lee</div>
+	</td>
+	</tr>  
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Images - Anne Stokes</div>
+	</td>
+	</tr>   
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_soviet_ads_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_soviet_ads_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Soviet Ads</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	
+		<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#F9D4D4" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_red" style="width: 530px;"><a name="welcome">Photos/Images &blacktriangleright; Soviet Ads</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:805px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #de8e8e 1px solid;  background-color: #F9D4D4;">
+
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_red"><a name="soviet_ads">Soviet Ads</a></td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+	
+
+	
+	<div class="galleria">
+<!--	<img src="images/soviet_ads/1.jpg" data-title="Title"   data-description="Description"> -->
+
+	<img src="images/soviet_ads/1.jpg" data-description="<a href='images/soviet_ads/1.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/2.jpg" data-description="<a href='images/soviet_ads/2.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/3.jpg" data-description="<a href='images/soviet_ads/3.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/4.jpg" data-description="<a href='images/soviet_ads/4.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/5.jpg" data-description="<a href='images/soviet_ads/5.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/6.jpg" data-description="<a href='images/soviet_ads/6.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/7.jpg" data-description="<a href='images/soviet_ads/7.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/8.jpg" data-description="<a href='images/soviet_ads/8.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/9.jpg" data-description="<a href='images/soviet_ads/9.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/10.jpg" data-description="<a href='images/soviet_ads/10.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/11.jpg" data-description="<a href='images/soviet_ads/11.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/12.jpg" data-description="<a href='images/soviet_ads/12.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/13.jpg" data-description="<a href='images/soviet_ads/13.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/14.jpg" data-description="<a href='images/soviet_ads/14.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/15.jpg" data-description="<a href='images/soviet_ads/15.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/16.jpg" data-description="<a href='images/soviet_ads/16.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/17.jpg" data-description="<a href='images/soviet_ads/17.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/18.jpg" data-description="<a href='images/soviet_ads/18.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/19.jpg" data-description="<a href='images/soviet_ads/19.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/20.jpg" data-description="<a href='images/soviet_ads/20.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/21.jpg" data-description="<a href='images/soviet_ads/21.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/22.jpg" data-description="<a href='images/soviet_ads/22.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/23.jpg" data-description="<a href='images/soviet_ads/23.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/24.jpg" data-description="<a href='images/soviet_ads/24.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/25.jpg" data-description="<a href='images/soviet_ads/25.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/26.jpg" data-description="<a href='images/soviet_ads/26.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/27.jpg" data-description="<a href='images/soviet_ads/27.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/28.jpg" data-description="<a href='images/soviet_ads/28.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/29.jpg" data-description="<a href='images/soviet_ads/29.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/30.jpg" data-description="<a href='images/soviet_ads/30.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/31.jpg" data-description="<a href='images/soviet_ads/31.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/32.jpg" data-description="<a href='images/soviet_ads/32.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/33.jpg" data-description="<a href='images/soviet_ads/33.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/34.jpg" data-description="<a href='images/soviet_ads/34.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/35.jpg" data-description="<a href='images/soviet_ads/35.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/36.jpg" data-description="<a href='images/soviet_ads/36.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/37.jpg" data-description="<a href='images/soviet_ads/37.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/38.jpg" data-description="<a href='images/soviet_ads/38.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/39.jpg" data-description="<a href='images/soviet_ads/39.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+
+	<img src="images/soviet_ads/41.jpg" data-description="<a href='images/soviet_ads/41.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/42.jpg" data-description="<a href='images/soviet_ads/42.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/43.jpg" data-description="<a href='images/soviet_ads/43.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/44.jpg" data-description="<a href='images/soviet_ads/44.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/45.jpg" data-description="<a href='images/soviet_ads/45.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/46.jpg" data-description="<a href='images/soviet_ads/46.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/47.jpg" data-description="<a href='images/soviet_ads/47.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/48.jpg" data-description="<a href='images/soviet_ads/48.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/49.jpg" data-description="<a href='images/soviet_ads/49.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/50.jpg" data-description="<a href='images/soviet_ads/50.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/51.jpg" data-description="<a href='images/soviet_ads/51.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/52.jpg" data-description="<a href='images/soviet_ads/52.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/53.jpg" data-description="<a href='images/soviet_ads/53.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/54.jpg" data-description="<a href='images/soviet_ads/54.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/55.jpg" data-description="<a href='images/soviet_ads/55.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/56.jpg" data-description="<a href='images/soviet_ads/56.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/57.jpg" data-description="<a href='images/soviet_ads/57.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/58.jpg" data-description="<a href='images/soviet_ads/58.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+
+	<img src="images/soviet_ads/60.jpg" data-description="<a href='images/soviet_ads/60.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/61.jpg" data-description="<a href='images/soviet_ads/61.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+
+
+	<img src="images/soviet_ads/64.jpg" data-description="<a href='images/soviet_ads/64.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/65.jpg" data-description="<a href='images/soviet_ads/65.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+
+	<img src="images/soviet_ads/67.jpg" data-description="<a href='images/soviet_ads/67.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/68.jpg" data-description="<a href='images/soviet_ads/68.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/69.jpg" data-description="<a href='images/soviet_ads/69.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/70.jpg" data-description="<a href='images/soviet_ads/70.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/71.jpg" data-description="<a href='images/soviet_ads/71.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/72.jpg" data-description="<a href='images/soviet_ads/72.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/73.jpg" data-description="<a href='images/soviet_ads/73.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/74.jpg" data-description="<a href='images/soviet_ads/74.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/75.jpg" data-description="<a href='images/soviet_ads/75.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/76.jpg" data-description="<a href='images/soviet_ads/76.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/77.jpg" data-description="<a href='images/soviet_ads/77.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/78.jpg" data-description="<a href='images/soviet_ads/78.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+
+	<img src="images/soviet_ads/80.jpg" data-description="<a href='images/soviet_ads/80.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/81.jpg" data-description="<a href='images/soviet_ads/81.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/82.jpg" data-description="<a href='images/soviet_ads/82.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/83.jpg" data-description="<a href='images/soviet_ads/83.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/84.jpg" data-description="<a href='images/soviet_ads/84.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/85.jpg" data-description="<a href='images/soviet_ads/85.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/86.jpg" data-description="<a href='images/soviet_ads/86.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/87.jpg" data-description="<a href='images/soviet_ads/87.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/88.jpg" data-description="<a href='images/soviet_ads/88.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/89.jpg" data-description="<a href='images/soviet_ads/89.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/90.jpg" data-description="<a href='images/soviet_ads/90.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/91.jpg" data-description="<a href='images/soviet_ads/91.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/92.jpg" data-description="<a href='images/soviet_ads/92.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/93.jpg" data-description="<a href='images/soviet_ads/93.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/94.jpg" data-description="<a href='images/soviet_ads/94.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/95.jpg" data-description="<a href='images/soviet_ads/95.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/96.jpg" data-description="<a href='images/soviet_ads/96.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/97.jpg" data-description="<a href='images/soviet_ads/97.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/98.jpg" data-description="<a href='images/soviet_ads/98.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/99.jpg" data-description="<a href='images/soviet_ads/99.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/100.jpg" data-description="<a href='images/soviet_ads/100.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/101.jpg" data-description="<a href='images/soviet_ads/101.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/102.jpg" data-description="<a href='images/soviet_ads/102.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/103.jpg" data-description="<a href='images/soviet_ads/103.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/104.jpg" data-description="<a href='images/soviet_ads/104.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/105.jpg" data-description="<a href='images/soviet_ads/105.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/106.jpg" data-description="<a href='images/soviet_ads/106.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/107.jpg" data-description="<a href='images/soviet_ads/107.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/108.jpg" data-description="<a href='images/soviet_ads/108.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/109.jpg" data-description="<a href='images/soviet_ads/109.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/110.jpg" data-description="<a href='images/soviet_ads/110.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/111.jpg" data-description="<a href='images/soviet_ads/111.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/112.jpg" data-description="<a href='images/soviet_ads/112.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/113.jpg" data-description="<a href='images/soviet_ads/113.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/114.jpg" data-description="<a href='images/soviet_ads/114.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/115.jpg" data-description="<a href='images/soviet_ads/115.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/116.jpg" data-description="<a href='images/soviet_ads/116.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/117.jpg" data-description="<a href='images/soviet_ads/117.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/118.jpg" data-description="<a href='images/soviet_ads/118.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/119.jpg" data-description="<a href='images/soviet_ads/119.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/120.jpg" data-description="<a href='images/soviet_ads/120.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/121.jpg" data-description="<a href='images/soviet_ads/121.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+
+	<img src="images/soviet_ads/123.jpg" data-description="<a href='images/soviet_ads/123.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/124.jpg" data-description="<a href='images/soviet_ads/124.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/125.jpg" data-description="<a href='images/soviet_ads/125.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/126.jpg" data-description="<a href='images/soviet_ads/126.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/127.jpg" data-description="<a href='images/soviet_ads/127.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/128.jpg" data-description="<a href='images/soviet_ads/128.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/129.jpg" data-description="<a href='images/soviet_ads/129.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/130.jpg" data-description="<a href='images/soviet_ads/130.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/131.jpg" data-description="<a href='images/soviet_ads/131.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/132.jpg" data-description="<a href='images/soviet_ads/132.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/133.jpg" data-description="<a href='images/soviet_ads/133.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/134.jpg" data-description="<a href='images/soviet_ads/134.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/135.jpg" data-description="<a href='images/soviet_ads/135.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/136.jpg" data-description="<a href='images/soviet_ads/136.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/137.jpg" data-description="<a href='images/soviet_ads/137.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/138.jpg" data-description="<a href='images/soviet_ads/138.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/139.jpg" data-description="<a href='images/soviet_ads/139.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/140.jpg" data-description="<a href='images/soviet_ads/140.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/141.jpg" data-description="<a href='images/soviet_ads/141.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/142.jpg" data-description="<a href='images/soviet_ads/142.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/143.jpg" data-description="<a href='images/soviet_ads/143.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/144.jpg" data-description="<a href='images/soviet_ads/144.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/145.jpg" data-description="<a href='images/soviet_ads/145.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/146.jpg" data-description="<a href='images/soviet_ads/146.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/147.jpg" data-description="<a href='images/soviet_ads/147.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/148.jpg" data-description="<a href='images/soviet_ads/148.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/149.jpg" data-description="<a href='images/soviet_ads/149.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/150.jpg" data-description="<a href='images/soviet_ads/150.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/151.jpg" data-description="<a href='images/soviet_ads/151.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/152.jpg" data-description="<a href='images/soviet_ads/152.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/153.jpg" data-description="<a href='images/soviet_ads/153.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/154.jpg" data-description="<a href='images/soviet_ads/154.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/155.jpg" data-description="<a href='images/soviet_ads/155.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/156.jpg" data-description="<a href='images/soviet_ads/156.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/157.jpg" data-description="<a href='images/soviet_ads/157.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/158.jpg" data-description="<a href='images/soviet_ads/158.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/159.jpg" data-description="<a href='images/soviet_ads/159.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/160.jpg" data-description="<a href='images/soviet_ads/160.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/161.jpg" data-description="<a href='images/soviet_ads/161.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/162.jpg" data-description="<a href='images/soviet_ads/162.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+
+	<img src="images/soviet_ads/164.jpg" data-description="<a href='images/soviet_ads/164.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/165.jpg" data-description="<a href='images/soviet_ads/165.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/166.jpg" data-description="<a href='images/soviet_ads/166.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/167.jpg" data-description="<a href='images/soviet_ads/167.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/168.jpg" data-description="<a href='images/soviet_ads/168.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/169.jpg" data-description="<a href='images/soviet_ads/169.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/170.jpg" data-description="<a href='images/soviet_ads/170.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/171.jpg" data-description="<a href='images/soviet_ads/171.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/172.jpg" data-description="<a href='images/soviet_ads/172.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/173.jpg" data-description="<a href='images/soviet_ads/173.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/174.jpg" data-description="<a href='images/soviet_ads/174.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/175.jpg" data-description="<a href='images/soviet_ads/175.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/176.jpg" data-description="<a href='images/soviet_ads/176.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/177.jpg" data-description="<a href='images/soviet_ads/177.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/178.jpg" data-description="<a href='images/soviet_ads/178.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/179.jpg" data-description="<a href='images/soviet_ads/179.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/180.jpg" data-description="<a href='images/soviet_ads/180.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/181.jpg" data-description="<a href='images/soviet_ads/181.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/182.jpg" data-description="<a href='images/soviet_ads/182.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/183.jpg" data-description="<a href='images/soviet_ads/183.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/184.jpg" data-description="<a href='images/soviet_ads/184.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/185.jpg" data-description="<a href='images/soviet_ads/185.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/186.jpg" data-description="<a href='images/soviet_ads/186.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/187.jpg" data-description="<a href='images/soviet_ads/187.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/188.jpg" data-description="<a href='images/soviet_ads/188.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/189.jpg" data-description="<a href='images/soviet_ads/189.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/190.jpg" data-description="<a href='images/soviet_ads/190.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/191.jpg" data-description="<a href='images/soviet_ads/191.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/192.jpg" data-description="<a href='images/soviet_ads/192.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/193.jpg" data-description="<a href='images/soviet_ads/193.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/194.jpg" data-description="<a href='images/soviet_ads/194.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/195.jpg" data-description="<a href='images/soviet_ads/195.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/196.jpg" data-description="<a href='images/soviet_ads/196.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/197.jpg" data-description="<a href='images/soviet_ads/197.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/198.jpg" data-description="<a href='images/soviet_ads/198.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/199.jpg" data-description="<a href='images/soviet_ads/199.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/200.jpg" data-description="<a href='images/soviet_ads/200.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/201.jpg" data-description="<a href='images/soviet_ads/201.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/202.jpg" data-description="<a href='images/soviet_ads/202.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/203.jpg" data-description="<a href='images/soviet_ads/203.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/204.jpg" data-description="<a href='images/soviet_ads/204.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/205.jpg" data-description="<a href='images/soviet_ads/205.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/206.jpg" data-description="<a href='images/soviet_ads/206.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/207.jpg" data-description="<a href='images/soviet_ads/207.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/208.jpg" data-description="<a href='images/soviet_ads/208.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/209.jpg" data-description="<a href='images/soviet_ads/209.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/210.jpg" data-description="<a href='images/soviet_ads/210.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/211.jpg" data-description="<a href='images/soviet_ads/211.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/212.jpg" data-description="<a href='images/soviet_ads/212.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/213.jpg" data-description="<a href='images/soviet_ads/213.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/214.jpg" data-description="<a href='images/soviet_ads/214.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+
+	<img src="images/soviet_ads/216.jpg" data-description="<a href='images/soviet_ads/216.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/217.jpg" data-description="<a href='images/soviet_ads/217.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/218.jpg" data-description="<a href='images/soviet_ads/218.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/219.jpg" data-description="<a href='images/soviet_ads/219.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/220.jpg" data-description="<a href='images/soviet_ads/220.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/221.jpg" data-description="<a href='images/soviet_ads/221.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/222.jpg" data-description="<a href='images/soviet_ads/222.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/223.jpg" data-description="<a href='images/soviet_ads/223.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+
+	<img src="images/soviet_ads/225.jpg" data-description="<a href='images/soviet_ads/225.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/soviet_ads/226.jpg" data-description="<a href='images/soviet_ads/226.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	</div>
+	<script>
+
+// http://picasaweb.google.com/data/feed/base/user/110014055642206318907/
+// Within Temptation - The Last Dance 
+
+var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/twelve/galleria.twelve.js');
+
+
+Galleria.run('.galleria', {
+	imagePan: true,
+	width : 670,
+	height : 600
+    });
+
+	</script>
+
+				</td>
+			</tr>
+
+			
+ 
+			<tr> <!-- Modified -->
+
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					31st of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+ 
+		
+
+ 
+ 
+			
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_red" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+
+
+

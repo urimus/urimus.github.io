@@ -1,0 +1,1590 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*39;
+var imgBgSrc="images/icons/background/milla_jovovich.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+		<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_actor_jovovich_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_actor_jovovich_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_actor_jovovich_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_actor_jovovich_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_selected">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; По Актёрам <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_bautista_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_bautista_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Дейв Батиста</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_diesel_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_diesel_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Вин Дизель</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_douglas_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_douglas_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Майкл Дуглас</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_jovovich_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_jovovich_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Милла Йовович</div>
+	</td>
+	</tr>	
+	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_schwarzenegger_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_schwarzenegger_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Арнольд Шварценеггер</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_stallone_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_stallone_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Сильвестер Сталлоне</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_statham_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_statham_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Джейсон Стейтем <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_willis_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_willis_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Брюс Уиллис</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; По Жанрам</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Мультипликация</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Супергеройские</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"  
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>			
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>			
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Фильмы &blacktriangleright; Милла Йовович</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:897px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="milla_jovovich">Милла Йовович</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Биография</td>
+			</tr>			
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/milla_jovovich.jpg" alt="Милла Йовович" title="Милла Йовович" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+<P><b>Милла Йовович</b> (сербохорв. Милица Јовови&#1115;, Milica Jovovi&#263;; рус. Милла (Милица) Богдановна Йовович; англ. Milla Jovovich; 17 декабря 1975, Киев) — американская актриса русско-сербского происхождения, музыкант, модель и модельер.
+
+
+<br><br>
+<P><b>Личная жизнь и увлечения:</b>
+
+<P>В октябре-ноябре 1992 года Милла была замужем за актёром Шоном Эндрюсом.
+
+<P>В 1997—1999 года Милла была замужем за режиссёром Люком Бессоном.
+
+<P>С 22 августа 2009 года Милла замужем в третий раз за режиссёром Полом Андерсоном, с которым она встречалась 7 лет до их свадьбы. У супругов есть две дочери — Эва Габо Андерсон (род.03.11.2007) и Дашиэл Иден Йовович-Андерсон (род.01.04.2015).
+
+<P>На своём официальном сайте Йовович публикует выдержки из дневника, где рассказывает о различных событиях в своей жизни. Она выступает за легализацию марихуаны и появлялась на обложке «High Times». Милла занимается боевыми искусствами и, в частности, бразильским джиу-джитсу.
+
+<P>Милла Йовович — левша. Рост Миллы — 174 см.
+
+<P>Свободно говорит на русском, сербском и французском языках.
+
+					
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%99%D0%BE%D0%B2%D0%BE%D0%B2%D0%B8%D1%87,_%D0%9C%D0%B8%D0%BB%D0%BB%D0%B0" class = "standardb_black" target="_blank">Wikipedia Йовович, Милла</a> - <b>Милла Йовович</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+		
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="breathe">Дыши! (англ. Breathe)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/breathe.jpg" alt="Дыши! (англ. Breathe)" title="Дыши! (англ. Breathe)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P>«<b>Дыши!</b>» (англ. Breathe) — американский художественный фильм в жанре боевик-триллер режиссёра Стефона Бристола, поставленный по сценарию Дага Саймона. Главные роли в фильме исполнили Милла Йовович, Дженнифер Хадсон, Куавенжане Уоллис, Common и Сэм Уортингтон. Выход фильма в США состоялся в апреле 2024 года.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Дыши!" class = "standardb_black" target="_blank">Wikipedia Дыши!</a> - <b>Дыши! (англ. Breathe)</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=N3FbhI5OytU" class = "standardb_black" target="_blank">Дыши! (англ. Breathe)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					07е Фев, 2025.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="fith_element">Пятый элемент</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/fith_element.jpg" alt="Пятый элемент" title="Пятый элемент" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+						<P><b>«Пятый элемент»</b> (англ. The Fifth Element, фр. Le Cinquieme element) — фантастический боевик с элементами комедии, снятый французским режиссёром Люком Бессоном в 1996 году на студии «Gaumont». Выход фильма в прокат состоялся в 1997 году.
+
+						<P>В основе истории лежит философская притча о любви. Она и есть тот единственный «пятый элемент», способный соединить четыре стихии, из которых состоит Вселенная.
+
+						<P>Бюджет картины составил 90 миллионов долларов. На момент выхода это был самый высокобюджетный фильм в истории, снятый за пределами Голливуда, а также фильм с самыми дорогими спецэффектами.
+						<br><br>
+						<P><b>Награды:</b>
+						<br>	
+
+						<P>&nbsp;&bull; Премия Люмьеров (1997, Франция) за лучшую режиссёрскую работу.
+						<P>&nbsp;&bull; Приз «Золотой экран» (1997, Германия).
+						<P>&nbsp;&bull; Премия «Сезар» (1998, Франция) в номинациях «Лучшая режиссёрская работа» (Люк Бессон), «Лучшая операторская работа» (Тьерри Арбогаст), «Лучшее оформление» (Дэн Уэйл).
+						<P>&nbsp;&bull; Номинация на MTV Movie Awards (1998) в категории «Лучшая драка».
+						<P>&nbsp;&bull; Номинация на «Оскар» (1998, США) в категории «Лучший монтаж звуковых эффектов».
+						
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%8F%D1%82%D1%8B%D0%B9_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC)" class = "standardb_black" target="_blank">Wikipedia Пятый элемент (фильм)</a> - <b>Пятый элемент</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=spO4W8JzokQ" class = "standardb_black" target="_blank">Пятый элемент</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="fourth_kind">Четвёртый Вид (англ. The Fourth Kind)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/fourth_kind.jpg" alt="Четвёртый Вид (англ. The Fourth Kind)" title="Четвёртый Вид (англ. The Fourth Kind)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P>«<b>Четвёртый вид</b>» (англ. The Fourth Kind) — американский псевдодокументальный фильм. Название позаимствовано из классификации Дж. Аллена Хайнека близких контактов с инопланетными формами жизни, в которых четвёртая степень (или вид) означает похищение. Действие фильма происходит в маленьком городке Ном на Аляске и содержит отчёт о событиях 2000 года от лица психолога доктора Эбигейл Тайлер, которая невольно для себя понимает, что с её пациентами происходят странные вещи. 
+
+<br><br>
+<P><b>Интересные факты:</b>
+
+<P>&nbsp;&bull; Присвоена оценка PG-13 за сцены насилия, пугающие моменты, наличие сексуальных сцен.
+<P>&nbsp;&bull; Роль Эбигейл Тайлер в «документальных» видеовставках сыграла актриса Шарлот Милхард.
+<P>&nbsp;&bull; Согласно CNN, существовали реальные случаи исчезновения людей в Номе. ФБР было привлечено к расследованию в 2005 г.: «В 20 случаях исчезновений ФБР установило, что причинами являлись алкоголь и низкая температура. Девять тел не были найдены.»
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%82%D0%B2%D1%91%D1%80%D1%82%D1%8B%D0%B9_%D0%B2%D0%B8%D0%B4" class = "standardb_black" target="_blank">Wikipedia Четвёртый вид</a> - <b>Четвёртый Вид (англ. The Fourth Kind)</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=S3omDam7GrM" class = "standardb_black" target="_blank">Четвёртый Вид (англ. The Fourth Kind)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					17е Авг, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="future_world">Мир Будущего (англ. Future World)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/future_world.jpg" alt="Мир Будущего (англ. Future World)" title="Мир Будущего (англ. Future World)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Future World</b> is an American science fiction action western film, directed by James Franco and Bruce Thierry Chung, from a screenplay by Chung and Jay Davis. It stars James Franco, Suki Waterhouse, Jeffrey Wahlberg, Margarita Levieva, Snoop Dogg, George Lewis Jr., Cliff 'Method Man' Smith, Lucy Liu and Milla Jovovich.
+
+<P>The film was released on May 25, 2018, by Lionsgate Premiere.
+
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Future_World_(film)" class = "standardb_black" target="_blank">Wikipedia Future World (film)</a> - <b>Мир Будущего (англ. Future World)</b> на Wikipedia (англ.).
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ma7IhcgUTug" class = "standardb_black" target="_blank">Мир Будущего (англ. Future World)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					02е Июл, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="hellboy">Хеллбой (англ. Hellboy)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/hellboy.jpg" alt="Хеллбой (англ. Hellboy)" title="Хеллбой (англ. Hellboy)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P>«<b>Хеллбой</b>» (англ. Hellboy) — американский супергеройский фильм режиссёра Нила Маршалла. По сценарию Эндрю Косби, на основе комикса Майка Миньолы. В главной роли Дэвид Харбор. Фильм компании Millennium Films имеет рейтинг R. Премьера фильма в РФ состоялась 11 апреля 2019 года.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D0%BB%D0%BB%D0%B1%D0%BE%D0%B9_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2019)" class = "standardb_black" target="_blank">Wikipedia Хеллбой (фильм, 2019)</a> - <b>Хеллбой (англ. Hellboy)</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=2mrOImrL2cs" class = "standardb_black" target="_blank">Хеллбой (англ. Hellboy)</a> -  Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					20е Мар, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="monster_hunter">Охотник на Монстров (англ. Monster Hunter)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/monster_hunter.jpg" alt="Охотник на Монстров (англ. Monster Hunter)" title="Охотник на Монстров (англ. Monster Hunter)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+		
+
+<P>«<b>Охотник на монстров</b>» (англ. Monster Hunter) — американский художественный фильм в жанре фэнтезийного боевика и триллера режиссёра Пола Андерсона, поставленный по его собственному сценарию. Сюжет фильма основан на серии игр Monster Hunter от компании Capcom. Фильм продюсируется компаниями Capcom, Impact Pictures и Constantin Film. Главные роли в фильме исполняют Милла Йовович, Тони Джаа, T.I., Рон Перлман и Диего Бонета. Выход фильма в США состоялся 18 декабря 2020 года.
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%85%D0%BE%D1%82%D0%BD%D0%B8%D0%BA_%D0%BD%D0%B0_%D0%BC%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%BE%D0%B2" class = "standardb_black" target="_blank">Wikipedia Охотник на монстров</a> - <b>Охотник на Монстров (англ. Monster Hunter)</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=K3ktLCE_DWk" class = "standardb_black" target="_blank">Охотник на Монстров (англ. Monster Hunter)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					03е Июн, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="resident_evil">Обитель зла (серия фильмов)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/resident_evil.jpg" alt="Обитель зла (серия фильмов)" title="Обитель зла (серия фильмов)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+<P><b>«Обитель зла»</b> (англ. Resident Evil, яп. Biohazard) — серия фильмов Пола У. С. Андерсона, созданная на основе одноимённой серии компьютерных игр компании Capcom. Главную роль исполнила Милла Йовович.
+
+<br><br>
+<P><b>Сюжет:</b>
+
+<P>Корпорация Umbrella выступает в качестве главного антагониста в серии. По сюжету, корпорация являлась одним из крупнейших фармацевтических конгломератов, базирующихся в Европе. В результате случайного инцидента, Umbrella становится виновной в биологической катастрофе. Человечество начало гибнуть, и через несколько лет мир превратился в ад, в котором люди пожирают себе подобных. При этом, мощь корпорации не угасла, напротив она стала еще более могущественна. В условиях апокалипсиса Umbrella смогла добиться полной власти над миром, однако угроза заражения вынудила сотрудников корпорации укрыться в подземных комплексах, где они продолжили эксперименты с биооружием. Только один человек мог положить конец власти корпорации — девушка по имени Элис. В ходе сражения с корпорацией, Элис в конце концов встречается с главным антагонистом, председателем корпорации Umbrella Альбертом Вескером. В итоге Вескер теряет власть в корпорации. Его место занял враждебный искусственный интеллект, который стал вынашивать планы по уничтожению остатков человечества...Теперь Элис и Альберту Вескеру пришлось забыть о вражде и объединиться против искусственного интеллекта ради спасения мира от полной гибели.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D0%B8%D1%82%D0%B5%D0%BB%D1%8C_%D0%B7%D0%BB%D0%B0_%28%D1%81%D0%B5%D1%80%D0%B8%D1%8F_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%BE%D0%B2%29" class = "standardb_black" target="_blank">Wikipedia Обитель зла (серия фильмов)</a> - <b>Обитель зла (серия фильмов)</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=o3ewAW0Ne94" class = "standardb_black" target="_blank">Resident Evil All Trailers 1 2 3 4 5</a> - Официальные трейлеры (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="ultraviolet">Ультрафиолет</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/ultraviolet.jpg" alt="Ультрафиолет" title="Ультрафиолет" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+<P><b>«Ультрафиолет»</b> (англ. Ultraviolet) — фантастический боевик режиссёра «Эквилибриума» — Курта Уиммера.
+
+<br><br>
+<P><b>Сюжет:</b>
+
+<P>Мир определен аварией биотехнологической лаборатории, в которой пытались создать сверхсолдат. В результате часть населения Земли заразилась вирусом и мутировала в гемофагов с вампирскими клыками. Таинственный вирус, воздействующий на ДНК, породил расу сверхлюдей-гемофагов, которые сильнее, быстрее и умнее простых смертных. Люди начали войну против гемофагов, и тем пришлось уйти в подполье. Одним из лучших воинов этого подполья стала Вайолет (Милла Йовович). Именно ей было поручено выкрасть созданное людьми оружие против мутантов. Пользуясь своими сверхспособностями, она в одиночку на мотоцикле атакует центр, где спрятано сверхоружие, способное уничтожить гемофагов. Однако в контейнере оказывается 9-летний мальчик «Шестой» — клон вице-кардинала Фердинанда Даксуса (правителя мира) и носитель опасного для гемофагов вируса. Вайолет доставляет мальчика на базу, но, в порыве сентиментальности, препятствует его убийству братьями по оружию.
+
+<P>Отныне она начинает собственную игру, планируя создать вакцину, которая вернула бы её в мир людей. Теперь за ней охотятся как сторонники вице-кардинала, так и вчерашние товарищи-гемофаги. Тем временем оказывается, что новый лидер гемофагов вступает в тайный сговор с вице-кардиналом, который в свою очередь сам оказывается тайным гемофагом. В лаборатории верных ей людей Вайолет узнает, что мальчик не представляет опасности для гемофагов, однако для людей вице-кардинала он обладает загадочной ценностью. Вайолет узнает, что вице-кардинал мечтает повысить своё благосостояние за счет новой эпидемии, антидот от которой он продаст за большие деньги. Мальчик — ключ к этим коварным замыслам. Спасая мальчика и уничтожая Даксуса, Вайолет неожиданно становится спасительницей человечества.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A3%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BE%D0%BB%D0%B5%D1%82_%28%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%29" class = "standardb_black" target="_blank">Wikipedia Ультрафиолет (фильм)</a> - <b>Ультрафиолет</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=lpw5hVAQkgA" class = "standardb_black" target="_blank">Ультрафиолет</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

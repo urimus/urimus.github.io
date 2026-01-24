@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Domuspagina</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#84bde4";
+	var scrollBackColor="#d0e7f7";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:2px 4px;
+	color:#448CCB; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+
+var menuHeight=23*10;
+var imgBgSrc="images/icons/background/work.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'lat');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Ego" title="Ego"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#d0e7f7"> 
+		<td  bgcolor="#d0e7f7" width="100%">
+		<div class="nimetus2_blue"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Domuspagina&nbsp;&#9734;</font></div>
+		</td>
+	
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('about_work_lat.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='about_work_lat.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="latina"
+			id="flag_lat"
+		>
+			<img src="lang/lat.gif" height="17" alt="latina" style="display: block;"/>
+		</div>
+	</td>
+		
+		
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('about_work_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='about_work_eng.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('about_work_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='about_work_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+	<td bgcolor="#d0e7f7" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_blue">Menu</td>
+	</tr>
+	<tr>
+		<td height="3px" bgcolor="#ff8a00"></td>
+	</tr>  
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'lat', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Pagina Tabula</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Circa Mihi</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_lat.html';
+			};"
+		class="menu_selected">
+		Circa Opus Meum</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Circa Mei PhD</div>
+	</td>
+	</tr>
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Relatio</div>
+	</td>
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photo/Imaginibus</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'lat', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_lat.html';
+			};"
+		class="menu_not_selected_black">
+		Quisquiliae</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'lat', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Res <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Nuntium</div>
+	</td>
+	</tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#d0e7f7" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#d0e7f7" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td class="title_blue" style="width: 530px;"><a name="welcome">Circa Opus Meum</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+</table>
+
+
+<!-- For scroll inside div 550 -->
+<div id="scrollDiv" style="height:230px;overflow:auto;">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
+
+	<tr align="center" >
+		<td style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_blue"><a name="aboutwork">Circa Opus Meum</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_blue" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/different/budu_metallistom.jpg" alt="Metalworker" title="Metalworker" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+<P>Otiosus.
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Relatio:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.fp7-diamond.eu/" class = "standardb_blue" target="_blank">DIAMOND</a> - Project's Description.			
+			</td>
+			</tr>	
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+				<a href="https%3A%2F%2Fagra.informatik.uni-bremen.de%2Fs_forensic.php%3Flang%3Den" class = "standardb_blue" target="_blank">FORENSIC</a> Release page.
+			</td>
+			</tr>			
+
+			
+		
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_blue" style="padding-left:10px; padding-right:10px;">
+					02 Apr, 2014.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_blue" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>

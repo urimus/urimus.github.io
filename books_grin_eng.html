@@ -1,0 +1,1210 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#de8e8e";
+	var scrollBackColor="#F9D4D4";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#CE3535; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*35;
+var imgBgSrc="images/icons/background/book.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#F9D4D4"> 
+		<td  bgcolor="#F9D4D4" width="100%">
+		<div class="nimetus2_red"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_grin_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_grin_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_grin_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_grin_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#F9D4D4" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_red">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_selected">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'books');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; USSR</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_bulychev_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_bulychev_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Kir Bulychev</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_grin_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_grin_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Alexander Grin</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_kazancev_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_kazancev_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Alexander Kazantsev</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_pavlov_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_pavlov_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Sergey Pavlov</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_yefremov_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_yefremov_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Ivan Yefremov</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; United Kingdom</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; United States of America</div>
+	</td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+			<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#F9D4D4" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_red" style="width: 530px;"><a name="welcome">Books &blacktriangleright; USSR &blacktriangleright; Alexander Grin (rus. Александр Грин)</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:805px;overflow:auto;">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #de8e8e 1px solid;  background-color: #F9D4D4;">
+
+		
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_red"><a name="movies">Alexander Grin (rus. Александр Грин)</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_red">Biography</td>
+			</tr>			
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/aleksandr_grin.jpg" alt="Alexander Grin (rus. Александр Грин)" title="Alexander Grin (rus. Александр Грин)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Aleksandr Stepanovich Grinevsky</b> (better known by his pen name, <b>Aleksandr Grin</b>, Russian: Александр Грин, August 23, 1880 – July 8, 1932) was a Russian writer, notable for his romantic novels and short stories, mostly set in an unnamed fantasy land with a European or Latin American flavor (Grin's fans often refer to this land as Grinlandia). Most of his writings deal with sea, adventures, and love.
+
+
+<br><br>
+<P><b>Works:</b>
+
+<P>Most of Alexander Grin's writings bear no direct relation to the reality of Imperial and Soviet Russia that he lived in. The setting of most of his novels and short stories is an unnamed land by the sea, apparently far from Europe but with all characters being Western European in name and appearance. Even his literary pseudonym (Grin) is a de-Russified form of his real last name (Grinevsky).
+
+<P>Described by some critics as "adolescent fiction", Grin's works in fact have a universal appeal. Like the authors of fantasy of the second half of 20th century, Grin deals with human desires and emotions in their most pure form. His world is not a fairy tale; it has many things in common with the reality of the early 20th century (such as automobiles and banks), but it's always more romantic and "childish" in its general feel. Populated by sea captains, sailors, scientists, travelers, criminals, extravagant aristocrats, childlike girls, elegant villains, and strong-spirited heroes who always stay true to their dreams, Grin's world (often referred to as Grinlandia by Grin's fans) is one of the most attractive and "livable" fantasy worlds in literature. Some of his novels contain an element of magic - not as an established part of his world, but always as a miracle that changes the lives of those who encounter it.
+
+<br><br>
+<P><b>Bibliography:</b>
+
+<P>The most notable of his novels include:
+
+<P>&nbsp;&bull; <a href="#alye_parusa" class = "standardb_red" target="_blank">Scarlet Sails</a> (Алые паруса, 1923), a simple but powerful love story, perhaps the most famous of Grin's works. It was made into a 1961 film, when during the Khrushchev Thaw, Grin's works enjoyed a revival of popularity.
+<P>&nbsp;&bull; The Shining World (Блистающий мир, 1923)
+<P>&nbsp;&bull; The Golden Chain (Золотая цепь, 1925)
+<P>&nbsp;&bull; <a href="#begushaja_po_volnam" class = "standardb_red" target="_blank">She Who Runs on the Waves</a> (Бегущая по волнам, 1928)
+<P>&nbsp;&bull; Jessie and Morgiana (1929, Wikisource: Джесси и Моргиана). It was made into a Czechoslovak film Morgiana in 1972.
+<P>&nbsp;&bull; The Road to Nowhere (Дорога никуда, 1930)
+
+<br><br>
+<P><b>Books:</b>
+
+<P>&nbsp;&bull; Selected Short Stories. Translated by Nicholas Luker. 184 pp. Ann Arbor, Mich.: Ardis Publishers.
+
+					
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Alexander_Grin" class = "standardb_red" target="_blank">Wikipedia Alexander Grin</a> - <b>Alexander Grin (rus. Александр Грин)</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					25th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+		
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_red"><a name="alye_parusa">Scarlet Sails (rus. Алые Паруса)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/alye_parusa.jpg" alt="Scarlet Sails (rus. Алые Паруса)" title="Scarlet Sails (rus. Алые Паруса)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>«Алые паруса»</b> — повесть-феерия Александра Грина о непоколебимой вере и всепобеждающей, возвышенной мечте, о том, что каждый может сделать для близкого чудо. Написана в 1916—1922 годах.
+
+<br><br>
+<P><b>История создания:</b>
+
+<P>Первые заметки, относящиеся к «Алым парусам», Александр Грин начал делать в 1916 году. В черновиках к роману «<a href="#begushaja_po_volnam" class = "standardb_red" target="_blank">Бегущая по волнам</a>» (1925) автор так описал первое появление замысла повести:
+
+<P><i>У меня есть «Алые паруса» — повесть о капитане и девочке. Я разузнал, как это происходило, совершенно случайно: я остановился у витрины с игрушками и увидел лодочку с острым парусом из белого шёлка. Эта игрушка мне что-то сказала, но я не знал — что, тогда я прикинул, не скажет ли больше парус красного, а лучше того — алого цвета, потому что в алом есть яркое ликование. Ликование означает знание, почему радуешься. И вот, развёртывая из этого, беря волны и корабль с алыми парусами, я увидел цель его бытия.</i>
+
+<br><br>
+<P>Предварительная работа над «Алыми парусами» была закончена в начале декабря 1920 го­да. В дальнейшем автор неоднократно вносил в рукопись правки. Белового авто­графа повести не сохранилось.
+
+<P>Глава «Грэй» была напечатана в газете «Вечерний телеграф», № 1 от 8 мая 1922 года. Целиком, в виде отдельной книги, феерия была опубликована в 1923 году. Писатель посвятил её своей второй жене Нине («Нине Николаевне Грин подносит и посвящает Автор. ПБГ, 23 ноября 1922 г.»). Повесть включалась во все собрания сочинений писателя.
+					
+
+<br><br>
+<P><b>Экранизации:</b>
+
+<P>&nbsp;&bull; «Алые паруса» (1961), реж. Александр Птушко.
+<P>&nbsp;&bull; «Ассоль» (1982), экспериментальная работа режиссёра Бориса Степанцева, которая построена на видеосовмещении актёра с рисованной декорацией.
+<P>&nbsp;&bull; «Правдивая история об Алых парусах» (2010), реж. Александр Стеколенко.
+			
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%8B%D0%B5_%D0%BF%D0%B0%D1%80%D1%83%D1%81%D0%B0" class = "standardb_red" target="_blank">Wikipedia Алые паруса</a> - Scarlet Sails (rus. Алые Паруса) on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					25th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+	
+		
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_red"><a name="begushaja_po_volnam">She Who Runs on the Waves (rus. Бегущая по Волнам)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/begushaja_po_volnam.jpg" alt="She Who Runs on the Waves (rus. Бегущая по Волнам)" title="She Who Runs on the Waves (rus. Бегущая по Волнам)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+					
+<P><b>«Бегущая по волнам»</b> — роман Александра Грина 1928 года, одно из последних крупных произведений писателя. Написан в романтическом жанре — это роман о Несбывшемся; современные критики отнесли бы книгу к жанру фэнтези.
+
+<br><br>
+<P><b>Экранизации:</b>
+
+<P>&nbsp;&bull; 1967 — Бегущая по волнам — по мотивам романа
+<P>&nbsp;&bull; 1983 — Человек из страны Грин (телеспектакль) — по мотивам романов «Бегущая по волнам», «Дорога никуда»
+<P>&nbsp;&bull; 2007 — Бегущая по волнам — по мотивам романов «Бегущая по волнам», «Дорога никуда», «Золотая цепь» и других произведений писателя
+
+<br><br>
+<P><b>Дополнительная информация:</b>
+
+<P>В 2013 году роман был включён в список «100 книг», рекомендованных школьникам Министерством образования и науки РФ для самостоятельного чтения.
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%B3%D1%83%D1%89%D0%B0%D1%8F_%D0%BF%D0%BE_%D0%B2%D0%BE%D0%BB%D0%BD%D0%B0%D0%BC" class = "standardb_red" target="_blank">Wikipedia Бегущая по волнам</a> - She Who Runs on the Waves (rus. Бегущая по Волнам) on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					25th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_red" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

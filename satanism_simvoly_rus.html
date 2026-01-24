@@ -1,0 +1,1069 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/satan_symbols.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_simvoly_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_simvoly_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_simvoly_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_simvoly_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_green">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>   
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>	
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"  
+		class="menu_selected">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>	
+	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_19_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_atheistic_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_atheistic_rus.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10008; Атеистический</div>
+	</td>
+	</tr>   
+
+
+	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_19_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_theistic_rus.html');
+
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_theistic_rus.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10004; Теистический</div>
+	</td>
+	</tr>   
+
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_19_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_simvoly_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_simvoly_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Символика</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Сатанизм &blacktriangleright; Символика</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">Оккультные и мистические символы и их значение — Дмитрий Лео</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="kabbalistic_tetragram">1. Каббалистическая Тетраграмма</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/geksagramma.png" alt="Каббалистическая тетраграмма" title="Каббалистическая тетраграмма" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Каббалистическая тетраграмма (гексаграмма) или масонская «Соломонова печать» посему и изображает дьявола тоже равносторонний треугольником, равным первому, но только обращенным вершиною вниз, а не вверх, обозначая тем самым полную противоположность сатаны — Богу. Используется для вызова злых духов в центр начерченного на земле шестиугольника.
+					
+
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="church_of_satan">2. Церковь Сатаны</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/cerkov_satany.jpg" alt="Церковь сатаны" title="Церковь сатаны" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Это символ Церкви сатаны в Сан-Франциско. Он также находиться в «Сатанинской Библии» под «Девятью сатанинскими заповедями». Этот символ всегда говорит о вовлечении в сатанизм.
+					
+				</td>
+			</tr>
+
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="cross_of_disorder">3. Крест Беспорядка</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/krest_besporjadka.png" alt="Крест беспорядка" title="Крест беспорядка" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Этот символ впервые был использован римлянами, которые оспаривали истинность христианства. Символ, означающий отрицание христианских ценностей и Божественной сущности Христа.
+					
+				</td>
+			</tr>		
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="pentagram">4. Пентаграмма/Пентакль</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/pentakl.png" alt="Пентаграмма/Пентакль" title="Пентаграмма/Пентакль" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Пятиконечная звезда это важнейший символ в магии. Обычно он используется ведьмами и колдунами (WICCA), для «Белой Магии». У каббалистов она становится символом могущества, всемогущества и самодержавства Разума. Этот символ любят использовать музыкальные рок группы.
+					
+				</td>
+			</tr>		
+			
+
+
+
+
+		
+		
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="inverted_pentagram">5. Перевёрнутая Пентаграмма/Пентакль</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/pentagram.jpg" alt="Перевёрнутая Пентаграмма/Пентакль" title="Перевёрнутая Пентаграмма/Пентакль" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Перевёрнутая Пентаграмма/Пентакль, образующая голову козла. Она находится на обложке «Сатанинской Библии». Это достаточно серьезный символ и почти всегда свидетельствует о вовлечении в сатанизм.
+					
+				</td>
+			</tr>   
+			
+						
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="eye_of_horus">6. Глаз Гора</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/glaz_gora.png" alt="Глаз Гора" title="Глаз Гора" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Глаз Гора — всевидящее око. Один из немногих символов, относящихся к Люциферу (как его еще называют последователи - королю ада). Что изображено на рисунке? Ниже глаза стекающая слеза, потому что он оплакивает тех, за пределами его влияния. Помимо изображения одного глаза существует амулет глаз гора с руками, держащими бант жизни либо жезл в форме папируса.
+					
+				</td>
+			</tr>			
+			
+
+
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="ankh">7. Анкх</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/anch.png" alt="Анкх" title="Анкх" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						В качестве символа неиссякаемой жизненной силы знак анкх наносился на стены храмов, на памятники и утварь. Анх, коптский крест — символ, ведущий своё происхождение из древнего Египта. Его использовали, как амулет, продлевающий жизнь. Знак применяли при захоронении умерших, поскольку верили, что мертвых ожидает продолжение жизни, только в ином мире. Е.П. Блаватская в книге «Тайная доктрина» описала символ анкх, как знак клятвы, жизни и завета. Боги и фараоны на изображениях нередко держали анкх в своей руке или передавали его людям.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="anarchy">8. Анархия</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/anarchija.png" alt="Анархия" title="Анархия" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Символизирует отрицание всех законов. Первоначально символ «панк-рока», но теперь он используется также и в сатанизме. Это изображение можно увидеть на стенах почти в каждом городе.
+					
+				</td>
+			</tr>
+						
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="aquarian_star">9. Aquarian Star - Звезда Водолея</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/zvezda_vodoleja.png" alt="Aquarian Star - Звезда Водолея" title="Aquarian Star - Звезда Водолея" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						<!-- Sars on 45 Medley -->
+						Символ Звезда Водолея (Универсальная Гексограмма) — герб Хранителей Знаний, символ величайшей магии и силы. Символ представляется в форме шестиконечной звезды, в некоторых случаях окружённое двумя кругами.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="triskele">10. Triskele (Трисили)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/triskele.png" alt="Triskele (Трисили)" title="Triskele (Трисили)" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Этот символ - кельтская версия Китайского символа Инь-Ян (ТАО). Считалось, что это символ "кельтской богини" который показывал три ее лица.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="yin_yang">11. TAO (Инь и Янь)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/in_jan.png" alt="TAO (Инь и Ян)" title="TAO (Инь и Ян)" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Древний китайский символ использовался первоначально для представления полярности, холизма и магии. Китайский символ ТАО: Инь и Янь являются двумя противоположностями, которые присутствуют во всех существах, веществах, феноменах природы.
+					
+				</td>
+			</tr>
+		
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="satanic_salute">12. Сатанинское Приветствие</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/privetstvie.jpg" alt="Сатанинское приветствие" title="Сатанинское приветствие" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Рука со свернутыми пальцами в виде рогов козла: Знак приветствия среди сатанистов известен, как «сатанинское приветствие». Молодые люди, таким образом, поднимают руки во время рок концертов. Формирует голову козла, общий символ сатанизма. Он находиться на обратной стороне «Сатанинской Библии».
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.imbf.org/interesnye-stati/okkultnye-misticheskie-simvoly.html" class = "standardb_green" target="_blank">Оккультные и мистические символы и их значение — Дмитрий Лео</a> в интернете.
+			</td>
+			</tr>
+
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					15е Мая, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+				
+		
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+
+

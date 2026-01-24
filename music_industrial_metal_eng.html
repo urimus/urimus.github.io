@@ -1,0 +1,1541 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*42;
+var imgBgSrc="images/icons/background/industrial.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_industrial_metal_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_industrial_metal_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_industrial_metal_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_industrial_metal_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>   
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_selected">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_chanson_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_chanson_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Chanson <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_7_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_country_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_country_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Country <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_disco_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_disco_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Disco</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Electronic</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Industrial</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_6_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_industrial_electro_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_industrial_electro_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Electro-</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_6_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_industrial_metal_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_industrial_metal_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Metal</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_6_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_industrial_rock_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_industrial_rock_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Rock</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Metal <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_pop_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_pop_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Pop</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Psychedelic</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'"
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rap_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rap_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Rap <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_reggae_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_reggae_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Reggae</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'"
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rock_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rock_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Rock <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+
+
+
+
+		
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>   
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>   
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>   
+	
+	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Music &blacktriangleright; Industrial &blacktriangleright; Metal</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:966px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+		
+	<tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="industrial">Industrial Music</a></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/industrial.jpg" alt="Industrial Music" title="Industrial Music" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Industrial music</b> is a genre of experimental/electronic music that draws on transgressive and provocative themes. The term was coined in the mid-1970s with the founding of Industrial Records by Genesis P-Orridge of Throbbing Gristle and Monte Cazazza; on Throbbing Gristle's debut album The Second Annual Report, they coined the slogan "industrial music for industrial people". In general, the style is harsh and challenging. AllMusic defines industrial as the "most abrasive and aggressive fusion of rock and electronic music"; "initially a blend of avant-garde electronics experiments (tape music, musique concr&egrave; te, white noise, synthesizers, sequencers, etc.) and punk provocation".
+
+<P>The first industrial artists experimented with noise and aesthetically controversial topics, musically and visually, such as fascism, serial killers and the occult. Their production was not limited to music, but included mail art, performance art, installation pieces and other art forms. Prominent industrial musicians include Throbbing Gristle, Monte Cazazza, SPK, Boyd Rice, Cabaret Voltaire, and Z'EV. The precursors that influenced the development of the genre included acts such as electronic group Kraftwerk, experimental rock acts such as The Velvet Underground and Frank Zappa, psychedelic rock artists such as Jimi Hendrix, and composers such as John Cage. Musicians also cite writers such as William S. Burroughs, and philosophers such as Friedrich Nietzsche as influences.
+
+<P>While the term was self-applied by a small coterie of groups and individuals associated with Industrial Records in the 1970s, it was broadened to include artists influenced by the original movement or using an "industrial" aesthetic. These artists expanded the genre by pushing it into noisier and more electronic directions. Over time, its influence spread into and blended with styles including ambient and rock, all of which now fall under the post-industrial music label. Electro-industrial music is a primary subgenre that developed in the 1980s. The two other most notable hybrid genres are industrial rock and industrial metal, which include bands such as Nine Inch Nails and Ministry, both of which released platinum-selling albums in the 1990s. These three distinct genres are often referred to as simply industrial.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Industrial_music" class = "standardb_black" target="_blank">Wikipedia Industrial Music</a> - <b>Industrial Music</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					28th of Jun, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+		
+	<tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="industrial_metal">Industrial Metal</a></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/industrial_metal.jpg" alt="Industrial Metal" title="Industrial Metal" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Industrial metal</b> is a musical genre that draws from industrial dance music, thrash metal and hardcore punk, using repeating metal guitar riffs, sampling, synthesizer or sequencer lines, and distorted vocals. Founding industrial metal acts include Ministry, Godflesh, and KMFDM.
+
+<P><b>Industrial metal</b> developed in the late 1980s, as industrial and heavy metal began to fuse into a common genre. In the early years of the 21st century, groups from the black metal scene began to incorporate elements of industrial music. Industrial metal did well in the early 1990s, particularly in North America, with the success of groups such as Nine Inch Nails. The industrial metal movement began to fade in the latter half of the 1990s.
+
+<br><br>
+
+<P><b>Commercial rise:</b>
+
+<P><b>Industrial metal</b> blossomed in the early 1990s, particularly in North America, where it would eventually sell close to 35 million units. It first became a commercial force in 1992 when Nine Inch Nails' Broken and Ministry's Psalm 69 went platinum in America, though the latter took three years to reach that status. Both groups were nominated for the Best Metal Performance in the 1992 Grammy Awards, with Nine Inch Nails winning. Two years later, Nine Inch Nails released The Downward Spiral, which debuted at No. 2, and would eventually go quadruple-platinum. This record is considered by Allmusic as "one of the bleakest multi-platinum albums ever."
+<br><br>
+<P><i>Overall, popular heavy rock music has changed to become more "industrialized". This robbed the industrial hardcore movement of any hopes of establishing a new identity of its own. The style is dead (or at least dying); the elements of the style continue on in new musical settings.</i>
+<P><i>– David A. Locher, Professor of Sociology, Missouri State University, 1998</i>
+
+<br><br>
+<P>Following Nine Inch Nails' success, Marilyn Manson, led by a prot&eacute;g&eacute; of Reznor's, came to prominence. The group's live performance and its transgressive appeal was often more commented on than their music.
+
+<P><b>Industrial metal</b> reached its commercial zenith in the latter half of the 1990s – according to the RIAA databases, its top-selling artists sold around 17.5 million units combined. Records by major industrial metal artists routinely debuted on the top spots of the Billboard 200 chart: Fear Factory's Obsolete (No. 1), Rob Zombie's Hellbilly Deluxe (No. 5),[64] Marilyn Manson's Antichrist Superstar (No. 3), and Nine Inch Nails' The Fragile (No. 1). A number of industrial metal albums performed well on Billboard's Heatseekers chart: Filter's Short Bus (No. 3), Stabbing Westward's Wither Blister Burn + Peel (No. 1), Rammstein's Sehnsucht (No. 2), Orgy's Candyass (No. 1), and Static-X's Wisconsin Death Trip (No. 1).
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Industrial_metal" class = "standardb_black" target="_blank">Wikipedia Industrial Metal</a> - <b>Industrial Metal</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					29th of Jun, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="gothminister">Gothminister</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+				<img src="images/icons/music/gothminister.jpg" alt="Gothminister" title="Gothminister" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+								<P><b>Gothminister</b> is an industrial metal band from Norway. Formed in 1999, they have released five albums and have had success in Germany, playing many German music festivals, including Wave-Gotik-Treffen (WGT), the Dark Storm Festival, the M'era Luna Festival, and performing for over 10,000 people at the Schattenreich Festival.
+
+<br><br>
+<P><b>Discography, Albums:</b>
+
+<P>&nbsp;&bull; 2003: Gothic Electronic Anthems
+<P>&nbsp;&bull; 2005: Empire of Dark Salvation
+<P>&nbsp;&bull; 2008: Happiness in Darkness
+<P>&nbsp;&bull; 2011: Anima Inferna
+<P>&nbsp;&bull; 2013: Utopia - (#85 Norway, #96 Germany)
+<P>&nbsp;&bull; 2016: Tba 6th Studio Album
+
+
+				
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Gothminister" class = "standardb_black" target="_blank">Wikipedia Gothminister</a> - <b>Gothminister</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://www.gothminister.com/" class = "standardb_black" target="_blank">Gothminister</a> - Official Website.
+			</td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Recommend:
+				</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<div class="text_black"><b>Gothminister - Beauty After Midnight.</b> <a href='https://www.youtube.com/watch?v=As0sy6JuSCY' class = 'standardb_black' target='_blank'>Youtube</a> Ссылка.</div>
+			<iframe width="640" height="480" src="https://www.youtube.com/embed/As0sy6JuSCY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+			<div  class="text_black">About <a href="countries_ussr_communism_eng.html" class = "standardb_black" target="_blank">USSR</a>.</div>
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					29th of Jun, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+	
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="static_x">Static-X</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+				<img src="images/icons/music/static_x.jpg" alt="Static-X" title="Static-X" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px; padding-top:10px;">
+							
+
+<P style="padding-top:10px;"> <b>Static-X</b> was an American heavy metal band from Los Angeles, California formed in 1994. The line-up fluctuated over the years, but always held constant with band founder, frontman, vocalist, and guitarist Wayne Static. The band rose to fame with their 1999 debut album Wisconsin Death Trip where the band's heavy industrial metal sound found attention within the burgeoning nu metal movement of the late 1990s, with the album eventually going platinum in the United States. The band released five more albums over the course of the next decade: Machine in 2001, Shadow Zone in 2003, Start a War in 2005, Cannibal in 2007, and Cult of Static 2009.
+
+<P>Shortly after their last album's release, the band entered a hiatus while Static worked on his solo album, Pighammer, in 2011. Static briefly reformed Static-X in 2012, using only members of his solo album's touring band, before officially breaking up in June 2013. On November 1, 2014, Wayne Static died at the age of 48.
+
+<br><br>
+<P><b>Band members:</b>
+<br><br>
+<P><b>Final lineup:</b>
+<P>&nbsp;&bull; Wayne Static – lead vocals, rhythm guitar, keyboards, music programming (1994–2010, 2012–2013)
+<P>&nbsp;&bull; Ashes – lead guitar (2012–2013)
+<P>&nbsp;&bull; Andy Cole – bass (2012–2013)
+<P>&nbsp;&bull; Sean Davidson – drums, percussion (2012–2013)
+<br><br>
+<P><b>Former members:</b>
+<P>&nbsp;&bull; Tony Campos – bass, backing vocals (1994–2010)
+<P>&nbsp;&bull; Koichi Fukuda – lead guitars, programming (1994–2000, 2005–2010)
+<P>&nbsp;&bull; Ken Jay – drums, percussion (1994–2002)
+<P>&nbsp;&bull; Tripp Eisen – lead guitars (2001–2005)
+<P>&nbsp;&bull; Nick Oshiro – drums, percussion (2003–2009)
+
+
+
+<br><br>
+<P><b>Discography, Studio albums:</b>
+
+<P>&nbsp;&bull; Wisconsin Death Trip (1999)
+<P>&nbsp;&bull; Machine (2001)
+<P>&nbsp;&bull; Shadow Zone (2003)
+<P>&nbsp;&bull; Start a War (2005)
+<P>&nbsp;&bull; Cannibal (2007)
+<P>&nbsp;&bull; Cult of Static (2009)
+
+
+				
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Static-X"  class = "standardb_black" target="_blank">Wikipedia Static-X</a> - <b>Static-X</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://www.facebook.com/staticx" class = "standardb_black" target="_blank">Facebook Static-X</a> - <b>Static-X</b> on Facebook.
+			</td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Recommend:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+	<div class="galleria">
+	<a href="https://www.youtube.com/watch?v=GNohq2JJMQY"><img src="images/icons/playlists/static_x1.jpg" data-title="Static-X - Cold"   data-description="About Crosses.<br><a href='https://www.youtube.com/watch?v=GNohq2JJMQY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Aug, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=jdovs_5kyGA"><img src="images/icons/playlists/static_x2.jpg" data-title="Static-X - Deliver Me"   data-description="About Universities and about <a href='music_industrial_metal_eng.html' class = 'smallb_black' target='_blank'>Industrial Metal</a>.<br><a href='https://www.youtube.com/watch?v=jdovs_5kyGA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Aug, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=PbY5gGjLpvs"><img src="images/icons/playlists/static_x3.jpg" data-title="Static-X - I am"   data-description="Parody on Band <a href='music_punk_rock_eng.html#green_day' class = 'smallb_black' target='_blank'>Green Day</a>.<br><a href='https://www.youtube.com/watch?v=PbY5gGjLpvs' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Aug, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=Ps0MfBG5-Uo"><img src="images/icons/playlists/static_x4.jpg" data-title="Static-X - Push It"   data-description="About Beautiful Girls.<br><a href='https://www.youtube.com/watch?v=Ps0MfBG5-Uo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>05th of Sep, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=vMCbJB4yNXo"><img src="images/icons/playlists/static_x5.jpg" data-title="Static-X - The Only"   data-description="About <a href='psychology_true_eng.html' class = 'smallb_black' target='_blank'>Psychology</a>.<br><a href='https://www.youtube.com/watch?v=vMCbJB4yNXo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>05th of Sep, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=nqiVvOXotyw"><img src="images/icons/playlists/static_x6.jpg" data-title="Static-X - I'm with Stupid"   data-description="About Smart People.<br><a href='https://www.youtube.com/watch?v=nqiVvOXotyw' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>05th of Sep, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=cX2v6b91XgM"><img src="images/icons/playlists/static_x7.jpg" data-title="Static-X - Burn to Burn"   data-description="About Band <a href='music_disco_eng.html#abba' class = 'smallb_black' target='_blank'>Abba</a>.<br><a href='https://www.youtube.com/watch?v=cX2v6b91XgM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>05th of Sep, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=hMsLcdrYPJo"><img src="images/icons/playlists/static_x7.jpg" data-title="Static-X - Structural Defect"   data-description="About Movies.<br><a href='https://www.youtube.com/watch?v=hMsLcdrYPJo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Sep, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=SSWeHANA-60"><img src="images/icons/playlists/static_x2.jpg" data-title="Static-X - So Real"   data-description="About <a href='music_punk_rock_eng.html' class = 'smallb_black' target='_blank'>Punks</a>.<br><a href='https://www.youtube.com/watch?v=SSWeHANA-60' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>06th of Sep, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=djmAg7hBHVM"><img src="images/icons/playlists/static_x8.jpg" data-title="Static-X - Skinned"   data-description="About <a href='about_phd_eng.html' class = 'smallb_black' target='_blank'>PhD</a>.<br><a href='https://www.youtube.com/watch?v=djmAg7hBHVM' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Sep, 2016."></a>
+
+	<a href="https://www.youtube.com/watch?v=86aEZHG631o"><img src="images/icons/playlists/static_x2.jpg" data-title="Static-X - Crash"   data-description="About Unfinished University.<br><a href='https://www.youtube.com/watch?v=86aEZHG631o' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>17th of Oct, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=F6l9R-QmfEo"><img src="images/icons/playlists/static_x9.jpg" data-title="Static-X – Start A War"   data-description="About Germany.<br><a href='https://www.youtube.com/watch?v=F6l9R-QmfEo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>20th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=zoXk1Nz-pI0"><img src="images/icons/playlists/static_x8.jpg" data-title="Static-X – Looks That Kill"   data-description="About Pedofiles.<br><a href='https://www.youtube.com/watch?v=zoXk1Nz-pI0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>20th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=QltvOI9Z4O4"><img src="images/icons/playlists/static_x2.jpg" data-title="Static-X - Head"   data-description="And Also <a href='https://www.youtube.com/watch?v=gj4u1yJMAf4' class = 'smallb_black' target='_blank'>Gimme Gimme Shock Treatment</a> - About Students.<br><a href='https://www.youtube.com/watch?v=QltvOI9Z4O4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>20th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=uLFiEEFSnXo"><img src="images/icons/playlists/static_x11.jpg" data-title="Static-X – Love Dump"   data-description="About <a href='https://www.youtube.com/watch?v=6Jppef-3wXI' class = 'smallb_black' target='_blank'>Cowboys (Youtube)</a> and About Song <a href='music_rap_eng.html#malchishnik' class = 'smallb_black' target='_blank'>Malchishnik (rus. Мальчишник)</a> - <a href='https://www.youtube.com/watch?v=-s4y3x-njHw' class = 'smallb_black' target='_blank'>Бабы и Бабло</a>.<br><a href='https://www.youtube.com/watch?v=uLFiEEFSnXo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>20th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=bfP1o3WJWEE"><img src="images/icons/playlists/static_x10.jpg" data-title="Static-X – Destroy All"   data-description="About <a href='satanism_theistic_eng.html' class = 'smallb_black' target='_blank'>Satanic</a> Dictature.<br><a href='https://www.youtube.com/watch?v=bfP1o3WJWEE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>20th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=Fp9Y_NZfamo"><img src="images/icons/playlists/static_x3.jpg" data-title="Static-X – The Trance Is The Motion"   data-description="And Also <a href='https://www.youtube.com/watch?v=w-WuNcx9pc0' class = 'smallb_black' target='_blank'>I Want To Fucking Break It</a> - About <a href='' class = 'smallb_black' target='_blank'>Industrial Metal</a>.<br><a href='https://www.youtube.com/watch?v=Fp9Y_NZfamo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>20th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=0lF_PJNXW8U"><img src="images/icons/playlists/static_x10.jpg" data-title="Static-X – Otsegolectric"   data-description=", <a href='https://www.youtube.com/watch?v=RlIyAm7Kn-8' class = 'smallb_black' target='_blank'>Down</a> - About Transvestites.<br><a href='https://www.youtube.com/watch?v=0lF_PJNXW8U' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>26th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=53rR_QYS8-U"><img src="images/icons/playlists/static_x2.jpg" data-title="Static-X - Behind The Wall of Sleep"   data-description="About Book <a href='books_london_eng.html' class = 'smallb_black' target='_blank'>Jack London</a> - <a href='books_london_eng.html#martin_eden' class = 'smallb_black' target='_blank'>Martin Eden</a>.<br><a href='https://www.youtube.com/watch?v=53rR_QYS8-U' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Mar, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=yNBB1NGlkjU"><img src="images/icons/playlists/static_x8.jpg" data-title="Static-X - Tera-Fied"   data-description="About Great Britain.<br><a href='https://www.youtube.com/watch?v=yNBB1NGlkjU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>09th of Mar, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=BCkoA4FBcds"><img src="images/icons/playlists/static_x12.jpg" data-title="Static-X - Reptile"   data-description="About <a href='psychology_true_eng.html#evolutionary_psychology' class = 'smallb_black' target='_blank'>Evolutionary Psychology</a> and Book <a href='books_tarmashev_eng.html' class = 'smallb_black' target='_blank'>Sergei Tarmashev (rus. Сергей Тармашев)</a> - <a href='books_tarmashev_rus.html#drevnij' class = 'smallb_black' target='_blank'>Древний</a>.<br><a href='https://www.youtube.com/watch?v=BCkoA4FBcds' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>20th of Mar, 2017."></a>
+	</div>
+
+
+	<script>
+
+
+	var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/azur/galleria.azur.js');
+
+	Galleria.run('.galleria', {
+	transition: 'fade',
+	imageCrop: true,
+	height : 500,
+	width : 670
+	});
+
+	</script>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					29th of Jun, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

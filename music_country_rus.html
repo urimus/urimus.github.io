@@ -1,0 +1,1625 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*39;
+var imgBgSrc="images/icons/background/guitar.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+
+
+
+		</td>
+	</tr>
+ 
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+		<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_country_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_country_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_country_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_country_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_selected">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+	
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_7_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_chanson_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_chanson_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Шансон <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_country_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_country_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Кантри <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_disco_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_disco_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Диско</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Электронная</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Индастриал</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Метал <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_pop_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_pop_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Поп</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Психоделическая</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Панк <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rap_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rap_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Рэп <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_reggae_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_reggae_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Регги</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rock_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rock_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Рок-музыка <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+
+
+
+
+		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>   
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>   
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+
+		
+		
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+		
+		
+		
+		
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+
+
+
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Музыка &blacktriangleright; Кантри</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+</table>
+
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:897px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="country">Кантри</a> <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Описание Жанра</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/country.jpg" alt="Кантри" title="Кантри" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>Кантри, кантри-музыка</b> (от англ. country music — сельская музыка) — обобщённое название формы музицирования, возникшей среди белого населения сельских районов юга и запада США.
+
+<P>Кантри основано на песенных и танцевальных мелодиях, завезённых в Америку ранними переселенцами из Европы, и опирается на англо-кельтские народные музыкальные традиции. Эта музыка долгое время сохранялась в почти нетронутом виде среди жителей горных районов штатов Теннесси, Кентукки, Северная Каролина.
+
+<P>По своему содержанию песни и баллады, исполняемые кантри-исполнителями, близки к обычной для сельского фольклора тематике. Дух искусства кантри определяется также подбором струнных инструментов, как гитара и мандолина. С самого начала, характерный колорит звучанию музыки придавала скрипка-фиддл — основной музыкальный инструмент американских фермеров на протяжении нескольких веков.
+
+<P>На стиль кантри также повлияла негритянская музыкальная культура. Это яснее всего проявляется в ритмике и непринуждённо-импровизационной манере исполнения, а также в использовании таких инструментов, как банджо и губная гармоника.
+
+<P>Кантри-музыка имеет тенденцию к открытым гитарным аккордам и ритмом 2/4 или 4/4. Форма вокальных номеров обычно куплетная — сольный запев и хоровой рефрен.
+
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D1%82%D1%80%D0%B8" class = "standardb_black" target="_blank">Wikipedia Кантри</a> - <b>Кантри</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					22е Июн, 2010.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+			<tr >
+
+				<td width="350" height="100%" class="nimetus_black"><a name="belomorkanal">Беломорканал <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/belomorkanal.jpg" alt="Беломорканал" title="Беломорканал" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+      
+
+<P>«<b>Беломорканал</b>» - известная музыкальная группа, выступающая в жанре русского шансона.
+
+<br><br>
+<P><b>История:</b>
+
+<P>Студия "Беломорканал" основана в 1995 году Степаном Арутюняном и Станиславом Марченко. Базируется в г. Оренбурге. Часть оборудования была завезена из США и Германии. Модернизация оборудования производится практически каждый год.
+
+<P>Первая работа студии — альбом «Козырные тузы» группы «Беломорканал», была записана в 1995 году. С.Арутюнян, В.Лизнер, С.Марченко и, ныне покойный Юрий Фисун, записывали этот альбом фактически «для себя», так как не предполагали что он принесёт их проекту значительный коммерческий успех.
+
+<P>Студия начинала свою работу в малопригодных для этого условиях — фактически в подвале.
+
+<br><br>
+<P><b>Альбомы:</b>
+
+<P>&nbsp;&bull; 1997 - Козырные тузы
+<P>&nbsp;&bull; 1997 - Привет, босота!
+<P>&nbsp;&bull; 1998 - Побег
+<P>&nbsp;&bull; 1998 - Вор
+<P>&nbsp;&bull; 1998 - Волки
+<P>&nbsp;&bull; 1999 - Ночь перед расстрелом
+<P>&nbsp;&bull; 1999 - Лагеря
+<P>&nbsp;&bull; 2000 - Привет, босота ! - 2
+<P>&nbsp;&bull; 2000 - Урка Мишка
+<P>&nbsp;&bull; 2000 - Блатная кровь
+<P>&nbsp;&bull; 2001 - Кресты
+<P>&nbsp;&bull; 2002 - Жиган и Жучка
+<P>&nbsp;&bull; 2002 - Плановая душа
+<P>&nbsp;&bull; 2002 - Сын инженера и врачихи
+<P>&nbsp;&bull; 2002 - Разведенные мосты
+<P>&nbsp;&bull; 2003 - Папиросочка
+<P>&nbsp;&bull; 2003 - Луноходы
+<P>&nbsp;&bull; 2004 - Маленькая стерва
+<P>&nbsp;&bull; 2004 - Человек из тюрьмы
+<P>&nbsp;&bull; 2006 - Блатарь
+<P>&nbsp;&bull; 2007 - Не в деньгах счастье
+<P>&nbsp;&bull; 2010 - Последний куш
+	
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://traditio.wiki/%D0%91%D0%B5%D0%BB%D0%BE%D0%BC%D0%BE%D1%80%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)" class = "standardb_black" target="_blank">Традиция Беломорканал (группа)</a> - <b>Беломорканал</b> на Традиция.
+			</td>
+			</tr>
+			
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+	<div class="galleria">
+
+	<a href="https://www.youtube.com/watch?v=HcTZ-xvPuzc"><img src="images/icons/playlists/belomorkanal16.jpg" data-title="Беломорканал - Менты не кенты"   data-description="<a href='https://www.youtube.com/watch?v=HcTZ-xvPuzc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=jIINQ3lwmuk"><img src="images/icons/playlists/belomorkanal61.jpg" data-title="Беломорканал - Кресты"   data-description="Про Кресты.<br><a href='https://www.youtube.com/watch?v=jIINQ3lwmuk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>30е Июн, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=T_W0IfhnQCg"><img src="images/icons/playlists/belomorkanal57.jpg" data-title="Беломорканал - Бродяга, Терпи"   data-description="Про <a href='music_disco_rus.html#professor_lebedinskij' class = 'smallb_black' target='_blank'>Профессор Лебединский</a> (Творчество).<br><a href='https://www.youtube.com/watch?v=T_W0IfhnQCg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Сен, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=hmPrrfK2w7A"><img src="images/icons/playlists/belomorkanal13.jpg" data-title="Беломорканал - Брат 2"   data-description="Пародия на <a href='music_metal_gothic_rus.html#black_metal' class = 'smallb_black' target='_blank'>Готик-Метал</a>.<br><a href='https://www.youtube.com/watch?v=hmPrrfK2w7A' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=M24yzLE9iFA"><img src="images/icons/playlists/belomorkanal1.jpg" data-title="Беломорканал - БАМ"   data-description="Пародия на <a href='music_metal_death_rus.html#death_metal' class = 'smallb_black' target='_blank'>Дэт Метал</a>.<br><a href='https://www.youtube.com/watch?v=O3kLvz1w7MU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=PhwGuv6BBUI"><img src="images/icons/playlists/belomorkanal2.jpg" data-title="Беломорканал - Анаша"   data-description="Пародия на <a href='music_metal_power_rus.html#power_metal' class = 'smallb_black' target='_blank'>Пауэр Метал</a>.<br><a href='https://www.youtube.com/watch?v=PhwGuv6BBUI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=JK3U6PIo4ls"><img src="images/icons/playlists/belomorkanal3.jpg" data-title="Беломорканал - Проза Жизни"   data-description="Пародия на <a href='music_metal_symphonic_rus.html#symphonic_metal' class = 'smallb_black' target='_blank'>Симфоник Метал</a>.<br><a href='https://www.youtube.com/watch?v=JK3U6PIo4ls' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=1IVu6Eu8P98"><img src="images/icons/playlists/belomorkanal53.jpg" data-title="Беломорканал - В Зеркале Старом ..."   data-description="Пародия на <a href='https://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D0%B2%D0%B8-%D0%BC%D0%B5%D1%82%D0%B0%D0%BB' class = 'smallb_black' target='_blank'>Хеви-метал (Wikipedia)</a>.<br><a href='https://www.youtube.com/watch?v=1IVu6Eu8P98' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>12е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=aQALJaxeAPg"><img src="images/icons/playlists/belomorkanal4.jpg" data-title="Беломорканал - Дрянь"   data-description="Пародия на <a href='music_pop_rus.html#pop' class = 'smallb_black' target='_blank'>Поп Музыку</a>, и на <a href='music_disco_rus.html#sinatra' class = 'smallb_black' target='_blank'>Фрэнк Синатра</a> в часности.<br><a href='https://www.youtube.com/watch?v=aQALJaxeAPg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=B1OsZnq6l6s"><img src="images/icons/playlists/belomorkanal5.jpg" data-title="Беломорканал - Исповедь"   data-description="<a href='https://www.youtube.com/watch?v=B1OsZnq6l6s' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=pQCQKyRNkb8"><img src="images/icons/playlists/belomorkanal6.jpg" data-title="Беломорканал - Первый Вечер"   data-description="Пародия на группу <a href='music_pop_rus.html#modern_talking' class = 'smallb_black' target='_blank'>Modern Talking</a>.<br><a href='https://www.youtube.com/watch?v=pQCQKyRNkb8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=pQCQKyRNkb8"><img src="images/icons/playlists/belomorkanal7.jpg" data-title="Беломорканал - Осенняя грусть"   data-description="Вспомнилось что-то не то как-будто.<br><a href='https://www.youtube.com/watch?v=pQCQKyRNkb8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=dCigtz8pGWM"><img src="images/icons/playlists/belomorkanal8.jpg" data-title="Беломорканал - Мыши"   data-description="Про Фашизм.<br><a href='https://www.youtube.com/watch?v=dCigtz8pGWM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=znkVqFqk41M"><img src="images/icons/playlists/belomorkanal9.jpg" data-title="Беломорканал - Старший брат"   data-description="Пародия на <a href='music_disco_rus.html#kombinacija' class = 'smallb_black' target='_blank'>Комбинация</a> - <a href='https://www.youtube.com/watch?v=SEcu9kcs6is' class = 'smallb_black' target='_blank'>Не родись красивой</a>.<br><a href='https://www.youtube.com/watch?v=znkVqFqk41M' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=iWyhrSeGaPI"><img src="images/icons/playlists/belomorkanal10.jpg" data-title="Беломорканал - Скрипач"   data-description="Про универского 'сачка' и про билет домой.<br><a href='https://www.youtube.com/watch?v=iWyhrSeGaPI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=bECUanVrgfs"><img src="images/icons/playlists/belomorkanal11.jpg" data-title="Беломорканал - Зек на воле"   data-description="Про Сталина.<br><a href='https://www.youtube.com/watch?v=bECUanVrgfs' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=ab6a2vl2vC8"><img src="images/icons/playlists/belomorkanal12.jpg" data-title="Беломорканал - Джентельмены"   data-description="Пародия на <a href='music_industrial_metal_rus.html#industrial_metal' class = 'smallb_black' target='_blank'>Индастиал Метал</a>.<br><a href='https://www.youtube.com/watch?v=ab6a2vl2vC8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>18е Июл, 2016."></a> 
+	<a href="https://www.youtube.com/watch?v=8Il2TDUPWDA"><img src="images/icons/playlists/belomorkanal14.jpg" data-title="Беломорканал - Мочалка"   data-description="Про нары.<br><a href='https://www.youtube.com/watch?v=8Il2TDUPWDA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a> 
+	<a href="https://www.youtube.com/watch?v=pEbDHnQmsy8"><img src="images/icons/playlists/belomorkanal15.jpg" data-title="Беломорканал - Натура"   data-description="Про внешний вид (одежду).<br><a href='https://www.youtube.com/watch?v=pEbDHnQmsy8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=UWBNxElqyBk"><img src="images/icons/playlists/belomorkanal16.jpg" data-title="Беломорканал - Рашен герл"   data-description="Про <a href='satanism_theistic_rus.html' class = 'smallb_black' target='_blank'>сатанистов</a>.<br><a href='https://www.youtube.com/watch?v=UWBNxElqyBk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=FUPkNW6ofqM"><img src="images/icons/playlists/belomorkanal17.jpg" data-title="Беломорканал - Запретная зона"   data-description="Про метро.<br><a href='https://www.youtube.com/watch?v=FUPkNW6ofqM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=72eM65ucAxI"><img src="images/icons/playlists/belomorkanal18.jpg" data-title="Беломорканал - Бог не фраер"   data-description="Про плакаты про науку.<br><a href='https://www.youtube.com/watch?v=72eM65ucAxI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=QGQ4V_Wd49g"><img src="images/icons/playlists/belomorkanal19.jpg" data-title="Беломорканал - Девочка самарская"   data-description="Про охрану и про <a href='psychology_true_rus.html' class = 'smallb_black' target='_blank'>Психологию</a>.<br><a href='https://www.youtube.com/watch?v=QGQ4V_Wd49g' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=NoTvTdgLphM"><img src="images/icons/playlists/belomorkanal20.jpg" data-title="Беломорканал - Бычок"   data-description="Про охрану.<br><a href='https://www.youtube.com/watch?v=NoTvTdgLphM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=tEjl_teKfzs"><img src="images/icons/playlists/belomorkanal21.jpg" data-title="Беломорканал - Дура-дурой"   data-description="Пародия на самого себя (беломорканал).<br><a href='https://www.youtube.com/watch?v=tEjl_teKfzs' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=pP6y8q5xzkc"><img src="images/icons/playlists/belomorkanal22.jpg" data-title="Беломорканал - Не в деньгах счастье"   data-description="Пародия на самого себя (беломорканал).<br><a href='https://www.youtube.com/watch?v=pP6y8q5xzkc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=hiYv1VwlFU4"><img src="images/icons/playlists/belomorkanal23.jpg" data-title="Беломорканал - Разведённые мосты, Бодя"   data-description="Пародия на <a href='music_disco_rus.html#kombinacija' class = 'smallb_black' target='_blank'>Комбинация</a> - <a href='https://www.youtube.com/watch?v=luobnG5k03Q' class = 'smallb_black' target='_blank'>Встреча на манежной</a>.<br><a href='https://www.youtube.com/watch?v=hiYv1VwlFU4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=H4OuN0HgWzU"><img src="images/icons/playlists/belomorkanal24.jpg" data-title="Беломорканал - Серенада"   data-description="Про понты.<br><a href='https://www.youtube.com/watch?v=H4OuN0HgWzU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=sN5YuwEhwPc"><img src="images/icons/playlists/belomorkanal25.jpg" data-title="Беломорканал - Не будите"   data-description="<a href='https://www.youtube.com/watch?v=sN5YuwEhwPc' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=G3Cd6PZePgk"><img src="images/icons/playlists/belomorkanal26.jpg" data-title="Беломорканал - Разведённые мосты 2"   data-description="Про книгу &quot;Мастер и Маргарита&quot;.<br><a href='https://www.youtube.com/watch?v=G3Cd6PZePgk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=Yq_4qitqUIY"><img src="images/icons/playlists/belomorkanal32.jpg" data-title="Беломорканал - На запретке"   data-description="Про книгу &quot;Мастер и Маргарита&quot;.<br><a href='https://www.youtube.com/watch?v=Yq_4qitqUIY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=fS83ODS3jhY"><img src="images/icons/playlists/belomorkanal27.jpg" data-title="Беломорканал - Налей по 100"   data-description="Про этот мой веб-сайт.<br><a href='https://www.youtube.com/watch?v=fS83ODS3jhY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=MAy-RusIDwg"><img src="images/icons/playlists/belomorkanal28.jpg" data-title="Беломорканал - Разговор с душой"   data-description="Пародия на <a href='music_disco_rus.html#abba' class = 'smallb_black' target='_blank'>Abba</a> - <a href='https://www.youtube.com/watch?v=pO7ubf4h8sk' class = 'smallb_black' target='_blank'>People Need Love</a>.<br><a href='https://www.youtube.com/watch?v=MAy-RusIDwg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=HgSxBXQhRw8"><img src="images/icons/playlists/belomorkanal29.jpg" data-title="Беломорканал - Посылочка"   data-description="Пародия на группу <a href='https://ru.wikipedia.org/wiki/Depeche_Mode' class = 'smallb_black' target='_blank'>Depeche Mode</a>.<br><a href='https://www.youtube.com/watch?v=HgSxBXQhRw8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=I3KYwBn_JPI"><img src="images/icons/playlists/belomorkanal30.jpg" data-title="Беломорканал - Папиросочка"   data-description="Про игру.<br><a href='https://www.youtube.com/watch?v=I3KYwBn_JPI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=p7ctiXpPZZI"><img src="images/icons/playlists/belomorkanal31.jpg" data-title="Беломорканал - Баня"   data-description="Про библиотеку и евреев.<br><a href='https://www.youtube.com/watch?v=p7ctiXpPZZI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=o4lJW9UtcnU"><img src="images/icons/playlists/belomorkanal33.jpg" data-title="Беломорканал - Я очарован и влюблён"   data-description="А так-же <a href='https://www.youtube.com/watch?v=eeFYeHxkkew' class = 'smallb_black' target='_blank'>Чифирок и папироска</a>, <a href='https://www.youtube.com/watch?v=EnGMNaTlLj0' class = 'smallb_black' target='_blank'>Пристань вечной тайги</a> - Про Германию.<br><a href='https://www.youtube.com/watch?v=o4lJW9UtcnU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=pzUDSPtuKqg"><img src="images/icons/playlists/belomorkanal34.jpg" data-title="Беломорканал - Зачем вы девочки"   data-description="Про немецкий язык.<br><a href='https://www.youtube.com/watch?v=pzUDSPtuKqg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=JjXObQDSUJs"><img src="images/icons/playlists/belomorkanal35.jpg" data-title="Беломорканал - Побег"   data-description="Про навязывание своего мнения, игнорирование чужого.<br><a href='https://www.youtube.com/watch?v=JjXObQDSUJs' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=6NeXHf_7L8s"><img src="images/icons/playlists/belomorkanal36.jpg" data-title="Беломорканал - Штрафные батальёны"   data-description="Про заключённых.<br><a href='https://www.youtube.com/watch?v=6NeXHf_7L8s' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=MAy-RusIDwg"><img src="images/icons/playlists/belomorkanal37.jpg" data-title="Беломорканал - Разговор"   data-description="Про религию, про Книгу <a href='books_pavlov_rus.html' class = 'smallb_black' target='_blank'>Сергей Павлов</a> - <a href='books_pavlov_rus.html#lunnaja_raduga' class = 'smallb_black' target='_blank'>Лунная Радуга</a> и про 'разборки'.<br><a href='https://www.youtube.com/watch?v=MAy-RusIDwg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=S7rbprloI28"><img src="images/icons/playlists/belomorkanal38.jpg" data-title="Беломорканал - Два вора"   data-description="Про петушню.<br><a href='https://www.youtube.com/watch?v=S7rbprloI28' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=LIGmMzY9yGI"><img src="images/icons/playlists/belomorkanal39.jpg" data-title="Беломорканал - Письмо из лагеря"   data-description="Про культуру.<br><a href='https://www.youtube.com/watch?v=LIGmMzY9yGI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=nMbvF2vNKe0"><img src="images/icons/playlists/belomorkanal40.jpg" data-title="Беломорканал - Балдею, Клава"   data-description="Про помидоры.<br><a href='https://www.youtube.com/watch?v=nMbvF2vNKe0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=5rn3aWgZbuo"><img src="images/icons/playlists/belomorkanal41.jpg" data-title="Беломорканал - Понты"   data-description="Про полицию.<br><a href='https://www.youtube.com/watch?v=5rn3aWgZbuo' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=JISG7DOk6gA"><img src="images/icons/playlists/belomorkanal42.jpg" data-title="Беломорканал - Деньги"   data-description="Про <a href='totalitarianism_rus.html' class = 'smallb_black' target='_blank'>тоталитаризм</a>.<br><a href='https://www.youtube.com/watch?v=JISG7DOk6gA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=jBeVx0psaNc"><img src="images/icons/playlists/belomorkanal43.jpg" data-title="Беломорканал - Опер окачурился"   data-description="Про сексуальные домогательства.<br><a href='https://www.youtube.com/watch?v=jBeVx0psaNc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=1jyc7PeyQJs"><img src="images/icons/playlists/belomorkanal44.jpg" data-title="Беломорканал - Чифирок в Карманчике"   data-description="Пародия на <a href='music_disco_rus.html#kombinacija' class = 'smallb_black' target='_blank'>Алёна Апина</a> - <a href='https://www.youtube.com/watch?v=xJ6aaD06Bms' class = 'smallb_black' target='_blank'>Лёха</a>.<br><a href='https://www.youtube.com/watch?v=1jyc7PeyQJs' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=nHc3pZSMELM"><img src="images/icons/playlists/belomorkanal45.jpg" data-title="Беломорканал - Водочка"   data-description="Про <a href='music_psychedelic_trance_rus.html' class = 'smallb_black' target='_blank'>психоделический транс</a>.<br><a href='https://www.youtube.com/watch?v=nHc3pZSMELM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=rU3VZI8edq8"><img src="images/icons/playlists/belomorkanal46.jpg" data-title="Беломорканал - Не скучай"   data-description="Про <a href='music_country_rus.html#vysockij' class = 'smallb_black' target='_blank'>Владимира Высоцкого</a>.<br><a href='https://www.youtube.com/watch?v=rU3VZI8edq8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=8brYB1xZNy0"><img src="images/icons/playlists/belomorkanal47.jpg" data-title="Беломорканал - А... поворуем?"   data-description="Пародия на <a href='music_disco_rus.html#kombinacija' class = 'smallb_black' target='_blank'>Комбинация</a> - <a href='https://www.youtube.com/watch?v=Sxgw1RjTXbI' class = 'smallb_black' target='_blank'>Уеду в Африку</a>.<br><a href='https://www.youtube.com/watch?v=8brYB1xZNy0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>04е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=bNSHpMrSx2o"><img src="images/icons/playlists/belomorkanal48.jpg" data-title="Беломорканал - Пехота"   data-description="Про <a href='countries_ussr_communism_rus.html' class = 'smallb_black' target='_blank'>СССР</a>.<br><a href='https://www.youtube.com/watch?v=bNSHpMrSx2o' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=lPLE-XKXJ9g"><img src="images/icons/playlists/belomorkanal49.jpg" data-title="Беломорканал - Я завязал"   data-description="Про <a href='communism_enemies_rus.html#kolhoz' class = 'smallb_black' target='_blank'>Колхоз</a>.<br><a href='https://www.youtube.com/watch?v=lPLE-XKXJ9g' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=o4lJW9UtcnU"><img src="images/icons/playlists/belomorkanal50.jpg" data-title="Беломорканал - Я очарован и влюблён"   data-description="Про университеты.<br><a href='https://www.youtube.com/watch?v=o4lJW9UtcnU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=YUnwct2bG2s"><img src="images/icons/playlists/belomorkanal51.jpg" data-title="Беломорканал - Чапаевск"   data-description="Про Чапаевск.<br><a href='https://www.youtube.com/watch?v=YUnwct2bG2s' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=DtneQVci0yM"><img src="images/icons/playlists/belomorkanal52.jpg" data-title="Беломорканал - Сын инженера и врачихи"   data-description="Про Паспорт.<br><a href='https://www.youtube.com/watch?v=DtneQVci0yM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=eeFYeHxkkew"><img src="images/icons/playlists/belomorkanal54.jpg" data-title="Беломорканал - Чифирок и Папироска"   data-description="Про Кастовую Систему.<br><a href='https://www.youtube.com/watch?v=eeFYeHxkkew' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>13е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=EnGMNaTlLj0"><img src="images/icons/playlists/belomorkanal55.jpg" data-title="Беломорканал - Пристань Вечной Тайги"   data-description="Про Судебную Систему.<br><a href='https://www.youtube.com/watch?v=EnGMNaTlLj0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>13е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=2-8VvYRR9lY"><img src="images/icons/playlists/belomorkanal53.jpg" data-title="Беломорканал - Легче Воруется"   data-description="Про <a href='movies_genre_anime_rus.html' class = 'smallb_black' target='_blank'>Аниме</a>.<br><a href='https://www.youtube.com/watch?v=2-8VvYRR9lY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>18е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=D7WJhqbJxJU"><img src="images/icons/playlists/belomorkanal56.jpg" data-title="Беломорканал - Путеводная Звезда"   data-description="Про Общественные Компьютеры в Библиотеках.<br><a href='https://www.youtube.com/watch?v=D7WJhqbJxJU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>06е Янв, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=0b3Qxac4UeU"><img src="images/icons/playlists/belomorkanal58.jpg" data-title="Беломорканал - Мама"   data-description="<a href='https://www.youtube.com/watch?v=0b3Qxac4UeU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25е Ноя, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=UoWlNERR5eE"><img src="images/icons/playlists/belomorkanal59.jpg" data-title="Беломорканал - Жиганское Танго"   data-description="Сами Всё Сделаем...<br><a href='https://www.youtube.com/watch?v=UoWlNERR5eE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25е Ноя, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=_TW-nXx-ImM"><img src="images/icons/playlists/belomorkanal60.jpg" data-title="Беломорканал - Доля Воровская"   data-description="Про Моральные Принципы.<br><a href='https://www.youtube.com/watch?v=_TW-nXx-ImM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25е Ноя, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=IHb66yh5FW0"><img src="images/icons/playlists/belomorkanal59.jpg" data-title="Беломорканал - Женитьба Жигана"   data-description="Про Котов.<br><a href='https://www.youtube.com/watch?v=IHb66yh5FW0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25е Ноя, 2017."></a>
+	</div>
+
+
+	<script>
+	var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/azur/galleria.azur.js');
+
+	Galleria.run('.galleria', {
+	transition: 'fade',
+	imageCrop: true,
+	height : 500,
+	width : 670
+	});
+	</script>
+
+
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					11е Июл, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="cash">Джонни Кэш</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/cash.jpg" alt="Джонни Кэш" title="Джонни Кэш" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						
+								<P><b>Джонни Кэш</b> (англ. Johnny Cash; 26 февраля 1932, Кингсленд, Арканзас — 12 сентября 2003, Нашвилл, Теннесси) — американский певец и композитор-песенник, ключевая фигура в музыке кантри, является одним из самых влиятельных музыкантов XX века. Несмотря на то, что в первую очередь его признали иконой кантри, исполнение песен в таких жанрах как госпел, рок-н-ролл и рокабилли — не редкость. Благодаря своей музыке, стилю жизни на сцене и вне её заслужил авторитет среди большого круга любителей музыки, далеко за пределами жанра кантри. Сам себя позиционировал как исполнителя «христианского кантри».
+
+								<P>С Джонни Кэшем ассоциируется устойчивое словосочетание «Человек в чёрном» (англ. Man In Black), поскольку с 1960-х годов для него было характерно ношение тёмной одежды (причины этого он поясняет в тексте одноимённой песни «Man in Black» 1971 года).
+								
+
+
+	
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%8D%D1%88,_%D0%94%D0%B6%D0%BE%D0%BD%D0%BD%D0%B8" class = "standardb_black" target="_blank">Wikipedia Кэш, Джонни</a> - <b>Джонни Кэш</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://www.johnnycash.com/" class = "standardb_black" target="_blank">Джонни Кэш</a> - Официальный Сайт (англ.).
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					22е Июн, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="obodzinsky">Валерий Ободзинский</a></td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/obodzinsky.jpg" alt="Валерий Ободзинский" title="Валерий Ободзинский" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						
+
+<P><b>Валерий Владимирович Ободзинский</b> (24 января 1942, Одесса — 26 апреля 1997, Москва) — советский и российский эстрадный певец, тенор, заслуженный артист Марийской АССР (1973).
+
+<P>В 1960-х — 1970-х годах — популярный эстрадный певец в СССР. Первый исполнитель песен «Эти глаза напротив» (Д. Тухманов — Т. Сашко), «Восточная песня» (Д. Тухманов — О. Гаджикасимов), «Колдовство» (А. Флярковский — Л. Дербенёв), «Играет орган» (Д. Тухманов — М. Пляцковский), «Вечная весна» (Д. Тухманов — И. Шаферан), «Мираж» (А. Зацепин — Л.Дербенёв), «Твой день» (С. Касторский — В. Гин), «Первое апреля» (В. Мигуля — И. Шаферан) и др.
+	
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="50%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+							<a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D0%BE%D0%B4%D0%B7%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D0%B9_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_black" target="_blank">Wikipedia Ободзинский, Валерий Владимирович</a> - <b>Валерий Ободзинский</b> на Wikipedia.
+						</td>
+			</tr>
+			
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+	<div class="galleria2">
+	<a href="https://www.youtube.com/watch?v=oiB-HUpyXLM"><img src="images/icons/playlists/obodzinskij1.jpg" data-title="Валерий Ободзинский - Дни Бегут" data-description="Про Группу <a href='music_disco_rus.html#kombinacija' class = 'smallb_black' target='_blank'>Комбинация</a>.<br><a href='https://www.youtube.com/watch?v=oiB-HUpyXLM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>06е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=XTZBnCdftG8"><img src="images/icons/playlists/obodzinskij2.jpg" data-title="Валерий Обозинский - То, Что Я Должен Сказать" data-description="<a href='https://www.youtube.com/watch?v=XTZBnCdftG8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>06е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=YVIBE2bk5xU"><img src="images/icons/playlists/obodzinskij3.jpg" data-title="Валерий Обозинский - Аравийская Песня" data-description="Про <a href='news_rus.html?type=world' class = 'smallb_black' target='_blank'>Строку Новостей</a>.<br><a href='https://www.youtube.com/watch?v=YVIBE2bk5xU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>06е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=n7wftQPfoGo"><img src="images/icons/playlists/obodzinskij4.jpg" data-title="Валерий Ободзинский - Лесная Колдунья" data-description="<a href='https://www.youtube.com/watch?v=n7wftQPfoGo' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>03е Мая, 2018."></a>
+	</div>
+
+
+	<script>
+
+	Galleria.run('.galleria2', {
+	transition: 'fade',
+	imageCrop: true,
+	height : 500,
+	width : 670
+	});
+	</script>
+
+
+			</td>
+			</tr>			
+						
+			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+				07е Мар, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="vysockij">Владимир Высоцкий</a></td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/vysockij.jpg" alt="Владимир Высоцкий" title="Владимир Высоцкий" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						
+								<P><b>Владимир Семёнович Высоцкий</b> (25 января 1938, Москва — 25 июля 1980, Москва) — советский поэт, актёр и автор-исполнитель песен; автор прозаических произведений. Лауреат Государственной премии СССР (1987, посмертно).
+
+								<P>Актёр Театра драмы и комедии на Таганке в Москве (1964—1980). Владимир Высоцкий сыграл более 20-ти ролей в театре, в том числе Гамлета («Гамлет» У. Шекспира), Галилея («Жизнь Галилея» Б. Брехта), Лопахина («Вишнёвый сад» А. Чехова). Наиболее примечательными работами в кинематографе как актёра являются его роли в фильмах «Место встречи изменить нельзя» (включая в качестве помощника режиссёра), «Маленькие трагедии», «Интервенция», «Хозяин тайги», «Вертикаль», «Служили два товарища», «Сказ про то, как царь Пётр арапа женил», «Короткие встречи», «Плохой хороший человек».
+
+								<P>Владимир Высоцкий вошёл в историю как автор-исполнитель своих песен под русскую семиструнную гитару.
+
+								<P>По итогам опроса ВЦИОМ, проведённого в 2010 году, Высоцкий занял второе место в списке «кумиров XX века» после Юрия Гагарина. Опрос, проведённый ФОМ в середине июля 2011 года, продемонстрировал, что, несмотря на снижение интереса к творчеству Высоцкого, абсолютному большинству (98 %) россиян знакомо имя «Владимир Высоцкий», а около 70 % ответили, что его песни нравятся, и считают его творчество важным явлением отечественной культуры XX века.
+
+	
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+						<td width="50%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+							<a href="https://ru.wikipedia.org/wiki/%D0%92%D1%8B%D1%81%D0%BE%D1%86%D0%BA%D0%B8%D0%B9,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_black" target="_blank">Wikipedia Высоцкий, Владимир Семёнович</a> - <b>Владимир Высоцкий</b> на Wikipedia.
+						</td>
+			</tr>
+			
+
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+	<div class="galleria3">
+	<a href="https://www.youtube.com/watch?v=Mafn4cUg0wU"><img src="images/icons/playlists/vysockij1.jpg" data-title="Владимир Высоцкий - Весна Ещё в Начале" data-description="<a href='https://www.youtube.com/watch?v=Mafn4cUg0wU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16е Янв, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=J0K6fn9ed84"><img src="images/icons/playlists/vysockij1.jpg" data-title="Владимир Высоцкий - Тот, Который Не Стрелял" data-description="<a href='https://www.youtube.com/watch?v=J0K6fn9ed84' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16е Янв, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=7eRvxuIT7Wc"><img src="images/icons/playlists/vysockij1.jpg" data-title="Владимир Высоцкий - Лирическая Песня" data-description="<a href='https://www.youtube.com/watch?v=7eRvxuIT7Wc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16е Янв, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=D9aAZQj-RSg"><img src="images/icons/playlists/vysockij1.jpg" data-title="Владимир Высоцкий - Эй, Шофёр" data-description="Про Немецких Свиней.<br><a href='https://www.youtube.com/watch?v=D9aAZQj-RSg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Апр, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=Sr-TPYl6eV4"><img src="images/icons/playlists/vysockij2.jpg" data-title="Владимир Высоцкий - За Хлеб и Воду" data-description="Про Берлин, Разделённый на Западный и Восточный.<br><a href='https://www.youtube.com/watch?v=Sr-TPYl6eV4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Апр, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=72EJXP8hE_o"><img src="images/icons/playlists/vysockij3.jpg" data-title="Владимир Высоцкий - Про Стукача" data-description="Про <a href='about_phd_rus.html' class = 'smallb_black' target='_blank'>PhD</a>.<br><a href='https://www.youtube.com/watch?v=72EJXP8hE_o' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Апр, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=p-LxeH0loaM"><img src="images/icons/playlists/vysockij4.jpg" data-title="Владимир Высоцкий - Уголовный Кодекс" data-description="Про Иностранную Культуру.<br><a href='https://www.youtube.com/watch?v=p-LxeH0loaM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Апр, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=ESu95NQDZls"><img src="images/icons/playlists/vysockij5.jpg" data-title="Владимир Высоцкий - Ноль-Семь" data-description="Про Фильм <a href='movies_superhero_marvel_rus.html#thor' class = 'smallb_black' target='_blank'>Тор</a>.<br><a href='https://www.youtube.com/watch?v=ESu95NQDZls' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Апр, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=Y3_V8BdZt1o"><img src="images/icons/playlists/vysockij1.jpg" data-title="Владимир Высоцкий - Случай на Шахте" data-description="Про Отель Адлон, Берлин.<br><a href='https://www.youtube.com/watch?v=Y3_V8BdZt1o' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Апр, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=sirYi358GM4"><img src="images/icons/playlists/vysockij6.jpg" data-title="Владимир Высоцкий - Корабли" data-description="Про Бесплатную Берлинскую Бомжовскую Кормёжку Zoologisher Garten.<br><a href='https://www.youtube.com/watch?v=sirYi358GM4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Апр, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=of0TPS_4Of0"><img src="images/icons/playlists/vysockij7.jpg" data-title="Владимир Высоцкий - Москва-Одесса" data-description="Про Петухов.<br><a href='https://www.youtube.com/watch?v=of0TPS_4Of0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Мая, 2017."></a>
+	</div>
+
+
+	<script>
+
+	Galleria.run('.galleria3', {
+	transition: 'fade',
+	imageCrop: true,
+	height : 500,
+	width : 670
+	});
+	</script>
+
+
+
+
+
+			</td>
+			</tr>
+
+
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					22е Июн, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+
+</div> <!-- End of scroll inside div -->
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

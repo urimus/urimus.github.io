@@ -1,0 +1,1141 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#de8e8e";
+	var scrollBackColor="#F9D4D4";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#CE3535; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*33;
+var imgBgSrc="images/icons/background/book.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#F9D4D4"> 
+		<td  bgcolor="#F9D4D4" width="100%">
+		<div class="nimetus2_red"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_wells_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_wells_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_wells_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_wells_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#F9D4D4" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_red">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_selected">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; USSR</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'books');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; United Kingdom</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_4_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_clarke_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_clarke_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Sir Arthur Charles Clarke</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_4_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_wells_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_wells_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Herbert George Wells</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_4_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_wyndham_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_wyndham_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; John Wyndham</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; United States of America</div>
+	</td>
+	</tr>	
+
+	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+			<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#F9D4D4" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_red" style="width: 530px;"><a name="welcome">Books &blacktriangleright; United Kingdom &blacktriangleright; Herbert George Wells</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:759px;overflow:auto;">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #de8e8e 1px solid;  background-color: #F9D4D4;">
+
+		
+
+
+
+
+	
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_red"><a name="wells">Herbert George Wells</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_red">Biography</td>
+			</tr>			
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/herbert_wells.png" alt="Herbert George Wells" title="Herbert George Wells" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Herbert George Wells</b> (21 September 1866 – 13 August 1946), usually referred to as H. G. Wells, was an English writer. He was prolific in many genres, including the novel, history, politics, social commentary, and textbooks and rules for war games. Wells is now best remembered for his science fiction novels and is called a "father of science fiction", along with Jules Verne and Hugo Gernsback. A futurist, his works predicted the airplane, tank, space travel, nuclear weapons, satellite television and the world wide web. His fiction imagined time travel, alien invasion, invisibility, and flights to the moon. Brian Aldiss referred to Wells as the "Shakespeare of science fiction”. His most notable science fiction works include The Time Machine (1895), The Island of Doctor Moreau (1896), The Invisible Man (1897), and The War of the Worlds (1898). He was nominated for the Nobel Prize in Literature four times.
+
+<P>Wells's earliest specialised training was in biology, and his thinking on ethical matters took place in a specifically and fundamentally Darwinian context. He was also from an early date an outspoken socialist, often (but not always, as at the beginning of the First World War) sympathising with pacifist views. His later works became increasingly political and didactic, and he wrote little science fiction, while he sometimes indicated on official documents that his profession was that of journalist. Novels like Kipps and The History of Mr Polly, which describe lower-middle-class life, led to the suggestion that he was a worthy successor to Charles Dickens, but Wells described a range of social strata and even attempted, in Tono-Bungay (1909), a diagnosis of English society as a whole. A diabetic, in 1934, Wells co-founded the charity The Diabetic Association (known today as Diabetes UK).
+					
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/H._G._Wells" class = "standardb_red" target="_blank">Wikipedia H. G. Wells</a> - <b>Herbert George Wells</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					20th of Oct, 2017.
+				</td>
+			</tr>
+			</table>
+
+	</td>
+		</tr>
+
+		
+		
+	
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="island_of_doctor_moreau">The Island of Doctor Moreau</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/island_of_doctor_moreau.jpg" alt="The Island of Doctor Moreau" title="The Island of Doctor Moreau" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>The Island of Doctor Moreau</b> is an 1896 science fiction novel by English author H. G. Wells. The text of the novel is the narration of Edward Prendick, a shipwrecked man rescued by a passing boat who is left on the island home of Doctor Moreau, a mad scientist who creates human-like hybrid beings from animals via vivisection. The novel deals with a number of philosophical themes, including pain and cruelty, moral responsibility, human identity, and human interference with nature. Wells described it as "an exercise in youthful blasphemy".
+
+<P>The Island of Doctor Moreau is a classic of early science fiction and remains one of Wells's best-known books. The novel is the earliest depiction of the science fiction motif "uplift" in which a more advanced race intervenes in the evolution of an animal species in order to bring the latter to a higher level of intelligence. It has been adapted to film and other media on many occasions.
+
+<br><br>
+<P><b>Adaptations:</b>
+
+<P>The novel has been adapted into films and other works, on multiple occasions:
+
+<P>&nbsp;&bull; Ile d'Epouvante (1913, The Island of Terror), a French silent film (also spelled L'Ile d'Epouvante and Isle d'epouvante). The 23-minute two-reeler film was directed by Joe Hamman in 1911 and then released in 1913. By late 1913, the film had been picked up by US distributor George Kleine and renamed The Island of Terror for its release in Chicago.
+<P>&nbsp;&bull; Die Insel der Veschollenen (1921), German silent adaption
+<P>&nbsp;&bull; Island of Lost Souls (1932), with Charles Laughton and Bela Lugosi.
+<P>&nbsp;&bull; Terror Is a Man (1959), with Francis Lederer, Greta Thyssen, and Richard Derr. This Filipino film, directed by Gerardo de Leon, was reissued in the United States as Blood Creature (1964). Leon partnered with Eddie Romero to direct and release two follow-up films in 1968: Brides of Blood and Mad Doctor of Blood Island. All three were produced by Lynn-Romero Productions.
+<P>&nbsp;&bull; At the age of 13, Tim Burton made an amateur adaptation of Wells' novel, The Island of Doctor Agor (1971).
+<P>&nbsp;&bull; The Twilight People (1972), starring John Ashley and with an early role for Pam Grier, was Eddie Romero's version of the original story.
+<P>&nbsp;&bull; Joseph Silva turned The Island of Dr. Moreau (1977), with Burt Lancaster and Michael York, into a derivative published by Ace.
+<P>&nbsp;&bull; In The Island of Dr. Moreau (1996), with Marlon Brando, Val Kilmer, David Thewlis, Fairuza Balk, and Ron Perlman, Dr. Moreau introduced human DNA into the animals in his possession in order to make them more human.
+<P>&nbsp;&bull; Seattle, Washington's Taproot Theatre Company performed Sean Gaffney's theatrical adaptation of the novel in 1999.
+<P>&nbsp;&bull; The Simpsons annual Halloween special adapted the novel as a segment in their "Treehouse of Horror XIII" episode called "The Island of Dr. Hibbert", in which the doctor invites unsuspecting Springfield residents to his island resort, and turns them into human-animal hybrids.
+<P>&nbsp;&bull; The film Dr. Moreau's House of Pain (2004), made by cult horror studio Full Moon Pictures, is billed as a sequel to the novel.
+<P>&nbsp;&bull; In the third season of science fiction thriller TV series, Orphan Black, the book plays an important role containing Professor Duncan's key to human cloning.
+<P>&nbsp;&bull; "The Madman's Daughter" tells the story from the point of view of Juliet Moreau, Dr. Moreau's deer-hybrid daughter.
+<P>&nbsp;&bull; Big Finish Productions released the Audio Adaptation of this Novel titled as The Island of Dr Moreau
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Island_of_Doctor_Moreau" class = "standardb_red" target="_blank">Wikipedia The Island of Doctor Moreau</a> - <b>The Island of Doctor Moreau</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					23rd of Oct, 2017.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+		
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="mr_ledbetters_vacation">Mr. Ledbetter's Vacation</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/mr_ledbetters_vacation.jpg" alt="Mr. Ledbetter's Vacation" title="Mr. Ledbetter's Vacation" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Mr. Ledbetter's Vacation</b> (Sometimes rendered 'Leadbetter') is a short story written by H. G. Wells in 1894. The story deals with the internal human conflict between rationality and the irrational fear of the unknown.
+
+<br><br>
+<P><b>Adaptations:</b>
+
+<P>&nbsp;&bull; Mr. Leadbetter's Vacation was adapted into a 30-minute BBC radio drama in the mid-1950s by Lance Sieveking. It was subsequently broadcast by NBC as part of their "Showcase" series, on 16 October 1954.
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Mr._Ledbetter%27s_Vacation" class = "standardb_red" target="_blank">Wikipedia Mr. Ledbetter's Vacation</a> - <b>Mr. Ledbetter's Vacation</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					20th of Oct, 2017.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	
+
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_red" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+

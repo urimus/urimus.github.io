@@ -1,0 +1,1402 @@
+﻿
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#de8e8e";
+	var scrollBackColor="#F9D4D4";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#CE3535; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*35;
+var imgBgSrc="images/icons/background/book.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#F9D4D4"> 
+		<td  bgcolor="#F9D4D4" width="100%">
+		<div class="nimetus2_red"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_yefremov_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_yefremov_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_yefremov_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_yefremov_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#F9D4D4" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_red">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>	
+
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_selected">
+		&#9679; Книги</div>
+	</td>
+	</tr>		
+	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'books');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; СССР</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_bulychev_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_bulychev_rus.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Кир Булычёв</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_grin_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_grin_rus.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Александр Грин</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_kazancev_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_kazancev_rus.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Александр Казанцев</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_pavlov_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_pavlov_rus.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Сергей Павлов</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_yefremov_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_yefremov_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Иван Ефремов</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Великобритания</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Соединённые Штаты Америки</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>			
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#F9D4D4" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_red" style="width: 530px;"><a name="welcome">Книги &blacktriangleright; СССР &blacktriangleright; Иван Ефремов</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:805px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #de8e8e 1px solid;  background-color: #F9D4D4;">
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_red"><a name="movies">Иван Ефремов</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_red">Биография</td>
+			</tr>			
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/ivan_yefremov.jpg" alt="Иван Ефремов" title="Иван Ефремов" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Иван Антонович Ефремов</b> (1908—1972) — русский советский писатель-фантаст, учёный-палеонтолог, создатель тафономии; философ-космист и общественный мыслитель. Лауреат Сталинской премии второй степени (1952).
+
+<P>В своих книгах показал как прошлое, так и возможное коммунистическое будущее человечества.
+
+
+<br><br>
+<P><b>Мировоззрение:</b>
+
+<P>Мировоззрение Ефремова замечательно своей цельностью, в нём палеонтолог-эволюционист дополняет социального мыслителя, психолога и писателя. От примитивных биологических форм к кострам палеолита, и далее, через собирание жемчужин мысли и красоты, создаваемых человеком во все эпохи, к построению справедливого общества. Основные источники и составные части ефремовского мировоззрения: социалистическая мысль — диалектика марксизма, Н. Чернышевский, А. Богданов, Г. Уэллс; романтико-приключенческая литература — Г. Хаггард, А. Грин; русская поэзия Серебряного века — Николай Гумилёв, Максимилиан Волошин (эти поэты цитируются во многих произведениях Ефремова, см. Л. Акопов. Поэзия в произведениях И. А. Ефремова); «Номогенез» выдающегося биолога Льва Семёновича Берга; гуманистическая психология К. Роджерса и Э. Фромма; индийская философия; идеи русского космизма — К. Циолковского, В. Вернадского и Живой Этики Рерихов, в которой он искал философию для будущего СССР. Цитаты и идеи Живой Этики стали частью его фантастических произведений.
+
+<P>Ефремов стал прототипом Фёдора Симеоновича Киврина в повести братьев Стругацких «Понедельник начинается в субботу».
+
+<br><br>
+<P><b>Сбывшиеся «предсказания»:</b>
+
+<P>&nbsp;&bull; Открытие месторождения алмазов в Якутии — в рассказе «Алмазная труба» (до Ефремова в 1840 году геолог Р. К. Маак в своём докладе сделал вывод, что на реке Вилюй должны быть кимберлитовые трубки и алмазные россыпи).
+<P>&nbsp;&bull; Открытие крупного месторождения ртутных руд на Южном Алтае — в рассказе «Озеро горных духов».
+<P>&nbsp;&bull; Особенность поведения жидких кристаллов — в рассказе «Атолл Факаофо».
+<P>&nbsp;&bull; Трёхмерное телевидение с параболическим вогнутым экраном, в романе «<a href="#tumannost_andromedy" class = "standardb_red" target="_blank">Туманность Андромеды</a>» (по другой версии, оно уже было известно).
+<P>&nbsp;&bull; Костюм-экзоскелет («прыгающий скелет»), который позволяет людям преодолевать повышенное гравитационное притяжение (в романе «<a href="#tumannost_andromedy" class = "standardb_red" target="_blank">Туманность Андромеды</a>»).
+<P>&nbsp;&bull; Открытие боразона (эльбора, нитрида бора) — режущего инструмента и обшивки корпуса звездолета «Тантра» (в романе «<a href="#tumannost_andromedy" class = "standardb_red" target="_blank">Туманность Андромеды</a>»). Интересно, что синтезирование нитрида бора и выход романа в свет произошли в 1957 году.
+<P>&nbsp;&bull; Электронная книга (в романе «<a href="#tumannost_andromedy" class = "standardb_red" target="_blank">Туманность Андромеды</a>»).
+<P>&nbsp;&bull; Омоложение организма (кожи) с помощью лазерной и радиоволновой терапии. (В романе "<a href="#tumannost_andromedy" class = "standardb_red" target="_blank">Туманность Андромеды</a>"). Радиолифтинг и термаж кожи, направленные на активизацию роста молодых клеток, а также омолаживающие процедуры с использованием лазера и широкополосного света. (см. В романе "<a href="#tumannost_andromedy" class = "standardb_red" target="_blank">Туманность Андромеды</a>"- "Эвда Наль вызвала в памяти все, что знала об основах долголетия, - очистке организма от энтропии. Изученные за тысячелетия, эти древние структуры, когда-то очаги старения и болезней, стали поддаваться энергетической очистке - химическому и лучевому промыванию, и радиоволновой встряске организма" - цит. по: И.Ефремов соч. в 3-х т., Т.3 кн.2, М., "Молодая Гвардия", 1976 - С. 219)
+
+<br><br>
+<P><b>Награды:</b>
+
+<P>&nbsp;&bull; орден Трудового Красного Знамени (1945) — за заслуги в палеонтологии.
+<P>&nbsp;&bull; орден Трудового Красного Знамени (1968) — за заслуги в развитии советской литературы и активное участие в коммунистическом воспитании трудящихся.
+<P>&nbsp;&bull; орден «Знак Почёта».
+<P>&nbsp;&bull; Сталинская премия второй степени (1952) — за книгу «Тафономия и геологическая летопись».
+
+<br><br>
+<P><b>Память:</b>
+
+<P>&nbsp;&bull; Именем Ефремова названа библиотека в посёлке Вырица.
+<P>&nbsp;&bull; Именем Ефремова назван клуб в Софии (Болгария). «Интегральный клуб фантастики, евристики и прогностики Иван Ефремов» создан в 1974 году и работает и сегодня. Это старейший клуб в Восточной Европе. Сайт клуба: http://sf-sofia.com/.
+<P>&nbsp;&bull; Названная в честь писателя ежегодная литературная конференция «Ефремовские чтения» проходит ежегодно в пос. Вырица; с 2009 года — также и в Москве.
+<P>&nbsp;&bull; Именем Ивана Ефремова названа литературная премия за вклад в развитие и пропаганду фантастики.
+<P>&nbsp;&bull; В честь Ивана Ефремова названа малая планета (2269) Ефремиана, открытая 2 мая 1976 года астрономом Н. Черных.
+<P>&nbsp;&bull; Ивантозавр (лат. Ivantosaurus ensifer) — примитивный терапсид, «Ивана Антоновича ящер», открыт и назван Петром Константиновичем Чудиновым в честь своего научного руководителя, Ивана Антоновича Ефремова.
+
+<br><br>
+<P><b>Фильмы:</b>
+<P>&nbsp;&bull; 1990 год — «Откровение Ивана Ефремова» (режиссёр Неля Гульчук).
+<P>&nbsp;&bull; 2001 год — «Иван Ефремов — Последний коммунист вселенной» (режиссёр В. Мелетин).
+<P>&nbsp;&bull; 2004 год — «Оседлавший дракона» (режиссёр Ирина Ланина).
+<P>&nbsp;&bull; 2007 год — «Человек Эры Кольца. Иван Ефремов» (режиссёр Денис Чуваев).
+
+<br><br>
+<P><b>Экранизации:</b>
+
+<P>&nbsp;&bull; «Туманность Андромеды» (реж. Евгений Шерстобитов). Полное название фильма: «Туманность Андромеды. Часть 1. Пленники Железной Звезды». 1967 год.
+
+					
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_red" target="_blank">Wikipedia Ефремов, Иван Антонович</a> - <b>Иван Ефремов</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					25е Авг, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_red"><a name="serdce_zmei">Сердце Змеи</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/serdce_zmei.jpg" alt="Сердце Змеи" title="Сердце Змеи" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>«Сердце Змеи»</b> («Cor Serpentis») — научно-фантастическая повесть Ивана Антоновича Ефремова, написанная в 1958 году.	
+
+<br><br>
+<P><b>Персонажи:</b>
+
+<P>&nbsp;&bull; Мут Анг — командир звездолёта «Теллур»
+<P>&nbsp;&bull; Тэй Эрон — помощник командира и главный астрофизик
+<P>&nbsp;&bull; Кари Рам — электронный механик и астронавигатор
+<P>&nbsp;&bull; Афра Деви — биолог
+<P>&nbsp;&bull; Тайна Дан — химик
+<P>&nbsp;&bull; Свет Сим — врач
+<P>&nbsp;&bull; Яс Тин — инженер пульсационных устройств
+
+<br><br>
+<P><b>Издания:</b>
+
+<P>Повесть впервые была напечатана в 1959 г. — в журнале «Юность» (№ 1) и, параллельно, в сборнике советской НФ «Дорога в 100 парсеков». Впоследствии неоднократно переиздавалась, включалась в авторские сборники и антологии. Была переведена на английский, французский, немецкий язык.
+
+<br><br>
+<P><b>Интересные факты:</b>
+
+<P>&nbsp;&bull; Во время полёта земной экипаж обсуждает варианты контакта с инопланетным разумом. При этом пересказывается и критикуется старинный рассказ «Первый контакт» — это произведение американского фантаста Мюррея Лейнстера 1945 года.
+
+<P>&nbsp;&bull; Несмотря на далёкое будущее и сверхсветовые скорости, герои Ефремова смотрят на стрелки циферблатов («Стрелки бесчисленных циферблатов начали хоровод почти осмысленных движений») и в поисках информации листают справочники («Да, при плюс двадцати градусах, — ответил, заглядывая в справочник, Кари»), — Ефремов и другие фантасты тогда ещё не ожидали появления и развития современных нам информационных технологий.
+						
+						
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B4%D1%86%D0%B5_%D0%97%D0%BC%D0%B5%D0%B8" class = "standardb_red" target="_blank">Wikipedia Сердце Змеи</a> - Сердце Змеи на Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					25е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_red"><a name="tumannost_andromedy">Туманность Андромеды</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/tumannost_andromedy.jpg" alt="Туманность Андромеды" title="Туманность Андромеды" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+<P><b>«Туманность Андромеды»</b> — социально-философский научно-фантастический роман Ивана Антоновича Ефремова. Написан в 1955—1956 гг. Отрывки романа печатались в газетах «Пионерская правда» (1957) и «Комсомольская правда» (1959).
+Первое издание — в №№ 1-9 журнала «Техника — молодёжи» в 1957 г. В виде книги впервые опубликован в издательстве ЦК ВЛКСМ «Молодая Гвардия» в 1958 году (165 000 экз.). После этого многократно переиздавался и был переведён на десятки языков мира. Роман входит в авторский цикл «Великое Кольцо».
+
+<P><i>Квинтэссенцией социальных и философских размышлений Ефремова о далёком будущем стал масштабный и беспрецедентный в советской литературе роман «Туманность Андромеды».</i> - Аннотация книги.
+
+
+<br><br>
+<P><b>Утопичность:</b>
+
+<P>«Туманность Андромеды» является классической коммунистической утопией о далёком будущем. Автор фокусирует внимание на социальных и культурных аспектах общества. Основные герои имеют профессии историка, археолога, командира космического корабля. Описываемое в романе общество автор предлагает считать идеальным, но в то же время есть попытка показать конфликт общества и учёного, добровольно принявшего наказание за свой рискованный научный эксперимент, причинивший значительные разрушения. В романе есть и несколько эпизодов, описывающих битву экипажа звездолёта «Тантра» с инопланетными существами-хищниками и, одновременно, с повышенной гравитацией их планеты.
+
+<br><br>
+Дмитрий Бак писал, что самое главное в романе
+
+<P><i>постановка вопроса о соотношении счастья и нормы. Это «проклятый вопрос», о который спотыкались все, начиная с Томаса Мора, и который привёл в XX веке к появлению антиутопий. У Замятина, например, общественное счастье оборачивалось абсолютной регламентированностью. А у Ефремова счастливыми и подлинными людьми оказываются те, кто сомневается, заблуждается, бунтует и протестует.</i>
+
+<br><br>
+
+<P>Иную оценку ефремовской утопии дал Всеволод Ревич, который обвинил Ефремова в том, что он в послесталинские годы стал защищать коммунизм. Ревич писал:
+
+<P><i>Он продолжал верить в то, что ничего лучшего для будущего Земли придумать невозможно, и поставил себе задачей убедить окружающих, что коммунизм — не унылый фаланстер, не принудиловка, а счастливая, красивая и творчески наполненная жизнь для всех.</i>
+
+<br><br>
+<P><b>Дискуссия с другими писателями:</b>
+
+<P>Существует мнение, что в определённой степени роман «Туманность Андромеды» явился своеобразным ответом роману «Звёздные короли» Эдмонда Гамильтона, написанному в 1949 году.
+
+<P>В «Звёздных королях» дело происходит в очень далёком будущем, отстоящем от современности на 200 000 лет. Галактика Млечного Пути уже давно заселена и, более того, разбита на государства — на манер устройства Земли в период Второй мировой войны. Роман Гамильтона представлял собой космическую оперу, приключенческий роман, который тем не менее был во многом основан на событиях Второй мировой войны. Маленькое, но очень агрессивное государство «облачников» («Лига Тёмных Миров»), их похожий на Адольфа Гитлера лидер (Шорр Кан), кампания по захвату всей Галактики и раздела её с колеблющимися и трусливыми "союзниками" — и противостоящее этому огромное королевство («Средне–Галактическая Империя») с длинной историей и мощным оружием («Разрушителем»), способным уничтожать само пространство.
+
+<P>Ефремов решил написать своё видение будущего, где не будет места королевствам, войнам и прочим пережиткам нашего времени.
+
+<P>Любопытно, что имена героев по Ефремову сильно напоминают имена будущего по Гамильтону: Вель Квен, Хел Беррел, Валь Марланн, Сат Шамар и тому подобные. Но есть и отличия: у Гамильтона существовало и своеобразное отчество — первая часть имени отца становилась второй частью имени сына (например, Зарт Арн и Джал Арн были сыновьями императора Арн Аббаса), а женские имена состояли из одного слова — Лианна (принцесса королевства Фомальгаут), Мерн. (Логично, что через многие века «Дмитрии» и «Джоны» не сохранятся, но в данном случае созвучность имён у двух авторов не похожа на совпадение. Правда, во второй книге дилогии — «Возвращение к звёздам» (1970) — Гамильтон даёт одному из второстепенных отрицательных персонажей вполне современное имя Джон Оллен).				
+						
+<br><br>
+<P><b>И. А. Ефремов о работе над романом:</b>
+
+<P>И. А. Ефремов утверждал, что работа над «Туманностью Андромеды» была для него очень сложной из-за того, что роман создавался в жанре научной фантастики. По словам Ефремова, мысль о космосе и межгалактических путешествиях привлекала его задолго до вывода на орбиту Земли первого советского искусственного спутника. Знакомство с несколькими десятками зарубежных фантастических романов (преимущественно американских), в которых описывались гибель человечества и космические войны межпланетных цивилизаций, вызвало полемическое желание предложить свою, гуманистическую концепцию освоения Космоса. Таким образом, возникла идея «Великого Кольца». Именно так сначала и предполагалось назвать роман. Но во время работы над рукописью на первое место вышел образ человека будущего.
+
+<P><i>«Я почувствовал, что не могу перебросить мост к другим Галактикам, пока сам не пойму, каким же станет завтрашний человек Земли, каковы будут его помыслы, стремления, идеалы…»</i>
+
+<br><br>
+<P>Соответственно изменилось и название произведения на «Туманность Андромеды». Хотя идея «Великого Кольца» всё равно осталась в романе главной.
+
+<P>По словам И. Ефремова, при подготовке романа он записывал в специальные блокноты наброски и пометки. Сам он называл эти блокноты «премудрыми тетрадями».
+
+<P>После сбора материала работа над романом долгое время не двигалась с места — пока, по свидетельству автора, он не увидел "внутренним взором" фрагмент посещения отважными астронавтами планеты Тьмы.
+<P><i>«Все эпизоды, связанные с пребыванием астронавтов на планете Тьмы, я видел настолько отчётливо, что по временам не успевал записывать. Писалось большими «кусками» по 8-10 страниц. И после этого я не уставал, а, наоборот, испытывал огромное удовольствие, приток свежих сил…»</i>
+
+<br><br>
+<P>И. Ефремов во время создания романа жил на своей подмосковной даче и почти ни с кем не общался, писал практически ежедневно. Настроиться на работу ему помогало созерцание звёздного неба и наблюдение в бинокль Туманности Андромеды.
+<P><i>«Так и остался у меня в памяти период работы над «Туманностью Андромеды» как время полного уединения, тишины, время, когда передо мной был только письменный стол и звёздное небо, как бы придвинувшееся, приблизившееся ко мне…</i>
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BC%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%90%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B5%D0%B4%D1%8B_%28%D1%80%D0%BE%D0%BC%D0%B0%D0%BD%29" class = "standardb_red" target="_blank">Wikipedia Туманность Андромеды (роман)</a> - Туманность Андромеды на Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					25е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+	
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_red"><a name="chas_byka">Час Быка</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/chas_byka.jpg" alt="Час Быка" title="Час Быка" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+<P><b>«Час Быка»</b> — социально-философский научно-фантастический роман Ивана Антоновича Ефремова о путешествии людей будущего, уроженцев коммунистической Земли, на планету Торманс, куда ранее бежала с Земли часть людей и где в результате возникло статичное тоталитарное общество. Написан в 1968 году.
+
+<P>В «Часе Быка» использован фантастический мир будущего Земли, описанный автором в более раннем романе «<a href="#tumannost_andromedy" class = "standardb_red" target="_blank">Туманность Андромеды</a>»; упоминаются (в качестве «исторических личностей») персонажи последнего: Рен Боз, Веда Конг, Эрг Ноор, Дар Ветер, Мвен Мас. Однако события «Часа Быка» происходят значительно позже и общих с «Туманностью Андромеды» действующих персонажей нет, а сюжет романа вполне самостоятелен.
+
+<P>Роман посвящён Таисии Иосифовне Ефремовой.
+
+<br><br>
+<P><b>Главные концепции:</b>
+
+    Инферно — природа как ад, средоточие зла для мыслящих, чувствующих существ.
+    Стрела Аримана — свойство инфернальных обществ автоматически направлять зло на лучших и честнейших своих представителей.
+    Коммунистическая Земля — общество свободных и ответственных людей, без денег и собственности, с всепланетными обсуждениями и прямым голосованием по всем вопросам, руководимое в каждой сфере деятельности Советами, состоящими из лучших и самых уважаемых специалистов.
+    Великое Кольцо — сообщество цивилизаций, общающихся посредством посылки радиосообщений. Время, когда Земля вступила в сообщество, называется Эрой Великого Кольца, она сменилась Эрой Встретившихся Рук — эпохой прямых контактов между отдельными цивилизациями.
+    Охранные системы, предохраняющие высокоразвитое общество от инфернальных пережитков человеческой психики.
+    Порог Синед Роба — ни одно низкое по морально-этическому уровню общество не может выйти в межзвёздный Космос, поскольку истребит себя своим собственным оружием, ещё находясь в пределах своей планеты или своей звёздной системы (имя учёного — анаграмма от «Денеш Габор»).
+    Недопустимость существования цивилизаций, перекрывающих путь к знаниям для своих подданных:
+
+<P><i>«На это не имеет права ни одно государство, ни одна планета во вселенной. Священный долг каждого из нас — нарушать такое беспримерное угнетение. Кто смеет закрывать мыслящему существу путь к познанию мира? … когда в Великом Кольце обнаруживают государство, закрывающее своим людям путь к знанию, то такое государство разрушают. Это единственный случай, дающий право на прямое вмешательство в дела чужой планеты. … запрет познавать искусство, науки, жизнь других планет недопустим»</i>
+
+<br><br>
+<P><b>Эры истории Человечества:</b>
+
+<P>На протяжении примерно трёх тысячелетий с XX века на Земле сменились:
+
+    ЭРМ — Эра Разобщённого Мира;
+    ЭМВ — Эра Мирового Воссоединения;
+    ЭОТ — Эра Общего Труда;
+    ЭВК — Эра Великого Кольца;
+    ЭВР — Эра Встретившихся Рук.
+
+
+<br><br>
+<P><b>Проблематика:</b>
+
+<P>Ефремов говорил, что роман возник из желания поспорить с авторами антиутопий:
+
+<P><i>Я обнаружил тенденцию в нашей научной фантастике (не говорю уже о зарубежной!) — рассматривать будущее в мрачных красках грядущих катастроф, неудач и неожиданностей, преимущественно неприятных.</i>
+<P><i>Конечно, и о трудностях, о неудачах, даже о возможных катастрофах надо писать. Но при этом писатель обязан показать выход из грозных ловушек, которые будущее готовит для человечества. А у авторов «антиутопий» выхода-то никакого нет. Всё или фатально, или подчинено прорвавшимся диким, животным инстинктам человека.</i>
+
+<br><br>
+<P>Ефремов новаторски переосмыслил жанр антиутопии, сочетая в одном романе как картину общества в условиях экологической и социальной катастрофы, так и альтернативное ему общество коммунистической Земли (ранее подробно описанное в «Туманности Андромеды»).
+
+
+
+
+
+
+
+<P>В книге достаточно намёков на Китай, поскольку роман был написан в период советско-китайского раскола. Например, сады диктатора планеты Чойо Чагаса называются также садами «величайшего гения Цоам», что является очевидным перевёртышем имени Мао Цзэдун, а Совет Четырёх, управляющий планетой, легко ассоциируется с группой лидеров Коммунистической Партии Китая с 1966 по 1976 годы, названную после её отстранения от власти «Бандой четырёх».
+
+<P>Однако в романе легко усматриваются черты, характерные и для СССР. Всеволод Ревич пишет в книге «Перекрёсток утопий»:
+
+<P><i>…хотел того автор или не хотел, всё, что творилось на Тормансе, с неотвратимостью проецировалось на нашу страну. Ефремов даже заглянул вперёд — в книге просматриваются ассоциации с временами застоя и — как его следствия — нынешнего беспредела.</i>
+
+<br><br>
+<P>Интересно, что в книге вообще нет упоминания об СССР: в разговорах героев о временах, когда на Земле кризис цивилизации, подобный тормансианскому, был преодолён, в качестве страны, «прошедшей по лезвию бритвы между капитализмом и муравьиным лжесоциализмом», называется Россия.
+
+<P>В романе «Час Быка» герои часто ссылаются на «философа и историка пятого периода ЭРМ» Эрфа Рома, имя которого является слегка завуалированными именем мыслителя-фрейдомарксиста Эриха Фромма.
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D1%81_%D0%91%D1%8B%D0%BA%D0%B0" class = "standardb_red" target="_blank">Wikipedia Час Быка</a> - Час Быка на Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					25е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+		
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_red" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

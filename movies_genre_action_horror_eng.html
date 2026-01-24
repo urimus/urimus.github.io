@@ -1,0 +1,1779 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*38;
+var imgBgSrc="images/icons/background/action_horror.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_genre_action_horror_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_genre_action_horror_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_genre_action_horror_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_genre_action_horror_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_selected">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; By Actors <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; By Genre</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_genre_action_horror_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_genre_action_horror_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Action Horror</div>
+	</td>
+	</tr>	
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_genre_body_horror_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_genre_body_horror_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Body Horror</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_genre_dystopia_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_genre_dystopia_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Dystopia</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_genre_post_apocalyptic_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_genre_post_apocalyptic_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Post-Apocalyptic</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_genre_short_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_genre_short_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Short</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_genre_sitcom_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_genre_sitcom_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Situation Comedy</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_genre_space_opera_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_genre_space_opera_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Space Opera</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Animation</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Superhero</div>
+	</td>
+	</tr>
+
+	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"  
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+
+
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table with search, name and languages -->
+	<tr class="title_black"> 
+		<td  class="title_black" style="width: 100%;"><a name="series">Movies &blacktriangleright; Action Horror</a></td>
+	</tr>
+
+</table>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:874px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="action">Action Horror</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/action.jpg" alt="Action" title="Action" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+<P><b>Action film</b> is a film genre in which the protagonist or protagonists end up in a series of challenges that typically include violence, extended fighting, physical feats, and frantic chases. Action films tend to feature a resourceful hero struggling against incredible odds, which include life-threatening situations, a villain, or a pursuit which generally concludes in victory for the hero (though a small number of films in this genre have ended in victory for the villain instead). Advancements in CGI have made it cheaper and easier to create action sequences and other visual effects that required the efforts of professional stunt crews in the past. However, reactions to action films containing significant amounts of CGI have been mixed as films that use computer animations to create unrealistic, highly unbelievable events are often met with criticism. While action has long been a recurring component in films, the "action film" genre began to develop in the 1970s along with the increase of stunts and special effects.
+
+<P>The genre is closely associated with the thriller and adventure film genres, and it may also contain elements of spy fiction and espionage.
+
+						
+					
+
+
+					<img src="images/icons/movies/horror.jpg" alt="Horror" title="Horror" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px; padding-top:10px;">
+					
+
+<br><br>
+<P>A <b>horror film</b> is a movie that seeks to elicit a physiological reaction, such as an elevated heartbeat, through the use of fear and shocking one’s audiences. Inspired by literature from authors like Edgar Allan Poe, Bram Stoker, and Mary Shelley, the horror genre has existed for more than a century. The macabre and the supernatural are frequent themes. Horror may also overlap with the fantasy, supernatural fiction and thriller genres.
+
+<P>Horror films often deal with viewers' nightmares, fears, revulsions and terror of the unknown. Plots within the horror genre often involve the intrusion of an evil force, event, or personage into the everyday world. Prevalent elements include ghosts, extraterrestrials, vampires, werewolves, demons, satanism, gore, torture, vicious animals, evil witches, monsters, zombies, cannibals, psychopaths, natural or man-made disasters, and serial killers.
+
+<P>Some subgenres of horror include action horror, comedy horror, body horror, disaster horror, holiday horror, horror drama, psychological horror, science fiction horror, slasher horror, supernatural horror, gothic horror, natural horror, zombie horror, first-person horror and teen horror.
+
+
+					
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Action_film" class = "standardb_black" target="_blank">Wikipedia Action film</a> - <b>Action</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Horror_film" class = "standardb_black" target="_blank">Wikipedia Horror film</a> - <b>Horror</b> on Wikipedia.
+			</td>
+			</tr>
+
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					12th of Aug, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="abandon">The Abandon</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/abandon.jpg" alt="The Abandon" title="The Abandon" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> The Abandon
+
+<P><b>Storyline:</b> A wounded soldier awakens in a strange cube that tests his physical and mental limits as he attempts to find a way to escape against a ticking clock.
+
+<P><b>Genres:</b> Horror, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Jonathan Rosenthal, Tamara Perry, Regis Terencio
+
+<P><b>Director:</b> Jason Satterlund
+
+<P><b>Country:</b> United States
+
+<P><b>Production Co:</b> Grindstone Entertainment Group, Mill House Motion Pictures
+
+<P><b>Duration:</b> 97 min
+
+<P><b>Release:</b> July 30, 2024 (United States)
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt10273738/" class = "standardb_black" target="_blank">IMDb Abandon (2022)</a> - <b>The Abandon</b> on IMDb.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=KPrao47fD8A" class = "standardb_black" target="_blank">The Abandon</a> - Official Trailer.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					05th of Aug, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="alien_covenant">Alien: Covenant</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/alien_covenant.jpg" alt="Alien: Covenant" title="Alien: Covenant" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+		
+
+<P><b>Alien: Covenant</b> is a 2017 British-American science fiction horror film directed and produced by Ridley Scott and written by John Logan and Dante Harper, from a story by Michael Green and Jack Paglen. A joint American and British production, the film is a sequel to Prometheus (2012) and the second entry in the Alien prequel series. It is the sixth installment in the Alien franchise overall, three of which have been directed by Scott. The film features returning star Michael Fassbender, with Katherine Waterston, Billy Crudup, Danny McBride, and Demián Bichir in supporting roles. It follows the crew of a colony ship that lands on an uncharted planet and makes a terrifying discovery.
+
+<P>In 2012, prior to the release of Prometheus, Ridley Scott discussed the prospects of a sequel and new trilogy, and this film was confirmed that August. Principal photography began on April 4, 2016, at Milford Sound in Fiordland National Park, New Zealand, and wrapped on July 19, 2016. Effects houses Odd Studios and CreatureNFX provided the film's makeup and animatronic creature effects. Scott said the first cut of the film was 2 hours and 23 minutes long, which was eventually edited down to the 2 hours and 3 minutes of the released version.
+
+<P>Alien: Covenant premiered in London on May 4, 2017. It was released on May 12 in the United Kingdom, and on May 19 in the United States. The film received generally positive reviews from critics, but underperformed at the box office; its worldwide gross was $240 million against a production budget of approximately $100 million, not including marketing costs.
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Alien:_Covenant" class = "standardb_black" target="_blank">Wikipedia Alien: Covenant</a> - <b>Alien: Covenant</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=svnAD0TApb8" class = "standardb_black" target="_blank">Alien: Covenant</a> - Official Trailer.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					21st of Aug, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="cursed">The Cursed: Dead Man's Prey (kor. 방법: 재차의)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/cursed.jpg" alt="The Cursed: Dead Man's Prey (kor. 방법: 재차의)" title="The Cursed: Dead Man's Prey (kor. 방법: 재차의)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+		
+
+
+<P><b>The Cursed: Dead Man’s Prey</b> (Korean: 방법: 재차의; RR: Bang-beop: Jaechaeui; lit. Method: re) is a 2021 South Korean occult thriller film, directed by Kim Yong-wan and starring Uhm Ji-won, Jung Ji-so and Oh Yoon-ah. The film written by Yeon Sang-ho is an extended version of 2020 drama The Cursed. It tells the story of a girl, who pursues the truth of an incident in which the culprit of a peculiar serial murder case turns out to be a revived corpse 'again'. It was released in theatres on July 28, 2021. It marked the final film appearance of Kim Mi-soo before her death in January 2022.
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Cursed:_Dead_Man%27s_Prey" class = "standardb_black" target="_blank">Wikipedia The Cursed: Dead Man's Prey</a> - <b>The Cursed: Dead Man's Prey (kor. 방법: 재차의)</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=J_W8G4RWsXA" class = "standardb_black" target="_blank">The Cursed: Dead Man's Prey (kor. 방법: 재차의)</a> - Official Trailer (kor., with subt.).
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					23rd of Jan, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="day">A Day (kor. 하루)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/day.jpg" alt="A Day (kor. 하루)" title="A Day (kor. 하루)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+		
+
+<P><b>A Day</b> is a 2017 South Korean mystery thriller film directed by Cho Sun-ho, starring Kim Myung-min and Byun Yo-han.
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/A_Day_(film)" class = "standardb_black" target="_blank">Wikipedia A Day (film)</a> - <b>A Day (kor. 하루)</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=kt61Rud41iM" class = "standardb_black" target="_blank">A Day (kor. 하루)</a> - Official Trailer (kor., with subt.).
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08th of Mar, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="drive_back">Drive Back</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/drive_back.jpg" alt="Drive Back" title="Drive Back" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Drive Back
+
+<P><b>Storyline:</b> A couple returning from their engagement party must escape a sinister and seemingly endless road.
+
+<P><b>Genres:</b> Action, Horror, Mystery, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Crystal Foster, Zack Gold, Nathan Healy
+
+<P><b>Director:</b> Cody Ashford
+
+<P><b>Country:</b> USA
+
+<P><b>Production Co:</b> Tremendum Pictures, Rotting Press
+
+<P><b>Duration:</b> 94 min
+
+<P><b>Release:</b> November 8, 2024 (United States)
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt23639696/" class = "standardb_black" target="_blank">IMDb Drive Back (2024)</a> - <b>Drive Back</b> on IMDb.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=wTVFTbAXD0o" class = "standardb_black" target="_blank">Drive Back</a> - Official Trailer.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					06th of Dec, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="king_arthur">King Arthur: Legend of the Sword</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/king_arthur.jpg" alt="King Arthur: Legend of the Sword" title="King Arthur: Legend of the Sword" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>King Arthur: Legend of the Sword</b> is a 2017 epic fantasy action adventure film directed by Guy Ritchie who co-wrote the film with Joby Harold and Lionel Wigram from a story by Harold and David Dobkin, inspired by Arthurian legends. The film stars Charlie Hunnam as the title character and Jude Law as the tyrannical king Vortigern who is attempting to kill him, with Àstrid Bergès-Frisbey, Djimon Hounsou, Aidan Gillen, and Eric Bana in supporting roles.
+
+<P>King Arthur premiered at the TCL Chinese Theater on 8 May 2017 and was theatrically released in 2D and RealD 3D on 12 May 2017 in the United States and 19 May 2017 in the United Kingdom. The film grossed $148 million worldwide against its $175 million production budget. Originally, the film was meant to be the first in a six-film franchise, but the planned sequels were cancelled after it underperformed at the box office and lost Warner Bros. and Village Roadshow Pictures over $150 million.
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/King_Arthur:_Legend_of_the_Sword" class = "standardb_black" target="_blank">Wikipedia King Arthur: Legend of the Sword</a> - <b>King Arthur: Legend of the Sword</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=6rbPTQIdjmY" class = "standardb_black" target="_blank">King Arthur: Legend of the Sword</a> - Official Trailer.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					22nd of Aug, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="otherlife">OtherLife</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/otherlife.jpg" alt="OtherLife" title="OtherLife" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+		
+
+<P><b>OtherLife</b> is a 2017 Australian science fiction thriller film directed by Ben C. Lucas. It stars Jessica De Gouw as the co-founder of Otherlife, a company that developed a form of biological virtual reality. When her business partner, played by T.J. Power, insists she license it for unethical use, she struggles to retain control of her invention with the help of her lover, played by Thomas Cocquerel.
+
+<P>The film is loosely based on the novel Solitaire by Kelley Eskridge.
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/OtherLife" class = "standardb_black" target="_blank">Wikipedia OtherLife</a> - <b>OtherLife</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=qav2Z0TgYMA" class = "standardb_black" target="_blank">OtherLife</a> - Official Trailer.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					11th of May, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="patrick">Patrick</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/patrick.jpg" alt="Patrick" title="Patrick" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+		
+
+<P><b>Patrick</b> is a 2013 Australian supernatural horror film that was directed by Mark Hartley and a remake of the 1978 film of the same name. It had its world premiere on 27 July 2013 at the Melbourne International Film Festival and received a limited theatrical release on 14 March 2014, followed by a DVD release the following month. Its Canadian theatrical premiere was at the Lost Episode Festival Toronto on 5 July 2014.
+
+<P>The movie stars Jackson Gallagher as the titular Patrick, a comatose young man who uses his psychic powers to stalk a nurse caring for him.
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Patrick_(2013_film)" class = "standardb_black" target="_blank">Wikipedia Patrick (2013 film)</a> - <b>Patrick</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=vwhng9xKDew" class = "standardb_black" target="_blank">Patrick</a> - Official Trailer.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					28th of May, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="underwater">Underwater</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/underwater.jpg" alt="Underwater" title="Underwater" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+		
+
+<P><b>Underwater</b> is a 2020 American science fiction action horror film directed by William Eubank. The film stars Kristen Stewart, Vincent Cassel, Jessica Henwick, John Gallagher Jr., Mamoudou Athie, and T.J. Miller.
+
+<P>Underwater follows a group of workers on a drilling facility at the bottom of the ocean who encounter hostile creatures after an earthquake destroys the facility. The film is loosely based on the Cthulhu Mythos, as it features Cthulhu and the Deep Ones as the antagonists.
+
+<P>The film was released in the United States on January 10, 2020, by 20th Century Fox. It received mixed reviews from critics and grossed $41 million worldwide against a production budget of $50–80 million. Notably, it was the final film released under the 20th Century Fox brand, as new owner The Walt Disney Company changed the company's name to 20th Century Studios just a week after its release.
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Underwater_(film)" class = "standardb_black" target="_blank">Wikipedia Underwater (film)</a> - <b>Underwater</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Rszr56AH3Co" class = "standardb_black" target="_blank">Underwater</a> - Official Trailer.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					13th of Feb, 2022.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

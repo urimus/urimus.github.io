@@ -1,0 +1,56 @@
+﻿<b class="text_black_blue">Games</b>
+
+&#9679; <a href="games_action_adventure_eng.html#action_adventure" class = "standardb_black" data-added="27th of Jul, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Action-Adventure</a>
+<span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#armor_mayhem" class = "standardb_black" data-added="19th of Aug, 2016." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Armor Mayhem</a></span>
+<span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#assasins_creed" class = "standardb_black" data-added="27th of Jul, 2016." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Assassin’s Creed II</a></span>
+<span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#prince_of_persia" class = "standardb_black" data-added="01st of May, 2012." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Price of Persia: The Forgotten Sands</a></span>
+
+&#9679; <a href="games_card_eng.html#card" class = "standardb_black" data-added="13th of Jul, 2018." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Card</a>
+<span style="padding-left:10px;">- <a href="games_card_eng.html#preferans" class = "standardb_black" data-added="13th of Jul, 2018." data-genre="Card" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Preferans</a></span>
+
+&#9679; <a href="games_puzzle_eng.html#puzzle" class = "standardb_black" data-added="27th of Jul, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Puzzle</a>
+<span style="padding-left:10px;">- <a href="games_puzzle_eng.html#diamond_digger_saga" class = "standardb_black" data-added="27th of Jul, 2016." data-genre="Puzzle" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Diamond Digger Saga</a></span>
+<span style="padding-left:10px;">- <a href="games_puzzle_eng.html#lines" class = "standardb_black" data-added="30th of Jun, 2017." data-genre="Puzzle" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Lines</a></span>
+
+&#9679; <a href="games_racing_eng.html#racing" class = "standardb_black" data-added="27th of Jul, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Racing</a>
+<span style="padding-left:10px;">- <a href="games_racing_eng.html#need_for_speed" class = "standardb_black" data-added="01st of May, 2012." data-genre="Racing" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Need for Speed: Hot Pursuit</a></span>
+
+&#9679; <b class="text_black_blue" data-added="26th of Jul, 2016.">Role-playing (RPG)</b>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_action_eng.html#rpg_action" class = "standardb_black" data-added="27th of Jul, 2016." data-genre="Role-Playing (RPG)" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Action RPG</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_action_eng.html#mass_effect" class = "standardb_black" data-added="01st of May, 2012." data-genre="Action RPG" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Mass Effect 3</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_action_eng.html#nox" class = "standardb_black" data-added="21st of Sep, 2019." data-genre="Action RPG" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Nox</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_action_eng.html#torchlight2" class = "standardb_black" data-added="25th of Aug, 2018." data-genre="Action RPG" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Torchlight II</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_breakout_eng.html#rpg_breakout" class = "standardb_black" data-added="27th of Jul, 2016." data-genre="Role-Playing (RPG)" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Breakout RPG</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_breakout_eng.html#alphabounce" class = "standardb_black" data-added="27th of Jul, 2016." data-genre="Breakout RPG" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Alphabounce</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_mmorpg_eng.html#rpg_mmorpg" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Role-Playing (RPG)" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Massively multiplayer online role-playing game (MMORPG)</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_mmorpg_eng.html#dragonica" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="MMORPG" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Dragonica</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_eng.html" class = "standardb_black" data-added="26th of Jul, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Role-Playing (RPG)</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_eng.html#dragon_quest" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Role-playing (RPG)" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Dragon Quest</a></span>
+<span style="padding-left:20px;">- <a href="games_rpg_eng.html#pillars_eternity" class = "standardb_black" data-added="14th of Dec, 2021." data-genre="Role-playing (RPG)" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Pillars of Eternity</a></span>
+
+&#9679; <b class="text_black_blue" data-added="26th of Jul, 2016.">Simulation Video</b>
+<span style="padding-left:10px;">&#9900; <a href="games_simulation_business_eng.html#simulation_business" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Business Simulation" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Business Simulation</a></span>
+<span style="padding-left:20px;">- <a href="games_simulation_business_eng.html#theme_hospital" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Business Simulation" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Theme Hospital</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_simulation_eng.html#simulation" class = "standardb_black" data-added="26th of Jul, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Simulation Video</a></span>
+<span style="padding-left:20px;">- <a href="games_simulation_eng.html#farmville" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Simulation Video" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">FarmVille</a></span>
+<span style="padding-left:20px;">- <a href="games_simulation_eng.html#simutrans" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Simulation Video" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Simutrans</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_simulation_space_flight_eng.html#simulation_space_flight" class = "standardb_black" data-added="22nd of Oct, 2019." data-genre="Space Flight Simulation" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Space Flight Simulation</a></span>
+<span style="padding-left:20px;">- <a href="games_simulation_space_flight_eng.html#everspace" class = "standardb_black" data-added="22nd of Oct, 2019." data-genre="Space Flight Simulation" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Everspace</a></span>
+
+&#9679; <b class="text_black_blue" data-added="26th of Jul, 2016.">Strategy</b>
+<span style="padding-left:10px;">&#9900; <a href="games_strategy_real_time_eng.html#strategy_real_time" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Real-Time Strategy</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_real_time_eng.html#age_of_empires" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Real-Time Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Age of Empires</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_real_time_eng.html#commandos" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Real-Time Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Commandos</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_real_time_eng.html#settlers" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Real-Time Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Settlers</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_real_time_eng.html#stronghold" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Real-Time Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Stronghold</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_strategy_tower_defense_eng.html#strategy_tower_defense" class = "standardb_black" data-added="19th of Aug, 2016." data-genre="Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Tower Defense</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_tower_defense_eng.html#gemcraft" class = "standardb_black" data-added="19th of Aug, 2016." data-genre="Tower Defense" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">GemCraft</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_strategy_turn_based_eng.html#strategy_turn_based" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Turn-Based Strategy</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_turn_based_eng.html#wesnoth" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Turn-Based Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Battle for Wesnoth</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_turn_based_eng.html#heroes_v" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Turn-Based Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Heroes of Might and Magic V</a></span>
+<span style="padding-left:20px;">- <a href="games_strategy_turn_based_eng.html#ufo" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Turn-Based Strategy" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">X-COM: Terror From The Deep</a></span>
+
+&#9679; <b class="text_black_blue" data-added="29th of Jun, 2017.">Not Video</b>
+<span style="padding-left:10px;">- <a href="games_not_video_eng.html#football" class = "standardb_black" data-added="29th of Jun, 2017." data-genre="Not Video" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Association Football</a></span>
+<span style="padding-left:10px;">- <a href="games_not_video_eng.html#snooker" class = "standardb_black" data-added="29th of Jun, 2017." data-genre="Not Video" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Snooker</a></span>
+<span style="padding-left:10px;">- <a href="games_not_video_eng.html#volleyball" class = "standardb_black" data-added="29th of Jun, 2017." data-genre="Not Video" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Volleyball</a></span>

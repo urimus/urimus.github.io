@@ -1,0 +1,1718 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#de8e8e";
+	var scrollBackColor="#F9D4D4";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#CE3535; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*37;
+var imgBgSrc="images/icons/background/book.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#F9D4D4"> 
+		<td  bgcolor="#F9D4D4" width="100%">
+		<div class="nimetus2_red"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_sheckley_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_sheckley_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_sheckley_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_sheckley_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#F9D4D4" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_red">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_selected">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; USSR</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; United Kingdom</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'books');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; United States of America</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_anderson_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_anderson_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Poul William Anderson</div>
+	</td>
+	</tr>	
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_azimov_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_azimov_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Isaac Asimov</div>
+	</td>
+	</tr>	
+
+	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_heinlein_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_heinlein_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Robert Anson Heinlein</div>
+	</td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_keyes_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_keyes_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Daniel Keyes</div>
+	</td>
+	</tr>		
+
+	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_london_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_london_eng.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Jack London</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_sheckley_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_sheckley_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Robert Sheckley</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div style = cursor:default
+		onmouseenter="this.className='menu_selected'" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_simak_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_simak_eng.html';
+			};"
+		class="menu_not_selected_red">
+		&nbsp;&nbsp;&nbsp;&bull; Clifford Donald Simak</div>
+	</td>
+	</tr>	
+
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+			<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#F9D4D4" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_red" style="width: 530px;"><a name="welcome">Books &blacktriangleright; United States of America &blacktriangleright; Robert Sheckley</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:851px;overflow:auto;">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #de8e8e 1px solid;  background-color: #F9D4D4;">
+
+		
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_red"><a name="movies">Robert Sheckley</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_red">Biography</td>
+			</tr>			
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/robert_sheckley.jpg" alt="Robert Sheckley" title="Robert Sheckley" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>Robert Sheckley</b> (July 17, 1928 – December 9, 2005) was an American writer. First published in the science fiction magazines of the 1950s, his numerous quick-witted stories and novels were famously unpredictable, absurdist, and broadly comical.
+
+<P>Sheckley was nominated for Hugo and Nebula awards and was named Author Emeritus by the Science Fiction and Fantasy Writers of America in 2001.
+
+
+
+<br><br>
+<P><b>Bibliography:</b>
+
+<br><br>
+<P><b>Science fiction and fantasy:</b>
+
+
+<br><br>
+<P><b>Novels:</b>
+
+<P>&nbsp;&bull; Immortality, Inc. as Immortality Delivered Avalon (1958), Bantam A1991 (1959), Gollancz (1963), Penguin (1978), Ace (1978), Tor (1991)
+<P>&nbsp;&bull; Dimension of Miracles Dell (1968), Gollancz (1969), Open Road Media (2014)
+<P>&nbsp;&bull; The Status Civilization, serialized as Omega. Signet S1840 (1960), Gollancz (1976), Ace (1979), Penguin (1979), Wildside (2007)
+<P>&nbsp;&bull; Journey Beyond Tomorrow, serialized as Journey of Joenes (1963). Signet D2223 (1963), Corgi (1966), Dell 4268 (1969). as Journey of Joenes Sphere (1978), Ace (1979)
+<P>&nbsp;&bull; The 10th Victim (novel) Ballantine U5050 (1965), Mayflower-Dell 8604 (1966), Ace (1979), Signet (1987), Methuen (1987)
+<P>&nbsp;&bull; Mindswap (featured as complete short novel in Galaxy magazine June 1965) Delacorte (1966), Dell 5643 (1967), Mayflower-Dell (1968), Pan (1973), Ace (1978), Grafton (1986)
+<P>&nbsp;&bull; Dimension of Miracles Dell 1940 (1968), Gollancz (1969), Mayflower (1971), Panther (1977), Ace (1979)
+<P>&nbsp;&bull; Options Pyramid (1975), Pan (1977), Grafton (1986)
+<P>&nbsp;&bull; The Alchemical Marriage of Alistair Crompton, Michael Joseph (1978), Sphere (1979), also known as Crompton Divided Holt, Rinehart and Winston (1978), Bantam (1979)
+<P>&nbsp;&bull; Dramocles Holt, Rinehart and Winston (1983), New English Library (1984)
+<P>&nbsp;&bull; Pop Death (1986)
+<P>&nbsp;&bull; Victim Prime Signet (1987)
+<P>&nbsp;&bull; Hunter / Victim Signet (1988)
+<P>&nbsp;&bull; On The Planet of Bottled Brains (with Harry Harrison, 1990)
+<P>&nbsp;&bull; Minotaur Maze (short novel, 1990)
+<P>&nbsp;&bull; Xolotl (short, 1991)
+<P>&nbsp;&bull; Alien Starswarm (short, 1991)
+<P>&nbsp;&bull; Millennial Contest series (with Roger Zelazny):
+<P>&nbsp;&nbsp;&nbsp;- Bring Me the Head of Prince Charming (1991)
+<P>&nbsp;&nbsp;&nbsp;- If at Faust You Don't Succeed (1993)
+<P>&nbsp;&nbsp;&nbsp;- A Farce to Be Reckoned With (1995)
+<P>&nbsp;&bull; Star Trek: Deep Space Nine: The Laertian Gamble (1995)
+<P>&nbsp;&bull; Aliens: Alien Harvest (1995)
+<P>&nbsp;&bull; Godshome Tor (1999)
+<P>&nbsp;&bull; Babylon 5: A Call to Arms (1999)
+<P>&nbsp;&bull; The Grand-Guignol of the Surrealists (2000)[13]
+<P>&nbsp;&bull; Dimension of Miracles Revisited (2000; self-published in English; published in France by Rivière Blanche, translated by Jean-Marc Lofficier)
+
+<br><br>
+<P><b>Short story collections:</b>
+
+<P>&nbsp;&bull; Untouched by Human Hands Ballantine H-73 (1954)
+<P>&nbsp;&bull; Citizen in Space Ballantine H-126 (1955)
+<P>&nbsp;&bull; Pilgrimage to Earth Bantam A1672 (1957)
+<P>&nbsp;&bull; Notions: Unlimited Bantam A2003 (1960)
+<P>&nbsp;&bull; Store of Infinity Bantam A2170 (1960)
+<P>&nbsp;&bull; Shards of Space Bantam J2443 (1962)
+<P>&nbsp;&bull; The People Trap Dell 6881 (1968)
+<P>&nbsp;&bull; Can You Feel Anything When I Do This? Doubleday (1971), DAW 99 (1973), also known as The Same to You Doubled Pan (1974)
+<P>&nbsp;&bull; The Robot Who Looked Like Me Sphere (1978), Bantam (1982)
+<P>&nbsp;&bull; Uncanny Tales Five Star (2003)
+
+<br><br>
+<P><b>Short story compilations:</b>
+
+<P>&nbsp;&bull; The Wonderful World of Robert Sheckley Bantam (1979), Sphere (1980)
+<P>&nbsp;&bull; The Sheckley Omnibus (1979)
+<P>&nbsp;&bull; Is THAT What People Do? Holt, Rinehart and Winston (1984; 23 previously published stories and 16 new)
+<P>&nbsp;&bull; The Collected Short Fiction of Robert Sheckley Pulphouse (1991; 5 volumes, vol. 5 includes new material)
+<P>&nbsp;&bull; The Masque of Mañana NESFA (2005)
+<P>&nbsp;&bull; Store of the Worlds NYRB (2012)
+
+
+<br><br>
+<P><b>Mystery and espionage:</b>
+
+<P>&nbsp;&bull; The Game of X Delacorte (1965) Dell 288 (19660. It was loosely adapted as the 1981 Disney film, Condorman: Sheckley also wrote the novelization of this film.
+<P>&nbsp;&bull; Stephen Dain series:
+<P>&nbsp;&nbsp;&nbsp;- Calibre .50 Bantam A2216 (1961)
+<P>&nbsp;&nbsp;&nbsp;- Dead Run Bantam A2240 (1961)
+<P>&nbsp;&nbsp;&nbsp;- Live Gold Bantam J2401 (1962)
+<P>&nbsp;&nbsp;&nbsp;- White Death Bantam J2685 (1963)
+<P>&nbsp;&nbsp;&nbsp;- Time Limit Bantam F3381 (1967)
+<P>&nbsp;&bull; Hob Draconian series:
+<P>&nbsp;&nbsp;&nbsp;- The Alternative Detective Tor (1993)
+<P>&nbsp;&nbsp;&nbsp;- Draconian New York Tor (1996)
+<P>&nbsp;&nbsp;&nbsp;- Soma Blues Tor (1997)
+
+<br><br>
+<P><b>Other works:</b>
+
+<P>&nbsp;&bull; The Man in the Water Regency 112 (1962)
+
+<br><br>
+<P><b>Books as editor:</b>
+
+<P>&nbsp;&bull; After the Fall (1980)
+
+					
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Robert_Sheckley" class = "standardb_red" target="_blank">Wikipedia Robert Sheckley</a> - <b>Robert Sheckley</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+		
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="accountant">The Accountant</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/accountant.jpg" alt="The Accountant" title="The Accountant" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>«Бухгалтер»</b> — рассказ классика фантастического жанра Роберта Шекли. Написан автором в 1954 году. В рассказе поднимается проблема отцов и детей и самоопределения человека, в том числе о выборе профессии. Переупрямить родителей часто оказывается чрезвычайно сложно. Впервые опубликован в июле 1954 в «The Magazine of Fantasy and Science Fiction». Переработан автором для включения в сборник «Is THAT What People Do?» (1984). Рассказ номинировался в 1985 году на премию «Locus».
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%85%D0%B3%D0%B0%D0%BB%D1%82%D0%B5%D1%80_(%D1%80%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B7)" class = "standardb_red" target="_blank">Wikipedia Бухгалтер (рассказ)</a> - <b>The Accountant</b> on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="dimension_of_miracles">Dimension of Miracles</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/dimension_of_miracles.jpg" alt="Dimension of Miracles" title="Dimension of Miracles" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Dimension of Miracles</b> is a 1968 satirical science-fiction novel, with elements of absurdism, by American writer Robert Sheckley.
+
+<P>The novel concerns the odyssey of Tom Carmody, a New Yorker who wins a prize in the Intergalactic Sweepstakes.
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Dimension_of_Miracles" class = "standardb_red" target="_blank">Wikipedia Dimension of Miracles</a> - <b>Dimension of Miracles</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="immortality_inc">Immortality, Inc.</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/immortality_inc.jpg" alt="Immortality, Inc." title="Immortality, Inc." style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Immortality, Inc.</b> is a 1959 science fiction novel by American writer Robert Sheckley, about a fictional process whereby a human's consciousness may be transferred into a brain-dead body. A striking concept in the novel is its description of random killings of strangers by people who intend to die. The serialised form (published under the title Time Killer in the magazine Galaxy Science Fiction) was nominated for the Hugo Award for Best Novel.
+
+<P>The story was loosely adapted into the 1992 film Freejack. A famous scene from the novel involving a character lost in a future New York City and mistakenly getting in line for a suicide booth was dramatized in the pilot episode of Futurama.
+
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Immortality,_Inc." class = "standardb_red" target="_blank">Wikipedia Immortality, Inc.</a> - <b>Immortality, Inc.</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="meeting_of_minds">Meeting of the Minds</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/meeting_of_the_minds.jpg" alt="Meeting of the Minds" title="Meeting of the Minds" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>«Поединок разумов» (англ. Meeting of the Minds)</b> — повесть писателя-фантаста Роберта Шекли, написанный автором в 1960 году.
+
+<P>Первая книжная публикация рассказа состоялась в сборнике «Осколки космоса» (англ. Shards of Space) в 1962 году.
+
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA_%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%BE%D0%B2" class = "standardb_red" target="_blank">Wikipedia Поединок разумов</a> - <b>Meeting of the Minds</b> on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="mindswap">Mindswap</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/mindswap.jpg" alt="Mindswap" title="Mindswap" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>«Обмен разумов»</b> (англ. Mindswap) — приключенческая, иронично-абсурдистская фантастическая повесть (роман) Роберта Шекли с элементами чёрного юмора. Первая публикация была в журнале «Galaxy Magazine» в июне 1965 года. Для первой книжной публикации (1966) роман был несколько расширен и доработан.
+
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D0%BC%D0%B5%D0%BD_%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%BE%D0%B2" class = "standardb_red" target="_blank">Wikipedia Обмен разумов</a> - <b>Mindswap</b> on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+	
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="mnemone">The Mnemone</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/mnemone.jpg" alt="The Mnemone" title="The Mnemone" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>«Мнемон»</b> (англ. The Mnemone) — рассказ классика фантастического жанра Роберта Шекли. Написан автором в 1971 году. Впервые был опубликован в ноябре 1972 года, в сборнике «Вы что-нибудь чувствуете, когда я прикасаюсь?»/«Того же и вам, но вдвойне». В 1982 году был переиздан в сборнике «Так люди этим занимаются?».
+
+<P>Интересным является то обстоятельство, что рассказ является попыткой продолжить тему, поднятую Рэем Бредбери в романе «451 градус по Фаренгейту». В своё время Шекли пытались обвинить в плагиате. Однако Бредбери сам сказал, что в данном случае обвинения в плагиате неуместны.
+
+<P>Безусловно и в данное произведение, и в роман Бредбери вложены схожие идеи, мысли, но ни в сюжетном, ни языковом они не имеют почти ничего общего. Рассказ «Мнемон» может выступать как продолжение повести «451 по Фаренгейту» с очень большой натяжкой.
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%B5%D0%BC%D0%BE%D0%BD" class = "standardb_red" target="_blank">Wikipedia Мнемон</a> - <b>The Mnemone</b> on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="pilgrimage_to_earth">Pilgrimage to Earth</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/pilgrimage_to_earth.jpg" alt="Pilgrimage to Earth" title="Pilgrimage to Earth" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>«Паломничество на Землю»</b> (англ. Pilgrimage to Earth) — сатирический рассказ известного фантаста Роберта Шекли. Написан в 1956 году. Был впервые опубликован в 1956 году в журнале «Playboy» под названием «Love, Inc.» (также печатался потом как «Love, Incorporated»), под названием «Pilgrimage to Earth» напечатан в июне 1957 года в журнале фантастики «The Magazine of Fantasy and Science Fiction», чуть позже вышел в одноимённом авторском сборнике.
+
+<P>В произведении поднят вопрос об искусной имитации человеческих чувств, делающей их неотличимыми от настоящих (а то и превосходящих естественные).
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BB%D0%BE%D0%BC%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE_%D0%BD%D0%B0_%D0%97%D0%B5%D0%BC%D0%BB%D1%8E" class = "standardb_red" target="_blank">Wikipedia Паломничество на Землю</a> - <b>Pilgrimage to Earth</b> on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="prospectors_special">Prospector’s Special</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/prospectors_special.jpg" alt="Prospector’s Special" title="Prospector’s Special" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>«Особый Старательский»</b> (англ. Prospector’s Special, также известен как «Спецзаказ золотоискателя») рассказ писателя-фантаста Роберта Шекли, впервые опубликован в журнале Galaxy Science Fiction в декабре 1959 года.
+
+<P>Первая книжная публикация рассказа состоялась в сборнике «Осколки космоса» (англ. Shards of Space) в 1962 году.
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BE%D0%B1%D1%8B%D0%B9_%D0%A1%D1%82%D0%B0%D1%80%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9" class = "standardb_red" target="_blank">Wikipedia Особый Старательский</a> - <b>Prospector’s Special</b> on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_red"><a name="ticket_to_tranai">A Ticket to Tranai</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/ticket_to_tranai.jpg" alt="A Ticket to Tranai" title="A Ticket to Tranai" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>«Билет на Планету Транай»</b> (англ. A Ticket to Tranai) — иронично-сатирическая повесть классика фантастического жанра Роберта Шекли. Впервые опубликована в журнале «Galaxy Science Fiction» (1955/№ 10) и в сборнике «Гражданин в космосе» («Citizen in Space», 1955).
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D0%BB%D0%B5%D1%82_%D0%BD%D0%B0_%D0%BF%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D1%83_%D0%A2%D1%80%D0%B0%D0%BD%D0%B0%D0%B9" class = "standardb_red" target="_blank">Wikipedia Билет на планету Транай</a> - <b>A Ticket to Tranai</b> on Wikipedia (rus.).
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					15th of Dec, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_red" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

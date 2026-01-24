@@ -1,0 +1,1507 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*43;
+var imgBgSrc="images/icons/background/chanson.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_punk_ska_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_punk_ska_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_punk_ska_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_punk_ska_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>   
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_selected">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_chanson_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_chanson_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Chanson <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_7_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_country_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_country_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Country <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_disco_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_disco_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Disco</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Electronic</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Industrial</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Metal <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_pop_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_pop_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Pop</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Psychedelic</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_punk_horror_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_punk_horror_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Horror Punk</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_punk_pop_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_punk_pop_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Pop Punk</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_punk_rock_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_punk_rock_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Punk Rock</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_punk_ska_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_punk_ska_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Ska Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rap_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rap_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Rap <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_reggae_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_reggae_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Reggae</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'"
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rock_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rock_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Rock <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+
+
+
+
+		
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>   
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>   
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>   
+	
+	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+	<tr>
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Music &blacktriangleright; Ska Punk</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:989px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+		
+	<tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="punk_ska">Ska Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font> <font class="blinking_text" color="deeppink"><sup>&#9876; Zombeified &#9876;</sup></font></a></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Genre's Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/punk_ska.jpg" alt="Ska Punk" title="Ska Punk" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Ska punk</b> is a fusion music genre that combines ska music and <a href="music_punk_rock_eng.html" class = "standardb_black" target="_blank">punk rock</a> music.
+
+
+<br><br>
+<P><b>Characteristics:</b>
+
+<P>Ska punk is a fusion music genre that combines ska music with punk rock music. Ska-core (sometimes spelled skacore) is a subgenre of ska punk that blends ska with hardcore punk. Early ska punk combined both 2 Tone and ska with hardcore punk. Ska punk often features wind instruments and horns such as saxophones, trombones and trumpets, making the genre distinct from most other punk rock music. Horn sections are very common in ska punk music. Ska punk mixes the rhythms of Jamaican ska with the heavy beats of punk rock. Ska punk is similar to traditional ska, but ska punk is faster and heavier than traditional ska.
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Ska_punk" class = "standardb_black" target="_blank">Wikipedia Ska Punk</a> - <b>Ska Punk</b> on Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					23rd of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+ <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="no_doubt">No Doubt <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/music/no_doubt.jpg" alt="No Doubt" title="No Doubt" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>No Doubt</b> is an American rock band from Anaheim, California, that formed in 1986. Since 1994, the group has consisted of vocalist Gwen Stefani, bassist and keyboardist Tony Kanal, guitarist and keyboardist Tom Dumont, and drummer Adrian Young. Since the mid-1990s in live performances and the studio, they have been supported by keyboardist and trombonist Gabrial McNair and keyboardist and trumpeter Stephen Bradley.
+
+<P>The ska sound of their song Trapped in a Box (1992) that was featured on their first album No Doubt (1992) failed to make an impact. The Beacon Street Collection (1993) is a raw expression of their sound, inspired by ska punk and released independently by the band under their own record label. The album sold over 100,000 copies in 1995, over three times as many as their first album sold. The band's diamond-certified album Tragic Kingdom (1995) helped launch the third-wave ska revival of the 1990s, and "Don't Speak", the third single from the album, set a record when it spent 16 weeks at the number one spot on the Billboard Hot 100 Airplay chart.
+
+<P>The group's next album, Return of Saturn (2000), despite the Top 40 hit single "Simple Kind of Life", did not match the success of their previous but received critical praise and was nominated for Best Rock Album at the 43rd Grammy Awards. Fifteen months later, the band reappeared with Rock Steady (2001), which incorporated reggae and dancehall music into their work. The album was primarily recorded in Jamaica and featured collaborations with Jamaican artists Bounty Killer, Sly and Robbie, and Lady Saw. The album produced two Grammy-winning singles, "Hey Baby" and "Underneath It All", as well as "Hella Good." On 22 November 2002, No Doubt received the Key to the City of Anaheim, given by the Mayor of Anaheim, Tom Daly in Disneyland during the band's appearance on 'Breakfast with Kevin and Bean' (KROQ-FM) where they performed five songs. After a 2004 tour the band embarked on solo projects, with Stefani releasing two successful solo albums Love. Angel. Music. Baby. (2004) and The Sweet Escape (2006) while Tom Dumont released his own solo music project, Invincible Overlord. In 2008, the band resumed working slowly on their sixth effort, titled Push and Shove (2012), and released their single "Settle Down". They have sold over 33 million albums worldwide.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/No_Doubt" class = "standardb_black" target="_blank">Wikipedia No Doubt</a> - <b>No Doubt</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://www.nodoubt.com/" class = "standardb_black" target="_blank">No Doubt</a> - Official Website.
+			</td>
+			</tr>
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Recommend:
+				</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+
+	<div class="galleria">
+	<a href="https://www.youtube.com/watch?v=rszcrPOlnSk"><img src="images/icons/playlists/no_doubt1.jpg" data-title="No Doubt - One More Summer"   data-description="<a href='https://www.youtube.com/watch?v=rszcrPOlnSk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>21st of Sep, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=z26J7eRW45Y"><img src="images/icons/playlists/no_doubt2.jpg" data-title="No Doubt - Panic"   data-description="About <a href='satanism_theistic_eng.html' class = 'smallb_black' target='_blank'>Satanism</a>.<br><a href='https://www.youtube.com/watch?v=z26J7eRW45Y' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>21st of Sep, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=wt1YkGO2Ieo"><img src="images/icons/playlists/no_doubt3.jpg" data-title="No Doubt - Hey Baby"   data-description="About <a href='satanism_theistic_eng.html' class = 'smallb_black' target='_blank'>Satanic</a> Girls.<br><a href='https://www.youtube.com/watch?v=wt1YkGO2Ieo' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>21st of Sep, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=Qf473t2kz9A"><img src="images/icons/playlists/no_doubt4.jpg" data-title="No Doubt – Real Love Survives"   data-description="About United States of America (USA).<br><a href='https://www.youtube.com/watch?v=Qf473t2kz9A' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>21st of Nov, 2016."></a>
+	</div>
+
+
+	<script>
+
+
+	var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/azur/galleria.azur.js');
+
+	Galleria.run('.galleria', {
+	transition: 'fade',
+	imageCrop: true,
+	height : 500,
+	width : 670
+	});
+	</script>
+
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					01st of Jul, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+       <tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="sektor_gaza">Sektor Gaza (rus. Сектор Газа) <font class="blinking_text" color="deeppink"><sup>&#9876; Zombiefied &#9876;</sup></font></a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/sektor_gaza.jpg" alt="Sektor Gaza" title="Sektor Gaza" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						
+<P><b>Sektor Gaza</b> (Russian: Сектор Газа, translated Gaza Strip or "Gas Sector") was a Russian punk rock band formed on 5 December 1987 in the city of Voronezh, Russia. Despite only semi-officially existing (due to obscene lyrics), the group remains popular in Russia today. The group name was taken from an eponymous industrial district of Voronezh (itself named for high levels of environmental contamination). Their music style could be defined as Russian punk, integrated with elements of different musical genres such as rock, rap, and Russian folk.
+
+<P>A punk-opera named "Kaschey-the-immortal" was released in 1994. It is a punk version of a famous Russian fairy tale with the name of the evil protagonist taken as its title. In this album Yuri has borrowed musical themes from a number popular groups such as AC/DC, Queen, Ace of Base, Nirvana, infusing them with his own lyrics. The album ranked in the top 10, and journalists called "SG" "a young promising group from the back of beyond".
+
+<P>The group released four videoclips: "Kolkhoz punk", "Lyric", "The fog" and "It's time to return home". Together with DJ Mole Yuri arranged some "SG" remixes in techno. "SG" uses curse words in their songs, but this was rarely seen in any of their concert performances. Klinskikh was quoted as stating, "I am using four letter words not for the sake of it...our songs are for those who can understand us. If you're stupid, you remain the same after the concert".
+
+<P>In November 1998 "SG" toured Russia.
+
+<P>A new album, "Hellraiser," was released in October 2000. Klinskikh's health was declining due to liver disease. On 4 July 2000, Yuri "Hoy" Klinskih complained of strong pains in his stomach and the left side of his chest. He chose not to cancel a meeting later that day to film a music video for the song "Noch Straha". He suffered heart failure shortly thereafter. Klinskikh died in Voronezh (Russia) at the age of 35. He is buried in the Levoberezhniy Cemetery.
+
+						
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Sektor_Gaza" class = "standardb_black" target="_blank">Wikipedia Sektor Gaza</a> - <b>Sektor Gaza</b> on Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://sektorgaza.net/english.htm" class = "standardb_black" target="_blank">Sektor Gaza</a> - Official Website.
+			</td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Recommend:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+
+	<div class="galleria2">
+	<a href="https://www.youtube.com/watch?v=GY75IdZydH4"><img src="images/icons/playlists/sektor_gaza8.jpg" data-title="Сектор Газа - Любовь Раскумаренная"   data-description="<a href='https://www.youtube.com/watch?v=GY75IdZydH4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>25th of Oct, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=uECmK_Z1_bA"><img src="images/icons/playlists/sektor_gaza1.jpg" data-title="Сектор Газа - Кусок"   data-description="This is about me, for sure.<br><a href='https://www.youtube.com/watch?v=uECmK_Z1_bA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Aug, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=ChhrEUUByqI"><img src="images/icons/playlists/sektor_gaza2.jpg" data-title="Сектор Газа - Твой Звонок"   data-description="Similar to <a href='music_country_eng.html#belomorkanal' class = 'smallb_black' target='_blank'>Беломорканал</a> - <a href='https://www.youtube.com/watch?v=JjXObQDSUJs' class = 'smallb_black' target='_blank'>Побег</a>, About imposing own views, ignoring the other&apos;s.<br><a href='https://www.youtube.com/watch?v=ChhrEUUByqI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Aug, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=oZCRHTaDwdE"><img src="images/icons/playlists/sektor_gaza3.jpg" data-title="Сектор Газа - План"   data-description="About <a href='psychology_true_eng.html' class = 'smallb_black' target='_blank'>Psychology</a>, and also about the prohibition of music listening.<br><a href='https://www.youtube.com/watch?v=oZCRHTaDwdE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Aug, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=FBeUAbFSqjI"><img src="images/icons/playlists/sektor_gaza4.jpg" data-title="Сектор Газа - Сельский Кайф"   data-description="About <a href='psychology_pseudo_eng.html' class = 'smallb_black' target='_blank'>Pseudopsychology</a>.<br><a href='https://www.youtube.com/watch?v=FBeUAbFSqjI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Aug, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=fWHLWMIzSx8"><img src="images/icons/playlists/sektor_gaza5.jpg" data-title="Сектор Газа - Лирика"   data-description="About <a href='psychology_true_eng.html' class = 'smallb_black' target='_blank'>Psychology</a> und <a href='psychology_pseudo_eng.html' class = 'smallb_black' target='_blank'>Pseudopsychology</a>.<br><a href='https://www.youtube.com/watch?v=fWHLWMIzSx8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Aug, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=Ysl9sk4EAcw"><img src="images/icons/playlists/sektor_gaza6.jpg" data-title="Сектор Газа - Скотник"   data-description="About Crosses.<br><a href='https://www.youtube.com/watch?v=Ysl9sk4EAcw' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>15th of Oct, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=BDfY2rgV5Z8"><img src="images/icons/playlists/sektor_gaza7.jpg" data-title="Сектор Газа - Ночь Перед Рождеством"   data-description="About Crosses.<br><a href='https://www.youtube.com/watch?v=BDfY2rgV5Z8' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>17th of Oct, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=FR_0nGKFFRI"><img src="images/icons/playlists/sektor_gaza2.jpg" data-title="Сектор Газа - Вылазка"   data-description="About Heterosexuals (Straits).<br><a href='https://www.youtube.com/watch?v=FR_0nGKFFRI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>24th of Oct, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=KkHGksZYD40"><img src="images/icons/playlists/sektor_gaza9.jpg" data-title="Сектор Газа - Спокойной Ночи Малыши!"   data-description="About <a href='music_metal_gothic_eng.html' class = 'smallb_black' target='_blank'>Metal Music</a>.<br><a href='https://www.youtube.com/watch?v=KkHGksZYD40' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>25th of Oct, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=5lRsIptBVvY"><img src="images/icons/playlists/sektor_gaza10.jpg" data-title="Сектор Газа - Оборотень"   data-description="About <a href='https://en.wikipedia.org/wiki/Chupacabra' class = 'smallb_black' target='_blank'>Chupacabra (Wikipedia)</a> and about Germany.<br><a href='https://www.youtube.com/watch?v=5lRsIptBVvY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>03rd of Nov, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=0P7bz3PICWI"><img src="images/icons/playlists/sektor_gaza2.jpg" data-title="Сектор Газа - Аванс"   data-description="About <a href='software_development_c++_eng.html' class = 'smallb_black' target='_blank'>IT</a> and Mobile Phone and About Signing by Blood.<br><a href='https://www.youtube.com/watch?v=0P7bz3PICWI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Nov, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=dypHhOAXNXE"><img src="images/icons/playlists/sektor_gaza11.jpg" data-title="Сектор Газа - Ядрёна Вошь"   data-description="About <a href='software_development_c++_eng.html' class = 'smallb_black' target='_blank'>IT</a> and Linux.<br><a href='https://www.youtube.com/watch?v=dypHhOAXNXE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>08th of Nov, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=xLxVeg2FRfA"><img src="images/icons/playlists/sektor_gaza12.jpg" data-title="Сектор Газа - Любовь Загробная"   data-description="About Locals.<br><a href='https://www.youtube.com/watch?v=xLxVeg2FRfA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Nov, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=zWbaCgxo0uk"><img src="images/icons/playlists/sektor_gaza13.jpg" data-title="Сектор Газа - Колыбельная"   data-description="About Russia.<br><a href='https://www.youtube.com/watch?v=zWbaCgxo0uk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>10th of Nov, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=tjDts_VH8ZY"><img src="images/icons/playlists/sektor_gaza14.jpg" data-title="Сектор Газа - Дураки"   data-description="About Alcoholics.<br><a href='https://www.youtube.com/watch?v=tjDts_VH8ZY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>18th of Nov, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=f6Xqvdmft7Q"><img src="images/icons/playlists/sektor_gaza15.jpg" data-title="Сектор Газа - Щи"   data-description="About Band <a href='music_industrial_rock_eng.html#garbage' class = 'smallb_black' target='_blank'>Garbage</a>.<br><a href='https://www.youtube.com/watch?v=f6Xqvdmft7Q' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>26th of Nov, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=CQ1ID6LPAq4"><img src="images/icons/playlists/sektor_gaza13.jpg" data-title="Сектор Газа - Носки"   data-description="About Rest.<br><a href='https://www.youtube.com/watch?v=CQ1ID6LPAq4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>22nd of Dec, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=j54gZo8UBGA"><img src="images/icons/playlists/sektor_gaza14.jpg" data-title="Сектор Газа - Возле Дома Твоего"   data-description="About Germany.<br><a href='https://www.youtube.com/watch?v=j54gZo8UBGA' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>05th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=V7ybIVCZNeI"><img src="images/icons/playlists/sektor_gaza9.jpg" data-title="Сектор Газа - Злая Ночь"   data-description="About United States of America (Consitution).<br><a href='https://www.youtube.com/watch?v=V7ybIVCZNeI' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>12th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=YK6_zUZVVGY"><img src="images/icons/playlists/sektor_gaza17.jpg" data-title="Сектор Газа - Марш Наркоманов"   data-description="About Cocks.<br><a href='https://www.youtube.com/watch?v=YK6_zUZVVGY' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>27th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=ihAsw86ZNW4"><img src="images/icons/playlists/sektor_gaza18.jpg" data-title="Сектор Газа - Чёрный Вурдалак"   data-description="About Black&amp;White Posters (Photos).<br><a href='https://www.youtube.com/watch?v=ihAsw86ZNW4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>27th of Jan, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=BkA3MdmOhL0"><img src="images/icons/playlists/sektor_gaza19.jpg" data-title="Сектор Газа - Вампиры"   data-description="About <a href='psychology_true_eng.html#evolutionary_psychology' class = 'smallb_black' target='_blank'>Evolutionary psychology</a>.<br><a href='https://www.youtube.com/watch?v=BkA3MdmOhL0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>04th of Mar, 2017."></a>  
+	<a href="https://www.youtube.com/watch?v=diIwEjT2ZN4"><img src="images/icons/playlists/sektor_gaza20.jpg" data-title="Сектор Газа - Звёздная Болезнь"   data-description="About Demons.<br><a href='https://www.youtube.com/watch?v=diIwEjT2ZN4' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>13th of Mar, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=KcGS9YzOYmE"><img src="images/icons/playlists/sektor_gaza21.jpg" data-title="Сектор Газа - Местные"   data-description="About Band Adrian Black or About Song <a href='music_disco_eng.html#kombinacija' class = 'smallb_black' target='_blank'>Kombinaciya (rus. Комбинация)</a> - <a href='https://www.youtube.com/watch?v=F0sRVHSL54M' class = 'smallb_black' target='_blank'>Вещи Собрай</a>.<br><a href='https://www.youtube.com/watch?v=KcGS9YzOYmE' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>17th of Mar, 2017."></a>	
+	<a href="https://www.youtube.com/watch?v=etftupLab_o"><img src="images/icons/playlists/sektor_gaza9.jpg" data-title="Сектор Газа - Я Мразь"   data-description="About Germany.<br><a href='https://www.youtube.com/watch?v=etftupLab_o' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>05th of Jan, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=AGcufKAdj0c"><img src="images/icons/playlists/sektor_gaza16.jpg" data-title="Сектор Газа - Ява"   data-description="About <a href='fotos_images_about_mai_ja_eng.html' class = 'smallb_black' target='_blank'>Mai Ja</a> (Creation).<br><a href='https://www.youtube.com/watch?v=AGcufKAdj0c' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>05th of Jan, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=-NtRQc7qNSU"><img src="images/icons/playlists/sektor_gaza13.jpg" data-title="Сектор Газа - Караван"   data-description="About Engineers.<br><a href='https://www.youtube.com/watch?v=-NtRQc7qNSU' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>15th of Jan, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=k2TNlpbvaLk"><img src="images/icons/playlists/sektor_gaza22.jpg" data-title="Сектор Газа - Голубь"   data-description="About Collapse of <a href='countries_ussr_communism_eng.html' class = 'smallb_black' target='_blank'>USSR</a>.<br><a href='https://www.youtube.com/watch?v=k2TNlpbvaLk' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>16th of Jan, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=3IDTpROYgU0"><img src="images/icons/playlists/sektor_gaza13.jpg" data-title="Сектор Газа - Видак"   data-description="About Leadership.<br><a href='https://www.youtube.com/watch?v=3IDTpROYgU0' class = 'smallb_black' target='_blank'>YouTube</a> Link.<br>25th of Jan, 2018."></a>
+	</div>
+
+
+	<script>
+	Galleria.run('.galleria2', {
+	transition: 'fade',
+	imageCrop: true,
+	height : 500,
+	width : 670
+	});
+	</script>
+
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					01st of Jul, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

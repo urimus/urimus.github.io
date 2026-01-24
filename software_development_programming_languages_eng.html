@@ -1,0 +1,1701 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#dbd9d9";
+	var scrollBackColor="#ffffff";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#A9A9A9; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*35;
+var imgBgSrc="images/icons/background/programming_languages.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#ffffff"> 
+		<td  bgcolor="#ffffff" width="100%">
+		<div class="nimetus2_white"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('software_development_programming_languages_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='software_development_programming_languages_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('software_development_programming_languages_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='software_development_programming_languages_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#ffffff" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_white">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>			
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	
+		<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_selected">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_18_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('software_development_audiovideo_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='software_development_audiovideo_eng.html';
+			};"  
+		class="menu_not_selected_white"
+		style="padding-left: 5px;">
+		&#9679; Audio/Video Processing</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_18_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('software_development_data_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='software_development_data_eng.html';
+			};"  
+		class="menu_not_selected_white"
+		style="padding-left: 5px;">
+		&#9679; Data Processing</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_18_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('software_development_drawing_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='software_development_drawing_eng.html';
+			};"  
+		class="menu_not_selected_white"
+		style="padding-left: 5px;">
+		&#9679; Drawing</div>
+	</td>
+	</tr>	
+
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_18_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('software_development_ide_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='software_development_ide_eng.html';
+			};"  
+		class="menu_not_selected_white"
+		style="padding-left: 5px;">
+		&#9679; IDE</div>
+	</td>
+	</tr>	
+
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_18_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('software_development_programming_languages_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='software_development_programming_languages_eng.html';
+			};"  
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Programming Languages</div>
+	</td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_18_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('software_development_text_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='software_development_text_eng.html';
+			};"  
+		class="menu_not_selected_white"
+		style="padding-left: 5px;">
+		&#9679; Text Processing</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_18_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('software_development_it_movies_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='software_development_it_movies_eng.html';
+			};"  
+		class="menu_not_selected_white"
+		style="padding-left: 5px;">
+		&#9679; Movies About IT</div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_18_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('software_development_it_music_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='software_development_it_music_eng.html';
+			};"  
+		class="menu_not_selected_white"
+		style="padding-left: 5px;">
+		&#9679; Music About IT</div>
+	</td>
+	</tr>	
+
+
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+
+</table>
+
+		</td>
+		<td bgcolor="#ffffff" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#ffffff" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ffffff">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ffffff">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_white" style="width: 530px;"><a name="welcome">Software Development &blacktriangleright; Programming Languages</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div 550 -->
+<div id="scrollDiv" style="height:805px;overflow:auto;">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="software_development">Software Development</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_white">What is this?</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/software_development.jpg" alt="Software Development" title="Software Development" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Software development</b> is the process of conceiving, specifying, designing, programming, documenting, testing, and bug fixing involved in creating and maintaining applications, frameworks, or other software components. Software development is a process of writing and maintaining the source code, but in a broader sense, it includes all that is involved between the conception of the desired software through to the final manifestation of the software, sometimes in a planned and structured process. Therefore, software development may include research, new development, prototyping, modification, reuse, re-engineering, maintenance, or any other activities that result in software products.
+
+<P>The software can be developed for a variety of purposes, the three most common being to meet specific needs of a specific client/business (the case with custom software), to meet a perceived need of some set of potential users (the case with commercial and open source software), or for personal use (e.g. a scientist may write software to automate a mundane task). <b>Embedded software development</b>, that is, the development of embedded software, such as used for controlling consumer products, requires the development process to be integrated with the development of the controlled physical product. System software underlies applications and the programming process itself, and is often developed separately.
+
+<P>The need for better quality control of the software development process has given rise to the discipline of software engineering, which aims to apply the systematic approach exemplified in the engineering paradigm to the process of software development.
+
+<P>There are many approaches to software project management, known as software development life cycle models, methodologies, processes, or models. The waterfall model is a traditional version, contrasted with the more recent innovation of agile software development.
+
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Software_development" class = "standardb_white" target="_blank">Wikipedia Software development</a> - <b>Software Development</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					18th of May, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="c++">C++</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/c++.png" alt="C++" title="C++" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>C++</b> is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing facilities for low-level memory manipulation.
+
+<P>It was designed with a bias toward system programming and embedded, resource-constrained and large systems, with performance, efficiency and flexibility of use as its design highlights. C++ has also been found useful in many other contexts, with key strengths being software infrastructure and resource-constrained applications, including desktop applications, servers (e.g. e-commerce, web search or SQL servers), and performance-critical applications (e.g. telephone switches or space probes). C++ is a compiled language, with implementations of it available on many platforms and provided by various organizations, including the Free Software Foundation (FSF's GCC), LLVM, Microsoft, Intel and IBM.
+
+<P>C++ is standardized by the International Organization for Standardization (ISO), with the latest standard version ratified and published by ISO in December 2014 as ISO/IEC 14882:2014 (informally known as C++14). The C++ programming language was initially standardized in 1998 as ISO/IEC 14882:1998, which was then amended by the C++03, ISO/IEC 14882:2003, standard. The current C++14 standard supersedes these and C++11, with new features and an enlarged standard library. Before the initial standardization in 1998, C++ was developed by Bjarne Stroustrup at Bell Labs since 1979, as an extension of the C language as he wanted an efficient and flexible language similar to C, which also provided high-level features for program organization. The C++17 standard is due in 2017, with the draft largely implemented by some compilers already, and C++20 is the next planned standard thereafter.
+
+<P>Many other programming languages have been influenced by C++, including C#, D, Java, and newer versions of C (after 1998).
+
+
+
+<br><br>
+<P><b>Philosophy:</b>
+
+<P>Throughout C++'s life, its development and evolution has been informally governed by a set of rules that its evolution should follow:
+
+<P>&nbsp;&bull; It must be driven by actual problems and its features should be useful immediately in real world programs.
+<P>&nbsp;&bull; Every feature should be implementable (with a reasonably obvious way to do so).
+<P>&nbsp;&bull; Programmers should be free to pick their own programming style, and that style should be fully supported by C++.
+<P>&nbsp;&bull; Allowing a useful feature is more important than preventing every possible misuse of C++.
+<P>&nbsp;&bull; It should provide facilities for organising programs into well-defined separate parts, and provide facilities for combining separately developed parts.
+<P>&nbsp;&bull; No implicit violations of the type system (but allow explicit violations; that is, those explicitly requested by the programmer).
+<P>&nbsp;&bull; User-created types need to have the same support and performance as built-in types.
+<P>&nbsp;&bull; Unused features should not negatively impact created executables (e.g. in lower performance).
+<P>&nbsp;&bull; There should be no language beneath C++ (except assembly language).
+<P>&nbsp;&bull; C++ should work alongside other existing programming languages, rather than fostering its own separate and incompatible programming environment.
+<P>&nbsp;&bull; If the programmer's intent is unknown, allow the programmer to specify it by providing manual control.
+
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/C%2B%2B" class = "standardb_white" target="_blank">Wikipedia C++</a> - <b>C++</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					03rd of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="fortran">Fortran</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/fortran.gif" alt="Fortran" title="Fortran" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Fortran</b> (formerly <b>FORTRAN</b>, derived from "Formula Translation") is a general-purpose, imperative programming language that is especially suited to numeric computation and scientific computing. Originally developed by IBM in the 1950s for scientific and engineering applications, Fortran came to dominate this area of programming early on and has been in continuous use for over half a century in computationally intensive areas such as numerical weather prediction, finite element analysis, computational fluid dynamics, computational physics, crystallography and computational chemistry. It is a popular language for high-performance computing and is used for programs that benchmark and rank the world's fastest supercomputers.
+
+<P>Fortran encompasses a lineage of versions, each of which evolved to add extensions to the language while usually retaining compatibility with prior versions. Successive versions have added support for structured programming and processing of character-based data (FORTRAN 77), array programming, modular programming and generic programming (Fortran 90), high performance Fortran (Fortran 95), object-oriented programming (Fortran 2003) and concurrent programming (Fortran 2008).
+
+
+<br><br>
+<P><b>Portability:</b>
+
+
+<P>Portability was a problem in the early days because there was no agreed standard – not even IBM's reference manual – and computer companies vied to differentiate their offerings from others by providing incompatible features. Standards have improved portability. The 1966 standard provided a reference syntax and semantics, but vendors continued to provide incompatible extensions. Although careful programmers were coming to realize that use of incompatible extensions caused expensive portability problems, and were therefore using programs such as The PFORT Verifier, it was not until after the 1977 standard, when the National Bureau of Standards (now NIST) published FIPS PUB 69, that processors purchased by the U.S. Government were required to diagnose extensions of the standard. Rather than offer two processors, essentially every compiler eventually had at least an option to diagnose extensions.
+
+<P>Incompatible extensions were not the only portability problem. For numerical calculations, it is important to take account of the characteristics of the arithmetic. This was addressed by Fox et al. in the context of the 1966 standard by the PORT library. The ideas therein became widely used, and were eventually incorporated into the 1990 standard by way of intrinsic inquiry functions. The widespread (now almost universal) adoption of the IEEE 754 standard for binary floating-point arithmetic has essentially removed this problem.
+
+<P>Access to the computing environment (e.g., the program's command line, environment variables, textual explanation of error conditions) remained a problem until it was addressed by the 2003 standard.
+
+<P>Large collections of library software that could be described as being loosely related to engineering and scientific calculations, such as graphics libraries, have been written in C, and therefore access to them presented a portability problem. This has been addressed by incorporation of C interoperability into the 2003 standard.
+
+<P>It is now possible (and relatively easy) to write an entirely portable program in Fortran, even without recourse to a preprocessor.
+
+
+<br><br>
+<P><b>Humor:</b>
+
+<P>During the same Fortran standards committee meeting at which the name "FORTRAN 77" was chosen, a satirical technical proposal was incorporated into the official distribution bearing the title "Letter O Considered Harmful". This proposal purported to address the confusion that sometimes arises between the letter "O" and the numeral zero, by eliminating the letter from allowable variable names. However, the method proposed was to eliminate the letter from the character set entirely (thereby retaining 48 as the number of lexical characters, which the colon had increased to 49). This was considered beneficial in that it would promote structured programming, by making it impossible to use the notorious GO TO statement as before. (Troublesome FORMAT statements would also be eliminated.) It was noted that this "might invalidate some existing programs" but that most of these "probably were non-conforming, anyway".
+
+<P>During the standards committee battle over whether the "minimum trip count" for the FORTRAN 77 DO statement should be zero (allowing no execution of the block) or one (the "plunge-ahead" DO), another facetious alternative was proposed (by Loren Meissner) to have the minimum be two – since there is no need for a loop if it is only executed once.
+
+<P>When assumed-length arrays were being added, there was a dispute as to the appropriate character to separate upper and lower bounds. In a comment examining these arguments, Dr. Walt Brainerd penned an article entitled "Astronomy vs. Gastroenterology" because some proponents had suggested using the star or asterisk ("*"), while others favored the colon (":").
+
+<P>In Fortran 77, variable names beginning with the letters I–N had a default type of integer, while variables starting with any other letters defaulted to real, although programmers could override the defaults with an explicit declaration. This led to the joke: "In Fortran, GOD is REAL (unless declared INTEGER)."
+
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Fortran" class = "standardb_white" target="_blank">Wikipedia Fortran</a> - <b>Fortran</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					04th of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="html">Html</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/html.jpg" alt="Html" title="Html" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+
+<P><b>HyperText Markup Language</b> (<b>HTML</b>) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS), and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web. Web browsers receive HTML documents from a webserver or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
+
+<P>HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects, such as interactive forms, may be embedded into the rendered page. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. Tags such as &lt;img /&gt; and &lt;input /&gt; introduce content into the page directly. Others such as &lt;p&gt;...&lt;/p&gt; surround and provide information about document text and may include other tags as sub-elements. Browsers do not display the HTML tags, but use them to interpret the content of the page.
+
+<P>HTML can embed programs written in a scripting language such as JavaScript which affect the behavior and content of web pages. Inclusion of CSS defines the look and layout of content. The World Wide Web Consortium (W3C), maintainer of both the HTML and the CSS standards, has encouraged the use of CSS over explicit presentational HTML since 1997.
+
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/HTML" class = "standardb_white" target="_blank">Wikipedia Html</a> - <b>Html</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					07th of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="javascript">Java/JavaScript</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/javascript.jpg" alt="JavaScript" title="JavaScript" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+
+<P><b>JavaScript</b> is a high-level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production; the majority of websites employ it, and all modern Web browsers support it without the need for plug-ins. JavaScript is prototype-based with first-class functions, making it a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles. It has an API for working with text, arrays, dates and regular expressions, but does not include any I/O, such as networking, storage, or graphics facilities, relying for these upon the host environment in which it is embedded.
+
+<P>Although there are strong outward similarities between JavaScript and Java, including language name, syntax, and respective standard libraries, the two are distinct languages and differ greatly in their design. JavaScript was influenced by programming languages such as Self and Scheme.
+
+<P>JavaScript is also used in environments that are not Web-based, such as PDF documents, site-specific browsers, and desktop widgets. Newer and faster JavaScript virtual machines (VMs) and platforms built upon them have also increased the popularity of JavaScript for server-side Web applications. On the client side, developers have traditionally implemented JavaScript as an interpreted language, but more recent browsers perform just-in-time compilation. Programmers also use JavaScript in video-game development, in crafting desktop and mobile applications, and in server-side network programming with run-time environments such as Node.js.
+
+
+<br><br>
+<P><b>Use in Web pages:</b>
+
+<P>The most common use of JavaScript is to add client-side behavior to HTML pages, also known as Dynamic HTML (DHTML). Scripts are embedded in or included from HTML pages and interact with the Document Object Model (DOM) of the page. Some simple examples of this usage are:
+
+<P>&nbsp;&bull; Loading new page content or submitting data to the server via Ajax without reloading the page (for example, a social network might allow the user to post status updates without leaving the page).
+<P>&nbsp;&bull; Animation of page elements, fading them in and out, resizing them, moving them, etc.
+<P>&nbsp;&bull; Interactive content, for example games, and playing audio and video.
+<P>&nbsp;&bull; Validating input values of a Web form to make sure that they are acceptable before being submitted to the server.
+<P>&nbsp;&bull; Transmitting information about the user's reading habits and browsing activities to various websites. Web pages frequently do this for Web analytics, ad tracking, personalization or other purposes.
+
+<P>Because JavaScript code can run locally in a user's browser (rather than on a remote server), the browser can respond to user actions quickly, making an application more responsive. Furthermore, JavaScript code can detect user actions that HTML alone cannot, such as individual keystrokes. Applications such as Gmail take advantage of this: much of the user-interface logic is written in JavaScript, and JavaScript dispatches requests for information (such as the content of an e-mail message) to the server. The wider trend of Ajax programming similarly exploits this strength.
+
+<P>A JavaScript engine (also known as JavaScript interpreter or JavaScript implementation) is an interpreter that interprets JavaScript source code and executes the script accordingly. The first JavaScript engine was created by Brendan Eich at Netscape, for the Netscape Navigator Web browser. The engine, code-named SpiderMonkey, is implemented in C. It has since been updated (in JavaScript 1.5) to conform to ECMAScript 3. The Rhino engine, created primarily by Norris Boyd (formerly at Netscape, now at Google) is a JavaScript implementation in Java. Rhino, like SpiderMonkey, is ECMAScript 3 compliant.
+
+<P>A Web browser is by far the most common host environment for JavaScript. Web browsers typically create "host objects" to represent the DOM in JavaScript. The Web server is another common host environment. A JavaScript Web server would typically expose host objects representing HTTP request and response objects, which a JavaScript program could then interrogate and manipulate to dynamically generate Web pages.
+
+<P>Because JavaScript is the only language that the most popular browsers share support for, it has become a target language for many frameworks in other languages, even though JavaScript was never intended to be such a language. Despite the performance limitations inherent to its dynamic nature, the increasing speed of JavaScript engines has made the language a surprisingly feasible compilation target.
+
+
+
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/JavaScript" class = "standardb_white" target="_blank">Wikipedia JavaScript</a> - <b>JavaScript</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					07th of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="laravel">Laravel</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/laravel.png" alt="Laravel" title="Laravel" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>Laravel</b> is a free, open-source PHP web framework, created by Taylor Otwell and intended for the development of web applications following the model–view–controller (MVC) architectural pattern. Some of the features of Laravel are a modular packaging system with a dedicated dependency manager, different ways for accessing relational databases, utilities that aid in application deployment and maintenance, and its orientation toward syntactic sugar.
+
+<P>As of March 2015, Laravel is regarded as one of the most popular PHP frameworks, together with Symfony2, Nette, CodeIgniter, Yii2 and other frameworks.
+
+<P>The source code of Laravel is hosted on GitHub and licensed under the terms of MIT License.
+
+
+
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Laravel" class = "standardb_white" target="_blank">Wikipedia Laravel</a> - <b>Laravel</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					07th of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="php">PHP/MySql</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/php.png" alt="PHP" title="PHP" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>PHP</b> is a server-side scripting language designed primarily for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994, the PHP reference implementation is now produced by The PHP Development Team. PHP originally stood for Personal Home Page, but it now stands for the recursive acronym PHP: Hypertext Preprocessor.
+
+<P>PHP code may be embedded into HTML or HTML5 code, or it can be used in combination with various web template systems, web content management systems and web frameworks. PHP code is usually processed by a PHP interpreter implemented as a module in the web server or as a Common Gateway Interface (CGI) executable. The web server combines the results of the interpreted and executed PHP code, which may be any type of data, including images, with the generated web page. PHP code may also be executed with a command-line interface (CLI) and can be used to implement standalone graphical applications.
+
+<P>The standard PHP interpreter, powered by the Zend Engine, is free software released under the PHP License. PHP has been widely ported and can be deployed on most web servers on almost every operating system and platform, free of charge.
+
+<P>The PHP language evolved without a written formal specification or standard until 2014, leaving the canonical PHP interpreter as a de facto standard. Since 2014 work has gone on to create a formal PHP specification.
+
+
+<br><br>
+<P><b>Use:</b>
+
+<P>PHP is a general-purpose scripting language that is especially suited to server-side web development, in which case PHP generally runs on a web server. Any PHP code in a requested file is executed by the PHP runtime, usually to create dynamic web page content or dynamic images used on websites or elsewhere. It can also be used for command-line scripting and client-side graphical user interface (GUI) applications. PHP can be deployed on most web servers, many operating systems and platforms, and can be used with many relational database management systems (RDBMS). Most web hosting providers support PHP for use by their clients. It is available free of charge, and the PHP Group provides the complete source code for users to build, customize and extend for their own use.
+
+
+<P>PHP acts primarily as a filter, taking input from a file or stream containing text and/or PHP instructions and outputting another stream of data. Most commonly the output will be HTML, although it could be JSON, XML or binary data such as image or audio formats. Since PHP 4, the PHP parser compiles input to produce bytecode for processing by the Zend Engine, giving improved performance over its interpreter predecessor.
+
+<P>Originally designed to create dynamic web pages, PHP now focuses mainly on server-side scripting, and it is similar to other server-side scripting languages that provide dynamic content from a web server to a client, such as Microsoft's ASP.NET, Sun Microsystems' JavaServer Pages, and mod_perl. PHP has also attracted the development of many software frameworks that provide building blocks and a design structure to promote rapid application development (RAD). Some of these include PRADO, CakePHP, Symfony, CodeIgniter, Laravel, Yii Framework, Phalcon and Zend Framework, offering features similar to other web frameworks.
+
+<P>The LAMP architecture has become popular in the web industry as a way of deploying web applications. PHP is commonly used as the P in this bundle alongside Linux, Apache and MySQL, although the P may also refer to Python, Perl, or some mix of the three. Similar packages, WAMP and MAMP, are also available for Windows and macOS, with the first letter standing for the respective operating system. Although both PHP and Apache are provided as part of the macOS base install, users of these packages seek a simpler installation mechanism that can be more easily kept up to date.
+
+<P>As of April 2007, over 20 million Internet domains had web services hosted on servers with PHP installed and mod_php was recorded as the most popular Apache HTTP Server module. As of October 2010, PHP was used as the server-side programming language on 75% of all websites whose server-side programming language was known (as of February 2014, the percentage had reached 82%), and PHP was the most-used open source software within enterprises. Web content management systems written in PHP include MediaWiki, Joomla, eZ Publish, eZ Platform, SilverStripe, WordPress, Drupal, and Moodle. Websites written in PHP, in back-end and/or user-facing portion, include Facebook, Digg, Tumblr, Dailymotion, and Slack.
+
+<P>For specific and more advanced usage scenarios, PHP offers a well defined and documented way for writing custom extensions in C or C++. Besides extending the language itself in form of additional libraries, extensions are providing a way for improving execution speed where it is critical and there is room for improvements by using a true compiled language. PHP also offers well defined ways for embedding itself into other software projects. That way PHP can be easily used as an internal scripting language for another project, also providing tight interfacing with the project's specific internal data structures.
+
+<P>PHP received mixed reviews due to lacking support for multithreading at the core language level, though using threads is made possible by the "pthreads" PECL extension.
+
+<P>As of January 2013, PHP was used in more than 240 million websites (39% of those sampled) and was installed on 2.1 million web servers.
+
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/PHP" class = "standardb_white" target="_blank">Wikipedia PHP</a> - <b>PHP</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					07th of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="python">Python</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/python.jpg" alt="Python" title="Python" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P>Python is a widely used high-level programming language for general-purpose programming, created by Guido van Rossum and first released in 1991. An interpreted language, Python has a design philosophy which emphasizes code readability (notably using whitespace indentation to delimit code blocks rather than curly braces or keywords), and a syntax which allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. The language provides constructs intended to enable writing clear programs on both a small and large scale.
+
+<P>Python features a dynamic type system and automatic memory management and supports multiple programming paradigms, including object-oriented, imperative, functional programming, and procedural styles. It has a large and comprehensive standard library.
+
+<P>Python interpreters are available for many operating systems, allowing Python code to run on a wide variety of systems. CPython, the reference implementation of Python, is open source software and has a community-based development model, as do nearly all of its variant implementations. CPython is managed by the non-profit Python Software Foundation.
+
+<br><br>
+<P><b>Features and philosophy:</b>
+
+<P>Python is a multi-paradigm programming language: object-oriented programming and structured programming are fully supported, and many language features support functional programming and aspect-oriented programming (including by metaprogramming and metaobjects (magic methods)). Many other paradigms are supported via extensions, including design by contract and logic programming.
+
+<P>Python uses dynamic typing and a mix of reference counting and a cycle-detecting garbage collector for memory management. An important feature of Python is dynamic name resolution (late binding), which binds method and variable names during program execution.
+
+<P>The design of Python offers some support for functional programming in the Lisp tradition. The language has map(), reduce() and filter() functions; list comprehensions, dictionaries, and sets; and generator expressions. The standard library has two modules (itertools and functools) that implement functional tools borrowed from Haskell and Standard ML.
+
+<P>The core philosophy of the language is summarized by the document The Zen of Python (PEP 20), which includes aphorisms such as:
+
+<P>&nbsp;&bull; Beautiful is better than ugly
+<P>&nbsp;&bull; Explicit is better than implicit
+<P>&nbsp;&bull; Simple is better than complex
+<P>&nbsp;&bull; Complex is better than complicated
+<P>&nbsp;&bull; Readability counts
+
+<br><br>
+<P>Rather than requiring all desired functionality to be built into the language's core, Python was designed to be highly extensible. Python can also be embedded in existing applications that need a programmable interface. This design of a small core language with a large standard library and an easily extensible interpreter was intended by Van Rossum from the start because of his frustrations with ABC, which espoused the opposite mindset.
+
+<P>While offering choice in coding methodology, the Python philosophy rejects exuberant syntax, such as in Perl, in favor of a sparser, less-cluttered grammar. As Alex Martelli put it: "To describe something as clever is not considered a compliment in the Python culture." Python's philosophy rejects the Perl "there is more than one way to do it" approach to language design in favor of "there should be one—and preferably only one—obvious way to do it".
+
+<P>Python's developers strive to avoid premature optimization, and moreover, reject patches to non-critical parts of CPython that would offer a marginal increase in speed at the cost of clarity. When speed is important, a Python programmer can move time-critical functions to extension modules written in languages such as C, or try using PyPy, a just-in-time compiler. Cython is also available, which translates a Python script into C and makes direct C-level API calls into the Python interpreter.
+
+<P>An important goal of Python's developers is making it fun to use. This is reflected in the origin of the name, which comes from Monty Python, and in an occasionally playful approach to tutorials and reference materials, such as using examples that refer to spam and eggs instead of the standard foo and bar.
+
+<P>A common neologism in the Python community is pythonic, which can have a wide range of meanings related to program style. To say that code is pythonic is to say that it uses Python idioms well, that it is natural or shows fluency in the language, that it conforms with Python's minimalist philosophy and emphasis on readability. In contrast, code that is difficult to understand or reads like a rough transcription from another programming language is called unpythonic.
+
+<P>Users and admirers of Python, especially those considered knowledgeable or experienced, are often referred to as Pythonists, Pythonistas, and Pythoneers.
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Python_(programming_language)" class = "standardb_white" target="_blank">Wikipedia Python (programming language)</a> - <b>Python</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					07th of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="ruby_on_rails">Ruby On Rails</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/ruby_on_rails.jpg" alt="Ruby On Rails" title="Ruby On Rails" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Ruby on Rails</b>, or simply <b>Rails</b>, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages. It encourages and facilitates the use of web standards such as JSON or XML for data transfer, and HTML, CSS and JavaScript for display and user interfacing. In addition to MVC, Rails emphasizes the use of other well-known software engineering patterns and paradigms, including convention over configuration (CoC), don't repeat yourself (DRY), and the active record pattern.
+
+
+<br><br>
+<P><b>Philosophy and design:</b>
+
+<P>Ruby on Rails is intended to emphasize Convention over Configuration (CoC), and the Don't Repeat Yourself (DRY) principle.
+
+<P>"Convention over Configuration" means a developer only needs to specify unconventional aspects of the application. For example, if there is a class Sale in the model, the corresponding table in the database is called sales by default. It is only if one deviates from this convention, such as calling the table "products sold", that the developer needs to write code regarding these names. Generally, Ruby on Rails conventions lead to less code and less repetition.
+
+<P>"Don't repeat yourself" means that information is located in a single, unambiguous place. For example, using the ActiveRecord module of Rails, the developer does not need to specify database column names in class definitions. Instead, Ruby on Rails can retrieve this information from the database based on the class name.
+
+<P>"Fat models, skinny controllers" means that most of the application logic should be placed within the model while leaving the controller as light as possible.
+
+
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Ruby_on_Rails" class = "standardb_white" target="_blank">Wikipedia Ruby On Rails</a> - <b>Ruby On Rails</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					07th of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #dbd9d9 1px solid;  background-color: #ffffff">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus2_white"><a name="visual_basic">Visual Basic</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_white" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/software_development/visual_basic.jpg" alt="Visual Basic" title="Visual Basic" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>Visual Basic</b> is a third-generation event-driven programming language and integrated development environment (IDE) from Microsoft for its Component Object Model (COM) programming model first released in 1991 and declared legacy in 2008. Microsoft intended Visual Basic to be relatively easy to learn and use. Visual Basic was derived from BASIC, a user-friendly programming language designed for beginners, and it enables the rapid application development (RAD) of graphical user interface (GUI) applications, access to databases using Data Access Objects, Remote Data Objects, or ActiveX Data Objects, and creation of ActiveX controls and objects.
+
+<P>A programmer can create an application using the components provided by the Visual Basic program itself. Over time the community of programmers developed third party components. Programs written in Visual Basic can also use the Windows API, which requires external function declarations.
+
+<P>The final release was version 6 in 1998 (now known simply as Visual Basic). On April 8, 2008 Microsoft stopped supporting Visual Basic 6.0 IDE. The Microsoft Visual Basic team still maintains compatibility for Visual Basic 6.0 applications on Windows Vista, Windows Server 2008 including R2, Windows 7, Windows 8, Windows 8.1, Windows Server 2012 and Windows 10 through its "It Just Works" program. In 2014, some software developers still preferred Visual Basic 6.0 over its successor, Visual Basic .NET. In 2014 some developers lobbied for a new version of Visual Basic 6.0. In 2016, Visual Basic 6.0 won the technical impact award at The 19th Annual D.I.C.E. Awards. A dialect of Visual Basic, Visual Basic for Applications (VBA), is used as a macro or scripting language within several Microsoft applications, including Microsoft Office.
+
+
+					
+				</td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Links:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_white" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Visual_Basic" class = "standardb_white" target="_blank">Wikipedia Visual Basic</a> - <b>Visual Basic</b> on Wikipedia.
+			</td>
+			</tr>			
+
+
+	
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_white" style="padding-left:10px; padding-right:10px;">
+					04th of Mar, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_white" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

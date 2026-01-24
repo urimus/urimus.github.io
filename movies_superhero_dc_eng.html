@@ -1,0 +1,1651 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*34;
+var imgBgSrc="images/icons/background/superhero.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+			<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_superhero_dc_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_superhero_dc_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_superhero_dc_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_superhero_dc_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_selected">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; By Actors <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; By Genre</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Animation</div>
+	</td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Superhero</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_superhero_dc_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_superhero_dc_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; DC Extended Universe</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_superhero_marvel_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_superhero_marvel_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Marvel Cinematic Universe</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_superhero_other_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_superhero_other_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Other</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"  
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Movies &blacktriangleright; Superhero &blacktriangleright; DC Extended Universe</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:782px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+
+		
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="movies_superhero">Superhero Movies</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/movies_superhero.jpg" alt="Superhero Films" title="Superhero Films" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P>A <b>superhero film</b>, <b>superhero movie</b>, or <b>superhero motion</b> picture is a film that is focused on the actions of one or more superheroes: individuals who usually possess superhuman abilities relative to a normal person and are dedicated to protecting the public. These films typically feature action, fantasy and/or science fiction elements, with the first film of a particular character often including a focus on the origin of the special powers and the first fight against the character's most famous supervillain, or archenemy.
+
+<P>Most superhero movies are based on superhero comics. By contrast, several films such as the RoboCop series, The Meteor Man, Unbreakable, The Incredibles, and Hancock are original for the screen, while The Green Hornet is based primarily on the original radio series and its 1960s television adaptation, and both Underdog and The Powerpuff Girls are based on an animated television series.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Superhero_film" class = "standardb_black" target="_blank">Wikipedia Superhero Film</a> - <b>Superhero Film</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					26th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+		
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="dc_extended_universe">DC Extended Universe</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/dc_extended_universe.jpg" alt="DC Extended Universe" title="DC Extended Universe" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>The DC Extended Universe</b> (<b>DCEU</b>) is an American media franchise and shared universe centered on a series of superhero films and a television series produced by DC Studios and distributed by Warner Bros. Pictures. It is based on characters that appear in American comic books published by DC Comics. The DCEU also includes comic books, short films, novels, and video games. Like the original DC Universe in comic books, the DCEU is established by crossing over common plot elements, settings, cast, and characters.
+
+<P>Warner Bros. began trying to bring various DC Comics superheroes together in films in 2002, when Wolfgang Petersen was to direct a crossover of the Superman and Batman film franchises. A planned Justice League film was put on hold in 2008. Initial universe plans were scrapped after the critical and commercial disappointment of the 2011 film Green Lantern.
+
+<P>Warner Bros. finally established its shared universe with the 2013 film Man of Steel, a reboot of the Superman film series, and 2016's Batman v Superman: Dawn of Justice, which also served as a reboot of the Batman film series. This was followed by 13 films and Peacemaker, a television series for Max. The DCEU's 15th and final film, Aquaman and the Lost Kingdom, was released on December 22, 2023.
+
+<P>The DCEU is the eighth-highest-grossing film franchise and the fourth-highest-grossing superhero film franchise, having grossed more than $7 billion at the global box office. The highest-grossing DC Comics-based film is Aquaman (2018), which earned more than $1.15 billion worldwide. However, eight of the 15 theatrically released films failed to break even theatrically, being considered box-office bombs. Reception to the franchise was generally mixed among critics and fans.
+
+<P>A new, rebooted franchise of films and television series, DC Universe (DCU), is planned by James Gunn and Peter Safran, who were appointed DC Studios' co-chairmen and co-CEOs in a late-2022 restructuring. Certain DCEU characters, such as Peacemaker, Amanda Waller and Blue Beetle, will be transitioned to the DCU.
+
+
+<br><br>
+<P><b>Films:</b>
+
+<P>&nbsp;&bull; <a href="#man_of_steel" class = "standardb_black">Man of Steel</a>, June 14, 2013
+<P>&nbsp;&bull; Batman v Superman: Dawn of Justice, March 25, 2016
+<P>&nbsp;&bull; <a href="#suicide_squad" class = "standardb_black">Suicide Squad</a>, August 5, 2016
+<P>&nbsp;&bull; <a href="#wonder_woman" class = "standardb_black">Wonder Woman</a>, June 2, 2017
+<P>&nbsp;&bull; Justice League, November 17, 2017
+<P>&nbsp;&bull; <a href="#aquaman" class = "standardb_black">Aquaman</a>, December 13, 2018
+<P>&nbsp;&bull; Shazam!, April 5, 2019
+<P>&nbsp;&bull; <a href="#birds_of_prey" class = "standardb_black">Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)</a>, February 7, 2020
+<P>&nbsp;&bull; <a href="#wonder_woman_1984" class = "standardb_black">Wonder Woman 1984</a>, December 25, 2020
+<P>&nbsp;&bull; Zack Snyder's Justice League, March 18, 2021
+<P>&nbsp;&bull; <a href="#suicide_squad2" class = "standardb_black">The Suicide Squad</a>, August 6, 2021
+<P>&nbsp;&bull; Black Adam, October 21, 2022
+<P>&nbsp;&bull; Shazam! Fury of the Gods, March 17, 2023
+<P>&nbsp;&bull; <a href="#flash" class = "standardb_black">The Flash</a>, June 16, 2023
+<P>&nbsp;&bull; Blue Beetle, August 18, 2023
+<P>&nbsp;&bull; <a href="#aquaman2" class = "standardb_black">Aquaman and the Lost Kingdom</a>, December 20, 2023
+
+
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/DC_Extended_Universe" class = "standardb_black" target="_blank">Wikipedia DC Extended Universe</a> - <b>DC Extended Universe</b> on Wikipedia.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					15th of Jun, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="aquaman">Aquaman</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/aquaman.jpg" alt="Aquaman" title="Aquaman" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Aquaman</b> is a 2018 American superhero film based on the DC Comics character of the same name, distributed by Warner Bros. Pictures. It is the sixth installment in the DC Extended Universe (DCEU). Directed by James Wan, with a screenplay by David Leslie Johnson-McGoldrick and Will Beall, from a story by Geoff Johns, Wan and Beall, it stars Jason Momoa as the title character, with Amber Heard, Willem Dafoe, Patrick Wilson, Dolph Lundgren, Yahya Abdul-Mateen II, and Nicole Kidman in supporting roles. It is the third live-action theatrical film featuring the title character, following Batman v Superman: Dawn of Justice (2016) and Justice League (2017) and the first full-length feature film centered around the character. In Aquaman, Arthur Curry, the heir to the underwater kingdom of Atlantis, must step forward to lead his people against his half-brother, Orm, who seeks to unite the seven underwater kingdoms against the surface world.
+
+<P>Development of an Aquaman film began in 2004, with several plans falling through over the years. In August 2014, Beall and Kurt Johnstad were hired to write two competing scripts and the film was officially announced in October 2014. Wan signed on as director in April 2015 and in July 2016 it was announced the film would move forward with Beall's screenplay, although Wan, Johnstad, Johns and Johnson-McGoldrick all performed various rewrites. The main cast was confirmed throughout 2016 and early 2017. Principal photography began in Australia on May 2, 2017. Most of the film was shot at Village Roadshow Studios in Gold Coast, Queensland, with production also held in Canada, Italy and Morocco, and wrapped on October 21, 2017.
+
+<P>Aquaman had its world premiere in London on November 26, 2018, and is scheduled to be released in the United States by Warner Bros. Pictures in Real D 3D, Dolby Cinema, IMAX and IMAX 3D on December 21, 2018.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Aquaman_(film)" class = "standardb_black" target="_blank">Wikipedia Aquaman (film)</a> - <b>Aquaman</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=WDkg3h8PCVU" class = "standardb_black" target="_blank">Aquaman</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					09th of Dec, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+
+		</tr>
+		
+		
+		
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="aquaman2">Aquaman and the Lost Kingdom</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/aquaman2.jpg" alt="Aquaman and the Lost Kingdom" title="Aquaman and the Lost Kingdom" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Aquaman and the Lost Kingdom</b> is a 2023 American superhero film based on the DC character Aquaman. Produced by DC Studios, Atomic Monster, the Safran Company, and Domain Entertainment, and distributed by Warner Bros. Pictures, it is the sequel to Aquaman (2018), and the 15th film and final installment in the DC Extended Universe (DCEU). The film was directed by James Wan from a screenplay by David Leslie Johnson-McGoldrick, and stars Jason Momoa as Arthur Curry / Aquaman, alongside Patrick Wilson, Amber Heard, Yahya Abdul-Mateen II, Randall Park, Dolph Lundgren, Temuera Morrison, Martin Short, and Nicole Kidman. In the film, Arthur must work with his half-brother Orm (Wilson) to prevent Black Manta (Abdul-Mateen II) from killing his family and using the cursed Black Trident to overheat the world while searching for the lost seventh kingdom of the seas.
+
+<P>Momoa pitched a story for an Aquaman sequel during production of the first film. Wan did not want to rush a sequel but agreed in January 2019 to oversee development. Johnson-McGoldrick signed on to return as screenwriter a month later, and Wan was confirmed to be returning as director in August 2020. He said the film would expand on Aquaman's worldbuilding, have a more serious tone, and feature themes such as climate change. It is a buddy comedy between Aquaman and Orm, and was inspired by the Silver Age of Comic Books with a retro science fiction vibe similar to the works of animator Ray Harryhausen and the horror films of the 1960s, specifically Planet of the Vampires (1965). Wan announced the sequel's title in June 2021, ahead of the start of filming at the end of the month. Filming concluded in January 2022, taking place in the United Kingdom, Hawaii, Los Angeles, and New Jersey, with additional filming in New Zealand.
+
+<P>Aquaman and the Lost Kingdom premiered at a fan event at the Grove, Los Angeles on December 19, 2023, and was released in the United States on December 22. The film received generally negative reviews from critics and has grossed $398 million worldwide.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Aquaman_and_the_Lost_Kingdom" class = "standardb_black" target="_blank">Wikipedia Aquaman and the Lost Kingdom</a> - <b>Aquaman and the Lost Kingdom</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=UGc5Tzz19UY" class = "standardb_black" target="_blank">Aquaman and the Lost Kingdom</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					25th of Jan, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+
+		</tr>
+		
+
+
+
+	
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="birds_of_prey">Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/birds_of_prey.jpg" alt="Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)" title="Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)</b> is a 2020 American superhero film based on the DC Comics team Birds of Prey. It is the eighth installment in the DC Extended Universe and a follow-up to <a href="#suicide_squad" class = "standardb_black" target="_blank">Suicide Squad</a> (2016). It was directed by Cathy Yan and written by Christina Hodson, and it stars Margot Robbie, Mary Elizabeth Winstead, Jurnee Smollett-Bell, Rosie Perez, Chris Messina, Ella Jay Basco, Ali Wong, and Ewan McGregor. The film follows Harley Quinn as she joins forces with Helena Bertinelli, Dinah Lance, and Renee Montoya to save Cassandra Cain from Gotham City crime lord Black Mask.
+
+<P>Robbie, who also served as producer, pitched the idea for Birds of Prey to Warner Bros. in 2015. The film was announced in May 2016, with Hodson being hired to write the script that November, followed by Yan signing on to direct in April 2018. The majority of the cast and crew were confirmed by December 2018. Principal photography lasted from January to April 2019 in Downtown Los Angeles, parts of the Arts District, Los Angeles, and soundstages at Warner Bros. Studios in Burbank, California. Additional filming took place in September 2019.
+
+<P>Birds of Prey is the first DCEU film and the second DC Films production to be rated R by the Motion Picture Association of America. The film had its world premiere in Mexico City on January 25, 2020, and was theatrically released in the United States in IMAX, Dolby Cinema, and 4DX on February 7, 2020. It grossed $201 million worldwide, making it the fourth highest-grossing film of 2020. The film received praise from critics for its visual style, Yan's direction, and Robbie's performance, but criticism for Hodson's screenplay.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Birds_of_Prey_(2020_film)" class = "standardb_black" target="_blank">Wikipedia Birds of Prey (2020 film)</a> - <b>Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=kGM4uYZzfu0" class = "standardb_black" target="_blank">Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					21st of May, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+
+		</tr>
+		
+		
+		
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="flash">The Flash</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/flash.jpg" alt="The Flash" title="The Flash" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>The Flash</b> is a 2023 American superhero film based on the DC character of the same name. Produced by Warner Bros. Pictures, DC Studios, Double Dream, and the Disco Factory, and distributed by Warner Bros., it is the 13th installment in the DC Extended Universe (DCEU). The film was directed by Andy Muschietti from a screenplay by Christina Hodson, and stars Ezra Miller as Barry Allen / The Flash alongside Sasha Calle, Michael Shannon, Ron Livingston, Maribel Verdú, Kiersey Clemons, Antje Traue, and Michael Keaton. In the film, Barry travels back in time to prevent his mother's death, which brings unintended consequences.
+
+<P>Development of a film based on the Flash began in the late 1980s, with multiple writers and directors attached to the project through 2014. The film was then redeveloped as a part of the DCEU, with Miller cast as the title character. Multiple directors were attached to the film over the following years, with Seth Grahame-Smith, Rick Famuyiwa, and the duo of John Francis Daley and Jonathan Goldstein all departing the project over creative differences. Muschietti and Hodson joined the film in July 2019, and pre-production began in January 2020. The film is influenced by the comic book storyline Flashpoint (2011), featuring other DC characters, such as Calle's Supergirl and both Ben Affleck's and Keaton's versions of Batman. Principal photography took place from April to October 2021 at Warner Bros. Studios, Leavesden and on location around the United Kingdom.
+
+<P>The Flash premiered at Grauman's Chinese Theatre in Los Angeles on June 12, 2023, and was released in the United States on June 16, following multiple delays caused by director changes, the COVID-19 pandemic, post-production setbacks, and controversies surrounding Miller. The film received mixed reviews from critics, who praised its humor, action sequences, and the performances, but criticized the third act and visual effects. The film has grossed $267.2 million worldwide against a production budget of $200–220 million, not including marketing costs, making it one of the biggest box-office bombs of all time, with projections of as much as a $200 million loss for Warner Bros.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Flash_(film)" class = "standardb_black" target="_blank">Wikipedia The Flash (film)</a> - <b>The Flash</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=hebWYacbdvc" class = "standardb_black" target="_blank">The Flash</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					18th of Jul, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+
+		</tr>
+		
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="man_of_steel">Man of Steel</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/man_of_steel.jpg" alt="Man of Steel" title="Man of Steel" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Man of Steel</b> is a 2013 superhero film based on the DC Comics character Superman. Produced by DC Entertainment, Legendary Pictures, Syncopy and Cruel and Unusual Films, and distributed by Warner Bros. Pictures, it is a British-American production and the first installment in the DC Extended Universe (DCEU). The film is directed by Zack Snyder, written by David S. Goyer, and stars Henry Cavill, Amy Adams, Michael Shannon, Kevin Costner, Diane Lane, Laurence Fishburne, Antje Traue, Ayelet Zurer, Christopher Meloni and Russell Crowe. Man of Steel is a reboot of the Superman film series that portrays the character's origin story. In the film, Clark Kent learns that he is a superpowered alien from the planet Krypton. He assumes the role of mankind's protector as Superman, making the choice to face General Zod and prevent him from destroying humanity.
+
+<P>Development began in 2008 when Warner Bros. took pitches from comic book writers, screenwriters, and directors, opting to reboot the franchise. In 2009, a court ruling resulted in Jerry Siegel's family recapturing the rights to Superman's origins and Siegel's copyright. The decision stated that Warner Bros. did not owe the families additional royalties from previous films, but if they did not begin production on a Superman film by 2011, then the Shuster and Siegel estates would be able to sue for lost revenue on an unproduced film. Producer Christopher Nolan pitched Goyer's idea after story discussion on The Dark Knight Rises, and Snyder was hired as the film's director in October 2010. Principal photography began in August 2011 in West Chicago, Illinois, before moving to Vancouver and Plano, Illinois.
+
+<P>Man of Steel was theatrically released in theaters on June 14, 2013, in 2D, 3D and IMAX. It grossed $668 million worldwide, making it the ninth highest-grossing film of 2013. Critics praised the film's visuals and Hans Zimmer's score but criticized its pacing and lack of character development. A direct sequel Batman v Superman: Dawn of Justice was released, on March 25, 2016.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Man_of_Steel_(film)" class = "standardb_black" target="_blank">Wikipedia Man of Steel (film)</a> - <b>Man of Steel</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=T6DJcgm3wNY" class = "standardb_black" target="_blank">Man of Steel</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					23rd of Jun, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+
+		</tr>
+		
+		
+		
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="suicide_squad">Suicide Squad</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/suicide_squad.jpg" alt="Suicide Squad" title="Suicide Squad" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Suicide Squad</b> is a 2016 American superhero film based on the DC Comics antihero team of the same name. It is the third installment in the DC Extended Universe. The film is written and directed by David Ayer and stars an ensemble cast featuring Will Smith, Jared Leto, Margot Robbie, Joel Kinnaman, Viola Davis, Jai Courtney, Jay Hernandez, Adewale Akinnuoye-Agbaje, Ike Barinholtz, Scott Eastwood and Cara Delevingne. In Suicide Squad, a secret government agency led by Amanda Waller recruits imprisoned supervillains to execute dangerous black ops missions and save the world from a powerful threat, in exchange for leaner sentences.
+
+<P>By February 2009, a Suicide Squad film was in development at Warner Bros. Pictures. Ayer signed on to write and direct in September 2014, and by October, the casting process had begun. Principal photography began on April 13, 2015, in Toronto, Ontario, with additional filming in Chicago, Illinois, and ended in August that year.
+
+<P>Suicide Squad premiered in New York City on August 1, 2016, and was released in the United States on August 5, 2016, in 2D, 3D and IMAX 3D. Following a strong debut that set new box office records, the film has grossed $580 million worldwide. Critical response to the film was generally negative, with criticism aimed towards the editing, directing and writing, though the cast's performances were praised.
+
+
+
+<br><br>
+<P><b>Critical response:</b>
+
+<P>Suicide Squad received generally negative reviews from critics. On Rotten Tomatoes, the film has a rating of 26%, based on 284 reviews, with an average rating of 4.7/10. The site's critical consensus reads, "Suicide Squad boasts a talented cast and a little more humor than previous DCEU efforts, but they aren't enough to save the disappointing end result from a muddled plot, thinly written characters, and choppy directing." On Metacritic, the film has a score of 40 out of 100, based on 53 critics, indicating "mixed or average reviews". Audiences polled by CinemaScore gave the film an average grade of "B+" on an A+ to F scale.
+
+<P>Rolling Stone's Peter Travers wrote, "DC Comics tries something different with Suicide Squad, an all-star collection of crime fighting villains—and the result is anything but super." Richard Lawson of Vanity Fair said, "Suicide Squad is just bad. It's ugly and boring, a toxic combination that means the film's highly fetishized violence doesn't even have the exciting tingle of the wicked or the taboo." Writing for The Wall Street Journal, Joe Morgenstern heavily criticized the film saying, "In a word, Suicide Squad is trash. In two words, it's ugly trash." He further said, it "amounts to an all-out attack on the whole idea of entertainment," and called the film a product of "shameless pandering".
+
+<P>Chris Nashawaty of Entertainment Weekly gave the film B- saying, "Suicide Squad kicks off with fizzy, punk-rock ferocity before turning flat and spiraling into familiar formulas," and called Jared Leto's "scene-stealing" Joker "wasted" and "stranded in the periphery". He concluded by saying, "For DC, Suicide Squad is a small step forward. But it could have been a giant leap." IGN gave the film 5.9/10, saying: "Suicide Squad is a decidedly different flavor than Batman v Superman. It goes for subversive, funny and stylish, and it succeeds wildly during the first act. But then the movie turns into something predictable and unexciting." Drew McWeeny from HitFix gave it a positive review, writing "Suicide Squad is not the darkest mainstream superhero comic book movie ever made, nor is it even the darkest live-action film featuring Batman ever made. However, it is gleefully nihilistic, and it takes a different approach to what has become a fairly familiar story form at this point, right at the moment when it feels like superhero movies either have to evolve or die." Brian Truitt from USA Today wrote, "Compared to its ilk, Suicide Squad is an excellently quirky, proudly raised middle finger to the staid superhero-movie establishment."
+
+<P>Margot Robbie's performance of Harley Quinn was widely praised, with many critics eager to see more of her character in future films. Paul Dini, the creator of Harley Quinn, said that Robbie "nailed" the character. David Fear of Rolling Stone, however, wrote that the "biggest letdown is the way the movie underserves both Harley and the actor playing her", and that one "can't forgive nearly ruining a complex, iconic character who deserves way better than this". Richard Lawson criticised her similarly, writing that "most fans of Harley Quinn—male, female, gay, straight—will be disappointed".
+
+<P>In contrast to the negative to mixed at-best reception from film critics, the movie received praise and positive reviews from the paying audience, fans, the studio, the actors themselves, as well as several of the creators of the film's comic book characters. John Ostrander, and Paul Dini creators of Amanda Waller, Suicide Squad, and Harley Quinn respectively, praised the film for its tone, character depiction and story-arcs, and the director's story-telling. Ostrander went so far as to state that he believed film critics had gone into the movie with an intent to dislike it, siting his belief that every superhero movie is compared to Christopher Nolan's The Dark Knight.
+
+<P>Following viewing of Suicide Squad, fans and the general audience had a largely differing opinion from critics as to the film's quality. The contrasting reviews were so large, a petition for Rotten Tomatoes to be shut down was started online. Given the site's influence on audiences, fans felt the site would negatively affect the movie's overall performance and that the site's overall rating was not an accurate depiction of the level of quality that the actual material is.
+
+<P>Despite the negative critical response, the studio has stated, through executive distribution Vice President Jeff Goldstein, that they are pleased with the fans' response, the box office performance, and are proud of the talent behind the creation of the movie; going so far as to say, "There’s a major disconnect with between what the critics are saying and what audiences are seeing...It bested anything that we could have expected."
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Suicide_Squad_%28film%29" class = "standardb_black" target="_blank">Wikipedia Suicide Squad (film)</a> - <b>Suicide Squad</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=CmRih_VtVAs" class = "standardb_black" target="_blank">Suicide Squad</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					26th of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+
+		</tr>
+		
+		
+		
+	
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="suicide_squad2">The Suicide Squad</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/suicide_squad2.jpg" alt="The Suicide Squad" title="The Suicide Squad" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>The Suicide Squad</b> is a 2021 American superhero film based on DC Comics featuring the team Suicide Squad. Produced by DC Films, Atlas Entertainment, and The Safran Company, and distributed by Warner Bros. Pictures, it is a standalone sequel to <a href="#suicide_squad" class = "standardb_black" target="_blank">Suicide Squad</a> (2016) and the tenth film in the DC Extended Universe (DCEU). It was written and directed by James Gunn and stars an ensemble cast including Margot Robbie, Idris Elba, John Cena, Joel Kinnaman, Sylvester Stallone, Viola Davis, Jai Courtney, and Peter Capaldi. In the film, a task force of convicts are sent to destroy evidence of the giant alien Starro.
+
+<P>David Ayer was set to return as director for a Suicide Squad sequel by March 2016, but in December he chose to develop a Gotham City Sirens film instead. Warner Bros. considered several replacement directors before hiring Gavin O'Connor in September 2017. He left by October 2018, and Gunn was hired to write and direct the film after being temporarily fired by Disney and Marvel Studios as the director of Guardians of the Galaxy Vol. 3 (2023). He drew inspiration from war films and John Ostrander's 1980s Suicide Squad comics, and decided to explore new characters in a story separate from the first film's narrative, though some cast members do return from Suicide Squad. Filming began in Atlanta, Georgia, in September 2019, and concluded in Panama in February 2020.
+
+<P>The Suicide Squad was theatrically released in the United Kingdom on July 30, 2021, and in the United States on August 5, while streaming on HBO Max for a month starting the same day. It received positive reviews from critics, who praised Gunn's direction, visual style, irreverent humor, and the soundtrack, with many finding it to be a significant improvement over its predecessor. Peacemaker, a spin-off television series starring Cena, is set to debut on HBO Max in January 2022.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Suicide_Squad_(film)" class = "standardb_black" target="_blank">Wikipedia The Suicide Squad (film)</a> - <b>The Suicide Squad</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=JuDLepNa7hw" class = "standardb_black" target="_blank">The Suicide Squad</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					09th of Aug, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+
+		</tr>
+		
+		
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="wonder_woman">Wonder Woman</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/wonder_woman.jpg" alt="Wonder Woman" title="Wonder Woman" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Wonder Woman</b> is a 2017 American superhero film based on the DC Comics character of the same name, distributed by Warner Bros. Pictures. It is the fourth installment in the <a href="#dc_extended_universe" class = "standardb_black" target="_blank">DC Extended Universe</a>. The film is directed by Patty Jenkins, with a screenplay by Allan Heinberg and a story by Heinberg, Zack Snyder, and Jason Fuchs. Gal Gadot stars as the titular character with Chris Pine, Robin Wright, Danny Huston, David Thewlis, Connie Nielsen, and Elena Anaya in supporting roles. Wonder Woman is the second live action theatrical film featuring the titular character, following her debut in 2016's Batman v Superman: Dawn of Justice. Jenkins' role as director makes her the first female director of a studio superhero movie.
+
+<P>Set in 1918, the film tells the story of Princess Diana, who grows up on the Amazon island of Themyscira. After American pilot Steve Trevor crashes offshore of the island and is rescued by Diana, he tells her about the ongoing World War. She then leaves her home in order to end the conflict, becoming Wonder Woman in the process. Development for the film began in 1996, with Jenkins signing on to direct in 2015. Principal photography began on November 21, 2015, with filming taking place in the United Kingdom, France, and Italy before wrapping up on May 9, 2016. Additional filming took place in November 2016.
+
+<P>Wonder Woman premiered in Shanghai on May 15, 2017, and was released in the United States on June 2, 2017, in 2D, 3D, and IMAX 3D. It received positive reviews from critics, with many praising Gadot and Pine's performances. The film set records for the biggest domestic opening for a female director ($103.3 million) and the biggest opening for a female-led comic book film, and has grossed $453 million worldwide, making it the eighth highest-grossing film of 2017.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Wonder_Woman_(2017_film)" class = "standardb_black" target="_blank">Wikipedia Wonder Woman (2017 film)</a> - <b>Wonder Woman</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=qeZ8X5FKl78" class = "standardb_black" target="_blank">Wonder Woman</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					15th of Jun, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+
+		</tr>
+
+	
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="wonder_woman_1984">Wonder Woman 1984</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/wonder_woman_1984.jpg" alt="Wonder Woman 1984" title="Wonder Woman 1984" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Wonder Woman 1984</b> (stylized on-screen and often abbreviated as <b>WW84</b>) is a 2020 American superhero film based on the DC Comics character Wonder Woman. It is the sequel to <a href="#wonder_woman" class = "standardb_black" target="_blank">2017's Wonder Woman</a> and the ninth installment in the DC Extended Universe (DCEU). The film is directed by Patty Jenkins from a script she wrote with Geoff Johns and Dave Callaham, based on a story by Johns and Jenkins. Gal Gadot stars as Diana Prince / Wonder Woman, alongside Chris Pine, Kristen Wiig, Pedro Pascal, Robin Wright, and Connie Nielsen. Set in 1984 during the Cold War, the film follows Diana and her past love Steve Trevor as they face off against Max Lord and Cheetah.
+
+<P>Discussion of a sequel began shortly after the release of the first film in June 2017 and the decision to proceed was confirmed the following month. Principal photography began on June 13, 2018, with filming taking place at Warner Bros. Studios, Leavesden in England, as well as the District of Columbia and Northern Virginia in the United States, London and Duxford in England, Tenerife and Fuerteventura in the Canary Islands, and Almería in Andalusia, Spain. Production wrapped on December 22, 2018, after a six-month shoot, with additional filming in July 2019.
+
+<P>Wonder Woman 1984 was originally scheduled for a wide theatrical release in the United States on June 5, 2020, but was delayed multiple times and eventually cancelled due to the COVID-19 pandemic. The film premiered on December 15, 2020, via the DC FanDome virtual platform and was theatrically released in the United States by Warner Bros. Pictures on December 25, 2020, and also made available to be streamed digitally on HBO Max for a month before moving to premium video on demand. In international markets that do not have HBO Max, the film was theatrically released on December 16, 2020. It received mixed reviews from critics, who praised its "escapist qualities" and Jenkins' take on the 1980s but found it "overindulgent or cliché". The film grossed $165 million worldwide, failing to break even due to limited theaters during the COVID-19 pandemic, but became the most-watched straight-to-streaming title of 2020.
+
+<P>Two follow-ups are currently in development; a sequel with Jenkins and Gadot returning, and set for a traditional theatrical release, and a spin-off produced by Jenkins focusing on the Amazons of Themyscira.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Wonder_Woman_1984" class = "standardb_black" target="_blank">Wikipedia Wonder Woman 1984</a> - <b>Wonder Woman 1984</b> on Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=XW2E2Fnh52w" class = "standardb_black" target="_blank">Wonder Woman 1984</a> - Official Trailer.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					28th of Mar, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+
+		</tr>
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

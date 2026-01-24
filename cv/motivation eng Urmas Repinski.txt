@@ -1,0 +1,25 @@
+Hello,
+
+The project I worked on at the Tallinn Technical University - Forensic - was in C++, a scientific project. Sufficient description in the Summary, link in English http://www.informatik.uni-bremen.de/agra/eng/forensic.php
+
+I have a Homepage on Wasmer, fully functioning: https://urimus.wasmer.app/about_me_eng.html
+The page is also a portfolio.
+
+Basically, the page code consists of Html + JavaScript, a little PHP (does not work on Wasmer). Each HTML page uses a script https://urimus.wasmer.app/scripts/pageResize.js
+To display the Appearing Menu, the script https://urimus.wasmer.app/scripts/showMenu.js is used.
+
+Sections you may be interested in:
+1. Site Map - https://urimus.wasmer.app/index_eng.html?type=aboutme&sortby=name. JavaScript Code that makes this section work - https://urimus.wasmer.app/scripts/showContents.js
+
+2. News - News Feed NASA - https://urimus.wasmer.app/news_eng.html?source=nasa&type=releases (also exists other News, complete list on Homepage in Section News). Relevant Code - https://urimus.wasmer.app/scripts/showFeed.js. To read the Feed, the feednami library (https://toolkit.sekando.com/docs/en/feednami) is used, which runs on JavaScript.
+
+3. The most voluminous section is the HTML editor, which allows you to modify the content of this site online directly from the same website. For the editor to work (https://urimus.wasmer.app/html_editor_eng.html?pattern=spec/mo*&i=0) PHP support and also a password are required; it does not function on Wasmer, but the corresponding JavaScript files are required to work on server that supports PHP further:
+a. https://urimus.wasmer.app/scripts/processSearchAndReplace.js
+b. https://urimus.wasmer.app/scripts/functionsAndConstants.js
+
+Also know C++, JavaScript, PHP, HTML, Css, MySQL well, and studying Python.
+
+Thank you,
+Urmas Repinski.
+
+Pdf CV - https://urimus.wasmer.app/cv/CV_English_Urmas_Repinski.pdf

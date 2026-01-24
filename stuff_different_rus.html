@@ -1,0 +1,1086 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*33;
+var imgBgSrc="images/icons/background/stuff.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+		<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('stuff_different_lat.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='stuff_different_lat.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="latina"
+			id="flag_lat"
+		>
+			<img src="lang/lat.gif" height="17" alt="latina" style="display: block;"/>
+		</div>
+	</td>
+
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('stuff_different_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='stuff_different_eng.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('stuff_different_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='stuff_different_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+	
+
+
+
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_selected">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_14_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('stuff_different_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='stuff_different_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&bull; Разное</div>
+	</td>
+	</tr>
+
+
+	
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_14_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('stuff_chupacabra_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='stuff_chupacabra_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Чупакабра</div>
+	</td>
+	</tr>
+	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_14_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('stuff_hyperspace_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='stuff_hyperspace_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Гиперпространство</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_14_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('stuff_images_general_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='stuff_images_general_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Картинки</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_14_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('stuff_matrix_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='stuff_matrix_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Матрица <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_14_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('stuff_star_trek_discovery_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='stuff_star_trek_discovery_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Звёздный Путь: Дискавери</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>			
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Барахло &blacktriangleright; Разное</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:759px;overflow:auto;">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+		
+		
+	<tr align="center">
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_black"><a name="1">Разное</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+	<div class="galleria">
+	<a href="https://www.youtube.com/watch?v=Q1cyLG0eyGc"><img src="images/icons/videos/francesco.jpg" data-title="Blaze U, Kilian K, Mr. Stache & Michael Caspar - Francesco (Lyric Video)[Extended Mix]" data-description="<a href='https://www.youtube.com/watch?v=Q1cyLG0eyGc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Янв, 2026."></a>
+	<a href="https://www.youtube.com/watch?v=zORs1YGiysY"><img src="images/icons/videos/blue_stahli.jpg" data-title="Blue Stahli - Not Over Til We Say So (feat. Emma Anzai of Sick Puppies) [Official Audio]"   data-description="<a href='https://www.youtube.com/watch?v=zORs1YGiysY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>14е Янв, 2026."></a>
+	<a href="https://www.youtube.com/watch?v=Geu6Hfu547o"><img src="images/icons/videos/equilibrium.jpg" data-title="Equilibrium Music Video"   data-description="<a href='https://www.youtube.com/watch?v=Geu6Hfu547o' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>11е Окт, 2025."></a>
+	<a href="https://www.youtube.com/watch?v=CukNN6m6tVs"><img src="images/icons/videos/underworld_amv2.jpg" data-title="BY MAKER - Misgiving 'Chaotichism' Remix ('Underworld: Saga' Music Video ᴴᴰ)"   data-description="<a href='https://www.youtube.com/watch?v=CukNN6m6tVs' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Сен, 2025."></a>
+	<a href="https://www.youtube.com/watch?v=gsIft4crPzI"><img src="images/icons/videos/land_of_fire.jpg" data-title="KORDHELL - LAND OF FIRE"   data-description="<a href='https://www.youtube.com/watch?v=gsIft4crPzI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Сен, 2025."></a>
+	<a href="https://www.youtube.com/watch?v=4-4ZkaYUWbw"><img src="images/icons/videos/gangstas_paradise.jpg" data-title="【GMV】Assassin's Creed (Coolio - Gangsta's Paradise)"   data-description="<a href='https://www.youtube.com/watch?v=4-4ZkaYUWbw' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>17е Апр, 2025."></a>
+	<a href="https://www.youtube.com/watch?v=LZn6yOhp9-o"><img src="images/icons/videos/remember_name.jpg" data-title="Assassin's Creed tribute - Remember the Name"   data-description="<a href='https://www.youtube.com/watch?v=LZn6yOhp9-o' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Мар, 2025."></a>
+	<a href="https://www.youtube.com/watch?v=rDVUWO3va-M"><img src="images/icons/videos/ghost.jpg" data-title="Gabry Ponte - Ghost (Official Visualizer)"   data-description="<a href='https://www.youtube.com/watch?v=rDVUWO3va-M' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>18е Янв, 2025."></a>
+	<a href="https://www.youtube.com/watch?v=ETxUpOIPiIc"><img src="images/icons/videos/push_up.jpg" data-title="Creeds - Push Up (TikTok Remix) / The Matrix (Fight Scene)"   data-description="<a href='https://www.youtube.com/watch?v=ETxUpOIPiIc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>23е Окт, 2024."></a>
+	<a href="https://www.youtube.com/watch?v=rRUf7-MmeFA"><img src="images/icons/videos/rocky_iv_war.jpg" data-title="Rocky IV War (Enzo Margaglio Remake)"   data-description="<a href='https://www.youtube.com/watch?v=rRUf7-MmeFA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>25е Авг, 2024."></a>
+	<a href="https://www.youtube.com/watch?v=bKe4iuBi3ng"><img src="images/icons/videos/joker_tribute.jpg" data-title="A Joker Tribute - Massive Attack"   data-description="<a href='https://www.youtube.com/watch?v=bKe4iuBi3ng' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>12е Мар, 2024."></a>
+	<a href="https://www.youtube.com/watch?v=AlRuwXpPWVI"><img src="images/icons/videos/terminator.jpg" data-title="Brad Fiedel - Terminator (asmian techno remix)"   data-description="<a href='https://www.youtube.com/watch?v=AlRuwXpPWVI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>06е Мар, 2024."></a>
+	<a href="https://www.youtube.com/watch?v=UbQgXeY_zi4"><img src="images/icons/videos/lone_digger.jpg" data-title="Caravan Palace - Lone Digger (Official MV)"   data-description="<a href='https://www.youtube.com/watch?v=UbQgXeY_zi4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>23е Фев, 2024."></a>
+	<a href="https://www.youtube.com/watch?v=fUis9yny_lI"><img src="images/icons/videos/take_breathe.jpg" data-title="Berlin - Take My Breathe Away theme from Top Gun with Lyrics"   data-description="<a href='https://www.youtube.com/watch?v=fUis9yny_lI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>15е Фев, 2023."></a>
+	<a href="https://www.youtube.com/watch?v=-5tHiZACxbI"><img src="images/icons/videos/timebomb.jpg" data-title="The Prodigy - Timebomb Zone (Official Video)"   data-description="<a href='https://www.youtube.com/watch?v=-5tHiZACxbI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Дек, 2023."></a>
+	<a href="https://www.youtube.com/watch?v=83oTO88TH_4"><img src="images/icons/videos/spectral.jpg" data-title="Sabaton: The Attack of the Dead Men (Spectral)"   data-description="<a href='https://www.youtube.com/watch?v=83oTO88TH_4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16е Ноя, 2023."></a>
+	<a href="https://www.youtube.com/watch?v=A--k4o5BDjY"><img src="images/icons/videos/bourne.jpg" data-title="jason bourne extreme ways music video"   data-description="<a href='https://www.youtube.com/watch?v=A--k4o5BDjY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>29е Мая, 2023."></a>
+	<a href="https://www.youtube.com/watch?v=iDCPI3pQR4M"><img src="images/icons/videos/punisher.jpg" data-title="Frank Castle (The Punisher) || Vengeful One"   data-description="<a href='https://www.youtube.com/watch?v=iDCPI3pQR4M' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>24е Мая, 2023."></a>
+	<a href="https://www.youtube.com/watch?v=nTYLMt6nLUg"><img src="images/icons/videos/two_steps.jpg" data-title="Two Steps From Hell - Protectors of the Earth - Game of Thrones (HD)"   data-description="<a href='https://www.youtube.com/watch?v=nTYLMt6nLUg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Апр, 2023."></a>
+	<a href="https://www.youtube.com/watch?v=Yn37E6H2ups"><img src="images/icons/videos/king_stereo.jpg" data-title="King Of The Stereo | The Matrix trilogy music video ft Saliva - King Of The Stereo"   data-description="<a href='https://www.youtube.com/watch?v=Yn37E6H2ups' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Мар, 2023."></a>
+	<a href="https://www.youtube.com/watch?v=Xbqipycvrjo"><img src="images/icons/videos/man_of_steel.jpg" data-title="(AMV) Man of Steel - Skillet"   data-description="<a href='https://www.youtube.com/watch?v=Xbqipycvrjo' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>31е Авг, 2022."></a>
+	<a href="https://www.youtube.com/watch?v=q2G8ASrOrP0"><img src="images/icons/videos/hela_paint_it_black.jpg" data-title="Hela ~ Paint it Black"   data-description="<a href='https://www.youtube.com/watch?v=q2G8ASrOrP0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Мар, 2021."></a>
+	<a href="https://www.youtube.com/watch?v=GpLNjYw2Mio"><img src="images/icons/videos/tactical_precision_disarray.jpg" data-title="Perturbator - Tactical Precision Disarray"   data-description="<a href='https://www.youtube.com/watch?v=GpLNjYw2Mio' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Мар, 2021."></a>
+	<a href="https://www.youtube.com/watch?v=LfR5wzjjWwI"><img src="images/icons/videos/ja_ne_mogu.jpg" data-title="Линда - Я не Могу"   data-description="<a href='https://www.youtube.com/watch?v=LfR5wzjjWwI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>31е Авг, 2020."></a>
+	<a href="https://www.youtube.com/watch?v=jobJz6er2a0"><img src="images/icons/videos/out_of_control.jpg" data-title="Chemical Brothers - Out Of Control"   data-description="<a href='https://www.youtube.com/watch?v=UCtC_tBKkcE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Авг, 2020."></a>
+	<a href="https://www.youtube.com/watch?v=IKGRgiQj6LE"><img src="images/icons/videos/worlds_on_fire.jpg" data-title="The Prodigy - World's On Fire"   data-description="<a href='https://www.youtube.com/watch?v=IKGRgiQj6LE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Авг, 2020."></a>
+	<a href="https://www.youtube.com/watch?v=5OKaVQONEdw"><img src="images/icons/videos/ruff_in_jungle.jpg" data-title="The Prodigy - Ruff in the Jungle"   data-description="<a href='https://www.youtube.com/watch?v=5OKaVQONEdw' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Авг, 2020."></a>
+	<a href="https://www.youtube.com/watch?v=jobJz6er2a0"><img src="images/icons/videos/night_stalker2.jpg" data-title="† Carpenter Brut † Night Stalker [ The Rise of the Synths ]"   data-description="<a href='https://www.youtube.com/watch?v=jobJz6er2a0' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>14е Июл, 2020."></a>
+	<a href="https://www.youtube.com/watch?v=sI8LOzy17p4"><img src="images/icons/videos/riddick_follow_me.jpg" data-title="Riddick Music Video 'follow me' Breaking Benjamin"   data-description="<a href='https://www.youtube.com/watch?v=sI8LOzy17p4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Июн, 2020."></a>
+	<a href="https://www.youtube.com/watch?v=-wF4Z87ZuaM"><img src="images/icons/videos/night_stalker.jpg" data-title="Carpenter Brut - Night Stalker (From 'Rise Of The Synths')"   data-description="<a href='https://www.youtube.com/watch?v=-wF4Z87ZuaM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Мая, 2020."></a>
+	<a href="https://www.youtube.com/watch?v=Z-fPsnfmaHk"><img src="images/icons/videos/tovarishh_praporshhik.jpg" data-title="Алексей Иваницкий - Товарищ Прапорщик"   data-description="<a href='https://www.youtube.com/watch?v=Z-fPsnfmaHk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Мар, 2020."></a>
+	<a href="https://www.youtube.com/watch?v=q1nq8sgkX4g"><img src="images/icons/videos/redline.jpg" data-title="Redline clip - Race between Ferrari Carrera GT SLR"   data-description="<a href='https://www.youtube.com/watch?v=q1nq8sgkX4g' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>14е Янв, 2020."></a>
+	<a href="https://www.youtube.com/watch?v=yAjAolFwOdM&t=2197s"><img src="images/icons/videos/stimul_zhizni.jpg" data-title="Красная Плесень - Стимул Жизни"   data-description="<a href='https://www.youtube.com/watch?v=yAjAolFwOdM&t=2197s' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>13е Сен, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=cpP3kwPGQbg"><img src="images/icons/videos/heartbreak_hotel.jpg" data-title="C. C. Catch - Heartbreak Hotel (Room 69 Mix)"   data-description="<a href='https://www.youtube.com/watch?v=cpP3kwPGQbg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>07е Авг, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=Eh-BD1dlGgs"><img src="images/icons/videos/zvezda_po_imeni_solnce.jpg" data-title="Виктор Цой - Звезда по Имени Солнце"   data-description="С 4 Куплетом. Автор Z-exit.<br><a href='https://www.youtube.com/watch?v=Eh-BD1dlGgs' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>18е Июл, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=KGcfJW2W0AQ"><img src="images/icons/videos/matrix_amv.jpg" data-title="The Matrix AMV"   data-description="Про Игру <a href='games_puzzle_rus.html#diamond_digger_saga' class = 'smallb_black' target='_blank'>Diamond Digger Saga</a>.<br><a href='https://www.youtube.com/watch?v=KGcfJW2W0AQ' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>02е Мар, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=O3kLvz1w7MU"><img src="images/icons/videos/david_blaine_1.jpg" data-title="David Blaine Street Magic Part 1"   data-description="В Ролях: Дэвид Блэйн, Эвин Фергусон, Питер Позински.<br><a href='https://www.youtube.com/watch?v=O3kLvz1w7MU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=wTqsV3q7rRU"><img src="images/icons/videos/david_blaine_2.jpg" data-title="David Blaine Street Magic Part 2"   data-description="В Ролях: Дэвид Блэйн, Эвин Фергусон, Питер Позински.<br><a href='https://www.youtube.com/watch?v=wTqsV3q7rRU' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=XHbYTm8U1v8"><img src="images/icons/videos/david_blaine_3.jpg" data-title="David Blaine Street Magic Part 3"   data-description="В Ролях: Дэвид Блэйн, Эвин Фергусон, Питер Позински.<br><a href='https://www.youtube.com/watch?v=XHbYTm8U1v8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=RA3ULeZViLA"><img src="images/icons/videos/david_blaine_4.jpg" data-title="David Blaine Street Magic Part 4"   data-description="В Ролях: Дэвид Блэйн, Эвин Фергусон, Питер Позински.<br><a href='https://www.youtube.com/watch?v=RA3ULeZViLA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=Daq6Xox66L4"><img src="images/icons/videos/david_blaine_5.jpg" data-title="David Blaine Street Magic Part 5"   data-description="В Ролях: Дэвид Блэйн, Эвин Фергусон, Питер Позински.<br><a href='https://www.youtube.com/watch?v=Daq6Xox66L4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Июл, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=KfX3Tyf32bA"><img src="images/icons/videos/gadalka.jpg" data-title="Гадалка (песня из кинофильма «Ах, водевиль, водевиль...»)" data-description="<a href='https://www.youtube.com/watch?v=KfX3Tyf32bA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>01е Авг, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=V4E5hPW5h2g"><img src="images/icons/videos/underworld_amv.jpg" data-title="Sonja & Lucian I Dance with the Devil (underworld 3)" data-description="<a href='https://www.youtube.com/watch?v=V4E5hPW5h2g' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Мар, 2017."></a>
+	</div>
+	<script>
+	var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/azur/galleria.azur.js');
+
+	Galleria.run('.galleria', {
+		height : 500,
+		width : 670
+	});
+	</script>
+
+				</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					20е Июн, 2016.
+				</td>
+			</tr>
+			</table>
+	</td>
+		</tr>
+		
+			
+				
+	
+
+
+		
+  </table> <!-- End of Func area -->
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!--- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+
+
+

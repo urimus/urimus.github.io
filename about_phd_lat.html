@@ -1,0 +1,691 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Domuspagina</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#84bde4";
+	var scrollBackColor="#d0e7f7";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(119,187,226,1) 0%, rgba(228,241,250,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:2px 4px;
+	color:#448CCB; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+
+var menuHeight=23*10;
+var imgBgSrc="images/icons/background/einstein.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'lat');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Ego" title="Ego"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#d0e7f7"> 
+		<td  bgcolor="#d0e7f7" width="100%">
+		<div class="nimetus2_blue"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Domuspagina&nbsp;&#9734;</font></div>
+		</td>
+	
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('about_phd_lat.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='about_phd_lat.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="latina"
+			id="flag_lat"
+		>
+			<img src="lang/lat.gif" height="17" alt="latina" style="display: block;"/>
+		</div>
+	</td>
+		
+		
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('about_phd_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='about_phd_eng.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('about_phd_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='about_phd_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+	<td bgcolor="#d0e7f7" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_blue">Menu</td>
+	</tr>
+	<tr>
+		<td height="3px" bgcolor="#ff8a00"></td>
+	</tr>  
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'lat', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Pagina Tabula</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Circa Mihi</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Circa Opus Meum</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_lat.html';
+			};"
+		class="menu_selected">
+		Circa Mei PhD</div>
+	</td>
+	</tr>
+	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Relatio</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photo/Imaginibus</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'lat', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_lat.html';
+			};"
+		class="menu_not_selected_black">
+		Quisquiliae</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'lat', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Res <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Nuntium</div>
+	</td>
+	</tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#d0e7f7" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#d0e7f7" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_blue" style="width: 530px;"><a name="welcome">Circa Mei PhD</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+</table>
+
+
+<!-- For scroll inside div 550 -->
+<div id="scrollDiv" style="height:230px;overflow:auto;">
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus_blue"><a name="dissertation">Prima Mea</a></td>
+			</tr>
+
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_blue" style="padding-left:10px; padding-right:10px;">
+
+					<img src="images/icons/different/phd.jpg" alt="PhD" title="PhD" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+
+<P>&#9679; Urmas Repinski. Model-based error localization and mutation-based error correction algorithms and their implementation for C designs.
+<a href="https://drive.google.com/file/d/1762AO7bvlp4O5xrfOgc1mofTTk38gckn/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Model-based error localization and mutation-based error correction algorithms and their implementation for C designs. Pdf" class="thumbnail_image_blue_png" src="cv/icons/google_drive_pdf.svg" height="27"></a>
+<a href="https://drive.google.com/file/d/1W05VhAZP5_MO3OKhUgpt9bsl2VJWso4U/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Model-based error localization and mutation-based error correction algorithms and their implementation for C designs. Doc" class="thumbnail_image_blue_png" src="cv/icons/google_drive_doc.svg" height="27"></a>
+
+<P>Undefended <b>PhD Dissertation</b>.
+
+<P>&#9679; Urmas Repinski. Model-based error localization and mutation-based error correction algorithms and their implementation for C designs. Presentation.
+<a href="https://drive.google.com/file/d/1DIg2RTQ3A9tHlj5Cq5PuSWHtEsvxzmFE/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Model-based error localization and mutation-based error correction algorithms and their implementation for C designs. Presentation. Pdf" class="thumbnail_image_blue_png" src="cv/icons/google_drive_pdf.svg" height="27"></a>
+<a href="https://drive.google.com/file/d/1S84JUx-YazJl0mQcDbRCt0yv9DpiTGBY/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Model-based error localization and mutation-based error correction algorithms and their implementation for C designs. Presentation. Odp" class="thumbnail_image_blue_png" src="cv/icons/google_drive_odp.svg" height="27"></a>
+
+<P>Undefended <b>PhD Dissertation's Presentation</b>.
+
+<P>&#9679; Urmas Repinski. Effective Model-Based Error Localization with Mutation-Based Error Correction in the C Designs.
+<a href="https://docs.google.com/document/d/11Nws4W4V-g34JM5smptfFx8WhsC8J3On/edit?usp=sharing&ouid=110014055642206318907&rtpof=true&sd=true" class = "standardb_blue" target="_blank"><img valign="middle" title="Effective Model-Based Error Localization with Mutation-Based Error Correction in the C Designs. Doc" class="thumbnail_image_blue_png" src="cv/icons/google_drive_doc.svg" height="27"></a>
+
+<P>One Unpublished <b>Scientific Article</b>.
+					
+				</td>
+			</tr>
+			
+	
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Relatio:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.fp7-diamond.eu/" class = "standardb_blue" target="_blank">DIAMOND</a> - Project's Description.			
+			</td>
+			</tr>	
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+				<a href="https%3A%2F%2Fagra.informatik.uni-bremen.de%2Fs_forensic.php%3Flang%3Den" class = "standardb_blue" target="_blank">FORENSIC</a> Release page.
+			</td>
+			</tr>			
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_blue" style="padding-left:10px; padding-right:10px;">
+					08 Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #84bde4 1px solid;  background-color: #d0e7f7">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" align="center" class="nimetus_blue"><a name="publications">Hic est nexus iam published articles mihi vasa et scientifica quae sunt in actu Propositiones</a></td>
+			</tr>
+	
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Vasa Mea Scientific:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>1.</b> Raik, Jaan; Repinski, Urmas; Hantson, Hanno; Jenihhin, Maksim; Di Guglielmo, Giuseppe; Pravadelli, Graziano; Fummi, Franco (2012). <b>Combining Dynamic Slicing and Mutation Operators for ESL Correction.</b> 17th IEEE European Test Symposium (1-6). IEEE. <a href="https://drive.google.com/file/d/1PXn3e2pQaIK51FVe71K765HKrayj-Chy/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Combining Dynamic Slicing and Mutation Operators for ESL Correction. Pdf" class="thumbnail_image_blue_png" src="cv/icons/google_drive_pdf.svg" height="27"></a> 
+
+<P>This is the group publication. This article in describe algorithms of model-based error localization and dynamic slicing, that are implemented in the <a href="https%3A%2F%2Fagra.informatik.uni-bremen.de%2Fs_forensic.php%3Flang%3Den" class = "standardb_blue" target="_blank">FORENSIC tool</a>, but does not include strict mathematical definitions of the model and of the algorithms, includes sections, that were developed by the co-authors also.
+			</td>
+			</tr>			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>2.</b> Repinski, Urmas; Raik, Jaan (2012). <b>Comparison of Model-Based Error Localization Algorithms for C Designs.</b> Proc. of 10th East-West Design & Test Symposium, Kharkov, Ukraine, September 14-17, 2012 (1-4). IEEE Computer Society Press.
+<a href="https://drive.google.com/file/d/1UWBRpWIc64Y783pN8tsk5nKguE3Jacni/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Comparison of Model-Based Error Localization Algorithms for C Designs. Pdf" class="thumbnail_image_blue_png" src="cv/icons/google_drive_pdf.svg" height="27"></a>
+<a href="https://docs.google.com/document/d/1zpYHveGumNM2EnR78c503RY1V-LjnvbM/edit?usp=sharing&ouid=110014055642206318907&rtpof=true&sd=true" class = "standardb_blue" target="_blank"><img valign="middle" title="Comparison of Model-Based Error Localization Algorithms for C Designs. Doc" class="thumbnail_image_blue_png" src="cv/icons/google_drive_doc.svg" height="27"></a>
+
+<P>I am the main author of the publication, where principles of implemented in the <a href="https%3A%2F%2Fagra.informatik.uni-bremen.de%2Fs_forensic.php%3Flang%3Den" class = "standardb_blue" target="_blank">FORENSIC tool</a> error localization and error correction and dynamic algorithms in details, with corresponding experimental data provided. The publication includes description of the novel approaches, implemented in the <a href="https%3A%2F%2Fagra.informatik.uni-bremen.de%2Fs_forensic.php%3Flang%3Den" class = "standardb_blue" target="_blank">FORENSIC tool</a>, like simulation using C functionality of the model and usage of novel simple ranking for model-based error localization.
+			</td>
+			</tr>	
+	
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>3.</b> Hantson, H.; Repinski, U.; Raik, J.; Jenihhin, M.; Ubar, R. (2012). <b>Diagnosis and Correction of Multiple Design Errors Using Critical Path Tracing and Mutation Analysis.</b> In: 13th IEEE Latin-American Test Workshop Proceedings (27-32). IEEE Computer Society Press.
+<a href="https://drive.google.com/file/d/1Ay3nYqM6FDo6NIsCVuB8O-11Q4iNU-_f/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Diagnosis and Correction of Multiple Design Errors Using Critical Path Tracing and Mutation Analysis. Pdf" class="thumbnail_image_blue_png" src="cv/icons/google_drive_pdf.svg" height="27"></a>
+
+<P>My Master's Degree publication, where i made a research of High-Level Decision Diagrams (HLDDS).
+			</td>
+			</tr>	
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>4.</b> Raik, Jaan; Repinski, Urmas; Ubar, Raimund; Jenihhin, Maksim; Chepurov, Anton (2010). <b>High-level design error diagnosis using backtrace on decision diagrams.</b> 28th Norchip Conference 15-16 November 2010, Tampere, Finland, IEEE.
+<a href="https://drive.google.com/file/d/13GIw4Q3Gbccfru2bxjWpr0X89YfmRzNI/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="High-level design error diagnosis using backtrace on decision diagrams. Pdf" class="thumbnail_image_blue_png" src="cv/icons/google_drive_pdf.svg" height="27"></a>
+
+<P>My Master's Degree publication, where i made a research of High-Level Decision Diagrams (HLDDS).
+			</td>
+			</tr>	
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>5.</b> Bloem, Roderick; Drechsler, Rolf; Fey, Goerschwin; Finder, Alexander; Hofferek, Georg; Koenighofer, Robert; Raik, Jaan; Repinski, Urmas; Suelflow, Andre (2012). <b>FoREnSiC - An Automatic Debugging Environment for C Programs</b>, Haifa Verification Conference (HVC'2012), pp 1-6, IBM Research Labs, Haifa, Israel: IBM.
+<a href="https://drive.google.com/file/d/16Omw-IkKrliWBZX09cvLX6V6zgI5DWZ6/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="FoREnSiC - An Automatic Debugging Environment for C Programs. Pdf" class="thumbnail_image_blue_png" src="cv/icons/google_drive_pdf.svg" height="27"></a>
+
+<P>This group publication describes structure of the developed within contents of the <a href="http://www.fp7-diamond.eu/" class = "standardb_blue" target="_blank">DIAMOND FP7</a> project <a href="https%3A%2F%2Fagra.informatik.uni-bremen.de%2Fs_forensic.php%3Flang%3Den" class = "standardb_blue" target="_blank">FORENSIC tool</a> in details. Article includes experimental data, achieved using all back-ends of the <a href="https%3A%2F%2Fagra.informatik.uni-bremen.de%2Fs_forensic.php%3Flang%3Den" class = "standardb_blue" target="_blank">FORENSIC tool</a>, with description of the back-ends and front-end of the tool. As the article were made before the end of the project (project ended at 01.01.2013), the experimental data, and algorithms descriptions, provided in the article, are not final, that will be corrected in the next articles.
+			</td>
+			</tr>
+
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>6.</b> Урмас Репинский (2012), <b>Верификация на основе симуляции с нахождением и исправлением ошибок для с-дизайнов</b>, Програмные продукты и системы, № 100, 2012 год, стр. 229-237.
+<a href="https://drive.google.com/file/d/1nSe0ukMUF8KjwcIPX5Hn8yKXTEQBsPGX/view?usp=sharing" class = "standardb_blue" target="_blank"><img valign="middle" title="Model-based Verification with Error Localization and Error Correction for C Designs. Pdf" class="thumbnail_image_blue_png" src="cv/icons/google_drive_pdf.svg" height="27"></a>
+
+<P><b>7.</b> Urmas Repinski (2012). <b>Model-based Verification with Error Localization and Error Correction for C Designs</b>, Програмные продукты и системы (international journal Software and Systems), № 100, 2012, pp. 221-229. (<a href="articles/Repinski_two_articles.pdf" class = "standardb_blue" target="_blank">pdf, articles 6-7</a>) 
+<P>I am the only author of the publication, where I described principles of implemented in the <a href="https%3A%2F%2Fagra.informatik.uni-bremen.de%2Fs_forensic.php%3Flang%3Den" class = "standardb_blue" target="_blank">FORENSIC tool</a> error localization and error correction algorithms and dynamic slicing in details, with corresponding experimental data provided. Does include mathematical definitions of the model and of the algorithms described.
+			</td>
+			</tr>
+
+	
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+					<br><br>
+					Научные Статьи, которые я активно использовал в своей Диссертации:
+				</td>
+			</tr>
+
+
+	
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>1.</b> Abreu Rui, Zoeteweij Peter and van Gemund Arjan J.C. 2006. <b>An Evaluation of Similarity Coefficients for Software Fault Localization</b>. Dependable Computing, 2006. PRDC '06. 12th Pacific Rim International Symposium on, 39-46. (<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4041886" class = "standardb_blue" target="_blank">pdf in IEEEXplore</a>).
+<P>Ample, Jaccard, Ochiai Ranking Definitions. Spectrum Based Error Localization Definition.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>12.</b> Debroy Vidroha, and Wong W. Eric. 2010. <b>Using Mutation to Automatically Suggest Fixes for Faulty Programs.</b> Software Testing, Verification and Validation (ICST), 2010 Third International Conference on, 65–74- (<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4041886" class = "standardb_blue" target="_blank">pdf in IEEEXplore</a>).
+<P>Tarantula Tool Ranking, Mutation-Based Error Correction Experimental Data.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>28.</b> Kas'janov, V. N. 1975. <b>Distinguishing Hammocks in a Directed Graph.</b> Soviet Math. Doklady, vol. 16, no. 5, 448-450.
+<P>Hammock Graph Mathematical Definition.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>41.</b> Quek, C. and Leitch, R.R. 1992. <b>Using energy constraints to generate fault candidates in model based diagnosis.</b> Intelligent Systems Engineering, First International Conference on (Conf. Publ. No. 360), 159 - 164. (<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=171934" class = "standardb_blue" target="_blank">pdf in IEEEXplore</a>).
+<P>Heruistic II and Herusitic III, that corrsponds to Ochiai ranking.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>53.</b> Weiser Mark. 1984. <b>Program Slicing.</b> IEEE Transactions on Software Engineering, vol. SE-10, no. 4, 352-357. (<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5010248" class = "standardb_blue" target="_blank">pdf in IEEEXplore</a>).
+<P>Referenced and Defined Variables definition for dynamic slicing.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_blue" style="padding-left:10px; padding-right:10px;">
+<P><b>60.</b> Zhang Xiangyu, He Haifeng, Gupta Neelam, Gupta Rajiv. 2005. <b>Experimental evaluation of using dynamic slices for fault location.</b> ADEBUG - Proceedings of the Third International Workshop on Automatic Debugging, Link&ouml;ping, Sweden, 33-42. (<a href="http://dl.acm.org/citation.cfm?id=1085135" class = "standardb_blue" target="_blank">pdf in ACM Digital Library</a>).
+<P>Dynamic slicing algorithm and experimental Results.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_blue" style="padding-left:10px; padding-right:10px;">
+					08 Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_blue" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>

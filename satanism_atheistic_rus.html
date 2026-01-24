@@ -1,0 +1,1128 @@
+﻿
+
+
+
+
+
+ 
+<!DOCTYPE html>
+ 
+<html>
+ 
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+ 
+ 
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+ 
+<script> 
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/satanism_atheistic.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+ 
+ 
+</head>
+ 
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+ 
+ 
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+ 
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+ 
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+ 
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_atheistic_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_atheistic_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_atheistic_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_atheistic_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+ 
+ 
+ 
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+ 
+	<td bgcolor="#DAF28E" valign="top"> 
+ 
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+ 
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_green">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>   
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+ 
+ 
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+ 
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"  
+		class="menu_selected">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+ 
+
+
+
+ 
+	<tr>
+		<td align="left" >
+		<div id="menu_19_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_atheistic_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_atheistic_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#10008; Атеистический</div>
+	</td>
+	</tr>   
+ 
+ 
+	
+ 
+
+ 
+ 
+ 
+	<tr>
+		<td align="left" >
+		<div id="menu_19_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_theistic_rus.html');
+ 
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_theistic_rus.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10004; Теистический</div>
+	</td>
+	</tr>   
+ 
+ 
+
+ 
+	<tr>
+		<td align="left" >
+		<div id="menu_19_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_simvoly_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_simvoly_rus.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#9679; Символика</div>
+	</td>
+	</tr>   
+ 
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+ 
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+ 
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+ 
+ 
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+ 
+ 
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+ 
+ 
+ 
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+ 
+</table>
+ 
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+ 
+<form action = "" method="post" name="form">
+ 
+ 
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+ 
+ 
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Сатанизм &blacktriangleright; Атеистический Сатанизм</a></td>
+	</tr>
+ 
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+ 
+</table>
+ 
+ 
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+ 
+ 
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+ 
+ 
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">Атеистический Сатанизм</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green">Что это такое?</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/atheistic_satanism.jpg" alt="Атеистический Сатанизм" title="Атеистический Сатанизм" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>Атеистический Сатанизм</b> не верит, что "Сатана" на самом деле существует как таковой, они не поклоняются сатане. Они считают, что каждый человек является сам по себе богом, и что каждый может поклоняться себе. У них "Сатана" является символом бунта, а не буквальным фигурой, они поклоняются сатане не больше, чем буддисты поклоняются Будде.
+ 
+ 
+					
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Satanism#Atheistic_Satanism" class = "standardb_green" target="_blank">Wikipedia LaVeyan Satanism and The Church of Satan</a> - <b>Атеистический Сатанизм</b> на Wikipedia (англ.).
+			</td>
+			</tr>	
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://rationalwiki.org/wiki/Satanism#Atheistic_Satanism" class = "standardb_green" target="_blank">RationalWiki Atheistic Satanism</a> - <b>Атеистический Сатанизм</b> на RationalWiki (англ.).
+			</td>
+			</tr>   
+ 
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					06е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+ 
+ 
+ 
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+ 
+			<tr>
+				<td width="250" height="100%" class="nimetus_green"><a name="laveyan_satanism">Сатанизм Ла-Вея</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/laveyan_satanism.jpg" alt="Сатанизм Ла-Вея" title="Сатанизм Ла-Вея" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+ 
+<P><b>Сатанизм Ла-Вея</b> — мировоззрение и официально практикуемое <a href="#church_of_satan" class = "standardb_green" target="_blank">Церковью Сатаны</a> учение, положения которого были сформулированы в 1960-е годы Антоном Ла-Веем, автором «Сатанинской библии» и основателем <a href="#church_of_satan" class = "standardb_green" target="_blank">Церкви Сатаны</a>. Сатанизм как «новый тип религии» (Ла-Вей) представляет собой современное движение, насчитывающее несколько миллионов последователей по всему миру.
+ 
+<P>Сатана в сатанизме Ла-Вея воспринимается как символ мировоззрения — символ свободы, саморазвития, индивидуализма и восстания против несправедливости.
+						
+					
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D1%82%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC_%D0%9B%D0%B0-%D0%92%D0%B5%D1%8F" class = "standardb_green" target="_blank">Wikipedia Сатанизм Ла-Вея</a> - <b>Сатанизм Ла-Вея</b> на Wikipedia.
+			</td>
+			</tr>
+ 
+ 
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					06е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+		
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+ 
+			<tr>
+				<td width="250" height="100%" class="nimetus_green"><a name="church_of_satan">Церковь Сатаны</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/church_of_satan.jpg" alt="Церковь Сатаны" title="Церковь Сатаны" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+					<P><b>Церковь Сатаны</b> (англ. The Church of Satan) — контркультурная группа, основанная в США <a href="#laveyan_satanism" class = "standardb_green" target="_blank">Антоном ЛаВеем</a> и которая «провозглашает себя сознательным носителем зла и антиподом христианства». Первая официально зарегистрированная организация, заявившая о сатанизме в качестве своей идеологии. Большая энциклопедия «Терра» отмечает, что Церковь Сатаны «хронологически первая из сатанинских сект». При этом нынешний лидер организации Питер Гилмор говорит, что «атеизм первичен, а сатанизм вторичен».
+ 
+					<P>Официальным символом Церкви Сатаны является печать Бафомета.
+ 
+					<br><br>
+					
+					<P><b>История:</b>
+					
+					<P>Церковь Сатаны была основана в Вальпургиеву ночь (30 апреля) 1966 года в Сан-Франциско Антоном Шандором ЛаВеем, впоследствии автором «Сатанинской библии» (1969). 1966 был назван им первым годом сатанинской эры. ЛаВей являлся верховным жрецом Церкви Сатаны до своей смерти (1966—1997).
+ 
+					<P>Из предыстории: в 1950-х годах Антон ЛаВей организовал сообщество Орден Трапезоида, который впоследствии стал управляющим органом Церкви Сатаны. Среди тех, кто участвовал в мероприятиях ЛаВея, были «баронесса» Карин де Плессен, выросшая в королевском дворце в Дании, д-р Сесил Никсон, эксцентричный фокусник и изобретатель, Кеннет Энгер, создатель андеграундных фильмов, Рассел Волден, городской юридический советник, Дональд Уэрби, один из наиболее влиятельных частных собственников Сан-Франциско, антрополог Майкл Харнер, писательница Шана Александер и другие. Также товарищами ЛаВея в тот период времени были писатели в жанрах научной фантастики и ужасов Энтони Бучер, Огуст Дерлет, Роберт Барбор Джонсон, Реджинальд Бретнор, Эмиль Петайа, Стюарт Палмер, Кларк Эштон Смит, Форрест Дж. Экерман и Фриц Лейбер.
+ 
+					<P>1 февраля 1967 Антон ЛаВей провёл церемонию открытой сатанинской свадьбы радикального журналиста Джона Рэймонда и Джудит Кэйс, чем привлёк к Церкви Сатаны значительное внимание со стороны средств массовой информации. Фотографом на церемонии был работавший в «San Francisco Chronicle» Джо Розенталь, автор ставшей знаковой фотографии поднятия флага американскими войсками на горе Сурибати во время Второй мировой войны. Фотографии сатанинской свадьбы были напечатаны в нескольких авторитетных изданиях.
+ 
+					<P>В мае того же года происходит церемония «сатанинского крещения» трёхлетней дочери ЛаВея Зины Галатеи. Журналисты, прибывшие задолго до начала церемонии, были очарованы ангельской улыбкой девочки, которой предстояло быть посвящённой дьяволу. «Сатанинское крещение» было составлено таким образом, чтобы доставить удовольствие ребёнку.
+ 
+					<P>Другим важным событием (декабрь 1967) стало проведение открытых сатанинских похорон члена Церкви Сатаны морского офицера Эдварда Олсона по просьбе его жены, при этом сатанизм был вскоре внесён в реестр официально признаваемых религий США.
+ 
+					<P>В июне 1967 в автокатастрофе погибла Джейн Мэнсфилд, по утверждению ЛаВея, имевшая близкие отношения с ЛаВеем и являвшаяся жрицей Церкви Сатаны. Несмотря на то, что эти утверждения были ложными, бульварная пресса объявила смерть актрисы побочным следствием проклятия, которое ЛаВей, якобы, наслал на партнёра Мэнсфилд Сэма Броди.
+ 
+					<P>Церковь Сатаны упоминалась во многих книгах, журналах и газетах в 1960-х и 1970-х. Также в 1970 вышел полнометражный документальный фильм «Satanis». Антон ЛаВей играл в фильме Кеннета Энгера «Пробуждение моего демонического брата», был техническим консультантом для фильма «Дьявольский дождь» («The Devil’s Rain»), в котором снимались Эрнест Боргнайн, Вильям Шатнер и (впервые) Джон Траволта. Утверждалось также, что ЛаВей неофициально играл роль Дьявола в фильме «Ребёнок Розмари» («Rosemary’s Baby»), однако позже это утверждение было опровергнуто. Церковь Сатаны также фигурировала в фильме Луиджи Скатини «Angeli Blanca, Angeli Negra» (в американском кинопрокате известном как «Witchcraft ‘70»).
+ 
+					<P>В 1975 ЛаВей начал видоизменять систему «гротто» Церкви Сатаны, избавляясь от людей, которые, как он считал, стремились преуспеть в организации лишь ради компенсации своих неудач во внешнем мире. Впоследствии реальный успех в жизни стал одним из критериев для продвижения внутри Церкви Сатаны. В тот же период Антон ЛаВей стал более избирателен при раздаче интервью. Данный переход к «закрытой» деятельности стал причиной слухов о распаде организации и даже о кончине ЛаВея.
+ 
+					<P>В 1980-е прокатилась новая волна массовой истерии, теорий преступного заговора и страха перед сатанизмом, начатая протестантскими фундаменталистами, некоторыми медиками и СМИ. В этот период такие члены Церкви Сатаны, как Питер Гилмор, Пегги Надрамиа, Бойд Райс, Адам Парфрей, Диаболос Рекс и рок-музыкант Кинг Даймонд, активно выступали в средствах массовой информации с опровержениями ложных обвинений в криминальной деятельности Церкви Сатаны, выдвигавшихся христианскими евангелистами. Впоследствии ФБР опубликовало официальный отчёт, опровергающий все теории преступного заговора того периода. Данный социальный феномен получил название «Сатанинской паники».
+ 
+					<P>В 1980-е и 1990-е Церковь Сатаны и её члены весьма активно участвовали в выпуске фильмов, музыки и журналов, посвящённых сатанизму. В качестве наиболее значимых можно отметить издательство Адама Парфри «Feral House», музыку Бойда Райса, фильмы Ника Бугаса (в том числе и документальный фильм «Speak of the Devil: The Canon of Anton LaVey»). Церковь Сатаны и Антон ЛаВей фигурировали во многих журналах и новостных статьях того времени.
+ 
+					<P>В 1997 году после смерти Антона Шандора ЛаВея главой Церкви Сатаны стала Бланш Бартон, его гражданская жена. Хотя и по сей день Бартон участвует в деятельности Церкви Сатаны, в 2001 году она уступила свой пост Питеру Гилмору и Пегги Надрамиа, которые сегодня являются верховными жрецом и жрицей данной организации и издают «The Black Flame» — официальный журнал Церкви Сатаны. Центральный офис Церкви Сатаны также переместился из Сан-Франциско в Нью-Йорк, где они проживают.
+ 
+						
+					
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%B0%D1%82%D0%B0%D0%BD%D1%8B" class = "standardb_green" target="_blank">Wikipedia Церковь Сатаны</a> - <b>Церковь Сатаны</b> на Wikipedia.
+			</td>
+			</tr>
+ 
+ 
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					07е Мая, 2016.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+		
+	
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+ 
+			<tr>
+				<td width="250" height="100%" class="nimetus_green"><a name="the_satanic_temple">Сатанинский Храм</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/the_satanic_temple.jpg" alt="Сатанинский Храм" title="Сатанинский Храм" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+ 
+<P>«<b>Сатанинский храм</b>» (англ. The Satanic Temple) — американская группа гражданских активистов, имеющая статус религиозной организации и использующая сатанинскую символику для пропаганды эгалитаризма, социальной справедливости и секуляризма. Группа занимается общественной деятельностью, политическим лоббированием и высмеиванием отношений между государством и христианскими организациями.
+
+<P>Представители «Сатанинского храма» заявляют, что Сатана является для них не сверхъестественным существом, а литературным образом, символом «вечного мятежника» против произвола власти и социальных норм.
+					
+					
+				</td>
+			</tr>
+			
+						
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Сатанинский_храм" class = "standardb_green" target="_blank">Wikipedia Сатанинский храм</a> - <b>Сатанинский Храм</b> на Wikipedia.
+			</td>
+			</tr>
+ 
+ 
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					06е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+		
+       
+ 
+ 
+ 
+		
+  </table> <!-- End of Func area -->
+ 
+</div> <!-- End of scroll inside div -->
+ 
+ 
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+ 
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+ 
+ 
+ 
+ 
+</body>
+</html>
+ 

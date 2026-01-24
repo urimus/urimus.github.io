@@ -1,0 +1,1083 @@
+﻿
+
+
+
+
+
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/psychology.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('psychology_pseudo_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='psychology_pseudo_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('psychology_pseudo_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='psychology_pseudo_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_green">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+		<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"  
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_selected">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_22_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+
+			if (event.ctrlKey) {
+				window.open('psychology_true_eng.html');
+
+			} else {
+				clickStarted = true;
+				window.location.href='psychology_true_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10004; True</div>
+	</td>
+	</tr>		
+	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_22_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('psychology_pseudo_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='psychology_pseudo_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#10008; Pseudo-</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_22_3"
+		onmouseenter="this.className='menu_selected'" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('psychology_movies_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='psychology_movies_eng.html';
+			};"
+		class="menu_not_selected_green">
+		&nbsp;&#9679; Movies</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Psychology &blacktriangleright; Pseudopsychology</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+
+		
+
+		
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">Pseudoscience</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green">What is this?</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/pseudoscience.jpg" alt="Pseudoscience" title="Pseudoscience" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Pseudoscience</b> is a claim, belief, or practice presented as scientific, but which does not adhere to the scientific method. A field, practice, or body of knowledge can reasonably be called pseudoscientific when it is presented as consistent with the norms of scientific research, but it demonstrably fails to meet these norms.
+
+<P>Pseudoscience is often characterized by the following: contradictory, exaggerated or unprovable claims; over-reliance on confirmation rather than rigorous attempts at refutation; lack of openness to evaluation by other experts in the field; and absence of systematic practices when rationally developing theories. The term pseudoscience is often considered pejorative because it suggests something is being inaccurately or even deceptively portrayed as science. Accordingly, those labeled as practicing or advocating pseudoscience often dispute the characterization.
+
+<P>Science is distinguishable from revelation, theology, or spirituality in that it offers insight into the physical world obtained by empirical research and testing. Commonly held beliefs in popular science may not meet the criteria of science. "Pop science" may blur the divide between science and pseudoscience among the general public, and may also involve science fiction. Pseudoscientific beliefs are widespread, even among science teachers and newspaper editors.
+
+<P>The demarcation between science and pseudoscience has philosophical and scientific implications. Differentiating science from pseudoscience has practical implications in the case of health care, expert testimony, environmental policies, and science education. Distinguishing scientific facts and theories from pseudoscientific beliefs such as those found in astrology, alchemy, medical quackery, occult beliefs, and creation science combined with scientific concepts, is part of science education and scientific literacy.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Pseudoscience" class = "standardb_green" target="_blank">Wikipedia Pseudoscience</a> - <b>Pseudoscience</b> on Wikipedia.
+			</td>
+			</tr>		
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				02nd of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+		
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_green"><a name="psychoanalysis">Psychoanalysis</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/psychoanalysis.jpg" alt="Psychoanalysis" title="Psychoanalysis" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>Psychoanalysis</b> is a set of psychological and psychotherapeutic theories and associated techniques, created by Austrian physician Sigmund Freud and stemming partly from the clinical work of Josef Breuer and others. Over time, psychoanalysis has been revised and developed in different directions. Some of Freud's colleagues and students, such as Alfred Adler and Carl Jung, went on to develop their own ideas independently. Freud insisted on retaining the term psychoanalysis for his school of thought, and Adler and Jung accepted this. The Neo-Freudians included Erich Fromm, Karen Horney, and Harry Stack Sullivan.
+
+<br><br>
+<P>The basic tenets of psychoanalysis include:
+
+<P>1. a person's development is determined by often forgotten events in early childhood rather than by inherited traits alone
+<P>2. human attitude, mannerism, experience, and thought is largely influenced by irrational drives that are rooted in the unconscious
+<P>3. it is necessary to bypass psychological resistance in the form of defense mechanisms when bringing drives into awareness
+<P>4. conflicts between the conscious and the unconscious, or with repressed material can materialize in the form of mental or emotional disturbances, for example: neurosis, neurotic traits, anxiety, depression etc.
+<P>5. liberating the elements of the unconscious is achieved through bringing this material into the conscious mind (via e.g. skilled guidance, i.e. therapeutic intervention).
+
+<br><br>
+<P>Under the broad umbrella of psychoanalysis there are at least 22 theoretical orientations regarding human mental development. The various approaches in treatment called "psychoanalysis" vary as much as the theories do. The term also refers to a method of analysing child development.
+
+<P>Freudian psychoanalysis refers to a specific type of treatment in which the "analysand" (analytic patient) verbally expresses his or her thoughts, including free associations, fantasies, and dreams, from which the analyst infers the unconscious conflicts causing the patient's symptoms and character problems, and interprets them for the patient to create insight for resolution of the problems. The analyst confronts and clarifies the patient's pathological defenses, wishes and guilt. Through the analysis of conflicts, including those contributing to resistance and those involving transference onto the analyst of distorted reactions, psychoanalytic treatment can hypothesize how patients unconsciously are their own worst enemies: how unconscious, symbolic reactions that have been stimulated by experience are causing symptoms. Freudian psychoanalysis relies on the concept that it is only after having a cathartic (e.g. healing) experience can a person be "cured" and aided.
+
+<P>Psychoanalysis has received criticism from a wide variety of sources. It is regarded by some critics as a pseudoscience. Nonetheless, it remains a strong influence within the realm of psychiatry, and more so in some quarters than others.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Psychoanalysis" class = "standardb_green" target="_blank">Wikipedia Psychoanalysis</a> - <b>Psychoanalysis</b> on Wikipedia.
+			</td>
+			</tr>		
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				02nd of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_green"><a name="transactional_analysis">Transactional Analysis</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/transactional_analysis.jpg" alt="Transactional Analysis" title="Transactional Analysis" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Transactional analysis</b> is a psychoanalytic theory and method of therapy wherein social transactions are analyzed to determine the ego state of the patient (whether parent-like, child-like, or adult-like) as a basis for understanding behavior. In transactional analysis, the patient is taught to alter the ego state as a way to solve emotional problems. The method deviates from Freudian psychoanalysis which focuses on increasing awareness of the contents of unconsciously held ideas. Eric Berne developed the concept and paradigm of transactional analysis in the late 1950s.
+
+<br><br>
+<P><b>History overview:</b>
+
+<P>TA is not only post-Freudian, but, according to its founder's wishes, consciously extra-Freudian. That is to say that, while it has its roots in psychoanalysis, since Berne was a psychoanalytically-trained psychiatrist, it was designed as a dissenting branch of psychoanalysis in that it put its emphasis on transactional rather than "psycho-" analysis.
+
+<P>With its focus on transactions, TA shifted the attention from internal psychological dynamics to the dynamics contained in people's interactions. Rather than believing that increasing awareness of the contents of unconsciously held ideas was the therapeutic path, TA concentrated on the content of people's interactions with each other. Changing these interactions was TA's path to solving emotional problems.
+
+<P>TA also differs from Freudian analysis in explaining that an individual's final emotional state is the result of inner dialogue between different parts of the psyche, as opposed to the Freudian hypothesis that imagery is the overriding determinant of inner emotional state. (For example, depression may be due to ongoing critical verbal messages from the inner Parent to the inner Child.) Berne believed that it is relatively easy to identify these inner dialogues and that the ability to do so is parentally suppressed in early childhood.
+
+<P>In addition, Berne believed in making a commitment to "curing" his patients rather than just understanding them. To that end he introduced one of the most important aspects of TA: the contract—an agreement entered into by both client and therapist to pursue specific changes that the client desires.
+
+<P>Revising Freud's concept of the human psyche as composed of the id, ego, and super-ego, Berne postulated in addition three "ego states"—the Parent, Adult, and Child states—which were largely shaped through childhood experiences. These three are all part of Freud's ego; none represent the id or the superego.
+
+<P>Unhealthy childhood experiences can lead to these being pathologically fixated in the Child and Parent ego states, bringing discomfort to an individual and/or others in a variety of forms, including many types of mental illness.
+
+<P>Berne considered how individuals interact with one another, and how the ego states affect each set of transactions. Unproductive or counterproductive transactions were considered to be signs of ego state problems. Analyzing these transactions according to the person's individual developmental history would enable the person to "get better". Berne thought that virtually everyone has something problematic about their ego states and that negative behaviour would not be addressed by "treating" only the problematic individual.
+
+<P>Berne identified a typology of common counterproductive social interactions, identifying these as "games".
+
+<P>Berne presented his theories in two popular books on transactional analysis: Games People Play (1964) and What Do You Say After You Say Hello? (1975). I'm OK, You're OK (1969), written by Berne's long-time friend Thomas Anthony Harris, is probably the most popular TA book.
+
+<P>By the 1970s, because of TA's non-technical and non-threatening jargon and model of the human psyche, many of its terms and concepts were adopted by eclectic therapists as part of their individual approaches to psychotherapy. It also served well as a therapy model for groups of patients, or marital/family counselees, where interpersonal (rather than intrapersonal) disturbances were the focus of treatment.
+
+<P>TA's popularity in the U.S. waned in the 1970s. The more dedicated TA purists banded together in 1964 with Berne to form a research and professional accrediting body, the International Transactional Analysis Association, or ITAA.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Transactional_analysis" class = "standardb_green" target="_blank">Wikipedia Transactional analysis</a> - <b>Transactional analysis</b> on Wikipedia.
+			</td>
+			</tr>		
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				02nd of Aug, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+		
+
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,1066 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/satan_symbols.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_simvoly_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_simvoly_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_simvoly_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_simvoly_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_green">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+		<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"  
+		class="menu_selected">
+		&#9679; Satanism</div>
+	</td>
+	</tr>		
+	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_19_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_atheistic_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_atheistic_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10008; Atheistic</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_19_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_theistic_eng.html');
+
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_theistic_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10004; Theistic</div>
+	</td>
+	</tr>	
+
+
+
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_19_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_simvoly_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_simvoly_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Symbolics</div>
+	</td>
+	</tr>		
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Satanism &blacktriangleright; Symbolics</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+
+		
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">Occult and mystical symbols and their meaning - Dmitry Leo</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="kabbalistic_tetragram">1. Kabbalistic Tetragram</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/geksagramma.png" alt="Kabbalistic tetragram" title="Kabbalistic tetragram" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Kabbalistic tetragram (hexagram) or Masonic "Solomon's seal" depicts the devil as an equilateral triangle, equal to the first, but only facing the top down, rather than up, thus indicating the exact opposite Satan - God. Used to call evil spirits in the center of the hexagon traced on the ground.
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="church_of_satan">2. Church of Satan</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/cerkov_satany.jpg" alt="Church of Satan" title="Church of Satan" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						It is a symbol of Church of Satan in San Francisco. It is also located in the "Satanic Bible" by "Nine Satanic commandments." This symbol is always talking about the involvement in Satanism.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="cross_of_disorder">3. Cross Of Disorder</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/krest_besporjadka.png" alt="Cross Of Disorder" title="Cross Of Disorder" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						This symbol was first used by the Romans, who challenged the truth of Christianity. The symbol is a denial of Christian values and divine nature of Christ.
+					
+
+				</td>
+			</tr>			
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="pentagram">4. Pentagram/Pentacle</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/pentakl.png" alt="Pentagram/Pentacle" title="Pentagram/Pentacle" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						The five-pointed star is the most important symbol of magic. Typically, it is used by sorcerers and witches (WICCA), for "White Magic". For Kabbalists it becomes a symbol of power, omnipotence and autocracy Mind. This symbol like to use musical rock bands.
+					
+				</td>
+			</tr>			
+			
+		
+		
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="inverted_pentagram">5. Inverted Pentagram/Pentacle</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/pentagram.jpg" alt="Inverted Pentagram/Pentacle" title="Inverted Pentagram/Pentacle" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						The inverted pentagram/pentacle, forming a head of the goat. It is on the cover of "The Satanic Bible". This is quite a serious character and almost always indicates involvement in Satanism.
+					
+				</td>
+			</tr>	
+			
+
+						
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="eye_of_horus">6. Eye of Horus</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/glaz_gora.png" alt="Eye of Horus" title="Eye of Horus" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Eye of Horus - all-seeing eye. One of the few characters belonging to Lucifer (as it is called followers - the king of hell). What is shown in the figure? Below the eye is a running down tear, it mourns those, who are outside his influence. In addition of the image of One Eye exists amulet Eye of Horus with image of hands, holding the bow of life or rod in the form of papyrus.
+					
+				</td>
+			</tr>				
+			
+
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="ankh">7. Ankh</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/anch.png" alt="Ankh" title="Ankh" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						As a symbol of inexhaustible vitality sign ankh was deposited on the walls of temples, monuments, and on the utensils. Ankh, the Coptic cross - a symbol, leading its origin from ancient Egypt. It was used as an amulet, prolonging life. The sign was used in the burial of the dead, because people believed that the dead awaiting the continuation of life, only in a different world. EP Blavatsky in the book "The Secret Doctrine" the ankh symbol described as a sign of the oath, life and covenant. Gods and Pharaohs on the images are often kept ankh in his hand or pass it to people.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="anarchy">8. Anarchy</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/anarchija.png" alt="Anarchy" title="Anarchy" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						It symbolizes the negation of all laws. Initially, the symbol "punk rock", but now it is also used in Satanism. This image can be seen on the walls in almost every city.
+					
+				</td>
+			</tr>
+						
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="aquarian_star">9. Aquarian Star</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/zvezda_vodoleja.png" alt="Aquarian Star" title="Aquarian Star" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Symbol Star Aquarius (Universal hexagrams) - Emblem of Keepers of Knowledge, a symbol of great magic and power. The symbol appears in the form of six-pointed star, in some cases surrounded by two circles. 
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="triskele">10. Triskele<>/a</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/triskele.png" alt="Triskele" title="Triskele" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						This symbol - Celtic version of the Chinese symbol of Yin-Yang (TAO). It was believed that this is the symbol of the "Celtic goddess", that showed three of her faces.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="yin_yang">11. TAO (Yin and Yang)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/in_jan.png" alt="TAO (Yin and Yang)" title="TAO (Yin and Yang)" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						Ancient Chinese symbol used to represent the original polarity, holism and magic. Chinese character Tao: Yin and Yang are two opposites that are present in all beings, materials, phenomena of nature.
+					
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td width="250" height="100%" class="nimetus_green" style="padding-top:10px;"><a name="satanic_salute">12. Satanic Salute</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/symbols/privetstvie.jpg" alt="Satanic salute" title="Satanic salute" style="width:100px; float:left; margin:5px 10px 5px 5px; display:block;">
+						A hand with fingers folded into a goat horns: greeting among Satanists known as "satanic salute". Young people raise their hands at a rock concert like this. Generates head of the goat, a common symbol of Satanism. It is located on the back of "The Satanic Bible".
+					
+				</td>
+
+			</tr>
+				
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.imbf.org/interesnye-stati/okkultnye-misticheskie-simvoly.html" class = "standardb_green" target="_blank">Occult and mystical symbols and their meaning - Dmitry Leo (rus.)</a> in internet.
+			</td>
+			</tr>
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					16th of May, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+			
+	</td>
+		</tr>
+
+
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

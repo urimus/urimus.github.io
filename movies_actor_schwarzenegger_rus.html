@@ -1,0 +1,1435 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*39;
+var imgBgSrc="images/icons/background/arnold_schwarzenegger.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+		<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_actor_schwarzenegger_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_actor_schwarzenegger_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_actor_schwarzenegger_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_actor_schwarzenegger_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_selected">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; По Актёрам <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_bautista_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_bautista_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Дейв Батиста</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_diesel_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_diesel_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Вин Дизель</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_douglas_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_douglas_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Майкл Дуглас</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_jovovich_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_jovovich_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Милла Йовович</div>
+	</td>
+	</tr>	
+	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_schwarzenegger_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_schwarzenegger_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Арнольд Шварценеггер</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_stallone_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_stallone_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Сильвестер Сталлоне</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_statham_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_statham_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Джейсон Стейтем <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_actor_willis_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_actor_willis_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Брюс Уиллис</div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; По Жанрам</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Мультипликация</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Супергеройские</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"  
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>	
+
+
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>			
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>			
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Фильмы &blacktriangleright; Арнольд Шварценеггер</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:897px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="arnold_shwarzenegger">Арнольд Шварценеггер</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_black">Биография</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/arnold_shwarzenegger.jpg" alt="Арнольд Шварценеггер" title="Арнольд Шварценеггер" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						<P><b>Арнольд Алоис Шварценеггер</b> (нем. Arnold Alois Schwarzenegger род. 30 июля 1947 года, деревня Таль близ города Грац, Штирия, Австрия) — американский культурист, бизнесмен и актёр австрийского происхождения, политик-республиканец, 38-й губернатор Калифорнии. Он был избран на эту должность в октябре 2003 года и переизбран на второй срок в 2006 году. Согласно результатам опроса общественного мнения, проведённого социологической службой Field Poll, Шварценеггер на губернаторском посту, по мнению 71 % респондентов, не справлялся со своими обязанностями, и на выборах в 2010 году он уже не мог выставлять свою кандидатуру. В 2011 году ушёл в отставку.
+
+						<P>Обладатель ряда премий по бодибилдингу, в том числе семикратный обладатель титула «Мистер Олимпия». Организатор конкурса «Арнольд Классик».
+
+						<P>За свою актёрскую карьеру исполнил главные роли во множестве фильмов, в том числе «Геркулес в Нью-Йорке» (1970), «Конан-варвар» (1982), «Терминатор» (1984), «Коммандо» (1985), «Хищник» (1987), «Бегущий человек» (1987), «<a href="#red_heat" class = "standardb_black" target="_blank">Красная жара</a>» (1988), «Близнецы» (1988), «<a href="#total_recall" class = "standardb_black" target="_blank">Вспомнить всё</a>» (1990), «Детсадовский полицейский» (1990), «Терминатор 2: Судный день» (1991), «Последний киногерой» (1993), «Правдивая ложь» (1994), «Бэтмен и Робин» (1997), «Терминатор 3: Восстание машин» (2003), «Возвращение героя» (2013) и др. Имеет ряд премий в кинематографе.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B2%D0%B0%D1%80%D1%86%D0%B5%D0%BD%D0%B5%D0%B3%D0%B3%D0%B5%D1%80,_%D0%90%D1%80%D0%BD%D0%BE%D0%BB%D1%8C%D0%B4" class = "standardb_black" target="_blank">Wikipedia Шварценеггер, Арнольд</a> - <b>Арнольд Шварценеггер</b> на Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					23е Мая, 2016.
+
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+		
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="6th_day">6-й День (англ. The 6th Day)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/6th_day.jpg" alt="6-й День (англ. The 6th Day)" title="6-й День (англ. The 6th Day)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+					
+<P>«<b>6-й день</b>» (англ. The 6th Day) — фантастический триллер режиссёра Роджера Споттисвуда совместного американо-канадского производства. Фильм был представлен на кинофестивале в Токио 28 октября 2000 года и вышел на экраны 17 ноября того же года. Главную роль исполнил Арнольд Шварценеггер.
+
+<P>Теглайны фильма: <i>"На шестой день Бог создал человека... и Личность аннулирована"</i>.
+
+<br><br>
+<P><b>Награды и номинации:</b>
+<P>В 2001 году фильм был номинирован на премию «Сатурн» в четырёх разных категориях: «Лучший научно-фантастический фильм», «Лучший актёр» (Арнольд Шварценеггер), «Лучший грим» и «Лучшие специальные эффекты», но не получил ни одной награды. В 2003 году актриса Сара Уайнтер также получила номинацию в категории «Лицом к будущему» за свою работу в «6-м дне» и телесериале «24 часа».
+
+<P>Арнольд Шварценеггер также получил сразу три номинации на «Золотую малину» в 2001 году в категориях «Худший актёр» (за исполнение роли Адама Гибсона), «Худшая экранная пара» (за исполнение ролей Адама Гибсона и его клона) и «Худший актёр второго плана» (за исполнение роли клона Адама Гибсона).
+
+<br><br>
+<P><b>Интересные факты:</b>
+<P>&nbsp;&bull; Создатели были вынуждены изменить написание названия фильма с «Шестого дня» (англ. The Sixth Day) на «6-й день» (англ. The 6th Day), чтобы зрители не путали его с вышедшим чуть ранее фильмом «Шестое чувство» (англ. The Sixth Sense).
+<P>&nbsp;&bull; Свою коронную фразу «Я вернусь» (англ. I'll be back) из фильма «Терминатор» в несколько модифицированном виде Арнольд Шварценеггер произносит, уходя из магазина клонированных домашних животных. Он говорит, обращаясь к продавцу: «Я, может быть, вернусь» (англ. I might be back), на что продавец уверенно отвечает «Ты вернёшься».
+<P>&nbsp;&bull; В 2000 году Терри Биссоном была написана одноимённая новеллизация на сценарий Кормака и Марианн Уибберли.
+<P>&nbsp;&bull; В 2011 году фильм был внесён в список самых недостоверных фантастических фильмов по версии НАСА.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/6-%D0%B9_%D0%B4%D0%B5%D0%BD%D1%8C" class = "standardb_black" target="_blank">Wikipedia 6-й День</a> - <b>6-й День (англ. The 6th Day)</b> на Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=MdLRlld8syE" class = "standardb_black" target="_blank">Youtube 6-й День</a> - Фильм <b>6-й День (англ. The 6th Day)</b> на Youtube.
+			</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.youtube.com/watch?v=Fu71aWJ4S9g" class = "standardb_black" target="_blank">6-й День (англ. The 6th Day)</a> - Официальный трейлер.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					14е Ноя, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="maggie">Заражённая (англ. Maggie)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/maggie.jpg" alt="Заражённая (англ. Maggie)" title="Заражённая (англ. Maggie)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+	
+
+
+<P>«<b>Заражённая</b>» (англ. Maggie) — американский постапокалиптический драматический фильм ужасов режиссёра Генри Хобсона и сценариста Джона Скотта.
+
+<P>Мировая премьера первоначально должна была состояться на Кинофестивале в Торонто в 2014 году, но позже компания Lionsgate выкупила права на распространение в США и убрала из списка кинофестиваля. Премьера состоялась на Кинофестивале Трайбека 23 апреля 2015 года, а затем фильм вышел в ограниченном выпуске в кинотеатрах и на видео по запросу 8 мая 2015 года.				
+					
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/6-%D0%B9_%D0%B4%D0%B5%D0%BD%D1%8C" class = "standardb_black" target="_blank">Wikipedia Заражённая</a> - <b>Заражённая (англ. Maggie)</b> на Wikipedia.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=nbYqc09-Mv4" class = "standardb_black" target="_blank">Youtube Заражённая</a> - Фильм <b>Заражённая (англ. Maggie)</b> на Youtube.
+			</td>
+			</tr>
+
+
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.youtube.com/watch?v=goakm8UwkHo" class = "standardb_black" target="_blank">Заражённая (англ. Maggie)</a> - Официальный трейлер.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					20е Ноя, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+	
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="red_heat">Красная Жара</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/red_heat.jpg" alt="Красная Жара" title="Красная Жара" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						<P><b>«Красная Жара»</b> (англ. Red Heat) — американский криминальный боевик 1988 года режиссёра Уолтера Хилла с Арнольдом Шварценеггером и Джеймсом Белуши в главных ролях. Фильм выдержан в характерной для конца 1980-х манере, связанной с потеплением отношений между СССР и США. В СССР приобрёл неоднозначную популярность благодаря многочисленным «ляпам» и ломаному русскому с редким для кинематографа матом.
+
+						<P>Рекламный слоган: «Самый жёсткий детектив в Москве. Самый безумный полицейский в Чикаго. Есть только одна вещь хуже, чем разозлить их: сделать их партнёрами».
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F_%D0%B6%D0%B0%D1%80%D0%B0_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_1988)" class = "standardb_black" target="_blank">Wikipedia Красная жара (фильм, 1988)</a> - <b>Красная Жара</b> на Wikipedia.
+
+
+
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=Uzu9gAWuqdI" class = "standardb_black" target="_blank">Красная Жара</a> - Официальный Трейлер (англ.).
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					23е Мая, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="total_recall">Вспомнить Всё (англ. Total Recall)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/total_recall.jpg" alt="Вспомнить Всё (англ. Total Recall)" title="Вспомнить Всё (англ. Total Recall)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+						<P><b>«Вспомнить всё»</b> (англ. Total Recall) — фантастический боевик режиссёра Пола Верховена 1990 года с участием Арнольда Шварценеггера. Фильм снят по мотивам рассказа <b>Филипа Дика</b> <b>«Из глубин памяти»</b>. Фильм номинировался на премии «Оскар» за лучший звук и лучший монтаж звука, но взял специальный «Оскар» за визуальные эффекты.
+<br><br>
+<P><b>Интересные факты:</b>
+<br>
+<P>&nbsp;&bull; Кассовые сборы в США $119 400 000, кассовые сборы в других странах $142 000 000
+<P>&nbsp;&bull; В 1989 году известный американский фантаст Пирс Энтони опубликовал новелизацию этого кинофильма под тем же названием «Total Recall» («Вспомнить всё»).
+<P>&nbsp;&bull; Изначально (в первой половине 1980-х годов) фильм должен был снимать Дэвид Кроненберг, который вышел из проекта после того, как продюсеры отвергли 12 написанных им вариантов сценария.
+<P>&nbsp;&bull; Среди кандидатов на роль главного героя рассматривались Джефф Бриджес, Патрик Суэйзи и Ричард Дрейфус.
+<P>&nbsp;&bull; Некоторые сюжетные решения были взяты из книги Дугласа Адамса «Путеводитель по Галактике для путешествующих автостопом» (The Hitch-Hiker’ s Guide to the Galaxy), а именно: раздражающе вежливый робот-таксист Джонни, постоянно насвистывающий норвежский национальный гимн, обертывание головы мокрым полотенцем во избежании излучения «жучка» (именно в «Путеводителе» было сказано: «Чтобы скрыться от преследователей, оберните полотенце вокруг своей головы»), а также проститутка с тремя грудями.
+<P>&nbsp;&bull; Картина была снята в Мехико — столице Мексики. Там были построены грандиозные декорации, там же, на станции метро «Chabacano», были сняты сцены в подземке, а некоторые эпизоды снимались в Военной академии Мехико.
+<P>&nbsp;&bull; В первоначальном варианте сценария главный герой Куэйд был бухгалтером, потом его сделали строителем.
+<P>&nbsp;&bull; Робот-таксист Джонни был сделан по образу и подобию актёра Роберта Пикардо и озвучен тоже им.
+<P>&nbsp;&bull; Ряд реалий 2084 года уже в 2010 году выглядит полной архаикой (например, CRT-мониторы в вагонах метро).
+<P>&nbsp;&bull; Когда человек попадает в открытый космос или вакуум, его глаза не могут вырываться из глазниц, как это показывается в фильме. Человек приблизительно 10-20 секунд находится в нормальном состоянии, благодаря чему может вернуться к безопасному месту. Но даже если он не вернется, то все еще будет жив в течение приблизительно минуты, хотя и без сознания. Единственная проблема, которая могла бы возникнуть - это разрыв барабанных перепонок и возможная слепота (при сохранении глазных яблок). Были также произведены опыты на шимпанзе - их поместили в камеру с атм.давлением, схожим с марсианским (около 2 мм.рт.ст.). Через 3 минуты их вытащили и смогли &quot;откачать&quot;.
+<P>&nbsp;&bull; Сценарий фильма находился в разработке 10 лет.
+<P>&nbsp;&bull; Над сценарием работал Ричард Дрейфус, на другом этапе - Дэвид Кроненберг.
+<P>&nbsp;&bull; Арнольд Шварцнеггер изначально хотел получить главную роль.
+<P>&nbsp;&bull; После утверждения Арни на роль, зачуханный клерк Куэйл превратился в мускулистого строительного рабочего Куэйда и был переписан финал картины.
+<P>&nbsp;&bull; После просмотра «Робота-полицейского» Арнольд сам добился утверждения сценария, состава съемочной группы и настоял на том, чтобы режиссером фильма был Верховен.
+<P>&nbsp;&bull; Когда Куэйд одет, как толстая женщина, паспорт, который он передает охраннику, - настоящий паспорт Присциллы Аллен, сыгравшей толстую женщину.
+<P>&nbsp;&bull; Самые большие рекламные плакаты, которые можно заметить в сцене, где Куэйд выходит из метро, - настоящие биллборды, которые находились около станции «Insurgentes» в Мехико Сити. Наиболее заметные из них - Fuji Film и Coca Cola.
+<P>&nbsp;&bull; Оригинальная версия фильма получила рейтинг «Х» из-за чрезмерного насилия на экране. В дальнейшем фильм был перемонтирован: наиболее жестокие моменты были вырезаны, а также были использованы новые ракурсы камеры. Перестрелка в метро, где Куэйд использует человеческое тело в качестве щита от пуль, больше всего подверглась дополнительному монтажу. В конце концов, фильм получил рейтинг «R».
+<P>&nbsp;&bull; Если верить диаграмме, которую показывают Куэйду в «Recall», то с каждым годом космические путешествия становятся менее безопасными.
+<P>&nbsp;&bull; В металлическом чемодане Куэйда можно заметить пропуск рабочего в «Пирамидные рудники» на Марсе.
+<P>&nbsp;&bull; Вся съёмочная группа получила пищевое отравление во время съёмок, за исключением Арнольда Шварценеггера, который ел исключительно еду, доставленную из США, и Рональда Шусетта, который предпринимал чрезмерные меры личной гигиены, например, чистил зубы исключительно кипяченой водой.
+<P>&nbsp;&bull; Миниатюрные модели, использовавшиеся для съёмок марсианских ландшафтов, были сделаны на основе фотографий поверхности Марса.
+<P>&nbsp;&bull; Количество погибших в фильме: 77.
+<P>&nbsp;&bull; В ранних версиях сценария главного героя звали Дуглас Куэйл, так же как и в рассказе Филипа Дика. Однако во время съёмок вице-президентом США был Дэн Куэйл. Скорее всего, это стало главной причиной изменения имени героя Арнольда Шварценеггера.
+
+<P>&nbsp;&bull; Сцена, в которой доктор Эджмар (Рой Броксмит) объясняет Куэйду, что он находится в состоянии сна, основана на сцене между Полом Ньюманом и Людвигом Донатом в «Разорванном занавесе» (1966). Некоторые ракурсы камеры в точности повторяют картину Хичкока.
+<P>&nbsp;&bull; Время действия - 2084 год, и это явно указано в одном из кадров. Когда таможня ставит штамп в паспорте &quot;полной женщины&quot; (Куэйда) - там стоит дата 19.6.2084. Это начало 45-й минуты фильма.
+<P>&nbsp;&bull; Испанское название фильма – «El Vengador Del Futuro», что в дословном переводе означает «Будущий мститель».
+<P>&nbsp;&bull; По словам монтажера Фрэнка Джей Уриосте, первоначально не предполагалось делать панорамные кадры города на Марсе, т.к. по мнению продюсеров, они были слишком затратные и могли привести к перерасходу бюджета. С данной проблемой Фрэнк поделился с Арнольдом Шварценеггером, которому удалось убедить продюсеров снять данные сцены.
+<P>&nbsp;&bull; В сцене в метро, где Арнольд Шварценеггер разбивает стекло вагона и запрыгивает в поезд, использовался небольшой заряд взрывчатки. Однако в одном из дублей взрывчатка не сработала, и Арни на самом деле разбил стекло рукой.
+<P>&nbsp;&bull; Потребовалось 15 кукловодов для контроля движений Куато.
+<P>&nbsp;&bull; Имя Куато происходит от испанского слова «cuate», что означает двойник.
+<P>&nbsp;&bull; Во время съёмок Шэрон Стоун жаловалось Полу Верховену, что она не уверена, является ли её героиня воображением Дага Куэйда, либо её персонаж на самом деле замужем за Дагом.
+<P>&nbsp;&bull; Когда Куэйду показывают картинки на мониторе в «Recall», на одной из них изображен тот самый реактор на Марсе.
+<P>&nbsp;&bull; Картина заканчивается кадром с плавным переходом в белый фон, для того чтобы оставить сомнения у зрителей, что всё показанное в фильме происходило в воображении Куэйда, и в конце фильма он подвергся лоботомии.
+<P>&nbsp;&bull; Сюжет в котором главный персонаж, имеющий проблемы с памятью, отправляется на другую планету, чтобы восстановить на ней атмосферу и прекратить произвол &quot;продавцов воздуха&quot; был впервые использован в советском фильме &quot;Через тернии к звездам&quot; 1980 года.
+
+
+
+						<P>29 июля 2010 компания Sony Pictures анонсировала создание <b>римейка «Вспомнить все»</b>. Как стала известно позже - съемки начнутся <b>в марте 2011 года в Канаде</b>. Режиссером фильма станет <b>Лен Уайзмен</b>, известный по картинам « Крепкий орешек-4» и первым двум частям «Другого мира».
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82%D1%8C_%D0%B2%D1%81%D1%91_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_1990)" class = "standardb_black" target="_blank">Wikipedia Вспомнить всё (фильм, 1990)</a> - <b>Вспомнить Всё (англ. Total Recall)</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.youtube.com/watch?v=WFMLGEHdIjE" class = "standardb_black" target="_blank">Вспомнить Всё (англ. Total Recall)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					09е Янв, 2011.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+	
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+

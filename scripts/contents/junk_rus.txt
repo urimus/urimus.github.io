@@ -1,0 +1,5 @@
+﻿<b class="text_black_blue">Мусор</b>
+&#9679; <a href="junk_rus.html#archive_81" class = "standardb_black" data-added="03е Авг, 2024." data-country="usa" data-year="2022" data-lang="eng" data-title_orig="Archive 81" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Архив 81</a>
+&#9679; <a href="junk_rus.html#for_all_mankind" class = "standardb_black" data-added="10е Мая, 2024." data-country="usa" data-year="2019" data-lang="eng" data-title_orig="For All Mankind" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Ради Всего Человечества</a> 
+&#9679; <a href="junk_rus.html#megalopolis" class = "standardb_black" data-added="14е Ноя, 2024." data-country="usa" data-year="2024" data-lang="eng" data-title_orig="Megalopolis" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Мегалополис</a>
+&#9679; <a href="junk_rus.html#watchers" class = "standardb_black" data-added="21е Июл, 2024." data-country="usa" data-year="2024" data-lang="eng" data-title_orig="The Watchers" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Смотрители</a>

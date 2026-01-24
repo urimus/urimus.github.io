@@ -1,0 +1,7 @@
+﻿<b class="text_red_blue">Анекдоты</b>
+&#9679; <a href="anekdots_general_rus.html" class = "standardb_red" data-added="17е Июл, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Общие</a>
+&#9679; <a href="anekdots_lieutenant_rzhevskiy_rus.html" class = "standardb_red" data-added="24е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Поручик Ржевский</a>
+&#9679; <a href="anekdots_nuthouse_rus.html" class = "standardb_red" data-added="24е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Психушка</a>
+&#9679; <a href="anekdots_politics_rus.html" class = "standardb_red" data-added="06е Ноя, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Политика</a>
+&#9679; <a href="anekdots_students_rus.html" class = "standardb_red" data-added="24е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Студенты</a>
+&#9679; <a href="anekdots_vovochka_rus.html" class = "standardb_red" data-added="24е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Вовочка</a>

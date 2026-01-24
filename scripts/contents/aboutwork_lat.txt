@@ -1,0 +1,2 @@
+﻿<b class="text_blue">Circa Mihi Opus</b>
+&#9679; <a href="about_work_lat.html" class = "standardb_blue" data-added="02 Apr, 2014." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Circa Opus Meum</a>

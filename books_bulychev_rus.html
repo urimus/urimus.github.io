@@ -1,0 +1,1340 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#de8e8e";
+	var scrollBackColor="#F9D4D4";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#CE3535; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*35;
+var imgBgSrc="images/icons/background/book.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#F9D4D4"> 
+		<td  bgcolor="#F9D4D4" width="100%">
+		<div class="nimetus2_red"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_bulychev_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_bulychev_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('books_bulychev_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='books_bulychev_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#F9D4D4" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_red">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>	
+
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_selected">
+		&#9679; Книги</div>
+	</td>
+	</tr>		
+	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'books');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; СССР</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_bulychev_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_bulychev_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Кир Булычёв</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_grin_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_grin_rus.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Александр Грин</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_kazancev_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_kazancev_rus.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Александр Казанцев</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_pavlov_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_pavlov_rus.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Сергей Павлов</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_3_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('books_yefremov_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='books_yefremov_rus.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Иван Ефремов</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Великобритания</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_10_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Соединённые Штаты Америки</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>			
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#F9D4D4" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_red" style="width: 530px;"><a name="welcome">Книги &blacktriangleright; СССР &blacktriangleright; Кир Булычёв</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:805px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #de8e8e 1px solid;  background-color: #F9D4D4;">
+
+
+		
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_red"><a name="movies">Кир Булычёв</a></td>
+			</tr>
+			<tr >
+				<td width="250" height="100%" class="nimetus_red">Биография</td>
+			</tr>			
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/kir_bulychev.jpg" alt="Кир Булычёв" title="Кир Булычёв" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Кир Булычёв</b> (настоящее имя Игорь Всеволодович Можейко; 18 октября 1934, Москва — 5 сентября 2003, там же) — русский советский писатель-фантаст, драматург, сценарист, литературовед; историк, востоковед, фалерист. Лауреат Государственной премии СССР (1982). Псевдоним скомпонован из имени жены Киры и девичьей фамилии матери писателя, Марии Михайловны Булычёвой.
+
+<br><br>
+<P><b>Экранизации:</b>
+
+<P>Кир Булычёв — самый востребованный кинематографистами советский и российский фантаст. По его произведениям и оригинальным сценариям снято более 20 фильмов, а также телесериалы и эпизоды телеальманаха «Этот фантастический мир». К большей части своих экранизаций Булычёв сам написал сценарии.
+
+<P>Самые известные экранизации Булычёва — мультфильмы <a href="movies_genre_sitcom_rus.html#tajna_tretej_planety" class = "standardb_red" target="_blank">«Тайна третьей планеты»</a>, «Перевал» и «День рождения Алисы», телевизионный минисериал «Гостья из будущего», полнометражные игровые фильмы <a href="movies_actor_metelkina_rus.html#cherez_ternii_k_zvezdam" class = "standardb_red" target="_blank">«Через тернии к звёздам»</a>, <a href="movies_actor_zhigunov_rus.html#podzemele_vedm" class = "standardb_red" target="_blank">«Подземелье ведьм»</a>, «Слезы капали» и «Лиловый шар».
+
+<P>Подавляющее большинство экранизаций Булычёва было снято в советское время. После распада СССР вышло всего три экранизации.
+
+<br><br>
+<P><b>Премии и награды:</b>
+
+<P>&nbsp;&bull; Государственная премия СССР (1982)
+<P>&nbsp;&bull; В 1997 году в Екатеринбурге Киру Булычёву был вручён приз всероссийской премии «Аэлита» за вклад в фантастику.
+<P>&nbsp;&bull; В 2002 году в рамках фестиваля фантастики «Аэлита» популярный писатель стал первым кавалером «Ордена рыцарей фантастики» им. И. Халымбаджи.
+<P>&nbsp;&bull; В 2004 году Киру Булычёву была присуждена Российская литературная премия имени Александра Грина (посмертно), за серию повестей об Алисе Селезнёвой.
+
+<br><br>
+<P><b>Мемориальная премия им. Кира Булычёва:</b>
+
+<P>Сразу после смерти писателя журналом «Если», членом Творческого Совета которого долгие годы являлся Кир Булычёв, была учреждена Мемориальная премия им. Кира Булычева. Вручается с 2004 года за высокий литературный уровень и человечность, проявленную в произведении. Сама премия представляет собой миниатюрную бронзовую пишущую машинку — символ труда писателя. В жюри входят два сотрудника «Если», все члены Творческого Совета журнала и четыре жанровых критика. В разные годы лауреатами Мемориальной премии им. Кира Булычева становились Марина и Сергей Дяченко, Евгений Лукин, Олег Дивов, Михаил Успенский, Святослав Логинов, Александр Бачило и Игорь Ткаченко, Дмитрий Колодан.
+
+<br><br>
+<P><b>Другие псевдонимы:</b>
+
+<P>&nbsp;&bull; Игорь Всеволодович Всеволодов
+<P>&nbsp;&bull; Николай Ложкин
+<P>&nbsp;&bull; Маун Сейн Джи
+<P>&nbsp;&bull; Лев Христофорович Минц
+<P>&nbsp;&bull; Кирилл Булычев
+
+
+					
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80_%D0%91%D1%83%D0%BB%D1%8B%D1%87%D1%91%D0%B2" class = "standardb_red" target="_blank">Wikipedia Кир Булычёв</a> - <b>Кир Булычёв</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.rusf.ru/kb/" class = "standardb_red" target="_blank">Кир Булычёв</a> - Официальный Сайт.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+
+					25е Авг, 2016.
+				</td>
+
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_red"><a name="prikljuchenija_alisy">Приключения Алисы</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/prikljuchenija_alisy.jpg" alt="Приключения Алисы" title="Приключения Алисы" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>«Приключения Алисы»</b> — цикл, серия книг Кира Булычёва в жанре фантастики для детей, подростков и взрослых, описывающих приключения Алисы Селезнёвой. Книги цикла писались автором на протяжении нескольких десятилетий, начиная с 1965 года (повесть «Девочка, с которой ничего не случится») и заканчивая 2003 годом («Алиса и Алисия»). Точного порядка книг в серии по времени описываемых в них событий нет, хотя некоторые исследователи предпринимали попытки ранжировать книги серии по предполагаемому возрасту Алисы в каждой из них.
+
+<P>Действие цикла происходит в научно-фантастическом будущем конца XXI века. Главным героем является Алиса Селезнёва, «девочка с Земли», дочь профессора биологии и директора зоопарка КосмоЗоо Игоря Селезнева. Каждая из повестей посвящена какому-либо отдельному её приключению в космосе, на Земле, в прошлом или даже в сказочном мире. Ряд книг был экранизирован.
+
+<P>По словам Булычёва, цель его сериала
+<P><i>«...найти пути к детской литературе, которая была бы адекватна поколениям детей, взращённых телевизором, а потом и компьютером.»</i>
+
+<br><br>
+<P>Оформлением цикла занимались многие художники, но в основном известны иллюстрации Евгения Мигунова.						
+					
+
+
+<br><br>
+<P><b>Временная последовательность описываемых в книгах цикла событий:</b>
+
+<P>Официальной временной последовательности у повестей не существует.
+
+<P>Исследователь биографии Алисы Селезнёвой Андрей Бусыгин, проанализировав все романы и повести о ней, смог определить приблизительную хронологию и привязать события, происходившие в них, к датам будущего:
+
+<P>&nbsp;&bull; Девочка, с которой ничего не случится: 2083—2086
+<P>&nbsp;&bull; Заповедник сказок: весна 2087
+<P>&nbsp;&bull; Козлик Иван Иванович: весна 2087
+<P>&nbsp;&bull; Путешествие Алисы: лето 2088
+<P>&nbsp;&bull; Второгодники: осень 2088 — весна 2089
+<P>&nbsp;&bull; Остров ржавого лейтенанта: июнь 2089
+<P>&nbsp;&bull; День рождения Алисы: осень 2089
+<P>&nbnbsp;&bull; Лиловый шар: зима 2089—2090
+<P>&nbsp;&bull; Пленники астероида: июль 2090
+<P>&nbsp;&bull; Сто лет тому вперёд: апрель 2091
+<P>&nbsp;&bull; Миллион приключений: весна — лето 2091
+<P>&nbsp;&bull; Узники «Ямагири-Мару»: весна 2092
+<P>&nbsp;&bull; Конец Атлантиды: весна 2092
+<P>&nbsp;&bull; Гай-до: июль 2092
+<P>&nbsp;&bull; Город без памяти: август 2092
+<P>&nbsp;&bull; Алиса и крестоносцы: сентябрь 2092
+
+<br><br>
+<P>Данная датировка, разумеется, не бесспорна, и в некоторых случаях противоречит сказанному в самих книгах. Например, в «Городе без памяти» прямо указывается что с конца «Гай-до» прошёл год, а Алиса с Пашкой не смогли навестить Гай-до из-за событий «Конца Атлантиды».
+
+<br><br>
+<P><b>Все книги про Алису Селезнёву во временном (смысловом) порядке:</b>
+
+<P>&nbsp;&bull; Девочка, с которой ничего не случится.
+<P>&nbsp;&bull; Ржавый фельдмаршал.
+<P>&nbsp;&bull; Путешествие Алисы.
+<P>&nbsp;&bull; День рождения Алисы.
+<P>&nbsp;&bull; Сто лет тому вперед.
+<P>&nbsp;&bull; Пленники астероида.
+<P>&nbsp;&bull; Заповедник сказок.
+<P>&nbsp;&bull; Козлик Иван Иванович.
+<P>&nbsp;&bull; Лиловый шар.
+<P>&nbsp;&bull; Миллион приключений.
+<P>&nbsp;&bull; Гай-до.
+<P>&nbsp;&bull; Узники «Ямагири-мару».
+<P>&nbsp;&bull; Конец Атлантиды.
+<P>&nbsp;&bull; Город без памяти.
+<P>&nbsp;&bull; Гость в кувшине.
+<P>&nbsp;&bull; Подземная лодка.
+<P>&nbsp;&bull; Алиса и крестоносцы.
+<P>&nbsp;&bull; Золотой медвежонок.
+<P>&nbsp;&bull; Война с лилипутами.
+<P>&nbsp;&bull; Излучатель доброты.
+<P>&nbsp;&bull; Сыщик Алиса.
+<P>&nbsp;&bull; Планета для тиранов.
+<P>&nbsp;&bull; Опасные сказки.
+<P>&nbsp;&bull; Дети динозавров.
+<P>&nbsp;&bull; Привидений не бывает.
+<P>&nbsp;&bull; Алиса и чудовище.
+<P>&nbsp;&bull; Секрет чёрного камня.
+<P>&nbsp;&bull; Вампир Полумракс.
+<P>&nbsp;&bull; Звёздный пес.
+<P>&nbsp;&bull; Сапфировый венец.
+<P>&nbsp;&bull; Заколдованный король.
+<P>&nbsp;&bull; Алиса и Алисия.
+<P>&nbsp;&bull; Королева пиратов на планете сказок.
+<P>&nbsp;&bull; Колдун и Снегурочка.
+<P>&nbsp;&bull; Алиса на планете загадок.
+<P>&nbsp;&bull; Алиса и дракон.
+<P>&nbsp;&bull; Алиса и притворщики.
+<P>&nbsp;&bull; Алиса на живой планете.
+<P>&nbsp;&bull; Второгодники.
+<P>&nbsp;&bull; Это ты, Алиса?
+<P>&nbsp;&bull; Настоящее кино.
+<P>&nbsp;&bull; Клад Наполеона.
+<P>&nbsp;&bull; Чудовище у родника.
+<P>&nbsp;&bull; Вокруг света за три часа.
+<P>&nbsp;&bull; Это вам не яблочный компот!
+<P>&nbsp;&bull; Алиса в Гусляре.
+<P>&nbsp;&bull; Уроды и красавцы.
+<P>&nbsp;&bull; Древние тайны.
+<P>&nbsp;&bull; Пашка-троглодит.
+<P>&nbsp;&bull; Чулан Синей Бороды.
+<P>&nbsp;&bull; Драконозавр.
+<P>&nbsp;&bull; Принцы в башне.
+
+<br><br>
+<P><b>Экранизации:</b>
+
+<P>&nbsp; <b>1. Тайна третьей планеты</b> — полнометражный мультипликационный фильм Романа Качанова по мотивам повести Кира Булычёва «Путешествие Алисы» («Алиса и три капитана», «Девочка с Земли») из цикла Приключения Алисы.
+
+<P>&nbsp; <b>2. Гостья из будущего</b> — советский детский пятисерийный телевизионный художественный фильм, снятый на киностудии им. Горького в 1983—84 годах кинорежиссёром Павлом Арсеновым по мотивам фантастической повести Кира Булычёва «Сто лет тому вперёд» (1977). Один из самых популярных детских художественных фильмов за всю историю советского и российского кинематографа, может считаться культовым.
+
+<P>&nbsp; <b>3. Лиловый шар</b> — советский детский художественный фильм, снятый в 1987 году режиссёром Павлом Арсеновым по мотивам повести Кира Булычёва «Лиловый шар» из цикла «Приключения Алисы». Второй фильм Павла Арсенова (после «Гостьи из будущего») с Наташей Гусевой в главной роли.
+
+<P>&nbsp; <b>4. Остров ржавого генерала</b> — фантастический детский художественный фильм, экранизация повести «Ржавый фельдмаршал» Кира Булычёва из цикла «Приключения Алисы» 1988. Первый из неосуществлённой серии экранизации фильмов про Алису, фигурирующей в первых титрах, которую часто путают с названием картины - 1000000 приключений
+
+<P>&nbsp; <b>5. Узники «Ямагири-мару»</b> — кукольный мультипликационный фильм режиссёра Алексея Соловьёва по мотивам повести Кира Булычёва «Узники „Ямагири-мару“» 1988.
+
+<P>&nbsp; <b>6. День рождения Алисы</b> — российский полнометражный мультипликационный фильм, выпущенный студией «Мастер-фильм» по одноимённой повести Кира Булычёва об Алисе Селезнёвой. Работа над фильмом была завершена 19 декабря 2008 года, премьера состоялась 12 февраля 2009 года, в прокате с 19 февраля 2009 года, вышел на DVD/Blu-Ray 12 марта 2009 года.
+
+<P>&nbsp; <b>7.</b> Компьютерный мультсериал <b>«Алиса знает, что делать!»</b> (2014)
+
+<br><br>
+<P>С 2009 года в производственном аду находится фильм «Приключения Алисы. Пленники трёх планет», фантастический фильм по мотивам произведений Кира Булычёва из цикла детских книг «Приключения Алисы». Снимать фильм должен режиссёр Олег Рясков, поставивший до этого телесериал «Александровский сад» и фильм «Слуга государев». Роль Алисы Селезнёвой должна исполнить актриса Дарья Мельникова, известная по телесериалу «Папины дочки».
+
+<P>Бюджет фильма составлял примерно 10 млн $. Ответственным за создание компьютерных эффектов был Павел Донатов, работавший до этого над спецэффектами для фильмов «9 рота» и «Обитаемый остров».
+
+<P>Съёмки нескольких сцен прошли в июле 2008 года, из которых был смонтирован тизер. Начало основного съёмочного периода назначено на февраль 2009 года. С января 2009 года работа над фильмом заморожена на неопределённый срок.
+
+<br><br>
+<P><b>За рубежом также были сняты несколько фильмов об Алисе:</b>
+
+<br><br>
+<P>&nbsp;&bull; <b>Болгария</b>
+
+<P>«Девочка, с которой ничего не случится», «Бронтя», «Наш Человек в прошлом». Короткометражные телефильмы в составе передачи "Спокойной ночи, дети". Каждый длится около 10 мин. Сняты в 1980-81 гг.
+
+<br><br>
+<P>&nbsp;&bull; <b>Польша</b>
+
+<P>«Девочка, с которой ничего не случится» (Dziewczynka, kt&oacute;rej nigdy nie zdarzy si&#281; nic z&#322;ego). Цветной телеспектакль, созданный по одноимённому циклу рассказов в 1994 год. Длительность 34 мин. Автором сценария выступил Кир Булычев (Kir Bu&#322;yczow), перевод и адаптация Ирены Левандовской (Irena Lewandowska). Режиссёр: Агнешка Глиньская. Оператор: Гжегож Кучеришка (Grzegorz Kuczeriszka). Сценограф: Анна Зайтц-Вихлач (Anna Seitz-Wich&#322;acz). Композитор: Марек Недзелько (Marek Niedzielko). Звукооператор: Анджей Богданович (Andrzej Bohdanowicz). Роли исполняют: Алиса — Ягода Стах (Jagoda Stach), профессор Селезнев — Кшиштоф Строиньский (Krzysztof Stroi&#324;ski), ведущий — Дорота Ляндовская (Dorota Landowska), Тутексы — Кристина Сенкевич (Krystyna Sienkiewicz) и Ян Коциняк (Jan Kociniak), Шуша — Яцек Брацяк (Jacek Braciak), Бронтя — Януш Марцинович (Janusz Marcinowicz), Марсианин — Генрик Биста (Henryk Bista), Учёный — Томаш Тараскевич (Tomasz Taraszkiewicz).
+
+<br><br>
+<P>&nbsp;&bull; <b>Словакия</b>
+
+<P>«Тайна трёх капитанов» (Z&aacute;hada tr&iacute; kapit&aacute;nu), снятый по повести «Путешествие Алисы» в 1990 году. Цветной фильм-спектакль в трёх частях, продолжительностью 76 мин. Авторы сценария: Кир Булычев (Kir Bulychyov), Анна Юраскова (Anna Jur&aacute;skov&aacute;). Режиссёр: Ян Бонавентура (Jan Bonaventura). Роли исполняют: Алиса — Клара Яндова (Kl&aacute;ra Jandov&aacute;), профессор Селезнев — Олдрих Визнер (Oldrich V&iacute;zner), в остальных ролях: Радка Ступкова (Radka Stupkova), Петр Коска (Petr Kostka), Петр Лепса (Petr Lepsa), Вит Песина (Vit Pesina), Михал Таловский (Michal T&aacute;lovsk&yacute;), Милан Кобера (Milan Kobera), Илона Йироткова (Ilona Jirotkova).
+						
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%D0%90%D0%BB%D0%B8%D1%81%D1%8B" class = "standardb_red" target="_blank">Wikipedia Приключения Алисы</a> - Приключения Алисы на Wikipedia.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					25е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr>
+				<td width="250" height="100%" class="nimetus_red"><a name="cherez_ternii_k_zvezdam">Через Тернии к Звездам</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/books/cherez_ternii_k_zvezdam.jpg" alt="Через Тернии к Звездам" title="Через Тернии к Звездам" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+
+<P>Аннотация на книгу <b>«Через Тернии к Звездам»</b>:
+<P>Земной исследовательский звездолёт обнаруживает в космосе повреждённую космическую станцию. Такой тип судна не значится в галактическом справочнике. На борту находят трупы клонов и одно тело в скафандре. Выжившая девушка очень похожа на землян, но обладает паранормальными способностями. Ведёт себя очень странно — боится открытых мест, природы, моря. Один из учёных решает поселить её у себя, до полного восстановления и адаптации.
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="http://fantasy-worlds.org/lib/id4794/" class = "standardb_red" target="_blank">Fantasy-Worlds Через Тернии к Звездам</a> - Через Тернии к Звездам на Fantasy-Worlds.
+			</td>
+			</tr>
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					01е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+		
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_red" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

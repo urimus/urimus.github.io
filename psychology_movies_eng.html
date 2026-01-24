@@ -1,0 +1,1658 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/psychology.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('psychology_movies_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='psychology_movies_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('psychology_movies_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='psychology_movies_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_green">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+		<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"  
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>		
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_selected">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_22_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+
+			if (event.ctrlKey) {
+				window.open('psychology_true_eng.html');
+
+			} else {
+				clickStarted = true;
+				window.location.href='psychology_true_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10004; True</div>
+	</td>
+	</tr>		
+	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_22_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('psychology_pseudo_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='psychology_pseudo_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10008; Pseudo-</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_22_3"
+		onmouseenter="this.className='menu_selected'" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('psychology_movies_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='psychology_movies_eng.html';
+			};"
+		class="menu_selected">
+		&nbsp;&#9679; Movies</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Psychology &blacktriangleright; Movies</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+
+		
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="about">Psychologycal Movies</a></td>
+			</tr>
+
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="answer">The Answer</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/answer.jpg" alt="The Answer" title="The Answer" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> The Answer
+
+<P><b>Storyline:</b> After being attacked, an introverted young man must follow clues left by his dead parents in order to figure out who is after him - and who he really is. 
+
+<P><b>Genres:</b> Romance, Sci-Fi, Thriller
+
+<P><b>Actor:</b>  Austin H&eacute;bert, Alexis Carra, David S. Lee 
+
+<P><b>Director:</b> Iqbal Ahmed
+
+<P><b>Country:</b> USA
+
+<P><b>Production Co:</b> Schoolfield Media
+
+<P><b>Duration:</b> 83 min
+
+<P><b>Release:</b> 2015
+
+
+
+
+					
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt2484224/" class = "standardb_green" target="_blank">IMDb The Answer</a> - <b>The Answer</b> on IMDb.
+			</td>
+			</tr>		
+ 
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ys82GR2X-qw" class = "standardb_green" target="_blank">The Answer</a> - Official Trailer.
+			</td>
+			</tr>		
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					22nd of Jul, 2018.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+ 
+
+ 
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="black_forest">Black Forest</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/black_forest.png" alt="Black Forest" title="Black Forest" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Black Forest
+
+<P><b>Storyline:</b> Modern day tourists find themselves lured into a deadly game in an alternate world where every fairy tale we were told at bedtime is real.
+
+<P><b>Genres:</b> Fantasy, Horror, Sci-Fi
+
+<P><b>Actor:</b> Tinsel Korey, Dhafer L'Abidine, Andy Clemence
+
+<P><b>Director:</b> Patrice Dinhut (as Patrick Dinhut)
+
+<P><b>Country:</b> USA
+
+<P><b>Production Co:</b> Syfy, UFO International Productions
+
+<P><b>Duration:</b> 84 min
+
+<P><b>Release:</b> 25 February 2012
+
+
+
+
+					
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt1776088/" class = "standardb_green" target="_blank">IMDb Black Forest</a> - <b>Black Forest</b> on IMDb.
+			</td>
+			</tr>		
+ 
+ 
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					03rd of Jan, 2019.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+
+
+
+ 
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="cube">Cube (film series)</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/cube.jpg" alt="Cube (film series)" title="Cube (film series)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+<P><b>Cube</b> is a Canadian psychological thriller horror film series. The three films were directed by Vincenzo Natali, Andrzej Sekuła, and Ernie Barbarash respectively.
+
+<P>All three films are centered, with slight variations, on the same science-fictional setting: a gigantic, mechanized cubical structure of unknown purpose and origin, made up of numerous smaller cubical rooms, in which most or all of the principal characters inexplicably awaken in the opening scenes. Each of these rooms has six heavy vault doors, one on each face of the cube, which lead into adjacent, largely identical rooms, differing occasionally by colour of lighting. Some of these rooms are &quot;safe&quot;, while others are equipped with deadly booby traps such as flamethrowers and razorwire. In some cases it is possible to detect a trap by throwing an object into the room first, although this method is not always reliable due to the trigger mechanism of certain traps.
+
+<P>In each case, a group of strangers awakens in this mysterious structure, without any knowledge of how or why they are there. In order to escape from the prison, they must band together and use their combined skills and talents to avoid the traps and navigate out of the maze, while also trying to solve the mystery of what the cube is and why they are in it. However, the pressure of being in the Cube generally turns one of the prisoners into a homicidal maniac who preys on the others.
+
+<P>Cube Zero was slightly different from the first two films in that it also dealt with the people on the outside of the Cube whose job it was to control the cube and oversee those within.
+
+<P>A fourth film was rumored in March 2011, and a remake of the first film was announced in April 2015.
+
+
+
+<br><br>
+<P><b>Current Films:</b>
+<P>&nbsp;&bull; <b>Cube</b> (1997), the first film in the series, follows a group of seven frightened strangers who find themselves trapped in a bizarre maze of cubical rooms, with no memory of how they arrived there. Searching for a way out, they soon discover that many rooms contain lethal booby traps, while others are safe. Initially the prisoners band together in attempt to escape, however as their stay becomes longer the prisoners begin to fight each other because of the stress of their imprisonment. Despite the film's low budget, it achieved moderate commercial success and has developed a cult following due to its surreal, Kafkaesque setting.
+<P>&nbsp;&bull; <b>Cube 2: Hypercube</b> (2002) is a sequel to the film Cube. The dusky, dingy rooms of the first film are replaced with high-tech, brightly lit rooms, and the conventional technology of the original traps are replaced with threats based on abstract mathematics. A new group of prisoners quickly discovers that, unlike the original Cube, the rooms in their prison appear to shift instantaneously. They realize they are inside a hypercube in which gravity, space, and time are distorted. This time the prisoners each have a connection to the cube's suggested creator.
+<P>&nbsp;&bull; <b>Cube Zero</b> (2004) is a prequel to the film Cube. Unlike the first two films, which were limited to the prisoners' point of view, the film concerns two characters, Eric Wynn and Dodd, who are technicians observing the prisoners. Wynn finds himself caring about the fate of Cassandra Rains, a woman in the Cube, and decides to risk his job and even his life to help her try to escape. The rooms are similar to the original film, except that the colors are not as bright as in the first film.
+
+
+
+
+
+
+					
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Cube_(film_series)" class = "standardb_green" target="_blank">Wikipedia Cube (film series)</a> - <b>Cube (film series)</b> on Wikipedia.
+			</td>
+			</tr>		
+ 
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					02nd of Aug, 2017.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+
+
+ 
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="curvature">Curvature</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/curvature.jpg" alt="Curvature" title="Curvature" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Curvature
+
+<P><b>Storyline:</b> Curvature is a time travel sci-fi drama about an engineer who travels back in time to stop herself from committing a murder.
+
+<P><b>Genres:</b> Mystery, Sci-Fi, Thriller
+
+<P><b>Actor:</b> Lyndsy Fonseca, Linda Hamilton, Glenn Morshower
+
+<P><b>Director:</b> Diego Hallivis
+
+<P><b>Country:</b> USA
+
+<P><b>Production Co:</b>  1inMM Productions, The Hallivis Brothers
+
+<P><b>Duration:</b> 90 min
+
+<P><b>Release:</b> 23 February 2018 (USA)
+
+					
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt4720596/" class = "standardb_green" target="_blank">IMDb Curvature (2017)</a> - <b>Curvature</b> on IMDb.
+			</td>
+			</tr>		
+ 
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					26th of Mar, 2019.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="elizabeth_harvest">Elizabeth Harvest</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/elizabeth_harvest.jpg" alt="Elizabeth Harvest" title="Elizabeth Harvest" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+<P><b>Elizabeth Harvest</b> is a 2018 science-fiction thriller film that was written and directed by Sebastian Gutierrez. The film premiered at South by Southwest on March 10, 2018 and stars Abbey Lee as the titular Elizabeth, a young woman who discovers that her new husband is hiding secrets.
+					
+<br><br>
+<P><b>Cast:</b>
+
+<P>&nbsp;&bull; Abbey Lee as Elizabeth
+<P>&nbsp;&bull; Matthew Beard as Oliver
+<P>&nbsp;&bull; Carla Gugino as Claire
+<P>&nbsp;&bull; Ciar&aacute;n Hinds as Henry
+<P>&nbsp;&bull; Dylan Baker as Logan
+
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Elizabeth_Harvest" class = "standardb_green" target="_blank">Wikipedia Elizabeth Harvest</a> - <b>Elizabeth Harvest</b> on Wikipedia.
+			</td>
+			</tr>		
+ 
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=vcMs46Lg7a4" class = "standardb_green" target="_blank">Elizabeth Harvest</a> - Official Trailer.
+			</td>
+			</tr>		
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					09th of Sep, 2018.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="escape_room">Escape Room</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/escape_room.jpg" alt="Escape Room" title="Escape Room" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>Escape Room</b> is a 2019 American psychological horror film directed by Adam Robitel and written by Bragi F. Schut and Maria Melnik. The film stars Taylor Russell, Logan Miller, Deborah Ann Woll, Jay Ellis, Tyler Labine, Nik Dodani, and Yorick van Wageningen, and follows a group of people who are sent to navigate a series of deadly escape rooms.
+
+<P>Development of the film began in August 2017, then under the title The Maze, and the casting process commenced. Filming took place in South Africa in late 2017 through January 2018.
+
+<P>Escape Room was released in the United States on January 4, 2019, by Sony Pictures Entertainment, and grossed over $155 million worldwide. The film received mixed reviews from critics, who praised the atmosphere and cast, but criticized the familiar plot and its failure to take full advantage of its premise. A sequel, Escape Room: Tournament of Champions, is scheduled for release on July 16, 2021.
+
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Escape_Room_(2019_film)" class = "standardb_green" target="_blank">Wikipedia Escape Room (2019 film)</a> - <b>Escape Room</b> on Wikipedia.
+			</td>
+			</tr>		
+ 
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=6dSKUoV0SNI" class = "standardb_green" target="_blank">Escape Room</a> - Official Trailer.
+			</td>
+			</tr>		
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					30th of Jun, 2021.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="escape_room2">Escape Room: Tournament of Champions</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/escape_room2.jpg" alt="Escape Room: Tournament of Champions" title="Escape Room: Tournament of Champions" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+
+<P><b>Escape Room: Tournament of Champions</b> (released in some markets as <b>Escape Room: No Way Out</b>) is a 2021 American psychological horror film directed by Adam Robitel and written by Will Honley, Maria Melnik, Daniel Tuch, and Oren Uziel. A sequel to 2019's <a href="#escape_room" class = "standardb_green" target="_blank">Escape Room</a>, it stars Taylor Russell, Logan Miller, and Deborah Ann Woll reprising their roles from the first film, alongside new cast members Indya Moore, Holland Roden, Thomas Cocquerel, and Carlito Olivero, and follows a group of six people trying to survive a new series of more deadly escape rooms.
+
+<P>After the first film became a surprise hit in 2019, Columbia Pictures approved a sequel. Robitel returned as the director with Schut writing the script, and Russell and Miller reprising their roles alongside the addition of new cast members. Filming took place on Cape Town, South Africa, from November 2019 to January 2020, with additional filming in January 2021.
+
+<P>Escape Room: Tournament of Champions was theatrically released in Australia on July 1, 2021, and in the United States on July 16, by Sony Pictures Releasing, following several delays due to the COVID-19 pandemic. The film has grossed $51 million and received mixed reviews from critics, who praised the elaborate puzzles, but noted the film's failure to improve upon its predecessor.
+
+
+
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Escape_Room:_Tournament_of_Champions" class = "standardb_green" target="_blank">Wikipedia Escape Room: Tournament of Champions</a> - <b>Escape Room: Tournament of Champions</b> on Wikipedia.
+			</td>
+			</tr>		
+ 
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=KlfUbZJVInA" class = "standardb_green" target="_blank">Escape Room: Tournament of Champions</a> - Official Trailer.
+			</td>
+			</tr>		
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					29th of Sep, 2021.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="jupiter_holdja">Jupiter's Moon (hung. Jupiter Holdja)</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/jupiter_holdja.jpg" alt="Jupiter's Moon (hung. Jupiter Holdja)" title="Jupiter's Moon (hung. Jupiter Holdja)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+<P><b>Jupiter's Moon</b> (Hungarian: Jupiter holdja) is a 2017 Hungarian drama film directed by Kornél Mundruczó. It competed for the Palme d'Or in the main competition section at the 2017 Cannes Film Festival.
+
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Jupiter%27s_Moon" class = "standardb_green" target="_blank">Wikipedia Jupiter's Moon</a> - <b>Jupiter's Moon (hung. Jupiter Holdja)</b> on Wikipedia.
+			</td>
+			</tr>		
+ 
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=ou5oxqQq95Q" class = "standardb_green" target="_blank">Jupiter's Moon (hung. Jupiter Holdja)</a> - Official Trailer (hung., with subtitles).
+			</td>
+			</tr>		
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					22nd of Aug, 2019.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="returned">The Returned</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/returned.jpg" alt="The Returned" title="The Returned" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+<P><b>The Returned</b> (Spanish: <b>Retornados</b>) is a 2013 Spanish-Canadian thriller film directed by Manuel Carballo, written by Hatem Khraiche, and starring Emily Hampshire, Kris Holden-Ried, Shawn Doyle, and Claudia Bassols. When a rare and difficult to obtain medicine that requires daily doses to stave off the effects of a zombie infection runs low, a physician (Hampshire) and her infected husband (Holden-Ried) go on the run to avoid angry demonstrators.
+
+					
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/The_Returned_(2013_film)" class = "standardb_green" target="_blank">Wikipedia The Returned</a> - <b>The Returned</b> on Wikipedia.
+			</td>
+			</tr>		
+ 
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=KvShW5HxYZ4" class = "standardb_green" target="_blank">The Returned</a> - Official Trailer.
+			</td>
+			</tr>		
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					02nd of Aug, 2018.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="rough_draft">A Rough Draft (rus. Черновик)</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/rough_draft.jpg" alt="A Rough Draft (rus. Черновик)" title="A Rough Draft (rus. Черновик)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+<P><b>A Rough Draft</b> (Russian: Черновик, translit. Chernovik) is a 2018 Russian fantasy film directed by Sergey Mokritskiy, based on the <a href="books_lukjanenko_eng.html#rabota_nad_oshibkami" class = "standardb_green" target="_blank">novel of the same name</a> by <a href="books_lukjanenko_eng.html" class = "standardb_green" target="_blank">Sergei Lukyanenko</a> and starring Nikita Volkov, Yulia Peresild and Yevgeny Tsyganov. It was released in Russia on May 25, 2018.		
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/A_Rough_Draft" class = "standardb_green" target="_blank">Wikipedia A Rough Draft</a> - <b>A Rough Draft (rus. Черновик)</b> on Wikipedia.
+			</td>
+			</tr>		
+ 
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=NaSB1GCJLqI" class = "standardb_green" target="_blank">A Rough Draft (rus. Черновик)</a> - Official Trailer (rus.).
+			</td>
+			</tr>		
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					08th of Oct, 2018.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+ 
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="solis">Solis</a></td>
+			</tr>
+
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/psychology/solis.jpg" alt="Solis" title="Solis" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+
+
+<P><b>AKA:</b>
+
+<P><b>Movie:</b> Solis
+
+<P><b>Storyline:</b> After a space mining operation gone bad, Troy is on an emergency escape vehicle drifting towards the sun. He gets radio contact with possible help but will they get there in time?
+
+<P><b>Genres:</b> Action, Adventure, Sci-Fi 
+
+<P><b>Actor:</b> Steven Ogg, Alice Lowe, Sid Phoenix
+
+<P><b>Director:</b> Carl Strathie
+
+<P><b>Country:</b> UK
+
+<P><b>Production Co:</b> Goldfinch Studios, Premiere Picture, Strathie Film
+
+<P><b>Duration:</b> 92 min
+
+<P><b>Release:</b> 30 January 2019 (Philippines)
+
+					
+				</td>
+			</tr>
+			
+ 
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+ 
+ 
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.imdb.com/title/tt6134274/" class = "standardb_green" target="_blank">IMDb Solis (2018)</a> - <b>Solis</b> on IMDb.
+			</td>
+			</tr>		
+ 
+ 
+
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					16th of Apr, 2019.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,1598 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*34;
+var imgBgSrc="images/icons/background/superhero.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+		<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_animation_dc_animated_movies_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_animation_dc_animated_movies_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('movies_animation_dc_animated_movies_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='movies_animation_dc_animated_movies_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_selected">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_8_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; По Актёрам <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; По Жанрам</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Мультипликация</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_animation_for_adults_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_animation_for_adults_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Для Взрослых</div>
+	</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_animation_for_children_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_animation_for_children_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+	&bull; Для Детей</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_3_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('movies_animation_dc_animated_movies_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='movies_animation_dc_animated_movies_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+	&bull; Анимационные Фильмы DC</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_8_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Супергеройские</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"  
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>			
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>			
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Фильмы &blacktriangleright; Мультипликация &blacktriangleright; Оригинальные Анимационные Фильмы Вселенной DC</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:782px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="animation">Мультипликация</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_black">Описание Жанра</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/animation.jpg" alt="Мультипликация" title="Мультипликация" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+
+<P><b>Мультипликация</b> (от лат. multiplicatio — умножение, увеличение, возрастание, размножение) — технические приёмы создания иллюзии движущихся изображений (движения и/или изменения формы объектов — морфинга) с помощью последовательности неподвижных изображений (кадров), сменяющих друг друга с некоторой частотой. <b>Анимация</b> (от фр. animation: оживление, одушевление) — западное название мультипликации: вид киноискусства и его произведение (анимационный фильм и, в частности, мультфильм), а также семейство соответствующих технологий.
+
+<P>По мнению известного мультипликатора Фёдора Хитрука, использование в СССР терминов «мультипликация», «мультипликатор» связано с технологией, использовавшейся до внедрения классической рисованной анимации — созданием изображений при помощи наложения на лист элементов персонажей, что сродни аппликации. По созвучию с этим словом эта отрасль кинематографа была названа мультипликацией.
+
+<P>В искусстве мультипликацией называют разновидность искусства, как правило, использующую технологию мультипликации как основной элемент творчества.
+
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F" class = "standardb_black" target="_blank">Wikipedia Мультипликация</a> - <b>Мультипликация</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					30е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="dc_animated_movies">Оригинальные Анимационные Фильмы Вселенной DC (англ. DC Universe Animated Original Movies)</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_black">Описание Жанра</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/dc_animated_movies.jpg" alt="Оригинальные Анимационные Фильмы Вселенной DC (англ. DC Universe Animated Original Movies)" title="Оригинальные Анимационные Фильмы Вселенной DC (англ. DC Universe Animated Original Movies)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+
+
+<P><b>Оригинальные анимационные фильмы вселенной DC</b> — серия анимационных фильмов по мотивам комиксов DC Comics, выпущенных сразу на видеоносителях компаниями Warner Premiere, Warner Bros. Animation и DC Comics. Первый фильм вышел в 2007 году, и к настоящему времени было выпущено более 30 полнометражных анимационных фильмов и 5 короткометражных, а также планируется релиз ещё нескольких. Продюсером всех мультфильмов является Брюс Тимм.
+
+<P>Первые мультфильмы были сюжетно не связаны между собой, кроме дилогии «Супермен/Бэтмен», а происходят в различных вымышленных вселенных. Но после мультфильма «Лига Справедливости: Парадокс источника конфликта» некоторые мультфильмы стали основываться на сюжетах комиксов New 52 и являются продолжением друг друга.
+
+					
+
+<br><br>
+<P><b>Фильмы:</b>
+
+<P>&nbsp;1. Супермен: Судный день (англ. Superman: Doomsday), 21 сентября 2007
+<P>&nbsp;2. Лига Справедливости: Новый барьер (англ. Justice League: The New Frontier), 26 февраля 2008
+<P>&nbsp;3. Бэтмен: Рыцарь Готэма (англ. Batman: Gotham Knight), 8 июля 2008
+<P>&nbsp;4. Чудо-Женщина (англ. Wonder Woman), 3 марта 2009
+<P>&nbsp;5. Зелёный Фонарь: Первый полёт (англ. Green Lantern: First Flight), 28 июля 2009
+<P>&nbsp;6. Супермен/Бэтмен: Враги общества (англ. Superman/Batman: Public Enemies), 29 сентября 2009
+<P>&nbsp;7. Лига Справедливости: Кризис двух миров (англ. Justice League: Crisis on Two Earths), 23 февраля 2010
+<P>&nbsp;8. Бэтмен: Под красным колпаком (англ. Batman: Under the Red Hood), 7 июля 2010
+<P>&nbsp;9. <a href="#apocalypse" class = "standardb_black">Супермен/Бэтмен: Апокалипсис (англ. Superman/Batman: Apocalypse)</a>, 28 сентября 2010
+<P>&nbsp;10. <a href="#all_star_superman" class = "standardb_black">Сверхновый Супермен (англ. All-Star Superman)</a>, 22 февраля 2011
+<P>&nbsp;11. Зелёный Фонарь: Изумрудные рыцари (англ. Green Lantern: Emerald Knights), 7 июля 2011
+<P>&nbsp;12. Бэтмен: Год первый (англ. Batman: Year One), 18 октября 2011
+<P>&nbsp;13. Лига Справедливости: Гибель (англ. Justice League: Doom), 28 февраля 2012
+<P>&nbsp;14. Супермен против Элиты (англ. Superman vs. The Elite), 12 июня 2012
+<P>&nbsp;15. Бэтмен: Возвращение Тёмного рыцаря. Часть 1 (англ. Batman: The Dark Knight Returns – Part 1), 25 сентября 2012
+<P>&nbsp;16. Бэтмен: Возвращение Тёмного рыцаря. Часть 2 (англ. Batman: The Dark Knight Returns – Part 2), 29 января 2013
+<P>&nbsp;17. Супермен: Непобеждённый (англ. Superman: Unbound), 7 мая 2013
+<P>&nbsp;18. <a href="#flashpoint_paradox" class = "standardb_black">Лига справедливости: Парадокс источника конфликта (англ. Justice League: The Flashpoint Paradox)</a>, 7 мая 2013
+<P>&nbsp;19. <a href="#war" class = "standardb_black">Лига Справедливости: Война (англ. Justice League: War)</a>, 4 февраля 2014
+<P>&nbsp;20. Сын Бэтмена (англ. Son of Batman), 6 мая 2014
+<P>&nbsp;21. Бэтмен: Нападение на Аркхэм (англ. Batman: Assault on Arkham), 29 июля 2014
+<P>&nbsp;22. Лига Справедливости: Трон Атлантиды (англ. Justice League: Throne of Atlantis), 13 января 2015
+<P>&nbsp;23. Бэтмен против Робина (англ. Batman vs. Robin), 7 апреля 2015
+<P>&nbsp;24. Лига Справедливости: Боги и Монстры (англ. Justice League: Gods and Monsters), 28 июля 2015
+<P>&nbsp;25. Бэтмен: Дурная кровь (англ. Batman: Bad Blood), 20 января 2016
+<P>&nbsp;26. Лига Справедливости против Юных Титанов (англ. Justice League vs. Teen Titans), 29 марта 2016
+<P>&nbsp;27. <a href="#killing_joke" class = "standardb_black">Бэтмен: Убийственная шутка (англ. Batman: The Killing Joke)</a>, 22 июля 2016
+<P>&nbsp;28. Тёмная Лига Справедливости (англ. Justice League Dark), 24 января 2017
+<P>&nbsp;29. Юные Титаны: Контракт Иуды (англ. Teen Titans: The Judas Contract), 31 марта 2017
+<P>&nbsp;30. Бэтмен и Харли Квинн (англ. Batman and Harley Quinn), 15 августа 2017
+<P>&nbsp;31. Бэтмен: Готэм в Газовом Свете (англ. Batman: Gotham by Gaslight), 23 января 2018
+<P>&nbsp;32. Отряд самоубийц: Строгое наказание (англ. Suicide Squad: Hell to Pay), 27 марта 2018
+<P>&nbsp;33. Смерть Супермена (англ. The Death of Superman), 24 июля 2018
+<P>&nbsp;34. Константин: Город демонов (англ. Constantine: City of Demons), 9 октября, 2018
+<P>&nbsp;35. Господство Суперменов (англ. Reign of the Supermen), 15 января 2019
+<P>&nbsp;36. Лига Справедливости против Смертоносной Пятёрки (англ. Justice League vs. the Fatal Five), 30 марта 2019
+<P>&nbsp;37. Бэтмен: Тихо! (англ. Batman: Hush), 20 июля 2019
+<P>&nbsp;38. Чудо-женщина: Родословная (англ. Wonder Woman: Bloodlines), 5 октября 2019
+<P>&nbsp;39. Супермен: Красный Сын (англ. Superman: Red Son), 25 февраля 2020
+<P>&nbsp;40. Тёмная Лига Справедливости: Война Апоколипса (англ. Justice League Dark: Apokolips War), 5 мая 2020
+<P>&nbsp;41. <a href="#superman_man_of_tomorrow" class = "standardb_black"> Супермен: Человек Завтрашнего Дня (англ. Superman: Man of Tomorrow)</a>, 23 августа 2020
+<P>&nbsp;42. Бэтмен: Душа дракона (англ. Batman: Soul of the Dragon), 12 января 2021
+<P>&nbsp;43. Общество Справедливости: Вторая Мировая Война (англ. Justice Society: World War II), 27 апреля 2021
+<P>&nbsp;44. Бэтмен: Долгий Хэллоуин. Часть 1 (англ. Batman: The Long Halloween, Part One), 22 июня 2021
+<P>&nbsp;45. Бэтмен: Долгий Хэллоуин. Часть 2 (англ. Batman: The Long Halloween, Part Two), 27 июля 2021
+<P>&nbsp;46. Несправедливость (англ. Injustice), 19 октября 2021
+<P>&nbsp;47. Женщина-кошка: Охота (англ. Catwoman: Hunted), 8 февраля 2022
+<P>&nbsp;48. Зелёный Фонарь: Берегись Моей Силы (англ. Green Lantern: Beware My Power), 26 июля 2022
+<P>&nbsp;49. Бэтмен и Супермен: Битва Суперсыновей (англ. Batman and Superman: Battle of the Super Sons), 18 октября 2022
+<P>&nbsp;50. <a href="#legion2" class = "standardb_black">Легион Супергероев (англ. Legion of Super-Heroes)</a>, 7 февраля 2023
+<P>&nbsp;51. Бэтмен: Гибель, пришедшая в Готэм (англ. Batman: The Doom That Came to Gotham), 28 марта 2023
+<P>&nbsp;52. <a href="#warworld" class = "standardb_black">Лига Справедливости: Мир Войны (англ. Justice League: Warworld)</a>, 25 июля 2023
+<P>&nbsp;53. Лига Справедливости: Кризис на Бесконечных Землях. Часть 1 (англ. Justice League: Crisis on Infinite Earths – Part One), 9 января 2024
+<P>&nbsp;54. Лига Справедливости: Кризис на Бесконечных Землях. Часть 2 (англ. Justice League: Crisis on Infinite Earths – Part Two), 23 апреля 2024
+<P>&nbsp;55. Лига Справедливости: Кризис на бесконечных землях. Часть 3 (англ. Justice League: Crisis on Infinite Earths – Part Three), 16 июля 2024
+
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Оригинальные_анимационные_фильмы_вселенной_DC" class = "standardb_black" target="_blank">Wikipedia Оригинальные анимационные фильмы вселенной DC</a> - <b>Оригинальные Анимационные Фильмы Вселенной DC (англ. DC Universe Animated Original Movies)</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					18е Мая, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="all_star_superman">Сверхновый Супермен (англ. All-Star Superman)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/all_star_superman.jpg" alt="Сверхновый Супермен (англ. All-Star Superman)" title="Сверхновый Супермен (англ. All-Star Superman)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>Сверхновый Супермен</b> — мультипликационный фильм, выпущенный сразу на видео и основанный на серии комиксов с одноименным названием Гранта Моррисона и Фрэнка Куайтли. Является десятым в линейке Оригинальных анимационных фильмов вселенной DC (предыдущий — «Супермен/Бэтмен: Апокалипсис», следующий — «Зелёный Фонарь: Изумрудные рыцари») и первым в линейке, получившим рейтинг PG. Фильм вышел 22 февраля 2011 года.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Сверхновый_Супермен_(мультфильм)" class = "standardb_black" target="_blank">Wikipedia Сверхновый Супермен (мультфильм)</a> - <b>Сверхновый Супермен (англ. All-Star Superman)</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=nt-guoMar_Y" class = "standardb_black" target="_blank">Сверхновый Супермен (англ. All-Star Superman)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					03е Фев, 2024.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="killing_joke">Бэтмен: Убийственная Шутка (англ. Batman: The Killing Joke)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/killing_joke.jpg" alt="Бэтмен: Убийственная Шутка (англ. Batman: The Killing Joke)" title="Бэтмен: Убийственная Шутка (англ. Batman: The Killing Joke)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P>«<b>Бэтмен: Убийственная шутка</b>» (англ. Batman: The Killing Joke) — американский анимационный супергеройский фильм 2016 года, созданный на основе известного графического романа Batman: The Killing Joke, является частью серии оригинальных анимационных фильмов вселенной DC. Это первый анимационный фильм, с присвоенным рейтингом R, вышедший сразу на DVD и Blu-Ray.
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%91%D1%8D%D1%82%D0%BC%D0%B5%D0%BD:_%D0%A3%D0%B1%D0%B8%D0%B9%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D1%88%D1%83%D1%82%D0%BA%D0%B0_(%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D1%84%D0%B8%D0%BB%D1%8C%D0%BC)" class = "standardb_black" target="_blank">Wikipedia Бэтмен: Убийственная шутка (мультфильм)</a> - <b>Бэтмен: Убийственная Шутка (англ. Batman: The Killing Joke)</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=nZ8PVP7mckw" class = "standardb_black" target="_blank">Бэтмен: Убийственная Шутка (англ. Batman: The Killing Joke)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					12е Июн, 2021.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="flashpoint_paradox">Лига Справедливости: Парадокс Источника Конфликта (англ. Justice League: The Flashpoint Paradox)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/flashpoint_paradox.jpg" alt="Лига Справедливости: Парадокс Источника Конфликта (англ. Justice League: The Flashpoint Paradox)" title="Лига Справедливости: Парадокс Источника Конфликта (англ. Justice League: The Flashpoint Paradox)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Лига справедливости: Парадокс источника конфликта</b> (англ. Justice League: The Flashpoint Paradox) — американский анимационный фильм 2013 года, выпущенный сразу на видео и основанный на кроссовер-серии комиксов Flashpoint. Является семнадцатым, входящим в состав оригинальной анимационной вселенной DC. Фильму был присвоен рейтинг PG-13. Существуют версии на одном DVD, специальная двухдисковая и Blu-Ray. В создании участвовала аниме-студия Studio 4°C.
+
+<P>Что касается названия, то его вернее определять как «Временной парадокс Флэша». Дословно flashpoint — это точка воспламенения, предел. В данном случае речь идет о парадоксе путешествия во времени.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Лига_Справедливости:_Парадокс_источника_конфликта" class = "standardb_black" target="_blank">Wikipedia Лига справедливости: Парадокс источника конфликта</a> - <b>Лига Справедливости: Парадокс Источника Конфликта (англ. Justice League: The Flashpoint Paradox)</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=xe0JiobQ98o" class = "standardb_black" target="_blank">Лига Справедливости: Парадокс Источника Конфликта (англ. Justice League: The Flashpoint Paradox)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					08е Мая, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+		
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="war">Лига Справедливости: Война</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/war.jpg" alt="Лига Справедливости: Война" title="Лига Справедливости: Война" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Лига справедливости: Война</b> (англ. Justice League: War) — американский анимационный фильм 2014 года, выпущенный сразу на видео и основанный на серии комиксов «Лига справедливости: Начало» (англ. Justice League: Origin) Джеффа Джонса и Джима Ли. Восемнадцатый анимационный фильм входящий в серию оригинальных анимационных фильмов вселенной DC и первый из них, основанный на комиксах линейки «The New 52». Был выпущен в форматах DVD и Blu-ray.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Лига_Справедливости:_Война" class = "standardb_black" target="_blank">Wikipedia Лига Справедливости: Война</a> - <b>Лига Справедливости: Война</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=SZIorLlvii4" class = "standardb_black" target="_blank">Лига Справедливости: Война</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					30е Ноя, 2017.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="warworld">Лига Справедливости: Мир Войны (англ. Justice League: Warworld)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/warworld.jpg" alt="Лига Справедливости: Мир Войны (англ. Justice League: Warworld)" title="Лига Справедливости: Мир Войны (англ. Justice League: Warworld)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P><b>Justice League: Warworld</b> is a 2023 American animated superhero film based on the DC Comics superhero team of the same name. Produced by DC Studios and Warner Bros. Animation and distributed by Warner Bros. Home Entertainment, it is the seventh film in the Tomorrowverse and the 52nd overall installment in the DC Universe Animated Original Movies line.
+
+<P>The film is written by Jeremy Adams, Ernie Altbacker, and Josie Campbell and directed by Jeff Wamester. It stars Stana Katic, Darren Criss and Jensen Ackles. In the film, the Justice League unites together to liberate the gladiator world of Warworld. The film was released on home media and digital on July 25, 2023. A sequel, Justice League: Crisis on Infinite Earths, is set for release in 2024.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Justice_League:_Warworld" class = "standardb_black" target="_blank">Wikipedia Justice League: Warworld</a> - <b>Лига Справедливости: Мир Войны (англ. Justice League: Warworld)</b> на Wikipedia (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=IPDLodUE9gg" class = "standardb_black" target="_blank">Лига Справедливости: Мир Войны (англ. Justice League: Warworld)</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					21е Ноя, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="legion2">Легион Супергероев (англ. Legion of Super-Heroes)</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/legion2.jpg" alt="Легион Супергероев (англ. Legion of Super-Heroes)" title="Легион Супергероев (англ. Legion of Super-Heroes)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P>«<b>Легион супергероев</b>» (англ. Legion of Super-Heroes) — американский анимационный фильм о супергероях снятый в 2023 году. Это шестой полнометражный мультфильм Вселенной «Tomorrowverse» и является на данный момент 51-м выпуском в серии Оригинальных анимационных фильмов вселенной DC . Режиссером мультфильма стал Джефф Ваместер. Фильм был выпущен по некоторым источникам сразу на видеоносителях 7 февраля 2023 г.
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/Легион_супергероев" class = "standardb_black" target="_blank">Wikipedia Легион супергероев</a> - <b>Легион Супергероев (англ. Legion of Super-Heroes)</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=z-129etzx20" class = "standardb_black" target="_blank">Легион Супергероев (англ. Legion of Super-Heroes)</a> - Официальный трейлер.
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					20е Июл, 2023.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+		
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
+						<tr >
+							<td width="100%" height="100%" class="nimetus_black"><a name="apocalypse">Супермен/Бэтмен: Апокалипсис</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/apocalypse.jpg" alt="Супермен/Бэтмен: Апокалипсис" title="Супермен/Бэтмен: Апокалипсис" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Супермен/Бэтмен: Апокалипсис</b> — второй мультипликационный фильм из серии «Супермен/Бэтмен», выпущенный сразу на видео и основанный на комиксах о супергероях Бэтмене и Супермене. Является девятым в линейке Оригинальных анимационных фильмов вселенной DC (предыдущий — «Бэтмен: Под красным колпаком», следующий — «Сверхновый Супермен»). Премьера фильма состоялась 28 сентября 2010 года.
+
+			
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D0%BF%D0%B5%D1%80%D0%BC%D0%B5%D0%BD/%D0%91%D1%8D%D1%82%D0%BC%D0%B5%D0%BD:_%D0%90%D0%BF%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8%D0%BF%D1%81%D0%B8%D1%81" class = "standardb_black" target="_blank">Wikipedia Супермен/Бэтмен: Апокалипсис</a> - <b>Супермен/Бэтмен: Апокалипсис</b> на Wikipedia.
+			</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=SZIorLlvii4" class = "standardb_black" target="_blank">Супермен/Бэтмен: Апокалипсис</a> - Официальный трейлер (англ.).
+			</td>
+			</tr>
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					21е Июл, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+
+
+	
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="250" height="100%" class="nimetus_black"><a name="superman_man_of_tomorrow">Супермен: Человек Завтрашнего Дня (англ. Superman: Man of Tomorrow)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/movies/superman_man_of_tomorrow.jpg" alt="Супермен: Человек Завтрашнего Дня (англ. Superman: Man of Tomorrow)" title="Супермен: Человек Завтрашнего Дня (англ. Superman: Man of Tomorrow)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Superman: Man of Tomorrow</b> is a 2020 American animated superhero film based on the DC Comics character Superman. Produced by Warner Bros. Animation, and DC Entertainment, and distributed by Warner Bros. Home Entertainment, it is the first installment in the DC Animated Movie Universe's second phase, and the seventeenth overall. The film is directed by Chris Palmer, and written by Tim Sheridan, and stars Darren Criss and Zachary Quinto. The film depicts the early days of Clark Kent's career as the superhero Superman. It is the 41st film in the DC Universe Animated Original Movies.
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Superman:_Man_of_Tomorrow" class = "standardb_black" target="_blank">Wikipedia Superman: Man of Tomorrow</a> - <b>Супермен: Человек Завтрашнего Дня (англ. Superman: Man of Tomorrow)</b> на Wikipedia (англ.).
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://www.youtube.com/watch?v=KzH1Sb1CEfw" class = "standardb_black" target="_blank">Супермен: Человек Завтрашнего Дня (англ. Superman: Man of Tomorrow)</a> - Официальный Трейлер.
+			</td>
+			</tr>
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					25е Окт, 2020.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+		
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+

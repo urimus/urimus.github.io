@@ -1,0 +1,7 @@
+﻿<b class="text_black_blue">Барахло <font color="red"><sup>&#9889; Evil &#9889;</sup></font></b>
+&#9679; <a href="stuff_different_rus.html" class = "standardb_black" data-added="20е Июн, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Разное</a>
+&#9679; <a href="stuff_chupacabra_rus.html" class = "standardb_black" data-added="14е Дек, 2017." data-lang="sp" data-title_orig="Chupacabras" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Чупакабра</a>
+&#9679; <a href="stuff_hyperspace_rus.html" class = "standardb_black" data-added="18е Июл, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Гиперпространство</a>
+&#9679; <a href="stuff_images_general_rus.html" class = "standardb_black" data-added="21е Июл, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Картинки</a>
+&#9679; <a href="stuff_matrix_rus.html#matrix" class = "standardb_black" data-added="10е Мая, 2023." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Матрица <font color="red"><sup>&#9889; Evil &#9889;</sup></font></a>
+&#9679; <a href="stuff_star_trek_discovery_rus.html" class = "standardb_black" data-added="30е Мая, 2024." data-country="usa" data-year="2017" data-title_orig="Star Trek: Discovery" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Звёздный Путь: Дискавери</a>

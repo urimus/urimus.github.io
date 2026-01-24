@@ -1,0 +1,1514 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/sssr.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('personalities_ussr_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='personalities_ussr_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('personalities_ussr_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='personalities_ussr_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_green">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>   
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"  
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_selected">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_ancient_rome_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_ancient_rome_rus.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#9679; Древний Рим</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_middle_ages_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_middle_ages_rus.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#9679; Средние Века</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_ussr_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_ussr_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; СССР</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+
+</table>
+
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Деятели &blacktriangleright; СССР</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">Список руководителей СССР</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green">Что это такое?</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/personalities_ussr.jpg" alt="Список руководителей СССР" title="Список руководителей СССР" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+
+<P>Перечень фактических (де-факто) <b>руководителей СССР</b> и Коммунистической Партии Советского Союза.
+
+<P>Должность Генерального секретаря Центрального комитета РКП (б)—ВКП (б)—КПСС была учреждена в апреле 1922 и стала фактически важнейшей государственной должностью после смерти Владимира Ленина. Фактически к тому времени Иосиф Сталин обладал в стране неограниченной властью. Формально же к 1953 он являлся лишь главой исполнительной власти страны (Председатель Совета Министров). Именно поэтому сменивший его на этом посту Георгий Маленков, являвшийся негласным преемником Сталина, стал новым лидером и главой государства. Маленков вплоть до 1955 возглавлял Совет Министров, однако начиная с избрания на вновь созданную должность Первого секретаря ЦК КПСС в сентябре 1953 постепенно набирает политический вес Никита Хрущёв, который как считается сыграл ведущую роль в устранении одного из основных конкурентов в борьбе за власть после смерти Сталина, Лаврентия Берия. В 1955 году Хрущев смещает Маленкова с поста Председателя Совета Министров СССР и власть окончательно переходит в его руки. С 1958 года и вплоть до отставки он совмещает должность Председателя Совмина и главы партии.
+
+<P>В последующем в СССР пост Председателя Совета Министров не воспринимался как главный государственный пост. Юридически (по конституции СССР) руководителями государства были лица, назначаемые на должность Председателя Президиума Верховного Совета СССР (позже — Председателя Верховного Совета СССР). С 1988 этот пост занял Михаил Горбачёв, что позволяло ему, являясь фактическим главой государства, быть руководителем и партии, и государственной власти. Исполнительную власть тогда возглавлял, занимая пост Председателя Совета Министров, Николай Рыжков. С марта 1990 Горбачёв совмещал посты Генерального секретаря ЦК КПСС и Президента СССР. Пост Президента сменил пост Председателя Верховного Совета в качестве главы государства, оставив второму лишь функции руководителя законодательной власти страны, но не руководителя самого государства. Тогда же была отменена статья 6 Конституции СССР и в результате КПСС лишилась монополии на власть, но при этом оставалась правящей партией до событий 19-21 августа 1991 года в Москве.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9_%D0%A1%D0%A1%D0%A1%D0%A0" class = "standardb_green" target="_blank">Wikipedia Список руководителей СССР</a> - <b>Список руководителей СССР</b> на Wikipedia.
+			</td>
+			</tr>   
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%A1%D0%BE%D0%B2%D0%BE%D0%BA" class = "standardb_green" target="_blank">Луркоморье Совок</a> - <b>Совок</b> на Луркоморье.
+			</td>
+			</tr>   
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="lenin">8 ноября 1917 — 21 января 1924 - Владимир Ильич Ленин</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/lenin.jpg" alt="Владимир Ильич Ленин" title="Владимир Ильич Ленин" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>8 ноября 1917 — 21 января 1924</b> - Председатель Совета Народных Комиссаров РСФСР и СССР.
+
+<br><br>
+
+<P><b>Владимир Ильич Ульянов</b> (псевдоним <b>Ленин</b>; 10 (22) апреля 1870, Симбирск — 21 января 1924, усадьба Горки, Московская губерния) — российский революционер, советский политический и государственный деятель, создатель Российской социал-демократической рабочей партии (большевиков), один из главных организаторов и руководителей Октябрьской революции 1917 года в России, первый председатель Совета Народных Комиссаров (правительства) РСФСР, создатель первого в мировой истории социалистического государства.
+
+<P>Марксист, публицист, основоположник марксизма-ленинизма, идеолог и создатель Третьего (Коммунистического) интернационала, основатель СССР, первый председатель СНК СССР. Сфера основных политико-публицистических работ — материалистическая философия, теория марксизма, критика капитализма и его высшей фазы: империализма, теория и практика осуществления социалистической революции, построения социализма и коммунизма, политэкономия социализма.
+
+<P>Мнения и оценки исторической роли Владимира Ульянова (Ленина) отличаются крайней полярностью. Вне зависимости от положительной или отрицательной оценки деятельности Ленина, даже многие некоммунистические исследователи считают его наиболее значительным революционным государственным деятелем в мировой истории. Журнал Time включил Ленина в сотню выдающихся людей 20-го века в категории «Лидеры и революционеры». В. Лавров утверждает, что произведения В. И. Ленина занимают первое место в мире среди переводной литературы.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%BB%D1%8C%D0%B8%D1%87" class = "standardb_green" target="_blank">Wikipedia Ленин, Владимир Ильич</a> - <b>Владимир Ильич Ленин</b> на Wikipedia.
+			</td>
+			</tr>   
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD" class = "standardb_green" target="_blank">Луркоморье Ленин</a> - <b>Ленин</b> на Луркоморье.
+			</td>
+			</tr>   
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+		
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="stalin">21 января 1924 — 5 марта 1953 - Иосиф Виссарионович Сталин</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/stalin.jpg" alt="Иосиф Виссарионович Сталин" title="Иосиф Виссарионович Сталин" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>21 января 1924 — 5 марта 1953</b> - Генеральный секретарь Центрального Комитета Российской Коммунистической партии (большевиков) (с 1925 г. — Всесоюзной Коммунистической партии (большевиков), с 1952 г. — Коммунистической партии Советского Союза) (с 3 апреля 1922 г. до 5 марта 1953 г.), Председатель Совета Министров СССР (с 6 мая 1941 г. по 5 марта 1953 г.).
+
+<br><br>
+
+<P><b>Иосиф Виссарионович Сталин</b> (настоящая фамилия — <b>Джугашвили</b>; 6 [18] декабря 1878 (по официальной версии 9 (21) декабря 1879), Гори, Тифлисская губерния, Российская империя — 5 марта 1953, Волынское, Кунцевский район, Московская область, РСФСР, СССР) — российский революционер, советский политический, государственный, военный и партийный деятель, генералиссимус. С конца 1920-х — начала 1930-х годов до своей смерти в 1953 году Сталин единолично руководил Советским государством.
+
+<P>Одержав верх во внутрипартийной борьбе за власть, завершившейся к концу 1920-х годов разгромом оппозиционных течений, Сталин взял курс на форсированную индустриализацию и сплошную коллективизацию сельского хозяйства для осуществления перехода в кратчайшие сроки от традиционного аграрного общества к индустриальному путём всемерной мобилизации внутренних ресурсов, сверхцентрализации экономической жизни и формирования в СССР целостной командно-административной системы.
+
+<P>В конце 1930-х годов в обстановке обострения внешнеполитической ситуации в Европе Сталин пошёл на сближение с нацистской Германией, достигнув договорённости о разграничении сфер интересов, на основании которой после начала Второй мировой войны СССР присоединил к себе территории Западной Украины и Западной Белоруссии, Прибалтики, Бессарабии и Северной Буковины, а также осуществил нападение на Финляндию.
+
+<P>Подвергшись в июне 1941 года нападению Германии, СССР под руководством Сталина как верховного главнокомандующего Вооружёнными силами понёс тяжёлые материальные и человеческие потери, присоединился к антигитлеровской коалиции и внёс решающий вклад в победу над нацизмом, что способствовало расширению сферы влияния СССР в Восточной Европе и Восточной Азии, формированию мировой социалистической системы, что, в свою очередь, привело к холодной войне и расколу мира на две противоборствующие системы. В послевоенные годы Сталин способствовал созданию в стране мощного военно-промышленного комплекса и превращению СССР в одну из двух мировых сверхдержав, обладающую ядерным оружием и соучредителя ООН, являющуюся постоянным членом Совета безопасности ООН с правом вето.
+
+<P>Правление Сталина характеризовалось наличием автократического режима личной власти, господством авторитарно-бюрократических методов управления, чрезмерным усилением репрессивных функций государства, сращиванием партийных и государственных органов, жёстким контролем государства за всеми сторонами жизни общества, нарушением фундаментальных прав и свобод граждан, депортациями народов, массовой гибелью людей в результате голода 1932—1933 годов и репрессий.
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D0%BB%D0%B8%D0%BD,_%D0%98%D0%BE%D1%81%D0%B8%D1%84_%D0%92%D0%B8%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_green" target="_blank">Wikipedia Сталин, Иосиф ВиссарионовичСталин, Иосиф Виссарионович</a> - <b>Иосиф Виссарионович Сталин</b> на Wikipedia.
+			</td>
+			</tr>   
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%A1%D1%82%D0%B0%D0%BB%D0%B8%D0%BD" class = "standardb_green" target="_blank">Луркоморье Сталин</a> - <b>Сталин</b> на Луркоморье.
+			</td>
+			</tr>   
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="malenkov">5 марта 1953 — 8 февраля 1955 - Георгий Максимилианович Маленков</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/malenkov.jpg" alt="Георгий Максимилианович Маленков" title="Георгий Максимилианович Маленков" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>5 марта 1953 — 8 февраля 1955</b> - Председатель Совета Министров СССР.
+
+<br><br>
+
+<P><b>Георгий Максимилианович Маленков</b> (26 декабря 1901 [8 января 1902], Оренбург, Российская империя — 14 января 1988 года, Москва) — советский государственный и партийный деятель, соратник И. В. Сталина, Председатель Совета министров СССР (1953—1955 гг.). Участник антипартийной группы.
+
+<P>Член ЦК КПСС (1939—1957 гг.), кандидат в члены Политбюро ЦК ВКП(б) (1941—1946 гг.), член Политбюро (Президиума) ЦК (1946—1957 гг.), член Оргбюро ЦК ВКП(б) (1939—1952 гг.), Секретарь ЦК КПСС (1939—1946 гг. и 1948—1953 гг.), депутат Верховного Совета СССР (1938—1958 гг.). Курировал ряд важнейших отраслей оборонной промышленности, в том числе создание водородной бомбы и первой АЭС в мире. Фактический руководитель Советского государства в марте — сентябре 1953 года.
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE%D0%B2,_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_green" target="_blank">Wikipedia Маленков, Георгий Максимилианович</a> - <b>Георгий Максимилианович Маленков</b> на Wikipedia.
+			</td>
+			</tr>   
+
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="hrushev">7 сентября 1953 — 14 октября 1964 - Никита Сергеевич Хрущёв</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/hrushev.jpg" alt="Никита Сергеевич Хрущёв" title="Никита Сергеевич Хрущёв" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>7 сентября 1953 — 14 октября 1964</b> - Первый Секретарь Центрального Комитета Коммунистической партии Советского Союза.
+<P><b>27 марта 1958 — 15 октября 1964</b> - Председатель Совета Министров СССР.
+
+<br><br>
+
+<P><b>Никита Сергеевич Хрущёв</b> (3 [15] апреля 1894, Калиновка, Дмитриевский уезд, Курская губерния, Российская империя — 11 сентября 1971, Москва, СССР) — Первый секретарь ЦК КПСС с 1953 по 1964 годы, Председатель Совета Министров СССР с 1958 по 1964 годы. Герой Советского Союза, трижды Герой Социалистического Труда.
+
+<P>Период правления Хрущёва часто называют «оттепелью»: были выпущены на свободу многие политические заключённые, по сравнению с периодом правления Сталина активность репрессий значительно снизилась. Уменьшилось влияние идеологической цензуры. Советский Союз достиг больших успехов в покорении космоса. Было развёрнуто активное жилищное строительство. Вместе с тем с именем Хрущёва связаны и организация самой жёсткой в послевоенный период антирелигиозной кампании, и значительное усиление карательной психиатрии, и расстрел рабочих в Новочеркасске, и неудачи в сельском хозяйстве и внешней политике. На период его правления приходится наивысшее напряжение холодной войны с США. Его политика десталинизации привела к разрыву с режимами Мао Цзэдуна в Китае и Энвера Ходжи в Албании, однако Китайской Народной Республике в то же время было оказано существенное содействие в разработке собственного ядерного оружия, также ей были частично переданы имевшиеся в СССР технологии его производства.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D1%83%D1%89%D1%91%D0%B2,_%D0%9D%D0%B8%D0%BA%D0%B8%D1%82%D0%B0_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87" class = "standardb_green" target="_blank">Wikipedia Хрущёв, Никита Сергеевич</a> - <b>Никита Сергеевич Хрущёв</b> на Wikipedia.
+			</td>
+			</tr>   
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%A5%D1%80%D1%83%D1%89%D1%91%D0%B2" class = "standardb_green" target="_blank">Луркоморье Никита Хрущёв</a> - <b>Никита Хрущёв</b> на Луркоморье.
+			</td>
+			</tr>   
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+		
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="brezhnev">14 октября 1964 — 10 ноября 1982 - Леонид Ильич Брежнев</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/brezhnev.jpg" alt="Леонид Ильич Брежнев" title="Леонид Ильич Брежнев" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>14 октября 1964 — 8 апреля 1966</b> - Первый секретарь Центрального комитета Коммунистической партии Советского Союза.
+<P><b>8 апреля 1966 — 10 ноября 1982</b> - Генеральный секретарь Центрального комитета Коммунистической партии Советского Союза.
+
+<br><br>
+
+<P><b>Леонид Ильич Брежнев</b> (6 [19] декабря 1906, по другим данным, 19 декабря 1906 [1 января 1907], Каменское, Екатеринославская губерния — 10 ноября 1982, Заречье, Московская область) — советский государственный и партийный деятель, занимавший высшие руководящие посты в СССР в течение 18 лет: с 1964 года и до своей смерти в 1982 году. Ветеран Великой Отечественной войны. Участник Парада Победы на Красной площади 24 июня 1945 года (комиссар сводного полка 4-го Украинского фронта).
+
+<P>Председатель Президиума Верховного Совета СССР в 1960—1964 и 1977—1982 годах. Первый секретарь ЦК КПСС в 1964—1966 годах. Генеральный секретарь ЦК КПСС с 1966 по 1982 год.
+
+<P>Депутат Совета Союза Верховного Совета СССР от Днепропетровской области (3 созыв, 1950—1954), Казахской ССР (4 созыв, 1954—1958), Куйбышевской области (5 созыв, 1958—1962) и Москвы (6—10 созывы, 1962—1982). В 1974—1977 годах — член Президиума Верховного Совета СССР. Маршал Советского Союза (1976).
+
+<P>Герой Социалистического Труда (1961) и четырежды Герой Советского Союза (1966, 1976, 1978, 1981). Лауреат Международной Ленинской премии «За укрепление мира между народами» (1973) и Ленинской премии по литературе (1979).
+
+<P>В 1978 году награждён орденом «Победа». (В 1989 году это награждение отменено указом Председателя Верховного Совета СССР М. С. Горбачёва).
+
+<P>Всего Брежнев имел 117 советских и иностранных государственных наград. По результатам опроса общественного мнения в 2013 году Леонид Ильич Брежнев признан лучшим главой государства в России/СССР в XX веке.
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D0%B6%D0%BD%D0%B5%D0%B2,_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%98%D0%BB%D1%8C%D0%B8%D1%87" class = "standardb_green" target="_blank">Wikipedia Брежнев, Леонид Ильич</a> - <b>Леонид Ильич Брежнев</b> на Wikipedia.
+			</td>
+			</tr>   
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%91%D1%80%D0%B5%D0%B6%D0%BD%D0%B5%D0%B2" class = "standardb_green" target="_blank">Луркоморье Брежнев</a> - <b>Брежнев</b> на Луркоморье.
+			</td>
+			</tr>   
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+
+		
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="andropov">12 ноября 1982 — 9 февраля 1984 - Юрий Владимирович Андропов</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/andropov.jpg" alt="Юрий Владимирович Андропов" title="Юрий Владимирович Андропов" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>12 ноября 1982 — 9 февраля 1984</b> - Генеральный секретарь Центрального комитета Коммунистической партии Советского Союза.
+
+<br><br>
+
+
+<P><b>Юрий Владимирович Андропов</b> (2 (15) июня 1914, станция Нагутская, Ставропольская губерния — 9 февраля 1984, Москва) — советский государственный и политический деятель, фактический руководитель СССР в 1982—1984 годах. Генеральный секретарь ЦК КПСС (1982—1984), Депутат Верховного Совета СССР 3-го и 6-10-го созывов: Совета Национальностей от Карело-Финской ССР (3-й созыв, 1950—1954), Совета Союза от Латвийской ССР (6-й созыв, 1962—1966), Эстонской ССР (7 созыв, 1966—1970) и Московской области (8-10-й созыв, 1970—1984). В Верховный Совет 9-го созыва избран от Каширского избирательного округа № 29 Московской области. Председатель Президиума Верховного Совета СССР (1983—1984). Председатель Комитета государственной безопасности СССР (1967—1982).
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%BE%D0%B2,_%D0%AE%D1%80%D0%B8%D0%B9_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_green" target="_blank">Wikipedia Андропов, Юрий Владимирович</a> - <b>Юрий Владимирович Андропов</b> на Wikipedia.
+			</td>
+			</tr>   
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%90%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%BE%D0%B2#.D0.90.D0.BD.D0.B4.D1.80.D0.BE.D0.BF.D0.BE.D0.B2" class = "standardb_green" target="_blank">Луркоморье Андропов</a> - <b>Андропов</b> на Луркоморье.
+			</td>
+			</tr>   
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="chernenko">13 февраля 1984 — 10 марта 1985 - Константин Устинович Черненко</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/chernenko.jpg" alt="Константин Устинович Черненко" title="Константин Устинович Черненко" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>13 февраля 1984 — 10 марта 1985</b> - Генеральный секретарь Центрального комитета Коммунистической партии Советского Союза.
+
+<br><br>
+
+
+<P><b>Константин Устинович Черненко</b> (24 сентября 1911 года, с. Большая Тесь, Енисейская губерния — 10 марта 1985 года, Москва) — советский партийный и государственный деятель. Генеральный секретарь ЦК КПСС с 13 февраля 1984 года, Председатель Президиума Верховного Совета СССР с 11 апреля 1984 года (депутат с 1966 года). Член ВКП(б) с 1931 года, ЦК КПСС — с 1971 года (кандидат с 1966), член Политбюро ЦК КПСС с 1978 года (кандидат с 1977).
+
+
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE,_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%A3%D1%81%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87" class = "standardb_green" target="_blank">Wikipedia Черненко, Константин Устинович</a> - <b>Константин Устинович Черненко</b> на Wikipedia.
+			</td>
+			</tr>   
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%A7%D0%B5%D1%80%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE#.D0.A7.D0.B5.D1.80.D0.BD.D0.B5.D0.BD.D0.BA.D0.BE" class = "standardb_green" target="_blank">Луркоморье Черненко</a> - <b>Черненко</b> на Луркоморье.
+			</td>
+			</tr>   
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="gorbachev">11 марта 1985 — 25 декабря 1991 - Михаил Сергеевич Горбачёв</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/gorbachev.jpg" alt="Михаил Сергеевич Горбачёв" title="Михаил Сергеевич Горбачёв" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>11 марта 1985 — 24 августа 1991</b> - Генеральный секретарь Центрального комитета Коммунистической Партии Советского Союза.
+<P><b>15 марта 1990 — 25 декабря 1991</b> - Президент СССР.
+
+<br><br>
+
+
+<P><b>Михаил Сергеевич Горбачёв</b> (род. 2 марта 1931, село Привольное, Северо-Кавказский край, РСФСР) — советский и российский государственный, политический и общественный деятель.
+
+<P>Последний генеральный секретарь ЦК КПСС. Последний Председатель Президиума Верховного Совета СССР, затем первый председатель Верховного Совета СССР. Единственный Президент СССР.
+
+<P>Основатель Горбачёв-Фонда. С 1993 года соучредитель ЗАО «Новая Ежедневная Газета» (см. «Новая газета»). Член редакционного совета с 1993 года.
+
+<P>Имеет ряд наград и почётных званий, наиболее известная из которых — Нобелевская премия мира 1990 года. Входит в список 100 самых изученных личностей в истории.
+
+<P>В период деятельности Горбачёва в должности главы государства и руководителя КПСС в Советском Союзе произошли серьёзнейшие изменения, повлиявшие на весь мир, которые стали следствием следующих событий:
+
+<P>&nbsp;&bull; Масштабная попытка реформирования советской системы («Перестройка»). Введение в СССР политики гласности, свободы слова и печати, демократических выборов, реформирования социалистической экономики в направлении рыночной модели хозяйствования (Концепция экономических реформ 1987 г. предполагала вхождение в рыночные отношения в отдалённом будущем).
+<P>&nbsp;&bull; Окончание Холодной войны.
+<P>&nbsp;&bull; Вывод советских войск из Афганистана (1989).
+<P>&nbsp;&bull; Отказ от государственного статуса коммунистической идеологии и преследования инакомыслящих.
+<P>&nbsp;&bull; Распад СССР и Варшавского блока в результате перехода СССР и социалистических стран Восточной Европы к рыночной экономике и демократии.
+
+
+
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%B1%D0%B0%D1%87%D1%91%D0%B2,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87" class = "standardb_green" target="_blank">Wikipedia Горбачёв, Михаил Сергеевич</a> - <b>Михаил Сергеевич Горбачёв</b> на Wikipedia.
+			</td>
+			</tr>   
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%93%D0%BE%D1%80%D0%B1%D0%B0%D1%87%D1%91%D0%B2" class = "standardb_green" target="_blank">Луркоморье Михаил Горбачёв</a> - <b>Михаил Горбачёв</b> на Луркоморье.
+			</td>
+			</tr>   
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+

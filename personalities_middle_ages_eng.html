@@ -1,0 +1,1040 @@
+﻿
+
+
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/middle_ages.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('personalities_middle_ages_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='personalities_middle_ages_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('personalities_middle_ages_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='personalities_middle_ages_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_green">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+		<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"  
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>		
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_selected">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_ancient_rome_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_ancient_rome_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#9679; Ancient Rome</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_middle_ages_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_middle_ages_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Middle Ages</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_ussr_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_ussr_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#9679; USSR</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Personalities &blacktriangleright; Middle Ages</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">Middle Ages</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green">What is this?</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/middle_ages.jpg" alt="Middle Ages" title="Middle Ages" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P>In the history of Europe, the <b>Middle Ages</b> or <b>medieval period</b> lasted from the 5th to the 15th century. It began with the fall of the Western Roman Empire and merged into the Renaissance and the Age of Discovery. The Middle Ages is the middle period of the three traditional divisions of Western history: classical antiquity, the medieval period, and the modern period. The medieval period is itself subdivided into the Early, High, and Late Middle Ages.
+
+<P>Population decline, counterurbanisation, invasion, and movement of peoples, which had begun in Late Antiquity, continued in the Early Middle Ages. The large-scale movements of the Migration Period, including various Germanic peoples, formed new kingdoms in what remained of the Western Roman Empire. In the seventh century, North Africa and the Middle East—once part of the Byzantine Empire—came under the rule of the Umayyad Caliphate, an Islamic empire, after conquest by Muhammad's successors. Although there were substantial changes in society and political structures, the break with classical antiquity was not complete. The still-sizeable Byzantine Empire survived in the east and remained a major power. The empire's law code, the Corpus Juris Civilis or "Code of Justinian", was rediscovered in Northern Italy in 1070 and became widely admired later in the Middle Ages. In the West, most kingdoms incorporated the few extant Roman institutions. Monasteries were founded as campaigns to Christianise pagan Europe continued. The Franks, under the Carolingian dynasty, briefly established the Carolingian Empire during the later 8th and early 9th century. It covered much of Western Europe but later succumbed to the pressures of internal civil wars combined with external invasions—Vikings from the north, Hungarians from the east, and Saracens from the south.
+
+<P>During the High Middle Ages, which began after 1000, the population of Europe increased greatly as technological and agricultural innovations allowed trade to flourish and the Medieval Warm Period climate change allowed crop yields to increase. Manorialism, the organisation of peasants into villages that owed rent and labour services to the nobles, and feudalism, the political structure whereby knights and lower-status nobles owed military service to their overlords in return for the right to rent from lands and manors, were two of the ways society was organised in the High Middle Ages. The Crusades, first preached in 1095, were military attempts by Western European Christians to regain control of the Holy Land from Muslims. Kings became the heads of centralised nation states, reducing crime and violence but making the ideal of a unified Christendom more distant. Intellectual life was marked by scholasticism, a philosophy that emphasised joining faith to reason, and by the founding of universities. The theology of Thomas Aquinas, the paintings of Giotto, the poetry of Dante and Chaucer, the travels of Marco Polo, and the Gothic architecture of cathedrals such as Chartres are among the outstanding achievements toward the end of this period and into the Late Middle Ages.
+
+<P>The Late Middle Ages was marked by difficulties and calamities including famine, plague, and war, which significantly diminished the population of Europe; between 1347 and 1350, the Black Death killed about a third of Europeans. Controversy, heresy, and the Western Schism within the Catholic Church paralleled the interstate conflict, civil strife, and peasant revolts that occurred in the kingdoms. Cultural and technological developments transformed European society, concluding the Late Middle Ages and beginning the early modern period.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Middle_Ages" class = "standardb_green" target="_blank">Wikipedia Middle Ages</a> - <b>Middle Ages</b> on Wikipedia.
+			</td>
+			</tr>	
+
+
+
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				09th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+	
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="nostradamus">Nostradamus</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/nostradamus.jpg" alt="Nostradamus" title="Nostradamus" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Michel de Nostredame</b> (depending on the source, 14 or 21 December 1503 – 2 July 1566), usually Latinised as <b>Nostradamus</b>, was a French apothecary and reputed seer who published collections of prophecies that have since become widely famous. He is best known for his book Les Propheties, the first edition of which appeared in 1555. Since the publication of this book, which has rarely been out of print since his death, Nostradamus has attracted a following that, along with much of the popular press, credits him with predicting many major world events. Most academic sources maintain that the associations made between world events and Nostradamus's quatrains are largely the result of misinterpretations or mistranslations (sometimes deliberate) or else are so tenuous as to render them useless as evidence of any genuine predictive power.
+
+<br><br>
+<P><b>Origins of The Prophecies</b>
+
+<P>Nostradamus claimed to base his published predictions on judicial astrology—the astrological 'judgment', or assessment, of the 'quality' (and thus potential) of events such as births, weddings, coronations etc.—but was heavily criticised by professional astrologers of the day such as Laurens Videl for incompetence and for assuming that "comparative horoscopy" (the comparison of future planetary configurations with those accompanying known past events) could actually predict what would happen in the future.
+
+<P>Research suggests that much of his prophetic work paraphrases collections of ancient end-of-the-world prophecies (mainly Bible-based), supplemented with references to historical events and anthologies of omen reports, and then projects those into the future in part with the aid of comparative horoscopy. Hence the many predictions involving ancient figures such as Sulla, Gaius Marius, Nero, and others, as well as his descriptions of "battles in the clouds" and "frogs falling from the sky." Astrology itself is mentioned only twice in Nostradamus's Preface and 41 times in the Centuries themselves, but more frequently in his dedicatory Letter to King Henry II. In the last quatrain of his sixth century he specifically attacks astrologers.
+
+<P>His historical sources include easily identifiable passages from Livy, Suetonius, Plutarch and other classical historians, as well as from medieval chroniclers such as Geoffrey of Villehardouin and Jean Froissart. Many of his astrological references are taken almost word for word from Richard Roussat's Livre de l'estat et mutations des temps of 1549–50.
+
+<P>One of his major prophetic sources was evidently the Mirabilis Liber of 1522, which contained a range of prophecies by Pseudo-Methodius, the Tiburtine Sibyl, Joachim of Fiore, Savonarola and others (his Preface contains 24 biblical quotations, all but two in the order used by Savonarola). This book had enjoyed considerable success in the 1520s, when it went through half a dozen editions, but did not sustain its influence, perhaps owing to its mostly Latin text, Gothic script and many difficult abbreviations. Nostradamus was one of the first to re-paraphrase these prophecies in French, which may explain why they are credited to him. It should be noted that modern views of plagiarism did not apply in the 16th century; authors frequently copied and paraphrased passages without acknowledgement, especially from the classics. The latest research suggests that he may in fact have used bibliomancy for this—randomly selecting a book of history or prophecy and taking his cue from whatever page it happened to fall open at.
+
+<P>Further material was gleaned from the De honesta disciplina of 1504 by Petrus Crinitus, which included extracts from Michael Psellos's De daemonibus, and the De Mysteriis Aegyptiorum (Concerning the mysteries of Egypt...), a book on Chaldean and Assyrian magic by Iamblichus, a 4th-century Neo-Platonist. Latin versions of both had recently been published in Lyon, and extracts from both are paraphrased (in the second case almost literally) in his first two verses, the first of which is appended to this article. While it is true that Nostradamus claimed in 1555 to have burned all of the occult works in his library, no one can say exactly what books were destroyed in this fire.
+
+<P>Only in the 17th century did people start to notice his reliance on earlier, mainly classical sources. This may help explain the fact that, during the same period, The Prophecies reportedly came into use in France as a classroom reader.
+
+<P>Nostradamus's reliance on historical precedent is reflected in the fact that he explicitly rejected the label "prophet" (i.e. a person having prophetic powers of his own) on several occasions:
+
+<P>&nbsp;&bull; Although, my son, I have used the word prophet, I would not attribute to myself a title of such lofty sublimity — Preface to C&eacute;sar, 1555.
+
+<P>&nbsp;&bull; Not that I would attribute to myself either the name or the role of a prophet — Preface to C&eacute;sar, 1555
+
+<P>&nbsp;&bull; [S]ome of [the prophets] predicted great and marvelous things to come: [though] for me, I in no way attribute to myself such a title here.—Letter to King Henry II, 1558
+
+<P>&nbsp;&bull; Not that I am foolish enough to claim to be a prophet.—Open letter to Privy Councillor (later Chancellor) Birague, 15 June 1566
+
+<br><br>
+<P>His rejection of the title prophet is consistent with the fact that he entitled his book Les Propheties de M. Michel Nostradamus (a title that, in French, as easily means "The Prophecies, by M. Michel Nostradamus"—which is what they were—as "The Prophecies of M. Michel Nostradamus", which, except in a few cases, they were not, other than in the manner of their editing, expression and reapplication to the future).
+
+
+<P>Given this reliance on literary sources, it is doubtful whether Nostradamus used any particular methods for entering a trance state, other than contemplation, meditation and incubation. His sole description of this process is contained in letter 41' of his collected Latin correspondence. The popular legend that he attempted the ancient methods of flame gazing, water gazing or both simultaneously is based on a naive reading of his first two verses, which merely liken his efforts to those of the Delphic and Branchidic oracles. The first of these is reproduced at the bottom of this article and the second can be seen by visiting the relevant facsimile site (see External Links). In his dedication to King Henri II, Nostradamus describes "emptying my soul, mind and heart of all care, worry and unease through mental calm and tranquility", but his frequent references to the "bronze tripod" of the Delphic rite are usually preceded by the words "as though" (compare, once again, External References to the original texts).
+
+
+<br><br>
+<P><b>Interpretations</b>
+
+<P>Most of the quatrains deal with disasters, such as plagues, earthquakes, wars, floods, invasions, murders, droughts, and battles—all undated and based on foreshadowings by the Mirabilis Liber. Some quatrains cover these disasters in overall terms; others concern a single person or small group of people. Some cover a single town, others several towns in several countries. A major, underlying theme is an impending invasion of Europe by Muslim forces from farther east and south headed by the expected Antichrist, directly reflecting the then-current Ottoman invasions and the earlier Saracen equivalents, as well as the prior expectations of the Mirabilis Liber. All of this is presented in the context  of the supposedly imminent end of the world—even though this is not in fact mentioned—a conviction that sparked numerous collections of end-time prophecies at the time, including an unpublished collection by Christopher Columbus.
+
+<P>Nostradamus has been credited, for the most part in hindsight, with predicting numerous events in world history, from the Great Fire of London, and the rise of Napoleon and Adolf Hitler, to the September 11 attacks on the World Trade Center. In 1992 one commentator who claimed to be able to contact Nostradamus under hypnosis even had him 'interpreting' his own verse X.6 (a prediction specifically about floods in southern France around the city of N&icirc;mes and people taking refuge in its collosse, or Colosseum, a Roman amphitheatre now known as the Ar&egrave;nes) as a prediction of an undated attack on the Pentagon, despite the historical seer's clear statement in his dedicatory letter to King Henri II that his prophecies were about Europe, North Africa and part of Asia Minor. Skeptics such as James Randi suggest that his reputation as a prophet is largely manufactured by modern-day supporters who fit his words to events that have either already occurred or are so imminent as to be inevitable, a process sometimes known as "retroactive clairvoyance" (postdiction). Thus, no Nostradamus quatrain is known to have been interpreted as predicting a specific event before it occurred, other than in vague, general terms that could equally apply to any number of other events. This even applies to quatrains that contain specific dates, such as III.77, which predicts "in 1727, in October, the king of Persia [shall be] captured by those of Egypt"—a prophecy that has, as ever, been interpreted retrospectively in the light of later events, in this case as though it presaged the known peace treaty between the Ottoman Empire and Persia of that year. Similarly, Nostradamus's notorious '1999' prophecy at X.72 (see Nostradamus in popular culture) describes no event that commentators have succeeded in identifying either before or since, other than by dint of twisting the words to fit whichever of the many contradictory happenings they are keen to claim as 'hits'. Moreover, no quatrain suggests, as is often claimed by books and films on the alleged Mayan Prophecy, that the world would end in December 2012. In his preface to the Prophecies, Nostradamus himself stated that his prophecies extend 'from now to the year 3797'—an extraordinary date which, given that the preface was written in 1555, may have more than a little to do with the fact that 2242 (3797 - 1555) had recently been proposed by his major astrological source Richard Roussat as a possible date for the end of the world.
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Nostradamus" class = "standardb_green" target="_blank">Wikipedia Nostradamus</a> - <b>Nostradamus</b> on Wikipedia.
+			</td>
+			</tr>	
+
+
+
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				09th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

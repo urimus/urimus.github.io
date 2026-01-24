@@ -1,0 +1,1151 @@
+﻿
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/satanism_theistic.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_theistic_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_theistic_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_theistic_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_theistic_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_green">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+		<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"  
+		class="menu_selected">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_19_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_atheistic_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_atheistic_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10008; Atheistic</div>
+	</td>
+	</tr>	
+
+
+	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_19_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_theistic_eng.html');
+
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_theistic_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#10004; Theistic</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_19_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_simvoly_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_simvoly_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#9679; Symbolics</div>
+	</td>
+	</tr>		
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Satanism &blacktriangleright; Theistic</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+
+		
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">Theistic Satanism</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green">What is this?</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/theistic_satanism.jpg" alt="Theistic Satanism" title="Theistic Satanism" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+					
+					<P><b>Satanism</b> is a group of ideological and philosophical beliefs based on the character of Satan. Although the public practice of Satanism began with the founding of the Church of Satan in 1966, historical precedents exist: a group called the Ophite Cultus Satanas was founded in Ohio by Herbert Arthur Sloane in 1948.
+
+					<P>Eliphas Levi's Sabbatic Goat (known as The Goat of Mendes or Baphomet) has become one of the most common symbols of Satanism.
+
+					<P>Satanist groups that appeared after the 1960s are widely diverse, but two major trends are theistic Satanism and atheistic Satanism. Theistic Satanists venerate Satan as a supernatural deity, viewing him not as omnipotent but rather as a patriarch. In contrast, atheistic Satanists regard Satan as merely a symbol of certain human traits.
+
+	`				<P>There are signs that Satanistic beliefs have become more socially tolerated. Satanism is now allowed in the Royal Navy of the British Armed Forces, despite opposition from Christians, and in 2005, the Supreme Court of the United States debated over protecting the religious rights of prison inmates after a lawsuit challenging the issue was filed to them.
+
+					<P>Contemporary Satanism is mainly an American phenomenon, the ideas spreading with the effects of globalization and the Internet. The Internet promotes awareness of other Satanists, and is also the main battleground for the definitions of Satanism today. Satanism started to reach Eastern Europe in the 1990s, in time with the fall of the Soviet Union, and most noticeably in Poland and Lithuania, predominantly Roman Catholic countries. It was estimated that there were 50,000 Satanists in 1990. There may now be as many as 100,000 Satanists in the world.
+
+						
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Satanism" class = "standardb_green" target="_blank">Wikipedia Satanism</a> - <b>Satanism</b> on Wikipedia.
+			</td>
+			</tr>			
+				
+	
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Pentagram" class = "standardb_green" target="_blank">Wikipedia Pentagram</a> - <b>Pentagram</b> on Wikipedia.
+			</td>
+			</tr>	
+
+		
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					07th of May, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+	
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="church_of_azazel">The Church of Azazel</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/the_church_of_azazel.jpg" alt="The Church of Azazel" title="The Church of Azazel" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+					
+<P><b>The Church of Azazel</b> is more a vision than a reality at this point. So far the founder, Diane Vera, has been more successful at building groups for high-quality, intellectually-stimulating discussion amongst Satanists in general (such as NYC Satanists, Luciferians, Dark Pagans, and LHP Occultists, which holds real-life monthly meetings here in NYC) or for theistic Satanists in general (such as the Yahoo groups she ran in late 2002 through early 2007) than at building a group devoted to her own particular form of Satanism. But Diane still would like to build a group devoted to her own particular approach to Satanism, once she finds enough appropriate people who are willing to help out with building it.
+
+<P>As of January 2013, we are now making a second serious try at building a local Church of Azazel proto-congregation in New York City.
+
+<P>The first incarnation of the Church of Azazel was founded in February 2004 as an online-based group. From August 2004 until April 2005 it functioned as an "Internet coven," meaning we all performed individual rituals at agreed-upon common times, on agreed-upon common themes, and discussed the rituals online before and afterward.
+
+<P>After 2005, the Church of Azazel was pretty much dormant, until April 2009. During most of 2005 to 2008, Diane Vera, the founder, focussed more on other Satanism-related projects, choosing to wait with any serious effort to build the Church of Azazel until enough other people showed a strong enough interest. In 2005 to 2006, she created a new website Against Satanic Panics, revamped the Black Goat Cabal website, and added more pages to her main Theistic Satanism site including a collection of pages Against neo-Nazism among Satanists. She also added more pages to the Church of Azazel site, fleshing out its paradigm (see Our beliefs and principles).
+
+<P>As of April 2009, a few people began to take an interest in building a local congregation here in New York City. However, too many of those people lived outside the city, at the very outer edges of the NYC metropolitan area, and had difficulty attending meetings very often. We concluded that the local Church of Azazel congregation is not likely to get off the ground until at least one of the following three things happens: (1) NYC Satanists, Luciferians, Dark Pagans, and LHP Occultists grows much bigger than it is now; (2) the more intelligent forms of theistic Satanism, including but not limited to the Church of Azazel, become significantly more visible on the Internet than they are now; and/or (3) we make substantial progress building separate groups devoted to each of our five Rising Gods of the modern West (Lilith, Prometheus, Ishtar, Pan, and Lucifer-of-Sophia). In the meantime, the NYC proto-congregation has continued to hold open discussion meetings four or five times per year, for anyone interested enough to show up.
+
+<P>In June/July 2011, there was a brief attempted revival of the Internet congregation, this time centered around Facebook, but with a non-Facebook public Internet participation requirement as well.
+
+<P>On a more successful note, a local NYC group for devotees of Lilith (one of the Church of Azazel's five Rising Gods) was founded by Diane and several other theistic Satanists in early 2010 and began holding regular rituals in early 2012. This group is not a Satanist group, but it welcomes people of all Pagan, polytheist, and occult paths, including Satanists, who revere Lilith. During 2012, eight group rituals were led by a very talented Pagan priestess of Lilith. In 2013, it began holding rituals representing a variety of different paths.
+
+<P>In September 2012, a local NYC group for devotees of Prometheus (another of the Rising Gods) was launched. It too is not a Satanist group, but it welcomes people of all Pagan, polytheist, and occult paths, including Satanists, who revere Prometheus and who have an interest (professional or amateur) in science and technology.
+
+<P>The Church of Azazel is now envisioned as a gathering of Satanists who also have a strong personal affinity for at least one of the Rising Gods. As we now envision it, all but the most casual participants in a Church of Azazel congregation would also participate regularly in at least one separate (non-Satanist but Satanist-friendly) polytheistic/occult group devoted to a particular Rising God. (See the ritual Affirmation of our common purpose.) Thus, it is necessary to continue launching separate groups devoted to each of the five Rising Gods before the Church of Azazel itself can fully exist in the form now envisioned.
+
+<P>In the meantime, the NYC proto-congregation still holds open discussion meetings at least a few times per year, for people interested in the Church of Azazel paradigm.				
+					
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://theisticsatanism.com/CoAz/index.html" class = "standardb_green" target="_blank">The Church of Azazel</a> in Internet.
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Azazel" class = "standardb_green" target="_blank">Wikipedia Azazel</a> - <b>Azazel</b> on Wikipedia.
+			</td>
+			</tr>		
+	
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					06th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="joy_of_satan_ministries">Joy of Satan Ministries</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/joy_of_satan_ministries.gif" alt="Joy of Satan Ministries" title="Joy of Satan Ministries" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+					
+<P>There are different sects of Satanism. <b>Joy of Satan Ministries</b> is Spiritual Satanism.
+
+<P>&nbsp;&bull; Satanism is not a "Christian invention."
+
+<P>&nbsp;&bull; Satanism predates Christianity and all other religions.
+
+<P>&nbsp;&bull; Satanism is not about spooks, goblins, vampires, Halloween monsters or other related entities.
+
+<P>&nbsp;&bull; Satanism is not about "evil."
+
+<P>&nbsp;&bull; Satanism is not a "reaction to Christianity."
+
+<P>&nbsp;&bull; Satanism is not about death.
+
+<P>&nbsp;&bull; True Satanism is about elevating and empowering humanity, which was our True Creator (Satan's) intention.
+
+<P>&nbsp;&bull; We know Satan/Lucifer as a real being.
+
+<P>&nbsp;&bull; We know Satan to be the True Father and Creator God of humanity.
+
+<P>&nbsp;&bull; We know "Yaweh/Jehova" of the bible to be a fictitious entity, and the people behind coercing this lie, to be the true deceivers of humanity and the masters of lies. This is evident in the many contradictions within the Judeo/Christian Bible, revealing this text to be the work of human beings who had occult knowledge and infused it with power to make it credible, and to incite fear in order to control.
+
+<P>&nbsp;&bull; We are law abiding.
+
+<P>&nbsp;&bull; We DO NOT advocate or participate in any blood or living sacrifice. This act is Judeo/Christian, as stated in their Bible - Deuteronomy 12:27:
+<P><i>"And thou shalt offer thy burnt offerings, the flesh and the blood, upon the altar of the LORD thy God: and the blood of thy sacrifices shall be poured out upon the altar of the LORD thy God, and thou shalt eat the flesh."</i>
+
+<P>&nbsp;&bull; We have found Satanism is the original religion of humanity. We have done our research. Satanism is based upon the ancient religions that predated Judaism and Christianity from hundreds to thousands of years.
+
+<P>&nbsp;&bull; Christianity was a reaction to the original Pagan religions, labeled as "Satanism" meaning "enemy/adversary" in Hebrew. If you read through the information contained within this website, we prove this.
+
+<P>&nbsp;&bull; Christianity was invented to remove spiritual and occult knowledge (the powers of the mind) from the populace and place this power in the hands of a "chosen" few to the detriment of all humanity. The powers of the mind and soul are very real. People who are unaware of or who do not believe in these powers are easy to control and manipulate by those who are skilled in using these energies.
+
+<P>&nbsp;&bull; The Original Gods [Demons] were unjustly labeled as monsters and branded as "evil" to keep humanity from spiritual knowledge. Because of this, the human race has drastically degenerated both spiritually and intellectually.
+
+<P>&nbsp;&bull; Spiritual Satanism strongly advocates all learning, knowledge, inquiry, and free thought.
+
+<P>&nbsp;&bull; Spiritual Satanism supports the separation of church and state. Satanists do not push Satanism or prosyletize.
+
+<P>&nbsp;&bull; Spiritual Satanists acknowledge science and believe everything of the occult/supernatural to have a rational scientific explanation. We believe humanity has been held back dangerously in this area due to the hoax of Judeo/Christianity and its relentless attacks upon science for centuries.
+
+<P>&nbsp;&bull; We practice power meditation to advance spiritually and to elevate ourselves. Power meditation is as essential for the human soul as food is essential for the human body. The serpent, a symbol of Satan represents the firey kundalini force coiled at the base of the spine, which upon ascending, transforms the human mind and soul to a much higher level of understanding and ability. This is the true meaning of "Raising the Devil." The Serpent symbol of Satan also represents the DNA helix of life.
+
+<P>&nbsp;&bull; We work directly with Satan. We believe each and every person who is willing and respectful can have a personal relationship with Satan. There are no mediators in Spiritual Satanism; the Ministry is here only for guidance and support.
+
+<P>&nbsp;&bull; We take our tenets and practices directly from Satan himself. For far too long, enemies of Satan such as the Christian churches have been at liberty to dictate lies concerning Satan and Satanism. These lies have been the foundation of occult crimes and other heinous acts that they indirectly promote. True Satanism has been actively and zealously suppressed for centuries and many out of ignorance believe lies about Satan and react accordingly.
+
+<P>&nbsp;&bull; Spiritual Satanism is a life loving religion. Satan accepts us as we are, but guides us to advance ourselves to where we evolve to a higher level. Spiritual Satanists are free to live their lives as they choose- responsibility to the responsible. We live by natural law and encourage everyone to develop themselves to their fullest extent.
+
+<P>&nbsp;&bull; We know we “save” our own souls as opposed to claims of the Nazarene saving anyone. Satanism is based upon the true transformation of the soul through power meditation. The Nazarene is a fictitious entity, whose identity was stolen form some 18+ crucified Pagan Gods, such as Odin, who hung from a tree and is nothing more than a tool to keep humanity under the control of a chosen few. The Nazarene has been used in Christian masses and services as a substitute for a human living blood sacrifice, revealing their true purpose.
+
+<P>&nbsp;&bull; The Judeo/Christian religion is a vicious hoax on humanity of catastrophic proportions. For a hoax to succeed there has to be a lack of knowledge on the part of the victim. The Christian religion and its cohorts actively suppress knowledge and free thought, encourage people to be slaves, and never advocate or teach anything for the betterment or advancement of humanity. As opposed to the stories of how the Nazarene healed people; Satan shows us how we can heal ourselves and perform so-called miracles, using our minds and the powers of our own souls.
+
+<P>&nbsp;&bull; Through empowering ourselves, we have confidence, self-respect and achieve spiritual advancement and independence.
+
+<P>&nbsp;&bull; Spiritual Satanism places no limits on developing the powers of the mind- known as "witchcraft" or "magick." We believe in justice and just as martial artists are versed in the uses of Dim Mak and other aspects of physical combat, Spiritual Satanists are versed in the Black Arts of "magick" should they ever need them. People who are unaware of these powers are defenseless against them, and the powers that be know this all too well. Satan does not tolerate injustice.
+
+<P>&nbsp;&bull; Spiritual Satanism does not in any way condone spirit abuse as taught in the classical grimoires. The Demons who were bound and compelled to do the bidding of the sorcerers are now free and anyone using the nine-foot circle methods and "Jehova" names is inviting personal disaster. The Demons are our friends and with respect and reverence in summoning through Satan, we seek to establish mutually beneficial relationships with them.
+
+<P>&nbsp;&bull; Spiritual Satanism advocates individuality, liberty, and independence.
+
+<P>&nbsp;&bull; It is obvious that Satan is not the "deceiver of humanity." His followers have been few in number and he doesn't need copious amounts of wealth, power and control to keep his followers. 
+				
+					
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.angelfire.com/empire/serpentis666/HOME.html" class = "standardb_green" target="_blank">Joy of Satan Ministries</a> in Internet.
+			</td>
+			</tr>
+
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					06th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+	
+			
+			
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

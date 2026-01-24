@@ -1,0 +1,3 @@
+﻿<b class="text_blue">Circa Mihi</b>
+&#9679; <a href="about_me_lat.html" class = "standardb_blue" data-added="02 Apr, 2014." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Circa Mihi</a>
+&#9679; <a href="about_me_lat.html#amv" class = "standardb_blue" data-added="21 Dec, 2023." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">AMV</a>

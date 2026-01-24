@@ -1,0 +1,1300 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+
+// http://altreligion.about.com/od/alternativereligionsaz/a/Theistic-Satanism.htm
+
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/satanism_theistic.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>   
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_theistic_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_theistic_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('satanism_theistic_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='satanism_theistic_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_green">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>   
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+
+
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>   
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"  
+		class="menu_selected">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_19_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_atheistic_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_atheistic_rus.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#10008; Атеистический</div>
+	</td>
+	</tr>   
+
+
+	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_19_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_theistic_rus.html');
+
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_theistic_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#10004; Теистический</div>
+	</td>
+	</tr>   
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_19_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_simvoly_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_simvoly_rus.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#9679; Символика</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+</table>
+
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Сатанизм &blacktriangleright; Теистический Сатанизм</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>   
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">Теистический Сатанизм</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green">Что это такое?</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/theistic_satanism.jpg" alt="Теистический Сатанизм" title="Теистический Сатанизм" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+					
+					
+					<P>О <b>Сатанизме</b> ходит много ложных сведений. Утверждают, что сатанисты — секта, представляющая собой извращенное христианство, поклоняющаяся Дьяволу, совершающая в ритуальных целях убийства и другие противозаконные действия. Это все — дезинформация, распространяемая противниками сатанизма и просто некомпетентными людьми.
+
+					<P>Имя Сатана заимствовано из древнееврейского языка, но оно не является исконно семитским словом, а происходит от искаженного греческого слова haitia, означающего "обвинение". Слово Дьявол также греческого происхождения, в древности оно означало "противник". Таким образом, первоначальное значение имен Сатаны отражает его сущность — противник и обвинитель общепринятых норм, существующего порядка вещей.
+
+					<P>Сатана существует, но не в том виде, в каком его представляет себе большинство людей, не в виде существа с рогами и копытами. Сатана — архетип, символизирующий изменение: Обвинитель, Еретик, который отказывается поклоняться и служить кому-либо, даже называющему себя богом. Сатана — образ, существующий вне времени и пространства. С ним невозможно общаться в обычном человеческом понимании, но можно стать подобным ему.
+
+					<P>Сатанизм понимается сатанистами как свой особый оккультный путь к особой цели. Сатанистский путь называется также Темным путем или Путем Левой Руки. Он включает в себя также особый сатанистский образ жизни.
+
+					<P>Цель сатанизма — изменение хода эволюции человека и истории человеческого общества, создание нового типа человеческой личности и цивилизации людей нового типа.
+
+					<P>Сатанизм по своей природе антирелигиозен. Религия — это подчинение божеству и его "официальным представителям" — церкви. Путь религии — это путь догмы, веры и страха, связанный с понятиями вознаграждения и возмездия от божества.
+
+					<P>Путь сатанизма — это путь освобождения, как внешнего, так и внутреннего. Это желание Знания, основанного на опыте, а не на вере; это гордость и ликование торжества; это желание использовать все возможности, которые дает нам жизнь. Сатанист в полной мере наслаждается жизнью, стремясь расширить границы существования и достичь совершенства во всем. Сатанист устанавливает свои стандарты, а не следует чужим.
+
+					<P>Сатанизм не преследует цели привлечь в свои ряды как можно больше людей. Сатанизм открыт только для тех, кто способен быть сатанистом: кто реалистично смотрит на мир, называет вещи своими именами и готов нести ответственность за свои решения и поступки. Поэтому никакое посвящение или иное официальное действо не может сделать человека сатанистом, если он не является таковым по своим индивидуальным качествам.
+
+					<P>По той же причине сатанисты не принимают детей в свои ряды, даже если это дети родителей-сатанистов. Одна из фундаментальных целей сатанизма — развить в человеке его индивидуальность, но для этого индивидуальность сначала должна сформироваться. Сатанизм предназначен только для тех, кто имеет собственные взгляды на окружающий мир и способен принимать самостоятельные решения. Таким образом, сатанистом можно стать начиная с возраста около 16 лет.
+
+					<P>Природа человека такова, что сатанизм подходит лишь меньшинству — тем немногим, кто в состоянии отвергнуть существующие порядки и игнорировать их. Это фундаментальный принцип сатанизма: каждый индивид вырабатывает свои собственные нормы, в соответствии с которыми он живет, и, если считает нужным, — умирает за них. То есть сатанист живет по-своему, не признавая никакой этики и морали. Общество называет такой образ жизни злом.
+
+					<P>Для сатаниста также не может быть никакой "сатанистской морали" или "подчинения авторитету Сатаны", поскольку сами понятия морали и подчинения авторитетам противоречат сущности сатанизма. Сатанизм — это практическое применение законов эволюции к человеку: быть сильным и побеждать там, где слабые гибнут.
+
+					<P>Однако, это все не означает того, что обычно понимают под аморальностью противники сатанизма: анархию и самоудовлетворение любой ценой. У сатаниста есть цель, внутренний мотив, более сильный, чем удовлетворение своего эго. Эта цель — стремление к совершенству, и она требует контроля над собой, самодисциплины, что достигается только реальным жизненным опытом. Сатанист желает эволюционировать, и это требует силы характера и раскрытия всех личных способностей. Все что сатанист делает в своей повседневной жизни и в ритуалах преследует цель расширить границы личности, пробудить скрытые в человеке более высокие, "божественные", способности. В мире нет границ, если только сами люди не создадут их себе.
+
+					<P>Естественно, путь сатанизма совсем не легкий. Методы, которые использует сатанист для достижения своей цели, бывают порой опасными. Ничто не может помочь сатанисту и облегчить его путь — только его собственный опыт, знания, характер и решительность.
+
+					<P>Сатанизм воспринял и продолжает развивать различные знания и эзотерические техники. Сатанистский образ жизни включает в себя магическую практику и ритуалы. Это дает сатанисту опыт, развивает новые способности и приобщает его к "запретным" для обычного человека видам искусства. В то же время магия открывает сатанисту и новые удовольствия — как физические, так и духовные.
+
+					<P>Сатанистские ритуалы — это не религиозные обряды; это то, что надо изучить, осмыслить и использовать для достижения практических целей. Сатанист всегда движется вперед — к новому знанию, новому опыту, новому видению, новым победам.
+
+					<P>Сатанистская диалектика истории — это позиция сатаниста по отношению к человечеству. Ее цель — направить эволюцию человека в сторону развития индивидуальности и творческих способностей. Чтобы этого добиться, нужно убрать все искусственно воздвигнутые препятствия, а значит — изменить всю структуру человеческого общества. Конечная цель — создать новый вид разумного существа, активно использующего все скрытые в человеке способности, считающиеся современным человеком "сверхъестественными" или "божественными". Большинство современных людей по своему характеру и отношению к жизни напоминают маленьких детей. Но человечеству давно пора повзрослеть.
+
+					<br><br>
+					<P><b>Приложение, 21 пункт сатанизма:</b>
+
+					<P>  1. Презирай жалость: это болезнь, которая делает сильных слабыми.
+					<P>  2. Всегда проверяй свою силу: в этом путь к успеху.
+					<P>  3. Всегда ищи счастье в победе, и никогда — в примирении.
+					<P>  4. Наслаждайся коротким отдыхом больше, чем долгим.
+					<P>  5. Собирай урожай, посеянный другими: ведь и ты тоже сеешь для будущих поколений.
+					<P>  6. Никогда не люби настолько, чтобы не быть готовым увидеть смерть того, кого ты любишь.
+					<P>  7. Не строй на песке — строй на скале; не строй для сегодняшнего дня, не строй для дня   вчерашнего — строй на все времена.
+					<P>  8. Всегда стремись к большему — к совершенству, которого еще никто не достиг.
+					<P>  9. Лучше умереть, чем подчиниться.
+					<P>  10. Кузнец не кует искусство — он кует мечи для воинов, и в этом — великое искусство.
+					<P>  11. Развивайся, все время побеждай себя прежнего — тогда ты победишь всех и все.
+					<P>  12. Кровь живущих ныне питает семена будущего.
+					<P>  13. Кто стоит на вершине пирамиды из черепов — тот видит дальше всех.
+					<P>  14. Не отвергай любовь, а получай от нее удовольстиве, как самозванец от своей власти.
+					<P>  15. Все великое построено на печали.
+					<P>  16. Стремись не только вперед, но и вверх — к истинному величию.
+					<P>  17. Будь свежим ветром, который сметает старое и приносит новое.
+					<P>  18. Пусть земная любовь будет твоей целью, но твоя высшая цель — величие.
+					<P>  19. Ничто так не красиво, как человеческое тело, особенно женское.
+					<P>  20. Развеивай иллюзии: сильному они вредны.
+					<P>  21. Все, что не убивает — делает сильней.
+					
+					<br><br>
+					<P>Anton Long, Conrad Robury				
+					
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.e-reading.club/bookreader.php/1023756/Milhar_-_Progressivnyy_satanizm._Tom_1.html" class = "standardb_green" target="_blank">Книга - Прогрессивный Сатанизм. Том 1</a> (автор <b>Мильхар</b>) в интернете.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://sargelas.com/koncepciya-satanizma" class = "standardb_green" target="_blank">Книга - Концепция Сатанизма</a> (автор <b>Algimantas Sargelas</b>) в интернете.
+			</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D1%82%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC" class = "standardb_green" target="_blank">Wikipedia Сатанизм</a> - <b>Сатанизм</b> на Wikipedia.
+			</td>
+			</tr>	
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%A1%D0%B0%D1%82%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC" class = "standardb_green" target="_blank">Луркоморье Сатанизм</a> - <b>Сатанизм</b> на Луркоморье.
+			</td>
+			</tr>   
+			
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D0%BD%D1%82%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0" class = "standardb_green" target="_blank">Wikipedia Пентаграмма</a> - <b>Пентаграмма</b> на Wikipedia.
+			</td>
+			</tr>   
+
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					07е Мая, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+	
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="church_of_azazel">The Church of Azazel</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/the_church_of_azazel.jpg" alt="The Church of Azazel" title="The Church of Azazel" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+					
+<P><b>The Church of Azazel</b> is more a vision than a reality at this point. So far the founder, Diane Vera, has been more successful at building groups for high-quality, intellectually-stimulating discussion amongst Satanists in general (such as NYC Satanists, Luciferians, Dark Pagans, and LHP Occultists, which holds real-life monthly meetings here in NYC) or for theistic Satanists in general (such as the Yahoo groups she ran in late 2002 through early 2007) than at building a group devoted to her own particular form of Satanism. But Diane still would like to build a group devoted to her own particular approach to Satanism, once she finds enough appropriate people who are willing to help out with building it.
+
+<P>As of January 2013, we are now making a second serious try at building a local Church of Azazel proto-congregation in New York City.
+
+<P>The first incarnation of the Church of Azazel was founded in February 2004 as an online-based group. From August 2004 until April 2005 it functioned as an "Internet coven," meaning we all performed individual rituals at agreed-upon common times, on agreed-upon common themes, and discussed the rituals online before and afterward.
+
+<P>After 2005, the Church of Azazel was pretty much dormant, until April 2009. During most of 2005 to 2008, Diane Vera, the founder, focussed more on other Satanism-related projects, choosing to wait with any serious effort to build the Church of Azazel until enough other people showed a strong enough interest. In 2005 to 2006, she created a new website Against Satanic Panics, revamped the Black Goat Cabal website, and added more pages to her main Theistic Satanism site including a collection of pages Against neo-Nazism among Satanists. She also added more pages to the Church of Azazel site, fleshing out its paradigm (see Our beliefs and principles).
+
+<P>As of April 2009, a few people began to take an interest in building a local congregation here in New York City. However, too many of those people lived outside the city, at the very outer edges of the NYC metropolitan area, and had difficulty attending meetings very often. We concluded that the local Church of Azazel congregation is not likely to get off the ground until at least one of the following three things happens: (1) NYC Satanists, Luciferians, Dark Pagans, and LHP Occultists grows much bigger than it is now; (2) the more intelligent forms of theistic Satanism, including but not limited to the Church of Azazel, become significantly more visible on the Internet than they are now; and/or (3) we make substantial progress building separate groups devoted to each of our five Rising Gods of the modern West (Lilith, Prometheus, Ishtar, Pan, and Lucifer-of-Sophia). In the meantime, the NYC proto-congregation has continued to hold open discussion meetings four or five times per year, for anyone interested enough to show up.
+
+<P>In June/July 2011, there was a brief attempted revival of the Internet congregation, this time centered around Facebook, but with a non-Facebook public Internet participation requirement as well.
+
+<P>On a more successful note, a local NYC group for devotees of Lilith (one of the Church of Azazel's five Rising Gods) was founded by Diane and several other theistic Satanists in early 2010 and began holding regular rituals in early 2012. This group is not a Satanist group, but it welcomes people of all Pagan, polytheist, and occult paths, including Satanists, who revere Lilith. During 2012, eight group rituals were led by a very talented Pagan priestess of Lilith. In 2013, it began holding rituals representing a variety of different paths.
+
+
+<P>In September 2012, a local NYC group for devotees of Prometheus (another of the Rising Gods) was launched. It too is not a Satanist group, but it welcomes people of all Pagan, polytheist, and occult paths, including Satanists, who revere Prometheus and who have an interest (professional or amateur) in science and technology.
+
+<P>The Church of Azazel is now envisioned as a gathering of Satanists who also have a strong personal affinity for at least one of the Rising Gods. As we now envision it, all but the most casual participants in a Church of Azazel congregation would also participate regularly in at least one separate (non-Satanist but Satanist-friendly) polytheistic/occult group devoted to a particular Rising God. (See the ritual Affirmation of our common purpose.) Thus, it is necessary to continue launching separate groups devoted to each of the five Rising Gods before the Church of Azazel itself can fully exist in the form now envisioned.
+
+<P>In the meantime, the NYC proto-congregation still holds open discussion meetings at least a few times per year, for people interested in the Church of Azazel paradigm.			
+					
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://theisticsatanism.com/CoAz/index.html" class = "standardb_green" target="_blank">The Church of Azazel</a> в Интернете (англ.).
+			</td>
+			</tr>
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%B7%D0%B0%D0%B7%D0%B5%D0%BB%D1%8C" class = "standardb_green" target="_blank">Wikipedia Азазель</a> - <b>Азазель</b> на Wikipedia (англ.).
+			</td>
+			</tr>	
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://lurkmore.to/%D0%9A%D0%BE%D0%B7%D1%91%D0%BB_%D0%BE%D1%82%D0%BF%D1%83%D1%89%D0%B5%D0%BD%D0%B8%D1%8F" class = "standardb_green" target="_blank">Луркоморье Козёл Отпущения</a> - <b>Козёл Отпущения</b> на Луркоморье.
+			</td>
+			</tr>   
+			
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					06е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="joy_of_satan_ministries">Министерство Радости Сатаны (англ. Joy of Satan Ministries)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/satanism/joy_of_satan_ministries.gif" alt="Министерство Радости Сатаны (англ. Joy of Satan Ministries)" title="Министерство Радости Сатаны (англ. Joy of Satan Ministries)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+				
+
+
+<P>Есть разные сатанинские секты. <b>Joy of Satan Ministers (Министерство Радости Сатаны)</b> представляют духовный сатанизм.
+
+<P>&nbsp;&bull; Сатанизм – это не «христианское изобретение».
+
+<P>&nbsp;&bull; Сатанизм предшествует христианству и остальным религиям.
+
+<P>&nbsp;&bull; Сатанизм – не о привидениях, вампирах, монстрах Хэллоуина и др. подобной ерунде.
+
+<P>&nbsp;&bull; Сатанизм – не о «зле»
+
+<P>&nbsp;&bull; Сатанизм – это не «реакция не христианство»
+
+<P>&nbsp;&bull; Сатанизм – не о смерти
+
+<P>&nbsp;&bull; Истинный сатанизм – это расширение власти и возможностей человечества, что и является целью нашего Создателя.
+
+<P>&nbsp;&bull; Мы знаем, что Сатана / Люцифер – реальное живое существо.
+
+<P>&nbsp;&bull; Мы знаем, что Сатана – истинный Отец и Бог-Создатель человечества.
+
+<P>&nbsp;&bull; Мы знаем, что Йахве / Иегова – это фиктивный персонаж, а те, кто стоит за этой ложью и толкает ее в массы, - истинные враги человечества и мастера лжи и обмана. Многочисленные противоречия иудаистско – христианской библии свидетельствуют о том, что этот текст написан людьми со знанием оккультизма, которые напитали его силой, чтобы он производил впечатление правдивости и внушал страх, которым легче всего управлять.
+
+<P>&nbsp;&bull; Мы уважаем закон.
+
+<P>&nbsp;&bull; Мы не признаем ни кровавых, ни каких-либо вообще жертвоприношений живых существ. Это иудаистско – христианский акт, как сказано во Второзаконии 12:27 и совершай всесожжения твои, мясо и кровь, на жертвеннике Господа, Бога твоего; но кровь других жертв твоих должна быть проливаема у жертвенника Господа, Бога твоего, а мясо ешь».
+
+<P>&nbsp;&bull; Мы считаем, что Сатанизм – это оригинальная религия человечества. Таковы результаты нашего исследования. Сатанизм основан на древнейших религиях, которые предшествовали иудаизму и христианству от сотен до тысяч лет.
+
+<P>&nbsp;&bull; Христианство возникло как реакция на оригинальные языческие религии, окрещенные им как «Сатанизм», что означает «враг / противник» на иврите. Если вы прочтете насквозь сайт Радость Сатаны, вы увидите: мы даем доказательство.
+
+<P>&nbsp;&bull; Христианство было сфабриковано с целью изъятия духовного и оккультного знания (силы сознания) у населения и передачи его в руки нескольких «избранных» в ущерб человечеству. Силы сознания и души, безусловно, реальны. Те, кто ничего не знает об этих силах или не верит в их существование, легко поддается контролю и манипуляции со стороны тех, кто имеет навыки использования этих энергий.
+
+<P>&nbsp;&bull; Оригинальные Боги (Демоны) были несправедливо заклеймены как монстры и «лукавые» для того, чтобы удержать нас как можно дальше от духовных знаний. Из-за этого человеческая раса далеко отстала как в духовном, так и в интеллектуальном развитии.
+
+<P>&nbsp;&bull; Духовный Сатанизм глубоко поддерживает познание, исследование и свободную мысль.
+
+<P>&nbsp;&bull; Духовный Сатанизм поддерживает разделение государства и церкви. Сатанисты никому не навязывают Сатанизм и не читают проповеди.
+
+<P>&nbsp;&bull; Духовный Сатанизм признает науку и полагает, что любое оккультное сверхъестественное явление имеет научное объяснение. Мы верим, что человечество опасно отстало в своем развитии в этой области из-за иудаистско – христианской лжи и ее бесконечных нападок на развитие науки на протяжении многих веков.
+
+<P>&nbsp;&bull; Мы практикуем медитацию силы, чтобы развиваться духовно и возвысить самих себя. Медитация силы жизненно необходима для человеческой души так же, как пища необходима для человеческого тела. Змея, символ Сатаны, представляет собой огненную Змею Кундалини, которая тлеет в основании позвоночника, которая будучи вознесена, трансформирует человеческий разум и душу на гораздо более высокий уровень понимания и возможностей. Это и есть истинный смысл «Вызывания Дьявола». Змеиный символ Сатаны также представляет спираль жизни ДНК.
+
+<P>&nbsp;&bull; Мы работаем непосредственно с Сатаной. Мы верим, что любой человек, при достаточном желании и уважении, может иметь личные отношения с Сатаной. В Сатанизме нет пророков. Министерство здесь только для совета и поддержки.
+
+<P>&nbsp;&bull; Мы берем наши принципы и практику непосредственно от самого Сатаны. Слишком долго, враги Сатаны, такие как христианские церкви, были свободны диктовать ложь о Сатане и сатанизме. Эта ложь была основой оккультных преступлений и других отвратительных актов, которым они косвенно способствуют. Правда в том, что Сатанизм активно и рьяно подавлялся в течение многих столетий, и многие по незнанию верят в эту ложь о Сатане и соответственно реагируют.
+
+<P>&nbsp;&bull; Духовный Сатанизм - это религия, которая любит жизнь. Сатана принимает нас, какие мы есть, но ведет нас к улучшения самих себя, чтобы мы развивались и постоянно повышали свой уровень. Духовные сатанисты могут свободно жить своей жизнью, какую сами выбирают - ответственность на ответственных. Мы живем по законам природы и призываем всех развиваться до самой максимальной степени.
+
+<P>&nbsp;&bull; Мы знаем, что только мы и никто другой "спасаем" наши собственные души, в отличие от претензий Назарянина. Сатанизм основан на подлинной трансформации души через медитации силы. Назарянин является фиктивным лицом, чья личность была украдена и слеплена из более 18ти распятых языческих богов, таких как Одина, которые висели на дереве, и не что иное, как инструмент, чтобы держать человечество под контролем немногих избранных. Назорей был использован в христианских богослужениях в качестве заменителя жертвы живой человеческой крови, раскрывая их истинную цель.
+
+<P>&nbsp;&bull; Иудаистско / христианская религия - это страшный обман человечества катастрофических масштабов. Для того, чтобы подобный обман имел успех у жертвы, у последней не должно быть знания. Христианская религия и ее соратники активно подавляют знания и свободную мысль, поощряя людей быть рабами, и никогда не выступают за что-либо для развития или продвижения человечества. В отличие от историй о том, как Назорей исцелял людей, Сатана показывает нам, как мы можем исцелить самих себя и выполнять так называемые чудеса, используя наше сознание и возможности наших собственных душ.
+
+<P>&nbsp;&bull; Через расширение нашей власти и возможностей, у нас есть уверенность, самоуважение и достижение духовного прогресса и независимости.
+
+<P>&nbsp;&bull; Духовный Сатанизм не накладывает ограничения на развитие силы ума, известное как "колдовство" или "магия". Мы верим в справедливость и так же, как мастера боевых искусств знают как использовать Дим Мак и другие аспекты физической борьбы, Духовные Сатанисты знают как использовать Черные Искусства "магии", если они когда-нибудь понадобятся. Люди, которые не знают об этих возможностях, беззащитны против них, и власть имущие знают все это слишком хорошо. Сатана не терпит несправедливости.
+
+<P>&nbsp;&bull; Духовный Сатанизм не в коей мере не оправдывает злоупотребление духовной властью, как описано в классических гримуарах. Демоны, которые были связаны и вынуждены действовать по указке колдунов, сейчас свободны, и каждый, кто использует методы, такие как круги в девять футов и имена «Иеговы», не призовет ничего, кроме катастрофы. Демоны - наши друзья и, вызывая их с уважением и почтением через Сатану, мы стремимся установить взаимовыгодные отношения с ними.
+
+<P>&nbsp;&bull; Духовный Сатанизм поощряет индивидуальность, свободу и независимость.
+
+<P>&nbsp;&bull; Это очевидно, что Сатана не "обманщик человечества". Его последователи были немногочисленны и ему не нужно обильное количество богатства, власти и контроля, чтобы удержать своих последователей.
+
+
+					
+
+					<img src="images/icons/satanism/city_satana.jpg" alt="Город 'Satana'" title="Город 'Satana'" vspace="5" hspace="5" align = "left" width="350" style="padding-right:5px; padding-top:10px;">
+
+<br><br>
+<P><b>Происхождение имени Сатана:</b>
+
+<P>После нескольких лет интенсивных и обширных исследований, все встало на свои места.
+
+<P>&nbsp;&bull; 1. Библия была изобретена для того, чтобы сохранить эзотерическое знание и силу ума / души в руках немногих избранных.
+
+<P>&nbsp;&bull; 2. Христианство, которое появилось вместе с католической церковью, было изобретено, чтобы физически реализовать сказанное выше, а также, чтобы уничтожить и заменить оригинальные религии. Оригинальные религии сосредоточены на вопросе почитания змей. Змей является символом кундалини. "Древо познания" в действительности представляет карту человеческой души. Это видно практически в каждой древней религии, предваряющей иудео / христианство. Ствол символизирует позвоночник, а ветви символизируют чакры и пути кундалини. Есть 144 000 нади (каналы течения кундалини, жизненной силы) внутри человеческой души.
+
+<P>Будда сидел под "деревом Бо" и достиг просветления. "Бо означает змею, как в Бо-А или Бoo-Та».[1] Христианская церковь украла, деформировала, и исказила все, что только смогла из исходных религий. Взгляните, смоковница, была известна как "Древо Мудрости" Фикус Религиоза.[2] Хсианская церковь извратила это с размещением фиговых листьев над гениталиями Адама и Евы.
+
+<P>&nbsp;&bull; 3. "Сатана" на иврите означает "враг" и "противник".
+
+<P>Но слово "Сатана" восходит гораздо, гораздо дальше в глубь веков, чем иврит. <a href="http://6.hidemyass.com/ip-1/encoded/Oi8vd3d3LnZpZXd6b25lLmNvbS9tYXRsb2NrLmh0bWw%3D" class = "standardb_green" target="_blank">Вот ссылка каждый должен прочесть</a>.
+
+<P>Видите, в верхней северо-западном углу карты Индии, имя города "Satana".
+
+<P>"Сатнам" и "Са Та На Ма" - священные мантры, используемые для стимуляции кундалини (змея). Пять древнейших звуков на санскрите, самом древнем из известных языков "SA-ТА-НА-МА». "Са" означает бесконечность; Та означает жизнь; На означает смерть, и Ма означает возрождение. Все вариации имени «Сатана» означают ПРАВДА на санскрите, который является одним из самых старых и самых древних языков.
+
+<P>Все это имеет отношение к кундалини, жизненной силе (Змея) внутри нас. "Одежда Иакова из цветов" в библии - это аура. Число семь – это число центральных чакр. Переводчики старых гримуаров все переврали относительно «семи планет». Древние знали гораздо больше, чем мы относительно астрономии.
+
+<P>Каждый, кто знаком с китайской медициной и продвинутыми боевыми искусствами, знает о ци (жизненной силе, она же кундалини) и что она более активна в некоторых каналах человеческого тела в определенные дни и часы. Я загрузила диаграмму в разделе Медитации на эту тему. Авторы текстов по алхимии того времени закодировали свои труды, чтобы избежать преследования со стороны церкви.
+
+<P>Солнце было еще одним объектом почитания в оригинальных религиях. Это из-за той чистой неодолимой силы, которую оно дарует, и из-за того, что оно является источником всей жизни. Поглощение энергии Луны и звезд - ничто по сравнению с тем, что можно сделать под солнцем, учитывая знания и подготовку. Члены духовенства Joy of Satan знают, что это. Отверстия в ауре исцеляется под Солнцем и жизненная сила увеличивается так, как от одного другого источника света.
+
+<P>"Люцифер" было также дано нашему любимому Отцу как имя. Люцифер - изначально римский бог, никак не связанный с нашим Отцом Сатаной / Эа. Приставка "Люц" имеет отношение к свету. Душа нуждается в свете. Утренняя звезда, Венера, была источником света для древних, так как ее восход предшествовал самому важному из светил – Солнцу. Венера также управляет горловой чакрой эмоций, второго узла (грандхи) из трех.
+
+<P>Отец Сатана (я предпочитаю называть его Сатана, лично), сказал мне, что ег не особо беспокоит, что люди называют его по имени, под которым он был известен им века, даже если оно неточно. Я зову его Отец Сатана, когда я с ним общаюсь или поблагодарю его за что-то. Для меня "Сатана" всегда означает "противник", противник вражеской лжи иудео / христианства.
+
+<P>Католическая церковь знала, что оригинальные религии должны быть заменены на что-то другое, и это то, откуда пришли все лживые библейские истории. Они все - грабеж языческих оригиналов, которые уходят корнями в незапамятное прошлое - гораздо старше, чем 300 лет н.э., когда иудео / христианство впервые подняло свою уродливую голову.
+
+<P>Дева Мария украла и заменила Богиню Астарот, которая была известна, как "Царица Неба". Астарот была самой популярной Богиней в дохристианском мире. Фиктивный Иегова содран с Энлиля / Вельзевула / Баэля, который был самым популярным Богом в дохристианской мира, в то время как наш любимый Отец-Создатель Сатана / Эа / Энки, предстал как Змий и Дьявол.
+
+<P>Сексуальность, которая является основным аспектом жизненной силы, автоматически попала под пристальное внимание со стороны церкви. Оргазм непосредственно стимулирует Змею Кундалини у основания позвоночника. Необходимая для создания другой человеческой жизни, творческая энергия может использоваться, чтобы возродить нашу жизненную силу, которая продвигает и наделяет могуществом душу.
+
+<P>Очевидно, сексуальная активность не может быть запрещена полностью, поэтому был использован страх, чтобы строжайше регулировать ее. В хсианской религии, особенно оригинальной католической церкви, все сексуальное удовольствие грешно и запрещено. Близость допускается только чтобы производить на свет детей и не более. Нагота стала грехом, потому что она приводит к похоти. Мастурбация стала еще одним "смертным грехом". Все, что так или иначе связано с поднятием кундалини, церковь жестоко преследовала. Единственная цель христианской церкви - это удаление знаний и ничего более.
+
+<P>В то время как массы лишены этого знания и силы, немногие избранных, которые работали, чтобы удалить эти знания, сами свободно использовали их, чтобы поработить несведущий мир. Иезуиты католической церкви, убийцы, как известно, могли даже левитировать, - столько психической власти они оттянули через молитвы их ничего не подозревающих жертв.
+
+<br><br>
+<P>[1] Плащ иллюминатов Уильяма Генри, 2003
+
+<P>[2] Там же.
+
+<P>Хотя эта книга имеет много ценной информации, если читать между строк, автор заблуждается, веря в фиктивного назарянина.
+
+
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://joyofsatan.ucoz.ru/" class = "standardb_green" target="_blank">Министерство Радости Сатаны (англ. Joy of Satan Ministries)</a> в Интернете.
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.angelfire.com/empire/serpentis666/HOME.html" class = "standardb_green" target="_blank">Joy of Satan Ministries</a> в Интернете (англ.).
+			</td>
+			</tr>
+
+	
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="http://joyofsatan.ucoz.ru/index/proiskhozhdenie_imeni_satana/0-7" class = "standardb_green" target="_blank">Происхождение имени 'Сатана'</a> - <b>Происхождение имени 'Сатана'</b> на Министерство Радости Сатаны (англ. Joy of Satan Ministries).
+
+
+			</td>
+			</tr>
+
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+					06е Сен, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+	
+		
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>   
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

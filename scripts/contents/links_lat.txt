@@ -1,0 +1,2 @@
+﻿<b class="text_blue">Relatio</b>
+&#9679; <a href="links_lat.html" class = "standardb_blue" data-added="09 Aug, 2016." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Relatio</a>

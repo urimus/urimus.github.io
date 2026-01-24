@@ -1,0 +1,1488 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#68c496";
+	var scrollBackColor="#DAF28E";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(93,201,81,1) 0%, rgba(207,250,197,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#008080; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*30;
+var imgBgSrc="images/icons/background/sssr.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#DAF28E"> 
+		<td  bgcolor="#DAF28E" width="100%">
+		<div class="nimetus2_green"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('personalities_ussr_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='personalities_ussr_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('personalities_ussr_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='personalities_ussr_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#DAF28E" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_green">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+	
+		<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"  
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>		
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_selected">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_ancient_rome_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_ancient_rome_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#9679; Ancient Rome</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_middle_ages_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_middle_ages_eng.html';
+			};"
+		class="menu_not_selected_green"
+		style="padding-left: 5px;">
+		&#9679; Middle Ages</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_ussr_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_ussr_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; USSR</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_25_3_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('personalities_ussr_leaders_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='personalities_ussr_leaders_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Leaders</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#DAF28E" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#DAF28E" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#DAF28E">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_green" style="width: 530px;"><a name="welcome">Personalities &blacktriangleright; USSR</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:690px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #68c496 1px solid;  background-color: #DAF28E;">
+
+
+	
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_green"><a name="music">List of leaders of the Soviet Union</a></td>
+			</tr>
+			<tr>
+				<td width="250" height="100%" class="nimetus_green">What is this?</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/personalities_ussr.jpg" alt="List of leaders of the Soviet Union" title="List of leaders of the Soviet Union" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P>Under the 1977 Constitution of the Union of Soviet Socialist Republics (USSR), the Chairman of the Council of Ministers was the head of government and the Chairman of the Presidium of the Supreme Soviet was the head of state. The office of the Chairman of the Council of Ministers was the equivalent to a First World Prime Minister, while the office of the Chairman of the Presidium was equivalent to the office of the President. In the Soviet Union's seventy-year history there was no official leader of the Soviet Union offices but a Soviet leader usually led the country through the office of the Premier and/or the office of the General Secretary of the Communist Party of the Soviet Union (CPSU). In the ideology of Vladimir Lenin the head of the Soviet state was a collegiate body of the vanguard party (see What Is to Be Done?).
+
+<P>Following Joseph Stalin's consolidation of power in the 1920s the post of the General Secretary of the Central Committee of the Communist Party became synonymous with 'Leader of the Soviet Union' because the post controlled both the CPSU and the Soviet Government. The post of the General Secretary was abolished under Stalin and later re-established by Nikita Khrushchev under the name of First Secretary; in 1966 Leonid Brezhnev reverted the office title to its former name. Being the head of the communist party, the office of the General Secretary was the highest in the Soviet Union until 1990. The post of General Secretary lacked clear guidelines of succession, so after the death or removal of a Soviet leader, the successor usually needed the support of the Politburo, the Central Committee, or another government or party apparatus to both take and stay in power. The President of the Soviet Union, an office created in March 1990, replaced the General Secretary as the highest Soviet political office.
+
+<P>Contemporaneously to establishment of the office of the President, representatives of the Congress of People's Deputies voted to remove Article 6 from the Soviet constitution which stated that the Soviet Union was a one-party state controlled by the Communist Party which, in turn, played the leading role in society. This vote weakened the Party and its hegemony over the Soviet Union and its people. Upon death, resignation, or removal from office of an incumbent President, the Vice President of the Soviet Union would assume the office, though the Soviet Union collapsed before this was actually tested. After the failed August Coup the Vice President was replaced by an elected member of the State Council of the Soviet Union.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/List_of_leaders_of_the_Soviet_Union" class = "standardb_green" target="_blank">Wikipedia List of leaders of the Soviet Union</a> - <b>List of leaders of the Soviet Union</b> on Wikipedia.
+			</td>
+			</tr>	
+
+
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="lenin">8 November 1917 — 21 January 1924 - Vladimir Lenin (rus. Владимир Ильич Ленин)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/lenin.jpg" alt="Vladimir Lenin (rus. Владимир Ильич Ленин)" title="Vladimir Lenin (rus. Владимир Ильич Ленин)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>8 November 1917 — 21 January 1924</b> - Chairman of the Council of People's Commissars of the RSFSR and the USSR.
+
+<br><br>
+
+<P><b>Vladimir Ilyich Ulyanov</b>, better known by the alias <b>Lenin</b> (22 April [O.S. 10 April] 1870  – 21 January 1924), was a Russian communist revolutionary, politician, and political theorist. He served as head of government of the Russian Republic from 1917 to 1918, of the Russian Soviet Federative Socialist Republic from 1918 to 1924, and of the Soviet Union from 1922 to 1924. Under his administration, Russia and then the wider Soviet Union became a one-party communist state governed by the Russian Communist Party. Ideologically a Marxist, he developed political theories known as Leninism.
+
+<P>Born to a wealthy middle-class family in Simbirsk, Lenin embraced revolutionary socialist politics following his brother's execution in 1887. Expelled from Kazan Imperial University for participating in protests against the Russian Empire's Tsarist regime, he devoted the following years to a law degree. He moved to Saint Petersburg in 1893 and became a senior figure in the Marxist Russian Social Democratic Labour Party (RSDLP). In 1897, he was arrested for sedition and exiled to Shushenskoye for three years, where he married Nadezhda Krupskaya. After his exile, he moved to Western Europe, where he became a prominent party theorist through his publications. In 1903, he took a key role in a RSDLP ideological split, leading the Bolshevik faction against Julius Martov's Mensheviks. Encouraging insurrection during Russia's failed Revolution of 1905, he later campaigned for the First World War to be transformed into a Europe-wide proletarian revolution, which as a Marxist he believed would cause the overthrow of capitalism and its replacement with socialism. After the 1917 February Revolution ousted the Tsar and established a Provisional Government, he returned to Russia to play a leading role in the October Revolution, in which the Bolsheviks overthrew the new regime.
+
+<P>Lenin's government was led by the Bolsheviks—now renamed the Communist Party—with some powers initially also held by elected soviets. The new government called elections for the Constituent Assembly and then abolished it, withdrew from the First World War by signing a treaty with the Central Powers, and granted independence to non-Russian nations under Russian control. It redistributed land among the peasantry and nationalised banks and large-scale industry. Opponents were suppressed in the Red Terror, a violent campaign orchestrated by the state security services; tens of thousands were killed and others interned in concentration camps. Anti-Bolshevik armies, established by both right and left-wing groups, were defeated in the Russian Civil War from 1917 to 1922. Responding to wartime devastation, famine, and popular uprisings, in 1921 Lenin promoted economic growth through a mixed economic system. Seeking to promote world revolution, Lenin's government created the Communist International, waged the Polish–Soviet War, and united Russia with neighbouring nations to form the Soviet Union in 1922. In increasingly poor health, Lenin expressed opposition to the growing power of his successor, Joseph Stalin, before dying at his Gorki mansion.
+
+<P>Widely considered one of the most significant and influential figures of the 20th century, Lenin was the posthumous subject of a pervasive personality cult within the Soviet Union until its dissolution in 1991. He became an ideological figurehead behind Marxism-Leninism and thus a prominent influence over the international communist movement. A controversial and highly divisive individual, Lenin is viewed by Marxist-Leninists as a champion of socialism and the working class, while critics on both the left and right see him as the founder of a totalitarian dictatorship responsible for mass human rights abuses.
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Vladimir_Lenin" class = "standardb_green" target="_blank">Wikipedia Vladimir Lenin</a> - <b>Vladimir Lenin (rus. Владимир Ильич Ленин)</b> on Wikipedia.
+			</td>
+			</tr>	
+
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+		
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="stalin">21 January 1924 — 5 March 1953 - Joseph Stalin (rus. Иосиф Виссарионович Сталин)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/stalin.jpg" alt="Joseph Stalin (rus. Иосиф Виссарионович Сталин)" title="Joseph Stalin (rus. Иосиф Виссарионович Сталин)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>21 January 1924 — 5 March 1953</b> - General Secretary of the Central Committee of the Russian Communist Party (Bolsheviks) (since 1925 - All-Union Communist Party (Bolsheviks), since 1952 - the Communist Party of the Soviet Union) (since April 3, 1922 to March 5, 1953), Chairman of the Board Ministers of the USSR (since May 6, 1941 to March 5, 1953).
+
+<br><br>
+
+<P><b>Joseph Vissarionovich Stalin</b> (18 December 1878[2] – 5 March 1953) was the leader of the Soviet Union from the mid-1920s until his death in 1953. Holding the post of the General Secretary of the Central Committee of the Communist Party of the Soviet Union, he was effectively the dictator of the state.
+
+<P>Stalin was one of the seven members of the first Politburo, founded in 1917 in order to manage the Bolshevik Revolution, alongside Lenin, Zinoviev, Kamenev, Trotsky, Sokolnikov, and Bubnov. Among the Bolshevik revolutionaries who took part in the Russian Revolution of 1917, Stalin was appointed General Secretary of the party's Central Committee in 1922. He subsequently managed to consolidate power following the 1924 death of Vladimir Lenin by suppressing Lenin's criticisms (in the postscript of his testament) and expanding the functions of his role, all the while eliminating any opposition. He remained General Secretary until the post was abolished in 1952, concurrently serving as the Premier of the Soviet Union from 1941 onward.
+
+<P>Under Stalin's rule, the concept of "Socialism in One Country" became a central tenet of Soviet society, contrary to Leon Trotsky's view that socialism must be spread through continuous international revolutions. He replaced the New Economic Policy introduced by Lenin in the early 1920s with a highly centralised command economy, launching a period of industrialization and collectivization that resulted in the rapid transformation of the USSR from an agrarian society into an industrial power. However, the economic changes coincided with the imprisonment of millions of people in Gulag labour camps. The initial upheaval in agriculture disrupted food production and contributed to the catastrophic Soviet famine of 1932–33, known in Ukraine as the Holodomor. Between 1934 and 1939 he organized and led a massive purge (known as "Great Purge") of the party, government, armed forces and intelligentsia, in which millions of so-called "enemies of the working class" were imprisoned, exiled or executed, often without due process. Major figures in the Communist Party and government, and many Red Army high commanders, were killed after being convicted of treason in show trials.
+
+<P>In August 1939, after failed attempts to conclude anti-Hitler pacts with other major European powers, Stalin entered into a non-aggression pact with Nazi Germany known as the Molotov–Ribbentrop Pact, or the Nazi-Soviet Pact, that divided their influence and territory within Eastern Europe, resulting in their invasion of Poland in September of that year, but Germany later violated the agreement and launched a massive invasion of the Soviet Union in June 1941. Despite heavy human and territorial losses, Soviet forces managed to halt the Nazi incursion after the decisive Battles of Moscow and Stalingrad. After defeating the Axis powers on the Eastern Front, the Red Army captured Berlin in May 1945, effectively ending the war in Europe for the Allies. The Soviet Union subsequently emerged as one of two recognized world superpowers, the other being the United States. Communist governments loyal to the Soviet Union were established in most countries freed from German occupation by the Red Army, which later constituted the Eastern Bloc. Stalin also had close relations with Mao Zedong in China and Kim Il-sung in North Korea.
+
+<P>Stalin led the Soviet Union through its post-war reconstruction phase, which saw a significant rise in tension with the Western world that would later be known as the Cold War. During this period, the USSR became the second country in the world to successfully develop a nuclear weapon, as well as launching the Great Plan for the Transformation of Nature in response to another widespread famine and the Great Construction Projects of Communism. In the years following his death, Stalin and his regime have been condemned on numerous occasions, most notably in 1956 when his successor Nikita Khrushchev denounced his legacy and initiated a process of de-Stalinization and rehabilitation to victims of his regime. Stalin remains a controversial figure today, with many regarding him as a tyrant. However, popular opinion within the Russian Federation is mixed. The exact number of deaths caused by Stalin's regime is still a subject of debate, but it is widely agreed to be in the order of millions.
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Joseph_Stalin" class = "standardb_green" target="_blank">Wikipedia Joseph Stalin</a> - <b>Joseph Stalin (rus. Иосиф Виссарионович Сталин)</b> on Wikipedia.
+			</td>
+			</tr>	
+
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="malenkov">5 March 1953 — 8 February 1955 - Georgy Malenkov (rus. Георгий Максимилианович Маленков)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/malenkov.jpg" alt="Georgy Malenkov (rus. Георгий Максимилианович Маленков)" title="Georgy Malenkov (rus. Георгий Максимилианович Маленков)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>5 March 1953 — 8 February 1955</b> - Chairman of the USSR Council of Ministers.
+
+<br><br>
+
+<P><b>Georgy Maximilianovich Malenkov</b> (Russian: Георгий Максимилианович Маленков; 8 January 1902 [O.S. 26 December 1901] – 14 January 1988) was a Soviet politician and Communist Party leader.
+
+<P>His family connections with Vladimir Lenin speeded his promotion in the party, and in 1925 he was put in charge of the party records. This brought him into close association with Joseph Stalin, and he was heavily involved in the purges of the 1930s. During World War II, he was given sole responsibility for the Soviet missile program. Later he gained favour with Stalin by discrediting Marshal Georgy Zhukov for supposed disloyalty, and supporting Stalin’s campaign to erase all the glories of Leningrad in the public mind, in order to promote Moscow as the cultural capital.
+
+<P>On Stalin’s death in 1953, Malenkov was briefly party leader, but was soon replaced by Nikita Khrushchev, with Malenkov as premier, as the party did not want both functions entrusted to the same person. His two-year term ended in failure. He was expelled from the Politburo in 1957. In 1961 he was expelled from the party and exiled to Kazakhstan.
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Georgy_Malenkov" class = "standardb_green" target="_blank">Wikipedia Georgy Malenkov</a> - <b>Georgy Malenkov (rus. Георгий Максимилианович Маленков)</b> на Wikipedia.
+			</td>
+			</tr>	
+
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="hrushev">7 September 1953 — 14 October 1964 - Nikita Khrushchev (rus. Никита Сергеевич Хрущёв)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/hrushev.jpg" alt="Nikita Khrushchev (rus. Никита Сергеевич Хрущёв)" title="Nikita Khrushchev (rus. Никита Сергеевич Хрущёв)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>7 September 1953 — 14 October 1964</b> - First Secretary of the Central Committee of the Communist Party of the Soviet Union.
+<P><b>27 March 1958 — 15 October 1964</b> - Chairman of the USSR Council of Ministers.
+
+<br><br>
+
+<P><b>Nikita Sergeyevich Khrushchev</b> (April 15 [O.S. April 3] 1894 – September 11, 1971) was a politician who led the Soviet Union during part of the Cold War. He served as First Secretary of the Communist Party of the Soviet Union from 1953 to 1964, and as Chairman of the Council of Ministers, or Premier, from 1958 to 1964. Khrushchev was responsible for the de-Stalinization of the Soviet Union, for backing the progress of the early Soviet space program, and for several relatively liberal reforms in areas of domestic policy. Khrushchev's party colleagues removed him from power in 1964, replacing him with Leonid Brezhnev as First Secretary and Alexei Kosygin as Premier.
+
+<P>Khrushchev was born in the village of Kalinovka in 1894, close to the present-day border between Russia and Ukraine. He was employed as a metalworker in his youth, and during the Russian Civil War was a political commissar. With the help of Lazar Kaganovich, he worked his way up the Soviet hierarchy. He supported Joseph Stalin's purges, and approved thousands of arrests. In 1938, Stalin sent him to govern Ukraine, and he continued the purges there. During what was known in the Soviet Union as the Great Patriotic War (Eastern Front of World War II), Khrushchev was again a commissar, serving as an intermediary between Stalin and his generals. Khrushchev was present at the bloody defense of Stalingrad, a fact he took great pride in throughout his life. After the war, he returned to Ukraine before being recalled to Moscow as one of Stalin's close advisers.
+
+<P>In the power struggle triggered by Stalin's death in 1953, Khrushchev, after several years, emerged victorious. On February 25, 1956, at the 20th Party Congress, he delivered the "Secret Speech", denouncing Stalin's purges and ushering in a less repressive era in the Soviet Union. His domestic policies, aimed at bettering the lives of ordinary citizens, were often ineffective, especially in agriculture. Hoping eventually to rely on missiles for national defense, Khrushchev ordered major cuts in conventional forces. Despite the cuts, Khrushchev's rule saw the most tense years of the Cold War, culminating in the Cuban Missile Crisis.
+
+<P>Some of Khrushchev's policies were seen as erratic, particularly by his emerging rivals within the Party, who quietly rose in strength and deposed him in October 1964. He did not suffer the deadly fate of some previous losers of Soviet power struggles, and was instead pensioned off with an apartment in Moscow and a dacha in the countryside. His lengthy memoirs were smuggled to the West and published in part in 1970. Khrushchev died in 1971 of heart disease.
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Nikita_Khrushchev" class = "standardb_green" target="_blank">Wikipedia Nikita Khrushchev</a> - <b>Nikita Khrushchev (rus. Никита Сергеевич Хрущёв)</b> on Wikipedia.
+			</td>
+			</tr>	
+
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+		
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="brezhnev">14 October 1964 — 10 November 1982 - Leonid Brezhnev (rus. Леонид Ильич Брежнев)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/brezhnev.jpg" alt="Leonid Brezhnev (rus. Леонид Ильич Брежнев)" title="Leonid Brezhnev (rus. Леонид Ильич Брежнев)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>14 October 1964 — 8 April 1966</b> - First Secretary of the Central Committee of the Communist Party of the Soviet Union.
+<P><b>8 April 1966 — 10 November 1982</b> - General Secretary of the Central Committee of the Communist Party of the Soviet Union.
+
+<br><br>
+
+<P><b>Leonid Ilyich Brezhnev</b> (Russian: Леонид Ильич Брежнев; 19 December 1906 (O.S. 6 December) – 10 November 1982) was the General Secretary of the Central Committee (CC) of the Communist Party of the Soviet Union (CPSU), presiding over the country from 1964 until his death in 1982. His eighteen-year term as General Secretary was second only to that of Joseph Stalin in duration. During Brezhnev's rule, the global influence of the Soviet Union grew dramatically, in part because of the expansion of the Soviet military during this time. His tenure as leader was marked by the beginning of an era of economic and social stagnation in the Soviet Union.
+
+<P>Brezhnev was born in Kamenskoye (now Kamianske, Ukraine) into a Russian worker's family. After graduating from the Dniprodzerzhynsk Metallurgical Technicum, he became a metallurgical engineer in the iron and steel industry, in Ukraine. He joined Komsomol in 1923, and in 1929 became an active member of the CPSU. He was drafted into immediate military service during World War II and left the army in 1946 with the rank of major general. In 1952 Brezhnev became a member of the Central Committee, and during 1964, Brezhnev succeeded Nikita Khrushchev as First Secretary, while Alexei Kosygin succeeded Khrushchev in his post as Soviet premier.
+
+<P>As a leader, Brezhnev took care to consult his colleagues before acting, but his attempt to govern without meaningful economic reforms led to a national decline by the mid-1970s, a period referred to as the Era of Stagnation. A significant increase in military expenditure, which by the time of Brezhnev's death stood at approximately 12.5% of the country's GNP, and an aging and ineffective leadership set the stage for a dwindling GNP compared to Western nations. While at the helm of the USSR, Brezhnev pushed for d&eacute;tente between the Eastern and Western countries. At the same time he presided over the Warsaw Pact invasion of Czechoslovakia to stop the Prague Spring, and he sent the Soviet military to Afghanistan in an attempt to save the fragile regime, which was fighting a war against the CIA-backed mujahideen. However, in December 1981 he decided not to militarily intervene in Poland, instead allowing the country's government to impose martial law, and effectively marking the end of the Brezhnev Doctrine.
+
+<P>After years of declining health, Brezhnev died on 10 November 1982 and was quickly succeeded in his post as General Secretary by Yuri Andropov. Brezhnev had fostered a cult of personality, although not nearly to the same degree as Stalin. Mikhail Gorbachev, who would lead the USSR from 1985 to 1991, denounced his legacy and drove the process of liberalisation of the Soviet Union. In spite of this, opinion polls in Russia show Brezhnev to be the most popular Russian leader of the 20th century.
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Leonid_Brezhnev" class = "standardb_green" target="_blank">Wikipedia Leonid Brezhnev</a> - <b>Leonid Brezhnev (rus. Леонид Ильич Брежнев)</b> on Wikipedia.
+			</td>
+			</tr>	
+
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+
+		
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="andropov">12 November 1982 — 9 February 1984 - Yuri Andropov (rus. Юрий Владимирович Андропов)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/andropov.jpg" alt="Yuri Andropov (rus. Юрий Владимирович Андропов)" title="Yuri Andropov (rus. Юрий Владимирович Андропов)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>12 November 1982 — 9 February 1984</b> - General Secretary of the Central Committee of the Communist Party of the Soviet Union.
+
+<br><br>
+
+
+<P><b>Yuri Vladimirovich Andropov</b> (Russian: Юрий Владимирович Андропов, 15 June [O.S. 2 June] 1914 – 9 February 1984) was a Soviet politician and the General Secretary of the Communist Party of the Soviet Union from 12 November 1982 until his death fifteen months later.
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Yuri_Andropov" class = "standardb_green" target="_blank">Wikipedia Yuri Andropov</a> - <b>Yuri Andropov (rus. Юрий Владимирович Андропов)</b> on Wikipedia.
+			</td>
+			</tr>	
+	
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="chernenko">13 February 1984 — 10 March 1985 - Konstantin Chernenko (rus. Константин Устинович Черненко)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/chernenko.jpg" alt="Konstantin Chernenko (rus. Константин Устинович Черненко)" title="Konstantin Chernenko (rus. Константин Устинович Черненко)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>13 February 1984 — 10 March 1985</b> - General Secretary of the Central Committee of the Communist Party of the Soviet Union.
+
+<br><br>
+
+
+<P><b>Konstantin Ustinovich Chernenko</b> (Russian: Константин Устинович Черненко; 24 September 1911 – 10 March 1985) was a Soviet politician and the fifth General Secretary of the Communist Party of the Soviet Union. He led the Soviet Union from 13 February 1984 until his death thirteen months later, on 10 March 1985. Chernenko was also Chairman of the Presidium of the Supreme Soviet from 11 April 1984 until his death.
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Konstantin_Chernenko" class = "standardb_green" target="_blank">Wikipedia Konstantin Chernenko</a> - <b>Konstantin Chernenko (rus. Константин Устинович Черненко)</b> on Wikipedia.
+			</td>
+			</tr>	
+	
+	
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #68c496 1px solid;  background-color: #DAF28E">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus_green"><a name="gorbachev">11 March 1985 — 25 December 1991 - Mikhail Gorbachev (rus. Михаил Сергеевич Горбачёв)</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_green" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/personalities/gorbachev.jpg" alt="Mikhail Gorbachev (rus. Михаил Сергеевич Горбачёв)" title="Mikhail Gorbachev (rus. Михаил Сергеевич Горбачёв)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>11 March 1985 — 24 August 1991</b> - General Secretary of the Central Committee of the Communist Party of the Soviet Union.
+<P><b>15 march 1990 — 25 December 1991</b> - President of the USSR.
+
+<br><br>
+
+
+<P><b>Mikhail Sergeyevich Gorbachev</b> (Russian: Михаил Сергеевич Горбачёв; born 2 March 1931) is a former Soviet statesman. He was the eighth and last leader of the Soviet Union, having been General Secretary of the Communist Party of the Soviet Union from 1985 until 1991, when the party was dissolved. He was the country's head of state from 1988 until its dissolution in 1991 (titled as Chairman of the Presidium of the Supreme Soviet from 1988 to 1989, as Chairman of the Supreme Soviet from 1989 to 1990, and as President of the Soviet Union from 1990 to 1991).
+
+<P>Gorbachev was born in Stavropol Krai into a peasant Ukrainian–Russian family, and in his teens, operated combine harvesters on collective farms. He graduated from Moscow State University in 1955 with a degree in law. While he was at the university, he joined the Communist Party, and soon became very active within it. In 1970, he was appointed the First Party Secretary of the Stavropol Regional Committee, First Secretary to the Supreme Soviet in 1974, and appointed a member of the Politburo in 1979. Within three years of the death of Soviet leader Leonid Brezhnev, following the brief "interregna" of Andropov and Chernenko, Gorbachev was elected general secretary by the Politburo in 1985. Before he reached the post, he had occasionally been mentioned in Western newspapers as a likely next leader and a man of the younger generation at the top level.
+
+<P>Gorbachev's policies of glasnost ("openness") and perestroika ("restructuring") and his reorientation of Soviet strategic aims contributed to the end of the Cold War. He removed the constitutional role of the Communist Party in governing the state, and inadvertently led to the dissolution of the Soviet Union. He was awarded the Otto Hahn Peace Medal in 1989, the Nobel Peace Prize in 1990 and the Harvey Prize in 1992, as well as honorary doctorates from various universities.
+
+<P>In September 2008, Gorbachev and business oligarch Alexander Lebedev announced they would form the Independent Democratic Party of Russia, and in May 2009 Gorbachev announced that the launch was imminent. This was Gorbachev's third attempt to establish a political party, having started the Social Democratic Party of Russia in 2001 and the Union of Social Democrats in 2007.
+
+
+
+
+
+
+
+					
+
+
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Links:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_green" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Mikhail_Gorbachev" class = "standardb_green" target="_blank">Wikipedia Mikhail Gorbachev</a> - <b>Mikhail Gorbachev (rus. Михаил Сергеевич Горбачёв)</b> on Wikipedia.
+			</td>
+			</tr>	
+
+			
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_green" style="padding-left:10px; padding-right:10px;">
+				08th of Sep, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+	
+
+
+
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_green" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,2050 @@
+﻿
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Урмас Репинский - Домашняя Страница</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#b0b0b0";
+	var scrollBackColor="#e2e2e2";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(170,170,170,1) 0%, rgba(238,238,238,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#707070; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+<!-- End of Foto Gallery -->
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*45;
+var imgBgSrc="images/icons/background/metal.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'rus');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#e2e2e2"> 
+		<td  bgcolor="#e2e2e2" width="100%">
+		<div class="nimetus2_black"><font class="blinking_text" >&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_metal_gothic_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_metal_gothic_eng.html' + window.location.hash;
+				};"
+			
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('music_metal_gothic_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='music_metal_gothic_rus.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#e2e2e2" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td  align="center" class="title_gradient_black">Меню</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Карта Сайта</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Обо мне</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моей работе</div>
+	</td>
+	</tr> 
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		О моём PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_rus.html';
+			};"
+		class="menu_not_selected_blue">
+		Ссылки</div>
+	</td>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Редактор</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_selected">
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_7_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_chanson_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_chanson_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Шансон <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	
+	<tr>
+		<td align="left" >
+		<div id="menu_7_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_country_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_country_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Кантри <font class="blinking_text" color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_disco_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_disco_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Диско</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Электронная</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Индастриал</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');"
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Метал <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_alternative_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_alternative_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Альтернативный <font class="blinking_text" color="crimson"><sup>&#191; Inadequate &#191;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_black_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_black_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Блэк-</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_death_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_death_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Дэт- <font class="blinking_text" color="blueviolet"><sup>&#9996; Fresh &#9996;</sup></font></div>
+	</td>
+	</tr>		
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);"
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_gothic_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_gothic_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Готик- <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_power_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_power_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Пауэр-</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);"
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_symphonic_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_symphonic_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Симфоник-</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);"
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_pop_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_pop_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Поп</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Психоделическая</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'music');"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Панк <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rap_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rap_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Рэп <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_reggae_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_reggae_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Регги</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_rock_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_rock_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 5px;">
+		&#9679; Рок-музыка <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+
+		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Игры</div>
+	</td>
+	</tr>	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Книги</div>
+	</td>
+	</tr>		
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Фото/Картинки</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_rus.html';
+			};"
+		class="menu_not_selected_black">
+		Мусор</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'rus', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
+		class="menu_not_selected_red">
+		&#9679; Анекдоты</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_rus.html';
+			};"  
+		class="menu_not_selected_red">
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>			
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Вещества Для Расслабления</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'rus', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Разработка Программ</div>
+	</td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Сатанизм</div>
+	</td>
+	</tr>
+
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Викка</div>
+	</td>
+	</tr>
+	
+	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Фальсифицируемость</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Психология</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Страны</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_rus.html';
+			};"
+		class="menu_not_selected_green">
+		Тоталитаризм</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'rus', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Деятели</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'rus', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Новости</div>
+	</td>
+	</tr>
+
+	
+	
+</table>
+
+		</td>
+		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#e2e2e2">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Музыка &blacktriangleright; Метал &blacktriangleright; Готик-Метал</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:1035px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="metal">Метал</a> <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Описание Жанра</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/metal.jpg" alt="Метал" title="Метал" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>Метал</b>, или <b>металл</b> (от англ. metal) — музыкальный жанр, разновидность рок-музыки, сформировавшаяся в начале и середине 1970-х годов, преимущественно в Англии и Соединённых Штатах Америки. Характерные черты метала — искажённые эффектом дисторшн электрогитары, затяжные гитарные соло, агрессивный ритм, как правило, шести-, восьми- или двухдольный размер такта, облегчённые риффы.
+
+<P>Метал имеет достаточно большое число стилей (поджанров), от сравнительно «мягких» (классический хеви-метал, пауэр-метал) до весьма «тяжёлых» и неприемлемых для большинства неподготовленных слушателей (дэт-метал, блэк-метал). Музыка «металлических» жанров распространена практически во всех странах, но наиболее крупные сцены сформировались в северной Европе (Британия, Скандинавия, Германия) и Северной Америке (США, Канада). Во всех странах Европы, включая Россию, существуют развитые региональные сцены, так же как и в Бразилии, Японии и многих других неевропейских странах. На Ближнем Востоке, за исключением Израиля и Турции, тяжёлый рок менее развит из-за жёстких цензурных ограничений.
+
+<P>Поклонников метала называют металлистами или металхэдами (англ. metalhead).
+
+<br><br>
+
+<P><b>Характеристики, Общие черты:</b>
+
+<P>Общие черты, характерные для всех поджанров металической музыки — ритмические музыкальные фигуры (риффы), искажённые электронным способом (эффектом дисторшн либо фузз), исполняемые, как правило, на электрогитаре (ритм-гитара) и бас-гитаре, образующей вместе с ударной установкой ритм-секцию; мелодические и гармонические элементы гитарной техники (гитарные соло, арпеджио, аккорды) обычно несёт вторая гитара (соло-гитара, «вторая гитара»). В силу того, что колебания струн у гитары имеют довольно короткий период затухания, соло-гитаристы также широко применяют различные электронно-механические эффекты, придающие звуку гитары сочность, пластичность и длительность нот — обычно это различные блоки эффектов, основанных на принципе реверберации (ревербератор, дилей и т. д.).
+
+
+
+
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%B0%D0%BB" class = "standardb_black" target="_blank">Wikipedia Метал</a> - <b>Метал</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					29е Июн, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_black"><a name="gothic_metal">Готик-Метал</a> <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></td>
+			</tr>
+			<tr>
+				<td width="350" height="100%" class="nimetus_black">Описание Жанра</td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+					<img src="images/icons/music/gothic_metal.jpg" alt="Готик-Метал" title="Готик-Метал" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
+<P><b>Готик-метал</b> или <b>готический металл</b> (англ. Gothic metal, Goth metal) — музыкальный жанр, разновидность метала, которая соединяет вязкость и мрачность дум-метала, экстремальные вокальные техники дэт- и блэк-метала, меланхолию и художественную красоту готик-рока.
+
+<br><br>
+<P><b>Современный успех:</b>
+
+<P>В новом тысячелетии многие представители готик-метала достигли признания критики и коммерческого успеха. Moonspell выиграли награду MTV European Music Awards в 2006 году как «Лучшая группа Португалии». Через год Within Temptation были удостоены той же награды в 2007 году как «лучшая группа Голландии и Бельгии». Within Temptation и Lacuna Coil имеют самые впечатляющие продажи альбомов.
+
+<P>Многие группы, исполнявшие другие виды музыки, в последние годы продемонстрировали серьёзное влияние готики. Так, например, исполнявшая симфо-блэк-метал Cradle of Filth на своих поздних альбомах записала ряд композиций с медленным темпом и дуэтом «красавица и чудовище». Некоторые готик-метал-группы, например Paradise Lost (в 1997 году, с выходом альбома One Second) и Tiamat (на поздних альбомах), в определённый период своего творчества даже перешли от готик-метала к более традиционному готик-року (впрочем, Paradise Lost впоследствии вернулись к готик-металу).
+
+<P>Частое употребление термина в прессе и готическом фэндоме привело к тому, что понятие «готик-метал» стало сильно размытым. Иногда к этому жанру по ошибке относят музыкантов, исполняющих музыку в других жанрах, но имеющих «готический» имидж, или соответствующие тексты (например, Marilyn Manson). Однако, как отмечает Allmusic, «настоящим готик-металом является только тот, который связан с готик-роком».
+					
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%82%D0%B8%D0%BA-%D0%BC%D0%B5%D1%82%D0%B0%D0%BB" class = "standardb_black" target="_blank">Wikipedia Готик-Метал</a> - <b>Готик-Метал</b> на Wikipedia.
+			</td>
+			</tr>
+			
+			
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					16е Янв, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="deathstars">Deathstars</a> <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+					<img src="images/icons/music/deathstars.jpg" alt="Deathstars" title="Deathstars" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P>«<b>Deathstars</b>» — шведская метал-группа, основанная в январе 2000 года. Стиль коллектива представляет необычную смесь готик-метала, и индастриал-метала, которая в сочетании с ярким имиджем открыла для них дорогу сначала на крупный лейбл LED, а затем и на один из авторитетнейших метал-лейблов Nuclear Blast. Их песни возглавляли верхние строки ТВ-чартов Швеции и Германии, звучали в голливудском фильме, а клипы запрещали к показу на телевидении, сегодня это одна из самых коммерчески успешных групп Швеции. Текущий состав в основном — состоит из участников музыкального коллектива Swordmaster (блэк-металлический проект) и Dissection, также в состав входит бывший участник Ophthalamia. 
+<br><br>
+<P><b>Текущие участники:</b>
+
+<P>&nbsp;&bull; Андреас «Whiplasher Bernadotte» Берг — вокал
+<P>&nbsp;&bull; Эмиль «Nightmare Industries» Нодтвейдт — гитара и клавишные
+<P>&nbsp;&bull; Юнас «Skinny Disco» Кангур — бас-гитара и бэк-вокал
+
+<br><br>
+<P><b>Дискография, Альбомы:</b>
+
+<P>&nbsp;&bull; Synthetic Generation (2002, Швеция) (2003, Европа) (2004, Северная и Южная Америка)
+<P>&nbsp;&bull; Termination Bliss (2006)
+<P>&nbsp;&bull; Night Electric Night (2009)
+<P>&nbsp;&bull; The Perfect Cult (2014)
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://ru.wikipedia.org/wiki/Deathstars" class = "standardb_black" target="_blank">Wikipedia Deathstars</a> - <b>Deathstars</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://www.deathstars.net/" class = "standardb_black" target="_blank">Deathstars</a> - Официальный Сайт (англ.).
+			</td>
+			</tr>
+
+
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+
+	<div class="galleria">
+	<a href="https://www.youtube.com/watch?v=m1NcAojd7QY"><img src="images/icons/playlists/deathstars1.jpg" data-title="DeathStrars - Temple of Insects"   data-description="<a href='https://www.youtube.com/watch?v=m1NcAojd7QY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>12е Мар, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=mE6Txr_LXZc"><img src="images/icons/playlists/deathstars2.jpg" data-title="DeathStrars - Chertograd"   data-description="<a href='https://www.youtube.com/watch?v=mE6Txr_LXZc' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>12е Мар, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=qK3r9do126o"><img src="images/icons/playlists/deathstars3.jpg" data-title="DeathStars - Blood Stained Blondes"   data-description="<a href='https://www.youtube.com/watch?v=qK3r9do126o' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>14е Мар, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=HdZlAt1IyyA"><img src="images/icons/playlists/deathstars4.jpg" data-title="DeathStars - All The Devil's Toys"   data-description="и Так-Же <a href='https://www.youtube.com/watch?v=oDA6XznmZ5g' class = 'smallb_black' target='_blank'>Fire Galore</a> - Про <a href='amv_creator_rus.html' class = 'smallb_black' target='_blank'>AMV Creator</a>.<br><a href='https://www.youtube.com/watch?v=HdZlAt1IyyA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Мар, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=lViCo8cbD_8"><img src="images/icons/playlists/deathstars5.jpg" data-title="DeathStars - Night Electric Night"   data-description="Про Песню <a href='music_rock_rus.html#chizh' class = 'smallb_black' target='_blank'>Чиж & Co</a> - <a href='https://www.youtube.com/watch?v=6Xet5vd22mQ' class = 'smallb_black' target='_blank'>Я Позвонил Вам с Телефона-Автомата</a>.<br><a href='https://www.youtube.com/watch?v=lViCo8cbD_8' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>08е Мая, 2018."></a>
+	</div>
+
+
+	<script>
+
+
+	var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/azur/galleria.azur.js');
+
+	Galleria.run('.galleria', {
+	height : 500,
+	width : 670
+	});
+	</script>
+
+			</td>
+			</tr>
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					20е Фев, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+
+
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="elysion">Elysion</a> <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+					<img src="images/icons/music/elysion.jpg" alt="Elysion" title="Elysion" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P>«<b>Elysion</b>» — греческая готик-метал-группа из Афин, созданная в 2006 году.
+
+<br><br>
+<P><b>Дискография, Студийные Альбомы:</b>
+<P>&nbsp;&bull; Silent Scr3am (2009)
+<P>&nbsp;&bull; Someplace Better (2014)
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://ru.wikipedia.org/wiki/Elysion" class = "standardb_black" target="_blank">Wikipedia Elysion</a> - <b>Elysion</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					20е Мар, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+  
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="nemesea">Nemesea</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+					<img src="images/icons/music/nemesea.jpg" alt="Nemesea" title="Nemesea" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Nemesea</b> — голландская симфо-метал-группа. 
+
+<br><br>
+<P><b>Текущие участники:</b>
+
+<P>&nbsp;&bull; Санне Миелу — вокал (с 2017)
+<P>&nbsp;&bull; Хенрик Ян де Йонг — гитара (с 2002)
+<P>&nbsp;&bull; Сонни Ондерватер — бас (с 2002)
+<P>&nbsp;&bull; Маттейс ван Тил — клавишные (с 2017)
+<P>&nbsp;&bull; Стивен Баума — ударные (2006—2011, с 2016)
+
+<br><br>
+<P><b>Дискография, Студийные альбомы:</b>
+
+<P>&nbsp;&bull; Mana (2004)
+<P>&nbsp;&bull; In Control (2007)
+<P>&nbsp;&bull; The Quiet Resistance (2011)
+<P>&nbsp;&bull; Uprise (2016)
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://ru.wikipedia.org/wiki/Nemesea" class = "standardb_black" target="_blank">Wikipedia Nemesea</a> - <b>Nemesea</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://www.nemesea.com/" class = "standardb_black" target="_blank">Nemesea</a> - Официальный Сайт (англ.).
+			</td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+	<div class="galleria2">
+	<a href="https://www.youtube.com/watch?v=yPRxaDUPjPY"><img src="images/icons/playlists/nemesea1.jpg" data-title="Nemesea - Allein"   data-description="Про Фабрики.<br><a href='https://www.youtube.com/watch?v=yPRxaDUPjPY' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>16е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=CZYnp4b006A"><img src="images/icons/playlists/nemesea1.jpg" data-title="Nemesea - 2012"   data-description="Про Золото.<br><a href='https://www.youtube.com/watch?v=CZYnp4b006A' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>19е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=iEb4k66B4Ao"><img src="images/icons/playlists/nemesea2.jpg" data-title="Nemesea - Hear Me"   data-description="Про Университеты (<a href='about_phd_rus.html' class = 'smallb_black' target='_blank'>PhD</a>).<br><a href='https://www.youtube.com/watch?v=iEb4k66B4Ao' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>04е Мая, 2018."></a>
+	</div>
+
+
+	<script>
+
+	Galleria.run('.galleria2', {
+	height : 500,
+	width : 670
+	});
+	</script>
+
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					16е Апр, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+  
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="poisonblack">Poisonblack</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+					<img src="images/icons/music/poisonblack.jpg" alt="Poisonblack" title="Poisonblack" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>Poisonblack</b> was a Finnish gothic metal band led by singer and guitarist Ville Laihiala.
+
+
+
+
+<br><br>
+<P><b>Discography, Studio albums:</b>
+
+<P>&nbsp;&bull; Escapexstacy (2003)
+<P>&nbsp;&bull; Lust Stained Despair (2006)
+<P>&nbsp;&bull; A Dead Heavy Day (2008)
+<P>&nbsp;&bull; Of Rust and Bones (2010)
+<P>&nbsp;&bull; Drive (2011)
+<P>&nbsp;&bull; Lyijy (2013)
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://en.wikipedia.org/wiki/Poisonblack" class = "standardb_black" target="_blank">Wikipedia Poisonblack</a> - <b>Poisonblack</b> на Wikipedia (англ.).
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://www.poisonblack.com/" class = "standardb_black" target="_blank">Poisonblack</a> - Официальный Сайт (фин.).
+			</td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+	<div class="galleria3">
+	<a href="https://www.youtube.com/watch?v=ESV59FJ51JA"><img src="images/icons/playlists/poisonblack1.jpg" data-title="Poisonblack - My Sun Shines Black"   data-description="<a href='https://www.youtube.com/watch?v=ESV59FJ51JA' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>20е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=wPuMd3l0dpM"><img src="images/icons/playlists/poisonblack2.jpg" data-title="Poisonblack - Me, Myself & I"   data-description="Про Офис.<br><a href='https://www.youtube.com/watch?v=wPuMd3l0dpM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>20е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=vWQBsbAaSpk"><img src="images/icons/playlists/poisonblack2.jpg" data-title="Poisonblack - Human Compost"   data-description="<a href='https://www.youtube.com/watch?v=vWQBsbAaSpk' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>05е Мая, 2018."></a>
+	</div>
+
+
+	<script>
+
+	Galleria.run('.galleria3', {
+	height : 500,
+	width : 670
+	});
+	</script>
+
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					20е Апр, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+
+
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+  
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="sirenia">Sirenia</a></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+					<img src="images/icons/music/sirenia.jpg" alt="Sirenia" title="Sirenia" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+<P><b>Sirenia</b> — норвежский готик-метал-проект, основанный Мортеном Веландом в 2001 году после ухода из Tristania. В новом проекте Мортен является бессменным участником и идейным лидером, продолжая писать тексты и музыку. Более того, он исполняет практически все музыкальные партии в выпускаемых альбомах. Для их записи используется большое число гитар: бас-гитара, акустическая гитара, электрогитара, шести-, семи- и двенадцатиструнные гитары, а также барабаны, синтезатор, фортепиано и скрипка. Характерная черта проекта — женский вокал со вставками хоровых пений, гроулинга и чистого мужского вокала. Ранним работам группы были присущи более мелодичные и меланхоличные композиции с доминирующей ролью гроулинга в вокале, поздним — более ритмичные и менее мрачные. По различным причинам в проекте часто меняются музыканты, так, первые четыре альбома записаны с участием разных вокалисток.
+
+<br><br>
+<P><b>Истоки, стиль, влияние:</b>
+
+<P>Такие группы, как Guns N’ Roses, M&ouml;tley Cr&uuml;e, Элис Купер и Metallica вдохновили Мортена начать заниматься музыкой. Несколько лет спустя он открыл для себя британскую готик-сцену, яркими представителями которой являлись группы The Sisters of Mercy, Fields of the Nephilim и The Mission. Мортену очень понравилась мрачная атмосфера, которая присутствовала в творчестве этих и других подобных групп, но и от своих прежних взглядов он не спешил отказываться, поэтому он решил объединить элементы, свойственные готическому жанру с элементами, свойственными металу, и с 1994 года начал экспериментировать в новом направлении. Постепенно совершенствуясь и оттачивая новый стиль, Мортен пытался соединить элементы классической музыки — хор, скрипку и фортепиано — с элементами рока и метала, а с помощью синтезатора пытался придать всему этому меланхоличную атмосферу. По его утверждению, все трудности, связанные с комбинированием этих, казалось бы, несовместимых вещей, являются катализатором его работоспособности, без них написание музыки превратилось бы в рутину. Точная классификация получившегося стиля затруднительна, поскольку музыка Sirenia сочетает в себе элементы различных жанров. В мелодиях можно проследить элементы блэк-метала, дэт-метала, дум-метала, готик-метала и симфоник-метала с явным преобладанием двух последних жанров. Вот что говорит о стиле сам Мортен:
+
+<P><i>Для нас всегда было сложно присвоить нашей музыке какой-то определённый ярлык, поскольку она основана на использовании элементов из различных стилей и сочетает их в одну большую музыкальную концепцию. Но если бы пришлось сравнивать с другими группами, я бы упомянул, например, Nightwish или Within Temptation, музыка этих групп содержит элементы, свойственные Sirenia, хотя, я думаю, мы имеем свой собственный стиль.</i>
+
+<br><br>
+
+<P>Помимо уже названных групп, также огромное влияние на Мортена оказала музыка и лирика Леонарда Коэна, который с раннего детства был любимым артистом Мортена. После того, как в 1992 году Мортен купил свою первую электрогитару, он начал задумываться о том, чтобы создать кавер на какую-нибудь из его песен, но решился на это лишь спустя 12 лет, когда понял, что имеет для этого достаточно опыта. Несмотря на то, что Мортен слушает музыку весьма разнообразных стилей и направлений, большее предпочтение он отдаёт музыке 70-х, 80-х и ранних 90-х, такой, например, как The Doors, Black Sabbath и Mot&ouml;rhead. По его словам, он получает вдохновение от прослушивания подобной музыки, чтения книг, просмотра фильмов, и вообще любого события, которое может произвести на него впечатление, вызвав тем самым у него какие-либо чувства и эмоции, а полученные чувства и эмоции, в свою очередь, помогают уже в написании собственной музыки.
+
+<P>Что касается текстов, то большая их часть посвящена жизни и смерти, любви и ненависти, депрессии, паранойе, размышлениям о суициде, а также другим психическим состояниям человека. При их написании Мортен пытается придать им некую двусмысленность и недоговорённость, чтобы каждый слушатель понял их по-своему. «Я применяю множество метафор, символов, которые оставляют большой простор для фантазии слушателя. Я предпочитаю писать глубже и сложнее, чем диктовать прописные истины», — утверждает Мортен. Именно поэтому он не любит давать интервью по поводу смысла песен, считая бессмысленным провести несколько месяцев придумывая хорошие тексты, а потом просто взять и сказать «Я имел в виду то и это». У Мортена накопилось множество материала, не вписывающегося в формат Sirenia, поэтому он решил организовать сайд-проект в котором смог бы воплотить все свои нереализованные идеи. Новый проект был основан 6 июля 2009 года и получил название Mortemia.
+
+<br><br>
+<P><b>Дискография, Студийные альбомы:</b>
+
+<P>&nbsp;&bull; At Sixes and Sevens (2002, Napalm Records)
+<P>&nbsp;&bull; An Elixir for Existence (2004, Napalm Records)
+<P>&nbsp;&bull; Nine Destinies and a Downfall (2007, Nuclear Blast)
+<P>&nbsp;&bull; The 13th Floor (2009, Nuclear Blast)
+<P>&nbsp;&bull; The Enigma of Life (2011, Nuclear Blast)
+<P>&nbsp;&bull; Perils of the Deep Blue (2013, Nuclear Blast)
+<P>&nbsp;&bull; The Seventh Life Path (2015, Napalm Records)
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://ru.wikipedia.org/wiki/Sirenia_%28%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0%29" class = "standardb_black" target="_blank">Wikipedia Sirenia (группа)</a> - <b>Sirenia</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="http://www.sirenia.no/" class = "standardb_black" target="_blank">Sirenia</a> - Официальный Сайт (англ.).
+			</td>
+			</tr>
+
+
+
+
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+
+	<div class="galleria4">
+	<a href="https://www.youtube.com/watch?v=njPWBTIv9qw"><img src="images/icons/playlists/sirenia1.jpg" data-title="Sirenia - The Other Side"   data-description="<a href='https://www.youtube.com/watch?v=njPWBTIv9qw' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>12е Сен, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=xOKCZIN9_ME"><img src="images/icons/playlists/sirenia2.jpg" data-title="Sirenia - Absent Without Leave"   data-description="<a href='https://www.youtube.com/watch?v=xOKCZIN9_ME' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>10е Окт, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=u5AwXgEFoY4"><img src="images/icons/playlists/sirenia3.jpg" data-title="Sirenia - Winterborn 77"   data-description="<a href='https://www.youtube.com/watch?v=u5AwXgEFoY4' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>17е Окт, 2016."></a>
+	<a href="https://www.youtube.com/watch?v=MHVhg__cviE"><img src="images/icons/playlists/sirenia3.jpg" data-title="Sirenia - The Lucid Door"   data-description="Про Профессоров.<br><a href='https://www.youtube.com/watch?v=MHVhg__cviE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>30е Окт, 2017."></a>
+	<a href="https://www.youtube.com/watch?v=dGCxgJFjnZw"><img src="images/icons/playlists/sirenia4.jpg" data-title="Sirenia - Seven Windows Weep"   data-description="Про Книгу <a href='books_clarke_rus.html' class = 'smallb_black' target='_blank'>Сэр Артур Чарльз Кларк</a> - <a href='books_clarke_rus.html#childhoods_end' class = 'smallb_black' target='_blank'>Конец Детства</a>.<br><a href='https://www.youtube.com/watch?v=dGCxgJFjnZw' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>30е Окт, 2017."></a>
+	</div>
+
+
+	<script>
+
+
+	Galleria.run('.galleria4', {
+	height : 500,
+	width : 670
+	});
+	</script>
+
+			</td>
+			</tr>
+
+
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					26е Авг, 2016.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+
+
+
+	<tr align="center" >
+		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+  
+
+			<tr >
+				<td width="350" height="100%" class="nimetus_black"><a name="to_die_for">To/Die/For</a> <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></td>
+			</tr>
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+					<img src="images/icons/music/to_die_for.jpg" alt="To/Die/For" title="To/Die/For" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+
+
+<P><b>To/Die/For</b> — финская готик-рок и готик-метал-группа. Основана в 1996 году под названием Mary-Ann, с 2000 года стала называться To/Die/For (англ. умереть за...).
+
+<br><br>
+<P><b>Дискография, Студийные альбомы:</b>
+
+<P>&nbsp;&bull; All Eternity (1999)
+<P>&nbsp;&bull; Epilogue (2001)
+<P>&nbsp;&bull; Jaded (2003)
+<P>&nbsp;&bull; IV (2005)
+<P>&nbsp;&bull; Wounds Wide Open (2006)
+<P>&nbsp;&bull; Samsara (2011)
+<P>&nbsp;&bull; Cult (2015)
+
+
+
+
+
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Ссылки:
+				</td>
+			</tr>
+			
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="https://ru.wikipedia.org/wiki/To/Die/For" class = "standardb_black" target="_blank">Wikipedia To/Die/For</a> - <b>To/Die/For</b> на Wikipedia.
+			</td>
+			</tr>
+			
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+			<a href="www.todiefor.fi" class = "standardb_black" target="_blank">To/Die/For</a> -  - Официальный Сайт (фин.).
+			</td>
+			</tr>
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Рекомендую:
+				</td>
+			</tr>
+			
+
+
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+
+
+
+
+	<div class="galleria5">
+	<a href="https://www.youtube.com/watch?v=LxrSALE1czI"><img src="images/icons/playlists/to_die_for2.jpg" data-title="To/Die/For - Little Deaths"   data-description="<a href='https://www.youtube.com/watch?v=LxrSALE1czI' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>26е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=FR97MPpDb34"><img src="images/icons/playlists/to_die_for1.jpg" data-title="To/Die/For - (I Just) Want You"   data-description="<a href='https://www.youtube.com/watch?v=FR97MPpDb34' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>22е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=gpOBT5l90eg"><img src="images/icons/playlists/to_die_for2.jpg" data-title="To/Die/For - Fragmented"   data-description="<a href='https://www.youtube.com/watch?v=gpOBT5l90eg' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>23е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=mcHV59tmQqE"><img src="images/icons/playlists/to_die_for3.jpg" data-title="To/Die/For - Straight Up"   data-description="<a href='https://www.youtube.com/watch?v=mcHV59tmQqE' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>23е Апр, 2018."></a>
+	<a href="https://www.youtube.com/watch?v=Bi9GgWqRdzM"><img src="images/icons/playlists/to_die_for4.jpg" data-title="To/Die/For - Love's A Sickness"   data-description="<a href='https://www.youtube.com/watch?v=Bi9GgWqRdzM' class = 'smallb_black' target='_blank'>YouTube</a> Ссылка.<br>07е Мая, 2018."></a>
+
+	</div>
+
+
+	<script>
+
+	Galleria.run('.galleria5', {
+	height : 500,
+	width : 670
+	});
+	</script>
+
+			</td>
+			</tr>
+
+
+
+			<tr> <!-- Modified -->
+				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
+					22е Апр, 2018.
+				</td>
+			</tr>
+			</table>
+
+
+	</td>
+		</tr>
+
+		
+
+
+
+
+
+
+
+
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_black" >
+	&copy; Урмас Репинский, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
+

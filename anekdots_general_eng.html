@@ -1,0 +1,1288 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Homepage</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#de8e8e";
+	var scrollBackColor="#F9D4D4";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#CE3535; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+
+<script>
+var menuHeight=23*33;
+var imgBgSrc="images/icons/background/anekdots.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'eng');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#F9D4D4"> 
+		<td  bgcolor="#F9D4D4" width="100%">
+		<div class="nimetus2_red"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('anekdots_general_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='anekdots_general_eng.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('anekdots_general_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='anekdots_general_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#F9D4D4" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_red">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Site Map</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About me</div>
+	</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my work</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		About my PhD</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_eng.html';
+			};"
+		class="menu_not_selected_blue">
+		Links</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('html_editor_eng.html?pattern=*.html&i=0');
+			} else {
+				clickStarted = true;
+				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+			};"
+		class="menu_not_selected_blue">
+		HTML Editor</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'music');"
+		class="menu_not_selected_black">
+		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_8"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'movies');"
+		class="menu_not_selected_black">
+		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_27"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'series');"
+		class="menu_not_selected_black">
+		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_9"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'games');"  
+		class="menu_not_selected_black">
+		&#9679; Games</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_10"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'books');"  
+		class="menu_not_selected_red">
+		&#9679; Books</div>
+	</td>
+	</tr>		
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'photos');"  
+		class="menu_not_selected_red">
+		&#9679; Photos/Images</div>
+	</td>
+	</tr>			
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_eng.html';
+			};"
+		class="menu_not_selected_black">
+		Junk</div>
+	</td>
+	</tr>			
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'eng', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+	
+		<tr>
+		<td align="center" >
+		<div id="menu_15"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		class="menu_selected">
+		&#9679; Anecdotes</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_15_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('anekdots_general_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='anekdots_general_eng.html';
+			};"  
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; General</div>
+	</td>
+	</tr>	
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_15_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('anekdots_lieutenant_rzhevskiy_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='anekdots_lieutenant_rzhevskiy_eng.html';
+			};"  
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Lieutenant Rzhevskiy</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_15_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('anekdots_nuthouse_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='anekdots_nuthouse_eng.html';
+			};"  
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Nuthouse</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_15_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('anekdots_politics_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='anekdots_politics_eng.html';
+			};"  
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Politics</div>
+	</td>
+	</tr>	
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_15_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('anekdots_students_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='anekdots_students_eng.html';
+			};"  
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Students</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_15_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('anekdots_vovochka_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='anekdots_vovochka_eng.html';
+			};"  
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Vovochka</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_16"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('heffalump_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='heffalump_eng.html';
+			};"  
+		class="menu_not_selected_red">
+		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+	</td>
+	</tr>				
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_17"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		class="menu_not_selected_white">
+		&#9679; Substances For Relaxation</div>
+	</td>
+	</tr>	
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_18"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
+		onclick="showSubMenu(this, 'eng', 'software');"  
+		class="menu_not_selected_white">
+		&#9679; Software Development</div>
+	</td>
+	</tr>	
+	
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_19"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'satanism');"
+		class="menu_not_selected_green">
+		&#9679; Satanism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_20"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('satanism_wicca_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='satanism_wicca_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Wicca</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_21"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('falsifiability_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='falsifiability_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Falsifiability</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="center" >
+		<div id="menu_22"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'psychology');"
+		class="menu_not_selected_green">
+		&#9679; Psychology</div>
+	</td>
+	</tr>
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_23"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'countries');"
+		class="menu_not_selected_green">
+		&#9679; Countries</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_24"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('totalitarianism_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='totalitarianism_eng.html';
+			};"
+		class="menu_not_selected_green">
+		Totalitarianism</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_25"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
+		onclick="showSubMenu(this, 'eng', 'personalities');"
+		class="menu_not_selected_green">
+		&#9679; Personalities</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'eng', 'news');"
+		class="menu_not_selected_red">
+		&#9679; News</div>
+	</td>
+	</tr>
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#F9D4D4" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_red" style="width: 530px;"><a name="welcome">Anecdotes &blacktriangleright; General</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:759px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #de8e8e 1px solid;  background-color: #F9D4D4;">
+
+		
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_red"><a name="movies">General</a></td>
+			</tr>		
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+	
+
+
+
+<P>Маме кричит со двора дед Кирилл:
+<P>— Вашего сына каток раздавил!
+<P>Мама спросила: — Где он теперь?
+<P>— Сейчас я его вам подсуну под дверь.
+
+
+<br><br><HR color="#ff8a00"><br>
+
+
+
+<P>Идет призыв...
+<P>- Ты кем работал? - Радист.
+<P>- В связисты.
+<P>- Ты? - Шофер.
+<P>- В танкисты.
+<P>- Ты?
+<P>- Спортсмен. Штангист.
+<P>- В стройбат.
+<P>- Ты?
+<P>- Глюкальщик.
+<P>- Кто?!
+<P>- Глюкальщик, ну с морем связано.
+<P>- В морфлот
+<P>.......
+<P>Приезжает этот самый глюкальщик на кораблик, там свои заморочки
+<P>- Профессия?
+<P>- Повар.
+<P>- Помощником кока.
+<P>......
+<P>- Профессия?
+<P>- Глюкальщик.
+<P>- Кто?
+<P>- Да глюкальщик я потомственный. И дед мой был глюкальщиком, и отец был глюкальщиком, вот и я...
+<P>- Дак куды ж тебя, #$@$# мать, такого? - Дайте 3 недели, я вам покажу, на что способен.
+<P>Дали ему запрошенный срок. Никто не беспокоил, кормили как полагается. Прошел срок - вызывает капитан.
+<P>- Ну, готов?
+<P>- Готов, вот глюкало. (Показывает отшлифованную баночку, а внутри шарик на ниточке болтается)
+<P>- Издеваешься, гад? На губу - месяц!
+<P>Сидит парнишка, картошку чистит, палубу моет, блюет за борт периодически (качка все-таки). Прилетает через пару недель на кораблик адмирал. Ну болтает там с капитаном, былые времена вспоминает. Смотрит вдруг адмирал - на полу глюкало лежит. Он как закипит:
+<P>- Да мать вашу, кто такое чудесное глюкало на пол бросил?
+<P>А, капитан - на губу - месяц.
+<P>Потом ласково так:
+<P>- А где мастер-то ваш?
+<P>- Как где, на губе, ясное дело - говорят адмиралу.
+<P>- Сюда его, орла! К награде представить!
+<P>Вызывают нашего глюкальщика, он еле жив - дрожит от страха.
+<P>Адмирал его по-отцовски обнял и говорит:
+<P>- Ты где ж такому ИСКУССТВУ научился?
+<P>- Да я, - говорит, - потомственный глюкальщик, у меня и отец и дед и прадед глюкальщиками были. Прадед еще при Петре был известен.
+<P>- Ну, сынок, молодец. Подари, пожалуйста, глюкало-то?
+<P>- Конечно берите, товарищ адмирал! Я вам еще могу сделать!
+<P>- Спасибо, спасибо сынок - три месяца отпуска!
+<P>Отдохнул хорошо наш глюкальщик, вернулся на корабль с новым званием. Тут и капитан после губы оклемался, цветочками, пивком встречает "близкого друга". Поговорили о том, о сем, капитан его и спрашивает:
+<P>- А что вот ентим самым твоим глюкалом делают-то?
+<P>- Ну, известно что! Пришли вы из дальнего плавания, сидите дома - мрак, по морю скучаете. Наливаете в ванну воду, ставите туды глюкало, а оно плавает по ванне, и нежно так, по морскому: ГЛЮК-ГЛЮЮЮК...
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>Построил прапорщик взвод и говорит
+<P>-Сегодня,товарищи бойцы,будем грузить АЛЮМИНЬ!
+<P>Один из бойцов поправляет:
+<P>-Не АЛЮМИНЬ тов. прапорщик, а АЛЮМИНИЙ.
+<P>-Да-да!АЛЮМИНИЙ! А особо умные будут грузить ЧУГУНИЙ!
+
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Однажды в Олимпийские виды спорта ввели новый: забивание гвоздей головой. Проходят соревнования. Выступает французский спортсмен. Два гвоздя забил - и его унесли с разбитой головой. Выступает американский спортсмен. Три гвоздя забил - и его унесли с разбитой головой. Выступает чукча. Забил пятьдесят гвоздей.
+<P>Объявляют результат: первое место занял спортсмен США, второе место занял спортсмен Франции, третье место занял чукча. Тренеры чукчи обиделись и пошли выяснять почему только третье. "А ваш спортсмен вообще нарушил правила: он забивал гвозди шляпками вниз."
+
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Купается мужик. Вдруг хватает его кто-то за яйца и голос спрашивает:
+<P>- Плюс два или минус два?
+<P>Мужик говорит:
+<P>- Плюс два.
+<P>Вылезает на берег, а у него четыре яйца. Думает мужик: сейчас вернусь, скажу "Минус два" и все опять будет хорошо. Полез он обратно в воду, доплыл до того места, там его опять хватают за яйца и спрашивают:
+<P>- Плюс четыре или минус четыре?
+
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Системные и прикладные программисты едут на конференцию.
+<P>Встречаются у касс вокзала, где и те и другие берут билеты. Прикладники покупают по билету на нос, системщики берут один билет. Удивленные прикладники спрашивают:
+<P>- У вас че только один человек едет?
+<P>- Да нет. Все.
+<P>- А как же вы?
+<P>- А это наши трудности.
+<P>В поезде прикладники занимают места согласно купленных билетов за полчаса до отправления. За 45 сек. До отхода появляется стая системщиков. С криками Мы товарища провожаем вся толпа врывается в вагон закрывается в туалете. Поезд трогается.
+<P>Контроллер подходит к туалету и стучит. Высовывается рука, протягивает билет. Через некоторое время системщики, как тараканы, расползаются по поезду.
+<P>Едут обратно. Опять встречаются на вокзале. Прикладники, укравшие копирайт берут один билет. Системщики билета не берут.
+<P>За 45 сек до отхода врывается толпа прикладников и запирается в туалете. Поезд трогается.
+<P>Стук в дверь туалета. Выосвывается рука, протягивает билет.
+<P>Системщик хватает билет и бежит в другой туалет.
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>- Please, two tickets to Dublin.
+<P>- Куда, блин?
+<P>- To Dublin…
+
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Получают на почте письмо, а в графе «Получатель» написано «Деду Морозу». Что с ним делать? Открыли, читают. Пишет мальчик Деду Морозу, мол, он сирота, и нет у него ни варежек, ни шарфика, ни шапочки, потому он и мерзнет зимой. Просит он Деда Мороза прислать их ему в качестве подарка на Новый год. На почте одни женщины работали, те всплакнули – мальчонка жалко, скинулись вместе из своих карманный денег и купили парню шапочку, шарфик, а с варежками не получилось – банально на них не хватили денег, но посылку все же отправили. Через несколько дней получают письмо от того же мальчика на имя Деда Мороза, открыли, читают: Дорогой Дедушка Мороз! Спасибо за подарки – шапочка впору и очень понравилась, шарфик очень теплый. А вот варежек в подарках не было – видать, ИХ НА ПОЧТЕ УКРАЛИ….
+
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>Письменное задание. Преподаватель дает вводную:
+<P>— Товарищи будущие дипломаты! Представьте себе, что вы представляете интересы нашей необъятной Родины в далекой африканской стране. Вас объявили PERSONA NON GRATA. Вам предложено в 24 часа покинуть пределы страны. Пишите ноту протеста.
+<P>Через 5 минут лучший студент группы сдает исписанный листок. Преподаватель читает, немного хмурится и говорит:
+<P>— Ну что ж, написано неплохо, в стиле советской дипломатии. Но к сожалению у вас есть две небольшие грамматические ошибки — дело в том что насрать пишется вместе, а "черная обезьяна" — с большой буквы — Президент все—таки!
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Останавливается 600 мерс на светофоре а в него на полном ходу вьезжает запор.
+<P>Ну дело как всегда два амбала в цепях подходят, видят старичок сидит.
+<P>-"Ну Отец квартира, недвижимость, есть ну в общем все отдашь и все равно не расплатишся."-говорят они.
+<P>-А тот говорит у меня сын директор птицефабрики.
+<P>-Ну тогда дело в шляпе поехали он расплатится.
+<P>Приезжают, высокий забор, ворота, сигналит из ворот ребята в масках скрутили тут подходит здоровый майор и говорит: Сколько раз говорить тебе Отец не директор птицефермы, а командир отдельного подразделения "БЕРКУТ"
+
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>Перекличка.
+<P>-Иванов !!! -бля....
+<P>-Я !
+<P>-Петров !!! -бля....
+<P>-Я !
+<P>-Сидоров !!!
+<P>-Я !
+<P>-Черезтризабораногузакидыщщенков !!!
+<P>-Я !
+<P>-Ни хуя ж себе фамилия...
+<P>-Я !
+<P>-Да вы че ,охуели брацы....
+<P>-МЫ !!!
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Сибирь, тайга, два геолога сидят у костра. Один отходит по малой нужде в кусты и там его за член кусает гадюка. Он бросается к своему напарнику с криком:
+<P>- Коля, Коля, свяжись скорее по рации с врачом, пусть скажет что делать.
+<P>Коля связывается с врачом. Так, мол, и так - человека укусила гадюка, что делать? Ну, врач и советует: надо наложить жгут и отсосать из раны кровь... 
+<P>Укушенный срывающимся голосом:
+<P>- Ну же, Коля, говори, что сказал врач?...
+<P>Коля, медленно снимая наушники:
+<P>- Помрешь ты Вася...
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Заиндевевший Кай указкой двигал по полу кусочки льда, изображавшие буквы. Снежная Королева подошла к нему и спросила:
+<P>- Что, мой мальчик, получается ли тебе собрать слово "Вечность"?
+<P>- Трудно, моя госпожа, сложить слово "Вечность" из букв "Ж", "П", "О" и "А" - ответил Кай.
+
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>Вылазит мужик утром из палатки (с большого бодуна), там другой мужик лювит рыбу.
+<P>- Не, мужик, клева не будет.
+<P>- Почему?
+<P>- Клево было вчера.
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>В чём схожесть между сексом и футболом?
+<P>- И там и там слишком много знатоков, но слишком мало игроков.
+
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>Внук спрашивает своего деда-переживщего блокаду Ленинграда
+<P>"Деда, а правда во время блокады хлеба не было" -
+<P>"Правда внучек, правда... Масло прям на колбасу мазали.
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>Встречаются два кума.
+<P>- Слушай, кум, ты когда-нибудь втроём пробовал?
+<P>- Нет.
+<P>- А хочешь?
+<P>- Ещё как!
+<P>- Ну,тогда быстро беги домой!
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Два быка - молодой и старый - пасутся на вершине холма. У подножия холма - стадо коров. Молодой бычок радостно прыгает вокруг старого, смотрит на коров и спрашивает:
+<P>- Дяденька бык, дяденька бык, давай быстро сбежим вниз и выебем во-о-н ту красивую белую коровку?
+<P>Старый бык, не переставая жевать траву, мрачно отвечает:
+<P>- Не-е-е...
+<P>Молодой бычок опять побегал вокруг и снова подскакивает к старому:
+<P>- Дяденька бык, дяденька бык, давай быстро сбежим вниз и выебем во-о-н ту красивую черную коровку?
+<P>Тот опять мрачно отвечает:
+<P>- Не-е-е...
+<P>Молодой бычок опять побегал вокруг и снова подскакивает к старому:
+<P>- Дяденька бык, дяденька бык, давай быстро сбежим вниз и выебем во-о-н ту красивую рыжую коровку?
+<P>А тот опять мрачно отвечает:
+<P>- Не-е-е...
+<P>- Но дяденька бык, а что же мы тогда будем делать.
+<P>Старый бык чуть еще пожевал, помолчал и мрачно ответил:
+<P>- Мы медленно-медленно сойдем по склону холма и выебем все стадо.
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>Понедельник. Дикий запад, салун, в уголке за столом сидят старые ковбои и цедят виски. Створки дверей раскрываются, влетает молодой ковбой, выстрелами из кольта сбивает шляпы с сидящих старых ковбоев, заказывает у бармена стакан виски и выпив его направляется к дверям. Вслед ему, один из старых ковбоев замечает:
+<P>- Молодой Джо, спили мушку!
+<P>То же самое повторяется во вторник среду и четверг. В пятницу, старые ковбои вылезают из за стола, выкрутив руки отбирают кольт и укладывают молодого лицом на пол. Один из старых ковбоев, осмотрев кольт замечает:
+<P>- Ты так и не спилил мушку, молодой Джо...
+<P>- Какого черта, - возмущается молодой Джо, - что ты привязался к моей мушке!!!
+<P>- Видишь ли, - отвечает старый ковбой, - когда я был таким же молодым, как и ты, я проделывал такую же штуку несколько дней. Потом людям это надоело, меня тоже поймали и оттрахали в задницу стволом моего же кольта. ЧЕРТОВА МУШКА!
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>– Ватсон ! Что у нас сегодня на завтрак?
+<P>– Солянка, сэр.
+<P>– А почему не овсянка, сэр?
+<P>– Подлянка, сэр!
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>Судят мужика за убийство соседа:
+<P>Судья: Подсудимый, расскажите суду, как все произошло.
+<P>Мужик: Прихожу после работы домой. Открываю дверь. Захожу в комнату и вижу, как мой сосед целует мою жену. Хотел было убить его, но вспомнил, что я тоже его жену целовал.
+<P>Судья: Ближе к делу.
+<P>Мужик: Тут смотрю, сосед жену раздевает и на кровать кладет. Хотел было убить, но вспомнил, что тоже это делал с его женой.
+<P>Судья: Дальше.
+<P>Мужик: Вдруг сосед начал жену трахать. Хотел было...
+<P>Судья: ...его убить, но вспомнили, что тоже трахали его жену (рассержено). Ну так почему вы его убили?
+<P>Мужик: Но я же свой х%й об его занавеску не вытирал!
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>Пожилой английский лорд, проснувшись утром, подходит к окну, и, вглядываясь туда внимательно, говорит молодому слуге: 
+<P>- Сегодня смог. 
+<P>- Поздравляю, сэр! - отвечает слуга.
+
+
+
+<br><br><HR color="#ff8a00"><br>
+
+
+
+<P>Приходит мужик к директору консерватории и говорит:
+<P>- У меня есть офффигенный номер. Я могу пробздеть любую партитуру любого музыкального произведения на выбор и без подготовки.
+<P>Директор, чтоб отвязаться от психа молча достает ноты "Полет шмеля" и протягивает их мужику. Тот быстро их просматривает и возвращает обратно.
+<P>- Нет, это не смогу исполнить.
+<P>- А что ж так? - ехидно спрашивает директор.
+<P>- Да тут есть два действительно сложных пассажа, так на них обосраться можно.
+
+
+<br><br><HR color="#ff8a00"><br>
+
+
+<P>На работе муж говорит своему приятелю:
+<P>- Вчера у нас в семье за семейным ужином вышло недоразумение, оговорился я, ну прямо по Фрейду. Представляешь, сидим: моя жена, теща и я, ужинаем. Вижу, а солонка-то прямо напротив тещи поставлена. Хотел я сказать ей: "Дорогая теща, передай мне, пожалуйста, соль", а вместо этого у меня вылетает: "Ах ты старая проклятая с%ка! Ты же мне всю жизнь испортила!"
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Северный полюс. Белая медведица, на руках у нее медвежонок.
+<P>- Мам, а у нас в роду медведи гризли есть, знаешь, черные такие, они там на юге, в Северной Америке водятся?
+<P>- Нет, сыночек, нету.
+<P>- Мам, а у нас в роду бурые медведи есть, большие такие, они еще в России водятся?
+<P>- Нет, сыночек, нету.
+<P>- Мам, а у нас в роду есть медведи панды, с такими круглыми ушками, в Китае водятся?
+<P>- Нет, сыночек, у нас и по папиной линии и по моей одни только белые медведи, все дедушки, бабушки, пра-дедушки, пра-бабушки. А че ты спрашиваешь?
+<P>- Да что-то холодно мне.
+
+<br><br><HR color="#ff8a00"><br>
+
+<P>Изобрели аппарат (А) предсказывающий будущее. Клинтон (К) спрашивает его:
+<P>К: - Будет третья мировая война?
+<P>А: - Да, в 2010-ом году.
+<P>К: - А сколько будет стоить банка кока-колы после войны?
+<P>А: - Семьдесят восемь копеек.
+
+<br><br><HR color="#ff8a00"><br>
+
+
+				</td>
+			</tr>
+
+			
+ 
+			<tr> <!-- Modified -->
+
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					17th of Jul, 2017.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+ 
+		
+
+ 
+ 
+		
+		
+
+
+	
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_red" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+

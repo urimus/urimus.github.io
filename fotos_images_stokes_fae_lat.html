@@ -1,0 +1,950 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Urmas Repinski - Domuspagina</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="images/icons/butterfly.gif" type="image/ico" />
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- Formated Tooltips Script -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
+
+  <script>
+	var scrollForeColor="#de8e8e";
+	var scrollBackColor="#F9D4D4";
+	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
+  </script>
+
+  <style>
+  .ui-tooltip.custom-tooltip {
+	background: linear-gradient(0deg, rgba(255,150,150,1) 0%, rgba(255,236,237,1) 100%);
+	font-size: 13px; 
+	font-family: "Verdana"; 
+	font-weight:bold; 
+	padding:4px 6px;
+	color:#CE3535; 
+	border: 2px solid #ff8a00;
+	border-radius: 4px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	width: max-content;
+	pointer-events: none;
+  }
+  </style>
+
+<!-- Foto Gallery -->
+
+<script src="scripts/galleria-1.6.1/src/galleria.js"></script>
+
+<!-- End of Foto Gallery -->
+
+
+
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+
+<script>
+var menuHeight=23*24;
+var imgBgSrc="images/icons/background/photos.png";
+var imgBgStarSrc="images/icons/background/sticky_note.png";
+</script>
+<!-- End of Background Images Script -->
+
+
+</head>
+
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="processPageResize(1, 0, 'lat');" onmouseover="checkIfHideSubMenu(event);"> <!-- Right background image -->
+
+
+<!-- Header Image Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+	<tr> 
+		<td  height="3"></td>
+	</tr>	
+	<tr>
+		<td width="1000">
+			<img src="images/icons/urmas.jpg" alt="Ego" title="Ego"  width="1000" style="display: block">
+		</td>
+	</tr>
+
+</table>
+
+<!-- Lanuage Table -->
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+
+	<tr align="right" bgcolor="#F9D4D4"> 
+		<td  bgcolor="#F9D4D4" width="100%">
+		<div class="nimetus2_red"><font class="blinking_text" >&#9734;&nbsp;Urmas Repinski - Domuspagina&nbsp;&#9734;</font></div>
+		</td>
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('fotos_images_stokes_fae_lat.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='fotos_images_stokes_fae_lat.html' + window.location.hash;
+				};"
+			class="flag_selected"
+			title="latina"
+			id="flag_lat"
+		>
+			<img src="lang/lat.gif" height="17" alt="latina" style="display: block;"/>
+		</div>
+	</td>
+
+
+
+
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('fotos_images_stokes_fae_eng.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='fotos_images_stokes_fae_eng.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="english"
+			id="flag_eng"
+		>
+			<img src="lang/eng.gif" height="17" alt="english" style="display: block;"/>
+		</div>
+	</td>
+    <td align="center" valign="bottom">
+		<div 
+			role="button"
+			tabindex="0"
+			onkeydown="
+				if(event.key==='Enter' || event.key===' ') {
+					event.preventDefault();
+					this.click(); this.onmouseleave();
+				}"
+			onmouseenter="this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onclick="
+				if (event.ctrlKey) {
+					window.open('fotos_images_stokes_fae_rus.html' + window.location.hash);
+				} else {
+					clickStarted = true;
+					window.location.href='fotos_images_stokes_fae_rus.html' + window.location.hash;
+				};"
+			class="flag_not_selected"
+			title="русский"
+			id="flag_rus"
+		>
+			<img src="lang/rus.gif" height="17" alt="русский" style="display: block;"/>
+		</div>
+	</td>
+	</tr>
+</table>
+
+
+
+<!-- Main Table -->
+<table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
+	<tr> 
+
+	<td bgcolor="#F9D4D4" valign="top"> 
+
+<table cellspacing="0" cellpadding="0" width="280" border="0" >
+
+	<tr onmouseenter="hideSubMenu();"> 
+		<td align="center" class="title_gradient_red">Menu</td>
+	</tr>
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+
+
+
+
+	<tr>
+		<td align="center">
+		<div id="menu_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'sitemap');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="showSubMenu(this, 'lat', 'sitemap');"
+		class="menu_not_selected_blue">
+		&#9679; Pagina Tabula</div>
+	</td>
+	</tr>   
+ 
+	<tr>
+		<td align="center">
+		<div id="menu_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_me_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_me_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Circa Mihi</div>
+	</td>
+	</tr>   
+
+	<tr>
+		<td align="center">
+		<div id="menu_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_work_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_work_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Circa Opus Meum</div>
+	</td>
+	</tr>   
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('about_phd_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='about_phd_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Circa Mei PhD</div>
+	</td>
+	</tr>
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('links_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='links_lat.html';
+			};"
+		class="menu_not_selected_blue">
+		Relatio</div>
+	</td>
+	
+
+	<tr>
+		<td align="center" >
+		<div id="menu_11"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_me_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_me_lat.html';
+			};"  
+		class="menu_selected">
+		&#9679; Photo/Imaginibus</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Photographia Mihi</div>
+	</td>
+	</tr>   
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Imaginibus - Nicoletta Ceccoli</div>
+	</td>
+	</tr>  
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Imaginibus - KuKuLa</div>
+	</td>
+	</tr>  
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Imaginibus - Mai Ja</div>
+	</td>
+	</tr>  
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'photos');"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Imaginibus - Minjae Lee</div>
+	</td>
+	</tr>  
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="showSubMenu(this, 'lat', 'photos');"
+		class="menu_selected"
+		style="padding-left: 5px;">
+		&#9679; Imaginibus - Anne Stokes</div>
+	</td>
+	</tr>   
+
+
+ 
+	<tr>
+		<td align="left" >
+		<div id="menu_11_6_1"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_images_about_stokes_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_images_about_stokes_lat.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Circa Anne Stokes</div>
+	</td>
+	</tr>   
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_6_2"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_images_stokes_dragons_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_images_stokes_dragons_lat.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Dracones</div>
+	</td>
+	</tr>
+
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_6_3"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_images_stokes_gothic_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_images_stokes_gothic_lat.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Antiqua</div>
+	</td>
+	</tr>   
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_6_4"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_images_stokes_fae_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_images_stokes_fae_lat.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Fae</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_6_5"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_images_stokes_tribal_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_images_stokes_tribal_lat.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Tribal</div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_6_6"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_images_stokes_steampunk_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_images_stokes_steampunk_lat.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Steampunk</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_6_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_images_stokes_age_of_dragons_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_images_stokes_age_of_dragons_lat.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 15px;">
+		&bull; Aetas Dragonum</div>
+	</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="left" >
+		<div id="menu_11_7"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('fotos_soviet_ads_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='fotos_soviet_ads_lat.html';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Soviet Ads</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_12"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'amv');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'lat', 'amv');"
+		class="menu_not_selected_black">
+		&#9679; AMV</div>
+	</td>
+	</tr>		
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_13"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('junk_lat.html');
+			} else {
+				clickStarted = true;
+				window.location.href='junk_lat.html';
+			};"
+		class="menu_not_selected_black">
+		Quisquiliae</div>
+	</td>
+	</tr>		
+	
+	<tr>
+		<td align="center" >
+		<div id="menu_14"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'stuff');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="showSubMenu(this, 'lat', 'stuff');"
+		class="menu_not_selected_black">
+		&#9679; Res <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+	</td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td align="center" >
+		<div id="menu_26"
+		role="button"
+		tabindex="0"
+		onkeydown="
+			if(event.key==='Enter' || event.key===' ') {
+				event.preventDefault();
+				this.click(); this.onmouseleave();
+			}"
+		onmouseenter="showSubMenu(this, 'lat', 'news');" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="showSubMenu(this, 'lat', 'news');"
+		class="menu_not_selected_red">
+		&#9679; Nuntium</div>
+	</td>
+	</tr>
+
+
+
+
+</table>
+
+	
+
+		</td>
+		<td bgcolor="#F9D4D4" style="padding-right:1px;"></td>
+		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+
+<form action = "" method="post" name="form">
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table where search, name and languages and func area-->
+<tr><td>
+
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#F9D4D4">
+<!-- Table with search, name and languages -->
+	<tr> 
+		<td  class="title_red" style="width: 530px;"><a name="welcome">Photo/Imaginibus &blacktriangleright; Imaginibus - Anne Stokes &blacktriangleright; Fae</a></td>
+	</tr>
+
+	<tr>
+		<td height="3" bgcolor="#ff8a00"></td>
+	</tr>	
+
+</table>
+
+
+<!-- For scroll inside div -->
+<div id="scrollDiv" style="height:552px;overflow:auto;">
+
+
+<table cellspacing="2" cellpadding="0" width="100%" style = "border: #de8e8e 1px solid;  background-color: #F9D4D4;">
+
+		
+
+
+
+
+
+	<tr align="center" >
+		<td style = "border: #de8e8e 1px solid;  background-color: #F9D4D4">
+			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
+			<tr >
+				<td width="100%" height="100%" class="nimetus2_red"><a name="fae">Fae</a></td>
+			</tr>	
+			<tr>
+				<td width="100%" height="100%" align="left"  class="text_red" style="padding-left:10px; padding-right:10px;">
+	
+	<div class="galleria">
+<!--	<img src="images/soviet_ads/1.jpg" data-title="Title"   data-description="Description"> -->
+
+	<img src="images/stokes/fae/1.jpg" data-title="Awake your Magic" data-description="<a href='images/stokes/fae/1.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/2.jpg" data-title="Stargazer" data-description="<a href='images/stokes/fae/2.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/3.jpg" data-title="Realm of Enchantment" data-description="<a href='images/stokes/fae/3.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/4.jpg" data-title="Autumn Fairy" data-description="<a href='images/stokes/fae/4.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/5.jpg" data-title="Realm of Tranquility" data-description="<a href='images/stokes/fae/5.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/6.jpg" data-title="Owl Messenger" data-description="<a href='images/stokes/fae/6.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/7.jpg" data-title="Celtic Fairy" data-description="<a href='images/stokes/fae/7.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/8.jpg" data-title="Dragonfly" data-description="<a href='images/stokes/fae/8.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/9.jpg" data-title="Oak King" data-description="<a href='images/stokes/fae/9.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/10.jpg" data-title="Woodland Guardian" data-description="<a href='images/stokes/fae/10.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/11.jpg" data-title="Acorn Pixie" data-description="<a href='images/stokes/fae/11.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/12.jpg" data-title="Mystic Aura" data-description="<a href='images/stokes/fae/12.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/13.jpg" data-title="Enlightenment" data-description="<a href='images/stokes/fae/13.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/14.jpg" data-title="Moonlight Unicorn" data-description="<a href='images/stokes/fae/14.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/15.jpg" data-title="Glimpse of a Unicorn" data-description="<a href='images/stokes/fae/15.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/16.jpg" data-title="Forest Unicorn" data-description="<a href='images/stokes/fae/16.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/17.jpg" data-title="Enchanted Pool" data-description="<a href='images/stokes/fae/17.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/18.jpg" data-title="Black Unicorn" data-description="<a href='images/stokes/fae/18.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/19.jpg" data-title="Winter Guardians" data-description="<a href='images/stokes/fae/19.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/20.jpg" data-title="Magical Arrival" data-description="<a href='images/stokes/fae/20.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/21.jpg" data-title="Little Helpers" data-description="<a href='images/stokes/fae/21.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/22.jpg" data-title="Surprise Gift" data-description="<a href='images/stokes/fae/22.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/23.jpg" data-title="Snow Dragon" data-description="<a href='images/stokes/fae/23.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/24.jpg" data-title="Midnight Messenger" data-description="<a href='images/stokes/fae/24.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/25.jpg" data-title="Solstice Gathering" data-description="<a href='images/stokes/fae/25.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/26.jpg" data-title="Spirit of Yule" data-description="<a href='images/stokes/fae/26.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/27.jpg" data-title="Snow Fairy" data-description="<a href='images/stokes/fae/27.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/28.jpg" data-title="Yule Angel" data-description="<a href='images/stokes/fae/28.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/29.jpg" data-title="Enchantment" data-description="<a href='images/stokes/fae/29.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/30.jpg" data-title="Found" data-description="<a href='images/stokes/fae/30.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/31.jpg" data-title="Journey's Start" data-description="<a href='images/stokes/fae/31.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/32.jpg" data-title="Pure Magic" data-description="<a href='images/stokes/fae/32.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	<img src="images/stokes/fae/33.jpg" data-title="Pure Heart" data-description="<a href='images/stokes/fae/33.jpg' class = 'smallb_red' target='_blank'>Download</a>">
+	</div>
+	<script>
+
+
+var galleria2 = new Galleria.loadTheme('scripts/galleria-1.6.1/src/themes/twelve/galleria.twelve.js');
+
+
+Galleria.run('.galleria', {
+	imagePan: true,
+	width : 670,
+	height : 650
+    });
+
+	</script>
+				</td>
+			</tr>
+ 
+
+
+
+
+
+			<tr>
+				<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+					<br><br>				
+					Relatio:
+				</td>
+			</tr>
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_red" style="padding-left:10px; padding-right:10px;">
+				<a href="http://www.annestokes.com/" class = "standardb_red" target="_blank">Anne Stokes</a> - Officialis Pagina (angl.).
+			</td>
+			</tr>
+
+
+ 
+			<tr> <!-- Modified -->
+
+				<td width="100%" height="100%" align="right" class="textsmall_red" style="padding-left:10px; padding-right:10px;">
+					10 Apr, 2017.
+				</td>
+			</tr>
+			</table>
+ 
+ 
+	</td>
+		</tr>
+ 
+		
+
+			
+		
+  </table> <!-- End of Func area -->
+
+</div> <!-- End of scroll inside div -->
+
+
+  </td></tr>
+  </table><!-- End of Table where search, name and languages and func area-->
+</form> 
+    </td> <!-- End of Functional Table -->
+	</tr>	
+</table> <!-- End of Main Table -->
+
+<!-- Bottom Copyright Table --> 
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+  <tr>
+    <td height="3" bgcolor="#ff8a00"></td>
+  </tr>
+	<tr>
+	<td class="title_red" >
+	&copy; Urmas Repinski, urrimus@hotmail.com
+	</td>
+	</tr>
+</table>
+<!-- End of Bottom Copyright Table --> 
+
+
+
+
+</body>
+</html>
+
