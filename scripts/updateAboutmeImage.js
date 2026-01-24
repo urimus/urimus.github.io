@@ -152,15 +152,6 @@ function updateAboutMeImage2(lang, feedURL, random) {
 		var totalEntries = items.length;
 		var i = 0;
 		if (random != 0) i = Math.floor(Math.random() * totalEntries);
-		if (lang == "rus") {
-			textError = "Загрузка Картинки #" + (i + 1) + " не Удалась. <a href='javascript:location.reload();' class = 'standardb_blue'>Обновите Страницу</a>.";
-		}
-		if (lang == "eng") {
-			textError = "Image #" + (i + 1) + " Load Failed. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
-		}
-		if (lang == "lat") {
-			textError = "Imago #" + (i + 1) + " Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
-		}
 
 		var item = items[i];
 		var loadingDivTitle = document.getElementById("loadingDivTitle");
@@ -274,6 +265,9 @@ function updateAboutMeImage2(lang, feedURL, random) {
 		Img.setAttribute('width', '100%');
 		Img.setAttribute('style', 'display: block;');
 		Img.onerror = function () {
+			if (lang == "rus") textError = "Загрузка Картинки #" + (i + 1) + " не Удалась. <a href='javascript:location.reload();' class = 'standardb_blue'>Обновите Страницу</a>.";
+			if (lang == "eng") textError = "Image #" + (i + 1) + " Load Failed. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
+			if (lang == "lat") textError = "Imago #" + (i + 1) + " Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
 			loadingDivTitle.innerHTML = textError;
 			adjustScrollDiv();
 		}
