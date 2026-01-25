@@ -1301,8 +1301,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 		textLoadAttempt = "Попытка Загрузки: ";
 	}
 
-	const apiURL = "https://proxy.wasmer.app?url=" + encodeURIComponent(feedURL);
-	fetch(apiURL)
+	fetch("https://proxy.wasmer.app?url=" + encodeURIComponent(feedURL))
 		.then(() => {
 			feednami.load(feedURL, function (result) {
 				loadAttemptSpan = document.getElementById("loadAttempt");
