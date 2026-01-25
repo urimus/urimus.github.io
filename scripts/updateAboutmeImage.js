@@ -106,18 +106,24 @@ function updateAboutMeImage(lang, random = 0) {
 
 
 	var feedURL = "https://www.nasa.gov/feeds/iotd-feed/";
-	const apiURL = "https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL);
-	fetch(apiURL)
-		.then(() => {
-			updateAboutMeImage2(lang, feedURL, random);
+
+	const parser = new RSSParser();
+	fetch("https://proxy.wasmer.app?url=" + encodeURIComponent(feedURL))
+		.then(res => res.text())
+		.then(xml => parser.parseString(xml))
+		.then(result => {
+			console.log(result);
+			if (toSkip == 1) return;
+			updateAboutMeImage2(lang, result, random);
 		})
-		.catch((e) => {
+		.catch(e => {
 			showErrorImage(lang, "error", e.message);
 			adjustScrollDiv();
 		});
+
 }
 
-function updateAboutMeImage2(lang, feedURL, random) {
+function updateAboutMeImage2(lang, result, random) {
 
 	var textLoadingImage, textError;
 	if (lang == "rus") {
@@ -130,143 +136,136 @@ function updateAboutMeImage2(lang, feedURL, random) {
 		textLoadingImage = "Lectio Imagibus";
 	}
 
-	feednami.load(feedURL, function (result) {
-		if (result.error) {
-			showErrorImage(lang, "error", result.error.message);
-			return;
-		}
-		if (toSkip == 1) return;
+	var items = result.items;
+	var totalEntries = items.length;
+	var i = 0;
+	if (random != 0) i = Math.floor(Math.random() * totalEntries);
 
-		var items = result.feed.entries;
-		var totalEntries = items.length;
-		var i = 0;
-		if (random != 0) i = Math.floor(Math.random() * totalEntries);
+	var item = items[i];
+	var loadingDivTitle = document.getElementById("loadingDivTitle");
+	loadingDivTitle.innerHTML = textLoadingImage + " #" + (i + 1) +" ("+formatBytes(item.enclosure.length)+"). ";
 
-		var item = items[i];
-		var loadingDivTitle = document.getElementById("loadingDivTitle");
-		loadingDivTitle.innerHTML = textLoadingImage + " #" + (i + 1) +" ("+formatBytes(item.enclosures[0].length)+"). ";
+	var table = document.getElementById("imagetable");
 
-		var table = document.getElementById("imagetable");
+	var tableRow = table.insertRow(-1);
+	var cell1 = tableRow.insertCell(0);
+	var Div = document.createElement('div');
+	Div.setAttribute('class', "text_blue");
+	Div.setAttribute('style', 'margin-top:5px;');
+	cell1.appendChild(Div);
 
-		var tableRow = table.insertRow(-1);
-		var cell1 = tableRow.insertCell(0);
-		var Div = document.createElement('div');
-		Div.setAttribute('class', "text_blue");
-		Div.setAttribute('style', 'margin-top:5px;');
-		cell1.appendChild(Div);
+	var summary_words, wordsCount, currentLineTop, linesToShow, linesCount, k, k2;
+	if (item.content != null) summary_words = item.content.split(" ");
+	wordsCount = 0;
+	currentLineTop = 0;
 
-		var summary_words, wordsCount, currentLineTop, linesToShow, linesCount, k, k2;
-		if (item.summary != null) summary_words = item.summary.split(" ");
-		wordsCount = 0;
-		currentLineTop = 0;
+	linesToShow = 4;
+	linesCount = 1;
 
-		linesToShow = 4;
-		linesCount = 1;
+	var imageA = document.createElement('a');
+	imageA.setAttribute('href', item.link);
+	imageA.setAttribute('class', 'standardb_blue');
+	imageA.setAttribute('target', '_blank');
+	imageA.innerText = "Image #" + (i + 1);
+	Div.appendChild(imageA);
+	Div.innerHTML = Div.innerHTML + ".";
 
-		var imageA = document.createElement('a');
-		imageA.setAttribute('href', item.link);
-		imageA.setAttribute('class', 'standardb_blue');
-		imageA.setAttribute('target', '_blank');
-		imageA.innerText = "Image #" + (i + 1);
-		Div.appendChild(imageA);
-		Div.innerHTML = Div.innerHTML + ".";
+	if (item.content != null) {
+		var summarySpan = document.createElement('span');
+		summarySpan.setAttribute('class', "text_blue");
+		summarySpan.innerHTML = "&nbsp;";
+		Div.appendChild(summarySpan);
 
-		if (item.summary != null) {
-			var summarySpan = document.createElement('span');
-			summarySpan.setAttribute('class', "text_blue");
-			summarySpan.innerHTML = "&nbsp;";
-			Div.appendChild(summarySpan);
-
-			var extensionA = document.createElement('a');
-			extensionA.setAttribute('href', "javascript:void(0);");
-			extensionA.setAttribute('class', 'standardb_blue');
-			extensionA.onclick = function () {
-				if (this.innerHTML == "[▼]") {
-					summarySpan.innerHTML = "&nbsp;" + item.summary;
-					this.innerHTML = "[&#9650;]";
-				} else if (this.innerHTML == "[▲]") {
-					summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, wordsCount);
-					this.innerHTML = "[&#9660;]";
-				}
-				adjustScrollDiv();
+		var extensionA = document.createElement('a');
+		extensionA.setAttribute('href', "javascript:void(0);");
+		extensionA.setAttribute('class', 'standardb_blue');
+		extensionA.onclick = function () {
+			if (this.innerHTML == "[▼]") {
+				summarySpan.innerHTML = "&nbsp;" + item.content;
+				this.innerHTML = "[&#9650;]";
+			} else if (this.innerHTML == "[▲]") {
+				summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, wordsCount);
+				this.innerHTML = "[&#9660;]";
 			}
-			extensionA.innerHTML = "[&#9660;]";
+			adjustScrollDiv();
+		}
+		extensionA.innerHTML = "[&#9660;]";
 
-			var Pointer = document.createElement('a');
-			Div.appendChild(Pointer);
+		var Pointer = document.createElement('a');
+		Div.appendChild(Pointer);
 
-			currentLineTop = Pointer.offsetTop;
-			for (k = 0; k < summary_words.length; k++) {
-				summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, k + 1);
-				if (Pointer.offsetTop != currentLineTop) {
-					if (linesCount == linesToShow) {
-						summarySpan.innerHTML = "";
-						Div.removeChild(Pointer);
-						Div.appendChild(extensionA);
-						wordsCount = 0;
-						linesCount = 1;
+		currentLineTop = Pointer.offsetTop;
+		for (k = 0; k < summary_words.length; k++) {
+			summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, k + 1);
+			if (Pointer.offsetTop != currentLineTop) {
+				if (linesCount == linesToShow) {
+					summarySpan.innerHTML = "";
+					Div.removeChild(Pointer);
+					Div.appendChild(extensionA);
+					wordsCount = 0;
+					linesCount = 1;
 
-						currentLineTop = extensionA.offsetTop;
-						for (k2 = 0; k2 < summary_words.length; k2++) {
-							wordsCount++;
-							summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, wordsCount);
-							if (extensionA.offsetTop != currentLineTop) {
-								if (linesCount == linesToShow) {
-									wordsCount--;
-									summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, wordsCount);
-									break;
-								} else {
-									currentLineTop = extensionA.offsetTop;
-									linesCount++;
-								}
+					currentLineTop = extensionA.offsetTop;
+					for (k2 = 0; k2 < summary_words.length; k2++) {
+						wordsCount++;
+						summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, wordsCount);
+						if (extensionA.offsetTop != currentLineTop) {
+							if (linesCount == linesToShow) {
+								wordsCount--;
+								summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, wordsCount);
+								break;
+							} else {
+								currentLineTop = extensionA.offsetTop;
+								linesCount++;
 							}
 						}
-						break;
-					} else {
-						currentLineTop = Pointer.offsetTop;
-						linesCount++;
 					}
+					break;
+				} else {
+					currentLineTop = Pointer.offsetTop;
+					linesCount++;
 				}
 			}
-			if (k == summary_words.length) {
-				Div.removeChild(Pointer);
-				summarySpan.innerHTML = "&nbsp;" + item.summary;
-			}
-		} else {
-			cell1.appendChild(Div);
 		}
-
-		var tableRow = table.insertRow(-1);
-		var cell1 = tableRow.insertCell(0);
-		var Div = document.createElement('div');
-		Div.setAttribute('class', "textsmall_blue");
-		Div.setAttribute('align', "right");
-		Div.setAttribute("style", "padding-left:10px; padding-right:10px;");
-		Div.innerHTML = formatDate(item.date_ms, lang);
+		if (k == summary_words.length) {
+			Div.removeChild(Pointer);
+			summarySpan.innerHTML = "&nbsp;" + item.content;
+		}
+	} else {
 		cell1.appendChild(Div);
+	}
 
+	var tableRow = table.insertRow(-1);
+	var cell1 = tableRow.insertCell(0);
+	var Div = document.createElement('div');
+	Div.setAttribute('class', "textsmall_blue");
+	Div.setAttribute('align', "right");
+	Div.setAttribute("style", "padding-left:10px; padding-right:10px;");
+	Div.innerHTML = formatDate(item.pubDate, lang);
+	cell1.appendChild(Div);
+
+	adjustScrollDiv();
+
+	var Img = document.createElement("img");
+	Img.setAttribute('class', "text_blue");
+	Img.setAttribute('alt', item.title);
+	Img.setAttribute('title', item.title);
+	Img.setAttribute('width', '100%');
+	Img.setAttribute('style', 'display: block;');
+	Img.onerror = function () {
+		if (lang == "rus") textError = "Загрузка Картинки #" + (i + 1) + " не Удалась. <a href='javascript:location.reload();' class = 'standardb_blue'>Обновите Страницу</a>.";
+		if (lang == "eng") textError = "Image #" + (i + 1) + " Load Failed. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
+		if (lang == "lat") textError = "Imago #" + (i + 1) + " Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
+		loadingDivTitle.innerHTML = textError;
 		adjustScrollDiv();
+	}
+	Img.onload = function () {
+		var tableRow = table.rows[0];
+		tableRow.replaceChildren();
+		var cell1 = tableRow.insertCell(0);	
+		cell1.appendChild(Img);
+		adjustScrollDiv();
+	}
+	Img.src=item.enclosure.url + "?w=450";
 
-		var Img = document.createElement("img");
-		Img.setAttribute('class', "text_blue");
-		Img.setAttribute('alt', item.title);
-		Img.setAttribute('title', item.title);
-		Img.setAttribute('width', '100%');
-		Img.setAttribute('style', 'display: block;');
-		Img.onerror = function () {
-			if (lang == "rus") textError = "Загрузка Картинки #" + (i + 1) + " не Удалась. <a href='javascript:location.reload();' class = 'standardb_blue'>Обновите Страницу</a>.";
-			if (lang == "eng") textError = "Image #" + (i + 1) + " Load Failed. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
-			if (lang == "lat") textError = "Imago #" + (i + 1) + " Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
-			loadingDivTitle.innerHTML = textError;
-			adjustScrollDiv();
-		}
-		Img.onload = function () {
-			var tableRow = table.rows[0];
-			tableRow.replaceChildren();
-			var cell1 = tableRow.insertCell(0);	
-			cell1.appendChild(Img);
-			adjustScrollDiv();
-		}
-		Img.src=item.enclosures[0].url + "?w=450";
-	});
 }
