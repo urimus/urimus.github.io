@@ -788,8 +788,7 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 					ifrm.setAttribute('style', 'display: block; margin-bottom:5px; border:0px; background-color: rgb(222, 142, 142, 0.0); aspect-ratio:16/9;');
 					ifrm.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture');
 					if (source=="cbs") {
-						ifrm.src="https://www.livereacting.com/tools/hls-player-embed?url="+entry.video;
-//						ifrm.src="https://hlsplayer.net/embed?type=m3u8&src="+entry.video;
+						ifrm.src="https://hlsplayer.net/embed?type=m3u8&src="+entry.video;
 //						ifrm.src="https://cdn.theoplayer.com/demos/iframe/theoplayer.html?autoplay=false&muted=false&preload=none&src="+entry.video;
 					} else if (isEmbed(entry.video)) {
 						ifrm.src=entry.video;
