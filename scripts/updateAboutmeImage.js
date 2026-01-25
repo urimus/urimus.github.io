@@ -114,14 +114,6 @@ function updateAboutMeImage(lang, random = 0) {
 			updateAboutMeImage2(lang, feedURL, random);
 		})
 		.catch((e) => {
-			var table = document.getElementById("imagetable");
-			table.replaceChildren();
-			var row = table.insertRow(-1);
-			var cellLoading = row.insertCell(0);
-			cellLoading.className = 'text_blue';
-			cellLoading.setAttribute('style', 'text-align:center; padding-top:10px;');
-			cellLoading.innerHTML = "<b><div id='loadingDivTitle'></div><div id='loadingDiv'>.</div></b>";
-			var loadingDivTitle = document.getElementById("loadingDivTitle");
 			loadingDivTitle.innerHTML = "<b>"+e.message+"</b><br><a href='javascript:location.reload();' class='standardb_blue' onkeydown='if(event.key===\"Enter\" || event.key===\" \") { event.preventDefault(); this.click(); this.onmouseleave();}'>" + textReload + "</a>";
 			adjustScrollDiv();
 		});
