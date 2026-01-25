@@ -16,7 +16,7 @@ function formatSummary(summary_arr, words) {
 	return summaryToShow;
 }
 
-function showErrorImage(lang, type) {
+function showErrorImage(lang, type, errorMessage="") {
 	var table = document.getElementById("imagetable");
 	table.replaceChildren();
 
@@ -26,11 +26,7 @@ function showErrorImage(lang, type) {
 		if (lang == "rus") imageDesc = "Загрузка Отменена";
 		if (lang == "lat") imageDesc = "Loading Skipped";
 	}
-	if (type == "error") {
-		if (lang == "eng") imageDesc = "Loading Error";
-		if (lang == "rus") imageDesc = "Ошибка Загрузки";
-		if (lang == "lat") imageDesc = "Loading Error";
-	}
+	if (type == "error") imageDesc = errorMessage;
 
 	var tableRow = table.insertRow(-1);
 	var cell1 = tableRow.insertCell(0);
@@ -107,6 +103,7 @@ function updateAboutMeImage(lang, random = 0) {
 	var Div = document.getElementById('information_div');
 	Div.style.right = '5px';
 
+
 	var feedURL = "https://www.nasa.gov/feeds/iotd-feed/";
 	const apiURL = "https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL);
 	fetch(apiURL)
@@ -114,10 +111,9 @@ function updateAboutMeImage(lang, random = 0) {
 			updateAboutMeImage2(lang, feedURL, random);
 		})
 		.catch((e) => {
-			loadingDivTitle.innerHTML = "<b>"+e.message+"</b><br><a href='javascript:location.reload();' class='standardb_blue' onkeydown='if(event.key===\"Enter\" || event.key===\" \") { event.preventDefault(); this.click(); this.onmouseleave();}'>" + textReload + "</a>";
+			showErrorImage(lang, "error", e.message);
 			adjustScrollDiv();
 		});
-
 }
 
 function updateAboutMeImage2(lang, feedURL, random) {
@@ -135,7 +131,7 @@ function updateAboutMeImage2(lang, feedURL, random) {
 
 	feednami.load(feedURL, function (result) {
 		if (result.error) {
-			showErrorImage(lang, "error");
+			showErrorImage(lang, "error", result.error.message);
 			return;
 		}
 		if (toSkip == 1) return;
