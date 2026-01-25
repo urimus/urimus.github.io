@@ -37,6 +37,7 @@ function showErrorImage(lang, type, errorMessage="") {
 	ImgE.setAttribute('alt', imageDesc);
 	ImgE.setAttribute('title', imageDesc);
 	ImgE.setAttribute('width', '100%');
+	ImgE.setAttribute('style', "margin-bottom: 5px;");
 	ImgE.onload = function () {
 		adjustScrollDiv();
 	}
