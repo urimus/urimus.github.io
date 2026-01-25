@@ -85,7 +85,7 @@ function updateAboutMeImage(lang, random = 0) {
 	var row = table.insertRow(-1);
 	var cellLoading = row.insertCell(0);
 	cellLoading.className = 'text_blue';
-	cellLoading.setAttribute('style', 'text-align:center; padding-top:10px;');
+	cellLoading.setAttribute('style', 'text-align:center; margin-top:10px; margin-bottom:5px;');
 	cellLoading.innerHTML = "<b><div id='loadingDivTitle'></div><div id='loadingDiv'>.</div></b>";
 
 	var loadingDivTitle = document.getElementById("loadingDivTitle");
@@ -150,7 +150,6 @@ function updateAboutMeImage2(lang, result, random) {
 	var cell1 = tableRow.insertCell(0);
 	var Div = document.createElement('div');
 	Div.setAttribute('class', "text_blue");
-	Div.setAttribute('style', 'margin-top:5px;');
 	cell1.appendChild(Div);
 
 	var summary_words, wordsCount, currentLineTop, linesToShow, linesCount, k, k2;
@@ -250,7 +249,7 @@ function updateAboutMeImage2(lang, result, random) {
 	Img.setAttribute('alt', item.title);
 	Img.setAttribute('title', item.title);
 	Img.setAttribute('width', '100%');
-	Img.setAttribute('style', 'display: block;');
+	Img.setAttribute('style', 'margin-bottom:5px; display: block;');
 	Img.onerror = function () {
 		if (lang == "rus") textError = "Загрузка Картинки #" + (i + 1) + " не Удалась. <a href='javascript:location.reload();' class = 'standardb_blue'>Обновите Страницу</a>.";
 		if (lang == "eng") textError = "Image #" + (i + 1) + " Load Failed. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
