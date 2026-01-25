@@ -112,7 +112,6 @@ function updateAboutMeImage(lang, random = 0) {
 		.then(res => res.text())
 		.then(xml => parser.parseString(xml))
 		.then(result => {
-			console.log(result);
 			if (toSkip == 1) return;
 			updateAboutMeImage2(lang, result, random);
 		})
