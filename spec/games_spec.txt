@@ -2,7 +2,6 @@
 
 1. Action-adventure: games_action_adventure
 Assasins Creed
-Control
 Prince of Persia
 
 2. Card: games_card

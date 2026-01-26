@@ -2,7 +2,6 @@
 
 &#9679; <a href="games_action_adventure_rus.html#action_adventure" class = "standardb_black" data-added="27е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Action-Adventure</a>
 <span style="padding-left:10px;">- <a href="games_action_adventure_rus.html#assasins_creed" class = "standardb_black" data-added="27е Июл, 2016." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Assassin’s Creed II</a></span>
-<span style="padding-left:10px;">- <a href="games_action_adventure_rus.html#control" class = "standardb_black" data-added="26е Янв, 2026." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Control</a></span>
 <span style="padding-left:10px;">- <a href="games_action_adventure_rus.html#prince_of_persia" class = "standardb_black" data-added="01е Мая, 2012." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Price of Persia: The Forgotten Sands</a></span>
 
 &#9679; <a href="games_card_rus.html#card" class = "standardb_black" data-added="13е Июл, 2018." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Карточные</a>
