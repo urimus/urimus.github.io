@@ -251,13 +251,15 @@ function updateAboutMeImage2(lang, result, random) {
 	Img.setAttribute('width', '100%');
 	Img.setAttribute('style', 'margin-bottom:5px; display: block;');
 	Img.onerror = function () {
-		if (lang == "rus") textError = "Загрузка Картинки #" + (i + 1) + " не Удалась. <a href='javascript:location.reload();' class = 'standardb_blue'>Обновите Страницу</a>.";
-		if (lang == "eng") textError = "Image #" + (i + 1) + " Load Failed. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
-		if (lang == "lat") textError = "Imago #" + (i + 1) + " Onus Defecit. <a href='javascript:location.reload();' class = 'standardb_blue'>Reload Page</a>.";
-		loadingDivTitle.innerHTML = textError;
+		if (toSkip == 1) return;
+		if (lang == "rus") textError = "Загрузка Картинки #" + (i + 1) + " не Удалась. Обновите Страницу.";
+		if (lang == "eng") textError = "Image #" + (i + 1) + " Load Failed. Reload Page.";
+		if (lang == "lat") textError = "Imago #" + (i + 1) + " Onus Defecit. Renova Paginam.";
+		showErrorImage(lang, "error", textError);
 		adjustScrollDiv();
 	}
 	Img.onload = function () {
+		if (toSkip == 1) return;
 		var tableRow = table.rows[0];
 		tableRow.replaceChildren();
 		var cell1 = tableRow.insertCell(0);	

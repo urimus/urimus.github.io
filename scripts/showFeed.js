@@ -1290,7 +1290,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 		textLoadAttempt = "Load Attempt: ";
 	}
 	if (lang == "lat") {
-		textReload = "Paginam Renova";
+		textReload = "Renova Paginam";
 		textFeed = "Nuntium Acies ";
 		textLoadAttempt = "Conatus Onerationis: ";
 	}
