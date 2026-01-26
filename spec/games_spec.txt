@@ -1,8 +1,8 @@
 ﻿Games:
 
 1. Action-adventure: games_action_adventure
-Armor Mayhem
 Assasins Creed
+Control
 Prince of Persia
 
 2. Card: games_card

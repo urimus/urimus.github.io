@@ -1,8 +1,8 @@
 ﻿<b class="text_black_blue">Games</b>
 
 &#9679; <a href="games_action_adventure_eng.html#action_adventure" class = "standardb_black" data-added="27th of Jul, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Action-Adventure</a>
-<span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#armor_mayhem" class = "standardb_black" data-added="19th of Aug, 2016." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Armor Mayhem</a></span>
 <span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#assasins_creed" class = "standardb_black" data-added="27th of Jul, 2016." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Assassin’s Creed II</a></span>
+<span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#control" class = "standardb_black" data-added="26th of Jan, 2026." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Control</a></span>
 <span style="padding-left:10px;">- <a href="games_action_adventure_eng.html#prince_of_persia" class = "standardb_black" data-added="01st of May, 2012." data-genre="Action-Adventure" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Price of Persia: The Forgotten Sands</a></span>
 
 &#9679; <a href="games_card_eng.html#card" class = "standardb_black" data-added="13th of Jul, 2018." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Card</a>
