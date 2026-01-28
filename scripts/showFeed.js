@@ -316,12 +316,6 @@ function showFeedData(type, source, lang, result) {
 			a.onclick = function () {
 				skipUpdates = 1;
 				for (var j = 0; j < result.entries.length; j++) {
-					if ((source == "cbs" || source == "nasa") && result.entries[j].storage.updateProcessed == 0) {
-						result.entries[j].media.origComment = result.entries[j].media.comment;
-						result.entries[j].media.comment = textUpdateSkipped;
-						result.entries[j].media.origUrl = result.entries[j].media.url;
-						result.entries[j].media.url = "images/icons/error/no_image.png";
-					}
 					result.entries[j].error = textUpdateSkipped;
 					if (result.entries[j].storage.updateProcessed == 0) {
 						result.entries[j].storage.updateProcessed = 1;
