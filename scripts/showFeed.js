@@ -2078,8 +2078,6 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 							description = jsonDATA.BODY;
 							if (description == "\n") description = "";
 						}
-					} else {
-						description = null;
 					}
 				}
 
