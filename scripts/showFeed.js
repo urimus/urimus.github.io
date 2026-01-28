@@ -2176,12 +2176,6 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				textUpdateAttempt = updateAttempt > 1 ? "/" + updateAttempt : "";
 				document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
 				result.entries[i].error = textUpdateAbsent+".";
-				if (source == "cbs" || source == "nasa") {
-					result.entries[i].media.origComment = result.entries[i].media.comment;
-					result.entries[i].media.comment = textUpdateAbsent;
-					result.entries[i].media.origUrl = result.entries[i].media.url;
-					result.entries[i].media.url = "images/icons/error/no_image.png";
-				}
 				showEntry(type, source, lang, result, i, 0);
 				result.entries[i].storage.updateProcessed = 1;
 				checkProcessedCount(source, type, result, lang, 0);
