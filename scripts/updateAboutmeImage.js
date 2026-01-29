@@ -85,7 +85,7 @@ function updateAboutMeImage(lang, random = 0) {
 	var row = table.insertRow(-1);
 	var cellLoading = row.insertCell(0);
 	cellLoading.className = 'text_blue';
-	cellLoading.setAttribute('style', 'text-align:center; margin-top:10px; margin-bottom:5px;');
+	cellLoading.setAttribute('style', 'text-align:center; margin: 10px 0px;');
 	cellLoading.innerHTML = "<b><div id='loadingDivTitle'></div><div id='loadingDiv'>.</div></b>";
 
 	var loadingDivTitle = document.getElementById("loadingDivTitle");
