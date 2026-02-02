@@ -146,7 +146,7 @@ function adjustScrollDiv2(){
 }
 
 function adjustScrollDiv(){
-	if (typeof galleria2 !== 'undefined') {
+	if (window.Galleria) {
 		Galleria.ready(function() { adjustScrollDiv2(); });
 	} else {
 		adjustScrollDiv2();
