@@ -109,19 +109,22 @@ function updateAboutMeImage(lang, random = 0) {
 
 	var feedURL = "https://www.nasa.gov/feeds/iotd-feed/";
 
-	const parser = new RSSParser();
-	fetch("https://proxy.wasmer.app?url=" + encodeURIComponent(feedURL))
-		.then(res => res.text())
-		.then(xml => parser.parseString(xml))
+	fetch("https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL))
+		.then(r => r.json())
 		.then(result => {
 			if (toSkip == 1) return;
+			if (result.error) {
+				showErrorImage(lang, "error", result.error.message);
+				adjustScrollDiv();
+				return;
+			}
+			result.feedXML = feedURL;
 			updateAboutMeImage2(lang, result, random);
 		})
 		.catch(e => {
 			showErrorImage(lang, "error", e.message);
 			adjustScrollDiv();
 		});
-
 }
 
 function updateAboutMeImage2(lang, result, random) {
@@ -137,14 +140,14 @@ function updateAboutMeImage2(lang, result, random) {
 		textLoadingImage = "Lectio Imagibus";
 	}
 
-	var items = result.items;
+	var items = result.feed.entries;
 	var totalEntries = items.length;
 	var i = 0;
 	if (random != 0) i = Math.floor(Math.random() * totalEntries);
 
 	var item = items[i];
 	var loadingDivTitle = document.getElementById("loadingDivTitle");
-	loadingDivTitle.innerHTML = textLoadingImage + " #" + (i + 1) +" ("+formatBytes(item.enclosure.length)+"). ";
+	loadingDivTitle.innerHTML = textLoadingImage + " #" + (i + 1) +" ("+formatBytes(item.enclosures[0].length)+"). ";
 
 	var table = document.getElementById("imagetable");
 
@@ -155,7 +158,7 @@ function updateAboutMeImage2(lang, result, random) {
 	cell1.appendChild(Div);
 
 	var summary_words, wordsCount, currentLineTop, linesToShow, linesCount, k, k2;
-	if (item.content != null) summary_words = item.content.split(" ");
+	if (item.summary!= null) summary_words = item.summary.split(" ");
 	wordsCount = 0;
 	currentLineTop = 0;
 
@@ -171,7 +174,7 @@ function updateAboutMeImage2(lang, result, random) {
 	Div.appendChild(imageA);
 	Div.innerHTML = Div.innerHTML + ".";
 
-	if (item.content != null) {
+	if (item.summary != null) {
 		var summarySpan = document.createElement('span');
 		summarySpan.setAttribute('class', "text_blue");
 		summarySpan.innerHTML = "&nbsp;";
@@ -183,7 +186,7 @@ function updateAboutMeImage2(lang, result, random) {
 		extensionA.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 		extensionA.onclick = function () {
 			if (this.innerHTML == "[▼]") {
-				summarySpan.innerHTML = "&nbsp;" + item.content;
+				summarySpan.innerHTML = "&nbsp;" + item.summary;
 				this.innerHTML = "[&#9650;]";
 			} else if (this.innerHTML == "[▲]") {
 				summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, wordsCount);
@@ -231,7 +234,7 @@ function updateAboutMeImage2(lang, result, random) {
 		}
 		if (k == summary_words.length) {
 			Div.removeChild(Pointer);
-			summarySpan.innerHTML = "&nbsp;" + item.content;
+			summarySpan.innerHTML = "&nbsp;" + item.summary;
 		}
 	} else {
 		cell1.appendChild(Div);
@@ -243,7 +246,7 @@ function updateAboutMeImage2(lang, result, random) {
 	Div.setAttribute('class', "textsmall_blue");
 	Div.setAttribute('align', "right");
 	Div.setAttribute("style", "padding-left:10px; padding-right:10px;");
-	Div.innerHTML = formatDate(item.pubDate, lang);
+	Div.innerHTML = formatDate(item.date_ms, lang);
 	cell1.appendChild(Div);
 
 	adjustScrollDiv();
@@ -270,6 +273,6 @@ function updateAboutMeImage2(lang, result, random) {
 		cell1.appendChild(Img);
 		adjustScrollDiv();
 	}
-	Img.src=item.enclosure.url + "?w=450";
+	Img.src=item.enclosures[0].url + "?w=450";
 
 }

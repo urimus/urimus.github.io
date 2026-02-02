@@ -1294,21 +1294,20 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 		textLoadAttempt = "Попытка Загрузки: ";
 	}
 
-	fetch("https://proxy.wasmer.app?url=" + encodeURIComponent(feedURL))
-		.then(() => {
-			feednami.load(feedURL, function (result) {
-				loadAttemptSpan = document.getElementById("loadAttempt");
-				if (loadAttemptSpan) loadAttemptSpan.innerHTML="";
+	fetch("https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL))
+		.then(r => r.json())
+		.then(result => {
+			loadAttemptSpan = document.getElementById("loadAttempt");
+			if (loadAttemptSpan) loadAttemptSpan.innerHTML="";
+			adjustFeedScrollDiv();
+			if (result.error) {
+				document.getElementById("loadingSpanTitle").innerHTML = result.error.message + "  " + feedIconText(feedURL, lang);
+				document.getElementById("loadingDiv").setAttribute("style", "display:none");
 				adjustFeedScrollDiv();
-				if (result.error) {
-					document.getElementById("loadingSpanTitle").innerHTML = result.error.message + "  " + feedIconText(feedURL, lang);
-					document.getElementById("loadingDiv").setAttribute("style", "display:none");
-					adjustFeedScrollDiv();
-					return;
-				}
-				result.feedXML = feedURL;
-				optimizeUpdateResult(type, source, lang, result);
-			});
+				return;
+			}
+			result.feedXML = feedURL;
+			optimizeUpdateResult(type, source, lang, result);
 		})
 		.catch((e) => {
 			if (loadAttempt < 10) {
