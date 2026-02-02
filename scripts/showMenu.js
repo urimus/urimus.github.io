@@ -8093,7 +8093,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 
 		tableStyle = "";
-		if (typeof galleria2 !== 'undefined') tableStyle = "z-index: 10000;";
+		if (window.Galleria) tableStyle = "z-index: 10000;";
 		tableStyle += " position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; box-shadow: 2px 2px 4px #ff8a00;";
 		tableStyle += " opacity:0; transition: opacity 0.2s linear;";
 		if (type != "contentsLink") {
