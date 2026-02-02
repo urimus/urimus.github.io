@@ -1947,7 +1947,7 @@ function checkProcessedCount(source, type, result, lang, pf = 1) {
 
 function update(i, source, type, result, lang, updateAttempt = 1) {
 
-	var textUpdateRecord, textUpdateAbsent, textUpdateLoadError, textReloadPage, textUpdateAttempt="";
+	var textUpdateRecord, textUpdateAbsent, textUpdateLoadError, textReloadPage, textUpdateAttempt="", textRecord;
 	var doc, mediaURL, property;
 	var description, searchDoc, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
 	var categories, creators, properties, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
@@ -1956,18 +1956,21 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 	if (skipUpdates == 1) return;
 
 	if (lang == "rus") {
+		textRecord = "Запись";
 		textUpdateRecord = "Обновление Записи";
 		textUpdateAbsent = "Обновление Отсутствует";
 		textUpdateLoadError = "Ошибка Загрузки Обновления";
 		textReloadPage = "Обновите Страницу";
 	}
 	if (lang == "eng") {
+		textRecord = "Record";
 		textUpdateRecord = "Updating Record";
 		textUpdateAbsent = "Update Absent";
 		textUpdateLoadError = "Update Load Error";
 		textReloadPage = "Reload Page";
 	}
 	if (lang == "lat") {
+		textRecord = "Monumentum";
 		textUpdateRecord = "Updating Monumentum";
 		textUpdateAbsent = "Renovatio Abest";
 		textUpdateLoadError = "Error Onerationis Renovationis";
@@ -2178,7 +2181,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		error: function(xhr) {
 			if (skipUpdates == 1) return;
 			textUpdateAttempt = (xhr.status == 0 || updateAttempt > 1) ? ", updateAttempt = " + updateAttempt : "";
-			console.log("Update Not Available (" + xhr.status + "). Record # " + (i + 1) + textUpdateAttempt);
+			console.log(textUpdateLoadError + " (" + xhr.status + "). " + textRecord + " # " + (i + 1) + textUpdateAttempt);
 			if (xhr.status == 0 && updateAttempt < 5) { // 5 0-status attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
