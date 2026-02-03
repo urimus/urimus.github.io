@@ -7932,8 +7932,8 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId, isCaption = 0) 
 	divSM.align = "left";
 
 	if (type != "contentsLink" && isCaption==0) {
-		divSM.setAttribute('onmouseenter', "mouseInMenu(this); showSubMenu(this, '"+lang+"', '"+type+"', "+newTableId+");");
-		divSM.setAttribute('onmouseleave', "mouseOutMenu(this, '"+menu.color+"');");
+		divSM.setAttribute('onmouseenter', "if (clickStarted) return; mouseInMenu(this); showSubMenu(this, '"+lang+"', '"+type+"', "+newTableId+");");
+		divSM.setAttribute('onmouseleave', "if (clickStarted) return; mouseOutMenu(this, '"+menu.color+"');");
 	}
 	if (isCaption==1) {
 		divSM.setAttribute('tabindex', "-1");

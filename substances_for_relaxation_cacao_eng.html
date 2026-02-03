@@ -58,7 +58,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 <!-- Header Image Table -->
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
 	<tr> 
 		<td height="3"></td>
 	</tr>	
@@ -73,7 +73,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 </table>
 
 <!-- Lanuage Table -->
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
 
 	<tr align="right" bgcolor="#ffffff"> 
 		<td  bgcolor="#ffffff" width="100%">
@@ -90,7 +90,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -115,7 +115,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -144,7 +144,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 <table cellspacing="0" cellpadding="0" width="280" border="0" >
 
-	<tr onmouseenter="hideSubMenu();"> 
+	<tr onmouseenter="if (!clickStarted) hideSubMenu();"> 
 		<td align="center" class="title_gradient_white">Menu</td>
 	</tr>
 	<tr>
@@ -164,7 +164,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'sitemap');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="showSubMenu(this, 'eng', 'sitemap');"
 		class="menu_not_selected_blue">
@@ -182,7 +182,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -205,7 +205,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -230,7 +230,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -255,7 +255,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -281,7 +281,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -306,7 +306,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'music');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'music');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'eng', 'music');"
 		class="menu_not_selected_black">
@@ -325,7 +325,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'movies');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'movies');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'eng', 'movies');"
 		class="menu_not_selected_black">
@@ -344,7 +344,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'series');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'series');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'eng', 'series');"
 		class="menu_not_selected_black">
@@ -362,7 +362,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'games');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'games');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'eng', 'games');"  
 		class="menu_not_selected_black">
@@ -381,7 +381,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'books');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'books');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'eng', 'books');"  
 		class="menu_not_selected_red">
@@ -400,7 +400,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'eng', 'photos');"  
 		class="menu_not_selected_red">
@@ -419,7 +419,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'amv');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'amv');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'eng', 'amv');"
 		class="menu_not_selected_black">
@@ -436,7 +436,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -460,7 +460,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'stuff');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'stuff');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'eng', 'stuff');"
 		class="menu_not_selected_black">
@@ -480,7 +480,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'anecdotes');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
 		class="menu_not_selected_red">
@@ -499,7 +499,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -525,7 +525,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'relaxation');" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="showSubMenu(this, 'eng', 'relaxation');"  
 		class="menu_selected">
@@ -547,7 +547,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -574,7 +574,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -601,7 +601,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -628,7 +628,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -655,7 +655,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -683,7 +683,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -710,7 +710,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -736,7 +736,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -763,7 +763,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'software');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'software');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="showSubMenu(this, 'eng', 'software');"  
 		class="menu_not_selected_white">
@@ -782,7 +782,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'satanism');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'satanism');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="showSubMenu(this, 'eng', 'satanism');"
 		class="menu_not_selected_green">
@@ -803,7 +803,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -830,7 +830,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -854,7 +854,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'psychology');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'psychology');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="showSubMenu(this, 'eng', 'psychology');"
 		class="menu_not_selected_green">
@@ -873,7 +873,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'countries');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'countries');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="showSubMenu(this, 'eng', 'countries');"
 		class="menu_not_selected_green">
@@ -893,7 +893,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -919,7 +919,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'personalities');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'personalities');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="showSubMenu(this, 'eng', 'personalities');"
 		class="menu_not_selected_green">
@@ -939,7 +939,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'eng', 'news');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'news');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'eng', 'news');"
 		class="menu_not_selected_red">
@@ -951,7 +951,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 		</td>
 		<td bgcolor="#ffffff" style="padding-right:1px;"></td>
-		<td width="827" valign="top" align="center" bgcolor="#ffffff" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+		<td width="827" valign="top" align="center" bgcolor="#ffffff" height="100%" id="funcTable" onmouseenter="if (!clickStarted) hideSubMenu();"> <!-- Functional Table -->
 
 <form action = "" method="post" name="form">
 
@@ -1049,7 +1049,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 </table> <!-- End of Main Table -->
 
 <!-- Bottom Copyright Table --> 
-<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
   <tr>
     <td height="3" bgcolor="#ff8a00"></td>
   </tr>

@@ -63,7 +63,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 <!-- Header Image Table -->
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
 	<tr> 
 		<td  height="3"></td>
 	</tr>	
@@ -76,7 +76,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 </table>
 
 <!-- Lanuage Table -->
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
 
 	<tr align="right" bgcolor="#e2e2e2"> 
 		<td  bgcolor="#e2e2e2" width="100%">
@@ -92,7 +92,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -121,7 +121,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -146,7 +146,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -174,7 +174,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <table cellspacing="0" cellpadding="0" width="280" border="0" >
 
 
-	<tr onmouseenter="hideSubMenu();"> 
+	<tr onmouseenter="if (!clickStarted) hideSubMenu();"> 
 		<td align="center" class="title_gradient_black">Menu</td>
 	</tr>
 	<tr>
@@ -192,7 +192,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'sitemap');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'sitemap');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="showSubMenu(this, 'lat', 'sitemap');"
 		class="menu_not_selected_blue">
@@ -210,7 +210,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -234,7 +234,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -260,7 +260,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -285,7 +285,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -309,7 +309,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'photos');"  
 		class="menu_not_selected_red">
@@ -327,7 +327,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'amv');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'amv');" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="showSubMenu(this, 'lat', 'amv');"
 		class="menu_selected">
@@ -344,7 +344,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -371,7 +371,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -401,7 +401,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -428,7 +428,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -457,7 +457,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -486,7 +486,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -514,7 +514,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -542,7 +542,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -566,7 +566,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'stuff');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'stuff');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'lat', 'stuff');"
 		class="menu_not_selected_black">
@@ -588,7 +588,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'news');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'news');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'news');"
 		class="menu_not_selected_red">
@@ -603,7 +603,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 		</td>
 		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
-		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenuNotCont();"> <!-- Functional Table -->
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="if (!clickStarted) hideSubMenuNotCont();"> <!-- Functional Table -->
 
 <form action = "" method="post" name="form">
 
@@ -648,11 +648,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					<img src="images/icons/different/amv_small.png" alt="AMV - Anime Movie Videos" title="AMV - Anime Movie Videos" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
 
 
-<P>- <a href="#cowboy_beebop" class = "standardb_black" data-added="18 Mai, 2012." data-video="Cowboy Beebop" data-audio="Green Day - Peacemaker" data-author="Urmas Repinski" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">AMV Cowboy Beebop</a>
-<P>- <a href="#futurama" class = "standardb_black" data-added="15 Iul, 2012." data-video="Futurama, Season 4, Godfellas" data-audio="Static-X - Skinnyman" data-author="Urmas Repinski" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">AMV Futurama</a>
-<P>- <a href="#trigun_badlands_rumble" class = "standardb_black" data-added="29 Iul, 2012." data-video="Trigun - Badlands Rumble" data-audio="HammerFall - Fury of the Wild" data-author="Urmas Repinski" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">AMV Trigun - Badlands Rumble</a>
-<P>- <a href="#trinity_blood" class = "standardb_black" data-added="27 Dec, 2012." data-video="Trinity Blood" data-audio="Terminal Choice - Menschenbrecher" data-author="Urmas Repinski" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">AMV Trinity Blood</a>
-<P>- <a href="#witch_hunter_robin" class = "standardb_black" data-added="15 Mai, 2012." data-video="Witch Hunter Robin" data-audio="Garbage - Untouchable" data-author="Urmas Repinski" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">AMV Witch Hunter Robin</a>
+<P>- <a href="#cowboy_beebop" class = "standardb_black" data-added="18 Mai, 2012." data-video="Cowboy Beebop" data-audio="Green Day - Peacemaker" data-author="Urmas Repinski" onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'contentsLink');">AMV Cowboy Beebop</a>
+<P>- <a href="#futurama" class = "standardb_black" data-added="15 Iul, 2012." data-video="Futurama, Season 4, Godfellas" data-audio="Static-X - Skinnyman" data-author="Urmas Repinski" onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'contentsLink');">AMV Futurama</a>
+<P>- <a href="#trigun_badlands_rumble" class = "standardb_black" data-added="29 Iul, 2012." data-video="Trigun - Badlands Rumble" data-audio="HammerFall - Fury of the Wild" data-author="Urmas Repinski" onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'contentsLink');">AMV Trigun - Badlands Rumble</a>
+<P>- <a href="#trinity_blood" class = "standardb_black" data-added="27 Dec, 2012." data-video="Trinity Blood" data-audio="Terminal Choice - Menschenbrecher" data-author="Urmas Repinski" onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'contentsLink');">AMV Trinity Blood</a>
+<P>- <a href="#witch_hunter_robin" class = "standardb_black" data-added="15 Mai, 2012." data-video="Witch Hunter Robin" data-audio="Garbage - Untouchable" data-author="Urmas Repinski" onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'contentsLink');">AMV Witch Hunter Robin</a>
 
 
 
@@ -961,7 +961,7 @@ Video - Witch Hunter Robin, Audio - Garbage - Untouchable.<br>
 </table> <!-- End of Main Table -->
 
 <!-- Bottom Copyright Table --> 
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
   <tr>
     <td height="3" bgcolor="#ff8a00"></td>
   </tr>

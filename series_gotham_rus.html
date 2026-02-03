@@ -69,7 +69,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 <!-- Header Image Table -->
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
 	<tr> 
 		<td  height="3"></td>
 	</tr>	
@@ -82,7 +82,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 </table>
 
 <!-- Lanuage Table -->
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
 
 	<tr align="right" bgcolor="#e2e2e2"> 
 		<td  bgcolor="#e2e2e2" width="100%">
@@ -98,7 +98,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -124,7 +124,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -153,7 +153,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 <table cellspacing="0" cellpadding="0" width="280" border="0" >
 
-	<tr onmouseenter="hideSubMenu();"> 
+	<tr onmouseenter="if (!clickStarted) hideSubMenu();"> 
 		<td  align="center" class="title_gradient_black">Меню</td>
 	</tr>
 	<tr>
@@ -172,7 +172,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'sitemap');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'sitemap');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="showSubMenu(this, 'rus', 'sitemap');"
 		class="menu_not_selected_blue">
@@ -190,7 +190,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -214,7 +214,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -240,7 +240,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -265,7 +265,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -289,7 +289,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -314,7 +314,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'music');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'music');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'rus', 'music');"
 		class="menu_not_selected_black">
@@ -333,7 +333,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'movies');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'movies');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'rus', 'movies');"
 		class="menu_not_selected_black">
@@ -351,7 +351,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'series');" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="showSubMenu(this, 'rus', 'series');"  
 		class="menu_selected">
@@ -371,7 +371,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'series');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'rus', 'series');"
 		class="menu_not_selected_black"
@@ -392,7 +392,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'series');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'rus', 'series');"
 		class="menu_not_selected_black"
@@ -413,7 +413,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'series');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'series');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'rus', 'series');"
 		class="menu_not_selected_black"
@@ -436,7 +436,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -463,7 +463,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -489,7 +489,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -516,7 +516,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'games');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'games');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'rus', 'games');"  
 		class="menu_not_selected_black">
@@ -534,7 +534,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'books');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'books');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'rus', 'books');"  
 		class="menu_not_selected_red">
@@ -552,7 +552,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'rus', 'photos');"  
 		class="menu_not_selected_red">
@@ -570,7 +570,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'amv');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'amv');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'rus', 'amv');"
 		class="menu_not_selected_black">
@@ -589,7 +589,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -614,7 +614,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'stuff');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'stuff');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'rus', 'stuff');"
 		class="menu_not_selected_black">
@@ -633,7 +633,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'anecdotes');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'anecdotes');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
 		class="menu_not_selected_red">
@@ -652,7 +652,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -678,7 +678,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'relaxation');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'relaxation');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="showSubMenu(this, 'rus', 'relaxation');"  
 		class="menu_not_selected_white">
@@ -697,7 +697,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'software');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'software');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
 		onclick="showSubMenu(this, 'rus', 'software');"  
 		class="menu_not_selected_white">
@@ -717,7 +717,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'satanism');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'satanism');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="showSubMenu(this, 'rus', 'satanism');"
 		class="menu_not_selected_green">
@@ -738,7 +738,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -765,7 +765,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -790,7 +790,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'psychology');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'psychology');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="showSubMenu(this, 'rus', 'psychology');"
 		class="menu_not_selected_green">
@@ -808,7 +808,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'countries');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'countries');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="showSubMenu(this, 'rus', 'countries');"
 		class="menu_not_selected_green">
@@ -827,7 +827,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -853,7 +853,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'personalities');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'personalities');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="showSubMenu(this, 'rus', 'personalities');"
 		class="menu_not_selected_green">
@@ -873,7 +873,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'rus', 'news');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'news');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'rus', 'news');"
 		class="menu_not_selected_red">
@@ -885,7 +885,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 		</td>
 		<td bgcolor="#e2e2e2" style="padding-right:1px;"></td>
-		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+		<td width="827" valign="top" align="center" bgcolor="#e2e2e2" height="100%" id="funcTable" onmouseenter="if (!clickStarted) hideSubMenu();"> <!-- Functional Table -->
 
 <form action = "" method="post" name="form">
 
@@ -1160,7 +1160,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 </table> <!-- End of Main Table -->
 
 <!-- Bottom Copyright Table --> 
-<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000"  align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
   <tr>
     <td height="3" bgcolor="#ff8a00"></td>
   </tr>

@@ -49,8 +49,6 @@
 
 <!-- End of Foto Gallery -->
 
-
-
 <script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
 <script>
@@ -67,7 +65,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 <!-- Header Image Table -->
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
 	<tr> 
 		<td  height="3"></td>
 	</tr>	
@@ -80,7 +78,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 </table>
 
 <!-- Lanuage Table -->
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
 
 	<tr align="right" bgcolor="#F9D4D4"> 
 		<td  bgcolor="#F9D4D4" width="100%">
@@ -97,7 +95,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -126,7 +124,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -151,7 +149,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 					event.preventDefault();
 					this.click(); this.onmouseleave();
 				}"
-			onmouseenter="this.className='flag_selected'"
+			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
@@ -180,7 +178,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 <table cellspacing="0" cellpadding="0" width="280" border="0" >
 
-	<tr onmouseenter="hideSubMenu();"> 
+	<tr onmouseenter="if (!clickStarted) hideSubMenu();"> 
 		<td align="center" class="title_gradient_red">Menu</td>
 	</tr>
 	<tr>
@@ -201,7 +199,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'sitemap');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'sitemap');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="showSubMenu(this, 'lat', 'sitemap');"
 		class="menu_not_selected_blue">
@@ -219,7 +217,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -243,7 +241,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -269,7 +267,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -294,7 +292,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -318,7 +316,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -347,7 +345,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'photos');"
 		class="menu_not_selected_red"
@@ -370,7 +368,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="showSubMenu(this, 'lat', 'photos');"
 		class="menu_selected"
@@ -390,7 +388,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -416,7 +414,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -444,7 +442,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'photos');"
 		class="menu_not_selected_red"
@@ -465,7 +463,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'photos');"
 		class="menu_not_selected_red"
@@ -486,7 +484,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'photos');"
 		class="menu_not_selected_red"
@@ -507,7 +505,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'photos');"
 		class="menu_not_selected_red"
@@ -530,7 +528,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -557,7 +555,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'amv');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'amv');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'lat', 'amv');"
 		class="menu_not_selected_black">
@@ -576,7 +574,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
@@ -600,7 +598,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'stuff');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'stuff');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'lat', 'stuff');"
 		class="menu_not_selected_black">
@@ -622,7 +620,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				event.preventDefault();
 				this.click(); this.onmouseleave();
 			}"
-		onmouseenter="showSubMenu(this, 'lat', 'news');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'news');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'news');"
 		class="menu_not_selected_red">
@@ -639,7 +637,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 		</td>
 		<td bgcolor="#F9D4D4" style="padding-right:1px;"></td>
-		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="hideSubMenu();"> <!-- Functional Table -->
+		<td width="827" valign="top" align="center" bgcolor="#F9D4D4" height="100%" id="funcTable" onmouseenter="if (!clickStarted) hideSubMenu();"> <!-- Functional Table -->
 
 <form action = "" method="post" name="form">
 
@@ -826,7 +824,7 @@ Galleria.run('.galleria', {
 </table> <!-- End of Main Table -->
 
 <!-- Bottom Copyright Table --> 
-<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="hideSubMenu();">
+<table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
   <tr>
     <td height="3" bgcolor="#ff8a00"></td>
   </tr>
