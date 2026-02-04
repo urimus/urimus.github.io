@@ -2741,13 +2741,6 @@ if (lang=="eng") {
 	wholeMenu["Other"].link = "series_superhero_other_eng.html";
 	wholeMenu["Other"].html = 'Other';
 
-	wholeMenu["Fallout"] = {};
-	wholeMenu["Fallout"].id = "27_5";
-	wholeMenu["Fallout"].color = "black";
-	wholeMenu["Fallout"].hasSub = 0;
-	wholeMenu["Fallout"].link = "series_fallout_eng.html";
-	wholeMenu["Fallout"].html = 'Fallout';
-
 	wholeMenu["Gotham City"] = {};
 	wholeMenu["Gotham City"].id = "27_6";
 	wholeMenu["Gotham City"].color = "black";
@@ -2863,13 +2856,6 @@ if (lang=="rus") {
 	wholeMenu["Другие"].hasSub = 0;
 	wholeMenu["Другие"].link = "series_superhero_other_rus.html";
 	wholeMenu["Другие"].html = 'Другие';
-
-	wholeMenu["Фоллаут"] = {};
-	wholeMenu["Фоллаут"].id = "27_5";
-	wholeMenu["Фоллаут"].color = "black";
-	wholeMenu["Фоллаут"].hasSub = 0;
-	wholeMenu["Фоллаут"].link = "series_fallout_rus.html";
-	wholeMenu["Фоллаут"].html = 'Фоллаут';
 
 	wholeMenu["Готэм-Сити"] = {};
 	wholeMenu["Готэм-Сити"].id = "27_6";

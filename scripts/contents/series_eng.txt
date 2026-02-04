@@ -84,10 +84,6 @@
 <span style="padding-left:20px;">- <a href="series_superhero_other_eng.html#jupiters_legacy" class = "standardb_black" data-added="21st of Jun, 2024." data-genre="Superhero, Other" data-country="usa" data-year="2021" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Jupiter's Legacy</a></span>
 <span style="padding-left:20px;">- <a href="series_superhero_other_eng.html#vagrant_queen" class = "standardb_black" data-added="21st of Jul, 2021." data-genre="Superhero, Other" data-country="usa" data-year="2020" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Vagrant Queen</a></span>
 
-&#9679; <a href="series_fallout_eng.html#fallout_franchise" class = "standardb_black" data-added="05th of Oct, 2024." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Fallout (franchise)</a>
-<span style="padding-left:10px;">- <a href="series_fallout_eng.html#fallout" class = "standardb_black" data-added="05th of Oct, 2024." data-genre="Fallout" data-country="usa" data-year="2024" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Fallout</a></span> 
-<span style="padding-left:10px;">- <a href="series_fallout_eng.html#silo" class = "standardb_black" data-added="09th of Apr, 2025." data-genre="Fallout" data-country="usa" data-year="2023" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Silo</a></span> 
-
 &#9679; <a href="series_gotham_eng.html#gotham_city" class = "standardb_black" data-added="27th of Nov, 2024." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Gotham City</a>
 <span style="padding-left:10px;">- <a href="series_gotham_eng.html#batman_caped" class = "standardb_black" data-added="25th of Feb, 2025." data-genre="Gotham City" data-country="usa" data-year="2024" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Batman: Caped Crusader</a></span> 
 <span style="padding-left:10px;">- <a href="series_gotham_eng.html#kite_man" class = "standardb_black" data-added="07th of Apr, 2025." data-genre="Gotham City" data-country="usa" data-year="2024" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Kite Man: Hell Yeah!</a></span> 
