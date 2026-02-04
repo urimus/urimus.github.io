@@ -48,7 +48,7 @@
 <script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
 <script>
-var menuHeight=23*38;
+var menuHeight=23*37;
 var imgBgSrc="images/icons/background/not_satanic.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
 </script>
@@ -560,31 +560,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-	<tr>
-		<td align="left" >
-		<div id="menu_27_5"
-		role="button"
-		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_fallout_rus.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_fallout_rus.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 5px;">
-	&bull; Фоллаут</div>
-	</td>
-	</tr>
-
 
 
 	<tr>
@@ -1049,7 +1024,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 <!-- For scroll inside div -->
-<div id="scrollDiv" style="height:874px;overflow:auto;">
+<div id="scrollDiv" style="height:851px;overflow:auto;">
 
 
 <table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
