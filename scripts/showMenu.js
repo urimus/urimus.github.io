@@ -5016,19 +5016,6 @@ if (lang=="eng") {
 	wholeMenu["Text Processing"].link = "software_development_text_eng.html";
 	wholeMenu["Text Processing"].html = 'Text Processing';
 
-	wholeMenu["Movies About IT"] = {};
-	wholeMenu["Movies About IT"].id = "18_7";
-	wholeMenu["Movies About IT"].color = "white";
-	wholeMenu["Movies About IT"].hasSub = 0;
-	wholeMenu["Movies About IT"].link = "software_development_it_movies_eng.html";
-	wholeMenu["Movies About IT"].html = 'Movies About IT';
-
-	wholeMenu["Music About IT"] = {};
-	wholeMenu["Music About IT"].id = "18_8";
-	wholeMenu["Music About IT"].color = "white";
-	wholeMenu["Music About IT"].hasSub = 0;
-	wholeMenu["Music About IT"].link = "software_development_it_music_eng.html";
-	wholeMenu["Music About IT"].html = 'Music About IT';
 }
 
 
@@ -5087,19 +5074,6 @@ if (lang=="rus") {
 	wholeMenu["Обработка Текста"].link = "software_development_text_rus.html";
 	wholeMenu["Обработка Текста"].html = 'Обработка Текста';
 
-	wholeMenu["Фильмы Про IT"] = {};
-	wholeMenu["Фильмы Про IT"].id = "18_7";
-	wholeMenu["Фильмы Про IT"].color = "white";
-	wholeMenu["Фильмы Про IT"].hasSub = 0;
-	wholeMenu["Фильмы Про IT"].link = "software_development_it_movies_rus.html";
-	wholeMenu["Фильмы Про IT"].html = 'Фильмы Про IT';
-
-	wholeMenu["Музыка Про IT"] = {};
-	wholeMenu["Музыка Про IT"].id = "18_8";
-	wholeMenu["Музыка Про IT"].color = "white";
-	wholeMenu["Музыка Про IT"].hasSub = 0;
-	wholeMenu["Музыка Про IT"].link = "software_development_it_music_rus.html";
-	wholeMenu["Музыка Про IT"].html = 'Музыка Про IT';
 }
 
 
