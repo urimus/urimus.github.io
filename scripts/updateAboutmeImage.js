@@ -117,7 +117,7 @@ function updateAboutMeImage(lang, random = 0) {
 		})
 		.then(result => {
 			if (toSkip == 1) return;
-			if (result.error) throw new Error(`Feednami ${result.error.message}`);
+			if (result.error) throw new Error(`Feednami ${result.error.code} ${result.error.message}`);
 			result.feedXML = feedURL;
 			updateAboutMeImage2(lang, result, random);
 		})

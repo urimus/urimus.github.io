@@ -1304,7 +1304,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 			if (loadAttemptSpan) loadAttemptSpan.innerHTML="";
 			adjustFeedScrollDiv();
 			if (result.error) {
-				document.getElementById("loadingSpanTitle").innerHTML = result.error.message + "  " + feedIconText(feedURL, lang);
+				document.getElementById("loadingSpanTitle").innerHTML = "Feednami "+result.error.code + " " + result.error.message + "  " + feedIconText(feedURL, lang);
 				document.getElementById("loadingDiv").setAttribute("style", "display:none");
 				adjustFeedScrollDiv();
 				return;
