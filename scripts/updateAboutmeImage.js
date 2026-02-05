@@ -111,20 +111,18 @@ function updateAboutMeImage(lang, random = 0) {
 
 	fetch("https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL))
 		.then(r => {
+			if (toSkip == 1) return null;
 			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
 			return r.json();
 		})
 		.then(result => {
 			if (toSkip == 1) return;
-			if (result.error) {
-				showErrorImage(lang, "error", result.error.message);
-				adjustScrollDiv();
-				return;
-			}
+			if (result.error) throw new Error(`Feednami ${result.error.message}`);
 			result.feedXML = feedURL;
 			updateAboutMeImage2(lang, result, random);
 		})
 		.catch(e => {
+			if (toSkip == 1) return;
 			showErrorImage(lang, "error", e.message);
 			adjustScrollDiv();
 		});
