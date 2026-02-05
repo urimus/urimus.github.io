@@ -1295,7 +1295,10 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 	}
 
 	fetch("https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL))
-		.then(r => r.json())
+		.then(r => {
+			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
+			return r.json();
+		})
 		.then(result => {
 			loadAttemptSpan = document.getElementById("loadAttempt");
 			if (loadAttemptSpan) loadAttemptSpan.innerHTML="";

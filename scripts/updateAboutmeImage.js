@@ -110,7 +110,10 @@ function updateAboutMeImage(lang, random = 0) {
 	var feedURL = "https://www.nasa.gov/feeds/iotd-feed/";
 
 	fetch("https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL))
-		.then(r => r.json())
+		.then(r => {
+			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
+			return r.json();
+		})
 		.then(result => {
 			if (toSkip == 1) return;
 			if (result.error) {
