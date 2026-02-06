@@ -4,14 +4,7 @@ var preloadCacheGl = {};
 var clickStarted = false;
 // ------------- End of Global Variables ---------------- //
 
-function keyboardClick(event) {
-	const el = event.target.closest('[tabindex], button, a, [role="button"]');
-	if (!el || el.disabled) return;
-
-	if (el.matches('input, textarea, select') || el.isContentEditable) return;
-
-	event.preventDefault();
-
+function keyboardClick(event, el) {
 	el.dispatchEvent(new MouseEvent('click', {
 		bubbles: true,
 		cancelable: true,
@@ -20,18 +13,35 @@ function keyboardClick(event) {
 		altKey: event.altKey,
 		metaKey: event.metaKey
 	}));
-
 	if (typeof el.onmouseleave === 'function') el.onmouseleave();
 }
 
+function getClickable(event) {
+	const el = event.target.closest('[tabindex], button, a, [role="button"]');
+	if (!el || el.disabled) return null;
+	if (el.matches('input, textarea, select') || el.isContentEditable) return null;
+	return el;
+}
+
 document.addEventListener('keydown', e => {
-	if (e.key === 'Enter') keyboardClick(e);
+	const el = getClickable(e);
+	if (!el) return;
+	if (e.key === ' ') {
+		e.preventDefault();
+		return;
+	}
+	if (e.key === 'Enter') {
+		e.preventDefault();
+		if (!e.repeat) keyboardClick(e, el);
+	}
 });
 
 document.addEventListener('keyup', e => {
-	if (e.key === ' ') keyboardClick(e);
+	if (e.key !== ' ') return;
+	const el = getClickable(e);
+	if (!el) return;
+	keyboardClick(e, el);
 });
-
 
 window.addEventListener('pageshow', function () {
 	clickStarted = false;
