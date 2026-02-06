@@ -516,7 +516,6 @@ function generateTabs(type, lang) {
 		Div.setAttribute('id', "contents_" + keys[i]);
 		Div.setAttribute('role', "button");
 		Div.setAttribute('tabindex', "0");
-		Div.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 		Div.setAttribute('onmouseenter', "if (clickStarted) return; this.className='menu_selected'; if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.fullTitle;");
 		Div.setAttribute('onmouseleave', "if (clickStarted) return; mouseOutTab('"+keys[i]+"', '"+type+"', '"+tabsColor[keys[i]]+"'); if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.shortTitle;");
 		sortby = encodeURIComponent(getParameterByName('sortby'));
@@ -531,7 +530,6 @@ function generateTabs(type, lang) {
 
 	a = document.createElement('a');
 	a.setAttribute('tabindex', "0");
-	a.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 	a.setAttribute('title', textVersInfo);
 	a.setAttribute('href', "javascript:showInformation('" + lang + "');");
 
@@ -584,20 +582,10 @@ function adjustContentsScrollDiv() {
 }
 
 function correctLink(line){
-
 	const parser=new DOMParser();
 	const doc=parser.parseFromString(line,"text/html");
-
 	let a=doc.querySelector("a");
-
-	if(a){
-		a.setAttribute(
-			"onkeydown",
-			"if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}"
-		);
-		a.setAttribute("target", "_blank");
-	}
-
+	if (a) a.setAttribute("target", "_blank");
 	return doc.body.innerHTML;
 }
 

@@ -7902,7 +7902,6 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId, isCaption = 0) 
 		if (type != "contentsLink") {
 			divSM.setAttribute('role', "button");
 			divSM.setAttribute('tabindex', "0");
-			divSM.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 			if (menu.hasSub) {
 				divSM.setAttribute('onclick', "showSubMenu(this, '"+lang+"', '"+type+"', "+newTableId+");");
 			} else {

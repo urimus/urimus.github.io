@@ -15,7 +15,6 @@ function feedIconText (feedURL, lang) {
 	a.setAttribute('class', 'standardb_red');
 	a.setAttribute('target', '_blank');
 	a.setAttribute('tabindex', "0");
-	a.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 	a.setAttribute('title', textRssFeed);
 
 	var Img = document.createElement("img");
@@ -35,7 +34,6 @@ function mailToText (email) {
 	a.setAttribute('class', 'standardb_red');
 	a.setAttribute('target', '_blank');
 	a.setAttribute('tabindex', "0");
-	a.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 	a.setAttribute('title', email);
 
 	var Img = document.createElement("img");
@@ -210,7 +208,6 @@ function showFeedTitle(type, source, lang, result) {
 		aLogo.setAttribute('class', 'standardb_red');
 		aLogo.setAttribute('target', '_blank');
 		aLogo.setAttribute('tabindex', "0");
-		aLogo.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 		aLogo.setAttribute('title', result.description);
 
 		var Img = document.createElement("img");
@@ -227,7 +224,6 @@ function showFeedTitle(type, source, lang, result) {
 
 		var Img = document.createElement('img');
 		Img.setAttribute('tabindex', "0");
-		Img.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 		Img.setAttribute('alt', textLastBuildDate);
 		Img.setAttribute('title', textLastBuildDate+formatDate(result.date_ms, lang));
 		Img.setAttribute('onload',  'javascript:adjustFeedScrollDiv();');
@@ -238,7 +234,6 @@ function showFeedTitle(type, source, lang, result) {
 		if (result.copyright!= null) {
 			var Img = document.createElement('img');
 			Img.setAttribute('tabindex', "0");
-			Img.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 			Img.setAttribute('alt', result.copyright);
 			Img.setAttribute('title', result.copyright);
 			Img.setAttribute('onload',  'javascript:adjustFeedScrollDiv();');
@@ -412,7 +407,6 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 	var extensionA = document.createElement('a');
 	extensionA.setAttribute('href', "javascript:void(0);");
 	extensionA.setAttribute('class', 'standardb_red');
-	extensionA.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 	extensionA.onclick = function () {
 		if (this.innerHTML == "[▼]") {
 			summarySpan.innerHTML = entry_summary;
@@ -716,7 +710,6 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 		extensionImgA.setAttribute('href', "javascript:void(0);");
 		extensionImgA.setAttribute('class', 'standardb_red');
 		extensionImgA.setAttribute('align', 'right');
-		extensionImgA.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 		extensionImgA.onclick = function () {
 			if (this.innerHTML == "[▼]") {
 				for (var j = 0; j < entry.additMediaUrl.length; j++) {
@@ -770,7 +763,6 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 		extensionVideoA.setAttribute('href', "javascript:void(0);");
 		extensionVideoA.setAttribute('class', 'standardb_red');
 		extensionVideoA.setAttribute('align', 'right');
-		extensionVideoA.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 		extensionVideoA.onclick  = function () { 
 			// ▼- &#9660;   ▲- &#9650;
 			if (this.innerHTML=="[▼]") { // expand
@@ -853,7 +845,6 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 		a.setAttribute('href', entry.source.url);
 		a.setAttribute('class', 'standardb_red');
 		a.setAttribute('target', '_blank');
-		a.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 		a.innerText = entry.source.title;
 		Div.appendChild(a);
 		Div.innerHTML = "<b>" + textSource + "</b>" + Div.innerHTML;
@@ -902,7 +893,6 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 	a.setAttribute('class', 'standardb_red');
 	a.setAttribute('target', '_blank');
 	a.setAttribute('rel', 'noopener');
-	a.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 	a.innerHTML = textMore + " ▶";
 	Div.appendChild(a);
 	contentsDiv.appendChild(Div);
@@ -917,7 +907,6 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 			a.setAttribute('class', 'standardb_red');
 			a.setAttribute('target', '_blank');
 			a.setAttribute('rel', 'noopener');
-			a.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 			if (j > 0) a.setAttribute('style', "padding-left:5px;");
 			a.innerHTML = "▶";
 			Div.appendChild(a);
@@ -1191,7 +1180,6 @@ function generateTabs(type, source, lang) {
 		Div.setAttribute('id', "feed_"+keys[i]);
 		Div.setAttribute('role', "button");
 		Div.setAttribute('tabindex', "0");
-		Div.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 		Div.setAttribute('onmouseenter', "if (clickStarted) return; this.className='menu_selected'; if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.fullTitle;");
 		Div.setAttribute('onmouseleave', "if (clickStarted) return; mouseOutTab('"+keys[i]+"', '"+type+"'); if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.shortTitle;");
 		var divLink="news_"+lang+".html?source="+source+"&type="+keys[i];
@@ -1206,7 +1194,6 @@ function generateTabs(type, source, lang) {
 
 	var Img = document.createElement('img');
 	Img.setAttribute('tabindex', "0");
-	Img.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 	if (lang=="eng" || lang=="lat") {
 		Img.setAttribute('alt', "Quick Tips");
 		Img.setAttribute('title', "Tip: Use Navigation Keys - <kbd>&rlarr;</kbd> with <kbd>Shift</kbd> and <kbd>Home</kbd>, <kbd>End</kbd> for Contents Scroll");
@@ -1224,7 +1211,6 @@ function generateTabs(type, source, lang) {
 	var a = document.createElement('a');
 	a.setAttribute('href', "javascript:showInformation('"+lang+"');");
 	a.setAttribute('tabindex', "0");
-	a.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 	a.setAttribute('title', textVersInfo);
 	var Img2 = document.createElement('img');
 	Img2.setAttribute('alt', textVersInfo);
@@ -1328,7 +1314,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 				var cell1 = row.insertCell(0);
 				cell1.className = 'text_red';
 				cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
-				cell1.innerHTML = "<b>" + textFeed + "</b>" + feedIconText(feedURL, lang) + "<br><b>" + e.message + "</b><br><a href='javascript:location.reload();' class='standardb_red' onkeydown='if(event.key===\"Enter\" || event.key===\" \") { event.preventDefault(); this.click(); this.onmouseleave();}'>" + textReload + "</a>";
+				cell1.innerHTML = "<b>" + textFeed + "</b>" + feedIconText(feedURL, lang) + "<br><b>" + e.message + "</b><br><a href='javascript:location.reload();' class='standardb_red'>" + textReload + "</a>";
 				adjustFeedScrollDiv();
 			}
 		});
@@ -2197,7 +2183,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = "images/icons/error/no_image.png";
 			}
-			result.entries[i].error = textUpdateLoadError + " (" + xhr.status + "). <a href='javascript:location.reload();' class='standardb_red' onkeydown='if(event.key===\"Enter\" || event.key===\" \") { event.preventDefault(); this.click(); this.onmouseleave();}');>"+textReloadPage+"</a>";
+			result.entries[i].error = textUpdateLoadError + " (" + xhr.status + "). <a href='javascript:location.reload();' class='standardb_red');>"+textReloadPage+"</a>";
 			showEntry(type, source, lang, result, i, 0);
 			result.entries[i].storage.updateProcessed = 1;
 			checkProcessedCount(source, type, result, lang, 0);

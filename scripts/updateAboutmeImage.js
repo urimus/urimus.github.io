@@ -170,7 +170,6 @@ function updateAboutMeImage2(lang, result, random) {
 	imageA.setAttribute('href', item.link);
 	imageA.setAttribute('class', 'standardb_blue');
 	imageA.setAttribute('target', '_blank');
-	imageA.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 	imageA.innerText = "Image #" + (i + 1);
 	Div.appendChild(imageA);
 	Div.innerHTML = Div.innerHTML + ".";
@@ -184,7 +183,6 @@ function updateAboutMeImage2(lang, result, random) {
 		var extensionA = document.createElement('a');
 		extensionA.setAttribute('href', "javascript:void(0);");
 		extensionA.setAttribute('class', 'standardb_blue');
-		extensionA.setAttribute('onkeydown', "if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); this.onmouseleave();}");
 		extensionA.onclick = function () {
 			if (this.innerHTML == "[▼]") {
 				summarySpan.innerHTML = "&nbsp;" + item.summary;

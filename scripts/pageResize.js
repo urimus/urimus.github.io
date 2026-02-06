@@ -4,6 +4,22 @@ var preloadCacheGl = {};
 var clickStarted = false;
 // ------------- End of Global Variables ---------------- //
 
+document.addEventListener('keydown', function (event) {
+	if (event.key !== 'Enter' && event.key !== ' ') return;
+
+	const el = event.target.closest('[tabindex], button, a, [role="button"]');
+	if (!el) return;
+
+	const tag = el.tagName;
+	if (['INPUT','TEXTAREA','SELECT'].includes(tag) || el.isContentEditable) return;
+
+	event.preventDefault();
+	el.click();
+
+	if (typeof el.onmouseleave === 'function') el.onmouseleave();
+});
+
+
 window.addEventListener('pageshow', function () {
 	clickStarted = false;
 	const ev = new MouseEvent('mouseleave');

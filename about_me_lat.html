@@ -182,11 +182,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_1"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'sitemap');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="showSubMenu(this, 'lat', 'sitemap');"
@@ -200,11 +195,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_2"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="
@@ -224,11 +214,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_3"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
@@ -250,11 +235,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_4"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
@@ -275,11 +255,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_5"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
@@ -299,11 +274,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_11"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'photos');"  
@@ -317,11 +287,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_12"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'amv');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'lat', 'amv');"
@@ -335,11 +300,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_13"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
@@ -359,11 +319,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_14"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'stuff');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'lat', 'stuff');"
@@ -381,11 +336,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_26"
 		role="button"
 		tabindex="0"
-		onkeydown="
-			if(event.key==='Enter' || event.key===' ') {
-				event.preventDefault();
-				this.click(); this.onmouseleave();
-			}"
 		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'news');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="showSubMenu(this, 'lat', 'news');"
@@ -418,7 +368,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>   
 	<tr>
 		<td>
-			<div id="information_div" style="position:absolute; right: 5px; bottom: -32px;"><a href="javascript:showInformation('lat');" title="Ultimo Modificatio" onkeydown="if(event.key==='Enter' || event.key===' ') {event.preventDefault();this.click(); this.onmouseleave();}"><img src="images/icons/html_editor/information.svg" alt="Ultimo Modificatio" class="thumbnail_image_blue_png" style="height: 27px; display: block;"></a></div>
+			<div id="information_div" style="position:absolute; right: 5px; bottom: -32px;"><a href="javascript:showInformation('lat');" title="Ultimo Modificatio"><img src="images/icons/html_editor/information.svg" alt="Ultimo Modificatio" class="thumbnail_image_blue_png" style="height: 27px; display: block;"></a></div>
 		</td>
 	</tr>
 </table>
@@ -433,14 +383,14 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<td valign="top" style="width: 454px; padding-left: 10px; padding-right: 10px; border: #84bde4 1px solid;  background-color: #d0e7f7">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%">
 				<tr>
-					<td class="nimetus2_blue" align="center"><a name="image">NASA Image of the Day <a href="/news_lat.html?source=nasa&type=image" class="standardb_blue" target="_blank" title="RSS Fluxus in hac Pagina" onkeydown="if(event.key==='Enter' || event.key===' ') {event.preventDefault();this.click(); this.onmouseleave();}"><img valign="middle" class="thumbnail_image_blue_png" src="images/icons/feed/feed_icon.svg" height="27"></a></a></td>
+					<td class="nimetus2_blue" align="center"><a name="image">NASA Image of the Day <a href="/news_lat.html?source=nasa&type=image" class="standardb_blue" target="_blank" title="RSS Fluxus in hac Pagina"><img valign="middle" class="thumbnail_image_blue_png" src="images/icons/feed/feed_icon.svg" height="27"></a></a></td>
 				</tr>
 				<tr >
-					<td align="center" class="nimetus2_blue">Managing Editor and Web-Master - Brian Dunbar <a href="mailto:brian.dunbar@nasa.gov" class="standardb_blue" target="_blank" title="brian.dunbar@nasa.gov" onkeydown="if(event.key==='Enter' || event.key===' ') {event.preventDefault();this.click(); this.onmouseleave();}"><img valign="middle" class="thumbnail_image_blue_png" src="images/icons/feed/mailto.svg" height="27"></a></td>
+					<td align="center" class="nimetus2_blue">Managing Editor and Web-Master - Brian Dunbar <a href="mailto:brian.dunbar@nasa.gov" class="standardb_blue" target="_blank" title="brian.dunbar@nasa.gov"><img valign="middle" class="thumbnail_image_blue_png" src="images/icons/feed/mailto.svg" height="27"></a></td>
 				</tr>
 				<tr><td align="center">
-					<span class="text_blue" style="float:left"><a href="javascript:updateAboutMeImage('lat', 0);" class="standardb_blue" onkeydown="if(event.key==='Enter' || event.key===' ') {event.preventDefault();this.click(); this.onmouseleave();}">Primus</a></span>
-					<span class="text_blue" style="float:right"><a href="javascript:updateAboutMeImage('lat', 1);" class="standardb_blue" onkeydown="if(event.key==='Enter' || event.key===' ') {event.preventDefault();this.click(); this.onmouseleave();}">Fortuitus</a></span>
+					<span class="text_blue" style="float:left"><a href="javascript:updateAboutMeImage('lat', 0);" class="standardb_blue">Primus</a></span>
+					<span class="text_blue" style="float:right"><a href="javascript:updateAboutMeImage('lat', 1);" class="standardb_blue">Fortuitus</a></span>
 				</td></tr>
 				<tr><td align="center">
 					<table id="imagetable" border="0" cellspacing="0" cellpadding="0"></table>
