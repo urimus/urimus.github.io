@@ -4,19 +4,32 @@ var preloadCacheGl = {};
 var clickStarted = false;
 // ------------- End of Global Variables ---------------- //
 
-document.addEventListener('keydown', function (event) {
-	if (event.key !== 'Enter' && event.key !== ' ') return;
-
+function keyboardClick(event) {
 	const el = event.target.closest('[tabindex], button, a, [role="button"]');
-	if (!el) return;
+	if (!el || el.disabled) return;
 
-	const tag = el.tagName;
-	if (['INPUT','TEXTAREA','SELECT'].includes(tag) || el.isContentEditable) return;
+	if (el.matches('input, textarea, select') || el.isContentEditable) return;
 
 	event.preventDefault();
-	el.click();
+
+	el.dispatchEvent(new MouseEvent('click', {
+		bubbles: true,
+		cancelable: true,
+		ctrlKey: event.ctrlKey,
+		shiftKey: event.shiftKey,
+		altKey: event.altKey,
+		metaKey: event.metaKey
+	}));
 
 	if (typeof el.onmouseleave === 'function') el.onmouseleave();
+}
+
+document.addEventListener('keydown', e => {
+	if (e.key === 'Enter') keyboardClick(e);
+});
+
+document.addEventListener('keyup', e => {
+	if (e.key === ' ') keyboardClick(e);
 });
 
 
