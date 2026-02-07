@@ -190,7 +190,6 @@ function sortByDate(fileContentsL, lang, textColor) {
 		myDates.push(parseDate(dateStr));
 	}
 
-
 	let len=myDates.length;
 	let temp;
 
@@ -212,17 +211,16 @@ function sortByDate(fileContentsL, lang, textColor) {
 
 	let newCol="red";
 
-	for (let i=len-1;i>0;i--){
+	for (let i=len-1;i>1;i--){
 
 		if (myDates[i]=="0") continue;
-
 		if (myDates[i].valueOf()==myDates[i-1].valueOf()){
 
 			let hasbull=0;
 			let sameDates = [];
 			let j=i;
 			sameDates.push(j);
-			for (j=i;j>=0;j--){
+			for (j=i;j>=1;j--){
 				if (myDates[j].valueOf()!=myDates[j-1].valueOf()) break;
 				if (fileContentsL[j].includes("&#9679;") || fileContentsL[j].includes("&#9900;")) {
 					hasbull=1;
