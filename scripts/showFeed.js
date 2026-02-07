@@ -1294,8 +1294,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 			}
 			result.feedXML = feedURL;
 			optimizeUpdateResult(type, source, lang, result);
-		});
-/*
+		})
 		.catch((e) => {
 			if (loadAttempt < 10) {
 				loadAttempt++;
@@ -1316,7 +1315,6 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 				adjustFeedScrollDiv();
 			}
 		});
-*/
 }
 
 function showFeed(type, source, lang) {
@@ -2111,9 +2109,13 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				categories = null;
 				properties = searchDoc.querySelectorAll('meta[name="keywords"]');
 				if (properties != null) categories = properties;
-				if (categories == null) {
-					properties = doc.head.querySelectorAll('meta[property="article:section"]');
+				if (categories == null || categories[0].content == "") {
+					properties = searchDoc.querySelectorAll('meta[name="parsely-tags"]');
 					if (properties != null) categories = properties;
+					if (categories == null || categories[0].content == "") {
+						properties = doc.head.querySelectorAll('meta[property="article:section"]');
+						if (properties != null) categories = properties;
+					}
 				}
 
 				if (typeof creators === "undefined") {
