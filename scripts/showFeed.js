@@ -2109,10 +2109,10 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				categories = null;
 				properties = searchDoc.querySelectorAll('meta[name="keywords"]');
 				if (properties != null) categories = properties;
-				if (categories == null || categories[0].content == "") {
+				if (categories == null || (categories[0] && categories[0].content == "")) {
 					properties = searchDoc.querySelectorAll('meta[name="parsely-tags"]');
 					if (properties != null) categories = properties;
-					if (categories == null || categories[0].content == "") {
+					if (categories == null || (categories[0] && categories[0].content == "")) {
 						properties = doc.head.querySelectorAll('meta[property="article:section"]');
 						if (properties != null) categories = properties;
 					}
