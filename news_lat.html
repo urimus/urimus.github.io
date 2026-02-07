@@ -46,7 +46,7 @@
 <script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
 <script>
-var menuHeight=23*17;
+var menuHeight=23*18;
 var imgBgSrc="images/icons/background/news.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
 </script>
@@ -336,6 +336,26 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>
 
 
+	<tr>
+		<td align="left" >
+		<div id="menu_26_8"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('news_lat.html?source=artemis&type=all');
+			} else {
+				clickStarted = true;
+				window.location.href='news_lat.html?source=artemis&type=all';
+			};"
+		class="menu_not_selected_red"
+		style="padding-left: 5px;">
+		&#9679; Artemis II RSS Acies</div>
+	</td>
+	</tr>
+
 
 	<tr>
 		<td align="left" >
@@ -491,7 +511,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	<table id="messagetable" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;" onmouseenter="if (!clickStarted) hideSubMenu();"></table>
 
  <!-- For scroll inside div 582 -->
-<div id="scrollDiv" style="height:383px; width: 711px; overflow:auto;">
+<div id="scrollDiv" style="height:406px; width: 711px; overflow:auto;">
 
 			<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse" id="feedtable"></table>
 

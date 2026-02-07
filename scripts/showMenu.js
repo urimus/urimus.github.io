@@ -5401,6 +5401,13 @@ if (lang=="eng") {
 	wholeMenu["● News"].link = "";
 	wholeMenu["● News"].html = '&#9679; News';
 
+	wholeMenu["Artemis II RSS Feed"] = {};
+	wholeMenu["Artemis II RSS Feed"].id = "26_8";
+	wholeMenu["Artemis II RSS Feed"].color = "red";
+	wholeMenu["Artemis II RSS Feed"].hasSub = 0;
+	wholeMenu["Artemis II RSS Feed"].link = "news_eng.html?source=artemis&type=all";
+	wholeMenu["Artemis II RSS Feed"].html = 'Artemis II RSS Feed';
+
 	wholeMenu["● CBS RSS Feed"] = {};
 	wholeMenu["● CBS RSS Feed"].id = "26_3";
 	wholeMenu["● CBS RSS Feed"].color = "red";
@@ -6095,6 +6102,13 @@ if (lang=="rus") {
 	wholeMenu["● Новости"].link = "";
 	wholeMenu["● Новости"].html = '&#9679; Новости';
 
+	wholeMenu["Artemis II RSS Строка"] = {};
+	wholeMenu["Artemis II RSS Строка"].id = "26_8";
+	wholeMenu["Artemis II RSS Строка"].color = "red";
+	wholeMenu["Artemis II RSS Строка"].hasSub = 0;
+	wholeMenu["Artemis II RSS Строка"].link = "news_rus.html?source=artemis&type=all";
+	wholeMenu["Artemis II RSS Строка"].html = 'Artemis II RSS Строка';
+
 	wholeMenu["● CBS RSS Строка"] = {};
 	wholeMenu["● CBS RSS Строка"].id = "26_3";
 	wholeMenu["● CBS RSS Строка"].color = "red";
@@ -6787,6 +6801,13 @@ if (lang=="lat") {
 	wholeMenu["● Nuntium"].hasSub = 1;
 	wholeMenu["● Nuntium"].link = "";
 	wholeMenu["● Nuntium"].html = '&#9679; Nuntium';
+
+	wholeMenu["Artemis II RSS Acies"] = {};
+	wholeMenu["Artemis II RSS Acies"].id = "26_8";
+	wholeMenu["Artemis II RSS Acies"].color = "red";
+	wholeMenu["Artemis II RSS Acies"].hasSub = 0;
+	wholeMenu["Artemis II RSS Acies"].link = "news_lat.html?source=artemis&type=all";
+	wholeMenu["Artemis II RSS Acies"].html = 'Artemis II RSS Acies';
 
 	wholeMenu["● CBS RSS Acies"] = {};
 	wholeMenu["● CBS RSS Acies"].id = "26_3";

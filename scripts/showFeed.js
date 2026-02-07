@@ -53,7 +53,7 @@ function newsLoad(lang) {
 	
 	sourceL=getParameterByName('source');
 	if (sourceL && sourceL!="") {
-		if (sourceL=="cbs" || sourceL=="nasa" || sourceL=="phys.org" || sourceL=="space.com" || sourceL=="wired" || sourceL=="yahoo" || sourceL=="yonhap")  {
+		if (sourceL=="artemis" || sourceL=="cbs" || sourceL=="nasa" || sourceL=="phys.org" || sourceL=="space.com" || sourceL=="wired" || sourceL=="yahoo" || sourceL=="yonhap")  {
 			source=sourceL;
 		}
 	} else {
@@ -78,7 +78,8 @@ function newsLoad(lang) {
 	
 	typeL=getParameterByName('type');
 	if (typeL && typeL!="") {
-		if (source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
+		if (source=="artemis" && typeL=="all" 
+		|| source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
 		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis") 
 		|| source=="phys.org" && (typeL=="all" 
 										|| typeL=="earth" || typeL=="environment"
@@ -105,27 +106,14 @@ function newsLoad(lang) {
 		toRedirect=1;
 	}
 	if (toRedirect==1) { // restore
-	    	if (source=="cbs") {
-			window.location.href='news_'+lang+'.html?source=cbs&type=top';
-		}
-	    	if (source=="nasa") {
-			window.location.href='news_'+lang+'.html?source=nasa&type=releases';
-		}
-	    	if (source=="phys.org") {
-			window.location.href='news_'+lang+'.html?source=phys.org&type=all';
-		}
-	    	if (source=="space.com") {
-			window.location.href='news_'+lang+'.html?source=space.com&type=all';
-		}
-	    	if (source=="wired") {
-			window.location.href='news_'+lang+'.html?source=wired&type=top';
-		}
-	    	if (source=="yahoo") {
-			window.location.href='news_'+lang+'.html?source=yahoo&type=top';
-		}
-	    	if (source=="yonhap") {
-			window.location.href='news_'+lang+'.html?source=yonhap&type=all';
-		}
+	    	if (source=="artemis") window.location.href='news_'+lang+'.html?source=artemis&type=all';
+	    	if (source=="cbs") window.location.href='news_'+lang+'.html?source=cbs&type=top';
+	    	if (source=="nasa") window.location.href='news_'+lang+'.html?source=nasa&type=releases';
+	    	if (source=="phys.org") window.location.href='news_'+lang+'.html?source=phys.org&type=all';
+	    	if (source=="space.com") window.location.href='news_'+lang+'.html?source=space.com&type=all';
+	    	if (source=="wired") window.location.href='news_'+lang+'.html?source=wired&type=top';
+	    	if (source=="yahoo") window.location.href='news_'+lang+'.html?source=yahoo&type=top';
+	    	if (source=="yonhap") window.location.href='news_'+lang+'.html?source=yonhap&type=all';
 		return;
 	}
 
@@ -323,7 +311,7 @@ function showFeedData(type, source, lang, result) {
 			$("#processedDiv").show();
 			adjustFeedScrollDiv();
 			// 10 updates simultaneously only
-			if (source == "cbs" || (source=="nasa" && type!="image") || source == "yonhap" || source=="yahoo") {
+			if (source == "artemis" || source == "cbs" || (source=="nasa" && type!="image") || source == "yonhap" || source=="yahoo") {
 				removeUnusedUpdates(source, type, result);
 				var updatingCount = 0;
 				for (var i = 0; i < result.entries.length; i++) {
@@ -1062,7 +1050,10 @@ function generateTabs(type, source, lang) {
 
 	var textFeedSource;
 	var menuDiv;
-
+	if (source=="artemis") {
+		textFeedSource = "Artemis II";
+		menuDiv=document.getElementById("menu_26_8");
+	}
 	if (source == "cbs") {
 		textFeedSource = "CBS";
 		menuDiv=document.getElementById("menu_26_3");
@@ -1119,7 +1110,7 @@ function generateTabs(type, source, lang) {
 			tabtype2="Chemistry &blacktriangleright; "+tabs[type];
 			if (type=="analytical") tabtype2="Chemistry &blacktriangleright; "+tabs2[type];
 		}
-	} else if (source=="space.com" && type=="all") tabtype2="All Stories";
+	} else if (source=="artemis" || source=="space.com") tabtype2="All Stories";
 	else if (source=="nasa" && type=="recent" || source=="wired" && type=="ai") tabtype2=tabs2[type];
 	else tabtype2=tabs[type];
 
@@ -1280,7 +1271,13 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 		textLoadAttempt = "Попытка Загрузки: ";
 	}
 
-	fetch("https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL))
+	var urlPrefix;
+	if (source == "artemis") {
+		urlPrefix = "https://proxy.wasmer.app?url=";
+	} else {
+		urlPrefix = "https://api.sekandocdn.net/api/v1.1/feeds/load?url=";
+	}
+	fetch(urlPrefix + encodeURIComponent(feedURL))
 		.then(r => {
 			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
 			return r.json();
@@ -1297,7 +1294,8 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 			}
 			result.feedXML = feedURL;
 			optimizeUpdateResult(type, source, lang, result);
-		})
+		});
+/*
 		.catch((e) => {
 			if (loadAttempt < 10) {
 				loadAttempt++;
@@ -1318,12 +1316,21 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 				adjustFeedScrollDiv();
 			}
 		});
+*/
 }
 
 function showFeed(type, source, lang) {
 	generateTabs(type, source, lang);
 
 	var feedURL = "";
+
+	if (source == "artemis") {
+		var artemisTypes = {
+			"all": "https://api.artemis2.live/news"
+		};
+		if (artemisTypes[type]) feedURL = artemisTypes[type];
+	}
+
 	if (source == "cbs") {
 		var cbsTypes = {
 			"top": "https://www.cbsnews.com/latest/rss/main",
@@ -1524,6 +1531,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	result = {};
 	result.feedXML = resultOrig.feedXML;
 
+	if (source == "artemis") result.image = "images/icons/feed/artemis_logo.svg";
 	if (source == "cbs") result.image = "images/icons/feed/cbs_news_logo.svg";
 	if (source == "nasa") result.image = "images/icons/feed/nasa_worm_logo.svg";
 	if (source == "phys.org") result.image = "images/icons/feed/phys_org_logo.png";
@@ -1535,26 +1543,31 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	result.totalUpdated = 0;
 	var locStUpdateData = {};
 
-	if (source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap" || source == "yahoo") {
+	if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap" || source == "yahoo") {
 		locStPar = source + "_" + type + "_updates";
 		locStUpdateData = getLocalStorageData(locStPar);
 	}
 
 	result.entries = [];
-	if (resultOrig.feed.entries.length == 0) return result;
-
-	result.title = resultOrig.feed.meta.title;
-	result.description = resultOrig.feed.meta.description;
-	if (source == "wired" && type != "top") result.description = result.title;
-	result.link = resultOrig.feed.meta.link;
-	if (resultOrig.feed.meta.date != null) {
-		result.date_ms = new Date(resultOrig.feed.meta.date).getTime();
+	if (source == "artemis") {
+		result.title = "NASA’s Artemis II Mission";
+		result.description = "NASA’s Artemis II Mission";
+		result.link = "https://artemis2.live/news";
+		items = resultOrig.data;
+	} else {
+		if (resultOrig.feed.entries.length == 0) return result;
+		result.title = resultOrig.feed.meta.title;
+		result.description = resultOrig.feed.meta.description;
+		if (source == "wired" && type != "top") result.description = result.title;
+		result.link = resultOrig.feed.meta.link;
+		if (resultOrig.feed.meta.date != null) {
+			result.date_ms = new Date(resultOrig.feed.meta.date).getTime();
+		}
+		if (resultOrig.feed.meta.copyright != null) {
+			result.copyright = resultOrig.feed.meta.copyright;
+		}
+		items = resultOrig.feed.entries;
 	}
-	if (resultOrig.feed.meta.copyright != null) {
-		result.copyright = resultOrig.feed.meta.copyright;
-	}
-
-	items = resultOrig.feed.entries;
 
 	for (var i = 0; i < items.length; i++) {
 		entry = items[i];
@@ -1567,6 +1580,19 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		result.entries[i].storage.updateInitiated = 0;
 		result.entries[i].storage.preloadStarted = 0;
 		result.entries[i].storage.preloadPF = null;
+
+		// --- artemis ---
+		if (source == "artemis") {
+			if (entry.imagePath!= null) {
+				result.entries[i].media.url = entry.imagePath;
+			} else {
+				result.entries[i].media.url = "images/icons/error/no_image.png";
+				if (lang == "rus") result.entries[i].media.comment = "Картинка Отсутствует";
+				if (lang == "eng" || lang == "lat") result.entries[i].media.comment = "Image Absent";
+			}
+			result.entries[i].media.width = 450;
+			result.entries[i].summary = entry.content;
+		}
 
 		// --- CBS ---
 		if (source == "cbs") {
@@ -1620,7 +1646,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 		// --- space.com ---
 		if (source == "space.com") {
-			var isVideo, videos, dotPos, ext;
 			if (entry.image != null && entry.image.url != null) {
 				result.entries[i].media.url = entry.image.url;
 				result.entries[i].media.comment = entry["media:content"]["media:text"]["#"];
@@ -1767,45 +1792,50 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			result.entries[i].subject = entry["dc:subject"]["#"];
 		}
 
-		result.entries[i].link = entry.link;
-		result.entries[i].date_ms = entry.date_ms;
+		if (source == "artemis") {
+			result.entries[i].link = entry.sourceUrl;
+			result.entries[i].date_ms = new Date(entry.updatedAt).getTime();
+		} else {
+			result.entries[i].link = entry.link;
+			result.entries[i].date_ms = entry.date_ms;
+		}
 
 		// --- Prevous Updates Load ---
-		if (source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap" || source == "yahoo") { 
-			if (typeof locStUpdateData[entry.link] !== "undefined") {
+		if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap" || source == "yahoo") { 
+			if (typeof locStUpdateData[result.entries[i].link] !== "undefined") {
 				result.entries[i].storage.updateProcessed = 1;
 				result.totalUpdated++;
-				if (typeof locStUpdateData[entry.link].summary !== "undefined") {
-					result.entries[i].summary = locStUpdateData[entry.link].summary;
+				if (typeof locStUpdateData[result.entries[i].link].summary !== "undefined") {
+					result.entries[i].summary = locStUpdateData[result.entries[i].link].summary;
 				}
-				if (typeof locStUpdateData[entry.link].mediaUrl !== "undefined") {
+				if (typeof locStUpdateData[result.entries[i].link].mediaUrl !== "undefined") {
 					result.entries[i].media.origUrl = result.entries[i].media.url;
-					result.entries[i].media.url = locStUpdateData[entry.link].mediaUrl;
+					result.entries[i].media.url = locStUpdateData[result.entries[i].link].mediaUrl;
 				}
-				if (typeof locStUpdateData[entry.link].mediaComment !== "undefined") {
+				if (typeof locStUpdateData[result.entries[i].link].mediaComment !== "undefined") {
 					result.entries[i].media.origComment = result.entries[i].media.comment;
-					result.entries[i].media.comment = locStUpdateData[entry.link].mediaComment;
+					result.entries[i].media.comment = locStUpdateData[result.entries[i].link].mediaComment;
 				}
-				if (typeof locStUpdateData[entry.link].creator!== "undefined") {
+				if (typeof locStUpdateData[result.entries[i].link].creator!== "undefined") {
 					result.entries[i].creator = [];
-					for (var j = 0; j < locStUpdateData[entry.link].creator.length; j++) {
-						result.entries[i].creator[j] = locStUpdateData[entry.link].creator[j];
+					for (var j = 0; j < locStUpdateData[result.entries[i].link].creator.length; j++) {
+						result.entries[i].creator[j] = locStUpdateData[result.entries[i].link].creator[j];
 					}
 				}
-				if (typeof locStUpdateData[entry.link].category !== "undefined") {
+				if (typeof locStUpdateData[result.entries[i].link].category !== "undefined") {
 					result.entries[i].category = [];
-					for (var j = 0; j < locStUpdateData[entry.link].category.length; j++) {
-						result.entries[i].category[j] = locStUpdateData[entry.link].category[j];
+					for (var j = 0; j < locStUpdateData[result.entries[i].link].category.length; j++) {
+						result.entries[i].category[j] = locStUpdateData[result.entries[i].link].category[j];
 					}
 				}
-				if (typeof locStUpdateData[entry.link].seeAlso !== "undefined") {
+				if (typeof locStUpdateData[result.entries[i].link].seeAlso !== "undefined") {
 					result.entries[i].seeAlso = [];
-					for (var j = 0; j < locStUpdateData[entry.link].seeAlso.length; j++) {
-						result.entries[i].seeAlso[j] = locStUpdateData[entry.link].seeAlso[j];
+					for (var j = 0; j < locStUpdateData[result.entries[i].link].seeAlso.length; j++) {
+						result.entries[i].seeAlso[j] = locStUpdateData[result.entries[i].link].seeAlso[j];
 					}
 				}
-				if (typeof locStUpdateData[entry.link].video !== "undefined") {
-					result.entries[i].video = locStUpdateData[entry.link].video;
+				if (typeof locStUpdateData[result.entries[i].link].video !== "undefined") {
+					result.entries[i].video = locStUpdateData[result.entries[i].link].video;
 				}
 			}
 		}
@@ -1823,7 +1853,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			}
 		}
 	}
-	if (resultOrig.feed.meta.date == null) {
+	if (source == "artemis" || resultOrig.feed.meta.date == null) {
 		result.date_ms = result.entries[0].date_ms;
 	}
 
@@ -2084,6 +2114,15 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				if (categories == null) {
 					properties = doc.head.querySelectorAll('meta[property="article:section"]');
 					if (properties != null) categories = properties;
+				}
+
+				if (typeof creators === "undefined") {
+					creators = null;
+					property = searchDoc.querySelector('meta[name="parsely-author"]');
+					if (property != null) {
+						creators = [];
+						creators[0] = property.content;
+					}
 				}
 
 				seeAlso = null;
