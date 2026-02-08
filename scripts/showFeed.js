@@ -1263,7 +1263,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 	if (lang == "lat") {
 		textReload = "Renova Paginam";
 		textFeed = "Nuntium Acies ";
-		textLoadAttempt = "Conatus Onerationis: ";
+		textLoadAttempt = "Tentamen Onerationis: ";
 	}
 	if (lang == "rus") {
 		textReload = "Обновите Страницу";
@@ -1964,7 +1964,7 @@ function checkProcessedCount(source, type, result, lang, pf = 1) {
 
 function update(i, source, type, result, lang, updateAttempt = 1) {
 
-	var textUpdateRecord, textUpdateAbsent, textUpdateLoadError, textReloadPage, textUpdateAttempt="", textRecord;
+	var textUpdateRecord, textUpdateAbsent, textUpdateLoadError, textReloadPage, textUpdateAttempt, textUpdateAttempt2="", textRecord;
 	var doc, mediaURL, property;
 	var description, searchDoc, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
 	var categories, creators, properties, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
@@ -1978,6 +1978,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		textUpdateAbsent = "Обновление Отсутствует";
 		textUpdateLoadError = "Ошибка Загрузки Обновления";
 		textReloadPage = "Обновите Страницу";
+		textUpdateAttempt = "Попытка Обновления";
 	}
 	if (lang == "eng") {
 		textRecord = "Record";
@@ -1985,6 +1986,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		textUpdateAbsent = "Update Absent";
 		textUpdateLoadError = "Update Load Error";
 		textReloadPage = "Reload Page";
+		textUpdateAttempt = "Update Attempt";
 	}
 	if (lang == "lat") {
 		textRecord = "Monumentum";
@@ -1992,10 +1994,11 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		textUpdateAbsent = "Renovatio Abest";
 		textUpdateLoadError = "Error Onerationis Renovationis";
 		textReloadPage = "Paginam Reficere";
+		textUpdateAttempt = "Tentamen Renovationis";
 	}
 
-	textUpdateAttempt = updateAttempt > 1 ? "/" + updateAttempt : "";
-	document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
+	textUpdateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
+	document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt2 + ".&nbsp;";
 
 	$.ajax({
 		type: "GET",
@@ -2005,8 +2008,8 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		success: function(data) {
 
 			if (skipUpdates == 1) return;
-			if (updateAttempt > 1) textUpdateAttempt = "/" + updateAttempt;
-			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
+			if (updateAttempt > 1) textUpdateAttempt2 = "/" + updateAttempt;
+			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt2 + ".&nbsp;";
 
 			doc = (new DOMParser).parseFromString(data, "text/html");
 
@@ -2195,12 +2198,12 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				return;
 			} else {
 				// update absent
-				textUpdateAttempt = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
-				console.log("Update Absent. Record # " + (i + 1) + textUpdateAttempt + ", data = " + data);
+				textUpdateAttempt2 = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
+				console.log("Update Absent. Record # " + (i + 1) + textUpdateAttempt2 + ", data = " + data);
 				consoleMetas(doc);
 
-				textUpdateAttempt = updateAttempt > 1 ? "/" + updateAttempt : "";
-				document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
+				textUpdateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
+				document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt2 + ".&nbsp;";
 				result.entries[i].error = textUpdateAbsent+".";
 				showEntry(type, source, lang, result, i, 0);
 				result.entries[i].storage.updateProcessed = 1;
@@ -2210,14 +2213,14 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		},
 		error: function(xhr) {
 			if (skipUpdates == 1) return;
-			textUpdateAttempt = (xhr.status == 0 || updateAttempt > 1) ? ", updateAttempt = " + updateAttempt : "";
-			console.log(textUpdateLoadError + " (" + xhr.status + "). " + textRecord + " # " + (i + 1) + textUpdateAttempt);
+			textUpdateAttempt2 = (xhr.status == 0 || updateAttempt > 1) ? ", " + textUpdateAttempt + " = " + updateAttempt : "";
+			console.log(textUpdateLoadError + " (" + xhr.status + "). " + textRecord + " # " + (i + 1) + textUpdateAttempt2);
 			if (xhr.status == 0 && updateAttempt < 5) { // 5 0-status attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
 			}
-			textUpdateAttempt = updateAttempt > 1 ? "/" + updateAttempt : "";
-			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt + ".&nbsp;";
+			textUpdateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
+			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt2 + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
 				result.entries[i].media.comment = textUpdateLoadError + " (" + xhr.status + ")";
