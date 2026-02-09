@@ -874,16 +874,18 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 		contentsDiv.appendChild(Div);
 	}
 
-	var Div = document.createElement('div');
-	Div.setAttribute('class', "text_red");
-	var a = document.createElement('a');
-	a.setAttribute('href', entry.link);
-	a.setAttribute('class', 'standardb_red');
-	a.setAttribute('target', '_blank');
-	a.setAttribute('rel', 'noopener');
-	a.innerHTML = textMore + " ▶";
-	Div.appendChild(a);
-	contentsDiv.appendChild(Div);
+	if ( entry.link != "") {
+		var Div = document.createElement('div');
+		Div.setAttribute('class', "text_red");
+		var a = document.createElement('a');
+		a.setAttribute('href', entry.link);
+		a.setAttribute('class', 'standardb_red');
+		a.setAttribute('target', '_blank');
+		a.setAttribute('rel', 'noopener');
+		a.innerHTML = textMore + " ▶";
+		Div.appendChild(a);
+		contentsDiv.appendChild(Div);
+	}
 
 	if (typeof entry.seeAlso !== "undefined" && entry.seeAlso.length > 0 && typeof entry.seeAlso[0] !== "undefined") {
 		var Div = document.createElement('div');
@@ -1796,6 +1798,11 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		} else {
 			result.entries[i].link = entry.link;
 			result.entries[i].date_ms = entry.date_ms;
+		}
+
+		if (result.entries[i].link == "") {
+			result.entries[i].storage.updateProcessed = 1;
+			result.totalUpdated++;
 		}
 
 		// --- Prevous Updates Load ---
