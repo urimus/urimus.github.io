@@ -1273,13 +1273,10 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 		textLoadAttempt = "Попытка Загрузки: ";
 	}
 
-	var urlPrefix;
-	if (source == "artemis") {
-		urlPrefix = "https://proxy.wasmer.app?url=";
-	} else {
-		urlPrefix = "https://api.sekandocdn.net/api/v1.1/feeds/load?url=";
+	if (source != "artemis") { // xml
+		feedURL = "https://api.sekandocdn.net/api/v1.1/feeds/load?url="+encodeURIComponent(feedURL);
 	}
-	fetch(urlPrefix + encodeURIComponent(feedURL))
+	fetch(feedURL)
 		.then(r => {
 			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
 			return r.json();
