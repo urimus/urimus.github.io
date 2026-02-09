@@ -1273,10 +1273,13 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 		textLoadAttempt = "Попытка Загрузки: ";
 	}
 
-	if (source != "artemis") { // xml
-		feedURL = "https://api.sekandocdn.net/api/v1.1/feeds/load?url="+encodeURIComponent(feedURL);
+	var feedURL2;
+	if (source == "artemis") {
+		feedURL2 = feedURL;
+	} else { // xml
+		feedURL2 = "https://api.sekandocdn.net/api/v1.1/feeds/load?url="+encodeURIComponent(feedURL);
 	}
-	fetch(feedURL)
+	fetch(feedURL2)
 		.then(r => {
 			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
 			return r.json();
