@@ -230,8 +230,8 @@ function sortByDate(fileContentsL, lang, textColor) {
 			i=j;
 			if (hasbull) continue;
 
-			let title1=getLinkTitle(fileContentsL[i+1]);
-			let title2=getLinkTitle(fileContentsL[i+2]);
+			let title1=getLinkTitle(fileContentsL[i]);
+			let title2=getLinkTitle(fileContentsL[i+1]);
 			if (title1==title2) continue;
 
 			for (let k = 0; k < sameDates.length; k++) {
