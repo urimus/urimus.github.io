@@ -2017,7 +2017,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			property = doc.querySelector('meta[property="og:image"]');
 			if (property != null) mediaURL = property.content;
 
-			if (source == "nasa") { // do not update NASA description
+			if (source == "nasa" || source == "artemis") { // do not update NASA description
 				description = result.entries[i].summary;
 			} else {
 				description = null;
@@ -2038,7 +2038,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				property = searchDoc.querySelector('meta[property="og:image"]');
 				if (property != null) mediaURL = property.content;
 
-				if (source != "nasa") { // do not update NASA description
+				if (source != "nasa" && source != "artemis") { // do not update NASA description
 					property = searchDoc.querySelector('meta[name="description"]');
 					if (property != null) description = property.content;
 					if (description == null) {
