@@ -5192,13 +5192,6 @@ if (lang=="eng") {
 	wholeMenu["✘ Pseudo-"].link = "psychology_pseudo_eng.html";
 	wholeMenu["✘ Pseudo-"].html = '✘ Pseudo-';
 
-	wholeMenu["Movies"] = {};
-	wholeMenu["Movies"].id = "22_3";
-	wholeMenu["Movies"].color = "green";
-	wholeMenu["Movies"].hasSub = 0;
-	wholeMenu["Movies"].link = "psychology_movies_eng.html";
-	wholeMenu["Movies"].html = 'Movies';
-
 }
 
 
@@ -5226,13 +5219,6 @@ if (lang=="rus") {
 	wholeMenu["✘ Псевдо-"].hasSub = 0;
 	wholeMenu["✘ Псевдо-"].link = "psychology_pseudo_rus.html";
 	wholeMenu["✘ Псевдо-"].html = '✘ Псевдо-';
-
-	wholeMenu["Фильмы"] = {};
-	wholeMenu["Фильмы"].id = "22_3";
-	wholeMenu["Фильмы"].color = "green";
-	wholeMenu["Фильмы"].hasSub = 0;
-	wholeMenu["Фильмы"].link = "psychology_movies_rus.html";
-	wholeMenu["Фильмы"].html = 'Фильмы';
 
 }
 
