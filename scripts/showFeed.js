@@ -2117,23 +2117,27 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				if (property != null) mediaComment = property.content;
 
 				categories = null;
-				properties = searchDoc.querySelectorAll('meta[name="keywords"]');
-				if (properties != null) categories = properties;
-				if (categories == null || !categories[0] || categories[0].content == "") {
-					properties = searchDoc.querySelectorAll('meta[name="parsely-tags"]');
+				if (source != "nasa") { // do not update nasa categories
+					properties = searchDoc.querySelectorAll('meta[name="keywords"]');
 					if (properties != null) categories = properties;
 					if (categories == null || !categories[0] || categories[0].content == "") {
-						properties = doc.head.querySelectorAll('meta[property="article:section"]');
+						properties = searchDoc.querySelectorAll('meta[name="parsely-tags"]');
 						if (properties != null) categories = properties;
+						if (categories == null || !categories[0] || categories[0].content == "") {
+							properties = doc.head.querySelectorAll('meta[property="article:section"]');
+							if (properties != null) categories = properties;
+						}
 					}
 				}
 
 				if (typeof creators === "undefined") {
 					creators = null;
-					property = searchDoc.querySelector('meta[name="parsely-author"]');
-					if (property != null) {
-						creators = [];
-						creators[0] = property.content;
+					if (source != "nasa") { // do not update nasa creators
+						property = searchDoc.querySelector('meta[name="parsely-author"]');
+						if (property != null) {
+							creators = [];
+							creators[0] = property.content;
+						}
 					}
 				}
 
