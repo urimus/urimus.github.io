@@ -57,7 +57,7 @@
 <script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
 <script>
-var menuHeight=23*37;
+var menuHeight=23*36;
 var imgBgSrc="images/icons/background/photos.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
 </script>
@@ -372,19 +372,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_11"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('fotos_me_rus.html');
-			} else {
-				clickStarted = true;
-				window.location.href='fotos_me_rus.html';
-			};"  
+		onclick="showSubMenu(this, 'rus', 'photos');"  
 		class="menu_selected">
 		&#9679; Фото/Картинки</div>
 	</td>
-	</tr>   
+	</tr>
  
 
 
@@ -451,31 +445,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		&bull; Лето 2012</div>
 	</td>
 	</tr>
-
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_11_1_3"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('fotos_zveri_2012_rus.html');
-			} else {
-				clickStarted = true;
-				window.location.href='fotos_zveri_2012_rus.html';
-			};"
-		class="menu_not_selected_red"
-		style="padding-left: 15px;">
-		&bull; Звери 2012</div>
-	</td>
-	</tr>
-
-
 
 
 
@@ -856,7 +825,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
  
  <!-- For scroll inside div -->
-<div id="scrollDiv" style="height:851px;overflow:auto;">
+<div id="scrollDiv" style="height:828px;overflow:auto;">
  
  
  

@@ -2,7 +2,6 @@
 &#9679; <b class="text_red_blue" data-added="17е Июн, 2016.">Мои Фото</b>
 <span style="padding-left:10px;">&#9900; <a href="fotos_rus.html" class = "standardb_red" data-added="17е Июн, 2016." data-author="Урмас Репинский" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Я</a></span>
 <span style="padding-left:10px;">&#9900; <a href="fotos_summer_2012_rus.html" class = "standardb_red" data-added="31е Авг, 2016." data-author="Урмас Репинский" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Лето 2012</a></span>
-<span style="padding-left:10px;">&#9900; <a href="fotos_zveri_2012_rus.html" class = "standardb_red" data-added="01е Янв, 2018." data-author="Урмас Репинский" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Звери 2012</a></span>
 &#9679; <b class="text_red_blue" data-added="06е Дек, 2017.">Картинки - Николетта Чекколи</b>
 <span style="padding-left:10px;">&#9900; <a href="fotos_images_about_ceccoli_rus.html" class = "standardb_red" data-added="06е Дек, 2017." data-country="sanmarino" data-lang="it" data-author_orig="Nicoletta Ceccoli" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">О Николетта Чекколи</a></span>
 <span style="padding-left:10px;">&#9900; <a href="fotos_images_ceccoli_works_rus.html" class = "standardb_red" data-added="06е Дек, 2017." data-country="sanmarino" data-author="Николетта Чекколи" data-lang="it" data-author_orig="Nicoletta Ceccoli" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Работы</a></span>

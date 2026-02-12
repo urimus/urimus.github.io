@@ -364,19 +364,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_11"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('fotos_me_rus.html');
-			} else {
-				clickStarted = true;
-				window.location.href='fotos_me_rus.html';
-			};"  
+		onclick="showSubMenu(this, 'rus', 'photos');"  
 		class="menu_selected">
 		&#9679; Фото/Картинки</div>
 	</td>
-	</tr>   
+	</tr>
  
 
 

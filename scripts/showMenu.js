@@ -3481,13 +3481,6 @@ if (lang=="eng") {
 	wholeMenu["Summer 2012"].link = "fotos_summer_2012_eng.html";
 	wholeMenu["Summer 2012"].html = 'Summer 2012';
 
-	wholeMenu["Zveri (rus. Звери) 2012"] = {};
-	wholeMenu["Zveri (rus. Звери) 2012"].id = "11_1_3";
-	wholeMenu["Zveri (rus. Звери) 2012"].color = "red";
-	wholeMenu["Zveri (rus. Звери) 2012"].hasSub = 0;
-	wholeMenu["Zveri (rus. Звери) 2012"].link = "fotos_zveri_2012_eng.html";
-	wholeMenu["Zveri (rus. Звери) 2012"].html = 'Zveri (rus. Звери) 2012';
-
 	wholeMenu["● Images - Nicoletta Ceccoli"] = {};
 	wholeMenu["● Images - Nicoletta Ceccoli"].id = "11_2";
 	wholeMenu["● Images - Nicoletta Ceccoli"].color = "red";
@@ -3771,13 +3764,6 @@ if (lang=="rus") {
 	wholeMenu["Лето 2012"].hasSub = 0;
 	wholeMenu["Лето 2012"].link = "fotos_summer_2012_rus.html";
 	wholeMenu["Лето 2012"].html = 'Лето 2012';
-
-	wholeMenu["Звери 2012"] = {};
-	wholeMenu["Звери 2012"].id = "11_1_3";
-	wholeMenu["Звери 2012"].color = "red";
-	wholeMenu["Звери 2012"].hasSub = 0;
-	wholeMenu["Звери 2012"].link = "fotos_zveri_2012_rus.html";
-	wholeMenu["Звери 2012"].html = 'Звери 2012';
 
 	wholeMenu["● Картинки - Николетта Чекколи"] = {};
 	wholeMenu["● Картинки - Николетта Чекколи"].id = "11_2";
@@ -4064,13 +4050,6 @@ if (lang=="lat") {
 	wholeMenu["Aestas 2012"].hasSub = 0;
 	wholeMenu["Aestas 2012"].link = "fotos_summer_2012_lat.html";
 	wholeMenu["Aestas 2012"].html = 'Aestas 2012';
-
-	wholeMenu["Zveri (rus. Звери) 2012"] = {};
-	wholeMenu["Zveri (rus. Звери) 2012"].id = "11_1_3";
-	wholeMenu["Zveri (rus. Звери) 2012"].color = "red";
-	wholeMenu["Zveri (rus. Звери) 2012"].hasSub = 0;
-	wholeMenu["Zveri (rus. Звери) 2012"].link = "fotos_zveri_2012_lat.html";
-	wholeMenu["Zveri (rus. Звери) 2012"].html = 'Zveri (rus. Звери) 2012';
 
 	wholeMenu["● Imaginibus - Nicoletta Ceccoli"] = {};
 	wholeMenu["● Imaginibus - Nicoletta Ceccoli"].id = "11_2";

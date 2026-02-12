@@ -2,7 +2,6 @@
 &#9679; <b class="text_red_blue" data-added="17th of Jun, 2016.">My Photos</b>
 <span style="padding-left:10px;">&#9900; <a href="fotos_eng.html" class = "standardb_red" data-added="17th of Jun, 2016." data-author="Urmas Repinski" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Me</a></span>
 <span style="padding-left:10px;">&#9900; <a href="fotos_summer_2012_eng.html" class = "standardb_red" data-added="31st of Aug, 2016." data-author="Urmas Repinski" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Summer 2012</a></span>
-<span style="padding-left:10px;">&#9900; <a href="fotos_zveri_2012_eng.html" class = "standardb_red" data-added="01st of Jan, 2018." data-author="Urmas Repinski" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Zveri 2012</a></span>
 &#9679; <b class="text_red_blue" data-added="06th of Dec, 2017.">Images - Nicoletta Ceccoli</b>
 <span style="padding-left:10px;">&#9900; <a href="fotos_images_about_ceccoli_eng.html" class = "standardb_red" data-added="06th of Dec, 2017." data-country="sanmarino" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">About Nicoletta Ceccoli</a></span>
 <span style="padding-left:10px;">&#9900; <a href="fotos_images_ceccoli_works_eng.html" class = "standardb_red" data-added="06th of Dec, 2017." data-country="sanmarino" data-author="Nicoletta Ceccoli" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Works</a></span>
