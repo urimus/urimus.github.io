@@ -88,11 +88,14 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
+				var type = getParameterByName('type');
+				var pars = '?source='+encodeURIComponent(getParameterByName('source'));
+				if (type) pars += '&type='+encodeURIComponent(type);
 				if (event.ctrlKey) {
-					window.open('news_lat.html?source='+encodeURIComponent(getParameterByName('source'))+'&type='+encodeURIComponent(getParameterByName('type')));
+					window.open('news_lat.html'+pars);
 				} else {
 					clickStarted = true;
-					window.location.href='news_lat.html?source='+encodeURIComponent(getParameterByName('source'))+'&type='+encodeURIComponent(getParameterByName('type'));
+					window.location.href='news_lat.html'+pars;
 				};"
 			class="flag_not_selected"
 			title="latina"
@@ -111,11 +114,14 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
+				var type = getParameterByName('type');
+				var pars = '?source='+encodeURIComponent(getParameterByName('source'));
+				if (type) pars += '&type='+encodeURIComponent(type);
 				if (event.ctrlKey) {
-					window.open('news_eng.html?source='+encodeURIComponent(getParameterByName('source'))+'&type='+encodeURIComponent(getParameterByName('type')));
+					window.open('news_eng.html'+pars);
 				} else {
 					clickStarted = true;
-					window.location.href='news_eng.html?source='+encodeURIComponent(getParameterByName('source'))+'&type='+encodeURIComponent(getParameterByName('type'));
+					window.location.href='news_eng.html'+pars;
 				};"   
 			class="flag_not_selected"
 			title="english"
@@ -131,11 +137,14 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
+				var type = getParameterByName('type');
+				var pars = '?source='+encodeURIComponent(getParameterByName('source'));
+				if (type) pars += '&type='+encodeURIComponent(type);
 				if (event.ctrlKey) {
-					window.open('news_rus.html?source='+encodeURIComponent(getParameterByName('source'))+'&type='+encodeURIComponent(getParameterByName('type')));
+					window.open('news_rus.html'+pars);
 				} else {
 					clickStarted = true;
-					window.location.href='news_rus.html?source='+encodeURIComponent(getParameterByName('source'))+'&type='+encodeURIComponent(getParameterByName('type'));
+					window.location.href='news_rus.html'+pars;
 				};"   
 			class="flag_selected"
 			title="русский"
