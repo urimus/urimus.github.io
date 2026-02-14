@@ -87,8 +87,7 @@ function newsLoad(lang) {
 	
 	typeL=getParameterByName('type');
 	if (typeL && typeL!="") {
-		if (source=="artemis" && typeL=="all" 
-		|| source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
+		if (source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
 		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis") 
 		|| source=="phys.org" && (typeL=="all" 
 										|| typeL=="earth" || typeL=="environment"
@@ -98,14 +97,18 @@ function newsLoad(lang) {
 										|| typeL=="astrobiology" || typeL=="astronomy" || typeL=="planetary" || typeL=="space"
 										|| typeL=="agriculture" || typeL=="biotechnology" || typeL=="cell" || typeL=="ecology" || typeL=="evolution" || typeL=="molecular" || typeL=="otherb" || typeL=="paleontology" || typeL=="plants" || typeL=="veterinary"
 										|| typeL=="analytical" || typeL=="biochemistry" || typeL=="materials" || typeL=="otherc" || typeL=="polymers")
-		|| source=="space.com" && typeL=="all" 
 		|| source=="wired" && (typeL=="top" || typeL=="business" || typeL=="ai" || typeL=="culture" || typeL=="gear" || typeL=="ideas" || typeL=="science" || typeL=="security" || typeL=="backchannel" || typeL=="guides")
 		|| source=="yahoo" && (typeL=="top" || typeL=="world" || typeL=="us" || typeL=="politics" || typeL=="health" || typeL=="finance" || typeL=="science" || typeL=="sports" || typeL=="entertainment" || typeL=="lifestyle")
 		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports") )  {
 			type=typeL;
 		}
+		if (source=="space.com" || source=="artemis") type="all";
 	} else {
-		toRedirect=1;
+		if (source=="space.com" || source=="artemis") {
+			type="all";
+		} else {
+			toRedirect=1;
+		}
 	}
 
 	if (type=="") {

@@ -5370,7 +5370,7 @@ if (lang=="eng") {
 	wholeMenu["Artemis II API Feed"].id = "26_8";
 	wholeMenu["Artemis II API Feed"].color = "red";
 	wholeMenu["Artemis II API Feed"].hasSub = 0;
-	wholeMenu["Artemis II API Feed"].link = "news_eng.html?source=artemis&type=all";
+	wholeMenu["Artemis II API Feed"].link = "news_eng.html?source=artemis";
 	wholeMenu["Artemis II API Feed"].html = 'Artemis II API Feed';
 
 	wholeMenu["● CBS RSS Feed"] = {};
@@ -5839,7 +5839,7 @@ if (lang=="eng") {
 	wholeMenu["Space.com RSS Feed"].id = "26_6";
 	wholeMenu["Space.com RSS Feed"].color = "red";
 	wholeMenu["Space.com RSS Feed"].hasSub = 0;
-	wholeMenu["Space.com RSS Feed"].link = "news_eng.html?source=space.com&type=all";
+	wholeMenu["Space.com RSS Feed"].link = "news_eng.html?source=space.com";
 	wholeMenu["Space.com RSS Feed"].html = 'Space.com RSS Feed';
 
 	wholeMenu["● Wired RSS Feed"] = {};
@@ -6071,7 +6071,7 @@ if (lang=="rus") {
 	wholeMenu["Artemis II API Строка"].id = "26_8";
 	wholeMenu["Artemis II API Строка"].color = "red";
 	wholeMenu["Artemis II API Строка"].hasSub = 0;
-	wholeMenu["Artemis II API Строка"].link = "news_rus.html?source=artemis&type=all";
+	wholeMenu["Artemis II API Строка"].link = "news_rus.html?source=artemis";
 	wholeMenu["Artemis II API Строка"].html = 'Artemis II API Строка';
 
 	wholeMenu["● CBS RSS Строка"] = {};
@@ -6540,7 +6540,7 @@ if (lang=="rus") {
 	wholeMenu["Space.com RSS Строка"].id = "26_6";
 	wholeMenu["Space.com RSS Строка"].color = "red";
 	wholeMenu["Space.com RSS Строка"].hasSub = 0;
-	wholeMenu["Space.com RSS Строка"].link = "news_rus.html?source=space.com&type=all";
+	wholeMenu["Space.com RSS Строка"].link = "news_rus.html?source=space.com";
 	wholeMenu["Space.com RSS Строка"].html = 'Space.com RSS Строка';
 
 	wholeMenu["● Wired RSS Строка"] = {};
@@ -6771,7 +6771,7 @@ if (lang=="lat") {
 	wholeMenu["Artemis II API Acies"].id = "26_8";
 	wholeMenu["Artemis II API Acies"].color = "red";
 	wholeMenu["Artemis II API Acies"].hasSub = 0;
-	wholeMenu["Artemis II API Acies"].link = "news_lat.html?source=artemis&type=all";
+	wholeMenu["Artemis II API Acies"].link = "news_lat.html?source=artemis";
 	wholeMenu["Artemis II API Acies"].html = 'Artemis II API Acies';
 
 	wholeMenu["● CBS RSS Acies"] = {};
@@ -7240,7 +7240,7 @@ if (lang=="lat") {
 	wholeMenu["Space.com RSS Acies"].id = "26_6";
 	wholeMenu["Space.com RSS Acies"].color = "red";
 	wholeMenu["Space.com RSS Acies"].hasSub = 0;
-	wholeMenu["Space.com RSS Acies"].link = "news_lat.html?source=space.com&type=all";
+	wholeMenu["Space.com RSS Acies"].link = "news_lat.html?source=space.com";
 	wholeMenu["Space.com RSS Acies"].html = 'Space.com RSS Acies';
 
 	wholeMenu["● Wired RSS Acies"] = {};
