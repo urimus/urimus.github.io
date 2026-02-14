@@ -6,9 +6,18 @@ var preloadCache = {};
 // ------------- End of Global Variables ---------------- //
 
 function feedIconText (feedURL, lang) {
-	if (lang == "rus") var textRssFeed="RSS Строка (англ.)";
-	if (lang == "eng") var textRssFeed="RSS Feed";
-	if (lang == "lat") var textRssFeed="RSS Acies (angl.)";
+
+	var textRssFeed;
+
+	if (feedURL == "https://api.artemis2.live/news") { // artemis
+		if (lang == "rus") textRssFeed="API Строка (англ.)";
+		if (lang == "eng") textRssFeed="API Feed";
+		if (lang == "lat") textRssFeed="API Acies (angl.)";
+	} else {
+		if (lang == "rus") textRssFeed="RSS Строка (англ.)";
+		if (lang == "eng") textRssFeed="RSS Feed";
+		if (lang == "lat") textRssFeed="RSS Acies (angl.)";
+	}
 
 	var a = document.createElement('a');
 	a.setAttribute('href', feedURL);
@@ -161,19 +170,31 @@ function adjustFeedScrollDiv() {
 function showFeedTitle(type, source, lang, result) {
 	var textRssFeed, textOutputRecords, textLastBuildDate, textPre;
 	if (lang == "rus") {
-		textRssFeed="RSS Строка (англ.)";
+		if (source == "artemis") {
+			textRssFeed="API Строка (англ.)";
+		} else {
+			textRssFeed="RSS Строка (англ.)";
+		}
 		textOutputRecords="Вывод Строки Новостей";
 		textLastBuildDate="Последняя Сборка:&nbsp;";
 		textPre="От";
 	}
 	if (lang == "eng") {
-		textRssFeed="RSS Feed";
+		if (source == "artemis") {
+			textRssFeed="API Feed";
+		} else {
+			textRssFeed="RSS Feed";
+		}
 		textOutputRecords="Outputing News Feed";
 		textLastBuildDate="Last Build:&nbsp;";
 		textPre="By";
 	}
 	if (lang == "lat") {
-		textRssFeed="RSS Acies (angl.)";
+		if (source == "artemis") {
+			textRssFeed="API Acies (angl.)";
+		} else {
+			textRssFeed="RSS Acies (angl.)";
+		}
 		textOutputRecords="Produco Nuntium Acies";
 		textLastBuildDate="Ultima Aedificatio:&nbsp;";
 		textPre="Ab";
@@ -1089,9 +1110,15 @@ function generateTabs(type, source, lang) {
 	menuDiv.setAttribute('onmouseleave', "this.className='menu_selected';");
 
 	var textRssFeed;
-	if (lang == "rus") textRssFeed="RSS Строка";
-	if (lang == "eng") textRssFeed="RSS Feed";
-	if (lang == "lat") textRssFeed="RSS Acies";
+	if (source == "artemis") {
+		if (lang == "rus") textRssFeed="API Строка";
+		if (lang == "eng") textRssFeed="API Feed";
+		if (lang == "lat") textRssFeed="API Acies";
+	} else {
+		if (lang == "rus") textRssFeed="RSS Строка";
+		if (lang == "eng") textRssFeed="RSS Feed";
+		if (lang == "lat") textRssFeed="RSS Acies";
+	}
 
 	var tabtype2;
 	if (source=="phys.org") {
@@ -1550,8 +1577,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 	result.entries = [];
 	if (source == "artemis") {
-		result.title = "NASA’s Artemis II Mission";
-		result.description = "NASA’s Artemis II Mission";
+		result.title = "NASA’s Artemis II Mission News";
+		result.description = "NASA’s Artemis II Mission News";
 		result.link = "https://artemis2.live/news";
 		items = resultOrig.data;
 	} else {
