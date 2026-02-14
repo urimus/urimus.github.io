@@ -102,13 +102,12 @@ function newsLoad(lang) {
 		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports") )  {
 			type=typeL;
 		}
-		if (source=="space.com" || source=="artemis") type="all";
 	} else {
-		if (source=="space.com" || source=="artemis") {
-			type="all";
-		} else {
-			toRedirect=1;
-		}
+		toRedirect=1;
+	}
+	if (source=="space.com" || source=="artemis") {
+		type="all";
+		toRedirect=0;
 	}
 
 	if (type=="") {
@@ -118,11 +117,9 @@ function newsLoad(lang) {
 		toRedirect=1;
 	}
 	if (toRedirect==1) { // restore
-	    	if (source=="artemis") window.location.href='news_'+lang+'.html?source=artemis&type=all';
 	    	if (source=="cbs") window.location.href='news_'+lang+'.html?source=cbs&type=top';
 	    	if (source=="nasa") window.location.href='news_'+lang+'.html?source=nasa&type=releases';
 	    	if (source=="phys.org") window.location.href='news_'+lang+'.html?source=phys.org&type=all';
-	    	if (source=="space.com") window.location.href='news_'+lang+'.html?source=space.com&type=all';
 	    	if (source=="wired") window.location.href='news_'+lang+'.html?source=wired&type=top';
 	    	if (source=="yahoo") window.location.href='news_'+lang+'.html?source=yahoo&type=top';
 	    	if (source=="yonhap") window.location.href='news_'+lang+'.html?source=yonhap&type=all';
