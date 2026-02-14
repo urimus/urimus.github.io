@@ -1,7 +1,7 @@
 ﻿<b class="text_red_blue">News</b>
 
-&#9679; <b class = "text_red_blue" data-added="07th of Feb, 2026." data-country="usa">Artemis II RSS Feed</b>
-<span style="padding-left:10px;">- <a href="news_eng.html?source=artemis&type=all" class = "standardb_red" data-added="07th of Feb, 2026." data-country="usa" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Artemis II RSS Feed</a></span>
+&#9679; <b class = "text_red_blue" data-added="07th of Feb, 2026." data-country="usa">Artemis II API Feed</b>
+<span style="padding-left:10px;">- <a href="news_eng.html?source=artemis&type=all" class = "standardb_red" data-added="07th of Feb, 2026." data-country="usa" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Artemis II API Feed</a></span>
 
 &#9679; <b class = "text_red_blue" data-added="31st of Oct, 2024." data-country="usa">CBS RSS Feed</b>
 <span style="padding-left:10px;">- <a href="news_eng.html?source=cbs&type=top" class = "standardb_red" data-added="31st of Oct, 2024." data-country="usa" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Top Stories</a></span>

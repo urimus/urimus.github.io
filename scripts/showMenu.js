@@ -5366,12 +5366,12 @@ if (lang=="eng") {
 	wholeMenu["● News"].link = "";
 	wholeMenu["● News"].html = '&#9679; News';
 
-	wholeMenu["Artemis II RSS Feed"] = {};
-	wholeMenu["Artemis II RSS Feed"].id = "26_8";
-	wholeMenu["Artemis II RSS Feed"].color = "red";
-	wholeMenu["Artemis II RSS Feed"].hasSub = 0;
-	wholeMenu["Artemis II RSS Feed"].link = "news_eng.html?source=artemis&type=all";
-	wholeMenu["Artemis II RSS Feed"].html = 'Artemis II RSS Feed';
+	wholeMenu["Artemis II API Feed"] = {};
+	wholeMenu["Artemis II API Feed"].id = "26_8";
+	wholeMenu["Artemis II API Feed"].color = "red";
+	wholeMenu["Artemis II API Feed"].hasSub = 0;
+	wholeMenu["Artemis II API Feed"].link = "news_eng.html?source=artemis&type=all";
+	wholeMenu["Artemis II API Feed"].html = 'Artemis II API Feed';
 
 	wholeMenu["● CBS RSS Feed"] = {};
 	wholeMenu["● CBS RSS Feed"].id = "26_3";
@@ -6067,12 +6067,12 @@ if (lang=="rus") {
 	wholeMenu["● Новости"].link = "";
 	wholeMenu["● Новости"].html = '&#9679; Новости';
 
-	wholeMenu["Artemis II RSS Строка"] = {};
-	wholeMenu["Artemis II RSS Строка"].id = "26_8";
-	wholeMenu["Artemis II RSS Строка"].color = "red";
-	wholeMenu["Artemis II RSS Строка"].hasSub = 0;
-	wholeMenu["Artemis II RSS Строка"].link = "news_rus.html?source=artemis&type=all";
-	wholeMenu["Artemis II RSS Строка"].html = 'Artemis II RSS Строка';
+	wholeMenu["Artemis II API Строка"] = {};
+	wholeMenu["Artemis II API Строка"].id = "26_8";
+	wholeMenu["Artemis II API Строка"].color = "red";
+	wholeMenu["Artemis II API Строка"].hasSub = 0;
+	wholeMenu["Artemis II API Строка"].link = "news_rus.html?source=artemis&type=all";
+	wholeMenu["Artemis II API Строка"].html = 'Artemis II API Строка';
 
 	wholeMenu["● CBS RSS Строка"] = {};
 	wholeMenu["● CBS RSS Строка"].id = "26_3";
@@ -6767,12 +6767,12 @@ if (lang=="lat") {
 	wholeMenu["● Nuntium"].link = "";
 	wholeMenu["● Nuntium"].html = '&#9679; Nuntium';
 
-	wholeMenu["Artemis II RSS Acies"] = {};
-	wholeMenu["Artemis II RSS Acies"].id = "26_8";
-	wholeMenu["Artemis II RSS Acies"].color = "red";
-	wholeMenu["Artemis II RSS Acies"].hasSub = 0;
-	wholeMenu["Artemis II RSS Acies"].link = "news_lat.html?source=artemis&type=all";
-	wholeMenu["Artemis II RSS Acies"].html = 'Artemis II RSS Acies';
+	wholeMenu["Artemis II API Acies"] = {};
+	wholeMenu["Artemis II API Acies"].id = "26_8";
+	wholeMenu["Artemis II API Acies"].color = "red";
+	wholeMenu["Artemis II API Acies"].hasSub = 0;
+	wholeMenu["Artemis II API Acies"].link = "news_lat.html?source=artemis&type=all";
+	wholeMenu["Artemis II API Acies"].html = 'Artemis II API Acies';
 
 	wholeMenu["● CBS RSS Acies"] = {};
 	wholeMenu["● CBS RSS Acies"].id = "26_3";

@@ -1139,12 +1139,16 @@ function generateTabs(type, source, lang) {
 			tabtype2="Chemistry &blacktriangleright; "+tabs[type];
 			if (type=="analytical") tabtype2="Chemistry &blacktriangleright; "+tabs2[type];
 		}
-	} else if (source=="artemis" || source=="space.com") tabtype2="All Stories";
+	} else if (source=="artemis" || source=="space.com") tabtype2="";
 	else if (source=="nasa" && type=="recent" || source=="wired" && type=="ai") tabtype2=tabs2[type];
 	else tabtype2=tabs[type];
 
 	var feedTitle=document.getElementById("feedTitle");
-	feedTitle.innerHTML=textNews+" &blacktriangleright; "+textFeedSource +" "+textRssFeed+" &blacktriangleright; "+tabtype2;
+	if (tabtype2 != "") {
+		feedTitle.innerHTML=textNews+" &blacktriangleright; "+textFeedSource +" "+textRssFeed+" &blacktriangleright; "+tabtype2;
+	} else {
+		feedTitle.innerHTML=textNews+" &blacktriangleright; "+textFeedSource +" "+textRssFeed;
+	}
 
 	var keys=Object.keys(tabs);
 	var table = document.getElementById("tabstable");
