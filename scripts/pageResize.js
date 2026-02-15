@@ -4,6 +4,8 @@ var preloadCacheGl = {};
 var clickStarted = false;
 // ------------- End of Global Variables ---------------- //
 
+
+// --- tab navigation ---
 function keyboardClick(event, el) {
 	el.dispatchEvent(new MouseEvent('click', {
 		bubbles: true,
@@ -43,7 +45,8 @@ document.addEventListener('keyup', e => {
 	keyboardClick(e, el);
 });
 
-window.addEventListener('pageshow', function () {
+// --- back/forward processing ---
+function handleBackForward() {
 	clickStarted = false;
 	const ev = new MouseEvent('mouseleave');
 	document.querySelectorAll(
@@ -51,9 +54,24 @@ window.addEventListener('pageshow', function () {
 	).forEach(el => {
 		el.dispatchEvent(ev);
 	});
+}
+
+window.addEventListener('pageshow', function (event) {
+	const navEntries = performance.getEntriesByType("navigation");
+	const nav = navEntries && navEntries.length ? navEntries[0] : null;
+	const isBackForward = (nav && nav.type === "back_forward") ||
+						(performance.navigation && performance.navigation.type === 2) ||
+						event.persisted;
+	if (isBackForward) {
+		handleBackForward();
+	}
 });
 
+window.addEventListener('popstate', function () {
+	handleBackForward();
+});
 
+// --- preload ---
 function preloadImages() {
 	const sortbyIcons = [
 		"date_black","date_blue","date_green","date_red","date_selected","date_white",
@@ -114,6 +132,7 @@ screen.orientation.addEventListener('change', function(event) {
 	processPageResize(0, 1);
 });
 
+// --- isMobile ---
 function isMobile() {
 	return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
 }
@@ -130,6 +149,7 @@ function isMobileLike() {
     return isMobile() || (isTouchDevice() && !hasHover());
 }
 
+// --- additional functions ---
 function getScrollbarWidth(el) {
 	if (!el || isTouchDevice()) return 0;
 	return el.offsetWidth - el.clientWidth;
@@ -160,6 +180,7 @@ function getScrollDivOffset(){
 	return hImgHeight + 68 + getScrollbarHeight(document.body); // 68
 }
 
+// --- adjust scrolldiv ---
 function adjustScrollDiv2(){
 	var scrollDiv = document.getElementById('scrollDiv');
 
@@ -193,7 +214,7 @@ function adjustScrollDiv(){
 }
 
 
-
+// --- news keys scroll ---
 function enableKeyboardScroll(scrollDiv) {
 
 	var stepRepeat = 0;
@@ -242,6 +263,7 @@ function enableKeyboardScroll(scrollDiv) {
 	});
 }
 
+// --- html editor menu corr ---
 function checkMenu6(lang) {
 	var menu6 = document.getElementById('menu_6');
 	if (menu6) {
@@ -277,6 +299,7 @@ function checkMenu6(lang) {
 	}
 }
 
+// --- pageResize ---
 function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 
 	if (isLoad == 1) { 
