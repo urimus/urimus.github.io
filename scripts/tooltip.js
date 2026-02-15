@@ -380,8 +380,12 @@ $(function() {
 
 	let lastPointer = null;
 	window.addEventListener("pointermove", e => { lastPointer = { x: e.clientX, y: e.clientY }; }, true);
-	window.addEventListener("pageshow", () => {
+	function fireTooltip() {
 		if (!lastPointer) return;
-		requestAnimationFrame(() => { fireTooltipAt(lastPointer.x, lastPointer.y); });
-	});
+		requestAnimationFrame(() => {
+			fireTooltipAt(lastPointer.x, lastPointer.y);
+		});
+	}
+	window.addEventListener("pageshow", fireTooltip);
+	window.addEventListener("popstate", fireTooltip);
 });
