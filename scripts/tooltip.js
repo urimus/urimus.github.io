@@ -368,22 +368,42 @@ $(function() {
 		}, 200);
 	});
 
-	function fireTooltipAt(x, y) {
-		if (typeof x !== "number" || typeof y !== "number") return;
-		const el = document.elementFromPoint(x, y);
-		if (!el?.getAttribute?.("title")) return;
-		el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
-		el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+	function fireTooltipAt(event) {
+		if (!event) return;
+		let el = event.target || event.srcElement;
+		const path = [];
+		while (el && el.nodeType === 1) {
+			path.push(el);
+			el = el.parentNode;
+		}
+		path.reverse();
+		for (const el of path) {
+			const title = el.getAttribute("title");
+			const style = getComputedStyle(el);
+			const isVisible = style.display !== "none" && style.visibility !== "hidden" && el.offsetWidth > 0 && el.offsetHeight > 0;
+
+			if (!title || !isVisible) continue;
+
+			const rect = el.getBoundingClientRect();
+			const cx = rect.left + rect.width / 2;
+			const cy = rect.top + rect.height / 2;
+			const topEl = document.elementFromPoint(cx, cy);
+			if (topEl === el || el.contains(topEl)) {
+				el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
+				el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+				break;
+			}
+		}
 	}
-	const firstHandler = ev => { fireTooltipAt(ev.clientX, ev.clientY); };
+	const firstHandler = ev => { fireTooltipAt(ev); };
 	window.addEventListener("pointermove", firstHandler, { capture: true, once: true });
 
-	let lastPointer = null;
-	window.addEventListener("pointermove", e => { lastPointer = { x: e.clientX, y: e.clientY }; }, true);
+	let lastPointerEvent = null;
+	window.addEventListener("pointermove", e => { lastPointerEvent = e; }, true);
 	function fireTooltip() {
-		if (!lastPointer) return;
+		if (!lastPointerEvent) return;
 		requestAnimationFrame(() => {
-			fireTooltipAt(lastPointer.x, lastPointer.y);
+			fireTooltipAt(lastPointerEvent);
 		});
 	}
 	window.addEventListener("pageshow", fireTooltip);
