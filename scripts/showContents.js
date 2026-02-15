@@ -516,7 +516,7 @@ function generateTabs(type, lang) {
 		Div.setAttribute('tabindex', "0");
 		Div.setAttribute('onmouseenter', "if (clickStarted) return; this.className='menu_selected'; if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.fullTitle;");
 		Div.setAttribute('onmouseleave', "if (clickStarted) return; mouseOutTab('"+keys[i]+"', '"+type+"', '"+tabsColor[keys[i]]+"'); if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.shortTitle;");
-		sortby = encodeURIComponent(getParameterByName('sortby'));
+		sortby = getParameterByName('sortby');
 		divLink = "index_" + lang + ".html?type=" + keys[i] + "&sortby=" + sortby;
 		Div.setAttribute('onclick', "if (event.ctrlKey){ window.open('"+divLink+"'); } else { clickStarted = true; window.location.href='"+divLink+"'; };");
 		Div.innerHTML = tabs[keys[i]];

@@ -137,7 +137,7 @@ function showRecordsNum(type, recordsNum, lang, newCaption) {
 		document.getElementById('feed_'+type).innerHTML=newCaption;
 	}
 	if (recordsNum==0) {
-		document.getElementById('feed_'+type).onmouseleave = function(){mouseOutTab(type, encodeURIComponent(getParameterByName('type')), 'black');}
+		document.getElementById('feed_'+type).onmouseleave = function(){mouseOutTab(type, getParameterByName('type'), 'black');}
 		document.getElementById('feed_'+type).onmouseleave();
 	}
 }
