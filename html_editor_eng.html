@@ -89,14 +89,12 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			tabindex="0"
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
-			onclick="				patt=encodeURIComponent(getParameterByName('pattern'));
-				i=encodeURIComponent(getParameterByName('i'));
-
+			onclick="
 				if (event.ctrlKey) {
-					window.open('html_editor_eng.html' + ((patt.localeCompare('null')!=0) ? '?pattern='+ patt+'&i='+i : ''));
+					window.open('html_editor_eng.html' + window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='html_editor_eng.html' + ((patt.localeCompare('null')!=0) ? '?pattern='+ patt+'&i='+i : '');
+					window.location.href='html_editor_eng.html' + window.location.search;
 				};"
 			class="flag_selected"
 			title="english"
@@ -111,14 +109,12 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			tabindex="0"
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
-			onclick="				patt=encodeURIComponent(getParameterByName('pattern'));
-				i=encodeURIComponent(getParameterByName('i'));
-
+			onclick="
 				if (event.ctrlKey) {
-					window.open('html_editor_rus.html' + ((patt.localeCompare('null')!=0) ? '?pattern='+ patt+'&i='+i : ''));
+					window.open('html_editor_rus.html' + window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='html_editor_rus.html' + ((patt.localeCompare('null')!=0) ? '?pattern='+ patt+'&i='+i : '');
+					window.location.href='html_editor_rus.html' + window.location.search;
 				};"
 			class="flag_not_selected"
 			title="русский"
@@ -248,12 +244,15 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="
-			patt=encodeURIComponent(getParameterByName('pattern'));
+			const params = new URLSearchParams({
+				pattern: getParameterByName('pattern') || '*.html',
+				i: 0
+			});
 			if (event.ctrlKey) {
-				window.open('html_editor_eng.html?pattern=' + ((patt.localeCompare('null')!=0) ? patt : '*.html')+'&i=0');
+				window.open('html_editor_eng.html?' + params.toString());
 			} else {
 				clickStarted = true;
-				window.location.href='html_editor_eng.html?pattern=' + ((patt.localeCompare('null')!=0) ? patt : '*.html')+'&i=0';
+				window.location.href='html_editor_eng.html?' + params.toString();
 			};"
 		class="menu_selected">
 		HTML Editor</div>

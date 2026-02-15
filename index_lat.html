@@ -87,10 +87,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby='+encodeURIComponent(getParameterByName('sortby')));
+					window.open('index_lat.html'+window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby='+encodeURIComponent(getParameterByName('sortby'));
+					window.location.href='index_lat.html'+window.location.search;
 				};"
 			class="flag_selected"
 			title="latina"
@@ -110,10 +110,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('index_eng.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby='+encodeURIComponent(getParameterByName('sortby')));
+					window.open('index_eng.html'+window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='index_eng.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby='+encodeURIComponent(getParameterByName('sortby'));
+					window.location.href='index_eng.html'+window.location.search;
 				};"
 			class="flag_not_selected"
 			title="english"
@@ -130,10 +130,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby='+encodeURIComponent(getParameterByName('sortby')));
+					window.open('index_rus.html'+window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='index_rus.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby='+encodeURIComponent(getParameterByName('sortby'));
+					window.location.href='index_rus.html'+window.location.search;
 				};"
 			class="flag_not_selected"
 			title="русский"
@@ -356,12 +356,16 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			tabindex="0"
 				onmouseenter="if (!clickStarted) mouseInSortBy('name');"
 				onmouseleave="mouseOutSortBy('name');"
-				onclick="		
+				onclick="
+					const params = new URLSearchParams({
+						type: getParameterByName('type'),
+						sortby: 'name'
+					});
 					if (event.ctrlKey) {
-						window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name');
+						window.open('index_lat.html?'+params.toString());
 					} else {
 						clickStarted = true;
-						window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=name';
+						window.location.href='index_lat.html?'+params.toString();
 					};"
 				class="sortby_not_selected"
 				title="Nomine"
@@ -376,12 +380,16 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			tabindex="0"
 				onmouseenter="if (!clickStarted) mouseInSortBy('date');"
 				onmouseleave="mouseOutSortBy('date');"
-				onclick="		
+				onclick="
+					const params = new URLSearchParams({
+						type: getParameterByName('type'),
+						sortby: 'date'
+					});
 					if (event.ctrlKey) {
-						window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date');
+						window.open('index_lat.html?'+params.toString());
 					} else {
 						clickStarted = true;
-						window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=date';
+						window.location.href='index_lat.html?'+params.toString();
 					};"
 				class="sortby_not_selected"
 				title="Diem"
@@ -396,12 +404,16 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			tabindex="0"
 				onmouseenter="if (!clickStarted) mouseInSortBy('flag');"
 				onmouseleave="mouseOutSortBy('flag');"
-				onclick="		
+				onclick="
+					const params = new URLSearchParams({
+						type: getParameterByName('type'),
+						sortby: 'flag'
+					});
 					if (event.ctrlKey) {
-						window.open('index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag');
+						window.open('index_lat.html?'+params.toString());
 					} else {
 						clickStarted = true;
-						window.location.href='index_lat.html?type='+encodeURIComponent(getParameterByName('type'))+'&sortby=flag';
+						window.location.href='index_lat.html?'+params.toString();
 					};"
 				class="sortby_not_selected"
 				title="Patriam"

@@ -86,14 +86,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
-				var type = getParameterByName('type');
-				var pars = '?source='+encodeURIComponent(getParameterByName('source'));
-				if (type) pars += '&type='+encodeURIComponent(type);
 				if (event.ctrlKey) {
-					window.open('news_lat.html'+pars);
+					window.open('news_lat.html'+window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='news_lat.html'+pars;
+					window.location.href='news_lat.html'+window.location.search;
 				};"
 			class="flag_not_selected"
 			title="latina"
@@ -112,14 +109,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
-				var type = getParameterByName('type');
-				var pars = '?source='+encodeURIComponent(getParameterByName('source'));
-				if (type) pars += '&type='+encodeURIComponent(type);
 				if (event.ctrlKey) {
-					window.open('news_eng.html'+pars);
+					window.open('news_eng.html'+window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='news_eng.html'+pars;
+					window.location.href='news_eng.html'+window.location.search;
 				};"       
 			class="flag_selected"
 			title="english"
@@ -135,14 +129,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
-				var type = getParameterByName('type');
-				var pars = '?source='+encodeURIComponent(getParameterByName('source'));
-				if (type) pars += '&type='+encodeURIComponent(type);
 				if (event.ctrlKey) {
-					window.open('news_rus.html'+pars);
+					window.open('news_rus.html'+window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='news_rus.html'+pars;
+					window.location.href='news_rus.html'+window.location.search;
 				};"       
 			class="flag_not_selected"
 			title="русский"
