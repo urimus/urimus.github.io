@@ -368,16 +368,20 @@ $(function() {
 		}, 200);
 	});
 
-	let fired = false;
-	const firstHandler = ev => {
-		if (fired || typeof ev.clientX !== "number") return;
-		fired = true;
-		const el = document.elementFromPoint(ev.clientX, ev.clientY);
-		if (el?.getAttribute?.("title")) {
-			el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
-			el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
-		}
-		window.removeEventListener("pointermove", firstHandler, true);
-	};
-	window.addEventListener("pointermove", firstHandler, true);
+	function fireTooltipAt(x, y) {
+		if (typeof x !== "number" || typeof y !== "number") return;
+		const el = document.elementFromPoint(x, y);
+		if (!el?.getAttribute?.("title")) return;
+		el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
+		el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+	}
+	const firstHandler = ev => { fireTooltipAt(ev.clientX, ev.clientY); };
+	window.addEventListener("pointermove", firstHandler, { capture: true, once: true });
+
+	let lastPointer = null;
+	window.addEventListener("pointermove", e => { lastPointer = { x: e.clientX, y: e.clientY }; }, true);
+	window.addEventListener("pageshow", () => {
+		if (!lastPointer) return;
+		requestAnimationFrame(() => { fireTooltipAt(lastPointer.x, lastPointer.y); });
+	});
 });
