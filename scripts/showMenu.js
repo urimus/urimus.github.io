@@ -7473,12 +7473,7 @@ function  loadMenuContentsLink(ele, lang) {
 	wholeMenu[ele.innerText.trim()].link = "";
 	wholeMenu[ele.innerText.trim()].html = ''+ele.innerHTML.trim();
 
-	var type;
-	if (typeof getParameterByName === "function") { // for amv
-		type = getParameterByName('type');
-	} else {
-		type="";
-	}
+	var type = new URLSearchParams(window.location.search).get("type") || "";
 	var addImage=0;
 	if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") addImage=1;
 
