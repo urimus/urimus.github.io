@@ -624,15 +624,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				onmouseenter="if (!clickStarted) mouseInSortBy('name');"
 				onmouseleave="mouseOutSortBy('name');"
 				onclick="
-					const params = new URLSearchParams({
-						type: getParameterByName('type'),
-						sortby: 'name'
-					});
+					const url = new window.URL(window.location);
+					url.searchParams.set('sortby', 'name');
 					if (event.ctrlKey) {
-						window.open('index_eng.html?'+params.toString());
+						window.open(url);
 					} else {
 						clickStarted = true;
-						window.location.href='index_eng.html?'+params.toString();
+						window.location=url;
 					};"
 				class="sortby_not_selected"
 				title="Name"
@@ -648,15 +646,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				onmouseenter="if (!clickStarted) mouseInSortBy('date');"
 				onmouseleave="mouseOutSortBy('date');"
 				onclick="
-					const params = new URLSearchParams({
-						type: getParameterByName('type'),
-						sortby: 'date'
-					});
+					const url = new window.URL(window.location);
+					url.searchParams.set('sortby', 'date');
 					if (event.ctrlKey) {
-						window.open('index_eng.html?'+params.toString());
+						window.open(url);
 					} else {
 						clickStarted = true;
-						window.location.href='index_eng.html?'+params.toString();
+						window.location=url;
 					};"
 					class="sortby_not_selected"
 					title="Date"
@@ -672,15 +668,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				onmouseenter="if (!clickStarted) mouseInSortBy('flag');"
 				onmouseleave="mouseOutSortBy('flag');"
 				onclick="
-					const params = new URLSearchParams({
-						type: getParameterByName('type'),
-						sortby: 'flag'
-					});
+					const url = new window.URL(window.location);
+					url.searchParams.set('sortby', 'flag');
 					if (event.ctrlKey) {
-						window.open('index_eng.html?'+params.toString());
+						window.open(url);
 					} else {
 						clickStarted = true;
-						window.location.href='index_eng.html?'+params.toString();
+						window.location=url;
 					};"
 				class="sortby_not_selected"
 				title="Country"

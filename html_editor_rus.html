@@ -246,15 +246,14 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseenter="if (!clickStarted) showSubMenu(this);" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="
-			const params = new URLSearchParams({
-				pattern: getParameterByName('pattern') || '*.html',
-				i: 0
-			});
+			const url = new window.URL(window.location);
+			if (!url.searchParams.has('pattern')) url.searchParams.set('pattern', '*.html');
+			if (!url.searchParams.has('i')) url.searchParams.set('i', '0');
 			if (event.ctrlKey) {
-				window.open('html_editor_rus.html?' + params.toString());
+				window.open(url);
 			} else {
 				clickStarted = true;
-				window.location.href='html_editor_rus.html?' + params.toString();
+				window.location=url;
 			};"
 		class="menu_selected">
 		HTML Редактор</div>
