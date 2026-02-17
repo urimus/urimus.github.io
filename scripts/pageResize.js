@@ -114,15 +114,9 @@ function preloadImages() {
 }
 
 function checkIfHideSubMenu(event) {
-	var target = getTarget(event);
-	if (typeof target !== "undefined" && (target.tagName=="BODY" || target.id=="imgBg" || target.id=="imgBgStar")) {
-		hideSubMenu();
-	}
-}
-
-function getTarget(event) {
-	var el = event.target || event.srcElement;
-	return el.nodeType == 1 ? el : el.parentNode;
+	const topEl = document.elementsFromPoint(event.clientX, event.clientY)?.[0];
+	if (!topEl) return;
+	if (topEl.matches("body, #imgBg, #imgBgStar")) hideSubMenu();
 }
 
 window.addEventListener('resize', function(event) {

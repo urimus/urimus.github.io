@@ -368,42 +368,42 @@ $(function() {
 		}, 200);
 	});
 
-	function fireTooltipAt(event) {
-		if (!event) return;
-		let el = event.target || event.srcElement;
-		const path = [];
-		while (el && el.nodeType === 1) {
-			path.push(el);
-			el = el.parentNode;
-		}
-		path.reverse();
-		for (const el of path) {
-			const title = el.getAttribute("title");
-			const style = getComputedStyle(el);
-			const isVisible = style.display !== "none" && style.visibility !== "hidden" && el.offsetWidth > 0 && el.offsetHeight > 0;
+	function fireTooltipAt(pos) {
+		if (!pos) return;
+		const { x, y } = pos;
 
-			if (!title || !isVisible) continue;
+		const el = document.elementFromPoint(x, y);
+		if (!el) return;
 
-			const rect = el.getBoundingClientRect();
-			const cx = rect.left + rect.width / 2;
-			const cy = rect.top + rect.height / 2;
-			const topEl = document.elementFromPoint(cx, cy);
-			if (topEl === el || el.contains(topEl)) {
-				el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
-				el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+		let cur = el;
+		while (cur && cur.nodeType === 1) {
+			const title = cur.getAttribute("title");
+			const style = getComputedStyle(cur);
+			const isVisible =
+				style.display !== "none" &&
+				style.visibility !== "hidden" &&
+				cur.offsetWidth > 0 &&
+				cur.offsetHeight > 0;
+
+			if (title && isVisible) {
+				cur.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
+				cur.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
 				break;
 			}
+
+			cur = cur.parentNode;
 		}
 	}
-	const firstHandler = ev => { fireTooltipAt(ev); };
-	window.addEventListener("pointermove", firstHandler, { capture: true, once: true });
+	let lastPointerPos = null;
+	window.addEventListener("pointermove", e => {
+		lastPointerPos = { x: e.clientX, y: e.clientY };
+		fireTooltipAt(lastPointerPos); 
+	}, { capture: true, once: true });
 
-	let lastPointerEvent = null;
-	window.addEventListener("pointermove", e => { lastPointerEvent = e; }, true);
 	function fireTooltip() {
-		if (!lastPointerEvent) return;
+		if (!lastPointerPos) return;
 		requestAnimationFrame(() => {
-			fireTooltipAt(lastPointerEvent);
+			fireTooltipAt(lastPointerPos);
 		});
 	}
 	window.addEventListener("pageshow", fireTooltip);
