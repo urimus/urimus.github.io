@@ -113,10 +113,9 @@ function preloadImages() {
 	}
 }
 
-function checkIfHideSubMenu(event) {
-	const topEl = document.elementsFromPoint(event.clientX, event.clientY)?.[0];
-	if (!topEl) return;
-	if (topEl.matches("body, #imgBg, #imgBgStar")) hideSubMenu();
+function checkIfHideSubMenu({ clientX, clientY }) {
+	const topEl = document.elementsFromPoint(clientX, clientY)?.[0];
+	if (topEl?.matches("body, #imgBg, #imgBgStar")) hideSubMenu();
 }
 
 window.addEventListener('resize', function(event) {
