@@ -339,7 +339,7 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 			imgBg.setAttribute('id', 'imgBg');
 			imgBg.setAttribute('src', imgBgSrc);
 			imgBg.setAttribute('style', 'position: fixed; bottom: 0px; left: 0px;');
-			imgBg.addEventListener("mouseenter", hideSubMenu);
+			imgBg.addEventListener("mouseenter", () => hideSubMenu());
 			document.body.appendChild(imgBg);
 		}
 		var imgBgStar = document.getElementById("imgBgStar");
@@ -348,7 +348,7 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 			imgBgStar.setAttribute('id', 'imgBgStar');
 			imgBgStar.setAttribute('src', imgBgStarSrc);
 			imgBgStar.setAttribute('style', 'position: fixed; top: 0px; right: 0px;');
-			imgBgStar.addEventListener("mouseenter", hideSubMenu);
+			imgBgStar.addEventListener("mouseenter", () => hideSubMenu());
 			document.body.appendChild(imgBgStar);
 		}
 		if (imageWidth >= 50) {
