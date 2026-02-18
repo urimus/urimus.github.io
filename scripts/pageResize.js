@@ -48,7 +48,7 @@ document.addEventListener('keyup', e => {
 // --- back/forward processing ---
 function handleBackForward() {
 	clickStarted = false;
-	const ev = new MouseEvent('mouseleave');
+	const ev = new PointerEvent('pointerleave');
 	document.querySelectorAll(
 		'[id^="menu_"],[id^="flag_"],[id^="sortby_"],[id^="feed_"],[id^="contents_"]'
 	).forEach(el => {
@@ -115,11 +115,14 @@ function preloadImages() {
 
 // --- Listerners ---
 document.addEventListener("DOMContentLoaded", () => {
-	document.body.addEventListener("mouseover", (event) => {
+	document.body.addEventListener("pointerover", (event) => {
 		const topEl = document.elementFromPoint(event.clientX, event.clientY);
 		if (topEl === document.body) {
 			hideSubMenu();
 		}
+	});
+	document.body.addEventListener("pointerdown", (event) => {
+		if (event.target === document.body) hideSubMenu();
 	});
 });
 
@@ -339,7 +342,7 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 			imgBg.setAttribute('id', 'imgBg');
 			imgBg.setAttribute('src', imgBgSrc);
 			imgBg.setAttribute('style', 'position: fixed; bottom: 0px; left: 0px;');
-			imgBg.addEventListener("mouseenter", () => hideSubMenu());
+			imgBg.addEventListener("pointerenter", () => hideSubMenu());
 			document.body.appendChild(imgBg);
 		}
 		var imgBgStar = document.getElementById("imgBgStar");
@@ -348,7 +351,7 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 			imgBgStar.setAttribute('id', 'imgBgStar');
 			imgBgStar.setAttribute('src', imgBgStarSrc);
 			imgBgStar.setAttribute('style', 'position: fixed; top: 0px; right: 0px;');
-			imgBgStar.addEventListener("mouseenter", () => hideSubMenu());
+			imgBgStar.addEventListener("pointerenter", () => hideSubMenu());
 			document.body.appendChild(imgBgStar);
 		}
 		if (imageWidth >= 50) {

@@ -387,9 +387,9 @@ $(function() {
 				cur.offsetHeight > 0;
 
 			if (!isVisible) continue;
-
-			cur.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
-			cur.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+			const tmp = el.title;
+			el.title = "";
+			el.title = tmp;
 			break;
 		}
 	}
