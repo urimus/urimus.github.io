@@ -113,8 +113,22 @@ function preloadImages() {
 	}
 }
 
-function checkIfHideSubMenu({ clientX, clientY }) {
-	const topEl = document.elementFromPoint(clientX, clientY);
+// --- Listerners ---
+let scheduled = false;
+let lastEvent;
+
+document.addEventListener("pointermove", (e) => {
+	lastEvent = e;
+	if (scheduled) return;
+
+	scheduled = true;
+	requestAnimationFrame(() => {
+		checkIfHideSubMenu(lastEvent);
+		scheduled = false;
+	});
+});
+function checkIfHideSubMenu(event) {
+	const topEl = document.elementFromPoint(event.clientX, event.clientY);
 	if (topEl?.matches("body, #imgBg, #imgBgStar")) hideSubMenu();
 }
 
@@ -367,6 +381,7 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 	}
 }
 
+// --- interval funcs ---
 function flashText() {
 	var ele2;
 	if (document.getElementsByClassName("blinking_text")) {
