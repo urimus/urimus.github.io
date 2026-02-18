@@ -114,7 +114,7 @@ function preloadImages() {
 }
 
 function checkIfHideSubMenu({ clientX, clientY }) {
-	const topEl = document.elementsFromPoint(clientX, clientY)?.[0];
+	const topEl = document.elementFromPoint(clientX, clientY);
 	if (topEl?.matches("body, #imgBg, #imgBgStar")) hideSubMenu();
 }
 

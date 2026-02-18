@@ -372,12 +372,13 @@ $(function() {
 		if (!pos) return;
 		const { x, y } = pos;
 
-		const el = document.elementFromPoint(x, y);
-		if (!el) return;
+		const els = document.elementsFromPoint(x, y);
+		if (!els.length) return;
 
-		let cur = el;
-		while (cur && cur.nodeType === 1) {
-			const title = cur.getAttribute("title");
+		for (const cur of els) {
+			const title = cur.getAttribute?.("title");
+			if (!title) continue;
+
 			const style = getComputedStyle(cur);
 			const isVisible =
 				style.display !== "none" &&
@@ -385,13 +386,11 @@ $(function() {
 				cur.offsetWidth > 0 &&
 				cur.offsetHeight > 0;
 
-			if (title && isVisible) {
-				cur.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
-				cur.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
-				break;
-			}
+			if (!isVisible) continue;
 
-			cur = cur.parentNode;
+			cur.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
+			cur.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+			break;
 		}
 	}
 	let lastPointerPos = null;
