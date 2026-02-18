@@ -1123,7 +1123,7 @@ function processSearch(lang) {
 	textArea.onkeyup = function(e){
 		setLineAndColumnNumber(lang);
 	}
-	textArea.onmouseup = function(e){
+	textArea.onpointerup = function(e){
 		setLineAndColumnNumber(lang);
 	}
 	textArea.addEventListener('input', () => {setTextAreaChanged(lang);}, { passive: true });
