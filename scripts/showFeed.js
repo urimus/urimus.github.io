@@ -367,6 +367,7 @@ function extractLines(html) {
 	var parser = new DOMParser();
 	var doc = parser.parseFromString(html, 'text/html');
 	var container = doc.body || doc;
+	container.querySelectorAll('br').forEach(br => br.replaceWith('\n'));
 	var text = '';
 	var pElements = container.querySelectorAll('p');
 	if (pElements.length > 0) {
