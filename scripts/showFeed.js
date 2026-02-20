@@ -369,7 +369,7 @@ function extractLines(html) {
 
 	return doc.body.innerText
 		.replaceAll("\\n", "\n")
-		.split(/\n+/)
+		.split("\n")
 		.map(s => s.trim())
 		.filter(Boolean);
 }
