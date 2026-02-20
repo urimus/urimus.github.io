@@ -375,7 +375,7 @@ function extractLines(html) {
 		text = container.textContent;
 	}
 	return text
-		.split('\n')
+		.split(/\n|\\n/)
 		.map(line => line.trim())
 		.filter(line => line.length > 0);
 }
