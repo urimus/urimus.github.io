@@ -366,19 +366,12 @@ function formatSummary(summary_arr, words) {
 function extractLines(html) {
 	var parser = new DOMParser();
 	var doc = parser.parseFromString(html, 'text/html');
-	var container = doc.body || doc;
-	container.querySelectorAll('br').forEach(br => br.replaceWith('\n'));
-	var text = '';
-	var pElements = container.querySelectorAll('p');
-	if (pElements.length > 0) {
-		text = Array.from(pElements).map(p => p.textContent).join('\n');
-	} else {
-		text = container.textContent;
-	}
-	return text
-		.split(/\n|\\n/)
-		.map(line => line.trim())
-		.filter(line => line.length > 0);
+
+	return doc.body.innerText
+		.replaceAll("\\n", "\n")
+		.split(/\n+/)
+		.map(s => s.trim())
+		.filter(Boolean);
 }
 
 function splitIgnoringSpecialSpan(str) {
