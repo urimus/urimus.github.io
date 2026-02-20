@@ -632,8 +632,8 @@ function showContents(type, sortby, lang) {
 			lines = data;
 			fileContents = lines
 				.split(/\r?\n|\r/)
-				.map(line => line.trim())
-				.filter(line => line.length > 0);
+				.map(s => s.trim())
+				.filter(Boolean);
 			recNum=fileContents.length-1;
 			fileContents[0] = fileContents[0] + '<b class="'+textColor+'_blue'+'"> - '+recNum+' '+getRecordsText(lang, recNum)+'</b>';
 
