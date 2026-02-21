@@ -5,6 +5,7 @@ $(function() {
 	var lineColor = "#ff8a00";
 	var currentTooltipTarget = null;
 	var suppressTooltipOpen = false;
+	var suppressTimeout = null;
 	var activeTooltips = new Set();
 	var updateLoopRunning = false;
 	var scrollDiv = document.getElementById('scrollDiv');
@@ -360,6 +361,11 @@ $(function() {
 		activeTooltips.forEach(tooltipEl => {
 			removeTooltip(tooltipEl);
 		});
+		if (suppressTimeout !== null) clearTimeout(suppressTimeout);
+		suppressTimeout = setTimeout(() => {
+			suppressTooltipOpen = false;
+			suppressTimeout = null;
+		}, 200);
 	});
 
 	function fireTooltipAt(pos) {
@@ -381,9 +387,9 @@ $(function() {
 				cur.offsetHeight > 0;
 
 			if (!isVisible) continue;
-			const tmp = el.title;
-			el.title = "";
-			el.title = tmp;
+			const tmp = cur.title;
+			cur.title = "";
+			cur.title = tmp;
 			break;
 		}
 	}
