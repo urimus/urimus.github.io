@@ -5,7 +5,6 @@ $(function() {
 	var lineColor = "#ff8a00";
 	var currentTooltipTarget = null;
 	var suppressTooltipOpen = false;
-	var suppressTimeout = null;
 	var activeTooltips = new Set();
 	var updateLoopRunning = false;
 	var scrollDiv = document.getElementById('scrollDiv');
@@ -361,23 +360,46 @@ $(function() {
 		activeTooltips.forEach(tooltipEl => {
 			removeTooltip(tooltipEl);
 		});
-		if (suppressTimeout !== null) clearTimeout(suppressTimeout);
-		suppressTimeout = setTimeout(() => {
-			suppressTooltipOpen = false;
-			suppressTimeout = null;
-		}, 200);
 	});
 
-	let fired = false;
-	const firstHandler = ev => {
-		if (fired || typeof ev.clientX !== "number") return;
-		fired = true;
-		const el = document.elementFromPoint(ev.clientX, ev.clientY);
-		if (el?.getAttribute?.("title")) {
-			el.dispatchEvent(new MouseEvent("mousemove", { bubbles: true }));
-			el.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+	function fireTooltipAt(pos) {
+		if (!pos) return;
+		const { x, y } = pos;
+
+		const els = document.elementsFromPoint(x, y);
+		if (!els.length) return;
+
+		for (const cur of els) {
+			const title = cur.getAttribute?.("title");
+			if (!title) continue;
+
+			const style = getComputedStyle(cur);
+			const isVisible =
+				style.display !== "none" &&
+				style.visibility !== "hidden" &&
+				cur.offsetWidth > 0 &&
+				cur.offsetHeight > 0;
+
+			if (!isVisible) continue;
+			const tmp = el.title;
+			el.title = "";
+			el.title = tmp;
+			break;
 		}
-		window.removeEventListener("pointermove", firstHandler, true);
-	};
-	window.addEventListener("pointermove", firstHandler, true);
+	}
+	let lastPointerPos = null;
+	window.addEventListener("pointermove", e => {
+		lastPointerPos = { x: e.clientX, y: e.clientY };
+		fireTooltipAt(lastPointerPos); 
+	}, { capture: true, once: true });
+
+	function fireTooltip() {
+		suppressTooltipOpen = false;
+		if (!lastPointerPos) return;
+		requestAnimationFrame(() => {
+			fireTooltipAt(lastPointerPos);
+		});
+	}
+	window.addEventListener("pageshow", fireTooltip);
+	window.addEventListener("popstate", fireTooltip);
 });
