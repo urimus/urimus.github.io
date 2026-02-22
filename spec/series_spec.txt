@@ -44,14 +44,6 @@ Space Opera
 - Moonhaven
 - Pandora
 
-Supernatural
-- All the Light We Cannot See
-- The Bondsman
-- Devs
-- Hunters
-- Midnight Mass
-- Raised by Wolves
-
 End of By Genre:----------------------------------------------------------
 
 Animation
@@ -93,6 +85,9 @@ Gotham City
 - Batman: Caped Crusader
 - Kite Man: Hell Yeah!
 - The Penguin
+
+Immortal Universe
+- Talamasca: The Secret Order
 
 Star Wars
 - The Acolyte

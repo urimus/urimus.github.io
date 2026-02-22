@@ -1,5 +1,7 @@
 ﻿
 
+
+
 <!DOCTYPE html>
 
 <html>
@@ -44,12 +46,18 @@
 
 
 
+<!-- Foto Gallery -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+<!-- End of Foto Gallery -->
+
+
 
 <script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
 <script>
-var menuHeight=23*37;
-var imgBgSrc="images/icons/background/not_satanic.png";
+var menuHeight=23*33;
+var imgBgSrc="images/icons/background/evil.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
 </script>
 <!-- End of Background Images Script -->
@@ -89,10 +97,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('series_supernatural_eng.html' + window.location.hash);
+					window.open('series_immortal_eng.html' + window.location.hash);
 				} else {
 					clickStarted = true;
-					window.location.href='series_supernatural_eng.html' + window.location.hash;
+					window.location.href='series_immortal_eng.html' + window.location.hash;
 				};"
 			
 			class="flag_not_selected"
@@ -110,10 +118,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('series_supernatural_rus.html' + window.location.hash);
+					window.open('series_immortal_rus.html' + window.location.hash);
 				} else {
 					clickStarted = true;
-					window.location.href='series_supernatural_rus.html' + window.location.hash;
+					window.location.href='series_immortal_rus.html' + window.location.hash;
 				};"
 			class="flag_selected"
 			title="русский"
@@ -141,7 +149,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	<tr>
 		<td height="3" bgcolor="#ff8a00"></td>
 	</tr>	
-
 
 
 
@@ -270,7 +277,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</td>
 	</tr>	
 	
-	
+
 	<tr>
 		<td align="center" >
 		<div id="menu_8"
@@ -284,9 +291,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</td>
 	</tr>	
 	
-
-
-
 	<tr>
 		<td align="center" >
 		<div id="menu_27"
@@ -308,127 +312,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		role="button"
 		tabindex="0"
 		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'series');" 
-		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'rus', 'series');"
-		class="menu_selected"
+		class="menu_not_selected_black"
 		style="padding-left: 5px;">
 		&#9679; По Жанрам <font class="blinking_text" color="OrangeRed"><sup>&#9762; Essential &#9762;</sup></font></div>
 	</td>
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_1"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_body_horror_rus.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_body_horror_rus.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-	&bull; Боди-Хоррор</div>
-	</td>
-	</tr>
-
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_2"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_fantasy_rus.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_fantasy_rus.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-	&bull; Фэнтези</div>
-	</td>
-	</tr>
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_3"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_historical_fiction_rus.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_historical_fiction_rus.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-	&bull; Истор. Фантастика <font class="blinking_text" color="OrangeRed"><sup>&#9762; Essential &#9762;</sup></font></div>
-	</td>
-	</tr>
-
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_4"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_space_opera_rus.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_space_opera_rus.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-	&bull; Космическая Опера</div>
-	</td>
-	</tr>
-
-
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_5"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_supernatural_rus.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_supernatural_rus.html';
-			};"
-		class="menu_selected"
-		style="padding-left: 15px;">
-	&bull; Сверхъестественное</div>
-	</td>
-	</tr>
-
+	</tr>	
 
 
 
@@ -447,6 +337,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>	
 
 
+
 	<tr>
 		<td align="left" >
 		<div id="menu_27_4"
@@ -460,10 +351,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		&#9679; Супергеройские</div>
 	</td>
 	</tr>	
-
-
-
-
 
 
 
@@ -487,6 +374,26 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</td>
 	</tr>
 
+
+	<tr>
+		<td align="left" >
+		<div id="menu_27_5"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('series_immortal_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='series_immortal_rus.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+	&bull; Бессмертная Вселенная</div>
+	</td>
+	</tr>
 
 
 
@@ -563,6 +470,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		&#9679; AMV</div>
 	</td>
 	</tr>		
+
+
 	<tr>
 		<td align="center" >
 		<div id="menu_13"
@@ -595,7 +504,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
 	</td>
 	</tr>
-
 
 
 	<tr>
@@ -661,6 +569,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>	
 
 
+
 	<tr>
 		<td align="center" >
 		<div id="menu_19"
@@ -673,6 +582,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		&#9679; Сатанизм</div>
 	</td>
 	</tr>
+
 
 
 
@@ -698,7 +608,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-
 	<tr>
 		<td align="center" >
 		<div id="menu_21"
@@ -718,6 +627,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</td>
 	</tr>
 
+
 	<tr>
 		<td align="center" >
 		<div id="menu_22"
@@ -731,8 +641,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</td>
 	</tr>
 
-
-
 	<tr>
 		<td align="center" >
 		<div id="menu_23"
@@ -745,6 +653,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		&#9679; Страны</div>
 	</td>
 	</tr>
+
 
 	<tr>
 		<td align="center" >
@@ -809,69 +718,69 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <tr><td>
 
 
-
-
-
-<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
 <!-- Table with search, name and languages -->
-	<tr class="title_black"> 
-		<td  class="title_black" style="width: 530px;"><a name="series">Сериалы &blacktriangleright; Сверхъестественное</a></td>
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Сериалы &blacktriangleright; Бессмертная Вселенная</a></td>
 	</tr>
-
-</table>
-<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
 
 	<tr>
 		<td height="3" bgcolor="#ff8a00"></td>
-	</tr>   
+	</tr>	
+
 </table>
 
 
 
 <!-- For scroll inside div -->
-<div id="scrollDiv" style="height:851px;overflow:auto;">
+<div id="scrollDiv" style="height:759px;overflow:auto;">
 
 
 <table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
 
 
-
-
 	<tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
 			<tr >
-				<td width="100%" height="100%" class="nimetus2_black"><a name="supernatural">Мистический Фильм</a></td>
+				<td width="100%" height="100%" class="nimetus2_black"><a name="immortal">Бессмертная Вселенная (англ. Immortal Universe)</a></td>
 			</tr>
-			<tr >
+			<tr>
 				<td width="250" height="100%" class="nimetus_black">Описание Жанра</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/supernatural.jpg" alt="Мистический Фильм" title="Мистический Фильм" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					<img src="images/icons/series/immortal.jpg" alt="Бессмертная Вселенная (англ. Immortal Universe)" title="Бессмертная Вселенная (англ. Immortal Universe)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
 
+<P><b>Anne Rice's Immortal Universe</b> is an American media franchise and shared universe centered on the 2020s AMC television series adaptations of Anne Rice's Vampire Chronicles and Lives of the Mayfair Witches supernatural horror novel series. The books, which originated with the 1976 novel Interview with the Vampire, follow vampires and witches in the ancient and modern world. The franchise includes three television series, Interview with the Vampire, Mayfair Witches, and the original spin-off, Talamasca: The Secret Order. The latter premiered in October 2025, focused on the Talamasca, a secret society in Rice's novels who investigate the paranormal.
 
-<P><b>Мистический фильм</b> или <b>мистика</b> — кинематографический жанр, часто включающий в себя элементы фантастики и фэнтези. В основе сюжетов мистических фильмов лежит взаимодействие персонажей из реального мира с миром потусторонних сил и явлений. Тесно связан с готическим фильмом.
+<P>AMC coined the term "Immortal Universe" with the October 2022 release of its Interview with the Vampire series. Notable characters include the vampires Lestat de Lioncourt and Louis de Pointe du Lac, the witch Rowan Mayfair and paranormal investigator and empath Ciprien Grieve.
+
 					
 				</td>
 			</tr>
 			
+
 			<tr>
 				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
 					<br><br>				
 					Ссылки:
 				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Immortal_Universe" class = "standardb_black" target="_blank">Wikipedia Immortal Universe</a> - <b>Бессмертная Вселенная (англ. Immortal Universe)</b> на Wikipedia (англ.).
+			</td>
 			</tr>
 			
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href=https://ru.wikipedia.org/wiki/Мистический_фильм" class = "standardb_black" target="_blank">Wikipedia Мистический фильм</a> - <b>Мистический Фильм</b> на Wikipedia.
-			</td>
-			</tr>
+			
 
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					17е Июн, 2021.
+					22е Фев, 2026.
 				</td>
 			</tr>
 			</table>
@@ -882,6 +791,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
+
 	<tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
@@ -889,17 +799,19 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				<td>
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="all_light">Весь Невидимый Нам Свет (англ. All the Light We Cannot See)</a></td>
+							<td width="100%" height="100%" class="nimetus_black"><a name="talamasca">Таламаска: Тайный Орден (англ. Talamasca: The Secret Order)</a></td>
 						</tr>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/all_light.jpg" alt="Весь Невидимый Нам Свет (англ. All the Light We Cannot See)" title="Весь Невидимый Нам Свет (англ. All the Light We Cannot See)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					<img src="images/icons/series/talamasca.jpg" alt="Таламаска: Тайный Орден (англ. Talamasca: The Secret Order)" title="Таламаска: Тайный Орден (англ. Talamasca: The Secret Order)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
 
 
-<P>«<b>Весь невидимый нам свет</b>» (англ. All the Light We Cannot See) — американский драматический мини-сериал, экранизация романа «Весь невидимый нам свет» Энтони Дорра. В главных ролях — Ария Мия Лоберти, Марк Руффало и Хью Лори. Четырёхсерийный мини-сериал сценариста Стивена Найта и режиссёра Шона Леви вышел на платформе Netflix 2 ноября 2023 года.
+<P>«<b>Таламаска. Тайный орден</b>» (англ. Talamasca: The Secret Order) — американский художественный сериал, созданный Джоном Ли Хэнкоком. Сюжет основан на романах Энн Райс «Вампирские хроники» и «Мэйфейрские ведьмы».
+
+<P>Это третий телесериал, действие которого разворачивается в мире бессмертных существ («Immortal Universe»), основанном на книгах Энн Райс. Первый сериал вселенной вышел в 2022 году под названием «Интервью с вампиром». Второй — «Мэйфейрские ведьмы», вышел в 2023 году. Премьера Таламаски состоялась на канале АМС 19 октября 2025 года.
 
 
 				</td>
@@ -915,17 +827,17 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 
 			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/Весь_невидимый_нам_свет_(мини-сериал)" class = "standardb_black" target="_blank">Wikipedia Весь невидимый нам свет (мини-сериал)</a> - <b>Весь Невидимый Нам Свет (англ. All the Light We Cannot See)</b> на Wikipedia.
+				<a href="https://ru.wikipedia.org/wiki/Таламаска._Тайный_орден" class = "standardb_black" target="_blank">Wikipedia Таламаска. Тайный орден</a> - <b>Таламаска: Тайный Орден (англ. Talamasca: The Secret Order)</b> на Wikipedia.
 			</td>
 			</tr>
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=Sf18MKZnSYo" class = "standardb_black" target="_blank">Весь Невидимый Нам Свет (англ. All the Light We Cannot See)</a> - Официальный трейлер (англ., с субт.).
+				<a href="https://www.youtube.com/watch?v=0XXo67zb-G0" class = "standardb_black" target="_blank">Таламаска: Тайный Орден (англ. Talamasca: The Secret Order)</a> - Официальный трейлер.
 			</td>
 			</tr>
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					06е Янв, 2024.
+					22е Фев, 2026.
 				</td>
 			</tr>
 			</table>
@@ -936,306 +848,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="bondsman">Охотник за Головами (англ. The Bondsman)</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/bondsman.jpg" alt="Охотник за Головами (англ. The Bondsman)" title="Охотник за Головами (англ. The Bondsman)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-
-<P><b>The Bondsman</b> is an American action horror television series created by Grainger David for Amazon Prime Video. The series premiered on April 3, 2025.
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/The_Bondsman" class = "standardb_black" target="_blank">Wikipedia The Bondsman</a> - <b>Охотник за Головами (англ. The Bondsman)</b> на Wikipedia (англ.).
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=-aG3eMAiXZQ" class = "standardb_black" target="_blank">Охотник за Головами (англ. The Bondsman)</a> - Официальный трейлер.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					16е Апр, 2025.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="devs">Разрабы (англ. Devs)</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/devs.jpg" alt="Разрабы (англ. Devs)" title="Разрабы (англ. Devs)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-
-
-
-<P><b>Devs</b> is an American science fiction thriller television miniseries created, written, and directed by Alex Garland. It premiered on March 5, 2020, on FX on Hulu.
-
-<P>Lily Chan (Sonoya Mizuno) is a software engineer for Amaya, a quantum computing company run by Forest (Nick Offerman). Lily soon becomes embroiled in the mysterious death of her boyfriend, who died on the first day of his new job at Devs. The series explores themes related to free will and determinism, as well as Silicon Valley. It received generally positive reviews, with critics praising its imagination, cinematography, acting, and soundtrack.
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Devs" class = "standardb_black" target="_blank">Wikipedia Devs</a> - <b>Разрабы (англ. Devs)</b> на Wikipedia (англ.).
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=rPRyYPQHxSw" class = "standardb_black" target="_blank">Разрабы (англ. Devs)</a> - Официальный трейлер.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					29е Мар, 2023.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="hunters">Охотники (англ. Hunters)</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/hunters.jpg" alt="Охотники (англ. Hunters)" title="Охотники (англ. Hunters)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-
-
-<P>«<b>Охотники</b>» (англ. Hunters) — американский телевизионный сериал, премьера которого состоялась 11 апреля 2016 года на канале Syfy Universal. Съёмки прошли в Мельбурне, Австралия. Сюжет сериала основан на книге Уитли Стрибера «Alien Hunter».
-
-<P>8 июля 2016 года было объявлено о закрытии сериала после одного сезона.
-
-<P>Исполнительница главной женской роли Бритни Олдфорд была номинирована на премию «Golden Maple Awards 2016».
-
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/Охотники_(телесериал,_2016)" class = "standardb_black" target="_blank">Wikipedia Охотники (телесериал, 2016)</a> - <b>Охотники (англ. Hunters)</b> на Wikipedia.
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=bnattaVoa9A" class = "standardb_black" target="_blank">Охотники (англ. Hunters)</a> - Официальный трейлер.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					15е Окт, 2023.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="midnight_mass">Полуночная Месса (англ. Midnight Mass)</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/midnight_mass.jpg" alt="Полуночная Месса (англ. Midnight Mass)" title="Полуночная Месса (англ. Midnight Mass)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-
-
-<P>«<b>Полуночная месса</b>» (англ. Midnight Mass) — американский веб-сериал в жанре сверхъестественного и ужасов, созданный Майком Флэнаганом для платформы Netflix. В главных ролях снялись Зак Гилфорд, Кейт Сигел и Хэмиш Линклейтер. Премьера состоялась 24 сентября 2021 года. Сериал получил положительные отзывы от критиков.
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/Полуночная_месса_(телесериал)" class = "standardb_black" target="_blank">Wikipedia Полуночная месса (телесериал)</a> - <b>Полуночная Месса (англ. Midnight Mass)</b> на Wikipedia.
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=8pWROUiQQqY" class = "standardb_black" target="_blank">Полуночная Месса (англ. Midnight Mass)</a> - Официальный трейлер.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					21е Окт, 2022.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="raised_by_wolves">Воспитанные Волками (англ. Raised by Wolves)</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/raised_by_wolves.jpg" alt="Воспитанные Волками (англ. Raised by Wolves)" title="Воспитанные Волками (англ. Raised by Wolves)" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-
-<P>«<b>Воспитанные волками</b>» (англ. Raised by Wolves; в другом переводе — «<b>Взращённые волками</b>») — американский телесериал в жанре научной фантастики, созданный Аароном Гузиковским. Первые две серии снял Ридли Скотт, который также является исполнительным продюсером сериала. Премьера первого сезона прошла 3 сентября 2020 года на HBO Max, премьера второго — 3 февраля 2022 года.
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Ссылки:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://ru.wikipedia.org/wiki/Воспитанные_волками" class = "standardb_black" target="_blank">Wikipedia Воспитанные волками</a> - <b>Воспитанные Волками (англ. Raised by Wolves)</b> на Wikipedia.
-			</td>
-			</tr>
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=BeQeZB9ouzI" class = "standardb_black" target="_blank">Воспитанные Волками (англ. Raised by Wolves)</a> - Официальный трейлер.
-			</td>
-			</tr>
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					18е Мар, 2022.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-
+		
   </table> <!-- End of Func area -->
 
 </div> <!-- End of scroll inside div -->
@@ -1257,7 +870,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	<td class="title_black" >
 	&copy; Урмас Репинский, urrimus@hotmail.com
 	</td>
-
 	</tr>
 </table>
 <!-- End of Bottom Copyright Table --> 
@@ -1267,7 +879,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 </body>
 </html>
-
 
 
 

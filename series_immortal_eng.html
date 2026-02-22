@@ -1,4 +1,7 @@
 ﻿
+
+
+
 <!DOCTYPE html>
 
 <html>
@@ -43,15 +46,11 @@
 
 
 
-
-
-
 <script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
-
 <script>
-var menuHeight=23*37;
-var imgBgSrc="images/icons/background/not_satanic.png";
+var menuHeight=23*33;
+var imgBgSrc="images/icons/background/evil.png";
 var imgBgStarSrc="images/icons/background/sticky_note.png";
 </script>
 <!-- End of Background Images Script -->
@@ -91,10 +90,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('series_supernatural_eng.html' + window.location.hash);
+					window.open('series_immortal_eng.html' + window.location.hash);
 				} else {
 					clickStarted = true;
-					window.location.href='series_supernatural_eng.html' + window.location.hash;
+					window.location.href='series_immortal_eng.html' + window.location.hash;
 				};"
 			class="flag_selected"
 			title="english"
@@ -111,10 +110,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('series_supernatural_rus.html' + window.location.hash);
+					window.open('series_immortal_rus.html' + window.location.hash);
 				} else {
 					clickStarted = true;
-					window.location.href='series_supernatural_rus.html' + window.location.hash;
+					window.location.href='series_immortal_rus.html' + window.location.hash;
 				};"
 			class="flag_not_selected"
 			title="русский"
@@ -142,7 +141,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	<tr>
 		<td height="3" bgcolor="#ff8a00"></td>
 	</tr>	
-
 
 
 	<tr>
@@ -256,6 +254,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>
 	
 	
+	
 	<tr>
 		<td align="center" >
 		<div id="menu_7"
@@ -268,7 +267,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
 	</td>
 	</tr>
-
 
 
 	<tr>
@@ -285,6 +283,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>	
 
 
+
 	<tr>
 		<td align="center" >
 		<div id="menu_27"
@@ -299,135 +298,19 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>
 
 
-
-
-
 	<tr>
 		<td align="left" >
 		<div id="menu_27_1"
 		role="button"
 		tabindex="0"
 		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'series');" 
-		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="showSubMenu(this, 'eng', 'series');"
-		class="menu_selected"
+		class="menu_not_selected_black"
 		style="padding-left: 5px;">
 		&#9679; By Genre <font class="blinking_text" color="OrangeRed"><sup>&#9762; Essential &#9762;</sup></font></div>
 	</td>
 	</tr>	
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_1"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_body_horror_eng.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_body_horror_eng.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-	&bull; Body Horror</div>
-	</td>
-	</tr>
-
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_2"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_fantasy_eng.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_fantasy_eng.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-	&bull; Fantasy</div>
-	</td>
-	</tr>
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_3"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_historical_fiction_eng.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_historical_fiction_eng.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-	&bull; Historical Fiction <font class="blinking_text" color="OrangeRed"><sup>&#9762; Essential &#9762;</sup></font></div>
-	</td>
-	</tr>
-
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_4"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_space_opera_eng.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_space_opera_eng.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-	&bull; Space Opera</div>
-	</td>
-	</tr>
-
-
-
-
-
-	<tr>
-		<td align="left" >
-		<div id="menu_27_1_5"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('series_supernatural_eng.html');
-			} else {
-				clickStarted = true;
-				window.location.href='series_supernatural_eng.html';
-			};"
-		class="menu_selected"
-		style="padding-left: 15px;">
-	&bull; Supernatural</div>
-	</td>
-	</tr>
 
 
 
@@ -490,6 +373,28 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 	<tr>
 		<td align="left" >
+		<div id="menu_27_5"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('series_immortal_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='series_immortal_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 5px;">
+	&bull; Immortal Universe</div>
+	</td>
+	</tr>
+
+
+
+	<tr>
+		<td align="left" >
 		<div id="menu_27_3"
 		role="button"
 		tabindex="0"
@@ -509,7 +414,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	</tr>
 
 
-
+	
 	<tr>
 		<td align="center" >
 		<div id="menu_9"
@@ -526,7 +431,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 	<tr>
 		<td align="center" >
 		<div id="menu_10"
-
 		role="button"
 		tabindex="0"
 		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'books');" 
@@ -673,7 +577,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-
 	<tr>
 		<td align="center" >
 		<div id="menu_20"
@@ -692,6 +595,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		Wicca</div>
 	</td>
 	</tr>
+
 
 
 
@@ -752,6 +656,8 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
+
+
 				window.open('totalitarianism_eng.html');
 			} else {
 				clickStarted = true;
@@ -761,6 +667,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		Totalitarianism</div>
 	</td>
 	</tr>
+
 
 
 
@@ -776,7 +683,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		&#9679; Personalities</div>
 	</td>
 	</tr>
-
 
 
 	<tr>
@@ -808,70 +714,69 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <tr><td>
 
 
-
-<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
+<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
 <!-- Table with search, name and languages -->
-	<tr class="title_black"> 
-		<td  class="title_black" style="width: 530px;"><a name="series">Series &blacktriangleright; Supernatural</a></td>
+	<tr> 
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Series &blacktriangleright; Immortal Universe</a></td>
 	</tr>
-
-</table>
-<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
 
 	<tr>
 		<td height="3" bgcolor="#ff8a00"></td>
-	</tr>   
+
+	</tr>	
+
 </table>
 
 
-
 <!-- For scroll inside div -->
-<div id="scrollDiv" style="height:851px;overflow:auto;">
+<div id="scrollDiv" style="height:759px;overflow:auto;">
 
 
 <table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
 
-
-
-
+		
 	<tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
 			<tr >
-				<td width="100%" height="100%" class="nimetus2_black"><a name="supernatural">Supernatural Film</a></td>
+				<td width="100%" height="100%" class="nimetus2_black"><a name="immortal">Immortal Universe</a></td>
 			</tr>
-			<tr >
+			<tr>
 				<td width="250" height="100%" class="nimetus_black">Genre Description</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/supernatural.jpg" alt="Supernatural Film" title="Supernatural Film" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					<img src="images/icons/series/immortal.jpg" alt="Immortal Universe" title="Immortal Universe" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					
 
+<P><b>Anne Rice's Immortal Universe</b> is an American media franchise and shared universe centered on the 2020s AMC television series adaptations of Anne Rice's Vampire Chronicles and Lives of the Mayfair Witches supernatural horror novel series. The books, which originated with the 1976 novel Interview with the Vampire, follow vampires and witches in the ancient and modern world. The franchise includes three television series, Interview with the Vampire, Mayfair Witches, and the original spin-off, Talamasca: The Secret Order. The latter premiered in October 2025, focused on the Talamasca, a secret society in Rice's novels who investigate the paranormal.
 
-<P><b>Supernatural film</b> is a film genre that encompasses supernatural themes related to gods, goddesses, ghosts, apparitions, spirits, miracles, and other extraordinary phenomena. These themes are often blended with other film genres, such as comedy, science fiction, fantasy, and horror. Historically, the primary goal of supernatural films was not to terrify audiences but to offer entertainment, often in whimsical or romantic contexts.
-
-<P>The film genre is part of several hybrid genres, including supernatural comedy films, supernatural horror films, supernatural religious films, and supernatural thriller films.
+<P>AMC coined the term "Immortal Universe" with the October 2022 release of its Interview with the Vampire series. Notable characters include the vampires Lestat de Lioncourt and Louis de Pointe du Lac, the witch Rowan Mayfair and paranormal investigator and empath Ciprien Grieve.
 
 					
 				</td>
 			</tr>
 			
+
 			<tr>
 				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
 					<br><br>				
 					Links:
 				</td>
+			</tr>
+
+
+			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
+			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
+				<a href="https://en.wikipedia.org/wiki/Immortal_Universe" class = "standardb_black" target="_blank">Wikipedia Immortal Universe</a> - <b>Immortal Universe</b> on Wikipedia.
+			</td>
 			</tr>
 			
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Supernatural_film" class = "standardb_black" target="_blank">Wikipedia Supernatural film</a> - <b>Supernatural Film</b> on Wikipedia.
-			</td>
-			</tr>
+			
 
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					17th of Jun, 2021.
+					22nd of Feb, 2026.
 				</td>
 			</tr>
 			</table>
@@ -883,7 +788,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-
 	<tr align="center" >
 		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
@@ -891,19 +795,19 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 				<td>
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
 						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="all_light">All the Light We Cannot See</a></td>
+							<td width="100%" height="100%" class="nimetus_black"><a name="talamasca">Talamasca: The Secret Order</a></td>
 						</tr>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/all_light.jpg" alt="All the Light We Cannot See" title="All the Light We Cannot See" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					<img src="images/icons/series/talamasca.jpg" alt="Talamasca: The Secret Order" title="Talamasca: The Secret Order" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
 
 
-<P><b>All the Light We Cannot See</b> is an American drama series directed by Shawn Levy and developed by Steven Knight for Netflix. Based on Anthony Doerr's novel, it stars Aria Mia Loberti, Mark Ruffalo and Hugh Laurie. The four-part series follows the stories of a blind French girl named Marie-Laure and a German soldier named Werner, whose paths cross in occupied France during World War II.
+<P><b>Anne Rice's Talamasca: The Secret Order</b>, or simply <b>Talamasca: The Secret Order</b>, is an American supernatural horror spy thriller drama television series created by John Lee Hancock that is based on The Vampire Chronicles and Lives of the Mayfair Witches by Anne Rice.
 
-<P>The limited series was released on November 2, 2023.
+<P>Talamasca: The Secret Order is the third television series set in the Immortal Universe, a shared universe based on Rice's novels, which started in 2022 with Interview with the Vampire. The series premiered on AMC on October 19, 2025.
 
 
 				</td>
@@ -919,17 +823,17 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 
 			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/All_the_Light_We_Cannot_See_(miniseries)" class = "standardb_black" target="_blank">Wikipedia All the Light We Cannot See (miniseries)</a> - <b>All the Light We Cannot See</b> on Wikipedia.
+				<a href="https://en.wikipedia.org/wiki/Talamasca:_The_Secret_Order" class = "standardb_black" target="_blank">Wikipedia Talamasca: The Secret Order</a> - <b>Talamasca: The Secret Order</b> on Wikipedia.
 			</td>
 			</tr>
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=QdE-JvKqpBQ" class = "standardb_black" target="_blank">All the Light We Cannot See</a> - Official Trailer.
+				<a href="https://www.youtube.com/watch?v=W4NR10YGzV4" class = "standardb_black" target="_blank">Talamasca: The Secret Order</a> - Official Trailer.
 			</td>
 			</tr>
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					06th of Jan, 2024.
+					22nd of Feb, 2026.
 				</td>
 			</tr>
 			</table>
@@ -941,307 +845,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 
 
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="bondsman">The Bondsman</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/bondsman.jpg" alt="The Bondsman" title="The Bondsman" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-
-<P><b>The Bondsman</b> is an American action horror television series created by Grainger David for Amazon Prime Video. The series premiered on April 3, 2025.
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Links:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/The_Bondsman" class = "standardb_black" target="_blank">Wikipedia The Bondsman</a> - <b>The Bondsman</b> on Wikipedia.
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=XmiGkuMWJ94" class = "standardb_black" target="_blank">The Bondsman</a> - Official Trailer.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					16th of Apr, 2025.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="devs">Devs</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/devs.jpg" alt="Devs" title="Devs" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-
-
-
-<P><b>Devs</b> is an American science fiction thriller television miniseries created, written, and directed by Alex Garland. It premiered on March 5, 2020, on FX on Hulu.
-
-<P>Lily Chan (Sonoya Mizuno) is a software engineer for Amaya, a quantum computing company run by Forest (Nick Offerman). Lily soon becomes embroiled in the mysterious death of her boyfriend, who died on the first day of his new job at Devs. The series explores themes related to free will and determinism, as well as Silicon Valley. It received generally positive reviews, with critics praising its imagination, cinematography, acting, and soundtrack.
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Links:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Devs" class = "standardb_black" target="_blank">Wikipedia Devs</a> - <b>Devs</b> on Wikipedia.
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=Fp9LMsI6uJ8" class = "standardb_black" target="_blank">Devs</a> - Official Trailer.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					29th of Mar, 2023.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="hunters">Hunters</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/hunters.jpg" alt="Hunters" title="Hunters" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-
-
-<P><b>Hunters</b> is an American television drama series that aired on Syfy, created by Natalie Chaidez and executive produced by Chaidez, Emile Levisetti and Gale Anne Hurd. Based on Whitley Strieber's best-selling novel Alien Hunter, the series premiered on April 11, 2016. It was originally going to air at 10/9c on Monday nights before the final six episodes were abruptly pushed back two hours in the schedule to Tuesdays at midnight due to the series' poor performance in the previous slot.
-
-<P>Syfy announced Hunters' cancellation on July 8, 2016.
-
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Links:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Hunters_(2016_TV_series)" class = "standardb_black" target="_blank">Wikipedia Hunters (2016 TV series)</a> - <b>Hunters</b> on Wikipedia.
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=8QaVA6GHOlA" class = "standardb_black" target="_blank">Hunters</a> - Official Trailer.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					15th of Oct, 2023.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="midnight_mass">Midnight Mass</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/midnight_mass.jpg" alt="Midnight Mass" title="Midnight Mass" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-<P><b>Midnight Mass</b> is an American supernatural horror streaming television miniseries created and directed by Mike Flanagan and starring Zach Gilford, Kate Siegel, Hamish Linklater, Samantha Sloyan, Rahul Kohli, Kristin Lehman, and Henry Thomas. The plot centers on an impoverished island community that experiences supernatural events after the arrival of a mysterious priest.
-
-<P>It was released on Netflix on September 24, 2021, and received positive reviews.
-
-
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Links:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Midnight_Mass_(miniseries)" class = "standardb_black" target="_blank">Wikipedia Midnight Mass (miniseries)</a> - <b>Midnight Mass</b> on Wikipedia.
-			</td>
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=89UV8vmWXlY" class = "standardb_black" target="_blank">Midnight Mass</a> - Official Trailer.
-			</td>
-			</tr>
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					21st of Oct, 2022.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-
-	<tr align="center" >
-		<td style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2">
-			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
-			<tr >
-				<td>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
-						<tr >
-							<td width="100%" height="100%" class="nimetus_black"><a name="raised_by_wolves">Raised by Wolves</a></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/series/raised_by_wolves.jpg" alt="Raised by Wolves" title="Raised by Wolves" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
-
-
-
-<P><b>Raised by Wolves</b> is an American science fiction drama television series created by Aaron Guzikowski that premiered on HBO Max on September 3, 2020. The first two episodes were directed by Ridley Scott, who also serves as an executive producer for the show. The series was renewed for a second season shortly after its debut, and the second season premiered on February 3, 2022. The first season was met with generally positive reviews from critics, while the second season has received critical acclaim.
-
-
-
-				</td>
-			</tr>
-
-			<tr>
-				<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-					<br><br>				
-					Links:
-				</td>
-
-			</tr>
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Raised_by_Wolves_(American_TV_series)" class = "standardb_black" target="_blank">Wikipedia Raised by Wolves (American TV series)</a> - <b>Raised by Wolves</b> on Wikipedia.
-			</td>
-			</tr>
-
-
-			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
-			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://www.youtube.com/watch?v=rE92bDAlPXI" class = "standardb_black" target="_blank">Raised by Wolves</a> - Official Trailer.
-			</td>
-			</tr>
-
-			<tr> <!-- Modified -->
-				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					18th of Mar, 2022.
-				</td>
-			</tr>
-			</table>
-
-
-	</td>
-		</tr>
-
-
-
-
-
-
-	
   </table> <!-- End of Func area -->
 
 </div> <!-- End of scroll inside div -->
@@ -1261,7 +864,6 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
   </tr>
 	<tr>
 	<td class="title_black" >
-
 	&copy; Urmas Repinski, urrimus@hotmail.com
 	</td>
 	</tr>
@@ -1273,5 +875,4 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 </body>
 </html>
-
 

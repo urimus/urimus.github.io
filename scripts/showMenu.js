@@ -2685,13 +2685,6 @@ if (lang=="eng") {
 	wholeMenu["Space Opera"].link = "series_space_opera_eng.html";
 	wholeMenu["Space Opera"].html = 'Space Opera';
 
-	wholeMenu["Supernatural"] = {};
-	wholeMenu["Supernatural"].id = "27_1_5";
-	wholeMenu["Supernatural"].color = "black";
-	wholeMenu["Supernatural"].hasSub = 0;
-	wholeMenu["Supernatural"].link = "series_supernatural_eng.html";
-	wholeMenu["Supernatural"].html = 'Supernatural';
-
 	wholeMenu["● Animation"] = {};
 	wholeMenu["● Animation"].id = "27_2";
 	wholeMenu["● Animation"].color = "black";
@@ -2748,6 +2741,13 @@ if (lang=="eng") {
 	wholeMenu["Gotham City"].link = "series_gotham_eng.html";
 	wholeMenu["Gotham City"].html = 'Gotham City';
 
+	wholeMenu["Immortal Universe"] = {};
+	wholeMenu["Immortal Universe"].id = "27_5";
+	wholeMenu["Immortal Universe"].color = "black";
+	wholeMenu["Immortal Universe"].hasSub = 0;
+	wholeMenu["Immortal Universe"].link = "series_immortal_eng.html";
+	wholeMenu["Immortal Universe"].html = 'Immortal Universe';
+
 	wholeMenu["Star Wars"] = {};
 	wholeMenu["Star Wars"].id = "27_3";
 	wholeMenu["Star Wars"].color = "black";
@@ -2800,13 +2800,6 @@ if (lang=="rus") {
 	wholeMenu["Космическая Опера"].hasSub = 0;
 	wholeMenu["Космическая Опера"].link = "series_space_opera_rus.html";
 	wholeMenu["Космическая Опера"].html = 'Космическая Опера';
-
-	wholeMenu["Сверхъестественное"] = {};
-	wholeMenu["Сверхъестественное"].id = "27_1_5";
-	wholeMenu["Сверхъестественное"].color = "black";
-	wholeMenu["Сверхъестественное"].hasSub = 0;
-	wholeMenu["Сверхъестественное"].link = "series_supernatural_rus.html";
-	wholeMenu["Сверхъестественное"].html = 'Сверхъестественное';
 
 	wholeMenu["● Мультипликация"] = {};
 	wholeMenu["● Мультипликация"].id = "27_2";
@@ -2863,6 +2856,13 @@ if (lang=="rus") {
 	wholeMenu["Готэм-Сити"].hasSub = 0;
 	wholeMenu["Готэм-Сити"].link = "series_gotham_rus.html";
 	wholeMenu["Готэм-Сити"].html = 'Готэм-Сити';
+
+	wholeMenu["Бессмертная Вселенная"] = {};
+	wholeMenu["Бессмертная Вселенная"].id = "27_5";
+	wholeMenu["Бессмертная Вселенная"].color = "black";
+	wholeMenu["Бессмертная Вселенная"].hasSub = 0;
+	wholeMenu["Бессмертная Вселенная"].link = "series_immortal_rus.html";
+	wholeMenu["Бессмертная Вселенная"].html = 'Бессмертная Вселенная';
 
 	wholeMenu["Звёздные Войны"] = {};
 	wholeMenu["Звёздные Войны"].id = "27_3";
