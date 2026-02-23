@@ -217,20 +217,17 @@ function adjustScrollDiv(){
 
 // --- news keys scroll ---
 function enableKeyboardScroll(scrollDiv) {
-	scrollDiv.style.overflowX = 'auto';
+
 	scrollDiv.style.scrollSnapType = 'x mandatory';
 	scrollDiv.style.scrollBehavior = 'smooth';
 
-	const step = () => scrollDiv.clientWidth;
-	const step2 = () => scrollDiv.clientHeight;
-
 	document.addEventListener('keydown', (e) => {
 		if (!e.shiftKey) {
-			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ left: step() });
-			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ left: -step() });
+			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ left: 1 });
+			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ left: -1 });
 		} else {
-			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: step2() });
-			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -step2() });
+			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: 1 });
+			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -1 });
 		}
 
 		if (e.key === 'Home') scrollDiv.scrollTo({ top: 0, left: 0 });
