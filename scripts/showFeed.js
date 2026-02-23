@@ -668,14 +668,19 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 	var cell1;
 	if (appendEntry == 1) {
 		cell1 = tableMainRow.insertCell(-1);
+		cell1.style.scrollSnapAlign = 'start';
 	} else {
 		var processedCountSoFar = 0;
 		for (var j = 0; j < i; j++) {
 			if (result.entries[j].storage.updateProcessed == 1) processedCountSoFar++;
 		}
 		cell1 = tableMainRow.insertCell(processedCountSoFar);
+		cell1.style.scrollSnapAlign = 'start';
+		var scrollDiv = document.getElementById('scrollDiv');
+		if (scrollDiv.scrollLeft < 5 && processedCountSoFar == 0) {
+			scrollDiv.scrollBy({ left: -1 });
+		}
 	}
-	cell1.style.scrollSnapAlign = 'start';
 
 	var contentsDiv = document.createElement('div');
 	contentsDiv.setAttribute('style', "display:inline-block; width:" + entry.media.width + "px; padding:10px; border: 1px solid #de8e8e;");
