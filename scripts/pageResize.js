@@ -217,50 +217,25 @@ function adjustScrollDiv(){
 
 // --- news keys scroll ---
 function enableKeyboardScroll(scrollDiv) {
+	scrollDiv.style.overflowX = 'auto';
+	scrollDiv.style.scrollSnapType = 'x mandatory';
+	scrollDiv.style.scrollBehavior = 'smooth';
 
-	var stepRepeat = 0;
-	var stepNoRepat = 474;
-	var pageStep = scrollDiv.clientHeight;
+	const step = () => scrollDiv.clientWidth;
 
 	document.addEventListener('keydown', (e) => {
-
-		var behavior;
-		var step;
-		if (e.repeat) {
-			behavior = 'auto';
-			stepRepeat += 10;
-			step = stepRepeat;
-		} else {
-			behavior = 'smooth';
-			stepRepeat  = 0;
-			step = stepNoRepat;
-		}
-
 		if (!e.shiftKey) {
-			if (e.key === 'ArrowLeft') {
-				scrollDiv.scrollBy({ left: -step, behavior });
-				e.preventDefault();
-			} else if (e.key === 'ArrowRight') {
-				scrollDiv.scrollBy({ left: step, behavior });
-				e.preventDefault();
-			} 
+			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ left: step() });
+			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ left: -step() });
 		} else {
-			if (e.key === 'ArrowLeft') {
-				scrollDiv.scrollBy({ top: -step, behavior });
-				e.preventDefault();
-			} else if (e.key === 'ArrowRight') {
-				scrollDiv.scrollBy({ top: step, behavior });
-				e.preventDefault();
-			}
+			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: step() });
+			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -step() });
 		}
 
-		if (e.key === 'Home') {
-			scrollDiv.scrollTo({ top: 0, left: 0, behavior });
-			e.preventDefault();
-		} else if (e.key === 'End') {
-			scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth, behavior });
-			e.preventDefault();
-		}
+		if (e.key === 'Home') scrollDiv.scrollTo({ top: 0, left: 0 });
+		if (e.key === 'End') scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth });
+		
+		if (['ArrowRight','ArrowLeft','Home','End'].includes(e.key)) e.preventDefault();
 	});
 }
 

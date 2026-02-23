@@ -675,6 +675,7 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 		}
 		cell1 = tableMainRow.insertCell(processedCountSoFar);
 	}
+	cell1.style.scrollSnapAlign = 'start';
 
 	var contentsDiv = document.createElement('div');
 	contentsDiv.setAttribute('style', "display:inline-block; width:" + entry.media.width + "px; padding:10px; border: 1px solid #de8e8e;");
