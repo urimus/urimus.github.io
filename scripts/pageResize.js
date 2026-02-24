@@ -236,6 +236,7 @@ function enableKeyboardScroll(scrollDiv) {
 				if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -stepRepeat, behavior: 'auto' });
 			}
 		} else {
+			stepRepeat = 0;
 			if (!e.shiftKey) {
 				if (e.key === 'ArrowRight') scrollDiv.scrollBy({ left: step, behavior: 'smooth' });
 				if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ left: -step, behavior: 'smooth' });
