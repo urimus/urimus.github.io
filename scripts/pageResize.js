@@ -219,22 +219,34 @@ function adjustScrollDiv(){
 function enableKeyboardScroll(scrollDiv) {
 
 	scrollDiv.style.scrollSnapType = 'x mandatory';
-	scrollDiv.style.scrollBehavior = 'smooth';
 
 	const step = 1;
 	const step2 = () => scrollDiv.clientHeight;
+	var stepRepeat = 0;
 
 	document.addEventListener('keydown', (e) => {
-		if (!e.shiftKey) {
-			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ left: step });
-			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ left: -step });
+
+		if (e.repeat) {
+			stepRepeat += 10;
+			if (!e.shiftKey) {
+				if (e.key === 'ArrowRight') scrollDiv.scrollBy({ left: stepRepeat, behavior: 'auto' });
+				if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ left: -stepRepeat, behavior: 'auto' });
+			} else {
+				if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: stepRepeat, behavior: 'auto' });
+				if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -stepRepeat, behavior: 'auto' });
+			}
 		} else {
-			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: step2() });
-			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -step2() });
+			if (!e.shiftKey) {
+				if (e.key === 'ArrowRight') scrollDiv.scrollBy({ left: step, behavior: 'smooth' });
+				if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ left: -step, behavior: 'smooth' });
+			} else {
+				if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: step2(), behavior: 'smooth' });
+				if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -step2(), behavior: 'smooth' });
+			}
 		}
 
-		if (e.key === 'Home') scrollDiv.scrollTo({ top: 0, left: 0 });
-		if (e.key === 'End') scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth });
+		if (e.key === 'Home') scrollDiv.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+		if (e.key === 'End') scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth, behavior: 'smooth' });
 		
 		if (['ArrowRight','ArrowLeft','Home','End'].includes(e.key)) e.preventDefault();
 	});

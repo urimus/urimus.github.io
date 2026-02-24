@@ -679,7 +679,7 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 		cell1.style.scrollSnapAlign = 'start';
 		var scrollDiv = document.getElementById('scrollDiv');
 		if (scrollDiv.scrollLeft < 5 && processedCountSoFar == 0) {
-			scrollDiv.scrollBy({ left: -1 });
+			scrollDiv.scrollBy({ left: -1, behavior: 'auto' });
 		}
 	}
 
