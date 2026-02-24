@@ -220,7 +220,7 @@ function enableKeyboardScroll(scrollDiv) {
 
 	scrollDiv.style.scrollSnapType = 'x mandatory';
 
-	const step = 474;
+	const step = 450;
 	const step2 = () => scrollDiv.clientHeight;
 	var stepRepeat = 0;
 
