@@ -674,12 +674,12 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 		for (var j = 0; j < i; j++) {
 			if (result.entries[j].storage.updateProcessed == 1) processedCountSoFar++;
 		}
+		var scrollDiv = document.getElementById('scrollDiv');
 		cell1 = tableMainRow.insertCell(processedCountSoFar);
 		cell1.style.padding = '2px';
 		cell1.style.scrollSnapAlign = 'start';
-		var scrollDiv = document.getElementById('scrollDiv');
 		if (scrollDiv.scrollLeft < 5 && processedCountSoFar == 0) {
-			scrollDiv.scrollBy({ left: -1, behavior: 'auto' });
+			scrollDiv.scrollLeft = 0;
 		}
 	}
 
