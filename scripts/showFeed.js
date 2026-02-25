@@ -1926,13 +1926,14 @@ function removeUnusedUpdates(source, type, result) {
 }
 
 
-function consoleMetas(template) {
-	const metas = template.content.querySelectorAll('meta');
-	for (let j = 0; j < metas.length; j++) {
-		let toLog = `meta[${j}]: `;
-		for (let k = 0; k < metas[j].attributes.length; k++) {
-			const attr = metas[j].attributes[k];
-			toLog += `${attr.name}=${attr.nodeValue}, `;
+function consoleMetas(doc) {
+	var metas, j, k, toLog;
+
+	metas = doc.getElementsByTagName('meta');
+	for (j = 0; j < metas.length; j++) {
+		toLog = "meta[" + j + "]: ";
+		for (k = 0; k < metas[j].attributes.length; k++) {
+			toLog += metas[j].attributes[k].name + "=" + metas[j].attributes[k].nodeValue + ", ";
 		}
 		console.log(toLog);
 	}
@@ -2003,8 +2004,8 @@ function checkProcessedCount(source, type, result, lang, pf = 1) {
 function update(i, source, type, result, lang, updateAttempt = 1) {
 
 	var textUpdateRecord, textUpdateAbsent, textUpdateLoadError, textReloadPage, textUpdateAttempt, textUpdateAttempt2="", textRecord;
-	var template, mediaURL, property;
-	var description, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
+	var doc, mediaURL, property;
+	var description, searchDoc, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
 	var categories, creators, properties, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
 
 	if (result.entries[i].storage.updateProcessed == 1) return;
@@ -2049,30 +2050,51 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			if (updateAttempt > 1) textUpdateAttempt2 = "/" + updateAttempt;
 			document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt2 + ".&nbsp;";
 
-			template = document.createElement('template');
-			template.innerHTML = data;
+			doc = (new DOMParser).parseFromString(data, "text/html");
 
 			mediaURL = null;
-			property = template.content.querySelector('meta[property="og:image"]');
-			if (property != null) mediaURL = property.getAttribute('content');
+			property = doc.querySelector('meta[property="og:image"]');
+			if (property != null) mediaURL = property.content;
 
 			if (source == "nasa" || source == "artemis") { // do not update NASA description
 				description = result.entries[i].summary;
 			} else {
 				description = null;
-				property = template.content.querySelector('meta[name="description"]');
-				if (property != null) description = property.getAttribute('content');
+				property = doc.head.querySelector('meta[name="description"]');
+				if (property != null) description = property.content;
 				if (description == null) {
-					property = template.content.querySelector('meta[property="og:description"]');
-					if (property != null) description = property.getAttribute('content');
+					property = doc.head.querySelector('meta[property="og:description"]');
+					if (property != null) description = property.content;
 				}
 				if (description == null) {
-					property = template.content.querySelector('meta[name="twitter:description"]');
-					if (property != null) description = property.getAttribute('content');
+					property = doc.head.querySelector('meta[name="twitter:description"]');
+					if (property != null) description = property.content;
 				}
+			}
+			if (description == null || mediaURL == null) {
+				searchDoc = doc;
+				mediaURL = null;
+				property = searchDoc.querySelector('meta[property="og:image"]');
+				if (property != null) mediaURL = property.content;
+
+				if (source != "nasa" && source != "artemis") { // do not update NASA description
+					property = searchDoc.querySelector('meta[name="description"]');
+					if (property != null) description = property.content;
+					if (description == null) {
+						property = searchDoc.head.querySelector('meta[property="og:description"]');
+						if (property != null) description = property.content;
+					}
+					if (description == null) {
+						property = searchDoc.head.querySelector('meta[name="twitter:description"]');
+						if (property != null) description = property.content;
+					}
+				}
+			} else {
+				searchDoc = doc.head;
 			}
 
 			if (description != null && mediaURL != null) {
+
 
 				const safeParseJSON = (jsonText) => {
 					try {
@@ -2123,18 +2145,18 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				}
 
 				mediaComment = null;
-				property = template.content.querySelector('meta[property="og:image:alt"]');
-				if (property != null) mediaComment = property.getAttribute('content');
+				property = searchDoc.querySelector('meta[property="og:image:alt"]');
+				if (property != null) mediaComment = property.content;
 
 				categories = null;
 				if (source != "nasa") { // do not update nasa categories
-					properties = template.content.querySelectorAll('meta[name="keywords"]');
+					properties = searchDoc.querySelectorAll('meta[name="keywords"]');
 					if (properties != null) categories = properties;
-					if (categories == null || !categories[0] || categories[0].getAttribute('content') == "") {
-						properties = template.content.querySelectorAll('meta[name="parsely-tags"]');
+					if (categories == null || !categories[0] || categories[0].content == "") {
+						properties = searchDoc.querySelectorAll('meta[name="parsely-tags"]');
 						if (properties != null) categories = properties;
-						if (categories == null || !categories[0] || categories[0].getAttribute('content') == "") {
-							properties = template.content.querySelectorAll('meta[property="article:section"]');
+						if (categories == null || !categories[0] || categories[0].content == "") {
+							properties = doc.head.querySelectorAll('meta[property="article:section"]');
 							if (properties != null) categories = properties;
 						}
 					}
@@ -2143,24 +2165,24 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				if (typeof creators === "undefined") {
 					creators = null;
 					if (source != "nasa") { // do not update nasa creators
-						property = template.content.querySelector('meta[name="parsely-author"]');
+						property = searchDoc.querySelector('meta[name="parsely-author"]');
 						if (property != null) {
 							creators = [];
-							creators[0] = property.getAttribute('content');
+							creators[0] = property.content;
 						}
 					}
 				}
 
 				seeAlso = null;
-				properties = template.content.querySelectorAll('meta[property="og:see_also"]');
+				properties = doc.head.querySelectorAll('meta[property="og:see_also"]');
 				if (properties != null) seeAlso = properties;
 
 				videoURL = null;
-				property = template.content.querySelector('meta[property="og:video"]');
-				if (property != null) videoURL = property.getAttribute('content');
+				property = searchDoc.querySelector('meta[property="og:video"]');
+				if (property != null) videoURL = property.content;
 				if (videoURL == null) {
-					property = template.content.querySelector('meta[property="og:video:url"]');
-					if (property != null) videoURL = property.getAttribute('content');
+					property = searchDoc.querySelector('meta[property="og:video:url"]');
+					if (property != null) videoURL = property.content;
 				}
 
 				locStUpdateDataNew = {};
@@ -2193,16 +2215,16 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 					result.entries[i].category = [];
 					locStUpdateDataNew.category = [];
 					for (j = 0; j < categories.length; j++) {
-						result.entries[i].category = result.entries[i].category.concat(categories[j].getAttribute('content').split(","));
-						locStUpdateDataNew.category = locStUpdateDataNew.category.concat(categories[j].getAttribute('content').split(","));
+						result.entries[i].category = result.entries[i].category.concat(categories[j].content.split(","));
+						locStUpdateDataNew.category = locStUpdateDataNew.category.concat(categories[j].content.split(","));
 					}
 				}
 				if (seeAlso != null) {
 					result.entries[i].seeAlso = [];
 					locStUpdateDataNew.seeAlso = [];
 					for (j = 0; j < seeAlso.length; j++) {
-						result.entries[i].seeAlso[j] = seeAlso[j].getAttribute('content');
-						locStUpdateDataNew.seeAlso[j] = seeAlso[j].getAttribute('content');
+						result.entries[i].seeAlso[j] = seeAlso[j].content;
+						locStUpdateDataNew.seeAlso[j] = seeAlso[j].content;
 					}
 				}
 				if (videoURL != null) {
@@ -2221,7 +2243,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				// update absent
 				textUpdateAttempt2 = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
 				console.log("Update Absent. Record # " + (i + 1) + textUpdateAttempt2 + ", data = " + data);
-				consoleMetas(template);
+				consoleMetas(doc);
 
 				textUpdateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 				document.getElementById("loadingSpanTitle").innerHTML = textUpdateRecord + " #" + (i + 1) + textUpdateAttempt2 + ".&nbsp;";
