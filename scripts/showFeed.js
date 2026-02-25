@@ -366,6 +366,10 @@ function extractLines(html) {
 	var parser = new DOMParser();
 	var doc = parser.parseFromString(html, 'text/html');
 
+	doc.querySelectorAll('p').forEach(p => {
+		p.replaceWith(document.createTextNode(p.innerText + '\n'));
+	});
+
 	return doc.body.innerText
 		.replaceAll("\\n", "\n")
 		.split("\n")
