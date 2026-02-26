@@ -56,14 +56,42 @@ if (!$hasPublic) {
 	exit("Access to local/private IPs is forbidden");
 }
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0");
-curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-curl_setopt($ch, CURLOPT_HEADER, false);
-curl_setopt($ch, CURLOPT_ENCODING, '');
+$ch = curl_init($url);
+
+$headers = [];
+
+$forwardHeaders = [
+	'HTTP_USER_AGENT'      => 'User-Agent',
+	'HTTP_ACCEPT'          => 'Accept',
+	'HTTP_ACCEPT_LANGUAGE' => 'Accept-Language',
+	'HTTP_ACCEPT_ENCODING' => 'Accept-Encoding',
+	'HTTP_REFERER'         => 'Referer',
+	'HTTP_COOKIE'          => 'Cookie'
+];
+
+foreach ($forwardHeaders as $serverKey => $headerName) {
+	if (!empty($_SERVER[$serverKey])) {
+		$headers[] = $headerName . ': ' . $_SERVER[$serverKey];
+	}
+}
+
+if (empty($_SERVER['HTTP_USER_AGENT'])) {
+	$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36';
+}
+
+curl_setopt_array($ch, [
+	CURLOPT_RETURNTRANSFER => true,
+	CURLOPT_FOLLOWLOCATION => true,
+	CURLOPT_TIMEOUT => 15,
+	CURLOPT_CUSTOMREQUEST => $_SERVER['REQUEST_METHOD'],
+	CURLOPT_HTTPHEADER => $headers,
+	CURLOPT_ENCODING => '',
+	CURLOPT_HEADER => false
+]);
+
+if (in_array($_SERVER['REQUEST_METHOD'], ['POST','PUT','PATCH','DELETE'])) {
+	curl_setopt($ch, CURLOPT_POSTFIELDS, file_get_contents('php://input'));
+}
 
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
