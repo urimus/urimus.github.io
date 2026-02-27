@@ -1931,13 +1931,16 @@ function removeUnusedUpdates(source, type, result) {
 
 
 function consoleMetas(doc) {
-	var metas, j, k, toLog;
+	var metas, j, k, toLog, meta, attrs;
 
-	metas = doc.getElementsByTagName('meta');
+	metas = doc.querySelectorAll('meta');
 	for (j = 0; j < metas.length; j++) {
+		meta = metas[j];
+		attrs = meta.attributes;
 		toLog = "meta[" + j + "]: ";
-		for (k = 0; k < metas[j].attributes.length; k++) {
-			toLog += metas[j].attributes[k].name + "=" + metas[j].attributes[k].nodeValue + ", ";
+		for (k = 0; k < attrs.length; k++) {
+			if (k > 0) toLog += ", ";
+			toLog += attrs[k].name + "=" + attrs[k].value;
 		}
 		console.log(toLog);
 	}
