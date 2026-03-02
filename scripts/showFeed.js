@@ -2012,7 +2012,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 	var textUpdateRecord, textUpdateAbsent, textUpdateLoadError, textReloadPage, textUpdateAttempt, textUpdateAttempt2="", textRecord;
 	var doc, mediaURL, property;
-	var description, searchDoc, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
+	var description, contentPos, scriptEndPos , jsonPosSt, jsonPosEd, jsonText, jsonDATA, mediaComment;
 	var categories, creators, properties, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
 
 	if (result.entries[i].storage.updateProcessed == 1) return;
@@ -2067,41 +2067,19 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				description = result.entries[i].summary;
 			} else {
 				description = null;
-				property = doc.head.querySelector('meta[name="description"]');
+				property = doc.querySelector('meta[name="description"]');
 				if (property != null) description = property.content;
 				if (description == null) {
-					property = doc.head.querySelector('meta[property="og:description"]');
+					property = doc.querySelector('meta[property="og:description"]');
 					if (property != null) description = property.content;
 				}
 				if (description == null) {
-					property = doc.head.querySelector('meta[name="twitter:description"]');
+					property = doc.querySelector('meta[name="twitter:description"]');
 					if (property != null) description = property.content;
 				}
-			}
-			if (description == null || mediaURL == null) {
-				searchDoc = doc;
-				mediaURL = null;
-				property = searchDoc.querySelector('meta[property="og:image"]');
-				if (property != null) mediaURL = property.content;
-
-				if (source != "nasa" && source != "artemis") { // do not update NASA description
-					property = searchDoc.querySelector('meta[name="description"]');
-					if (property != null) description = property.content;
-					if (description == null) {
-						property = searchDoc.head.querySelector('meta[property="og:description"]');
-						if (property != null) description = property.content;
-					}
-					if (description == null) {
-						property = searchDoc.head.querySelector('meta[name="twitter:description"]');
-						if (property != null) description = property.content;
-					}
-				}
-			} else {
-				searchDoc = doc.head;
 			}
 
 			if (description != null && mediaURL != null) {
-
 
 				const safeParseJSON = (jsonText) => {
 					try {
@@ -2152,18 +2130,18 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				}
 
 				mediaComment = null;
-				property = searchDoc.querySelector('meta[property="og:image:alt"]');
+				property = doc.querySelector('meta[property="og:image:alt"]');
 				if (property != null) mediaComment = property.content;
 
 				categories = null;
 				if (source != "nasa") { // do not update nasa categories
-					properties = searchDoc.querySelectorAll('meta[name="keywords"]');
+					properties = doc.querySelectorAll('meta[name="keywords"]');
 					if (properties != null) categories = properties;
 					if (categories == null || !categories[0] || categories[0].content == "") {
-						properties = searchDoc.querySelectorAll('meta[name="parsely-tags"]');
+						properties = doc.querySelectorAll('meta[name="parsely-tags"]');
 						if (properties != null) categories = properties;
 						if (categories == null || !categories[0] || categories[0].content == "") {
-							properties = doc.head.querySelectorAll('meta[property="article:section"]');
+							properties = doc.querySelectorAll('meta[property="article:section"]');
 							if (properties != null) categories = properties;
 						}
 					}
@@ -2172,7 +2150,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				if (typeof creators === "undefined") {
 					creators = null;
 					if (source != "nasa") { // do not update nasa creators
-						property = searchDoc.querySelector('meta[name="parsely-author"]');
+						property = doc.querySelector('meta[name="parsely-author"]');
 						if (property != null) {
 							creators = [];
 							creators[0] = property.content;
@@ -2181,14 +2159,14 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				}
 
 				seeAlso = null;
-				properties = doc.head.querySelectorAll('meta[property="og:see_also"]');
+				properties = doc.querySelectorAll('meta[property="og:see_also"]');
 				if (properties != null) seeAlso = properties;
 
 				videoURL = null;
-				property = searchDoc.querySelector('meta[property="og:video"]');
+				property = doc.querySelector('meta[property="og:video"]');
 				if (property != null) videoURL = property.content;
 				if (videoURL == null) {
-					property = searchDoc.querySelector('meta[property="og:video:url"]');
+					property = doc.querySelector('meta[property="og:video:url"]');
 					if (property != null) videoURL = property.content;
 				}
 
