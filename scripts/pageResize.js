@@ -124,6 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.body.addEventListener("pointerdown", (event) => {
 		if (event.target === document.body) hideSubMenu();
 	});
+	// works fine but possible to call all functions from here and not to use document.body.onload();
+	document.body.onload();
+	document.body.onload = null;
 });
 
 window.addEventListener('resize', function(event) {
@@ -182,7 +185,7 @@ function getScrollDivOffset(){
 }
 
 // --- adjust scrolldiv ---
-function adjustScrollDiv2(){
+function adjustScrollDiv(){
 	var scrollDiv = document.getElementById('scrollDiv');
 
 	if (isTouchDevice()) {
@@ -205,15 +208,6 @@ function adjustScrollDiv2(){
 		informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 5) + 'px';
 	}
 }
-
-function adjustScrollDiv(){
-	if (window.Galleria) {
-		Galleria.ready(function() { adjustScrollDiv2(); });
-	} else {
-		adjustScrollDiv2();
-	}
-}
-
 
 // --- news keys scroll ---
 function enableKeyboardScroll(scrollDiv) {
