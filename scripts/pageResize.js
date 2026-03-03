@@ -351,13 +351,6 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 			imgBgStar.style.display="none";
 		}
 	}
-
-	if (window.location.pathname.substr(0, 4) == "/amv" && isLoad == 1) {
-		const iframes = document.getElementsByTagName("iframe");
-		for (const iframe of iframes) {
-			iframe.src = iframe.dataset.src;
-		}
-	}
 }
 
 // --- interval funcs ---
