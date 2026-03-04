@@ -415,7 +415,7 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 	extensionA.setAttribute('class', 'standardb_red');
 	extensionA.onclick = function () {
 		if (this.innerHTML == "[▼]") {
-			summarySpan.innerHTML = entry_summary;
+			summarySpan.innerHTML = entry_summary + "&nbsp;";
 			this.innerHTML = "[▲]";
 		} else if (this.innerHTML == "[▲]") {
 			summarySpan.innerHTML = formatSummary(summary_words, wordsCount);

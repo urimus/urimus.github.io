@@ -185,7 +185,7 @@ function updateAboutMeImage2(lang, result, random) {
 		extensionA.setAttribute('class', 'standardb_blue');
 		extensionA.onclick = function () {
 			if (this.innerHTML == "[▼]") {
-				summarySpan.innerHTML = "&nbsp;" + item.summary;
+				summarySpan.innerHTML = "&nbsp;" + item.summary + "&nbsp;";
 				this.innerHTML = "[&#9650;]";
 			} else if (this.innerHTML == "[▲]") {
 				summarySpan.innerHTML = "&nbsp;" + formatSummary(summary_words, wordsCount);
