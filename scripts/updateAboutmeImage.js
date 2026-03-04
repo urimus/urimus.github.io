@@ -4,16 +4,7 @@ var toSkip = 0;
 // ------------- End of Global Variables ---------------- //
 
 function formatSummary(summary_arr, words) {
-	var summaryToShow = "";
-	var j;
-	for (j = 0; j < words && j < summary_arr.length; j++) {
-		if (j == summary_arr.length - 1) {
-			summaryToShow = summaryToShow + summary_arr[j];
-		} else {
-			summaryToShow = summaryToShow + summary_arr[j] + " ";
-		}
-	}
-	return summaryToShow;
+	return summary_arr.slice(0, words).join(" ") + " ";
 }
 
 function showErrorImage(lang, type, errorMessage="") {
