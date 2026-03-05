@@ -2092,7 +2092,8 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 //									mediaURL = jsonDATA.image.url;
 //								}
 								creators = [];
-								creators[0]=jsonDATA.creator.name;
+								creators[0] = [];
+								creators[0].content=jsonDATA.creator.name;
 								break;
 							}
 						}
