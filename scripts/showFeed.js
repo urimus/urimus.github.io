@@ -2138,14 +2138,11 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 					}
 				}
 
-				if (typeof creators === "undefined") {
+				if (typeof result.entries[i].creator === "undefined" && typeof creators === "undefined") {
 					creators = null;
 					if (source != "nasa") { // do not update nasa creators
-						property = doc.querySelector('meta[name="parsely-author"]');
-						if (property != null) {
-							creators = [];
-							creators[0] = property.content;
-						}
+						properties = doc.querySelectorAll('meta[name="parsely-author"]');
+						if (properties != null) creators = properties;
 					}
 				}
 
@@ -2183,8 +2180,8 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 					result.entries[i].creator = [];
 					locStUpdateDataNew.creator = [];
 					for (j = 0; j < creators.length; j++) {
-						result.entries[i].creator[j] = creators[j];
-						locStUpdateDataNew.creator[j] = creators[j];
+						result.entries[i].creator[j] = creators[j].content;
+						locStUpdateDataNew.creator[j] = creators[j].content;
 					}
 				}
 				if (categories != null) {
