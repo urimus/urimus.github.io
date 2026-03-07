@@ -1753,7 +1753,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			}
 		}
 
-		// --- Common for all ---
 		if (result.entries[i].media.width >= 450) result.entries[i].media.width = 450;
 		if (entry.comments != null) result.entries[i].media.comment = entry.comments;
 		if (typeof entry.source !== "undefined") {
@@ -1761,6 +1760,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			result.entries[i].source.title = entry.source.title;
 			result.entries[i].source.url = entry.source.url;
 		}
+
+		// --- dc:creator ---
 		if (typeof entry["dc:creator"] !== "undefined") {
 			result.entries[i].creator = [];
 			if (source != "wired") {
@@ -1827,7 +1828,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			result.entries[i].date_ms = entry.date_ms;
 		}
 
-		if (result.entries[i].link == "") {
+		if (result.entries[i].link == "" || result.entries[i].link == "https://x.com/nasaadmin/status/2025249086908125630?s=46") {
 			result.entries[i].storage.updateProcessed = 1;
 			result.totalUpdated++;
 		}
