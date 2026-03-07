@@ -8155,7 +8155,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 }
 
 function hideSubMenu(ele, manual = 0, additDel = "") {
-	var maxSubCount = 3, eleID, tables, objToRemove=[], ret=null;
+	var maxSubCount = 3, eleID, tables, objToRemove=[], ret=null, textarea;
 
 	eleID = "";
 	if (typeof ele === "undefined") {
@@ -8245,6 +8245,10 @@ function hideSubMenu(ele, manual = 0, additDel = "") {
 			setTimeout(() => { document.body.removeChild(objToRemove[i]); }, 200);
 		}
 	}
+
+	textarea = document.getElementById("textarea_area");
+	if (textarea) textarea.focus();
+
 	return ret;
 }
 
