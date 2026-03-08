@@ -8245,10 +8245,6 @@ function hideSubMenu(ele, manual = 0, additDel = "") {
 			setTimeout(() => { document.body.removeChild(objToRemove[i]); }, 200);
 		}
 	}
-
-	textarea = document.getElementById("textarea_area");
-	if (textarea) textarea.focus();
-
 	return ret;
 }
 
