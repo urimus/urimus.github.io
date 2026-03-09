@@ -1165,7 +1165,7 @@ function generateTabs(type, source, lang) {
 		var subcell = subrow.insertCell(0);
 		subcell.setAttribute('style', "width: 280px; display: inline-block; textAlign: left; margin:2px;");
 		var Div = document.createElement('div');
-		Div.setAttribute('id', "menu_26_1");
+		Div.setAttribute('id', "menu_100");
 		Div.setAttribute('onmouseenter', "showSubMenu(this, '"+lang+"', 'news');");
 		Div.setAttribute('onmouseleave', "this.className='menu_not_selected_red'");
 		Div.setAttribute('onclick', "showSubMenu(this, '"+lang+"', 'news');" );

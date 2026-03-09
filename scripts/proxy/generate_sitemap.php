@@ -22,16 +22,22 @@ $sitemapLines[] = ['loc' => $baseUrl, 'lastmod' => $lastmodMain];
 $sitemapLines[] = ['loc' => $baseUrl.$allFile, 'lastmod' => date('Y-m-d')];
 
 foreach($files as $file) {
-	if($file === '.' || $file === '..' || in_array(strtolower($file), [strtolower($sitemapFile)], true)) continue;
-	if(in_array($file, $exclude, true)) continue;
+	$path = $dir . '/' . $file;
 
-	$path = $dir.'/'.$file;
-	if(is_file($path) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) === 'html' && $file !== $allFile) {
-		$loc = $baseUrl.$file;
-		$lastmod = date('Y-m-d', filemtime($path));
-		$sitemapLines[] = ['loc' => $loc, 'lastmod' => $lastmod];
-		$htmlLinks[] = ['title' => filenameToTitle($file), 'url' => $loc];
-	}
+	if (
+		$file === '.' || 
+		$file === '..' || 
+		strtolower($file) === strtolower($sitemapFile) || 
+		in_array($file, $exclude, true) || 
+		!is_file($path) || 
+		strtolower(pathinfo($file, PATHINFO_EXTENSION)) !== 'html' || 
+		$file === $allFile
+	) continue;
+
+	$loc = $baseUrl.$file;
+	$lastmod = date('Y-m-d', filemtime($path));
+	$sitemapLines[] = ['loc' => $loc, 'lastmod' => $lastmod];
+	$htmlLinks[] = ['title' => filenameToTitle($file), 'url' => $loc];
 }
 
 usort($htmlLinks, function($a, $b) { return strcmp($a['title'], $b['title']); });

@@ -8020,7 +8020,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	if (lastSubMenu==null) {
 		tableSM = document.createElement("table");
 		tableSM.setAttribute('id', "table" + newTableId);
-		tableSM.dataset.id = ele.id;
+		tableSM.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
 		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
@@ -8054,7 +8054,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableSM.innerHTML = ''; lastSubMenu.innerHTML = '';
 		tableSM.style.transition = "opacity 0.2s linear";
 		tableSM.setAttribute('id', "table" + newTableId);
-		tableSM.dataset.id = ele.id;
+		tableSM.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
 		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
