@@ -33,7 +33,11 @@ foreach ($files as $file) {
 	if (is_file($dir . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) === 'html') {
 
 		$loc = $baseUrl . $file;
-		$lastmod = date('Y-m-d', filemtime($dir . '/' . $file));
+		if ($file === $allFile) {
+			$lastmod = date('Y-m-d');
+		} else {
+			$lastmod = date('Y-m-d', filemtime($dir . '/' . $file));
+		}
 
 		$url = $xml->addChild('url');
 		$url->addChild('loc', $loc);
@@ -47,6 +51,8 @@ foreach ($files as $file) {
 		}
 	}
 }
+
+$allExists = file_exists($dir . '/' . $allFile);
 
 $allHtml = "<!DOCTYPE html>
 <html lang='en'>
@@ -69,9 +75,11 @@ $allHtml .= "</ul>
 
 file_put_contents($dir . '/' . $allFile, $allHtml);
 
-$url = $xml->addChild('url');
-$url->addChild('loc', $baseUrl . $allFile);
-$url->addChild('lastmod', date('Y-m-d'));
+if (!$allExists) {
+	$url = $xml->addChild('url');
+	$url->addChild('loc', $baseUrl . $allFile);
+	$url->addChild('lastmod', date('Y-m-d'));
+}
 
 $dom = new DOMDocument('1.0', 'UTF-8');
 $dom->preserveWhiteSpace = false;
