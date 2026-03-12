@@ -663,7 +663,6 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 	if (appendEntry == 1) {
 		cell1 = tableMainRow.insertCell(-1);
 		cell1.style.padding = '0 2px';
-		cell1.style.scrollSnapAlign = 'start';
 	} else {
 		var processedCountSoFar = 0;
 		for (var j = 0; j < i; j++) {
@@ -672,7 +671,6 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 		var scrollDiv = document.getElementById('scrollDiv');
 		cell1 = tableMainRow.insertCell(processedCountSoFar);
 		cell1.style.padding = '0 2px';
-		cell1.style.scrollSnapAlign = 'start';
 		if (scrollDiv.scrollLeft < 5 && processedCountSoFar == 0) {
 			scrollDiv.scrollLeft = 0;
 		}
