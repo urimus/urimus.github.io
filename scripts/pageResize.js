@@ -214,7 +214,6 @@ function enableKeyboardScroll(scrollDiv) {
 
 	scrollDiv.style.scrollSnapType = 'x mandatory';
 
-	let stepRepeat = 0;
 	let cells = Array.from(scrollDiv.querySelectorAll('td, th'));
 	const observer = new MutationObserver(() => {
 		cells = Array.from(scrollDiv.querySelectorAll('td, th'));
@@ -229,11 +228,10 @@ function enableKeyboardScroll(scrollDiv) {
 		return cells.length - 1;
 	};
 
-	const stepX = (dir, repeatCount = 0) => {
+	const stepX = (dir) => {
 		if (!cells.length) return 0;
 		const index = findCurrentCellIndex();
-		const jumpIndex = Math.min(1 + Math.floor(repeatCount / 2), 10);
-		let targetIndex = index + (dir === 'right' ? jumpIndex : -jumpIndex);
+		let targetIndex = index + (dir === 'right' ? 1 : -1);
 		targetIndex = Math.max(0, Math.min(cells.length - 1, targetIndex));
 		return cells[targetIndex].offsetLeft - scrollDiv.scrollLeft;
 	};
@@ -242,14 +240,11 @@ function enableKeyboardScroll(scrollDiv) {
 
 	document.addEventListener('keydown', (e) => {
 
-		if (e.repeat) stepRepeat++;
-		else stepRepeat = 0;
-
 		if (!e.shiftKey) {
 			if (e.key === 'ArrowRight')
-				scrollDiv.scrollBy({ left: stepX('right', stepRepeat), behavior: e.repeat ? 'auto' : 'smooth' });
+				scrollDiv.scrollBy({ left: stepX('right'), behavior: e.repeat ? 'auto' : 'smooth' });
 			if (e.key === 'ArrowLeft')
-				scrollDiv.scrollBy({ left: stepX('left', stepRepeat), behavior: e.repeat ? 'auto' : 'smooth' });
+				scrollDiv.scrollBy({ left: stepX('left'), behavior: e.repeat ? 'auto' : 'smooth' });
 		} else {
 			if (e.key === 'ArrowRight')
 				scrollDiv.scrollBy({ top: stepY(), behavior: 'smooth' });
