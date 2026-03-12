@@ -220,17 +220,25 @@ function enableKeyboardScroll(scrollDiv) {
 	});
 	observer.observe(scrollDiv, { childList: true, subtree: true });
 
-	const findCurrentCellIndex = () => {
+	const findCurrentCellIndex = (dir) => {
 		const scrollLeft = scrollDiv.scrollLeft;
-		for (let i = 0; i < cells.length; i++) {
-			if (cells[i].offsetLeft >= scrollLeft - 1) return i;
+		if (dir === 'right') {
+			for (let i = 0; i < cells.length; i++) {
+				if (cells[i].offsetLeft >= scrollLeft - 1) return i;
+			}
+			return cells.length - 1;
 		}
-		return cells.length - 1;
+		if (dir === 'left') {
+			for (let i = cells.length - 1; i >= 0; i--) {
+				if (cells[i].offsetLeft <= scrollLeft + 1) return i;
+			}
+			return 0;
+		}
 	};
 
 	const stepX = (dir) => {
 		if (!cells.length) return 0;
-		const index = findCurrentCellIndex();
+		const index = findCurrentCellIndex(dir);
 		let targetIndex = index + (dir === 'right' ? 1 : -1);
 		targetIndex = Math.max(0, Math.min(cells.length - 1, targetIndex));
 		return cells[targetIndex].offsetLeft - scrollDiv.scrollLeft;
