@@ -217,34 +217,46 @@ function enableKeyboardScroll(scrollDiv) {
 		cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 	});
 	observer.observe(scrollDiv, { childList: true, subtree: true });
-	const EPS = 0.5;
-	const getTargetCellIndex = (dir) => {
+
+	const getTargetCellIndex = (key) => {
 		const scrollLeft = scrollDiv.scrollLeft;
 		const scrollRight = scrollLeft + scrollDiv.clientWidth;
-		if (dir === 'right') {
+		if (key === 'ArrowRight') {
 			for (let i = 0; i < cells.length; i++) {
-				if (cells[i].offsetLeft >= scrollLeft - EPS) return i + (cells[i].offsetLeft - (scrollLeft - EPS) > 5 ? 0 : 1);
+				if (cells[i].offsetLeft > scrollLeft) return i;
 			}
 			return cells.length - 1;
 		}
-		for (let i = cells.length - 1; i >= 0; i--) {
-			const cellRight = cells[i].offsetLeft + cells[i].offsetWidth;
-			if (cellRight <= scrollRight + EPS) return i - (scrollRight + EPS - cellRight > 5 ? 0 : 1);
+		if (key === 'ArrowLeft') {
+			for (let i = cells.length - 1; i >= 0; i--) {
+				const cellRight = cells[i].offsetLeft + cells[i].offsetWidth;
+				if (cellRight < scrollRight) return i;
+			}
+			return 0;
 		}
 		return 0;
 	};
-	const targetX = (dir) => {
-		if (!cells.length) return scrollDiv.scrollLeft;
-		let idx = Math.max(0, Math.min(cells.length - 1, getTargetCellIndex(dir)));
-		if (dir === 'right') return cells[idx].offsetLeft;
-		const cell = cells[idx];
-		return cell.offsetLeft + cell.offsetWidth - scrollDiv.clientWidth;
+
+	const stepX = (key) => {
+		if (!cells.length) return 0;
+		const idx = Math.max(0, Math.min(cells.length - 1, getTargetCellIndex(key)));
+		let target;
+		if (key === 'ArrowRight') {
+			target = cells[idx].offsetLeft;
+		} else if (key === 'ArrowLeft') {
+			const cell = cells[idx];
+			target = cell.offsetLeft + cell.offsetWidth - scrollDiv.clientWidth;
+		} else {
+			return 0;
+		}
+		return target - scrollDiv.scrollLeft;
 	};
+
 	const stepY = () => scrollDiv.clientHeight;
+
 	document.addEventListener('keydown', (e) => {
 		if (!e.shiftKey) {
-			if (e.key === 'ArrowRight') scrollDiv.scrollTo({ left: targetX('right') });
-			if (e.key === 'ArrowLeft') scrollDiv.scrollTo({ left: targetX('left') });
+			if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') scrollDiv.scrollBy({ left: stepX(e.key) });
 		} else {
 			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: stepY() });
 			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -stepY() });
