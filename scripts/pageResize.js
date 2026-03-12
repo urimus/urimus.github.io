@@ -211,63 +211,47 @@ function adjustScrollDiv(){
 
 // --- news keys scroll ---
 function enableKeyboardScroll(scrollDiv) {
-
+	scrollDiv.style.scrollBehavior = "auto";
 	let cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 	const observer = new MutationObserver(() => {
 		cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 	});
 	observer.observe(scrollDiv, { childList: true, subtree: true });
 	const EPS = 0.5;
-
 	const getTargetCellIndex = (dir) => {
 		const scrollLeft = scrollDiv.scrollLeft;
 		const scrollRight = scrollLeft + scrollDiv.clientWidth;
 		if (dir === 'right') {
 			for (let i = 0; i < cells.length; i++) {
-				if (cells[i].offsetLeft >= scrollLeft - EPS) {
-					if (cells[i].offsetLeft - (scrollLeft - EPS) > 5) return i;
-					return i+1;
-				}
+				if (cells[i].offsetLeft >= scrollLeft - EPS) return i + (cells[i].offsetLeft - (scrollLeft - EPS) > 5 ? 0 : 1);
 			}
 			return cells.length - 1;
 		}
-		if (dir === 'left') {
-			for (let i = cells.length - 1; i >= 0; i--) {
-				const cellRight = cells[i].offsetLeft + cells[i].offsetWidth;
-				if (cellRight <= scrollRight + EPS) {
-					if (scrollRight + EPS - cellRight  > 5) return i;
-					return i-1;
-				}
-			}
-			return 0;
+		for (let i = cells.length - 1; i >= 0; i--) {
+			const cellRight = cells[i].offsetLeft + cells[i].offsetWidth;
+			if (cellRight <= scrollRight + EPS) return i - (scrollRight + EPS - cellRight > 5 ? 0 : 1);
 		}
+		return 0;
 	};
-
 	const targetX = (dir) => {
 		if (!cells.length) return scrollDiv.scrollLeft;
-		let targetIndex = getTargetCellIndex(dir);
-		targetIndex = Math.max(0, Math.min(cells.length - 1, targetIndex));
-		if (dir === 'right') {
-			return cells[targetIndex].offsetLeft;
-		} else {
-			const cell = cells[targetIndex];
-			return cell.offsetLeft + cell.offsetWidth - scrollDiv.clientWidth;
-		}
+		let idx = Math.max(0, Math.min(cells.length - 1, getTargetCellIndex(dir)));
+		if (dir === 'right') return cells[idx].offsetLeft;
+		const cell = cells[idx];
+		return cell.offsetLeft + cell.offsetWidth - scrollDiv.clientWidth;
 	};
-
 	const stepY = () => scrollDiv.clientHeight;
-
 	document.addEventListener('keydown', (e) => {
 		if (!e.shiftKey) {
-			if (e.key === 'ArrowRight') scrollDiv.scrollTo({ left: targetX('right'), behavior: e.repeat ? 'auto' : 'smooth' });
-			if (e.key === 'ArrowLeft') scrollDiv.scrollTo({ left: targetX('left'), behavior: e.repeat ? 'auto' : 'smooth' });
+			if (e.key === 'ArrowRight') scrollDiv.scrollTo({ left: targetX('right') });
+			if (e.key === 'ArrowLeft') scrollDiv.scrollTo({ left: targetX('left') });
 		} else {
-			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: stepY(), behavior: 'smooth' });
-			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -stepY(), behavior: 'smooth' });
+			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: stepY() });
+			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -stepY() });
 		}
-		if (e.key === 'Home') scrollDiv.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-		if (e.key === 'End') scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth, behavior: 'smooth' });
-		if (['ArrowRight','ArrowLeft','Home','End'].includes(e.key)) e.preventDefault();
+		if (e.key === 'Home') scrollDiv.scrollTo({ top: 0, left: 0 });
+		if (e.key === 'End') scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth });
+		if (['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) e.preventDefault();
 	});
 }
 
