@@ -232,8 +232,8 @@ function enableKeyboardScroll(scrollDiv) {
 	const stepX = (dir, repeatCount = 0) => {
 		if (!cells.length) return 0;
 		const index = findCurrentCellIndex();
-		const jump = Math.min(1 + Math.floor(repeatCount / 2), 10);
-		let targetIndex = index + (dir === 'right' ? jump : -jump);
+		const jumpIndex = Math.min(1 + Math.floor(repeatCount / 2), 10);
+		let targetIndex = index + (dir === 'right' ? jumpIndex : -jumpIndex);
 		targetIndex = Math.max(0, Math.min(cells.length - 1, targetIndex));
 		return cells[targetIndex].offsetLeft - scrollDiv.scrollLeft;
 	};
