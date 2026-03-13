@@ -220,8 +220,11 @@ function enableKeyboardScroll(scrollDiv) {
 	observer.observe(scrollDiv, { childList: true, subtree: true });
 	let scrollCellIndex = 0;
 
-	const scrollToCell = (index, e) => {
+	const scrollToCell = (e) => {
 		if (!cells.length) return;
+		var index = scrollCellIndex;
+		if (e.key === 'ArrowRight') index++;
+		if (e.key === 'ArrowLeft') index--;
 		index = Math.max(0, Math.min(cells.length - 1, index));
 		const cell = cells[index];
 		const delta = cell.offsetLeft - scrollDiv.scrollLeft;
@@ -233,8 +236,7 @@ function enableKeyboardScroll(scrollDiv) {
 
 	document.addEventListener('keydown', (e) => {
 		if (!e.shiftKey) {
-			if (e.key === 'ArrowRight') scrollToCell(scrollCellIndex + 1, e);
-			if (e.key === 'ArrowLeft') scrollToCell(scrollCellIndex - 1, e);
+			scrollToCell(e);
 		} else {
 			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: stepY(), behavior: 'smooth' });
 			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -stepY(), behavior: 'smooth' });
