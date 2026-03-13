@@ -211,45 +211,72 @@ function adjustScrollDiv(){
 
 // --- news keys scroll ---
 function enableKeyboardScroll(scrollDiv) {
-
 	let cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
-	const observer = new MutationObserver(() => {
+	let scrollCellIndex = 0;
+	let lastDirection = null;
+
+	const updateCells = () => {
 		cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 		scrollCellIndex = Math.min(scrollCellIndex, cells.length - 1);
-	});
-	observer.observe(scrollDiv, { childList: true, subtree: true });
-	let scrollCellIndex = 0;
-
-	const scrollToCell = (e) => {
-		if (!cells.length) return;
-		var index = scrollCellIndex;
-		if (e.key === 'ArrowRight') index++;
-		if (e.key === 'ArrowLeft') index--;
-		index = Math.max(0, Math.min(cells.length - 1, index));
-		const cell = cells[index];
-		const delta = cell.offsetLeft - scrollDiv.scrollLeft;
-		scrollDiv.scrollBy({ left: delta, behavior: e.repeat ? 'auto' : 'smooth' });
-		scrollCellIndex = index;
 	};
 
-	const stepY = () => scrollDiv.clientHeight;
+	new MutationObserver(updateCells).observe(scrollDiv, { childList: true, subtree: true });
+
+	const scrollToCell = (direction, repeat) => {
+		if (!cells.length || !direction) return;
+
+		const atLeftEdge = scrollCellIndex === 0;
+		const atRightEdge = scrollCellIndex === cells.length - 1;
+
+		if (!lastDirection || lastDirection === direction || atLeftEdge || atRightEdge) {
+			scrollCellIndex = direction === 'right'
+				? Math.min(cells.length - 1, scrollCellIndex + 1)
+				: Math.max(0, scrollCellIndex - 1);
+		}
+		lastDirection = direction;
+
+		const cell = cells[scrollCellIndex];
+		const targetScroll = direction === 'right'
+			? cell.offsetLeft
+			: cell.offsetLeft + cell.offsetWidth - scrollDiv.clientWidth;
+
+		scrollDiv.scrollTo({ left: targetScroll, behavior: repeat ? 'auto' : 'smooth' });
+	};
+
+	const stepY = scrollDiv.clientHeight;
+
+	const updateScrollCellIndex = () => {
+		if (!cells.length) return;
+		let closestIndex = 0, minDistance = Infinity;
+		cells.forEach((cell, i) => {
+			const distance = Math.abs(cell.offsetLeft - scrollDiv.scrollLeft);
+			if (distance < minDistance) { minDistance = distance; closestIndex = i; }
+		});
+		scrollCellIndex = closestIndex;
+	};
+
+	scrollDiv.addEventListener('scroll', updateScrollCellIndex);
 
 	document.addEventListener('keydown', (e) => {
-		if (!e.shiftKey) {
-			scrollToCell(e);
-		} else {
-			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: stepY(), behavior: 'smooth' });
-			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -stepY(), behavior: 'smooth' });
-		}
-		if (e.key === 'Home') {
+		if (['ArrowRight', 'ArrowLeft'].includes(e.key)) {
+			if (e.shiftKey) {
+				const delta = e.key === 'ArrowRight' ? stepY : -stepY;
+				scrollDiv.scrollBy({ top: delta, behavior: 'smooth' });
+			} else {
+				scrollToCell(e.key === 'ArrowRight' ? 'right' : 'left', e.repeat);
+			}
+			e.preventDefault();
+		} else if (e.key === 'Home') {
 			scrollCellIndex = 0;
+			lastDirection = null;
 			scrollDiv.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-		}
-		if (e.key === 'End') {
+			e.preventDefault();
+		} else if (e.key === 'End') {
 			scrollCellIndex = cells.length - 1;
+			lastDirection = null;
 			scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth, behavior: 'smooth' });
+			e.preventDefault();
 		}
-		if (['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) e.preventDefault();
 	});
 }
 
