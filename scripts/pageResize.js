@@ -211,58 +211,42 @@ function adjustScrollDiv(){
 
 // --- news keys scroll ---
 function enableKeyboardScroll(scrollDiv) {
-	scrollDiv.style.scrollBehavior = "auto";
+
 	let cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 	const observer = new MutationObserver(() => {
 		cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
+		scrollCellIndex = Math.min(scrollCellIndex, cells.length - 1);
 	});
 	observer.observe(scrollDiv, { childList: true, subtree: true });
+	let scrollCellIndex = 0;
 
-	const getTargetCellIndex = (key) => {
-		const scrollLeft = scrollDiv.scrollLeft;
-		const scrollRight = scrollLeft + scrollDiv.clientWidth;
-		if (key === 'ArrowRight') {
-			for (let i = 0; i < cells.length; i++) {
-				if (cells[i].offsetLeft > scrollLeft) return i;
-			}
-			return cells.length - 1;
-		}
-		if (key === 'ArrowLeft') {
-			for (let i = cells.length - 1; i >= 0; i--) {
-				const cellRight = cells[i].offsetLeft + cells[i].offsetWidth;
-				if (cellRight < scrollRight) return i;
-			}
-			return 0;
-		}
-		return 0;
-	};
-
-	const stepX = (key) => {
-		if (!cells.length) return 0;
-		const idx = Math.max(0, Math.min(cells.length - 1, getTargetCellIndex(key)));
-		let target;
-		if (key === 'ArrowRight') {
-			target = cells[idx].offsetLeft;
-		} else if (key === 'ArrowLeft') {
-			const cell = cells[idx];
-			target = cell.offsetLeft + cell.offsetWidth - scrollDiv.clientWidth;
-		} else {
-			return 0;
-		}
-		return target - scrollDiv.scrollLeft;
+	const scrollToCell = (index, e) => {
+		if (!cells.length) return;
+		index = Math.max(0, Math.min(cells.length - 1, index));
+		const cell = cells[index];
+		const delta = cell.offsetLeft - scrollDiv.scrollLeft;
+		scrollDiv.scrollBy({ left: delta, behavior: e.repeat ? 'auto' : 'smooth' });
+		scrollCellIndex = index;
 	};
 
 	const stepY = () => scrollDiv.clientHeight;
 
 	document.addEventListener('keydown', (e) => {
 		if (!e.shiftKey) {
-			if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') scrollDiv.scrollBy({ left: stepX(e.key) });
+			if (e.key === 'ArrowRight') scrollToCell(scrollCellIndex + 1, e);
+			if (e.key === 'ArrowLeft') scrollToCell(scrollCellIndex - 1, e);
 		} else {
-			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: stepY() });
-			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -stepY() });
+			if (e.key === 'ArrowRight') scrollDiv.scrollBy({ top: stepY(), behavior: 'smooth' });
+			if (e.key === 'ArrowLeft') scrollDiv.scrollBy({ top: -stepY(), behavior: 'smooth' });
 		}
-		if (e.key === 'Home') scrollDiv.scrollTo({ top: 0, left: 0 });
-		if (e.key === 'End') scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth });
+		if (e.key === 'Home') {
+			scrollCellIndex = 0;
+			scrollDiv.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+		}
+		if (e.key === 'End') {
+			scrollCellIndex = cells.length - 1;
+			scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth, behavior: 'smooth' });
+		}
 		if (['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) e.preventDefault();
 	});
 }
