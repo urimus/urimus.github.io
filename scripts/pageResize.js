@@ -214,68 +214,77 @@ function enableKeyboardScroll(scrollDiv) {
 	let cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 	let scrollCellIndex = 0;
 	let lastDirection = null;
+	let isKeyboardScrolling = false;
+	let cellSizes = cells.map(cell => ({ left: cell.offsetLeft, width: cell.offsetWidth }));
 
 	const updateCells = () => {
 		cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
+		cellSizes = cells.map(cell => ({ left: cell.offsetLeft, width: cell.offsetWidth }));
 		scrollCellIndex = Math.min(scrollCellIndex, cells.length - 1);
 	};
 
 	new MutationObserver(updateCells).observe(scrollDiv, { childList: true, subtree: true });
 
+	const resizeObserver = new ResizeObserver(updateCells);
+	cells.forEach(cell => resizeObserver.observe(cell));
+	window.addEventListener('resize', updateCells);
+
 	const scrollToCell = (direction, repeat) => {
 		if (!cells.length || !direction) return;
-
 		const atLeftEdge = scrollCellIndex === 0;
 		const atRightEdge = scrollCellIndex === cells.length - 1;
-
 		if (!lastDirection || lastDirection === direction || atLeftEdge || atRightEdge) {
 			scrollCellIndex = direction === 'right'
 				? Math.min(cells.length - 1, scrollCellIndex + 1)
 				: Math.max(0, scrollCellIndex - 1);
 		}
 		lastDirection = direction;
-
-		const cell = cells[scrollCellIndex];
-		const targetScroll = direction === 'right'
-			? cell.offsetLeft
-			: cell.offsetLeft + cell.offsetWidth - scrollDiv.clientWidth;
-
-		scrollDiv.scrollTo({ left: targetScroll, behavior: repeat ? 'auto' : 'smooth' });
+		const target = direction === 'right'
+			? cellSizes[scrollCellIndex].left
+			: cellSizes[scrollCellIndex].left + cellSizes[scrollCellIndex].width - scrollDiv.clientWidth;
+		isKeyboardScrolling = true;
+		scrollDiv.scrollTo({ left: target, behavior: repeat ? 'auto' : 'smooth' });
 	};
 
 	const stepY = scrollDiv.clientHeight;
 
 	const updateScrollCellIndex = () => {
-		if (!cells.length) return;
-		let closestIndex = 0, minDistance = Infinity;
-		cells.forEach((cell, i) => {
-			const distance = Math.abs(cell.offsetLeft - scrollDiv.scrollLeft);
-			if (distance < minDistance) { minDistance = distance; closestIndex = i; }
-		});
-		scrollCellIndex = closestIndex;
+		if (isKeyboardScrolling) { isKeyboardScrolling = false; return; }
+		if (!cellSizes.length) return;
+		const scrollLeft = scrollDiv.scrollLeft;
+		let closest = scrollCellIndex;
+		let best = Math.abs(cellSizes[closest].left - scrollLeft);
+		while (true) {
+			let changed = false;
+			if (closest + 1 < cellSizes.length) {
+				const d = Math.abs(cellSizes[closest + 1].left - scrollLeft);
+				if (d < best) { best = d; closest += 1; changed = true; }
+			}
+			if (closest - 1 >= 0) {
+				const d = Math.abs(cellSizes[closest - 1].left - scrollLeft);
+				if (d < best) { best = d; closest -= 1; changed = true; }
+			}
+			if (!changed) break;
+		}
+		scrollCellIndex = closest;
 	};
 
 	scrollDiv.addEventListener('scroll', updateScrollCellIndex);
 
 	document.addEventListener('keydown', (e) => {
-		if (['ArrowRight', 'ArrowLeft'].includes(e.key)) {
+		if (['ArrowRight','ArrowLeft'].includes(e.key)) {
 			if (e.shiftKey) {
+				isKeyboardScrolling = true;
 				const delta = e.key === 'ArrowRight' ? stepY : -stepY;
 				scrollDiv.scrollBy({ top: delta, behavior: 'smooth' });
-			} else {
-				scrollToCell(e.key === 'ArrowRight' ? 'right' : 'left', e.repeat);
-			}
+			} else scrollToCell(e.key === 'ArrowRight' ? 'right' : 'left', e.repeat);
 			e.preventDefault();
 		} else if (e.key === 'Home') {
-			scrollCellIndex = 0;
-			lastDirection = null;
-			scrollDiv.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-			e.preventDefault();
+			isKeyboardScrolling = true; scrollCellIndex = 0; lastDirection = null;
+			scrollDiv.scrollTo({ top: 0, left: 0, behavior: 'smooth' }); e.preventDefault();
 		} else if (e.key === 'End') {
-			scrollCellIndex = cells.length - 1;
-			lastDirection = null;
-			scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth, behavior: 'smooth' });
-			e.preventDefault();
+			isKeyboardScrolling = true; scrollCellIndex = cells.length - 1; lastDirection = null;
+			scrollDiv.scrollTo({ top: scrollDiv.scrollHeight, left: scrollDiv.scrollWidth, behavior: 'smooth' }); e.preventDefault();
 		}
 	});
 }
