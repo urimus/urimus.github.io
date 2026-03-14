@@ -244,6 +244,7 @@ function enableKeyboardScroll(scrollDiv) {
 			}
 		}
 		scrollCellIndex = closest;
+		lastDirection = "mouse";
 	};
 
 	const scrollToCell = (direction, repeat) => {
