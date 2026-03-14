@@ -214,32 +214,34 @@ function enableKeyboardScroll(scrollDiv) {
 	let cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 	let scrollCellIndex = 0;
 	let lastDirection = null;
-	let cellSizes = cells.map(cell => ({ left: cell.offsetLeft, width: cell.offsetWidth }));
+	let cellSizes = cells.map(cell => ({
+		left: cell.offsetLeft,
+		width: cell.offsetWidth,
+		center: cell.offsetLeft + cell.offsetWidth / 2
+	}));
 	let isKeyboardScrolling = false;
 
 	const updateCells = () => {
 		cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
-		cellSizes = cells.map(cell => ({ left: cell.offsetLeft, width: cell.offsetWidth }));
+		cellSizes = cells.map(cell => ({
+			left: cell.offsetLeft,
+			width: cell.offsetWidth,
+			center: cell.offsetLeft + cell.offsetWidth / 2
+		}));
 		scrollCellIndex = Math.min(scrollCellIndex, cells.length - 1);
 	};
 
 	const updateScrollCellIndex = () => {
-		if (isKeyboardScrolling) return;
-		if (!cellSizes.length) return;
-		const scrollLeft = scrollDiv.scrollLeft;
-		let closest = scrollCellIndex;
-		let best = Math.abs(cellSizes[closest].left - scrollLeft);
-		while (true) {
-			let changed = false;
-			if (closest + 1 < cellSizes.length) {
-				const d = Math.abs(cellSizes[closest + 1].left - scrollLeft);
-				if (d < best) { best = d; closest += 1; changed = true; }
+		if (isKeyboardScrolling || !cellSizes.length) return;
+		const scrollCenter = scrollDiv.scrollLeft + scrollDiv.clientWidth / 2;
+		let closest = 0;
+		let best = Infinity;
+		for (let i = 0; i < cellSizes.length; i++) {
+			const d = Math.abs(cellSizes[i].center - scrollCenter);
+			if (d < best) {
+				best = d;
+				closest = i;
 			}
-			if (closest - 1 >= 0) {
-				const d = Math.abs(cellSizes[closest - 1].left - scrollLeft);
-				if (d < best) { best = d; closest -= 1; changed = true; }
-			}
-			if (!changed) break;
 		}
 		scrollCellIndex = closest;
 	};
