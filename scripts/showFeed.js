@@ -2098,6 +2098,34 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 						}
 					}
 				}
+				if (source == "cbs") {
+					contentPos = data.indexOf("@context");
+					if (contentPos != -1) {
+						jsonPosSt = contentPos - 2;
+						jsonPosEd = data.indexOf("</script>", jsonPosSt + 1);
+						jsonText = data.substr(jsonPosSt, jsonPosEd - jsonPosSt - 1);
+						jsonDATA = safeParseJSON(jsonText);
+						if (jsonDATA!=null) {
+							description = jsonDATA.articleBody;
+							if (jsonDATA.author) {
+								if (jsonDATA.author.length > 0) creators = [];
+								for (j = 0; j < jsonDATA.author.length; j++) {
+									creators[j] = [];
+									creators[j].content=jsonDATA.author[j].name;
+								}
+							}
+							if (jsonDATA.keywords) {
+								if (jsonDATA.keywords.length > 0) categories = [];
+								for (j = 0; j < jsonDATA.keywords.length; j++) {
+									categories[j] = [];
+									categories[j].content=jsonDATA.keywords[j];
+								}
+							}
+						}
+					}
+				}
+
+
 				if (source == "yonhap") {
 					contentPos = data.indexOf("CONTENT_DATA");
 					if (contentPos != -1) {
@@ -2124,8 +2152,8 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				property = doc.querySelector('meta[property="og:image:alt"]');
 				if (property != null) mediaComment = property.content;
 
-				categories = null;
-				if (source != "nasa") { // do not update nasa categories
+				if (source != "nasa" && source != "cbs") { // do not update nasa and cbs categories
+					categories = null;
 					properties = doc.querySelectorAll('meta[name="keywords"]');
 					if (properties != null) categories = properties;
 					if (categories == null || !categories[0] || categories[0].content == "") {
@@ -2140,7 +2168,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 				if (typeof result.entries[i].creator === "undefined" && typeof creators === "undefined") {
 					creators = null;
-					if (source != "nasa") { // do not update nasa creators
+					if (source != "nasa" && source != "cbs") { // do not update nasa and cbs creators
 						properties = doc.querySelectorAll('meta[name="parsely-author"]');
 						if (properties != null) creators = properties;
 					}
