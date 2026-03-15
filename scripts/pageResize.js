@@ -281,11 +281,9 @@ function enableKeyboardScroll(scrollDiv) {
 			const direction = lastDirection;
 			if (lastDirection == 'right') lastDirection = "left";
 			else if (lastDirection == 'left') lastDirection = "right";
-			isKeyboardScrolling = true;
 			scrollToCell(direction, false);
-		} else {
-			isKeyboardScrolling = false;
 		}
+		isKeyboardScrolling = false;
 		prevScrollLeft = scrollDiv.scrollLeft;
 	});
 
