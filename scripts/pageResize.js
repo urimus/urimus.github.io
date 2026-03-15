@@ -234,8 +234,11 @@ function enableKeyboardScroll(scrollDiv) {
 	};
 
 	const updateScrollCellIndex = () => {
-		if (isKeyboardScrolling || !cellSizes.length) return;
 		const scrollLeft = scrollDiv.scrollLeft;
+		if (isKeyboardScrolling || !cellSizes.length) {
+			prevScrollLeft = scrollLeft;
+			return;
+		}
 		const scrollCenter = scrollLeft + scrollDiv.clientWidth / 2;
 		let closest = 0;
 		let best = Infinity;
@@ -247,10 +250,9 @@ function enableKeyboardScroll(scrollDiv) {
 			}
 		}
 		scrollCellIndex = closest;
-		const currentScrollLeft = scrollLeft;
-		if (currentScrollLeft > prevScrollLeft) lastDirection = 'right';
-		else if (currentScrollLeft < prevScrollLeft) lastDirection = 'left';
-		prevScrollLeft = currentScrollLeft;
+		if (scrollLeft > prevScrollLeft) lastDirection = 'right';
+		else if (scrollLeft < prevScrollLeft) lastDirection = 'left';
+		prevScrollLeft = scrollLeft;
 	};
 
 	const scrollToCell = (direction, repeat) => {
