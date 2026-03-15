@@ -247,7 +247,6 @@ function enableKeyboardScroll(scrollDiv) {
 			}
 		}
 		scrollCellIndex = closest;
-
 		const currentScrollLeft = scrollLeft;
 		if (currentScrollLeft > prevScrollLeft) lastDirection = 'right';
 		else if (currentScrollLeft < prevScrollLeft) lastDirection = 'left';
@@ -267,7 +266,6 @@ function enableKeyboardScroll(scrollDiv) {
 		const target = direction === 'right'
 			? cellSizes[scrollCellIndex].left
 			: cellSizes[scrollCellIndex].left + cellSizes[scrollCellIndex].width - scrollDiv.clientWidth;
-		isKeyboardScrolling = true;
 		scrollDiv.scrollTo({ left: target, behavior: repeat ? 'auto' : 'smooth' });
 	};
 
@@ -279,15 +277,23 @@ function enableKeyboardScroll(scrollDiv) {
 
 	scrollDiv.addEventListener('scroll', updateScrollCellIndex);
 	scrollDiv.addEventListener('scrollend', () => {
-		isKeyboardScrolling = false;
+		if (!isKeyboardScrolling) {
+			const direction = lastDirection;
+			if (lastDirection == 'right') lastDirection = "left";
+			else if (lastDirection == 'left') lastDirection = "right";
+			isKeyboardScrolling = true;
+			scrollToCell(direction, false);
+		} else {
+			isKeyboardScrolling = false;
+		}
 		prevScrollLeft = scrollDiv.scrollLeft;
 	});
 
 	document.addEventListener('keydown', (e) => {
 		if (['ArrowRight', 'ArrowLeft'].includes(e.key)) {
+			isKeyboardScrolling = true;
 			if (e.shiftKey) {
 				const delta = e.key === 'ArrowRight' ? stepY() : -stepY();
-				isKeyboardScrolling = true;
 				scrollDiv.scrollBy({ top: delta, behavior: 'smooth' });
 			} else {
 				scrollToCell(e.key === 'ArrowRight' ? 'right' : 'left', e.repeat);
