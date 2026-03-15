@@ -213,7 +213,8 @@ function adjustScrollDiv(){
 function enableKeyboardScroll(scrollDiv) {
 	let cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 	let scrollCellIndex = 0;
-	let lastDirection = null;
+	let lastDirection = null; // for keyboard scroll
+	let prevScrollLeft = scrollDiv.scrollLeft; // for pointer scroll
 	let cellSizes = cells.map(cell => ({
 		left: cell.offsetLeft,
 		width: cell.offsetWidth,
@@ -223,6 +224,7 @@ function enableKeyboardScroll(scrollDiv) {
 
 	const updateCells = () => {
 		cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
+		cells.forEach(cell => resizeObserver.observe(cell));
 		cellSizes = cells.map(cell => ({
 			left: cell.offsetLeft,
 			width: cell.offsetWidth,
@@ -233,7 +235,8 @@ function enableKeyboardScroll(scrollDiv) {
 
 	const updateScrollCellIndex = () => {
 		if (isKeyboardScrolling || !cellSizes.length) return;
-		const scrollCenter = scrollDiv.scrollLeft + scrollDiv.clientWidth / 2;
+		const scrollLeft = scrollDiv.scrollLeft;
+		const scrollCenter = scrollLeft + scrollDiv.clientWidth / 2;
 		let closest = 0;
 		let best = Infinity;
 		for (let i = 0; i < cellSizes.length; i++) {
@@ -244,7 +247,11 @@ function enableKeyboardScroll(scrollDiv) {
 			}
 		}
 		scrollCellIndex = closest;
-		lastDirection = null;
+
+		const currentScrollLeft = scrollLeft;
+		if (currentScrollLeft > prevScrollLeft) lastDirection = 'right';
+		else if (currentScrollLeft < prevScrollLeft) lastDirection = 'left';
+		prevScrollLeft = currentScrollLeft;
 	};
 
 	const scrollToCell = (direction, repeat) => {
@@ -268,11 +275,13 @@ function enableKeyboardScroll(scrollDiv) {
 
 	new MutationObserver(updateCells).observe(scrollDiv, { childList: true, subtree: true });
 	const resizeObserver = new ResizeObserver(updateCells);
-	cells.forEach(cell => resizeObserver.observe(cell));
 	window.addEventListener('resize', updateCells);
 
 	scrollDiv.addEventListener('scroll', updateScrollCellIndex);
-	scrollDiv.addEventListener('scrollend', () => { isKeyboardScrolling = false; });
+	scrollDiv.addEventListener('scrollend', () => {
+		isKeyboardScrolling = false;
+		prevScrollLeft = scrollDiv.scrollLeft;
+	});
 
 	document.addEventListener('keydown', (e) => {
 		if (['ArrowRight', 'ArrowLeft'].includes(e.key)) {
