@@ -281,8 +281,8 @@ function enableKeyboardScroll(scrollDiv) {
 	scrollDiv.addEventListener('scrollend', () => {
 		if (!isKeyboardScrolling) {
 			const direction = lastDirection;
-			if (lastDirection == 'right') lastDirection = "left";
-			else if (lastDirection == 'left') lastDirection = "right";
+			if (lastDirection === 'right') lastDirection = "left";
+			else if (lastDirection === 'left') lastDirection = "right";
 			isKeyboardScrolling = true;
 			scrollToCell(direction, false);
 		} else {
