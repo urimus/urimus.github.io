@@ -286,7 +286,6 @@ function enableKeyboardScroll(scrollDiv) {
 		} else {
 			isKeyboardScrolling = false;
 		}
-		prevScrollLeft = scrollDiv.scrollLeft;
 	});
 
 	document.addEventListener('keydown', (e) => {
