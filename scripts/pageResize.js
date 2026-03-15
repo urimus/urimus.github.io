@@ -214,7 +214,6 @@ function enableKeyboardScroll(scrollDiv) {
 	let cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 	let scrollCellIndex = 0;
 	let lastDirection = null; // for keyboard scroll
-	let prevScrollLeft = scrollDiv.scrollLeft; // for pointer scroll
 	let cellSizes = cells.map(cell => ({
 		left: cell.offsetLeft,
 		width: cell.offsetWidth,
@@ -235,10 +234,7 @@ function enableKeyboardScroll(scrollDiv) {
 
 	const updateScrollCellIndex = () => {
 		const scrollLeft = scrollDiv.scrollLeft;
-		if (isKeyboardScrolling || !cellSizes.length) {
-			prevScrollLeft = scrollLeft;
-			return;
-		}
+		if (isKeyboardScrolling || !cellSizes.length) return;
 		const scrollCenter = scrollLeft + scrollDiv.clientWidth / 2;
 		let closest = 0;
 		let best = Infinity;
@@ -250,9 +246,6 @@ function enableKeyboardScroll(scrollDiv) {
 			}
 		}
 		scrollCellIndex = closest;
-		if (scrollLeft > prevScrollLeft) lastDirection = 'right';
-		else if (scrollLeft < prevScrollLeft) lastDirection = 'left';
-		prevScrollLeft = scrollLeft;
 	};
 
 	const scrollToCell = (direction, repeat) => {
@@ -260,14 +253,15 @@ function enableKeyboardScroll(scrollDiv) {
 		const atLeftEdge = scrollCellIndex === 0;
 		const atRightEdge = scrollCellIndex === cells.length - 1;
 		if (!lastDirection || lastDirection === direction || atLeftEdge || atRightEdge) {
-			scrollCellIndex = direction === 'right'
-				? Math.min(cells.length - 1, scrollCellIndex + 1)
-				: Math.max(0, scrollCellIndex - 1);
+			if (direction === 'right') scrollCellIndex = Math.min(cells.length - 1, scrollCellIndex + 1);
+			else if (direction === 'left') scrollCellIndex = Math.max(0, scrollCellIndex - 1);
 		}
 		lastDirection = direction;
-		const target = direction === 'right'
-			? cellSizes[scrollCellIndex].left
-			: cellSizes[scrollCellIndex].left + cellSizes[scrollCellIndex].width - scrollDiv.clientWidth;
+		let target;
+		const clientWidth = scrollDiv.clientWidth;
+		if (direction === 'right') target = cellSizes[scrollCellIndex].left;
+		else if (direction === 'left') target = cellSizes[scrollCellIndex].left + cellSizes[scrollCellIndex].width - clientWidth;
+		else if (direction === 'center') target = cellSizes[scrollCellIndex].left - Math.max(0, clientWidth - cellSizes[scrollCellIndex].width) / 2;
 		scrollDiv.scrollTo({ left: target, behavior: repeat ? 'auto' : 'smooth' });
 	};
 
@@ -279,15 +273,8 @@ function enableKeyboardScroll(scrollDiv) {
 
 	scrollDiv.addEventListener('scroll', updateScrollCellIndex);
 	scrollDiv.addEventListener('scrollend', () => {
-		if (!isKeyboardScrolling) {
-			const direction = lastDirection;
-			if (lastDirection == 'right') lastDirection = "left";
-			else if (lastDirection == 'left') lastDirection = "right";
-			isKeyboardScrolling = true;
-			scrollToCell(direction, false);
-		} else {
-			isKeyboardScrolling = false;
-		}
+		if (!isKeyboardScrolling) scrollToCell("center", false);
+		isKeyboardScrolling = false;
 	});
 
 	document.addEventListener('keydown', (e) => {
