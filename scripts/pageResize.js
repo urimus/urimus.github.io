@@ -230,7 +230,7 @@ function enableKeyboardScroll(scrollDiv) {
 			width: cell.offsetWidth,
 			center: cell.offsetLeft + cell.offsetWidth / 2
 		}));
-		scrollCellIndex = Math.min(scrollCellIndex, cells.length - 1);
+		scrollCellIndex = Math.max(0, Math.min(scrollCellIndex, cells.length - 1));
 	};
 
 	const updateScrollCellIndex = () => {
