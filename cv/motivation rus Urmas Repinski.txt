@@ -1,0 +1,26 @@
+Здравствуйте,
+
+Проект, которым я занимался в Таллиннском Техническом Университете - Forensic - был на с++, научный проект. Достаточное описание в Резюме, ссылка на английском http://www.informatik.uni-bremen.de/agra/eng/forensic.php
+
+У меня есть домашняя страница на GitHub, полностью функционирующая: https://urimus.github.io/about_me_rus.html
+Страница так-же является и портфолио.
+
+В основном код страницы состоит из Html+JavaScript, немного PHP (на GitHub не работает). Для работы каждой HTML страницы используется скрипт https://urimus.github.io/scripts/pageResize.js
+Для отображения Появляющегося Меню используется скрипт https://urimus.github.io/scripts/showMenu.js
+
+Вас заинтересовать могут разделы:
+1. Карта Сайта - https://urimus.github.io/index_rus.html?type=aboutme&sortby=name . JavaScript Код, который обеспечивает работу этого раздела - https://urimus.github.io/scripts/showContents.js
+
+2. Новости - Строка Новостей NASA - https://urimus.github.io/news_rus.html?source=nasa&type=releases (имеются ещё Новости, полный список на Странице в Разделе Новости). Соответственный Код - https://urimus.github.io/scripts/showFeed.js . Для чтения Строки используется библиотека feednami (https://toolkit.sekando.com/docs/en/feednami) которая работает на JavaScript.
+
+3. Наиболее Объёмный раздел - HTML редактор, который позволяет модифицировать содержание данного сайта онлайн прямо с этого же веб-сайта. Для работы редактора (https://urimus.github.io/html_editor_rus.html?pattern=spec/mo*&i=0) требуется поддержка PHP и, так-же, пароль, на GitHub он не функционирует, но соответственные JavaScript файлы для работы на сервере, поддерживающем PHP далее:
+a. https://urimus.github.io/scripts/processSearchAndReplace.js
+b. https://urimus.github.io/scripts/functionsAndConstants.js
+
+Так-же хорошо знаю C++, JavaScript, PHP, HTML, Css, MySQL, изучаю Python.
+
+Спасибо,
+Урмас Репинский.
+
+Pdf CV - https://urimus.github.io/cv/CV_Russian_Urmas_Repinski.pdf
+

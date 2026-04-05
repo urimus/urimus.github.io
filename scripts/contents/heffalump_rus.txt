@@ -1,0 +1,2 @@
+﻿<b class="text_red_blue">Слонопотам <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></b>
+&#9679; <a href="heffalump_rus.html" class = "standardb_red" data-added="23е Ноя, 2018." data-lang="eng" data-title_orig="Heffalump" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Слонопотам <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></a>
