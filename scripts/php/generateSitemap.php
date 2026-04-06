@@ -58,7 +58,7 @@ function buildSitemapXml($urls) {
 }
 
 function buildAllHtml($links, $baseUrl) {
-	$html = "<!DOCTYPE html>\n<html lang='en'>\n<head>\n\t<meta charset='UTF-8'>\n\t<title>Site Map</title>\n</head>\n<body>\n";
+	$html = "<!DOCTYPE html>\n<html lang='zxx'>\n<head>\n\t<meta charset='UTF-8'>\n\t<title>Site Map</title>\n</head>\n<body>\n";
 	$html .= "\t<h1>Site Map</h1>\n\t<ul>\n";
 	$html .= "\t\t<li><a href=\"{$baseUrl}\">Home</a></li>\n";
 	foreach($links as $page) {
