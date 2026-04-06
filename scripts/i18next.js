@@ -645,7 +645,7 @@ i18next.init({
 			}
 		}
 	},
-	compatibilityJSON: 'v3' // default does not work for latin
+	compatibilityJSON: 'v3' // default does not work for latin plurals
 }).then(() => {
 	i18next.services.pluralResolver.addRule(
 		"eng",
@@ -661,10 +661,10 @@ i18next.init({
 	);
 /*
 var pluralFormsOfKey= i18next.services.pluralResolver.getPluralFormsOfKey(
-  "rus", 
+  "lat", 
   "record"
 );
-console.log("lang - rus, getPluralFormsOfKey - ", pluralFormsOfKey);
+console.log("lang - lat, getPluralFormsOfKey - ", pluralFormsOfKey);
 */
 });
 
