@@ -1430,7 +1430,7 @@ if (lang=="lat") {
 	wholeMenu["123OrdinaPer"].color = "black";
 	wholeMenu["123OrdinaPer"].hasSub = 0;
 	wholeMenu["123OrdinaPer"].link = "index_lat.html?type=junk&sortby=flag";
-	wholeMenu["123OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Patriam';
+	wholeMenu["123OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Civitas';
 
 	wholeMenu["● Res ⚡ Evil ⚡"] = {};
 	wholeMenu["● Res ⚡ Evil ⚡"].id = "1_13";
@@ -1481,7 +1481,7 @@ if (lang=="lat") {
 	wholeMenu["253OrdinaPer"].color = "red";
 	wholeMenu["253OrdinaPer"].hasSub = 0;
 	wholeMenu["253OrdinaPer"].link = "index_lat.html?type=news&sortby=flag";
-	wholeMenu["253OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Patriam';
+	wholeMenu["253OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Civitas';
 
 }
 
