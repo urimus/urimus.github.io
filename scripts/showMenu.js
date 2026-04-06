@@ -1284,14 +1284,14 @@ if (lang=="lat") {
 	wholeMenu["11OrdinaPer"].color = "blue";
 	wholeMenu["11OrdinaPer"].hasSub = 0;
 	wholeMenu["11OrdinaPer"].link = "index_lat.html?type=aboutme&sortby=name";
-	wholeMenu["11OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["11OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["12OrdinaPer"] = {};
 	wholeMenu["12OrdinaPer"].id = "1_1_2";
 	wholeMenu["12OrdinaPer"].color = "blue";
 	wholeMenu["12OrdinaPer"].hasSub = 0;
 	wholeMenu["12OrdinaPer"].link = "index_lat.html?type=aboutme&sortby=date";
-	wholeMenu["12OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["12OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Data';
 
 	wholeMenu["● De Opere Meo"] = {};
 	wholeMenu["● De Opere Meo"].id = "1_2";
@@ -1306,14 +1306,14 @@ if (lang=="lat") {
 	wholeMenu["21OrdinaPer"].color = "blue";
 	wholeMenu["21OrdinaPer"].hasSub = 0;
 	wholeMenu["21OrdinaPer"].link = "index_lat.html?type=aboutwork&sortby=name";
-	wholeMenu["21OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["21OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["22OrdinaPer"] = {};
 	wholeMenu["22OrdinaPer"].id = "1_2_2";
 	wholeMenu["22OrdinaPer"].color = "blue";
 	wholeMenu["22OrdinaPer"].hasSub = 0;
 	wholeMenu["22OrdinaPer"].link = "index_lat.html?type=aboutwork&sortby=date";
-	wholeMenu["22OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["22OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Data';
 
 	wholeMenu["● De Doctoratu Meo"] = {};
 	wholeMenu["● De Doctoratu Meo"].id = "1_3";
@@ -1328,14 +1328,14 @@ if (lang=="lat") {
 	wholeMenu["31OrdinaPer"].color = "blue";
 	wholeMenu["31OrdinaPer"].hasSub = 0;
 	wholeMenu["31OrdinaPer"].link = "index_lat.html?type=aboutphd&sortby=name";
-	wholeMenu["31OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["31OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["32OrdinaPer"] = {};
 	wholeMenu["32OrdinaPer"].id = "1_3_2";
 	wholeMenu["32OrdinaPer"].color = "blue";
 	wholeMenu["32OrdinaPer"].hasSub = 0;
 	wholeMenu["32OrdinaPer"].link = "index_lat.html?type=aboutphd&sortby=date";
-	wholeMenu["32OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["32OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Data';
 
 	wholeMenu["● Nexus"] = {};
 	wholeMenu["● Nexus"].id = "1_4";
@@ -1350,14 +1350,14 @@ if (lang=="lat") {
 	wholeMenu["41OrdinaPer"].color = "blue";
 	wholeMenu["41OrdinaPer"].hasSub = 0;
 	wholeMenu["41OrdinaPer"].link = "index_lat.html?type=links&sortby=name";
-	wholeMenu["41OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["41OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["42OrdinaPer"] = {};
 	wholeMenu["42OrdinaPer"].id = "1_4_2";
 	wholeMenu["42OrdinaPer"].color = "blue";
 	wholeMenu["42OrdinaPer"].hasSub = 0;
 	wholeMenu["42OrdinaPer"].link = "index_lat.html?type=links&sortby=date";
-	wholeMenu["42OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["42OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Data';
 
 	wholeMenu["● Imagines"] = {};
 	wholeMenu["● Imagines"].id = "1_10";
@@ -1372,14 +1372,14 @@ if (lang=="lat") {
 	wholeMenu["101OrdinaPer"].color = "red";
 	wholeMenu["101OrdinaPer"].hasSub = 0;
 	wholeMenu["101OrdinaPer"].link = "index_lat.html?type=photos&sortby=name";
-	wholeMenu["101OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["101OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["102OrdinaPer"] = {};
 	wholeMenu["102OrdinaPer"].id = "1_10_2";
 	wholeMenu["102OrdinaPer"].color = "red";
 	wholeMenu["102OrdinaPer"].hasSub = 0;
 	wholeMenu["102OrdinaPer"].link = "index_lat.html?type=photos&sortby=date";
-	wholeMenu["102OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["102OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Data';
 
 	wholeMenu["● AMV"] = {};
 	wholeMenu["● AMV"].id = "1_11";
@@ -1394,14 +1394,14 @@ if (lang=="lat") {
 	wholeMenu["111OrdinaPer"].color = "black";
 	wholeMenu["111OrdinaPer"].hasSub = 0;
 	wholeMenu["111OrdinaPer"].link = "index_lat.html?type=amv&sortby=name";
-	wholeMenu["111OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["111OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["112OrdinaPer"] = {};
 	wholeMenu["112OrdinaPer"].id = "1_11_2";
 	wholeMenu["112OrdinaPer"].color = "black";
 	wholeMenu["112OrdinaPer"].hasSub = 0;
 	wholeMenu["112OrdinaPer"].link = "index_lat.html?type=amv&sortby=date";
-	wholeMenu["112OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["112OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Data';
 
 	wholeMenu["● Quisquiliae"] = {};
 	wholeMenu["● Quisquiliae"].id = "1_12";
@@ -1416,21 +1416,21 @@ if (lang=="lat") {
 	wholeMenu["121OrdinaPer"].color = "black";
 	wholeMenu["121OrdinaPer"].hasSub = 0;
 	wholeMenu["121OrdinaPer"].link = "index_lat.html?type=junk&sortby=name";
-	wholeMenu["121OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["121OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["122OrdinaPer"] = {};
 	wholeMenu["122OrdinaPer"].id = "1_12_2";
 	wholeMenu["122OrdinaPer"].color = "black";
 	wholeMenu["122OrdinaPer"].hasSub = 0;
 	wholeMenu["122OrdinaPer"].link = "index_lat.html?type=junk&sortby=date";
-	wholeMenu["122OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["122OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Data';
 
 	wholeMenu["123OrdinaPer"] = {};
 	wholeMenu["123OrdinaPer"].id = "1_12_3";
 	wholeMenu["123OrdinaPer"].color = "black";
 	wholeMenu["123OrdinaPer"].hasSub = 0;
 	wholeMenu["123OrdinaPer"].link = "index_lat.html?type=junk&sortby=flag";
-	wholeMenu["123OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Civitas';
+	wholeMenu["123OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Terra';
 
 	wholeMenu["● Res ⚡ Evil ⚡"] = {};
 	wholeMenu["● Res ⚡ Evil ⚡"].id = "1_13";
@@ -1445,14 +1445,14 @@ if (lang=="lat") {
 	wholeMenu["131OrdinaPer"].color = "black";
 	wholeMenu["131OrdinaPer"].hasSub = 0;
 	wholeMenu["131OrdinaPer"].link = "index_lat.html?type=stuff&sortby=name";
-	wholeMenu["131OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["131OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["132OrdinaPer"] = {};
 	wholeMenu["132OrdinaPer"].id = "1_13_2";
 	wholeMenu["132OrdinaPer"].color = "black";
 	wholeMenu["132OrdinaPer"].hasSub = 0;
 	wholeMenu["132OrdinaPer"].link = "index_lat.html?type=stuff&sortby=date";
-	wholeMenu["132OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["132OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Data';
 
 	wholeMenu["● Nuntii"] = {};
 	wholeMenu["● Nuntii"].id = "1_25";
@@ -1467,21 +1467,21 @@ if (lang=="lat") {
 	wholeMenu["251OrdinaPer"].color = "red";
 	wholeMenu["251OrdinaPer"].hasSub = 0;
 	wholeMenu["251OrdinaPer"].link = "index_lat.html?type=news&sortby=name";
-	wholeMenu["251OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomine';
+	wholeMenu["251OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["252OrdinaPer"] = {};
 	wholeMenu["252OrdinaPer"].id = "1_25_2";
 	wholeMenu["252OrdinaPer"].color = "red";
 	wholeMenu["252OrdinaPer"].hasSub = 0;
 	wholeMenu["252OrdinaPer"].link = "index_lat.html?type=news&sortby=date";
-	wholeMenu["252OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
+	wholeMenu["252OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Data';
 
 	wholeMenu["253OrdinaPer"] = {};
 	wholeMenu["253OrdinaPer"].id = "1_25_3";
 	wholeMenu["253OrdinaPer"].color = "red";
 	wholeMenu["253OrdinaPer"].hasSub = 0;
 	wholeMenu["253OrdinaPer"].link = "index_lat.html?type=news&sortby=flag";
-	wholeMenu["253OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Civitas';
+	wholeMenu["253OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Terra';
 
 }
 
