@@ -1,8 +1,6 @@
 <?php
 // --- Настройки ---
 $allowedOrigins = [
-    "https://urimus.wasmer.app",
-    "https://urimus2.wasmer.app",
     "https://urimus.github.io",
     "http://urimus2.royalwebhosting.net"
 ];
@@ -101,4 +99,3 @@ if ($contentType) {
 }
 
 echo $response;
-?>
