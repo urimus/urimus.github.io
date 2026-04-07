@@ -1,5 +1,4 @@
 <?php
-
 $allowedOrigins = [
 	"https://urimus.wasmer.app",
 	"https://urimus2.wasmer.app",
@@ -7,59 +6,30 @@ $allowedOrigins = [
 	"http://urimus2.royalwebhosting.net"
 ];
 
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+$origin = $_SERVER['HTTP_ORIGIN'] ?? ($_SERVER['HTTP_REFERER'] ?? '');
 $currentHost = $_SERVER['HTTP_HOST'] ?? '';
 
-// --- CORS ВСЕГДА ---
-function sendCors($origin, $allowedOrigins, $currentHost) {
-	$originHost = parse_url($origin, PHP_URL_HOST);
-	$allowed = false;
-
-	foreach ($allowedOrigins as $allowedOrigin) {
-		$allowedHost = parse_url($allowedOrigin, PHP_URL_HOST);
-		if (strcasecmp($originHost, $allowedHost) === 0) {
-			$allowed = true;
-			break;
-		}
-	}
-
-	if (!$allowed && strcasecmp($originHost, $currentHost) === 0) {
+$originHost = parse_url($origin, PHP_URL_HOST);
+$allowed = false;
+foreach ($allowedOrigins as $allowedOrigin) {
+	$allowedHost = parse_url($allowedOrigin, PHP_URL_HOST);
+	if (strcasecmp($originHost, $allowedHost) === 0) {
 		$allowed = true;
+		break;
 	}
-
-	if ($allowed && $origin) {
-		header("Access-Control-Allow-Origin: " . $origin);
-	} else {
-		header("Access-Control-Allow-Origin: *");
-	}
-
-	header("Access-Control-Allow-Methods: GET, OPTIONS");
-	header("Access-Control-Allow-Headers: Content-Type");
-	header("Vary: Origin");
-
-	return $allowed;
+}
+if (!$allowed && strcasecmp($originHost, $currentHost) === 0) {
+	$allowed = true;
 }
 
-$allowed = sendCors($origin, $allowedOrigins, $currentHost);
-
-// --- PREFLIGHT ---
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-	http_response_code(204);
-	exit;
-}
-
-// --- ORIGIN CHECK ---
-if (!$allowed && $origin) {
+if (!$allowed) {
 	http_response_code(403);
-	echo "Origin not allowed";
-	exit;
+	exit("Origin not allowed");
 }
 
-// --- URL ---
 if (!isset($_GET['url'])) {
 	http_response_code(400);
-	echo "URL parameter is required";
-	exit;
+	exit("URL parameter is required");
 }
 
 $url = trim($_GET['url']);
@@ -70,14 +40,11 @@ if (!preg_match('#^https?://#i', $url)) {
 
 if (!filter_var($url, FILTER_VALIDATE_URL)) {
 	http_response_code(400);
-	echo "Invalid URL";
-	exit;
+	exit("Invalid URL");
 }
 
-// --- SSRF защита ---
 $host = parse_url($url, PHP_URL_HOST);
 $ips = gethostbynamel($host) ?: [];
-
 $hasPublic = false;
 foreach ($ips as $ip) {
 	if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
@@ -85,66 +52,42 @@ foreach ($ips as $ip) {
 		break;
 	}
 }
-
 if (!$hasPublic) {
 	http_response_code(403);
-	echo "Access to local/private IPs is forbidden";
-	exit;
+	exit("Access to local/private IPs is forbidden");
 }
 
-// --- CURL (усиленный под Yahoo) ---
 $ch = curl_init();
-
-curl_setopt_array($ch, [
-	CURLOPT_URL => $url,
-	CURLOPT_RETURNTRANSFER => true,
-	CURLOPT_FOLLOWLOCATION => true,
-	CURLOPT_TIMEOUT => 20,
-
-	// поддержка сжатия
-	CURLOPT_ENCODING => 'gzip, deflate, br',
-
-	// браузерный User-Agent
-	CURLOPT_USERAGENT => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122 Safari/537.36",
-
-	CURLOPT_HTTPHEADER => [
-		"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-		"Accept-Language: en-US,en;q=0.9",
-		"Cache-Control: no-cache",
-		"Pragma: no-cache",
-		"Upgrade-Insecure-Requests: 1"
-	],
-
-	// иногда нужно для Yahoo / CDN
-	CURLOPT_SSL_VERIFYPEER => false,
-	CURLOPT_SSL_VERIFYHOST => false,
-
-	// пробуем HTTP/2
-	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_2_0
-]);
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0");
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_ENCODING, '');
 
 $response = curl_exec($ch);
-
-// --- CURL ERROR ---
-if ($response === false) {
-	http_response_code(500);
-	echo "CURL ERROR: " . curl_error($ch);
-	curl_close($ch);
-	exit;
-}
-
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $contentType = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
 
+if (curl_errno($ch)) {
+	http_response_code(500);
+	exit("cURL Error: " . curl_error($ch));
+}
+
 curl_close($ch);
 
-// --- STATUS ---
-http_response_code($httpCode ?: 500);
+if ($httpCode !== 0) {
+	http_response_code($httpCode);
+} else {
+	http_response_code(500);
+}
 
-// --- CONTENT TYPE ---
+header("Access-Control-Allow-Origin: " . $origin);
+
 if ($contentType) {
 	header("Content-Type: " . $contentType);
 }
 
-// --- OUTPUT ---
 echo $response;
+?>
