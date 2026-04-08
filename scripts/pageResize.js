@@ -182,7 +182,7 @@ function getScrollDivOffset(){
 	var hImgWidth = 851;
 	var hImgHeight = 315;
 	hImgHeight = hImgHeight*(1000/hImgWidth);
-	return hImgHeight + 68 + getScrollbarHeight(document.body); // 68
+	return hImgHeight + 65 + getScrollbarHeight(document.body); // 65
 }
 
 // --- adjust scrolldiv ---
