@@ -1356,7 +1356,7 @@ function showFeed(type, source, lang) {
 
 	if (source == "yahoo") {
 		var yahooTypes = {
-			"top": "https://news.yahoo.com/rss",
+			"top": "https://news.yahoo.com/rss/",
 			"world": "https://news.yahoo.com/rss/world",
 			"us": "https://news.yahoo.com/rss/us",
 			"politics": "https://news.yahoo.com/rss/politics",
