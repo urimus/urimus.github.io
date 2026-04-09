@@ -50,7 +50,7 @@ foreach (glob($q, GLOB_BRACE) as $filename) {
 }
 
 if ($c==0) { // try search inside files
-	foreach (glob("../../*", GLOB_BRACE) as $filename) {
+	foreach (glob("../../*") as $filename) {
 		if (!is_file($filename)) continue;
 		if (!canReadPath($filename)) continue;
 		$file_contents=file_get_contents($filename);
