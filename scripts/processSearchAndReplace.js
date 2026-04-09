@@ -174,6 +174,7 @@ function replacePHP(lang, action = "replace") {
 			fileToShow: parseInt(getParameterByName('i')) || 0
 		},
 		success: function(data) {
+			if (data=="not logged in") {alert(t("notLoggedIn")); return;}
 			var dir = JSON.parse(data);
 			if (dir.length>0) {
 				processReplacePHP(lang, action, dir, 0, replaceWhat, replaceTo, 0, 0);
@@ -353,6 +354,7 @@ function resizeImages(lang) {
 			q: newFilePath
 		},
 		success: function(data) {
+			if (data=="not logged in") {alert(t("notLoggedIn")); return;}
 			var dir = JSON.parse(data);
 			if (dir.length > 0) {
 				prResizeImage(lang, dir, filePath, newImageWidth, 0, 0);
@@ -571,6 +573,7 @@ function saveas(lang, encoding = "UTF-8") {
 			q: newFileName
 		},
 		success: function(data) {
+			if (data=="not logged in") {alert(t("notLoggedIn")); return;}
 			var message_show;
 			if (data=="0") {
 				message_show = (filename_orig_dir==newFileName_dir) ? t("fileSavedAsSuccessfully") + " " + t("reloadPage") : t("fileSavedAsSuccessfully");
@@ -620,6 +623,7 @@ function upload(lang) {
 				q: newFilePath
 			},
 			success: function(data) {
+				if (data=="not logged in") {alert(t("notLoggedIn")); return;}
 				if (data=="0") { 
 					createFolder=window.confirm(t("folder")+ newFilePath+ t("notFoundCreate"));
 					if (!createFolder) return;
@@ -921,6 +925,7 @@ function processSearch(lang) {
 					fileToShow: parseInt(getParameterByName('i')) || 0
 				},
 				success: function(data) {
+					if (data=="not logged in") {alert(t("notLoggedIn")); return;}
 					var dir = JSON.parse(data);
 					if (dir.length>0) {
 						if (i<0 || i>=dir.length) {
