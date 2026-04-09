@@ -5,7 +5,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
 }
 if (($_SESSION['login'] ?? null) !== 'OK') {
-    exit('not logged in');
+	echo "not logged in";
+	exit;
 }
 
 
@@ -20,7 +21,7 @@ $dirs = glob($q, GLOB_ONLYDIR) ?: [];
 
 foreach ($dirs as $dir) {
 	if (!canReadPath($dir)) continue;
-	echo 1;
+	echo "1";
 	exit;
 }
-echo 0;
+echo "0";

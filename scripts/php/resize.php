@@ -5,7 +5,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
 }
 if (($_SESSION['login'] ?? null) !== 'OK') {
-    exit('not logged in');
+	echo "not logged in";
+	exit;
 }
 
 
@@ -39,7 +40,7 @@ if($mime['mime']=='image/png') {
     file_put_contents("logs/resize.log", ($fileNum+1).". Skipped - ".substr($filename, 6).".".PHP_EOL, FILE_APPEND | LOCK_EX);
     // ---------- end of log -------- //
 
-    echo 0;    
+    echo "0";    
     return;
 }
 if ($width==$mime[0]) {
@@ -48,7 +49,7 @@ if ($width==$mime[0]) {
     file_put_contents("logs/resize.log", ($fileNum+1).". Not Processed, Width is already ".$width."px - ".substr($filename, 6).".".PHP_EOL, FILE_APPEND | LOCK_EX);
     // ---------- end of log -------- //
 
-    echo 1;    
+    echo "1";    
     return;
 }
 
@@ -91,4 +92,4 @@ imagedestroy($src_img);
 file_put_contents("logs/resize.log", ($fileNum+1).". Resized to width =".$width."px - ".substr($filename, 6).".\n", FILE_APPEND | LOCK_EX);
 // ---------- end of log -------- //
 
-echo 1; 
+echo "1"; 

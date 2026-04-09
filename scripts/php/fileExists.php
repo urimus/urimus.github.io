@@ -5,7 +5,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
 }
 if (($_SESSION['login'] ?? null) !== 'OK') {
-    exit('not logged in');
+	echo "not logged in";
+	exit;
 }
 
 //get the q parameter from URL
@@ -19,7 +20,7 @@ $files = glob($q) ?: [];
 foreach ($files as $file) {
 	if (!is_file($file)) continue;
 	if (!canReadPath($file)) continue;
-	echo 1;
+	echo "1";
 	exit;
 }
-echo 0;
+echo "0";

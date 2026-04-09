@@ -17,7 +17,7 @@ if ($username=="b16_21398790") {
 	file_put_contents($logFile, "=== Log Started: " . $date . " ===" . PHP_EOL);
 
 	$_SESSION['login']="OK";
-	echo 1;
+	echo "1";
 } else {
-	echo 0;
+	echo "0";
 }

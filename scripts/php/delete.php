@@ -8,7 +8,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
 }
 if (($_SESSION['login'] ?? null) !== 'OK') {
-    exit('not logged in');
+	echo "not logged in";
+	exit;
 }
 
 //get the filename, q, encoding and wobom from POST
@@ -16,7 +17,7 @@ $filename=$_GET["filename"];
 $filename="../../".$filename; // add path from this script to root
 
 if (unlink($filename)) {
-    echo 1;
+    echo "1";
 } else {
-    echo 0;
+    echo "0";
 }

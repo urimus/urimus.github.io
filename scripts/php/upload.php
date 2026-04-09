@@ -4,7 +4,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
 }
 if (($_SESSION['login'] ?? null) !== 'OK') {
-    exit('not logged in');
+	echo "not logged in";
+	exit;
 }
 
 
@@ -20,4 +21,4 @@ if ($createFolder && !is_dir($path."/")) mkdir($path."/", 0777, true);
 
 copy($_FILES['file']['tmp_name'], $path."/".$_FILES['file']['name']);
 
-echo 1;
+echo "1";
