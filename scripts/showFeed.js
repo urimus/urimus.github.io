@@ -1904,7 +1904,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 	$.ajax({
 		type: "GET",
-		url: "https://proxy3.wasmer.app?url=" + encodeURIComponent(result.entries[i].link),
+		url: "https://myproxy.wasmer.app?url=" + encodeURIComponent(result.entries[i].link),
 		cache: false,
 		dataType: "text",
 		success: function(data) {
