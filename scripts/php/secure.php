@@ -1,7 +1,7 @@
 <?php
 
 function canReadPath($path) {
-	$baseDir = realpath(__DIR__ . '/../../');
+	$baseDir = realpath(dirname(__DIR__, 2));
 	if ($baseDir === false) return false;
 	$realPath = realpath($path);
 	if ($realPath === false || !is_readable($realPath)) return false;

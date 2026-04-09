@@ -1,17 +1,23 @@
 <?php
 
 //get the q parameter from URL
-$q = $_GET['q'];
+$q = $_GET['q'] ?? null;
+if ($q === null) {
+	echo json_encode([]);
+	exit;
+}
 $qorig=$q;
-$q="../../".$q; // add path from this script to root
-$fileToShow=-1;
-if (isset($_GET["fileToShow"])) $fileToShow=$_GET["fileToShow"];
+
+$q = ltrim($q, '/\\');
+$q="../../".$q;
+
+$fileToShow = $_GET["fileToShow"] ?? -1;
 
 include 'secure.php';
 include 'errorProcessing.php';
 include 'detectEncodingClass.php';
 
-$out = array();
+$out = [];
 $c=0;
 
 function processFile($filename, $c, $fileToShow){
@@ -49,8 +55,7 @@ if ($c==0) { // try search inside files
 		if (!canReadPath($filename)) continue;
 		$file_contents=file_get_contents($filename);
 		if ($file_contents===false) continue;
-		$matchPos = strpos($file_contents, $qorig);
-		if ($matchPos!==false) {
+		if ($qorig !== '' && strpos($file_contents, $qorig) !== false) {
 			$out[] = processFile($filename, $c, $fileToShow);
 			$c++;
 		}
