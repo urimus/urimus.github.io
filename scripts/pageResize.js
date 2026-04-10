@@ -143,7 +143,7 @@ function preloadImages() {
 	const checkIfCasheComplete = () => {
 		imagesLoaded++;
 		if (imagesLoaded == totalImages) {
-			if (loadingComplete) {
+			if (isMobile() || loadingComplete) {
 				var messageArea = document.getElementById('messageArea');
 				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
 			}
@@ -446,18 +446,19 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 		if (textArea != null && textArea.value != "") adjustTextarea();
 	}
 
-	var imgBgLoaded = false;
-	var imgBgStarLoaded = false;
-	const checkIfLoadingComplete = () => {
-		if (imgBgLoaded && imgBgStarLoaded) {
-			if (casheComplete) {
-				var messageArea = document.getElementById('messageArea');
-				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
-			}
-			loadingComplete = true;
-		}
-	};
 	if (!isMobile()) {
+		var imgBgLoaded = false;
+		var imgBgStarLoaded = false;
+		const checkIfLoadingComplete = () => {
+			if (imgBgLoaded && imgBgStarLoaded) {
+				if (casheComplete) {
+					var messageArea = document.getElementById('messageArea');
+					if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
+				}
+				loadingComplete = true;
+			}
+		};
+
 		const imageWidth = (document.documentElement.clientWidth - 1000) / 2;
 		var imgBg = document.getElementById("imgBg");
 		var imgBgStar = document.getElementById("imgBgStar");
@@ -507,10 +508,6 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 			imgBg.style.display="none";
 			imgBgStar.style.display="none";
 		}
-	} else {
-		imgBgLoaded = true;
-		imgBgStarLoaded = true;
-		checkIfLoadingComplete();
 	}
 
 }
