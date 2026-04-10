@@ -2,6 +2,8 @@
 // ------------- Global Variables ---------------- //
 var preloadCacheGl = {};
 var clickStarted = false;
+var loadingComplete = false;
+var casheComplete = false;
 // ------------- End of Global Variables ---------------- //
 
 
@@ -135,12 +137,33 @@ function preloadImages() {
 	].map(f => `/images/icons/background/${f}.png`);
 
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
+	const totalImages = images.length;
+	var imagesLoaded = 0;
+
+	const checkIfCasheComplete = () => {
+		imagesLoaded++;
+		if (imagesLoaded == totalImages) {
+			if (loadingComplete) {
+				var messageArea = document.getElementById('messageArea');
+				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
+			}
+			casheComplete = true;
+		}
+	};
 
 	for (let imgSrc of images) {
 		if (!preloadCacheGl[imgSrc]) {
 			const img = new Image();
 			img.src = imgSrc;
 			preloadCacheGl[imgSrc] = img;
+			img.onload = function () {
+				checkIfCasheComplete();
+			}
+			img.onerror = function () {
+				checkIfCasheComplete();
+			}
+		} else {
+			checkIfCasheComplete();
 		}
 	}
 }
@@ -458,10 +481,13 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang, setMessageA
 			imgBgStar.style.display="none";
 		}
 	}
-	
+
 	if (isLoad == 1 && setMessageArea == 1) {
-		var messageArea = document.getElementById('messageArea');
-		if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
+		if (casheComplete) {
+			var messageArea = document.getElementById('messageArea');
+			if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
+		}
+		loadingComplete = true;
 	}
 }
 
