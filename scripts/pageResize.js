@@ -422,7 +422,6 @@ function processPageResize(orientationChanged = 0, lang) {
 		preloadImages(); // preloadImages
 		checkMenu6(lang); // correct HTML Editor menu
 		if (window.location.pathname.substr(0, 5) == "/news" && scrollDiv != null) enableKeyboardScroll(scrollDiv);
-		initComplete = true;
 	}
 
 	if (scrollDiv != null) {
@@ -510,7 +509,7 @@ function processPageResize(orientationChanged = 0, lang) {
 			imgBgStar.style.display="none";
 		}
 	}
-
+	if (!initComplete) initComplete = true;
 }
 
 // --- interval funcs ---
