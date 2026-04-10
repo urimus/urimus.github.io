@@ -104,21 +104,38 @@ function preloadImages() {
 	].map(f => `/lang/all/${f}.gif`);
 
 	const htmlEditorIcons = [
-		"generate", "information", "information_red", "logout", "replace", "replace_minus", "replace_plus",
-		"resize_folder_images", "resize_image", "search"
+		"generate","information","information_red","logout","replace","replace_minus","replace_plus",
+		"resize_folder_images","resize_image", "search"
 	].map(f => `/images/icons/html_editor/${f}.svg`);
 
 	const feedIcons = [
-		"build", "copyright", "feed_icon", "mailto", "mailto_red", "tips"
+		"build","copyright","feed_icon","mailto","mailto_red","tips"
 	].map(f => `/images/icons/feed/${f}.svg`);
 	const feedLogos = [
-		"artemis", "cbs_news", "nasa_worm", "space_com", "wired", "yahoo_news", "yonhap_news"
+		"artemis","cbs_news","nasa_worm","space_com","wired","yahoo_news","yonhap_news"
 	].map(f => `/images/icons/feed/${f}_logo.svg`);
 	const feedImages = [
-		"loading.gif", "phys_org_logo.png", "video.jpg"
+		"loading.gif","phys_org_logo.png","video.jpg"
 	].map(f => `/images/icons/feed/${f}`);
 
-	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...feedLogos, ...feedImages];
+	const backgrounds = [
+		"action_adventure","action_horror","amv","ancient_rome","anekdots","animation",
+		"arnold_schwarzenegger","audio_video_processing","body_horror","book",
+		"bruce_willis","card","chanson","chupacabra","data_processing","disco","drawing",
+		"dystopia","einstein","energy_drinks","evil","falsifiability","gotham_city",
+		"guitar","guitar_electronic","heffalump","historical_fiction","html_editor",
+		"hyperspace","ide","industrial","ireland","jason_statham","junk","language_select",
+		"links","matrix","metal","michael_douglas","middle_ages","milla_jovovich",
+		"mockbuster","national","news","not_video","photos","pop","post_apocalyptic",
+		"programming_languages","psychedelic","psychology","punk","puzzle","racing",
+		"rap","reggae","rock","rpg","satan_symbols","satanism_atheistic",
+		"satanism_theistic","short","simulation","sitcom","site_map","space_opera",
+		"sssr","star_trek","sticky_note","strategy","stuff","succubus","superhero",
+		"sylvester_stallone","text_processing","totalitarianism","usa_ussr","viking",
+		"vin_diesel","warlock","wicca","work"
+	].map(f => `/images/icons/background/${f}.png`);
+
+	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...feedLogos, ...feedImages, ...backgrounds];
 
 	for (let imgSrc of images) {
 		if (!preloadCacheGl[imgSrc]) {
