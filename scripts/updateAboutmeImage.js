@@ -39,7 +39,7 @@ function showInformation(lang) {
 
 function updateAboutMeImage(lang, random = 0) {
 
-	processPageResize(1, 0, lang);
+	processPageResize(0, lang);
 
 	toSkip = 0;
 

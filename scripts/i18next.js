@@ -672,7 +672,7 @@ console.log("lang - lat, getPluralFormsOfKey - ", pluralFormsOfKey);
 });
 
 function changeLanguage(lang) {
-	if (lang !== i18next.language) i18next.changeLanguage(lang);
+	if (lang && lang !== i18next.language) i18next.changeLanguage(lang);
 }
 
 let { t } = i18next;

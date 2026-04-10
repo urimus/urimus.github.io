@@ -134,7 +134,7 @@ function newsLoad(lang) {
 		return;
 	}
 
-	processPageResize(1, 0, lang);
+	processPageResize(0, lang);
 	showFeed(type, source, lang);
 }
 

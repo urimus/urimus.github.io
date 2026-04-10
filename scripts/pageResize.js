@@ -4,6 +4,7 @@ var preloadCacheGl = {};
 var clickStarted = false;
 var loadingComplete = false;
 var casheComplete = false;
+var initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
 
@@ -184,22 +185,22 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (window.location.pathname.substr(0, 4) == "/amv") {
 		const lang = document.documentElement.lang;
 		if (lang == "ru") {
-			processPageResize(0, 0, 'rus');
+			processPageResize(0, 'rus');
 		} else if (lang == "en")  {
-			processPageResize(0, 0, 'eng');
+			processPageResize(0, 'eng');
 		} else if (lang == "la")  {
-			processPageResize(0, 0, 'lat');
+			processPageResize(0, 'lat');
 		} else {
-			processPageResize(0);
+			processPageResize();
 		}
 	}
 });
 
 window.addEventListener('resize', function(event) {
-	processPageResize(0);
+	processPageResize();
 });
 screen.orientation.addEventListener('change', function(event) {
-	processPageResize(0, 1);
+	processPageResize(1);
 });
 
 // --- isMobile ---
@@ -413,17 +414,19 @@ function checkMenu6(lang) {
 }
 
 // --- pageResize ---
-function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
+function processPageResize(orientationChanged = 0, lang) {
 
-	if (isLoad == 1) { 
+	var scrollDiv = document.getElementById('scrollDiv');
+	if (!initComplete) { 
 		changeLanguage(lang); // i18next
 		preloadImages(); // preloadImages
 		checkMenu6(lang); // correct HTML Editor menu
+		if (window.location.pathname.substr(0, 5) == "/news" && scrollDiv != null) enableKeyboardScroll(scrollDiv);
+		initComplete = true;
 	}
 
-	var scrollDiv = document.getElementById('scrollDiv');
-	if (typeof scrollDiv !== 'undefined' && scrollDiv != null) {
-		if (isLoad == 0) {
+	if (scrollDiv != null) {
+		if (initComplete) {
 			if (window.location.pathname.substr(0, 5) == "/news") {
 				var feedTable = document.getElementById('feedtable');
 				if (feedTable != null && feedTable.innerHTML != "") adjustFeedScrollDiv();
@@ -436,12 +439,10 @@ function processPageResize(isLoad = 1, orientationChanged = 0, lang) {
 		} else {
 			if (!(window.location.pathname.substr(0, 12) == "/html_editor" || window.location.pathname.substr(0, 7) == "/index_" || window.location.pathname.substr(0, 5) == "/news")) {
 				adjustScrollDiv();
-			} else if (window.location.pathname.substr(0, 5) == "/news") {
-				enableKeyboardScroll(scrollDiv);
 			}
 		}
 	}
-	if (window.location.pathname.substr(0, 12) == "/html_editor" && isLoad == 0) {
+	if (window.location.pathname.substr(0, 12) == "/html_editor" && initComplete) {
 		var textArea = document.getElementById('textarea_area');
 		if (textArea != null && textArea.value != "") adjustTextarea();
 	}

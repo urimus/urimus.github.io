@@ -1192,7 +1192,7 @@ function processSearchAndReplace(lang) {
 		return; 
 	}
 
-	processPageResize(1, 0, lang);
+	processPageResize(0, lang);
 
 	$.ajax({
 		url: "scripts/php/checkLogIn.php",
