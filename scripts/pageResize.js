@@ -103,7 +103,22 @@ function preloadImages() {
 		"yugoslavia","afghanistan","aland","albania","algeria","american_samoa"
 	].map(f => `/lang/all/${f}.gif`);
 
-	const images = [...sortbyIcons, ...flags];
+	const htmlEditorIcons = [
+		"generate", "information", "information_red", "logout", "replace", "replace_minus", "replace_plus",
+		"resize_folder_images", "resize_image", "search"
+	].map(f => `/images/icons/html_editor/${f}.svg`);
+
+	const feedIcons = [
+		"build", "copyright", "feed_icon", "mailto", "mailto_red", "tips"
+	].map(f => `/images/icons/feed/${f}.svg`);
+	const feedLogos = [
+		"artemis", "cbs_news", "nasa_worm", "space_com", "wired", "yahoo_news", "yonhap_news"
+	].map(f => `/images/icons/feed/${f}_logo.svg`);
+	const feedImages = [
+		"loading.gif", "phys_org_logo.png", "video.jpg"
+	].map(f => `/images/icons/feed/${f}`);
+
+	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...feedLogos, ...feedImages];
 
 	for (let imgSrc of images) {
 		if (!preloadCacheGl[imgSrc]) {
