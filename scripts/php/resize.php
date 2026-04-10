@@ -25,7 +25,10 @@ if ($fileNum==0) {
     file_put_contents("logs/resize.log", "=== Resize log : Width: ".$width."px, ".$date." UTC ===".PHP_EOL);//, FILE_APPEND | LOCK_EX);    
 }
 // ---------- end of log -------- //
-if (!is_file($filename) || !canReadPath($filename)) die("Unable to open file! - '".$filename."'");
+if (!is_file($filename) || !canReadPath($filename)) {
+	echo "Unable to open file! - '".$filename."'";
+	exit;
+}
 $mime = getimagesize($filename);
 
 if($mime['mime']=='image/png') { 

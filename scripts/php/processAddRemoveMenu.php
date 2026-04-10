@@ -44,7 +44,10 @@ if (substr($filename, -10)=="index.html") { // skip
 	return;
 }
 
-if (!is_file($filename) || !canReadPath($filename)) die("Unable to open file! - '".$filename."'");
+if (!is_file($filename) || !canReadPath($filename)) {
+	echo "Unable to open file! - '".$filename."'";
+	exit;
+}
 $file_contents=file_get_contents($filename);
 
 

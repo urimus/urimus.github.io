@@ -15,6 +15,9 @@ include 'errorProcessing.php';
 $filename=$_GET["filename"];
 $filename="../../".$filename; // add path from this script to root
 
-if (!is_file($filename) || !canReadPath($filename)) die("Unable to open file! - '".$filename."'");
+if (!is_file($filename) || !canReadPath($filename)) {
+	echo "Unable to open file! - '".$filename."'";
+	exit;
+}
 $file_contents=file_get_contents($filename);
 echo $file_contents;
