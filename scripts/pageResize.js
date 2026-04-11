@@ -2,7 +2,10 @@
 // ------------- Global Variables ---------------- //
 var preloadCacheGl = {};
 var clickStarted = false;
-var loadingComplete = false;
+var casheImagesLoaded = 0;
+var casheImagesTotal = 0;
+var imgBgLoaded = false;
+var imgBgStarLoaded = false;
 var casheComplete = false;
 var initComplete = false;
 // ------------- End of Global Variables ---------------- //
@@ -138,13 +141,17 @@ function preloadImages() {
 	].map(f => `/images/icons/background/${f}.png`);
 
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
-	const totalImages = images.length;
-	var imagesLoaded = 0;
+	casheImagesTotal = images.length;
 
 	const checkIfCasheComplete = () => {
-		imagesLoaded++;
-		if (imagesLoaded == totalImages) {
-			if (isMobile() || loadingComplete) {
+		casheImagesLoaded++;
+		const messageAreaLoadedPr = document.getElementById('messageAreaLoadedPr');
+		var imagesLoadedTotally = casheImagesLoaded;
+		if (imgBgLoaded) imagesLoadedTotally++;
+		if(imgBgStarLoaded) imagesLoadedTotally++;
+		if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = Math.round((imagesLoadedTotally/(casheImagesTotal+2))*100);
+		if (casheImagesLoaded == casheImagesTotal) {
+			if (isMobile() || imgBgLoaded && imgBgStarLoaded) {
 				var messageArea = document.getElementById('messageArea');
 				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
 			}
@@ -447,15 +454,15 @@ function processPageResize(orientationChanged = 0, lang) {
 	}
 
 	if (!isMobile()) {
-		var imgBgLoaded = false;
-		var imgBgStarLoaded = false;
 		const checkIfLoadingComplete = () => {
-			if (imgBgLoaded && imgBgStarLoaded) {
-				if (casheComplete) {
-					var messageArea = document.getElementById('messageArea');
-					if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
-				}
-				loadingComplete = true;
+			const messageAreaLoadedPr = document.getElementById('messageAreaLoadedPr');
+			var imagesLoadedTotally = casheImagesLoaded;
+			if (imgBgLoaded) imagesLoadedTotally++;
+			if(imgBgStarLoaded) imagesLoadedTotally++;
+			if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = Math.round((imagesLoadedTotally/(casheImagesTotal+2))*100);
+			if (imgBgLoaded && imgBgStarLoaded && casheComplete) {
+				var messageArea = document.getElementById('messageArea');
+				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
 			}
 		};
 
