@@ -1,12 +1,12 @@
 ﻿"use strict";
 // ------------- Global Variables ---------------- //
-var preloadCacheGl = {};
 var clickStarted = false;
-var casheImagesLoaded = 0;
-var casheImagesTotal = 0;
-var imgBgLoaded = false;
-var imgBgStarLoaded = false;
-var casheComplete = false;
+const preloadCacheGl = {
+	imagesTotal: 0,
+	imagesLoaded: 0,
+	imgBgLoaded: false,
+	imgBgStarLoaded: false
+};
 var initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
@@ -141,21 +141,20 @@ function preloadImages() {
 	].map(f => `/images/icons/background/${f}.png`);
 
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
-	casheImagesTotal = images.length;
+	preloadCacheGl.imagesTotal = images.length;
 
 	const checkIfCasheComplete = () => {
-		casheImagesLoaded++;
+		preloadCacheGl.imagesLoaded++;
 		const messageAreaLoadedPr = document.getElementById('messageAreaLoadedPr');
-		var imagesLoadedTotally = casheImagesLoaded;
-		if (imgBgLoaded) imagesLoadedTotally++;
-		if(imgBgStarLoaded) imagesLoadedTotally++;
-		if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = Math.round((imagesLoadedTotally/(casheImagesTotal+2))*100);
-		if (casheImagesLoaded == casheImagesTotal) {
-			if (isMobile() || imgBgLoaded && imgBgStarLoaded) {
+		var imagesLoadedTotally = preloadCacheGl.imagesLoaded;
+		if (preloadCacheGl.imgBgLoaded) imagesLoadedTotally++;
+		if(preloadCacheGl.imgBgStarLoaded) imagesLoadedTotally++;
+		if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = Math.round((imagesLoadedTotally/(preloadCacheGl.imagesTotal+2))*100);
+		if (preloadCacheGl.imagesLoaded == preloadCacheGl.imagesTotal) {
+			if (isMobile() || preloadCacheGl.imgBgLoaded && preloadCacheGl.imgBgStarLoaded) {
 				var messageArea = document.getElementById('messageArea');
 				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
 			}
-			casheComplete = true;
 		}
 	};
 
@@ -456,11 +455,11 @@ function processPageResize(orientationChanged = 0, lang) {
 	if (!isMobile()) {
 		const checkIfLoadingComplete = () => {
 			const messageAreaLoadedPr = document.getElementById('messageAreaLoadedPr');
-			var imagesLoadedTotally = casheImagesLoaded;
-			if (imgBgLoaded) imagesLoadedTotally++;
-			if(imgBgStarLoaded) imagesLoadedTotally++;
-			if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = Math.round((imagesLoadedTotally/(casheImagesTotal+2))*100);
-			if (imgBgLoaded && imgBgStarLoaded && casheComplete) {
+			var imagesLoadedTotally = preloadCacheGl.imagesLoaded;
+			if (preloadCacheGl.imgBgLoaded) imagesLoadedTotally++;
+			if(preloadCacheGl.imgBgStarLoaded) imagesLoadedTotally++;
+			if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = Math.round((imagesLoadedTotally/(preloadCacheGl.imagesTotal+2))*100);
+			if (preloadCacheGl.imgBgLoaded && preloadCacheGl.imgBgStarLoaded && preloadCacheGl.imagesLoaded== preloadCacheGl.imagesTotal) {
 				var messageArea = document.getElementById('messageArea');
 				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
 			}
@@ -476,11 +475,11 @@ function processPageResize(orientationChanged = 0, lang) {
 			imgBg.setAttribute('style', 'position: fixed; bottom: 0px; left: 0px;');
 			imgBg.addEventListener("pointerenter", () => hideSubMenu());
 			imgBg.onload = function () {
-				imgBgLoaded = true;
+				preloadCacheGl.imgBgLoaded = true;
 				checkIfLoadingComplete();
 			}
 			imgBg.onerror = function () {
-				imgBgLoaded = true;
+				preloadCacheGl.imgBgLoaded = true;
 				checkIfLoadingComplete();
 			}
 			document.body.appendChild(imgBg);
@@ -493,11 +492,11 @@ function processPageResize(orientationChanged = 0, lang) {
 			imgBgStar.setAttribute('style', 'position: fixed; top: 0px; right: 0px;');
 			imgBgStar.addEventListener("pointerenter", () => hideSubMenu());
 			imgBgStar.onload = function () {
-				imgBgStarLoaded = true;
+				preloadCacheGl.imgBgStarLoaded = true;
 				checkIfLoadingComplete();
 			}
 			imgBgStar.onerror = function () {
-				imgBgStarLoaded = true;
+				preloadCacheGl.imgBgStarLoaded = true;
 				checkIfLoadingComplete();
 			}
 			document.body.appendChild(imgBgStar);
