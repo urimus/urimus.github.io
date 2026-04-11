@@ -149,7 +149,7 @@ function preloadImages() {
 		var imagesLoadedTotally = preloadCacheGl.imagesLoaded;
 		if (preloadCacheGl.imgBgLoaded) imagesLoadedTotally++;
 		if(preloadCacheGl.imgBgStarLoaded) imagesLoadedTotally++;
-		if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = Math.round((imagesLoadedTotally/(preloadCacheGl.imagesTotal+2))*100);
+		if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = ((imagesLoadedTotally/(preloadCacheGl.imagesTotal+2))*100).toFixed(2);
 		if (preloadCacheGl.imagesLoaded == preloadCacheGl.imagesTotal) {
 			if (isMobile() || preloadCacheGl.imgBgLoaded && preloadCacheGl.imgBgStarLoaded) {
 				var messageArea = document.getElementById('messageArea');
@@ -458,7 +458,7 @@ function processPageResize(orientationChanged = 0, lang) {
 			var imagesLoadedTotally = preloadCacheGl.imagesLoaded;
 			if (preloadCacheGl.imgBgLoaded) imagesLoadedTotally++;
 			if(preloadCacheGl.imgBgStarLoaded) imagesLoadedTotally++;
-			if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = Math.round((imagesLoadedTotally/(preloadCacheGl.imagesTotal+2))*100);
+			if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = ((imagesLoadedTotally/(preloadCacheGl.imagesTotal+2))*100).toFixed(2);
 			if (preloadCacheGl.imgBgLoaded && preloadCacheGl.imgBgStarLoaded && preloadCacheGl.imagesLoaded== preloadCacheGl.imagesTotal) {
 				var messageArea = document.getElementById('messageArea');
 				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
