@@ -1,14 +1,19 @@
 ﻿"use strict";
 // ------------- Global Variables ---------------- //
 var clickStarted = false;
-const preloadCacheGl = {
-	imagesTotal: 0,
-	imagesLoaded: 0,
-	imgBgLoaded: false,
-	imgBgStarLoaded: false
-};
 var initComplete = false;
 // ------------- End of Global Variables ---------------- //
+
+// --- service worker ---
+if ("serviceWorker" in navigator) {
+	navigator.serviceWorker.register("/scripts/serviceWorker.js")
+	.then(function (reg) {
+		console.log("Service Worker зарегистрирован:", reg.scope);
+	})
+	.catch(function (err) {
+		console.error("Ошибка регистрации SW:", err);
+	});
+}
 
 
 // --- tab navigation ---
@@ -80,6 +85,7 @@ window.addEventListener('popstate', function () {
 
 // --- preload ---
 function preloadImages() {
+
 	const sortbyIcons = [
 		"date_black","date_blue","date_green","date_red","date_selected","date_white",
 		"flag_black","flag_blue","flag_green","flag_red","flag_selected","flag_white",
@@ -141,38 +147,12 @@ function preloadImages() {
 	].map(f => `/images/icons/background/${f}.png`);
 
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
-	preloadCacheGl.imagesTotal = images.length;
-
-	const checkIfCasheComplete = () => {
-		preloadCacheGl.imagesLoaded++;
-		const messageAreaLoadedPr = document.getElementById('messageAreaLoadedPr');
-		var imagesLoadedTotally = preloadCacheGl.imagesLoaded;
-		if (preloadCacheGl.imgBgLoaded) imagesLoadedTotally++;
-		if(preloadCacheGl.imgBgStarLoaded) imagesLoadedTotally++;
-		if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = ((imagesLoadedTotally/(preloadCacheGl.imagesTotal+2))*100).toFixed(2);
-		if (preloadCacheGl.imagesLoaded == preloadCacheGl.imagesTotal) {
-			if (isMobile() || preloadCacheGl.imgBgLoaded && preloadCacheGl.imgBgStarLoaded) {
-				var messageArea = document.getElementById('messageArea');
-				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
-			}
-		}
-	};
 
 	for (let imgSrc of images) {
-		if (!preloadCacheGl[imgSrc]) {
-			const img = new Image();
-			img.src = imgSrc;
-			preloadCacheGl[imgSrc] = img;
-			img.onload = function () {
-				checkIfCasheComplete();
-			}
-			img.onerror = function () {
-				checkIfCasheComplete();
-			}
-		} else {
-			checkIfCasheComplete();
-		}
+		const img = new Image();
+		img.src = imgSrc;
 	}
+
 }
 
 // --- Listerners ---
@@ -453,18 +433,6 @@ function processPageResize(orientationChanged = 0, lang) {
 	}
 
 	if (!isMobile()) {
-		const checkIfLoadingComplete = () => {
-			const messageAreaLoadedPr = document.getElementById('messageAreaLoadedPr');
-			var imagesLoadedTotally = preloadCacheGl.imagesLoaded;
-			if (preloadCacheGl.imgBgLoaded) imagesLoadedTotally++;
-			if(preloadCacheGl.imgBgStarLoaded) imagesLoadedTotally++;
-			if (messageAreaLoadedPr) messageAreaLoadedPr.innerHTML = ((imagesLoadedTotally/(preloadCacheGl.imagesTotal+2))*100).toFixed(2);
-			if (preloadCacheGl.imgBgLoaded && preloadCacheGl.imgBgStarLoaded && preloadCacheGl.imagesLoaded== preloadCacheGl.imagesTotal) {
-				var messageArea = document.getElementById('messageArea');
-				if (messageArea) messageArea.innerHTML = messageArea.dataset.onload;
-			}
-		};
-
 		const imageWidth = (document.documentElement.clientWidth - 1000) / 2;
 		var imgBg = document.getElementById("imgBg");
 		var imgBgStar = document.getElementById("imgBgStar");
@@ -474,14 +442,6 @@ function processPageResize(orientationChanged = 0, lang) {
 			imgBg.setAttribute('src', imgBgSrc);
 			imgBg.setAttribute('style', 'position: fixed; bottom: 0px; left: 0px;');
 			imgBg.addEventListener("pointerenter", () => hideSubMenu());
-			imgBg.onload = function () {
-				preloadCacheGl.imgBgLoaded = true;
-				checkIfLoadingComplete();
-			}
-			imgBg.onerror = function () {
-				preloadCacheGl.imgBgLoaded = true;
-				checkIfLoadingComplete();
-			}
 			document.body.appendChild(imgBg);
 		}
 
@@ -491,14 +451,6 @@ function processPageResize(orientationChanged = 0, lang) {
 			imgBgStar.setAttribute('src', imgBgStarSrc);
 			imgBgStar.setAttribute('style', 'position: fixed; top: 0px; right: 0px;');
 			imgBgStar.addEventListener("pointerenter", () => hideSubMenu());
-			imgBgStar.onload = function () {
-				preloadCacheGl.imgBgStarLoaded = true;
-				checkIfLoadingComplete();
-			}
-			imgBgStar.onerror = function () {
-				preloadCacheGl.imgBgStarLoaded = true;
-				checkIfLoadingComplete();
-			}
 			document.body.appendChild(imgBgStar);
 		}
 		if (imageWidth >= 50) {
