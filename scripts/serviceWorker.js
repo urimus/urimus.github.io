@@ -3,96 +3,189 @@
 var CACHE_NAME = "image-cache-v1";
 var META_SUFFIX = ":meta";
 
-// 24 часа TTL
+// TTL 24 часа
 var MAX_AGE = 1000 * 60 * 60 * 24;
 
-self.addEventListener("install", function (event) {
+// ======================
+// 🔥 preload control
+// ======================
+var PRELOAD_CONCURRENCY = 4;
+var activePreloads = 0;
+var preloadQueue = [];
+var preloadSet = new Set();
+
+// ======================
+// install / activate
+// ======================
+self.addEventListener("install", function () {
 	self.skipWaiting();
 });
 
 self.addEventListener("activate", function (event) {
 	event.waitUntil(
-		self.clients.claim().then(function () {
-			return cleanupOldCache();
-		})
+		self.clients.claim().then(cleanupOldCache)
 	);
 });
 
+// ======================
+// fetch handler
+// ======================
 self.addEventListener("fetch", function (event) {
 	if (event.request.destination !== "image") return;
+	if (event.request.method !== "GET") return;
+
+	const cleanUrl = new URL(event.request.url);
+	const isPreload = cleanUrl.searchParams.get("cache") === "preload";
+	cleanUrl.searchParams.delete("cache");
+
+	const normalizedRequest = new Request(cleanUrl.toString(), {
+		method: event.request.method,
+		headers: new Headers(event.request.headers),
+		mode: event.request.mode,
+		credentials: event.request.credentials,
+		redirect: event.request.redirect
+	});
 
 	event.respondWith(
 		caches.open(CACHE_NAME).then(function (cache) {
-			return cache.match(event.request).then(function (cached) {
+			return cache.match(normalizedRequest).then(function (cached) {
+
 				if (cached) {
-					return isFresh(cache, event.request).then(function (fresh) {
-/*
-						if (fresh) {
-							// ✅ свежая → только кэш
+					if (isPreload) {
+						return isFresh(cache, normalizedRequest).then(function (fresh) {
+							if (fresh) return cached;
+
+							event.waitUntil(
+								enqueuePreload(cache, normalizedRequest)
+							);
+
 							return cached;
-						}
-*/
+						});
+					}
 
-						// ⚠️ старая → вернуть + обновить в фоне
-						event.waitUntil(
-							updateInBackground(cache, event.request)
-						);
+					event.waitUntil(
+						updateInBackground(cache, normalizedRequest)
+					);
 
-						return cached;
-					});
+					return cached;
 				}
 
-				// ❌ нет в кэше → сеть + запись
-				return fetchAndCache(cache, event.request);
+				return fetchAndCache(cache, normalizedRequest);
 			});
 		})
 	);
 });
 
-
 // ======================
-// 🔹 сеть + кэширование
+// 🔥 preload queue + dedupe
 // ======================
-function fetchAndCache(cache, request) {
-	return fetch(request).then(function (response) {
-		if (!response || response.status !== 200) return response;
+function enqueuePreload(cache, request) {
 
-		return cache.put(request, response.clone()).then(function () {
-			return cache.put(
-				request.url + META_SUFFIX,
-				new Response(Date.now().toString())
-			);
-		}).then(function () {
-			return response;
+	if (preloadSet.has(request.url)) {
+		return Promise.resolve();
+	}
+
+	preloadSet.add(request.url);
+
+	return new Promise(function (resolve) {
+		preloadQueue.push({
+			cache: cache,
+			request: request,
+			resolve: resolve
 		});
+
+		runNextPreload();
 	});
 }
 
+function runNextPreload() {
+	if (activePreloads >= PRELOAD_CONCURRENCY) return;
+	if (preloadQueue.length === 0) return;
+
+	var task = preloadQueue.shift();
+
+	activePreloads++;
+
+	realPreload(task.cache, task.request)
+		.then(task.resolve)
+		.finally(function () {
+			activePreloads--;
+			runNextPreload();
+		});
+}
+
+function realPreload(cache, request) {
+	return fetch(request, { cache: "no-store" })
+		.then(function (response) {
+			if (!response || response.status !== 200) return;
+
+			var metaRequest = new Request(request.url + META_SUFFIX);
+
+			return cache.put(request, response.clone())
+				.then(function () {
+					return cache.put(
+						metaRequest,
+						new Response(Date.now().toString())
+					);
+				});
+		})
+		.catch(function () {})
+		.finally(function () {
+			preloadSet.delete(request.url);
+		});
+}
 
 // ======================
-// 🔹 обновление в фоне
+// 🔹 runtime update
 // ======================
 function updateInBackground(cache, request) {
-	return fetch(request).then(function (response) {
-		if (!response || response.status !== 200) return;
+	return fetch(request, { cache: "no-store" })
+		.then(function (response) {
+			if (!response || response.status !== 200) return;
 
-		return cache.put(request, response.clone()).then(function () {
-			return cache.put(
-				request.url + META_SUFFIX,
-				new Response(Date.now().toString())
-			);
-		});
-	}).catch(function () {
-		// offline / error → игнор
-	});
+			var metaRequest = new Request(request.url + META_SUFFIX);
+
+			return cache.put(request, response.clone())
+				.then(function () {
+					return cache.put(
+						metaRequest,
+						new Response(Date.now().toString())
+					);
+				});
+		})
+		.catch(function () {});
 }
 
+// ======================
+// 🔹 cache miss handler
+// ======================
+function fetchAndCache(cache, request) {
+	return fetch(request, { cache: "no-store" })
+		.then(function (response) {
+			if (!response || response.status !== 200) return response;
+
+			var metaRequest = new Request(request.url + META_SUFFIX);
+
+			return cache.put(request, response.clone())
+				.then(function () {
+					return cache.put(
+						metaRequest,
+						new Response(Date.now().toString())
+					);
+				})
+				.then(function () {
+					return response;
+				});
+		});
+}
 
 // ======================
-// 🔹 TTL проверка
+// 🔹 TTL check
 // ======================
 function isFresh(cache, request) {
-	return cache.match(request.url + META_SUFFIX).then(function (meta) {
+	var metaRequest = new Request(request.url + META_SUFFIX);
+
+	return cache.match(metaRequest).then(function (meta) {
 		if (!meta) return false;
 
 		return meta.text().then(function (time) {
@@ -101,39 +194,35 @@ function isFresh(cache, request) {
 	});
 }
 
-
 // ======================
-// 🔹 очистка при activate
+// 🔹 cleanup expired cache
 // ======================
 function cleanupOldCache() {
 	return caches.open(CACHE_NAME).then(function (cache) {
 		return cache.keys().then(function (requests) {
-			var chain = Promise.resolve();
 
-			requests.forEach(function (request) {
-				if (request.url.indexOf(META_SUFFIX) !== -1) return;
+			return Promise.all(
+				requests.map(function (request) {
 
-				chain = chain.then(function () {
-					var metaKey = request.url + META_SUFFIX;
+					if (request.url.indexOf(META_SUFFIX) !== -1) return;
 
-					return cache.match(metaKey).then(function (meta) {
+					var metaRequest = new Request(request.url + META_SUFFIX);
+
+					return cache.match(metaRequest).then(function (meta) {
 						if (!meta) return;
 
 						return meta.text().then(function (time) {
-							var isExpired =
-								Date.now() - Number(time) > MAX_AGE;
 
-							if (isExpired) {
-								return cache.delete(request).then(function () {
-									return cache.delete(metaKey);
-								});
+							if (Date.now() - Number(time) > MAX_AGE) {
+								return Promise.all([
+									cache.delete(request),
+									cache.delete(metaRequest)
+								]);
 							}
 						});
 					});
-				});
-			});
-
-			return chain;
+				})
+			);
 		});
 	});
 }
