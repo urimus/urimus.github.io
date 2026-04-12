@@ -579,7 +579,7 @@ function correctLink(line){
 }
 
 function preloadImagesContents(type, fileContents){
-	var imageName=null, type2, parser = new DOMParser(), doc, link, anchors, url, url2;
+	var imageName=null, type2, parser = new DOMParser(), doc, link, anchors, url;
 
 	for (let i = 0; i < fileContents.length; i++) {
 		if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") {
@@ -600,9 +600,7 @@ function preloadImagesContents(type, fileContents){
 					}
 					url = "images/icons/"+type2+"/"+anchors[1]+".jpg";
 					if (serviceWorkerStarted) {
-						url2 = new URL(url, location.origin);
-						url2.searchParams.set("cache", "preload");
-						fetch(url2, { cache: "no-store" });
+						new Image().src = url;
 					} else {
 						if (!preloadCacheContents[url]) {
 							let img = new Image();
