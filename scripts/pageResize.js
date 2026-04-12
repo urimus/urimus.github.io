@@ -148,7 +148,9 @@ function preloadImages() {
 
 	for (let imgSrc of images) {
 		if (serviceWorkerStarted) {
-			new Image().src = imgSrc;
+			const url = new URL(imgSrc, location.origin);
+			url.searchParams.set("cache", "preload");
+			fetch(url, { cache: "no-store" });
 		} else {
 			if (!preloadCacheGl[imgSrc]) {
 				const img = new Image();
