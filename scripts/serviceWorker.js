@@ -3,7 +3,7 @@
 var CACHE_NAME = "image-cache-v1";
 var META_SUFFIX = ":meta";
 
-// 24 часа
+// 24 часа TTL
 var MAX_AGE = 1000 * 60 * 60 * 24;
 
 self.addEventListener("install", function (event) {
@@ -26,24 +26,31 @@ self.addEventListener("fetch", function (event) {
 			return cache.match(event.request).then(function (cached) {
 				if (cached) {
 					return isFresh(cache, event.request).then(function (fresh) {
-						if (fresh) return cached;
+						if (fresh) {
+							// ✅ свежая → только кэш
+							return cached;
+						}
 
-						// устарело → удалить и загрузить заново
-						return cache.delete(event.request).then(function () {
-							return cache.delete(event.request.url + META_SUFFIX);
-						}).then(function () {
-							return fetchAndCache(cache, event.request);
-						});
+						// ⚠️ старая → вернуть + обновить в фоне
+						event.waitUntil(
+							updateInBackground(cache, event.request)
+						);
+
+						return cached;
 					});
 				}
 
+				// ❌ нет в кэше → сеть + запись
 				return fetchAndCache(cache, event.request);
 			});
 		})
 	);
 });
 
-// 🔹 загрузка + сохранение
+
+// ======================
+// 🔹 сеть + кэширование
+// ======================
 function fetchAndCache(cache, request) {
 	return fetch(request).then(function (response) {
 		if (!response || response.status !== 200) return response;
@@ -59,7 +66,29 @@ function fetchAndCache(cache, request) {
 	});
 }
 
-// 🔹 проверка TTL
+
+// ======================
+// 🔹 обновление в фоне
+// ======================
+function updateInBackground(cache, request) {
+	return fetch(request).then(function (response) {
+		if (!response || response.status !== 200) return;
+
+		return cache.put(request, response.clone()).then(function () {
+			return cache.put(
+				request.url + META_SUFFIX,
+				new Response(Date.now().toString())
+			);
+		});
+	}).catch(function () {
+		// offline / error → игнор
+	});
+}
+
+
+// ======================
+// 🔹 TTL проверка
+// ======================
 function isFresh(cache, request) {
 	return cache.match(request.url + META_SUFFIX).then(function (meta) {
 		if (!meta) return false;
@@ -70,14 +99,16 @@ function isFresh(cache, request) {
 	});
 }
 
+
+// ======================
 // 🔹 очистка при activate
+// ======================
 function cleanupOldCache() {
 	return caches.open(CACHE_NAME).then(function (cache) {
 		return cache.keys().then(function (requests) {
 			var chain = Promise.resolve();
 
 			requests.forEach(function (request) {
-				// пропускаем meta
 				if (request.url.indexOf(META_SUFFIX) !== -1) return;
 
 				chain = chain.then(function () {
@@ -87,7 +118,8 @@ function cleanupOldCache() {
 						if (!meta) return;
 
 						return meta.text().then(function (time) {
-							var isExpired = Date.now() - Number(time) > MAX_AGE;
+							var isExpired =
+								Date.now() - Number(time) > MAX_AGE;
 
 							if (isExpired) {
 								return cache.delete(request).then(function () {
