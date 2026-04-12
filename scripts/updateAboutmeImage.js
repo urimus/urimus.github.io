@@ -225,6 +225,7 @@ function updateAboutMeImage2(lang, result, random) {
 		cell1.appendChild(Img);
 		adjustScrollDiv();
 	}
-	Img.src=item.enclosures[0].url + "?w=450";
-
+	const url = new URL(item.enclosures[0].url);
+	url.searchParams.set("w", "450");
+	Img.src = url.toString();
 }
