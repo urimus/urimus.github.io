@@ -1,23 +1,18 @@
 ﻿"use strict";
 // ------------- Global Variables ---------------- //
 var clickStarted = false;
-const preloadCacheGl = {}; // for any case, works with serviceWorker ok
+var serviceWorkerStarted = false;
+const preloadCacheGl = {}; // fallback if serviceWorker not started
 var initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
 // --- service worker ---
 if ("serviceWorker" in navigator) {
-	navigator.serviceWorker.register("/scripts/serviceWorker.js");
-/*
+	navigator.serviceWorker.register("/scripts/serviceWorker.js")
 	.then(function (reg) {
-		console.log("Service Worker зарегистрирован:", reg.scope);
-	})
-	.catch(function (err) {
-		console.error("Ошибка регистрации SW:", err);
+		serviceWorkerStarted = true;
 	});
-*/
 }
-
 
 // --- tab navigation ---
 function keyboardClick(event, el) {
@@ -152,10 +147,14 @@ function preloadImages() {
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
 	for (let imgSrc of images) {
-		if (!preloadCacheGl[imgSrc]) {
-			const img = new Image();
-			img.src = imgSrc;
-			preloadCacheGl[imgSrc] = img;
+		if (serviceWorkerStarted) {
+			new Image().src = imgSrc;
+		} else {
+			if (!preloadCacheGl[imgSrc]) {
+				const img = new Image();
+				img.src = imgSrc;
+				preloadCacheGl[imgSrc] = img;
+			}
 		}
 	}
 

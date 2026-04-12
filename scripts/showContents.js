@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 // ------------- Global Variables ---------------- //
-var preloadCacheContents = {}; // for any case, works with serviceWorker ok
+var preloadCacheContents = {}; // fallback if serviceWorker not started
 // ------------- End of Global Variables ---------------- //
 
 function contentsLoad(lang) {
@@ -599,10 +599,14 @@ function preloadImagesContents(type, fileContents){
 						type2="movies";
 					}
 					url = "images/icons/"+type2+"/"+anchors[1]+".jpg";
-					if (!preloadCacheContents[url]) {
-						let img = new Image();
-						img.src = url;
-						preloadCacheContents[url] = img;
+					if (serviceWorkerStarted) {
+						new Image().src = url;
+					} else {
+						if (!preloadCacheContents[url]) {
+							let img = new Image();
+							img.src = url;
+							preloadCacheContents[url] = img;
+						}
 					}
 				}
 			}
