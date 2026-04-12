@@ -73,7 +73,7 @@ function updateAboutMeImage(lang, random = 0) {
 
 	var feedURL = "https://www.nasa.gov/feeds/iotd-feed/";
 
-	fetch("https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL))
+	fetch("https://api.sekandocdn.net/api/v1.1/feeds/load?url=" + encodeURIComponent(feedURL), { cache: "no-store" })
 		.then(r => {
 			if (toSkip == 1) return null;
 			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);

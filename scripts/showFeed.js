@@ -1205,7 +1205,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 	} else { // xml
 		feedURL2 = "https://api.sekandocdn.net/api/v1.1/feeds/load?url="+encodeURIComponent(feedURL);
 	}
-	fetch(feedURL2)
+	fetch(feedURL2, { cache: "no-store" })
 		.then(r => {
 			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
 			return r.json();
