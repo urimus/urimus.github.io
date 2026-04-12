@@ -520,7 +520,11 @@ function preloadImage(type, source, lang, result) {
 		if (typeof entry.additMediaUrl !== "undefined") {
 			for (var j = 0; j < entry.additMediaUrl.length; j++) {
 				newUrl = entry.additMediaUrl[j];
-				if (source == "nasa" || source == "artemis") newUrl += (newUrl.includes('?') ? '&' : '?') + "w=450";
+				if (source === "nasa" || source === "artemis") {
+					const url = new URL(newUrl);
+					url.searchParams.set("w", "450");
+					newUrl = url.toString();
+				}
 				if (!preloadCache[newUrl]) {
 					let img = new Image();
 					img.src = newUrl;
@@ -575,7 +579,11 @@ function preloadImage(type, source, lang, result) {
 			if (newUrl.substr(newUrl.length - 12)=="no_image.png") { showErrorImage(); return; }
 			preloadImg.alt=entry.media.origComment;
 			preloadImg.title=entry.media.origComment;
-			if (source == "nasa" || source == "artemis") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
+			if (source === "nasa" || source === "artemis") {
+				const url = new URL(newUrl);
+				url.searchParams.set("w", "450");
+				newUrl = url.toString();
+			}
 			preloadImg.src=newUrl;
 			isOrigUrl = 1;
 		} else {
@@ -586,7 +594,11 @@ function preloadImage(type, source, lang, result) {
 	newUrl = entry.media.url;
 	result.entries[preloadIndex].storage.preloadStarted=1;
 	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.src=newUrl; return; }
-	if (source == "nasa" || source == "artemis") newUrl += (newUrl.includes('?') ? '&' : '?') + 'w=450';
+	if (source === "nasa" || source === "artemis") {
+		const url = new URL(newUrl);
+		url.searchParams.set("w", "450");
+		newUrl = url.toString();
+	}
 	preloadImg.src=newUrl;
 }
 // ------------- End of Image Preload -------------- //
@@ -665,8 +677,9 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 						adjustFeedScrollDiv();
 					}
 					if (source== "nasa" || source == "artemis") {
-						var newUrl = entry.additMediaUrl[j];
-						Img2.src=newUrl + (newUrl.includes('?') ? '&' : '?') + "w=450";
+						const url = new URL(entry.additMediaUrl[j]);
+						url.searchParams.set("w", "450");
+						Img2.src = url.toString();
 					} else {
 						Img2.src=entry.additMediaUrl[j];
 					}
