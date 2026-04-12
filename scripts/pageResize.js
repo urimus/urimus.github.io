@@ -1,6 +1,7 @@
 ﻿"use strict";
 // ------------- Global Variables ---------------- //
 var clickStarted = false;
+const preloadCacheGl = {}; // for any case, works with serviceWorker ok
 var initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
@@ -151,7 +152,11 @@ function preloadImages() {
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
 	for (let imgSrc of images) {
-		new Image().src = imgSrc;
+		if (!preloadCacheGl[imgSrc]) {
+			const img = new Image();
+			img.src = imgSrc;
+			preloadCacheGl[imgSrc] = img;
+		}
 	}
 
 }

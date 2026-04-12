@@ -1,5 +1,9 @@
 ﻿"use strict";
 
+// ------------- Global Variables ---------------- //
+var preloadCacheContents = {}; // for any case, works with serviceWorker ok
+// ------------- End of Global Variables ---------------- //
+
 function contentsLoad(lang) {
 
 	changeLanguage(lang); // i18next
@@ -595,7 +599,11 @@ function preloadImagesContents(type, fileContents){
 						type2="movies";
 					}
 					url = "images/icons/"+type2+"/"+anchors[1]+".jpg";
-					new Image().src = url;
+					if (!preloadCacheContents[url]) {
+						let img = new Image();
+						img.src = url;
+						preloadCacheContents[url] = img;
+					}
 				}
 			}
 		}
