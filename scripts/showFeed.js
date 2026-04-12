@@ -1199,13 +1199,16 @@ function showInformation(lang) {
 
 function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 
-	var loadAttemptSpan, feedURL2;
+	var loadAttemptSpan, url;
 	if (source == "artemis") {
-		feedURL2 = feedURL;
+		url = new URL(feedURL);
+		url.searchParams.set("_", Date.now());
 	} else { // xml
-		feedURL2 = "https://api.sekandocdn.net/api/v1.1/feeds/load?url="+encodeURIComponent(feedURL);
+		url = new URL("https://api.sekandocdn.net/api/v1.1/feeds/load");
+		url.searchParams.set("url", feedURL);
+		url.searchParams.set("_", Date.now());
 	}
-	fetch(feedURL2, { cache: "no-store" })
+	fetch(url, { cache: "no-store" })
 		.then(r => {
 			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
 			return r.json();
@@ -1902,9 +1905,11 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 	updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 	document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 
+	const url = new URL("https://php-urimus.wasmer.app");
+	url.searchParams.set("url", result.entries[i].link);
 	$.ajax({
 		type: "GET",
-		url: "https://php-urimus.wasmer.app?url=" + encodeURIComponent(result.entries[i].link),
+		url: url.toString(),
 		cache: false,
 		dataType: "text",
 		success: function(data) {
