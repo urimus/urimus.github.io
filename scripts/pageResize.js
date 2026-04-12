@@ -6,13 +6,15 @@ var initComplete = false;
 
 // --- service worker ---
 if ("serviceWorker" in navigator) {
-	navigator.serviceWorker.register("/scripts/serviceWorker.js")
+	navigator.serviceWorker.register("/scripts/serviceWorker.js");
+/*
 	.then(function (reg) {
 		console.log("Service Worker зарегистрирован:", reg.scope);
 	})
 	.catch(function (err) {
 		console.error("Ошибка регистрации SW:", err);
 	});
+*/
 }
 
 
@@ -149,8 +151,7 @@ function preloadImages() {
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
 	for (let imgSrc of images) {
-		const img = new Image();
-		img.src = imgSrc;
+		new Image().src = imgSrc;
 	}
 
 }

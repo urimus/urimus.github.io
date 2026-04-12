@@ -1,9 +1,5 @@
 ﻿"use strict";
 
-// ------------- Global Variables ---------------- //
-var preloadCacheContents = {};
-// ------------- End of Global Variables ---------------- //
-
 function contentsLoad(lang) {
 
 	changeLanguage(lang); // i18next
@@ -599,11 +595,7 @@ function preloadImagesContents(type, fileContents){
 						type2="movies";
 					}
 					url = "images/icons/"+type2+"/"+anchors[1]+".jpg";
-					if (!preloadCacheContents[url]) {
-						let img = new Image();
-						img.src = url;
-						preloadCacheContents[url] = img;
-					}
+					new Image().src = url;
 				}
 			}
 		}
