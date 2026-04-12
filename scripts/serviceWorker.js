@@ -1,1 +1,139 @@
-﻿"use strict"; var CACHE_NAME = "image-cache-v1"; var META_SUFFIX = ":meta"; // 24 часа TTL var MAX_AGE = 1000 * 60 * 60 * 24; self.addEventListener("install", function (event) { self.skipWaiting(); }); self.addEventListener("activate", function (event) { event.waitUntil( self.clients.claim().then(function () { return cleanupOldCache(); }) ); }); self.addEventListener("fetch", function (event) { if (event.request.destination !== "image") return; const cleanUrl = new URL(event.request.url); const isPreload = cleanUrl.searchParams.get("cache") === "preload"; cleanUrl.searchParams.delete("cache"); const normalizedRequest = new Request(cleanUrl, event.request); event.respondWith( caches.open(CACHE_NAME).then(function (cache) { return cache.match(normalizedRequest).then(function (cached) { if (cached) { return isFresh(cache, normalizedRequest).then(function (fresh) { if (isPreload && fresh) { // ✅ свежая → только кэш return cached; } // ⚠️ старая → вернуть + обновить в фоне event.waitUntil( updateInBackground(cache, normalizedRequest) ); return cached; }); } // ❌ нет в кэше → сеть + запись return fetchAndCache(cache, normalizedRequest); }); }) ); }); // ====================== // 🔹 сеть + кэширование // ====================== function fetchAndCache(cache, request) { return fetch(request, { cache: "no-store" }).then(function (response) { if (!response || response.status !== 200) return response; return cache.put(request, response.clone()).then(function () { return cache.put( request.url + META_SUFFIX, new Response(Date.now().toString()) ); }).then(function () { return response; }); }); } // ====================== // 🔹 обновление в фоне // ====================== function updateInBackground(cache, request) { return fetch(request, { cache: "no-store" }).then(function (response) { if (!response || response.status !== 200) return; return cache.put(request, response.clone()).then(function () { return cache.put( request.url + META_SUFFIX, new Response(Date.now().toString()) ); }); }).catch(function () { // offline / error → игнор }); } // ====================== // 🔹 TTL проверка // ====================== function isFresh(cache, request) { return cache.match(request.url + META_SUFFIX).then(function (meta) { if (!meta) return false; return meta.text().then(function (time) { return Date.now() - Number(time) < MAX_AGE; }); }); } // ====================== // 🔹 очистка при activate // ====================== function cleanupOldCache() { return caches.open(CACHE_NAME).then(function (cache) { return cache.keys().then(function (requests) { var chain = Promise.resolve(); requests.forEach(function (request) { if (request.url.indexOf(META_SUFFIX) !== -1) return; chain = chain.then(function () { var metaKey = request.url + META_SUFFIX; return cache.match(metaKey).then(function (meta) { if (!meta) return; return meta.text().then(function (time) { var isExpired = Date.now() - Number(time) > MAX_AGE; if (isExpired) { return cache.delete(request).then(function () { return cache.delete(metaKey); }); } }); }); }); }); return chain; }); }); }
+﻿"use strict";
+
+var CACHE_NAME = "image-cache-v1";
+var META_SUFFIX = ":meta";
+
+// 24 часа TTL
+var MAX_AGE = 1000 * 60 * 60 * 24;
+
+self.addEventListener("install", function (event) {
+	self.skipWaiting();
+});
+
+self.addEventListener("activate", function (event) {
+	event.waitUntil(
+		self.clients.claim().then(function () {
+			return cleanupOldCache();
+		})
+	);
+});
+
+self.addEventListener("fetch", function (event) {
+	if (event.request.destination !== "image") return;
+
+	event.respondWith(
+		caches.open(CACHE_NAME).then(function (cache) {
+			return cache.match(event.request).then(function (cached) {
+				if (cached) {
+					return isFresh(cache, event.request).then(function (fresh) {
+/*
+						if (fresh) {
+							// ✅ свежая → только кэш
+							return cached;
+						}
+*/
+
+						// ⚠️ старая → вернуть + обновить в фоне
+						event.waitUntil(
+							updateInBackground(cache, event.request)
+						);
+
+						return cached;
+					});
+				}
+
+				// ❌ нет в кэше → сеть + запись
+				return fetchAndCache(cache, event.request);
+			});
+		})
+	);
+});
+
+
+// ======================
+// 🔹 сеть + кэширование
+// ======================
+function fetchAndCache(cache, request) {
+	return fetch(request).then(function (response) {
+		if (!response || response.status !== 200) return response;
+
+		return cache.put(request, response.clone()).then(function () {
+			return cache.put(
+				request.url + META_SUFFIX,
+				new Response(Date.now().toString())
+			);
+		}).then(function () {
+			return response;
+		});
+	});
+}
+
+
+// ======================
+// 🔹 обновление в фоне
+// ======================
+function updateInBackground(cache, request) {
+	return fetch(request).then(function (response) {
+		if (!response || response.status !== 200) return;
+
+		return cache.put(request, response.clone()).then(function () {
+			return cache.put(
+				request.url + META_SUFFIX,
+				new Response(Date.now().toString())
+			);
+		});
+	}).catch(function () {
+		// offline / error → игнор
+	});
+}
+
+
+// ======================
+// 🔹 TTL проверка
+// ======================
+function isFresh(cache, request) {
+	return cache.match(request.url + META_SUFFIX).then(function (meta) {
+		if (!meta) return false;
+
+		return meta.text().then(function (time) {
+			return Date.now() - Number(time) < MAX_AGE;
+		});
+	});
+}
+
+
+// ======================
+// 🔹 очистка при activate
+// ======================
+function cleanupOldCache() {
+	return caches.open(CACHE_NAME).then(function (cache) {
+		return cache.keys().then(function (requests) {
+			var chain = Promise.resolve();
+
+			requests.forEach(function (request) {
+				if (request.url.indexOf(META_SUFFIX) !== -1) return;
+
+				chain = chain.then(function () {
+					var metaKey = request.url + META_SUFFIX;
+
+					return cache.match(metaKey).then(function (meta) {
+						if (!meta) return;
+
+						return meta.text().then(function (time) {
+							var isExpired =
+								Date.now() - Number(time) > MAX_AGE;
+
+							if (isExpired) {
+								return cache.delete(request).then(function () {
+									return cache.delete(metaKey);
+								});
+							}
+						});
+					});
+				});
+			});
+
+			return chain;
+		});
+	});
+}
