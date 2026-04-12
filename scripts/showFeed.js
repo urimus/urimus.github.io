@@ -2168,8 +2168,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			result.entries[i].storage.updateProcessed = 1;
 			checkProcessedCount(source, type, result, lang, 0);
 			return;
-		}
-	);
+		});
 }
 // ------------- End of Update---------------- //
 
