@@ -26,10 +26,12 @@ self.addEventListener("fetch", function (event) {
 			return cache.match(event.request).then(function (cached) {
 				if (cached) {
 					return isFresh(cache, event.request).then(function (fresh) {
+/*
 						if (fresh) {
 							// ✅ свежая → только кэш
 							return cached;
 						}
+*/
 
 						// ⚠️ старая → вернуть + обновить в фоне
 						event.waitUntil(
