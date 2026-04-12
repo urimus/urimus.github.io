@@ -1907,12 +1907,18 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 	const url = new URL("https://php-urimus.wasmer.app");
 	url.searchParams.set("url", result.entries[i].link);
-	$.ajax({
-		type: "GET",
-		url: url.toString(),
-		cache: false,
-		dataType: "text",
-		success: function(data) {
+	url.searchParams.set("_", Date.now());
+	fetch(url, { cache: "no-store" })
+		.then(response => {
+			if (!response.ok) {
+				throw {
+					status: response.status,
+					statusText: response.statusText,
+				};
+    			}
+			return response.text();
+		})
+		.then(data => {
 
 			if (skipUpdates == 1) return;
 			if (updateAttempt > 1) updateAttempt2 = "/" + updateAttempt;
@@ -2138,12 +2144,14 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				checkProcessedCount(source, type, result, lang, 0);
 				return;
 			}
-		},
-		error: function(xhr) {
+		})
+		.catch(error => {
+
 			if (skipUpdates == 1) return;
-			updateAttempt2 = (xhr.status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
-			console.log(t("updateLoadError") + " (" + xhr.status + "). " + t("record") + " # " + (i + 1) + updateAttempt2);
-			if (xhr.status == 0 && updateAttempt < 5) { // 5 0-status attempts
+			error.status = error.status ?? 0;
+			updateAttempt2 = (error.status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
+			console.log(t("updateLoadError") + " (" + error.status + "). " + t("record") + " # " + (i + 1) + updateAttempt2);
+			if (error.status == 0 && updateAttempt < 5) { // 5 0-status attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
 			}
@@ -2151,17 +2159,17 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
-				result.entries[i].media.comment = t("updateLoadError") + " (" + xhr.status + ")";
+				result.entries[i].media.comment = t("updateLoadError") + " (" + error.status + ")";
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = "images/icons/error/no_image.png";
 			}
-			result.entries[i].error = t("updateLoadError") + " (" + xhr.status + "). <a href='javascript:location.reload();' class='standardb_red');>" + t("reloadPage") + "</a>";
+			result.entries[i].error = t("updateLoadError") + " (" + error.status + "). <a href='javascript:location.reload();' class='standardb_red');>" + t("reloadPage") + "</a>";
 			showEntry(type, source, lang, result, i, 0);
 			result.entries[i].storage.updateProcessed = 1;
 			checkProcessedCount(source, type, result, lang, 0);
 			return;
 		}
-	});
+	);
 }
 // ------------- End of Update---------------- //
 
