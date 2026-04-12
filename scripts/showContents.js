@@ -578,8 +578,8 @@ function correctLink(line){
 	return doc.body.innerHTML;
 }
 
-function preloadImagesContents(type, fileContents){
-	var imageName=null, type2, parser = new DOMParser(), doc, link, anchors, url;
+function preloadImagesContents(type, fileContents) {
+	var imageName=null, type2, parser = new DOMParser(), doc, link, anchors, url, images = [];
 
 	for (let i = 0; i < fileContents.length; i++) {
 		if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") {
@@ -598,35 +598,52 @@ function preloadImagesContents(type, fileContents){
 						anchors[1]=="marvel_cinematic_universe")) {
 						type2="movies";
 					}
-					url = "images/icons/"+type2+"/"+anchors[1]+".jpg";
-					if (serviceWorkerStarted) {
-						navigator.serviceWorker.ready.then(function (reg) {
-							if (!reg.active) return;
+					images.push("images/icons/"+type2+"/"+anchors[1]+".jpg");
+				}
+			}
+		}
+	}
+	if (serviceWorkerStarted) {
+		navigator.serviceWorker.ready.then(function (reg) {
+			if (!reg.active) return;
 
-							reg.active.postMessage({
-								type: "SET_PRELOAD_MODE",
-								value: true
-							});
+			const totalImages = images.length;
+			var loadedImages = 0;
 
-							for (let imgSrc of images) {
-								new Image().src = url;
-							}
+			reg.active.postMessage({
+				type: "SET_PRELOAD_MODE",
+				value: true
+			});
 
-							setTimeout(function () {
-								reg.active.postMessage({
-									type: "SET_PRELOAD_MODE",
-									value: false
-								});
-							}, 50);
+			for (let imgSrc of images) {
+				let img = new Image();
+				img.onload = function () {
+					loadedImages++;
+					if (loadedImages >= totalImages) {
+						reg.active.postMessage({
+							type: "SET_PRELOAD_MODE",
+							value: false
 						});
-					} else {
-						if (!preloadCacheContents[url]) {
-							let img = new Image();
-							img.src = url;
-							preloadCacheContents[url] = img;
-						}
 					}
 				}
+				img.onerror = function () {
+					loadedImages++;
+					if (loadedImages >= totalImages) {
+						reg.active.postMessage({
+							type: "SET_PRELOAD_MODE",
+							value: false
+						});
+					}
+				}
+				img.src = url;
+			}
+		});
+	} else {
+		for (let imgSrc of images) {
+			if (!preloadCacheContents[imgSrc]) {
+				let img = new Image();
+				img.src = imgSrc;
+				preloadCacheContents[imgSrc] = img;
 			}
 		}
 	}
