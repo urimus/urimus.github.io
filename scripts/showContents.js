@@ -600,7 +600,25 @@ function preloadImagesContents(type, fileContents){
 					}
 					url = "images/icons/"+type2+"/"+anchors[1]+".jpg";
 					if (serviceWorkerStarted) {
-						new Image().src = url;
+						navigator.serviceWorker.ready.then(function (reg) {
+							if (!reg.active) return;
+
+							reg.active.postMessage({
+								type: "SET_PRELOAD_MODE",
+								value: true
+							});
+
+							for (let imgSrc of images) {
+								new Image().src = url;
+							}
+
+							setTimeout(function () {
+								reg.active.postMessage({
+									type: "SET_PRELOAD_MODE",
+									value: false
+								});
+							}, 50);
+						});
 					} else {
 						if (!preloadCacheContents[url]) {
 							let img = new Image();

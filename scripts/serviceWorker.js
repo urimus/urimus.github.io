@@ -3,11 +3,14 @@
 var CACHE_NAME = "image-cache-v1";
 var META_SUFFIX = ":meta";
 
+// TTL (24h)
 var MAX_AGE = 1000 * 60 * 60 * 24;
 
 // ======================
-// 🔥 concurrency + dedupe
+// 🔥 preload control
 // ======================
+var IS_PRELOAD_MODE = false;
+
 var PRELOAD_CONCURRENCY = 4;
 var activePreloads = 0;
 var preloadQueue = [];
@@ -27,6 +30,17 @@ self.addEventListener("activate", function (event) {
 });
 
 // ======================
+// 🔥 preload mode toggle (from page)
+// ======================
+self.addEventListener("message", function (event) {
+	if (!event.data) return;
+
+	if (event.data.type === "SET_PRELOAD_MODE") {
+		IS_PRELOAD_MODE = !!event.data.value;
+	}
+});
+
+// ======================
 // fetch
 // ======================
 self.addEventListener("fetch", function (event) {
@@ -37,15 +51,37 @@ self.addEventListener("fetch", function (event) {
 		caches.open(CACHE_NAME).then(function (cache) {
 			return cache.match(event.request).then(function (cached) {
 
+				// ======================
+				// HIT
+				// ======================
 				if (cached) {
-					// stale-while-revalidate
-					event.waitUntil(
-						updateInBackground(cache, event.request)
-					);
 
-					return cached;
+					// 🔥 preload mode → только background refresh
+					if (IS_PRELOAD_MODE) {
+						event.waitUntil(
+							enqueuePreload(cache, event.request)
+						);
+						return cached;
+					}
+
+					// 🔄 runtime mode → stale-while-revalidate + TTL
+					return isFresh(cache, event.request).then(function (fresh) {
+
+						if (fresh) {
+							return cached;
+						}
+
+						event.waitUntil(
+							updateInBackground(cache, event.request)
+						);
+
+						return cached;
+					});
 				}
 
+				// ======================
+				// MISS
+				// ======================
 				return fetchAndCache(cache, event.request);
 			});
 		})
@@ -53,37 +89,7 @@ self.addEventListener("fetch", function (event) {
 });
 
 // ======================
-// fetch + cache (with dedupe conceptually ready)
-// ======================
-function fetchAndCache(cache, request) {
-	return fetch(request, { cache: "no-store" })
-		.then(function (response) {
-			if (!response || response.status !== 200) return response;
-
-			var metaRequest = new Request(request.url + META_SUFFIX);
-
-			return cache.put(request, response.clone())
-				.then(function () {
-					return cache.put(
-						metaRequest,
-						new Response(Date.now().toString())
-					);
-				})
-				.then(function () {
-					return response;
-				});
-		});
-}
-
-// ======================
-// background update (queued + limited)
-// ======================
-function updateInBackground(cache, request) {
-	return enqueuePreload(cache, request);
-}
-
-// ======================
-// 🔥 queue (max 4 parallel)
+// 🔥 PRELOAD QUEUE (LIMIT 4 + DEDUPE)
 // ======================
 function enqueuePreload(cache, request) {
 
@@ -142,7 +148,51 @@ function realPreload(cache, request) {
 }
 
 // ======================
-// TTL
+// 🔄 runtime update
+// ======================
+function updateInBackground(cache, request) {
+	return fetch(request, { cache: "no-store" })
+		.then(function (response) {
+			if (!response || response.status !== 200) return;
+
+			var metaRequest = new Request(request.url + META_SUFFIX);
+
+			return cache.put(request, response.clone())
+				.then(function () {
+					return cache.put(
+						metaRequest,
+						new Response(Date.now().toString())
+					);
+				});
+		})
+		.catch(function () {});
+}
+
+// ======================
+// ❌ MISS handler
+// ======================
+function fetchAndCache(cache, request) {
+	return fetch(request, { cache: "no-store" })
+		.then(function (response) {
+			if (!response || response.status !== 200) return response;
+
+			var metaRequest = new Request(request.url + META_SUFFIX);
+
+			return cache.put(request, response.clone())
+				.then(function () {
+					return cache.put(
+						metaRequest,
+						new Response(Date.now().toString())
+					);
+				})
+				.then(function () {
+					return response;
+				});
+		});
+}
+
+// ======================
+// ⏱ TTL
 // ======================
 function isFresh(cache, request) {
 	var metaRequest = new Request(request.url + META_SUFFIX);
@@ -157,7 +207,7 @@ function isFresh(cache, request) {
 }
 
 // ======================
-// cleanup
+// 🧹 cleanup expired cache
 // ======================
 function cleanupOldCache() {
 	return caches.open(CACHE_NAME).then(function (cache) {

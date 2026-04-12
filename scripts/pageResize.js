@@ -146,10 +146,28 @@ function preloadImages() {
 
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
-	for (let imgSrc of images) {
-		if (serviceWorkerStarted) {
-			new Image().src = imgSrc;
-		} else {
+	if (serviceWorkerStarted) {
+		navigator.serviceWorker.ready.then(function (reg) {
+			if (!reg.active) return;
+
+			reg.active.postMessage({
+				type: "SET_PRELOAD_MODE",
+				value: true
+			});
+
+			for (let imgSrc of images) {
+				new Image().src = imgSrc;
+			}
+
+			setTimeout(function () {
+				reg.active.postMessage({
+					type: "SET_PRELOAD_MODE",
+					value: false
+				});
+			}, 50);
+		});
+	} else {
+		for (let imgSrc of images) {
 			if (!preloadCacheGl[imgSrc]) {
 				const img = new Image();
 				img.src = imgSrc;
@@ -157,6 +175,7 @@ function preloadImages() {
 			}
 		}
 	}
+
 
 }
 
