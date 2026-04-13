@@ -43,11 +43,11 @@ self.addEventListener("fetch", function (event) {
 
 						if (IS_PRELOAD_MODE && fresh) {
 							// ✅ свежая → только кэш
-//console.log("✅ свежая → только кэш");
+console.log("is preload, ✅ свежая → только кэш");
 							return cached;
 						}
 
-//console.log("⚠️ старая → вернуть + обновить в фоне");
+console.log("⚠️ старая → вернуть + обновить в фоне");
 						// ⚠️ старая → вернуть + обновить в фоне
 						event.waitUntil(
 							updateInBackground(cache, event.request)
@@ -57,7 +57,7 @@ self.addEventListener("fetch", function (event) {
 					});
 				}
 
-//console.log("❌ нет в кэше → сеть + запись");
+console.log("❌ нет в кэше → сеть + запись");
 				// ❌ нет в кэше → сеть + запись
 				return fetchAndCache(cache, event.request);
 			});
