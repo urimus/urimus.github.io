@@ -2068,10 +2068,10 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 					}
 				}
 
-				var qPos;
 				if (mediaURL != null) {
-					qPos = mediaURL.indexOf("?");
-					if (qPos != -1) mediaURL = mediaURL.substr(0, qPos);
+					const url = new URL(mediaURL);
+					url.search = "";
+					mediaURL = url.toString();
 				} else {
 					mediaURL = result.entries[i].media.url;
 				}
