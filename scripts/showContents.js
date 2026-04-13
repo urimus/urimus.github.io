@@ -605,7 +605,9 @@ function preloadImagesContents(type, fileContents) {
 	}
 	if (serviceWorkerStarted) {
 		for (let imgSrc of images) {
-			new Image().src = imgSrc + "?preload=1";
+			const url = new URL( imgSrc, window.location.href);
+			url.searchParams.set("preload", "1");
+			new Image().src = url.toString();
 		}		
 	} else {
 		for (let imgSrc of images) {
