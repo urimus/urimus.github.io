@@ -604,11 +604,40 @@ function preloadImagesContents(type, fileContents) {
 		}
 	}
 	if (serviceWorkerStarted) {
-		for (let imgSrc of images) {
-			const url = new URL(imgSrc, location.origin);
-			url.searchParams.set("cache", "preload");
-			fetch(url, { cache: "no-store" });
-		}
+		navigator.serviceWorker.ready.then(function (reg) {
+			if (!reg.active) return;
+
+			const totalImages = images.length;
+			var loadedImages = 0;
+
+			reg.active.postMessage({
+				type: "SET_PRELOAD_MODE",
+				value: true
+			});
+
+			for (let imgSrc of images) {
+				let img = new Image();
+				img.onload = function () {
+					loadedImages++;
+					if (loadedImages >= totalImages) {
+						reg.active.postMessage({
+							type: "SET_PRELOAD_MODE",
+							value: false
+						});
+					}
+				}
+				img.onerror = function () {
+					loadedImages++;
+					if (loadedImages >= totalImages) {
+						reg.active.postMessage({
+							type: "SET_PRELOAD_MODE",
+							value: false
+						});
+					}
+				}
+				img.src = url;
+			}
+		});
 	} else {
 		for (let imgSrc of images) {
 			if (!preloadCacheContents[imgSrc]) {
