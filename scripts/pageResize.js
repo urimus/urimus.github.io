@@ -8,15 +8,10 @@ var initComplete = false;
 
 // --- service worker ---
 if ("serviceWorker" in navigator) {
-  console.log("SW in navigator");
-	navigator.serviceWorker.register("/scripts/serviceWorker.js")
+	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
 	.then(function (reg) {
 		serviceWorkerStarted = true;
-  console.log("serviceWorkerStarted  - ", serviceWorkerStarted);
-	})
-.then(() => {
-  console.log("SW ready, reload...");
-});
+	});
 }
 
 // --- tab navigation ---
@@ -155,9 +150,7 @@ function preloadImages() {
 	var loadedImages = 0;
 
 	if (serviceWorkerStarted) {
-console.log("preload serviceWorkerStarted - ", serviceWorkerStarted);
 		navigator.serviceWorker.ready.then(function (reg) {
-console.log("preload navigator.serviceWorker.ready.then");
 			if (!reg.active) return;
 
 			reg.active.postMessage({
