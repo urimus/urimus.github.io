@@ -635,7 +635,7 @@ function preloadImagesContents(type, fileContents) {
 						});
 					}
 				}
-				img.src = url;
+				img.src = imgSrc;
 			}
 		});
 	} else {

@@ -11,6 +11,10 @@ var initComplete = false;
 navigator.serviceWorker.getRegistrations().then(regs => {
   regs.forEach(r => r.unregister());
 });
+
+navigator.serviceWorker.controller
+
+navigator.serviceWorker.getRegistrations().then(console.log)
 */
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
