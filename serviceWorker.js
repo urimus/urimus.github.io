@@ -53,7 +53,7 @@ self.addEventListener("fetch", function (event) {
 	if (event.request.destination !== "image") return;
 
 	const { request, isPreload } = normalizeRequest(event.request);
-console.log("SW: isPreload - ", isPreload);
+
 	event.respondWith(
 		caches.open(CACHE_NAME).then(function (cache) {
 			return cache.match(request).then(function (cached) {
