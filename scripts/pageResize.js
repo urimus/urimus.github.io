@@ -156,12 +156,11 @@ function preloadImages() {
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
 	if (serviceWorkerStarted) {
-			for (let imgSrc of images) {
-				const url = new URL(imgSrc, location.origin);
-				url.searchParams.set("cache", "preload");
-				fetch(url, { cache: "no-store" });
-			}
-		});
+		for (let imgSrc of images) {
+			const url = new URL(imgSrc, location.origin);
+			url.searchParams.set("cache", "preload");
+			fetch(url, { cache: "no-store" });
+		}
 	} else {
 		for (let imgSrc of images) {
 			if (!preloadCacheGl[imgSrc]) {
