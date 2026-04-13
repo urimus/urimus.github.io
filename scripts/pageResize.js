@@ -11,12 +11,14 @@ if ("serviceWorker" in navigator) {
   console.log("SW in navigator");
 	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
 	.then(function (reg) {
+  if (reg.waiting) {
+    reg.waiting.postMessage({ type: "SKIP_WAITING" });
+  }
 		serviceWorkerStarted = true;
   console.log("serviceWorkerStarted  - ", serviceWorkerStarted);
 	})
 .then(() => {
-  console.log("SW ready, reloading...");
-  location.reload();
+  console.log("SW ready, reload...");
 });
 }
 
