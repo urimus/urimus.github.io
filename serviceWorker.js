@@ -6,9 +6,6 @@ var META_SUFFIX = ":meta";
 // 24 hour TTL
 var MAX_AGE = 1000 * 60 * 60 * 24;
 
-// preload control
-var IS_PRELOAD_MODE = false;
-
 // in-flight dedupe
 var IN_FLIGHT = {};
 
@@ -28,15 +25,26 @@ self.addEventListener("activate", function (event) {
 });
 
 // ======================
-// preload mode toggle
+// normalize request
 // ======================
-self.addEventListener("message", function (event) {
-	if (!event.data) return;
+function normalizeRequest(request) {
+	const url = new URL(request.url);
 
-	if (event.data.type === "SET_PRELOAD_MODE") {
-		IS_PRELOAD_MODE = !!event.data.value;
-	}
-});
+	const isPreload = url.searchParams.has("preload");
+	url.searchParams.delete("preload");
+
+	const normalized = new Request(url.toString(), {
+		method: request.method,
+		headers: request.headers,
+		mode: request.mode,
+		credentials: request.credentials,
+		cache: request.cache,
+		redirect: request.redirect,
+		referrer: request.referrer
+	});
+
+	return { request: normalized, isPreload };
+}
 
 // ======================
 // fetch handler
@@ -44,28 +52,26 @@ self.addEventListener("message", function (event) {
 self.addEventListener("fetch", function (event) {
 	if (event.request.destination !== "image") return;
 
+	const { request, isPreload } = normalizeRequest(event.request);
+console.log("SW: isPreload - ", isPreload);
 	event.respondWith(
 		caches.open(CACHE_NAME).then(function (cache) {
-			return cache.match(event.request).then(function (cached) {
+			return cache.match(request).then(function (cached) {
 
 				// ======================
-				// 1. CACHE HIT
+				// CACHE HIT
 				// ======================
 				if (cached) {
-					return isFresh(cache, event.request).then(function (fresh) {
+					return isFresh(cache, request).then(function (fresh) {
 
-						// fresh → return cache + background update
 						if (fresh) {
-							if (!IS_PRELOAD_MODE) {
-								event.waitUntil(
-									fetchAndCache(cache, event.request)
-								);
+							if (!isPreload) {
+								event.waitUntil(fetchAndCache(cache, request));
 							}
 							return cached;
 						}
 
-						// stale → network-first
-						return fetchAndCache(cache, event.request)
+						return fetchAndCache(cache, request)
 							.catch(function () {
 								return cached;
 							});
@@ -73,9 +79,9 @@ self.addEventListener("fetch", function (event) {
 				}
 
 				// ======================
-				// 2. CACHE MISS
+				// CACHE MISS
 				// ======================
-				return fetchAndCache(cache, event.request);
+				return fetchAndCache(cache, request);
 			});
 		})
 	);

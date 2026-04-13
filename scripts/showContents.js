@@ -604,40 +604,9 @@ function preloadImagesContents(type, fileContents) {
 		}
 	}
 	if (serviceWorkerStarted) {
-		navigator.serviceWorker.ready.then(function (reg) {
-			if (!reg.active) return;
-
-			const totalImages = images.length;
-			var loadedImages = 0;
-
-			reg.active.postMessage({
-				type: "SET_PRELOAD_MODE",
-				value: true
-			});
-
-			for (let imgSrc of images) {
-				let img = new Image();
-				img.onload = function () {
-					loadedImages++;
-					if (loadedImages >= totalImages) {
-						reg.active.postMessage({
-							type: "SET_PRELOAD_MODE",
-							value: false
-						});
-					}
-				}
-				img.onerror = function () {
-					loadedImages++;
-					if (loadedImages >= totalImages) {
-						reg.active.postMessage({
-							type: "SET_PRELOAD_MODE",
-							value: false
-						});
-					}
-				}
-				img.src = imgSrc;
-			}
-		});
+		for (let imgSrc of images) {
+			new Image().src = imgSrc + "?preload=1";
+		}		
 	} else {
 		for (let imgSrc of images) {
 			if (!preloadCacheContents[imgSrc]) {
