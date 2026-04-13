@@ -31,8 +31,20 @@ self.addEventListener("message", function (event) {
 	}
 });
 
+function log(...args) {
+	self.clients.matchAll().then(clients => {
+		clients.forEach(client => {
+			client.postMessage({
+				type: "SW_LOG",
+				data: args
+			});
+		});
+	});
+}
+
 self.addEventListener("fetch", function (event) {
-console.log("FETCH:", event.request.url, event.request.destination);
+console.log("console.log FETCH:", event.request.url, event.request.destination);
+log("log FETCH:", event.request.url, event.request.destination);
 	if (event.request.destination !== "image") return;
 
 	event.respondWith(
@@ -43,11 +55,13 @@ console.log("FETCH:", event.request.url, event.request.destination);
 
 						if (IS_PRELOAD_MODE && fresh) {
 							// ✅ свежая → только кэш
-console.log("is preload, ✅ свежая → только кэш");
+console.log("console.log is preload, ✅ свежая → только кэш");
+log("log ✅ свежая → только кэш");
 							return cached;
 						}
 
-console.log("⚠️ старая → вернуть + обновить в фоне");
+console.log("console.log ⚠️ старая → вернуть + обновить в фоне");
+log("log ⚠️ старая → вернуть + обновить в фоне");
 						// ⚠️ старая → вернуть + обновить в фоне
 						event.waitUntil(
 							updateInBackground(cache, event.request)
@@ -57,7 +71,8 @@ console.log("⚠️ старая → вернуть + обновить в фон
 					});
 				}
 
-console.log("❌ нет в кэше → сеть + запись");
+console.log("console.log ❌ нет в кэше → сеть + запись");
+log("log ❌ нет в кэше → сеть + запись");
 				// ❌ нет в кэше → сеть + запись
 				return fetchAndCache(cache, event.request);
 			});
