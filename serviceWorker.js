@@ -31,8 +31,19 @@ self.addEventListener("message", function (event) {
 	}
 });
 
+function log(...args) {
+    self.clients.matchAll().then(clients => {
+        clients.forEach(client => {
+            client.postMessage({
+                type: "SW_LOG",
+                data: args
+            });
+        });
+    });
+}
+
 self.addEventListener("fetch", function (event) {
-console.log("FETCH:", event.request.url, event.request.destination);
+log("FETCH:", event.request.url, event.request.destination);
 	if (event.request.destination !== "image") return;
 
 	event.respondWith(
@@ -43,11 +54,11 @@ console.log("FETCH:", event.request.url, event.request.destination);
 
 						if (IS_PRELOAD_MODE && fresh) {
 							// ✅ свежая → только кэш
-console.log("✅ свежая → только кэш");
+log("✅ свежая → только кэш");
 							return cached;
 						}
 
-console.log("⚠️ старая → вернуть + обновить в фоне");
+log("⚠️ старая → вернуть + обновить в фоне");
 						// ⚠️ старая → вернуть + обновить в фоне
 						event.waitUntil(
 							updateInBackground(cache, event.request)
@@ -57,7 +68,7 @@ console.log("⚠️ старая → вернуть + обновить в фон
 					});
 				}
 
-console.log("❌ нет в кэше → сеть + запись");
+log("❌ нет в кэше → сеть + запись");
 				// ❌ нет в кэше → сеть + запись
 				return fetchAndCache(cache, event.request);
 			});
