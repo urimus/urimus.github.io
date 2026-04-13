@@ -8,10 +8,15 @@ var initComplete = false;
 
 // --- service worker ---
 if ("serviceWorker" in navigator) {
+  console.log("SW in navigator");
 	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
 	.then(function (reg) {
 		serviceWorkerStarted = true;
-	});
+  console.log("serviceWorkerStarted  - ", serviceWorkerStarted);
+	})
+.then(() => {
+  console.log("SW ready, reload page now");
+});
 }
 navigator.serviceWorker.addEventListener("message", e => {
   console.log("FROM SW:", e.data);
