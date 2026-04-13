@@ -18,9 +18,6 @@ if ("serviceWorker" in navigator) {
   console.log("SW ready, reload page now");
 });
 }
-navigator.serviceWorker.addEventListener("message", e => {
-  console.log("FROM SW:", e.data);
-});
 
 // --- tab navigation ---
 function keyboardClick(event, el) {
@@ -158,7 +155,9 @@ function preloadImages() {
 	var loadedImages = 0;
 
 	if (serviceWorkerStarted) {
+console.log("preload serviceWorkerStarted - ", serviceWorkerStarted);
 		navigator.serviceWorker.ready.then(function (reg) {
+console.log("preload navigator.serviceWorker.ready.then");
 			if (!reg.active) return;
 
 			reg.active.postMessage({
