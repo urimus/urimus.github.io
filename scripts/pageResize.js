@@ -156,9 +156,9 @@ function preloadImages() {
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
 	if (serviceWorkerStarted) {
-			for (let imgSrc of images) {
-				new Image().src = imgSrc + "?preload=1";
-			}			
+		for (let imgSrc of images) {
+			new Image().src = imgSrc + "?preload=1";
+		}			
 	} else {
 		for (let imgSrc of images) {
 			if (!preloadCacheGl[imgSrc]) {
