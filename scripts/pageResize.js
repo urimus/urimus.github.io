@@ -9,11 +9,8 @@ var initComplete = false;
 // --- service worker ---
 if ("serviceWorker" in navigator) {
   console.log("SW in navigator");
-	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
+	navigator.serviceWorker.register("/serviceWorker.js")
 	.then(function (reg) {
-  if (reg.waiting) {
-    reg.waiting.postMessage({ type: "SKIP_WAITING" });
-  }
 		serviceWorkerStarted = true;
   console.log("serviceWorkerStarted  - ", serviceWorkerStarted);
 	})
