@@ -8,7 +8,7 @@ var initComplete = false;
 
 // --- service worker ---
 if ("serviceWorker" in navigator) {
-	navigator.serviceWorker.register("/scripts/serviceWorker.js", { scope: "/" })
+	navigator.serviceWorker.register("/scripts/serviceWorker.js")
 	.then(function (reg) {
 		serviceWorkerStarted = true;
 	});
