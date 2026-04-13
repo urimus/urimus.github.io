@@ -9,7 +9,7 @@ var initComplete = false;
 // --- service worker ---
 if ("serviceWorker" in navigator) {
   console.log("SW in navigator");
-	navigator.serviceWorker.register("serviceWorker.js")
+	navigator.serviceWorker.register("/scripts/serviceWorker.js")
 	.then(function (reg) {
 		serviceWorkerStarted = true;
   console.log("serviceWorkerStarted  - ", serviceWorkerStarted);
