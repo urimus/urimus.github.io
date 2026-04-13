@@ -3,11 +3,18 @@
 var CACHE_NAME = "image-cache-v1";
 var META_SUFFIX = ":meta";
 
-// 24 часа TTL
+// 24 hour TTL
 var MAX_AGE = 1000 * 60 * 60 * 24;
+
 // preload control
 var IS_PRELOAD_MODE = false;
 
+// in-flight dedupe
+var IN_FLIGHT = {};
+
+// ======================
+// install / activate
+// ======================
 self.addEventListener("install", function (event) {
 	self.skipWaiting();
 });
@@ -21,7 +28,7 @@ self.addEventListener("activate", function (event) {
 });
 
 // ======================
-// 🔥 preload mode toggle (from page)
+// preload mode toggle
 // ======================
 self.addEventListener("message", function (event) {
 	if (!event.data) return;
@@ -31,81 +38,90 @@ self.addEventListener("message", function (event) {
 	}
 });
 
+// ======================
+// fetch handler
+// ======================
 self.addEventListener("fetch", function (event) {
-//console.log("console.log FETCH:", event.request.url, event.request.destination);
 	if (event.request.destination !== "image") return;
 
 	event.respondWith(
 		caches.open(CACHE_NAME).then(function (cache) {
 			return cache.match(event.request).then(function (cached) {
+
+				// ======================
+				// 1. CACHE HIT
+				// ======================
 				if (cached) {
 					return isFresh(cache, event.request).then(function (fresh) {
 
-						if (IS_PRELOAD_MODE && fresh) {
-							// ✅ свежая → только кэш
-//console.log("console.log is preload, ✅ свежая → только кэш");
+						// fresh → return cache + background update
+						if (fresh) {
+							if (!IS_PRELOAD_MODE) {
+								event.waitUntil(
+									fetchAndCache(cache, event.request)
+								);
+							}
 							return cached;
 						}
 
-//console.log("console.log ⚠️ старая → вернуть + обновить в фоне");
-						// ⚠️ старая → вернуть + обновить в фоне
-						event.waitUntil(
-							updateInBackground(cache, event.request)
-						);
-
-						return cached;
+						// stale → network-first
+						return fetchAndCache(cache, event.request)
+							.catch(function () {
+								return cached;
+							});
 					});
 				}
 
-//console.log("console.log ❌ нет в кэше → сеть + запись");
-				// ❌ нет в кэше → сеть + запись
+				// ======================
+				// 2. CACHE MISS
+				// ======================
 				return fetchAndCache(cache, event.request);
 			});
 		})
 	);
 });
 
-
 // ======================
-// 🔹 сеть + кэширование
+// network + cache
 // ======================
 function fetchAndCache(cache, request) {
-	return fetch(request).then(function (response) {
-		if (!response || response.status !== 200) return response;
+	var key = request.url;
 
-		return cache.put(request, response.clone()).then(function () {
-			return cache.put(
-				request.url + META_SUFFIX,
-				new Response(Date.now().toString())
-			);
-		}).then(function () {
-			return response;
+	if (IN_FLIGHT[key]) {
+		return IN_FLIGHT[key].catch(function () {
+			return cache.match(request);
 		});
-	});
+	}
+
+	IN_FLIGHT[key] = fetch(request)
+		.then(function (response) {
+
+			if (!response || (response.status !== 200 && response.type !== "opaque")) {
+				return response;
+			}
+
+			return Promise.all([
+				cache.put(request, response.clone()),
+				cache.put(
+					key + META_SUFFIX,
+					new Response(Date.now().toString())
+				)
+			]).then(function () {
+				return response;
+			});
+		})
+		.catch(function () {
+			return cache.match(request);
+		})
+		.finally(function () {
+			delete IN_FLIGHT[key];
+		});
+
+	return IN_FLIGHT[key];
 }
 
-
 // ======================
-// 🔹 обновление в фоне
-// ======================
-function updateInBackground(cache, request) {
-	return fetch(request).then(function (response) {
-		if (!response || response.status !== 200) return;
-
-		return cache.put(request, response.clone()).then(function () {
-			return cache.put(
-				request.url + META_SUFFIX,
-				new Response(Date.now().toString())
-			);
-		});
-	}).catch(function () {
-		// offline / error → игнор
-	});
-}
-
-
-// ======================
-// 🔹 TTL проверка
+// TTL check
 // ======================
 function isFresh(cache, request) {
 	return cache.match(request.url + META_SUFFIX).then(function (meta) {
@@ -117,13 +133,13 @@ function isFresh(cache, request) {
 	});
 }
 
-
 // ======================
-// 🔹 очистка при activate
+// cleanup old cache
 // ======================
 function cleanupOldCache() {
 	return caches.open(CACHE_NAME).then(function (cache) {
 		return cache.keys().then(function (requests) {
+
 			var chain = Promise.resolve();
 
 			requests.forEach(function (request) {
