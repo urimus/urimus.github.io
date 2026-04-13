@@ -479,7 +479,7 @@ function preloadImage(type, source, lang, result) {
 		if (result.entries[j].storage.preloadPF !== null && result.entries[j].storage.preloadPF == 0) preloadFailedCount++;
 	}
 
-	if (preloadPassedCount+preloadFailedCount==totalEntries) return;
+	if (preloadPassedCount+preloadFailedCount>=totalEntries) return;
 	if (preloadStartedCount==5) return; // 5 preloads simultaneously only
 	if (preloadSet==0) return;
 
@@ -498,7 +498,7 @@ function preloadImage(type, source, lang, result) {
 		for (var j = 0; j < totalEntries; j++) {
 			if (result.entries[j].storage.preloadPF !== null) loadedCount++;
 		}
-		if (loadedCount == totalEntries) {
+		if (loadedCount >= totalEntries) {
 			document.getElementById("loadedCount").innerHTML = "";
 		} else {
 			document.getElementById("loadedCount").innerHTML = loadedCount + "/";
@@ -564,7 +564,7 @@ function preloadImage(type, source, lang, result) {
 			for (var j = 0; j < totalEntries; j++) {
 				if (result.entries[j].storage.preloadPF !== null) loadedCount++;
 			}
-			if (loadedCount == totalEntries) {
+			if (loadedCount >= totalEntries) {
 				document.getElementById("loadedCount").innerHTML = "";
 			} else {
 				document.getElementById("loadedCount").innerHTML = loadedCount + "/";
