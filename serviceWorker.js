@@ -43,7 +43,8 @@ function log(...args) {
 }
 
 self.addEventListener("fetch", function (event) {
-log("FETCH:", event.request.url, event.request.destination);
+console.log("console.log FETCH:", event.request.url, event.request.destination);
+log("log FETCH:", event.request.url, event.request.destination);
 	if (event.request.destination !== "image") return;
 
 	event.respondWith(
@@ -54,11 +55,11 @@ log("FETCH:", event.request.url, event.request.destination);
 
 						if (IS_PRELOAD_MODE && fresh) {
 							// ✅ свежая → только кэш
-log("✅ свежая → только кэш");
+//log("✅ свежая → только кэш");
 							return cached;
 						}
 
-log("⚠️ старая → вернуть + обновить в фоне");
+//log("⚠️ старая → вернуть + обновить в фоне");
 						// ⚠️ старая → вернуть + обновить в фоне
 						event.waitUntil(
 							updateInBackground(cache, event.request)
@@ -68,7 +69,7 @@ log("⚠️ старая → вернуть + обновить в фоне");
 					});
 				}
 
-log("❌ нет в кэше → сеть + запись");
+//log("❌ нет в кэше → сеть + запись");
 				// ❌ нет в кэше → сеть + запись
 				return fetchAndCache(cache, event.request);
 			});
