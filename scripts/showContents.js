@@ -605,7 +605,7 @@ function preloadImagesContents(type, fileContents) {
 	}
 	if (serviceWorkerStarted) {
 		for (let imgSrc of images) {
-			const url = new URL( imgSrc, window.location.href);
+			const url = new URL(imgSrc, window.location.href);
 			url.searchParams.set("preload", "1");
 			new Image().src = url.toString();
 		}		
