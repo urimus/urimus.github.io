@@ -7,8 +7,13 @@ var initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
 // --- service worker ---
+/* в консоли
+navigator.serviceWorker.getRegistrations().then(regs => {
+  regs.forEach(r => r.unregister());
+});
+*/
 if ("serviceWorker" in navigator) {
-	navigator.serviceWorker.register("/scripts/serviceWorker.js")
+	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
 	.then(function (reg) {
 		serviceWorkerStarted = true;
 	});
