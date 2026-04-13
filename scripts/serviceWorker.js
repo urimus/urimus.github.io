@@ -32,6 +32,7 @@ self.addEventListener("message", function (event) {
 });
 
 self.addEventListener("fetch", function (event) {
+    console.log("FETCH:", event.request.url, event.request.destination);
 	if (event.request.destination !== "image") return;
 
 	event.respondWith(
