@@ -13,6 +13,9 @@ if ("serviceWorker" in navigator) {
 		serviceWorkerStarted = true;
 	});
 }
+navigator.serviceWorker.addEventListener("message", e => {
+  console.log("FROM SW:", e.data);
+});
 
 // --- tab navigation ---
 function keyboardClick(event, el) {
