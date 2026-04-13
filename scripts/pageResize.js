@@ -15,7 +15,8 @@ if ("serviceWorker" in navigator) {
   console.log("serviceWorkerStarted  - ", serviceWorkerStarted);
 	})
 .then(() => {
-  console.log("SW ready, reload page now");
+  console.log("SW ready, reloading...");
+  location.reload();
 });
 }
 
