@@ -2068,12 +2068,11 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 					}
 				}
 
+				mediaURL ??= result.entries[i].media.url;
 				if (mediaURL != null) {
 					const url = new URL(mediaURL);
 					url.search = "";
 					mediaURL = url.toString();
-				} else {
-					mediaURL = result.entries[i].media.url;
 				}
 
 				seeAlso = getMetas(doc, 'meta[property="og:see_also"]');
