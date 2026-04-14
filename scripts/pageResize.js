@@ -1,8 +1,7 @@
 ﻿"use strict";
 // ------------- Global Variables ---------------- //
 var clickStarted = false;
-var serviceWorkerStarted = false;
-const preloadCacheGl = {}; // fallback if serviceWorker not started
+const preloadCacheGl = {}; // fallback if not "serviceWorker" in navigator
 var initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
@@ -19,7 +18,7 @@ navigator.serviceWorker.getRegistrations().then(console.log)
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
 	.then(function (reg) {
-		serviceWorkerStarted = true;
+		// nothing
 	});
 }
 
@@ -155,12 +154,19 @@ function preloadImages() {
 
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
-	if (serviceWorkerStarted) {
-		for (let imgSrc of images) {
-			const url = new URL(imgSrc, window.location.href);
-			url.searchParams.set("preload", "1");
-			new Image().src = url.toString();
-		}			
+	if ("serviceWorker" in navigator) {
+		const start = () => {
+			for (let imgSrc of images) {
+				const url = new URL(imgSrc, window.location.href);
+				url.searchParams.set("preload", "1");
+				new Image().src = url.toString();
+			}
+		};
+		if (navigator.serviceWorker.controller) {
+			start();
+		} else {
+			navigator.serviceWorker.addEventListener("controllerchange", start, { once: true });
+		}
 	} else {
 		for (let imgSrc of images) {
 			if (!preloadCacheGl[imgSrc]) {
@@ -170,8 +176,6 @@ function preloadImages() {
 			}
 		}
 	}
-
-
 }
 
 // --- Listerners ---

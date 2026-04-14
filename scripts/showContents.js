@@ -579,7 +579,7 @@ function correctLink(line){
 }
 
 function preloadImagesContents(type, fileContents) {
-	var imageName=null, type2, parser = new DOMParser(), doc, link, anchors, url, images = [];
+	var imageName=null, type2, parser = new DOMParser(), doc, link, anchors, images = [];
 
 	for (let i = 0; i < fileContents.length; i++) {
 		if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") {
@@ -603,12 +603,19 @@ function preloadImagesContents(type, fileContents) {
 			}
 		}
 	}
-	if (serviceWorkerStarted) {
-		for (let imgSrc of images) {
-			const url = new URL(imgSrc, window.location.href);
-			url.searchParams.set("preload", "1");
-			new Image().src = url.toString();
-		}		
+	if ("serviceWorker" in navigator) {
+		const start = () => {
+			for (let imgSrc of images) {
+				const url = new URL(imgSrc, window.location.href);
+				url.searchParams.set("preload", "1");
+				new Image().src = url.toString();
+			}
+		};
+		if (navigator.serviceWorker.controller) {
+			start();
+		} else {
+			navigator.serviceWorker.addEventListener("controllerchange", start, { once: true });
+		}
 	} else {
 		for (let imgSrc of images) {
 			if (!preloadCacheContents[imgSrc]) {
