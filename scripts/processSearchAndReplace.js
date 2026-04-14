@@ -682,7 +682,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 			} else {
 				toJpg=1;
 			}
-			filename = prompt(prompt12, filename);
+			filename = prompt(t("enterImageName"), filename);
 			if (filename == null ) return;
 			upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, createFolder);
 		};
