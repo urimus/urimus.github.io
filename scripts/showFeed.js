@@ -2086,14 +2086,14 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = mediaURL;
 				locStUpdateDataNew.mediaUrl = mediaURL;
-			}
-			if (mediaComment != null) {
-				result.entries[i].media.origComment = result.entries[i].media.comment;
-				result.entries[i].media.comment = mediaComment;
-				locStUpdateDataNew.mediaComment = mediaComment;
-			}  else {
-				result.entries[i].media.comment = "";
-				locStUpdateDataNew.mediaComment = "";
+				if (mediaComment != null) {
+					result.entries[i].media.origComment = result.entries[i].media.comment;
+					result.entries[i].media.comment = mediaComment;
+					locStUpdateDataNew.mediaComment = mediaComment;
+				} else {
+					result.entries[i].media.comment = "";
+					locStUpdateDataNew.mediaComment = "";
+				}
 			}
 			if (creators != null) {
 				result.entries[i].creator = [];
@@ -2111,7 +2111,6 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 					locStUpdateDataNew.creatorUrl[j] = creatorsUrls[j];
 				}
 			}
-
 			if (categories != null) {
 				result.entries[i].category = [];
 				locStUpdateDataNew.category = [];
@@ -2134,8 +2133,6 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			}
 
 			// success
-console.log("description - ", description);
-console.log("mediaURL - ", mediaURL);
 			if (description != null && mediaURL != null) {
 				locStPar = source + "_" + type + "_updates";
 				var locStUpdateData = getLocalStorageData(locStPar);
@@ -2150,7 +2147,7 @@ console.log("mediaURL - ", mediaURL);
 
 			// complete update absent
 			updateAttempt2 = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
-			console.log("Update Absent. Record # " + (i + 1) + updateAttempt2 + ", data = " + data);
+			console.log(t("updateAbsent") + ". " + t("record") + " # " + (i + 1) + updateAttempt2 + ", data = " + data);
 			consoleMetas(doc);
 
 			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
