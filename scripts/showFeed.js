@@ -2132,8 +2132,8 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				locStUpdateDataNew.video = videoURL;
 			}
 
-			// success
 			if (description != null && mediaURL != null) {
+				// success
 				locStPar = source + "_" + type + "_updates";
 				var locStUpdateData = getLocalStorageData(locStPar);
 				locStUpdateData[result.entries[i].link] = locStUpdateDataNew;
@@ -2142,21 +2142,19 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				showEntry(type, source, lang, result, i, 0);
 				result.entries[i].storage.updateProcessed = 1;
 				checkProcessedCount(source, type, result, lang, 1);
-				return;
+			} else {
+				// complete update absent
+				updateAttempt2 = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
+				console.log(t("updateAbsent") + ". " + t("record") + " # " + (i + 1) + updateAttempt2 + ", data = " + data);
+				consoleMetas(doc);
+
+				updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
+				document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
+				result.entries[i].error = t("updateAbsent") + ".";
+				showEntry(type, source, lang, result, i, 0);
+				result.entries[i].storage.updateProcessed = 1;
+				checkProcessedCount(source, type, result, lang, 0);
 			}
-
-			// complete update absent
-			updateAttempt2 = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
-			console.log(t("updateAbsent") + ". " + t("record") + " # " + (i + 1) + updateAttempt2 + ", data = " + data);
-			consoleMetas(doc);
-
-			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
-			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
-			result.entries[i].error = t("updateAbsent") + ".";
-			showEntry(type, source, lang, result, i, 0);
-			result.entries[i].storage.updateProcessed = 1;
-			checkProcessedCount(source, type, result, lang, 0);
-			return;
 
 		})
 		.catch(error => {
