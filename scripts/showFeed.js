@@ -532,7 +532,7 @@ function preloadImage(type, source, lang, result) {
 				}
 			}
 		}
-		if (source!="cbs" && typeof entry.video!== "undefined" && !isEmbed(entry.video)) {
+		if (source != "cbs" && typeof entry.video !== "undefined" && !isEmbed(entry.video)) {
 			newUrl = entry.video;
 			if (!preloadCache[newUrl]) {
 				let v = document.createElement("video");
@@ -550,12 +550,12 @@ function preloadImage(type, source, lang, result) {
 			result.entries[preloadIndex].storage.preloadPF=0;
 			result.entries[preloadIndex].storage.preloadStarted=0;
 			result.entries[preloadIndex].storage.loadingImg=null;
-			if (!preloadImg.alt) {
+			if (preloadImg.alt == null) {
 				loadingImg.alt = t("imageLoadError");
 			} else {
 				loadingImg.alt = preloadImg.alt;
 			}
-			if (!preloadImg.title) {
+			if (preloadImg.title == null) {
 				loadingImg.title = t("imageLoadError");
 			} else {
 				loadingImg.title= preloadImg.title;
@@ -584,7 +584,7 @@ function preloadImage(type, source, lang, result) {
 				url.searchParams.set("w", "450");
 				newUrl = url.toString();
 			}
-			preloadImg.src=newUrl;
+			preloadImg.src = newUrl;
 			isOrigUrl = 1;
 		} else {
 			showErrorImage();
@@ -593,13 +593,13 @@ function preloadImage(type, source, lang, result) {
 	}
 	newUrl = entry.media.url;
 	result.entries[preloadIndex].storage.preloadStarted=1;
-	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.src=newUrl; return; }
+	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.src = newUrl; return; }
 	if (source === "nasa" || source === "artemis") {
 		const url = new URL(newUrl);
 		url.searchParams.set("w", "450");
 		newUrl = url.toString();
 	}
-	preloadImg.src=newUrl;
+	preloadImg.src = newUrl;
 }
 // ------------- End of Image Preload -------------- //
 
