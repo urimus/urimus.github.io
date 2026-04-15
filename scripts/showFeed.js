@@ -550,12 +550,12 @@ function preloadImage(type, source, lang, result) {
 			result.entries[preloadIndex].storage.preloadPF=0;
 			result.entries[preloadIndex].storage.preloadStarted=0;
 			result.entries[preloadIndex].storage.loadingImg=null;
-			if (preloadImg.alt == null) {
+			if (preloadImg.alt == null || preloadImg.alt == "") {
 				loadingImg.alt = t("imageLoadError");
 			} else {
 				loadingImg.alt = preloadImg.alt;
 			}
-			if (preloadImg.title == null) {
+			if (preloadImg.title == null || preloadImg.title == "") {
 				loadingImg.title = t("imageLoadError");
 			} else {
 				loadingImg.title= preloadImg.title;
@@ -577,8 +577,10 @@ function preloadImage(type, source, lang, result) {
 		newUrl = entry.media.origUrl;
 		if (typeof newUrl !== 'undefined' && isOrigUrl == 0 && newUrl != preloadImg.src) {
 			if (newUrl.substr(newUrl.length - 12)=="no_image.png") { showErrorImage(); return; }
-			preloadImg.alt=entry.media.origComment;
-			preloadImg.title=entry.media.origComment;
+			if (entry.media.origComment != null) {
+				preloadImg.alt=entry.media.origComment;
+				preloadImg.title=entry.media.origComment;
+			}
 			if (source === "nasa" || source === "artemis") {
 				const url = new URL(newUrl);
 				url.searchParams.set("w", "450");
