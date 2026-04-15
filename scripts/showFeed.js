@@ -1969,193 +1969,198 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				if (description == null) description = getMeta(doc, 'meta[name="twitter:description"]');
 			}
 
-			if (description != null && mediaURL != null) {
+			mediaComment = getMeta(doc, 'meta[property="og:image:alt"]');
 
-				mediaComment = getMeta(doc, 'meta[property="og:image:alt"]');
+			categories = getMetas(doc, 'meta[name="keywords"]');
+			if (categories == null || !categories[0]) categories = getMetas(doc, 'meta[name="parsely-tags"]');
+			if (categories == null || !categories[0]) categories = getMetas(doc, 'meta[property="article:section"]');
 
-				categories = getMetas(doc, 'meta[name="keywords"]');
-				if (categories == null || !categories[0]) categories = getMetas(doc, 'meta[name="parsely-tags"]');
-				if (categories == null || !categories[0]) categories = getMetas(doc, 'meta[property="article:section"]');
+			creators = getMetas(doc, 'meta[name="parsely-author"]');
+			if (result.entries[i].creator != null || creators != null) {
+				creators = [...new Set([...(result.entries[i].creator ?? []), ...(creators ?? [])])];
+			}
 
-				if (typeof result.entries[i].creator === "undefined") {
-					creators = getMetas(doc, 'meta[name="parsely-author"]');
+			const safeParseJSON = (jsonText) => {
+				try {
+					return JSON.parse(jsonText);
+				} catch {
+					return null;
 				}
-
-				const safeParseJSON = (jsonText) => {
-					try {
-						return JSON.parse(jsonText);
-					} catch {
-						return null;
+			};
+			if (source == "yahoo") {
+				var jsonDATA = null;
+				const scripts = getScripts(doc, 'script[type="application/ld+json"]');
+				for (const script of scripts) {
+					jsonDATA = safeParseJSON(script);
+					if (jsonDATA !=null && typeof jsonDATA.creator !== "undefined" && typeof jsonDATA.creator.name !== "undefined") {
+//						if (typeof jsonDATA.image !== "undefined" && typeof jsonDATA.image.url !== "undefined") {
+//							mediaURL = jsonDATA.image.url;
+//						}
+						creators = [];
+						creators[0] = jsonDATA.creator.name;
+						break;
 					}
-				};
-				if (source == "yahoo") {
-					var jsonDATA = null;
-					const scripts = getScripts(doc, 'script[type="application/ld+json"]');
-					for (const script of scripts) {
-						jsonDATA = safeParseJSON(script);
-						if (jsonDATA !=null && typeof jsonDATA.creator !== "undefined" && typeof jsonDATA.creator.name !== "undefined") {
-//							if (typeof jsonDATA.image !== "undefined" && typeof jsonDATA.image.url !== "undefined") {
-//								mediaURL = jsonDATA.image.url;
-//							}
+				}
+			}
+			if (source == "cbs") {
+				var jsonDATA = null;
+				const scripts = getScripts(doc, 'script[type="application/ld+json"]');
+				for (const script of scripts) {
+					jsonDATA = safeParseJSON(script);
+					if (jsonDATA != null && jsonDATA.articleBody) break;
+				}
+				if (jsonDATA && jsonDATA.articleBody) {
+					description = jsonDATA.articleBody;
+					if (jsonDATA.author) {
+						if (jsonDATA.author.length > 0) {
 							creators = [];
-							creators[0] = jsonDATA.creator.name;
-							break;
+							creatorsUrls = [];
 						}
-					}
-				}
-				if (source == "cbs") {
-					var jsonDATA = null;
-					const scripts = getScripts(doc, 'script[type="application/ld+json"]');
-					for (const script of scripts) {
-						jsonDATA = safeParseJSON(script);
-						if (jsonDATA != null && jsonDATA.articleBody) break;
-					}
-					if (jsonDATA && jsonDATA.articleBody) {
-						description = jsonDATA.articleBody;
-						if (jsonDATA.author) {
-							if (jsonDATA.author.length > 0) {
-								creators = [];
-								creatorsUrls = [];
-							}
-							for (j = 0; j < jsonDATA.author.length; j++) {
-								creators[j] = jsonDATA.author[j].name;
-								if (jsonDATA.author[j].url) {
-									creatorsUrls[j] = jsonDATA.author[j].url;
-								}
+						for (j = 0; j < jsonDATA.author.length; j++) {
+							creators[j] = jsonDATA.author[j].name;
+							if (jsonDATA.author[j].url) {
+								creatorsUrls[j] = jsonDATA.author[j].url;
 							}
 						}
-						if (jsonDATA.keywords) {
-							if (jsonDATA.keywords.length > 0) categories = jsonDATA.keywords;
-						}
+					}
+					if (jsonDATA.keywords) {
+						if (jsonDATA.keywords.length > 0) categories = jsonDATA.keywords;
 					}
 				}
-				if (source == "nasa") {
-					var jsonDATA = null;
-					const scripts = getScripts(doc, 'script[type="application/ld+json"]');
-					for (const script of scripts) {
-						jsonDATA = safeParseJSON(script);
-						if (jsonDATA != null && jsonDATA["@graph"]) {
-							const graph = jsonDATA["@graph"];
-							for (const ele of graph) {
-								if (ele["@type"] == "ImageObject") {
-									mediaURL = ele.url;
-									if (ele.caption) mediaComment = ele.caption;
-								}
-								if (ele["@type"] == "Person") {
-									creators = [];
-									creators[0] = ele.name;
-								}
+			}
+			if (source == "nasa") {
+				var jsonDATA = null;
+				const scripts = getScripts(doc, 'script[type="application/ld+json"]');
+				for (const script of scripts) {
+					jsonDATA = safeParseJSON(script);
+					if (jsonDATA != null && jsonDATA["@graph"]) {
+						const graph = jsonDATA["@graph"];
+						for (const ele of graph) {
+							if (ele["@type"] == "ImageObject") {
+								mediaURL = ele.url;
+								if (ele.caption) mediaComment = ele.caption;
+							}
+							if (ele["@type"] == "Person") {
+	//							creators = [];
+	//							creators[0] = ele.name;
 							}
 						}
-						if (jsonDATA != null && jsonDATA.keywords) {
-							if (jsonDATA.keywords.length > 0) categories = jsonDATA.keywords;
-						}
+					}
+					if (jsonDATA != null && jsonDATA.keywords) {
+						if (jsonDATA.keywords.length > 0) categories = jsonDATA.keywords;
 					}
 				}
-				if (source == "yonhap") {
-					const script = getScript(doc, '#contentJsonData');
-					if (script) {
-						const getData = new Function(`
-							let CONTENT_DATA;
-							${script}
-							return CONTENT_DATA;
-						`);
-						var jsonDATA = safeParseJSON(getData());
-						if (jsonDATA) {
-							description = jsonDATA.BODY;
-							if (description == "\n") description = "";
-						}
+			}
+			if (source == "yonhap") {
+				const script = getScript(doc, '#contentJsonData');
+				if (script) {
+					const getData = new Function(`
+						let CONTENT_DATA;
+						${script}
+						return CONTENT_DATA;
+					`);
+					var jsonDATA = safeParseJSON(getData());
+					if (jsonDATA) {
+						description = jsonDATA.BODY;
+						if (description == "\n") description = "";
 					}
 				}
+			}
+				
+			if (mediaURL != null) {
+				const url = new URL(mediaURL);
+				url.search = "";
+				mediaURL = url.toString();
+			}
 
-				mediaURL ??= result.entries[i].media.url;
-				if (mediaURL != null) {
-					const url = new URL(mediaURL);
-					url.search = "";
-					mediaURL = url.toString();
-				}
+			seeAlso = getMetas(doc, 'meta[property="og:see_also"]');
+			videoURL = getMeta(doc, 'meta[property="og:video"]');
+			if (videoURL == null) videoURL = getMeta(doc, 'meta[property="og:video:url"]');
 
-				seeAlso = getMetas(doc, 'meta[property="og:see_also"]');
-				videoURL = getMeta(doc, 'meta[property="og:video"]');
-				if (videoURL == null) videoURL = getMeta(doc, 'meta[property="og:video:url"]');
+			locStUpdateDataNew = {};
+			if (description != null) {
+				result.entries[i].summary = description;
+				locStUpdateDataNew.summary = description;
+			}
+			if (mediaURL != null) {
+				result.entries[i].media.origUrl = result.entries[i].media.url;
+				result.entries[i].media.url = mediaURL;
+				locStUpdateDataNew.mediaUrl = mediaURL;
+			}
+			if (mediaComment != null) {
+				result.entries[i].media.origComment = result.entries[i].media.comment;
+				result.entries[i].media.comment = mediaComment;
+				locStUpdateDataNew.mediaComment = mediaComment;
+			}  else {
+				result.entries[i].media.comment = "";
+				locStUpdateDataNew.mediaComment = "";
+			}
+			if (creators != null) {
+				result.entries[i].creator = [];
+				locStUpdateDataNew.creator = [];
+				for (j = 0; j < creators.length; j++) {
+					result.entries[i].creator[j] = creators[j];
+					locStUpdateDataNew.creator[j] = creators[j];
+				}
+			}
+			if (creatorsUrls) {
+				result.entries[i].creatorUrl = [];
+				locStUpdateDataNew.creatorUrl = [];
+				for (j = 0; j < creatorsUrls.length; j++) {
+					result.entries[i].creatorUrl[j] = creatorsUrls[j];
+					locStUpdateDataNew.creatorUrl[j] = creatorsUrls[j];
+				}
+			}
 
-				locStUpdateDataNew = {};
-				if (description != null) {
-					result.entries[i].summary = description;
-					locStUpdateDataNew.summary = description;
+			if (categories != null) {
+				result.entries[i].category = [];
+				locStUpdateDataNew.category = [];
+				for (j = 0; j < categories.length; j++) {
+					result.entries[i].category = result.entries[i].category.concat(categories[j].split(","));
+					locStUpdateDataNew.category = locStUpdateDataNew.category.concat(categories[j].split(","));
 				}
-				if (mediaURL != null) {
-					result.entries[i].media.origUrl = result.entries[i].media.url;
-					result.entries[i].media.url = mediaURL;
-					locStUpdateDataNew.mediaUrl = mediaURL;
+			}
+			if (seeAlso != null) {
+				result.entries[i].seeAlso = [];
+				locStUpdateDataNew.seeAlso = [];
+				for (j = 0; j < seeAlso.length; j++) {
+					result.entries[i].seeAlso[j] = seeAlso[j];
+					locStUpdateDataNew.seeAlso[j] = seeAlso[j];
 				}
-				if (mediaComment != null) {
-					result.entries[i].media.origComment = result.entries[i].media.comment;
-					result.entries[i].media.comment = mediaComment;
-					locStUpdateDataNew.mediaComment = mediaComment;
-				}  else {
-					result.entries[i].media.comment = "";
-					locStUpdateDataNew.mediaComment = "";
-				}
-				if (creators != null) {
-					result.entries[i].creator = [];
-					locStUpdateDataNew.creator = [];
-					for (j = 0; j < creators.length; j++) {
-						result.entries[i].creator[j] = creators[j];
-						locStUpdateDataNew.creator[j] = creators[j];
-					}
-				}
-				if (creatorsUrls) {
-					result.entries[i].creatorUrl = [];
-					locStUpdateDataNew.creatorUrl = [];
-					for (j = 0; j < creatorsUrls.length; j++) {
-						result.entries[i].creatorUrl[j] = creatorsUrls[j];
-						locStUpdateDataNew.creatorUrl[j] = creatorsUrls[j];
-					}
-				}
+			}
+			if (videoURL != null) {
+				result.entries[i].video = videoURL;
+				locStUpdateDataNew.video = videoURL;
+			}
 
-				if (categories != null) {
-					result.entries[i].category = [];
-					locStUpdateDataNew.category = [];
-					for (j = 0; j < categories.length; j++) {
-						result.entries[i].category = result.entries[i].category.concat(categories[j].split(","));
-						locStUpdateDataNew.category = locStUpdateDataNew.category.concat(categories[j].split(","));
-					}
-				}
-				if (seeAlso != null) {
-					result.entries[i].seeAlso = [];
-					locStUpdateDataNew.seeAlso = [];
-					for (j = 0; j < seeAlso.length; j++) {
-						result.entries[i].seeAlso[j] = seeAlso[j];
-						locStUpdateDataNew.seeAlso[j] = seeAlso[j];
-					}
-				}
-				if (videoURL != null) {
-					result.entries[i].video = videoURL;
-					locStUpdateDataNew.video = videoURL;
-				}
+			// success
+console.log("description - ", description);
+console.log("mediaURL - ", mediaURL);
+			if (description != null && mediaURL != null) {
 				locStPar = source + "_" + type + "_updates";
 				var locStUpdateData = getLocalStorageData(locStPar);
 				locStUpdateData[result.entries[i].link] = locStUpdateDataNew;
 				localStorage[source + "_" + type + "_updates"] = JSON.stringify(locStUpdateData);
+
 				showEntry(type, source, lang, result, i, 0);
 				result.entries[i].storage.updateProcessed = 1;
 				checkProcessedCount(source, type, result, lang, 1);
 				return;
-			} else {
-				// update absent
-				updateAttempt2 = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
-				console.log("Update Absent. Record # " + (i + 1) + updateAttempt2 + ", data = " + data);
-				consoleMetas(doc);
-
-				updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
-				document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
-				result.entries[i].error = t("updateAbsent") + ".";
-				showEntry(type, source, lang, result, i, 0);
-				result.entries[i].storage.updateProcessed = 1;
-				checkProcessedCount(source, type, result, lang, 0);
-				return;
 			}
+
+			// complete update absent
+			updateAttempt2 = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
+			console.log("Update Absent. Record # " + (i + 1) + updateAttempt2 + ", data = " + data);
+			consoleMetas(doc);
+
+			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
+			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
+			result.entries[i].error = t("updateAbsent") + ".";
+			showEntry(type, source, lang, result, i, 0);
+			result.entries[i].storage.updateProcessed = 1;
+			checkProcessedCount(source, type, result, lang, 0);
+			return;
+
 		})
 		.catch(error => {
 
