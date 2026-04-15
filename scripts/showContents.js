@@ -600,6 +600,7 @@ function preloadImagesContents(type, fileContents) {
 		}
 	}
 	if ("serviceWorker" in navigator) {
+		/*
 		const start = () => {
 			for (let imgSrc of images) {
 				const url = new URL(imgSrc, window.location.href);
@@ -612,6 +613,14 @@ function preloadImagesContents(type, fileContents) {
 		} else {
 			navigator.serviceWorker.addEventListener("controllerchange", start, { once: true });
 		}
+		*/
+		navigator.serviceWorker.ready.then(() => {
+			for (let imgSrc of images) {
+				const url = new URL(imgSrc, window.location.href);
+				url.searchParams.set("preload", "1");
+				new Image().src = url.toString();
+			}
+		});
 	}
 }
 

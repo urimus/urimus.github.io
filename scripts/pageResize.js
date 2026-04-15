@@ -156,6 +156,7 @@ function preloadImages() {
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
 	if ("serviceWorker" in navigator) {
+		/*
 		const start = () => {
 			for (let imgSrc of images) {
 				const url = new URL(imgSrc, window.location.href);
@@ -168,6 +169,14 @@ function preloadImages() {
 		} else {
 			navigator.serviceWorker.addEventListener("controllerchange", start, { once: true });
 		}
+		*/
+		navigator.serviceWorker.ready.then(() => {
+			for (let imgSrc of images) {
+				const url = new URL(imgSrc, window.location.href);
+				url.searchParams.set("preload", "1");
+				new Image().src = url.toString();
+			}
+		});
 	}
 }
 
