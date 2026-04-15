@@ -3,8 +3,8 @@
 var CACHE_NAME = "image-cache-v1";
 var META_SUFFIX = ":meta";
 
-// 24 hour TTL
-var MAX_AGE = 1000 * 60 * 60 * 24;
+// 7 days TTL
+var MAX_AGE = 1000 * 60 * 60 * 24 * 7;
 
 // in-flight dedupe
 var IN_FLIGHT = {};
