@@ -1,7 +1,6 @@
 ﻿"use strict";
 // ------------- Global Variables ---------------- //
 var clickStarted = false;
-const preloadCacheGl = {}; // fallback if not "serviceWorker" in navigator
 var initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
@@ -168,14 +167,6 @@ function preloadImages() {
 			start();
 		} else {
 			navigator.serviceWorker.addEventListener("controllerchange", start, { once: true });
-		}
-	} else {
-		for (let imgSrc of images) {
-			if (!preloadCacheGl[imgSrc]) {
-				let img = new Image();
-				img.src = imgSrc;
-				preloadCacheGl[imgSrc] = img;
-			}
 		}
 	}
 }

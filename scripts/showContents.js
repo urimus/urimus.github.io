@@ -1,9 +1,5 @@
 ﻿"use strict";
 
-// ------------- Global Variables ---------------- //
-var preloadCacheContents = {}; // fallback if serviceWorker not started
-// ------------- End of Global Variables ---------------- //
-
 function contentsLoad(lang) {
 
 	changeLanguage(lang); // i18next
@@ -615,14 +611,6 @@ function preloadImagesContents(type, fileContents) {
 			start();
 		} else {
 			navigator.serviceWorker.addEventListener("controllerchange", start, { once: true });
-		}
-	} else {
-		for (let imgSrc of images) {
-			if (!preloadCacheContents[imgSrc]) {
-				let img = new Image();
-				img.src = imgSrc;
-				preloadCacheContents[imgSrc] = img;
-			}
 		}
 	}
 }
