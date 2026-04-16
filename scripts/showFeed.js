@@ -652,6 +652,9 @@ function showEntry(type, source, lang, result, i, appendEntry = 1) {
 	Img.setAttribute('align', 'left');
 	Img.setAttribute('width', entry.media.width);
 	Img.setAttribute('style', 'display: block; margin-top:5px; margin-bottom:5px;');
+	Img.onload = function () {
+		adjustFeedScrollDiv();
+	}
 	Img.src="images/icons/feed/loading.gif";
 	imageDiv.appendChild(Img);
 
