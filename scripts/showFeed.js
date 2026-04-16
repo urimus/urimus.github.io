@@ -300,6 +300,7 @@ function showFeedData(type, source, lang, result) {
 
 			var loadingDelayDiv = document.createElement("div");
 			loadingDelayDiv.id = "loadingDelayDiv";
+			loadingDelayDiv.className = "blinking_text";
 			loadingDelayDiv.textContent = t("delay30SecPossible");
 			loadingDivTitleSkip.appendChild(loadingDelayDiv);
 
