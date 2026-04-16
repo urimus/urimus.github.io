@@ -1923,7 +1923,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 	updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 	document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 
-	const url = new URL("https://php-urimus.wasmer.app");
+	const url = new URL("https://proxy-df9w.onrender.com");
 	url.searchParams.set("url", result.entries[i].link);
 	url.searchParams.set("_", Date.now());
 	fetch(url, { cache: "no-store" })
