@@ -295,7 +295,14 @@ function showFeedData(type, source, lang, result) {
 				}
 				checkProcessedCount(result);
 			};
-			document.getElementById("loadingDivTitleSkip").appendChild(a);
+			var loadingDivTitleSkip = document.getElementById("loadingDivTitleSkip");
+			loadingDivTitleSkip.appendChild(a);
+
+			var loadingDelayDiv = document.createElement("div");
+			loadingDelayDiv.id = "loadingDelayDiv";
+			loadingDelayDiv.textContent = t("delay30SecPossible");
+			loadingDivTitleSkip.appendChild(loadingDelayDiv);
+
 			$("#processedDiv").show();
 			adjustFeedScrollDiv();
 			// 10 updates simultaneously only
