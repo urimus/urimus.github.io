@@ -2,7 +2,7 @@
 // --- Настройки ---
 $allowedOrigins = [
     "https://urimus.github.io",
-    "http://urimus2.royalwebhosting.net"
+    "http://urimus3.royalwebhosting.net"
 ];
 
 // --- Определяем Origin ---
