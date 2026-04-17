@@ -7572,21 +7572,23 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 		if (lastSubMenu!=null) {
 			tableSM.style.transition = "opacity 0.2s linear";
-			var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-rectT.height/2;
-			if (shiftTransitionStart<0) {
-				shiftTransitionStart=top_scroll ;
-			}
-			if (shiftTransitionStart+rectT.height - top_scroll > h) {
-				shiftTransitionStart=top_scroll + h - rectT.height;
-			}
-			tableSM.style.top=shiftTransitionStart+"px";
-			tableSM.offsetHeight;
-			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
-			if (type == "contentsLink") {
+			if (type != "contentsLink") {
+				var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-rectT.height/2;
+				if (shiftTransitionStart<0) {
+					shiftTransitionStart=top_scroll ;
+				}
+				if (shiftTransitionStart+rectT.height - top_scroll > h) {
+					shiftTransitionStart=top_scroll + h - rectT.height;
+				}
+				tableSM.style.top=shiftTransitionStart+"px";
+				tableSM.offsetHeight;
+				tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
+			} else {
+				tableSM.offsetHeight;
+				tableSM.style.transition = "left 0.2s ease-out, opacity 0.2s linear";
 				left_shift = rect.right + 10.0;
 				tableSM.style.left=left_shift+"px";
 			}
-
 		}
 		tableSM.style.top=top_shift+"px";
 		lastRect=rect;
@@ -7611,17 +7613,20 @@ function showSubMenu(ele, lang, type, newTableId) {
 				top_shift = top_scroll + h - rectT.height;
 			}
 			if (lastSubMenu!=null) {
-				var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-rectT.height/2;
-				if (shiftTransitionStart<0) {
-					shiftTransitionStart=top_scroll;
-				}
-				if (shiftTransitionStart+rectT.height  - top_scroll > h) {
-					shiftTransitionStart=top_scroll + h - rectT.height;
-				}
-				tableSM.style.top=shiftTransitionStart+"px";
-				tableSM.offsetHeight;
-				tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
-				if (type == "contentsLink") {
+				if (type != "contentsLink") {
+					var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-rectT.height/2;
+					if (shiftTransitionStart<0) {
+						shiftTransitionStart=top_scroll;
+					}
+					if (shiftTransitionStart+rectT.height  - top_scroll > h) {
+						shiftTransitionStart=top_scroll + h - rectT.height;
+					}
+					tableSM.style.top=shiftTransitionStart+"px";
+					tableSM.offsetHeight;
+					tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
+				} else {
+					tableSM.offsetHeight;
+					tableSM.style.transition = "left 0.2s ease-out, opacity 0.2s linear";
 					left_shift = rect.right + 10.0;
 					tableSM.style.left=left_shift+"px";
 				}
