@@ -7561,28 +7561,27 @@ function showSubMenu(ele, lang, type, newTableId) {
 	h = getViewportHeight();
 	popupImage = document.getElementById("popupImage");
 
+	rectT = tableSM.getBoundingClientRect();
+	table_height = rectT.height;
+	top_shift = top_scroll + rect.top + rect.height / 2 - table_height / 2;
+	table_top = top_shift - top_scroll;
+	table_bottom = top_shift - top_scroll + table_height;
+	if (table_top < 0) {
+		top_shift = top_scroll;
+	}
+	if (table_bottom > h) {
+		top_shift = top_scroll + h - table_height;
+	}
 	if (!popupImage) {
-		rectT = tableSM.getBoundingClientRect();
-		table_height = rectT.height;
-		top_shift = top_scroll + rect.top + rect.height / 2 - table_height / 2;
-		table_top = top_shift - top_scroll;
-		table_bottom = top_shift - top_scroll + table_height;
-		if (table_top < 0) {
-			top_shift = top_scroll;
-		}
-		if (table_bottom > h) {
-			top_shift = top_scroll + h - table_height;
-		}
-
 		if (lastSubMenu!=null) {
 			tableSM.style.transition = "opacity 0.2s linear";
 			if (type != "contentsLink") {
-				var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-rectT.height/2;
+				var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
 				if (shiftTransitionStart<0) {
 					shiftTransitionStart=top_scroll ;
 				}
-				if (shiftTransitionStart+rectT.height - top_scroll > h) {
-					shiftTransitionStart=top_scroll + h - rectT.height;
+				if (shiftTransitionStart+table_height - top_scroll > h) {
+					shiftTransitionStart=top_scroll + h - table_height;
 				}
 				tableSM.style.top=shiftTransitionStart+"px";
 				tableSM.offsetHeight;
@@ -7618,12 +7617,12 @@ function showSubMenu(ele, lang, type, newTableId) {
 			if (lastSubMenu!=null) {
 				tableSM.style.transition = "opacity 0.2s linear";
 				if (type != "contentsLink") {
-					var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-rectT.height/2;
+					var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
 					if (shiftTransitionStart<0) {
 						shiftTransitionStart=top_scroll;
 					}
-					if (shiftTransitionStart+rectT.height  - top_scroll > h) {
-						shiftTransitionStart=top_scroll + h - rectT.height;
+					if (shiftTransitionStart+table_height  - top_scroll > h) {
+						shiftTransitionStart=top_scroll + h - table_height;
 					}
 					tableSM.style.top=shiftTransitionStart+"px";
 					tableSM.offsetHeight;
