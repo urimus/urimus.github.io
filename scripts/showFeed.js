@@ -3,6 +3,7 @@
 // ------------- Global Variables ---------------- //
 var skipUpdates=0;
 var preloadCache = {};
+var updateDelayTimeout = null;
 // ------------- End of Global Variables ---------------- //
 
 function feedIconText (feedURL, lang) {
@@ -298,11 +299,13 @@ function showFeedData(type, source, lang, result) {
 			var loadingDivTitleSkip = document.getElementById("loadingDivTitleSkip");
 			loadingDivTitleSkip.appendChild(a);
 
-			var loadingDelayDiv = document.createElement("div");
-			loadingDelayDiv.id = "loadingDelayDiv";
-			loadingDelayDiv.className = "blinking_text";
-			loadingDelayDiv.textContent = t("delay30SecPossible");
-			loadingDivTitleSkip.appendChild(loadingDelayDiv);
+			updateDelayTimeout = setTimeout(function() {
+				var loadingDelayDiv = document.createElement("div");
+				loadingDelayDiv.id = "loadingDelayDiv";
+				loadingDelayDiv.className = "blinking_text";
+				loadingDelayDiv.textContent = t("delay30SecPossible");
+				loadingDivTitleSkip.appendChild(loadingDelayDiv);
+			}, 5000);
 
 			$("#processedDiv").show();
 			adjustFeedScrollDiv();
@@ -1931,6 +1934,15 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 	updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 	document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 
+	const hideLoadingDelayDiv = () => {
+		var loadingDelayDiv = document.getElementById("loadingDelayDiv");
+		if (loadingDelayDiv) loadingDelayDiv.remove();
+		if (updateDelayTimeout != null) {
+			clearTimeout(updateDelayTimeout);
+			updateDelayTimeout = null;
+		}
+	};
+
 	const url = new URL("https://proxy-df9w.onrender.com");
 	url.searchParams.set("url", result.entries[i].link);
 	url.searchParams.set("_", Date.now());
@@ -1947,6 +1959,9 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		.then(data => {
 
 			if (skipUpdates == 1) return;
+
+			hideLoadingDelayDiv();
+
 			if (updateAttempt > 1) updateAttempt2 = "/" + updateAttempt;
 			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 
@@ -2173,6 +2188,9 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		.catch(error => {
 
 			if (skipUpdates == 1) return;
+
+			hideLoadingDelayDiv();
+
 			error.status = error.status ?? 0;
 			updateAttempt2 = (error.status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
 			console.log(t("updateLoadError") + " (" + error.status + "). " + t("record") + " # " + (i + 1) + updateAttempt2);
