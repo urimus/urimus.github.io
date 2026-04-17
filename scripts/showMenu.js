@@ -7405,7 +7405,8 @@ var lastRect="";
 
 function showSubMenu(ele, lang, type, newTableId) {
 	var tablex, wholeMenu, key, keys, tableSM, row, cell1, rect, top_shift, left_shift, tableStyle;
-	var prevId, top_scroll, h, rectT, popupImage, imageHeight, i, tableWidth;
+	var table_height, table_top, table_bottom;
+	var prevId, top_scroll, h, rectT, popupImage, i, tableWidth;
 	var lastSubMenu = null;
 
 	if (typeof type === "undefined" || type != "contentsLink") ele.setAttribute('class', 'menu_selected');
@@ -7536,6 +7537,8 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
+		top_shift = -9999;
+		tableSM.style.top=top_shift+"px";
 	}
 	if (lastSubMenu==null) document.body.appendChild(tableSM);
 
@@ -7560,14 +7563,15 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 	if (!popupImage) {
 		rectT = tableSM.getBoundingClientRect();
-		top_shift = top_scroll + rect.top + rect.height / 2 - rectT.height / 2;
-		tableSM.style.top=top_shift+"px";
-		rectT = tableSM.getBoundingClientRect();
-		if (rectT.top < 0) {
+		table_height = rectT.height;
+		top_shift = top_scroll + rect.top + rect.height / 2 - table_height / 2;
+		table_top = top_shift - top_scroll;
+		table_bottom = top_shift - top_scroll + table_height;
+		if (table_top < 0) {
 			top_shift = top_scroll;
 		}
-		if (rectT.bottom > h) {
-			top_shift = top_scroll + h - rectT.height;
+		if (table_bottom > h) {
+			top_shift = top_scroll + h - table_height;
 		}
 
 		if (lastSubMenu!=null) {
@@ -7590,9 +7594,9 @@ function showSubMenu(ele, lang, type, newTableId) {
 				tableSM.style.left=left_shift+"px";
 			}
 		}
-		tableSM.style.top=top_shift+"px";
-		lastRect=rect;
 	}
+	tableSM.style.top=top_shift+"px";
+	lastRect=rect;
 
 	if (lastSubMenu==null) {
 		requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
@@ -7600,19 +7604,19 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 	if (popupImage) {
 		popupImage.onload = function () {
-			if (lastSubMenu!=null) tableSM.style.transition = "opacity 0.2s linear";
-			var imageHeight = popupImage.height;
 			rectT = tableSM.getBoundingClientRect();
-			top_shift = top_scroll + rect.top + rect.height / 2 - rectT.height / 2;
-			tableSM.style.top=top_shift+"px";
-			rectT = tableSM.getBoundingClientRect();
-			if (rectT.top < 0) {
+			table_height = rectT.height;
+			top_shift = top_scroll + rect.top + rect.height / 2 - table_height / 2;
+			table_top = top_shift - top_scroll;
+			table_bottom = top_shift - top_scroll + table_height;
+			if (table_top < 0) {
 				top_shift = top_scroll;
 			}
-			if (rectT.bottom > h) {
-				top_shift = top_scroll + h - rectT.height;
+			if (table_bottom > h) {
+				top_shift = top_scroll + h - table_height;
 			}
 			if (lastSubMenu!=null) {
+				tableSM.style.transition = "opacity 0.2s linear";
 				if (type != "contentsLink") {
 					var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-rectT.height/2;
 					if (shiftTransitionStart<0) {
