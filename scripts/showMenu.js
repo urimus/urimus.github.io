@@ -7537,6 +7537,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
 		tableSM.dataset.type = type;
+		// to avoid blinking
 		top_shift = -9999;
 		tableSM.style.top=top_shift+"px";
 	}
