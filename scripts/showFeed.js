@@ -2,7 +2,6 @@
 
 // ------------- Global Variables ---------------- //
 var skipUpdates=0;
-var preloadCache = {};
 var updateDelayTimeout = null;
 // ------------- End of Global Variables ---------------- //
 
@@ -527,31 +526,19 @@ function preloadImage(type, source, lang, result) {
 		loadingImg.title=preloadImg.title;
 		loadingImg.src=preloadImg.src;
 
-		// preloading additional images and video
-		if (typeof entry.additMediaUrl !== "undefined") {
-			for (var j = 0; j < entry.additMediaUrl.length; j++) {
-				newUrl = entry.additMediaUrl[j];
-				if (source === "nasa" || source === "artemis") {
-					const url = new URL(newUrl);
-					url.searchParams.set("w", "450");
-					newUrl = url.toString();
+		// preloading additional images
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.ready.then(() => {
+				if (typeof entry.additMediaUrl !== "undefined") {
+					for (var j = 0; j < entry.additMediaUrl.length; j++) {
+						const url = new URL(entry.additMediaUrl[j]);
+						if (source === "nasa" || source === "artemis") {
+							url.searchParams.set("w", "450");
+						}
+						new Image().src = url.toString();
+					}
 				}
-				if (!preloadCache[newUrl]) {
-					let img = new Image();
-					img.src = newUrl;
-					preloadCache[newUrl] = img;
-				}
-			}
-		}
-		if (source != "cbs" && typeof entry.video !== "undefined" && !isEmbed(entry.video)) {
-			newUrl = entry.video;
-			if (!preloadCache[newUrl]) {
-				let v = document.createElement("video");
-				v.src = newUrl;
-				v.preload = "auto";
-				v.load();
-				preloadCache[newUrl] = v;
-			}
+			});
 		}
 		adjustFeedScrollDiv();
 		preloadImage(type, source, lang, result);
