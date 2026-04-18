@@ -7561,7 +7561,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	h = getViewportHeight();
 	popupImage = document.getElementById("popupImage");
 
-	if (!popupImage) {
+	const showTableSM = () => {
 		rectT = tableSM.getBoundingClientRect();
 		table_height = rectT.height;
 		top_shift = top_scroll + rect.top + rect.height / 2 - table_height / 2;
@@ -7575,69 +7575,39 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 		if (lastSubMenu!=null) {
 			tableSM.style.transition = "opacity 0.2s linear";
-			if (type != "contentsLink") {
-				var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
-				if (shiftTransitionStart<0) {
-					shiftTransitionStart=top_scroll ;
-				}
-				if (shiftTransitionStart+table_height - top_scroll > h) {
-					shiftTransitionStart=top_scroll + h - table_height;
-				}
-				tableSM.style.top=shiftTransitionStart+"px";
-				tableSM.offsetHeight;
-				tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
-			} else {
-				tableSM.offsetHeight;
-				tableSM.style.transition = "left 0.2s ease-out, opacity 0.2s linear";
-				left_shift = rect.right + 10.0;
-				tableSM.style.left=left_shift+"px";
+			var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
+			if (shiftTransitionStart<0) {
+				shiftTransitionStart=top_scroll ;
 			}
+			if (shiftTransitionStart+table_height - top_scroll > h) {
+				shiftTransitionStart=top_scroll + h - table_height;
+			}
+			tableSM.style.top=shiftTransitionStart+"px";
+			tableSM.offsetHeight;
+			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 		}
 		tableSM.style.top=top_shift+"px";
+		if (type == "contentsLink") {
+			left_shift = rect.right + 10.0;
+		} else {
+			left_shift = rect.right - 10.0;
+		}
+		tableSM.style.left=left_shift+"px";
 		lastRect=rect;
+	};
+
+	if (!popupImage) {
+		showTableSM();
+	} else {
+		popupImage.onload = function () {
+			showTableSM();
+		};
 	}
 
 	if (lastSubMenu==null) {
 		requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
 	}
 
-	if (popupImage) {
-		popupImage.onload = function () {
-			rectT = tableSM.getBoundingClientRect();
-			table_height = rectT.height;
-			top_shift = top_scroll + rect.top + rect.height / 2 - table_height / 2;
-			table_top = top_shift - top_scroll;
-			table_bottom = top_shift - top_scroll + table_height;
-			if (table_top < 0) {
-				top_shift = top_scroll;
-			}
-			if (table_bottom > h) {
-				top_shift = top_scroll + h - table_height;
-			}
-			if (lastSubMenu!=null) {
-				tableSM.style.transition = "opacity 0.2s linear";
-				if (type != "contentsLink") {
-					var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
-					if (shiftTransitionStart<0) {
-						shiftTransitionStart=top_scroll;
-					}
-					if (shiftTransitionStart+table_height  - top_scroll > h) {
-						shiftTransitionStart=top_scroll + h - table_height;
-					}
-					tableSM.style.top=shiftTransitionStart+"px";
-					tableSM.offsetHeight;
-					tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
-				} else {
-					tableSM.offsetHeight;
-					tableSM.style.transition = "left 0.2s ease-out, opacity 0.2s linear";
-					left_shift = rect.right + 10.0;
-					tableSM.style.left=left_shift+"px";
-				}
-			}
-			tableSM.style.top=top_shift+"px";
-			lastRect=rect;
-		};
-	}
 }
 
 function hideSubMenu(ele, manual = 0, additDel = "") {
