@@ -7593,6 +7593,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 			left_shift = rect.right - 10.0;
 		}
 		tableSM.style.left=left_shift+"px";
+		lastRect=rect;
 	};
 
 	if (!popupImage) {
@@ -7603,7 +7604,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 		};
 	}
 
-	lastRect=rect;
 	if (lastSubMenu==null) {
 		requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
 	}
