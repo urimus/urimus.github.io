@@ -7419,13 +7419,6 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 	tableSM.dataset.lang = lang;
 	tableSM.dataset.type = type;
 
-	top_shift = -9999;
-	if (type == "contentsLink") {
-		left_shift = lastRect.right + 10.0;
-	} else {
-		left_shift = lastRect.right - 10.0;
-	}
-
 	tableStyle = "";
 	if (window.Galleria) tableStyle = "z-index: 10000;";
 	tableStyle += " position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; box-shadow: 2px 2px 4px #ff8a00;";
@@ -7440,8 +7433,6 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 		tableStyle += tableWidth;
 	}
 	tableSM.setAttribute('style', tableStyle);
-	tableSM.style.top=top_shift+"px";
-	tableSM.style.left=left_shift+"px";
 
 	document.body.appendChild(tableSM);
 
@@ -7488,6 +7479,12 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 			shiftTransitionStart=top_scroll + h - table_height;
 		}
 		tableSM.style.top=shiftTransitionStart+"px";
+		if (type == "contentsLink") {
+			left_shift = lastRect.right + 10.0;
+		} else {
+			left_shift = lastRect.right - 10.0;
+		}
+		tableSM.style.left=left_shift+"px";
 		tableSM.offsetHeight;
 		tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 	}
