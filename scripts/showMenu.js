@@ -7478,24 +7478,21 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 			shiftTransitionStart=top_scroll + h - table_height;
 		}
 		tableSM.style.top=shiftTransitionStart+"px";
-		if (type == "contentsLink") {
-			left_shift = lastRect.right + 10.0;
-		} else {
-			left_shift = lastRect.right - 10.0;
-		}
+		left_shift = lastRect.right + (type === "contentsLink" ? 10 : -10);
 		tableSM.style.left=left_shift+"px";
-		tableSM.offsetHeight;
-		tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
-	}
-	tableSM.style.top=top_shift+"px";
-	if (type == "contentsLink") {
-		left_shift = rect.right + 10.0;
+		requestAnimationFrame(() => {
+			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
+			tableSM.style.top=top_shift+"px";
+			left_shift = rect.right + (type === "contentsLink" ? 10 : -10);
+			tableSM.style.left=left_shift+"px";
+		});
 	} else {
-		left_shift = rect.right - 10.0;
+		tableSM.style.top=top_shift+"px";
+		left_shift = rect.right + (type === "contentsLink" ? 10 : -10);
+		tableSM.style.left=left_shift+"px";
 	}
-	tableSM.style.left=left_shift+"px";
-	lastRect=rect;
 
+	lastRect=rect;
 	if (opacity == 0) {
 		requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
 	}
