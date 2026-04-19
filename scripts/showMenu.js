@@ -7221,6 +7221,7 @@ function  loadMenuContentsLink(ele, lang) {
 				type2="movies";
 			}
 			wholeMenu["Image"].html='<img id="popupImage" src="images/icons/'+type2+'/'+anchors[1]+'.jpg" />';
+			wholeMenu.imageUrl = "images/icons/"+type2+"/"+anchors[1]+".jpg";
 		}
 	}
 	if (typeof ele.dataset.country!== "undefined") {
@@ -7402,6 +7403,7 @@ function addTableRow(tableSM, menu, key, lang, type, newTableId, isCaption = 0) 
 
 var lastSubMenuType = "";
 var lastRect="";
+var loadingPopupImage = null;
 
 function showSubMenu(ele, lang, type, newTableId) {
 	var tablex, wholeMenu, key, keys, tableSM, row, cell1, rect, top_shift, left_shift, tableStyle;
@@ -7496,9 +7498,10 @@ function showSubMenu(ele, lang, type, newTableId) {
 	});
 
 	rect = ele.getBoundingClientRect();
-	if (lastSubMenu==null) {
+
+	const createTableSM = (opacity = 1) => {
 		tableSM = document.createElement("table");
-		tableSM.setAttribute('id', "table" + newTableId);
+//		tableSM.setAttribute('id', "table" + newTableId);
 		tableSM.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
 		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
@@ -7506,15 +7509,15 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 		top_shift = -9999;
 		if (type == "contentsLink") {
-			left_shift = rect.right + 10.0;
+			left_shift = lastRect.right + 10.0;
 		} else {
-			left_shift = rect.right - 10.0;
+			left_shift = lastRect.right - 10.0;
 		}
 
 		tableStyle = "";
 		if (window.Galleria) tableStyle = "z-index: 10000;";
 		tableStyle += " position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; box-shadow: 2px 2px 4px #ff8a00;";
-		tableStyle += " opacity:0; transition: opacity 0.2s linear;";
+		tableStyle += " opacity:" + opacity + "; transition: opacity 0.2s linear;";
 		if (type != "contentsLink") {
 			tableStyle += " width: 280px;";
 		} else {
@@ -7528,41 +7531,27 @@ function showSubMenu(ele, lang, type, newTableId) {
 		tableSM.style.top=top_shift+"px";
 		tableSM.style.left=left_shift+"px";
 
-	} else {
-		tableSM=lastSubMenu;
-		tableSM.innerHTML = ''; lastSubMenu.innerHTML = '';
-		tableSM.style.transition = "opacity 0.2s linear";
-		tableSM.setAttribute('id', "table" + newTableId);
-		tableSM.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
-		tableSM.dataset.origLeft = rect.left;
-		tableSM.dataset.lang = lang;
-		tableSM.dataset.type = type;
-		// to avoid blinking
-		top_shift = -9999;
-		tableSM.style.top=top_shift+"px";
-	}
-	if (lastSubMenu==null) document.body.appendChild(tableSM);
+		document.body.appendChild(tableSM);
 
-	// caption
-	addTableRow(tableSM, wholeMenu[key], key, lang, type, newTableId + 1, 1);
+		// caption
+		addTableRow(tableSM, wholeMenu[key], key, lang, type, newTableId + 1, 1);
 
-	prevId = "";
-	keys = Object.keys(wholeMenu);
-	for (i = 0; i < keys.length; i++) {
-		var id = wholeMenu[keys[i]].id;
-		if (id.lastIndexOf("_") == -1) continue;
-		if (id == prevId) continue;
-		prevId = id;
-		if (wholeMenu[key].id == id.substring(0, id.lastIndexOf("_"))) {
-			addTableRow(tableSM, wholeMenu[keys[i]], keys[i], lang, type, newTableId + 1);
+		prevId = "";
+		keys = Object.keys(wholeMenu);
+		for (i = 0; i < keys.length; i++) {
+			if (keys[i] == "imageUrl") continue;
+			var id = wholeMenu[keys[i]].id;
+			if (id.lastIndexOf("_") == -1) continue;
+			if (id == prevId) continue;
+			prevId = id;
+			if (wholeMenu[key].id == id.substring(0, id.lastIndexOf("_"))) {
+				addTableRow(tableSM, wholeMenu[keys[i]], keys[i], lang, type, newTableId + 1);
+			}
 		}
-	}
 
-	top_scroll = window.scrollY;
-	h = getViewportHeight();
-	popupImage = tableSM.querySelector("#popupImage");
+		top_scroll = window.scrollY;
+		h = getViewportHeight();
 
-	const showTableSM = () => {
 		rectT = tableSM.getBoundingClientRect();
 		table_height = rectT.height;
 		top_shift = top_scroll + rect.top + rect.height / 2 - table_height / 2;
@@ -7575,6 +7564,9 @@ function showSubMenu(ele, lang, type, newTableId) {
 			top_shift = top_scroll + h - table_height;
 		}
 		if (lastSubMenu!=null) {
+			lastSubMenu.innerHTML = "";
+			lastSubMenu.remove();
+			lastSubMenu = null;
 			tableSM.style.transition = "opacity 0.2s linear";
 			var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
 			if (shiftTransitionStart<0) {
@@ -7587,6 +7579,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 			tableSM.offsetHeight;
 			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 		}
+		tableSM.setAttribute('id', "table" + newTableId);
 		tableSM.style.top=top_shift+"px";
 		if (type == "contentsLink") {
 			left_shift = rect.right + 10.0;
@@ -7595,18 +7588,50 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 		tableSM.style.left=left_shift+"px";
 		lastRect=rect;
+
+		if (opacity == 0) {
+			requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
+		}
 	};
 
-	if (!popupImage) {
-		showTableSM();
-	} else {
-		popupImage.onload = function () {
-			showTableSM();
-		};
-	}
-
 	if (lastSubMenu==null) {
-		requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
+		if (wholeMenu.imageUrl) {
+			if (loadingPopupImage) {
+				loadingPopupImage.onload = null;
+				loadingPopupImage = null;
+			}
+			popupImage = new Image();
+			popupImage.onload = function () {
+				createTableSM(0);
+			};
+			popupImage.src = wholeMenu.imageUrl;
+			loadingPopupImage  = popupImage;
+		} else {
+			createTableSM(0);
+		}
+	} else {
+		tableSM=lastSubMenu;
+		tableSM.innerHTML = ''; lastSubMenu.innerHTML = '';
+		tableSM.style.transition = "opacity 0.2s linear";
+		tableSM.setAttribute('id', "table" + newTableId);
+		tableSM.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
+		tableSM.dataset.origLeft = rect.left;
+		tableSM.dataset.lang = lang;
+		tableSM.dataset.type = type;
+		if (wholeMenu.imageUrl) {
+			if (loadingPopupImage) {
+				loadingPopupImage.onload = null;
+				loadingPopupImage = null;
+			}
+			popupImage = new Image();
+			popupImage.onload = function () {
+				createTableSM(1);
+			};
+			popupImage.src = wholeMenu.imageUrl;
+			loadingPopupImage  = popupImage;
+		} else {
+			createTableSM(1);
+		}
 	}
 
 }
