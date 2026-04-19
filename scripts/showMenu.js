@@ -7470,7 +7470,6 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 		lastSubMenu.innerHTML = "";
 		lastSubMenu.remove();
 		lastSubMenu = null;
-		tableSM.style.transition = "opacity 0.2s linear";
 		shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
 		if (shiftTransitionStart<0) {
 			shiftTransitionStart=top_scroll ;
