@@ -7405,10 +7405,12 @@ var lastSubMenuType = "";
 var lastRect="";
 var loadingPopupImage = null;
 
-function createTableSM(opacity = 1, newTableId, wholeMenu, key, lang, type, rect, lastSubMenu) {
+function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu) {
 
 	var tableSM, top_shift, left_shift, tableStyle, tableWidth, prevId, keys, i, id, top_scroll, h, rectT;
-	var table_height, table_top, table_bottom, shiftTransitionStart;
+	var table_height, table_top, table_bottom, shiftTransitionStart, opacity;
+
+	opacity = lastSubMenu == null ? 0 : 1;
 
 	tableSM = document.createElement("table");
 	tableSM.setAttribute('id', "table" + newTableId);
@@ -7594,7 +7596,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 	});
 
 	rect = ele.getBoundingClientRect();
-	var opacity = lastSubMenu == null ? 0 : 1;
 
 	if (wholeMenu.imageUrl) {
 		if (loadingPopupImage) {
@@ -7603,12 +7604,12 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 		popupImage = new Image();
 		popupImage.onload = function () {
-			createTableSM(opacity, newTableId, wholeMenu, key, lang, type, rect, lastSubMenu);
+			createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu);
 		};
 		popupImage.src = wholeMenu.imageUrl;
 		loadingPopupImage  = popupImage;
 	} else {
-		createTableSM(opacity, newTableId, wholeMenu, key, lang, type, rect, lastSubMenu);
+		createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu);
 	}
 }
 
