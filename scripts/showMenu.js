@@ -7594,50 +7594,21 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 	};
 
-	if (lastSubMenu==null) {
-		if (wholeMenu.imageUrl) {
-			if (loadingPopupImage) {
-				loadingPopupImage.onload = null;
-				loadingPopupImage = null;
-			}
-			popupImage = new Image();
-			popupImage.onload = function () {
-				createTableSM(0);
-			};
-			popupImage.src = wholeMenu.imageUrl;
-			loadingPopupImage  = popupImage;
-		} else {
-			createTableSM(0);
+	var opacity = lastSubMenu == null ? 0 : 1;
+	if (wholeMenu.imageUrl) {
+		if (loadingPopupImage) {
+			loadingPopupImage.onload = null;
+			loadingPopupImage = null;
 		}
+		popupImage = new Image();
+		popupImage.onload = function () {
+			createTableSM(opacity);
+		};
+		popupImage.src = wholeMenu.imageUrl;
+		loadingPopupImage  = popupImage;
 	} else {
-		if (wholeMenu.imageUrl) {
-			if (loadingPopupImage) {
-				loadingPopupImage.onload = null;
-				loadingPopupImage = null;
-			}
-			popupImage = new Image();
-			popupImage.onload = function () {
-				lastSubMenu.innerHTML = '';
-				lastSubMenu.setAttribute('id', "table" + newTableId);
-				lastSubMenu.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
-				lastSubMenu.dataset.origLeft = rect.left;
-				lastSubMenu.dataset.lang = lang;
-				lastSubMenu.dataset.type = type;
-				createTableSM(1);
-			};
-			popupImage.src = wholeMenu.imageUrl;
-			loadingPopupImage  = popupImage;
-		} else {
-			lastSubMenu.innerHTML = '';
-			lastSubMenu.setAttribute('id', "table" + newTableId);
-			lastSubMenu.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
-			lastSubMenu.dataset.origLeft = rect.left;
-			lastSubMenu.dataset.lang = lang;
-			lastSubMenu.dataset.type = type;
-			createTableSM(1);
-		}
+		createTableSM(opacity);
 	}
-
 }
 
 function hideSubMenu(ele, manual = 0, additDel = "") {
