@@ -7405,11 +7405,107 @@ var lastSubMenuType = "";
 var lastRect="";
 var loadingPopupImage = null;
 
+function createTableSM(opacity = 1, newTableId, wholeMenu, key, lang, type, rect, lastSubMenu) {
+
+	var tableSM, top_shift, left_shift, tableStyle, tableWidth, prevId, keys, i, id, top_scroll, h, rectT;
+	var table_height, table_top, table_bottom, shiftTransitionStart;
+
+	tableSM = document.createElement("table");
+	tableSM.setAttribute('id', "table" + newTableId);
+	tableSM.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
+	tableSM.dataset.origLeft = rect.left;
+	tableSM.dataset.lang = lang;
+	tableSM.dataset.type = type;
+
+	top_shift = -9999;
+	if (type == "contentsLink") {
+		left_shift = lastRect.right + 10.0;
+	} else {
+		left_shift = lastRect.right - 10.0;
+	}
+
+	tableStyle = "";
+	if (window.Galleria) tableStyle = "z-index: 10000;";
+	tableStyle += " position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; box-shadow: 2px 2px 4px #ff8a00;";
+	tableStyle += " opacity:" + opacity + "; transition: opacity 0.2s linear;";
+	if (type != "contentsLink") {
+		tableStyle += " width: 280px;";
+	} else {
+		tableWidth=" max-width: 280px; ";
+		if (type == "contentsLink" && typeof wholeMenu["Image"] !== "undefined") {
+			tableWidth=" max-width: 362px; ";
+		}
+		tableStyle += tableWidth;
+	}
+	tableSM.setAttribute('style', tableStyle);
+	tableSM.style.top=top_shift+"px";
+	tableSM.style.left=left_shift+"px";
+
+	document.body.appendChild(tableSM);
+
+	// caption
+	addTableRow(tableSM, wholeMenu[key], key, lang, type, newTableId + 1, 1);
+
+	prevId = "";
+	keys = Object.keys(wholeMenu);
+	for (i = 0; i < keys.length; i++) {
+		if (keys[i] == "imageUrl") continue;
+		id = wholeMenu[keys[i]].id;
+		if (id.lastIndexOf("_") == -1) continue;
+		if (id == prevId) continue;
+		prevId = id;
+		if (wholeMenu[key].id == id.substring(0, id.lastIndexOf("_"))) {
+			addTableRow(tableSM, wholeMenu[keys[i]], keys[i], lang, type, newTableId + 1);
+		}
+	}
+
+	top_scroll = window.scrollY;
+	h = getViewportHeight();
+
+	rectT = tableSM.getBoundingClientRect();
+	table_height = rectT.height;
+	top_shift = top_scroll + rect.top + rect.height / 2 - table_height / 2;
+	table_top = top_shift - top_scroll;
+	table_bottom = top_shift - top_scroll + table_height;
+	if (table_top < 0) {
+		top_shift = top_scroll;
+	}
+	if (table_bottom > h) {
+		top_shift = top_scroll + h - table_height;
+	}
+	if (lastSubMenu != null) {
+		lastSubMenu.innerHTML = "";
+		lastSubMenu.remove();
+		lastSubMenu = null;
+		tableSM.style.transition = "opacity 0.2s linear";
+		shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
+		if (shiftTransitionStart<0) {
+			shiftTransitionStart=top_scroll ;
+		}
+		if (shiftTransitionStart+table_height - top_scroll > h) {
+			shiftTransitionStart=top_scroll + h - table_height;
+		}
+		tableSM.style.top=shiftTransitionStart+"px";
+		tableSM.offsetHeight;
+		tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
+	}
+	tableSM.style.top=top_shift+"px";
+	if (type == "contentsLink") {
+		left_shift = rect.right + 10.0;
+	} else {
+		left_shift = rect.right - 10.0;
+	}
+	tableSM.style.left=left_shift+"px";
+	lastRect=rect;
+
+	if (opacity == 0) {
+		requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
+	}
+}
+
+
 function showSubMenu(ele, lang, type, newTableId) {
-	var tablex, wholeMenu, key, keys, tableSM, row, cell1, rect, top_shift, left_shift, tableStyle;
-	var table_height, table_top, table_bottom;
-	var prevId, top_scroll, h, rectT, popupImage, i, tableWidth;
-	var lastSubMenu = null;
+	var tablex, wholeMenu, key, rect, prevId, top_scroll, rectT, popupImage, lastSubMenu = null;
 
 	if (typeof type === "undefined" || type != "contentsLink") ele.setAttribute('class', 'menu_selected');
 
@@ -7498,102 +7594,8 @@ function showSubMenu(ele, lang, type, newTableId) {
 	});
 
 	rect = ele.getBoundingClientRect();
-
-	const createTableSM = (opacity = 1) => {
-		tableSM = document.createElement("table");
-		tableSM.setAttribute('id', "table" + newTableId);
-		tableSM.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
-		tableSM.dataset.origLeft = rect.left;
-		tableSM.dataset.lang = lang;
-		tableSM.dataset.type = type;
-
-		top_shift = -9999;
-		if (type == "contentsLink") {
-			left_shift = lastRect.right + 10.0;
-		} else {
-			left_shift = lastRect.right - 10.0;
-		}
-
-		tableStyle = "";
-		if (window.Galleria) tableStyle = "z-index: 10000;";
-		tableStyle += " position: absolute; border: 1px #ff8a00 solid; border-spacing: 0px; box-shadow: 2px 2px 4px #ff8a00;";
-		tableStyle += " opacity:" + opacity + "; transition: opacity 0.2s linear;";
-		if (type != "contentsLink") {
-			tableStyle += " width: 280px;";
-		} else {
-			tableWidth=" max-width: 280px; ";
-			if (type == "contentsLink" && typeof wholeMenu["Image"] !== "undefined") {
-				tableWidth=" max-width: 362px; ";
-			}
-			tableStyle += tableWidth;
-		}
-		tableSM.setAttribute('style', tableStyle);
-		tableSM.style.top=top_shift+"px";
-		tableSM.style.left=left_shift+"px";
-
-		document.body.appendChild(tableSM);
-
-		// caption
-		addTableRow(tableSM, wholeMenu[key], key, lang, type, newTableId + 1, 1);
-
-		prevId = "";
-		keys = Object.keys(wholeMenu);
-		for (i = 0; i < keys.length; i++) {
-			if (keys[i] == "imageUrl") continue;
-			var id = wholeMenu[keys[i]].id;
-			if (id.lastIndexOf("_") == -1) continue;
-			if (id == prevId) continue;
-			prevId = id;
-			if (wholeMenu[key].id == id.substring(0, id.lastIndexOf("_"))) {
-				addTableRow(tableSM, wholeMenu[keys[i]], keys[i], lang, type, newTableId + 1);
-			}
-		}
-
-		top_scroll = window.scrollY;
-		h = getViewportHeight();
-
-		rectT = tableSM.getBoundingClientRect();
-		table_height = rectT.height;
-		top_shift = top_scroll + rect.top + rect.height / 2 - table_height / 2;
-		table_top = top_shift - top_scroll;
-		table_bottom = top_shift - top_scroll + table_height;
-		if (table_top < 0) {
-			top_shift = top_scroll;
-		}
-		if (table_bottom > h) {
-			top_shift = top_scroll + h - table_height;
-		}
-		if (lastSubMenu!=null) {
-			lastSubMenu.innerHTML = "";
-			lastSubMenu.remove();
-			lastSubMenu = null;
-			tableSM.style.transition = "opacity 0.2s linear";
-			var shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
-			if (shiftTransitionStart<0) {
-				shiftTransitionStart=top_scroll ;
-			}
-			if (shiftTransitionStart+table_height - top_scroll > h) {
-				shiftTransitionStart=top_scroll + h - table_height;
-			}
-			tableSM.style.top=shiftTransitionStart+"px";
-			tableSM.offsetHeight;
-			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
-		}
-		tableSM.style.top=top_shift+"px";
-		if (type == "contentsLink") {
-			left_shift = rect.right + 10.0;
-		} else {
-			left_shift = rect.right - 10.0;
-		}
-		tableSM.style.left=left_shift+"px";
-		lastRect=rect;
-
-		if (opacity == 0) {
-			requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
-		}
-	};
-
 	var opacity = lastSubMenu == null ? 0 : 1;
+
 	if (wholeMenu.imageUrl) {
 		if (loadingPopupImage) {
 			loadingPopupImage.onload = null;
@@ -7601,12 +7603,12 @@ function showSubMenu(ele, lang, type, newTableId) {
 		}
 		popupImage = new Image();
 		popupImage.onload = function () {
-			createTableSM(opacity);
+			createTableSM(opacity, newTableId, wholeMenu, key, lang, type, rect, lastSubMenu);
 		};
 		popupImage.src = wholeMenu.imageUrl;
 		loadingPopupImage  = popupImage;
 	} else {
-		createTableSM(opacity);
+		createTableSM(opacity, newTableId, wholeMenu, key, lang, type, rect, lastSubMenu);
 	}
 }
 
@@ -7697,8 +7699,9 @@ function hideSubMenu(ele, manual = 0, additDel = "") {
 	}
 	if (objToRemove.length>0) {
 		for (let i = 0; i < objToRemove.length; i++) {
-			objToRemove[i].style.opacity = "0";
-			setTimeout(() => { document.body.removeChild(objToRemove[i]); }, 200);
+			const obj = objToRemove[i];
+			obj.style.opacity = "0";
+			setTimeout(() => { obj.remove(); }, 200);
 		}
 	}
 	return ret;
