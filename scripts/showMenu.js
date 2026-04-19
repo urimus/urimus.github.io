@@ -7501,7 +7501,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 	const createTableSM = (opacity = 1) => {
 		tableSM = document.createElement("table");
-//		tableSM.setAttribute('id', "table" + newTableId);
+		tableSM.setAttribute('id', "table" + newTableId);
 		tableSM.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
 		tableSM.dataset.origLeft = rect.left;
 		tableSM.dataset.lang = lang;
@@ -7579,7 +7579,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 			tableSM.offsetHeight;
 			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 		}
-		tableSM.setAttribute('id', "table" + newTableId);
 		tableSM.style.top=top_shift+"px";
 		if (type == "contentsLink") {
 			left_shift = rect.right + 10.0;
