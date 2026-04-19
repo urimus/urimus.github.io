@@ -7610,14 +7610,6 @@ function showSubMenu(ele, lang, type, newTableId) {
 			createTableSM(0);
 		}
 	} else {
-		tableSM=lastSubMenu;
-		tableSM.innerHTML = ''; lastSubMenu.innerHTML = '';
-		tableSM.style.transition = "opacity 0.2s linear";
-		tableSM.setAttribute('id', "table" + newTableId);
-		tableSM.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
-		tableSM.dataset.origLeft = rect.left;
-		tableSM.dataset.lang = lang;
-		tableSM.dataset.type = type;
 		if (wholeMenu.imageUrl) {
 			if (loadingPopupImage) {
 				loadingPopupImage.onload = null;
@@ -7625,11 +7617,23 @@ function showSubMenu(ele, lang, type, newTableId) {
 			}
 			popupImage = new Image();
 			popupImage.onload = function () {
+				lastSubMenu.innerHTML = '';
+				lastSubMenu.setAttribute('id', "table" + newTableId);
+				lastSubMenu.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
+				lastSubMenu.dataset.origLeft = rect.left;
+				lastSubMenu.dataset.lang = lang;
+				lastSubMenu.dataset.type = type;
 				createTableSM(1);
 			};
 			popupImage.src = wholeMenu.imageUrl;
 			loadingPopupImage  = popupImage;
 		} else {
+			lastSubMenu.innerHTML = '';
+			lastSubMenu.setAttribute('id', "table" + newTableId);
+			lastSubMenu.dataset.id = "menu_" + wholeMenu[key].id; // or ele.id for correct pre-defined ids
+			lastSubMenu.dataset.origLeft = rect.left;
+			lastSubMenu.dataset.lang = lang;
+			lastSubMenu.dataset.type = type;
 			createTableSM(1);
 		}
 	}
