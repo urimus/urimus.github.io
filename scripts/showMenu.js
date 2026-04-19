@@ -7490,12 +7490,9 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 		tableSM.style.top=top_shift+"px";
 		left_shift = rect.right + (type === "contentsLink" ? 10 : -10);
 		tableSM.style.left=left_shift+"px";
-	}
-
-	lastRect=rect;
-	if (opacity == 0) {
 		requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
 	}
+	lastRect=rect;
 }
 
 
