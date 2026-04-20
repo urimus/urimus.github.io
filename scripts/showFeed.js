@@ -304,6 +304,7 @@ function showFeedData(type, source, lang, result) {
 				loadingDelayDiv.className = "blinking_text";
 				loadingDelayDiv.textContent = t("delay30SecPossible");
 				loadingDivTitleSkip.appendChild(loadingDelayDiv);
+				adjustFeedScrollDiv();
 			}, 5000);
 
 			$("#processedDiv").show();
@@ -1927,6 +1928,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		if (updateDelayTimeout != null) {
 			clearTimeout(updateDelayTimeout);
 			updateDelayTimeout = null;
+			adjustFeedScrollDiv();
 		}
 	};
 
