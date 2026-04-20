@@ -7497,7 +7497,7 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 
 
 function showSubMenu(ele, lang, type, newTableId) {
-	var tablex, wholeMenu, key, rect, prevId, top_scroll, rectT, popupImage, lastSubMenu = null;
+	var tablex, wholeMenu, key, rect, prevId, top_scroll, rectT, lastSubMenu = null;
 
 	if (typeof type === "undefined" || type != "contentsLink") ele.setAttribute('class', 'menu_selected');
 
@@ -7587,17 +7587,16 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 	rect = ele.getBoundingClientRect();
 
+	if (loadingPopupImage) {
+		loadingPopupImage.onload = null;
+		loadingPopupImage = null;
+	}
 	if (wholeMenu.imageUrl) {
-		if (loadingPopupImage) {
-			loadingPopupImage.onload = null;
-			loadingPopupImage = null;
-		}
-		popupImage = new Image();
-		popupImage.onload = function () {
+		loadingPopupImage = new Image();
+		loadingPopupImage.onload = function () {
 			createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu);
 		};
-		popupImage.src = wholeMenu.imageUrl;
-		loadingPopupImage  = popupImage;
+		loadingPopupImage.src = wholeMenu.imageUrl;
 	} else {
 		createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu);
 	}
