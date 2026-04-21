@@ -297,6 +297,7 @@ function showFeedData(type, source, lang, result) {
 			};
 			var loadingDivTitleSkip = document.getElementById("loadingDivTitleSkip");
 			loadingDivTitleSkip.appendChild(a);
+			adjustFeedScrollDiv();
 
 			const url = new URL(proxyURL);
 			url.searchParams.set("url", "https://example.com");
