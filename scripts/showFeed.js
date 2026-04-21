@@ -308,10 +308,12 @@ function showFeedData(type, source, lang, result) {
 			fetch(url, { cache: "no-store" })
 				.then(response => {
 					if (!response.ok) {
-						throw {
-							status: response.status,
-							statusText: response.statusText,
-						};
+						return response.text().then(msg => {
+							throw {
+								status: response.status,
+								statusText: msg || response.statusText || "Request failed"
+							};
+						});
 		    			}
 					if (skipUpdates == 1) return;
 
@@ -335,6 +337,7 @@ function showFeedData(type, source, lang, result) {
 				.catch(error => { // proxy does not work
 					if (skipUpdates == 1) return;
 					error.status = error.status ?? 0;
+					error.statusText = error.statusText ?? error.message ?? String(error);
 
 					var table2 = document.getElementById("messagetable");
 					table2.replaceChildren();
@@ -1955,10 +1958,12 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 	fetch(url, { cache: "no-store" })
 		.then(response => {
 			if (!response.ok) {
-				throw {
-					status: response.status,
-					statusText: response.statusText,
-				};
+				return response.text().then(msg => {
+					throw {
+						status: response.status,
+						statusText: msg || response.statusText || "Request failed"
+					};
+				});
     			}
 			return response.text();
 		})
@@ -2194,6 +2199,8 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			if (skipUpdates == 1) return;
 
 			error.status = error.status ?? 0;
+			error.statusText = error.statusText ?? error.message ?? String(error);
+
 			updateAttempt2 = (error.status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
 			console.log(t("updateLoadError") + " (" + error.status + "). " + t("record") + " # " + (i + 1) + updateAttempt2);
 			if (error.status == 0 && updateAttempt < 5) { // 5 0-status attempts
