@@ -340,7 +340,7 @@ function showFeedData(type, source, lang, result) {
 					adjustFeedScrollDiv();
 
 					for (var j = 0; j < totalEntries; j++) {
-						result.entries[j].error = t("proxyNotFunction") + ".";
+						result.entries[j].error = t("proxyUnavilable") + ".";
 						if (result.entries[j].storage.updateProcessed == 0) {
 							result.entries[j].storage.updateProcessed = 1;
 							showEntry(type, source, lang, result, j, 0);
