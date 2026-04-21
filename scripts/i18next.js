@@ -325,7 +325,7 @@ i18next.init({
 				outputNewsFeed: "Outputing News Feed",
 				phpIsNotSupported: "PHP is not Supported at ",
 				progress: "Progress: ",
-				proxyUnavilable: "Proxy and Update Unavilable",
+				proxyUnavilable: "Proxy and Update are Unavilable",
 				quickTips: "Quick Tips",
 				readingFile: "Reading File ",
 				readingFilesMatchingPattern: "Reading Files, Matching Pattern ",
