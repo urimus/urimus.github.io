@@ -2,7 +2,7 @@
 
 // ------------- Global Variables ---------------- //
 var skipUpdates=0;
-var updateDelayTimeout = null;
+var proxyURL = "https://proxy-df9w.onrender.com";
 // ------------- End of Global Variables ---------------- //
 
 function feedIconText (feedURL, lang) {
@@ -279,7 +279,7 @@ function showFeedData(type, source, lang, result) {
 					showEntry(type, source, lang, result, i, 1);
 				}
 			}
-			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecords") + ".&nbsp;";
+			document.getElementById("loadingSpanTitle").innerHTML = t("checkingProxy") + ".&nbsp;";
 			var a = document.createElement('a');
 			a.setAttribute('href', "javascript:void(0);");
 			a.setAttribute('class', 'standardb_red');
@@ -298,30 +298,51 @@ function showFeedData(type, source, lang, result) {
 			var loadingDivTitleSkip = document.getElementById("loadingDivTitleSkip");
 			loadingDivTitleSkip.appendChild(a);
 
-			updateDelayTimeout = setTimeout(function() {
-				var loadingDelayDiv = document.createElement("div");
-				loadingDelayDiv.id = "loadingDelayDiv";
-				loadingDelayDiv.className = "blinking_text";
-				loadingDelayDiv.textContent = t("delay30SecPossible");
-				loadingDivTitleSkip.appendChild(loadingDelayDiv);
-				adjustFeedScrollDiv();
-			}, 5000);
+			const url = new URL(proxyURL);
+			url.searchParams.set("url", "https://example.com");
+			url.searchParams.set("_", Date.now());
+			fetch(url, { cache: "no-store" })
+				.then(response => {
+					if (!response.ok) {
+						throw {
+							status: response.status,
+							statusText: response.statusText,
+						};
+		    			}
+					if (skipUpdates == 1) return;
 
-			$("#processedDiv").show();
-			adjustFeedScrollDiv();
-			// 10 updates simultaneously only
-			if (source == "artemis" || source == "cbs" || (source=="nasa" && type!="image") || source == "yonhap" || source=="yahoo") {
-				removeUnusedUpdates(source, type, result);
-				var updatingCount = 0;
-				for (var i = 0; i < totalEntries; i++) {
-					if (result.entries[i].storage.updateProcessed == 0) {
-						result.entries[i].storage.updateInitiated = 1;
-						update(i, source, type, result, lang);
-						updatingCount++;
-						if (updatingCount == 10) break; // 10 updates simultaneously only
+					// proxy works
+					$("#processedDiv").show();
+					adjustFeedScrollDiv();
+					// 10 updates simultaneously only
+					if (source == "artemis" || source == "cbs" || (source=="nasa" && type!="image") || source == "yonhap" || source=="yahoo") {
+						removeUnusedUpdates(source, type, result);
+						var updatingCount = 0;
+						for (var i = 0; i < totalEntries; i++) {
+							if (result.entries[i].storage.updateProcessed == 0) {
+								result.entries[i].storage.updateInitiated = 1;
+								update(i, source, type, result, lang);
+								updatingCount++;
+								if (updatingCount == 10) break; // 10 updates simultaneously only
+							}
+						}
 					}
-				}
-			}
+				})
+				.catch(error => { // proxy does not work
+					if (skipUpdates == 1) return;
+					var table2 = document.getElementById("messagetable");
+					table2.replaceChildren();
+					$("#processedDiv").hide();
+					adjustFeedScrollDiv();
+
+					for (var j = 0; j < totalEntries; j++) {
+						result.entries[j].error = t("proxyNotFunction") + ".";
+						if (result.entries[j].storage.updateProcessed == 0) {
+							result.entries[j].storage.updateProcessed = 1;
+							showEntry(type, source, lang, result, j, 0);
+						}
+					}
+				});
 		}
 	}
 }
@@ -1922,17 +1943,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 	updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 	document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 
-	const hideLoadingDelayDiv = () => {
-		var loadingDelayDiv = document.getElementById("loadingDelayDiv");
-		if (loadingDelayDiv) loadingDelayDiv.remove();
-		if (updateDelayTimeout != null) {
-			clearTimeout(updateDelayTimeout);
-			updateDelayTimeout = null;
-			adjustFeedScrollDiv();
-		}
-	};
-
-	const url = new URL("https://proxy-df9w.onrender.com");
+	const url = new URL(proxyURL);
 	url.searchParams.set("url", result.entries[i].link);
 	url.searchParams.set("_", Date.now());
 	fetch(url, { cache: "no-store" })
@@ -1948,8 +1959,6 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		.then(data => {
 
 			if (skipUpdates == 1) return;
-
-			hideLoadingDelayDiv();
 
 			if (updateAttempt > 1) updateAttempt2 = "/" + updateAttempt;
 			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
@@ -2177,8 +2186,6 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		.catch(error => {
 
 			if (skipUpdates == 1) return;
-
-			hideLoadingDelayDiv();
 
 			error.status = error.status ?? 0;
 			updateAttempt2 = (error.status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
