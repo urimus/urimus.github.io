@@ -334,13 +334,15 @@ function showFeedData(type, source, lang, result) {
 				})
 				.catch(error => { // proxy does not work
 					if (skipUpdates == 1) return;
+					error.status = error.status ?? 0;
+
 					var table2 = document.getElementById("messagetable");
 					table2.replaceChildren();
 					$("#processedDiv").hide();
 					adjustFeedScrollDiv();
 
 					for (var j = 0; j < totalEntries; j++) {
-						result.entries[j].error = t("proxyUnavilable") + ".";
+						result.entries[j].error = t("proxyUnavilable") + ". (" + error.status + ")";
 						if (result.entries[j].storage.updateProcessed == 0) {
 							result.entries[j].storage.updateProcessed = 1;
 							showEntry(type, source, lang, result, j, 0);
