@@ -293,7 +293,10 @@ function showFeedData(type, source, lang, result) {
 						showEntry(type, source, lang, result, j, 0);
 					}
 				}
-				checkProcessedCount(result);
+				var table2 = document.getElementById("messagetable");
+				table2.replaceChildren();
+				$("#processedDiv").hide();
+				adjustFeedScrollDiv();
 			};
 			var loadingDivTitleSkip = document.getElementById("loadingDivTitleSkip");
 			loadingDivTitleSkip.appendChild(a);
