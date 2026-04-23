@@ -1542,7 +1542,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	for (var c = 0; c < items.length; c++) {
 		entry = items[c];
 		if (source == "yahoo" && typeof entry.source !== "undefined") {
-			if (entry.source.title == "BBC" || entry.source.title == "Yahoo Finance UK" || entry.source.title == "Telegraph") {
+			if (entry.source.title == "BBC" || entry.source.title == "Yahoo Finance UK" || entry.source.title == "The Telegraph") {
 				continue;
 			}
 		}
