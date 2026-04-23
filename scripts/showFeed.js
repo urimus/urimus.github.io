@@ -1496,7 +1496,7 @@ function getLocalStorageData(par) {
 // ------------- Optimize ---------------- //
 
 function optimizeUpdateResult(type, source, lang, resultOrig) {
-	var result, locStUpdateData, locStPar, items, entry;
+	var result, locStUpdateData, locStPar, items, entry, i = -1, c;
 
 	result = {};
 	result.feedXML = resultOrig.feedXML;
@@ -1539,8 +1539,15 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		items = resultOrig.feed.entries;
 	}
 
-	for (var i = 0; i < items.length; i++) {
-		entry = items[i];
+	for (var c = 0; c < items.length; c++) {
+		entry = items[c];
+		if (source == "yahoo" && typeof entry.source !== "undefined") {
+			if (entry.source.title == "BBC" || entry.source.title == "Yahoo Finance UK") {
+				continue;
+			}
+		}
+		i++;
+
 		result.entries[i] = {};
 		result.entries[i].title = entry.title;
 		result.entries[i].media = {};
