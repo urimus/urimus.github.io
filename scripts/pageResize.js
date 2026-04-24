@@ -4,23 +4,6 @@ var clickStarted = false;
 var initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
-// --- service worker ---
-/* в консоли
-navigator.serviceWorker.getRegistrations().then(regs => {
-  regs.forEach(r => r.unregister());
-});
-
-navigator.serviceWorker.controller
-
-navigator.serviceWorker.getRegistrations().then(console.log)
-*/
-if ("serviceWorker" in navigator) {
-	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
-	.then(function (reg) {
-		// nothing
-	});
-}
-
 // --- tab navigation ---
 function keyboardClick(event, el) {
 	el.dispatchEvent(new MouseEvent('click', {
@@ -204,6 +187,23 @@ document.addEventListener("DOMContentLoaded", () => {
 		} else {
 			processPageResize();
 		}
+	}
+
+	// --- service worker ---
+	/* в консоли
+	navigator.serviceWorker.getRegistrations().then(regs => {
+		regs.forEach(r => r.unregister());
+	});
+
+	navigator.serviceWorker.controller
+
+	navigator.serviceWorker.getRegistrations().then(console.log)
+	*/
+	if ("serviceWorker" in navigator) {
+		navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
+		.then(function (reg) {
+			// nothing
+		});
 	}
 });
 
