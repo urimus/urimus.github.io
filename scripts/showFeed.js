@@ -1275,7 +1275,7 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 			} 
 
 			var table2 = document.getElementById("messagetable");
-			if (!table2) return;
+			if (!table2) return null;
 			table2.replaceChildren();
 			var row = table2.insertRow(-1);
 			var cell1 = row.insertCell(0);
@@ -1283,7 +1283,6 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 			cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
 			cell1.innerHTML = "<b>" + t("newsFeed") + "&nbsp;</b>" + feedIconText(feedURL, lang) + "<br><b>" + e.message + "</b><br><a href='javascript:location.reload();' class='standardb_red'>" + t("reloadPage")+ "</a>";
 			adjustFeedScrollDiv();
-
 			return null;
 		})
 		.then(result => {

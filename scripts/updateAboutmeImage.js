@@ -82,16 +82,22 @@ function updateAboutMeImage(lang, random = 0) {
 			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
 			return r.json();
 		})
-		.then(result => {
-			if (toSkip == 1) return;
-			if (result.error) throw new Error(`Feednami ${result.error.code} ${result.error.message}`);
-			result.feedXML = feedURL;
-			updateAboutMeImage2(lang, result, random);
-		})
 		.catch(e => {
-			if (toSkip == 1) return;
+			if (toSkip == 1) return null;
 			showErrorImage(lang, "error", e.message);
 			adjustScrollDiv();
+			return null;
+		})
+		.then(result => {
+			if (toSkip == 1) return;
+			if (result === null) return; // safe return from catch
+			if (result.error) {
+				showErrorImage(lang, "error", `Feednami ${result.error.code} ${result.error.message}`);
+				adjustScrollDiv();
+				return;
+			}
+			result.feedXML = feedURL;
+			updateAboutMeImage2(lang, result, random);
 		});
 }
 
