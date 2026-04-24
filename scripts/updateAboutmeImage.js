@@ -77,20 +77,15 @@ function updateAboutMeImage(lang, random = 0) {
 	url.searchParams.set("_", Date.now());
 
 	fetch(url, { cache: "no-store" })
-		.then(r => {
-			if (toSkip == 1) return null;
-			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
-			return r.json();
-		})
-		.catch(e => {
-			if (toSkip == 1) return null;
-			showErrorImage(lang, "error", e.message);
-			adjustScrollDiv();
-			return null;
-		})
-		.then(result => {
+	.then(response => {
+		if (toSkip == 1) return;
+		if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+		return response.json();
+	})
+	.then(
+		result => {
 			if (toSkip == 1) return;
-			if (result === null) return; // safe return from catch
+			if (!result) return;
 			if (result.error) {
 				showErrorImage(lang, "error", `Feednami ${result.error.code} ${result.error.message}`);
 				adjustScrollDiv();
@@ -98,7 +93,13 @@ function updateAboutMeImage(lang, random = 0) {
 			}
 			result.feedXML = feedURL;
 			updateAboutMeImage2(lang, result, random);
-		});
+		},
+		error => {
+			if (toSkip == 1) return;
+			showErrorImage(lang, "error", error.message);
+			adjustScrollDiv();
+		}
+	);
 }
 
 function updateAboutMeImage2(lang, result, random) {

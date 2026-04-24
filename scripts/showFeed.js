@@ -306,40 +306,24 @@ function showFeedData(type, source, lang, result) {
 			url.searchParams.set("url", "https://example.com");
 			url.searchParams.set("_", Date.now());
 			fetch(url, { cache: "no-store" })
-				.then(response => {
-					if (!response.ok) {
-						return response.text().then(msg => {
-							throw {
-								status: response.status,
-								statusText: msg || response.statusText || "Request failed"
-							};
-						});
-		    			}
-					return true; // proxy works
-				})
-				.catch(error => { // proxy does not work
-					if (skipUpdates == 1) return false;
-					error.status = error.status ?? 0;
-					error.statusText = error.statusText ?? error.message ?? String(error);
+			.then(response => {
+				if (skipUpdates == 1) return;
+				if (!response.ok) {
+					return response.text().then(msg => {
+						const message = msg || response.statusText || "Request failed";
+						const err = new Error(message);
+						err.status = response.status;
+						err.statusText = message;
+						throw err;
+					});
+		    		}
+				return true; // proxy works
+			})
+			.then(
+				data => { // proxy works
+					if (skipUpdates == 1) return;
+					if (!data) return;
 
-					var table2 = document.getElementById("messagetable");
-					table2.replaceChildren();
-					$("#processedDiv").hide();
-					adjustFeedScrollDiv();
-
-					for (var j = 0; j < totalEntries; j++) {
-						result.entries[j].error = t("proxyUnavilable") + ". (" + error.status + ")";
-						if (result.entries[j].storage.updateProcessed == 0) {
-							result.entries[j].storage.updateProcessed = 1;
-							showEntry(type, source, lang, result, j, 0);
-						}
-					}
-					return false;
-				})
-				.then(proxyOK => {
-					if (!proxyOK || skipUpdates == 1) return;
-
-					// proxy works
 					$("#processedDiv").show();
 					adjustFeedScrollDiv();
 					// 10 updates simultaneously only
@@ -355,7 +339,26 @@ function showFeedData(type, source, lang, result) {
 							}
 						}
 					}
-				});
+				},
+				error => { // proxy does not work
+					if (skipUpdates == 1) return;
+					error.status = error.status ?? 0;
+					error.statusText = error.statusText ?? error.message ?? String(error);
+
+					var table2 = document.getElementById("messagetable");
+					table2.replaceChildren();
+					$("#processedDiv").hide();
+					adjustFeedScrollDiv();
+
+					for (var j = 0; j < totalEntries; j++) {
+						result.entries[j].error = t("proxyUnavilable") + ". (" + error.status + ")";
+						if (result.entries[j].storage.updateProcessed == 0) {
+							result.entries[j].storage.updateProcessed = 1;
+							showEntry(type, source, lang, result, j, 0);
+						}
+					}
+				}
+			);
 		}
 	}
 }
@@ -1260,33 +1263,12 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 		url.searchParams.set("_", Date.now());
 	}
 	fetch(url, { cache: "no-store" })
-		.then(r => {
-			if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
-			return r.json();
-		})
-		.catch((e) => {
-			if (loadAttempt < 10) {
-				loadAttempt++;
-				loadAttemptSpan = document.getElementById("loadAttempt");
-				if (loadAttemptSpan) loadAttemptSpan.innerHTML="<br><b>" + t("loadAttempt") + ":&nbsp;" + loadAttempt + "</b>";
-				adjustFeedScrollDiv();
-				loadFeednami(type, source, lang, feedURL, loadAttempt);
-				return null;
-			} 
-
-			var table2 = document.getElementById("messagetable");
-			if (!table2) return null;
-			table2.replaceChildren();
-			var row = table2.insertRow(-1);
-			var cell1 = row.insertCell(0);
-			cell1.className = 'text_red';
-			cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
-			cell1.innerHTML = "<b>" + t("newsFeed") + "&nbsp;</b>" + feedIconText(feedURL, lang) + "<br><b>" + e.message + "</b><br><a href='javascript:location.reload();' class='standardb_red'>" + t("reloadPage")+ "</a>";
-			adjustFeedScrollDiv();
-			return null;
-		})
-		.then(result => {
-			if (result === null) return; // safe return from catch
+	.then(response => {
+		if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+		return response.json();
+	})
+	.then(
+		result => {
 			loadAttemptSpan = document.getElementById("loadAttempt");
 			if (loadAttemptSpan) loadAttemptSpan.innerHTML="";
 			adjustFeedScrollDiv();
@@ -1298,7 +1280,28 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 			}
 			result.feedXML = feedURL;
 			optimizeUpdateResult(type, source, lang, result);
-		});
+		},
+		error => {
+			if (loadAttempt < 10) {
+				loadAttempt++;
+				loadAttemptSpan = document.getElementById("loadAttempt");
+				if (loadAttemptSpan) loadAttemptSpan.innerHTML="<br><b>" + t("loadAttempt") + ":&nbsp;" + loadAttempt + "</b>";
+				adjustFeedScrollDiv();
+				loadFeednami(type, source, lang, feedURL, loadAttempt);
+				return;
+			} 
+
+			var table2 = document.getElementById("messagetable");
+			if (!table2) return;
+			table2.replaceChildren();
+			var row = table2.insertRow(-1);
+			var cell1 = row.insertCell(0);
+			cell1.className = 'text_red';
+			cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
+			cell1.innerHTML = "<b>" + t("newsFeed") + "&nbsp;</b>" + feedIconText(feedURL, lang) + "<br><b>" + error.message + "</b><br><a href='javascript:location.reload();' class='standardb_red'>" + t("reloadPage")+ "</a>";
+			adjustFeedScrollDiv();
+		}
+	);
 }
 
 function showFeed(type, source, lang) {
@@ -1969,48 +1972,24 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 	url.searchParams.set("url", result.entries[i].link);
 	url.searchParams.set("_", Date.now());
 	fetch(url, { cache: "no-store" })
-		.then(response => {
-			if (!response.ok) {
-				return response.text().then(msg => {
-					throw {
-						status: response.status,
-						statusText: msg || response.statusText || "Request failed"
-					};
-				});
-    			}
-			return response.text();
-		})
-		.catch(error => {
-
-			if (skipUpdates == 1) return null;
-
-			error.status = error.status ?? 0;
-			error.statusText = error.statusText ?? error.message ?? String(error);
-
-			updateAttempt2 = (error.status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
-			console.log(t("updateLoadError") + " (" + error.status + "). " + t("record") + " # " + (i + 1) + updateAttempt2);
-			if (error.status == 0 && updateAttempt < 5) { // 5 0-status attempts
-				update(i, source, type, result, lang, updateAttempt + 1);
-				return null;
-			}
-			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
-			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
-			if (source == "cbs" || source == "nasa") {
-				result.entries[i].media.origComment = result.entries[i].media.comment;
-				result.entries[i].media.comment = t("updateLoadError") + " (" + error.status + ")";
-				result.entries[i].media.origUrl = result.entries[i].media.url;
-				result.entries[i].media.url = "images/icons/error/no_image.png";
-			}
-			result.entries[i].error = t("updateLoadError") + " (" + error.status + "). <a href='javascript:location.reload();' class='standardb_red');>" + t("reloadPage") + "</a>";
-			showEntry(type, source, lang, result, i, 0);
-			result.entries[i].storage.updateProcessed = 1;
-			checkProcessedCount(source, type, result, lang, 0);
-			return null;
-		})
-		.then(data => {
+	.then(response => {
+		if (skipUpdates == 1) return;
+		if (!response.ok) {
+			return response.text().then(msg => {
+				const message = msg || response.statusText || "Request failed";
+				const err = new Error(message);
+				err.status = response.status;
+				err.statusText = message;
+				throw err;
+			});
+    		}
+		return response.text();
+	})
+	.then(
+		data => {
 
 			if (skipUpdates == 1) return;
-			if (data === null) return; // safe return from catch
+			if (!data) return;
 
 			if (updateAttempt > 1) updateAttempt2 = "/" + updateAttempt;
 			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
@@ -2233,7 +2212,34 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				result.entries[i].storage.updateProcessed = 1;
 				checkProcessedCount(source, type, result, lang, 0);
 			}
-		});
+		},
+		error => {
+
+			if (skipUpdates == 1) return;
+
+			error.status = error.status ?? 0;
+			error.statusText = error.statusText ?? error.message ?? String(error);
+
+			updateAttempt2 = (error.status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
+			console.log(t("updateLoadError") + " (" + error.status + "). " + t("record") + " # " + (i + 1) + updateAttempt2);
+			if (error.status == 0 && updateAttempt < 5) { // 5 0-status attempts
+				update(i, source, type, result, lang, updateAttempt + 1);
+				return;
+			}
+			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
+			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
+			if (source == "cbs" || source == "nasa") {
+				result.entries[i].media.origComment = result.entries[i].media.comment;
+				result.entries[i].media.comment = t("updateLoadError") + " (" + error.status + ")";
+				result.entries[i].media.origUrl = result.entries[i].media.url;
+				result.entries[i].media.url = "images/icons/error/no_image.png";
+			}
+			result.entries[i].error = t("updateLoadError") + " (" + error.status + "). <a href='javascript:location.reload();' class='standardb_red');>" + t("reloadPage") + "</a>";
+			showEntry(type, source, lang, result, i, 0);
+			result.entries[i].storage.updateProcessed = 1;
+			checkProcessedCount(source, type, result, lang, 0);
+		}
+	);
 }
 // ------------- End of Update---------------- //
 
