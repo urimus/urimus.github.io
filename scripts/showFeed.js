@@ -306,19 +306,23 @@ function showFeedData(type, source, lang, result) {
 			url.searchParams.set("url", "https://example.com");
 			url.searchParams.set("_", Date.now());
 			fetch(url, { cache: "no-store" })
-			.then(response => {
-				if (skipUpdates == 1) return;
-				if (!response.ok) {
-					return response.text().then(msg => {
-						const message = msg || response.statusText || "Request failed";
-						const err = new Error(message);
-						err.status = response.status;
-						err.statusText = message;
-						throw err;
-					});
-		    		}
-				return true; // proxy works
-			})
+			.then(
+				response => {
+					if (skipUpdates == 1) return;
+					if (!response.ok) {
+						return response.text().then(
+							msg => {
+								const message = msg || response.statusText || "Request failed";
+								const err = new Error(message);
+								err.status = response.status;
+								err.statusText = message;
+								throw err;
+							}
+						);
+		    			}
+					return true; // proxy works
+				}
+			)
 			.then(
 				data => { // proxy works
 					if (skipUpdates == 1) return;
@@ -1263,10 +1267,12 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 		url.searchParams.set("_", Date.now());
 	}
 	fetch(url, { cache: "no-store" })
-	.then(response => {
-		if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
-		return response.json();
-	})
+	.then(
+		response => {
+			if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+			return response.json();
+		}
+	)
 	.then(
 		result => {
 			loadAttemptSpan = document.getElementById("loadAttempt");
@@ -1972,19 +1978,23 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 	url.searchParams.set("url", result.entries[i].link);
 	url.searchParams.set("_", Date.now());
 	fetch(url, { cache: "no-store" })
-	.then(response => {
-		if (skipUpdates == 1) return;
-		if (!response.ok) {
-			return response.text().then(msg => {
-				const message = msg || response.statusText || "Request failed";
-				const err = new Error(message);
-				err.status = response.status;
-				err.statusText = message;
-				throw err;
-			});
-    		}
-		return response.text();
-	})
+	.then(
+		response => {
+			if (skipUpdates == 1) return;
+			if (!response.ok) {
+				return response.text().then(
+					msg => {
+						const message = msg || response.statusText || "Request failed";
+						const err = new Error(message);
+						err.status = response.status;
+						err.statusText = message;
+						throw err;
+					}
+				);
+			}
+			return response.text();
+		}
+	)
 	.then(
 		data => {
 

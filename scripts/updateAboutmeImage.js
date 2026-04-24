@@ -77,11 +77,13 @@ function updateAboutMeImage(lang, random = 0) {
 	url.searchParams.set("_", Date.now());
 
 	fetch(url, { cache: "no-store" })
-	.then(response => {
-		if (toSkip == 1) return;
-		if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
-		return response.json();
-	})
+	.then(
+		response => {
+			if (toSkip == 1) return;
+			if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+			return response.json();
+		}
+	)
 	.then(
 		result => {
 			if (toSkip == 1) return;
