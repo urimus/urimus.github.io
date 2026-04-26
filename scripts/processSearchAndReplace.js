@@ -167,32 +167,36 @@ function replacePHP(lang, action = "replace") {
 	var searchPatt = getParameterByName('pattern'); 
 
 	if (!searchPatt) return;
-	$.ajax({
-		url: 'scripts/php/dir.php',
-		data: {
+	axios.get("scripts/php/dir.php", {
+		params: {
 			q: searchPatt,
-			fileToShow: parseInt(getParameterByName('i')) || 0
-		},
-		success: function(data) {
+			fileToShow: parseInt(getParameterByName("i")) || 0
+		}
+	})
+	.then(
+		response => {
+			const data = response.data;
 			if (data=="not logged in") {alert(t("notLoggedIn")); return;}
-			var dir = JSON.parse(data);
+			var dir = data;
 			if (dir.length>0) {
 				processReplacePHP(lang, action, dir, 0, replaceWhat, replaceTo, 0, 0);
 			} else {
 				return false;
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statisticsTimesReplaced, statisticsFilesProcessed) {
 	var statisticsTimesReplaced_o = statisticsTimesReplaced;
 
-	let ajaxOptions = {};
+	let axiosConfig = {};
+
 	if (action === "replace") {
-		ajaxOptions.url = "scripts/php/processReplace.php";
-		ajaxOptions.data = {
-			filename: dir[i]['correctDir'] + dir[i]['basename'],
+		axiosConfig.url = "scripts/php/processReplace.php";
+		axiosConfig.params = {
+			filename: dir[i]["correctDir"] + dir[i]["basename"],
 			replaceWhat: replaceWhat,
 			replaceTo: replaceTo,
 			fileNum: i,
@@ -202,29 +206,29 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 	}
 
 	if (action === "addMenu" || action === "removeMenu") {
-		ajaxOptions.url = "scripts/php/processAddRemoveMenu.php";
-		ajaxOptions.data = {
-			filename: dir[i]['correctDir'] + dir[i]['basename'],
+		axiosConfig.url = "scripts/php/processAddRemoveMenu.php";
+		axiosConfig.params = {
+			filename: dir[i]["correctDir"] + dir[i]["basename"],
 			action: action,
 			fileNum: i,
 			date: i == 0 ? formatDate() : ""
 		};
 	}
 
-	$.ajax({
-		...ajaxOptions,
-		success: function(data, textStatus, jqXHR) {
-			if (data == "not logged in") {
+	axios(axiosConfig)
+	.then(
+		response => {
+			const data = response.data;
+			if (typeof data === "string" && data == "not logged in") {
 				processSearchAndReplace(lang);
 				return;
 			}
 
 			document.getElementById("caption_div").innerHTML = t("progress") + (i + 1) + "/" + dir.length;
-
-			if (data.substring(0, 20) == "Unable to open file!") {
+			if (typeof data === "string" && data.startsWith("Unable to open file!")) {
 				alert(data);
 			} else {
-				var ret = JSON.parse(data);
+				var ret = data;
 				var modified = ret['modified'];
 				statisticsTimesReplaced = ret['statisticsTimesReplaced'];
 				if (statisticsTimesReplaced > 0) statisticsFilesProcessed++;
@@ -238,20 +242,22 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 					var textarea = document.getElementById("textarea_area");
 					var lines = textarea.value;
 
-					$.ajax({
-						url: "scripts/php/getFileContents.php",
-						data: {
+					axios.get("scripts/php/getFileContents.php", {
+						params: {
 							filename: fileHref
-						},
-						success: function(data) {
-							var lines2 = data;
-							if (lines2 == "not logged in") { processSearchAndReplace(lang); return; }
+						}
+					})
+					.then(
+						response => {
+							var lines2 = response.data;
+							if (typeof lines2 === "string" && lines2 == "not logged in") { processSearchAndReplace(lang); return; }
 							if (lines2 != lines) {
 								textarea.value = lines2;
 								setTextAreaChanged(lang, 0);
 							}
-						}
-					});
+						},
+						defaultAxiosError
+					);
 				}
 			}
 
@@ -282,8 +288,9 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 			} else {
 				processReplacePHP(lang, action, dir, i + 1, replaceWhat, replaceTo, statisticsTimesReplaced, statisticsFilesProcessed);
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 // ======================================
@@ -348,19 +355,22 @@ function resizeImages(lang) {
 	$("#resizeImage_div").hide();
 	$("#generate_div").hide();
 
-	$.ajax({
-		url: 'scripts/php/dir.php',
-		data: {
+	axios.get("scripts/php/dir.php", {
+		params: {
 			q: newFilePath
-		},
-		success: function(data) {
+		}
+	})
+	.then(
+		response => {
+			const data = response.data;
 			if (data=="not logged in") {alert(t("notLoggedIn")); return;}
-			var dir = JSON.parse(data);
+			var dir = data;
 			if (dir.length > 0) {
 				prResizeImage(lang, dir, filePath, newImageWidth, 0, 0);
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 // ======================================
@@ -369,18 +379,20 @@ function resizeImages(lang) {
 
 function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcessed) {
 
-	$.ajax({
-		url: "scripts/php/resize.php",
-		data: {
-			filename: filePath + dir[i]['basename'],
+	axios.get("scripts/php/resize.php", {
+		params: {
+			filename: filePath + dir[i]["basename"],
 			fileNum: i,
 			width: fileWidth,
 			date: i == 0 ? formatDate() : ""
-		},
-		success: function(data) {
-			if (data == "not logged in") { processSearchAndReplace(lang); return; }
+		}
+	})
+	.then(
+		response => {
+			const data = response.data;
+			if (typeof data === "string" && data == "not logged in") { processSearchAndReplace(lang); return; }
 			document.getElementById("caption_div").innerHTML = t("progress") + (i + 1) + "/" + dir.length;
-			if (data.substring(0, 20) == "Unable to open file!") {
+			if (typeof data === "string" && data.startsWith("Unable to open file!")) {
 				alert(data);
 			} else {
 				var ret = Number(data);
@@ -414,8 +426,9 @@ function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcess
 			} else {
 				prResizeImage(lang, dir, filePath, fileWidth, i + 1, statisticsFilesProcessed);
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 // ======================================
@@ -527,22 +540,21 @@ function save(lang, encoding = "UTF-8", filename = document.getElementById("file
 
 	var message1 = message === "" ? t("fileSavedSuccessfully") : message;
 
-	$.ajax({
-		url: "scripts/php/save.php",
-		type: "POST",
-		data: {
-			filename: filename,
-			q: document.getElementById('textarea_area').value,
-			encoding: encoding
-		},
-		success: function(data) {
-			if (data=="not logged in") {alert(t("fileNotSaved")); return;}
-			if (data.substring(0,20)=="Unable to open file!") {
+	axios.post("scripts/php/save.php", new URLSearchParams({
+		filename: filename,
+		q: document.getElementById("textarea_area").value,
+		encoding: encoding
+	}))
+	.then(
+		response => {
+			const data = response.data;
+			if (typeof data === "string" && data == "not logged in") {alert(t("fileNotSaved")); return;}
+			if (typeof data === "string" && data.startsWith("Unable to open file!")) {
 				alert(data);
 				return;
 			} else {
 				if (document.getElementById("fileName").getAttribute("href")==filename) {
-					var ret=JSON.parse(data);
+					var ret = data;
 					document.getElementById("dateModified_lbl").innerHTML=formatDate(ret["modified"]*1000, lang);
 					setBOM(ret["first10bytes"]);
 					setTextAreaChanged(lang, 0);
@@ -556,8 +568,9 @@ function save(lang, encoding = "UTF-8", filename = document.getElementById("file
 				}
 				return;
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function saveas(lang, encoding = "UTF-8") {
@@ -567,13 +580,15 @@ function saveas(lang, encoding = "UTF-8") {
 	var newFileName_dir=newFileName.substring(0,newFileName.lastIndexOf("/")+1);
 	if (newFileName==null || newFileName=="") return;
 
-	$.ajax({
-		url: "scripts/php/fileExists.php",
-		data: {
+	axios.get("scripts/php/fileExists.php", {
+		params: {
 			q: newFileName
-		},
-		success: function(data) {
-			if (data=="not logged in") {alert(t("notLoggedIn")); return;}
+		}
+	})
+	.then(
+		response => {
+			const data = response.data;
+			if (typeof data === "string" && data=="not logged in") {alert(t("notLoggedIn")); return;}
 			var message_show;
 			if (data=="0") {
 				message_show = (filename_orig_dir==newFileName_dir) ? t("fileSavedAsSuccessfully") + " " + t("reloadPage") : t("fileSavedAsSuccessfully");
@@ -583,8 +598,9 @@ function saveas(lang, encoding = "UTF-8") {
 				if (!confirm) return;
 				save(lang, encoding, newFileName, 1, t("fileSavedAsSuccessfully"));
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 // ======================================
@@ -617,13 +633,15 @@ function upload(lang) {
 		HTMLEditorData["uploadPath"]=newFilePath;
 		localStorage[locStPar]=JSON.stringify(HTMLEditorData);
 
-		$.ajax({
-			url: "scripts/php/dirExists.php",
-			data: {
+		axios.get("scripts/php/dirExists.php", {
+			params: {
 				q: newFilePath
-			},
-			success: function(data) {
-				if (data=="not logged in") {alert(t("notLoggedIn")); return;}
+			}
+		})
+		.then(
+			response => {
+				const data = response.data;
+				if (typeof data === "string" && data=="not logged in") {alert(t("notLoggedIn")); return;}
 				if (data=="0") { 
 					createFolder=window.confirm(t("folder")+ newFilePath+ t("notFoundCreate"));
 					if (!createFolder) return;
@@ -631,8 +649,9 @@ function upload(lang) {
 				} else { 
 					upload2(lang, allFiles, 0, newFilePath, createFolder);
 				}
-			}
-		});
+			},
+			defaultAxiosError
+		);
 	};
 
 	input.click();
@@ -734,12 +753,14 @@ function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 
 	var message1 = isImage === 0 ? t("file") : t("image");
 
-	$.ajax({
-		url: "scripts/php/fileExists.php",
-		data: {
+	axios.get("scripts/php/fileExists.php", {
+		params: {
 			q: newFilePath + "/" + filename
-		},
-		success: function(data) {
+		}
+	})
+	.then(
+		response => {
+			const data = response.data;
 			if (data=="0") {
 				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			} else { 
@@ -747,8 +768,9 @@ function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 				if (!confirm) return;
 				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder) {
@@ -776,15 +798,17 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	var dataArray = new FormData();
 	dataArray.append('file', file, filename);
 
-	$.ajax({
-		url: "scripts/php/upload.php?path=" + encodeURIComponent(newFilePath) + "&createFolder=" + encodeURIComponent(createFolder),
-		type: "POST",
-		data: dataArray,
-		processData: false,
-		contentType: false,
-		success: function(data) {
+	axios.post("scripts/php/upload.php", dataArray, {
+		params: {
+			path: newFilePath,
+			createFolder: createFolder
+		}
+	})
+	.then(
+		response => {
+			const data = response.data;
 			$("#caption_div").html(t("htmlEditor"));
-			if (data=="not logged in") {processSearchAndReplace(lang); return;}
+			if (typeof data === "string" && data=="not logged in") {processSearchAndReplace(lang); return;}
 			if (data=="1") {
 				if (isImage) {
 					var confirm = window.confirm(messageF + newFilePath + "/" + filename + " " + t("uploadedSuccessfullyShowImage"));
@@ -797,8 +821,9 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 				alert(data);
 				return;
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function del(lang, totalFiles) {
@@ -807,13 +832,15 @@ function del(lang, totalFiles) {
 	var confirm = window.confirm(t("reallyDelete")+" "+filename+"?");
 	if (!confirm) return;
 
-	$.ajax({
-		url: "scripts/php/delete.php",
-		data: {
+	axios.get("scripts/php/delete.php", {
+		params: {
 			filename: filename
-		},
-		success: function(data) {
-			if (data=="not logged in") {processSearchAndReplace(lang); return;};
+		}
+	})
+	.then(
+		response => {
+			const data = response.data;
+			if (typeof data === "string" && data=="not logged in") {processSearchAndReplace(lang); return;};
 			if (data=="1") {
 				alert(t("fileDeleted"));
 				var i =(parseInt(getParameterByName('i'))||0);
@@ -824,18 +851,20 @@ function del(lang, totalFiles) {
 			} else {
 				alert(t("fileNotFound"));
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function logout(lang) {
-	$.ajax({
-		url: "scripts/php/logOut.php",
-		success: function(data) {
+	axios.get("scripts/php/logOut.php")
+	.then(
+		response => {
 			window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(getParameterByName('pattern'))+'&i='+ (parseInt(getParameterByName('i'))||0);
 			return;
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function generateSitemap(lang) {
@@ -850,18 +879,21 @@ function generateSitemap(lang) {
 	HTMLEditorData["baseUrl"] = baseUrl;
 	localStorage[locStPar] = JSON.stringify(HTMLEditorData);
 
-	$.ajax({
-		url: "scripts/php/generateSitemap.php",
-		data: {
+	axios.get("scripts/php/generateSitemap.php", {
+		params: {
 			baseUrl: baseUrl
-		},
-		success: function(data) {
+		}
+	})
+	.then(
+		response => {
+			const data = response.data;
 			messageFull = "Sitemap.xml " + t("and") + " all.html " + t("and") + " robots.txt" + t("for") + " '" + data + "'" + t("generatedSuccessfullyShowThem");
 			var confirmView = window.confirm(messageFull);
 			if (confirmView) window.open('html_editor_'+lang+'.html?pattern='+encodeURIComponent('{sitemap.xml,all.html,robots.txt}')+'&i=0');
 			return;
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function searchPattern(lang) {
@@ -873,13 +905,14 @@ function searchPattern(lang) {
 }
 
 function showInformation(lang) {
-	$.ajax({
-		url: "scripts/processSearchAndReplace.js",
-		success: function(data, textStatus, jqXHR) {
-			modStr = jqXHR.getResponseHeader('Last-Modified');
+	axios.get("scripts/processSearchAndReplace.js")
+	.then(
+		response => {
+			const modStr = response.headers["last-modified"];
 			alert(t("htmlEditorInfoText") + formatDate(modStr, lang)+".");
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function processSearch(lang) {
@@ -918,15 +951,17 @@ function processSearch(lang) {
 		var err1 = t("notFoundFiles") + searchPatt + "'.";
 		var i=(parseInt(getParameterByName('i'))||0);
 		if (i!=null) {
-			$.ajax({
-				url: "scripts/php/dir.php",
-				data: {
+			axios.get("scripts/php/dir.php", {
+				params: {
 					q: searchPatt,
-					fileToShow: parseInt(getParameterByName('i')) || 0
-				},
-				success: function(data) {
-					if (data=="not logged in") {alert(t("notLoggedIn")); return;}
-					var dir = JSON.parse(data);
+					fileToShow: parseInt(getParameterByName("i")) || 0
+				}
+			})
+			.then(
+				response => {
+					const data = response.data;
+					if (typeof data === "string" && data=="not logged in") {alert(t("notLoggedIn")); return;}
+					var dir = data;
 					if (dir.length>0) {
 						if (i<0 || i>=dir.length) {
 							window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(searchPatt)+'&i=0';
@@ -1017,8 +1052,9 @@ function processSearch(lang) {
 						$("#error_message_with_logout_row").show();
 						return false;
 					}
-				}
-			});
+				},
+				defaultAxiosError
+			);
 		} else {
 			window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(searchPatt)+'&i=0';
 			return;
@@ -1047,14 +1083,16 @@ function measureWidth(contents) {
 function loadAndShowFile(lang, filename, modified, encoding, first10bytes, totalFiles){
 	$("#error_message").text(t("readingFile")+"'"+filename+"'.");
 
-	$.ajax({
-		url: "scripts/php/getFileContents.php",
-		data: {
+	axios.get("scripts/php/getFileContents.php", {
+		params: {
 			filename: filename
-		},
-		success: function(data) {
-			if (data=="not logged in") {processSearchAndReplace(lang); return;};
-			if (data.substring(0,20)=="Unable to open file!") {
+		}
+	})
+	.then(
+		response => {
+			const data = response.data;
+			if (typeof data === "string" && data == "not logged in") {processSearchAndReplace(lang); return;};
+			if (typeof data === "string" && data.startsWith("Unable to open file!")) {
 				alert(data);
 			}
 			var lines=data;    
@@ -1084,8 +1122,9 @@ function loadAndShowFile(lang, filename, modified, encoding, first10bytes, total
 			textarea.scrollLeft = 0;
 			textarea.setSelectionRange(0, 0);
 			setLineAndColumnNumber(lang);
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function setLinksValues(lang, encoding, totalFiles) {
@@ -1194,9 +1233,12 @@ function processSearchAndReplace(lang) {
 
 	processPageResize(0, lang);
 
-	$.ajax({
-		url: "scripts/php/checkLogIn.php",
-		success: function(data) {
+	axios.get("scripts/php/checkLogIn.php", {
+		responseType: "text"
+	})
+	.then(
+		response => {
+			const data = response.data;
 			if (data.substring(0, 2) == "<?") {
 				$("#error_message").text(t("phpIsNotSupported") + window.location.hostname + t("htmlEditorIsNotFunctioning"));
 				return;
@@ -1229,14 +1271,16 @@ function processSearchAndReplace(lang) {
 					return false;
 				}
 				
-				$.ajax({
-					url: "scripts/php/checkUsernamePassword.php",
-					data: {
+				axios.get("scripts/php/checkUsernamePassword.php", {
+					params: {
 						username: username,
 						date: formatDate()
-					},
-					success: function(data) {
-						if (JSON.parse(data)=="0"){
+					}
+				})
+				.then(
+					response => {
+						const data = response.data;
+						if (data == "0"){
 							$("#search_col1").hide();
 							$("#search_col2").hide();
 							$("#search_col3").hide();
@@ -1253,13 +1297,15 @@ function processSearchAndReplace(lang) {
 							return false;
 						}
 						processSearch(lang);
-					}
-				});
+					},
+					defaultAxiosError
+				);
 			} else {
 				processSearch(lang);
 			}
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function adjustTextarea() {

@@ -401,6 +401,102 @@ function enableKeyboardScroll(scrollDiv) {
 	});
 }
 
+// --- default axios error ---
+function logData(caption, data, maxLength = 100) {
+	console.log(caption);
+
+	const truncate = value => {
+		if (typeof value === "string" && value.length > maxLength) {
+			return value.slice(0, maxLength) + "… [" + value.length + " chars]";
+		}
+		return value;
+	};
+
+	if (data instanceof FormData) {
+		for (const [key, value] of data.entries()) {
+			if (value instanceof File) {
+				console.log(
+					`  ${key}: [File]`,
+					`${value.name} (${value.type || "unknown"}, ${value.size} bytes)`
+				);
+			} else {
+				console.log(`  ${key}:`, truncate(value));
+			}
+		}
+		return;
+	}
+
+	if (typeof data === "object" && data !== null) {
+		Object.entries(data).forEach(([key, value]) => {
+			console.log(`  ${key}:`, truncate(value));
+		});
+	} else {
+		console.log("  ", data);
+	}
+}
+
+
+function defaultAxiosError(error) {
+	const config = error.config || {};
+	const response = error.response || {};
+
+	const method = (config.method || "GET").toUpperCase();
+	const url = config.url ? decodeURIComponent(config.url) : "";
+
+	const query = url.split("?")[1] || "";
+	const getData = query
+		? Object.fromEntries(new URLSearchParams(query))
+		: "(no GET params)";
+
+	let postData = "(none)";
+	if (typeof config.data !== "undefined") postData = config.data;
+
+	console.groupCollapsed(
+		`%cAJAX ERROR [${method} | HTTP ${response.status || 0}]`,
+		"color:red;font-weight:bold"
+	);
+
+	console.log("URL:", url);
+
+	if (method === "GET" || getData !== "(no GET params)") {
+		logData("GET params:", getData);
+	}
+
+	if (method !== "GET") {
+		logData("POST data:", postData);
+	}
+
+	console.log("textStatus:", error.code || error.message);
+	console.log("errorThrown:", error.message);
+
+	const headers = response.headers || {};
+
+	if (headers["x-php-error"]) {
+		console.log("=== PHP Error Details ===");
+		console.log("Message:", decodeURIComponent(headers["x-php-message"] || ""));
+		console.log("File:", decodeURIComponent(headers["x-php-file"] || ""));
+		console.log("Line:", headers["x-php-line"] || "");
+		console.log("==================");
+	}
+
+	const stack = new Error().stack;
+
+	if (stack) {
+		console.log("=== JavaScript Call Stack ===");
+		console.log(stack);
+		console.log("==================");
+	}
+
+	console.log(
+		"Complete PHP log:",
+		window.location.origin +
+			"/html_editor_rus.html?pattern=scripts/php/logs/*&i=0"
+	);
+
+	console.log("Response:", response.data || "");
+	console.groupEnd();
+}
+
 // --- html editor menu corr ---
 function checkMenu6(lang) {
 	var menu6 = document.getElementById('menu_6');
@@ -410,16 +506,18 @@ function checkMenu6(lang) {
 			menu6.dataset.ttcolor = "blue";
 			menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 		} else {
-			$.ajax({
-				url: "scripts/php/checkPHP.php",
-				success: function(data) {
+			axios.get("scripts/php/checkPHP.php")
+			.then(
+				response => {
+					const data = response.data;
 					if (data.substring(0, 2) == "<?") {
 						menu6.setAttribute("title", t("phpIsNotSupported") + window.location.hostname + t("htmlEditorIsNotFunctioning"));
 						menu6.dataset.ttcolor = "blue";
 						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 					}
-				}
-			});
+				},
+				defaultAxiosError
+			);
 		}
 	}
 }

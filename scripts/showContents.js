@@ -544,13 +544,14 @@ function generateTabs(type, lang) {
 
 function showInformation(lang) {
 	var modStr, infoText;
-	$.ajax({
-		url: "scripts/showContents.js",
-		success: function(data, textStatus, jqXHR) {
-			modStr = jqXHR.getResponseHeader('Last-Modified');
+	axios.get("scripts/showContents.js")
+	.then(
+		response => {
+			const modStr = response.headers["last-modified"];
 			alert(t("sitemapInfoText") + formatDate(modStr, lang) + ".");
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function adjustContentsScrollDiv() {
@@ -631,10 +632,10 @@ function showContents(type, sortby, lang) {
 	textColor = generateTabs(type, lang);
 	refreshSortByTabs(type, sortby, lang);
 
-	$.ajax({
-		url: "scripts/contents/" + type + "_" + lang + ".txt",
-		success: function(data) {
-			lines = data;
+	axios.get(`scripts/contents/${type}_${lang}.txt`)
+	.then(
+		response => {
+			lines = response.data;
 			fileContents = lines
 				.split(/\r?\n|\r/)
 				.map(s => s.trim())
@@ -661,7 +662,8 @@ function showContents(type, sortby, lang) {
 				cell1.innerHTML = fileContents[i];
 			}
 			adjustContentsScrollDiv();
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 

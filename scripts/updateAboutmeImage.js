@@ -31,10 +31,15 @@ function showErrorImage(lang, type, errorMessage="") {
 }
 
 function showInformation(lang) {
-	$.getJSON('https://api.github.com/repos/urimus/urimus.github.io/commits', function (data) {
-		var lastCommit = formatDate(new Date(data[0].commit.author.date).getTime(), lang);
-		alert(t("homepageInfoText")+ lastCommit + ".");
-	});
+	axios.get("https://api.github.com/repos/urimus/urimus.github.io/commits")
+	.then(
+		response => {
+			const data = response.data;
+			const lastCommit = formatDate(new Date(data[0].commit.author.date).getTime(), lang);
+			alert(t("homepageInfoText")+ lastCommit + ".");
+		},
+		defaultAxiosError
+	);
 }
 
 function updateAboutMeImage(lang, random = 0) {
@@ -72,22 +77,17 @@ function updateAboutMeImage(lang, random = 0) {
 
 
 	const feedURL = "https://www.nasa.gov/feeds/iotd-feed/";
-	const url = new URL("https://api.sekandocdn.net/api/v1.1/feeds/load");
-	url.searchParams.set("url", feedURL);
-	url.searchParams.set("_", Date.now());
 
-	fetch(url, { cache: "no-store" })
+	axios.get("https://api.sekandocdn.net/api/v1.1/feeds/load", {
+		params: {
+			url: feedURL,
+			_: Date.now()
+		}
+	})
 	.then(
 		response => {
 			if (toSkip == 1) return;
-			if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
-			return response.json();
-		}
-	)
-	.then(
-		result => {
-			if (toSkip == 1) return;
-			if (!result) return;
+			const result = response.data;
 			if (result.error) {
 				showErrorImage(lang, "error", `Feednami ${result.error.code} ${result.error.message}`);
 				adjustScrollDiv();

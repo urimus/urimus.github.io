@@ -302,32 +302,15 @@ function showFeedData(type, source, lang, result) {
 			loadingDivTitleSkip.appendChild(a);
 			adjustFeedScrollDiv();
 
-			const url = new URL(proxyURL);
-			url.searchParams.set("url", "https://example.com");
-			url.searchParams.set("_", Date.now());
-			fetch(url, { cache: "no-store" })
-			.then(
-				response => {
-					if (skipUpdates == 1) return;
-					if (!response.ok) {
-						return response.text().then(
-							msg => {
-								const message = msg || response.statusText || "Request failed";
-								const err = new Error(message);
-								err.status = response.status;
-								err.statusText = message;
-								throw err;
-							}
-						);
-		    			}
-					return true; // proxy works
+			axios.get(proxyURL, {
+				params: {
+					url: "https://example.com",
+					_: Date.now()
 				}
-			)
+			})
 			.then(
-				data => { // proxy works
+				response => { // proxy works
 					if (skipUpdates == 1) return;
-					if (!data) return;
-
 					$("#processedDiv").show();
 					adjustFeedScrollDiv();
 					// 10 updates simultaneously only
@@ -346,8 +329,9 @@ function showFeedData(type, source, lang, result) {
 				},
 				error => { // proxy does not work
 					if (skipUpdates == 1) return;
-					error.status = error.status ?? 0;
-					error.statusText = error.statusText ?? error.message ?? String(error);
+
+					const status = error.response?.status ?? 0;
+					const statusText = error.response?.statusText ?? error.message ?? String(error);
 
 					var table2 = document.getElementById("messagetable");
 					table2.replaceChildren();
@@ -355,7 +339,7 @@ function showFeedData(type, source, lang, result) {
 					adjustFeedScrollDiv();
 
 					for (var j = 0; j < totalEntries; j++) {
-						result.entries[j].error = t("proxyUnavilable") + ". (" + error.status + ")";
+						result.entries[j].error = t("proxyUnavilable") + ". (" + status + ")";
 						if (result.entries[j].storage.updateProcessed == 0) {
 							result.entries[j].storage.updateProcessed = 1;
 							showEntry(type, source, lang, result, j, 0);
@@ -1246,35 +1230,36 @@ function generateTabs(type, source, lang) {
 
 
 function showInformation(lang) {
-	$.ajax({
-		url: "scripts/showFeed.js",
-		success: function(data, textStatus, jqXHR) {
-			var modStr = jqXHR.getResponseHeader('Last-Modified');
+	axios.get("scripts/showFeed.js").then(
+		response => {
+			const modStr = response.headers["last-modified"];
 			alert(t("feedInfoText") + formatDate(modStr, lang) + ".");
-		}
-	});
+		},
+		defaultAxiosError
+	);
 }
 
 function loadFeednami(type, source, lang, feedURL, loadAttempt) {
 
 	var loadAttemptSpan, url;
+	let axiosConfig = {};
+
 	if (source == "artemis") {
-		url = new URL(feedURL);
-		url.searchParams.set("_", Date.now());
-	} else { // xml
-		url = new URL("https://api.sekandocdn.net/api/v1.1/feeds/load");
-		url.searchParams.set("url", feedURL);
-		url.searchParams.set("_", Date.now());
+		axiosConfig.url = feedURL;
+		axiosConfig.params = {
+			_: Date.now()
+		};
+	} else {
+		axiosConfig.url = "https://api.sekandocdn.net/api/v1.1/feeds/load";
+		axiosConfig.params = {
+			url: feedURL,
+			_: Date.now()
+		};
 	}
-	fetch(url, { cache: "no-store" })
+	axios(axiosConfig)
 	.then(
 		response => {
-			if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
-			return response.json();
-		}
-	)
-	.then(
-		result => {
+			const result = response.data;
 			loadAttemptSpan = document.getElementById("loadAttempt");
 			if (loadAttemptSpan) loadAttemptSpan.innerHTML="";
 			adjustFeedScrollDiv();
@@ -1974,32 +1959,17 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 	updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 	document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 
-	const url = new URL(proxyURL);
-	url.searchParams.set("url", result.entries[i].link);
-	url.searchParams.set("_", Date.now());
-	fetch(url, { cache: "no-store" })
+	axios.get(proxyURL, {
+		params: {
+			url: result.entries[i].link,
+			_: Date.now()
+		}
+	})
 	.then(
 		response => {
 			if (skipUpdates == 1) return;
-			if (!response.ok) {
-				return response.text().then(
-					msg => {
-						const message = msg || response.statusText || "Request failed";
-						const err = new Error(message);
-						err.status = response.status;
-						err.statusText = message;
-						throw err;
-					}
-				);
-			}
-			return response.text();
-		}
-	)
-	.then(
-		data => {
 
-			if (skipUpdates == 1) return;
-			if (!data) return;
+			const data = response.data;
 
 			if (updateAttempt > 1) updateAttempt2 = "/" + updateAttempt;
 			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
@@ -2227,12 +2197,12 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 			if (skipUpdates == 1) return;
 
-			error.status = error.status ?? 0;
-			error.statusText = error.statusText ?? error.message ?? String(error);
+			const status = error.response?.status ?? 0;
+			const statusText = error.response?.statusText ?? error.message ?? String(error);
 
-			updateAttempt2 = (error.status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
-			console.log(t("updateLoadError") + " (" + error.status + "). " + t("record") + " # " + (i + 1) + updateAttempt2);
-			if (error.status == 0 && updateAttempt < 5) { // 5 0-status attempts
+			updateAttempt2 = (status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
+			console.log(t("updateLoadError") + " (" + status + "). " + t("record") + " # " + (i + 1) + updateAttempt2);
+			if (status == 0 && updateAttempt < 5) { // 5 0-status attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
 			}
@@ -2240,11 +2210,11 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
-				result.entries[i].media.comment = t("updateLoadError") + " (" + error.status + ")";
+				result.entries[i].media.comment = t("updateLoadError") + " (" + status + ")";
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = "images/icons/error/no_image.png";
 			}
-			result.entries[i].error = t("updateLoadError") + " (" + error.status + "). <a href='javascript:location.reload();' class='standardb_red');>" + t("reloadPage") + "</a>";
+			result.entries[i].error = t("updateLoadError") + " (" + status + "). <a href='javascript:location.reload();' class='standardb_red');>" + t("reloadPage") + "</a>";
 			showEntry(type, source, lang, result, i, 0);
 			result.entries[i].storage.updateProcessed = 1;
 			checkProcessedCount(source, type, result, lang, 0);
