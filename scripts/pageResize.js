@@ -4,6 +4,23 @@ var clickStarted = false;
 var initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
+// --- service worker ---
+/* в консоли
+navigator.serviceWorker.getRegistrations().then(regs => {
+	regs.forEach(r => r.unregister());
+});
+
+navigator.serviceWorker.controller
+
+navigator.serviceWorker.getRegistrations().then(console.log)
+*/
+if ("serviceWorker" in navigator) {
+	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
+	.then(function (reg) {
+		// nothing
+	});
+}
+
 // --- tab navigation ---
 function keyboardClick(event, el) {
 	el.dispatchEvent(new MouseEvent('click', {
@@ -139,20 +156,6 @@ function preloadImages() {
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
 	if ("serviceWorker" in navigator) {
-		/*
-		const start = () => {
-			for (let imgSrc of images) {
-				const url = new URL(imgSrc, window.location.href);
-				url.searchParams.set("preload", "1");
-				new Image().src = url.toString();
-			}
-		};
-		if (navigator.serviceWorker.controller) {
-			start();
-		} else {
-			navigator.serviceWorker.addEventListener("controllerchange", start, { once: true });
-		}
-		*/
 		navigator.serviceWorker.ready.then(() => {
 			for (let imgSrc of images) {
 				const url = new URL(imgSrc, window.location.href);
@@ -187,23 +190,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		} else {
 			processPageResize();
 		}
-	}
-
-	// --- service worker ---
-	/* в консоли
-	navigator.serviceWorker.getRegistrations().then(regs => {
-		regs.forEach(r => r.unregister());
-	});
-
-	navigator.serviceWorker.controller
-
-	navigator.serviceWorker.getRegistrations().then(console.log)
-	*/
-	if ("serviceWorker" in navigator) {
-		navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
-		.then(function (reg) {
-			// nothing
-		});
 	}
 });
 
