@@ -7480,17 +7480,17 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 		tableSM.style.top=shiftTransitionStart+"px";
 		left_shift = lastRect.right + (type === "contentsLink" ? 10 : -10);
 		tableSM.style.left=left_shift+"px";
-		requestAnimationFrame(() => {
-			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
-			tableSM.style.top=top_shift+"px";
-			left_shift = rect.right + (type === "contentsLink" ? 10 : -10);
-			tableSM.style.left=left_shift+"px";
-		});
+		tableSM.offsetHeight;
+		tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
+		tableSM.style.top=top_shift+"px";
+		left_shift = rect.right + (type === "contentsLink" ? 10 : -10);
+		tableSM.style.left=left_shift+"px";
 	} else {
 		tableSM.style.top=top_shift+"px";
 		left_shift = rect.right + (type === "contentsLink" ? 10 : -10);
 		tableSM.style.left=left_shift+"px";
-		requestAnimationFrame(() => { tableSM.style.opacity = "1"; });
+		tableSM.offsetHeight;
+		tableSM.style.opacity = "1";
 	}
 	lastRect=rect;
 }
