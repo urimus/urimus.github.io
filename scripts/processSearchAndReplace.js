@@ -509,27 +509,52 @@ function encodeByEncoding(str, enc) {
 	return data;
 }
 
-function download(lang, encoding = 'UTF-8', filename = "") {
+function download(lang, encoding = "UTF-8", filename = "") {
 
 	if (!filename) {
 		const href = document.getElementById("fileName").getAttribute("href");
 		filename = href.substring(href.lastIndexOf("/") + 1);
 	}
 
-	const value = document.getElementById('textarea_area').value;
-	const enc = (encoding || '').toUpperCase();
+	const value = document.getElementById("textarea_area").value;
+
+	const enc = (encoding || "UTF-8").toUpperCase();
+
 	const bomBytes = getBOM(enc);
 	const data = encodeByEncoding(value, enc);
-	const blob = new Blob(bomBytes ? [bomBytes, data] : [data]);
 
-	const _URL = window.URL || window.webkitURL;
-	const blobUrl = _URL.createObjectURL(blob);
+	const blob = new Blob(
+		bomBytes ? [bomBytes, data] : [data]
+	);
 
-	const a = document.createElement('a');
-	a.href = blobUrl;
-	a.download = filename;
-	a.click();
-	_URL.revokeObjectURL(blobUrl);
+	if (!("showSaveFilePicker" in window)) {
+		const _URL = window.URL || window.webkitURL;
+		const blobUrl = _URL.createObjectURL(blob);
+
+		const a = document.createElement('a');
+		a.href = blobUrl;
+		a.download = filename;
+		a.click();
+		_URL.revokeObjectURL(blobUrl);
+		return;
+	}
+
+	window.showSaveFilePicker({
+		suggestedName: filename
+	})
+	.then(function(handle) {
+		return handle.createWritable();
+	})
+	.then(function(writable) {
+		return writable.write(blob)
+			.then(function() {
+				return writable.close();
+			});
+	})
+	.catch(function(err) {
+		if (err.name === "AbortError") return;
+		console.log(err);
+	});
 }
 
 // ======================================
