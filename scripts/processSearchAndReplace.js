@@ -535,7 +535,9 @@ function download(lang, encoding = "UTF-8", filename = "") {
 		a.href = blobUrl;
 		a.download = filename;
 		a.click();
-		_URL.revokeObjectURL(blobUrl);
+		setTimeout(() => {
+			_URL.revokeObjectURL(blobUrl);
+		}, 1000);
 		return;
 	}
 
