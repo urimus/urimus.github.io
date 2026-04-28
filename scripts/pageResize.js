@@ -522,14 +522,14 @@ function processPageResize(orientationChanged = 0, lang) {
 			if (window.location.pathname.startsWith("/news")) {
 				var feedTable = document.getElementById('feedtable');
 				if (feedTable != null && feedTable.innerHTML != "") adjustFeedScrollDiv();
-			} else if (window.location.pathname.startsWith("/index_")) {
+			} else if (window.location.pathname.startsWith("/site_map")) {
 				var contentsTable = document.getElementById('contentstable');
 				if (contentsTable != null && contentsTable.innerHTML != "") adjustContentsScrollDiv();
 			} else {
 				adjustScrollDiv();
 			}
 		} else {
-			if (!(window.location.pathname.startsWith("/html_editor") || window.location.pathname.startsWith("/index_") || window.location.pathname.startsWith("/news"))) {
+			if (!(window.location.pathname.startsWith("/html_editor") || window.location.pathname.startsWith("/site_map") || window.location.pathname.startsWith("/news"))) {
 				adjustScrollDiv();
 			}
 		}

@@ -1,10 +1,10 @@
 ﻿
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="ru">
 
 <head>
-<title>Urmas Repinski - Homepage</title> 
+<title>Урмас Репинский - Домашняя Страница</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,9 +12,9 @@
 <link rel="stylesheet" href="styles.css">
 
 <!-- For Google Index -->
-<link rel="alternate" hreflang="en" href="https://urimus.github.io/index_eng.html">
-<link rel="alternate" hreflang="la" href="https://urimus.github.io/index_lat.html">
-<link rel="alternate" hreflang="ru" href="https://urimus.github.io/index_rus.html">
+<link rel="alternate" hreflang="en" href="https://urimus.github.io/site_map_eng.html">
+<link rel="alternate" hreflang="la" href="https://urimus.github.io/site_map_lat.html">
+<link rel="alternate" hreflang="ru" href="https://urimus.github.io/site_map_rus.html">
 
 <!-- jQuery and jQuery UI Scripts -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.min.css">
@@ -65,14 +65,14 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 </head>
 
-<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="contentsLoad('eng');"> <!-- Right background image -->
+<body style="background: url('images/icons/background/brick_wall.jpg'); background-size: cover; background-attachment: fixed;" onload="contentsLoad('rus');"> <!-- Right background image -->
 
 <!-- Header Image Table -->
 <table cellspacing="0" cellpadding="0" width="1000" align="center" border="0" onmouseenter="if (!clickStarted) hideSubMenu();">
 
 	<tr>
 		<td width="1000">
-			<img src="images/icons/urmas.jpg" alt="Me" title="Me"  width="1000" style="display: block">
+			<img src="images/icons/urmas.jpg" alt="Я" title="Я"  width="1000" style="display: block">
 		</td>
 	</tr>
 
@@ -83,7 +83,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 
 	<tr align="right" bgcolor="#d0e7f7"> 
 		<td  bgcolor="#d0e7f7" width="100%">
-		<div class="nimetus2_blue"><font class="blinking_text" id="messageArea">&#9734;&nbsp;Urmas Repinski - Homepage&nbsp;&#9734;</font></div>
+		<div class="nimetus2_blue"><font class="blinking_text" id="messageArea">&#9734;&nbsp;Урмас Репинский - Домашняя Страница&nbsp;&#9734;</font></div>
 		</td>
 
     <td align="center" valign="bottom">
@@ -94,10 +94,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('index_lat.html'+window.location.search);
+					window.open('site_map_lat.html'+window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='index_lat.html'+window.location.search;
+					window.location.href='site_map_lat.html'+window.location.search;
 				};"
 			class="flag_not_selected"
 			title="latina"
@@ -112,15 +112,15 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			role="button"
 			tabindex="0"
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
-			onmouseleave="if (!clickStarted) this.className='flag_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('index_eng.html'+window.location.search);
+					window.open('site_map_eng.html'+window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='index_eng.html'+window.location.search;
+					window.location.href='site_map_eng.html'+window.location.search;
 				};"
-			class="flag_selected"
+			class="flag_not_selected"
 			title="english"
 			id="flag_eng"
 		>
@@ -132,15 +132,15 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 			role="button"
 			tabindex="0"
 			onmouseenter="if (!clickStarted) this.className='flag_selected'"
-			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
+			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('index_rus.html'+window.location.search);
+					window.open('site_map_rus.html'+window.location.search);
 				} else {
 					clickStarted = true;
-					window.location.href='index_rus.html'+window.location.search;
+					window.location.href='site_map_rus.html'+window.location.search;
 				};"
-			class="flag_not_selected"
+			class="flag_selected"
 			title="русский"
 			id="flag_rus"
 		>
@@ -153,32 +153,32 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <!-- Main Table -->
 <table cellspacing="0" cellpadding="0" border="0"  width="1000" align="center">
 	<tr> 
-
 	<td bgcolor="#d0e7f7" valign="top"> 
 
 <table cellspacing="0" cellpadding="0" width="280" border="0" >
 
 	<tr onmouseenter="if (!clickStarted) hideSubMenu();"> 
-		<td  align="center" class="title_gradient_blue">Menu</td>
+		<td align="center" class="title_gradient_blue">Меню</td>
 	</tr>
 	<tr>
-		<td height="3" bgcolor="#ff8a00"></td>
-	</tr>   
+		<td height="3px" bgcolor="#ff8a00"></td>
+	</tr>  
+
 	<tr>
-		<td align="center" >
+		<td align="center">
 		<div id="menu_1"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'sitemap');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'sitemap');" 
 		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
-		onclick="showSubMenu(this, 'eng', 'sitemap');"
+		onclick="showSubMenu(this, 'rus', 'sitemap');"
 		class="menu_selected">
-		&#9679; Site Map</div>
+		&#9679; Карта Сайта</div>
 	</td>
 	</tr>   
 
 	<tr>
-		<td align="center" >
+		<td align="center">
 		<div id="menu_2"
 		role="button"
 		tabindex="0"
@@ -186,17 +186,18 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('about_me_eng.html');
+				window.open('about_me_rus.html');
 			} else {
 				clickStarted = true;
-				window.location.href='about_me_eng.html';
+				window.location.href='about_me_rus.html';
 			};"
 		class="menu_not_selected_blue">
-		About me</div>
+		Обо мне</div>
 	</td>
 	</tr>   
+
 	<tr>
-		<td align="center" >
+		<td align="center">
 		<div id="menu_3"
 		role="button"
 		tabindex="0"
@@ -204,13 +205,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('about_work_eng.html');
+				window.open('about_work_rus.html');
 			} else {
 				clickStarted = true;
-				window.location.href='about_work_eng.html';
+				window.location.href='about_work_rus.html';
 			};"
 		class="menu_not_selected_blue">
-		About my work</div>
+		О моей работе</div>
 	</td>
 	</tr>   
 
@@ -223,13 +224,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('about_phd_eng.html');
+				window.open('about_phd_rus.html');
 			} else {
 				clickStarted = true;
-				window.location.href='about_phd_eng.html';
+				window.location.href='about_phd_rus.html';
 			};"
 		class="menu_not_selected_blue">
-		About my PhD</div>
+		О моём PhD</div>
 	</td>
 	</tr>
 
@@ -242,13 +243,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('links_eng.html');
+				window.open('links_rus.html');
 			} else {
 				clickStarted = true;
-				window.location.href='links_eng.html';
+				window.location.href='links_rus.html';
 			};"
 		class="menu_not_selected_blue">
-		Links</div>
+		Ссылки</div>
 	</td>
 	</tr>
 
@@ -261,13 +262,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_blue'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('html_editor_eng.html?pattern=*.html&i=0');
+				window.open('html_editor_rus.html?pattern=*.html&i=0');
 			} else {
 				clickStarted = true;
-				window.location.href='html_editor_eng.html?pattern=*.html&i=0';
+				window.location.href='html_editor_rus.html?pattern=*.html&i=0';
 			};"
 		class="menu_not_selected_blue">
-		HTML Editor</div>
+		HTML Редактор</div>
 	</td>
 	</tr>
 
@@ -276,11 +277,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_7"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'music');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'music');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="showSubMenu(this, 'eng', 'music');"
+		onclick="showSubMenu(this, 'rus', 'music');"
 		class="menu_not_selected_black">
-		&#9679; Music <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
+		&#9679; Музыка <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
 	</td>
 	</tr>   
 	<tr>
@@ -288,11 +289,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_8"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'movies');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'movies');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="showSubMenu(this, 'eng', 'movies');"
+		onclick="showSubMenu(this, 'rus', 'movies');"
 		class="menu_not_selected_black">
-		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
+		&#9679; Фильмы <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
 	</td>
 	</tr>
 
@@ -301,11 +302,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_27"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'series');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'series');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="showSubMenu(this, 'eng', 'series');"
+		onclick="showSubMenu(this, 'rus', 'series');"
 		class="menu_not_selected_black">
-		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
+		&#9679; Сериалы <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
 	</td>
 	</tr>   
 
@@ -314,11 +315,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_9"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'games');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'games');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="showSubMenu(this, 'eng', 'games');"  
+		onclick="showSubMenu(this, 'rus', 'games');"  
 		class="menu_not_selected_black">
-		&#9679; Games</div>
+		&#9679; Игры</div>
 	</td>
 	</tr>   
 
@@ -327,35 +328,35 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_10"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'books');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'books');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
-		onclick="showSubMenu(this, 'eng', 'books');"  
+		onclick="showSubMenu(this, 'rus', 'books');"  
 		class="menu_not_selected_red">
-		&#9679; Books</div>
+		&#9679; Книги</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center" >
 		<div id="menu_11"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'photos');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'photos');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
-		onclick="showSubMenu(this, 'eng', 'photos');"  
+		onclick="showSubMenu(this, 'rus', 'photos');"  
 		class="menu_not_selected_red">
-		&#9679; Photos/Images</div>
+		&#9679; Фото/Картинки</div>
 	</td>
-	</tr>   
+	</tr>
 
 	<tr>
 		<td align="center" >
 		<div id="menu_12"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'amv');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'amv');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="showSubMenu(this, 'eng', 'amv');"
+		onclick="showSubMenu(this, 'rus', 'amv');"
 		class="menu_not_selected_black">
 		&#9679; AMV</div>
 	</td>
@@ -370,13 +371,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('junk_eng.html');
+				window.open('junk_rus.html');
 			} else {
 				clickStarted = true;
-				window.location.href='junk_eng.html';
+				window.location.href='junk_rus.html';
 			};"
 		class="menu_not_selected_black">
-		Junk</div>
+		Мусор</div>
 	</td>
 	</tr>		
 
@@ -385,11 +386,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_14"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'stuff');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'stuff');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="showSubMenu(this, 'eng', 'stuff');"
+		onclick="showSubMenu(this, 'rus', 'stuff');"
 		class="menu_not_selected_black">
-		&#9679; Stuff <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
+		&#9679; Барахло <font class="blinking_text" color="red"><sup>&#9889; Evil &#9889;</sup></font></div>
 	</td>
 	</tr>
 
@@ -398,11 +399,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_15"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'anecdotes');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'anecdotes');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
-		onclick="showSubMenu(this, 'eng', 'anecdotes');"  
+		onclick="showSubMenu(this, 'rus', 'anecdotes');"  
 		class="menu_not_selected_red">
-		&#9679; Anecdotes</div>
+		&#9679; Анекдоты</div>
 	</td>
 	</tr>	
 
@@ -415,13 +416,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('heffalump_eng.html');
+				window.open('heffalump_rus.html');
 			} else {
 				clickStarted = true;
-				window.location.href='heffalump_eng.html';
+				window.location.href='heffalump_rus.html';
 			};"  
 		class="menu_not_selected_red">
-		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
+		Слонопотам <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
 	</td>
 	</tr>		
 
@@ -430,11 +431,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_17"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'relaxation');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'relaxation');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
-		onclick="showSubMenu(this, 'eng', 'relaxation');"  
+		onclick="showSubMenu(this, 'rus', 'relaxation');"  
 		class="menu_not_selected_white">
-		&#9679; Substances For Relaxation</div>
+		&#9679; Вещества Для Расслабления</div>
 	</td>
 	</tr>   
 
@@ -443,11 +444,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_18"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'software');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'software');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_white'" 
-		onclick="showSubMenu(this, 'eng', 'software');"  
+		onclick="showSubMenu(this, 'rus', 'software');"  
 		class="menu_not_selected_white">
-		&#9679; Software Development</div>
+		&#9679; Разработка Программ</div>
 	</td>
 	</tr>   
 
@@ -456,11 +457,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_19"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'satanism');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'satanism');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
-		onclick="showSubMenu(this, 'eng', 'satanism');"
+		onclick="showSubMenu(this, 'rus', 'satanism');"
 		class="menu_not_selected_green">
-		&#9679; Satanism</div>
+		&#9679; Сатанизм</div>
 	</td>
 	</tr>
 
@@ -473,13 +474,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('satanism_wicca_eng.html');
+				window.open('satanism_wicca_rus.html');
 			} else {
 				clickStarted = true;
-				window.location.href='satanism_wicca_eng.html';
+				window.location.href='satanism_wicca_rus.html';
 			};"
 		class="menu_not_selected_green">
-		Wicca</div>
+		Викка</div>
 	</td>
 	</tr>
 
@@ -492,13 +493,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('falsifiability_eng.html');
+				window.open('falsifiability_rus.html');
 			} else {
 				clickStarted = true;
-				window.location.href='falsifiability_eng.html';
+				window.location.href='falsifiability_rus.html';
 			};"
 		class="menu_not_selected_green">
-		Falsifiability</div>
+		Фальсифицируемость</div>
 	</td>
 	</tr>
 
@@ -507,11 +508,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_22"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'psychology');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'psychology');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
-		onclick="showSubMenu(this, 'eng', 'psychology');"
+		onclick="showSubMenu(this, 'rus', 'psychology');"
 		class="menu_not_selected_green">
-		&#9679; Psychology</div>
+		&#9679; Психология</div>
 	</td>
 	</tr>
 
@@ -520,11 +521,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_23"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'countries');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'countries');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
-		onclick="showSubMenu(this, 'eng', 'countries');"
+		onclick="showSubMenu(this, 'rus', 'countries');"
 		class="menu_not_selected_green">
-		&#9679; Countries</div>
+		&#9679; Страны</div>
 	</td>
 	</tr>
 
@@ -537,13 +538,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
 		onclick="
 			if (event.ctrlKey) {
-				window.open('totalitarianism_eng.html');
+				window.open('totalitarianism_rus.html');
 			} else {
 				clickStarted = true;
-				window.location.href='totalitarianism_eng.html';
+				window.location.href='totalitarianism_rus.html';
 			};"
 		class="menu_not_selected_green">
-		Totalitarianism</div>
+		Тоталитаризм</div>
 	</td>
 	</tr>
 
@@ -552,11 +553,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_25"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'personalities');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'personalities');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_green'" 
-		onclick="showSubMenu(this, 'eng', 'personalities');"
+		onclick="showSubMenu(this, 'rus', 'personalities');"
 		class="menu_not_selected_green">
-		&#9679; Personalities</div>
+		&#9679; Деятели</div>
 	</td>
 	</tr>
 
@@ -565,11 +566,11 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 		<div id="menu_26"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'news');" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'news');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
-		onclick="showSubMenu(this, 'eng', 'news');"
+		onclick="showSubMenu(this, 'rus', 'news');"
 		class="menu_not_selected_red">
-		&#9679; News</div>
+		&#9679; Новости</div>
 	</td>
 	</tr>
 
@@ -585,15 +586,15 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 <!-- Table where search, name and languages and func area-->
 <tr><td>
 
-<table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#d0e7f7">
+<table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#d0e7f7">
 <!-- Table with search, name and languages -->
 	<tr class="title_blue"> 
-		<td  style="width: 490px;"><a name="site_map" id="contentsTitle">Site Map</a></td>
+		<td  class="title_blue" style="width: 490px;"><a name="site_map" id="contentsTitle">Карта Сайта</a></td>
 		<td bgcolor="#d0e7f7" width="3"></td>
-		<td style="width: 150px;" id="sortby_title">Sort By:</td>
+		<td  style="width: 150px;" id="sortby_title">Сортировать По:</td>
 
 		<td>
-			<div id="sortby_name" align="center" style="width: 22px; display: block;"
+			<div id="sortby_name" align="center" style="width: 22px;"
 			role="button"
 			tabindex="0"
 				onmouseenter="if (!clickStarted) mouseInSortBy('name');"
@@ -608,13 +609,13 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 						window.location=url;
 					};"
 				class="sortby_not_selected"
-				title="Name"
+				title="Имени"
 			>
-				<img src="scripts/contents/icons/sortby_name_blue.svg" id="sortby_name_img" alt="Name" height="18" style="display: block;"/>
+				<img src="scripts/contents/icons/sortby_name_blue.svg" id="sortby_name_img" alt="Имени" height="18"  style="display: block;"/>
 			</div>
 		</td>
 
-			<td>
+		<td>
 			<div id="sortby_date" align="center" style="width: 22px; display: block;"
 			role="button"
 			tabindex="0"
@@ -629,10 +630,10 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 						clickStarted = true;
 						window.location=url;
 					};"
-					class="sortby_not_selected"
-					title="Date"
+				class="sortby_not_selected"
+				title="Дате"
 			>
-				<img src="scripts/contents/icons/sortby_date_blue.svg" id="sortby_date_img" alt="Date" height="18" style="display: block;"/>
+				<img src="scripts/contents/icons/sortby_date_blue.svg" id="sortby_date_img" alt="Дате" height="18" style="display: block;"/>
 			</div>
 		</td>
 
@@ -652,13 +653,14 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
 						window.location=url;
 					};"
 				class="sortby_not_selected"
-				title="Country"
+				title="Стране"
 			>
-				<img src="scripts/contents/icons/sortby_flag_blue.svg" id="sortby_flag_img" alt="Country" height="18" style="display: block;"/>
+				<img src="scripts/contents/icons/sortby_flag_blue.svg" id="sortby_flag_img" alt="Стране" height="18" style="display: block;"/>
 			</div>
 		</td>
 
 	</tr>
+
 </table>
 <table cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ff8a00">
 
@@ -675,7 +677,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
   	<table id="tabstable" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse"  onmouseenter="if (!clickStarted) hideSubMenu();">
 	</table>
 
-<!-- For scroll inside div 405-->
+<!-- For scroll inside div 405 -->
 <div id="scrollDiv" style="height:613px;overflow:auto;">
 
 			<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse" id="contentstable"></table>
@@ -701,7 +703,7 @@ var imgBgStarSrc="images/icons/background/sticky_note.png";
   </tr>
 	<tr>
 	<td class="title_blue" >
-	&copy; Urmas Repinski, urrimus@hotmail.com
+	&copy; Урмас Репинский, urrimus@hotmail.com
 	</td>
 	</tr>
 </table>

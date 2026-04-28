@@ -52,7 +52,7 @@ function contentsLoad(lang) {
 	}
 
 	if (toRedirect==1) {
-		window.location.href='index_'+lang+'.html?type='+type+'&sortby='+ sortby;
+		window.location.href='site_map_'+lang+'.html?type='+type+'&sortby='+ sortby;
 		return;
 	}
 
@@ -507,7 +507,7 @@ function generateTabs(type, lang) {
 		Div.setAttribute('onmouseenter', "if (clickStarted) return; this.className='menu_selected'; if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.fullTitle;");
 		Div.setAttribute('onmouseleave', "if (clickStarted) return; mouseOutTab('"+keys[i]+"', '"+type+"', '"+tabsColor[keys[i]]+"'); if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.shortTitle;");
 		sortby = getParameterByName('sortby');
-		divLink = "index_" + lang + ".html?type=" + keys[i] + "&sortby=" + sortby;
+		divLink = "site_map_" + lang + ".html?type=" + keys[i] + "&sortby=" + sortby;
 		Div.setAttribute('onclick', "if (event.ctrlKey){ window.open('"+divLink+"'); } else { clickStarted = true; window.location.href='"+divLink+"'; };");
 		Div.innerHTML = tabs[keys[i]];
 		cell1.appendChild(Div);

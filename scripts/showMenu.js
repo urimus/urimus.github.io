@@ -28,14 +28,14 @@ if (lang=="eng") {
 	wholeMenu["11SortBy"].id = "1_1_1";
 	wholeMenu["11SortBy"].color = "blue";
 	wholeMenu["11SortBy"].hasSub = 0;
-	wholeMenu["11SortBy"].link = "index_eng.html?type=aboutme&sortby=name";
+	wholeMenu["11SortBy"].link = "site_map_eng.html?type=aboutme&sortby=name";
 	wholeMenu["11SortBy"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["12SortBy"] = {};
 	wholeMenu["12SortBy"].id = "1_1_2";
 	wholeMenu["12SortBy"].color = "blue";
 	wholeMenu["12SortBy"].hasSub = 0;
-	wholeMenu["12SortBy"].link = "index_eng.html?type=aboutme&sortby=date";
+	wholeMenu["12SortBy"].link = "site_map_eng.html?type=aboutme&sortby=date";
 	wholeMenu["12SortBy"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● About my work"] = {};
@@ -50,14 +50,14 @@ if (lang=="eng") {
 	wholeMenu["21SortBy"].id = "1_2_1";
 	wholeMenu["21SortBy"].color = "blue";
 	wholeMenu["21SortBy"].hasSub = 0;
-	wholeMenu["21SortBy"].link = "index_eng.html?type=aboutwork&sortby=name";
+	wholeMenu["21SortBy"].link = "site_map_eng.html?type=aboutwork&sortby=name";
 	wholeMenu["21SortBy"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["22SortBy"] = {};
 	wholeMenu["22SortBy"].id = "1_2_2";
 	wholeMenu["22SortBy"].color = "blue";
 	wholeMenu["22SortBy"].hasSub = 0;
-	wholeMenu["22SortBy"].link = "index_eng.html?type=aboutwork&sortby=date";
+	wholeMenu["22SortBy"].link = "site_map_eng.html?type=aboutwork&sortby=date";
 	wholeMenu["22SortBy"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● About my PhD"] = {};
@@ -72,14 +72,14 @@ if (lang=="eng") {
 	wholeMenu["31SortBy"].id = "1_3_1";
 	wholeMenu["31SortBy"].color = "blue";
 	wholeMenu["31SortBy"].hasSub = 0;
-	wholeMenu["31SortBy"].link = "index_eng.html?type=aboutphd&sortby=name";
+	wholeMenu["31SortBy"].link = "site_map_eng.html?type=aboutphd&sortby=name";
 	wholeMenu["31SortBy"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["32SortBy"] = {};
 	wholeMenu["32SortBy"].id = "1_3_2";
 	wholeMenu["32SortBy"].color = "blue";
 	wholeMenu["32SortBy"].hasSub = 0;
-	wholeMenu["32SortBy"].link = "index_eng.html?type=aboutphd&sortby=date";
+	wholeMenu["32SortBy"].link = "site_map_eng.html?type=aboutphd&sortby=date";
 	wholeMenu["32SortBy"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Links"] = {};
@@ -94,14 +94,14 @@ if (lang=="eng") {
 	wholeMenu["41SortBy"].id = "1_4_1";
 	wholeMenu["41SortBy"].color = "blue";
 	wholeMenu["41SortBy"].hasSub = 0;
-	wholeMenu["41SortBy"].link = "index_eng.html?type=links&sortby=name";
+	wholeMenu["41SortBy"].link = "site_map_eng.html?type=links&sortby=name";
 	wholeMenu["41SortBy"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["42SortBy"] = {};
 	wholeMenu["42SortBy"].id = "1_4_2";
 	wholeMenu["42SortBy"].color = "blue";
 	wholeMenu["42SortBy"].hasSub = 0;
-	wholeMenu["42SortBy"].link = "index_eng.html?type=links&sortby=date";
+	wholeMenu["42SortBy"].link = "site_map_eng.html?type=links&sortby=date";
 	wholeMenu["42SortBy"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● HTML Editor"] = {};
@@ -116,14 +116,14 @@ if (lang=="eng") {
 	wholeMenu["51SortBy"].id = "1_5_1";
 	wholeMenu["51SortBy"].color = "blue";
 	wholeMenu["51SortBy"].hasSub = 0;
-	wholeMenu["51SortBy"].link = "index_eng.html?type=htmleditor&sortby=name";
+	wholeMenu["51SortBy"].link = "site_map_eng.html?type=htmleditor&sortby=name";
 	wholeMenu["51SortBy"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["52SortBy"] = {};
 	wholeMenu["52SortBy"].id = "1_5_2";
 	wholeMenu["52SortBy"].color = "blue";
 	wholeMenu["52SortBy"].hasSub = 0;
-	wholeMenu["52SortBy"].link = "index_eng.html?type=htmleditor&sortby=date";
+	wholeMenu["52SortBy"].link = "site_map_eng.html?type=htmleditor&sortby=date";
 	wholeMenu["52SortBy"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Music ☥ Vampiric ☥"] = {};
@@ -138,21 +138,21 @@ if (lang=="eng") {
 	wholeMenu["61SortBy"].id = "1_6_1";
 	wholeMenu["61SortBy"].color = "black";
 	wholeMenu["61SortBy"].hasSub = 0;
-	wholeMenu["61SortBy"].link = "index_eng.html?type=music&sortby=name";
+	wholeMenu["61SortBy"].link = "site_map_eng.html?type=music&sortby=name";
 	wholeMenu["61SortBy"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["62SortBy"] = {};
 	wholeMenu["62SortBy"].id = "1_6_2";
 	wholeMenu["62SortBy"].color = "black";
 	wholeMenu["62SortBy"].hasSub = 0;
-	wholeMenu["62SortBy"].link = "index_eng.html?type=music&sortby=date";
+	wholeMenu["62SortBy"].link = "site_map_eng.html?type=music&sortby=date";
 	wholeMenu["62SortBy"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["63SortBy"] = {};
 	wholeMenu["63SortBy"].id = "1_6_3";
 	wholeMenu["63SortBy"].color = "black";
 	wholeMenu["63SortBy"].hasSub = 0;
-	wholeMenu["63SortBy"].link = "index_eng.html?type=music&sortby=flag";
+	wholeMenu["63SortBy"].link = "site_map_eng.html?type=music&sortby=flag";
 	wholeMenu["63SortBy"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Country';
 
 	wholeMenu["● Movies 💎 Unique 💎"] = {};
@@ -167,21 +167,21 @@ if (lang=="eng") {
 	wholeMenu["71SortBy"].id = "1_7_1";
 	wholeMenu["71SortBy"].color = "black";
 	wholeMenu["71SortBy"].hasSub = 0;
-	wholeMenu["71SortBy"].link = "index_eng.html?type=movies&sortby=name";
+	wholeMenu["71SortBy"].link = "site_map_eng.html?type=movies&sortby=name";
 	wholeMenu["71SortBy"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["72SortBy"] = {};
 	wholeMenu["72SortBy"].id = "1_7_2";
 	wholeMenu["72SortBy"].color = "black";
 	wholeMenu["72SortBy"].hasSub = 0;
-	wholeMenu["72SortBy"].link = "index_eng.html?type=movies&sortby=date";
+	wholeMenu["72SortBy"].link = "site_map_eng.html?type=movies&sortby=date";
 	wholeMenu["72SortBy"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["73SortBy"] = {};
 	wholeMenu["73SortBy"].id = "1_7_3";
 	wholeMenu["73SortBy"].color = "black";
 	wholeMenu["73SortBy"].hasSub = 0;
-	wholeMenu["73SortBy"].link = "index_eng.html?type=movies&sortby=flag";
+	wholeMenu["73SortBy"].link = "site_map_eng.html?type=movies&sortby=flag";
 	wholeMenu["73SortBy"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Country';
 
 	wholeMenu["● Series ⚘ Forbidden ⚘"] = {};
@@ -196,21 +196,21 @@ if (lang=="eng") {
 	wholeMenu["271SortBy"].id = "1_27_1";
 	wholeMenu["271SortBy"].color = "black";
 	wholeMenu["271SortBy"].hasSub = 0;
-	wholeMenu["271SortBy"].link = "index_eng.html?type=series&sortby=name";
+	wholeMenu["271SortBy"].link = "site_map_eng.html?type=series&sortby=name";
 	wholeMenu["271SortBy"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["272SortBy"] = {};
 	wholeMenu["272SortBy"].id = "1_27_2";
 	wholeMenu["272SortBy"].color = "black";
 	wholeMenu["272SortBy"].hasSub = 0;
-	wholeMenu["272SortBy"].link = "index_eng.html?type=series&sortby=date";
+	wholeMenu["272SortBy"].link = "site_map_eng.html?type=series&sortby=date";
 	wholeMenu["272SortBy"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["273SortBy"] = {};
 	wholeMenu["273SortBy"].id = "1_27_3";
 	wholeMenu["273SortBy"].color = "black";
 	wholeMenu["273SortBy"].hasSub = 0;
-	wholeMenu["273SortBy"].link = "index_eng.html?type=series&sortby=flag";
+	wholeMenu["273SortBy"].link = "site_map_eng.html?type=series&sortby=flag";
 	wholeMenu["273SortBy"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Country';
 
 	wholeMenu["● Games"] = {};
@@ -225,14 +225,14 @@ if (lang=="eng") {
 	wholeMenu["81SortBy"].id = "1_8_1";
 	wholeMenu["81SortBy"].color = "black";
 	wholeMenu["81SortBy"].hasSub = 0;
-	wholeMenu["81SortBy"].link = "index_eng.html?type=games&sortby=name";
+	wholeMenu["81SortBy"].link = "site_map_eng.html?type=games&sortby=name";
 	wholeMenu["81SortBy"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["82SortBy"] = {};
 	wholeMenu["82SortBy"].id = "1_8_2";
 	wholeMenu["82SortBy"].color = "black";
 	wholeMenu["82SortBy"].hasSub = 0;
-	wholeMenu["82SortBy"].link = "index_eng.html?type=games&sortby=date";
+	wholeMenu["82SortBy"].link = "site_map_eng.html?type=games&sortby=date";
 	wholeMenu["82SortBy"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Books"] = {};
@@ -247,21 +247,21 @@ if (lang=="eng") {
 	wholeMenu["91SortBy"].id = "1_9_1";
 	wholeMenu["91SortBy"].color = "red";
 	wholeMenu["91SortBy"].hasSub = 0;
-	wholeMenu["91SortBy"].link = "index_eng.html?type=books&sortby=name";
+	wholeMenu["91SortBy"].link = "site_map_eng.html?type=books&sortby=name";
 	wholeMenu["91SortBy"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["92SortBy"] = {};
 	wholeMenu["92SortBy"].id = "1_9_2";
 	wholeMenu["92SortBy"].color = "red";
 	wholeMenu["92SortBy"].hasSub = 0;
-	wholeMenu["92SortBy"].link = "index_eng.html?type=books&sortby=date";
+	wholeMenu["92SortBy"].link = "site_map_eng.html?type=books&sortby=date";
 	wholeMenu["92SortBy"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["93SortBy"] = {};
 	wholeMenu["93SortBy"].id = "1_9_3";
 	wholeMenu["93SortBy"].color = "red";
 	wholeMenu["93SortBy"].hasSub = 0;
-	wholeMenu["93SortBy"].link = "index_eng.html?type=books&sortby=flag";
+	wholeMenu["93SortBy"].link = "site_map_eng.html?type=books&sortby=flag";
 	wholeMenu["93SortBy"].html = '<img src="scripts/contents/icons/sortby_flag_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Country';
 
 	wholeMenu["● Photos/Images"] = {};
@@ -276,14 +276,14 @@ if (lang=="eng") {
 	wholeMenu["101SortBy"].id = "1_10_1";
 	wholeMenu["101SortBy"].color = "red";
 	wholeMenu["101SortBy"].hasSub = 0;
-	wholeMenu["101SortBy"].link = "index_eng.html?type=photos&sortby=name";
+	wholeMenu["101SortBy"].link = "site_map_eng.html?type=photos&sortby=name";
 	wholeMenu["101SortBy"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["102SortBy"] = {};
 	wholeMenu["102SortBy"].id = "1_10_2";
 	wholeMenu["102SortBy"].color = "red";
 	wholeMenu["102SortBy"].hasSub = 0;
-	wholeMenu["102SortBy"].link = "index_eng.html?type=photos&sortby=date";
+	wholeMenu["102SortBy"].link = "site_map_eng.html?type=photos&sortby=date";
 	wholeMenu["102SortBy"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● AMV"] = {};
@@ -298,14 +298,14 @@ if (lang=="eng") {
 	wholeMenu["111SortBy"].id = "1_11_1";
 	wholeMenu["111SortBy"].color = "black";
 	wholeMenu["111SortBy"].hasSub = 0;
-	wholeMenu["111SortBy"].link = "index_eng.html?type=amv&sortby=name";
+	wholeMenu["111SortBy"].link = "site_map_eng.html?type=amv&sortby=name";
 	wholeMenu["111SortBy"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["112SortBy"] = {};
 	wholeMenu["112SortBy"].id = "1_11_2";
 	wholeMenu["112SortBy"].color = "black";
 	wholeMenu["112SortBy"].hasSub = 0;
-	wholeMenu["112SortBy"].link = "index_eng.html?type=amv&sortby=date";
+	wholeMenu["112SortBy"].link = "site_map_eng.html?type=amv&sortby=date";
 	wholeMenu["112SortBy"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Junk"] = {};
@@ -320,21 +320,21 @@ if (lang=="eng") {
 	wholeMenu["121SortBy"].id = "1_12_1";
 	wholeMenu["121SortBy"].color = "black";
 	wholeMenu["121SortBy"].hasSub = 0;
-	wholeMenu["121SortBy"].link = "index_eng.html?type=junk&sortby=name";
+	wholeMenu["121SortBy"].link = "site_map_eng.html?type=junk&sortby=name";
 	wholeMenu["121SortBy"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["122SortBy"] = {};
 	wholeMenu["122SortBy"].id = "1_12_2";
 	wholeMenu["122SortBy"].color = "black";
 	wholeMenu["122SortBy"].hasSub = 0;
-	wholeMenu["122SortBy"].link = "index_eng.html?type=junk&sortby=date";
+	wholeMenu["122SortBy"].link = "site_map_eng.html?type=junk&sortby=date";
 	wholeMenu["122SortBy"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["123SortBy"] = {};
 	wholeMenu["123SortBy"].id = "1_12_3";
 	wholeMenu["123SortBy"].color = "black";
 	wholeMenu["123SortBy"].hasSub = 0;
-	wholeMenu["123SortBy"].link = "index_eng.html?type=junk&sortby=flag";
+	wholeMenu["123SortBy"].link = "site_map_eng.html?type=junk&sortby=flag";
 	wholeMenu["123SortBy"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Country';
 
 	wholeMenu["● Stuff ⚡ Evil ⚡"] = {};
@@ -349,14 +349,14 @@ if (lang=="eng") {
 	wholeMenu["131SortBy"].id = "1_13_1";
 	wholeMenu["131SortBy"].color = "black";
 	wholeMenu["131SortBy"].hasSub = 0;
-	wholeMenu["131SortBy"].link = "index_eng.html?type=stuff&sortby=name";
+	wholeMenu["131SortBy"].link = "site_map_eng.html?type=stuff&sortby=name";
 	wholeMenu["131SortBy"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["132SortBy"] = {};
 	wholeMenu["132SortBy"].id = "1_13_2";
 	wholeMenu["132SortBy"].color = "black";
 	wholeMenu["132SortBy"].hasSub = 0;
-	wholeMenu["132SortBy"].link = "index_eng.html?type=stuff&sortby=date";
+	wholeMenu["132SortBy"].link = "site_map_eng.html?type=stuff&sortby=date";
 	wholeMenu["132SortBy"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Anecdotes"] = {};
@@ -371,14 +371,14 @@ if (lang=="eng") {
 	wholeMenu["141SortBy"].id = "1_14_1";
 	wholeMenu["141SortBy"].color = "red";
 	wholeMenu["141SortBy"].hasSub = 0;
-	wholeMenu["141SortBy"].link = "index_eng.html?type=anecdotes&sortby=name";
+	wholeMenu["141SortBy"].link = "site_map_eng.html?type=anecdotes&sortby=name";
 	wholeMenu["141SortBy"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["142SortBy"] = {};
 	wholeMenu["142SortBy"].id = "1_14_2";
 	wholeMenu["142SortBy"].color = "red";
 	wholeMenu["142SortBy"].hasSub = 0;
-	wholeMenu["142SortBy"].link = "index_eng.html?type=anecdotes&sortby=date";
+	wholeMenu["142SortBy"].link = "site_map_eng.html?type=anecdotes&sortby=date";
 	wholeMenu["142SortBy"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Heffalump ☠ Criminal ☠"] = {};
@@ -393,14 +393,14 @@ if (lang=="eng") {
 	wholeMenu["151SortBy"].id = "1_15_1";
 	wholeMenu["151SortBy"].color = "red";
 	wholeMenu["151SortBy"].hasSub = 0;
-	wholeMenu["151SortBy"].link = "index_eng.html?type=heffalump&sortby=name";
+	wholeMenu["151SortBy"].link = "site_map_eng.html?type=heffalump&sortby=name";
 	wholeMenu["151SortBy"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["152SortBy"] = {};
 	wholeMenu["152SortBy"].id = "1_15_2";
 	wholeMenu["152SortBy"].color = "red";
 	wholeMenu["152SortBy"].hasSub = 0;
-	wholeMenu["152SortBy"].link = "index_eng.html?type=heffalump&sortby=date";
+	wholeMenu["152SortBy"].link = "site_map_eng.html?type=heffalump&sortby=date";
 	wholeMenu["152SortBy"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Substances For Relaxation"] = {};
@@ -415,14 +415,14 @@ if (lang=="eng") {
 	wholeMenu["161SortBy"].id = "1_16_1";
 	wholeMenu["161SortBy"].color = "white";
 	wholeMenu["161SortBy"].hasSub = 0;
-	wholeMenu["161SortBy"].link = "index_eng.html?type=relaxation&sortby=name";
+	wholeMenu["161SortBy"].link = "site_map_eng.html?type=relaxation&sortby=name";
 	wholeMenu["161SortBy"].html = '<img src="scripts/contents/icons/sortby_name_white.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["162SortBy"] = {};
 	wholeMenu["162SortBy"].id = "1_16_2";
 	wholeMenu["162SortBy"].color = "white";
 	wholeMenu["162SortBy"].hasSub = 0;
-	wholeMenu["162SortBy"].link = "index_eng.html?type=relaxation&sortby=date";
+	wholeMenu["162SortBy"].link = "site_map_eng.html?type=relaxation&sortby=date";
 	wholeMenu["162SortBy"].html = '<img src="scripts/contents/icons/sortby_date_white.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Software Development"] = {};
@@ -437,14 +437,14 @@ if (lang=="eng") {
 	wholeMenu["171SortBy"].id = "1_17_1";
 	wholeMenu["171SortBy"].color = "white";
 	wholeMenu["171SortBy"].hasSub = 0;
-	wholeMenu["171SortBy"].link = "index_eng.html?type=software&sortby=name";
+	wholeMenu["171SortBy"].link = "site_map_eng.html?type=software&sortby=name";
 	wholeMenu["171SortBy"].html = '<img src="scripts/contents/icons/sortby_name_white.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["172SortBy"] = {};
 	wholeMenu["172SortBy"].id = "1_17_2";
 	wholeMenu["172SortBy"].color = "white";
 	wholeMenu["172SortBy"].hasSub = 0;
-	wholeMenu["172SortBy"].link = "index_eng.html?type=software&sortby=date";
+	wholeMenu["172SortBy"].link = "site_map_eng.html?type=software&sortby=date";
 	wholeMenu["172SortBy"].html = '<img src="scripts/contents/icons/sortby_date_white.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Satanism"] = {};
@@ -459,14 +459,14 @@ if (lang=="eng") {
 	wholeMenu["181SortBy"].id = "1_18_1";
 	wholeMenu["181SortBy"].color = "green";
 	wholeMenu["181SortBy"].hasSub = 0;
-	wholeMenu["181SortBy"].link = "index_eng.html?type=satanism&sortby=name";
+	wholeMenu["181SortBy"].link = "site_map_eng.html?type=satanism&sortby=name";
 	wholeMenu["181SortBy"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["182SortBy"] = {};
 	wholeMenu["182SortBy"].id = "1_18_2";
 	wholeMenu["182SortBy"].color = "green";
 	wholeMenu["182SortBy"].hasSub = 0;
-	wholeMenu["182SortBy"].link = "index_eng.html?type=satanism&sortby=date";
+	wholeMenu["182SortBy"].link = "site_map_eng.html?type=satanism&sortby=date";
 	wholeMenu["182SortBy"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Wicca"] = {};
@@ -481,14 +481,14 @@ if (lang=="eng") {
 	wholeMenu["191SortBy"].id = "1_19_1";
 	wholeMenu["191SortBy"].color = "green";
 	wholeMenu["191SortBy"].hasSub = 0;
-	wholeMenu["191SortBy"].link = "index_eng.html?type=wicca&sortby=name";
+	wholeMenu["191SortBy"].link = "site_map_eng.html?type=wicca&sortby=name";
 	wholeMenu["191SortBy"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["192SortBy"] = {};
 	wholeMenu["192SortBy"].id = "1_19_2";
 	wholeMenu["192SortBy"].color = "green";
 	wholeMenu["192SortBy"].hasSub = 0;
-	wholeMenu["192SortBy"].link = "index_eng.html?type=wicca&sortby=date";
+	wholeMenu["192SortBy"].link = "site_map_eng.html?type=wicca&sortby=date";
 	wholeMenu["192SortBy"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Falsifiability"] = {};
@@ -503,14 +503,14 @@ if (lang=="eng") {
 	wholeMenu["201SortBy"].id = "1_20_1";
 	wholeMenu["201SortBy"].color = "green";
 	wholeMenu["201SortBy"].hasSub = 0;
-	wholeMenu["201SortBy"].link = "index_eng.html?type=falsifiability&sortby=name";
+	wholeMenu["201SortBy"].link = "site_map_eng.html?type=falsifiability&sortby=name";
 	wholeMenu["201SortBy"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["202SortBy"] = {};
 	wholeMenu["202SortBy"].id = "1_20_2";
 	wholeMenu["202SortBy"].color = "green";
 	wholeMenu["202SortBy"].hasSub = 0;
-	wholeMenu["202SortBy"].link = "index_eng.html?type=falsifiability&sortby=date";
+	wholeMenu["202SortBy"].link = "site_map_eng.html?type=falsifiability&sortby=date";
 	wholeMenu["202SortBy"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Psychology"] = {};
@@ -525,14 +525,14 @@ if (lang=="eng") {
 	wholeMenu["211SortBy"].id = "1_21_1";
 	wholeMenu["211SortBy"].color = "green";
 	wholeMenu["211SortBy"].hasSub = 0;
-	wholeMenu["211SortBy"].link = "index_eng.html?type=psychology&sortby=name";
+	wholeMenu["211SortBy"].link = "site_map_eng.html?type=psychology&sortby=name";
 	wholeMenu["211SortBy"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["212SortBy"] = {};
 	wholeMenu["212SortBy"].id = "1_21_2";
 	wholeMenu["212SortBy"].color = "green";
 	wholeMenu["212SortBy"].hasSub = 0;
-	wholeMenu["212SortBy"].link = "index_eng.html?type=psychology&sortby=date";
+	wholeMenu["212SortBy"].link = "site_map_eng.html?type=psychology&sortby=date";
 	wholeMenu["212SortBy"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Countries"] = {};
@@ -547,14 +547,14 @@ if (lang=="eng") {
 	wholeMenu["221SortBy"].id = "1_22_1";
 	wholeMenu["221SortBy"].color = "green";
 	wholeMenu["221SortBy"].hasSub = 0;
-	wholeMenu["221SortBy"].link = "index_eng.html?type=countries&sortby=name";
+	wholeMenu["221SortBy"].link = "site_map_eng.html?type=countries&sortby=name";
 	wholeMenu["221SortBy"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["222SortBy"] = {};
 	wholeMenu["222SortBy"].id = "1_22_2";
 	wholeMenu["222SortBy"].color = "green";
 	wholeMenu["222SortBy"].hasSub = 0;
-	wholeMenu["222SortBy"].link = "index_eng.html?type=countries&sortby=date";
+	wholeMenu["222SortBy"].link = "site_map_eng.html?type=countries&sortby=date";
 	wholeMenu["222SortBy"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Totalitarianism"] = {};
@@ -569,14 +569,14 @@ if (lang=="eng") {
 	wholeMenu["231SortBy"].id = "1_23_1";
 	wholeMenu["231SortBy"].color = "green";
 	wholeMenu["231SortBy"].hasSub = 0;
-	wholeMenu["231SortBy"].link = "index_eng.html?type=totalitarianism&sortby=name";
+	wholeMenu["231SortBy"].link = "site_map_eng.html?type=totalitarianism&sortby=name";
 	wholeMenu["231SortBy"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["232SortBy"] = {};
 	wholeMenu["232SortBy"].id = "1_23_2";
 	wholeMenu["232SortBy"].color = "green";
 	wholeMenu["232SortBy"].hasSub = 0;
-	wholeMenu["232SortBy"].link = "index_eng.html?type=totalitarianism&sortby=date";
+	wholeMenu["232SortBy"].link = "site_map_eng.html?type=totalitarianism&sortby=date";
 	wholeMenu["232SortBy"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● Personalities"] = {};
@@ -591,14 +591,14 @@ if (lang=="eng") {
 	wholeMenu["241SortBy"].id = "1_24_1";
 	wholeMenu["241SortBy"].color = "green";
 	wholeMenu["241SortBy"].hasSub = 0;
-	wholeMenu["241SortBy"].link = "index_eng.html?type=personalities&sortby=name";
+	wholeMenu["241SortBy"].link = "site_map_eng.html?type=personalities&sortby=name";
 	wholeMenu["241SortBy"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["242SortBy"] = {};
 	wholeMenu["242SortBy"].id = "1_24_2";
 	wholeMenu["242SortBy"].color = "green";
 	wholeMenu["242SortBy"].hasSub = 0;
-	wholeMenu["242SortBy"].link = "index_eng.html?type=personalities&sortby=date";
+	wholeMenu["242SortBy"].link = "site_map_eng.html?type=personalities&sortby=date";
 	wholeMenu["242SortBy"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["● News"] = {};
@@ -613,21 +613,21 @@ if (lang=="eng") {
 	wholeMenu["251SortBy"].id = "1_25_1";
 	wholeMenu["251SortBy"].color = "red";
 	wholeMenu["251SortBy"].hasSub = 0;
-	wholeMenu["251SortBy"].link = "index_eng.html?type=news&sortby=name";
+	wholeMenu["251SortBy"].link = "site_map_eng.html?type=news&sortby=name";
 	wholeMenu["251SortBy"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Name';
 
 	wholeMenu["252SortBy"] = {};
 	wholeMenu["252SortBy"].id = "1_25_2";
 	wholeMenu["252SortBy"].color = "red";
 	wholeMenu["252SortBy"].hasSub = 0;
-	wholeMenu["252SortBy"].link = "index_eng.html?type=news&sortby=date";
+	wholeMenu["252SortBy"].link = "site_map_eng.html?type=news&sortby=date";
 	wholeMenu["252SortBy"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Date';
 
 	wholeMenu["253SortBy"] = {};
 	wholeMenu["253SortBy"].id = "1_25_3";
 	wholeMenu["253SortBy"].color = "red";
 	wholeMenu["253SortBy"].hasSub = 0;
-	wholeMenu["253SortBy"].link = "index_eng.html?type=news&sortby=flag";
+	wholeMenu["253SortBy"].link = "site_map_eng.html?type=news&sortby=flag";
 	wholeMenu["253SortBy"].html = '<img src="scripts/contents/icons/sortby_flag_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Country';
 
 }
@@ -657,14 +657,14 @@ if (lang=="rus") {
 	wholeMenu["11СортироватьПо"].id = "1_1_1";
 	wholeMenu["11СортироватьПо"].color = "blue";
 	wholeMenu["11СортироватьПо"].hasSub = 0;
-	wholeMenu["11СортироватьПо"].link = "index_rus.html?type=aboutme&sortby=name";
+	wholeMenu["11СортироватьПо"].link = "site_map_rus.html?type=aboutme&sortby=name";
 	wholeMenu["11СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["12СортироватьПо"] = {};
 	wholeMenu["12СортироватьПо"].id = "1_1_2";
 	wholeMenu["12СортироватьПо"].color = "blue";
 	wholeMenu["12СортироватьПо"].hasSub = 0;
-	wholeMenu["12СортироватьПо"].link = "index_rus.html?type=aboutme&sortby=date";
+	wholeMenu["12СортироватьПо"].link = "site_map_rus.html?type=aboutme&sortby=date";
 	wholeMenu["12СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● О моей работе"] = {};
@@ -679,14 +679,14 @@ if (lang=="rus") {
 	wholeMenu["21СортироватьПо"].id = "1_2_1";
 	wholeMenu["21СортироватьПо"].color = "blue";
 	wholeMenu["21СортироватьПо"].hasSub = 0;
-	wholeMenu["21СортироватьПо"].link = "index_rus.html?type=aboutwork&sortby=name";
+	wholeMenu["21СортироватьПо"].link = "site_map_rus.html?type=aboutwork&sortby=name";
 	wholeMenu["21СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["22СортироватьПо"] = {};
 	wholeMenu["22СортироватьПо"].id = "1_2_2";
 	wholeMenu["22СортироватьПо"].color = "blue";
 	wholeMenu["22СортироватьПо"].hasSub = 0;
-	wholeMenu["22СортироватьПо"].link = "index_rus.html?type=aboutwork&sortby=date";
+	wholeMenu["22СортироватьПо"].link = "site_map_rus.html?type=aboutwork&sortby=date";
 	wholeMenu["22СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● О моём PhD"] = {};
@@ -701,14 +701,14 @@ if (lang=="rus") {
 	wholeMenu["31СортироватьПо"].id = "1_3_1";
 	wholeMenu["31СортироватьПо"].color = "blue";
 	wholeMenu["31СортироватьПо"].hasSub = 0;
-	wholeMenu["31СортироватьПо"].link = "index_rus.html?type=aboutphd&sortby=name";
+	wholeMenu["31СортироватьПо"].link = "site_map_rus.html?type=aboutphd&sortby=name";
 	wholeMenu["31СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["32СортироватьПо"] = {};
 	wholeMenu["32СортироватьПо"].id = "1_3_2";
 	wholeMenu["32СортироватьПо"].color = "blue";
 	wholeMenu["32СортироватьПо"].hasSub = 0;
-	wholeMenu["32СортироватьПо"].link = "index_rus.html?type=aboutphd&sortby=date";
+	wholeMenu["32СортироватьПо"].link = "site_map_rus.html?type=aboutphd&sortby=date";
 	wholeMenu["32СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Ссылки"] = {};
@@ -723,14 +723,14 @@ if (lang=="rus") {
 	wholeMenu["41СортироватьПо"].id = "1_4_1";
 	wholeMenu["41СортироватьПо"].color = "blue";
 	wholeMenu["41СортироватьПо"].hasSub = 0;
-	wholeMenu["41СортироватьПо"].link = "index_rus.html?type=links&sortby=name";
+	wholeMenu["41СортироватьПо"].link = "site_map_rus.html?type=links&sortby=name";
 	wholeMenu["41СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["42СортироватьПо"] = {};
 	wholeMenu["42СортироватьПо"].id = "1_4_2";
 	wholeMenu["42СортироватьПо"].color = "blue";
 	wholeMenu["42СортироватьПо"].hasSub = 0;
-	wholeMenu["42СортироватьПо"].link = "index_rus.html?type=links&sortby=date";
+	wholeMenu["42СортироватьПо"].link = "site_map_rus.html?type=links&sortby=date";
 	wholeMenu["42СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● HTML Редактор"] = {};
@@ -745,14 +745,14 @@ if (lang=="rus") {
 	wholeMenu["51СортироватьПо"].id = "1_5_1";
 	wholeMenu["51СортироватьПо"].color = "blue";
 	wholeMenu["51СортироватьПо"].hasSub = 0;
-	wholeMenu["51СортироватьПо"].link = "index_rus.html?type=htmleditor&sortby=name";
+	wholeMenu["51СортироватьПо"].link = "site_map_rus.html?type=htmleditor&sortby=name";
 	wholeMenu["51СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["52СортироватьПо"] = {};
 	wholeMenu["52СортироватьПо"].id = "1_5_2";
 	wholeMenu["52СортироватьПо"].color = "blue";
 	wholeMenu["52СортироватьПо"].hasSub = 0;
-	wholeMenu["52СортироватьПо"].link = "index_rus.html?type=htmleditor&sortby=date";
+	wholeMenu["52СортироватьПо"].link = "site_map_rus.html?type=htmleditor&sortby=date";
 	wholeMenu["52СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Музыка ☥ Vampiric ☥"] = {};
@@ -767,21 +767,21 @@ if (lang=="rus") {
 	wholeMenu["61СортироватьПо"].id = "1_6_1";
 	wholeMenu["61СортироватьПо"].color = "black";
 	wholeMenu["61СортироватьПо"].hasSub = 0;
-	wholeMenu["61СортироватьПо"].link = "index_rus.html?type=music&sortby=name";
+	wholeMenu["61СортироватьПо"].link = "site_map_rus.html?type=music&sortby=name";
 	wholeMenu["61СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["62СортироватьПо"] = {};
 	wholeMenu["62СортироватьПо"].id = "1_6_2";
 	wholeMenu["62СортироватьПо"].color = "black";
 	wholeMenu["62СортироватьПо"].hasSub = 0;
-	wholeMenu["62СортироватьПо"].link = "index_rus.html?type=music&sortby=date";
+	wholeMenu["62СортироватьПо"].link = "site_map_rus.html?type=music&sortby=date";
 	wholeMenu["62СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["63СортироватьПо"] = {};
 	wholeMenu["63СортироватьПо"].id = "1_6_3";
 	wholeMenu["63СортироватьПо"].color = "black";
 	wholeMenu["63СортироватьПо"].hasSub = 0;
-	wholeMenu["63СортироватьПо"].link = "index_rus.html?type=music&sortby=flag";
+	wholeMenu["63СортироватьПо"].link = "site_map_rus.html?type=music&sortby=flag";
 	wholeMenu["63СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Стране';
 
 	wholeMenu["● Фильмы 💎 Unique 💎"] = {};
@@ -796,21 +796,21 @@ if (lang=="rus") {
 	wholeMenu["71СортироватьПо"].id = "1_7_1";
 	wholeMenu["71СортироватьПо"].color = "black";
 	wholeMenu["71СортироватьПо"].hasSub = 0;
-	wholeMenu["71СортироватьПо"].link = "index_rus.html?type=movies&sortby=name";
+	wholeMenu["71СортироватьПо"].link = "site_map_rus.html?type=movies&sortby=name";
 	wholeMenu["71СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["72СортироватьПо"] = {};
 	wholeMenu["72СортироватьПо"].id = "1_7_2";
 	wholeMenu["72СортироватьПо"].color = "black";
 	wholeMenu["72СортироватьПо"].hasSub = 0;
-	wholeMenu["72СортироватьПо"].link = "index_rus.html?type=movies&sortby=date";
+	wholeMenu["72СортироватьПо"].link = "site_map_rus.html?type=movies&sortby=date";
 	wholeMenu["72СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["73СортироватьПо"] = {};
 	wholeMenu["73СортироватьПо"].id = "1_7_3";
 	wholeMenu["73СортироватьПо"].color = "black";
 	wholeMenu["73СортироватьПо"].hasSub = 0;
-	wholeMenu["73СортироватьПо"].link = "index_rus.html?type=movies&sortby=flag";
+	wholeMenu["73СортироватьПо"].link = "site_map_rus.html?type=movies&sortby=flag";
 	wholeMenu["73СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Стране';
 
 	wholeMenu["● Сериалы ⚘ Forbidden ⚘"] = {};
@@ -825,21 +825,21 @@ if (lang=="rus") {
 	wholeMenu["271СортироватьПо"].id = "1_27_1";
 	wholeMenu["271СортироватьПо"].color = "black";
 	wholeMenu["271СортироватьПо"].hasSub = 0;
-	wholeMenu["271СортироватьПо"].link = "index_rus.html?type=series&sortby=name";
+	wholeMenu["271СортироватьПо"].link = "site_map_rus.html?type=series&sortby=name";
 	wholeMenu["271СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["272СортироватьПо"] = {};
 	wholeMenu["272СортироватьПо"].id = "1_27_2";
 	wholeMenu["272СортироватьПо"].color = "black";
 	wholeMenu["272СортироватьПо"].hasSub = 0;
-	wholeMenu["272СортироватьПо"].link = "index_rus.html?type=series&sortby=date";
+	wholeMenu["272СортироватьПо"].link = "site_map_rus.html?type=series&sortby=date";
 	wholeMenu["272СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["273СортироватьПо"] = {};
 	wholeMenu["273СортироватьПо"].id = "1_27_3";
 	wholeMenu["273СортироватьПо"].color = "black";
 	wholeMenu["273СортироватьПо"].hasSub = 0;
-	wholeMenu["273СортироватьПо"].link = "index_rus.html?type=series&sortby=flag";
+	wholeMenu["273СортироватьПо"].link = "site_map_rus.html?type=series&sortby=flag";
 	wholeMenu["273СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Стране';
 
 	wholeMenu["● Игры"] = {};
@@ -854,14 +854,14 @@ if (lang=="rus") {
 	wholeMenu["81СортироватьПо"].id = "1_8_1";
 	wholeMenu["81СортироватьПо"].color = "black";
 	wholeMenu["81СортироватьПо"].hasSub = 0;
-	wholeMenu["81СортироватьПо"].link = "index_rus.html?type=games&sortby=name";
+	wholeMenu["81СортироватьПо"].link = "site_map_rus.html?type=games&sortby=name";
 	wholeMenu["81СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["82СортироватьПо"] = {};
 	wholeMenu["82СортироватьПо"].id = "1_8_2";
 	wholeMenu["82СортироватьПо"].color = "black";
 	wholeMenu["82СортироватьПо"].hasSub = 0;
-	wholeMenu["82СортироватьПо"].link = "index_rus.html?type=games&sortby=date";
+	wholeMenu["82СортироватьПо"].link = "site_map_rus.html?type=games&sortby=date";
 	wholeMenu["82СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Книги"] = {};
@@ -876,21 +876,21 @@ if (lang=="rus") {
 	wholeMenu["91СортироватьПо"].id = "1_9_1";
 	wholeMenu["91СортироватьПо"].color = "red";
 	wholeMenu["91СортироватьПо"].hasSub = 0;
-	wholeMenu["91СортироватьПо"].link = "index_rus.html?type=books&sortby=name";
+	wholeMenu["91СортироватьПо"].link = "site_map_rus.html?type=books&sortby=name";
 	wholeMenu["91СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["92СортироватьПо"] = {};
 	wholeMenu["92СортироватьПо"].id = "1_9_2";
 	wholeMenu["92СортироватьПо"].color = "red";
 	wholeMenu["92СортироватьПо"].hasSub = 0;
-	wholeMenu["92СортироватьПо"].link = "index_rus.html?type=books&sortby=date";
+	wholeMenu["92СортироватьПо"].link = "site_map_rus.html?type=books&sortby=date";
 	wholeMenu["92СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["93SortBy"] = {};
 	wholeMenu["93SortBy"].id = "1_9_3";
 	wholeMenu["93SortBy"].color = "red";
 	wholeMenu["93SortBy"].hasSub = 0;
-	wholeMenu["93SortBy"].link = "index_rus.html?type=books&sortby=flag";
+	wholeMenu["93SortBy"].link = "site_map_rus.html?type=books&sortby=flag";
 	wholeMenu["93SortBy"].html = '<img src="scripts/contents/icons/sortby_flag_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Стране';
 
 	wholeMenu["● Фото/Картинки"] = {};
@@ -905,14 +905,14 @@ if (lang=="rus") {
 	wholeMenu["101СортироватьПо"].id = "1_10_1";
 	wholeMenu["101СортироватьПо"].color = "red";
 	wholeMenu["101СортироватьПо"].hasSub = 0;
-	wholeMenu["101СортироватьПо"].link = "index_rus.html?type=photos&sortby=name";
+	wholeMenu["101СортироватьПо"].link = "site_map_rus.html?type=photos&sortby=name";
 	wholeMenu["101СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["102СортироватьПо"] = {};
 	wholeMenu["102СортироватьПо"].id = "1_10_2";
 	wholeMenu["102СортироватьПо"].color = "red";
 	wholeMenu["102СортироватьПо"].hasSub = 0;
-	wholeMenu["102СортироватьПо"].link = "index_rus.html?type=photos&sortby=date";
+	wholeMenu["102СортироватьПо"].link = "site_map_rus.html?type=photos&sortby=date";
 	wholeMenu["102СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● AMV"] = {};
@@ -927,14 +927,14 @@ if (lang=="rus") {
 	wholeMenu["111СортироватьПо"].id = "1_11_1";
 	wholeMenu["111СортироватьПо"].color = "black";
 	wholeMenu["111СортироватьПо"].hasSub = 0;
-	wholeMenu["111СортироватьПо"].link = "index_rus.html?type=amv&sortby=name";
+	wholeMenu["111СортироватьПо"].link = "site_map_rus.html?type=amv&sortby=name";
 	wholeMenu["111СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["112СортироватьПо"] = {};
 	wholeMenu["112СортироватьПо"].id = "1_11_2";
 	wholeMenu["112СортироватьПо"].color = "black";
 	wholeMenu["112СортироватьПо"].hasSub = 0;
-	wholeMenu["112СортироватьПо"].link = "index_rus.html?type=amv&sortby=date";
+	wholeMenu["112СортироватьПо"].link = "site_map_rus.html?type=amv&sortby=date";
 	wholeMenu["112СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Мусор"] = {};
@@ -949,21 +949,21 @@ if (lang=="rus") {
 	wholeMenu["121СортироватьПо"].id = "1_12_1";
 	wholeMenu["121СортироватьПо"].color = "black";
 	wholeMenu["121СортироватьПо"].hasSub = 0;
-	wholeMenu["121СортироватьПо"].link = "index_rus.html?type=junk&sortby=name";
+	wholeMenu["121СортироватьПо"].link = "site_map_rus.html?type=junk&sortby=name";
 	wholeMenu["121СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["122СортироватьПо"] = {};
 	wholeMenu["122СортироватьПо"].id = "1_12_2";
 	wholeMenu["122СортироватьПо"].color = "black";
 	wholeMenu["122СортироватьПо"].hasSub = 0;
-	wholeMenu["122СортироватьПо"].link = "index_rus.html?type=junk&sortby=date";
+	wholeMenu["122СортироватьПо"].link = "site_map_rus.html?type=junk&sortby=date";
 	wholeMenu["122СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["123СортироватьПо"] = {};
 	wholeMenu["123СортироватьПо"].id = "1_12_3";
 	wholeMenu["123СортироватьПо"].color = "black";
 	wholeMenu["123СортироватьПо"].hasSub = 0;
-	wholeMenu["123СортироватьПо"].link = "index_rus.html?type=junk&sortby=flag";
+	wholeMenu["123СортироватьПо"].link = "site_map_rus.html?type=junk&sortby=flag";
 	wholeMenu["123СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Стране';
 
 	wholeMenu["● Барахло ⚡ Evil ⚡"] = {};
@@ -978,14 +978,14 @@ if (lang=="rus") {
 	wholeMenu["131СортироватьПо"].id = "1_13_1";
 	wholeMenu["131СортироватьПо"].color = "black";
 	wholeMenu["131СортироватьПо"].hasSub = 0;
-	wholeMenu["131СортироватьПо"].link = "index_rus.html?type=stuff&sortby=name";
+	wholeMenu["131СортироватьПо"].link = "site_map_rus.html?type=stuff&sortby=name";
 	wholeMenu["131СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["132СортироватьПо"] = {};
 	wholeMenu["132СортироватьПо"].id = "1_13_2";
 	wholeMenu["132СортироватьПо"].color = "black";
 	wholeMenu["132СортироватьПо"].hasSub = 0;
-	wholeMenu["132СортироватьПо"].link = "index_rus.html?type=stuff&sortby=date";
+	wholeMenu["132СортироватьПо"].link = "site_map_rus.html?type=stuff&sortby=date";
 	wholeMenu["132СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Анекдоты"] = {};
@@ -1000,14 +1000,14 @@ if (lang=="rus") {
 	wholeMenu["141СортироватьПо"].id = "1_14_1";
 	wholeMenu["141СортироватьПо"].color = "red";
 	wholeMenu["141СортироватьПо"].hasSub = 0;
-	wholeMenu["141СортироватьПо"].link = "index_rus.html?type=anecdotes&sortby=name";
+	wholeMenu["141СортироватьПо"].link = "site_map_rus.html?type=anecdotes&sortby=name";
 	wholeMenu["141СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["142СортироватьПо"] = {};
 	wholeMenu["142СортироватьПо"].id = "1_14_2";
 	wholeMenu["142СортироватьПо"].color = "red";
 	wholeMenu["142СортироватьПо"].hasSub = 0;
-	wholeMenu["142СортироватьПо"].link = "index_rus.html?type=anecdotes&sortby=date";
+	wholeMenu["142СортироватьПо"].link = "site_map_rus.html?type=anecdotes&sortby=date";
 	wholeMenu["142СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Слонопотам ☠ Criminal ☠"] = {};
@@ -1022,14 +1022,14 @@ if (lang=="rus") {
 	wholeMenu["151СортироватьПо"].id = "1_15_1";
 	wholeMenu["151СортироватьПо"].color = "red";
 	wholeMenu["151СортироватьПо"].hasSub = 0;
-	wholeMenu["151СортироватьПо"].link = "index_rus.html?type=heffalump&sortby=name";
+	wholeMenu["151СортироватьПо"].link = "site_map_rus.html?type=heffalump&sortby=name";
 	wholeMenu["151СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["152СортироватьПо"] = {};
 	wholeMenu["152СортироватьПо"].id = "1_15_2";
 	wholeMenu["152СортироватьПо"].color = "red";
 	wholeMenu["152СортироватьПо"].hasSub = 0;
-	wholeMenu["152СортироватьПо"].link = "index_rus.html?type=heffalump&sortby=date";
+	wholeMenu["152СортироватьПо"].link = "site_map_rus.html?type=heffalump&sortby=date";
 	wholeMenu["152СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Вещества Для Расслабления"] = {};
@@ -1044,14 +1044,14 @@ if (lang=="rus") {
 	wholeMenu["161СортироватьПо"].id = "1_16_1";
 	wholeMenu["161СортироватьПо"].color = "white";
 	wholeMenu["161СортироватьПо"].hasSub = 0;
-	wholeMenu["161СортироватьПо"].link = "index_rus.html?type=relaxation&sortby=name";
+	wholeMenu["161СортироватьПо"].link = "site_map_rus.html?type=relaxation&sortby=name";
 	wholeMenu["161СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_white.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["162СортироватьПо"] = {};
 	wholeMenu["162СортироватьПо"].id = "1_16_2";
 	wholeMenu["162СортироватьПо"].color = "white";
 	wholeMenu["162СортироватьПо"].hasSub = 0;
-	wholeMenu["162СортироватьПо"].link = "index_rus.html?type=relaxation&sortby=date";
+	wholeMenu["162СортироватьПо"].link = "site_map_rus.html?type=relaxation&sortby=date";
 	wholeMenu["162СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_white.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Разработка Программного Обеспечения"] = {};
@@ -1066,14 +1066,14 @@ if (lang=="rus") {
 	wholeMenu["171СортироватьПо"].id = "1_17_1";
 	wholeMenu["171СортироватьПо"].color = "white";
 	wholeMenu["171СортироватьПо"].hasSub = 0;
-	wholeMenu["171СортироватьПо"].link = "index_rus.html?type=software&sortby=name";
+	wholeMenu["171СортироватьПо"].link = "site_map_rus.html?type=software&sortby=name";
 	wholeMenu["171СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_white.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["172СортироватьПо"] = {};
 	wholeMenu["172СортироватьПо"].id = "1_17_2";
 	wholeMenu["172СортироватьПо"].color = "white";
 	wholeMenu["172СортироватьПо"].hasSub = 0;
-	wholeMenu["172СортироватьПо"].link = "index_rus.html?type=software&sortby=date";
+	wholeMenu["172СортироватьПо"].link = "site_map_rus.html?type=software&sortby=date";
 	wholeMenu["172СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_white.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Сатанизм"] = {};
@@ -1088,14 +1088,14 @@ if (lang=="rus") {
 	wholeMenu["181СортироватьПо"].id = "1_18_1";
 	wholeMenu["181СортироватьПо"].color = "green";
 	wholeMenu["181СортироватьПо"].hasSub = 0;
-	wholeMenu["181СортироватьПо"].link = "index_rus.html?type=satanism&sortby=name";
+	wholeMenu["181СортироватьПо"].link = "site_map_rus.html?type=satanism&sortby=name";
 	wholeMenu["181СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["182СортироватьПо"] = {};
 	wholeMenu["182СортироватьПо"].id = "1_18_2";
 	wholeMenu["182СортироватьПо"].color = "green";
 	wholeMenu["182СортироватьПо"].hasSub = 0;
-	wholeMenu["182СортироватьПо"].link = "index_rus.html?type=satanism&sortby=date";
+	wholeMenu["182СортироватьПо"].link = "site_map_rus.html?type=satanism&sortby=date";
 	wholeMenu["182СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Викка"] = {};
@@ -1110,14 +1110,14 @@ if (lang=="rus") {
 	wholeMenu["191СортироватьПо"].id = "1_19_1";
 	wholeMenu["191СортироватьПо"].color = "green";
 	wholeMenu["191СортироватьПо"].hasSub = 0;
-	wholeMenu["191СортироватьПо"].link = "index_rus.html?type=wicca&sortby=name";
+	wholeMenu["191СортироватьПо"].link = "site_map_rus.html?type=wicca&sortby=name";
 	wholeMenu["191СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["192СортироватьПо"] = {};
 	wholeMenu["192СортироватьПо"].id = "1_19_2";
 	wholeMenu["192СортироватьПо"].color = "green";
 	wholeMenu["192СортироватьПо"].hasSub = 0;
-	wholeMenu["192СортироватьПо"].link = "index_rus.html?type=wicca&sortby=date";
+	wholeMenu["192СортироватьПо"].link = "site_map_rus.html?type=wicca&sortby=date";
 	wholeMenu["192СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Фальсифицируемость"] = {};
@@ -1132,14 +1132,14 @@ if (lang=="rus") {
 	wholeMenu["201СортироватьПо"].id = "1_20_1";
 	wholeMenu["201СортироватьПо"].color = "green";
 	wholeMenu["201СортироватьПо"].hasSub = 0;
-	wholeMenu["201СортироватьПо"].link = "index_rus.html?type=falsifiability&sortby=name";
+	wholeMenu["201СортироватьПо"].link = "site_map_rus.html?type=falsifiability&sortby=name";
 	wholeMenu["201СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["202СортироватьПо"] = {};
 	wholeMenu["202СортироватьПо"].id = "1_20_2";
 	wholeMenu["202СортироватьПо"].color = "green";
 	wholeMenu["202СортироватьПо"].hasSub = 0;
-	wholeMenu["202СортироватьПо"].link = "index_rus.html?type=falsifiability&sortby=date";
+	wholeMenu["202СортироватьПо"].link = "site_map_rus.html?type=falsifiability&sortby=date";
 	wholeMenu["202СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Психология"] = {};
@@ -1154,14 +1154,14 @@ if (lang=="rus") {
 	wholeMenu["211СортироватьПо"].id = "1_21_1";
 	wholeMenu["211СортироватьПо"].color = "green";
 	wholeMenu["211СортироватьПо"].hasSub = 0;
-	wholeMenu["211СортироватьПо"].link = "index_rus.html?type=psychology&sortby=name";
+	wholeMenu["211СортироватьПо"].link = "site_map_rus.html?type=psychology&sortby=name";
 	wholeMenu["211СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["212СортироватьПо"] = {};
 	wholeMenu["212СортироватьПо"].id = "1_21_2";
 	wholeMenu["212СортироватьПо"].color = "green";
 	wholeMenu["212СортироватьПо"].hasSub = 0;
-	wholeMenu["212СортироватьПо"].link = "index_rus.html?type=psychology&sortby=date";
+	wholeMenu["212СортироватьПо"].link = "site_map_rus.html?type=psychology&sortby=date";
 	wholeMenu["212СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Страны"] = {};
@@ -1176,14 +1176,14 @@ if (lang=="rus") {
 	wholeMenu["221СортироватьПо"].id = "1_22_1";
 	wholeMenu["221СортироватьПо"].color = "green";
 	wholeMenu["221СортироватьПо"].hasSub = 0;
-	wholeMenu["221СортироватьПо"].link = "index_rus.html?type=countries&sortby=name";
+	wholeMenu["221СортироватьПо"].link = "site_map_rus.html?type=countries&sortby=name";
 	wholeMenu["221СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["222СортироватьПо"] = {};
 	wholeMenu["222СортироватьПо"].id = "1_22_2";
 	wholeMenu["222СортироватьПо"].color = "green";
 	wholeMenu["222СортироватьПо"].hasSub = 0;
-	wholeMenu["222СортироватьПо"].link = "index_rus.html?type=countries&sortby=date";
+	wholeMenu["222СортироватьПо"].link = "site_map_rus.html?type=countries&sortby=date";
 	wholeMenu["222СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Тоталитаризм"] = {};
@@ -1198,14 +1198,14 @@ if (lang=="rus") {
 	wholeMenu["231СортироватьПо"].id = "1_23_1";
 	wholeMenu["231СортироватьПо"].color = "green";
 	wholeMenu["231СортироватьПо"].hasSub = 0;
-	wholeMenu["231СортироватьПо"].link = "index_rus.html?type=totalitarianism&sortby=name";
+	wholeMenu["231СортироватьПо"].link = "site_map_rus.html?type=totalitarianism&sortby=name";
 	wholeMenu["231СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["232СортироватьПо"] = {};
 	wholeMenu["232СортироватьПо"].id = "1_23_2";
 	wholeMenu["232СортироватьПо"].color = "green";
 	wholeMenu["232СортироватьПо"].hasSub = 0;
-	wholeMenu["232СортироватьПо"].link = "index_rus.html?type=totalitarianism&sortby=date";
+	wholeMenu["232СортироватьПо"].link = "site_map_rus.html?type=totalitarianism&sortby=date";
 	wholeMenu["232СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Деятели"] = {};
@@ -1220,14 +1220,14 @@ if (lang=="rus") {
 	wholeMenu["241СортироватьПо"].id = "1_24_1";
 	wholeMenu["241СортироватьПо"].color = "green";
 	wholeMenu["241СортироватьПо"].hasSub = 0;
-	wholeMenu["241СортироватьПо"].link = "index_rus.html?type=personalities&sortby=name";
+	wholeMenu["241СортироватьПо"].link = "site_map_rus.html?type=personalities&sortby=name";
 	wholeMenu["241СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["242СортироватьПо"] = {};
 	wholeMenu["242СортироватьПо"].id = "1_24_2";
 	wholeMenu["242СортироватьПо"].color = "green";
 	wholeMenu["242СортироватьПо"].hasSub = 0;
-	wholeMenu["242СортироватьПо"].link = "index_rus.html?type=personalities&sortby=date";
+	wholeMenu["242СортироватьПо"].link = "site_map_rus.html?type=personalities&sortby=date";
 	wholeMenu["242СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_green.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["● Новости"] = {};
@@ -1242,21 +1242,21 @@ if (lang=="rus") {
 	wholeMenu["251СортироватьПо"].id = "1_25_1";
 	wholeMenu["251СортироватьПо"].color = "red";
 	wholeMenu["251СортироватьПо"].hasSub = 0;
-	wholeMenu["251СортироватьПо"].link = "index_rus.html?type=news&sortby=name";
+	wholeMenu["251СортироватьПо"].link = "site_map_rus.html?type=news&sortby=name";
 	wholeMenu["251СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Имени';
 
 	wholeMenu["252СортироватьПо"] = {};
 	wholeMenu["252СортироватьПо"].id = "1_25_2";
 	wholeMenu["252СортироватьПо"].color = "red";
 	wholeMenu["252СортироватьПо"].hasSub = 0;
-	wholeMenu["252СортироватьПо"].link = "index_rus.html?type=news&sortby=date";
+	wholeMenu["252СортироватьПо"].link = "site_map_rus.html?type=news&sortby=date";
 	wholeMenu["252СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Дате';
 
 	wholeMenu["253СортироватьПо"] = {};
 	wholeMenu["253СортироватьПо"].id = "1_25_3";
 	wholeMenu["253СортироватьПо"].color = "red";
 	wholeMenu["253СортироватьПо"].hasSub = 0;
-	wholeMenu["253СортироватьПо"].link = "index_rus.html?type=news&sortby=flag";
+	wholeMenu["253СортироватьПо"].link = "site_map_rus.html?type=news&sortby=flag";
 	wholeMenu["253СортироватьПо"].html = '<img src="scripts/contents/icons/sortby_flag_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Стране';
 }
 
@@ -1283,14 +1283,14 @@ if (lang=="lat") {
 	wholeMenu["11OrdinaPer"].id = "1_1_1";
 	wholeMenu["11OrdinaPer"].color = "blue";
 	wholeMenu["11OrdinaPer"].hasSub = 0;
-	wholeMenu["11OrdinaPer"].link = "index_lat.html?type=aboutme&sortby=name";
+	wholeMenu["11OrdinaPer"].link = "site_map_lat.html?type=aboutme&sortby=name";
 	wholeMenu["11OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["12OrdinaPer"] = {};
 	wholeMenu["12OrdinaPer"].id = "1_1_2";
 	wholeMenu["12OrdinaPer"].color = "blue";
 	wholeMenu["12OrdinaPer"].hasSub = 0;
-	wholeMenu["12OrdinaPer"].link = "index_lat.html?type=aboutme&sortby=date";
+	wholeMenu["12OrdinaPer"].link = "site_map_lat.html?type=aboutme&sortby=date";
 	wholeMenu["12OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● De Opere Meo"] = {};
@@ -1305,14 +1305,14 @@ if (lang=="lat") {
 	wholeMenu["21OrdinaPer"].id = "1_2_1";
 	wholeMenu["21OrdinaPer"].color = "blue";
 	wholeMenu["21OrdinaPer"].hasSub = 0;
-	wholeMenu["21OrdinaPer"].link = "index_lat.html?type=aboutwork&sortby=name";
+	wholeMenu["21OrdinaPer"].link = "site_map_lat.html?type=aboutwork&sortby=name";
 	wholeMenu["21OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["22OrdinaPer"] = {};
 	wholeMenu["22OrdinaPer"].id = "1_2_2";
 	wholeMenu["22OrdinaPer"].color = "blue";
 	wholeMenu["22OrdinaPer"].hasSub = 0;
-	wholeMenu["22OrdinaPer"].link = "index_lat.html?type=aboutwork&sortby=date";
+	wholeMenu["22OrdinaPer"].link = "site_map_lat.html?type=aboutwork&sortby=date";
 	wholeMenu["22OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● De Doctoratu Meo"] = {};
@@ -1327,14 +1327,14 @@ if (lang=="lat") {
 	wholeMenu["31OrdinaPer"].id = "1_3_1";
 	wholeMenu["31OrdinaPer"].color = "blue";
 	wholeMenu["31OrdinaPer"].hasSub = 0;
-	wholeMenu["31OrdinaPer"].link = "index_lat.html?type=aboutphd&sortby=name";
+	wholeMenu["31OrdinaPer"].link = "site_map_lat.html?type=aboutphd&sortby=name";
 	wholeMenu["31OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["32OrdinaPer"] = {};
 	wholeMenu["32OrdinaPer"].id = "1_3_2";
 	wholeMenu["32OrdinaPer"].color = "blue";
 	wholeMenu["32OrdinaPer"].hasSub = 0;
-	wholeMenu["32OrdinaPer"].link = "index_lat.html?type=aboutphd&sortby=date";
+	wholeMenu["32OrdinaPer"].link = "site_map_lat.html?type=aboutphd&sortby=date";
 	wholeMenu["32OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Nexus"] = {};
@@ -1349,14 +1349,14 @@ if (lang=="lat") {
 	wholeMenu["41OrdinaPer"].id = "1_4_1";
 	wholeMenu["41OrdinaPer"].color = "blue";
 	wholeMenu["41OrdinaPer"].hasSub = 0;
-	wholeMenu["41OrdinaPer"].link = "index_lat.html?type=links&sortby=name";
+	wholeMenu["41OrdinaPer"].link = "site_map_lat.html?type=links&sortby=name";
 	wholeMenu["41OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["42OrdinaPer"] = {};
 	wholeMenu["42OrdinaPer"].id = "1_4_2";
 	wholeMenu["42OrdinaPer"].color = "blue";
 	wholeMenu["42OrdinaPer"].hasSub = 0;
-	wholeMenu["42OrdinaPer"].link = "index_lat.html?type=links&sortby=date";
+	wholeMenu["42OrdinaPer"].link = "site_map_lat.html?type=links&sortby=date";
 	wholeMenu["42OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_blue.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Imagines"] = {};
@@ -1371,14 +1371,14 @@ if (lang=="lat") {
 	wholeMenu["101OrdinaPer"].id = "1_10_1";
 	wholeMenu["101OrdinaPer"].color = "red";
 	wholeMenu["101OrdinaPer"].hasSub = 0;
-	wholeMenu["101OrdinaPer"].link = "index_lat.html?type=photos&sortby=name";
+	wholeMenu["101OrdinaPer"].link = "site_map_lat.html?type=photos&sortby=name";
 	wholeMenu["101OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["102OrdinaPer"] = {};
 	wholeMenu["102OrdinaPer"].id = "1_10_2";
 	wholeMenu["102OrdinaPer"].color = "red";
 	wholeMenu["102OrdinaPer"].hasSub = 0;
-	wholeMenu["102OrdinaPer"].link = "index_lat.html?type=photos&sortby=date";
+	wholeMenu["102OrdinaPer"].link = "site_map_lat.html?type=photos&sortby=date";
 	wholeMenu["102OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● AMV"] = {};
@@ -1393,14 +1393,14 @@ if (lang=="lat") {
 	wholeMenu["111OrdinaPer"].id = "1_11_1";
 	wholeMenu["111OrdinaPer"].color = "black";
 	wholeMenu["111OrdinaPer"].hasSub = 0;
-	wholeMenu["111OrdinaPer"].link = "index_lat.html?type=amv&sortby=name";
+	wholeMenu["111OrdinaPer"].link = "site_map_lat.html?type=amv&sortby=name";
 	wholeMenu["111OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["112OrdinaPer"] = {};
 	wholeMenu["112OrdinaPer"].id = "1_11_2";
 	wholeMenu["112OrdinaPer"].color = "black";
 	wholeMenu["112OrdinaPer"].hasSub = 0;
-	wholeMenu["112OrdinaPer"].link = "index_lat.html?type=amv&sortby=date";
+	wholeMenu["112OrdinaPer"].link = "site_map_lat.html?type=amv&sortby=date";
 	wholeMenu["112OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Quisquiliae"] = {};
@@ -1415,21 +1415,21 @@ if (lang=="lat") {
 	wholeMenu["121OrdinaPer"].id = "1_12_1";
 	wholeMenu["121OrdinaPer"].color = "black";
 	wholeMenu["121OrdinaPer"].hasSub = 0;
-	wholeMenu["121OrdinaPer"].link = "index_lat.html?type=junk&sortby=name";
+	wholeMenu["121OrdinaPer"].link = "site_map_lat.html?type=junk&sortby=name";
 	wholeMenu["121OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["122OrdinaPer"] = {};
 	wholeMenu["122OrdinaPer"].id = "1_12_2";
 	wholeMenu["122OrdinaPer"].color = "black";
 	wholeMenu["122OrdinaPer"].hasSub = 0;
-	wholeMenu["122OrdinaPer"].link = "index_lat.html?type=junk&sortby=date";
+	wholeMenu["122OrdinaPer"].link = "site_map_lat.html?type=junk&sortby=date";
 	wholeMenu["122OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["123OrdinaPer"] = {};
 	wholeMenu["123OrdinaPer"].id = "1_12_3";
 	wholeMenu["123OrdinaPer"].color = "black";
 	wholeMenu["123OrdinaPer"].hasSub = 0;
-	wholeMenu["123OrdinaPer"].link = "index_lat.html?type=junk&sortby=flag";
+	wholeMenu["123OrdinaPer"].link = "site_map_lat.html?type=junk&sortby=flag";
 	wholeMenu["123OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_black.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Terra';
 
 	wholeMenu["● Res ⚡ Evil ⚡"] = {};
@@ -1444,14 +1444,14 @@ if (lang=="lat") {
 	wholeMenu["131OrdinaPer"].id = "1_13_1";
 	wholeMenu["131OrdinaPer"].color = "black";
 	wholeMenu["131OrdinaPer"].hasSub = 0;
-	wholeMenu["131OrdinaPer"].link = "index_lat.html?type=stuff&sortby=name";
+	wholeMenu["131OrdinaPer"].link = "site_map_lat.html?type=stuff&sortby=name";
 	wholeMenu["131OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["132OrdinaPer"] = {};
 	wholeMenu["132OrdinaPer"].id = "1_13_2";
 	wholeMenu["132OrdinaPer"].color = "black";
 	wholeMenu["132OrdinaPer"].hasSub = 0;
-	wholeMenu["132OrdinaPer"].link = "index_lat.html?type=stuff&sortby=date";
+	wholeMenu["132OrdinaPer"].link = "site_map_lat.html?type=stuff&sortby=date";
 	wholeMenu["132OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_black.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["● Nuntii"] = {};
@@ -1466,21 +1466,21 @@ if (lang=="lat") {
 	wholeMenu["251OrdinaPer"].id = "1_25_1";
 	wholeMenu["251OrdinaPer"].color = "red";
 	wholeMenu["251OrdinaPer"].hasSub = 0;
-	wholeMenu["251OrdinaPer"].link = "index_lat.html?type=news&sortby=name";
+	wholeMenu["251OrdinaPer"].link = "site_map_lat.html?type=news&sortby=name";
 	wholeMenu["251OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_name_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Nomen';
 
 	wholeMenu["252OrdinaPer"] = {};
 	wholeMenu["252OrdinaPer"].id = "1_25_2";
 	wholeMenu["252OrdinaPer"].color = "red";
 	wholeMenu["252OrdinaPer"].hasSub = 0;
-	wholeMenu["252OrdinaPer"].link = "index_lat.html?type=news&sortby=date";
+	wholeMenu["252OrdinaPer"].link = "site_map_lat.html?type=news&sortby=date";
 	wholeMenu["252OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_date_red.svg" width="18" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Diem';
 
 	wholeMenu["253OrdinaPer"] = {};
 	wholeMenu["253OrdinaPer"].id = "1_25_3";
 	wholeMenu["253OrdinaPer"].color = "red";
 	wholeMenu["253OrdinaPer"].hasSub = 0;
-	wholeMenu["253OrdinaPer"].link = "index_lat.html?type=news&sortby=flag";
+	wholeMenu["253OrdinaPer"].link = "site_map_lat.html?type=news&sortby=flag";
 	wholeMenu["253OrdinaPer"].html = '<img src="scripts/contents/icons/sortby_flag_red.svg" height="18"  style="vertical-align:middle; padding-right: 5px;"/>Terra';
 
 }
@@ -7200,7 +7200,7 @@ function  loadMenuContentsLink(ele, lang) {
 	wholeMenu[ele.innerText.trim()].html = ''+ele.innerHTML.trim();
 
 	var type = "";
-	if (window.location.pathname.startsWith("/index_")) type = getParameterByName("type") || "";
+	if (window.location.pathname.startsWith("/site_map")) type = getParameterByName("type") || "";
 	var addImage=0;
 	if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") addImage=1;
 
