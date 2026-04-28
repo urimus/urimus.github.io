@@ -9,7 +9,7 @@
 Для отображения Появляющегося Меню используется скрипт https://urimus.github.io/scripts/showMenu.js
 
 Вас заинтересовать могут разделы:
-1. Карта Сайта - https://urimus.github.io/index_rus.html?type=aboutme&sortby=name . JavaScript Код, который обеспечивает работу этого раздела - https://urimus.github.io/scripts/showContents.js
+1. Карта Сайта - https://urimus.github.io/site_map_rus.html?type=aboutme&sortby=name . JavaScript Код, который обеспечивает работу этого раздела - https://urimus.github.io/scripts/showContents.js
 
 2. Новости - Строка Новостей NASA - https://urimus.github.io/news_rus.html?source=nasa&type=releases (имеются ещё Новости, полный список на Странице в Разделе Новости). Соответственный Код - https://urimus.github.io/scripts/showFeed.js . Для чтения Строки используется библиотека feednami (https://toolkit.sekando.com/docs/en/feednami) которая работает на JavaScript.
 

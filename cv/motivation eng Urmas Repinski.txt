@@ -9,7 +9,7 @@ Basically, the page code consists of Html + JavaScript, a little PHP (does not w
 To display the Appearing Menu, the script https://urimus.github.io/scripts/showMenu.js is used.
 
 Sections you may be interested in:
-1. Site Map - https://urimus.github.io/index_eng.html?type=aboutme&sortby=name. JavaScript Code that makes this section work - https://urimus.github.io/scripts/showContents.js
+1. Site Map - https://urimus.github.io/site_map_eng.html?type=aboutme&sortby=name. JavaScript Code that makes this section work - https://urimus.github.io/scripts/showContents.js
 
 2. News - News Feed NASA - https://urimus.github.io/news_eng.html?source=nasa&type=releases (also exists other News, complete list on Homepage in Section News). Relevant Code - https://urimus.github.io/scripts/showFeed.js. To read the Feed, the feednami library (https://toolkit.sekando.com/docs/en/feednami) is used, which runs on JavaScript.
 
