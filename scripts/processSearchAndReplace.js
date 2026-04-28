@@ -895,7 +895,7 @@ function logout(lang) {
 }
 
 function generateSitemap(lang) {
-	var baseUrl;
+	var baseUrl, messageFull;
 
 	var locStPar = "HTML_editor";
 	var HTMLEditorData = getLocalStorageData(locStPar);
@@ -914,7 +914,7 @@ function generateSitemap(lang) {
 	.then(
 		response => {
 			const data = response.data;
-			messageFull = "Sitemap.xml " + t("and") + " all.html " + t("and") + " robots.txt" + t("for") + " '" + data + "'" + t("generatedSuccessfullyShowThem");
+			messageFull = "Sitemap.xml " + t("and") + " all.html " + t("and") + " robots.txt " + t("for") + " '" + data + "'" + t("generatedSuccessfullyShowThem");
 			var confirmView = window.confirm(messageFull);
 			if (confirmView) window.open('html_editor_'+lang+'.html?pattern='+encodeURIComponent('{sitemap.xml,all.html,robots.txt}')+'&i=0');
 			return;
