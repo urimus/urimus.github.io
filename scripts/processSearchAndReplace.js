@@ -694,7 +694,7 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 	var isImage=0;
 	var imagetype="";
 
-	if (filetype.substr(0, 5)=="image") {
+	if (filetype.startsWith("image")) {
 		isImage=1;
 		imagetype=filetype.substr(6);
 	}
@@ -776,7 +776,7 @@ function upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, c
 
 function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 	var isImage=0;
-	if (file.type.substr(0,5)=="image") isImage=1;
+	if (file.type.startsWith("image")) isImage=1;
 
 	var message1 = isImage === 0 ? t("file") : t("image");
 
@@ -802,7 +802,7 @@ function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 
 function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 	var isImage=0;
-	if (file.type.substr(0,5)=="image") isImage=1;
+	if (file.type.startsWith("image")) isImage=1;
 
 	var messageF = isImage === 0 ? t("file") : t("image");
 

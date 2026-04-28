@@ -7200,7 +7200,7 @@ function  loadMenuContentsLink(ele, lang) {
 	wholeMenu[ele.innerText.trim()].html = ''+ele.innerHTML.trim();
 
 	var type = "";
-	if (window.location.pathname.substr(0, 7) == "/index_") type = getParameterByName("type") || "";
+	if (window.location.pathname.startsWith("/index_")) type = getParameterByName("type") || "";
 	var addImage=0;
 	if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") addImage=1;
 
