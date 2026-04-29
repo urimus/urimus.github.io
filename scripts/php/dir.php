@@ -1,6 +1,6 @@
 <?php
 
-include 'noCache.php';
+include 'headers.php';
 include 'secure.php';
 include 'errorProcessing.php';
 include 'detectEncodingClass.php';

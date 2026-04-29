@@ -1,6 +1,6 @@
 <?php
 
-include 'noCache.php';
+include 'headers.php';
 
 // check if logged in
 if (session_status() !== PHP_SESSION_ACTIVE) {

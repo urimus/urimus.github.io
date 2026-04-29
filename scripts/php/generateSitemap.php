@@ -1,6 +1,6 @@
 <?php
 
-include 'noCache.php';
+include 'headers.php';
 
 $baseUrl = $_GET["baseUrl"] ?? '';
 $baseUrl = strtolower(trim($baseUrl));
