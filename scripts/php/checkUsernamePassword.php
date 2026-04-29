@@ -1,5 +1,6 @@
 <?php
 
+include 'noCache.php';
 include 'errorProcessing.php';
 
 //get the parameters from URL

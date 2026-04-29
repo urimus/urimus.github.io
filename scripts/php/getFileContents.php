@@ -1,4 +1,8 @@
 <?php
+include 'noCache.php';
+include 'secure.php';
+include 'errorProcessing.php';
+
 // check if logged in
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
@@ -7,9 +11,6 @@ if (($_SESSION['login'] ?? null) !== 'OK') {
 	echo "not logged in";
 	exit;
 }
-
-include 'secure.php';
-include 'errorProcessing.php';
 
 //get the filename GET
 $filename=$_GET["filename"];

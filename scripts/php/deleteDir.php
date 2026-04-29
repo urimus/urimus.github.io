@@ -1,5 +1,7 @@
 <?php
 
+include 'noCache.php';
+
 // check if logged in
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();

@@ -1,5 +1,9 @@
 <?php
 
+include 'noCache.php';
+include 'secure.php';
+include 'errorProcessing.php';
+
 // check if logged in
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
@@ -9,16 +13,12 @@ if (($_SESSION['login'] ?? null) !== 'OK') {
 	exit;
 }
 
-
 //get the filename, replaceWhat, replaceTo, encoding from GET
 $filename=$_GET["filename"];
 $filename="../../".$filename; // add path from this script to root
 $fileNum=$_GET["fileNum"];
 $width=$_GET["width"];
 $date = $_GET['date'] ?? '';
-
-include 'secure.php';
-include 'errorProcessing.php';
 
 // ---------- log -------- //
 if ($fileNum==0) {

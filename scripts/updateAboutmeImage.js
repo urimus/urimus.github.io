@@ -31,7 +31,9 @@ function showErrorImage(lang, type, errorMessage="") {
 }
 
 function showInformation(lang) {
-	axios.get("https://api.github.com/repos/urimus/urimus.github.io/commits")
+	axios.get("https://api.github.com/repos/urimus/urimus.github.io/commits", {
+		params: { _: Date.now() }
+	})
 	.then(
 		response => {
 			const data = response.data;

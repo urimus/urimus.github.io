@@ -1,4 +1,11 @@
 <?php
+
+include 'noCache.php';
+include 'secure.php';
+include 'errorProcessing.php';
+include 'saveClass.php';
+include 'detectEncodingClass.php';
+
 // check if logged in
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
@@ -8,7 +15,6 @@ if (($_SESSION['login'] ?? null) !== 'OK') {
 	exit;
 }
 
-
 //get the filename, replaceWhat, replaceTo, encoding from GET
 $filename=$_GET["filename"];
 $filename="../../".$filename; // add path from this script to root
@@ -17,11 +23,6 @@ $replaceWhat=$_GET["replaceWhat"];
 $replaceTo=$_GET["replaceTo"];
 $filesProcessed=$_GET["filesProcessed"];
 $date = $_GET['date'] ?? '';
-
-include 'secure.php';
-include 'errorProcessing.php';
-include 'saveClass.php';
-include 'detectEncodingClass.php';
 
 if (!is_file($filename) || !canReadPath($filename)) {
 	echo "Unable to open file! - '".$filename."'";

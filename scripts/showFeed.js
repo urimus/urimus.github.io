@@ -1230,7 +1230,10 @@ function generateTabs(type, source, lang) {
 
 
 function showInformation(lang) {
-	axios.get("scripts/showFeed.js").then(
+	axios.get("scripts/showFeed.js", {
+		params: { _: Date.now() }
+	})
+	.then(
 		response => {
 			const modStr = response.headers["last-modified"];
 			alert(t("feedInfoText") + formatDate(modStr, lang) + ".");

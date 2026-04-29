@@ -1,5 +1,11 @@
 <?php
 
+include 'noCache.php';
+include 'secure.php';
+include 'errorProcessing.php';
+include 'saveClass.php';
+include 'detectEncodingClass.php';
+
 // check if logged in
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
@@ -16,12 +22,6 @@ $filename="../../".$filename; // add path from this script to root
 $action=$_GET["action"];
 $fileNum=$_GET["fileNum"];
 $date = $_GET['date'] ?? '';
-
-include 'secure.php';
-include 'errorProcessing.php';
-include 'saveClass.php';
-include 'detectEncodingClass.php';
-
 
 // ---------- log -------- //
 if ($fileNum==0) {

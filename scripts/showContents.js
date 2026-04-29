@@ -544,7 +544,9 @@ function generateTabs(type, lang) {
 
 function showInformation(lang) {
 	var modStr, infoText;
-	axios.get("scripts/showContents.js")
+	axios.get("scripts/showContents.js", {
+		params: { _: Date.now() }
+	})
 	.then(
 		response => {
 			const modStr = response.headers["last-modified"];
@@ -616,7 +618,9 @@ function showContents(type, sortby, lang) {
 	textColor = generateTabs(type, lang);
 	refreshSortByTabs(type, sortby, lang);
 
-	axios.get(`scripts/contents/${type}_${lang}.txt`)
+	axios.get(`scripts/contents/${type}_${lang}.txt`, {
+		params: { _: Date.now() }
+	})
 	.then(
 		response => {
 			lines = response.data;

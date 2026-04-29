@@ -1,5 +1,9 @@
 <?php
 
+include 'noCache.php';
+include 'secure.php';
+include 'errorProcessing.php';
+
 // check if logged in
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
@@ -12,9 +16,6 @@ if (($_SESSION['login'] ?? null) !== 'OK') {
 //get the q parameter from URL
 $q=$_GET["q"];
 $q="../../".$q; // add path from this script to root
-
-include 'secure.php';
-include 'errorProcessing.php';
 
 $files = glob($q) ?: [];
 foreach ($files as $file) {

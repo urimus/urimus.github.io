@@ -1,5 +1,10 @@
 <?php
 
+include 'noCache.php';
+include 'secure.php';
+include 'errorProcessing.php';
+include 'detectEncodingClass.php';
+
 // check if logged in
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
@@ -21,10 +26,6 @@ $q = ltrim($q, '/\\');
 $q="../../".$q;
 
 $fileToShow = $_GET["fileToShow"] ?? -1;
-
-include 'secure.php';
-include 'errorProcessing.php';
-include 'detectEncodingClass.php';
 
 $out = [];
 $c=0;

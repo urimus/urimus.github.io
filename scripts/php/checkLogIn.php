@@ -1,5 +1,6 @@
 <?php
 
+include 'noCache.php';
 include 'errorProcessing.php';
 
 // check if logged in

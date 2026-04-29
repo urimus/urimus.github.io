@@ -1,5 +1,7 @@
 <?php
 
+include 'noCache.php';
+
 $baseUrl = $_GET["baseUrl"] ?? '';
 $baseUrl = strtolower(trim($baseUrl));
 $baseUrl = rtrim($baseUrl, '/') . '/';

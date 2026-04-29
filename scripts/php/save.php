@@ -1,4 +1,10 @@
 <?php
+
+include 'noCache.php';
+include 'errorProcessing.php';
+include 'saveClass.php';
+include 'detectEncodingClass.php';
+
 // check if logged in
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
@@ -14,10 +20,6 @@ $filename=$_POST["filename"];
 $filename="../../".$filename; // add path from this script to root
 $data=$_POST["q"];
 $encoding=$_POST["encoding"];
-
-include 'errorProcessing.php';
-include 'saveClass.php';
-include 'detectEncodingClass.php';
 
 $out = array();
 

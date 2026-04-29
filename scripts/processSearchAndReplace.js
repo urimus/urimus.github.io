@@ -909,7 +909,9 @@ function searchPattern(lang) {
 }
 
 function showInformation(lang) {
-	axios.get("scripts/processSearchAndReplace.js")
+	axios.get("scripts/processSearchAndReplace.js", {
+		params: { _: Date.now() }
+	})
 	.then(
 		response => {
 			const modStr = response.headers["last-modified"];
