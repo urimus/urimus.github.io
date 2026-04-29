@@ -83,27 +83,6 @@ function replacePHP(lang, action = "replace") {
 		if (!confirmContinue) return;
 	}
 
-	var message1, message2, message3, message4, message5;
-
-	// ---------------- Replace ----------------- //
-	if (action=="replace") {
-		message1 = t("reallyReplace");
-		message2 = t("to");
-		message3 = t("inAllDocuments");
-		message4 = t("whatToReplace");
-		message5 = t("whatToToReplace");
-	}
-	// ---------------- End of Replace ----------------- //
-
-	// ---------------- Add or Remove Menu ----------------- //
-	if (action=="addMenu" || action=="removeMenu") {
-		message1 = t("really");
-		message2 = (action=="addMenu") ? t("add") : t("remove");
-		message3 = t("menuHeight");
-		message4 = t("inAllDocuments");
-	}
-	// ---------------- End of Add or Remove Menu ----------------- //
-
 	var replaceWhat = "";
 	var replaceTo = "";
 
@@ -128,10 +107,10 @@ function replacePHP(lang, action = "replace") {
 			}
 		}
 
-		replaceWhat = prompt(message4, replaceWhat);
+		replaceWhat = prompt(t("whatToReplace"), replaceWhat);
 		if (replaceWhat == null ) {return;}
-		if (replaceWhat=="") {alert(message4); return;}
-		replaceTo = prompt(message5, replaceTo);
+		if (replaceWhat=="") {alert(t("whatToReplace")); return;}
+		replaceTo = prompt(t("whatToToReplace"), replaceTo);
 		if (replaceTo == null ) {return;}
 
 		if (document.getElementById('textarea_area').selectionStart != undefined) { // Mozilla version
@@ -145,14 +124,14 @@ function replacePHP(lang, action = "replace") {
 			replaceTo = lines.join(String.fromCharCode(9));
 		}
 
-		var confirmReplace = window.confirm(message1 + replaceWhat + message2 + replaceTo + message3 + getParameterByName('pattern') + "' ?");
+		var confirmReplace = window.confirm(t("reallyReplace") + replaceWhat + t("to") + replaceTo + "' " + t("inAllDocuments") + getParameterByName('pattern') + "' ?");
 		if (!confirmReplace) return;
 	}
 	// ---------------- End of Replace ----------------- //
 
 	// ---------------- Add or Remove Menu ----------------- //
 	if (action=="addMenu" || action=="removeMenu") {
-		var confirmMenu = window.confirm(message1 + message2 + message3 + message4 + getParameterByName('pattern') + "' ?");
+		var confirmMenu = window.confirm(t("really") + ((action=="addMenu") ? t("add") : t("remove")) + t("menuHeight") + t("inAllDocuments") + getParameterByName('pattern') + "' ?");
 		if (!confirmMenu) return;
 	}
 	// ---------------- End of Add or Remove Menu ----------------- //
@@ -616,10 +595,10 @@ function saveas(lang, encoding = "UTF-8") {
 		response => {
 			const data = response.data;
 			if (typeof data === "string" && data=="not logged in") {alert(t("notLoggedIn")); return;}
-			var message_show;
+			var message;
 			if (data=="0") {
-				message_show = (filename_orig_dir==newFileName_dir) ? t("fileSavedAsSuccessfully") + " " + t("reloadPage") : t("fileSavedAsSuccessfully");
-				save(lang, encoding, newFileName, 1, message_show);
+				message = (filename_orig_dir==newFileName_dir) ? t("fileSavedAsSuccessfully") + " " + t("reloadPage") : t("fileSavedAsSuccessfully");
+				save(lang, encoding, newFileName, 1, message);
 			} else { 
 				var confirm = window.confirm(t("file") + newFileName + t("existsOverwrite"));
 				if (!confirm) return;
@@ -775,10 +754,8 @@ function upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, c
 }
 
 function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
-	var isImage=0;
-	if (file.type.startsWith("image")) isImage=1;
 
-	var message1 = isImage === 0 ? t("file") : t("image");
+	var message = file.type.startsWith("image") ? t("image") : t("file");
 
 	axios.get("scripts/php/fileExists.php", {
 		params: {
@@ -791,7 +768,7 @@ function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 			if (data=="0") {
 				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			} else { 
-				var confirm = window.confirm(message1 + newFilePath + "/" + filename + t("existsOverwrite"));
+				var confirm = window.confirm(message + newFilePath + "/" + filename + t("existsOverwrite"));
 				if (!confirm) return;
 				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			}
@@ -804,7 +781,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	var isImage=0;
 	if (file.type.startsWith("image")) isImage=1;
 
-	var messageF = isImage === 0 ? t("file") : t("image");
+	var message = isImage === 0 ? t("file") : t("image");
 
 	var fileType = file.type;
 	if (fileType == "") fileType = t("undefined");
@@ -838,10 +815,10 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 			if (typeof data === "string" && data=="not logged in") {processSearchAndReplace(lang); return;}
 			if (data=="1") {
 				if (isImage) {
-					var confirm = window.confirm(messageF + newFilePath + "/" + filename + " " + t("uploadedSuccessfullyShowImage"));
+					var confirm = window.confirm(message + newFilePath + "/" + filename + " " + t("uploadedSuccessfullyShowImage"));
 					if (confirm) window.open(newFilePath + "/" + filename, '_blank').focus();
 				} else {
-					alert(messageF + newFilePath+"/" + filename + " " + t("uploadedSuccessfully"));
+					alert(message + newFilePath+"/" + filename + " " + t("uploadedSuccessfully"));
 				}
 				upload2(lang, allFiles, i+1, newFilePath, createFolder);
 			} else {
@@ -895,7 +872,7 @@ function logout(lang) {
 }
 
 function generateSitemap(lang) {
-	var baseUrl, messageFull;
+	var baseUrl;
 
 	var locStPar = "HTML_editor";
 	var HTMLEditorData = getLocalStorageData(locStPar);
@@ -914,8 +891,8 @@ function generateSitemap(lang) {
 	.then(
 		response => {
 			const data = response.data;
-			messageFull = "Sitemap.xml " + t("and") + " all.html " + t("and") + " robots.txt " + t("for") + " '" + data + "'" + t("generatedSuccessfullyShowThem");
-			var confirmView = window.confirm(messageFull);
+			var message = "Sitemap.xml " + t("and") + " all.html " + t("and") + " robots.txt " + t("for") + " '" + data + "'" + t("generatedSuccessfullyShowThem");
+			var confirmView = window.confirm(message);
 			if (confirmView) window.open('html_editor_'+lang+'.html?pattern='+encodeURIComponent('{sitemap.xml,all.html,robots.txt}')+'&i=0');
 			return;
 		},
