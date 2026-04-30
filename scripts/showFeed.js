@@ -1238,7 +1238,7 @@ function showInformation(lang) {
 			const modStr = response.headers["last-modified"];
 			alert(t("feedInfoText") + formatDate(modStr, lang) + ".");
 		},
-		defaultAxiosError
+		axiosError
 	);
 }
 
@@ -2200,15 +2200,15 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 			if (skipUpdates == 1) return;
 
-			const status = error.response?.status ?? 0;
-			const statusText = error.response?.statusText ?? error.message ?? String(error);
-
-			updateAttempt2 = (status == 0 || updateAttempt > 1) ? ", " + t("updateAttempt") + " = " + updateAttempt : "";
-			console.log(t("updateLoadError") + " (" + status + "). " + t("record") + " # " + (i + 1) + updateAttempt2);
-			if (status == 0 && updateAttempt < 5) { // 5 0-status attempts
+			axiosError(error, t("record") + " # " + (i + 1) + " | " + t("updateAttempt") + " " + updateAttempt);
+			if ( updateAttempt < 5) { // 5 attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;
 			}
+
+			const status = error.response?.status ?? 0;
+			const statusText = error.response?.statusText ?? error.message ?? String(error);
+
 			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {

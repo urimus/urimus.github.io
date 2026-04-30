@@ -386,7 +386,7 @@ function enableKeyboardScroll(scrollDiv) {
 	});
 }
 
-// --- default axios error ---
+// --- axios error ---
 function logData(caption, data, maxLength = 100) {
 	console.log(caption);
 
@@ -420,28 +420,44 @@ function logData(caption, data, maxLength = 100) {
 	}
 }
 
-
-function defaultAxiosError(error) {
+function axiosError(error, updateErrorMessage) {
 	const config = error.config || {};
 	const response = error.response || {};
 
 	const method = (config.method || "GET").toUpperCase();
+
+	const baseURL = config.baseURL || "";
 	const url = config.url ? decodeURIComponent(config.url) : "";
 
-	const query = url.split("?")[1] || "";
-	const getData = query
-		? Object.fromEntries(new URLSearchParams(query))
-		: "(no GET params)";
+	const getData =
+		config.params && Object.keys(config.params).length > 0
+			? config.params
+			: "(no GET params)";
+
+	let fullURL = baseURL + url;
+	if (config.params) {
+		const queryString = new URLSearchParams(config.params).toString();
+		if (queryString) {
+			fullURL += (fullURL.includes("?") ? "&" : "?") + queryString;
+		}
+	}
 
 	let postData = "(none)";
 	if (typeof config.data !== "undefined") postData = config.data;
 
-	console.groupCollapsed(
-		`%cAJAX ERROR [${method} | HTTP ${response.status || 0}]`,
-		"color:red;font-weight:bold"
-	);
+	if (typeof updateErrorMessage === "undefined") {
+		console.groupCollapsed(
+			`%cAJAX ERROR [${method} | HTTP ${response.status || 0}]`,
+			"color:red;font-weight:bold"
+		);
+	} else {
+		console.groupCollapsed(
+			`%c${t("updateLoadError")} [${method} | HTTP ${response.status || 0} | ${updateErrorMessage}]`,
+			"color:red;font-weight:bold"
+		);
+	}
 
-	console.log("URL:", url);
+	console.log("URL:", fullURL);
 
 	if (method === "GET" || getData !== "(no GET params)") {
 		logData("GET params:", getData);
@@ -454,6 +470,8 @@ function defaultAxiosError(error) {
 	console.log("textStatus:", error.code || error.message);
 	console.log("errorThrown:", error.message);
 
+	console.log("Response:", response.data || "");
+
 	const headers = response.headers || {};
 
 	if (headers["x-php-error"]) {
@@ -464,21 +482,22 @@ function defaultAxiosError(error) {
 		console.log("==================");
 	}
 
-	const stack = new Error().stack;
+	if (typeof updateErrorMessage === "undefined") {
+		const stack = new Error().stack;
 
-	if (stack) {
-		console.log("=== JavaScript Call Stack ===");
-		console.log(stack);
-		console.log("==================");
+		if (stack) {
+			console.log("=== JavaScript Call Stack ===");
+			console.log(stack);
+			console.log("==================");
+		}
+
+		console.log(
+			"Complete PHP log:",
+			window.location.origin +
+				"/html_editor_rus.html?pattern=scripts/php/logs/*&i=0"
+		);
 	}
 
-	console.log(
-		"Complete PHP log:",
-		window.location.origin +
-			"/html_editor_rus.html?pattern=scripts/php/logs/*&i=0"
-	);
-
-	console.log("Response:", response.data || "");
 	console.groupEnd();
 }
 
@@ -501,7 +520,7 @@ function checkMenu6(lang) {
 						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 					}
 				},
-				defaultAxiosError
+				axiosError
 			);
 		}
 	}
