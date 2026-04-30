@@ -1963,7 +1963,8 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 	axios.get(proxyURL, {
 		params: {
-			url: result.entries[i].link
+			url: result.entries[i].link,
+			_: Date.now()
 		}
 	})
 	.then(
