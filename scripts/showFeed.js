@@ -304,7 +304,8 @@ function showFeedData(type, source, lang, result) {
 
 			axios.get(proxyURL, {
 				params: {
-					url: "https://example.com"
+					url: "https://example.com",
+					_: Date.now()
 				}
 			})
 			.then(
