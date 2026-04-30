@@ -545,7 +545,7 @@ function generateTabs(type, lang) {
 function showInformation(lang) {
 	var modStr, infoText;
 	axios.get("scripts/showContents.js", {
-		params: { _: Date.now() }
+		headers: { 'Cache-Control': 'no-cache' }
 	})
 	.then(
 		response => {
@@ -619,7 +619,7 @@ function showContents(type, sortby, lang) {
 	refreshSortByTabs(type, sortby, lang);
 
 	axios.get(`scripts/contents/${type}_${lang}.txt`, {
-		params: { _: Date.now() }
+		headers: { 'Cache-Control': 'no-cache' }
 	})
 	.then(
 		response => {

@@ -910,7 +910,7 @@ function searchPattern(lang) {
 
 function showInformation(lang) {
 	axios.get("scripts/processSearchAndReplace.js", {
-		params: { _: Date.now() }
+		headers: { 'Cache-Control': 'no-cache' }
 	})
 	.then(
 		response => {

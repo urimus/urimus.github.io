@@ -304,8 +304,7 @@ function showFeedData(type, source, lang, result) {
 
 			axios.get(proxyURL, {
 				params: {
-					url: "https://example.com",
-					_: Date.now()
+					url: "https://example.com"
 				}
 			})
 			.then(
@@ -1231,7 +1230,7 @@ function generateTabs(type, source, lang) {
 
 function showInformation(lang) {
 	axios.get("scripts/showFeed.js", {
-		params: { _: Date.now() }
+		headers: { 'Cache-Control': 'no-cache' }
 	})
 	.then(
 		response => {
@@ -1964,8 +1963,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 	axios.get(proxyURL, {
 		params: {
-			url: result.entries[i].link,
-			_: Date.now()
+			url: result.entries[i].link
 		}
 	})
 	.then(
