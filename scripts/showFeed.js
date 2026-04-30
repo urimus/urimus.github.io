@@ -2200,6 +2200,9 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 			if (skipUpdates == 1) return;
 
+			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
+			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
+
 			axiosError(error, t("record") + " # " + (i + 1) + " | " + t("updateAttempt") + " " + updateAttempt);
 			if ( updateAttempt < 5) { // 5 attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
@@ -2209,8 +2212,6 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			const status = error.response?.status ?? 0;
 			const statusText = error.response?.statusText ?? error.message ?? String(error);
 
-			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
-			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 			if (source == "cbs" || source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
 				result.entries[i].media.comment = t("updateLoadError") + " (" + status + ")";
