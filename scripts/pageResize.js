@@ -420,7 +420,7 @@ function logData(caption, data, maxLength = 100) {
 	}
 }
 
-function axiosError(error, updateErrorMessage) {
+function consoleAxiosError(error, updateErrorMessage) {
 	const config = error.config || {};
 	const response = error.response || {};
 
@@ -445,17 +445,16 @@ function axiosError(error, updateErrorMessage) {
 	let postData = "(none)";
 	if (typeof config.data !== "undefined") postData = config.data;
 
+	var messageCaption = "";
 	if (typeof updateErrorMessage === "undefined") {
-		console.groupCollapsed(
-			`%cAJAX ERROR [${method} | HTTP ${response.status || 0}]`,
-			"color:red;font-weight:bold"
-		);
+		messageCaption = "%cAJAX ERROR [" + method + " | HTTP " + (response.status || 0) + "]";
 	} else {
-		console.groupCollapsed(
-			`%c${t("updateLoadError")} [${method} | HTTP ${response.status || 0} | ${updateErrorMessage}]`,
-			"color:red;font-weight:bold"
-		);
+		messageCaption = "%cAJAX ERROR [" + method + " | HTTP " + (response.status || 0) + " | " + updateErrorMessage + "]";
 	}
+	console.groupCollapsed(
+		messageCaption,
+		"color:red;font-weight:bold"
+	);
 
 	console.log("URL:", fullURL);
 
@@ -520,7 +519,7 @@ function checkMenu6(lang) {
 						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
 					}
 				},
-				axiosError
+				consoleAxiosError
 			);
 		}
 	}

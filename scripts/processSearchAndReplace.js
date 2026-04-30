@@ -163,7 +163,7 @@ function replacePHP(lang, action = "replace") {
 				return false;
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -235,7 +235,7 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 								setTextAreaChanged(lang, 0);
 							}
 						},
-						axiosError
+						consoleAxiosError
 					);
 				}
 			}
@@ -268,7 +268,7 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 				processReplacePHP(lang, action, dir, i + 1, replaceWhat, replaceTo, statisticsTimesReplaced, statisticsFilesProcessed);
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -348,7 +348,7 @@ function resizeImages(lang) {
 				prResizeImage(lang, dir, filePath, newImageWidth, 0, 0);
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -406,7 +406,7 @@ function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcess
 				prResizeImage(lang, dir, filePath, fileWidth, i + 1, statisticsFilesProcessed);
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -575,7 +575,7 @@ function save(lang, encoding = "UTF-8", filename = document.getElementById("file
 				return;
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -605,7 +605,7 @@ function saveas(lang, encoding = "UTF-8") {
 				save(lang, encoding, newFileName, 1, t("fileSavedAsSuccessfully"));
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -656,7 +656,7 @@ function upload(lang) {
 					upload2(lang, allFiles, 0, newFilePath, createFolder);
 				}
 			},
-			axiosError
+			consoleAxiosError
 		);
 	};
 
@@ -773,7 +773,7 @@ function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -826,7 +826,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 				return;
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -856,7 +856,7 @@ function del(lang, totalFiles) {
 				alert(t("fileNotFound"));
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -867,7 +867,7 @@ function logout(lang) {
 			window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(getParameterByName('pattern'))+'&i='+ (parseInt(getParameterByName('i'))||0);
 			return;
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -896,7 +896,7 @@ function generateSitemap(lang) {
 			if (confirmView) window.open('html_editor_'+lang+'.html?pattern='+encodeURIComponent('{sitemap.xml,all.html,robots.txt}')+'&i=0');
 			return;
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -917,7 +917,7 @@ function showInformation(lang) {
 			const modStr = response.headers["last-modified"];
 			alert(t("htmlEditorInfoText") + formatDate(modStr, lang)+".");
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -1059,7 +1059,7 @@ function processSearch(lang) {
 						return false;
 					}
 				},
-				axiosError
+				consoleAxiosError
 			);
 		} else {
 			window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(searchPatt)+'&i=0';
@@ -1129,7 +1129,7 @@ function loadAndShowFile(lang, filename, modified, encoding, first10bytes, total
 			textarea.setSelectionRange(0, 0);
 			setLineAndColumnNumber(lang);
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -1304,13 +1304,13 @@ function processSearchAndReplace(lang) {
 						}
 						processSearch(lang);
 					},
-					axiosError
+					consoleAxiosError
 				);
 			} else {
 				processSearch(lang);
 			}
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 

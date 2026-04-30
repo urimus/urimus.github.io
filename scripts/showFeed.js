@@ -1238,7 +1238,7 @@ function showInformation(lang) {
 			const modStr = response.headers["last-modified"];
 			alert(t("feedInfoText") + formatDate(modStr, lang) + ".");
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -2203,7 +2203,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 
-			axiosError(error, t("record") + " # " + (i + 1) + " | " + t("updateAttempt") + " " + updateAttempt);
+			consoleAxiosError(error, t("record") + " # " + (i + 1) + " | " + t("updateAttempt") + " " + updateAttempt);
 			if ( updateAttempt < 5) { // 5 attempts
 				update(i, source, type, result, lang, updateAttempt + 1);
 				return;

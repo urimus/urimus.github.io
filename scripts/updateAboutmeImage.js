@@ -40,7 +40,7 @@ function showInformation(lang) {
 			const lastCommit = formatDate(new Date(data[0].commit.author.date).getTime(), lang);
 			alert(t("homepageInfoText")+ lastCommit + ".");
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 

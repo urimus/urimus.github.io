@@ -552,7 +552,7 @@ function showInformation(lang) {
 			const modStr = response.headers["last-modified"];
 			alert(t("sitemapInfoText") + formatDate(modStr, lang) + ".");
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
@@ -651,7 +651,7 @@ function showContents(type, sortby, lang) {
 			}
 			adjustContentsScrollDiv();
 		},
-		axiosError
+		consoleAxiosError
 	);
 }
 
