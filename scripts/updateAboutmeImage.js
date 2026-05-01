@@ -92,7 +92,7 @@ function updateAboutMeImage(lang, random = 0) {
 				return;
 			}
 			result.feedXML = feedURL;
-			updateAboutMeImage2(lang, result, random, controller);
+			updateAboutMeImage2(lang, result, random);
 		},
 		error => {
 			if (error.code === 'ERR_CANCELED') return;
@@ -102,9 +102,7 @@ function updateAboutMeImage(lang, random = 0) {
 	);
 }
 
-function updateAboutMeImage2(lang, result, random, controller) {
-
-	if (controller.signal.aborted) return;
+function updateAboutMeImage2(lang, result, random) {
 
 	var items = result.feed.entries;
 	var totalEntries = items.length;
@@ -222,12 +220,10 @@ function updateAboutMeImage2(lang, result, random, controller) {
 	Img.setAttribute('width', '100%');
 	Img.setAttribute('style', 'margin-bottom:5px; display: block;');
 	Img.onerror = function () {
-		if (controller.signal.aborted) return;
 		showErrorImage(lang, "error", t("image") + "#" + (i + 1) + " " + t("loadingFailed") + ". " + t("reloadPage") + ".");
 		adjustScrollDiv();
 	}
 	Img.onload = function () {
-		if (controller.signal.aborted) return;
 		var tableRow = table.rows[0];
 		tableRow.replaceChildren();
 		var cell1 = tableRow.insertCell(0);	

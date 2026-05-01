@@ -1893,14 +1893,6 @@ function checkProcessedCount(source, type, result, lang, controller, pf = 1) {
 	var processedCount, nextUpdateRecord, nextUpdateRecordSet, j, passedCount, failedCount, failedCountInt, failedCountTitle;
 	var totalEntries = result.entries.length;
 
-	if (controller.signal.aborted) {
-		var table2 = document.getElementById("messagetable");
-		table2.replaceChildren();
-		$("#processedDiv").hide();
-		adjustFeedScrollDiv();
-		return;
-	}
-
 	// failed
 	if (pf == 0) {
 		failedCount = document.getElementById("failedCount");
@@ -1954,8 +1946,6 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1) {
 
 	var doc, mediaURL, description, mediaComment, updateAttempt2="";
 	var categories, creators, creatorsUrls, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
-
-	if (controller.signal.aborted) return;
 
 	updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 	document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
