@@ -513,7 +513,7 @@ function checkMenu6(lang) {
 			.then(
 				response => {
 					const data = response.data;
-					if (data.substring(0, 2) == "<?") {
+					if (String(data).startsWith("<?")) {
 						menu6.setAttribute("title", t("phpIsNotSupported") + window.location.hostname + t("htmlEditorIsNotFunctioning"));
 						menu6.dataset.ttcolor = "blue";
 						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";

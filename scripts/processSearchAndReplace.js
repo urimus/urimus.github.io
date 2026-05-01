@@ -155,13 +155,10 @@ function replacePHP(lang, action = "replace") {
 	.then(
 		response => {
 			const data = response.data;
-			if (data=="not logged in") {alert(t("notLoggedIn")); return;}
+			if (data == "not logged in") {alert(t("notLoggedIn")); return;}
 			var dir = data;
-			if (dir.length>0) {
-				processReplacePHP(lang, action, dir, 0, replaceWhat, replaceTo, 0, 0);
-			} else {
-				return false;
-			}
+			if (dir.length == 0) return;
+			processReplacePHP(lang, action, dir, 0, replaceWhat, replaceTo, 0, 0);
 		},
 		consoleAxiosError
 	);
@@ -342,11 +339,10 @@ function resizeImages(lang) {
 	.then(
 		response => {
 			const data = response.data;
-			if (data=="not logged in") {alert(t("notLoggedIn")); return;}
+			if (data == "not logged in") {alert(t("notLoggedIn")); return;}
 			var dir = data;
-			if (dir.length > 0) {
-				prResizeImage(lang, dir, filePath, newImageWidth, 0, 0);
-			}
+			if (dir.length == 0) return;
+			prResizeImage(lang, dir, filePath, newImageWidth, 0, 0);
 		},
 		consoleAxiosError
 	);
@@ -559,7 +555,7 @@ function save(lang, encoding = "UTF-8", filename = document.getElementById("file
 				alert(data);
 				return;
 			} else {
-				if (document.getElementById("fileName").getAttribute("href")==filename) {
+				if (document.getElementById("fileName").getAttribute("href") == filename) {
 					var ret = data;
 					document.getElementById("dateModified_lbl").innerHTML=formatDate(ret["modified"]*1000, lang);
 					setBOM(ret["first10bytes"]);
@@ -596,7 +592,7 @@ function saveas(lang, encoding = "UTF-8") {
 			const data = response.data;
 			if (typeof data === "string" && data=="not logged in") {alert(t("notLoggedIn")); return;}
 			var message;
-			if (data=="0") {
+			if (data === 0) {
 				message = (filename_orig_dir==newFileName_dir) ? t("fileSavedAsSuccessfully") + " " + t("reloadPage") : t("fileSavedAsSuccessfully");
 				save(lang, encoding, newFileName, 1, message);
 			} else { 
@@ -648,7 +644,7 @@ function upload(lang) {
 			response => {
 				const data = response.data;
 				if (typeof data === "string" && data=="not logged in") {alert(t("notLoggedIn")); return;}
-				if (data=="0") { 
+				if (data === 0) { 
 					createFolder=window.confirm(t("folder")+ newFilePath+ t("notFoundCreate"));
 					if (!createFolder) return;
 					upload2(lang, allFiles, 0, newFilePath, createFolder);
@@ -765,7 +761,7 @@ function upload4(file, filename, lang, allFiles, i, newFilePath, createFolder) {
 	.then(
 		response => {
 			const data = response.data;
-			if (data=="0") {
+			if (data === 0) {
 				uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder);
 			} else { 
 				var confirm = window.confirm(message + newFilePath + "/" + filename + t("existsOverwrite"));
@@ -813,7 +809,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 			const data = response.data;
 			$("#caption_div").html(t("htmlEditor"));
 			if (typeof data === "string" && data=="not logged in") {processSearchAndReplace(lang); return;}
-			if (data=="1") {
+			if (data === 1) {
 				if (isImage) {
 					var confirm = window.confirm(message + newFilePath + "/" + filename + " " + t("uploadedSuccessfullyShowImage"));
 					if (confirm) window.open(newFilePath + "/" + filename, '_blank').focus();
@@ -845,7 +841,7 @@ function del(lang, totalFiles) {
 		response => {
 			const data = response.data;
 			if (typeof data === "string" && data=="not logged in") {processSearchAndReplace(lang); return;};
-			if (data=="1") {
+			if (data === 1) {
 				alert(t("fileDeleted"));
 				var i =(parseInt(getParameterByName('i'))||0);
 				if (i!=0 && i==(totalFiles-1)) i--;
@@ -1049,14 +1045,14 @@ function processSearch(lang) {
 							$("#error_message_row").hide();
 							$("#error_message_with_logout").text(err1);
 							$("#error_message_with_logout_row").show();
-							return false;
+							return;
 						}
 					} else {
 						$("#error_message").text("");
 						$("#error_message_row").hide();
 						$("#error_message_with_logout").text(err1);
 						$("#error_message_with_logout_row").show();
-						return false;
+						return;
 					}
 				},
 				consoleAxiosError
@@ -1101,13 +1097,13 @@ function loadAndShowFile(lang, filename, modified, encoding, first10bytes, total
 			if (typeof data === "string" && data.startsWith("Unable to open file!")) {
 				alert(data);
 			}
-			var lines=data;    
-			var textarea=document.getElementById("textarea_area");
-			textarea.value=lines;
-			document.getElementById("fileName").innerHTML=filename;
-			document.getElementById("fileName").href=filename;
-			document.getElementById("dateModified_lbl").innerHTML=formatDate(modified*1000, lang);
-			document.getElementById("encoding_lbl").innerHTML=encoding;
+			var lines = data;    
+			var textarea = document.getElementById("textarea_area");
+			textarea.value = lines;
+			document.getElementById("fileName").innerHTML = filename;
+			document.getElementById("fileName").href = filename;
+			document.getElementById("dateModified_lbl").innerHTML = formatDate(modified*1000, lang);
+			document.getElementById("encoding_lbl").innerHTML = encoding;
 			$("#error_message_row").hide();
 			$("#error_message_with_logout_row").hide();
 			$("#search_col1").show();
@@ -1124,7 +1120,7 @@ function loadAndShowFile(lang, filename, modified, encoding, first10bytes, total
 			setLinksValues(lang, encoding, totalFiles);
 			setBOM(first10bytes);
 			textarea.focus();
-			textarea.scrollTop=0;
+			textarea.scrollTop = 0;
 			textarea.scrollLeft = 0;
 			textarea.setSelectionRange(0, 0);
 			setLineAndColumnNumber(lang);
@@ -1239,17 +1235,15 @@ function processSearchAndReplace(lang) {
 
 	processPageResize(0, lang);
 
-	axios.get("scripts/php/checkLogIn.php", {
-		responseType: "text"
-	})
+	axios.get("scripts/php/checkLogIn.php")
 	.then(
 		response => {
 			const data = response.data;
-			if (data.substring(0, 2) == "<?") {
+			if (String(data).startsWith("<?")) {
 				$("#error_message").text(t("phpIsNotSupported") + window.location.hostname + t("htmlEditorIsNotFunctioning"));
 				return;
 			};
-			if (data=="0"){
+			if (data === 0){
 				var locStPar="HTML_editor";
 				var HTMLEditorData=getLocalStorageData(locStPar);
 				var username1 = (typeof HTMLEditorData["username"] !== "undefined") ? HTMLEditorData["username"] : "";
@@ -1286,7 +1280,7 @@ function processSearchAndReplace(lang) {
 				.then(
 					response => {
 						const data = response.data;
-						if (data == "0"){
+						if (data === 0){
 							$("#search_col1").hide();
 							$("#search_col2").hide();
 							$("#search_col3").hide();
