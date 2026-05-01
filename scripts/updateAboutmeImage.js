@@ -1,7 +1,4 @@
 ﻿"use strict";
-// ------------- Global Variables ---------------- //
-var toSkip = 0;
-// ------------- End of Global Variables ---------------- //
 
 function formatSummary(summary_arr, words) {
 	return summary_arr.slice(0, words).join(" ") + " ";
@@ -48,8 +45,6 @@ function updateAboutMeImage(lang, random = 0) {
 
 	processPageResize(0, lang);
 
-	toSkip = 0;
-
 	var table = document.getElementById("imagetable");
 	table.replaceChildren();
 
@@ -66,9 +61,10 @@ function updateAboutMeImage(lang, random = 0) {
 	aSkip.setAttribute('href', "javascript:void(0);");
 	aSkip.setAttribute('class', 'standardb_blue');
 	aSkip.innerText = t("skip");
+	let controller = new AbortController();
 	aSkip.onclick = function () {
+		controller.abort();
 		showErrorImage(lang, "skipped");
-		toSkip = 1;
 		return;
 	}
 	loadingDivTitle.innerHTML = t("readingNewsFeed") + ". ";
@@ -84,11 +80,11 @@ function updateAboutMeImage(lang, random = 0) {
 		params: {
 			url: feedURL,
 			_: Date.now()
-		}
+		},
+		signal: controller.signal
 	})
 	.then(
 		response => {
-			if (toSkip == 1) return;
 			const result = response.data;
 			if (result.error) {
 				showErrorImage(lang, "error", `Feednami ${result.error.code} ${result.error.message}`);
@@ -96,17 +92,19 @@ function updateAboutMeImage(lang, random = 0) {
 				return;
 			}
 			result.feedXML = feedURL;
-			updateAboutMeImage2(lang, result, random);
+			updateAboutMeImage2(lang, result, random, controller);
 		},
 		error => {
-			if (toSkip == 1) return;
+			if (error.code === 'ERR_CANCELED') return;
 			showErrorImage(lang, "error", error.message);
 			adjustScrollDiv();
 		}
 	);
 }
 
-function updateAboutMeImage2(lang, result, random) {
+function updateAboutMeImage2(lang, result, random, controller) {
+
+	if (controller.signal.aborted) return;
 
 	var items = result.feed.entries;
 	var totalEntries = items.length;
@@ -224,12 +222,12 @@ function updateAboutMeImage2(lang, result, random) {
 	Img.setAttribute('width', '100%');
 	Img.setAttribute('style', 'margin-bottom:5px; display: block;');
 	Img.onerror = function () {
-		if (toSkip == 1) return;
+		if (controller.signal.aborted) return;
 		showErrorImage(lang, "error", t("image") + "#" + (i + 1) + " " + t("loadingFailed") + ". " + t("reloadPage") + ".");
 		adjustScrollDiv();
 	}
 	Img.onload = function () {
-		if (toSkip == 1) return;
+		if (controller.signal.aborted) return;
 		var tableRow = table.rows[0];
 		tableRow.replaceChildren();
 		var cell1 = tableRow.insertCell(0);	

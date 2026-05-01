@@ -1,7 +1,6 @@
 ﻿"use strict";
 
 // ------------- Global Variables ---------------- //
-var skipUpdates=0;
 var proxyURL = "https://proxy-df9w.onrender.com";
 // ------------- End of Global Variables ---------------- //
 
@@ -284,8 +283,9 @@ function showFeedData(type, source, lang, result) {
 			a.setAttribute('href', "javascript:void(0);");
 			a.setAttribute('class', 'standardb_red');
 			a.innerText = t("skip");
+			let controller = new AbortController();
 			a.onclick = function () {
-				skipUpdates = 1;
+				controller.abort();
 				for (var j = 0; j < totalEntries; j++) {
 					result.entries[j].error = t("updateSkipped") + ".";
 					if (result.entries[j].storage.updateProcessed == 0) {
@@ -306,11 +306,11 @@ function showFeedData(type, source, lang, result) {
 				params: {
 					url: "https://example.com",
 					_: Date.now()
-				}
+				},
+				signal: controller.signal
 			})
 			.then(
 				response => { // proxy works
-					if (skipUpdates == 1) return;
 					$("#processedDiv").show();
 					adjustFeedScrollDiv();
 					// 10 updates simultaneously only
@@ -320,7 +320,7 @@ function showFeedData(type, source, lang, result) {
 						for (var i = 0; i < totalEntries; i++) {
 							if (result.entries[i].storage.updateProcessed == 0) {
 								result.entries[i].storage.updateInitiated = 1;
-								update(i, source, type, result, lang);
+								update(i, source, type, result, lang, controller);
 								updatingCount++;
 								if (updatingCount == 10) break; // 10 updates simultaneously only
 							}
@@ -328,7 +328,7 @@ function showFeedData(type, source, lang, result) {
 					}
 				},
 				error => { // proxy does not work
-					if (skipUpdates == 1) return;
+					if (error.code === 'ERR_CANCELED') return;
 
 					const status = error.response?.status ?? 0;
 					const statusText = error.response?.statusText ?? error.message ?? String(error);
@@ -345,6 +345,7 @@ function showFeedData(type, source, lang, result) {
 							showEntry(type, source, lang, result, j, 0);
 						}
 					}
+
 				}
 			);
 		}
@@ -1889,12 +1890,12 @@ function consoleMetas(doc) {
 }
 
 
-function checkProcessedCount(source, type, result, lang, pf = 1) {
+function checkProcessedCount(source, type, result, lang, controller, pf = 1) {
 
 	var processedCount, nextUpdateRecord, nextUpdateRecordSet, j, passedCount, failedCount, failedCountInt, failedCountTitle;
 	var totalEntries = result.entries.length;
 
-	if (skipUpdates) {
+	if (controller.signal.aborted) {
 		var table2 = document.getElementById("messagetable");
 		table2.replaceChildren();
 		$("#processedDiv").hide();
@@ -1945,19 +1946,18 @@ function checkProcessedCount(source, type, result, lang, pf = 1) {
 		}
 		if (nextUpdateRecordSet == 1) {
 			result.entries[nextUpdateRecord].storage.updateInitiated = 1;
-			update(nextUpdateRecord, source, type, result, lang);
+			update(nextUpdateRecord, source, type, result, lang, controller);
 		}
 	}
 }
 
 
-function update(i, source, type, result, lang, updateAttempt = 1) {
+function update(i, source, type, result, lang, controller, updateAttempt = 1) {
 
 	var doc, mediaURL, description, mediaComment, updateAttempt2="";
 	var categories, creators, creatorsUrls, seeAlso, videoURL, locStUpdateDataNew, locStPar, j;
 
-	if (result.entries[i].storage.updateProcessed == 1) return;
-	if (skipUpdates == 1) return;
+	if (controller.signal.aborted) return;
 
 	updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 	document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
@@ -1966,11 +1966,11 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 		params: {
 			url: result.entries[i].link,
 			_: Date.now()
-		}
+		},
+		signal: controller.signal
 	})
 	.then(
 		response => {
-			if (skipUpdates == 1) return;
 
 			const data = response.data;
 
@@ -2181,7 +2181,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 
 				showEntry(type, source, lang, result, i, 0);
 				result.entries[i].storage.updateProcessed = 1;
-				checkProcessedCount(source, type, result, lang, 1);
+				checkProcessedCount(source, type, result, lang, controller, 1);
 			} else {
 				// complete update absent
 				updateAttempt2 = updateAttempt > 1 ? ", updateAttempt = " + updateAttempt : "";
@@ -2193,19 +2193,19 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 				result.entries[i].error = t("updateAbsent") + ".";
 				showEntry(type, source, lang, result, i, 0);
 				result.entries[i].storage.updateProcessed = 1;
-				checkProcessedCount(source, type, result, lang, 0);
+				checkProcessedCount(source, type, result, lang, controller, 0);
 			}
 		},
 		error => {
 
-			if (skipUpdates == 1) return;
+			if (error.code === 'ERR_CANCELED') return;
 
 			updateAttempt2 = updateAttempt > 1 ? "/" + updateAttempt : "";
 			document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecord") + " #" + (i + 1) + updateAttempt2 + ".&nbsp;";
 
 			consoleAxiosError(error, t("record") + " # " + (i + 1) + " | " + t("updateAttempt") + " " + updateAttempt);
 			if ( updateAttempt < 5) { // 5 attempts
-				update(i, source, type, result, lang, updateAttempt + 1);
+				update(i, source, type, result, lang, controller, updateAttempt + 1);
 				return;
 			}
 
@@ -2221,7 +2221,7 @@ function update(i, source, type, result, lang, updateAttempt = 1) {
 			result.entries[i].error = t("updateLoadError") + " (" + status + "). <a href='javascript:location.reload();' class='standardb_red');>" + t("reloadPage") + "</a>";
 			showEntry(type, source, lang, result, i, 0);
 			result.entries[i].storage.updateProcessed = 1;
-			checkProcessedCount(source, type, result, lang, 0);
+			checkProcessedCount(source, type, result, lang, controller, 0);
 		}
 	);
 }
