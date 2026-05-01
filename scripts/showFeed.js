@@ -1,8 +1,6 @@
 ﻿"use strict";
 
-// ------------- Global Variables ---------------- //
 var proxyURL = "https://proxy-df9w.onrender.com";
-// ------------- End of Global Variables ---------------- //
 
 function feedIconText (feedURL, lang) {
 
