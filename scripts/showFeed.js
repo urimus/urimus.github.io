@@ -180,11 +180,8 @@ function showFeedTitle(type, source, lang, result) {
 	} else {
 		textRssFeed = "RSS "
 	}
-	if (lang == "rus" || lang == "lat") {
-		textRssFeed += t("feed") + " (" + t("eng") + ")";
-	} else {
-		textRssFeed += t("feed");
-	}
+	textRssFeed += t("feed");
+	if (lang == "rus" || lang == "lat") textRssFeed += " (" + t("eng") + ")";
 
 	document.getElementById("loadingSpanTitle").innerHTML = t("outputNewsFeed")+" "+feedIconText(result.feedXML, lang);
 
