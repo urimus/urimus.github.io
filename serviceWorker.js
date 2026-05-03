@@ -4,9 +4,9 @@
 // CACHE NAMES
 // =====================================================
 
-var IMAGE_CACHE = "image-cache-2";
-var STATIC_CACHE = "static-cache-2";
-var API_CACHE = "api-cache-2";
+var IMAGE_CACHE = "image-cache";
+var STATIC_CACHE = "static-cache";
+var API_CACHE = "api-cache";
 
 var META_SUFFIX = ":meta";
 
