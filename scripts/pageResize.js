@@ -16,8 +16,8 @@ navigator.serviceWorker.getRegistrations().then(console.log)
 */
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
-	.then(function (reg) {
-		// nothing
+	.then(function (registration) {
+		registration.update();
 	});
 }
 
