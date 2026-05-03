@@ -4,7 +4,7 @@
 // CACHE NAMES
 // =====================================================
 
-var IMAGE_CACHE = "image-cache-v2";
+var IMAGE_CACHE = "image-cache-v1";
 var STATIC_CACHE = "static-cache-v1";
 var API_CACHE = "api-cache-v1";
 
@@ -16,7 +16,7 @@ var MAX_AGE = 1000 * 60 * 60 * 24 * 7;
 // network timeout
 var FETCH_TIMEOUT = 7000;
 
-// in-flight dedupe (только для image)
+// in-flight dedupe (images)
 var IN_FLIGHT = new Map();
 
 
@@ -45,30 +45,23 @@ self.addEventListener("fetch", function (event) {
 	var request = event.request;
 
 	if (request.method !== "GET") return;
-
 	if (request.headers.get("Authorization")) return;
 
 	var url = new URL(request.url);
 
-	// ----------------------------------------
 	// HTML
-	// ----------------------------------------
 	if (request.mode === "navigate") {
 		event.respondWith(handleGeneric(event, request, STATIC_CACHE, networkFirst));
 		return;
 	}
 
-	// ----------------------------------------
 	// IMAGES
-	// ----------------------------------------
 	if (request.destination === "image") {
 		event.respondWith(handleImageRequest(event, request));
 		return;
 	}
 
-	// ----------------------------------------
 	// JS / CSS / fonts
-	// ----------------------------------------
 	if (
 		request.destination === "script" ||
 		request.destination === "style" ||
@@ -78,9 +71,7 @@ self.addEventListener("fetch", function (event) {
 		return;
 	}
 
-	// ----------------------------------------
 	// API
-	// ----------------------------------------
 	if (url.pathname.startsWith("/api/")) {
 		event.respondWith(handleGeneric(event, request, API_CACHE, networkFirst));
 		return;
@@ -98,23 +89,21 @@ function handleGeneric(event, request, cacheName, strategy) {
 		return cache.match(request).then(function (cached) {
 
 			if (cached) {
-				event.waitUntil(
-					refreshGeneric(cache, request, strategy)
-				);
+				event.waitUntil(refreshGeneric(cache, request));
 				return cached;
 			}
 
-			return fetchAndCacheGeneric(cache, request);
+			return strategy(request, cache);
 		});
 	});
 }
 
-function refreshGeneric(cache, request, strategy) {
+function refreshGeneric(cache, request) {
 	return isFresh(cache, request).then(function (fresh) {
 		if (!fresh) {
 			return fetchAndCacheGeneric(cache, request);
 		}
-	}).catch(function () {});
+	});
 }
 
 function fetchAndCacheGeneric(cache, request) {
@@ -142,7 +131,63 @@ function fetchAndCacheGeneric(cache, request) {
 
 
 // =====================================================
-// IMAGE HANDLER (оставлен твой)
+// STRATEGIES
+// =====================================================
+
+function networkFirst(request, cache) {
+	return fetch(request)
+		.then(function (response) {
+
+			if (!response || response.status !== 200) {
+				return response;
+			}
+
+			return Promise.all([
+				cache.put(request, response.clone()),
+				cache.put(
+					request.url + META_SUFFIX,
+					new Response(Date.now().toString())
+				)
+			]).then(function () {
+				return response;
+			});
+		})
+		.catch(function () {
+			return cache.match(request);
+		});
+}
+
+function staleWhileRevalidate(request, cache) {
+	return cache.match(request).then(function (cached) {
+
+		var fetchPromise = fetch(request)
+			.then(function (response) {
+
+				if (response && response.status === 200) {
+					return Promise.all([
+						cache.put(request, response.clone()),
+						cache.put(
+							request.url + META_SUFFIX,
+							new Response(Date.now().toString())
+						)
+					]).then(function () {
+						return response;
+					});
+				}
+
+				return response;
+			})
+			.catch(function () {
+				return cached;
+			});
+
+		return cached || fetchPromise;
+	});
+}
+
+
+// =====================================================
+// IMAGE HANDLER (твой)
 // =====================================================
 
 function handleImageRequest(event, request) {
@@ -151,9 +196,7 @@ function handleImageRequest(event, request) {
 		return cache.match(request).then(function (cached) {
 
 			if (cached) {
-				event.waitUntil(
-					refreshIfNeeded(cache, request)
-				);
+				event.waitUntil(refreshIfNeeded(cache, request));
 				return cached;
 			}
 
@@ -227,7 +270,7 @@ function fetchWithTimeout(request, ms) {
 
 
 // =====================================================
-// TTL CHECK (для всех)
+// TTL CHECK
 // =====================================================
 
 function isFresh(cache, request) {
@@ -242,11 +285,31 @@ function isFresh(cache, request) {
 
 
 // =====================================================
-// FULL CLEANUP (ВСЕ КЭШИ)
+// CLEANUP (FULL + твоя логика)
 // =====================================================
 
 function cleanupAllCaches() {
 	return caches.keys().then(function (keys) {
+
+		// удалить старые cache names
+		return Promise.all(
+			keys.map(function (name) {
+				if (
+					name !== IMAGE_CACHE &&
+					name !== STATIC_CACHE &&
+					name !== API_CACHE
+				) {
+					return caches.delete(name);
+				}
+			})
+		);
+
+	}).then(function () {
+
+		// TTL cleanup ВСЕХ кэшей
+		return caches.keys();
+
+	}).then(function (keys) {
 
 		return Promise.all(
 			keys.map(function (name) {
