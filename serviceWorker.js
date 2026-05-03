@@ -1,12 +1,13 @@
 ﻿"use strict";
 
 // =====================================================
-// FAST IMAGE CACHE SERVICE WORKER
-// Promise version (no async / await)
-// direct request version (no normalizeRequest)
+// CACHE NAMES
 // =====================================================
 
-var CACHE_NAME = "image-cache-v2";
+var IMAGE_CACHE = "image-cache-v2";
+var STATIC_CACHE = "static-cache-v1";
+var API_CACHE = "api-cache-v1";
+
 var META_SUFFIX = ":meta";
 
 // 7 days
@@ -30,49 +31,84 @@ self.addEventListener("install", function (event) {
 self.addEventListener("activate", function (event) {
 	event.waitUntil(
 		self.clients.claim().then(function () {
-			return cleanupOldCache();
+			return cleanupOldCaches();
 		})
 	);
 });
 
 
 // =====================================================
-// FETCH
+// FETCH ROUTER
 // =====================================================
 
 self.addEventListener("fetch", function (event) {
 	var request = event.request;
 
-	if (request.destination !== "image") return;
 	if (request.method !== "GET") return;
 
-	event.respondWith(handleImageRequest(event, request));
+	// ❌ не кэшируем авторизованные запросы
+	if (request.headers.get("Authorization")) return;
+
+	var url = new URL(request.url);
+
+	// ----------------------------------------
+	// HTML (navigation)
+	// ----------------------------------------
+	if (request.mode === "navigate") {
+		event.respondWith(networkFirst(request, STATIC_CACHE));
+		return;
+	}
+
+	// ----------------------------------------
+	// IMAGES
+	// ----------------------------------------
+	if (request.destination === "image") {
+		event.respondWith(handleImageRequest(event, request));
+		return;
+	}
+
+	// ----------------------------------------
+	// JS / CSS / fonts
+	// ----------------------------------------
+	if (
+		request.destination === "script" ||
+		request.destination === "style" ||
+		request.destination === "font"
+	) {
+		event.respondWith(staleWhileRevalidate(request, STATIC_CACHE));
+		return;
+	}
+
+	// ----------------------------------------
+	// API (пример)
+	// ----------------------------------------
+	if (url.pathname.startsWith("/api/")) {
+		event.respondWith(networkFirst(request, API_CACHE));
+		return;
+	}
+
+	// ----------------------------------------
+	// DEFAULT → сеть
+	// ----------------------------------------
 });
 
 
 // =====================================================
-// MAIN HANDLER
+// IMAGE HANDLER
 // =====================================================
 
 function handleImageRequest(event, request) {
-	return caches.open(CACHE_NAME).then(function (cache) {
+	return caches.open(IMAGE_CACHE).then(function (cache) {
 
 		return cache.match(request).then(function (cached) {
 
-			// -------------------------------------------------
-			// CACHE HIT -> RETURN IMMEDIATELY
-			// -------------------------------------------------
 			if (cached) {
 				event.waitUntil(
 					refreshIfNeeded(cache, request)
 				);
-
 				return cached;
 			}
 
-			// -------------------------------------------------
-			// CACHE MISS -> NETWORK
-			// -------------------------------------------------
 			return fetchAndCache(cache, request);
 		});
 	});
@@ -80,7 +116,7 @@ function handleImageRequest(event, request) {
 
 
 // =====================================================
-// REFRESH IF OLD
+// IMAGE REFRESH (TTL)
 // =====================================================
 
 function refreshIfNeeded(cache, request) {
@@ -88,14 +124,12 @@ function refreshIfNeeded(cache, request) {
 		if (!fresh) {
 			return fetchAndCache(cache, request);
 		}
-	}).catch(function () {
-		// ignore
-	});
+	}).catch(function () {});
 }
 
 
 // =====================================================
-// FETCH + CACHE
+// IMAGE FETCH + CACHE
 // =====================================================
 
 function fetchAndCache(cache, request) {
@@ -166,7 +200,7 @@ function fetchWithTimeout(request, ms) {
 
 
 // =====================================================
-// TTL CHECK
+// TTL CHECK (images)
 // =====================================================
 
 function isFresh(cache, request) {
@@ -181,53 +215,113 @@ function isFresh(cache, request) {
 
 
 // =====================================================
-// CLEANUP
+// NETWORK FIRST (HTML / API)
 // =====================================================
 
-function cleanupOldCache() {
+function networkFirst(request, cacheName) {
+	return fetch(request)
+		.then(function (response) {
+
+			if (!response || response.status !== 200) {
+				return response;
+			}
+
+			return caches.open(cacheName).then(function (cache) {
+				cache.put(request, response.clone());
+				return response;
+			});
+		})
+		.catch(function () {
+			return caches.match(request);
+		});
+}
+
+
+// =====================================================
+// STALE WHILE REVALIDATE (JS / CSS)
+// =====================================================
+
+function staleWhileRevalidate(request, cacheName) {
+	return caches.open(cacheName).then(function (cache) {
+
+		return cache.match(request).then(function (cached) {
+
+			var fetchPromise = fetch(request)
+				.then(function (networkResponse) {
+
+					if (networkResponse && networkResponse.status === 200) {
+						cache.put(request, networkResponse.clone());
+					}
+
+					return networkResponse;
+				})
+				.catch(function () {
+					return cached;
+				});
+
+			return cached || fetchPromise;
+		});
+	});
+}
+
+
+// =====================================================
+// CLEANUP (FULL)
+// =====================================================
+
+function cleanupOldCaches() {
 	return caches.keys().then(function (keys) {
 
+		// удалить старые cache names
 		return Promise.all(
 			keys.map(function (name) {
-				if (name !== CACHE_NAME) {
+				if (
+					name !== IMAGE_CACHE &&
+					name !== STATIC_CACHE &&
+					name !== API_CACHE
+				) {
 					return caches.delete(name);
 				}
 			})
-		).then(function () {
-			return caches.open(CACHE_NAME);
-		}).then(function (cache) {
-			return cache.keys().then(function (requests) {
+		);
 
-				var chain = Promise.resolve();
+	}).then(function () {
 
-				requests.forEach(function (request) {
-					if (request.url.indexOf(META_SUFFIX) !== -1) return;
+		// TTL cleanup IMAGE_CACHE
+		return caches.open(IMAGE_CACHE);
 
-					chain = chain.then(function () {
+	}).then(function (cache) {
 
-						var metaKey = request.url + META_SUFFIX;
+		return cache.keys().then(function (requests) {
 
-						return cache.match(metaKey).then(function (meta) {
+			var chain = Promise.resolve();
 
-							if (!meta) return;
+			requests.forEach(function (request) {
 
-							return meta.text().then(function (time) {
+				if (request.url.indexOf(META_SUFFIX) !== -1) return;
 
-								if (
-									Date.now() - Number(time) > MAX_AGE
-								) {
-									return cache.delete(request)
-										.then(function () {
-											return cache.delete(metaKey);
-										});
-								}
-							});
+				chain = chain.then(function () {
+
+					var metaKey = request.url + META_SUFFIX;
+
+					return cache.match(metaKey).then(function (meta) {
+
+						if (!meta) return;
+
+						return meta.text().then(function (time) {
+
+							if (Date.now() - Number(time) > MAX_AGE) {
+								return cache.delete(request)
+									.then(function () {
+										return cache.delete(metaKey);
+									});
+							}
 						});
 					});
 				});
-
-				return chain;
 			});
+
+			return chain;
 		});
 	});
 }
