@@ -10,13 +10,14 @@ var API_CACHE = "api-cache";
 
 var META_SUFFIX = ":meta";
 
-// TTL (7 days unified)
+// TTL (7 days)
 var MAX_AGE = 1000 * 60 * 60 * 24 * 7;
 
-// timeout
-var FETCH_TIMEOUT = 7000;
 
-// image in-flight dedupe
+// =====================================================
+// IN-FLIGHT DEDUPE (GLOBAL)
+// =====================================================
+
 var IN_FLIGHT = new Map();
 
 
@@ -80,6 +81,108 @@ self.addEventListener("fetch", function (event) {
 
 
 // =====================================================
+// SMART FETCH (core with dedupe)
+// =====================================================
+
+function smartFetch(request, options) {
+	var {
+		timeout = 0,
+		retries = 0,
+		retryDelay = 300,
+		cache = null,
+		cacheKey = request,
+		cacheable = true,
+		fallbackToCache = true,
+		dedupe = true
+	} = options || {};
+
+	var key = (typeof cacheKey === "string") ? cacheKey : cacheKey.url;
+
+	if (dedupe && IN_FLIGHT.has(key)) {
+		return IN_FLIGHT.get(key);
+	}
+
+	function attempt(n) {
+		return fetchWithOptionalTimeout(request, timeout)
+			.then(function (response) {
+
+				if (!response || (response.status !== 200 && response.type !== "opaque")) {
+					throw new Error("Bad response");
+				}
+
+				if (cache && cacheable) {
+					return Promise.all([
+						cache.put(cacheKey, response.clone()),
+						cache.put(
+							cacheKey.url + META_SUFFIX,
+							new Response(Date.now().toString())
+						)
+					]).then(function () {
+						return response;
+					});
+				}
+
+				return response;
+			})
+			.catch(function (err) {
+
+				if (n < retries) {
+					return delay(retryDelay).then(function () {
+						return attempt(n + 1);
+					});
+				}
+
+				if (fallbackToCache && cache) {
+					return cache.match(cacheKey).then(function (cached) {
+						if (cached) return cached;
+						throw err;
+					});
+				}
+
+				throw err;
+			});
+	}
+
+	var promise = attempt(0).finally(function () {
+		IN_FLIGHT.delete(key);
+	});
+
+	if (dedupe) {
+		IN_FLIGHT.set(key, promise);
+	}
+
+	return promise;
+}
+
+
+// =====================================================
+// TIMEOUT + DELAY
+// =====================================================
+
+function fetchWithOptionalTimeout(request, ms) {
+	if (!ms) return fetch(request);
+
+	var controller = new AbortController();
+
+	var timer = setTimeout(function () {
+		controller.abort();
+	}, ms);
+
+	return fetch(request, {
+		signal: controller.signal
+	}).finally(function () {
+		clearTimeout(timer);
+	});
+}
+
+function delay(ms) {
+	return new Promise(function (resolve) {
+		setTimeout(resolve, ms);
+	});
+}
+
+
+// =====================================================
 // GENERIC HANDLER
 // =====================================================
 
@@ -89,7 +192,7 @@ function handleGeneric(event, request, cacheName, strategy) {
 		return cache.match(request).then(function (cached) {
 
 			if (cached) {
-				event.waitUntil(refreshGeneric(cache, request));
+				event.waitUntil(refreshIfNeeded(cache, request));
 				return cached;
 			}
 
@@ -98,97 +201,35 @@ function handleGeneric(event, request, cacheName, strategy) {
 	});
 }
 
-function refreshGeneric(cache, request) {
-	return isFresh(cache, request).then(function (fresh) {
-		if (!fresh) {
-			return fetchAndCacheGeneric(cache, request);
-		}
-		return Promise.resolve();
-	});
-}
-
-function fetchAndCacheGeneric(cache, request) {
-	return fetch(request)
-		.then(function (response) {
-
-			if (
-				response &&
-				(response.status === 200 || response.type === "opaque")
-			) {
-				return Promise.all([
-					cache.put(request, response.clone()),
-					cache.put(
-						request.url + META_SUFFIX,
-						new Response(Date.now().toString())
-					)
-				]).then(function () {
-					return response;
-				});
-			}
-
-			return response;
-		})
-		.catch(function () {
-			return cache.match(request).then(function (cached) {
-				if (cached) return cached;
-				return new Response("Network error", { status: 502 });
-			});
-		});
-}
-
 
 // =====================================================
 // STRATEGIES
 // =====================================================
 
 function networkFirst(request, cache) {
-	return fetch(request)
-		.then(function (response) {
-
-			if (!response || (response.status !== 200 && response.type !== "opaque")) {
-				return response;
-			}
-
-			return Promise.all([
-				cache.put(request, response.clone()),
-				cache.put(
-					request.url + META_SUFFIX,
-					new Response(Date.now().toString())
-				)
-			]).then(function () {
-				return response;
-			});
-		})
-		.catch(function () {
-			return cache.match(request).then(function (cached) {
-				if (cached) return cached;
-				return new Response("Offline", { status: 503 });
-			});
-		});
+	return smartFetch(request, {
+		timeout: 5000,
+		retries: 1,
+		cache: cache,
+		cacheKey: request,
+		fallbackToCache: true,
+		dedupe: false // важно для navigate/API
+	}).catch(function () {
+		return new Response("Offline", { status: 503 });
+	});
 }
 
 function staleWhileRevalidate(request, cache, cached) {
 
-	var fetchPromise = fetch(request)
-		.then(function (response) {
-
-			if (response && (response.status === 200 || response.type === "opaque")) {
-				return Promise.all([
-					cache.put(request, response.clone()),
-					cache.put(
-						request.url + META_SUFFIX,
-						new Response(Date.now().toString())
-					)
-				]).then(function () {
-					return response;
-				});
-			}
-
-			return response;
-		})
-		.catch(function () {
-			return cached;
-		});
+	var fetchPromise = smartFetch(request, {
+		timeout: 5000,
+		retries: 1,
+		cache: cache,
+		cacheKey: request,
+		dedupe: true
+	}).catch(function () {
+		return cached;
+	});
 
 	return cached || fetchPromise;
 }
@@ -208,81 +249,22 @@ function handleImageRequest(event, request) {
 				return cached;
 			}
 
-			return fetchAndCacheImage(cache, request);
-		});
-	});
-}
-
-function refreshIfNeeded(cache, request) {
-	return isFresh(cache, request).then(function (fresh) {
-		if (!fresh) {
-			return fetchAndCacheImage(cache, request);
-		}
-		return Promise.resolve();
-	});
-}
-
-function fetchAndCacheImage(cache, request) {
-	var key = request.url;
-
-	if (IN_FLIGHT.has(key)) {
-		return IN_FLIGHT.get(key);
-	}
-
-	var promise = fetchWithTimeout(request, FETCH_TIMEOUT)
-		.then(function (response) {
-
-			if (response && (response.status === 200 || response.type === "opaque")) {
-				return Promise.all([
-					cache.put(request, response.clone()),
-					cache.put(
-						key + META_SUFFIX,
-						new Response(Date.now().toString())
-					)
-				]).then(function () {
-					return response;
-				});
-			}
-
-			return response;
-		})
-		.catch(function () {
-			return cache.match(request).then(function (fallback) {
-				if (fallback) return fallback;
+			return smartFetch(request, {
+				timeout: 7000,
+				retries: 1,
+				cache: cache,
+				cacheKey: request,
+				dedupe: true
+			}).catch(function () {
 				return new Response("", { status: 504 });
 			});
-		})
-		.finally(function () {
-			IN_FLIGHT.delete(key);
 		});
-
-	IN_FLIGHT.set(key, promise);
-
-	return promise;
-}
-
-
-// =====================================================
-// FETCH WITH TIMEOUT
-// =====================================================
-
-function fetchWithTimeout(request, ms) {
-	var controller = new AbortController();
-
-	var timer = setTimeout(function () {
-		controller.abort();
-	}, ms);
-
-	return fetch(request, {
-		signal: controller.signal
-	}).finally(function () {
-		clearTimeout(timer);
 	});
 }
 
 
 // =====================================================
-// TTL CHECK (ALL CACHE TYPES)
+// TTL CHECK
 // =====================================================
 
 function isFresh(cache, request) {
@@ -295,15 +277,27 @@ function isFresh(cache, request) {
 	});
 }
 
+function refreshIfNeeded(cache, request) {
+	return isFresh(cache, request).then(function (fresh) {
+		if (!fresh) {
+			return smartFetch(request, {
+				timeout: 5000,
+				retries: 1,
+				cache: cache,
+				cacheKey: request
+			});
+		}
+	});
+}
+
 
 // =====================================================
-// CLEANUP ALL CACHES (your logic preserved)
+// CLEANUP
 // =====================================================
 
 function cleanupAllCaches() {
 	return caches.keys().then(function (keys) {
 
-		// remove unknown caches
 		return Promise.all(
 			keys.map(function (name) {
 				if (
@@ -318,7 +312,6 @@ function cleanupAllCaches() {
 
 	}).then(function () {
 
-		// TTL cleanup ALL caches
 		return caches.keys();
 
 	}).then(function (keys) {
