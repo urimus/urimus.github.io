@@ -10,13 +10,13 @@ var API_CACHE = "api-cache-v1";
 
 var META_SUFFIX = ":meta";
 
-// TTL (7 days)
+// TTL (7 days unified)
 var MAX_AGE = 1000 * 60 * 60 * 24 * 7;
 
-// network timeout
+// timeout
 var FETCH_TIMEOUT = 7000;
 
-// in-flight dedupe (images)
+// image in-flight dedupe
 var IN_FLIGHT = new Map();
 
 
@@ -80,7 +80,7 @@ self.addEventListener("fetch", function (event) {
 
 
 // =====================================================
-// GENERIC HANDLER (TTL + strategies)
+// GENERIC HANDLER
 // =====================================================
 
 function handleGeneric(event, request, cacheName, strategy) {
@@ -93,7 +93,7 @@ function handleGeneric(event, request, cacheName, strategy) {
 				return cached;
 			}
 
-			return strategy(request, cache);
+			return strategy(request, cache, cached);
 		});
 	});
 }
@@ -103,6 +103,7 @@ function refreshGeneric(cache, request) {
 		if (!fresh) {
 			return fetchAndCacheGeneric(cache, request);
 		}
+		return Promise.resolve();
 	});
 }
 
@@ -110,7 +111,10 @@ function fetchAndCacheGeneric(cache, request) {
 	return fetch(request)
 		.then(function (response) {
 
-			if (response && response.status === 200) {
+			if (
+				response &&
+				(response.status === 200 || response.type === "opaque")
+			) {
 				return Promise.all([
 					cache.put(request, response.clone()),
 					cache.put(
@@ -125,7 +129,10 @@ function fetchAndCacheGeneric(cache, request) {
 			return response;
 		})
 		.catch(function () {
-			return cache.match(request);
+			return cache.match(request).then(function (cached) {
+				if (cached) return cached;
+				return new Response("Network error", { status: 502 });
+			});
 		});
 }
 
@@ -138,7 +145,7 @@ function networkFirst(request, cache) {
 	return fetch(request)
 		.then(function (response) {
 
-			if (!response || response.status !== 200) {
+			if (!response || (response.status !== 200 && response.type !== "opaque")) {
 				return response;
 			}
 
@@ -153,41 +160,42 @@ function networkFirst(request, cache) {
 			});
 		})
 		.catch(function () {
-			return cache.match(request);
+			return cache.match(request).then(function (cached) {
+				if (cached) return cached;
+				return new Response("Offline", { status: 503 });
+			});
 		});
 }
 
-function staleWhileRevalidate(request, cache) {
-	return cache.match(request).then(function (cached) {
+function staleWhileRevalidate(request, cache, cached) {
 
-		var fetchPromise = fetch(request)
-			.then(function (response) {
+	var fetchPromise = fetch(request)
+		.then(function (response) {
 
-				if (response && response.status === 200) {
-					return Promise.all([
-						cache.put(request, response.clone()),
-						cache.put(
-							request.url + META_SUFFIX,
-							new Response(Date.now().toString())
-						)
-					]).then(function () {
-						return response;
-					});
-				}
+			if (response && (response.status === 200 || response.type === "opaque")) {
+				return Promise.all([
+					cache.put(request, response.clone()),
+					cache.put(
+						request.url + META_SUFFIX,
+						new Response(Date.now().toString())
+					)
+				]).then(function () {
+					return response;
+				});
+			}
 
-				return response;
-			})
-			.catch(function () {
-				return cached;
-			});
+			return response;
+		})
+		.catch(function () {
+			return cached;
+		});
 
-		return cached || fetchPromise;
-	});
+	return cached || fetchPromise;
 }
 
 
 // =====================================================
-// IMAGE HANDLER (твой)
+// IMAGE HANDLER
 // =====================================================
 
 function handleImageRequest(event, request) {
@@ -210,6 +218,7 @@ function refreshIfNeeded(cache, request) {
 		if (!fresh) {
 			return fetchAndCacheImage(cache, request);
 		}
+		return Promise.resolve();
 	});
 }
 
@@ -223,10 +232,7 @@ function fetchAndCacheImage(cache, request) {
 	var promise = fetchWithTimeout(request, FETCH_TIMEOUT)
 		.then(function (response) {
 
-			if (
-				response &&
-				(response.status === 200 || response.type === "opaque")
-			) {
+			if (response && (response.status === 200 || response.type === "opaque")) {
 				return Promise.all([
 					cache.put(request, response.clone()),
 					cache.put(
@@ -239,6 +245,12 @@ function fetchAndCacheImage(cache, request) {
 			}
 
 			return response;
+		})
+		.catch(function () {
+			return cache.match(request).then(function (fallback) {
+				if (fallback) return fallback;
+				return new Response("", { status: 504 });
+			});
 		})
 		.finally(function () {
 			IN_FLIGHT.delete(key);
@@ -270,7 +282,7 @@ function fetchWithTimeout(request, ms) {
 
 
 // =====================================================
-// TTL CHECK
+// TTL CHECK (ALL CACHE TYPES)
 // =====================================================
 
 function isFresh(cache, request) {
@@ -285,13 +297,13 @@ function isFresh(cache, request) {
 
 
 // =====================================================
-// CLEANUP (FULL + твоя логика)
+// CLEANUP ALL CACHES (your logic preserved)
 // =====================================================
 
 function cleanupAllCaches() {
 	return caches.keys().then(function (keys) {
 
-		// удалить старые cache names
+		// remove unknown caches
 		return Promise.all(
 			keys.map(function (name) {
 				if (
@@ -306,7 +318,7 @@ function cleanupAllCaches() {
 
 	}).then(function () {
 
-		// TTL cleanup ВСЕХ кэшей
+		// TTL cleanup ALL caches
 		return caches.keys();
 
 	}).then(function (keys) {
