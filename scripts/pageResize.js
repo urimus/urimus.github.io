@@ -137,7 +137,7 @@ function preloadImages() {
 	];
 
 	const backgrounds = [
-		"action_adventure","action_horror","amv","ancient_rome","anekdots","animation",
+		...["action_adventure","action_horror","amv","ancient_rome","anekdots","animation",
 		"arnold_schwarzenegger","audio_video_processing","body_horror","book",
 		"bruce_willis","card","chanson","chupacabra","data_processing","disco","drawing",
 		"dystopia","einstein","energy_drinks","evil","falsifiability","gotham_city",
@@ -150,8 +150,10 @@ function preloadImages() {
 		"satanism_theistic","short","simulation","sitcom","site_map","space_opera",
 		"sssr","star_trek","sticky_note","strategy","stuff","succubus","superhero",
 		"sylvester_stallone","text_processing","totalitarianism","usa_ussr","viking",
-		"vin_diesel","warlock","wicca","work"
-	].map(f => `/images/icons/background/${f}.png`);
+		"vin_diesel","warlock","wicca","work"]
+			.map(f => `/images/icons/background/${f}.png`),
+		"/images/icons/background/brick_wall.jpg"
+	];
 
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
 
