@@ -328,6 +328,8 @@ function showFeedData(type, source, lang, result) {
 					const status = error.response?.status ?? 0;
 					const statusText = error.response?.statusText ?? error.message ?? String(error);
 
+					consoleAxiosError(error, t("proxyUnavilable") + ". (" + status + ")");
+
 					var table2 = document.getElementById("messagetable");
 					table2.replaceChildren();
 					$("#processedDiv").hide();
