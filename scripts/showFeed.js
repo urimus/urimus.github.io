@@ -323,12 +323,13 @@ function showFeedData(type, source, lang, result) {
 					}
 				},
 				error => { // proxy does not work
+
 					if (error.code === 'ERR_CANCELED') return;
 
 					const status = error.response?.status ?? 0;
 					const statusText = error.response?.statusText ?? error.message ?? String(error);
 
-					consoleAxiosError(error, t("proxyUnavilable") + ". (" + status + ")");
+					consoleAxiosError(error, t("proxyUnavilable"));
 
 					var table2 = document.getElementById("messagetable");
 					table2.replaceChildren();
