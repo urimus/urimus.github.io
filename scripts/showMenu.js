@@ -7488,10 +7488,12 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 		top_shift = top_scroll + h - table_height;
 	}
 	if (lastSubMenu != null) {
+		var rectTL = lastSubMenu.getBoundingClientRect();
+
 		lastSubMenu.innerHTML = "";
 		lastSubMenu.remove();
 		lastSubMenu = null;
-		shiftTransitionStart=top_scroll + lastRect.top+lastRect.height/2-table_height/2;
+		shiftTransitionStart=top_scroll + rectTL.top+rectTL.height/2-table_height/2;
 		if (shiftTransitionStart<0) {
 			shiftTransitionStart=top_scroll ;
 		}
@@ -7499,7 +7501,7 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 			shiftTransitionStart=top_scroll + h - table_height;
 		}
 		tableSM.style.top=shiftTransitionStart+"px";
-		left_shift = lastRect.right + (type === "contentsLink" ? 10 : -10);
+		left_shift = rectTL.left;
 		tableSM.style.left=left_shift+"px";
 		tableSM.offsetHeight;
 		tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
@@ -7545,7 +7547,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 	}
 
 	// additional case
-	if (lastSubMenu!=null) {
+	if (isMobileLike() && lastSubMenu!=null) {
 		rectT=lastSubMenu.getBoundingClientRect();
 		if (lastRect.left-rectT.left>=1) {
 			lastSubMenu = hideSubMenu(ele, 0, lastSubMenu.dataset.id);
@@ -7642,18 +7644,13 @@ function hideSubMenu(ele, manual = 0, additDel = "") {
 		tables[i] = document.getElementById("table" + (i + 1));
 	}
 
-// console.log(manual);
-
 	// subs with ret
 	if (manual == 0) {
-// console.log("ele.getBoundingClientRect().left - ", ele.getBoundingClientRect().left);
 		for (let i = maxSubCount - 1; i >= 0; i--) {
 			if (tables[i]) {
 				// use existing table for new contents
-// console.log("i - ", i, ", tables[i].dataset.origLeft - ", tables[i].dataset.origLeft);
 				if (tables[i].dataset.id != additDel && ele.getBoundingClientRect().left == tables[i].dataset.origLeft && eleID!=tables[i].dataset.id || lastSubMenuType == "contentsLink") {
 					ret=tables[i];
-// console.log("ret.dataset.origLeft - ", ret.dataset.origLeft);
 					requestAnimationFrame(() => {
 						document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
 					});
@@ -7720,7 +7717,6 @@ function hideSubMenu(ele, manual = 0, additDel = "") {
 			setTimeout(() => { obj.remove(); }, 200);
 		}
 	}
-// console.log("ret - ", ret);
 	return ret;
 }
 
