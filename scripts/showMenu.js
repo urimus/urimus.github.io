@@ -7642,18 +7642,18 @@ function hideSubMenu(ele, manual = 0, additDel = "") {
 		tables[i] = document.getElementById("table" + (i + 1));
 	}
 
-console.log(manual);
+// console.log(manual);
 
 	// subs with ret
 	if (manual == 0) {
-console.log("ele.getBoundingClientRect().left - ", ele.getBoundingClientRect().left);
+// console.log("ele.getBoundingClientRect().left - ", ele.getBoundingClientRect().left);
 		for (let i = maxSubCount - 1; i >= 0; i--) {
 			if (tables[i]) {
 				// use existing table for new contents
-console.log("i - ", i, ", tables[i].dataset.origLeft - ", tables[i].dataset.origLeft);
+// console.log("i - ", i, ", tables[i].dataset.origLeft - ", tables[i].dataset.origLeft);
 				if (tables[i].dataset.id != additDel && ele.getBoundingClientRect().left == tables[i].dataset.origLeft && eleID!=tables[i].dataset.id || lastSubMenuType == "contentsLink") {
 					ret=tables[i];
-console.log("ret.dataset.origLeft - ", ret.dataset.origLeft);
+// console.log("ret.dataset.origLeft - ", ret.dataset.origLeft);
 					requestAnimationFrame(() => {
 						document.getElementById(tables[i].dataset.id).setAttribute('onclick', "showSubMenu(this, '"+tables[i].dataset.lang+"', '"+tables[i].dataset.type+"', "+(i+1)+");");
 					});
@@ -7720,7 +7720,7 @@ console.log("ret.dataset.origLeft - ", ret.dataset.origLeft);
 			setTimeout(() => { obj.remove(); }, 200);
 		}
 	}
-console.log("ret - ", ret);
+// console.log("ret - ", ret);
 	return ret;
 }
 
