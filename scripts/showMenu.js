@@ -7720,6 +7720,7 @@ console.log("ret.dataset.origLeft - ", ret.dataset.origLeft);
 			setTimeout(() => { obj.remove(); }, 200);
 		}
 	}
+console.log("ret - ", ret);
 	return ret;
 }
 
