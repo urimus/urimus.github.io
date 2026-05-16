@@ -7429,7 +7429,7 @@ var loadingPopupImage = null;
 function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu) {
 
 	var tableSM, top_shift, left_shift, tableStyle, tableWidth, prevId, keys, i, id, top_scroll, h, rectT;
-	var table_height, table_top, table_bottom, shiftTransitionStart, opacity;
+	var table_height, table_top, table_bottom, shiftTransitionStart, opacity, vertAnimation = true;
 
 	opacity = lastSubMenu == null ? 0 : 1;
 
@@ -7482,29 +7482,37 @@ function createTableSM(newTableId, wholeMenu, key, lang, type, rect, lastSubMenu
 	table_top = top_shift - top_scroll;
 	table_bottom = top_shift - top_scroll + table_height;
 	if (table_top < 0) {
+		vertAnimation = false;
 		top_shift = top_scroll;
 	}
 	if (table_bottom > h) {
+		vertAnimation = false;
 		top_shift = top_scroll + h - table_height;
 	}
 	if (lastSubMenu != null) {
 		var rectTL = lastSubMenu.getBoundingClientRect();
-
 		lastSubMenu.innerHTML = "";
 		lastSubMenu.remove();
 		lastSubMenu = null;
-		shiftTransitionStart=top_scroll + rectTL.top+rectTL.height/2-table_height/2;
-		if (shiftTransitionStart<0) {
-			shiftTransitionStart=top_scroll ;
+		if (vertAnimation) {
+			shiftTransitionStart=top_scroll + rectTL.top+rectTL.height/2-table_height/2;
+			if (shiftTransitionStart<0) {
+				shiftTransitionStart=top_scroll ;
+			}
+			if (shiftTransitionStart+table_height - top_scroll > h) {
+				shiftTransitionStart=top_scroll + h - table_height;
+			}
+			tableSM.style.top=shiftTransitionStart+"px";
+			left_shift = rectTL.left;
+			tableSM.style.left=left_shift+"px";
+			tableSM.offsetHeight;
+			tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
+		} else {
+			left_shift = rectTL.left;
+			tableSM.style.left=left_shift+"px";
+			tableSM.offsetHeight;
+			tableSM.style.transition = "left 0.2s ease-out, opacity 0.2s linear";
 		}
-		if (shiftTransitionStart+table_height - top_scroll > h) {
-			shiftTransitionStart=top_scroll + h - table_height;
-		}
-		tableSM.style.top=shiftTransitionStart+"px";
-		left_shift = rectTL.left;
-		tableSM.style.left=left_shift+"px";
-		tableSM.offsetHeight;
-		tableSM.style.transition = "top 0.2s ease-out, left 0.2s ease-out, opacity 0.2s linear";
 		tableSM.style.top=top_shift+"px";
 		left_shift = rect.right + (type === "contentsLink" ? 10 : -10);
 		tableSM.style.left=left_shift+"px";
