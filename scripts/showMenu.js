@@ -7598,7 +7598,7 @@ function showSubMenu(ele, lang, type, newTableId) {
 
 	requestAnimationFrame(() => {
 		ele.setAttribute('onclick', "hideSubMenu(this, 1);");
-		if (isMobileLike()) {
+		if (isMobileLike() && type != "contentsLink") {
 			ele.setAttribute(
 				"onmouseleave",
 				`mouseOutMenu(this, "${wholeMenu[key].color}");
