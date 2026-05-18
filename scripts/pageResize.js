@@ -222,7 +222,7 @@ function preloadImages() {
 	].map(f => `/images/icons/background/${f}.png`);
 
 	const other = [
-		"background/brick_wall.jpg","styles/sunshine2_3.gif","colors.gif"
+		"background/brick_wall.jpg","styles/sunshine2_3.gif","colors.gif", "urmas.jpg"
 	].map(f => `/images/icons/${f}`);
 
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds, ...other];
