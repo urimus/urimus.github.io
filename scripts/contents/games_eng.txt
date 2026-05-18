@@ -23,7 +23,7 @@
 <span style="padding-left:20px;">- <a href="games_rpg_breakout_eng.html#alphabounce" class = "standardb_black" data-added="27th of Jul, 2016." data-genre="Breakout RPG" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Alphabounce</a></span>
 <span style="padding-left:10px;">&#9900; <a href="games_rpg_mmorpg_eng.html#rpg_mmorpg" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Role-Playing (RPG)" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Massively multiplayer online role-playing game (MMORPG)</a></span>
 <span style="padding-left:20px;">- <a href="games_rpg_mmorpg_eng.html#dragonica" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="MMORPG" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Dragonica</a></span>
-<span style="padding-left:10px;">&#9900; <a href="games_rpg_eng.html" class = "standardb_black" data-added="26th of Jul, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Role-Playing (RPG)</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_eng.html#rpg" class = "standardb_black" data-added="26th of Jul, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Role-Playing (RPG)</a></span>
 <span style="padding-left:20px;">- <a href="games_rpg_eng.html#dragon_quest" class = "standardb_black" data-added="26th of Jul, 2016." data-genre="Role-playing (RPG)" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Dragon Quest</a></span>
 <span style="padding-left:20px;">- <a href="games_rpg_eng.html#pillars_eternity" class = "standardb_black" data-added="14th of Dec, 2021." data-genre="Role-playing (RPG)" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Pillars of Eternity</a></span>
 

@@ -23,7 +23,7 @@
 <span style="padding-left:20px;">- <a href="games_rpg_breakout_rus.html#alphabounce" class = "standardb_black" data-added="27е Июл, 2016." data-genre="Breakout РПГ" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Alphabounce</a></span>
 <span style="padding-left:10px;">&#9900; <a href="games_rpg_mmorpg_rus.html#rpg_mmorpg" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Ролевая игра (РПГ)" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Массовая многопользовательская ролевая онлайн-игра (ММОРПГ)</a></span>
 <span style="padding-left:20px;">- <a href="games_rpg_mmorpg_rus.html#dragonica" class = "standardb_black" data-added="26е Июл, 2016." data-genre="ММОРПГ" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Dragonica</a></span>
-<span style="padding-left:10px;">&#9900; <a href="games_rpg_rus.html" class = "standardb_black" data-added="26е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Ролевая игра (РПГ)</a></span>
+<span style="padding-left:10px;">&#9900; <a href="games_rpg_rus.html#rpg" class = "standardb_black" data-added="26е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Ролевая игра (РПГ)</a></span>
 <span style="padding-left:20px;">- <a href="games_rpg_rus.html#dragon_quest" class = "standardb_black" data-added="26е Июл, 2016." data-genre="Ролевая игра (РПГ)" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Dragon Quest</a></span>
 <span style="padding-left:20px;">- <a href="games_rpg_rus.html#pillars_eternity" class = "standardb_black" data-added="14е Дек, 2021." data-genre="Ролевая игра (РПГ)" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Pillars of Eternity</a></span>
 
