@@ -220,7 +220,8 @@ function preloadImages() {
 		"sylvester_stallone","text_processing","totalitarianism","usa_ussr","viking",
 		"vin_diesel","warlock","wicca","work"]
 			.map(f => `/images/icons/background/${f}.png`),
-		"/images/icons/background/brick_wall.jpg", "/images/icons/styles/sunshine2_3.gif", "/images/icons/colors.gif"
+		...["background/brick_wall.jpg","styles/sunshine2_3.gif","colors.gif"]
+			.map(f => `/images/icons/${f}`)
 	];
 
 	const images = [...sortbyIcons, ...flags, ...htmlEditorIcons, ...feedIcons, ...backgrounds];
