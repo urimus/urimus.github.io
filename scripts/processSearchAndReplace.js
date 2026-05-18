@@ -215,9 +215,6 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 					document.getElementById("dateModified_lbl").innerHTML = formatDate(modified * 1000, lang);
 					setBOM(ret["first10bytes"]);
 
-					var textarea = document.getElementById("textarea_area");
-					var lines = textarea.value;
-
 					axios.get("scripts/php/getFileContents.php", {
 						params: {
 							filename: fileHref
@@ -225,12 +222,11 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 					})
 					.then(
 						response => {
-							var lines2 = response.data;
-							if (typeof lines2 === "string" && lines2 == "not logged in") { processSearchAndReplace(lang); return; }
-							if (lines2 != lines) {
-								textarea.value = lines2;
-								setTextAreaChanged(lang, false);
-							}
+							var lines = response.data;
+							if (typeof lines === "string" && lines == "not logged in") { processSearchAndReplace(lang); return; }
+							var textarea = document.getElementById("textarea_area");
+							textarea.value = lines;
+							setTextAreaChanged(lang, false);
 						},
 						consoleAxiosError
 					);

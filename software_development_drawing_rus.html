@@ -23,19 +23,20 @@
 <!-- Axios Script -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- Internationalisation Script -->
-  <script src="https://unpkg.com/i18next@23/i18next.min.js"></script>
-  <script src="scripts/i18next.js"></script>
+<script src="https://unpkg.com/i18next@23/i18next.min.js"></script>
+<script src="scripts/i18next.js"></script>
+<script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
 
-  <script src="scripts/tooltip.js"></script> <!-- jQuery UI Tooltip -->
-  <script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/pageResize.js"></script> <!-- Processing Page Resize -->
+<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
 
-  <script>
+<script>
 	var scrollForeColor="#dbd9d9";
 	var scrollBackColor="#ffffff";
 	document.documentElement.setAttribute("style", "scrollbar-color: "+scrollForeColor+" "+scrollBackColor+";");
-  </script>
+</script>
 
-  <style>
+<style>
   .ui-tooltip.custom-tooltip {
 	background: linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%);
 	font-size: 13px; 
@@ -50,17 +51,14 @@
 	width: max-content;
 	pointer-events: none;
   }
-  </style>
-
-<script src="scripts/showMenu.js"></script> <!-- ShowPopupMenu -->
+</style>
 
 <script>
 
-var menuHeight=23*33;
-var imgBgSrc="images/icons/background/drawing.png";
-var imgBgStarSrc="images/icons/background/sticky_note.png";
+	var menuHeight = 23*33;
+	var imgBgSrc = "images/icons/background/drawing.png";
+	var imgBgStarSrc = "images/icons/background/sticky_note.png";
 </script>
-<!-- End of Background Images Script -->
 
 </head>
 

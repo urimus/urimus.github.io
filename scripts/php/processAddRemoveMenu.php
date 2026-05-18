@@ -52,11 +52,11 @@ $file_contents=file_get_contents($filename);
 
 
 /// --------------- on the top
-$matchPos = strpos($file_contents, "var menuHeight=");
+$matchPos = strpos($file_contents, "var menuHeight = ");
 $matchPos2 = strpos($file_contents, "*", $matchPos);
 $matchPos3 = strpos($file_contents, ";", $matchPos2);
-$menuHeightInit1=substr($file_contents, $matchPos+strlen("var menuHeight="), $matchPos2-$matchPos-strlen("var menuHeight="));
-$menuHeightInit2=substr($file_contents, $matchPos+strlen("var menuHeight=")+strlen($menuHeightInit1)+1, $matchPos3-$matchPos2-1);
+$menuHeightInit1=substr($file_contents, $matchPos+strlen("var menuHeight = "), $matchPos2-$matchPos-strlen("var menuHeight = "));
+$menuHeightInit2=substr($file_contents, $matchPos+strlen("var menuHeight = ")+strlen($menuHeightInit1)+1, $matchPos3-$matchPos2-1);
 
 $menuHeightInt1=intval($menuHeightInit1);
 $menuHeightInt2=intval($menuHeightInit2);
@@ -69,7 +69,7 @@ $statisticsTimesReplaced=0;
 if ($matchPos!==false) {
 	$statisticsTimesReplaced++;
 	$lineNrs[]=substr_count(substr($file_contents, 0, $matchPos),"\n");
-	$file_contents=substr($file_contents, 0, $matchPos)."var menuHeight=".$menuHeightInt1."*".$menuHeightInt2_new.substr($file_contents, $matchPos3);
+	$file_contents=substr($file_contents, 0, $matchPos)."var menuHeight = ".$menuHeightInt1."*".$menuHeightInt2_new.substr($file_contents, $matchPos3);
 }
 
 $menuHeightInt=$menuHeightInt1*$menuHeightInt2_new;
