@@ -550,7 +550,7 @@ function consoleAxiosError(error, description) {
 		logData("POST data:", postData);
 	}
 
-	console.log("Error Code:", error.code || "Unknown Error");
+	console.log("Error Code:", error.code || "(none)");
 	console.log("Error Message:", error.message);
 	console.log("Response:", response.data || "(none)");
 
