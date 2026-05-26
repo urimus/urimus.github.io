@@ -1,0 +1,3 @@
+﻿<b class="text_blue">Обо Мне</b>
+&#9679; <a href="about_me_rus.html" class = "standardb_blue" data-added="02е Апр, 2014." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Обо Мне</a>
+&#9679; <a href="about_me_rus.html#amv" class = "standardb_blue" data-added="21е Дек, 2023." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">AMV</a>

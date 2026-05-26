@@ -1,0 +1,9 @@
+﻿<b class="text_green_blue">Satanism</b>
+&#10008; <a href="satanism_atheistic_eng.html" class = "standardb_green" data-added="06th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Atheistic</a>
+<span style="padding-left:10px;">- <a href="satanism_atheistic_eng.html#laveyan_satanism" class = "standardb_green" data-added="06th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">LaVeyan Satanism</a></span>
+<span style="padding-left:10px;">- <a href="satanism_atheistic_eng.html#church_of_satan" class = "standardb_green" data-added="07th of May, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Church of Satan</a></span>
+<span style="padding-left:10px;">- <a href="satanism_atheistic_eng.html#the_satanic_temple" class = "standardb_green" data-added="06th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">The Satanic Temple</a></span>
+&#10004; <a href="satanism_theistic_eng.html" class = "standardb_green" data-added="07th of May, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Theistic</a>
+<span style="padding-left:10px;">- <a href="satanism_theistic_eng.html#church_of_azazel" class = "standardb_green" data-added="06th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">The Church of Azazel</a></span>
+<span style="padding-left:10px;">- <a href="satanism_theistic_eng.html#joy_of_satan_ministries" class = "standardb_green" data-added="06th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');"> Joy of Satan Ministries</a></span>
+&#9679; <a href="satanism_simvoly_eng.html" class = "standardb_green" data-added="16th of May, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Symbolics</a>
