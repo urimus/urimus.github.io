@@ -2196,13 +2196,6 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 			} else {
 				// complete update absent
 
-				document.getElementById("loadingSpanTitle").innerHTML =
-					t("updatingRecord")
-					+ " #" + (i + 1)
-					+ (updateAttempt > 1 ? "/" + updateAttempt : "")
-					+ ".&nbsp;";
-
-
 				// check for redirect in html
 				redirectURL = getMeta(doc, 'meta[http-equiv="refresh"]');
 				if (redirectURL && redirectCount < 5) {
