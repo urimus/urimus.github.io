@@ -2222,6 +2222,17 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					result.entries[i].origLink = null;
 				}
 
+				if (updateAttempt < 5) { // 5 attempts
+					console.log(
+						t("updateAbsent")
+						+ ". " + t("record")
+						+ " # " + (i + 1)
+						+ ", " + t("updateAttempt") + " = " + updateAttempt
+					);
+					update(i, source, type, result, lang, controller, updateAttempt + 1, redirectCount);
+					return;
+				}
+
 				console.log(
 					t("updateAbsent")
 					+ ". " + t("record")
@@ -2248,7 +2259,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				+ ".&nbsp;";
 
 			consoleAxiosError(error, t("record") + " # " + (i + 1) + " | " + t("updateAttempt") + " " + updateAttempt);
-			if ( updateAttempt < 5) { // 5 attempts
+			if (updateAttempt < 5) { // 5 attempts
 				update(i, source, type, result, lang, controller, updateAttempt + 1, redirectCount);
 				return;
 			}
