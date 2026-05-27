@@ -311,6 +311,7 @@ function showFeedData(type, source, lang, result) {
 			.then(
 				response => { // proxy works
 					$("#processedDiv").show();
+					document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecords") + ".&nbsp;";
 					adjustFeedScrollDiv();
 					// 10 updates simultaneously only
 					if (source == "artemis" || source == "cbs" || (source=="nasa" && type!="image") || source == "yonhap" || source=="yahoo") {
@@ -1915,7 +1916,7 @@ function checkProcessedCount(source, type, result, lang, controller, pf = 1) {
 		failedCountTitle.innerHTML = "&nbsp;(#&#10062;: " + failedCountInt + ")";
 		processedCount = document.getElementById("processedCount");
 		result.totalUpdated++;
-		processedCount.innerHTML = (result.totalUpdated + 1);
+		processedCount.innerHTML = result.totalUpdated;
 		document.getElementById("leftCount").innerHTML = (totalEntries - result.totalUpdated);
 	}
 
@@ -1944,7 +1945,7 @@ function checkProcessedCount(source, type, result, lang, controller, pf = 1) {
 			passedCount.innerHTML = parseInt(passedCount.innerHTML) + 1;
 			processedCount = document.getElementById("processedCount");
 			result.totalUpdated++;
-			processedCount.innerHTML = (result.totalUpdated + 1);
+			processedCount.innerHTML = result.totalUpdated;
 			document.getElementById("leftCount").innerHTML = (totalEntries - result.totalUpdated);
 		}
 		if (nextUpdateRecordSet) {
@@ -1960,12 +1961,6 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 	var doc, mediaURL, description, mediaComment;
 	var categories, creators, creatorsUrls, seeAlso, videoURL, locStUpdateDataNew, locStPar, j, redirectURL;
 
-	document.getElementById("loadingSpanTitle").innerHTML =
-		t("updatingRecord")
-		+ " #" + (i + 1)
-		+ (updateAttempt > 1 ? "/" + updateAttempt : "")
-		+ ".&nbsp;";
-
 	axios.get(proxyURL, {
 		params: {
 			url: result.entries[i].link,
@@ -1977,12 +1972,6 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 		response => {
 
 			const data = response.data;
-
-			document.getElementById("loadingSpanTitle").innerHTML =
-				t("updatingRecord")
-				+ " #" + (i + 1)
-				+ (updateAttempt > 1 ? "/" + updateAttempt : "")
-				+ ".&nbsp;";
 
 			doc = (new DOMParser).parseFromString(data, "text/html");
 
@@ -2181,6 +2170,13 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 
 			if (description != null && mediaURL != null) {
 				// success
+
+				document.getElementById("loadingSpanTitle").innerHTML =
+					t("updatingRecord")
+					+ " #" + (i + 1)
+					+ (updateAttempt > 1 ? "/" + updateAttempt : "")
+					+ " &#9989;.&nbsp;";
+
 				locStPar = source + "_" + type + "_updates";
 				var locStUpdateData = getLocalStorageData(locStPar);
 				if (result.entries[i].origLink != null) {
@@ -2195,6 +2191,12 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				checkProcessedCount(source, type, result, lang, controller, 1);
 			} else {
 				// complete update absent
+
+				document.getElementById("loadingSpanTitle").innerHTML =
+					t("updatingRecord")
+					+ " #" + (i + 1)
+					+ (updateAttempt > 1 ? "/" + updateAttempt : "")
+					+ " &#10062;.&nbsp;";
 
 				// check for redirect in html
 				redirectURL = getMeta(doc, 'meta[http-equiv="refresh"]');
@@ -2249,7 +2251,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				t("updatingRecord")
 				+ " #" + (i + 1)
 				+ (updateAttempt > 1 ? "/" + updateAttempt : "")
-				+ ".&nbsp;";
+				+ " &#10062;.&nbsp;";
 
 			consoleAxiosError(error, t("record") + " # " + (i + 1) + " | " + t("updateAttempt") + " " + updateAttempt);
 			if (updateAttempt < 5) { // 5 attempts
