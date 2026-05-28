@@ -34,37 +34,22 @@ b. Electronic Dance Music (EDM)
 2. Eisenpunk
 3. Gabry Ponte
 
-c. Electronic rock
+c. Electro-Industrial
+1. Das Ich
+2. Diary of Dreams
+3. La Magra
+4. Rabia Sorda
+
+d. Electronic rock
 1. Blue Stahli
 
-d. Synthwave
+e. Synthwave
 1. Dance With the Dead
 2. DeadLife
 3. The Midnight
 4. Night Club
 5. Scandroid
 ---------------------------------- Electronic music End ----------------------------------
-
-
-
-
----------------------------------- Industrial ----------------------------------- **** Done
-a. Electro-Industrial
-1. Das Ich
-2. Diary of Dreams
-3. La Magra
-4. Rabia Sorda
-
-b. Industrial Metal:
-1. Dawn of Ashes
-2. Gothminister
-3. Static-X
-
-c. Industrial Rock
-1. Garbage
-2. Mono Inc.
----------------------------------- Industrial End -------------------------------
-
 
 
 ---------------------------------- Metal ------------------------------------------------ **** Done
@@ -87,11 +72,16 @@ d. Gothic Metal
 4. Sirenia
 5. To/Die/For
 
-e. Power Metal:
+e. Industrial Metal:
+1. Dawn of Ashes
+2. Gothminister
+3. Static-X
+
+f. Power Metal:
 1. Battle Beast
 2. Sabaton
 
-f. Symphonic Metal:
+g. Symphonic Metal:
 1. Therion
 ---------------------------------- Metal End -------------------------------------------
 

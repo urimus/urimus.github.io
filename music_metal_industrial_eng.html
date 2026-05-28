@@ -13,8 +13,8 @@
 <link rel="stylesheet" href="styles.css">
 
 <!-- For Google Index -->
-<link rel="alternate" hreflang="en" href="https://urimus.github.io/music_industrial_metal_eng.html">
-<link rel="alternate" hreflang="ru" href="https://urimus.github.io/music_industrial_metal_rus.html">
+<link rel="alternate" hreflang="en" href="https://urimus.github.io/music_metal_industrial_eng.html">
+<link rel="alternate" hreflang="ru" href="https://urimus.github.io/music_metal_industrial_rus.html">
 
 <!-- jQuery and jQuery UI Scripts -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.min.css">
@@ -55,8 +55,8 @@
 </style>
 
 <script>
-	var menuHeight = 23*42;
-	var imgBgSrc = "images/icons/background/industrial.png";
+	var menuHeight = 23*45;
+	var imgBgSrc = "images/icons/background/metal.png";
 	var imgBgStarSrc = "images/icons/background/sticky_note.png";
 </script>
 
@@ -91,10 +91,10 @@
 			onmouseleave="if (!clickStarted) this.className='flag_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('music_industrial_metal_eng.html' + window.location.hash);
+					window.open('music_metal_industrial_eng.html' + window.location.hash);
 				} else {
 					clickStarted = true;
-					window.location.href='music_industrial_metal_eng.html' + window.location.hash;
+					window.location.href='music_metal_industrial_eng.html' + window.location.hash;
 				};"
 			class="flag_selected"
 			title="english"
@@ -111,10 +111,10 @@
 			onmouseleave="if (!clickStarted) this.className='flag_not_selected'"
 			onclick="
 				if (event.ctrlKey) {
-					window.open('music_industrial_metal_rus.html' + window.location.hash);
+					window.open('music_metal_industrial_rus.html' + window.location.hash);
 				} else {
 					clickStarted = true;
-					window.location.href='music_industrial_metal_rus.html' + window.location.hash;
+					window.location.href='music_metal_industrial_rus.html' + window.location.hash;
 				};"
 			class="flag_not_selected"
 			title="русский"
@@ -139,7 +139,7 @@
 	</tr>
 	<tr>
 		<td height="3" bgcolor="#ff8a00"></td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center">
@@ -171,7 +171,7 @@
 		class="menu_not_selected_blue">
 		About me</div>
 	</td>
-	</tr>   
+	</tr>	
 	<tr>
 		<td align="center" >
 		<div id="menu_3"
@@ -189,7 +189,7 @@
 		class="menu_not_selected_blue">
 		About my work</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center" >
@@ -279,7 +279,7 @@
 		style="padding-left: 5px;">
 		&#9679; Chanson <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="left" >
@@ -319,7 +319,7 @@
 		style="padding-left: 5px;">
 		&#9679; Disco</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="left" >
@@ -333,95 +333,161 @@
 		style="padding-left: 5px;">
 		&#9679; Electronic</div>
 	</td>
-	</tr>   
-
-	<tr>
-		<td align="left" >
-		<div id="menu_7_6"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'music');" 
-		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
-		onclick="showSubMenu(this, 'eng', 'music');"
-		class="menu_selected"
-		style="padding-left: 5px;">
-		&#9679; Industrial</div>
-	</td>
-	</tr>   
-
-	<tr>
-		<td align="left" >
-		<div id="menu_7_6_1"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('music_industrial_electro_eng.html');
-			} else {
-				clickStarted = true;
-				window.location.href='music_industrial_electro_eng.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-		&bull; Electro-</div>
-	</td>
-	</tr>   
-
-	<tr>
-		<td align="left" >
-		<div id="menu_7_6_2"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('music_industrial_metal_eng.html');
-			} else {
-				clickStarted = true;
-				window.location.href='music_industrial_metal_eng.html';
-			};"
-		class="menu_selected"
-		style="padding-left: 15px;">
-		&bull; Metal</div>
-	</td>
-	</tr>
-
-	<tr>
-		<td align="left" >
-		<div id="menu_7_6_3"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('music_industrial_rock_eng.html');
-			} else {
-				clickStarted = true;
-				window.location.href='music_industrial_rock_eng.html';
-			};"
-		class="menu_not_selected_black"
-		style="padding-left: 15px;">
-		&bull; Rock</div>
-	</td>
-	</tr>
+	</tr>	
 
 	<tr>
 		<td align="left" >
 		<div id="menu_7_7"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'music');" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'music');"
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
 		onclick="showSubMenu(this, 'eng', 'music');"
-		class="menu_not_selected_black"
+		class="menu_selected"
 		style="padding-left: 5px;">
 		&#9679; Metal <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
 	</td>
-	</tr>   
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_1"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_alternative_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_alternative_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Alternative <font class="blinking_text" color="crimson"><sup>&#191; Inadequate &#191;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_2"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_black_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_black_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Black</div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_3"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_death_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_death_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Death <font class="blinking_text" color="blueviolet"><sup>&#9996; Fresh &#9996;</sup></font></div>
+	</td>
+	</tr>		
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_4"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_gothic_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_gothic_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Gothic <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
+	</td>
+	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_7"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_selected'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_industrial_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_industrial_eng.html';
+			};"
+		class="menu_selected"
+		style="padding-left: 15px;">
+		&bull; Industrial</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_5"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_power_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_power_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Power</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_6"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_symphonic_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_symphonic_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Symphonic</div>
+	</td>
+	</tr>
 
 	<tr>
 		<td align="left" >
@@ -441,7 +507,7 @@
 		style="padding-left: 5px;">
 		&#9679; Pop</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="left" >
@@ -455,7 +521,7 @@
 		style="padding-left: 5px;">
 		&#9679; Psychedelic</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="left" >
@@ -469,7 +535,7 @@
 		style="padding-left: 5px;">
 		&#9679; Punk <font class="blinking_text" color="purple"><sup>&#9765; Vampiric &#9765;</sup></font></div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="left" >
@@ -489,7 +555,7 @@
 		style="padding-left: 5px;">
 		&#9679; Rap <font class="blinking_text" color="dodgerblue"><sup>&sung; Simple &sung;</sup></font></div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="left" >
@@ -529,7 +595,7 @@
 		style="padding-left: 5px;">
 		&#9679; Rock <font class="blinking_text" color="cornflowerblue"><sup>&#9925; Cool &#9925;</sup></font></div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center" >
@@ -542,7 +608,7 @@
 		class="menu_not_selected_black">
 		&#9679; Movies <font class="blinking_text" color="DodgerBlue"><sup>&#128142; Unique &#128142;</sup></font></div>
 	</td>
-	</tr>
+	</tr>	
 
 	<tr>
 		<td align="center" >
@@ -555,7 +621,7 @@
 		class="menu_not_selected_black">
 		&#9679; Series <font class="blinking_text" color="MediumSlateBlue"><sup>&#9880; Forbidden &#9880;</sup></font></div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center" >
@@ -568,7 +634,7 @@
 		class="menu_not_selected_black">
 		&#9679; Games</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center" >
@@ -581,7 +647,7 @@
 		class="menu_not_selected_red">
 		&#9679; Books</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center" >
@@ -594,7 +660,7 @@
 		class="menu_not_selected_red">
 		&#9679; Photos/Images</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center" >
@@ -607,7 +673,7 @@
 		class="menu_not_selected_black">
 		&#9679; AMV</div>
 	</td>
-	</tr>	
+	</tr>		
 	<tr>
 		<td align="center" >
 		<div id="menu_13"
@@ -625,7 +691,7 @@
 		class="menu_not_selected_black">
 		Junk</div>
 	</td>
-	</tr>		
+	</tr>			
 
 	<tr>
 		<td align="center" >
@@ -651,7 +717,7 @@
 		class="menu_not_selected_red">
 		&#9679; Anecdotes</div>
 	</td>
-	</tr>	
+	</tr>		
 
 	<tr>
 		<td align="center" >
@@ -670,7 +736,7 @@
 		class="menu_not_selected_red">
 		Heffalump <font class="blinking_text" color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></div>
 	</td>
-	</tr>		
+	</tr>				
 
 	<tr>
 		<td align="center" >
@@ -683,7 +749,7 @@
 		class="menu_not_selected_white">
 		&#9679; Substances For Relaxation</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center" >
@@ -696,7 +762,7 @@
 		class="menu_not_selected_white">
 		&#9679; Software Development</div>
 	</td>
-	</tr>   
+	</tr>	
 
 	<tr>
 		<td align="center" >
@@ -835,17 +901,17 @@
 <table cellspacing="0" cellpadding="0" width="100%"  border="0" bgcolor="#e2e2e2">
 <!-- Table with search, name and languages -->
 	<tr> 
-		<td  class="title_black" style="width: 530px;"><a name="welcome">Music &blacktriangleright; Industrial &blacktriangleright; Metal</a></td>
+		<td  class="title_black" style="width: 530px;"><a name="welcome">Music &blacktriangleright; Metal &blacktriangleright; Industrial</a></td>
 	</tr>
 
 	<tr>
 		<td height="3" bgcolor="#ff8a00"></td>
-	</tr>   
+	</tr>	
 
 </table>
 
 <!-- For scroll inside div -->
-<div id="scrollDiv" style="height:966px;overflow:auto;">
+<div id="scrollDiv" style="height:1035px;overflow:auto;">
 
 <table cellspacing="2" cellpadding="0" width="100%" style = "border: #b0b0b0 1px solid;  background-color: #e2e2e2;">
 
@@ -854,20 +920,20 @@
 
 			<table border="0" cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse">
 			<tr >
-				<td width="100%" height="100%" class="nimetus2_black"><a name="industrial">Industrial Music</a></td>
+				<td width="100%" height="100%" class="nimetus2_black"><a name="metal">Metal</a></td>
 			</tr>
 			<tr>
 				<td width="350" height="100%" class="nimetus_black">Genre's Description</td>
 			</tr>
 			<tr>
 				<td width="100%" height="100%" align="left"  class="text_black" style="padding-left:10px; padding-right:10px;">
-					<img src="images/icons/music/industrial.jpg" alt="Industrial Music" title="Industrial Music" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
+					<img src="images/icons/music/metal.jpg" alt="Metal" title="Metal" style="width:350px; float:left; margin:5px 10px 5px 5px; display:block;">
 
-<P><b>Industrial music</b> is a genre of experimental/electronic music that draws on transgressive and provocative themes. The term was coined in the mid-1970s with the founding of Industrial Records by Genesis P-Orridge of Throbbing Gristle and Monte Cazazza; on Throbbing Gristle's debut album The Second Annual Report, they coined the slogan "industrial music for industrial people". In general, the style is harsh and challenging. AllMusic defines industrial as the "most abrasive and aggressive fusion of rock and electronic music"; "initially a blend of avant-garde electronics experiments (tape music, musique concr&egrave; te, white noise, synthesizers, sequencers, etc.) and punk provocation".
+<P><b>Heavy metal</b> (or simply <b>metal</b>) is a genre of rock music that developed in the late 1960s and early 1970s, largely in the United Kingdom and the United States. With roots in blues rock and psychedelic rock, the bands that created heavy metal developed a thick, massive sound, characterized by highly amplified distortion, extended guitar solos, emphatic beats, and overall loudness. Heavy metal lyrics and performance styles are sometimes associated with masculinity, aggression, and machismo.
 
-<P>The first industrial artists experimented with noise and aesthetically controversial topics, musically and visually, such as fascism, serial killers and the occult. Their production was not limited to music, but included mail art, performance art, installation pieces and other art forms. Prominent industrial musicians include Throbbing Gristle, Monte Cazazza, SPK, Boyd Rice, Cabaret Voltaire, and Z'EV. The precursors that influenced the development of the genre included acts such as electronic group Kraftwerk, experimental rock acts such as The Velvet Underground and Frank Zappa, psychedelic rock artists such as Jimi Hendrix, and composers such as John Cage. Musicians also cite writers such as William S. Burroughs, and philosophers such as Friedrich Nietzsche as influences.
+<P>The first heavy metal bands such as Led Zeppelin, Black Sabbath and Deep Purple attracted large audiences, though they were often derided by critics, a status common throughout the history of the genre. During the mid-1970s, Judas Priest helped spur the genre's evolution by discarding much of its blues influence; Mot&ouml;rhead introduced a punk rock sensibility and an increasing emphasis on speed. Beginning in the late 1970s, bands in the new wave of British heavy metal such as Iron Maiden and Saxon followed in a similar vein. Before the end of the decade, heavy metal fans became known as "metalheads" or "headbangers".
 
-<P>While the term was self-applied by a small coterie of groups and individuals associated with Industrial Records in the 1970s, it was broadened to include artists influenced by the original movement or using an "industrial" aesthetic. These artists expanded the genre by pushing it into noisier and more electronic directions. Over time, its influence spread into and blended with styles including ambient and rock, all of which now fall under the post-industrial music label. Electro-industrial music is a primary subgenre that developed in the 1980s. The two other most notable hybrid genres are industrial rock and industrial metal, which include bands such as Nine Inch Nails and Ministry, both of which released platinum-selling albums in the 1990s. These three distinct genres are often referred to as simply industrial.
+<P>During the 1980s, glam metal became a commercial force with groups such as M&ouml;tley Cr&uuml;e and Poison. Underground scenes produced an array of more aggressive styles: thrash metal broke into the mainstream with bands such as Metallica, Megadeth, Slayer, and Anthrax, while other extreme subgenres of metal such as death metal and black metal remain subcultural phenomena. Since the mid-1990s popular styles have further expanded the definition of the genre. These include groove metal (with bands such as Pantera) and nu metal (with bands such as Slipknot, Korn and Linkin Park), the latter of which often incorporates elements of grunge and hip hop.
 
 				</td>
 			</tr>
@@ -881,13 +947,13 @@
 
 			<tr> <!-- Linkid, sama on link 2 ja 3 jaoks -->
 			<td width="100%" height="100%" align="center" class="text_black" style="padding-left:10px; padding-right:10px;">
-				<a href="https://en.wikipedia.org/wiki/Industrial_music" class = "standardb_black" target="_blank">Wikipedia Industrial Music</a> - <b>Industrial Music</b> on Wikipedia.
+				<a href="https://en.wikipedia.org/wiki/Heavy_metal_music" class = "standardb_black" target="_blank">Wikipedia Heavy metal music</a> - <b>Metal</b> on Wikipedia.
 			</td>
 			</tr>
 
 			<tr> <!-- Modified -->
 				<td width="100%" height="100%" align="right" class="textsmall_black" style="padding-left:10px; padding-right:10px;">
-					28th of Jun, 2016.
+					29th of Jun, 2016.
 				</td>
 			</tr>
 			</table>
@@ -1243,7 +1309,7 @@
   </table><!-- End of Table where search, name and languages and func area-->
 </form> 
     </td> <!-- End of Functional Table -->
-	</tr>   
+	</tr>	
 </table> <!-- End of Main Table -->
 
 <!-- Bottom Copyright Table --> 

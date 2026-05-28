@@ -336,20 +336,6 @@
 
 	<tr>
 		<td align="left" >
-		<div id="menu_7_6"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'music');" 
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="showSubMenu(this, 'eng', 'music');"
-		class="menu_not_selected_black"
-		style="padding-left: 5px;">
-		&#9679; Industrial</div>
-	</td>
-	</tr>	
-
-	<tr>
-		<td align="left" >
 		<div id="menu_7_7"
 		role="button"
 		tabindex="0"
@@ -441,6 +427,26 @@
 		&bull; Gothic <font class="blinking_text" color="orangered"><sup>&nwnear; Real &nwnear;</sup></font></div>
 	</td>
 	</tr>	
+
+	<tr>
+		<td align="left" >
+		<div id="menu_7_7_7"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_metal_industrial_eng.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_metal_industrial_eng.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Industrial</div>
+	</td>
+	</tr>
 
 	<tr>
 		<td align="left" >

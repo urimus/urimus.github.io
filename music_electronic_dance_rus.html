@@ -378,6 +378,26 @@
 
 	<tr>
 		<td align="left" >
+		<div id="menu_7_5_5"
+		role="button"
+		tabindex="0"
+		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
+		onclick="
+			if (event.ctrlKey) {
+				window.open('music_electronic_industrial_rus.html');
+			} else {
+				clickStarted = true;
+				window.location.href='music_electronic_industrial_rus.html';
+			};"
+		class="menu_not_selected_black"
+		style="padding-left: 15px;">
+		&bull; Индастриал</div>
+	</td>
+	</tr>
+
+	<tr>
+		<td align="left" >
 		<div id="menu_7_5_3"
 		role="button"
 		tabindex="0"
@@ -413,20 +433,6 @@
 		class="menu_not_selected_black"
 		style="padding-left: 15px;">
 		&bull; Синтвейв</div>
-	</td>
-	</tr>
-
-	<tr>
-		<td align="left" >
-		<div id="menu_7_6"
-		role="button"
-		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'music');"
-		onmouseleave="if (!clickStarted) this.className='menu_not_selected_black'" 
-		onclick="showSubMenu(this, 'rus', 'music');"
-		class="menu_not_selected_black"
-		style="padding-left: 5px;">
-		&#9679; Индастриал</div>
 	</td>
 	</tr>
 

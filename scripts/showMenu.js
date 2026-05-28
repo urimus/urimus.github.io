@@ -1547,6 +1547,13 @@ if (lang=="eng") {
 	wholeMenu["Dance (EDM)"].link = "music_electronic_dance_eng.html";
 	wholeMenu["Dance (EDM)"].html = 'Dance (EDM)';
 
+	wholeMenu["eIndustrial"] = {};
+	wholeMenu["eIndustrial"].id = "7_5_5";
+	wholeMenu["eIndustrial"].color = "black";
+	wholeMenu["eIndustrial"].hasSub = 0;
+	wholeMenu["eIndustrial"].link = "music_electronic_industrial_eng.html";
+	wholeMenu["eIndustrial"].html = 'Industrial';
+
 	wholeMenu["eRock"] = {};
 	wholeMenu["eRock"].id = "7_5_3";
 	wholeMenu["eRock"].color = "black";
@@ -1560,34 +1567,6 @@ if (lang=="eng") {
 	wholeMenu["Synthwave"].hasSub = 0;
 	wholeMenu["Synthwave"].link = "music_electronic_synthwave_eng.html";
 	wholeMenu["Synthwave"].html = 'Synthwave';
-
-	wholeMenu["● Industrial"] = {};
-	wholeMenu["● Industrial"].id = "7_6";
-	wholeMenu["● Industrial"].color = "black";
-	wholeMenu["● Industrial"].hasSub = 1;
-	wholeMenu["● Industrial"].link = "";
-	wholeMenu["● Industrial"].html = '&#9679; Industrial';
-
-	wholeMenu["Electro-"] = {};
-	wholeMenu["Electro-"].id = "7_6_1";
-	wholeMenu["Electro-"].color = "black";
-	wholeMenu["Electro-"].hasSub = 0;
-	wholeMenu["Electro-"].link = "music_industrial_electro_eng.html";
-	wholeMenu["Electro-"].html = 'Electro-';
-
-	wholeMenu["iMetal"] = {};
-	wholeMenu["iMetal"].id = "7_6_2";
-	wholeMenu["iMetal"].color = "black";
-	wholeMenu["iMetal"].hasSub = 0;
-	wholeMenu["iMetal"].link = "music_industrial_metal_eng.html";
-	wholeMenu["iMetal"].html = 'Metal';
-
-	wholeMenu["iRock"] = {};
-	wholeMenu["iRock"].id = "7_6_3";
-	wholeMenu["iRock"].color = "black";
-	wholeMenu["iRock"].hasSub = 0;
-	wholeMenu["iRock"].link = "music_industrial_rock_eng.html";
-	wholeMenu["iRock"].html = 'Rock';
 
 	wholeMenu["● Metal ⤧ Real ⤧"] = {};
 	wholeMenu["● Metal ⤧ Real ⤧"].id = "7_7";
@@ -1623,6 +1602,13 @@ if (lang=="eng") {
 	wholeMenu["Gothic"].hasSub = 0;
 	wholeMenu["Gothic"].link = "music_metal_gothic_eng.html";
 	wholeMenu["Gothic"].html = 'Gothic <font color="orangered"><sup>&nwnear; Real &nwnear;</sup></font>';
+
+	wholeMenu["Industrial"] = {};
+	wholeMenu["Industrial"].id = "7_7_7";
+	wholeMenu["Industrial"].color = "black";
+	wholeMenu["Industrial"].hasSub = 0;
+	wholeMenu["Industrial"].link = "music_metal_industrial_eng.html";
+	wholeMenu["Industrial"].html = 'Industrial';
 
 	wholeMenu["Power"] = {};
 	wholeMenu["Power"].id = "7_7_5";
@@ -1784,6 +1770,13 @@ if (lang=="rus") {
 	wholeMenu["Танцевальная (EDM)"].link = "music_electronic_dance_rus.html";
 	wholeMenu["Танцевальная (EDM)"].html = 'Танцевальная (EDM)';
 
+	wholeMenu["эИндастриал"] = {};
+	wholeMenu["эИндастриал"].id = "7_5_5";
+	wholeMenu["эИндастриал"].color = "black";
+	wholeMenu["эИндастриал"].hasSub = 0;
+	wholeMenu["эИндастриал"].link = "music_electronic_industrial_rus.html";
+	wholeMenu["эИндастриал"].html = 'Индастриал';
+
 	wholeMenu["эРок"] = {};
 	wholeMenu["эРок"].id = "7_5_3";
 	wholeMenu["эРок"].color = "black";
@@ -1797,35 +1790,6 @@ if (lang=="rus") {
 	wholeMenu["Синтвейв"].hasSub = 0;
 	wholeMenu["Синтвейв"].link = "music_electronic_synthwave_rus.html";
 	wholeMenu["Синтвейв"].html = 'Синтвейв';
-
-
-	wholeMenu["● Индастриал"] = {};
-	wholeMenu["● Индастриал"].id = "7_6";
-	wholeMenu["● Индастриал"].color = "black";
-	wholeMenu["● Индастриал"].hasSub = 1;
-	wholeMenu["● Индастриал"].link = "";
-	wholeMenu["● Индастриал"].html = '&#9679; Индастриал';
-
-	wholeMenu["Электро-"] = {};
-	wholeMenu["Электро-"].id = "7_6_1";
-	wholeMenu["Электро-"].color = "black";
-	wholeMenu["Электро-"].hasSub = 0;
-	wholeMenu["Электро-"].link = "music_industrial_electro_rus.html";
-	wholeMenu["Электро-"].html = 'Электро-';
-
-	wholeMenu["иМетал"] = {};
-	wholeMenu["иМетал"].id = "7_6_2";
-	wholeMenu["иМетал"].color = "black";
-	wholeMenu["иМетал"].hasSub = 0;
-	wholeMenu["иМетал"].link = "music_industrial_metal_rus.html";
-	wholeMenu["иМетал"].html = 'Метал';
-
-	wholeMenu["иРок"] = {};
-	wholeMenu["иРок"].id = "7_6_3";
-	wholeMenu["иРок"].color = "black";
-	wholeMenu["иРок"].hasSub = 0;
-	wholeMenu["иРок"].link = "music_industrial_rock_rus.html";
-	wholeMenu["иРок"].html = 'Рок';
 
 	wholeMenu["● Метал ⤧ Real ⤧"] = {};
 	wholeMenu["● Метал ⤧ Real ⤧"].id = "7_7";
@@ -1861,6 +1825,13 @@ if (lang=="rus") {
 	wholeMenu["Готик-"].hasSub = 0;
 	wholeMenu["Готик-"].link = "music_metal_gothic_rus.html";
 	wholeMenu["Готик-"].html = 'Готик- <font color="orangered"><sup>&nwnear; Real &nwnear;</sup></font>';
+
+	wholeMenu["Индастриал-"] = {};
+	wholeMenu["Индастриал-"].id = "7_7_7";
+	wholeMenu["Индастриал-"].color = "black";
+	wholeMenu["Индастриал-"].hasSub = 0;
+	wholeMenu["Индастриал-"].link = "music_metal_industrial_rus.html";
+	wholeMenu["Индастриал-"].html = 'Индастриал-';
 
 	wholeMenu["Пауэр-"] = {};
 	wholeMenu["Пауэр-"].id = "7_7_5";
