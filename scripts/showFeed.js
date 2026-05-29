@@ -1265,6 +1265,8 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt = 1) {
 			_: Date.now()
 		};
 	}
+	axiosConfig.timeout = 10000;
+
 	axios(axiosConfig)
 	.then(
 		response => {

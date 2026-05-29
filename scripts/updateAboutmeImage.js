@@ -97,11 +97,12 @@ function updateAboutMeImage(lang, random = false) {
 	Div.innerHTML = "<b><div id='loadingDivTitle'></div><div id='loadingDiv'>.</div></b>";
 	cell1.appendChild(Div);
 
+	var i = random
+		? Math.floor(Math.random() * result.feed.entries.length)
+		: 0;
+
 	if (result != null) {
-		var i = random
-			? Math.floor(Math.random() * result.feed.entries.length)
-			: 0;
-		updateAboutMeImage2(lang, i);
+		updateAboutMeImage3(lang, i);
 		return;
 	}
 
@@ -119,9 +120,17 @@ function updateAboutMeImage(lang, random = false) {
 	loadingDivTitle.innerHTML = t("readingNewsFeed") + ". ";
 	loadingDivTitle.appendChild(aSkip);
 
+	var loadAttempt = document.createElement("span");
+	loadAttempt.id = "loadAttempt";
+	loadingDivTitle.appendChild(loadAttempt);
+
 	var Div = document.getElementById('information_div');
 	Div.style.right = '5px';
 
+	updateAboutMeImage2(lang, i, controller);
+}
+
+function updateAboutMeImage2(lang, i, controller, loadAttempt = 1) {
 
 	const feedURL = "https://www.nasa.gov/feeds/iotd-feed/";
 
@@ -130,7 +139,8 @@ function updateAboutMeImage(lang, random = false) {
 			url: feedURL,
 			_: Date.now()
 		},
-		signal: controller.signal
+		signal: controller.signal,
+		timeout: 10000 // 10 sec
 	})
 	.then(
 		response => {
@@ -142,21 +152,28 @@ function updateAboutMeImage(lang, random = false) {
 			}
 			result = response.data;
 			result.feedXML = feedURL;
-			var i = random
-				? Math.floor(Math.random() * result.feed.entries.length)
-				: 0;
-			updateAboutMeImage2(lang, i);
+			updateAboutMeImage3(lang, i);
 		},
 		error => {
 			if (error.code === 'ERR_CANCELED') return;
-			consoleAxiosError(error, t("feedLoadError"));
+			consoleAxiosError(error, t("feedLoadError") + " | " + t("loadAttempt") + " " + loadAttempt);
+			if (loadAttempt < 10) {
+				loadAttempt++;
+				var loadAttemptSpan = document.getElementById("loadAttempt");
+				if (loadAttemptSpan) loadAttemptSpan.innerHTML="<br><b>" + t("loadAttempt") + ":&nbsp;" + loadAttempt + "</b>";
+				adjustScrollDiv();
+				updateAboutMeImage2(lang, i, controller, loadAttempt);
+				return;
+			} 
+
 			showErrorImage(lang, "error", error.message);
 			adjustScrollDiv();
 		}
 	);
+
 }
 
-function updateAboutMeImage2(lang, i) {
+function updateAboutMeImage3(lang, i) {
 
 	var item = result.feed.entries[i];
 	var loadingDivTitle = document.getElementById("loadingDivTitle");
