@@ -311,7 +311,7 @@ function showFeedData(type, source, lang, result) {
 			.then(
 				response => { // proxy works
 					$("#processedDiv").show();
-					document.getElementById("loadingSpanTitle").innerHTML = t("updatingRecords") + ".&nbsp;";
+					document.getElementById("loadingSpanTitle").innerHTML = t("updateStarted") + ".&nbsp;";
 					adjustFeedScrollDiv();
 					// 10 updates simultaneously only
 					if (source == "artemis" || source == "cbs" || (source=="nasa" && type!="image") || source == "yonhap" || source=="yahoo") {
@@ -2172,7 +2172,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				// success
 
 				document.getElementById("loadingSpanTitle").innerHTML =
-					t("updatingRecord")
+					t("updateOfRecord")
 					+ " #" + (i + 1)
 					+ (updateAttempt > 1 ? "/" + updateAttempt : "")
 					+ " &#9989;.&nbsp;";
@@ -2193,7 +2193,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				// complete update absent
 
 				document.getElementById("loadingSpanTitle").innerHTML =
-					t("updatingRecord")
+					t("updateOfRecord")
 					+ " #" + (i + 1)
 					+ (updateAttempt > 1 ? "/" + updateAttempt : "")
 					+ " &#10062;.&nbsp;";
@@ -2248,7 +2248,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 			if (error.code === 'ERR_CANCELED') return;
 
 			document.getElementById("loadingSpanTitle").innerHTML =
-				t("updatingRecord")
+				t("updateOfRecord")
 				+ " #" + (i + 1)
 				+ (updateAttempt > 1 ? "/" + updateAttempt : "")
 				+ " &#10062;.&nbsp;";
