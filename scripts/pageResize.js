@@ -715,19 +715,10 @@ function flashText() {
 }
 
 function loading() {
-	var ele2, ele;
-	if (document.getElementById("loadingDiv")) {
-		if ($("#loadingDiv").text().slice(-1) == ".") $("#loadingDiv").text($("#loadingDiv").text() + ".");
-		if ($("#loadingDiv").text().slice(-6) == "......") $("#loadingDiv").text($("#loadingDiv").text().slice(0, -5));
-	}
-	if (document.getElementsByClassName("loadingDiv")) {
-		ele2 = document.getElementsByClassName("loadingDiv");
-		for (var i = 0; i < ele2.length; i++) {
-			ele = ele2[i];
-			if (ele.innerText.slice(-1) == ".") ele.innerText = ele.innerText + ".";
-			if (ele.innerText.slice(-6) == "......") ele.innerText = ele.innerText.slice(0, -5);
-		}
-	}
+	const el = document.getElementById("loadingDiv");
+	if (!el) return;
+	el.textContent += ".";
+	if (el.textContent.endsWith("......")) el.textContent = el.textContent.slice(0, -5);
 }
 
 function animatedText() {
