@@ -717,8 +717,24 @@ function flashText() {
 function loading() {
 	const el = document.getElementById("loadingDiv");
 	if (!el) return;
-	el.textContent += ".";
-	if (el.textContent.endsWith("......")) el.textContent = el.textContent.slice(0, -5);
+
+	const frames = ["◶","◵","◴","◷"];
+
+	let text = el.textContent.trimEnd();
+	let current = text.slice(-1);
+	if (!current) {
+		el.textContent = "◷";
+		return;
+	}
+
+	const index = frames.indexOf(current);
+	if (index === -1) {
+		el.textContent = text + " ◷";
+		return;
+	}
+
+	const nextIndex = (index + 1) % frames.length;
+	el.textContent = text.slice(0, -1) + frames[nextIndex];
 }
 
 function animatedText() {
