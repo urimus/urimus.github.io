@@ -1449,7 +1449,7 @@ function showFeed(type, source, lang) {
 
 	var loadingDiv = document.createElement("div");
 	loadingDiv.id = "loadingDiv";
-	loadingDiv.textContent = "◷";
+	loadingDiv.textContent = "🌕";
 
 	var processedDiv = document.createElement("div");
 	processedDiv.id = "processedDiv";

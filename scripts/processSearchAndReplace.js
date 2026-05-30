@@ -788,7 +788,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	var confirm = window.confirm(summary);
 	if (!confirm) return;
 
-	$("#caption_div").html("<div id='loadingDiv'>" + t("fileUploading") + "(" + formatBytes(file.size) + ") ◷</div>");
+	$("#caption_div").html("<div id='loadingDiv'>" + t("fileUploading") + "(" + formatBytes(file.size) + ") 🌕</div>");
 
 	var dataArray = new FormData();
 	dataArray.append('file', file, filename);

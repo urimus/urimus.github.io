@@ -718,23 +718,25 @@ function loading() {
 	const el = document.getElementById("loadingDiv");
 	if (!el) return;
 
-	const frames = ["◶","◵","◴","◷"];
+	const frames = ["🌖","🌗","🌘","🌑","🌒","🌓","🌔","🌕"];
 
-	let text = el.textContent.trimEnd();
-	let current = text.slice(-1);
+	let chars = [...el.textContent.trim()];
+	let current = chars[chars.length - 1];
+
 	if (!current) {
-		el.textContent = "◷";
+		el.textContent = "🌕";
 		return;
 	}
 
 	const index = frames.indexOf(current);
 	if (index === -1) {
-		el.textContent = text + " ◷";
+		el.textContent = text + " 🌕";
 		return;
 	}
 
 	const nextIndex = (index + 1) % frames.length;
-	el.textContent = text.slice(0, -1) + frames[nextIndex];
+	chars[chars.length - 1] = frames[nextIndex];
+	el.textContent = chars.join("");
 }
 
 function animatedText() {
