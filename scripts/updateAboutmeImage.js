@@ -101,7 +101,7 @@ function updateAboutMeImage(lang, random = false) {
 	const loadingDiv = document.createElement('div');
 	loadingDiv.id = "loadingDiv";
 	loadingDiv.textContent = "⬤";
-	loadingDiv.dataset.hue = "240";
+	loadingDiv.dataset.hue = "175";
 
 	Div.appendChild(loadingDivTitle);
 	Div.appendChild(loadingDiv);
