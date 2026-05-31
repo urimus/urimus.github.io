@@ -91,10 +91,20 @@ function updateAboutMeImage(lang, random = false) {
 
 	var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
-	var Div = document.createElement('div');
-	Div.setAttribute('class', "text_blue");
-	Div.setAttribute('style', 'text-align:center; margin: 5px 0px;');
-	Div.innerHTML = "<b><div id='loadingDivTitle'></div><div id='loadingDiv'>🔵</div></b>";
+	const Div = document.createElement('div');
+	Div.className = "text_blue";
+	Div.style.cssText = "text-align:center; margin: 5px 0px; font-weight: bold;";
+
+	const loadingDivTitle = document.createElement('div');
+	loadingDivTitle.id = "loadingDivTitle";
+
+	const loadingDiv = document.createElement('div');
+	loadingDiv.id = "loadingDiv";
+	loadingDiv.textContent = "⬤";
+	loadingDiv.dataset.hue = "240";
+
+	Div.appendChild(loadingDivTitle);
+	Div.appendChild(loadingDiv);
 	cell1.appendChild(Div);
 
 	var i = random
@@ -106,7 +116,6 @@ function updateAboutMeImage(lang, random = false) {
 		return;
 	}
 
-	var loadingDivTitle = document.getElementById("loadingDivTitle");
 	var aSkip = document.createElement('a');
 	aSkip.setAttribute('href', "javascript:void(0);");
 	aSkip.setAttribute('class', 'standardb_blue');
@@ -124,8 +133,8 @@ function updateAboutMeImage(lang, random = false) {
 	loadAttempt.id = "loadAttempt";
 	loadingDivTitle.appendChild(loadAttempt);
 
-	var Div = document.getElementById('information_div');
-	Div.style.right = '5px';
+	var Div2 = document.getElementById('information_div');
+	Div2.style.right = '5px';
 
 	updateAboutMeImage2(lang, i, controller);
 }

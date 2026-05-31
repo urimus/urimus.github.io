@@ -718,25 +718,21 @@ function loading() {
 	const el = document.getElementById("loadingDiv");
 	if (!el) return;
 
-	const frames = ["🔴","🟠","🟡","🟢","🔵","🟣"];
+	let hue = parseInt(el.dataset.hue || "0", 10);
+	el.textContent = "⬤";
+	hue = (hue + 2) % 360;
 
-	let chars = [...el.textContent.trim()];
-	let current = chars[chars.length - 1];
+	/*
+	h (hue) = color angle (0–360° on the color wheel)
+	0 = red
+	60 = yellow
+	120 = green
+	240 = blue
+	300 = violet
+	*/
 
-	if (!current) {
-		el.textContent = "🔴";
-		return;
-	}
-
-	const index = frames.indexOf(current);
-	if (index === -1) {
-		el.textContent = text + " 🔴";
-		return;
-	}
-
-	const nextIndex = (index + 1) % frames.length;
-	chars[chars.length - 1] = frames[nextIndex];
-	el.textContent = chars.join("");
+	el.style.color = `hsl(${hue}, 100%, 50%)`;
+	el.dataset.hue = hue.toString();
 }
 
 function animatedText() {
@@ -760,6 +756,6 @@ function animatedText() {
 	}
 }
 
-setInterval(function() { loading(); }, 500);
+setInterval(function() { loading(); }, 39);
 setInterval(function() { animatedText(); }, 250);
 setInterval(function() { flashText(); }, 50);
