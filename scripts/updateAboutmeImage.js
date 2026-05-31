@@ -94,7 +94,7 @@ function updateAboutMeImage(lang, random = false) {
 	var Div = document.createElement('div');
 	Div.setAttribute('class', "text_blue");
 	Div.setAttribute('style', 'text-align:center; margin: 5px 0px;');
-	Div.innerHTML = "<b><div id='loadingDivTitle'></div><div id='loadingDiv'>🌕</div></b>";
+	Div.innerHTML = "<b><div id='loadingDivTitle'></div><div id='loadingDiv'>🔵</div></b>";
 	cell1.appendChild(Div);
 
 	var i = random

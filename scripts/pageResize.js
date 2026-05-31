@@ -718,19 +718,19 @@ function loading() {
 	const el = document.getElementById("loadingDiv");
 	if (!el) return;
 
-	const frames = ["🌖","🌗","🌘","🌑","🌒","🌓","🌔","🌕"];
+	const frames = ["🔴","🟠","🟡","🟢","🔵","🟣"];
 
 	let chars = [...el.textContent.trim()];
 	let current = chars[chars.length - 1];
 
 	if (!current) {
-		el.textContent = "🌕";
+		el.textContent = "🔴";
 		return;
 	}
 
 	const index = frames.indexOf(current);
 	if (index === -1) {
-		el.textContent = text + " 🌕";
+		el.textContent = text + " 🔴";
 		return;
 	}
 
