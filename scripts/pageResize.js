@@ -679,28 +679,3 @@ function processPageResize(lang, preloadImagesInInit = true) {
 	}
 	if (!initComplete) initComplete = true;
 }
-
-
-// --- interval funcs ---
-function animatedText() {
-	var ele2, text, fontStPos, fontStEndPos, fontEndPos, textBeforeFont, textInFont, textAfterFont, newHightlightpos, text2, newAnimatedtext;
-	if (document.getElementsByClassName("animatedText")) {
-		ele2 = document.getElementsByClassName("animatedText");
-		for (var i = 0; i < ele2.length; i++) {
-			text = ele2[i].innerHTML;
-			fontStPos = text.indexOf("<font");
-			fontStEndPos = text.indexOf(">", fontStPos);
-			fontEndPos = text.indexOf("</font>");
-			textBeforeFont = text.substr(0, fontStPos);
-			textInFont = text.substr(fontStEndPos + 1, 1);
-			textAfterFont = text.substr(fontEndPos + 7);
-			newHightlightpos = fontStPos + 1;
-			if (fontEndPos == text.length - 7) newHightlightpos = 0;
-			text2 = ele2[i].innerText;
-			newAnimatedtext = text2.substr(0, newHightlightpos) + '<font color="#ff8a00">' + text2.substr(newHightlightpos, 1) + "</font>" + text2.substr(newHightlightpos + 1);
-			ele2[i].innerHTML = newAnimatedtext;
-		}
-	}
-}
-
-setInterval(function() { animatedText(); }, 250);
