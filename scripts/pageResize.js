@@ -714,27 +714,6 @@ function flashText() {
 	}
 }
 
-function loading() {
-	const el = document.getElementById("loadingDiv");
-	if (!el) return;
-
-	let hue = parseInt(el.dataset.hue || "0", 10);
-	el.textContent = "⬤";
-	hue = (hue + 2) % 360;
-
-	/*
-	h (hue) = color angle (0–360° on the color wheel)
-	0 = red
-	60 = yellow
-	120 = green
-	240 = blue
-	300 = violet
-	*/
-
-	el.style.color = `hsl(${hue}, 100%, 50%)`;
-	el.dataset.hue = hue.toString();
-}
-
 function animatedText() {
 	var ele2, text, fontStPos, fontStEndPos, fontEndPos, textBeforeFont, textInFont, textAfterFont, newHightlightpos, text2, newAnimatedtext;
 	if (document.getElementsByClassName("animatedText")) {
@@ -756,6 +735,5 @@ function animatedText() {
 	}
 }
 
-setInterval(function() { loading(); }, 39);
 setInterval(function() { animatedText(); }, 250);
 setInterval(function() { flashText(); }, 50);

@@ -100,8 +100,12 @@ function updateAboutMeImage(lang, random = false) {
 
 	const loadingDiv = document.createElement('div');
 	loadingDiv.id = "loadingDiv";
-	loadingDiv.textContent = "⬤";
-	loadingDiv.dataset.hue = "175";
+	loadingDiv.style.display = "inline-block";
+	loadingDiv.style.width = "12px";
+	loadingDiv.style.height = "12px";
+	loadingDiv.style.borderRadius = "50%";
+	loadingDiv.style.animation = "hueShift 2s linear infinite";
+	loadingDiv.style.animationDelay = "-1s";
 
 	Div.appendChild(loadingDivTitle);
 	Div.appendChild(loadingDiv);
