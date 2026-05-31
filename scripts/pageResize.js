@@ -680,40 +680,8 @@ function processPageResize(lang, preloadImagesInInit = true) {
 	if (!initComplete) initComplete = true;
 }
 
-// --- interval funcs ---
-function flashText() {
-	var ele2;
-	if (document.getElementsByClassName("blinking_text")) {
-		ele2 = document.getElementsByClassName("blinking_text");
-		for (var i = 0; i < ele2.length; i++) {
-			if (typeof ele2[i].dataset.value === 'undefined') {
-				var newOp = Math.floor(Math.random() * 11) / 10.0;
-				var dir = Math.floor(Math.random() * 2);
-				if (dir == 0) ele2[i].dataset.value = newOp - 0.1;
-				if (dir == 1) ele2[i].dataset.value = newOp + 0.1;
-				ele2[i].style.opacity = newOp;
-			} else {
-				if (ele2[i].style.opacity == 0.0) {
-					ele2[i].dataset.value = 0.0;
-					ele2[i].style.opacity = 0.1;
-				} else if (ele2[i].style.opacity == 1.0) {
-					ele2[i].dataset.value = 1.0;
-					ele2[i].style.opacity = 0.9;
-				} else {
-					if (ele2[i].style.opacity > ele2[i].dataset.value) {
-						ele2[i].dataset.value = ele2[i].style.opacity;
-						ele2[i].style.opacity = parseFloat(ele2[i].style.opacity) + 0.1;
-					}
-					if (ele2[i].style.opacity < ele2[i].dataset.value) {
-						ele2[i].dataset.value = ele2[i].style.opacity;
-						ele2[i].style.opacity = parseFloat(ele2[i].style.opacity) - 0.1;
-					}
-				}
-			}
-		}
-	}
-}
 
+// --- interval funcs ---
 function animatedText() {
 	var ele2, text, fontStPos, fontStEndPos, fontEndPos, textBeforeFont, textInFont, textAfterFont, newHightlightpos, text2, newAnimatedtext;
 	if (document.getElementsByClassName("animatedText")) {
@@ -736,4 +704,3 @@ function animatedText() {
 }
 
 setInterval(function() { animatedText(); }, 250);
-setInterval(function() { flashText(); }, 50);
