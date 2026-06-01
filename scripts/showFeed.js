@@ -1448,8 +1448,8 @@ function showFeed(type, source, lang) {
 	}
 
 	var loadingDiv = document.createElement("div");
-	loadingDiv.className = "spin_text";
-	loadingDiv.textContent = "⌛"; // ↻
+	loadingDiv.className = "spin_animated_text";
+	loadingDiv.textContent = "⏳"; // ↻⌛
 
 	var processedDiv = document.createElement("div");
 	processedDiv.id = "processedDiv";

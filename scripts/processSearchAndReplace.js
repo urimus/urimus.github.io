@@ -795,8 +795,9 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	var captionDiv = document.getElementById("caption_div");
 	captionDiv.textContent = t("fileUploading") + "(" + formatBytes(file.size) + ") ";
 	var loadingDiv = document.createElement("div");
-	loadingDiv.className = "spin_text";
-	loadingDiv.textContent = "⌛"; // ↻
+	loadingDiv.className = "spin_animated_text";
+	loadingDiv.style.animationDelay = "-1s";
+	loadingDiv.textContent = "⏳"; // ↻⌛
 	captionDiv.appendChild(loadingDiv);
 
 	var dataArray = new FormData();

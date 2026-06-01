@@ -99,8 +99,9 @@ function updateAboutMeImage(lang, random = false) {
 	loadingDivTitle.id = "loadingDivTitle";
 
 	const loadingDiv = document.createElement('div');
-	loadingDiv.className = "spin_text";
-	loadingDiv.textContent = "⌛"; // ↻
+	loadingDiv.className = "spin_animated_text";
+	loadingDiv.style.animationDelay = "-1s";
+	loadingDiv.textContent = "⏳"; // ↻⌛
 
 	Div.appendChild(loadingDivTitle);
 	Div.appendChild(loadingDiv);
