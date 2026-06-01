@@ -1449,7 +1449,7 @@ function showFeed(type, source, lang) {
 
 	var loadingDiv = document.createElement("div");
 	loadingDiv.className = "spin_text";
-	loadingDiv.textContent = '↻';
+	loadingDiv.textContent = "⌛"; // ↻
 
 	var processedDiv = document.createElement("div");
 	processedDiv.id = "processedDiv";

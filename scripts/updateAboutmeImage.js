@@ -100,7 +100,7 @@ function updateAboutMeImage(lang, random = false) {
 
 	const loadingDiv = document.createElement('div');
 	loadingDiv.className = "spin_text";
-	loadingDiv.textContent = '↻';
+	loadingDiv.textContent = "⌛"; // ↻
 
 	Div.appendChild(loadingDivTitle);
 	Div.appendChild(loadingDiv);
