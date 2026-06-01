@@ -797,7 +797,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	var loadingDiv = document.createElement("div");
 	loadingDiv.className = "spin_animated_text";
 	loadingDiv.style.animationDelay = "-1s";
-	loadingDiv.textContent = "⏳"; // ↻⌛
+	loadingDiv.textContent = "⌛"; // ↻⌛⏳
 	captionDiv.appendChild(loadingDiv);
 
 	var dataArray = new FormData();
