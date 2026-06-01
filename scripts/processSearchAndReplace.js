@@ -191,6 +191,8 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 		};
 	}
 
+	var captionDiv = document.getElementById("caption_div");
+
 	axios(axiosConfig)
 	.then(
 		response => {
@@ -200,7 +202,7 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 				return;
 			}
 
-			document.getElementById("caption_div").innerHTML = t("progress") + (i + 1) + "/" + dir.length;
+			captionDiv.textContent = t("progress") + (i + 1) + "/" + dir.length;
 			if (typeof data === "string" && data.startsWith("Unable to open file!")) {
 				alert(data);
 			} else {
@@ -234,7 +236,7 @@ function processReplacePHP(lang, action, dir, i, replaceWhat, replaceTo, statist
 			}
 
 			if ((i + 1) == dir.length) {
-				document.getElementById("caption_div").innerHTML = t("htmlEditor");
+				captionDiv.textContent = t("htmlEditor");
 				var fullMessage = (dir.length != 1) ? t("filesReplacedSuccessfully") : t("fileReplacedSuccessfully");
 				fullMessage += "\n" + t("statistics") + statisticsTimesReplaced + t("replacementsWereMade") + statisticsFilesProcessed;
 				fullMessage += (statisticsFilesProcessed != 1) ? t("filesOf") : t("fileOf");
@@ -350,6 +352,8 @@ function resizeImages(lang) {
 
 function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcessed) {
 
+	var captionDiv = document.getElementById("caption_div");
+
 	axios.get("scripts/php/resize.php", {
 		params: {
 			filename: filePath + dir[i]["basename"],
@@ -362,7 +366,7 @@ function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcess
 		response => {
 			const data = response.data;
 			if (typeof data === "string" && data == "not logged in") { processSearchAndReplace(lang); return; }
-			document.getElementById("caption_div").innerHTML = t("progress") + (i + 1) + "/" + dir.length;
+			captionDiv.textContent = t("progress") + (i + 1) + "/" + dir.length;
 			if (typeof data === "string" && data.startsWith("Unable to open file!")) {
 				alert(data);
 			} else {
@@ -371,7 +375,7 @@ function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcess
 			}
 
 			if ((i + 1) == dir.length) {
-				document.getElementById("caption_div").innerHTML = t("htmlEditor");
+				captionDiv.textContent = t("htmlEditor");
 				var fullMessage = (dir.length != 1) ? t("filesResizedSuccessfully") : t("fileResizedSuccessfully");
 				fullMessage += "\n" + t("statistics") + t("resizesWereMade") + statisticsFilesProcessed;
 				fullMessage += (statisticsFilesProcessed != 1) ? t("filesOf") : t("fileOf");
@@ -788,7 +792,12 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	var confirm = window.confirm(summary);
 	if (!confirm) return;
 
-	$("#caption_div").html(t("fileUploading") + "(" + formatBytes(file.size) + ")");
+	var captionDiv = document.getElementById("caption_div");
+	captionDiv.textContent = t("fileUploading") + "(" + formatBytes(file.size) + ") ";
+	var loadingDiv = document.createElement("div");
+	loadingDiv.className = "spin_text";
+	loadingDiv.textContent = '↻';
+	captionDiv.appendChild(loadingDiv);
 
 	var dataArray = new FormData();
 	dataArray.append('file', file, filename);
@@ -802,7 +811,7 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 	.then(
 		response => {
 			const data = response.data;
-			$("#caption_div").html(t("htmlEditor"));
+			captionDiv.textContent = t("htmlEditor");
 			if (typeof data === "string" && data=="not logged in") {processSearchAndReplace(lang); return;}
 			if (data === 1) {
 				if (isImage) {

@@ -1448,12 +1448,8 @@ function showFeed(type, source, lang) {
 	}
 
 	var loadingDiv = document.createElement("div");
-	loadingDiv.id = "loadingDiv";
-	loadingDiv.style.display = "inline-block";
-	loadingDiv.style.width = "12px";
-	loadingDiv.style.height = "12px";
-	loadingDiv.style.borderRadius = "50%";
-	loadingDiv.style.animation = "hueShift 2s linear infinite";
+	loadingDiv.className = "spin_text";
+	loadingDiv.textContent = '↻';
 
 	var processedDiv = document.createElement("div");
 	processedDiv.id = "processedDiv";
