@@ -1451,7 +1451,7 @@ function showFeed(type, source, lang) {
 	loadingDiv.className = "spin_animated_text";
 	loadingDiv.style.padding = "4px";
 	loadingDiv.style.fontSize = "20px";
-	loadingDiv.textContent = "⌛"; // ↻⌛⏳
+	loadingDiv.textContent = "⚙"; // ↻⌛⏳
 
 	var processedDiv = document.createElement("div");
 	processedDiv.id = "processedDiv";

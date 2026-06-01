@@ -103,7 +103,7 @@ function updateAboutMeImage(lang, random = false) {
 	loadingDiv.style.animationDelay = "-1s";
 	loadingDiv.style.padding = "4px";
 	loadingDiv.style.fontSize = "20px";
-	loadingDiv.textContent = "⌛"; // ↻⌛⏳
+	loadingDiv.textContent = "⚙"; // ↻⌛⏳
 
 	Div.appendChild(loadingDivTitle);
 	Div.appendChild(loadingDiv);
