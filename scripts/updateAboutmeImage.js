@@ -102,7 +102,7 @@ function updateAboutMeImage(lang, random = false) {
 	loadingDiv.className = "spin_animated_text";
 	loadingDiv.style.animationDelay = "-1s";
 	loadingDiv.style.fontSize = "20px";
-	loadingDiv.style.paddingBottom = "3px"; // to avoid spin shift
+	loadingDiv.style.paddingBottom = "3.1px"; // to avoid spin shift
 	loadingDiv.textContent = "⚙"; // ↻⌛⏳
 
 	Div.appendChild(loadingDivTitle);
