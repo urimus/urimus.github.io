@@ -1449,7 +1449,8 @@ function showFeed(type, source, lang) {
 
 	var loadingDiv = document.createElement("div");
 	loadingDiv.className = "spin_animated_text";
-	loadingDiv.style.padding = "4px";
+	loadingDiv.style.paddingBottom = "3px"; // to avoid spin shift
+	loadingDiv.style.margin = "5px";
 	loadingDiv.style.fontSize = "20px";
 	loadingDiv.textContent = "⚙"; // ↻⌛⏳
 
