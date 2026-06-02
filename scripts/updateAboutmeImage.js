@@ -103,7 +103,7 @@ function updateAboutMeImage(lang, random = false) {
 	loadingDiv.style.animationDelay = "-1s";
 	loadingDiv.style.fontSize = "20px";
 	loadingDiv.style.paddingBottom = "3.1px"; // to avoid spin shift
-	loadingDiv.textContent = "⚙"; // ↻⌛⏳
+	loadingDiv.textContent = "⚙"; // ↻⌛⏳⚙⛭
 
 	Div.appendChild(loadingDivTitle);
 	Div.appendChild(loadingDiv);
