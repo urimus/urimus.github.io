@@ -2217,9 +2217,13 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					result.entries[i].origLink = null;
 				}
 
+				var message = t("updateAbsent");
+				if (mediaURL == null && description != null) message = t("updateAbsentNoImage");
+				if (mediaURL != null && description == null) message = t("updateAbsentNoDescr");
+
 				if (updateAttempt < 5) { // 5 attempts
 					console.log(
-						t("updateAbsent")
+						message
 						+ ". " + t("record")
 						+ " # " + (i + 1)
 						+ ", " + t("updateAttempt") + " = " + updateAttempt
@@ -2229,7 +2233,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				}
 
 				console.log(
-					t("updateAbsent")
+					message
 					+ ". " + t("record")
 					+ " # " + (i + 1)
 					+ ", " + t("updateAttempt") + " = " + updateAttempt
@@ -2237,7 +2241,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				);
 				consoleMetas(doc);
 
-				result.entries[i].error = t("updateAbsent") + ".";
+				result.entries[i].error = message + ".";
 				showEntry(type, source, lang, result, i, false);
 				result.entries[i].storage.updateProcessed = 1;
 				checkProcessedCount(source, type, result, lang, controller, 0);
