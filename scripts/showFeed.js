@@ -237,15 +237,10 @@ function showFeedTitle(type, source, lang, result) {
 			cell1.innerHTML+=' '+t("by")+' Brian Dunbar&nbsp;' + mailToIconText("brian.dunbar@nasa.gov");
 		}
 
-		var table2 = document.getElementById("messagetable");
-		if (table2) {
-			var cell1 = table2.rows[0].cells[0];
-			cell1.setAttribute("style", "text-align: center; padding-bottom: 10px;");
-		}
 		adjustFeedScrollDiv();
 		showFeedData(type, source, lang, result);
 	}
-	preloadImg.setAttribute('src', result.image);
+	preloadImg.src = result.image;
 	adjustFeedScrollDiv();
 }
 
@@ -1493,11 +1488,12 @@ function showFeed(type, source, lang) {
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
 		cell1.style.textAlign = "center";
+		cell1.style.paddingBottom = "10px";
 		cell1.appendChild(container);
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL);
 	}
-	preloadImg.setAttribute('src', 'images/icons/feed/feed_icon.svg');
+	preloadImg.src = "images/icons/feed/feed_icon.svg";
 }
 
 // ------------- Functions ---------------- //
