@@ -1492,7 +1492,7 @@ function showFeed(type, source, lang) {
 		var row = table.insertRow(-1);
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
-		cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
+		cell1.style.textAlign = "center";
 		cell1.appendChild(container);
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL);
