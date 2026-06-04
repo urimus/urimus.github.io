@@ -680,7 +680,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	Img.onload = function () {
 		adjustFeedScrollDiv();
 	}
-	Img.src="images/icons/feed/loading.gif";
+	Img.src="images/icons/html_editor/generate.svg";
 	imageDiv.appendChild(Img);
 
 	result.entries[i].storage.loadingImg=Img;

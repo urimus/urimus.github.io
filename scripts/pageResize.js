@@ -199,7 +199,7 @@ function preloadImagesGeneral() {
 			.map(f => `/images/icons/feed/${f}.svg`),
 		...["artemis","cbs_news","nasa_worm","space_com","wired","yahoo_news","yonhap_news"]
 			.map(f => `/images/icons/feed/${f}_logo.svg`),
-		...["loading.gif","phys_org_logo.png","video.jpg"]
+		...["phys_org_logo.png","video.jpg"]
 			.map(f => `/images/icons/feed/${f}`),
 		...["error.jpg","no_image.png","no_image_blue.png"]
 			.map(f => `/images/icons/error/${f}`),
