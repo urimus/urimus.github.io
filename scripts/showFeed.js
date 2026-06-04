@@ -545,11 +545,14 @@ function preloadImage(type, source, lang, result) {
 			if (typeof summaryDiv !== "undefined" && typeof entry.summary !== "undefined" && entry.summary != null && entry.summary != "") {
 				formatSummaryDiv(lang, summaryDiv, entry);
 			}
+		} else {
+			loadingImg.setAttribute('width', 450);
 		}
 
 		loadingImg.alt=preloadImg.alt;
 		loadingImg.title=preloadImg.title;
 		loadingImg.src=preloadImg.src;
+		loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
 
 		// preloading additional images
 		if ("serviceWorker" in navigator) {
@@ -573,6 +576,10 @@ function preloadImage(type, source, lang, result) {
 			result.entries[preloadIndex].storage.preloadPF=0;
 			result.entries[preloadIndex].storage.preloadStarted=0;
 			result.entries[preloadIndex].storage.loadingImg=null;
+
+			loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
+			loadingImg.setAttribute('width', 450);
+
 			if (preloadImg.alt == null || preloadImg.alt == "") {
 				loadingImg.alt = t("imageLoadError");
 			} else {
@@ -675,8 +682,8 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	var Img = document.createElement("img");
 	Img.setAttribute('class', "text_red");
 	Img.setAttribute('align', 'left');
-	Img.setAttribute('width', entry.media.width);
-	Img.setAttribute('style', 'display: block; margin-top:5px; margin-bottom:5px;');
+	Img.setAttribute('width', entry.media.width - 200);
+	Img.setAttribute('style', 'display: block; margin: 5px 100px;');
 	Img.onload = function () {
 		adjustFeedScrollDiv();
 	}
