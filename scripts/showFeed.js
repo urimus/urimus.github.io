@@ -549,10 +549,11 @@ function preloadImage(type, source, lang, result) {
 			loadingImg.setAttribute('width', 450);
 		}
 
+		loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
+		loadingImg.setAttribute('class', 'text_red;');
 		loadingImg.alt=preloadImg.alt;
 		loadingImg.title=preloadImg.title;
 		loadingImg.src=preloadImg.src;
-		loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
 
 		// preloading additional images
 		if ("serviceWorker" in navigator) {
@@ -578,6 +579,7 @@ function preloadImage(type, source, lang, result) {
 			result.entries[preloadIndex].storage.loadingImg=null;
 
 			loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
+			loadingImg.setAttribute('class', 'text_red;');
 			loadingImg.setAttribute('width', 450);
 
 			if (preloadImg.alt == null || preloadImg.alt == "") {
@@ -680,7 +682,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	contentsDiv.appendChild(imageDiv);
 
 	var Img = document.createElement("img");
-	Img.setAttribute('class', "text_red");
+	Img.setAttribute('class', "spin_text");
 	Img.setAttribute('align', 'left');
 	Img.setAttribute('width', entry.media.width - 200);
 	Img.setAttribute('style', 'display: block; margin: 5px 100px;');
