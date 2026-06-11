@@ -153,7 +153,7 @@ function adjustFeedScrollDiv() {
 
 	var tabsHeight = document.getElementById('tabstable').offsetHeight;
 	var feedTitleHeight = document.getElementById('titletable').offsetHeight;
-	var feedMessageHeight = document.getElementById('messagetable')?.offsetHeight || 0;
+	var feedMessageHeight = document.getElementById('messagetable').offsetHeight;
 	var totalHeight = tabsHeight+feedTitleHeight+feedMessageHeight;
 
 	if (isMobile()) {
@@ -256,7 +256,7 @@ function showFeedData(type, source, lang, result) {
 
 		if (result.totalUpdated == totalEntries || (source=="nasa" && type=="image") || source == "phys.org" || source == "space.com" || source == "wired") {
 			var table2 = document.getElementById("messagetable");
-			table2.remove();
+			table2.replaceChildren();
 			adjustFeedScrollDiv();
 			for (var i = 0; i < totalEntries; i++) {
 				showEntry(type, source, lang, result, i, true);
@@ -287,7 +287,7 @@ function showFeedData(type, source, lang, result) {
 					}
 				}
 				var table2 = document.getElementById("messagetable");
-				table2.remove();
+				table2.replaceChildren();
 				adjustFeedScrollDiv();
 			};
 			var loadingDivTitleSkip = document.getElementById("loadingDivTitleSkip");
@@ -331,7 +331,7 @@ function showFeedData(type, source, lang, result) {
 					const statusText = error.response?.statusText ?? error.message ?? String(error);
 
 					var table2 = document.getElementById("messagetable");
-					table2.remove();
+					table2.replaceChildren();
 					adjustFeedScrollDiv();
 
 					for (var j = 0; j < totalEntries; j++) {
@@ -1941,7 +1941,7 @@ function checkProcessedCount(source, type, result, lang, controller, pf = 1) {
 	}
 	if (processedCount == totalEntries) {
 		var table2 = document.getElementById("messagetable");
-		table2.remove();
+		table2.replaceChildren();
 		adjustFeedScrollDiv();
 		return;
 	} else {
