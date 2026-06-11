@@ -153,7 +153,7 @@ function adjustFeedScrollDiv() {
 
 	var tabsHeight = document.getElementById('tabstable').offsetHeight;
 	var feedTitleHeight = document.getElementById('titletable').offsetHeight;
-	var feedMessageHeight = document.getElementById('messagetable').offsetHeight;
+	var feedMessageHeight = document.getElementById('messagetable')?.offsetHeight || 0;
 	var totalHeight = tabsHeight+feedTitleHeight+feedMessageHeight;
 
 	if (isMobile()) {
@@ -255,9 +255,8 @@ function showFeedData(type, source, lang, result) {
 		tableMainRow.setAttribute('id', 'tableMainRow');
 
 		if (result.totalUpdated == totalEntries || (source=="nasa" && type=="image") || source == "phys.org" || source == "space.com" || source == "wired") {
-			$("#processedDiv").hide();
 			var table2 = document.getElementById("messagetable");
-			table2.replaceChildren();
+			table2.remove();
 			adjustFeedScrollDiv();
 			for (var i = 0; i < totalEntries; i++) {
 				showEntry(type, source, lang, result, i, true);
@@ -288,8 +287,7 @@ function showFeedData(type, source, lang, result) {
 					}
 				}
 				var table2 = document.getElementById("messagetable");
-				table2.replaceChildren();
-				$("#processedDiv").hide();
+				table2.remove();
 				adjustFeedScrollDiv();
 			};
 			var loadingDivTitleSkip = document.getElementById("loadingDivTitleSkip");
@@ -305,7 +303,8 @@ function showFeedData(type, source, lang, result) {
 			})
 			.then(
 				response => { // proxy works
-					$("#processedDiv").show();
+					var processedDiv = document.getElementById("processedDiv");
+					processedDiv.style.display = "block";
 					document.getElementById("loadingSpanTitle").innerHTML = t("updateStarted") + ".&nbsp;";
 					adjustFeedScrollDiv();
 					// 10 updates simultaneously only
@@ -332,8 +331,7 @@ function showFeedData(type, source, lang, result) {
 					const statusText = error.response?.statusText ?? error.message ?? String(error);
 
 					var table2 = document.getElementById("messagetable");
-					table2.replaceChildren();
-					$("#processedDiv").hide();
+					table2.remove();
 					adjustFeedScrollDiv();
 
 					for (var j = 0; j < totalEntries; j++) {
@@ -1497,7 +1495,7 @@ function showFeed(type, source, lang) {
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
 		cell1.style.textAlign = "center";
-		cell1.style.paddingBottom = "10px";
+		cell1.style.padding = "10px";
 		cell1.appendChild(container);
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL);
@@ -1943,8 +1941,7 @@ function checkProcessedCount(source, type, result, lang, controller, pf = 1) {
 	}
 	if (processedCount == totalEntries) {
 		var table2 = document.getElementById("messagetable");
-		table2.replaceChildren();
-		$("#processedDiv").hide();
+		table2.remove();
 		adjustFeedScrollDiv();
 		return;
 	} else {
