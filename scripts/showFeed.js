@@ -1297,14 +1297,21 @@ function loadFeednami(type, source, lang, feedURL, loadAttempt = 1) {
 				return;
 			} 
 
+			var container = document.createElement("div");
+			container.style.padding = "5px";
+			container.style.border = "1px solid #de8e8e";
+			container.style.fontWeight = "bold";
+			container.style.display = "inline-block";
+
 			var table2 = document.getElementById("messagetable");
-			if (!table2) return;
 			table2.replaceChildren();
 			var row = table2.insertRow(-1);
 			var cell1 = row.insertCell(0);
 			cell1.className = 'text_red';
-			cell1.setAttribute("style", "text-align: center; padding-top: 10px; padding-bottom: 10px;");
-			cell1.innerHTML = "<b>" + t("newsFeed") + "&nbsp;</b>" + feedIcon(feedURL, lang).outerHTML + "<br><b>" + error.message + "</b><br><a href='javascript:location.reload();' class='standardb_red'>" + t("reloadPage")+ "</a>";
+			cell1.style.textAlign = "center";
+			cell1.style.padding = "4px";
+			cell1.appendChild(container);
+			container.innerHTML = t("newsFeed") + "&nbsp;" + feedIcon(feedURL, lang).outerHTML + "<br>" + error.message + "<br><a href='javascript:location.reload();' class='standardb_red'>" + t("reloadPage")+ "</a>";
 			adjustFeedScrollDiv();
 			requestIdleCallback(() => { preloadImagesGeneral(); });
 		}
@@ -1499,7 +1506,7 @@ function showFeed(type, source, lang) {
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
 		cell1.style.textAlign = "center";
-		cell1.style.padding = "5px";
+		cell1.style.padding = "4px";
 		cell1.appendChild(container);
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL);
