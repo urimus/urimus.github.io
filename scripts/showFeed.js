@@ -1482,10 +1482,14 @@ function showFeed(type, source, lang) {
 	loadingDivTitleSkip.appendChild(loadingSpanTitle);
 	loadingDivTitleSkip.appendChild(loadAttempt);
 
-	var container = document.createElement("b");
+	var container = document.createElement("div");
 	container.appendChild(loadingDivTitleSkip);
 	container.appendChild(loadingDiv);
 	container.appendChild(processedDiv);
+	container.style.padding = "5px";
+	container.style.border = "1px solid #de8e8e";
+	container.style.fontWeight = "bold";
+	container.style.display = "inline-block";
 
 	var preloadImg = new Image();
 	preloadImg.onload = function () {
@@ -1495,7 +1499,7 @@ function showFeed(type, source, lang) {
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
 		cell1.style.textAlign = "center";
-		cell1.style.padding = "10px";
+		cell1.style.padding = "5px";
 		cell1.appendChild(container);
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL);
