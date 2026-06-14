@@ -209,7 +209,7 @@ function preloadImagesGeneral() {
 		"bruce_willis","card","chanson","chupacabra","data_processing","disco","drawing",
 		"dystopia","einstein","energy_drinks","evil","falsifiability","gotham_city",
 		"guitar","guitar_electronic","heffalump","historical_fiction","html_editor",
-		"hyperspace","ide","industrial","ireland","jason_statham","junk","language_select",
+		"hyperspace","ide","ireland","jason_statham","junk","language_select",
 		"links","matrix","metal","michael_douglas","middle_ages","milla_jovovich",
 		"mockbuster","national","news","not_video","photos","pop","post_apocalyptic",
 		"programming_languages","psychedelic","psychology","punk","puzzle","racing",
