@@ -1269,7 +1269,7 @@ function showFeednamiError(error, feedURL, lang) {
 
 	var container = document.createElement("div");
 	container.style.padding = "5px";
-	container.style.border = "1px solid #de8e8e";
+	container.style.border = "2px solid #de8e8e";
 	container.style.fontWeight = "bold";
 	container.style.display = "inline-block";
 
@@ -1514,7 +1514,7 @@ function showFeed(type, source, lang) {
 	container.appendChild(loadingDiv);
 	container.appendChild(processedDiv);
 	container.style.padding = "5px";
-	container.style.border = "1px solid #de8e8e";
+	container.style.border = "2px solid #de8e8e";
 	container.style.fontWeight = "bold";
 	container.style.display = "inline-block";
 
