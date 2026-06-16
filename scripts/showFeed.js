@@ -197,6 +197,7 @@ function showFeedTitle(type, source, lang, result) {
 		var container = document.createElement("div");
 		container.style.padding = "5px";
 		container.style.border = "1px solid #de8e8e";
+		container.style.borderRadius = "4px";
 		container.style.fontWeight = "bold";
 
 		cell1.style.textAlign = "left";
@@ -676,7 +677,12 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	cell1.style.verticalAlign = 'top';
 
 	var contentsDiv = document.createElement('div');
-	contentsDiv.setAttribute('style', "display:inline-block; width:" + entry.media.width + "px; padding:10px; border: 1px solid #de8e8e;");
+	contentsDiv.style.display = "inline-block";
+	contentsDiv.style.width = entry.media.width + "px";
+	contentsDiv.style.padding = "10px";
+	contentsDiv.style.border = "1px solid #de8e8e";
+	contentsDiv.style.borderRadius = "4px";
+
 	cell1.appendChild(contentsDiv);
 
 	if (typeof entry.error !== "undefined" && entry.error != null) {
@@ -705,8 +711,8 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	Img.src="images/icons/feed/loading.svg";
 	imageDiv.appendChild(Img);
 
-	result.entries[i].storage.loadingImg=Img;
-	result.entries[i].storage.contentsDiv=contentsDiv;
+	result.entries[i].storage.loadingImg = Img;
+	result.entries[i].storage.contentsDiv = contentsDiv;
 	// preload later
 	// ------------- Additional Images Show/Hide -------------- //
 	if (typeof entry.additMediaUrl !== "undefined") {
@@ -1270,6 +1276,7 @@ function showFeednamiError(error, feedURL, lang) {
 	var container = document.createElement("div");
 	container.style.padding = "5px";
 	container.style.border = "2px solid #de8e8e";
+	container.style.borderRadius = "4px";
 	container.style.fontWeight = "bold";
 	container.style.display = "inline-block";
 
@@ -1515,6 +1522,7 @@ function showFeed(type, source, lang) {
 	container.appendChild(processedDiv);
 	container.style.padding = "5px";
 	container.style.border = "2px solid #de8e8e";
+	container.style.borderRadius = "4px";
 	container.style.fontWeight = "bold";
 	container.style.display = "inline-block";
 
