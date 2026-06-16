@@ -193,7 +193,17 @@ function showFeedTitle(type, source, lang, result) {
 		var row = table.insertRow(-1);	
 		var cell1 = row.insertCell(0);
 		cell1.setAttribute('class', 'nimetus_red');
-		cell1.setAttribute('style', 'padding: 5px 10px; display: -webkit-flex;display: flex; align-items: center;');
+
+		var container = document.createElement("div");
+		container.style.padding = "5px";
+		container.style.border = "1px solid #de8e8e";
+		container.style.fontWeight = "bold";
+
+		cell1.style.textAlign = "left";
+		cell1.style.padding = "4px 2px";
+		container.style.display = "inline-flex";
+		container.style.alignItems = "center";
+		cell1.appendChild(container);
 
 		var aLogo = document.createElement('a');
 		aLogo.setAttribute('href', result.link);
@@ -209,10 +219,15 @@ function showFeedTitle(type, source, lang, result) {
 		Img.setAttribute('align', 'left');
 		Img.setAttribute('style', 'height: 27px; display: block;');
 		aLogo.appendChild(Img);
-		cell1.appendChild(aLogo);
+		container.appendChild(aLogo);
 
-		cell1.innerHTML += "&nbsp;" + textRssFeed + "&nbsp;" + feedIcon(result.feedXML, lang).outerHTML;
-		cell1.innerHTML += ",&nbsp;<span id='loadedCount'>0/</span>" + totalEntries + "&nbsp;" + t("record", { count: totalEntries}) + "<span id='failedCountTitle'></span>";
+		var Div = document.createElement('div');
+		Div.setAttribute('class', "text_red");
+		Div.style.display = "inline-block";
+		Div.innerHTML += "&nbsp;" + textRssFeed + "&nbsp;" + feedIcon(result.feedXML, lang).outerHTML;
+		Div.innerHTML += ",&nbsp;<span id='loadedCount'>0/</span>" + totalEntries + "&nbsp;" + t("record", { count: totalEntries}) + "<span id='failedCountTitle'></span>";
+		Div.innerHTML += "&nbsp;";
+		container.appendChild(Div);
 
 		var Img = document.createElement('img');
 		Img.setAttribute('tabindex', "0");
@@ -220,7 +235,7 @@ function showFeedTitle(type, source, lang, result) {
 		Img.setAttribute('title', t("lastBuild") + ":&nbsp;" + formatDate(result.date_ms, lang));
 		Img.setAttribute('style',  "height:27px;");
 		Img.src="images/icons/feed/build.svg";
-		cell1.innerHTML+="&nbsp;"+Img.outerHTML;
+		container.appendChild(Img);
 
 		if (result.copyright!= null) {
 			var Img = document.createElement('img');
@@ -229,12 +244,12 @@ function showFeedTitle(type, source, lang, result) {
 			Img.setAttribute('title', result.copyright);
 			Img.setAttribute('style',  "height:27px;");
 			Img.src="images/icons/feed/copyright.svg";
-			cell1.innerHTML+=Img.outerHTML;
+			container.appendChild(Img);
 		}
-		cell1.innerHTML+=".";
+		container.innerHTML+=".";
 
 		if (source=="nasa" && type=="image") {
-			cell1.innerHTML+=' '+t("by")+' Brian Dunbar&nbsp;' + mailToIconText("brian.dunbar@nasa.gov");
+			container.innerHTML+=' '+t("by")+' Brian Dunbar&nbsp;' + mailToIconText("brian.dunbar@nasa.gov");
 		}
 
 		adjustFeedScrollDiv();
@@ -1264,7 +1279,7 @@ function showFeednamiError(error, feedURL, lang) {
 	var cell1 = row.insertCell(0);
 	cell1.className = 'text_red';
 	cell1.style.textAlign = "center";
-	cell1.style.padding = "4px";
+	cell1.style.padding = "4px 2px";
 	cell1.appendChild(container);
 	container.innerHTML = t("newsFeed") + "&nbsp;" + feedIcon(feedURL, lang).outerHTML + "<br>" + error.message + "<br><a href='javascript:location.reload();' class='standardb_red'>" + t("reloadPage")+ "</a>";
 	adjustFeedScrollDiv();
@@ -1511,7 +1526,7 @@ function showFeed(type, source, lang) {
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
 		cell1.style.textAlign = "center";
-		cell1.style.padding = "4px";
+		cell1.style.padding = "4px 2px";
 		cell1.appendChild(container);
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL);
