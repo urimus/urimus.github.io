@@ -1279,7 +1279,7 @@ function showFeednamiError(error, feedURL, lang) {
 	var cell1 = row.insertCell(0);
 	cell1.className = 'text_red';
 	cell1.style.textAlign = "center";
-	cell1.style.padding = "4px 2px";
+	cell1.style.padding = "4px 2px 8px 2px";
 	cell1.appendChild(container);
 	container.innerHTML = t("newsFeed") + "&nbsp;" + feedIcon(feedURL, lang).outerHTML + "<br>" + error.message + "<br><a href='javascript:location.reload();' class='standardb_red'>" + t("reloadPage")+ "</a>";
 	adjustFeedScrollDiv();
@@ -1526,7 +1526,7 @@ function showFeed(type, source, lang) {
 		var cell1 = row.insertCell(0);
 		cell1.className = 'text_red';
 		cell1.style.textAlign = "center";
-		cell1.style.padding = "4px 2px";
+		cell1.style.padding = "4px 2px 8px 2px";;
 		cell1.appendChild(container);
 		adjustFeedScrollDiv();
 		loadFeednami(type, source, lang, feedURL);
