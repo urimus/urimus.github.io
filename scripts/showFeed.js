@@ -554,8 +554,6 @@ function preloadImage(type, source, lang, result) {
 
 		if (preloadImg.naturalWidth < 450) {
 			loadingImg.setAttribute('width', preloadImg.naturalWidth);
-			contentsDiv.style.width = preloadImg.naturalWidth;
-
 			if (typeof summaryDiv !== "undefined" && typeof entry.summary !== "undefined" && entry.summary != null && entry.summary != "") {
 				formatSummaryDiv(lang, summaryDiv, entry);
 			}
@@ -679,7 +677,6 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 
 	var contentsDiv = document.createElement('div');
 	contentsDiv.style.display = "inline-block";
-	contentsDiv.style.width = entry.media.width + "px";
 	contentsDiv.style.padding = "10px";
 	contentsDiv.style.border = "1px solid #de8e8e";
 	contentsDiv.style.borderRadius = "4px";
