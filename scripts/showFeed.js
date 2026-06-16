@@ -554,7 +554,8 @@ function preloadImage(type, source, lang, result) {
 
 		if (preloadImg.naturalWidth < 450) {
 			loadingImg.setAttribute('width', preloadImg.naturalWidth);
-			contentsDiv.setAttribute('style', "display:inline-block; width:" + loadingImg.width + "px; padding:10px; border: 1px solid #de8e8e;");
+			contentsDiv.style.width = preloadImg.naturalWidth;
+
 			if (typeof summaryDiv !== "undefined" && typeof entry.summary !== "undefined" && entry.summary != null && entry.summary != "") {
 				formatSummaryDiv(lang, summaryDiv, entry);
 			}
