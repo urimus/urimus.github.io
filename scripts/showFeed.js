@@ -266,8 +266,7 @@ function showFeedData(type, source, lang, result) {
 	if (totalEntries > 0) {
 		var table = document.getElementById("feedtable");
 		var tableMainRow = table.insertRow(-1);
-		tableMainRow.setAttribute('style', 'vertical-align:top;');
-		tableMainRow.setAttribute('id', 'tableMainRow');
+		tableMainRow.id = 'tableMainRow';
 
 		if (result.totalUpdated == totalEntries || (source=="nasa" && type=="image") || source == "phys.org" || source == "space.com" || source == "wired") {
 			var table2 = document.getElementById("messagetable");
@@ -674,6 +673,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 			scrollDiv.scrollLeft = 0;
 		}
 	}
+	cell1.style.verticalAlign = 'top';
 
 	var contentsDiv = document.createElement('div');
 	contentsDiv.setAttribute('style', "display:inline-block; width:" + entry.media.width + "px; padding:10px; border: 1px solid #de8e8e;");
