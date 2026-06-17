@@ -196,6 +196,7 @@ function showFeedTitle(type, source, lang, result) {
 		container.style.border = "1px solid #de8e8e";
 		container.style.borderRadius = "4px";
 		container.style.fontWeight = "bold";
+		container.style.width = "fit-content";
 
 		cell1.style.textAlign = "left";
 		cell1.style.padding = "4px 2px";
