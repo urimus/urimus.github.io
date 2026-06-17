@@ -196,7 +196,6 @@ function showFeedTitle(type, source, lang, result) {
 		container.style.border = "1px solid #de8e8e";
 		container.style.borderRadius = "4px";
 		container.style.fontWeight = "bold";
-		container.style.width = "fit-content";
 
 		cell1.style.textAlign = "left";
 		cell1.style.padding = "4px 2px";
@@ -553,6 +552,7 @@ function preloadImage(type, source, lang, result) {
 
 		if (preloadStartedCount>=5 && !cached) return; // 5 preloads simultaneously only
 
+		var container=entry.storage.container;
 		var loadingImg=entry.storage.loadingImg;
 		var summaryDiv=entry.storage.summaryDiv;
 
@@ -574,6 +574,7 @@ function preloadImage(type, source, lang, result) {
 
 			if (preloadImg.naturalWidth < 450) {
 				loadingImg.setAttribute('width', preloadImg.naturalWidth);
+				container.style.width = preloadImg.naturalWidth + "px";
 				if (typeof summaryDiv !== "undefined" && typeof entry.summary !== "undefined" && entry.summary != null && entry.summary != "") {
 					formatSummaryDiv(lang, summaryDiv, entry);
 				}
@@ -693,6 +694,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	container.style.padding = "10px";
 	container.style.border = "1px solid #de8e8e";
 	container.style.borderRadius = "4px";
+	container.style.width = entry.media.width + "px";
 
 	cell1.appendChild(container);
 
@@ -723,6 +725,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	imageDiv.appendChild(Img);
 
 	result.entries[i].storage.loadingImg = Img;
+	result.entries[i].storage.container = container;
 
 	// preload later
 	// ------------- Additional Images Show/Hide -------------- //
