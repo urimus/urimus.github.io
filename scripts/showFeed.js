@@ -533,7 +533,6 @@ function preloadImage(type, source, lang, result) {
 
 	var entry=result.entries[preloadIndex];
 	var loadingImg=entry.storage.loadingImg;
-	var contentsDiv=entry.storage.contentsDiv;
 	var summaryDiv=entry.storage.summaryDiv;
 
 	var preloadImg = new Image();
@@ -675,28 +674,28 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	}
 	cell1.style.verticalAlign = 'top';
 
-	var contentsDiv = document.createElement('div');
-	contentsDiv.style.display = "inline-block";
-	contentsDiv.style.padding = "10px";
-	contentsDiv.style.border = "1px solid #de8e8e";
-	contentsDiv.style.borderRadius = "4px";
+	var container = document.createElement('div');
+	container.style.display = "inline-block";
+	container.style.padding = "10px";
+	container.style.border = "1px solid #de8e8e";
+	container.style.borderRadius = "4px";
 
-	cell1.appendChild(contentsDiv);
+	cell1.appendChild(container);
 
 	if (typeof entry.error !== "undefined" && entry.error != null) {
 		var Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
 		Div.innerHTML = "💥 " + entry.error;
-		contentsDiv.appendChild(Div);
+		container.appendChild(Div);
 	}
 
 	var Div = document.createElement('div');
 	Div.setAttribute('class', "nimetus3_red");
 	Div.innerHTML = (i + 1) + ". " + entry.title;
-	contentsDiv.appendChild(Div);
+	container.appendChild(Div);
 
 	var imageDiv = document.createElement('div');
-	contentsDiv.appendChild(imageDiv);
+	container.appendChild(imageDiv);
 
 	var Img = document.createElement("img");
 	Img.setAttribute('class', "spin_text");
@@ -710,7 +709,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	imageDiv.appendChild(Img);
 
 	result.entries[i].storage.loadingImg = Img;
-	result.entries[i].storage.contentsDiv = contentsDiv;
+
 	// preload later
 	// ------------- Additional Images Show/Hide -------------- //
 	if (typeof entry.additMediaUrl !== "undefined") {
@@ -832,7 +831,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		var summaryDiv = document.createElement('div');
 		summaryDiv.setAttribute('class', "text_red");
 		summaryDiv.setAttribute('style', 'display:inline-block;');
-		contentsDiv.appendChild(summaryDiv);
+		container.appendChild(summaryDiv);
 		formatSummaryDiv(lang, summaryDiv, entry);
 		result.entries[i].storage.summaryDiv=summaryDiv;
 	}
@@ -844,7 +843,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		var Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
 		Div.innerHTML = "<b>" + t("subject") + ":&nbsp;</b>" + entry.subject;
-		contentsDiv.appendChild(Div);
+		container.appendChild(Div);
 	}
 
 	if (typeof entry.source !== "undefined" && typeof entry.source.title !== "undefined") {
@@ -858,7 +857,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		a.innerText = entry.source.title;
 		Div.appendChild(a);
 		Div.innerHTML = "<b>" + t("source") + ":&nbsp;</b>" + Div.innerHTML;
-		contentsDiv.appendChild(Div);
+		container.appendChild(Div);
 	}
 
 	if (typeof entry.creator !== "undefined" && entry.creator.length > 0 && typeof entry.creator[0] !== "undefined") {
@@ -894,7 +893,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 				Div.innerHTML += '&nbsp;' + mailToIconText(entry.creatorEmail[0]);
 			}
 		}
-		contentsDiv.appendChild(Div);
+		container.appendChild(Div);
 	}
 
 	if (typeof entry.category !== "undefined" && entry.category.length > 0 && typeof entry.category[0] !== "undefined") {
@@ -905,7 +904,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		} else {
 			Div.innerHTML = "<b>" + t("category") + ":&nbsp;</b>" + entry.category[0];
 		}
-		contentsDiv.appendChild(Div);
+		container.appendChild(Div);
 	}
 
 	if ( entry.link != "") {
@@ -918,7 +917,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		a.setAttribute('rel', 'noopener');
 		a.innerHTML = t("more") + " ▶";
 		Div.appendChild(a);
-		contentsDiv.appendChild(Div);
+		container.appendChild(Div);
 	}
 
 	if (typeof entry.seeAlso !== "undefined" && entry.seeAlso.length > 0 && typeof entry.seeAlso[0] !== "undefined") {
@@ -935,14 +934,14 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 			a.innerHTML = "▶";
 			Div.appendChild(a);
 		}
-		contentsDiv.appendChild(Div);
+		container.appendChild(Div);
 	}
 
 	var date = document.createElement('div');
 	date.className = 'textsmall_red';
 	date.setAttribute("style", "text-align:right; padding-right:10px;");
 	date.innerHTML = formatDate(entry.date_ms, lang);
-	contentsDiv.appendChild(date);
+	container.appendChild(date);
 }
 
 function generateTabs(type, source, lang) {
