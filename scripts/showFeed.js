@@ -4,29 +4,26 @@ var proxyURL = "https://proxy-df9w.onrender.com";
 
 function feedIcon (feedURL, lang) {
 
-	var textRssFeed;
+	var textFeedType;
 	if (feedURL == "https://api.artemis2.live/news") { // artemis
-		textRssFeed = "API ";
+		textFeedType = "API ";
 	} else {
-		textRssFeed = "RSS "
+		textFeedType = "RSS "
 	}
-	if (lang == "rus" || lang == "lat") {
-		textRssFeed += t("feed") + " (" + t("eng") + ")";
-	} else {
-		textRssFeed += t("feed");
-	}
+	textFeedType += t("feed");
+	if (lang == "rus" || lang == "lat") textFeedType += " (" + t("eng") + ")";
 
 	var a = document.createElement('a');
 	a.setAttribute('href', feedURL);
 	a.setAttribute('class', 'standardb_red');
 	a.setAttribute('target', '_blank');
 	a.setAttribute('tabindex', "0");
-	a.setAttribute('title', textRssFeed);
+	a.setAttribute('title', textFeedType);
 
 	var Img = document.createElement("img");
 	Img.setAttribute('src', "images/icons/feed/feed_icon.svg");
 	Img.setAttribute('class', "thumbnail_image_red_png");
-	Img.setAttribute('alt', textRssFeed);
+	Img.setAttribute('alt', textFeedType);
 	Img.setAttribute('valign', 'middle');
 	Img.setAttribute('style', 'height: 27px;');
 	a.appendChild(Img);
@@ -174,14 +171,14 @@ function adjustFeedScrollDiv() {
 
 function showFeedTitle(type, source, lang, result) {
 
-	var textRssFeed;
+	var textFeedType;
 	if (source == "artemis") {
-		textRssFeed = "API ";
+		textFeedType = "API ";
 	} else {
-		textRssFeed = "RSS "
+		textFeedType = "RSS "
 	}
-	textRssFeed += t("feed");
-	if (lang == "rus" || lang == "lat") textRssFeed += " (" + t("eng") + ")";
+	textFeedType += t("feed");
+	if (lang == "rus" || lang == "lat") textFeedType += " (" + t("eng") + ")";
 
 	document.getElementById("loadingSpanTitleSub").innerHTML = t("outputNewsFeed") + " ";
 
@@ -225,7 +222,7 @@ function showFeedTitle(type, source, lang, result) {
 		var Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
 		Div.style.display = "inline-block";
-		Div.innerHTML += "&nbsp;" + textRssFeed + "&nbsp;" + feedIcon(result.feedXML, lang).outerHTML;
+		Div.innerHTML += "&nbsp;" + textFeedType + "&nbsp;" + feedIcon(result.feedXML, lang).outerHTML;
 		Div.innerHTML += ",&nbsp;<span id='loadedCount'>0/</span>" + totalEntries + "&nbsp;" + t("record", { count: totalEntries}) + "<span id='failedCountTitle'></span>";
 		Div.innerHTML += "&nbsp;";
 		container.appendChild(Div);
@@ -1105,12 +1102,13 @@ function generateTabs(type, source, lang) {
 	menuDiv.setAttribute('class', "menu_selected");
 	menuDiv.setAttribute('onmouseleave', "this.className='menu_selected';");
 
-	var textRssFeed;
+	var textFeedType;
 	if (source == "artemis") {
-		textRssFeed="API " + t("feed");
+		textFeedType ="API ";
 	} else {
-		textRssFeed="RSS " + t("feed");
+		textFeedType ="RSS ";
 	}
+	textFeedType += t("feed");
 
 	var tabtype2;
 	if (source=="phys.org") {
@@ -1137,9 +1135,9 @@ function generateTabs(type, source, lang) {
 
 	var feedTitle=document.getElementById("feedTitle");
 	if (tabtype2 != "") {
-		feedTitle.innerHTML=t("news")+" &blacktriangleright; "+textFeedSource +" "+textRssFeed+" &blacktriangleright; "+tabtype2;
+		feedTitle.innerHTML=t("news")+" &blacktriangleright; "+textFeedSource +" "+textFeedType+" &blacktriangleright; "+tabtype2;
 	} else {
-		feedTitle.innerHTML=t("news")+" &blacktriangleright; "+textFeedSource +" "+textRssFeed;
+		feedTitle.innerHTML=t("news")+" &blacktriangleright; "+textFeedSource +" "+textFeedType;
 	}
 
 	var keys=Object.keys(tabs);
