@@ -502,7 +502,7 @@ function isEmbed(url) {
 }
 
 function isImageCached(url) {
-	if (!("caches" in window)) {
+	if (!("serviceWorker" in navigator && "caches" in window)) {
 		return Promise.resolve(false);
 	}
 
@@ -510,11 +510,8 @@ function isImageCached(url) {
 		.then(function (cache) {
 			return cache.match(url);
 		})
-		.then(function (response) {
-			return !!response;
-		});
+		.then(Boolean);
 }
-
 
 function preloadImage(type, source, lang, result) {
 
