@@ -603,7 +603,7 @@ function preloadImage(type, source, lang, result) {
 				});
 			}
 			adjustFeedScrollDiv();
-			preloadImage(type, source, lang, result);
+			if (preloadStartedCount <= 5) preloadImage(type, source, lang, result);
 		}
 		preloadImg.onerror = function () {
 			const showErrorImage = () => {
@@ -635,7 +635,7 @@ function preloadImage(type, source, lang, result) {
 					document.getElementById("loadedCount").innerHTML = loadedCount + "/";
 				}
 				adjustFeedScrollDiv();
-				preloadImage(type, source, lang, result);
+				if (preloadStartedCount <= 5) preloadImage(type, source, lang, result);
 			};
 
 			// try origUrl if set
