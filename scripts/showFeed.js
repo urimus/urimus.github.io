@@ -501,21 +501,11 @@ function isEmbed(url) {
 	}
 }
 
-function isImageCached(url) {
-	if (!("serviceWorker" in navigator && "caches" in window)) {
-		return Promise.resolve(false);
-	}
-
-	return caches.open("image-cache")
-		.then(function (cache) {
-			return cache.match(url);
-		})
-		.then(Boolean);
-}
-
 function preloadImage(type, source, lang, result) {
+	// 5 preloads simultaneously only
 
 	var isOrigUrl=0;
+	var newUrl;
 	var totalEntries = result.entries.length;
 	var preloadStartedCount=0;
 	var preloadPassedCount=0;
@@ -535,34 +525,84 @@ function preloadImage(type, source, lang, result) {
 	}
 
 	if (preloadPassedCount+preloadFailedCount>=totalEntries) return;
+	if (preloadStartedCount==5) return; // 5 preloads simultaneously only
 	if (preloadSet==0) return;
 
 	var entry=result.entries[preloadIndex];
-	// 5 preloads simultaneously only
-	var newUrl = entry.media.url;
-	if (newUrl.substr(newUrl.length - 12) != "no_image.png") {
-		if (source === "nasa" || source === "artemis") {
-			const url = new URL(newUrl);
-			url.searchParams.set("w", "450");
-			newUrl = url.toString();
+	var container=entry.storage.container;
+	var loadingImg=entry.storage.loadingImg;
+	var summaryDiv=entry.storage.summaryDiv;
+
+	var preloadImg = new Image();
+	preloadImg.alt=entry.media.comment;
+	preloadImg.title=entry.media.comment;
+	preloadImg.onload = function () {
+		result.entries[preloadIndex].storage.preloadPF=1;
+		result.entries[preloadIndex].storage.preloadStarted=0;
+		result.entries[preloadIndex].storage.loadingImg=null;
+		for (var j = 0; j < totalEntries; j++) {
+			if (result.entries[j].storage.preloadPF !== null) loadedCount++;
 		}
+		if (loadedCount >= totalEntries) {
+			document.getElementById("loadedCount").innerHTML = "";
+		} else {
+			document.getElementById("loadedCount").innerHTML = loadedCount + "/";
+		}
+
+		if (preloadImg.naturalWidth < 450) {
+			loadingImg.setAttribute('width', preloadImg.naturalWidth);
+			container.style.width = preloadImg.naturalWidth + "px";
+			if (typeof summaryDiv !== "undefined" && typeof entry.summary !== "undefined" && entry.summary != null && entry.summary != "") {
+				formatSummaryDiv(lang, summaryDiv, entry);
+			}
+		} else {
+			loadingImg.setAttribute('width', 450);
+		}
+
+		loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
+		loadingImg.setAttribute('class', 'text_red;');
+		loadingImg.alt=preloadImg.alt;
+		loadingImg.title=preloadImg.title;
+		loadingImg.src=preloadImg.src;
+
+		// preloading additional images
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.ready.then(() => {
+				if (typeof entry.additMediaUrl !== "undefined") {
+					for (var j = 0; j < entry.additMediaUrl.length; j++) {
+						const url = new URL(entry.additMediaUrl[j]);
+						if (source === "nasa" || source === "artemis") {
+							url.searchParams.set("w", "450");
+						}
+						new Image().src = url.toString();
+					}
+				}
+			});
+		}
+		adjustFeedScrollDiv();
+		preloadImage(type, source, lang, result);
 	}
-
-	isImageCached(newUrl).then(function (cached) {
-
-		if (preloadStartedCount>=5 && !cached) return; // 5 preloads simultaneously only
-
-		var container=entry.storage.container;
-		var loadingImg=entry.storage.loadingImg;
-		var summaryDiv=entry.storage.summaryDiv;
-
-		var preloadImg = new Image();
-		preloadImg.alt=entry.media.comment;
-		preloadImg.title=entry.media.comment;
-		preloadImg.onload = function () {
-			result.entries[preloadIndex].storage.preloadPF=1;
+	preloadImg.onerror = function () {
+		const showErrorImage = () => {
+			result.entries[preloadIndex].storage.preloadPF=0;
 			result.entries[preloadIndex].storage.preloadStarted=0;
 			result.entries[preloadIndex].storage.loadingImg=null;
+
+			loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
+			loadingImg.setAttribute('class', 'text_red;');
+			loadingImg.setAttribute('width', 450);
+
+			if (preloadImg.alt == null || preloadImg.alt == "") {
+				loadingImg.alt = t("imageLoadError");
+			} else {
+				loadingImg.alt = preloadImg.alt;
+			}
+			if (preloadImg.title == null || preloadImg.title == "") {
+				loadingImg.title = t("imageLoadError");
+			} else {
+				loadingImg.title= preloadImg.title;
+			}
+			loadingImg.src="images/icons/error/error.jpg";
 			for (var j = 0; j < totalEntries; j++) {
 				if (result.entries[j].storage.preloadPF !== null) loadedCount++;
 			}
@@ -571,97 +611,41 @@ function preloadImage(type, source, lang, result) {
 			} else {
 				document.getElementById("loadedCount").innerHTML = loadedCount + "/";
 			}
-
-			if (preloadImg.naturalWidth < 450) {
-				loadingImg.setAttribute('width', preloadImg.naturalWidth);
-				container.style.width = preloadImg.naturalWidth + "px";
-				if (typeof summaryDiv !== "undefined" && typeof entry.summary !== "undefined" && entry.summary != null && entry.summary != "") {
-					formatSummaryDiv(lang, summaryDiv, entry);
-				}
-			} else {
-				loadingImg.setAttribute('width', 450);
-			}
-
-			loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
-			loadingImg.setAttribute('class', 'text_red;');
-			loadingImg.alt=preloadImg.alt;
-			loadingImg.title=preloadImg.title;
-			loadingImg.src=preloadImg.src;
-
-			// preloading additional images
-			if ("serviceWorker" in navigator) {
-				navigator.serviceWorker.ready.then(() => {
-					if (typeof entry.additMediaUrl !== "undefined") {
-						for (var j = 0; j < entry.additMediaUrl.length; j++) {
-							const url = new URL(entry.additMediaUrl[j]);
-							if (source === "nasa" || source === "artemis") {
-								url.searchParams.set("w", "450");
-							}
-							new Image().src = url.toString();
-						}
-					}
-				});
-			}
 			adjustFeedScrollDiv();
-			if (preloadStartedCount <= 5) preloadImage(type, source, lang, result);
-		}
-		preloadImg.onerror = function () {
-			const showErrorImage = () => {
-				result.entries[preloadIndex].storage.preloadPF=0;
-				result.entries[preloadIndex].storage.preloadStarted=0;
-				result.entries[preloadIndex].storage.loadingImg=null;
+			preloadImage(type, source, lang, result);
+		};
 
-				loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
-				loadingImg.setAttribute('class', 'text_red;');
-				loadingImg.setAttribute('width', 450);
-
-				if (preloadImg.alt == null || preloadImg.alt == "") {
-					loadingImg.alt = t("imageLoadError");
-				} else {
-					loadingImg.alt = preloadImg.alt;
-				}
-				if (preloadImg.title == null || preloadImg.title == "") {
-					loadingImg.title = t("imageLoadError");
-				} else {
-					loadingImg.title= preloadImg.title;
-				}
-				loadingImg.src="images/icons/error/error.jpg";
-				for (var j = 0; j < totalEntries; j++) {
-					if (result.entries[j].storage.preloadPF !== null) loadedCount++;
-				}
-				if (loadedCount >= totalEntries) {
-					document.getElementById("loadedCount").innerHTML = "";
-				} else {
-					document.getElementById("loadedCount").innerHTML = loadedCount + "/";
-				}
-				adjustFeedScrollDiv();
-				if (preloadStartedCount <= 5) preloadImage(type, source, lang, result);
-			};
-
-			// try origUrl if set
-			newUrl = entry.media.origUrl;
-			if (typeof newUrl !== 'undefined' && isOrigUrl == 0 && newUrl != preloadImg.src) {
-				if (newUrl.substr(newUrl.length - 12)=="no_image.png") { showErrorImage(); return; }
-				if (entry.media.origComment != null) {
-					preloadImg.alt=entry.media.origComment;
-					preloadImg.title=entry.media.origComment;
-				}
-				if (source === "nasa" || source === "artemis") {
-					const url = new URL(newUrl);
-					url.searchParams.set("w", "450");
-					newUrl = url.toString();
-				}
-				preloadImg.src = newUrl;
-				isOrigUrl = 1;
-			} else {
-				showErrorImage();
-				return;
+		// try origUrl if set
+		newUrl = entry.media.origUrl;
+		if (typeof newUrl !== 'undefined' && isOrigUrl == 0 && newUrl != preloadImg.src) {
+			if (newUrl.substr(newUrl.length - 12)=="no_image.png") { showErrorImage(); return; }
+			if (entry.media.origComment != null) {
+				preloadImg.alt=entry.media.origComment;
+				preloadImg.title=entry.media.origComment;
 			}
+			if (source === "nasa" || source === "artemis") {
+				const url = new URL(newUrl);
+				url.searchParams.set("w", "450");
+				newUrl = url.toString();
+			}
+			preloadImg.src = newUrl;
+			isOrigUrl = 1;
+		} else {
+			showErrorImage();
+			return;
 		}
+	}
 
-		result.entries[preloadIndex].storage.preloadStarted=1;
-		preloadImg.src = newUrl;
-	});
+
+	newUrl = entry.media.url;
+	result.entries[preloadIndex].storage.preloadStarted=1;
+	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.src = newUrl; return; }
+	if (source === "nasa" || source === "artemis") {
+		const url = new URL(newUrl);
+		url.searchParams.set("w", "450");
+		newUrl = url.toString();
+	}
+	preloadImg.src = newUrl;
 }
 // ------------- End of Image Preload -------------- //
 
@@ -2344,4 +2328,3 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 	);
 }
 // ------------- End of Update---------------- //
-
