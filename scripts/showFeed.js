@@ -515,7 +515,10 @@ function preloadImage(type, source, lang, result) {
 	var loadedCount=0;
 
 	for (var j = 0; j < totalEntries; j++) {
-		if (result.entries[j].storage.preloadComplete==0 && result.entries[j].storage.preloadStarted==0 && preloadSet==0) {
+		if (result.entries[j].storage.loadingImg != null &&
+		result.entries[j].storage.preloadComplete==0 &&
+		result.entries[j].storage.preloadStarted==0 &&
+		preloadSet==0) {
 			preloadSet=1;
 			preloadIndex=j;
 		}
