@@ -515,7 +515,7 @@ function preloadImage(type, source, lang, result) {
 	var loadedCount=0;
 
 	for (var j = 0; j < totalEntries; j++) {
-		if (typeof result.entries[j].storage.loadingImg !== "undefined" && result.entries[j].storage.loadingImg != null && result.entries[j].storage.preloadStarted==0 && preloadSet==0) {
+		if (result.entries[j].storage.preloadComplete==0 && result.entries[j].storage.preloadStarted==0 && preloadSet==0) {
 			preloadSet=1;
 			preloadIndex=j;
 		}
@@ -539,7 +539,8 @@ function preloadImage(type, source, lang, result) {
 	preloadImg.onload = function () {
 		result.entries[preloadIndex].storage.preloadPF=1;
 		result.entries[preloadIndex].storage.preloadStarted=0;
-		result.entries[preloadIndex].storage.loadingImg=null;
+		result.entries[preloadIndex].storage.preloadComplete=1;
+//		result.entries[preloadIndex].storage.loadingImg=null;
 		for (var j = 0; j < totalEntries; j++) {
 			if (result.entries[j].storage.preloadPF !== null) loadedCount++;
 		}
@@ -586,7 +587,8 @@ function preloadImage(type, source, lang, result) {
 		const showErrorImage = () => {
 			result.entries[preloadIndex].storage.preloadPF=0;
 			result.entries[preloadIndex].storage.preloadStarted=0;
-			result.entries[preloadIndex].storage.loadingImg=null;
+			result.entries[preloadIndex].storage.preloadComplete=1;
+//			result.entries[preloadIndex].storage.loadingImg=null;
 
 			loadingImg.setAttribute('style', 'display: block; margin: 5px 0;');
 			loadingImg.setAttribute('class', 'text_red;');
@@ -639,6 +641,7 @@ function preloadImage(type, source, lang, result) {
 
 	newUrl = entry.media.url;
 	result.entries[preloadIndex].storage.preloadStarted=1;
+	result.entries[preloadIndex].storage.preloadComplete=0;
 	if (newUrl.substr(newUrl.length - 12)=="no_image.png") { preloadImg.src = newUrl; return; }
 	if (source === "nasa" || source === "artemis") {
 		const url = new URL(newUrl);
@@ -1555,6 +1558,34 @@ function getLocalStorageData(par) {
 
 
 // ------------- Optimize ---------------- //
+function getFirstFrame(videoUrl, i, callback) {
+	const video = document.createElement('video');
+	video.crossOrigin = 'anonymous';
+	video.preload = 'auto';
+	video.muted = true;
+
+	video.onloadeddata = function() {
+		video.currentTime = 0;
+	};
+
+	video.onseeked = function() {
+		const canvas = document.createElement('canvas');
+		canvas.width = video.videoWidth;
+		canvas.height = video.videoHeight;
+
+		const ctx = canvas.getContext('2d');
+		ctx.drawImage(video, 0, 0);
+
+		canvas.toBlob(function(blob) {
+			const imageUrl = URL.createObjectURL(blob);
+
+			// Передаем blob-ссылку и i
+			callback(imageUrl, i);
+		}, 'image/jpeg', 0.9);
+	};
+
+	video.src = videoUrl;
+}
 
 function optimizeUpdateResult(type, source, lang, resultOrig) {
 	var result, locStUpdateData, locStPar, items, entry, i = -1, c;
@@ -1617,6 +1648,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		result.entries[i].storage.updateProcessed = 0;
 		result.entries[i].storage.updateInitiated = 0;
 		result.entries[i].storage.preloadStarted = 0;
+		result.entries[i].storage.preloadComplete = 0;
 		result.entries[i].storage.preloadPF = null;
 
 		// --- artemis ---
@@ -1710,6 +1742,16 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 					result.entries[i].media.url = "images/icons/feed/video.jpg";
 					result.entries[i].media.comment = t("recordContainsVideo");
 					result.entries[i].video = entry.image.url;
+					getFirstFrame(proxyURL+"?url="+entry.image.url, i, function(imageUrl, i) {
+						result.entries[i].media.url = imageUrl;
+						result.entries[i].media.comment = "";
+						var loadingImg = result.entries[i].storage.loadingImg;
+						if (loadingImg) {
+							loadingImg.src = imageUrl;
+							loadingImg.alt = "";
+							loadingImg.title = "";
+						}
+					});
 				}
 			} else {
 				result.entries[i].media.url = "images/icons/error/no_image.png";
