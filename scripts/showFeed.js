@@ -518,6 +518,7 @@ function preloadImage(type, source, lang, result) {
 		if (result.entries[j].storage.loadingImg != null &&
 		result.entries[j].storage.preloadComplete==0 &&
 		result.entries[j].storage.preloadStarted==0 &&
+		result.entries[j].media.url != "" &&
 		preloadSet==0) {
 			preloadSet=1;
 			preloadIndex=j;
@@ -1742,18 +1743,11 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				if (isVideo == 0) {
 					result.entries[i].media.url = entry.image.url;
 				} else {
-					result.entries[i].media.url = "images/icons/feed/video.jpg";
-					result.entries[i].media.comment = t("recordContainsVideo");
+					result.entries[i].media.url = "";
 					result.entries[i].video = entry.image.url;
 					getFirstFrame(proxyURL+"?url="+entry.image.url, i, function(imageUrl, i) {
 						result.entries[i].media.url = imageUrl;
-						result.entries[i].media.comment = "";
-						var loadingImg = result.entries[i].storage.loadingImg;
-						if (loadingImg) {
-							loadingImg.src = imageUrl;
-							loadingImg.alt = "";
-							loadingImg.title = "";
-						}
+						preloadImage(type, source, lang, result);
 					});
 				}
 			} else {
