@@ -1745,7 +1745,9 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				} else {
 					result.entries[i].media.url = "";
 					result.entries[i].video = entry.image.url;
-					getFirstFrame(proxyURL+"?url="+entry.image.url, i, function(imageUrl, i) {
+					const url = new URL(proxyURL);
+					url.searchParams.set("url", entry.image.url);
+					getFirstFrame(url.toString(), i, function(imageUrl, i) {
 						result.entries[i].media.url = imageUrl;
 						preloadImage(type, source, lang, result);
 					});
