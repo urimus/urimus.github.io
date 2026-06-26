@@ -1563,9 +1563,10 @@ function getLocalStorageData(par) {
 
 // ------------- Optimize ---------------- //
 function getFirstFrame(videoUrl, i, callback) {
-	const video = document.createElement('video');
-	video.crossOrigin = 'anonymous';
-	video.preload = 'auto';
+	const video = document.createElement("video");
+
+	video.crossOrigin = "anonymous";
+	video.preload = "metadata";
 	video.muted = true;
 
 	video.onloadeddata = function() {
@@ -1573,24 +1574,24 @@ function getFirstFrame(videoUrl, i, callback) {
 	};
 
 	video.onseeked = function() {
-		const canvas = document.createElement('canvas');
+		const canvas = document.createElement("canvas");
 		canvas.width = video.videoWidth;
 		canvas.height = video.videoHeight;
 
-		const ctx = canvas.getContext('2d');
+		const ctx = canvas.getContext("2d");
 		ctx.drawImage(video, 0, 0);
 
 		canvas.toBlob(function(blob) {
-			const imageUrl = URL.createObjectURL(blob);
+			callback(URL.createObjectURL(blob), i);
+		}, "image/jpeg", 0.9);
+	};
 
-			// Передаем blob-ссылку и i
-			callback(imageUrl, i);
-		}, 'image/jpeg', 0.9);
+	video.onerror = function() {
+		// Не видео или ошибка загрузки — ничего не делаем.
 	};
 
 	video.src = videoUrl;
 }
-
 function optimizeUpdateResult(type, source, lang, resultOrig) {
 	var result, locStUpdateData, locStPar, items, entry, i = -1, c;
 
