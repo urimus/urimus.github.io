@@ -1587,11 +1587,12 @@ function getFirstFrame(videoUrl, i, callback) {
 	};
 
 	video.onerror = function() {
-		// Не видео или ошибка загрузки — ничего не делаем.
+		callback(null, i);
 	};
 
 	video.src = videoUrl;
 }
+
 function optimizeUpdateResult(type, source, lang, resultOrig) {
 	var result, locStUpdateData, locStPar, items, entry, i = -1, c;
 
@@ -1732,16 +1733,17 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 		// --- wired ---
 		if (source == "wired") {
-			var videos, dotPos, ext, isVideo;
+			var videos, dotPos, ext, isVideo = false;
 			if (entry.image != null && entry.image.url != null) {
-				isVideo = 0;
-				videos = ["mp4", "3gp", "ogg"];
-				dotPos = entry.image.url.lastIndexOf(".");
-				if (dotPos != -1) {
-					ext = entry.image.url.substr(dotPos + 1);
-					if (videos.includes(ext)) isVideo = 1;
+
+				const url = entry.image.url.split(/[?#]/)[0]; // remove ? and #
+				const dotPos = url.lastIndexOf(".");
+				if (dotPos !== -1) {
+					const ext = url.substring(dotPos + 1).toLowerCase();
+					isVideo = ["mp4", "3gp", "ogg", "webm", "mov", "m4v"].includes(ext);
 				}
-				if (isVideo == 0) {
+
+				if (!isVideo) {
 					result.entries[i].media.url = entry.image.url;
 				} else {
 					result.entries[i].media.url = "";
@@ -1749,7 +1751,24 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 					const url = new URL(proxyURL);
 					url.searchParams.set("url", entry.image.url);
 					getFirstFrame(url.toString(), i, function(imageUrl, i) {
-						result.entries[i].media.url = imageUrl;
+						var loadingImg = result.entries[i].storage.loadingImg;
+						if (imageUrl) {
+							result.entries[i].media.url = imageUrl;
+							result.entries[i].media.comment = "";
+							if (loadingImg) {
+								loadingImg.src = imageUrl;
+								loadingImg.alt = "";
+								loadingImg.title = "";
+							}
+						} else {
+							result.entries[i].media.url="images/icons/error/error.jpg";
+							result.entries[i].media.comment = t("imageLoadError");
+							if (loadingImg) {
+								loadingImg.src = "images/icons/error/error.jpg";
+								loadingImg.alt = t("imageLoadError");
+								loadingImg.title = t("imageLoadError");
+							}
+						}
 						preloadImage(type, source, lang, result);
 					});
 				}
