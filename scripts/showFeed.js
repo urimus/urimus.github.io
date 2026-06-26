@@ -1749,23 +1749,12 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 					const url = new URL(proxyURL);
 					url.searchParams.set("url", entry.image.url);
 					getFirstFrame(url.toString(), i, function(imageUrl, i) {
-						var loadingImg = result.entries[i].storage.loadingImg;
 						if (imageUrl) {
 							result.entries[i].media.url = imageUrl;
 							result.entries[i].media.comment = "";
-							if (loadingImg) {
-								loadingImg.src = imageUrl;
-								loadingImg.alt = "";
-								loadingImg.title = "";
-							}
 						} else {
 							result.entries[i].media.url="images/icons/error/error.jpg";
 							result.entries[i].media.comment = t("imageLoadError");
-							if (loadingImg) {
-								loadingImg.src = "images/icons/error/error.jpg";
-								loadingImg.alt = t("imageLoadError");
-								loadingImg.title = t("imageLoadError");
-							}
 						}
 						preloadImage(type, source, lang, result);
 					});
