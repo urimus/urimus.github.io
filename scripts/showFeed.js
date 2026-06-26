@@ -1733,16 +1733,14 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 		// --- wired ---
 		if (source == "wired") {
-			var videos, dotPos, ext, isVideo = false;
 			if (entry.image != null && entry.image.url != null) {
-
+				let isVideo = false;
 				const url = entry.image.url.split(/[?#]/)[0]; // remove ? and #
 				const dotPos = url.lastIndexOf(".");
 				if (dotPos !== -1) {
 					const ext = url.substring(dotPos + 1).toLowerCase();
 					isVideo = ["mp4", "3gp", "ogg", "webm", "mov", "m4v"].includes(ext);
 				}
-
 				if (!isVideo) {
 					result.entries[i].media.url = entry.image.url;
 				} else {
