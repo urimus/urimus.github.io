@@ -1733,31 +1733,19 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 		// --- wired ---
 		if (source == "wired") {
+			result.entries[i].media.isVideo = false;
 			if (entry.image != null && entry.image.url != null) {
-				let isVideo = false;
 				const url = entry.image.url.split(/[?#]/)[0]; // remove ? and #
 				const dotPos = url.lastIndexOf(".");
 				if (dotPos !== -1) {
 					const ext = url.substring(dotPos + 1).toLowerCase();
-					isVideo = ["mp4", "3gp", "ogg", "webm", "mov", "m4v"].includes(ext);
+					result.entries[i].media.isVideo = ["mp4", "3gp", "ogg", "webm", "mov", "m4v"].includes(ext);
 				}
-				if (!isVideo) {
-					result.entries[i].media.url = entry.image.url;
-				} else {
+				if (result.entries[i].media.isVideo) {
 					result.entries[i].media.url = "";
 					result.entries[i].video = entry.image.url;
-					const url = new URL(proxyURL);
-					url.searchParams.set("url", entry.image.url);
-					getFirstFrame(url.toString(), i, function(imageUrl, i) {
-						if (imageUrl) {
-							result.entries[i].media.url = imageUrl;
-							result.entries[i].media.comment = "";
-						} else {
-							result.entries[i].media.url="images/icons/error/error.jpg";
-							result.entries[i].media.comment = t("imageLoadError");
-						}
-						preloadImage(type, source, lang, result);
-					});
+				} else {
+					result.entries[i].media.url = entry.image.url;
 				}
 			} else {
 				result.entries[i].media.url = "images/icons/error/no_image.png";
@@ -1942,9 +1930,30 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			}
 		}
 	}
+
 	if (source == "artemis" || resultOrig.feed.meta.date == null) {
 		result.date_ms = result.entries[0].date_ms;
 	}
+
+	if (source == "wired") {
+		for (var i = 0; i < totalEntries ; i++) {
+			if (result.entries[i].media.isVideo) {
+				const url = new URL(proxyURL);
+				url.searchParams.set("url", result.entries[i].video);
+				getFirstFrame(url.toString(), i, function(imageUrl, i) {
+					if (imageUrl) {
+						result.entries[i].media.url = imageUrl;
+						result.entries[i].media.comment = "";
+					} else {
+						result.entries[i].media.url="images/icons/error/error.jpg";
+						result.entries[i].media.comment = t("imageLoadError");
+					}
+					preloadImage(type, source, lang, result);
+				});
+			}
+		}
+	}
+
 
 	document.getElementById("processedCount").innerHTML = result.totalUpdated;
 	document.getElementById("leftCount").innerHTML = totalEntries - result.totalUpdated;
