@@ -8,9 +8,8 @@
 
 
 ---------------------------------- Country -------------------------------------  **** Done
-1. Belomorkanal
-2. Valery Obodzinsky
-3. Vladimir Vysockij
+1. Valery Obodzinsky
+2. Vladimir Vysockij
 ---------------------------------- Country End ---------------------------------
 
 

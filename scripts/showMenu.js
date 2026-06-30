@@ -1517,7 +1517,7 @@ if (lang=="eng") {
 	wholeMenu["Country"].color = "black";
 	wholeMenu["Country"].hasSub = 0;
 	wholeMenu["Country"].link = "music_country_eng.html";
-	wholeMenu["Country"].html = 'Country <font color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font>';
+	wholeMenu["Country"].html = 'Country';
 
 	wholeMenu["Disco"] = {};
 	wholeMenu["Disco"].id = "7_4";
@@ -1732,7 +1732,7 @@ if (lang=="rus") {
 	wholeMenu["Кантри"].color = "black";
 	wholeMenu["Кантри"].hasSub = 0;
 	wholeMenu["Кантри"].link = "music_country_rus.html";
-	wholeMenu["Кантри"].html = 'Кантри <font color="mediumseagreen"><sup>&circlearrowright; Minimalistic &circlearrowleft;</sup></font>';
+	wholeMenu["Кантри"].html = 'Кантри';
 
 
 	wholeMenu["Диско"] = {};

@@ -640,7 +640,7 @@ function showContents(type, sortby, lang) {
 				.map(s => s.trim())
 				.filter(Boolean);
 			recNum=fileContents.length-1;
-			fileContents[0] = fileContents[0] + '<b class="' + textColor + '_blue'+'"> - ' + recNum+' ' + t("record", { count: recNum}) + '</b>';
+			fileContents[0] = fileContents[0] + '<br><b class="' + textColor + '_blue'+'">' + recNum+' ' + t("record", { count: recNum}) + '</b>';
 
 			requestIdleCallback(() => { 
 				preloadImagesContents(type, fileContents);
