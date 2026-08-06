@@ -1,0 +1,2 @@
+﻿<b class="text_green_blue">Фальсифицируемость</b>
+&#9679; <a href="falsifiability_rus.html" class = "standardb_green" data-added="17е Ноя, 2019." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Фальсифицируемость</a>

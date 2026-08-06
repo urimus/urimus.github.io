@@ -1,0 +1,7 @@
+﻿<b class="text_black_blue">Stuff <font color="red"><sup>&#9889; Evil &#9889;</sup></font></b>
+&#9679; <a href="stuff_different_eng.html" class = "standardb_black" data-added="20th of Jun, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Different</a>
+&#9679; <a href="stuff_chupacabra_eng.html" class = "standardb_black" data-added="14th of Dec, 2017." data-lang="sp" data-title_orig="Chupacabras" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Chupacabra</a>
+&#9679; <a href="stuff_hyperspace_eng.html" class = "standardb_black" data-added="18th of Jul, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Hyperspace</a>
+&#9679; <a href="stuff_images_general_eng.html" class = "standardb_black" data-added="21st of Jul, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Images</a>
+&#9679; <a href="stuff_matrix_eng.html#matrix" class = "standardb_black" data-added="10th of May, 2023." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Matrix <font color="red"><sup>&#9889; Evil &#9889;</sup></font></a>
+&#9679; <a href="stuff_star_trek_discovery_eng.html" class = "standardb_black" data-added="30th of May, 2024." data-country="usa" data-year="2017" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Star Trek: Discovery</a>

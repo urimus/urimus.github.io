@@ -1,0 +1,2 @@
+﻿<b class="text_blue">HTML Editor</b>
+&#9679; <a href="html_editor_eng.html?pattern=*.html&i=0" class = "standardb_blue" data-added="22nd of Jan, 2018." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">HTML Editor</a>

@@ -1,0 +1,9 @@
+﻿<b class="text_white_blue">Substances For Relaxation</b>
+&#9679; <a href="substances_for_relaxation_cacao_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Cacao</a>
+&#9679; <a href="substances_for_relaxation_cannabis_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Cannabis</a>
+&#9679; <a href="substances_for_relaxation_cigarettes_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Cigarettes</a>
+&#9679; <a href="substances_for_relaxation_coffee_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Coffee</a>
+&#9679; <a href="substances_for_relaxation_energy_drinks_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Energy Drinks</a>
+&#9679; <a href="substances_for_relaxation_psilocybin_mushrooms_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Psilocybin Mushrooms</a>
+&#9679; <a href="substances_for_relaxation_tea_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Tea</a>
+&#9679; <a href="substances_for_relaxation_tobacco_eng.html" class = "standardb_white" data-added="25th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Tobaccoo</a>

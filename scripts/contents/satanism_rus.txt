@@ -1,0 +1,9 @@
+﻿<b class="text_green_blue">Сатанизм</b>
+&#10008; <a href="satanism_atheistic_rus.html" class = "standardb_green" data-added="06е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Атеистический</a>
+<span style="padding-left:10px;">- <a href="satanism_atheistic_rus.html#laveyan_satanism" class = "standardb_green" data-added="06е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Сатанизм Ла-Вея</a></span>
+<span style="padding-left:10px;">- <a href="satanism_atheistic_rus.html#church_of_satan" class = "standardb_green" data-added="07е Мая, 2016." data-lang="eng" data-title_orig="Church of Satan" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Церковь Сатаны</a></span>
+<span style="padding-left:10px;">- <a href="satanism_atheistic_rus.html#the_satanic_temple" class = "standardb_green" data-added="06е Сен, 2016." data-lang="eng" data-title_orig="The Satanic Temple" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Сатанинский Храм</a></span>
+&#10004; <a href="satanism_theistic_rus.html" class = "standardb_green" data-added="07е Мая, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Теистический</a>
+<span style="padding-left:10px;">- <a href="satanism_theistic_rus.html#church_of_azazel" class = "standardb_green" data-added="06е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">The Church of Azazel</a></span>
+<span style="padding-left:10px;">- <a href="satanism_theistic_rus.html#joy_of_satan_ministries" class = "standardb_green" data-added="06е Сен, 2016." data-lang="eng" data-title_orig="Joy of Satan Ministries" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Министерство Радости Сатаны</a></span>
+&#9679; <a href="satanism_simvoly_rus.html" class = "standardb_green" data-added="15е Мая, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Символика</a>
