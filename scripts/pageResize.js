@@ -374,24 +374,6 @@ function enableKeyboardScroll(scrollDiv) {
 		prevScrollLeft = scrollDiv.scrollLeft;
 	}
 
-	function animateScroll(x, y) {
-		stopScrollAnimation();
-		isKeyboardScrolling = true;
-		scrollTween = gsap.to(scrollDiv, {
-			scrollTo: {
-				x: x,
-				y: y
-			},
-			duration: 1.0,
-			ease: "power4.out",
-			onComplete() {
-				scrollTween = null;
-				isKeyboardScrolling = false;
-				prevScrollLeft = scrollDiv.scrollLeft;
-			}
-		});
-	}
-
 	function updateScrollCellIndex() {
 		if (!cells.length) return;
 		const scrollLeft = scrollDiv.scrollLeft;
@@ -413,7 +395,22 @@ function enableKeyboardScroll(scrollDiv) {
 		lastDirection = "pointer";
 	}
 
-	function scrollToCell(direction, repeat = false) {
+	function animateScroll(x, y) {
+		stopScrollAnimation();
+		isKeyboardScrolling = true;
+		scrollTween = gsap.to(scrollDiv, {
+			scrollTo: { x: x, y: y },
+			duration: 1.0,
+			ease: "power4.out",
+			onComplete() {
+				scrollTween = null;
+				isKeyboardScrolling = false;
+				prevScrollLeft = scrollDiv.scrollLeft;
+			}
+		});
+	}
+
+	function scrollToCell(direction) {
 		if (!cells.length) return;
 		const atLeftEdge = scrollCellIndex === 0;
 		const atRightEdge = scrollCellIndex === cells.length - 1;
@@ -427,30 +424,17 @@ function enableKeyboardScroll(scrollDiv) {
 		let target = direction === 'right'
 			? cell.offsetLeft
 			: cell.offsetLeft + cell.offsetWidth - scrollDiv.clientWidth;
-		target = Math.max(
-			0,
-			Math.min(target, scrollDiv.scrollWidth - scrollDiv.clientWidth)
-		);
+		target = Math.max(0, Math.min(target, scrollDiv.scrollWidth - scrollDiv.clientWidth));
 		animateScroll(target, scrollDiv.scrollTop);
-		if (repeat && scrollTween) {
-			scrollTween.progress(1);
-		}
 	}
 
 	function stepY() {
 		return scrollDiv.clientHeight;
 	}
 
-	new MutationObserver(updateCells).observe(scrollDiv, {
-		childList: true,
-		subtree: true
-	});
-
+	new MutationObserver(updateCells).observe(scrollDiv, { childList: true, subtree: true });
 	new ResizeObserver(updateCells).observe(scrollDiv);
-
-	scrollDiv.addEventListener('wheel', () => {
-		stopScrollAnimation();
-	}, { passive: true });
+	scrollDiv.addEventListener('wheel', () => { stopScrollAnimation(); }, { passive: true });
 
 	scrollDiv.addEventListener('scroll', () => {
 		if (isKeyboardScrolling) {
@@ -470,19 +454,10 @@ function enableKeyboardScroll(scrollDiv) {
 					(e.key === 'ArrowRight' ? stepY() : -stepY());
 				animateScroll(
 					scrollDiv.scrollLeft,
-					Math.max(
-						0,
-						Math.min(
-							targetY,
-							scrollDiv.scrollHeight - scrollDiv.clientHeight
-						)
-					)
+					Math.max(0, Math.min(targetY, scrollDiv.scrollHeight - scrollDiv.clientHeight))
 				);
 			} else {
-				scrollToCell(
-					e.key === 'ArrowRight' ? 'right' : 'left',
-					e.repeat
-				);
+				scrollToCell(e.key === 'ArrowRight' ? 'right' : 'left');
 			}
 			e.preventDefault();
 		} else if (e.key === 'Home') {
@@ -493,10 +468,7 @@ function enableKeyboardScroll(scrollDiv) {
 		} else if (e.key === 'End') {
 			scrollCellIndex = cells.length - 1;
 			lastDirection = null;
-			animateScroll(
-				scrollDiv.scrollWidth,
-				scrollDiv.scrollHeight
-			);
+			animateScroll(scrollDiv.scrollWidth, scrollDiv.scrollHeight);
 			e.preventDefault();
 		}
 	});
