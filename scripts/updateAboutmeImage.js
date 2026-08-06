@@ -83,9 +83,16 @@ function reloadAboutMeImage(lang) {
 	updateAboutMeImage(lang);
 }
 
-function updateAboutMeImage(lang, random = false) {
-
+function updateAboutMeImageLoad(lang) {
 	processPageResize(lang, false);
+
+	let Div2 = document.getElementById('information_div');
+	Div2.style.right = '6px';
+
+	updateAboutMeImage2(lang, 0);
+}
+
+function updateAboutMeImage(lang, random = false) {
 
 	let i = random
 		? Math.floor(Math.random() * result.item.length)
@@ -104,7 +111,6 @@ function updateAboutMeImage(lang, random = false) {
 		Img.setAttribute('id', "iotd");
 		Img.setAttribute('style', 'display: block; margin: 0 100px 5px 100px;');
 		Img.setAttribute('class', "spin_text");
-		Img.setAttribute('align', 'left');
 		Img.setAttribute('width', 450 - 200);
 		Img.onload = function () {
 			adjustScrollDiv();
