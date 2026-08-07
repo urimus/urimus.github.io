@@ -364,7 +364,7 @@ function enableKeyboardScroll(scrollDiv) {
 		scrollCellIndex = Math.max(0, Math.min(scrollCellIndex, cells.length - 1));
 	}
 
-	function animateScroll(x, y) {
+	function animateScroll(x, y, duration = 1.0) {
 		if (scrollTween) {
 			scrollTween.kill();
 			scrollTween = null;
@@ -376,7 +376,7 @@ function enableKeyboardScroll(scrollDiv) {
 				y: y,
 				autoKill: false
 			},
-			duration: 1.0,
+			duration: duration,
 			ease: "power4.out",
 			onComplete() {
 				scrollTween = null;
@@ -385,7 +385,7 @@ function enableKeyboardScroll(scrollDiv) {
 		});
 	}
 
-	function scrollToCell(direction) {
+	function scrollToCell(direction, duration) {
 		if (!cells.length) return;
 		const atLeftEdge = scrollCellIndex === 0;
 		const atRightEdge = scrollCellIndex === cells.length - 1;
@@ -400,7 +400,7 @@ function enableKeyboardScroll(scrollDiv) {
 			? cell.offsetLeft
 			: cell.offsetLeft + cell.offsetWidth - scrollDiv.clientWidth;
 		target = Math.max(0, Math.min(target, scrollDiv.scrollWidth - scrollDiv.clientWidth));
-		animateScroll(target, scrollDiv.scrollTop);
+		animateScroll(target, scrollDiv.scrollTop, duration);
 	}
 
 	function stepY() {
@@ -421,7 +421,7 @@ function enableKeyboardScroll(scrollDiv) {
 				scrollDiv.scrollHeight - scrollDiv.clientHeight
 			)
 		);
-		animateScroll(targetX, targetY);
+		animateScroll(targetX, targetY, 0.3);
 	}, { passive: false });
 
 	function updateScrollCellIndex() {
@@ -463,7 +463,7 @@ function enableKeyboardScroll(scrollDiv) {
 					Math.max(0, Math.min(targetY, scrollDiv.scrollHeight - scrollDiv.clientHeight))
 				);
 			} else {
-				scrollToCell(e.key === 'ArrowRight' ? 'right' : 'left');
+				scrollToCell(e.key === 'ArrowRight' ? 'right' : 'left', e.repeat ? 0.3 : 1.0);
 			}
 			e.preventDefault();
 		} else if (e.key === 'Home') {
