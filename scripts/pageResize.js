@@ -364,27 +364,6 @@ function enableKeyboardScroll(scrollDiv) {
 		scrollCellIndex = Math.max(0, Math.min(scrollCellIndex, cells.length - 1));
 	}
 
-	function updateScrollCellIndex() {
-		if (!cells.length) return;
-		const scrollLeft = scrollDiv.scrollLeft;
-		const isHorizontalScroll = scrollLeft !== prevScrollLeft;
-		if (!isHorizontalScroll) return;
-		prevScrollLeft = scrollLeft;
-		const scrollCenter = scrollLeft + scrollDiv.clientWidth / 2;
-		let closest = 0;
-		let best = Infinity;
-		for (let i = 0; i < cells.length; i++) {
-			const cellCenter = cells[i].offsetLeft + cells[i].offsetWidth / 2;
-			const distance = Math.abs(cellCenter - scrollCenter);
-			if (distance < best) {
-				best = distance;
-				closest = i;
-			}
-		}
-		scrollCellIndex = closest;
-		lastDirection = "pointer";
-	}
-
 	function animateScroll(x, y) {
 		if (scrollTween) {
 			scrollTween.kill();
@@ -445,11 +424,29 @@ function enableKeyboardScroll(scrollDiv) {
 		animateScroll(targetX, targetY);
 	}, { passive: false });
 
-	scrollDiv.addEventListener('scroll', () => {
-		if (scrollTween) {
-			prevScrollLeft = scrollDiv.scrollLeft;
-			return;
+	function updateScrollCellIndex() {
+		if (!cells.length) return;
+		const scrollLeft = scrollDiv.scrollLeft;
+		const isHorizontalScroll = scrollLeft !== prevScrollLeft;
+		if (!isHorizontalScroll) return;
+		prevScrollLeft = scrollLeft;
+		const scrollCenter = scrollLeft + scrollDiv.clientWidth / 2;
+		let closest = 0;
+		let best = Infinity;
+		for (let i = 0; i < cells.length; i++) {
+			const cellCenter = cells[i].offsetLeft + cells[i].offsetWidth / 2;
+			const distance = Math.abs(cellCenter - scrollCenter);
+			if (distance < best) {
+				best = distance;
+				closest = i;
+			}
 		}
+		scrollCellIndex = closest;
+		lastDirection = "pointer";
+	}
+
+	scrollDiv.addEventListener('scroll', () => {
+		if (scrollTween) return;
 		clearTimeout(scrollTimer);
 		scrollTimer = setTimeout(() => {
 			updateScrollCellIndex();
