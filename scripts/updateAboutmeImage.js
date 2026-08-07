@@ -78,18 +78,16 @@ function preloadImagesIOTD() {
 
 }
 
+function updateAboutMeImageLoad(lang) {
+	processPageResize(lang, false);
+	let Div2 = document.getElementById('information_div');
+	Div2.style.right = '6px';
+	updateAboutMeImage2(lang, 0);
+}
+
 function reloadAboutMeImage(lang) {
 	result = null;
 	updateAboutMeImage(lang);
-}
-
-function updateAboutMeImageLoad(lang) {
-	processPageResize(lang, false);
-
-	let Div2 = document.getElementById('information_div');
-	Div2.style.right = '6px';
-
-	updateAboutMeImage2(lang, 0);
 }
 
 function updateAboutMeImage(lang, random = false) {
@@ -102,22 +100,18 @@ function updateAboutMeImage(lang, random = false) {
 	Div2.style.right = '6px';
 
 	if (result == null) {
-		let table = document.getElementById("imagetable");
-		table.replaceChildren();
-		let row = table.insertRow(-1);
-		let cell1 = row.insertCell(0);
-
 		let Img = document.createElement("img");
 		Img.setAttribute('id', "iotd");
 		Img.setAttribute('style', 'display: block; margin: 0 100px 5px 100px;');
 		Img.setAttribute('class', "spin_text");
 		Img.setAttribute('width', 450 - 200);
 		Img.onload = function () {
+			let Img2 = document.getElementById("iotd");
+			Img2.replaceWith(Img);
 			adjustScrollDiv();
 			updateAboutMeImage2(lang, i);
 		}
 		Img.src="images/icons/feed/loading.svg";
-		cell1.appendChild(Img);
 	} else {
 		updateAboutMeImage3(lang, i);
 	}
