@@ -399,7 +399,11 @@ function enableKeyboardScroll(scrollDiv) {
 		stopScrollAnimation();
 		isKeyboardScrolling = true;
 		scrollTween = gsap.to(scrollDiv, {
-			scrollTo: { x: x, y: y },
+			scrollTo: {
+				x: x,
+				y: y,
+				autoKill: false
+			},
 			duration: 1.0,
 			ease: "power4.out",
 			onComplete() {
@@ -434,7 +438,20 @@ function enableKeyboardScroll(scrollDiv) {
 
 	new MutationObserver(updateCells).observe(scrollDiv, { childList: true, subtree: true });
 	new ResizeObserver(updateCells).observe(scrollDiv);
-	scrollDiv.addEventListener('wheel', () => { stopScrollAnimation(); }, { passive: true });
+	scrollDiv.addEventListener('wheel', e => {
+		e.preventDefault();
+		const targetX = scrollTween
+			? scrollTween.vars.scrollTo.x
+			: scrollDiv.scrollLeft;
+		const targetY = Math.max(
+			0,
+			Math.min(
+				scrollDiv.scrollTop + e.deltaY,
+				scrollDiv.scrollHeight - scrollDiv.clientHeight
+			)
+		);
+		animateScroll(targetX, targetY);
+	}, { passive: false });
 
 	scrollDiv.addEventListener('scroll', () => {
 		if (isKeyboardScrolling) {
