@@ -356,22 +356,12 @@ function enableKeyboardScroll(scrollDiv) {
 	let scrollCellIndex = 0;
 	let lastDirection = null;
 	let prevScrollLeft = scrollDiv.scrollLeft;
-	let isKeyboardScrolling = false;
 	let scrollTween = null;
 	let scrollTimer = null;
 
 	function updateCells() {
 		cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
 		scrollCellIndex = Math.max(0, Math.min(scrollCellIndex, cells.length - 1));
-	}
-
-	function stopScrollAnimation() {
-		if (scrollTween) {
-			scrollTween.kill();
-			scrollTween = null;
-		}
-		isKeyboardScrolling = false;
-		prevScrollLeft = scrollDiv.scrollLeft;
 	}
 
 	function updateScrollCellIndex() {
@@ -396,8 +386,11 @@ function enableKeyboardScroll(scrollDiv) {
 	}
 
 	function animateScroll(x, y) {
-		stopScrollAnimation();
-		isKeyboardScrolling = true;
+		if (scrollTween) {
+			scrollTween.kill();
+			scrollTween = null;
+		}
+		prevScrollLeft = scrollDiv.scrollLeft;
 		scrollTween = gsap.to(scrollDiv, {
 			scrollTo: {
 				x: x,
@@ -408,7 +401,6 @@ function enableKeyboardScroll(scrollDiv) {
 			ease: "power4.out",
 			onComplete() {
 				scrollTween = null;
-				isKeyboardScrolling = false;
 				prevScrollLeft = scrollDiv.scrollLeft;
 			}
 		});
@@ -454,7 +446,7 @@ function enableKeyboardScroll(scrollDiv) {
 	}, { passive: false });
 
 	scrollDiv.addEventListener('scroll', () => {
-		if (isKeyboardScrolling) {
+		if (scrollTween) {
 			prevScrollLeft = scrollDiv.scrollLeft;
 			return;
 		}
