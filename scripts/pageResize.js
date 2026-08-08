@@ -433,7 +433,6 @@ function enableKeyboardScroll(scrollDiv) {
 	}, { passive: false });
 
 	function updateScrollCellIndex() {
-		if (isZoom()) return;
 		if (!cells.length) return;
 		const scrollLeft = scrollDiv.scrollLeft;
 		const isHorizontalScroll = scrollLeft !== prevScrollLeft;
@@ -456,6 +455,7 @@ function enableKeyboardScroll(scrollDiv) {
 
 	scrollDiv.addEventListener('scroll', () => {
 		if (scrollTween) return;
+		if (isZoom()) return;
 		clearTimeout(scrollTimer);
 		scrollTimer = setTimeout(() => {
 			updateScrollCellIndex();
