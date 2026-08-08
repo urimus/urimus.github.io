@@ -418,6 +418,11 @@ function enableKeyboardScroll(scrollDiv) {
 	new ResizeObserver(updateCells).observe(scrollDiv);
 	scrollDiv.addEventListener('wheel', e => {
 		if (e.ctrlKey) return;
+		const maxScrollTop = scrollDiv.scrollHeight - scrollDiv.clientHeight;
+		if (maxScrollTop <= 0) return;
+		if (e.deltaY < 0 && scrollDiv.scrollTop <= 0) return;
+		if (e.deltaY > 0 && scrollDiv.scrollTop >= maxScrollTop) return;
+
 		e.preventDefault();
 		const targetX = scrollTween
 			? scrollTween.vars.scrollTo.x
@@ -430,6 +435,7 @@ function enableKeyboardScroll(scrollDiv) {
 			)
 		);
 		animateScroll(targetX, targetY, 0.3);
+
 	}, { passive: false });
 
 	function updateScrollCellIndex() {
