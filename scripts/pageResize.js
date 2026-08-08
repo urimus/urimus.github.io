@@ -358,6 +358,13 @@ function enableKeyboardScroll(scrollDiv) {
 	let prevScrollLeft = scrollDiv.scrollLeft;
 	let scrollTween = null;
 	let scrollTimer = null;
+	let devicePixelRatio = window.devicePixelRatio;
+
+	function isZoom() {
+		const zoomChanged = window.devicePixelRatio !== devicePixelRatio;
+		if (zoomChanged) devicePixelRatio = window.devicePixelRatio;
+		return zoomChanged;
+	}
 
 	function updateCells() {
 		cells = Array.from(scrollDiv.querySelectorAll('tr:first-child td, tr:first-child th'));
@@ -410,6 +417,7 @@ function enableKeyboardScroll(scrollDiv) {
 	new MutationObserver(updateCells).observe(scrollDiv, { childList: true, subtree: true });
 	new ResizeObserver(updateCells).observe(scrollDiv);
 	scrollDiv.addEventListener('wheel', e => {
+		if (e.ctrlKey) return;
 		e.preventDefault();
 		const targetX = scrollTween
 			? scrollTween.vars.scrollTo.x
@@ -425,6 +433,7 @@ function enableKeyboardScroll(scrollDiv) {
 	}, { passive: false });
 
 	function updateScrollCellIndex() {
+		if (isZoom()) return;
 		if (!cells.length) return;
 		const scrollLeft = scrollDiv.scrollLeft;
 		const isHorizontalScroll = scrollLeft !== prevScrollLeft;
