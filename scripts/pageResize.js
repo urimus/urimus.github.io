@@ -418,24 +418,33 @@ function enableKeyboardScroll(scrollDiv) {
 	new ResizeObserver(updateCells).observe(scrollDiv);
 	scrollDiv.addEventListener('wheel', e => {
 		if (e.ctrlKey) return;
+
 		const maxScrollTop = scrollDiv.scrollHeight - scrollDiv.clientHeight;
-		if (maxScrollTop <= 0) return;
-		if (e.deltaY < 0 && scrollDiv.scrollTop <= 0) return;
-		if (e.deltaY > 0 && scrollDiv.scrollTop >= maxScrollTop) return;
+		const maxScrollLeft = scrollDiv.scrollWidth - scrollDiv.clientWidth;
+		if (maxScrollTop <= 0 && maxScrollLeft <= 0) return;
+		const scrollingDown = e.deltaY > 0;
+		const scrollingUp = e.deltaY < 0;
+		const scrollingRight = e.deltaX > 0;
+		const scrollingLeft = e.deltaX < 0;
+		const atTop = scrollDiv.scrollTop <= 0;
+		const atBottom = scrollDiv.scrollTop >= maxScrollTop;
+		const atLeft = scrollDiv.scrollLeft <= 0;
+		const atRight = scrollDiv.scrollLeft >= maxScrollLeft;
+		if (
+			(scrollingUp && atTop) ||
+			(scrollingDown && atBottom) ||
+			(scrollingLeft && atLeft) ||
+			(scrollingRight && atRight)
+		) {
+			return;
+		}
 
 		e.preventDefault();
-		const targetX = scrollTween
-			? scrollTween.vars.scrollTo.x
-			: scrollDiv.scrollLeft;
-		const targetY = Math.max(
-			0,
-			Math.min(
-				scrollDiv.scrollTop + e.deltaY,
-				scrollDiv.scrollHeight - scrollDiv.clientHeight
-			)
-		);
-		animateScroll(targetX, targetY, 0.3);
-
+		const targetX = scrollTween ?  scrollTween.vars.scrollTo.x : scrollDiv.scrollLeft;
+		const targetY = scrollTween ? scrollTween.vars.scrollTo.y : scrollDiv.scrollTop;
+		const nextX = Math.max(	0, Math.min(targetX + e.deltaX, maxScrollLeft));
+		const nextY = Math.max(0, Math.min(targetY + e.deltaY, maxScrollTop));
+		animateScroll(nextX, nextY, 0.3);
 	}, { passive: false });
 
 	function updateScrollCellIndex() {
