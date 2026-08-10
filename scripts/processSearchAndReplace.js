@@ -1233,7 +1233,7 @@ function processSearchAndReplace(lang) {
 
 	if (isMobile()) {
 		$("#error_message").text(t("htmlEditorIsNotSupported"));
-		checkMenu6(lang);
+		checkMenu6();
 		return; 
 	}
 

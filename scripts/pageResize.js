@@ -462,25 +462,42 @@ function consoleAxiosError(error, description) {
 }
 
 // --- html editor menu corr ---
-function checkMenu6(lang) {
+function checkMenu6() {
 	let menu6 = document.getElementById('menu_6');
 	if (menu6) {
-		if (isMobile()) {
-			menu6.setAttribute("title", t("htmlEditorIsNotSupported"));
+		const disableMenu6 = title => {
+			if (menu6.dataset.menuDisabled) return;
+			menu6.setAttribute("title", title);
 			menu6.dataset.ttcolor = "blue";
-			menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
+			menu6.innerHTML =
+				"<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" +
+				menu6.innerHTML.trim() +
+				"</s>";
+			menu6.dataset.menuDisabled = "true";
+		}
+		if (isMobile()) {
+			disableMenu6(t("htmlEditorIsNotSupported"));
 		} else {
 			axios.get("scripts/php/checkPHP.php")
 			.then(
 				response => {
 					const data = response.data;
 					if (String(data).startsWith("<?")) {
-						menu6.setAttribute("title", t("phpIsNotSupported") + window.location.hostname + t("htmlEditorIsNotFunctioning"));
-						menu6.dataset.ttcolor = "blue";
-						menu6.innerHTML = "<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" + menu6.innerHTML.trim() + "</s>";
+						disableMenu6(
+							t("phpIsNotSupported") +
+							window.location.hostname +
+							t("htmlEditorIsNotFunctioning")
+						);
 					}
 				},
-				consoleAxiosError
+				error => {
+					consoleAxiosError(error);
+					disableMenu6(
+						t("phpIsNotSupported") +
+						window.location.hostname +
+						t("htmlEditorIsNotFunctioning")
+					);
+				}
 			);
 		}
 	}
@@ -496,7 +513,7 @@ function processPageResize(lang, preloadImagesInInit = true) {
 				preloadImagesGeneral();
 			});
 		}
-		checkMenu6(lang); // correct HTML Editor menu
+		checkMenu6();
 	}
 
 	changeLanguage(lang); // i18next
