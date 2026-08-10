@@ -244,7 +244,8 @@ function preloadImagesGeneral() {
 
 // --- Listerners ---
 document.addEventListener("DOMContentLoaded", () => {
-	if (window.location.pathname == "/" || window.location.pathname == "/index.html") return;
+	let page = window.location.pathname;
+	if (page == "/" || page == "/index.html") return;
 	document.body.addEventListener("pointerover", (event) => {
 		const topEl = document.elementFromPoint(event.clientX, event.clientY);
 		if (topEl === document.body) {
@@ -256,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	// for amv only
-	if (window.location.pathname.startsWith("/amv")) {
+	if (page.startsWith("/amv")) {
 		const lang = document.documentElement.lang;
 		if (lang == "ru") {
 			processPageResize('rus');
@@ -343,8 +344,8 @@ function adjustScrollDiv(){
 	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
 	scrollDiv.style.height = "100%";
 
-	let pathname = window.location.pathname;
-	if (pathname.startsWith("/about_me")) {
+	let page = window.location.pathname;
+	if (page.startsWith("/about_me")) {
 		let informationDiv = document.getElementById('information_div');
 		informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 6) + 'px';
 	}
@@ -507,11 +508,9 @@ function checkMenu6() {
 function processPageResize(lang) {
 
 	let scrollDiv = document.getElementById('scrollDiv');
+	let page = window.location.pathname;
 	if (!initComplete) {
-		if (!(window.location.pathname.startsWith("/about_me") ||
-		window.location.pathname.startsWith("/news") ||
-		window.location.pathname.startsWith("/site_map") ||
-		window.location.pathname.startsWith("/html_editor"))) {
+		if (!(page.startsWith("/about_me") || page.startsWith("/news") || page.startsWith("/site_map") || 	page.startsWith("/html_editor"))) {
 			requestIdleCallback(() => {
 				preloadImagesGeneral();
 			});
@@ -523,22 +522,22 @@ function processPageResize(lang) {
 
 	if (scrollDiv != null) {
 		if (initComplete) {
-			if (window.location.pathname.startsWith("/news")) {
+			if (page.startsWith("/news")) {
 				let feedTable = document.getElementById('feedtable');
 				if (feedTable != null && feedTable.innerHTML != "") adjustFeedScrollDiv();
-			} else if (window.location.pathname.startsWith("/site_map")) {
+			} else if (page.startsWith("/site_map")) {
 				let contentsTable = document.getElementById('contentstable');
 				if (contentsTable != null && contentsTable.innerHTML != "") adjustContentsScrollDiv();
 			} else {
 				adjustScrollDiv();
 			}
 		} else {
-			if (!(window.location.pathname.startsWith("/html_editor") || window.location.pathname.startsWith("/site_map") || window.location.pathname.startsWith("/news"))) {
+			if (!(page.startsWith("/html_editor") || page.startsWith("/site_map") || page.startsWith("/news"))) {
 				adjustScrollDiv();
 			}
 		}
 	}
-	if (window.location.pathname.startsWith("/html_editor") && initComplete) {
+	if (page.startsWith("/html_editor") && initComplete) {
 		let textArea = document.getElementById('textarea_area');
 		if (textArea != null && textArea.value != "") adjustTextarea();
 	}
@@ -552,7 +551,7 @@ function processPageResize(lang) {
 			imgBg.setAttribute('id', 'imgBg');
 			imgBg.setAttribute('src', imgBgSrc);
 			imgBg.setAttribute('style', 'position: fixed; bottom: 0px; left: 0px;');
-			if (window.location.pathname != "/" && window.location.pathname != "/index.html") {
+			if (page != "/" && page != "/index.html") {
 				imgBg.addEventListener("pointerenter", () => hideSubMenu());
 			}
 			document.body.appendChild(imgBg);
@@ -563,7 +562,7 @@ function processPageResize(lang) {
 			imgBgStar.setAttribute('id', 'imgBgStar');
 			imgBgStar.setAttribute('src', imgBgStarSrc);
 			imgBgStar.setAttribute('style', 'position: fixed; top: 0px; right: 0px;');
-			if (window.location.pathname != "/" && window.location.pathname != "/index.html") {
+			if (page != "/" && page != "/index.html") {
 				imgBgStar.addEventListener("pointerenter", () => hideSubMenu());
 			}
 			document.body.appendChild(imgBgStar);
