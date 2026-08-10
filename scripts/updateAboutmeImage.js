@@ -79,7 +79,7 @@ function preloadImagesIOTD() {
 }
 
 function updateAboutMeImageLoad(lang) {
-	processPageResize(lang, false);
+	processPageResize(lang);
 	let Div2 = document.getElementById('information_div');
 	Div2.style.right = '6px';
 	updateAboutMeImage2(lang, 0);

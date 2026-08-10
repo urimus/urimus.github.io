@@ -56,7 +56,7 @@ function contentsLoad(lang) {
 		return;
 	}
 
-	processPageResize(lang, false);
+	processPageResize(lang);
 	showContents(type, sortby, lang);
 
 }

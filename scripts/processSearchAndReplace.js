@@ -1237,7 +1237,7 @@ function processSearchAndReplace(lang) {
 		return; 
 	}
 
-	processPageResize(lang, false);
+	processPageResize(lang);
 
 	axios.get("scripts/php/checkLogIn.php")
 	.then(

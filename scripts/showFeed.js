@@ -299,7 +299,7 @@ function newsLoad(lang) {
 
 	let scrollDiv = document.getElementById('scrollDiv');
 	if (scrollDiv) enableKeyboardScroll(scrollDiv);
-	processPageResize(lang, false);
+	processPageResize(lang);
 	showFeed(type, source, lang);
 }
 

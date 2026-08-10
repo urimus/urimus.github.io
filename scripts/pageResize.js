@@ -504,11 +504,14 @@ function checkMenu6() {
 }
 
 // --- pageResize ---
-function processPageResize(lang, preloadImagesInInit = true) {
+function processPageResize(lang) {
 
 	let scrollDiv = document.getElementById('scrollDiv');
 	if (!initComplete) {
-		if (preloadImagesInInit) {
+		if (!(window.location.pathname.startsWith("/about_me") ||
+		window.location.pathname.startsWith("/news") ||
+		window.location.pathname.startsWith("/site_map") ||
+		window.location.pathname.startsWith("/html_editor"))) {
 			requestIdleCallback(() => {
 				preloadImagesGeneral();
 			});
