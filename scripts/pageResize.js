@@ -464,43 +464,45 @@ function consoleAxiosError(error, description) {
 // --- html editor menu corr ---
 function checkMenu6() {
 	let menu6 = document.getElementById('menu_6');
-	if (menu6) {
-		const disableMenu6 = title => {
-			if (menu6.dataset.menuDisabled) return;
-			menu6.setAttribute("title", title);
-			menu6.dataset.ttcolor = "blue";
-			menu6.innerHTML =
-				"<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" +
-				menu6.innerHTML.trim() +
-				"</s>";
-			menu6.dataset.menuDisabled = "true";
-		}
-		if (isMobile()) {
-			disableMenu6(t("htmlEditorIsNotSupported"));
-		} else {
-			axios.get("scripts/php/checkPHP.php")
-			.then(
-				response => {
-					const data = response.data;
-					if (String(data).startsWith("<?")) {
-						disableMenu6(
-							t("phpIsNotSupported") +
-							window.location.hostname +
-							t("htmlEditorIsNotFunctioning")
-						);
-					}
-				},
-				error => {
-					consoleAxiosError(error);
-					disableMenu6(
-						t("phpIsNotSupported") +
-						window.location.hostname +
-						t("htmlEditorIsNotFunctioning")
-					);
-				}
+	if (!menu6) return;
+
+	const disableMenu6 = title => {
+		if (menu6.dataset.menuDisabled) return;
+		menu6.setAttribute("title", title);
+		menu6.dataset.ttcolor = "blue";
+		menu6.innerHTML =
+			"<s style='text-decoration: line-through; text-decoration-thickness: 2px;'>" +
+			menu6.innerHTML.trim() +
+			"</s>";
+		menu6.dataset.menuDisabled = "true";
+	}
+
+	if (isMobile()) {
+		disableMenu6(t("htmlEditorIsNotSupported"));
+		return;
+	} 
+
+	axios.get("scripts/php/checkPHP.php")
+	.then(
+		response => {
+			const data = response.data;
+			if (String(data).startsWith("<?")) {
+				disableMenu6(
+					t("phpIsNotSupported") +
+					window.location.hostname +
+					t("htmlEditorIsNotFunctioning")
+				);
+			}
+		},
+		error => {
+			consoleAxiosError(error);
+			disableMenu6(
+				t("phpIsNotSupported") +
+				window.location.hostname +
+				t("htmlEditorIsNotFunctioning")
 			);
 		}
-	}
+	);
 }
 
 // --- pageResize ---
@@ -510,7 +512,7 @@ function processPageResize(lang, isInit = true) {
 	let scrollDiv = document.getElementById('scrollDiv');
 	let page = window.location.pathname;
 	if (isInit) {
-		changeLanguage(lang); // i18next
+		changeLanguage(lang);
 		if (!(page.startsWith("/about_me") || page.startsWith("/news") || page.startsWith("/site_map") || 	page.startsWith("/html_editor"))) {
 			requestIdleCallback(() => {
 				preloadImagesGeneral();
