@@ -1,7 +1,6 @@
 ﻿"use strict";
 // ------------- Global Variables ---------------- //
 let clickStarted = false;
-let initComplete = false;
 // ------------- End of Global Variables ---------------- //
 
 // --- service worker ---
@@ -505,11 +504,13 @@ function checkMenu6() {
 }
 
 // --- pageResize ---
-function processPageResize(lang) {
+function processPageResize(lang, isInit = true) {
+	if (!lang) isInit = false;
 
 	let scrollDiv = document.getElementById('scrollDiv');
 	let page = window.location.pathname;
-	if (!initComplete) {
+	if (isInit) {
+		changeLanguage(lang); // i18next
 		if (!(page.startsWith("/about_me") || page.startsWith("/news") || page.startsWith("/site_map") || 	page.startsWith("/html_editor"))) {
 			requestIdleCallback(() => {
 				preloadImagesGeneral();
@@ -518,10 +519,8 @@ function processPageResize(lang) {
 		checkMenu6();
 	}
 
-	changeLanguage(lang); // i18next
-
 	if (scrollDiv != null) {
-		if (initComplete) {
+		if (!isInit) {
 			if (page.startsWith("/news")) {
 				let feedTable = document.getElementById('feedtable');
 				if (feedTable != null && feedTable.innerHTML != "") adjustFeedScrollDiv();
@@ -537,7 +536,7 @@ function processPageResize(lang) {
 			}
 		}
 	}
-	if (page.startsWith("/html_editor") && initComplete) {
+	if (page.startsWith("/html_editor") && !isInit) {
 		let textArea = document.getElementById('textarea_area');
 		if (textArea != null && textArea.value != "") adjustTextarea();
 	}
@@ -581,5 +580,4 @@ function processPageResize(lang) {
 			imgBgStar.style.display="none";
 		}
 	}
-	if (!initComplete) initComplete = true;
 }
