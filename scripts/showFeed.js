@@ -156,8 +156,8 @@ function enableKeyboardScroll(scrollDiv) {
 		}
 
 		e.preventDefault();
-		const targetX = scrollTween ? scrollTween.vars.scrollTo.x : scrollDiv.scrollLeft;
-		const targetY = scrollTween ? scrollTween.vars.scrollTo.y : scrollDiv.scrollTop;
+		const targetX = scrollTween.vars?.scrollTo?.x ?? scrollDiv.scrollLeft;
+		const targetY = scrollTween.vars?.scrollTo?.y ?? scrollDiv.scrollTop;
 		const nextX = Math.max(	0, Math.min(targetX + e.deltaX, maxScrollLeft));
 		const nextY = Math.max(0, Math.min(targetY + e.deltaY, maxScrollTop));
 		const remaining = Math.max(0.1, scrollTween.duration() - scrollTween.time());
