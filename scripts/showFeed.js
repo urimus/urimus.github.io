@@ -160,7 +160,9 @@ function enableKeyboardScroll(scrollDiv) {
 		const targetY = scrollTween ? scrollTween.vars.scrollTo.y : scrollDiv.scrollTop;
 		const nextX = Math.max(	0, Math.min(targetX + e.deltaX, maxScrollLeft));
 		const nextY = Math.max(0, Math.min(targetY + e.deltaY, maxScrollTop));
-		animateScroll(nextX, nextY, 0.3);
+		const remaining = Math.max(0.1, scrollTween.duration() - scrollTween.time());
+
+		animateScroll(nextX, nextY, remaining);
 	}, { passive: false });
 
 	function updateScrollCellIndex() {
