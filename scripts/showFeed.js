@@ -566,7 +566,7 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 
 	let k;
 	for (k = 1; k <= summary_words.length; k++) {
-		summarySpan.innerHTML = formatSummary(summary_words, k+1);
+		summarySpan.innerHTML = formatSummary(summary_words, k);
 		if (getLineCount(summaryDiv) > linesToShow) {
 			wordsCount = k - 1;
 			summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
