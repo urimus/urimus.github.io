@@ -1883,7 +1883,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		items = resultOrig.item;
 	}
 
-	const getMediaCommentBlock = (caption, content, marginTop = 0) => `
+	const mediaCommentBlock = (caption, content, marginTop = 0) => `
 		<div style="display:flex; align-items:center; margin-top:${marginTop}px">
 			<div style="flex:1; border:1px solid #ff8a00;"></div>
 			<div style="padding:0 5px; white-space:nowrap;">${caption}</div>
@@ -1998,14 +1998,14 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				newEntry.media.url = url;
 				let description = entry["media:content"]?.["media:description"]?._cdata;
 				if (description) {
-					newEntry.media.comment = getMediaCommentBlock(t("description"), description);
+					newEntry.media.comment = mediaCommentBlock(t("description"), description);
 					let content = entry["media:content"]?.["media:text"]?._cdata;
 					if (description && content != description) {
-						newEntry.media.comment += getMediaCommentBlock(t("content"), content, 5);
+						newEntry.media.comment += mediaCommentBlock(t("content"), content, 5);
 					}
 					let credit = entry["media:content"]?.["media:credit"]?._cdata;
 					if (credit) {
-						newEntry.media.comment += getMediaCommentBlock(t("credit"), credit, 5);
+						newEntry.media.comment += mediaCommentBlock(t("credit"), credit, 5);
 					}
 				}
 			} else {
