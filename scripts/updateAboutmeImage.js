@@ -5,11 +5,6 @@ let imagesCachingStarted = false;
 let result = null;
 // ------------- End of Global Variables ---------------- //
 
-
-function formatSummary(summary_arr, words) {
-	return summary_arr.slice(0, words).join(" ") + " ";
-}
-
 function showErrorImage(message = "") {
 	let ImgE = document.createElement("img");
 	ImgE.setAttribute('id', "iotd");
