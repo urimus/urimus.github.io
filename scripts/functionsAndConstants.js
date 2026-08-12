@@ -104,16 +104,19 @@ function detectBomCheckSoFar(bytes) {
 	return 0;
 }
 
-function splitWithLimit(summary) {
-	return summary
-		.split(" ")
-		.flatMap(word => {
-			if (word.length <= 50) {
-				return word;
-			}
-			const parts = word.match(/.{1,50}/g);
-			return parts.map((part, index) =>
-				index < parts.length - 1 ? part + "-" : part
-			);
-		});
+function formatSummary(summary_arr, words) {
+	return summary_arr.slice(0, words).join(" ") + " ";
+}
+
+function getLineCount(element) {
+	const range = document.createRange();
+	range.selectNodeContents(element);
+	const rects = [...range.getClientRects()];
+	const lines = [];
+	for (const rect of rects) {
+		if (!lines.some(line => Math.abs(line - rect.top) < 2)) {
+			lines.push(rect.top);
+		}
+	}
+	return lines.length;
 }

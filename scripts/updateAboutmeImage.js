@@ -173,19 +173,15 @@ function updateAboutMeImage3(lang, i) {
 		descDiv.innerHTML = "";
 	}
 
-	let summary_words, wordsCount, currentLineTop, linesToShow, linesCount, k, k2;
 	let item_description = null;
-
+	let summary_words;
 	if (item.description._text) {
 		item_description = DOMPurify.sanitize(item.description._text);
-		summary_words = splitWithLimit(item_description);
-		item_description = summary_words.join(" ");
+		summary_words = item_description.split(" ");
 	}
-	wordsCount = 0;
-	currentLineTop = 0;
 
-	linesToShow = 4;
-	linesCount = 1;
+	let wordsCount = 0;
+	let linesToShow = 4;
 
 	let imageA = document.createElement('a');
 	imageA.setAttribute('href', item.link._text);
@@ -198,6 +194,7 @@ function updateAboutMeImage3(lang, i) {
 	if (item_description) {
 		let summarySpan = document.createElement('span');
 		summarySpan.setAttribute('class', "text_blue");
+		summarySpan.style.overflowWrap = "anywhere";
 		descDiv.appendChild(summarySpan);
 
 		let extensionA = document.createElement('a');
@@ -214,46 +211,20 @@ function updateAboutMeImage3(lang, i) {
 			adjustScrollDiv();
 		}
 		extensionA.innerHTML = "[▼]";
+		descDiv.appendChild(extensionA);
 
-		let Pointer = document.createElement('a');
-		descDiv.appendChild(Pointer);
-
-		currentLineTop = Pointer.offsetTop;
-		for (k = 0; k < summary_words.length; k++) {
-			summarySpan.innerHTML = formatSummary(summary_words, k + 1);
-			if (Pointer.offsetTop != currentLineTop) {
-				if (linesCount == linesToShow) {
-					summarySpan.innerHTML = "";
-					descDiv.removeChild(Pointer);
-					descDiv.appendChild(extensionA);
-					wordsCount = 0;
-					linesCount = 1;
-
-					currentLineTop = extensionA.offsetTop;
-					for (k2 = 0; k2 < summary_words.length; k2++) {
-						wordsCount++;
-						summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
-						if (extensionA.offsetTop != currentLineTop) {
-							if (linesCount == linesToShow) {
-								wordsCount--;
-								summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
-								break;
-							} else {
-								currentLineTop = extensionA.offsetTop;
-								linesCount++;
-							}
-						}
-					}
-					break;
-				} else {
-					currentLineTop = Pointer.offsetTop;
-					linesCount++;
-				}
+		let k;
+		for (k = 1; k <= summary_words.length; k++) {
+			summarySpan.innerHTML = formatSummary(summary_words, k);
+			if (getLineCount(descDiv) > linesToShow) {
+				wordsCount = k - 1;
+				summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
+				break;
 			}
 		}
 		if (k == summary_words.length) {
-			descDiv.removeChild(Pointer);
 			summarySpan.innerHTML = item_description;
+			descDiv.removeChild(extensionA);
 		}
 	}
 

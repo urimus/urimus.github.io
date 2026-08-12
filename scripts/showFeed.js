@@ -503,12 +503,6 @@ function showFeedData(type, source, lang, result) {
 	}
 }
 
-
-
-function formatSummary(summary_arr, words) {
-	return summary_arr.slice(0, words).join(" ") + " ";
-}
-
 function extractLines(html) {
 	let parser = new DOMParser();
 	let doc = parser.parseFromString(html, 'text/html');
@@ -535,8 +529,7 @@ function splitIgnoringSpecialSpan(str) {
 function formatSummaryDiv(lang, summaryDiv, entry) {
 
 	let entry_summary = DOMPurify.sanitize(entry.summary);
-	let summary_words = splitWithLimit(entry_summary);
-	entry_summary = summary_words.join(" ");
+	let summary_words = entry_summary.split(" ");
 	let lines = extractLines(entry_summary);
 	if (lines.length > 1) {
 		entry_summary  = "<span style='padding-left:10px;'><span>" + lines.join(" <br><span style='padding-left:10px;'><span>");
@@ -544,14 +537,13 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 	}
 
 	let wordsCount = 0;
-	let currentLineTop = 0;
-	let linesCount = 1;
 	let linesToShow = 4;
 
 	summaryDiv.replaceChildren();
 
 	let summarySpan = document.createElement('span');
 	summarySpan.setAttribute('class', "text_red");
+	summarySpan.style.overflowWrap = "anywhere";
 	summarySpan.innerHTML = "";
 	summaryDiv.innerHTML = "";
 	summaryDiv.appendChild(summarySpan);
@@ -570,60 +562,20 @@ function formatSummaryDiv(lang, summaryDiv, entry) {
 		adjustFeedScrollDiv();
 	};
 	extensionA.innerHTML = "[▼]";
-
-	let Pointer = document.createElement('a');
-	summaryDiv.appendChild(Pointer);
+	summaryDiv.appendChild(extensionA);
 
 	let k;
-	for (k = 0; k < summary_words.length; k++) {
+	for (k = 1; k <= summary_words.length; k++) {
 		summarySpan.innerHTML = formatSummary(summary_words, k+1);
-		if (k == 0) currentLineTop = Pointer.offsetTop;
-		if (Pointer.offsetTop != currentLineTop) {
-			if (Math.abs(Pointer.offsetTop - currentLineTop) < 2) {
-				currentLineTop = Pointer.offsetTop;
-				continue;
-			}
-			if (linesCount == linesToShow) {
-
-				summarySpan.innerHTML = "";
-				summaryDiv.removeChild(Pointer);
-				summaryDiv.appendChild(extensionA);
-
-				wordsCount = 0;
-				linesCount = 1;
-
-				let k2;
-				for (k2 = 0; k2 < summary_words.length; k2++) {
-					wordsCount++;
-					summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
-					if (k2 == 0) currentLineTop = extensionA.offsetTop;
-					if (extensionA.offsetTop != currentLineTop) {
-						if (Math.abs(extensionA.offsetTop - currentLineTop) < 2) {
-							currentLineTop = extensionA.offsetTop;
-							continue;
-						}
-						if (linesCount == linesToShow) {
-							wordsCount--;
-							summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
-							break;
-						} else {
-							currentLineTop = extensionA.offsetTop;
-							linesCount++;
-						}
-					}
-				}
-				break;
-
-			} else {
-				currentLineTop = Pointer.offsetTop;
-				linesCount++;
-			}
+		if (getLineCount(summaryDiv) > linesToShow) {
+			wordsCount = k - 1;
+			summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
+			break;
 		}
 	}
-
 	if (k == summary_words.length) {
-		summaryDiv.removeChild(Pointer);
 		summarySpan.innerHTML = entry_summary;
+		summaryDiv.removeChild(extensionA);
 	}
 }
 
