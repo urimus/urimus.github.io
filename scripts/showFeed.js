@@ -526,14 +526,16 @@ function splitIgnoringSpecialSpan(str) {
 		.map(s => s.replaceAll(placeholder, "<span style='padding-left:10px;'><span>"));
 }
 
-function formatSummaryDiv(lang, summaryDiv, entry) {
+function formatSummaryDiv(summaryDiv, entry) {
 
 	let entry_summary = DOMPurify.sanitize(entry.summary);
-	let summary_words = entry_summary.split(" ");
+	let summary_words;
 	let lines = extractLines(entry_summary);
-	if (lines.length > 1) {
+	if (lines.length) {
 		entry_summary  = "<span style='padding-left:10px;'><span>" + lines.join(" <br><span style='padding-left:10px;'><span>");
 		summary_words = splitIgnoringSpecialSpan(entry_summary);
+	} else {
+		summary_words = entry_summary.split(" ");
 	}
 
 	let wordsCount = 0;
@@ -656,7 +658,7 @@ function preloadImage(type, source, lang, result) {
 			container.style.width = preloadImg.naturalWidth + "px";
 			entry.media.width = preloadImg.naturalWidth;
 			if (summaryDiv && entry.summary) {
-				formatSummaryDiv(lang, summaryDiv, entry);
+				formatSummaryDiv(summaryDiv, entry);
 			}
 		} else {
 			preloadImg.setAttribute('width', 450);
@@ -950,7 +952,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		let summaryDiv = document.createElement('div');
 		summaryDiv.setAttribute('class', "text_red");
 		container.appendChild(summaryDiv);
-		formatSummaryDiv(lang, summaryDiv, entry);
+		formatSummaryDiv(summaryDiv, entry);
 		result.entries[i].storage.summaryDiv = summaryDiv;
 	}
 
