@@ -121,7 +121,7 @@ function getLineCount(element) {
 	return lines.length;
 }
 
-function modifyElesToMakeLines(element, element2, words_arr, linesToShow, addSpace) {
+function modifyElesToMakeLines(element, element2, words_arr, linesToShow, addSpace = true) {
 	for (let i = 1; i <= words_arr.length; i++) {
 		element2.innerHTML = formatSummary(words_arr, i, addSpace);
 		if (getLineCount(element) > linesToShow) {
