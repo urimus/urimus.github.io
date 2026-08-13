@@ -519,23 +519,24 @@ function extractLines(html) {
 }
 
 function splitIgnoringSpecialSpan(str) {
-	let placeholder = "\n";
+	let placeholder = "\\n";
 	return str
 		.replaceAll("<span style='padding-left:10px;'><span>", placeholder)
-		.split(" ")
+		.split(/\s+/)
 		.map(s => s.replaceAll(placeholder, "<span style='padding-left:10px;'><span>"));
 }
 
 function formatSummaryDiv(summaryDiv, entry) {
-
 	let entry_summary = DOMPurify.sanitize(entry.summary);
 	let summary_words;
 	let lines = extractLines(entry_summary);
 	if (lines.length > 1) {
 		entry_summary  = "<span style='padding-left:10px;'><span>" + lines.join(" <br><span style='padding-left:10px;'><span>");
 		summary_words = splitIgnoringSpecialSpan(entry_summary);
+		entry_summary = summary_words.join(" ");
 	} else {
-		summary_words = entry_summary.split(" ");
+		summary_words = entry_summary.split(/\s+/);
+		entry_summary = summary_words.join(" ");
 	}
 
 	let wordsCount = 0;
@@ -557,20 +558,20 @@ function formatSummaryDiv(summaryDiv, entry) {
 			summarySpan.innerHTML = entry_summary + " ";
 			this.innerHTML = "[▲]";
 		} else if (this.innerHTML == "[▲]") {
-			summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
+			summarySpan.innerHTML = formatSummary(summary_words, wordsCount, true);
 			this.innerHTML = "[▼]";
 		}
 		adjustFeedScrollDiv();
 	};
 	extensionA.innerHTML = "[▼]";
 
-	let wordsCountTmp = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow);
-	if (wordsCountTmp == 0) {
+	let wordsCountTmp = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow, false);
+	if (wordsCountTmp == -1) {
 		summarySpan.innerHTML = entry_summary;
 	} else {
 		summarySpan.innerHTML = "";
 		summaryDiv.appendChild(extensionA);
-		wordsCount = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow);
+		wordsCount = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow, true);
 	}
 }
 
