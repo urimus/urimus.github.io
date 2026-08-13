@@ -209,7 +209,7 @@ function updateAboutMeImage3(lang, i) {
 		descDiv.appendChild(extensionA);
 
 		let k;
-		for (k = 1; k <= summary_words.length; k++) {
+		for (k = 1; k < summary_words.length; k++) {
 			summarySpan.innerHTML = formatSummary(summary_words, k);
 			if (getLineCount(descDiv) > linesToShow) {
 				wordsCount = k - 1;
