@@ -104,8 +104,8 @@ function detectBomCheckSoFar(bytes) {
 	return 0;
 }
 
-function formatSummary(summary_arr, words) {
-	return summary_arr.slice(0, words).join(" ") + " ";
+function formatSummary(words_arr, wordsCount) {
+	return words_arr.slice(0, wordsCount).join(" ") + " ";
 }
 
 function getLineCount(element) {
@@ -119,4 +119,16 @@ function getLineCount(element) {
 		}
 	}
 	return lines.length;
+}
+
+function modifyElesToMakeLines(element, element2, words_arr, linesToShow) {
+	for (let i = 1; i <= words_arr.length; i++) {
+		element2.innerHTML = formatSummary(words_arr, i);
+		if (getLineCount(element) > linesToShow) {
+			let wordsCount = i - 1;
+			element2.innerHTML = formatSummary(words_arr, wordsCount);
+			return wordsCount;
+		}
+	}
+	return 0;
 }

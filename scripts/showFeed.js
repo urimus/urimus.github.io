@@ -563,20 +563,14 @@ function formatSummaryDiv(summaryDiv, entry) {
 		adjustFeedScrollDiv();
 	};
 	extensionA.innerHTML = "[▼]";
-	summaryDiv.appendChild(extensionA);
 
-	let k;
-	for (k = 1; k < summary_words.length; k++) {
-		summarySpan.innerHTML = formatSummary(summary_words, k);
-		if (getLineCount(summaryDiv) > linesToShow) {
-			wordsCount = k - 1;
-			summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
-			break;
-		}
-	}
-	if (k == summary_words.length) {
+	let wordsCountTmp = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow);
+	if (wordsCountTmp == 0) {
 		summarySpan.innerHTML = entry_summary;
-		summaryDiv.removeChild(extensionA);
+	} else {
+		summarySpan.innerHTML = "";
+		summaryDiv.appendChild(extensionA);
+		wordsCount = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow);
 	}
 }
 

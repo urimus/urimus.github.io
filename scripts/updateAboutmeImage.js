@@ -169,10 +169,10 @@ function updateAboutMeImage3(lang, i) {
 	}
 
 	let item_description = null;
-	let summary_words;
+	let description_words;
 	if (item.description._text) {
 		item_description = DOMPurify.sanitize(item.description._text);
-		summary_words = item_description.split(" ");
+		description_words = item_description.split(" ");
 	}
 
 	let wordsCount = 0;
@@ -187,39 +187,33 @@ function updateAboutMeImage3(lang, i) {
 	descDiv.innerHTML += ". ";
 
 	if (item_description) {
-		let summarySpan = document.createElement('span');
-		summarySpan.setAttribute('class', "text_blue");
-		summarySpan.style.overflowWrap = "anywhere";
-		descDiv.appendChild(summarySpan);
+		let descSpan = document.createElement('span');
+		descSpan.setAttribute('class', "text_blue");
+		descSpan.style.overflowWrap = "anywhere";
+		descDiv.appendChild(descSpan);
 
 		let extensionA = document.createElement('a');
 		extensionA.setAttribute('href', "javascript:void(0);");
 		extensionA.setAttribute('class', 'standardb_blue');
 		extensionA.onclick = function () {
 			if (this.innerHTML == "[▼]") {
-				summarySpan.innerHTML = item_description + " ";
+				descSpan.innerHTML = item_description + " ";
 				this.innerHTML = "[▲]";
 			} else if (this.innerHTML == "[▲]") {
-				summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
+				descSpan.innerHTML = formatSummary(description_words, wordsCount);
 				this.innerHTML = "[▼]";
 			}
 			adjustScrollDiv();
 		}
 		extensionA.innerHTML = "[▼]";
-		descDiv.appendChild(extensionA);
 
-		let k;
-		for (k = 1; k < summary_words.length; k++) {
-			summarySpan.innerHTML = formatSummary(summary_words, k);
-			if (getLineCount(descDiv) > linesToShow) {
-				wordsCount = k - 1;
-				summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
-				break;
-			}
-		}
-		if (k == summary_words.length) {
-			summarySpan.innerHTML = item_description;
-			descDiv.removeChild(extensionA);
+		let wordsCountTmp = modifyElesToMakeLines(descDiv, descSpan, description_words, linesToShow);
+		if (wordsCountTmp == 0) {
+			descSpan.innerHTML = item_description;
+		} else {
+			descSpan.innerHTML = "";
+			descDiv.appendChild(extensionA);
+			wordsCount = modifyElesToMakeLines(descDiv, descSpan, description_words, linesToShow);
 		}
 	}
 
