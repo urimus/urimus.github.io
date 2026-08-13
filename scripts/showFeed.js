@@ -533,11 +533,10 @@ function formatSummaryDiv(summaryDiv, entry) {
 	if (lines.length > 1) {
 		entry_summary  = "<span style='padding-left:10px;'><span>" + lines.join(" <br><span style='padding-left:10px;'><span>");
 		summary_words = splitIgnoringSpecialSpan(entry_summary);
-		entry_summary = summary_words.join(" ");
 	} else {
 		summary_words = entry_summary.split(/\s+/);
-		entry_summary = summary_words.join(" ");
 	}
+	entry_summary = summary_words.join(" ");
 
 	let wordsCount = 0;
 	let linesToShow = 4;
