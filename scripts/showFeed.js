@@ -541,13 +541,12 @@ function formatSummaryDiv(summaryDiv, entry) {
 	let wordsCount = 0;
 	let linesToShow = 4;
 
-	summaryDiv.replaceChildren();
+	summaryDiv.innerHTML = "";
 
 	let summarySpan = document.createElement('span');
 	summarySpan.setAttribute('class', "text_red");
 	summarySpan.style.overflowWrap = "anywhere";
 	summarySpan.innerHTML = "";
-	summaryDiv.innerHTML = "";
 	summaryDiv.appendChild(summarySpan);
 
 	let extensionA = document.createElement('a');
