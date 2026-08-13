@@ -531,7 +531,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	let entry_summary = DOMPurify.sanitize(entry.summary);
 	let summary_words;
 	let lines = extractLines(entry_summary);
-	if (lines.length) {
+	if (lines.length > 1) {
 		entry_summary  = "<span style='padding-left:10px;'><span>" + lines.join(" <br><span style='padding-left:10px;'><span>");
 		summary_words = splitIgnoringSpecialSpan(entry_summary);
 	} else {
