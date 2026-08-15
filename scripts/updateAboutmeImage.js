@@ -172,7 +172,7 @@ function updateAboutMeImage3(lang, i) {
 	let description_words;
 	if (item.description._text) {
 		item_description = DOMPurify.sanitize(item.description._text);
-		description_words = item_description.split(/\s+/);
+		description_words = item_description.splitAllSpaces();
 		item_description = description_words.join(" ");
 	}
 
