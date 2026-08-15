@@ -522,7 +522,8 @@ function splitIgnoringSpecialSpan(str) {
 	let placeholder = "\\n";
 	return str
 		.replaceAll("<span style='padding-left:10px;'><span>", placeholder)
-		.split(/\s+/)
+		.split(/(?:\s+|&nbsp;|&ensp;|&emsp;|&thinsp;|&#160;|&#xA0;|&#8194;|&#x2002;|&#8195;|&#x2003;|&#8201;|&#x2009;|&#8202;|&#x200A;|&#8239;|&#x202F;|&#8287;|&#x205F;|&#12288;|&#x3000;)/giu)
+		.filter(Boolean)
 		.map(s => s.replaceAll(placeholder, "<span style='padding-left:10px;'><span>"));
 }
 
@@ -534,7 +535,9 @@ function formatSummaryDiv(summaryDiv, entry) {
 		entry_summary  = "<span style='padding-left:10px;'><span>" + lines.join(" <br><span style='padding-left:10px;'><span>");
 		summary_words = splitIgnoringSpecialSpan(entry_summary);
 	} else {
-		summary_words = entry_summary.split(/\s+/);
+		summary_words = entry_summary
+			.split(/(?:\s+|&nbsp;|&ensp;|&emsp;|&thinsp;|&#160;|&#xA0;|&#8194;|&#x2002;|&#8195;|&#x2003;|&#8201;|&#x2009;|&#8202;|&#x200A;|&#8239;|&#x202F;|&#8287;|&#x205F;|&#12288;|&#x3000;)/giu)
+			.filter(Boolean);
 	}
 	entry_summary = summary_words.join(" ");
 
@@ -554,7 +557,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	extensionA.setAttribute('class', 'standardb_red');
 	extensionA.onclick = function () {
 		if (this.innerHTML == "[▼]") {
-			summarySpan.innerHTML = entry_summary + " ";
+			summarySpan.innerHTML = entry_summary + "    ";
 			this.innerHTML = "[▲]";
 		} else if (this.innerHTML == "[▲]") {
 			summarySpan.innerHTML = formatSummary(summary_words, wordsCount, true);
