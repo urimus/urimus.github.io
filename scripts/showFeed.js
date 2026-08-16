@@ -556,20 +556,18 @@ function formatSummaryDiv(summaryDiv, entry) {
 			summarySpan.innerHTML = entry_summary + "    ";
 			this.innerHTML = "[▲]";
 		} else if (this.innerHTML == "[▲]") {
-			summarySpan.innerHTML = formatSummary(summary_words, wordsCount, true);
+			summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
 			this.innerHTML = "[▼]";
 		}
 		adjustFeedScrollDiv();
 	};
 	extensionA.innerHTML = "[▼]";
 
-	let wordsCountTmp = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow, false);
-	if (wordsCountTmp == -1) {
-		summarySpan.innerHTML = entry_summary;
-	} else {
+	summarySpan.innerHTML = entry_summary;
+	if (getLineCount(summaryDiv) > linesToShow) {
 		summarySpan.innerHTML = "";
 		summaryDiv.appendChild(extensionA);
-		wordsCount = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow, true);
+		wordsCount = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow);
 	}
 }
 

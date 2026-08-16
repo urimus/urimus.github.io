@@ -201,20 +201,18 @@ function updateAboutMeImage3(lang, i) {
 				descSpan.innerHTML = item_description + " ";
 				this.innerHTML = "[▲]";
 			} else if (this.innerHTML == "[▲]") {
-				descSpan.innerHTML = formatSummary(description_words, wordsCount, true);
+				descSpan.innerHTML = formatSummary(description_words, wordsCount);
 				this.innerHTML = "[▼]";
 			}
 			adjustScrollDiv();
 		}
 		extensionA.innerHTML = "[▼]";
 
-		let wordsCountTmp = modifyElesToMakeLines(descDiv, descSpan, description_words, linesToShow, false);
-		if (wordsCountTmp == -1) {
-			descSpan.innerHTML = item_description;
-		} else {
+		descSpan.innerHTML = item_description;
+		if (getLineCount(descDiv) > linesToShow) {
 			descSpan.innerHTML = "";
 			descDiv.appendChild(extensionA);
-			wordsCount = modifyElesToMakeLines(descDiv, descSpan, description_words, linesToShow, true);
+			wordsCount = modifyElesToMakeLines(descDiv, descSpan, description_words, linesToShow);
 		}
 	}
 
