@@ -105,7 +105,7 @@ function detectBomCheckSoFar(bytes) {
 }
 
 function formatSummary(words_arr, wordsCount) {
-	return words_arr.slice(0, wordsCount).join(" ") + " ");
+	return words_arr.slice(0, wordsCount).join(" ") + " ";
 }
 
 function getLineCount(element) {
