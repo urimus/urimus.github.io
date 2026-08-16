@@ -125,9 +125,11 @@ function modifyElement2(element, element2, words_arr, linesToShow) {
 	if (!words_arr.length) return 0;
 	let left = 1;
 	let right = words_arr.length;
-	let wordsCount = 1;
+	let wordsCount = 0;
+	let middle = Math.min(linesToShow * 20, right);
+	let lastChecked = 0;
 	while (left <= right) {
-		const middle = Math.floor((left + right) / 2);
+		lastChecked = middle;
 		element2.innerHTML = formatSummary(words_arr, middle);
 		const lines = getLineCount(element);
 		if (lines <= linesToShow) {
@@ -136,8 +138,11 @@ function modifyElement2(element, element2, words_arr, linesToShow) {
 		} else {
 			right = middle - 1;
 		}
+		middle = Math.floor((left + right) / 2);
 	}
-	element2.innerHTML = formatSummary(words_arr, wordsCount);
+	if (wordsCount !== lastChecked) {
+		element2.innerHTML = formatSummary(words_arr, wordsCount);
+	}
 	return wordsCount;
 }
 
