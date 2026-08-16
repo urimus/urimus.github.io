@@ -519,11 +519,10 @@ function extractLines(html) {
 }
 
 function splitIgnoringSpecialSpan(str) {
-	let placeholder = "\\n";
-	return str
-		.replaceAll("<span style='padding-left:10px;'><span>", placeholder)
-		.splitAllSpaces()
-		.map(s => s.replaceAll(placeholder, "<span style='padding-left:10px;'><span>"));
+	const placeholder = "\\n";
+	const specialSpan = "<span style='padding-left:10px;'><span>";
+	return splitAllSpaces(str.replaceAll(specialSpan, placeholder))
+		.map(s => s.replaceAll(placeholder, specialSpan));
 }
 
 function formatSummaryDiv(summaryDiv, entry) {
@@ -534,7 +533,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 		entry_summary  = "<span style='padding-left:10px;'><span>" + lines.join(" <br><span style='padding-left:10px;'><span>");
 		summary_words = splitIgnoringSpecialSpan(entry_summary);
 	} else {
-		summary_words = entry_summary.splitAllSpaces();
+		summary_words = splitAllSpaces(entry_summary);
 	}
 	entry_summary = summary_words.join(" ");
 
