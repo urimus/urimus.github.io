@@ -567,7 +567,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	if (getLineCount(summaryDiv) > linesToShow) {
 		summarySpan.innerHTML = "";
 		summaryDiv.appendChild(extensionA);
-		wordsCount = modifyElesToMakeLines(summaryDiv, summarySpan, summary_words, linesToShow);
+		wordsCount = modifyElement2(summaryDiv, summarySpan, summary_words, linesToShow);
 	}
 }
 

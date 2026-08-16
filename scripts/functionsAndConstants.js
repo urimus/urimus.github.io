@@ -121,16 +121,24 @@ function getLineCount(element) {
 	return lines.length;
 }
 
-function modifyElesToMakeLines(element, element2, words_arr, linesToShow) {
-	for (let i = 1; i <= words_arr.length; i++) {
-		element2.innerHTML = formatSummary(words_arr, i);
-		if (getLineCount(element) > linesToShow) {
-			let wordsCount = i - 1;
-			element2.innerHTML = formatSummary(words_arr, wordsCount);
-			return wordsCount;
+function modifyElement2(element, element2, words_arr, linesToShow) {
+	if (!words_arr.length) return 0;
+	let left = 1;
+	let right = words_arr.length;
+	let wordsCount = 1;
+	while (left <= right) {
+		const middle = Math.floor((left + right) / 2);
+		element2.innerHTML = formatSummary(words_arr, middle);
+		const lines = getLineCount(element);
+		if (lines <= linesToShow) {
+			wordsCount = middle;
+			left = middle + 1;
+		} else {
+			right = middle - 1;
 		}
 	}
-	return -1;
+	element2.innerHTML = formatSummary(words_arr, wordsCount);
+	return wordsCount;
 }
 
 function splitAllSpaces(str) {

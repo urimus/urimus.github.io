@@ -212,7 +212,7 @@ function updateAboutMeImage3(lang, i) {
 		if (getLineCount(descDiv) > linesToShow) {
 			descSpan.innerHTML = "";
 			descDiv.appendChild(extensionA);
-			wordsCount = modifyElesToMakeLines(descDiv, descSpan, description_words, linesToShow);
+			wordsCount = modifyElement2(descDiv, descSpan, description_words, linesToShow);
 		}
 	}
 
