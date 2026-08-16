@@ -172,14 +172,24 @@ function enableKeyboardScroll(scrollDiv) {
 		if (!isHorizontalScroll) return;
 		prevScrollLeft = scrollLeft;
 		const scrollCenter = scrollLeft + scrollDiv.clientWidth / 2;
-		let closest = 0;
-		let best = Infinity;
-		for (let i = 0; i < cells.length; i++) {
-			const cellCenter = cells[i].offsetLeft + cells[i].offsetWidth / 2;
-			const distance = Math.abs(cellCenter - scrollCenter);
-			if (distance < best) {
-				best = distance;
-				closest = i;
+		let left = 0;
+		let right = cells.length - 1;
+
+		while (left < right) {
+			const middle = Math.floor((left + right) / 2);
+			const cellCenter = cells[middle].offsetLeft + cells[middle].offsetWidth / 2;
+			if (cellCenter < scrollCenter) {
+				left = middle + 1;
+			} else {
+				right = middle;
+			}
+		}
+		let closest = left;
+		if (left > 0) {
+			const currentCenter = cells[left].offsetLeft + cells[left].offsetWidth / 2;
+			const previousCenter = cells[left - 1].offsetLeft + cells[left - 1].offsetWidth / 2;
+			if (Math.abs(previousCenter - scrollCenter) < Math.abs(currentCenter - scrollCenter)) {
+				closest = left - 1;
 			}
 		}
 		scrollCellIndex = closest;
