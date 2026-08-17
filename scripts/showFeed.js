@@ -573,12 +573,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	};
 	extensionA.innerHTML = "[▼]";
 
-	summarySpan.innerHTML = entry_summary;
-	if (getLineCount(summaryDiv) > linesToShow) {
-		summarySpan.innerHTML = "";
-		summaryDiv.appendChild(extensionA);
-		wordsCount = modifyElement2(summaryDiv, summarySpan, summary_words, linesToShow);
-	}
+	wordsCount = modifySummary(summaryDiv, summarySpan, extensionA, entry_summary, summary_words, linesToShow);
 }
 
 // ------------- Image Preload -------------- //

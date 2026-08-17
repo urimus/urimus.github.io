@@ -208,12 +208,7 @@ function updateAboutMeImage3(lang, i) {
 		}
 		extensionA.innerHTML = "[▼]";
 
-		descSpan.innerHTML = item_description;
-		if (getLineCount(descDiv) > linesToShow) {
-			descSpan.innerHTML = "";
-			descDiv.appendChild(extensionA);
-			wordsCount = modifyElement2(descDiv, descSpan, description_words, linesToShow);
-		}
+		wordsCount = modifySummary(descDiv, descSpan, extensionA, item_description, description_words, linesToShow);
 	}
 
 	let dateDiv = document.getElementById("dateDiv");

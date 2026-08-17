@@ -108,31 +108,36 @@ function formatSummary(words_arr, wordsCount) {
 	return words_arr.slice(0, wordsCount).join(" ") + " ";
 }
 
-function getLineCount(element) {
+function elementFitsLines(element, linesToShow) {
 	const range = document.createRange();
 	range.selectNodeContents(element);
-	const rects = [...range.getClientRects()];
+	const rects = range.getClientRects();
 	const lines = [];
 	for (const rect of rects) {
 		if (!lines.some(line => Math.abs(line - rect.top) < 2)) {
 			lines.push(rect.top);
+			if (lines.length > linesToShow) {
+				return false;
+			}
 		}
 	}
-	return lines.length;
+	return true;
 }
 
-function modifyElement2(element, element2, words_arr, linesToShow) {
-	if (!words_arr.length) return 0;
+function modifySummary(element, element2, extensionA, summary, words_arr, linesToShow) {
+	element2.innerHTML = summary;
+	if (elementFitsLines(element, linesToShow)) return -1;
+	element2.innerHTML = "";
+	element.appendChild(extensionA);
+	if (!words_arr.length) return -1;
+
 	let left = 1;
 	let right = words_arr.length;
 	let wordsCount = 0;
 	let middle = Math.min(linesToShow * 20, right);
-	let lastChecked = 0;
 	while (left <= right) {
-		lastChecked = middle;
 		element2.innerHTML = formatSummary(words_arr, middle);
-		const lines = getLineCount(element);
-		if (lines <= linesToShow) {
+		if (elementFitsLines(element, linesToShow)) {
 			wordsCount = middle;
 			left = middle + 1;
 		} else {
@@ -140,9 +145,7 @@ function modifyElement2(element, element2, words_arr, linesToShow) {
 		}
 		middle = Math.floor((left + right) / 2);
 	}
-	if (wordsCount !== lastChecked) {
-		element2.innerHTML = formatSummary(words_arr, wordsCount);
-	}
+	element2.innerHTML = formatSummary(words_arr, wordsCount);
 	return wordsCount;
 }
 
