@@ -189,23 +189,7 @@ function updateAboutMeImage3(lang, i) {
 		descSpan.setAttribute('class', "text_blue");
 		descSpan.style.overflowWrap = "anywhere";
 		descDiv.appendChild(descSpan);
-
-		let extensionA = document.createElement('a');
-		extensionA.setAttribute('href', "javascript:void(0);");
-		extensionA.setAttribute('class', 'standardb_blue');
-		extensionA.onclick = function () {
-			if (this.innerHTML == "[▼]") {
-				descSpan.innerHTML = item_description + " ";
-				this.innerHTML = "[▲]";
-			} else if (this.innerHTML == "[▲]") {
-				descSpan.innerHTML = formatSummary(description_words, wordsCount);
-				this.innerHTML = "[▼]";
-			}
-			adjustScrollDiv();
-		}
-		extensionA.innerHTML = "[▼]";
-
-		let wordsCount = modifySummary(descDiv, descSpan, extensionA, item_description, description_words, 4);
+		modifySummary(descDiv, descSpan, item_description, description_words, "blue", 4);
 	}
 
 	let dateDiv = document.getElementById("dateDiv");

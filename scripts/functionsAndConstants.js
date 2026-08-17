@@ -124,16 +124,31 @@ function elementFitsLines(element, linesToShow) {
 	return true;
 }
 
-function modifySummary(element, element2, extensionA, summary, words_arr, linesToShow = 4) {
+function modifySummary(element, element2, summary, words_arr, col = "blue", linesToShow = 4) {
 	element2.innerHTML = summary;
-	if (elementFitsLines(element, linesToShow)) return -1;
+	if (elementFitsLines(element, linesToShow)) return;
+	if (!words_arr.length) return;
+
+	let wordsCount = 0;
 	element2.innerHTML = "";
+	let extensionA = document.createElement('a');
+	extensionA.setAttribute('href', "javascript:void(0);");
+	extensionA.setAttribute('class', 'standardb_' + col);
+	extensionA.onclick = function () {
+		if (this.innerHTML == "[▼]") {
+			element2.innerHTML = summary + "    ";
+			this.innerHTML = "[▲]";
+		} else if (this.innerHTML == "[▲]") {
+			element2.innerHTML = formatSummary(words_arr, wordsCount);
+			this.innerHTML = "[▼]";
+		}
+		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
+	};
+	extensionA.innerHTML = "[▼]";
 	element.appendChild(extensionA);
-	if (!words_arr.length) return -1;
 
 	let left = 1;
 	let right = words_arr.length;
-	let wordsCount = 0;
 	let middle = Math.min(linesToShow * 20, right);
 	while (left <= right) {
 		element2.innerHTML = formatSummary(words_arr, middle);
@@ -146,7 +161,6 @@ function modifySummary(element, element2, extensionA, summary, words_arr, linesT
 		middle = Math.floor((left + right) / 2);
 	}
 	element2.innerHTML = formatSummary(words_arr, wordsCount);
-	return wordsCount;
 }
 
 function splitAllSpaces(str) {

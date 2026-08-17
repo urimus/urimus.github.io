@@ -553,22 +553,8 @@ function formatSummaryDiv(summaryDiv, entry) {
 	summarySpan.style.overflowWrap = "anywhere";
 	summaryDiv.appendChild(summarySpan);
 
-	let extensionA = document.createElement('a');
-	extensionA.setAttribute('href', "javascript:void(0);");
-	extensionA.setAttribute('class', 'standardb_red');
-	extensionA.onclick = function () {
-		if (this.innerHTML == "[▼]") {
-			summarySpan.innerHTML = entry_summary + "    ";
-			this.innerHTML = "[▲]";
-		} else if (this.innerHTML == "[▲]") {
-			summarySpan.innerHTML = formatSummary(summary_words, wordsCount);
-			this.innerHTML = "[▼]";
-		}
-		adjustFeedScrollDiv();
-	};
-	extensionA.innerHTML = "[▼]";
-
-	let wordsCount = modifySummary(summaryDiv, summarySpan, extensionA, entry_summary, summary_words, 4);
+	modifySummary(summaryDiv, summarySpan, entry_summary, summary_words, "red", 4);
+	adjustFeedScrollDiv();
 }
 
 // ------------- Image Preload -------------- //
