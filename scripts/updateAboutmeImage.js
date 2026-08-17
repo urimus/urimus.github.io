@@ -176,9 +176,6 @@ function updateAboutMeImage3(lang, i) {
 		item_description = description_words.join(" ");
 	}
 
-	let wordsCount = 0;
-	let linesToShow = 4;
-
 	let imageA = document.createElement('a');
 	imageA.setAttribute('href', item.link._text);
 	imageA.setAttribute('class', 'standardb_blue');
@@ -208,7 +205,7 @@ function updateAboutMeImage3(lang, i) {
 		}
 		extensionA.innerHTML = "[▼]";
 
-		wordsCount = modifySummary(descDiv, descSpan, extensionA, item_description, description_words, linesToShow);
+		let wordsCount = modifySummary(descDiv, descSpan, extensionA, item_description, description_words, 4);
 	}
 
 	let dateDiv = document.getElementById("dateDiv");

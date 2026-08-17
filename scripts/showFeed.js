@@ -547,15 +547,10 @@ function formatSummaryDiv(summaryDiv, entry) {
 	}
 	entry_summary = summary_words.join(" ");
 
-	let wordsCount = 0;
-	let linesToShow = 4;
-
 	summaryDiv.innerHTML = "";
-
 	let summarySpan = document.createElement('span');
 	summarySpan.setAttribute('class', "text_red");
 	summarySpan.style.overflowWrap = "anywhere";
-	summarySpan.innerHTML = "";
 	summaryDiv.appendChild(summarySpan);
 
 	let extensionA = document.createElement('a');
@@ -573,7 +568,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	};
 	extensionA.innerHTML = "[▼]";
 
-	wordsCount = modifySummary(summaryDiv, summarySpan, extensionA, entry_summary, summary_words, linesToShow);
+	let wordsCount = modifySummary(summaryDiv, summarySpan, extensionA, entry_summary, summary_words, 4);
 }
 
 // ------------- Image Preload -------------- //

@@ -124,7 +124,7 @@ function elementFitsLines(element, linesToShow) {
 	return true;
 }
 
-function modifySummary(element, element2, extensionA, summary, words_arr, linesToShow) {
+function modifySummary(element, element2, extensionA, summary, words_arr, linesToShow = 4) {
 	element2.innerHTML = summary;
 	if (elementFitsLines(element, linesToShow)) return -1;
 	element2.innerHTML = "";
