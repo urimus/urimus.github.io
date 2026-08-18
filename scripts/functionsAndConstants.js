@@ -128,26 +128,28 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	if (!words_arr.length) return;
 	let wordsCount = 0;
 
-	// Exponential search
 	let left = 1;
 	let right = words_arr.length;
 	let middle = 1;
+	element2.innerHTML = formatSummary(words_arr, 1, false);
+	let firstWordFits = elementFitsLines(element, linesToShow);
 
-	while (middle < right) {
-		element2.innerHTML = formatSummary(words_arr, middle, false);
-		if (!elementFitsLines(element, linesToShow)) break;
-		wordsCount = middle;
-		left = middle + 1;
-		middle = Math.min(middle * 2, right);
-	}
-
-	// Checking right, if exponential search reached the end
-	if (middle === right) {
-		element2.innerHTML = summary;
-		if (elementFitsLines(element, linesToShow)) {
+	if (!firstWordFits) {
+		// One word doesn't fit.
+		// If it's the only word, just leave it.
+		if (right === 1) return;
+	} else {
+		wordsCount = 1;
+		// Exponential search
+		while (middle < right) {
+			left = middle + 1;
+			middle = Math.min(middle * 2, right);
+			element2.innerHTML = formatSummary(words_arr, middle, false);
+			if (!elementFitsLines(element, linesToShow)) break;
 			wordsCount = middle;
-			return;
 		}
+		// Entire summary fits
+		if (wordsCount === right) return;
 	}
 
 	element2.innerHTML = "";
@@ -166,6 +168,9 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	};
 	extensionA.innerHTML = "[▼]";
 	element.appendChild(extensionA);
+
+	// If the first word doesn't fit, no binary search is needed.
+	if (!firstWordFits) return;
 
 	// middle = overflow
 	right = middle - 1;
