@@ -104,8 +104,8 @@ function detectBomCheckSoFar(bytes) {
 	return 0;
 }
 
-function formatSummary(words_arr, wordsCount) {
-	return words_arr.slice(0, wordsCount).join(" ") + " ";
+function formatSummary(words_arr, wordsCount, addSpace = true) {
+	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
 }
 
 function elementFitsLines(element, linesToShow) {
@@ -125,11 +125,31 @@ function elementFitsLines(element, linesToShow) {
 }
 
 function modifySummary(element, element2, summary, words_arr, col = "blue", linesToShow = 4) {
-	element2.innerHTML = summary;
-	if (elementFitsLines(element, linesToShow)) return;
 	if (!words_arr.length) return;
-
 	let wordsCount = 0;
+
+	// Exponential search
+	let left = 1;
+	let right = words_arr.length;
+	let middle = 1;
+
+	while (middle < right) {
+		element2.innerHTML = formatSummary(words_arr, middle, false);
+		if (!elementFitsLines(element, linesToShow)) break;
+		wordsCount = middle;
+		left = middle + 1;
+		middle = Math.min(middle * 2, right);
+	}
+
+	// Checking right, if exponential search reached the end
+	if (middle === right) {
+		element2.innerHTML = summary;
+		if (elementFitsLines(element, linesToShow)) {
+			wordsCount = middle;
+			return;
+		}
+	}
+
 	element2.innerHTML = "";
 	let extensionA = document.createElement('a');
 	extensionA.setAttribute('href', "javascript:void(0);");
@@ -147,10 +167,13 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	extensionA.innerHTML = "[▼]";
 	element.appendChild(extensionA);
 
-	let left = 1;
-	let right = words_arr.length;
-	let middle = Math.min(linesToShow * 20, right);
+	// middle = overflow
+	right = middle - 1;
+	words_arr[left - 1].length >= 3 ? left-- : left -= 2;
+	left = Math.max(1, left);
+
 	while (left <= right) {
+		middle = Math.floor((left + right) / 2);
 		element2.innerHTML = formatSummary(words_arr, middle);
 		if (elementFitsLines(element, linesToShow)) {
 			wordsCount = middle;
@@ -158,7 +181,6 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 		} else {
 			right = middle - 1;
 		}
-		middle = Math.floor((left + right) / 2);
 	}
 	element2.innerHTML = formatSummary(words_arr, wordsCount);
 }
