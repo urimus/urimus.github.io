@@ -169,8 +169,7 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 
 	// middle = overflow
 	right = middle - 1;
-	words_arr[left - 1].length >= 3 ? left-- : left -= 2;
-	left = Math.max(1, left);
+	left = 1;
 
 	while (left <= right) {
 		middle = Math.floor((left + right) / 2);
