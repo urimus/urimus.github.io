@@ -152,7 +152,6 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 		if (wordsCount === right) return;
 	}
 
-	element2.innerHTML = "";
 	let extensionA = document.createElement('a');
 	extensionA.setAttribute('href', "javascript:void(0);");
 	extensionA.setAttribute('class', 'standardb_' + col);
@@ -172,9 +171,10 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	// If the first word doesn't fit, no binary search is needed.
 	if (!firstWordFits) return;
 
-	// middle = overflow
+	// middle = first overflow
 	right = middle - 1;
-	left = 1;
+	// Compensate for extensionA insertion
+	left = Math.max(1, left - 3);
 
 	while (left <= right) {
 		middle = Math.floor((left + right) / 2);
