@@ -1933,11 +1933,13 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				}
 				let content = entry["media:content"]?.["media:text"]?._cdata;
 				if (content && (!description || description && content.toLowerCase() !== description.toLowerCase())) {
-					newEntry.media.comment += mediaCommentBlock(t("content"), content, 5);
+					let padding = newEntry.media.comment ? 5 : 0;
+					newEntry.media.comment += mediaCommentBlock(t("content"), content, padding);
 				}
 				let credit = entry["media:content"]?.["media:credit"]?._cdata;
 				if (credit) {
-					newEntry.media.comment += mediaCommentBlock(t("credit"), credit, 5);
+					let padding = newEntry.media.comment ? 5 : 0;
+					newEntry.media.comment += mediaCommentBlock(t("credit"), credit, padding);
 				}
 			} else {
 				newEntry.media.url = "images/icons/error/no_image.png";
