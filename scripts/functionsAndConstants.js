@@ -112,28 +112,27 @@ function getLineInfo(element, linesToShow) {
 	const range = document.createRange();
 	range.selectNodeContents(element);
 	const rects = range.getClientRects();
-	const lines = [];
-	let lastLineTop = null;
+
+	const lines = new Set();
+
 	for (const rect of rects) {
-		if (!lines.some(line => Math.abs(line - rect.top) < 2)) {
-			lines.push(rect.top);
-			lastLineTop = lastLineTop === null ? rect.top : Math.max(lastLineTop, rect.top);
-			if (lines.length > linesToShow) {
+		if (!lines.has(rect.top)) {
+			lines.add(rect.top);
+			if (lines.size > linesToShow) {
 				return {
-					fits: false,
-					lastLineTop
+					fits: false
 				};
 			}
 		}
 	}
+
 	return {
-		fits: true,
-		lastLineTop
+		fits: true
 	};
 }
 
-
 function modifySummary(element, element2, summary, words_arr, col = "blue", linesToShow = 4) {
+
 	if (!words_arr.length) return;
 	let wordsCount = 0;
 
@@ -143,7 +142,6 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	element2.innerHTML = formatSummary(words_arr, 1, false);
 	let result = getLineInfo(element, linesToShow);
 	let firstWordFits = result.fits;
-	let successfulLineTop = result.lastLineTop;
 
 	if (!firstWordFits) {
 		// One word doesn't fit.
@@ -159,7 +157,6 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 			result = getLineInfo(element, linesToShow);
 			if (!result.fits) break;
 			wordsCount = middle;
-			successfulLineTop = result.lastLineTop;
 		}
 		// Entire summary fits
 		if (wordsCount === right) return;
@@ -186,10 +183,8 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 
 	// middle = first overflow
 	right = middle - 1;
-	// Reset lower bound if extensionA moved to a new line.
-	// This guarantees that no valid word count is skipped.
-	const extensionTop = extensionA.getBoundingClientRect().top;
-	if (Math.abs(extensionTop - successfulLineTop) >= 2) left = 1;
+	// Expand the lower bound slightly to account for the extension link.
+	left = Math.max(1, left - 3);
 
 	while (left <= right) {
 		middle = Math.floor((left + right) / 2);
