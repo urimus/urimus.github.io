@@ -24,6 +24,9 @@ function feedIcon(feedURL, lang) {
 	Img.setAttribute('class', "thumbnail_image_red_png");
 	Img.setAttribute('alt', textFeedType);
 	Img.setAttribute('height', 27);
+	Img.onload = function () {
+		adjustFeedScrollDiv();
+	}
 
 	if (feedURL == "https://api.artemis2.live/news") { // artemis
 		Img.setAttribute('src', "images/icons/feed/api_icon.svg");
@@ -354,95 +357,96 @@ function showFeedTitle(type, source, lang, result) {
 		}
 	}
 
-	let preloadImg = new Image();
-	preloadImg.setAttribute('class', "thumbnail_image_red_png");
-	preloadImg.setAttribute('alt', title);
+	let totalEntries = result.entries.length;
+	let table = document.getElementById("titletable");
+	table.replaceChildren();
+	let row = table.insertRow(-1);	
+	let cell1 = row.insertCell(0);
+	cell1.setAttribute('class', 'nimetus_red');
+	cell1.style.textAlign = "center";
+	cell1.style.padding = "4px 2px";
+
+	let container = document.createElement("div");
+	container.style.padding = "5px";
+	container.style.border = "1px solid #de8e8e";
+	container.style.borderRadius = "4px";
+	container.style.fontWeight = "bold";
+
+	container.style.display = "inline-flex";
+	container.style.alignItems = "center";
+	container.style.gap = "6px";
+	cell1.appendChild(container);
+
+	let aLogo = document.createElement('a');
+	aLogo.setAttribute('href', result.link);
+	aLogo.setAttribute('class', 'standardb_red');
+	aLogo.setAttribute('target', '_blank');
+	aLogo.setAttribute('tabindex', "0");
+	aLogo.setAttribute('title', title);
+
+	let logoImg = document.createElement("img");
+	logoImg.setAttribute('class', "thumbnail_image_red_png");
+	logoImg.setAttribute('alt', title);
 	if (source == "artemis") {
-		preloadImg.setAttribute('height', 54);
+		logoImg.setAttribute('height', 54);
 	} else {
-		preloadImg.setAttribute('height', 27);
+		logoImg.setAttribute('height', 27);
 	}
-	preloadImg.onload = function () {
-		let totalEntries = result.entries.length;
-		let table = document.getElementById("titletable");
-		table.replaceChildren();
-		let row = table.insertRow(-1);	
-		let cell1 = row.insertCell(0);
-		cell1.setAttribute('class', 'nimetus_red');
-		cell1.style.textAlign = "center";
-		cell1.style.padding = "4px 2px";
+	logoImg.onload = function () {
+		adjustFeedScrollDiv();
+	}
+	logoImg.src = result.image;
+	aLogo.appendChild(logoImg);
+	container.appendChild(aLogo);
 
-		let container = document.createElement("div");
-		container.style.padding = "5px";
-		container.style.border = "1px solid #de8e8e";
-		container.style.borderRadius = "4px";
-		container.style.fontWeight = "bold";
+	let Div = document.createElement('div');
+	Div.innerHTML = "<span id='loadedCount'>0/</span>" +
+		totalEntries +
+		" " +
+		t("record", { count: totalEntries}) +
+		"<span id='failedCountTitle'></span>";
+	container.appendChild(Div);
 
-		container.style.display = "inline-flex";
-		container.style.alignItems = "center";
-		container.style.gap = "6px";
-		cell1.appendChild(container);
+	container.appendChild(feedIcon(result.feedXML, lang));
 
-		let aLogo = document.createElement('a');
-		aLogo.setAttribute('href', result.link);
-		aLogo.setAttribute('class', 'standardb_red');
-		aLogo.setAttribute('target', '_blank');
-		aLogo.setAttribute('tabindex', "0");
-		aLogo.setAttribute('title', title);
-		aLogo.appendChild(preloadImg);
-		container.appendChild(aLogo);
+	if (result.date_ms) {
+		let Img = document.createElement('img');
+		Img.setAttribute('tabindex', "0");
+		Img.setAttribute('alt', t("lastBuild"));
+		Img.setAttribute('title', t("lastBuild") + ": " + formatDate(result.date_ms, lang));
+		Img.setAttribute('height', 27);
+		Img.src="images/icons/feed/build.svg";
+		container.appendChild(Img);
+	}
+
+	if (result.copyright) {
+		let Img = document.createElement('img');
+		Img.setAttribute('tabindex', "0");
+		let copyright = DOMPurify.sanitize(result.copyright);
+		Img.setAttribute('alt', copyright);
+		Img.setAttribute('title', copyright);
+		Img.setAttribute('height', 27);
+		Img.src="images/icons/feed/copyright.svg";
+		container.appendChild(Img);
+	}
+
+	if (source=="nasa" && type=="image") {
+		let Img = document.createElement('img');
+		Img.setAttribute('tabindex', "0");
+		Img.setAttribute('alt', t("managingEditor"));
+		Img.setAttribute('title', t("managingEditor"));
+		Img.setAttribute('height', 27);
+		Img.src="images/icons/feed/attribution.svg";
 
 		let Div = document.createElement('div');
-		Div.innerHTML = "<span id='loadedCount'>0/</span>" +
-			totalEntries +
-			" " +
-			t("record", { count: totalEntries}) +
-			"<span id='failedCountTitle'></span>";
-		container.appendChild(Div);
+		Div.innerHTML = "▸ Brian Dunbar"; // ⯈
+		Div.appendChild(document.createElement("span"));
 
-		container.appendChild(feedIcon(result.feedXML, lang));
-
-		if (result.date_ms) {
-			let Img = document.createElement('img');
-			Img.setAttribute('tabindex', "0");
-			Img.setAttribute('alt', t("lastBuild"));
-			Img.setAttribute('title', t("lastBuild") + ": " + formatDate(result.date_ms, lang));
-			Img.setAttribute('height', 27);
-			Img.src="images/icons/feed/build.svg";
-			container.appendChild(Img);
-		}
-
-		if (result.copyright) {
-			let Img = document.createElement('img');
-			Img.setAttribute('tabindex', "0");
-			let copyright = DOMPurify.sanitize(result.copyright);
-			Img.setAttribute('alt', copyright);
-			Img.setAttribute('title', copyright);
-			Img.setAttribute('height', 27);
-			Img.src="images/icons/feed/copyright.svg";
-			container.appendChild(Img);
-		}
-
-		if (source=="nasa" && type=="image") {
-			let Img = document.createElement('img');
-			Img.setAttribute('tabindex', "0");
-			Img.setAttribute('alt', t("managingEditor"));
-			Img.setAttribute('title', t("managingEditor"));
-			Img.setAttribute('height', 27);
-			Img.src="images/icons/feed/attribution.svg";
-
-			let Div = document.createElement('div');
-			Div.innerHTML = "▸ Brian Dunbar"; // ⯈
-			Div.appendChild(document.createElement("span"));
-
-			container.append(Img, Div, mailToIcon("brian.dunbar@nasa.gov"));
-		}
-
-		adjustFeedScrollDiv();
-		showFeedData(type, source, lang, result);
+		container.append(Img, Div, mailToIcon("brian.dunbar@nasa.gov"));
 	}
-	preloadImg.src = result.image;
+
 	adjustFeedScrollDiv();
+	showFeedData(type, source, lang, result);
 }
 
 function showFeedData(type, source, lang, result) {
@@ -1704,24 +1708,16 @@ function showFeed(type, source, lang) {
 	container.style.fontWeight = "bold";
 	container.style.display = "inline-block";
 
-	let preloadImg = new Image();
-	preloadImg.onload = function () {
-		let table = document.getElementById("messagetable");
-		table.replaceChildren();
-		let row = table.insertRow(-1);
-		let cell1 = row.insertCell(0);
-		cell1.className = 'text_red';
-		cell1.style.textAlign = "center";
-		cell1.style.padding = "4px 2px 8px 2px";;
-		cell1.appendChild(container);
-		adjustFeedScrollDiv();
-		loadFeed(type, source, lang, feedURL);
-	}
-	if (source == "artemis") {
-		preloadImg.src = "images/icons/feed/api_icon.svg";
-	} else {
-		preloadImg.src = "images/icons/feed/rss_icon.svg"
-	}
+	let table = document.getElementById("messagetable");
+	table.replaceChildren();
+	let row = table.insertRow(-1);
+	let cell1 = row.insertCell(0);
+	cell1.className = 'text_red';
+	cell1.style.textAlign = "center";
+	cell1.style.padding = "4px 2px 8px 2px";;
+	cell1.appendChild(container);
+	adjustFeedScrollDiv();
+	loadFeed(type, source, lang, feedURL);
 }
 
 // ------------- Functions ---------------- //
