@@ -1930,7 +1930,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				if (description) {
 					newEntry.media.comment = mediaCommentBlock(t("description"), description);
 					let content = entry["media:content"]?.["media:text"]?._cdata;
-					if (description && content != description) {
+					if (content && content.toLowerCase() !== description.toLowerCase()) {
 						newEntry.media.comment += mediaCommentBlock(t("content"), content, 5);
 					}
 					let credit = entry["media:content"]?.["media:credit"]?._cdata;
