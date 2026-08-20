@@ -1926,17 +1926,18 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			const url = entry["media:thumbnail"]?._attributes?.url;
 			if (url) {
 				newEntry.media.url = url;
+				newEntry.media.comment = "";
 				let description = entry["media:content"]?.["media:description"]?._cdata;
 				if (description) {
 					newEntry.media.comment = mediaCommentBlock(t("description"), description);
-					let content = entry["media:content"]?.["media:text"]?._cdata;
-					if (content && content.toLowerCase() !== description.toLowerCase()) {
-						newEntry.media.comment += mediaCommentBlock(t("content"), content, 5);
-					}
-					let credit = entry["media:content"]?.["media:credit"]?._cdata;
-					if (credit) {
-						newEntry.media.comment += mediaCommentBlock(t("credit"), credit, 5);
-					}
+				}
+				let content = entry["media:content"]?.["media:text"]?._cdata;
+				if (content && (!description || description && content.toLowerCase() !== description.toLowerCase())) {
+					newEntry.media.comment += mediaCommentBlock(t("content"), content, 5);
+				}
+				let credit = entry["media:content"]?.["media:credit"]?._cdata;
+				if (credit) {
+					newEntry.media.comment += mediaCommentBlock(t("credit"), credit, 5);
 				}
 			} else {
 				newEntry.media.url = "images/icons/error/no_image.png";
