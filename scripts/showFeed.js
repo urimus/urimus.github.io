@@ -1921,18 +1921,20 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			newEntry.title = entry.title._cdata;
 			const url = entry["media:thumbnail"]?._attributes?.url;
 			if (url) {
+				const fixHtmlEntities = text => text?.replaceAll("&amp;", "&");
+
 				newEntry.media.url = url;
 				newEntry.media.comment = "";
-				let description = entry["media:content"]?.["media:description"]?._cdata;
+				let description = fixHtmlEntities(entry["media:content"]?.["media:description"]?._cdata);
 				if (description) {
 					newEntry.media.comment = mediaCommentBlock(t("description"), description);
 				}
-				let content = entry["media:content"]?.["media:text"]?._cdata;
-				if (content && (!description || description && content.toLowerCase() !== description.toLowerCase())) {
+				let content = fixHtmlEntities(entry["media:content"]?.["media:text"]?._cdata);
+				if (content && (!description || content.toLowerCase() !== description.toLowerCase())) {
 					let padding = newEntry.media.comment ? 5 : 0;
 					newEntry.media.comment += mediaCommentBlock(t("content"), content, padding);
 				}
-				let credit = entry["media:content"]?.["media:credit"]?._cdata;
+				let credit = fixHtmlEntities(entry["media:content"]?.["media:credit"]?._cdata);
 				if (credit) {
 					let padding = newEntry.media.comment ? 5 : 0;
 					newEntry.media.comment += mediaCommentBlock(t("credit"), credit, padding);
