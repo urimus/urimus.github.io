@@ -558,6 +558,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	summaryDiv.appendChild(summarySpan);
 
 	modifySummary(summaryDiv, summarySpan, entry_summary, summary_words, "red", 4);
+
 	adjustFeedScrollDiv();
 }
 
@@ -885,7 +886,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					video.controls = true;
 					video.autoplay = true;
 					video.playsInline = true;
-					video.preload = "metadata";
+					video.preload = "auto";
 					video.width = entry.media.width;
 					video.style.cssText = cssText;
 					video.onloadedmetadata = function () {
