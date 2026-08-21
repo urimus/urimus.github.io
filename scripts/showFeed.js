@@ -1809,15 +1809,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		items = resultOrig.item;
 	}
 
-	const mediaCommentBlock = (caption, content, marginTop = 0) => `
-		<div style="display:flex; align-items:center; margin-top:${marginTop}px">
-			<div style="flex:1; border:1px solid #ff8a00;"></div>
-			<div style="padding:0 5px; white-space:nowrap;">${caption}</div>
-			<div style="flex:1; border:1px solid #ff8a00;"></div>
-		</div>
-		<div>${content}</div>
-	`;
-
 	for (let c = 0; c < items.length; c++) {
 		let entry = items[c];
 
@@ -1922,6 +1913,14 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			const url = entry["media:thumbnail"]?._attributes?.url;
 			if (url) {
 				const fixHtmlEntities = text => text?.replaceAll("&amp;", "&");
+				const mediaCommentBlock = (caption, content, marginTop = 0) => `
+					<div style="display:flex; align-items:center; margin-top:${marginTop}px">
+						<div style="flex:1; border:1px solid #ff8a00;"></div>
+						<div style="padding:0 5px; white-space:nowrap;">${caption}</div>
+						<div style="flex:1; border:1px solid #ff8a00;"></div>
+					</div>
+					<div>${content}</div>
+				`;
 
 				newEntry.media.url = url;
 				newEntry.media.comment = "";
