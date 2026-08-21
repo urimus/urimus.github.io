@@ -175,9 +175,9 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 		if (wordsCount === right) return;
 
 		// If the exponential search found a value that fits
-		// within linesToShow - 1 lines, we can use it as the
-		// exact lower bound for the binary search.
-		if (lastSuccessfulLinesToShowM1 > 0) left = lastSuccessfulLinesToShowM1 + 1;
+		// within linesToShow - 1 lines, use it as the lower bound.
+		// Otherwise, left = 1.
+		left = lastSuccessfulLinesToShowM1 + 1;
 	}
 
 	const extensionA = document.createElement("a");
