@@ -194,7 +194,8 @@ function preloadImagesGeneral() {
 		"resize_folder_images","resize_image", "search"]
 			.map(f => `/images/icons/html_editor/${f}.svg`),
 
-		...["api_icon","attribution","build","copyright","link","loading","loading_red","mailto","mailto_red","rss_icon","tips"]
+		...["api_icon","attribution","build","copyright","link","loading","loading_red","mailto","image",
+		"mailto_red","rss_icon","tips"]
 			.map(f => `/images/icons/feed/${f}.svg`),
 		...["artemis","cbs_news","nasa_worm","space_com","wired","yahoo_news","yonhap_news"]
 			.map(f => `/images/icons/feed/${f}_logo.svg`),

@@ -178,19 +178,33 @@ function updateAboutMeImage3(lang, i) {
 
 	let imageA = document.createElement('a');
 	imageA.setAttribute('href', item.link._text);
-	imageA.setAttribute('class', 'standardb_blue');
+	imageA.setAttribute('class', 'standardb_blue icon_link');
 	imageA.setAttribute('target', '_blank');
-	imageA.innerText = "Image #" + (i + 1);
-	descDiv.appendChild(imageA);
-	descDiv.innerHTML += ". ";
-
-	if (item_description) {
-		let descSpan = document.createElement('span');
-		descSpan.setAttribute('class', "text_blue");
-		descSpan.style.overflowWrap = "anywhere";
-		descDiv.appendChild(descSpan);
-		modifySummary(descDiv, descSpan, item_description, description_words, "blue", 4);
+	imageA.setAttribute('tabindex', "0");
+	imageA.setAttribute('title',  "Image #" + (i + 1));
+	let imgSVG = document.createElement("img");
+	imgSVG.setAttribute('class', "thumbnail_image_blue_png");
+	imgSVG.setAttribute('alt', "Image #" + (i + 1));
+	imgSVG.setAttribute('height', 27);
+	imgSVG.onload = function () {
+		if (item_description) {
+			let descSpan = document.createElement('span');
+			descSpan.setAttribute('class', "text_blue");
+			descSpan.style.overflowWrap = "anywhere";
+			descDiv.appendChild(descSpan);
+			modifySummary(descDiv, descSpan, item_description, description_words, "blue", 5);
+		}
+		adjustScrollDiv();
 	}
+	imgSVG.setAttribute('src', "images/icons/feed/image.svg");
+	imageA.appendChild(imgSVG);
+	descDiv.appendChild(imageA);
+
+
+	let imgSpan = document.createElement('span');
+	imgSpan.setAttribute('class', "text_blue");
+	imgSpan.innerHTML = " ";
+	descDiv.appendChild(imgSpan);
 
 	let dateDiv = document.getElementById("dateDiv");
 	if (!dateDiv) {
