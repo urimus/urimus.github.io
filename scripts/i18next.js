@@ -296,7 +296,7 @@ i18next.init({
 				fileUploading: "File is Uploading ",
 				folder: "Folder '",
 				for: "for",
-				forContentsScroll: "for Content's Scroll",
+				forContentsScroll: "for the Content's Scroll",
 				generatedSuccessfullyShowThem: " Generated Successfully. Show Them?",
 				groupingFoundFiles: "Grouping Found Files, According to Their First Letter and Printing Created Groups.",
 				hide: "Hide",
