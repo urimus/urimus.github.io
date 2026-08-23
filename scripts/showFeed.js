@@ -425,9 +425,11 @@ function showFeedTitle(type, source, lang, result) {
 	if (result.copyright) {
 		let Img = document.createElement('img');
 		Img.setAttribute('tabindex', "0");
-		let copyright = DOMPurify.sanitize(result.copyright);
-		Img.setAttribute('alt', copyright);
-		Img.setAttribute('title', copyright);
+		let title = "<div>" + t("copyright") + "</div>";
+		title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
+		title += "<div>" + DOMPurify.sanitize(result.copyright) + "</div>";
+		Img.setAttribute('alt', t("copyright"));
+		Img.setAttribute('title', title);
 		Img.setAttribute('height', 27);
 		Img.src="images/icons/feed/copyright.svg";
 		container.appendChild(Img);
