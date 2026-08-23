@@ -413,7 +413,10 @@ function showFeedTitle(type, source, lang, result) {
 		let Img = document.createElement('img');
 		Img.setAttribute('tabindex', "0");
 		Img.setAttribute('alt', t("lastBuild"));
-		Img.setAttribute('title', t("lastBuild") + ": " + formatDate(result.date_ms, lang));
+		let title = "<div>" + t("lastBuild") + "</div>";
+		title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
+		title += "<div>" + formatDate(result.date_ms, lang) + "</div>";
+		Img.setAttribute('title', title);
 		Img.setAttribute('height', 27);
 		Img.src="images/icons/feed/build.svg";
 		container.appendChild(Img);
@@ -1334,10 +1337,13 @@ function generateTabs(type, source, lang) {
 	let cell1 = row.insertCell(0);
 	cell1.appendChild(tabssubtable2);
 
+	let title = "<div>" + t("tip") + "</div>";
+	title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
+	title += "<div>" + t("useNavigationKeys") + " <kbd>&rlarr;</kbd> " + t("with") + " <kbd>Shift</kbd> " + t("and") + " <kbd>Home</kbd>, <kbd>End</kbd> " + t("forContentsScroll") + "</div>";
 	let Img = document.createElement('img');
 	Img.setAttribute('tabindex', "0");
-	Img.setAttribute('alt', t("quickTips"));
-	Img.setAttribute('title', t("tipUseNavigationKeys") + " - <kbd>&rlarr;</kbd> " + t("with") + " <kbd>Shift</kbd> " + t("and") + " <kbd>Home</kbd>, <kbd>End</kbd> " + t("forContentsScroll"));
+	Img.setAttribute('alt', t("tip"));
+	Img.setAttribute('title', title);
 	Img.setAttribute('style',  "height:27px; display: block;");
 	Img.src="images/icons/feed/tips.svg";
 	table.appendChild(Img);
