@@ -181,7 +181,7 @@ function updateAboutMeImage3(lang, i) {
 	imageA.setAttribute('class', 'standardb_blue icon_link');
 	imageA.setAttribute('target', '_blank');
 	imageA.setAttribute('tabindex', "0");
-	imageA.setAttribute('title',  "NASA Image of the Day, Image #" + (i + 1));
+	imageA.setAttribute('title',  "Image #" + (i + 1) + "<br>NASA Image of the Day");
 	let imgSVG = document.createElement("img");
 	imgSVG.setAttribute('class', "thumbnail_image_blue_png");
 	imgSVG.setAttribute('alt', "Image #" + (i + 1));
