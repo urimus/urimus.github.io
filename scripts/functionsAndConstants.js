@@ -147,10 +147,7 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	let result = getLineInfo(element, linesToShow);
 	const firstWordFits = result.fitsLinesToShow;
 
-	if (linesToShow === 1 && firstWordFits) {
-		wordsCount = 1;
-		left = 2;
-	} else if (!firstWordFits) {
+	if (!firstWordFits) {
 		// If even the first word does not fit, no search is needed.
 		if (right === 1) return;
 		wordsCount = 1;
@@ -198,8 +195,8 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 
 	// If the first word does not fit, no binary search is needed.
 	if (!firstWordFits) return;
-	// For linesToShow > 1, middle is the first known overflowing value.
-	if (linesToShow !== 1) right = middle - 1;
+	// middle is the first known overflowing value.
+	right = middle - 1;
 
 	// Binary search for the maximum number of words that fits.
 	while (left <= right) {
