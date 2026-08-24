@@ -1921,7 +1921,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			newEntry.title = entry.title._cdata;
 			const url = entry["media:thumbnail"]?._attributes?.url;
 			if (url) {
-				const fixHtmlEntities = text => text?.replaceAll("&amp;", "&");
+				const fixHtmlEntities = text => text?.replaceAll("&amp;", "&").replace(/&#0+(\d+);/g, "&#$1;");
 				const mediaCommentBlock = (caption, content, marginTop = 0) => `
 					<div style="display:flex; align-items:center; margin-top:${marginTop}px">
 						<div style="flex:1; border:1px solid #ff8a00;"></div>
