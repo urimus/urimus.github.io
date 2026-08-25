@@ -104,8 +104,8 @@ function detectBomCheckSoFar(bytes) {
 	return 0;
 }
 
-function formatSummary(words_arr, wordsCount, addSpace = true) {
-	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
+function formatSummary(words_arr, wordsCount) {
+	return words_arr.slice(0, wordsCount).join(" ") + " ";
 }
 
 function fitsLines(element, linesToShow) {
@@ -140,16 +140,12 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 		if (fitsLines(element, linesToShow)) return;
 	}
 
-	let wordsCount = 0;
-	let left = 1;
-	let right = words_arr.length;
-
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
 	extensionA.setAttribute("class", "standardb_" + col);
 	extensionA.onclick = function () {
 		if (this.innerHTML === "[▼]") {
-			element2.innerHTML = summary + "    ";
+			element2.innerHTML = summary + " ";
 			this.innerHTML = "[▲]";
 		} else if (this.innerHTML === "[▲]") {
 			element2.innerHTML = formatSummary(words_arr, wordsCount);
@@ -159,6 +155,10 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	};
 	extensionA.innerHTML = "[▼]";
 	element.appendChild(extensionA);
+
+	let wordsCount = 1;
+	let left = 2;
+	let right = words_arr.length;
 
 	// Binary search for the maximum number of words that fits.
 	while (left <= right) {
