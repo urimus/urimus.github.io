@@ -144,12 +144,10 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	if (!words_arr.length) return;
 
 	// Estimate the likely result to start exponential search.
-	let estimatedResult;
-	if (col == "blue") {
-		estimatedResult = (linesToShow - 1) * 10;
-	} else {
-		estimatedResult = linesToShow * 10;
-	}
+	// For blue, one line is occupied by the image.
+	let estimatedResult = col == "blue"
+		? (linesToShow - 1) * 10
+		: linesToShow * 10;
 
 	let wordsCount = 1;
 	let left;
@@ -161,10 +159,7 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	while (true) {
 		element2.innerHTML = formatSummary(words_arr, current, false);
 		const result = getLineInfo(element, linesToShow);
-		if (!result.fitsLinesToShow) {
-			right = current - 1;
-			break;
-		}
+		if (!result.fitsLinesToShow) break;
 		wordsCount = current;
 		if (result.fitsLinesToShowM1) {
 			lastSuccessfulLinesToShowM1 = current;
@@ -190,8 +185,9 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	extensionA.innerHTML = "[▼]";
 	element.appendChild(extensionA);
 
-	// Binary search lower bound.
+	// Binary search bounds.
 	left = Math.max(2, lastSuccessfulLinesToShowM1 + 1);
+	right = current - 1;
 
 	// Binary search.
 	while (left <= right) {
