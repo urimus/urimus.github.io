@@ -86,7 +86,7 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	// Binary search.
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
-		element2.innerHTML = formatSummary(words_arr, middle, false);
+		element2.innerHTML = formatSummary(words_arr, middle);
 		const result = getLineInfo(element, linesToShow);
 		if (result.fitsLinesToShow) {
 			wordsCount = middle;
