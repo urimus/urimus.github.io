@@ -476,7 +476,7 @@ function showFeedData(type, source, lang, result) {
 					showEntry(type, source, lang, result, i, true);
 				}
 			}
-			document.getElementById("loadingTitleContainer").innerHTML = t("updateStarted") + ". ";
+			document.getElementById("loadingTitleContainer").innerHTML = t("updateStarted") + ".&nbsp;";
 			let a = document.createElement('a');
 			a.setAttribute('href', "javascript:void(0);");
 			a.setAttribute('class', 'standardb_red');
@@ -2501,7 +2501,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					t("updateOfRecord")
 					+ " #" + (i + 1)
 					+ (updateAttempt > 1 ? "/" + updateAttempt : "")
-					+ " ❎. ";
+					+ " ❎.&nbsp;";
 
 				// check for redirect in html
 				let redirectURL = getMeta(doc, 'meta[http-equiv="refresh"]');
@@ -2555,7 +2555,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					t("updateOfRecord")
 					+ " #" + (i + 1)
 					+ (updateAttempt > 1 ? "/" + updateAttempt : "")
-					+ " ✅. ";
+					+ " ✅.&nbsp;";
 
 				let locStPar = source + "_" + type + "_updates";
 				let locStUpdateData = getLocalStorageData(locStPar);
@@ -2579,7 +2579,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				t("updateOfRecord")
 				+ " #" + (i + 1)
 				+ (updateAttempt > 1 ? "/" + updateAttempt : "")
-				+ " ❎. ";
+				+ " ❎.&nbsp;";
 
 			consoleAxiosError(error, t("record") + " # " + (i + 1) + " | " + t("updateAttempt") + " " + updateAttempt);
 			if (updateAttempt < 5) { // 5 attempts
