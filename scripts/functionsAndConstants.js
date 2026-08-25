@@ -104,11 +104,17 @@ function detectBomCheckSoFar(bytes) {
 	return 0;
 }
 
-function formatSummary(words_arr, wordsCount) {
-	return words_arr.slice(0, wordsCount).join(" ") + " ";
+function splitAllSpaces(str) {
+	return str
+		.split(/(?:\s+|&(?:nbsp|ensp|emsp|thinsp|hairsp|MediumSpace|ThickSpace|VeryThinSpace|NoBreak|puncsp);|&#(?:32|160|8192|8193|8194|8195|8196|8197|8198|8199|8200|8201|8202|8239|8287|12288);|&#x(?:20|A0|2000|2001|2002|2003|2004|2005|2006|2007|2008|2009|200A|202F|205F|3000);)/giu)
+		.filter(Boolean);
 }
 
-function fitsLines(element, linesToShow) {
+function formatSummary(words_arr, wordsCount, addSpace = true) {
+	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
+}
+
+function getLineInfo(element, linesToShow) {
 	const range = document.createRange();
 	range.selectNodeContents(element);
 	const rects = range.getClientRects();
@@ -118,26 +124,54 @@ function fitsLines(element, linesToShow) {
 	for (const rect of rects) {
 		if (!lines.has(rect.top)) {
 			lines.add(rect.top);
-			if (lines.size > linesToShow) return false;
+
+			if (lines.size > linesToShow) {
+				return {
+					fitsLinesToShow: false,
+					fitsLinesToShowM1: false
+				};
+			}
 		}
 	}
 
-	return true;
+	return {
+		fitsLinesToShow: true,
+		fitsLinesToShowM1: lines.size <= linesToShow - 1
+	};
 }
 
 function modifySummary(element, element2, summary, words_arr, col = "blue", linesToShow = 4) {
 	if (!words_arr.length) return;
 
-	// For short texts, check whether the whole summary already fits.
-	let estimatedMaxWords;
+	// Estimate the likely result to start exponential search.
+	let estimatedResult;
 	if (col == "blue") {
-		estimatedMaxWords = (linesToShow - 1) * 10;
+		estimatedResult = (linesToShow - 1) * 10;
 	} else {
-		estimatedMaxWords = linesToShow * 10;
+		estimatedResult = linesToShow * 10;
 	}
-	if (words_arr.length <= estimatedMaxWords) {
-		element2.innerHTML = summary;
-		if (fitsLines(element, linesToShow)) return;
+
+	let wordsCount = 1;
+	let left;
+	let right = words_arr.length;
+	let current = Math.min(estimatedResult, right);
+	let lastSuccessfulLinesToShowM1 = 0;
+
+	// Exponential search.
+	while (true) {
+		element2.innerHTML = formatSummary(words_arr, current, false);
+		const result = getLineInfo(element, linesToShow);
+		if (!result.fitsLinesToShow) {
+			right = current - 1;
+			break;
+		}
+		wordsCount = current;
+		if (result.fitsLinesToShowM1) {
+			lastSuccessfulLinesToShowM1 = current;
+		}
+		// The entire summary fits.
+		if (current === right) return;
+		current = Math.min(current * 2, right);
 	}
 
 	const extensionA = document.createElement("a");
@@ -156,15 +190,15 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	extensionA.innerHTML = "[▼]";
 	element.appendChild(extensionA);
 
-	let wordsCount = 1;
-	let left = 2;
-	let right = words_arr.length;
+	// Binary search lower bound.
+	left = Math.max(2, lastSuccessfulLinesToShowM1 + 1);
 
-	// Binary search for the maximum number of words that fits.
+	// Binary search.
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
-		element2.innerHTML = formatSummary(words_arr, middle);
-		if (fitsLines(element, linesToShow)) {
+		element2.innerHTML = formatSummary(words_arr, middle, false);
+		const result = getLineInfo(element, linesToShow);
+		if (result.fitsLinesToShow) {
 			wordsCount = middle;
 			left = middle + 1;
 		} else {
@@ -172,10 +206,4 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 		}
 	}
 	element2.innerHTML = formatSummary(words_arr, wordsCount);
-}
-
-function splitAllSpaces(str) {
-	return str
-		.split(/(?:\s+|&(?:nbsp|ensp|emsp|thinsp|hairsp|MediumSpace|ThickSpace|VeryThinSpace|NoBreak|puncsp);|&#(?:32|160|8192|8193|8194|8195|8196|8197|8198|8199|8200|8201|8202|8239|8287|12288);|&#x(?:20|A0|2000|2001|2002|2003|2004|2005|2006|2007|2008|2009|200A|202F|205F|3000);)/giu)
-		.filter(Boolean);
 }
