@@ -429,13 +429,13 @@ function getStatistics(perf) {
 	};
 }
 
-function testSummary(summaryDiv, summarySpan, linesToShow = 4) {
+function testSummary(summaryDiv, linesToShow = 4) {
 	if (testComplete) return;
 
 	testComplete = true;
 
 	const testStart = performance.now();
-	console.log("Test Started");
+	console.log("Modify Summary Speed Test Started.");
 
 	const TEST_COUNT = 1000;
 	const maxWords = linesToShow * 20;
@@ -552,7 +552,5 @@ function testSummary(summaryDiv, summarySpan, linesToShow = 4) {
 	});
 
 	const testTime = performance.now() - testStart;
-
-	console.log(`Test Complete. Duration: ${testTime.toFixed(2)} ms`);
-	console.log(`Benchmark completed: ${TEST_COUNT} texts, 1-${maxWords} words, ${linesToShow} lines`);
+	console.log(`Modify Summary Speed Test completed: ${TEST_COUNT} texts, 1-${maxWords} words, ${linesToShow} lines, duration: ${testTime.toFixed(2)} ms.`);
 }
