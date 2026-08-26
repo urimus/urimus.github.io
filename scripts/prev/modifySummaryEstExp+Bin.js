@@ -144,10 +144,10 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	if (!words_arr.length) return;
 
 	// Estimate the likely result to start exponential search.
+	const estimatedResult = linesToShow * 10;
+
 	// For blue, one line is occupied by the image.
-	let estimatedResult = col == "blue"
-		? (linesToShow - 1) * 10
-		: linesToShow * 10;
+	if (col === "blue") linesToShow++;
 
 	let wordsCount = 1;
 	let left;
