@@ -1934,13 +1934,17 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				newEntry.media.url = url;
 				newEntry.media.comment = "";
 				let description = fixHtmlEntities(entry["media:content"]?.["media:description"]?._cdata);
-				if (description) {
-					newEntry.media.comment = mediaCommentBlock(t("description"), description);
-				}
 				let content = fixHtmlEntities(entry["media:content"]?.["media:text"]?._cdata);
-				if (content && (!description || content.toLowerCase() !== description.toLowerCase())) {
-					let padding = newEntry.media.comment ? 5 : 0;
-					newEntry.media.comment += mediaCommentBlock(t("content"), content, padding);
+				if (description && content && content.toLowerCase() === description.toLowerCase()) {
+					newEntry.media.comment += mediaCommentBlock(t("description")+"/"+t("content"), description);
+				} else {
+					if (description) {
+						newEntry.media.comment += mediaCommentBlock(t("description"), description);
+					}
+					if (content) {
+						let padding = newEntry.media.comment ? 5 : 0;
+						newEntry.media.comment += mediaCommentBlock(t("content"), content, padding);
+					}
 				}
 				let credit = fixHtmlEntities(entry["media:content"]?.["media:credit"]?._cdata);
 				if (credit) {
