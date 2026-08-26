@@ -552,5 +552,5 @@ function testSummary(summaryDiv, linesToShow = 4) {
 	});
 
 	const testTime = performance.now() - testStart;
-	console.log(`Modify Summary Speed Test completed: ${TEST_COUNT} texts, 1-${maxWords} words, ${linesToShow} lines, duration: ${testTime.toFixed(2)} ms.`);
+	console.log(`Modify Summary Speed Test (${TEST_COUNT} texts, 1-${maxWords} words, ${linesToShow} lines) completed. Duration: ${testTime.toFixed(2)} ms.`);
 }
