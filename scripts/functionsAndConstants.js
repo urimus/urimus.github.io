@@ -330,22 +330,6 @@ function modifySummaryOneByOne(
 // BENCHMARK
 // =========================================================
 
-let perf1 = {
-	count: 0,
-	total: 0,
-	min: Infinity,
-	max: 0,
-	times: []
-};
-
-let perf2 = {
-	count: 0,
-	total: 0,
-	min: Infinity,
-	max: 0,
-	times: []
-};
-
 let testComplete = false;
 
 function randomWord() {
@@ -434,13 +418,14 @@ function testSummary(summaryDiv, linesToShow = 4) {
 
 	testComplete = true;
 
-	const testStart = performance.now();
-	console.log("Modify Summary Speed Test Started.");
-
 	const TEST_COUNT = 1000;
 	const maxWords = linesToShow * 20;
 
-	perf1 = {
+	console.log(`Modify Summary Speed Test Started: ${TEST_COUNT} texts, 1–${maxWords} words, ${linesToShow} lines.`);
+
+	const testStart = performance.now();
+
+	const perf1 = {
 		count: 0,
 		total: 0,
 		min: Infinity,
@@ -448,7 +433,7 @@ function testSummary(summaryDiv, linesToShow = 4) {
 		times: []
 	};
 
-	perf2 = {
+	const perf2 = {
 		count: 0,
 		total: 0,
 		min: Infinity,
@@ -541,7 +526,7 @@ function testSummary(summaryDiv, linesToShow = 4) {
 	const avg2 = perf2.total / perf2.count;
 
 	console.table({
-		"Algorithm 1": {
+		"Algorithm": {
 			...statistics1,
 			speedup: (avg2 / avg1).toFixed(2) + "x"
 		},
@@ -552,5 +537,5 @@ function testSummary(summaryDiv, linesToShow = 4) {
 	});
 
 	const testTime = performance.now() - testStart;
-	console.log(`Modify Summary Speed Test (${TEST_COUNT} texts, 1-${maxWords} words, ${linesToShow} lines) completed. Duration: ${testTime.toFixed(2)} ms.`);
+	console.log(`Modify Summary Speed Test Completed. Duration: ${testTime.toFixed(2)} ms.`);
 }
