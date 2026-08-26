@@ -413,17 +413,19 @@ function getStatistics(perf) {
 	};
 }
 
-function testSummary(summaryDiv, linesToShow = 4) {
+function testSummary(summaryDiv) {
 	if (testComplete) return;
 
 	testComplete = true;
 
 	const TEST_COUNT = 1000;
-	const maxWords = linesToShow * 20;
 
-	console.log(`Modify Summary Speed Test Started: ${TEST_COUNT} texts, 1–${maxWords} words, ${linesToShow} lines.`);
+	console.log(`Modify Summary Speed Test Started: ${TEST_COUNT} texts.`);
 
 	const testStart = performance.now();
+
+	const MIN_LINES = 1;
+	const MAX_LINES = 10;
 
 	const perf1 = {
 		count: 0,
@@ -441,7 +443,8 @@ function testSummary(summaryDiv, linesToShow = 4) {
 		times: []
 	};
 
-	function generateTestText() {
+	function generateTestText(linesToShow) {
+		const maxWords = linesToShow * 20;
 		const wordsCount = 1 + Math.floor(Math.random() * maxWords);
 		const words = new Array(wordsCount);
 
@@ -455,7 +458,7 @@ function testSummary(summaryDiv, linesToShow = 4) {
 		};
 	}
 
-	function runAlgorithm1(entry_summary, summary_words) {
+	function runAlgorithm1(entry_summary, summary_words, linesToShow) {
 		summaryDiv.innerHTML = "";
 
 		const span = document.createElement("span");
@@ -480,7 +483,7 @@ function testSummary(summaryDiv, linesToShow = 4) {
 		addPerf(perf1, time);
 	}
 
-	function runAlgorithm2(entry_summary, summary_words) {
+	function runAlgorithm2(entry_summary, summary_words, linesToShow) {
 		summaryDiv.innerHTML = "";
 
 		const span = document.createElement("span");
@@ -506,16 +509,21 @@ function testSummary(summaryDiv, linesToShow = 4) {
 	}
 
 	for (let test = 0; test < TEST_COUNT; test++) {
-		const data = generateTestText();
+		const linesToShow =
+			MIN_LINES +
+			Math.floor(Math.random() * (MAX_LINES - MIN_LINES + 1));
+
+		const data = generateTestText(linesToShow);
+
 		const entry_summary = data.summary;
 		const summary_words = data.words;
 
 		if (Math.random() < 0.5) {
-			runAlgorithm1(entry_summary, summary_words);
-			runAlgorithm2(entry_summary, summary_words);
+			runAlgorithm1(entry_summary, summary_words, linesToShow);
+			runAlgorithm2(entry_summary, summary_words, linesToShow);
 		} else {
-			runAlgorithm2(entry_summary, summary_words);
-			runAlgorithm1(entry_summary, summary_words);
+			runAlgorithm2(entry_summary, summary_words, linesToShow);
+			runAlgorithm1(entry_summary, summary_words, linesToShow);
 		}
 	}
 
@@ -537,5 +545,8 @@ function testSummary(summaryDiv, linesToShow = 4) {
 	});
 
 	const testTime = performance.now() - testStart;
-	console.log(`Modify Summary Speed Test Completed. Duration: ${testTime.toFixed(2)} ms.`);
+
+	console.log(
+		`Modify Summary Speed Test Completed. Duration: ${testTime.toFixed(2)} ms.`
+	);
 }

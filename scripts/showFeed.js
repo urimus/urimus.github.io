@@ -562,7 +562,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	summarySpan.style.overflowWrap = "anywhere";
 	summaryDiv.appendChild(summarySpan);
 
-//	testSummary(summaryDiv, 4);
+//	testSummary(summaryDiv);
 	modifySummary(summaryDiv, summarySpan, entry_summary, summary_words, "red", 4);
 
 	adjustFeedScrollDiv();
