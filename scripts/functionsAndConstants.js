@@ -203,3 +203,356 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	}
 	element2.innerHTML = formatSummary(words_arr, wordsCount);
 }
+
+// =========================================================
+// TEST FUNCTIONS
+// =========================================================
+
+function modifySummaryOneByOne(
+	element,
+	element2,
+	summary,
+	words_arr,
+	col = "blue",
+	linesToShow = 4
+) {
+	if (!words_arr.length) return;
+
+	let wordsCount = 0;
+	let currentLineTop = 0;
+	let linesCount = 1;
+
+	const extensionA = document.createElement("a");
+	extensionA.setAttribute("href", "javascript:void(0);");
+	extensionA.setAttribute("class", "standardb_" + col);
+	extensionA.innerHTML = "[▼]";
+
+	extensionA.onclick = function () {
+		if (this.innerHTML === "[▼]") {
+			element2.innerHTML = summary + "    ";
+			this.innerHTML = "[▲]";
+		} else {
+			element2.innerHTML = formatSummary(words_arr, wordsCount);
+			this.innerHTML = "[▼]";
+		}
+
+		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
+	};
+
+	// Pointer для первого прохода
+	const pointer = document.createElement("a");
+	element.appendChild(pointer);
+
+	// Первый проход — ищем место, где начинаются новые строки.
+	for (let k = 0; k < words_arr.length; k++) {
+		element2.innerHTML = formatSummary(words_arr, k + 1);
+
+		if (k === 0) {
+			currentLineTop = pointer.offsetTop;
+		}
+
+		if (pointer.offsetTop !== currentLineTop) {
+			if (Math.abs(pointer.offsetTop - currentLineTop) < 2) {
+				currentLineTop = pointer.offsetTop;
+				continue;
+			}
+
+			if (linesCount === linesToShow) {
+				// Нужно начинать второй проход уже с нормальной ссылки.
+				element2.innerHTML = "";
+				element.removeChild(pointer);
+				element.appendChild(extensionA);
+
+				wordsCount = 0;
+				linesCount = 1;
+
+				currentLineTop = extensionA.offsetTop;
+
+				// Второй проход — ищем точное количество слов.
+				for (let k2 = 0; k2 < words_arr.length; k2++) {
+					wordsCount++;
+
+					element2.innerHTML =
+						formatSummary(words_arr, wordsCount);
+
+					if (k2 === 0) {
+						currentLineTop = extensionA.offsetTop;
+					}
+
+					if (extensionA.offsetTop !== currentLineTop) {
+						if (Math.abs(extensionA.offsetTop - currentLineTop) < 2) {
+							currentLineTop = extensionA.offsetTop;
+							continue;
+						}
+
+						if (linesCount === linesToShow) {
+							wordsCount--;
+
+							element2.innerHTML =
+								formatSummary(words_arr, wordsCount);
+
+							break;
+						}
+
+						currentLineTop = extensionA.offsetTop;
+						linesCount++;
+					}
+				}
+
+				break;
+			}
+
+			currentLineTop = pointer.offsetTop;
+			linesCount++;
+		}
+	}
+
+	// Весь текст помещается.
+	if (wordsCount === 0 && linesCount < linesToShow) {
+		element.removeChild(pointer);
+		element.appendChild(extensionA);
+		element2.innerHTML = summary;
+		return;
+	}
+
+	// Если цикл закончился, значит весь текст помещается.
+	if (wordsCount === 0) {
+		element.removeChild(pointer);
+		element2.innerHTML = summary;
+		return;
+	}
+
+	element2.innerHTML = formatSummary(words_arr, wordsCount);
+	element.appendChild(extensionA);
+}
+
+// =========================================================
+// BENCHMARK
+// =========================================================
+
+let perf1 = {
+	count: 0,
+	total: 0,
+	min: Infinity,
+	max: 0,
+	times: []
+};
+
+let perf2 = {
+	count: 0,
+	total: 0,
+	min: Infinity,
+	max: 0,
+	times: []
+};
+
+let testComplete = false;
+
+function randomWord() {
+	const r = Math.random();
+	let length;
+
+	if (r < 0.02) length = 1;
+	else if (r < 0.08) length = 2;
+	else if (r < 0.20) length = 3;
+	else if (r < 0.38) length = 4;
+	else if (r < 0.58) length = 5;
+	else if (r < 0.74) length = 6;
+	else if (r < 0.84) length = 7;
+	else if (r < 0.91) length = 8;
+	else if (r < 0.95) length = 9;
+	else if (r < 0.975) length = 10;
+	else length = 11 + Math.floor(Math.random() * 5);
+
+	const letters =
+		"eeeeeeeeeeeeeeeeeeee" +
+		"tttttttttttt" +
+		"aaaaaaaaaa" +
+		"oooooooooo" +
+		"iiiiiiiii" +
+		"nnnnnnnnn" +
+		"ssssssss" +
+		"hhhhhhhh" +
+		"rrrrrrr" +
+		"dddddd" +
+		"llllll" +
+		"cccccc" +
+		"uuuuuu" +
+		"mmmm" +
+		"wwww" +
+		"ffff" +
+		"gggg" +
+		"yyyy" +
+		"pppp" +
+		"bbbb" +
+		"vvvv" +
+		"kkkk" +
+		"jjj" +
+		"xxx" +
+		"qqq" +
+		"zz";
+
+	let word = "";
+
+	for (let i = 0; i < length; i++) {
+		word += letters[Math.floor(Math.random() * letters.length)];
+	}
+
+	return word;
+}
+
+function addPerf(perf, time) {
+	perf.count++;
+	perf.total += time;
+	perf.times.push(time);
+
+	if (time < perf.min) perf.min = time;
+	if (time > perf.max) perf.max = time;
+}
+
+function getStatistics(perf) {
+	const sorted = [...perf.times].sort((a, b) => a - b);
+
+	function percentile(p) {
+		return sorted[Math.floor((sorted.length - 1) * p)];
+	}
+
+	return {
+		count: perf.count,
+		avg: (perf.total / perf.count).toFixed(4) + " ms",
+		median: percentile(0.50).toFixed(4) + " ms",
+		p95: percentile(0.95).toFixed(4) + " ms",
+		p99: percentile(0.99).toFixed(4) + " ms",
+		min: perf.min.toFixed(4) + " ms",
+		max: perf.max.toFixed(4) + " ms",
+		total: perf.total.toFixed(2) + " ms"
+	};
+}
+
+function testSummary(summaryDiv, summarySpan, linesToShow = 4) {
+	if (testComplete) return;
+
+	testComplete = true;
+
+	const testStart = performance.now();
+	console.log("Test Started");
+
+	const TEST_COUNT = 1000;
+	const maxWords = linesToShow * 20;
+
+	perf1 = {
+		count: 0,
+		total: 0,
+		min: Infinity,
+		max: 0,
+		times: []
+	};
+
+	perf2 = {
+		count: 0,
+		total: 0,
+		min: Infinity,
+		max: 0,
+		times: []
+	};
+
+	function generateTestText() {
+		const wordsCount = 1 + Math.floor(Math.random() * maxWords);
+		const words = new Array(wordsCount);
+
+		for (let i = 0; i < wordsCount; i++) {
+			words[i] = randomWord();
+		}
+
+		return {
+			summary: words.join(" "),
+			words: words
+		};
+	}
+
+	function runAlgorithm1(entry_summary, summary_words) {
+		summaryDiv.innerHTML = "";
+
+		const span = document.createElement("span");
+		span.setAttribute("class", "text_red");
+		span.style.overflowWrap = "anywhere";
+
+		summaryDiv.appendChild(span);
+
+		const start = performance.now();
+
+		modifySummary(
+			summaryDiv,
+			span,
+			entry_summary,
+			summary_words,
+			"red",
+			linesToShow
+		);
+
+		const time = performance.now() - start;
+
+		addPerf(perf1, time);
+	}
+
+	function runAlgorithm2(entry_summary, summary_words) {
+		summaryDiv.innerHTML = "";
+
+		const span = document.createElement("span");
+		span.setAttribute("class", "text_red");
+		span.style.overflowWrap = "anywhere";
+
+		summaryDiv.appendChild(span);
+
+		const start = performance.now();
+
+		modifySummaryOneByOne(
+			summaryDiv,
+			span,
+			entry_summary,
+			summary_words,
+			"red",
+			linesToShow
+		);
+
+		const time = performance.now() - start;
+
+		addPerf(perf2, time);
+	}
+
+	for (let test = 0; test < TEST_COUNT; test++) {
+		const data = generateTestText();
+		const entry_summary = data.summary;
+		const summary_words = data.words;
+
+		if (Math.random() < 0.5) {
+			runAlgorithm1(entry_summary, summary_words);
+			runAlgorithm2(entry_summary, summary_words);
+		} else {
+			runAlgorithm2(entry_summary, summary_words);
+			runAlgorithm1(entry_summary, summary_words);
+		}
+	}
+
+	const statistics1 = getStatistics(perf1);
+	const statistics2 = getStatistics(perf2);
+
+	const avg1 = perf1.total / perf1.count;
+	const avg2 = perf2.total / perf2.count;
+
+	console.table({
+		"Algorithm 1": {
+			...statistics1,
+			speedup: (avg2 / avg1).toFixed(2) + "x"
+		},
+		"One By One": {
+			...statistics2,
+			speedup: (avg1 / avg2).toFixed(2) + "x"
+		}
+	});
+
+	const testTime = performance.now() - testStart;
+
+	console.log(`Test Complete. Duration: ${testTime.toFixed(2)} ms`);
+	console.log(`Benchmark completed: ${TEST_COUNT} texts, 1-${maxWords} words, ${linesToShow} lines`);
+}
