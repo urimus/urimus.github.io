@@ -531,9 +531,6 @@ function testSummary(summaryDiv) {
 	const statistics1 = getStatistics(perf1);
 	const statistics2 = getStatistics(perf2);
 
-	const avg1 = perf1.total / perf1.count;
-	const avg2 = perf2.total / perf2.count;
-
 	console.log("=== STATISTICS ===");
 
 	console.table({
@@ -543,16 +540,25 @@ function testSummary(summaryDiv) {
 
 	console.log("=== RESULT ===");
 
+	const avg1 = perf1.total / perf1.count;
+	const avg2 = perf2.total / perf2.count;
+
+	const averageTimeTotal = avg1 + avg2;
+	const timeShare1 = avg1 / averageTimeTotal * 100;
+	const timeShare2 = avg2 / averageTimeTotal * 100;
+
 	console.table({
 		"Algorithm": {
 			count: perf1.count,
 			total: perf1.total.toFixed(2) + " ms",
-			average: avg1.toFixed(4) + " ms"
+			average: avg1.toFixed(4) + " ms",
+			"time share": timeShare1.toFixed(2) + "%"
 		},
 		"One By One": {
 			count: perf2.count,
 			total: perf2.total.toFixed(2) + " ms",
-			average: avg2.toFixed(4) + " ms"
+			average: avg2.toFixed(4) + " ms",
+			"time share": timeShare2.toFixed(2) + "%"
 		},
 		"Difference": {
 			total: (perf1.total - perf2.total).toFixed(2) + " ms",
