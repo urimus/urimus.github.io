@@ -419,13 +419,10 @@ function testSummary(summaryDiv) {
 	testComplete = true;
 
 	const TEST_COUNT = 1000;
-
-	console.log(`Modify Summary Speed Test Started: ${TEST_COUNT} texts.`);
-
-	const testStart = performance.now();
-
 	const MIN_LINES = 1;
 	const MAX_LINES = 10;
+
+	console.log(`Modify Summary Speed Test Started: ${TEST_COUNT} texts.`);
 
 	const perf1 = {
 		count: 0,
@@ -508,6 +505,8 @@ function testSummary(summaryDiv) {
 		addPerf(perf2, time);
 	}
 
+	const testStart = performance.now();
+
 	for (let test = 0; test < TEST_COUNT; test++) {
 		const linesToShow =
 			MIN_LINES +
@@ -527,24 +526,43 @@ function testSummary(summaryDiv) {
 		}
 	}
 
+	const testTime = performance.now() - testStart;
+
 	const statistics1 = getStatistics(perf1);
 	const statistics2 = getStatistics(perf2);
 
 	const avg1 = perf1.total / perf1.count;
 	const avg2 = perf2.total / perf2.count;
 
+	console.log("=== STATISTICS ===");
+
 	console.table({
-		"Algorithm": {
-			...statistics1,
-			speedup: (avg2 / avg1).toFixed(2) + "x"
-		},
-		"One By One": {
-			...statistics2,
-			speedup: (avg1 / avg2).toFixed(2) + "x"
-		}
+		"Algorithm": statistics1,
+		"One By One": statistics2
 	});
 
-	const testTime = performance.now() - testStart;
+	console.log("=== RESULT ===");
+
+	console.table({
+		"Algorithm": {
+			count: perf1.count,
+			total: perf1.total.toFixed(2) + " ms",
+			average: avg1.toFixed(4) + " ms"
+		},
+		"One By One": {
+			count: perf2.count,
+			total: perf2.total.toFixed(2) + " ms",
+			average: avg2.toFixed(4) + " ms"
+		},
+		"Difference": {
+			total: (perf1.total - perf2.total).toFixed(2) + " ms",
+			average: (avg1 - avg2).toFixed(4) + " ms"
+		},
+		"Speedup": {
+			total: (perf2.total / perf1.total).toFixed(2) + "x",
+			average: (avg2 / avg1).toFixed(2) + "x"
+		}
+	});
 
 	console.log(
 		`Modify Summary Speed Test Completed. Duration: ${testTime.toFixed(2)} ms.`
