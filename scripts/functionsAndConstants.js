@@ -538,14 +538,26 @@ function testSummary(summaryDiv) {
 		"One By One": statistics2
 	});
 
-	console.log("=== RESULT ===");
+	// =========================================================
+	// RESULT
+	// =========================================================
 
 	const avg1 = perf1.total / perf1.count;
 	const avg2 = perf2.total / perf2.count;
 
+	const differenceTotal = perf1.total - perf2.total;
+	const differenceAverage = avg1 - avg2;
+
 	const averageTimeTotal = avg1 + avg2;
 	const timeShare1 = avg1 / averageTimeTotal * 100;
 	const timeShare2 = avg2 / averageTimeTotal * 100;
+
+	// Speedup is always >= 1x:
+	// slower time / faster time
+	const totalSpeedup = Math.max(perf1.total, perf2.total) / Math.min(perf1.total, perf2.total);
+	const averageSpeedup = Math.max(avg1, avg2) / Math.min(avg1, avg2);
+
+	console.log("=== RESULT ===");
 
 	console.table({
 		"Algorithm": {
@@ -554,19 +566,22 @@ function testSummary(summaryDiv) {
 			average: avg1.toFixed(4) + " ms",
 			"time share": timeShare1.toFixed(2) + "%"
 		},
+
 		"One By One": {
 			count: perf2.count,
 			total: perf2.total.toFixed(2) + " ms",
 			average: avg2.toFixed(4) + " ms",
 			"time share": timeShare2.toFixed(2) + "%"
 		},
+
 		"Difference": {
-			total: (perf1.total - perf2.total).toFixed(2) + " ms",
-			average: (avg1 - avg2).toFixed(4) + " ms"
+			total: differenceTotal.toFixed(2) + " ms",
+			average: differenceAverage.toFixed(4) + " ms"
 		},
+
 		"Speedup": {
-			total: (perf2.total / perf1.total).toFixed(2) + "x",
-			average: (avg2 / avg1).toFixed(2) + "x"
+			total: totalSpeedup.toFixed(2) + "x",
+			average: averageSpeedup.toFixed(2) + "x"
 		}
 	});
 
