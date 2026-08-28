@@ -105,232 +105,169 @@ function correctPadding(line) {
 }
 
 function sortByDate(fileContentsL, lang, textColor) {
-
 	const parser = new DOMParser();
-	let myDates = [];
 
-	function getDataAdded(html) {
-		const doc = parser.parseFromString(html, "text/html");
-		const el = doc.querySelector("[data-added]");
-		return el ? el.getAttribute("data-added") : null;
-	}
-
-	function getLinkTitle(html) {
-		const doc = parser.parseFromString(html, "text/html");
-		const a = doc.querySelector("a");
-		return a ? a.textContent.trim() : "";
-	}
+	const monthIndexes = {
+		eng: {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11},
+		lat: {Ian:0,Feb:1,Mar:2,Apr:3,Mai:4,Iun:5,Iul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11},
+		rus: {Янв:0,Фев:1,Мар:2,Апр:3,Мая:4,Июн:5,Июл:6,Авг:7,Сен:8,Окт:9,Ноя:10,Дек:11}
+	};
 
 	function parseDate(textDate) {
-
-		let textDay, textMonth, textYear, textAllMonths;
-
-		if (lang=="eng") {
-			textDay=textDate.substring(0,2);
-			textMonth=textDate.substring(8,11);
-			textYear=textDate.substring(13,17);
-			textAllMonths=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+		let textDay, textMonth, textYear;
+		if (lang == "eng") {
+			textDay = textDate.substring(0,2);
+			textMonth = textDate.substring(8,11);
+			textYear = textDate.substring(13,17);
 		}
-		if (lang=="lat") {
-			textDay=textDate.substring(0,2);
-			textMonth=textDate.substring(3,6);
-			textYear=textDate.substring(8,12);
-			textAllMonths=["Ian","Feb","Mar","Apr","Mai","Iun","Iul","Aug","Sep","Oct","Nov","Dec"];
+		else if (lang == "lat") {
+			textDay = textDate.substring(0,2);
+			textMonth = textDate.substring(3,6);
+			textYear = textDate.substring(8,12);
 		}
-		if (lang=="rus") {
-			textDay=textDate.substring(0,2);
-			textMonth=textDate.substring(4,7);
-			textYear=textDate.substring(9,13);
-			textAllMonths=["Янв","Фев","Мар","Апр","Мая","Июн","Июл","Авг","Сен","Окт","Ноя","Дек"];
+		else if (lang == "rus") {
+			textDay = textDate.substring(0,2);
+			textMonth = textDate.substring(4,7);
+			textYear = textDate.substring(9,13);
 		}
-
-		let m=0;
-		for (let j=0;j<textAllMonths.length;j++){
-			if (textAllMonths[j]==textMonth){
-				m=j;
-				break;
-			}
-		}
-
-		return new Date(textYear,m,textDay);
+		return new Date(Number(textYear), monthIndexes[lang][textMonth], Number(textDay));
 	}
 
 	const buildYearBlock = (year, textColor) => `
 		<div style="display:flex; align-items:center; margin-top:5px;">
 			<div style="flex:1; border:1px solid #ff8a00;"></div>
-			<div class="nimetus2_${textColor}" style="padding:0 5px; white-space:nowrap;">
-				${year}
-			</div>
+			<div class="nimetus2_${textColor}" style="padding:0 5px; white-space:nowrap;">${year}</div>
 			<div style="flex:1; border:1px solid #ff8a00;"></div>
 		</div>
 	`;
 
-	for (let i=1;i<fileContentsL.length;i++){
-		fileContentsL[i]=correctPadding(fileContentsL[i]);
-		const dateStr=getDataAdded(fileContentsL[i]);
-		if (!dateStr){
-			myDates.push(0);
-			continue;
-		}
-		myDates.push(parseDate(dateStr));
+	const items = [];
+
+	for (let i = 1; i < fileContentsL.length; i++) {
+		const html = correctPadding(fileContentsL[i]);
+		const doc = parser.parseFromString(html, "text/html");
+		const dataAddedElement = doc.querySelector("[data-added]");
+		const linkElement = doc.querySelector("a");
+		const dateStr = dataAddedElement ? dataAddedElement.getAttribute("data-added") : null;
+		items.push({
+			html: html,
+			date: dateStr ? parseDate(dateStr) : 0,
+			title: linkElement ? linkElement.textContent.trim() : ""
+		});
 	}
 
-	let len=myDates.length;
-	let temp;
+	items.sort((a, b) => b.date - a.date);
 
-	for (let i=len-1;i>=0;i--){
-		for (let j=1;j<=i;j++){
-			if (myDates[j-1]<myDates[j]){
+	const newCol = "red";
 
-				temp=myDates[j-1];
-				myDates[j-1]=myDates[j];
-				myDates[j]=temp;
-
-				temp=fileContentsL[j];
-				fileContentsL[j]=fileContentsL[j+1];
-				fileContentsL[j+1]=temp;
-			}
-		}
-	}
-
-	let newCol="red";
-	for (let i=len-1;i>1;i--){
-		if (myDates[i]=="0") continue;
-		if (myDates[i].valueOf()==myDates[i-1].valueOf()){
-			let hasbull=0;
-			let sameDates = [];
-			let j=i;
+	for (let i = items.length - 1; i > 1; i--) {
+		if (items[i].date === 0) continue;
+		if (items[i].date.valueOf() === items[i - 1].date.valueOf()) {
+			let hasbull = 0;
+			const sameDates = [];
+			let j = i;
 			sameDates.push(j);
-			for (j=i;j>=1;j--){
-				if (myDates[j].valueOf()!=myDates[j-1].valueOf()) break;
-				if (fileContentsL[j].includes("&#9679;") || fileContentsL[j].includes("&#9900;")) {
-					hasbull=1;
-				}
-				sameDates.push(j-1);
+
+			for (j = i; j >= 1; j--) {
+				if (items[j].date.valueOf() !== items[j - 1].date.valueOf()) break;
+				if (items[j - 1].html.includes("&#9679;") || items[j - 1].html.includes("&#9900;")) hasbull = 1;
+				sameDates.push(j - 1);
 			}
-			i=j;
+
+			i = j;
 			if (hasbull) continue;
 
-			let title1=getLinkTitle(fileContentsL[i]);
-			let title2=getLinkTitle(fileContentsL[i+1]);
-			if (title1==title2) continue;
+			const title1 = items[i - 1] ? items[i - 1].title : "";
+			const title2 = items[i] ? items[i].title : "";
+			if (title1 == title2) continue;
 
 			for (let k = 0; k < sameDates.length; k++) {
-				fileContentsL[sameDates[k]+1]="<font color='"+newCol+"'>"+fileContentsL[sameDates[k]+1]+"</font>";
+				const index = sameDates[k];
+				items[index].html = "<font color='" + newCol + "'>" + items[index].html + "</font>";
 			}
 		}
 	}
 
-	let textYearHTML;
-	for (let i=len-2;i>=0;i--){
-		if (myDates[i+1]=="0") continue;
-		if (myDates[i+1].getFullYear()!=myDates[i].getFullYear()){
-			textYearHTML=buildYearBlock(myDates[i+1].getFullYear(),textColor);
-			fileContentsL.splice(i+2,0,textYearHTML);
+	const result = [fileContentsL[0]];
+	let previousYear = null;
+
+	for (let i = 0; i < items.length; i++) {
+		const item = items[i];
+
+		if (item.date !== 0) {
+			const currentYear = item.date.getFullYear();
+			if (currentYear !== previousYear) {
+				result.push(buildYearBlock(currentYear, textColor));
+				previousYear = currentYear;
+			}
 		}
+
+		result.push(item.html);
 	}
 
-	if (len>=1){
-		textYearHTML=buildYearBlock(myDates[0].getFullYear(),textColor);
-		fileContentsL.splice(1,0,textYearHTML);
-	}
-
-	return fileContentsL;
+	return result;
 }
 
-function sortByFlag(fileContentsL, lang, textColor){
+function sortByFlag(fileContentsL, lang, textColor) {
+	const parser = new DOMParser();
 
-	const parser=new DOMParser();
-
-	let myFlags=[];
-	let myTextFlags=[];
-	let fileContentsL2=[];
-	let zeroContents=[];
-
-	function getCountry(html){
-		const doc=parser.parseFromString(html,"text/html");
-		const el=doc.querySelector("[data-country]");
-		return el?el.getAttribute("data-country"):null;
+	function getCountry(html) {
+		const doc = parser.parseFromString(html, "text/html");
+		const el = doc.querySelector("[data-country]");
+		return el ? el.getAttribute("data-country") : null;
 	}
 
 	const buildFlagBlock = (code, title, textColor) => `
 		<div style="display:flex; align-items:center; margin-top:5px;">
 			<div style="flex:1; border:1px solid #ff8a00;"></div>
 			<div class="nimetus2_${textColor}" style="padding:0 5px;">
-				<img
-					src="lang/all/${code}.gif"
-					width="30"
-					title="${title}"
-					data-ttcolor="${textColor.slice(0, -5)}"
-				/>
+				<img src="lang/all/${code}.gif" width="30" title="${title}" data-ttcolor="${textColor.slice(0, -5)}"/>
 			</div>
 			<div style="flex:1; border:1px solid #ff8a00;"></div>
 		</div>
 	`;
 
+	const items = [];
+	const zeroContents = [];
 
-	fileContentsL2.push(fileContentsL[0]);
+	for (let i = 1; i < fileContentsL.length; i++) {
+		const html = correctPadding(fileContentsL[i]);
+		const flagStr = getCountry(html);
 
-	for(let i=1;i<fileContentsL.length;i++){
-		fileContentsL[i]=correctPadding(fileContentsL[i]);
-		let flagStr=getCountry(fileContentsL[i]);
-		if(!flagStr){
-			zeroContents.push(fileContentsL[i]);
+		if (!flagStr) {
+			zeroContents.push(html);
 			continue;
 		}
-		let flags=flagStr.split(";");
-		for(let j=0;j<flags.length;j++){
-			myFlags.push(t(flags[j]));
-			myTextFlags.push(flags[j]);
-			fileContentsL2.push(fileContentsL[i]);
+
+		const flags = flagStr.split(";");
+
+		for (let j = 0; j < flags.length; j++) {
+			items.push({
+				html: html,
+				flag: t(flags[j]),
+				textFlag: flags[j]
+			});
 		}
 	}
 
-	let len=myFlags.length;
-	let temp;
+	items.sort((a, b) => a.flag.localeCompare(b.flag));
 
-	for(let i=len-1;i>=0;i--){
-		for(let j=1;j<=i;j++){
-			if(myFlags[j-1]>myFlags[j]){
+	const result = [fileContentsL[0]];
 
-				temp=myFlags[j-1];
-				myFlags[j-1]=myFlags[j];
-				myFlags[j]=temp;
-
-				temp=myTextFlags[j-1];
-				myTextFlags[j-1]=myTextFlags[j];
-				myTextFlags[j]=temp;
-
-				temp=fileContentsL2[j];
-				fileContentsL2[j]=fileContentsL2[j+1];
-				fileContentsL2[j+1]=temp;
-			}
+	for (let i = 0; i < items.length; i++) {
+		if (i === 0 || items[i].flag != items[i - 1].flag) {
+			result.push(buildFlagBlock(items[i].textFlag, items[i].flag, textColor));
 		}
+		result.push(items[i].html);
 	}
 
+	result.push("<div style='width:100%; border:1px solid #ff8a00; margin:10px 0;'></div>");
 
-	let textFlagHTML;
-
-	for(let i=len-2;i>=0;i--){
-		if(myFlags[i+1]=="") continue;
-		if(myFlags[i+1]!=myFlags[i]){
-			textFlagHTML=buildFlagBlock(myTextFlags[i+1],myFlags[i+1], textColor);
-			fileContentsL2.splice(i+2,0,textFlagHTML);
-		}
+	for (let i = 0; i < zeroContents.length; i++) {
+		result.push(zeroContents[i]);
 	}
 
-	if(len>1 && myFlags[0]!=""){
-		textFlagHTML=buildFlagBlock(myTextFlags[0],myFlags[0], textColor);
-		fileContentsL2.splice(1,0,textFlagHTML);
-	}
-
-	fileContentsL2.push("<div style='width:100%; border:1px solid #ff8a00; margin:10px 0;'></div>");
-
-	for(let i=0;i<zeroContents.length;i++){
-		fileContentsL2.push(zeroContents[i]);
-	}
-
-	return fileContentsL2;
+	return result;
 }
 
 
