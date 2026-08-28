@@ -1407,32 +1407,49 @@ function showInformation(lang) {
 
 function showFeedError(message, feedURL, lang) {
 
-	let container = document.createElement("div");
+	const container = document.createElement("div");
 	container.style.padding = "5px";
 	container.style.border = "2px solid #de8e8e";
 	container.style.borderRadius = "4px";
 	container.style.fontWeight = "bold";
 	container.style.display = "inline-block";
 
-	let table2 = document.getElementById("messagetable");
+	const table2 = document.getElementById("messagetable");
 	table2.replaceChildren();
-	let row = table2.insertRow(-1);
-	let cell1 = row.insertCell(0);
-	cell1.className = 'text_red';
+
+	const row = table2.insertRow(-1);
+	const cell1 = row.insertCell(0);
+	cell1.className = "text_red";
 	cell1.style.textAlign = "center";
 	cell1.style.padding = "4px 2px 8px 2px";
 	cell1.appendChild(container);
 
-	let Div = document.createElement("div");
-	Div.style.display = "inline-flex";
-	Div.style.alignItems = "center";
-	Div.style.gap = "6px";
-	Div.innerHTML = t("newsFeed") + feedIcon(feedURL, lang).outerHTML;
+	// Заголовок + иконка
+	const div = document.createElement("div");
+	div.style.display = "inline-flex";
+	div.style.alignItems = "center";
+	div.style.gap = "6px";
+	div.append(t("newsFeed"), feedIcon(feedURL, lang));
 
-	container.innerHTML = Div.outerHTML + "<br>" + message + "<br><a href='javascript:location.reload();' class='standardb_red'>" + t("reloadPage")+ "</a>";
+	container.append(
+		div,
+		document.createElement("br"),
+		document.createTextNode(message),
+		document.createElement("br")
+	);
+
+	const reloadLink = document.createElement("a");
+	reloadLink.href = "#";
+	reloadLink.className = "standardb_red";
+	reloadLink.textContent = t("reloadPage");
+	reloadLink.addEventListener("click", () => location.reload());
+
+	container.appendChild(reloadLink);
+
 	adjustFeedScrollDiv();
-	requestIdleCallback(() => { preloadImagesGeneral(); });
-
+	requestIdleCallback(() => {
+		preloadImagesGeneral();
+	});
 }
 
 function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
@@ -2605,7 +2622,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = "images/icons/error/no_image.png";
 			}
-			result.entries[i].error = t("updateLoadError") + " (" + status + "). <a href='javascript:location.reload();' class='standardb_red');>" + t("reloadPage") + "</a>";
+			result.entries[i].error = t("updateLoadError") + " (" + status + "). <a href='javascript:location.reload();' class='standardb_red'>" + t("reloadPage") + "</a>";
 			showEntry(type, source, lang, result, i, false);
 			result.entries[i].storage.updateProcessed = 1;
 			checkProcessedCount(source, type, result, lang, controller, 0);
