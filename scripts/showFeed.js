@@ -1424,7 +1424,6 @@ function showFeedError(message, feedURL, lang) {
 	cell1.style.padding = "4px 2px 8px 2px";
 	cell1.appendChild(container);
 
-	// Заголовок + иконка
 	const div = document.createElement("div");
 	div.style.display = "inline-flex";
 	div.style.alignItems = "center";
@@ -1439,10 +1438,9 @@ function showFeedError(message, feedURL, lang) {
 	);
 
 	const reloadLink = document.createElement("a");
-	reloadLink.href = "javascript:void(0);";
+	reloadLink.href = "javascript:location.reload();";
 	reloadLink.className = "standardb_red";
 	reloadLink.textContent = t("reloadPage");
-	reloadLink.addEventListener("click", () => location.reload());
 
 	container.appendChild(reloadLink);
 
@@ -1493,7 +1491,7 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 			let result;
 			if (source == "artemis") {
 				if (!data || typeof data !== "object" || data.message !== "fetch news event is successful.") {
-   					showFeedError("API Parse Error: Invalid API Response", feedURL, lang);
+					showFeedError("API Parse Error: Invalid API Response", feedURL, lang);
 					adjustScrollDiv();
 					return;
 				}
