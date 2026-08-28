@@ -90,7 +90,7 @@ function refreshSortByTabs(type, sortbyType, lang) {
 	}
 }
 
-function sortByDate(fileContentsL, lang, textColor) {
+function sortByDate(fileContents, lang, textColor) {
 	const parser = new DOMParser();
 
 	const monthIndexes = {
@@ -135,8 +135,8 @@ function sortByDate(fileContentsL, lang, textColor) {
 
 	const items = [];
 
-	for (let i = 1; i < fileContentsL.length; i++) {
-		const doc = parser.parseFromString(fileContentsL[i], "text/html");
+	for (let i = 1; i < fileContents.length; i++) {
+		const doc = parser.parseFromString(fileContents[i], "text/html");
 
 		const span = doc.querySelector("span");
 
@@ -216,7 +216,7 @@ function sortByDate(fileContentsL, lang, textColor) {
 		}
 	}
 
-	const result = [fileContentsL[0]];
+	const result = [fileContents[0]];
 	let previousYear = null;
 
 	for (let i = 0; i < items.length; i++) {
@@ -237,7 +237,7 @@ function sortByDate(fileContentsL, lang, textColor) {
 	return result;
 }
 
-function sortByFlag(fileContentsL, lang, textColor) {
+function sortByFlag(fileContents, lang, textColor) {
 	const parser = new DOMParser();
 
 	const buildFlagBlock = (code, title, textColor) => `
@@ -253,8 +253,8 @@ function sortByFlag(fileContentsL, lang, textColor) {
 	const items = [];
 	const zeroContents = [];
 
-	for (let i = 1; i < fileContentsL.length; i++) {
-		const doc = parser.parseFromString(fileContentsL[i], "text/html");
+	for (let i = 1; i < fileContents.length; i++) {
+		const doc = parser.parseFromString(fileContents[i], "text/html");
 
 		const span = doc.querySelector("span");
 
@@ -293,7 +293,7 @@ function sortByFlag(fileContentsL, lang, textColor) {
 
 	items.sort((a, b) => a.flag.localeCompare(b.flag));
 
-	const result = [fileContentsL[0]];
+	const result = [fileContents[0]];
 
 	for (let i = 0; i < items.length; i++) {
 		if (i === 0 || items[i].flag !== items[i - 1].flag) {
