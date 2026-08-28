@@ -95,8 +95,7 @@ function correctPadding(doc) {
 
 	if (span) {
 		span.style.paddingLeft = "10px";
-	}
-	else {
+	} else {
 		const wrapper = doc.createElement("span");
 		wrapper.style.paddingLeft = "10px";
 		wrapper.innerHTML = doc.body.innerHTML;
