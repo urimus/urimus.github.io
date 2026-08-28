@@ -90,6 +90,21 @@ function refreshSortByTabs(type, sortbyType, lang) {
 	}
 }
 
+function correctPadding(doc) {
+	const span = doc.querySelector("span");
+
+	if (span) {
+		span.style.paddingLeft = "10px";
+	}
+	else {
+		const wrapper = doc.createElement("span");
+		wrapper.style.paddingLeft = "10px";
+		wrapper.innerHTML = doc.body.innerHTML;
+		doc.body.innerHTML = "";
+		doc.body.appendChild(wrapper);
+	}
+}
+
 function sortByDate(fileContents, lang, textColor) {
 	const parser = new DOMParser();
 
@@ -138,18 +153,7 @@ function sortByDate(fileContents, lang, textColor) {
 	for (let i = 1; i < fileContents.length; i++) {
 		const doc = parser.parseFromString(fileContents[i], "text/html");
 
-		const span = doc.querySelector("span");
-
-		if (span) {
-			span.style.paddingLeft = "10px";
-		}
-		else {
-			const wrapper = doc.createElement("span");
-			wrapper.style.paddingLeft = "10px";
-			wrapper.innerHTML = doc.body.innerHTML;
-			doc.body.innerHTML = "";
-			doc.body.appendChild(wrapper);
-		}
+		correctPadding(doc);
 
 		const dataAddedElement = doc.querySelector("[data-added]");
 		const linkElement = doc.querySelector("a");
@@ -185,21 +189,13 @@ function sortByDate(fileContents, lang, textColor) {
 			sameDates.push(j);
 
 			for (j = i; j >= 1; j--) {
-				if (items[j].date.valueOf() !== items[j - 1].date.valueOf()) {
-					break;
-				}
-
-				if (items[j - 1].hasBull) {
-					hasBull = true;
-				}
-
+				if (items[j].date.valueOf() !== items[j - 1].date.valueOf()) break;
+				if (items[j - 1].hasBull) hasBull = true;
 				sameDates.push(j - 1);
 			}
 
 			i = j;
-
 			if (hasBull) continue;
-
 			const title1 = items[i - 1] ? items[i - 1].title : "";
 			const title2 = items[i] ? items[i].title : "";
 
@@ -207,16 +203,12 @@ function sortByDate(fileContents, lang, textColor) {
 
 			for (let k = 0; k < sameDates.length; k++) {
 				const index = sameDates[k];
-
-				items[index].html =
-					"<font color='" + newCol + "'>" +
-					items[index].html +
-					"</font>";
+				items[index].html = "<font color='" + newCol + "'>" + items[index].html + "</font>";
 			}
 		}
 	}
 
-	const result = [fileContents[0]];
+	fileContents.length = 1;
 	let previousYear = null;
 
 	for (let i = 0; i < items.length; i++) {
@@ -226,15 +218,14 @@ function sortByDate(fileContents, lang, textColor) {
 			const currentYear = item.date.getFullYear();
 
 			if (currentYear !== previousYear) {
-				result.push(buildYearBlock(currentYear, textColor));
+				fileContents.push(buildYearBlock(currentYear, textColor));
 				previousYear = currentYear;
 			}
 		}
 
-		result.push(item.html);
+		fileContents.push(item.html);
 	}
 
-	return result;
 }
 
 function sortByFlag(fileContents, lang, textColor) {
@@ -256,17 +247,7 @@ function sortByFlag(fileContents, lang, textColor) {
 	for (let i = 1; i < fileContents.length; i++) {
 		const doc = parser.parseFromString(fileContents[i], "text/html");
 
-		const span = doc.querySelector("span");
-
-		if (span) {
-			span.style.paddingLeft = "10px";
-		} else {
-			const wrapper = doc.createElement("span");
-			wrapper.style.paddingLeft = "10px";
-			wrapper.innerHTML = doc.body.innerHTML;
-			doc.body.innerHTML = "";
-			doc.body.appendChild(wrapper);
-		}
+		correctPadding(doc);
 
 		const countryElement = doc.querySelector("[data-country]");
 		const flagStr = countryElement
@@ -293,29 +274,27 @@ function sortByFlag(fileContents, lang, textColor) {
 
 	items.sort((a, b) => a.flag.localeCompare(b.flag));
 
-	const result = [fileContents[0]];
+	fileContents.length = 1;
 
 	for (let i = 0; i < items.length; i++) {
 		if (i === 0 || items[i].flag !== items[i - 1].flag) {
-			result.push(
+			fileContents.push(
 				buildFlagBlock(items[i].textFlag, items[i].flag, textColor)
 			);
 		}
 
-		result.push(items[i].html);
+		fileContents.push(items[i].html);
 	}
 
-	result.push(
+	fileContents.push(
 		"<div style='width:100%; border:1px solid #ff8a00; margin:10px 0;'></div>"
 	);
 
 	for (let i = 0; i < zeroContents.length; i++) {
-		result.push(zeroContents[i]);
+		fileContents.push(zeroContents[i]);
 	}
 
-	return result;
 }
-
 
 function generateTabs(type, lang) {
 	let tabs = {};
@@ -570,7 +549,6 @@ function preloadImagesContents(type, fileContents) {
 	});
 }
 
-
 function showContents(type, sortby, lang) {
 
 	let textColor = generateTabs(type, lang);
@@ -593,8 +571,8 @@ function showContents(type, sortby, lang) {
 				preloadImagesContents(type, fileContents);
 			});
 
-			if (sortby=="date") fileContents = sortByDate(fileContents, lang, textColor+"_blue");
-			if (sortby=="flag" && (type=="music" || type=="movies" || type=="series" || type=="books" || type=="junk" || type=="news")) fileContents = sortByFlag(fileContents, lang, textColor+"_blue");
+			if (sortby=="date") sortByDate(fileContents, lang, textColor+"_blue");
+			if (sortby=="flag" && (type=="music" || type=="movies" || type=="series" || type=="books" || type=="junk" || type=="news")) sortByFlag(fileContents, lang, textColor+"_blue");
 
 			let table = document.getElementById("contentstable");
 			table.replaceChildren();
