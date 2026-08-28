@@ -1439,7 +1439,7 @@ function showFeedError(message, feedURL, lang) {
 	);
 
 	const reloadLink = document.createElement("a");
-	reloadLink.href = "#";
+	reloadLink.href = "javascript:void(0);";
 	reloadLink.className = "standardb_red";
 	reloadLink.textContent = t("reloadPage");
 	reloadLink.addEventListener("click", () => location.reload());
