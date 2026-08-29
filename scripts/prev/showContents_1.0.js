@@ -90,6 +90,211 @@ function refreshSortByTabs(type, sortbyType, lang) {
 	}
 }
 
+function correctPadding(doc) {
+	const span = doc.querySelector("span");
+
+	if (span) {
+		span.style.paddingLeft = "10px";
+	} else {
+		const wrapper = doc.createElement("span");
+		wrapper.style.paddingLeft = "10px";
+		wrapper.innerHTML = doc.body.innerHTML;
+		doc.body.innerHTML = "";
+		doc.body.appendChild(wrapper);
+	}
+}
+
+function sortByDate(fileContents, lang, textColor) {
+	const parser = new DOMParser();
+
+	const monthIndexes = {
+		eng: {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11},
+		lat: {Ian:0,Feb:1,Mar:2,Apr:3,Mai:4,Iun:5,Iul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11},
+		rus: {Янв:0,Фев:1,Мар:2,Апр:3,Мая:4,Июн:5,Июл:6,Авг:7,Сен:8,Окт:9,Ноя:10,Дек:11}
+	};
+
+	function parseDate(textDate) {
+		let textDay, textMonth, textYear;
+
+		if (lang == "eng") {
+			textDay = textDate.substring(0,2);
+			textMonth = textDate.substring(8,11);
+			textYear = textDate.substring(13,17);
+		}
+		else if (lang == "lat") {
+			textDay = textDate.substring(0,2);
+			textMonth = textDate.substring(3,6);
+			textYear = textDate.substring(8,12);
+		}
+		else if (lang == "rus") {
+			textDay = textDate.substring(0,2);
+			textMonth = textDate.substring(4,7);
+			textYear = textDate.substring(9,13);
+		}
+
+		return new Date(
+			Number(textYear),
+			monthIndexes[lang][textMonth],
+			Number(textDay)
+		);
+	}
+
+	const buildYearBlock = (year, textColor) => `
+		<div style="display:flex; align-items:center; margin-top:5px;">
+			<div style="flex:1; border:1px solid #ff8a00;"></div>
+			<div class="nimetus2_${textColor}" style="padding:0 5px; white-space:nowrap;">${year}</div>
+			<div style="flex:1; border:1px solid #ff8a00;"></div>
+		</div>
+	`;
+
+	const items = [];
+
+	for (let i = 1; i < fileContents.length; i++) {
+		const doc = parser.parseFromString(fileContents[i], "text/html");
+
+		correctPadding(doc);
+
+		const dataAddedElement = doc.querySelector("[data-added]");
+		const linkElement = doc.querySelector("a");
+
+		const dateStr = dataAddedElement
+			? dataAddedElement.getAttribute("data-added")
+			: null;
+
+		const textContent = doc.body.textContent;
+
+		const hasBull = textContent.includes("●") || textContent.includes("⚬");
+
+		items.push({
+			html: doc.body.innerHTML,
+			date: dateStr ? parseDate(dateStr) : 0,
+			title: linkElement ? linkElement.textContent.trim() : "",
+			hasBull: hasBull
+		});
+	}
+
+	items.sort((a, b) => b.date - a.date);
+
+	const newCol = "red";
+
+	for (let i = items.length - 1; i > 1; i--) {
+		if (items[i].date === 0) continue;
+
+		if (items[i].date.valueOf() === items[i - 1].date.valueOf()) {
+			let hasBull = false;
+			const sameDates = [];
+			let j = i;
+
+			sameDates.push(j);
+
+			for (j = i; j >= 1; j--) {
+				if (items[j].date.valueOf() !== items[j - 1].date.valueOf()) break;
+				if (items[j - 1].hasBull) hasBull = true;
+				sameDates.push(j - 1);
+			}
+
+			i = j;
+			if (hasBull) continue;
+			const title1 = items[i - 1] ? items[i - 1].title : "";
+			const title2 = items[i] ? items[i].title : "";
+
+			if (title1 == title2) continue;
+
+			for (let k = 0; k < sameDates.length; k++) {
+				const index = sameDates[k];
+				items[index].html = "<font color='" + newCol + "'>" + items[index].html + "</font>";
+			}
+		}
+	}
+
+	fileContents.length = 1;
+	let previousYear = null;
+
+	for (let i = 0; i < items.length; i++) {
+		const item = items[i];
+
+		if (item.date !== 0) {
+			const currentYear = item.date.getFullYear();
+
+			if (currentYear !== previousYear) {
+				fileContents.push(buildYearBlock(currentYear, textColor));
+				previousYear = currentYear;
+			}
+		}
+
+		fileContents.push(item.html);
+	}
+
+}
+
+function sortByFlag(fileContents, lang, textColor) {
+	const parser = new DOMParser();
+
+	const buildFlagBlock = (code, title, textColor) => `
+		<div style="display:flex; align-items:center; margin-top:5px;">
+			<div style="flex:1; border:1px solid #ff8a00;"></div>
+			<div class="nimetus2_${textColor}" style="padding:0 5px;">
+				<img src="lang/all/${code}.gif" width="30" title="${title}" data-ttcolor="${textColor.slice(0, -5)}"/>
+			</div>
+			<div style="flex:1; border:1px solid #ff8a00;"></div>
+		</div>
+	`;
+
+	const items = [];
+	const zeroContents = [];
+
+	for (let i = 1; i < fileContents.length; i++) {
+		const doc = parser.parseFromString(fileContents[i], "text/html");
+
+		correctPadding(doc);
+
+		const countryElement = doc.querySelector("[data-country]");
+		const flagStr = countryElement
+			? countryElement.getAttribute("data-country")
+			: null;
+
+		const html = doc.body.innerHTML;
+
+		if (!flagStr) {
+			zeroContents.push(html);
+			continue;
+		}
+
+		const flags = flagStr.split(";");
+
+		for (let j = 0; j < flags.length; j++) {
+			items.push({
+				html: html,
+				flag: t(flags[j]),
+				textFlag: flags[j]
+			});
+		}
+	}
+
+	items.sort((a, b) => a.flag.localeCompare(b.flag));
+
+	fileContents.length = 1;
+
+	for (let i = 0; i < items.length; i++) {
+		if (i === 0 || items[i].flag !== items[i - 1].flag) {
+			fileContents.push(
+				buildFlagBlock(items[i].textFlag, items[i].flag, textColor)
+			);
+		}
+
+		fileContents.push(items[i].html);
+	}
+
+	fileContents.push(
+		"<div style='width:100%; border:1px solid #ff8a00; margin:10px 0;'></div>"
+	);
+
+	for (let i = 0; i < zeroContents.length; i++) {
+		fileContents.push(zeroContents[i]);
+	}
+
+}
+
 function generateTabs(type, lang) {
 	let tabs = {};
 	let tabs2 = {};
@@ -290,6 +495,14 @@ function adjustContentsScrollDiv() {
 	scrollDiv.style.height = "100%";
 }
 
+function correctLink(line){
+	const parser=new DOMParser();
+	const doc=parser.parseFromString(line,"text/html");
+	let a=doc.querySelector("a");
+	if (a) a.setAttribute("target", "_blank");
+	return doc.body.innerHTML;
+}
+
 function preloadImagesContents(type, fileContents) {
 	if (!("serviceWorker" in navigator)) return;
 
@@ -335,246 +548,8 @@ function preloadImagesContents(type, fileContents) {
 	});
 }
 
-function correctPadding(element) {
-	const span = element.querySelector("span");
-	if (span) {
-		span.style.paddingLeft = "10px";
-		return;
-	}
-
-	const wrapper = element.ownerDocument.createElement("span");
-	wrapper.style.paddingLeft = "10px";
-	wrapper.append(...element.childNodes);
-	element.appendChild(wrapper);
-}
-
-function fileContentsToDOM(fileContents) {
-	const parser = new DOMParser();
-	const rows = [];
-
-	for (let i = 0; i < fileContents.length; i++) {
-		const doc = parser.parseFromString(fileContents[i], "text/html");
-
-		for (const a of doc.querySelectorAll("a")) {
-			a.setAttribute("target", "_blank");
-		}
-
-		rows.push(doc.body);
-	}
-
-	return rows;
-}
-
-function sortByDate(docs, lang, textColor) {
-	const monthIndexes = {
-		eng: {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11},
-		lat: {Ian:0,Feb:1,Mar:2,Apr:3,Mai:4,Iun:5,Iul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11},
-		rus: {Янв:0,Фев:1,Мар:2,Апр:3,Мая:4,Июн:5,Июл:6,Авг:7,Сен:8,Окт:9,Ноя:10,Дек:11}
-	};
-
-	function parseDate(textDate) {
-		let textDay, textMonth, textYear;
-
-		if (lang == "eng") {
-			textDay = textDate.substring(0,2);
-			textMonth = textDate.substring(8,11);
-			textYear = textDate.substring(13,17);
-		}
-		else if (lang == "lat") {
-			textDay = textDate.substring(0,2);
-			textMonth = textDate.substring(3,6);
-			textYear = textDate.substring(8,12);
-		}
-		else if (lang == "rus") {
-			textDay = textDate.substring(0,2);
-			textMonth = textDate.substring(4,7);
-			textYear = textDate.substring(9,13);
-		}
-
-		return new Date(Number(textYear), monthIndexes[lang][textMonth], Number(textDay));
-	}
-
-	function buildYearBlock(year, textColor) {
-		const container = document.createElement("div");
-		container.setAttribute("style", "display:flex;align-items:center;margin-top:5px;");
-
-		const left = document.createElement("div");
-		left.setAttribute("style", "flex:1;border:1px solid #ff8a00;");
-
-		const title = document.createElement("div");
-		title.className = "nimetus2_" + textColor;
-		title.setAttribute("style", "padding:0 5px;white-space:nowrap;");
-		title.textContent = year;
-
-		const right = document.createElement("div");
-		right.setAttribute("style", "flex:1;border:1px solid #ff8a00;");
-
-		container.append(left, title, right);
-
-		return container;
-	}
-
-	const firstDoc = docs[0];
-	const items = [];
-
-	for (let i = 1; i < docs.length; i++) {
-		const doc = docs[i];
-
-		correctPadding(doc);
-
-		const dataAddedElement = doc.querySelector("[data-added]");
-		const linkElement = doc.querySelector("a");
-		const dateStr = dataAddedElement ? dataAddedElement.getAttribute("data-added") : null;
-		const textContent = doc.textContent;
-		const hasBull = textContent.includes("●") || textContent.includes("⚬");
-
-		items.push({
-			doc: doc,
-			date: dateStr ? parseDate(dateStr) : 0,
-			title: linkElement ? linkElement.textContent.trim() : "",
-			hasBull: hasBull
-		});
-	}
-
-	items.sort((a, b) => b.date - a.date);
-
-	const newCol = "red";
-
-	for (let i = items.length - 1; i > 1; i--) {
-		if (items[i].date === 0) continue;
-
-		if (items[i].date.valueOf() === items[i - 1].date.valueOf()) {
-			let hasBull = false;
-			const sameDates = [];
-			let j = i;
-
-			sameDates.push(j);
-
-			for (j = i; j >= 1; j--) {
-				if (items[j].date.valueOf() !== items[j - 1].date.valueOf()) break;
-				if (items[j - 1].hasBull) hasBull = true;
-				sameDates.push(j - 1);
-			}
-
-			i = j;
-
-			if (hasBull) continue;
-
-			const title1 = items[i - 1] ? items[i - 1].title : "";
-			const title2 = items[i] ? items[i].title : "";
-
-			if (title1 == title2) continue;
-
-			for (let k = 0; k < sameDates.length; k++) {
-				const item = items[sameDates[k]];
-				const font = document.createElement("font");
-
-				font.setAttribute("color", newCol);
-				font.append(...item.doc.childNodes);
-				item.doc.appendChild(font);
-			}
-		}
-	}
-
-	const rows = [firstDoc];
-	let previousYear = null;
-
-	for (let i = 0; i < items.length; i++) {
-		const item = items[i];
-
-		if (item.date !== 0) {
-			const currentYear = item.date.getFullYear();
-
-			if (currentYear !== previousYear) {
-				rows.push(buildYearBlock(currentYear, textColor));
-				previousYear = currentYear;
-			}
-		}
-
-		rows.push(item.doc);
-	}
-
-	return rows;
-}
-
-function sortByFlag(docs, textColor) {
-	function buildFlagBlock(code, title, textColor) {
-		const container = document.createElement("div");
-		container.style.cssText = "display:flex;align-items:center;margin-top:5px;";
-
-		const left = document.createElement("div");
-		left.style.cssText = "flex:1;border:1px solid #ff8a00;";
-
-		const titleBlock = document.createElement("div");
-		titleBlock.className = "nimetus2_" + textColor;
-		titleBlock.style.cssText = "padding:0 5px;";
-
-		const img = document.createElement("img");
-		img.src = "lang/all/" + code + ".gif";
-		img.width = 30;
-		img.title = title;
-		img.setAttribute("data-ttcolor", textColor.slice(0, -5));
-
-		titleBlock.appendChild(img);
-
-		const right = document.createElement("div");
-		right.style.cssText = "flex:1;border:1px solid #ff8a00;";
-
-		container.append(left, titleBlock, right);
-
-		return container;
-	}
-
-	function buildSeparator() {
-		const separator = document.createElement("div");
-		separator.style.cssText = "width:100%;border:1px solid #ff8a00;margin:10px 0;";
-		return separator;
-	}
-
-	const items = [];
-	const zeroContents = [];
-
-	for (let i = 1; i < docs.length; i++) {
-		const doc = docs[i];
-
-		correctPadding(doc);
-
-		const countryElement = doc.querySelector("[data-country]");
-		const flagStr = countryElement ? countryElement.getAttribute("data-country") : null;
-
-		if (!flagStr) {
-			zeroContents.push(doc);
-			continue;
-		}
-
-		for (const flag of flagStr.split(";")) {
-			items.push({
-				content: doc,
-				flag: t(flag),
-				textFlag: flag
-			});
-		}
-	}
-
-	items.sort((a, b) => a.flag.localeCompare(b.flag));
-
-	const rows = [docs[0]];
-
-	for (let i = 0; i < items.length; i++) {
-		if (i === 0 || items[i].flag !== items[i - 1].flag) {
-			rows.push(buildFlagBlock(items[i].textFlag, items[i].flag, textColor));
-		}
-
-		rows.push(items[i].content.cloneNode(true));
-	}
-
-	rows.push(buildSeparator());
-	rows.push(...zeroContents);
-
-	return rows;
-}
-
 function showContents(type, sortby, lang) {
+
 	let textColor = generateTabs(type, lang);
 	refreshSortByTabs(type, sortby, lang);
 
@@ -588,54 +563,35 @@ function showContents(type, sortby, lang) {
 				.split(/\r?\n|\r/)
 				.map(s => s.trim())
 				.filter(Boolean);
+			let recNum=fileContents.length-1;
+			fileContents[0] = fileContents[0] + '<br><b class="' + textColor + '_blue'+'">' + recNum+' ' + t("record", { count: recNum}) + '</b>';
 
-			let recNum = fileContents.length - 1;
-			fileContents[0] = fileContents[0] + '<br><b class="' + textColor + '_blue">' + recNum + ' ' + t("record", { count: recNum }) + '</b>';
-
-			requestIdleCallback(() => {
+			requestIdleCallback(() => { 
 				preloadImagesContents(type, fileContents);
 			});
 
-			const docs = fileContentsToDOM(fileContents);
-
-			let rows;
-
-			if (sortby == "date") {
-				rows = sortByDate(docs, lang, textColor + "_blue");
-			} else if (sortby == "flag" && (type == "music" || type == "movies" || type == "series" || type == "books" || type == "junk" || type == "news")) {
-				rows = sortByFlag(docs, textColor + "_blue");
-			} else {
-				rows = docs;
-			}
+			if (sortby=="date") sortByDate(fileContents, lang, textColor+"_blue");
+			if (sortby=="flag" && (type=="music" || type=="movies" || type=="series" || type=="books" || type=="junk" || type=="news")) sortByFlag(fileContents, lang, textColor+"_blue");
 
 			let table = document.getElementById("contentstable");
 			table.replaceChildren();
 
-			for (let i = 0; i < rows.length; i++) {
-				const row = table.insertRow(-1);
-				const cell1 = row.insertCell(0);
-
-				cell1.className = "text_" + textColor + "_blue";
-
-				if (i == 0) {
-					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;padding-top:10px;text-align:center;");
-				} else if (i == rows.length - 1) {
-					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;padding-bottom:10px;");
-				} else {
-					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;");
-				}
-
-				cell1.appendChild(rows[i]);
+			for (let i = 0; i < fileContents.length; i++) {
+				fileContents[i] = correctLink(fileContents[i]);
+				let row = table.insertRow(-1);
+				let cell1 = row.insertCell(0);
+				cell1.className = 'text_'+textColor+"_blue";
+				if (i==0) { cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;padding-top:10px;text-align: center;'); }
+				else if (i == fileContents.length-1) { cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;padding-bottom:10px;'); }
+				else { cell1.setAttribute('style', 'padding-left:10px;padding-right:10px;'); }
+				cell1.innerHTML = fileContents[i];
 			}
-
 			adjustContentsScrollDiv();
 		},
 		consoleAxiosError
 	)
 	.finally(() => {
-		requestIdleCallback(() => {
-			preloadImagesGeneral();
-		});
+		requestIdleCallback(() => { preloadImagesGeneral(); });
 	});
 }
 
