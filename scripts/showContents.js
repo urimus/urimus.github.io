@@ -290,51 +290,6 @@ function adjustContentsScrollDiv() {
 	scrollDiv.style.height = "100%";
 }
 
-function preloadImagesContents(type, fileContents) {
-	if (!("serviceWorker" in navigator)) return;
-
-	let imageName=null, type2, parser = new DOMParser(), doc, link, anchors, images = [];
-
-	for (let i = 0; i < fileContents.length; i++) {
-		if (type=="movies" || type=="music" || type=="series" || type=="games" || type=="junk") {
-			doc = parser.parseFromString(fileContents[i], "text/html");
-			link = doc.querySelector("a");
-			if (link) {
-				anchors=link.href.split("#");
-				if (anchors.length>1) {
-					let type2=type;
-					if (type=="series" && (
-						anchors[1]=="animation" || 
-						anchors[1]=="body_horror" || 
-						anchors[1]=="space_opera" || 
-						anchors[1]=="movies_superhero" || 
-						anchors[1]=="dc_extended_universe" || 
-						anchors[1]=="marvel_cinematic_universe")) {
-						type2="movies";
-					}
-					images.push("images/icons/"+type2+"/"+anchors[1]+".jpg");
-				}
-			}
-		}
-	}
-
-	if (images.length === 0) return;
-
-	navigator.serviceWorker.ready.then(() => {
-		console.log("[SW] site map images caching started");
-		const state = {
-			index: -1,
-			loaded: 0,
-			failed: 0,
-			startTime: Date.now(),
-			source: "site map images"
-		};
-		for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once
-			loadNextCacheImage(state, images);
-		}
-	});
-}
-
 function correctPadding(element) {
 	const span = element.querySelector("span");
 	if (span) {
@@ -346,23 +301,6 @@ function correctPadding(element) {
 	wrapper.style.paddingLeft = "10px";
 	wrapper.append(...element.childNodes);
 	element.appendChild(wrapper);
-}
-
-function fileContentsToDOM(fileContents) {
-	const parser = new DOMParser();
-	const rows = [];
-
-	for (let i = 0; i < fileContents.length; i++) {
-		const doc = parser.parseFromString(fileContents[i], "text/html");
-
-		for (const a of doc.querySelectorAll("a")) {
-			a.setAttribute("target", "_blank");
-		}
-
-		rows.push(doc.body);
-	}
-
-	return rows;
 }
 
 function sortByDate(docs, lang, textColor) {
@@ -574,6 +512,98 @@ function sortByFlag(docs, textColor) {
 	return rows;
 }
 
+function preloadImagesContents(type, docs) {
+	if (!("serviceWorker" in navigator)) return;
+
+	if (
+		type !== "movies" &&
+		type !== "music" &&
+		type !== "series" &&
+		type !== "games" &&
+		type !== "junk"
+	) {
+		return;
+	}
+
+	const images = [];
+
+	for (let i = 0; i < docs.length; i++) {
+		const link = docs[i].querySelector("a");
+
+		if (!link) continue;
+
+		const anchors = link.href.split("#");
+
+		if (anchors.length <= 1) continue;
+
+		let type2 = type;
+
+		if (
+			type === "series" &&
+			(
+				anchors[1] === "animation" ||
+				anchors[1] === "body_horror" ||
+				anchors[1] === "space_opera" ||
+				anchors[1] === "movies_superhero" ||
+				anchors[1] === "dc_extended_universe" ||
+				anchors[1] === "marvel_cinematic_universe"
+			)
+		) {
+			type2 = "movies";
+		}
+
+		images.push(
+			"images/icons/" + type2 + "/" + anchors[1] + ".jpg"
+		);
+	}
+
+	if (images.length === 0) return;
+
+	navigator.serviceWorker.ready.then(() => {
+		console.log("[SW] site map images caching started");
+
+		const state = {
+			index: -1,
+			loaded: 0,
+			failed: 0,
+			startTime: Date.now(),
+			source: "site map images"
+		};
+
+		for (let i = 0; i < Math.min(images.length, 5); i++) {
+			loadNextCacheImage(state, images);
+		}
+	});
+}
+
+function fileContentsToDOM(fileContents, textColor) {
+	const parser = new DOMParser();
+	const rows = [];
+
+	const recNum = fileContents.length - 1;
+
+	for (let i = 0; i < fileContents.length; i++) {
+		const doc = parser.parseFromString(fileContents[i], "text/html");
+
+		for (const a of doc.querySelectorAll("a")) {
+			a.target = "_blank";
+		}
+
+		if (i === 0) {
+			const b = doc.createElement("b");
+			b.className = textColor + "_blue";
+			b.textContent = `${recNum} ${t("record", { count: recNum })}`;
+
+			doc.body.appendChild(doc.createElement("br"));
+			doc.body.appendChild(b);
+		}
+
+		rows.push(doc.body);
+	}
+
+	return rows;
+}
+
 function showContents(type, sortby, lang) {
 	let textColor = generateTabs(type, lang);
 	refreshSortByTabs(type, sortby, lang);
@@ -583,23 +613,19 @@ function showContents(type, sortby, lang) {
 	})
 	.then(
 		response => {
-			let lines = response.data;
-			let fileContents = lines
+
+			let fileContents = response.data
 				.split(/\r?\n|\r/)
 				.map(s => s.trim())
 				.filter(Boolean);
 
-			let recNum = fileContents.length - 1;
-			fileContents[0] = fileContents[0] + '<br><b class="' + textColor + '_blue">' + recNum + ' ' + t("record", { count: recNum }) + '</b>';
+			const docs = fileContentsToDOM(fileContents, textColor);
 
 			requestIdleCallback(() => {
-				preloadImagesContents(type, fileContents);
+				preloadImagesContents(type, docs);
 			});
 
-			const docs = fileContentsToDOM(fileContents);
-
 			let rows;
-
 			if (sortby == "date") {
 				rows = sortByDate(docs, lang, textColor + "_blue");
 			} else if (sortby == "flag" && (type == "music" || type == "movies" || type == "series" || type == "books" || type == "junk" || type == "news")) {
