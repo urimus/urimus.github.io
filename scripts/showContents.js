@@ -406,7 +406,6 @@ function sortByDate(docs, lang, textColor) {
 			for (let k = 0; k < sameDates.length; k++) {
 				const item = items[sameDates[k]];
 				const font = document.createElement("font");
-
 				font.setAttribute("color", newCol);
 				font.append(...item.doc.childNodes);
 				item.doc.appendChild(font);
@@ -414,25 +413,20 @@ function sortByDate(docs, lang, textColor) {
 		}
 	}
 
-	const rows = [firstDoc];
+	docs.length = 1;
 	let previousYear = null;
 
 	for (let i = 0; i < items.length; i++) {
 		const item = items[i];
-
 		if (item.date !== 0) {
 			const currentYear = item.date.getFullYear();
-
 			if (currentYear !== previousYear) {
-				rows.push(buildYearBlock(currentYear, textColor));
+				docs.push(buildYearBlock(currentYear, textColor));
 				previousYear = currentYear;
 			}
 		}
-
-		rows.push(item.doc);
+		docs.push(item.doc);
 	}
-
-	return rows;
 }
 
 function sortByFlag(docs, textColor) {
@@ -496,20 +490,17 @@ function sortByFlag(docs, textColor) {
 
 	items.sort((a, b) => a.flag.localeCompare(b.flag));
 
-	const rows = [docs[0]];
+	docs.length = 1;
 
 	for (let i = 0; i < items.length; i++) {
 		if (i === 0 || items[i].flag !== items[i - 1].flag) {
-			rows.push(buildFlagBlock(items[i].textFlag, items[i].flag, textColor));
+			docs.push(buildFlagBlock(items[i].textFlag, items[i].flag, textColor));
 		}
-
-		rows.push(items[i].content.cloneNode(true));
+		docs.push(items[i].content.cloneNode(true));
 	}
 
-	rows.push(buildSeparator());
-	rows.push(...zeroContents);
-
-	return rows;
+	docs.push(buildSeparator());
+	docs.push(...zeroContents);
 }
 
 function preloadImagesContents(type, docs) {
@@ -578,7 +569,7 @@ function preloadImagesContents(type, docs) {
 
 function linesToDOM(lines, textColor) {
 	const parser = new DOMParser();
-	const rows = [];
+	const docs = [];
 
 	const recNum = lines.length - 1;
 
@@ -598,10 +589,10 @@ function linesToDOM(lines, textColor) {
 			doc.body.appendChild(b);
 		}
 
-		rows.push(doc.body);
+		docs.push(doc.body);
 	}
 
-	return rows;
+	return docs;
 }
 
 function showContents(type, sortby, lang) {
@@ -625,19 +616,16 @@ function showContents(type, sortby, lang) {
 				preloadImagesContents(type, docs);
 			});
 
-			let rows;
 			if (sortby == "date") {
-				rows = sortByDate(docs, lang, textColor + "_blue");
+				sortByDate(docs, lang, textColor + "_blue");
 			} else if (sortby == "flag" && (type == "music" || type == "movies" || type == "series" || type == "books" || type == "junk" || type == "news")) {
-				rows = sortByFlag(docs, textColor + "_blue");
-			} else {
-				rows = docs;
+				sortByFlag(docs, textColor + "_blue");
 			}
 
 			let table = document.getElementById("contentstable");
 			table.replaceChildren();
 
-			for (let i = 0; i < rows.length; i++) {
+			for (let i = 0; i < docs.length; i++) {
 				const row = table.insertRow(-1);
 				const cell1 = row.insertCell(0);
 
@@ -645,13 +633,13 @@ function showContents(type, sortby, lang) {
 
 				if (i == 0) {
 					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;padding-top:10px;text-align:center;");
-				} else if (i == rows.length - 1) {
+				} else if (i == docs.length - 1) {
 					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;padding-bottom:10px;");
 				} else {
 					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;");
 				}
 
-				cell1.appendChild(rows[i]);
+				cell1.appendChild(docs[i]);
 			}
 
 			adjustContentsScrollDiv();
