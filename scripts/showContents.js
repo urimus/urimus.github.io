@@ -574,22 +574,25 @@ function linesToDOM(lines, textColor) {
 	const recNum = lines.length - 1;
 
 	for (let i = 0; i < lines.length; i++) {
-		const doc = parser.parseFromString(lines[i], "text/html");
+		const parsed = parser.parseFromString(lines[i], "text/html");
 
-		for (const a of doc.querySelectorAll("a")) {
+		for (const a of parsed.querySelectorAll("a")) {
 			a.target = "_blank";
 		}
 
 		if (i === 0) {
-			const b = doc.createElement("b");
+			const b = parsed.createElement("b");
 			b.className = textColor + "_blue";
 			b.textContent = `${recNum} ${t("record", { count: recNum })}`;
 
-			doc.body.appendChild(doc.createElement("br"));
-			doc.body.appendChild(b);
+			parsed.body.appendChild(parsed.createElement("br"));
+			parsed.body.appendChild(b);
 		}
 
-		docs.push(doc.body);
+		const container = document.createElement("div");
+		container.append(...parsed.body.childNodes);
+		docs.push(container);
+
 	}
 
 	return docs;
