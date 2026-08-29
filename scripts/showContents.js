@@ -576,14 +576,14 @@ function preloadImagesContents(type, docs) {
 	});
 }
 
-function fileContentsToDOM(fileContents, textColor) {
+function linesToDOM(lines, textColor) {
 	const parser = new DOMParser();
 	const rows = [];
 
-	const recNum = fileContents.length - 1;
+	const recNum = lines.length - 1;
 
-	for (let i = 0; i < fileContents.length; i++) {
-		const doc = parser.parseFromString(fileContents[i], "text/html");
+	for (let i = 0; i < lines.length; i++) {
+		const doc = parser.parseFromString(lines[i], "text/html");
 
 		for (const a of doc.querySelectorAll("a")) {
 			a.target = "_blank";
@@ -614,12 +614,12 @@ function showContents(type, sortby, lang) {
 	.then(
 		response => {
 
-			let fileContents = response.data
+			let lines = response.data
 				.split(/\r?\n|\r/)
 				.map(s => s.trim())
 				.filter(Boolean);
 
-			const docs = fileContentsToDOM(fileContents, textColor);
+			const docs = linesToDOM(lines, textColor);
 
 			requestIdleCallback(() => {
 				preloadImagesContents(type, docs);
