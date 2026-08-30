@@ -568,7 +568,6 @@ function preloadImagesContents(type, docs) {
 }
 
 function linesToDOM(lines, textColor) {
-	const recNum = lines.length - 1;
 
 	const template = document.createElement("template");
 
@@ -578,8 +577,13 @@ function linesToDOM(lines, textColor) {
 
 	const docs = Array.from(template.content.children);
 
-	for (const a of template.content.querySelectorAll("a")) {
-		a.target = "_blank";
+	if (!textColor) return docs;
+
+	const recNum = lines.length - 1;
+
+	for (const doc of docs) {
+		const a = doc.querySelector("a");
+		if (a) a.target = "_blank";
 	}
 
 	if (docs.length > 0) {
@@ -609,22 +613,26 @@ function showContents(type, sortby, lang) {
 				.map(s => s.trim())
 				.filter(Boolean);
 
-			const docs = linesToDOM(lines, textColor);
+			let docs;
 
 			requestIdleCallback(() => {
-				preloadImagesContents(type, docs);
+				const preloadDocs = docs || linesToDOM(lines);
+				preloadImagesContents(type, preloadDocs);
 			});
 
 			if (sortby == "date") {
+				docs = linesToDOM(lines, textColor);
 				sortByDate(docs, lang, textColor + "_blue");
 			} else if (sortby == "flag" && (type == "music" || type == "movies" || type == "series" || type == "books" || type == "junk" || type == "news")) {
+				docs = linesToDOM(lines, textColor);
 				sortByFlag(docs, textColor + "_blue");
 			}
 
 			let table = document.getElementById("contentstable");
 			table.replaceChildren();
 
-			for (let i = 0; i < docs.length; i++) {
+			const items = docs || lines;
+			for (let i = 0; i < items.length; i++) {
 				const row = table.insertRow(-1);
 				const cell1 = row.insertCell(0);
 
@@ -632,15 +640,20 @@ function showContents(type, sortby, lang) {
 
 				if (i == 0) {
 					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;padding-top:10px;text-align:center;");
-				} else if (i == docs.length - 1) {
+				} else if (i == items.length - 1) {
 					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;padding-bottom:10px;");
 				} else {
 					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;");
 				}
 
-				cell1.appendChild(docs[i]);
+				if (docs) {
+					cell1.appendChild(docs[i]);
+				} else {
+					cell1.innerHTML = lines[i];
+					const a = cell1.querySelector("a");
+					if (a) a.target = "_blank";
+				}
 			}
-
 			adjustContentsScrollDiv();
 		},
 		consoleAxiosError
