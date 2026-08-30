@@ -614,12 +614,6 @@ function showContents(type, sortby, lang) {
 				.filter(Boolean);
 
 			let docs;
-
-			requestIdleCallback(() => {
-				const preloadDocs = docs || linesToDOM(lines);
-				preloadImagesContents(type, preloadDocs);
-			});
-
 			if (sortby == "date") {
 				docs = linesToDOM(lines, textColor);
 				sortByDate(docs, lang, textColor + "_blue");
@@ -628,6 +622,11 @@ function showContents(type, sortby, lang) {
 				sortByFlag(docs, textColor + "_blue");
 			}
 
+			requestIdleCallback(() => {
+				const preloadDocs = docs || linesToDOM(lines);
+				preloadImagesContents(type, preloadDocs);
+			});
+			
 			let table = document.getElementById("contentstable");
 			table.replaceChildren();
 
