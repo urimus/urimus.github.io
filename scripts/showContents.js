@@ -568,31 +568,27 @@ function preloadImagesContents(type, docs) {
 }
 
 function linesToDOM(lines, textColor) {
-	const parser = new DOMParser();
-	const docs = [];
-
 	const recNum = lines.length - 1;
 
-	for (let i = 0; i < lines.length; i++) {
-		const parsed = parser.parseFromString(lines[i], "text/html");
+	const template = document.createElement("template");
 
-		for (const a of parsed.querySelectorAll("a")) {
-			a.target = "_blank";
-		}
+	template.innerHTML = lines
+		.map(line => `<div>${line}</div>`)
+		.join("");
 
-		if (i === 0) {
-			const b = parsed.createElement("b");
-			b.className = textColor + "_blue";
-			b.textContent = `${recNum} ${t("record", { count: recNum })}`;
+	const docs = Array.from(template.content.children);
 
-			parsed.body.appendChild(parsed.createElement("br"));
-			parsed.body.appendChild(b);
-		}
+	for (const a of template.content.querySelectorAll("a")) {
+		a.target = "_blank";
+	}
 
-		const container = document.createElement("div");
-		container.append(...parsed.body.childNodes);
-		docs.push(container);
+	if (docs.length > 0) {
+		const b = document.createElement("b");
+		b.className = textColor + "_blue";
+		b.textContent = `${recNum} ${t("record", { count: recNum })}`;
 
+		docs[0].appendChild(document.createElement("br"));
+		docs[0].appendChild(b);
 	}
 
 	return docs;
@@ -655,4 +651,3 @@ function showContents(type, sortby, lang) {
 		});
 	});
 }
-
