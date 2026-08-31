@@ -424,18 +424,19 @@ function sortByFlag(docs, textColor) {
 }
 
 function sortByDate(docs, lang, textColor) {
+
 	const monthIndexes = {
 		eng: {
-			Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
-			Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+			Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06",
+			Jul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12"
 		},
 		lat: {
-			Ian: 0, Feb: 1, Mar: 2, Apr: 3, Mai: 4, Iun: 5,
-			Iul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+			Ian: "01", Feb: "02", Mar: "03", Apr: "04", Mai: "05", Iun: "06",
+			Iul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12"
 		},
 		rus: {
-			Янв: 0, Фев: 1, Мар: 2, Апр: 3, Мая: 4, Июн: 5,
-			Июл: 6, Авг: 7, Сен: 8, Окт: 9, Ноя: 10, Дек: 11
+			Янв: "01", Фев: "02", Мар: "03", Апр: "04", Мая: "05", Июн: "06",
+			Июл: "07", Авг: "08", Сен: "09", Окт: "10", Ноя: "11", Дек: "12"
 		}
 	};
 
@@ -458,13 +459,13 @@ function sortByDate(docs, lang, textColor) {
 			year = textDate.substring(9, 13);
 		}
 
-		const yearNum = Number(year);
-		const monthNum = monthIndexes[lang][month];
-		const dayNum = Number(day);
-
 		return {
-			value: yearNum * 10000 + (monthNum + 1) * 100 + dayNum,
-			year: yearNum
+			value: Number(
+				year +
+				monthIndexes[lang][month] +
+				day
+			),
+			year: Number(year)
 		};
 	}
 
