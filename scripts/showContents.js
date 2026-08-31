@@ -307,54 +307,9 @@ function correctPadding(element) {
 	cell.appendChild(wrapper);
 }
 
-function sortByDate(docs, lang, textColor) {
-	const monthIndexes = {
-		eng: {
-			Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
-			Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
-		},
-		lat: {
-			Ian: 0, Feb: 1, Mar: 2, Apr: 3, Mai: 4, Iun: 5,
-			Iul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
-		},
-		rus: {
-			Янв: 0, Фев: 1, Мар: 2, Апр: 3, Мая: 4, Июн: 5,
-			Июл: 6, Авг: 7, Сен: 8, Окт: 9, Ноя: 10, Дек: 11
-		}
-	};
+function sortByFlag(docs, textColor) {
 
-
-	function parseDate(textDate) {
-		let day, month, year;
-
-		if (lang === "eng") {
-			day = textDate.substring(0, 2);
-			month = textDate.substring(8, 11);
-			year = textDate.substring(13, 17);
-		}
-		else if (lang === "lat") {
-			day = textDate.substring(0, 2);
-			month = textDate.substring(3, 6);
-			year = textDate.substring(8, 12);
-		}
-		else {
-			day = textDate.substring(0, 2);
-			month = textDate.substring(4, 7);
-			year = textDate.substring(9, 13);
-		}
-
-		const yearNum = Number(year);
-		const monthNum = monthIndexes[lang][month];
-		const dayNum = Number(day);
-
-		return {
-			value: yearNum * 10000 + (monthNum + 1) * 100 + dayNum,
-			year: yearNum
-		};
-	}
-
-
-	function buildYearBlock(year, textColor) {
+	function buildFlagBlock(code, title, textColor) {
 		const row = document.createElement("tr");
 		const cell = document.createElement("td");
 
@@ -366,132 +321,106 @@ function sortByDate(docs, lang, textColor) {
 		left.style.cssText =
 			"flex:1;border:1px solid #ff8a00;";
 
-		const title = document.createElement("div");
-		title.className = "nimetus2_" + textColor;
-		title.style.cssText =
-			"padding:0 5px;white-space:nowrap;";
-		title.textContent = year;
+		const titleBlock = document.createElement("div");
+		titleBlock.className = "nimetus2_" + textColor;
+		titleBlock.style.cssText =
+			"padding:0 5px;";
+
+		const img = document.createElement("img");
+		img.src = "lang/all/" + code + ".gif";
+		img.width = 30;
+		img.title = title;
+		img.setAttribute(
+			"data-ttcolor",
+			textColor.slice(0, -5)
+		);
+
+		titleBlock.appendChild(img);
 
 		const right = document.createElement("div");
 		right.style.cssText =
 			"flex:1;border:1px solid #ff8a00;";
 
-		container.append(left, title, right);
+		container.append(left, titleBlock, right);
 		cell.appendChild(container);
 		row.appendChild(cell);
 
 		return row;
 	}
 
+	function buildSeparator() {
+		const row = document.createElement("tr");
+		const cell = document.createElement("td");
+
+		cell.style.cssText =
+			"width:100%;padding:0;";
+
+		const separator = document.createElement("div");
+		separator.style.cssText =
+			"border:1px solid #ff8a00;margin:10px 0;";
+
+		cell.appendChild(separator);
+		row.appendChild(cell);
+
+		return row;
+	}
 
 	const items = [];
+	const zeroContents = [];
 
 	for (let i = 1; i < docs.length; i++) {
 		const doc = docs[i];
 
 		correctPadding(doc);
 
-		const dataAddedElement = doc.querySelector("[data-added]");
-		const linkElement = doc.querySelector("a");
-
-		const dateStr = dataAddedElement
-			? dataAddedElement.getAttribute("data-added")
+		const countryElement = doc.querySelector("[data-country]");
+		const flagStr = countryElement
+			? countryElement.getAttribute("data-country")
 			: null;
 
-		const parsedDate = dateStr
-			? parseDate(dateStr)
-			: null;
-
-		const textContent = doc.textContent;
-
-		items.push({
-			doc,
-			date: parsedDate ? parsedDate.value : 0,
-			year: parsedDate ? parsedDate.year : 0,
-			title: linkElement
-				? linkElement.textContent.trim()
-				: "",
-			hasBull:
-				textContent.includes("●") ||
-				textContent.includes("⚬")
-		});
-	}
-
-	items.sort((a, b) => b.date - a.date);
-
-	const newCol = "red";
-
-	for (let i = items.length - 1; i > 1; i--) {
-		if (items[i].date === 0) continue;
-
-		if (items[i].date !== items[i - 1].date) {
+		if (!flagStr) {
+			zeroContents.push(doc);
 			continue;
 		}
 
-		const end = i;
-		let start = i;
-
-		let hasBull = items[i].hasBull;
-
-		while (
-			start > 0 &&
-			items[start].date === items[start - 1].date
-		) {
-			start--;
-
-			if (items[start].hasBull) {
-				hasBull = true;
-			}
-		}
-
-		i = start;
-
-		if (hasBull) continue;
-/*
-		const title1 = items[start - 1]
-			? items[start - 1].title
-			: "";
-
-		const title2 = items[start]
-			? items[start].title
-			: "";
-
-		if (title1 === title2) continue;
-*/
-		for (let index = start; index <= end; index++) {
-			const item = items[index];
-			const cell = item.doc.cells[0];
-
-			const font = document.createElement("font");
-			font.setAttribute("color", newCol);
-			font.append(...cell.childNodes);
-			cell.appendChild(font);
+		for (const flag of flagStr.split(";")) {
+			items.push({
+				content: doc,
+				flag: t(flag),
+				textFlag: flag
+			});
 		}
 	}
 
+	items.sort((a, b) => a.flag.localeCompare(b.flag));
 
 	docs.length = 1;
 
-	let previousYear = null;
+	const addedDocs = new WeakSet();
 
-	for (const item of items) {
-		if (item.date !== 0) {
-			const currentYear = item.year;
+	for (let i = 0; i < items.length; i++) {
+		const item = items[i];
 
-			if (currentYear !== previousYear) {
-				docs.push(
-					buildYearBlock(
-						currentYear,
-						textColor
-					)
-				);
-
-				previousYear = currentYear;
-			}
+		if (i === 0 || item.flag !== items[i - 1].flag) {
+			docs.push(
+				buildFlagBlock(
+					item.textFlag,
+					item.flag,
+					textColor
+				)
+			);
 		}
 
-		docs.push(item.doc);
+		if (addedDocs.has(item.content)) {
+			docs.push(item.content.cloneNode(true));
+		} else {
+			docs.push(item.content);
+			addedDocs.add(item.content);
+		}
 	}
+
+	docs.push(buildSeparator());
+	docs.push(...zeroContents);
 }
 
 function sortByDate(docs, lang, textColor) {
@@ -510,7 +439,6 @@ function sortByDate(docs, lang, textColor) {
 		}
 	};
 
-
 	function parseDate(textDate) {
 		let day, month, year;
 
@@ -539,7 +467,6 @@ function sortByDate(docs, lang, textColor) {
 			year: yearNum
 		};
 	}
-
 
 	function buildYearBlock(year, textColor) {
 		const row = document.createElement("tr");
@@ -570,7 +497,6 @@ function sortByDate(docs, lang, textColor) {
 		return row;
 	}
 
-
 	const items = [];
 
 	for (let i = 1; i < docs.length; i++) {
@@ -600,9 +526,7 @@ function sortByDate(docs, lang, textColor) {
 		});
 	}
 
-
 	items.sort((a, b) => b.date - a.date);
-
 
 	const newCol = "red";
 
@@ -643,7 +567,6 @@ function sortByDate(docs, lang, textColor) {
 			cell.appendChild(font);
 		}
 	}
-
 
 	docs.length = 1;
 
