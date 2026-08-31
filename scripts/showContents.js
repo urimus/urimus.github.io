@@ -508,44 +508,15 @@ function sortByDate(docs, lang, textColor) {
 		const parsedDate = parseDate(
 			doc.querySelector("[data-added]")?.dataset.added
 		);
-		const textContent = doc.textContent;
 
 		items.push({
 			doc,
 			date: parsedDate?.value ?? 0,
-			year: parsedDate?.year ?? 0,
-			hasBull: textContent.includes("●") || textContent.includes("⚬")
+			year: parsedDate?.year ?? 0
 		});
 	}
 
 	items.sort((a, b) => b.date - a.date);
-
-	for (let end = items.length - 1; end > 1; end--) {
-		const date = items[end].date;
-
-		if (!date || date !== items[end - 1].date) continue;
-
-		let start = end;
-		let hasBull = items[end].hasBull;
-
-		while (start > 0 && items[start - 1].date === date) {
-			--start;
-			hasBull ||= items[start].hasBull;
-		}
-
-		if (!hasBull) {
-			for (let i = start; i <= end; i++) {
-				const cell = items[i].doc.cells[0];
-				const font = document.createElement("font");
-
-				font.color = "red";
-				font.append(...cell.childNodes);
-				cell.appendChild(font);
-			}
-		}
-
-		end = start;
-	}
 
 	docs.length = 1;
 
