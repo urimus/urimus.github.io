@@ -291,7 +291,7 @@ function adjustContentsScrollDiv() {
 }
 
 function correctPadding(element) {
-	const cell = element.cells ? element.cells[0] : element;
+	const cell = element.cells?.[0] ?? element;
 	if (!cell) return;
 
 	const span = cell.querySelector("span");
@@ -373,10 +373,7 @@ function sortByFlag(docs, textColor) {
 
 		correctPadding(doc);
 
-		const countryElement = doc.querySelector("[data-country]");
-		const flagStr = countryElement
-			? countryElement.getAttribute("data-country")
-			: null;
+		const flagStr = doc.querySelector("[data-country]")?.dataset.country;
 
 		if (!flagStr) {
 			zeroContents.push(doc);
@@ -441,6 +438,9 @@ function sortByDate(docs, lang, textColor) {
 	};
 
 	function parseDate(textDate) {
+
+		if (!textDate) return null;
+
 		let day, month, year;
 
 		if (lang === "eng") {
@@ -505,68 +505,46 @@ function sortByDate(docs, lang, textColor) {
 
 		correctPadding(doc);
 
-		const dataAddedElement = doc.querySelector("[data-added]");
-
-		const dateStr = dataAddedElement
-			? dataAddedElement.getAttribute("data-added")
-			: null;
-
-		const parsedDate = dateStr
-			? parseDate(dateStr)
-			: null;
-
+		const parsedDate = parseDate(
+			doc.querySelector("[data-added]")?.dataset.added
+		);
 		const textContent = doc.textContent;
 
 		items.push({
 			doc,
-			date: parsedDate ? parsedDate.value : 0,
-			year: parsedDate ? parsedDate.year : 0,
-			hasBull:
-				textContent.includes("●") ||
-				textContent.includes("⚬")
+			date: parsedDate?.value ?? 0,
+			year: parsedDate?.year ?? 0,
+			hasBull: textContent.includes("●") || textContent.includes("⚬")
 		});
 	}
 
 	items.sort((a, b) => b.date - a.date);
 
-	const newCol = "red";
+	for (let end = items.length - 1; end > 1; end--) {
+		const date = items[end].date;
 
-	for (let i = items.length - 1; i > 1; i--) {
-		if (items[i].date === 0) continue;
+		if (!date || date !== items[end - 1].date) continue;
 
-		if (items[i].date !== items[i - 1].date) {
-			continue;
+		let start = end;
+		let hasBull = items[end].hasBull;
+
+		while (start > 0 && items[start - 1].date === date) {
+			--start;
+			hasBull ||= items[start].hasBull;
 		}
 
-		const end = i;
-		let start = i;
+		if (!hasBull) {
+			for (let i = start; i <= end; i++) {
+				const cell = items[i].doc.cells[0];
+				const font = document.createElement("font");
 
-		let hasBull = items[i].hasBull;
-
-		while (
-			start > 0 &&
-			items[start].date === items[start - 1].date
-		) {
-			start--;
-
-			if (items[start].hasBull) {
-				hasBull = true;
+				font.color = "red";
+				font.append(...cell.childNodes);
+				cell.appendChild(font);
 			}
 		}
 
-		i = start;
-
-		if (hasBull) continue;
-
-		for (let index = start; index <= end; index++) {
-			const item = items[index];
-			const cell = item.doc.cells[0];
-
-			const font = document.createElement("font");
-			font.setAttribute("color", newCol);
-			font.append(...cell.childNodes);
-			cell.appendChild(font);
-		}
+		end = start;
 	}
 
 	docs.length = 1;
