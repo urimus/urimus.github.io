@@ -291,68 +291,96 @@ function adjustContentsScrollDiv() {
 }
 
 function correctPadding(element) {
-	const span = element.querySelector("span");
+	const cell = element.cells ? element.cells[0] : element;
+	if (!cell) return;
+
+	const span = cell.querySelector("span");
+
 	if (span) {
 		span.style.paddingLeft = "10px";
 		return;
 	}
 
-	const wrapper = element.ownerDocument.createElement("span");
+	const wrapper = cell.ownerDocument.createElement("span");
 	wrapper.style.paddingLeft = "10px";
-	wrapper.append(...element.childNodes);
-	element.appendChild(wrapper);
+	wrapper.append(...cell.childNodes);
+	cell.appendChild(wrapper);
 }
+
 
 function sortByDate(docs, lang, textColor) {
 	const monthIndexes = {
-		eng: {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11},
-		lat: {Ian:0,Feb:1,Mar:2,Apr:3,Mai:4,Iun:5,Iul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11},
-		rus: {Янв:0,Фев:1,Мар:2,Апр:3,Мая:4,Июн:5,Июл:6,Авг:7,Сен:8,Окт:9,Ноя:10,Дек:11}
+		eng: {
+			Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+			Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+		},
+		lat: {
+			Ian: 0, Feb: 1, Mar: 2, Apr: 3, Mai: 4, Iun: 5,
+			Iul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+		},
+		rus: {
+			Янв: 0, Фев: 1, Мар: 2, Апр: 3, Мая: 4, Июн: 5,
+			Июл: 6, Авг: 7, Сен: 8, Окт: 9, Ноя: 10, Дек: 11
+		}
 	};
 
 	function parseDate(textDate) {
-		let textDay, textMonth, textYear;
+		let day, month, year;
 
-		if (lang == "eng") {
-			textDay = textDate.substring(0,2);
-			textMonth = textDate.substring(8,11);
-			textYear = textDate.substring(13,17);
+		if (lang === "eng") {
+			day = textDate.substring(0, 2);
+			month = textDate.substring(8, 11);
+			year = textDate.substring(13, 17);
 		}
-		else if (lang == "lat") {
-			textDay = textDate.substring(0,2);
-			textMonth = textDate.substring(3,6);
-			textYear = textDate.substring(8,12);
+		else if (lang === "lat") {
+			day = textDate.substring(0, 2);
+			month = textDate.substring(3, 6);
+			year = textDate.substring(8, 12);
 		}
-		else if (lang == "rus") {
-			textDay = textDate.substring(0,2);
-			textMonth = textDate.substring(4,7);
-			textYear = textDate.substring(9,13);
+		else {
+			day = textDate.substring(0, 2);
+			month = textDate.substring(4, 7);
+			year = textDate.substring(9, 13);
 		}
 
-		return new Date(Number(textYear), monthIndexes[lang][textMonth], Number(textDay));
+		return new Date(
+			Number(year),
+			monthIndexes[lang][month],
+			Number(day)
+		);
 	}
 
+
 	function buildYearBlock(year, textColor) {
+		const row = document.createElement("tr");
+		const cell = document.createElement("td");
+
 		const container = document.createElement("div");
-		container.setAttribute("style", "display:flex;align-items:center;margin-top:5px;");
+		container.style.cssText =
+			"display:flex;align-items:center;margin-top:5px;";
 
 		const left = document.createElement("div");
-		left.setAttribute("style", "flex:1;border:1px solid #ff8a00;");
+		left.style.cssText =
+			"flex:1;border:1px solid #ff8a00;";
 
 		const title = document.createElement("div");
 		title.className = "nimetus2_" + textColor;
-		title.setAttribute("style", "padding:0 5px;white-space:nowrap;");
+		title.style.cssText =
+			"padding:0 5px;white-space:nowrap;";
 		title.textContent = year;
 
 		const right = document.createElement("div");
-		right.setAttribute("style", "flex:1;border:1px solid #ff8a00;");
+		right.style.cssText =
+			"flex:1;border:1px solid #ff8a00;";
 
 		container.append(left, title, right);
+		cell.appendChild(container);
+		row.appendChild(cell);
 
-		return container;
+		return row;
 	}
 
-	const firstDoc = docs[0];
+
 	const items = [];
 
 	for (let i = 1; i < docs.length; i++) {
@@ -362,15 +390,17 @@ function sortByDate(docs, lang, textColor) {
 
 		const dataAddedElement = doc.querySelector("[data-added]");
 		const linkElement = doc.querySelector("a");
-		const dateStr = dataAddedElement ? dataAddedElement.getAttribute("data-added") : null;
+		const dateStr = dataAddedElement
+			? dataAddedElement.getAttribute("data-added")
+			: null;
+
 		const textContent = doc.textContent;
-		const hasBull = textContent.includes("●") || textContent.includes("⚬");
 
 		items.push({
-			doc: doc,
+			doc,
 			date: dateStr ? parseDate(dateStr) : 0,
 			title: linkElement ? linkElement.textContent.trim() : "",
-			hasBull: hasBull
+			hasBull: textContent.includes("●") || textContent.includes("⚬")
 		});
 	}
 
@@ -381,87 +411,120 @@ function sortByDate(docs, lang, textColor) {
 	for (let i = items.length - 1; i > 1; i--) {
 		if (items[i].date === 0) continue;
 
-		if (items[i].date.valueOf() === items[i - 1].date.valueOf()) {
-			let hasBull = false;
-			const sameDates = [];
-			let j = i;
+		if (items[i].date.valueOf() !== items[i - 1].date.valueOf()) {
+			continue;
+		}
 
-			sameDates.push(j);
+		let hasBull = false;
+		const sameDates = [];
+		let j = i;
 
-			for (j = i; j >= 1; j--) {
-				if (items[j].date.valueOf() !== items[j - 1].date.valueOf()) break;
-				if (items[j - 1].hasBull) hasBull = true;
-				sameDates.push(j - 1);
+		sameDates.push(j);
+
+		for (; j >= 1; j--) {
+			if (items[j].date.valueOf() !== items[j - 1].date.valueOf()) {
+				break;
 			}
 
-			i = j;
-
-			if (hasBull) continue;
-
-			const title1 = items[i - 1] ? items[i - 1].title : "";
-			const title2 = items[i] ? items[i].title : "";
-
-			if (title1 == title2) continue;
-
-			for (let k = 0; k < sameDates.length; k++) {
-				const item = items[sameDates[k]];
-				const font = document.createElement("font");
-				font.setAttribute("color", newCol);
-				font.append(...item.doc.childNodes);
-				item.doc.appendChild(font);
+			if (items[j - 1].hasBull) {
+				hasBull = true;
 			}
+
+			sameDates.push(j - 1);
+		}
+
+		i = j;
+
+		if (hasBull) continue;
+
+		const title1 = items[i - 1] ? items[i - 1].title : "";
+		const title2 = items[i] ? items[i].title : "";
+
+		if (title1 === title2) continue;
+
+		for (const index of sameDates) {
+			const item = items[index];
+			const cell = item.doc.cells[0];
+
+			const font = document.createElement("font");
+			font.setAttribute("color", newCol);
+			font.append(...cell.childNodes);
+			cell.appendChild(font);
 		}
 	}
 
 	docs.length = 1;
+
 	let previousYear = null;
 
-	for (let i = 0; i < items.length; i++) {
-		const item = items[i];
+	for (const item of items) {
 		if (item.date !== 0) {
 			const currentYear = item.date.getFullYear();
+
 			if (currentYear !== previousYear) {
 				docs.push(buildYearBlock(currentYear, textColor));
 				previousYear = currentYear;
 			}
 		}
+
 		docs.push(item.doc);
 	}
 }
 
+
 function sortByFlag(docs, textColor) {
 	function buildFlagBlock(code, title, textColor) {
+		const row = document.createElement("tr");
+		const cell = document.createElement("td");
+
 		const container = document.createElement("div");
-		container.style.cssText = "display:flex;align-items:center;margin-top:5px;";
+		container.style.cssText =
+			"display:flex;align-items:center;margin-top:5px;";
 
 		const left = document.createElement("div");
-		left.style.cssText = "flex:1;border:1px solid #ff8a00;";
+		left.style.cssText =
+			"flex:1;border:1px solid #ff8a00;";
 
 		const titleBlock = document.createElement("div");
 		titleBlock.className = "nimetus2_" + textColor;
-		titleBlock.style.cssText = "padding:0 5px;";
+		titleBlock.style.cssText =
+			"padding:0 5px;";
 
 		const img = document.createElement("img");
 		img.src = "lang/all/" + code + ".gif";
 		img.width = 30;
 		img.title = title;
-		img.setAttribute("data-ttcolor", textColor.slice(0, -5));
+		img.setAttribute(
+			"data-ttcolor",
+			textColor.slice(0, -5)
+		);
 
 		titleBlock.appendChild(img);
 
 		const right = document.createElement("div");
-		right.style.cssText = "flex:1;border:1px solid #ff8a00;";
+		right.style.cssText =
+			"flex:1;border:1px solid #ff8a00;";
 
 		container.append(left, titleBlock, right);
+		cell.appendChild(container);
+		row.appendChild(cell);
 
-		return container;
+		return row;
 	}
+
 
 	function buildSeparator() {
-		const separator = document.createElement("div");
-		separator.style.cssText = "width:100%;border:1px solid #ff8a00;margin:10px 0;";
-		return separator;
+		const row = document.createElement("tr");
+		const cell = document.createElement("td");
+
+		cell.style.cssText =
+			"width:100%;border:1px solid #ff8a00;margin:10px 0;";
+
+		row.appendChild(cell);
+
+		return row;
 	}
+
 
 	const items = [];
 	const zeroContents = [];
@@ -472,7 +535,9 @@ function sortByFlag(docs, textColor) {
 		correctPadding(doc);
 
 		const countryElement = doc.querySelector("[data-country]");
-		const flagStr = countryElement ? countryElement.getAttribute("data-country") : null;
+		const flagStr = countryElement
+			? countryElement.getAttribute("data-country")
+			: null;
 
 		if (!flagStr) {
 			zeroContents.push(doc);
@@ -494,14 +559,22 @@ function sortByFlag(docs, textColor) {
 
 	for (let i = 0; i < items.length; i++) {
 		if (i === 0 || items[i].flag !== items[i - 1].flag) {
-			docs.push(buildFlagBlock(items[i].textFlag, items[i].flag, textColor));
+			docs.push(
+				buildFlagBlock(
+					items[i].textFlag,
+					items[i].flag,
+					textColor
+				)
+			);
 		}
+
 		docs.push(items[i].content.cloneNode(true));
 	}
 
 	docs.push(buildSeparator());
 	docs.push(...zeroContents);
 }
+
 
 function preloadImagesContents(type, docs) {
 	if (!("serviceWorker" in navigator)) return;
@@ -516,42 +589,44 @@ function preloadImagesContents(type, docs) {
 		return;
 	}
 
-	const images = [];
+	const images = new Set();
 
-	for (let i = 0; i < docs.length; i++) {
-		const link = docs[i].querySelector("a");
+	for (const doc of docs) {
+		const link = doc.querySelector("a");
 
 		if (!link) continue;
 
-		const anchors = link.href.split("#");
+		const hash = link.hash.slice(1);
 
-		if (anchors.length <= 1) continue;
+		if (!hash) continue;
 
 		let type2 = type;
 
 		if (
 			type === "series" &&
 			(
-				anchors[1] === "animation" ||
-				anchors[1] === "body_horror" ||
-				anchors[1] === "space_opera" ||
-				anchors[1] === "movies_superhero" ||
-				anchors[1] === "dc_extended_universe" ||
-				anchors[1] === "marvel_cinematic_universe"
+				hash === "animation" ||
+				hash === "body_horror" ||
+				hash === "space_opera" ||
+				hash === "movies_superhero" ||
+				hash === "dc_extended_universe" ||
+				hash === "marvel_cinematic_universe"
 			)
 		) {
 			type2 = "movies";
 		}
 
-		images.push(
-			"images/icons/" + type2 + "/" + anchors[1] + ".jpg"
+		images.add(
+			"images/icons/" + type2 + "/" + hash + ".jpg"
 		);
 	}
 
-	if (images.length === 0) return;
+	if (!images.size) return;
 
 	navigator.serviceWorker.ready.then(() => {
 		console.log("[SW] site map images caching started");
+
+		const imageList = [...images];
 
 		const state = {
 			index: -1,
@@ -561,99 +636,104 @@ function preloadImagesContents(type, docs) {
 			source: "site map images"
 		};
 
-		for (let i = 0; i < Math.min(images.length, 5); i++) {
-			loadNextCacheImage(state, images);
+		for (
+			let i = 0, count = Math.min(imageList.length, 5);
+			i < count;
+			i++
+		) {
+			loadNextCacheImage(state, imageList);
 		}
 	});
 }
 
 function linesToDOM(lines, textColor) {
+	const docs = new Array(lines.length);
+	const className = "text_" + textColor + "_blue";
+	const lastIndex = lines.length - 1;
 
-	const template = document.createElement("template");
+	for (let i = 0; i < lines.length; i++) {
+		const row = document.createElement("tr");
+		const cell = document.createElement("td");
 
-	template.innerHTML = lines
-		.map(line => `<div>${line}</div>`)
-		.join("");
+		cell.className = className;
 
-	const docs = Array.from(template.content.children);
+		if (i === 0) {
+			cell.style.cssText =
+				"padding-left:10px;padding-right:10px;padding-top:10px;text-align:center;";
+		}
+		else if (i === lastIndex) {
+			cell.style.cssText =
+				"padding-left:10px;padding-right:10px;padding-bottom:10px;";
+		}
+		else {
+			cell.style.cssText =
+				"padding-left:10px;padding-right:10px;";
+		}
 
-	if (!textColor) return docs;
+		cell.innerHTML = lines[i];
 
-	const recNum = lines.length - 1;
-
-	for (const doc of docs) {
-		const a = doc.querySelector("a");
+		const a = cell.querySelector("a");
 		if (a) a.target = "_blank";
-	}
 
-	if (docs.length > 0) {
-		const b = document.createElement("b");
-		b.className = textColor + "_blue";
-		b.textContent = `${recNum} ${t("record", { count: recNum })}`;
-
-		docs[0].appendChild(document.createElement("br"));
-		docs[0].appendChild(b);
+		row.appendChild(cell);
+		docs[i] = row;
 	}
 
 	return docs;
 }
 
 function showContents(type, sortby, lang) {
-	let textColor = generateTabs(type, lang);
+	const textColor = generateTabs(type, lang);
+
 	refreshSortByTabs(type, sortby, lang);
 
 	axios.get(`scripts/contents/${type}_${lang}.txt`, {
-		headers: { 'Cache-Control': 'no-cache' }
+		headers: { "Cache-Control": "no-cache" }
 	})
 	.then(
 		response => {
-
-			let lines = response.data
+			const lines = response.data
 				.split(/\r?\n|\r/)
 				.map(s => s.trim())
 				.filter(Boolean);
 
-			let docs;
-			if (sortby == "date") {
-				docs = linesToDOM(lines, textColor);
-				sortByDate(docs, lang, textColor + "_blue");
-			} else if (sortby == "flag" && (type == "music" || type == "movies" || type == "series" || type == "books" || type == "junk" || type == "news")) {
-				docs = linesToDOM(lines, textColor);
-				sortByFlag(docs, textColor + "_blue");
+			const recNum = lines.length - 1;
+			lines[0] += `<br><b class="${textColor}_blue">${recNum} ${t("record", { count: recNum })}</b>`;
+
+			const docs = linesToDOM(lines, textColor);
+
+			if (sortby === "date") {
+				sortByDate(
+					docs,
+					lang,
+					textColor + "_blue"
+				);
 			}
+			else if (
+				sortby === "flag" &&
+				(
+					type === "music" ||
+					type === "movies" ||
+					type === "series" ||
+					type === "books" ||
+					type === "junk" ||
+					type === "news"
+				)
+			) {
+				sortByFlag(
+					docs,
+					textColor + "_blue"
+				);
+			}
+
+			const table = document.getElementById("contentstable");
+			table.replaceChildren(...docs);
+
+			adjustContentsScrollDiv();
 
 			requestIdleCallback(() => {
-				const preloadDocs = docs || linesToDOM(lines);
-				preloadImagesContents(type, preloadDocs);
+				preloadImagesContents(type, docs);
 			});
-			
-			let table = document.getElementById("contentstable");
-			table.replaceChildren();
-
-			const items = docs || lines;
-			for (let i = 0; i < items.length; i++) {
-				const row = table.insertRow(-1);
-				const cell1 = row.insertCell(0);
-
-				cell1.className = "text_" + textColor + "_blue";
-
-				if (i == 0) {
-					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;padding-top:10px;text-align:center;");
-				} else if (i == items.length - 1) {
-					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;padding-bottom:10px;");
-				} else {
-					cell1.setAttribute("style", "padding-left:10px;padding-right:10px;");
-				}
-
-				if (docs) {
-					cell1.appendChild(docs[i]);
-				} else {
-					cell1.innerHTML = lines[i];
-					const a = cell1.querySelector("a");
-					if (a) a.target = "_blank";
-				}
-			}
-			adjustContentsScrollDiv();
 		},
 		consoleAxiosError
 	)

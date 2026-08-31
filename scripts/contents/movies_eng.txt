@@ -4,7 +4,6 @@
 
 <span style="padding-left:10px;">&#9900; <a href="movies_actor_bautista_eng.html#bautista" class = "standardb_black" data-added="29th of Oct, 2025." data-country="usa" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Dave Bautista</a></span>
 <span style="padding-left:20px;">- <a href="movies_actor_bautista_eng.html#afterburn" class = "standardb_black" data-added="29th of Oct, 2025." data-actor="Dave Bautista" data-country="usa" data-year="2025" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Afterburn</a></span>
-<span style="padding-left:20px;">- <a href="movies_actor_bautista_eng.html#avengers_infinity_war" class = "standardb_black" data-added="29th of Oct, 2025." data-actor="Dave Bautista" data-country="usa" data-year="2018" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Avengers: Infinity War</a></span>
 <span style="padding-left:20px;">- <a href="movies_actor_bautista_eng.html#guardians_of_the_galaxy" class = "standardb_black" data-added="29th of Oct, 2025." data-actor="Dave Bautista" data-country="usa" data-year="2014" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Guardians of the Galaxy</a></span>
 <span style="padding-left:20px;">- <a href="movies_actor_bautista_eng.html#riddick" class = "standardb_black" data-added="29th of Oct, 2025." data-actor="Dave Bautista" data-country="usa" data-year="2013" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Riddick</a></span>
 
