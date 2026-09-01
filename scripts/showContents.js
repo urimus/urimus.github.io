@@ -305,18 +305,19 @@ function sortByFlag(docs, textColor) {
 		const row = document.createElement("tr");
 		const cell = document.createElement("td");
 
+		cell.style.padding = "5px 10px 0 10px";
+
 		const container = document.createElement("div");
-		container.style.cssText =
-			"display:flex; align-items:center; padding: 5px 10px 0 10px;";
+		container.style.display = "flex";
+		container.style.alignItems = "center";
 
 		const left = document.createElement("div");
-		left.style.cssText =
-			"flex:1;border:1px solid #ff8a00;";
+		left.style.flex = "1";
+		left.style.border = "1px solid #ff8a00";
 
 		const titleBlock = document.createElement("div");
 		titleBlock.className = "nimetus2_" + textColor;
-		titleBlock.style.cssText =
-			"padding:0 5px;";
+		titleBlock.style.padding = "0 5px";
 
 		const img = document.createElement("img");
 		img.src = "lang/all/" + code + ".gif";
@@ -330,8 +331,8 @@ function sortByFlag(docs, textColor) {
 		titleBlock.appendChild(img);
 
 		const right = document.createElement("div");
-		right.style.cssText =
-			"flex:1;border:1px solid #ff8a00;";
+		right.style.flex = "1";
+		right.style.border = "1px solid #ff8a00";
 
 		container.append(left, titleBlock, right);
 		cell.appendChild(container);
@@ -343,11 +344,10 @@ function sortByFlag(docs, textColor) {
 	function buildSeparator() {
 		const row = document.createElement("tr");
 		const cell = document.createElement("td");
+		cell.style.padding = "10px";
 
 		const separator = document.createElement("div");
-
-		separator.style.cssText =
-			"border:1px solid #ff8a00; margin: 10px;";
+		separator.style.border = "1px solid #ff8a00";
 
 		cell.appendChild(separator);
 		row.appendChild(cell);
@@ -472,23 +472,25 @@ function sortByDate(docs, lang, textColor) {
 		const row = document.createElement("tr");
 		const cell = document.createElement("td");
 
+		cell.style.padding = "5px 10px 0 10px";
+
 		const container = document.createElement("div");
-		container.style.cssText =
-			"display:flex; align-items:center; padding: 5px 10px 0 10px;";
+		container.style.display = "flex";
+		container.style.alignItems = "center";
 
 		const left = document.createElement("div");
-		left.style.cssText =
-			"flex:1;border:1px solid #ff8a00;";
+		left.style.flex = "1";
+		left.style.border = "1px solid #ff8a00";
 
 		const title = document.createElement("div");
 		title.className = "nimetus2_" + textColor;
-		title.style.cssText =
-			"padding:0 5px;white-space:nowrap;";
+		title.style.padding = "0 5px";
+		title.style.whiteSpace = "nowrap";
 		title.textContent = year;
 
 		const right = document.createElement("div");
-		right.style.cssText =
-			"flex:1;border:1px solid #ff8a00;";
+		right.style.flex = "1";
+		right.style.border = "1px solid #ff8a00";
 
 		container.append(left, title, right);
 		cell.appendChild(container);
@@ -603,26 +605,13 @@ function preloadImagesContents(type, docs) {
 function linesToDOM(lines, textColor) {
 	const docs = new Array(lines.length);
 	const className = "text_" + textColor + "_blue";
-	const lastIndex = lines.length - 1;
 
 	for (let i = 0; i < lines.length; i++) {
 		const row = document.createElement("tr");
 		const cell = document.createElement("td");
 
 		cell.className = className;
-
-		if (i === 0) {
-			cell.style.cssText =
-				"padding-left:10px;padding-right:10px;padding-top:10px;text-align:center;";
-		}
-		else if (i === lastIndex) {
-			cell.style.cssText =
-				"padding-left:10px;padding-right:10px;padding-bottom:10px;";
-		}
-		else {
-			cell.style.cssText =
-				"padding-left:10px;padding-right:10px;";
-		}
+		cell.style.padding = "0 10px";
 
 		cell.innerHTML = lines[i];
 
@@ -651,9 +640,6 @@ function showContents(type, sortby, lang) {
 				.map(s => s.trim())
 				.filter(Boolean);
 
-			const recNum = lines.length - 1;
-			lines[0] += `<br><b class="${textColor}_blue">${recNum} ${t("record", { count: recNum })}</b>`;
-
 			const docs = linesToDOM(lines, textColor);
 
 			if (sortby === "date") {
@@ -679,6 +665,20 @@ function showContents(type, sortby, lang) {
 					textColor + "_blue"
 				);
 			}
+
+			const firstCell = docs[0].firstElementChild;
+			firstCell.style.paddingTop = "10px";
+			firstCell.style.textAlign = "center";
+
+			const recNum = lines.length - 1;
+			const count = document.createElement("b");
+			count.className = textColor + "_blue";
+			count.textContent = `${recNum} ${t("record", { count: recNum })}`;
+
+			firstCell.append(document.createElement("br"), count);
+
+			const lastCell = docs[docs.length - 1].firstElementChild;
+			lastCell.style.paddingBottom = "10px";
 
 			const table = document.getElementById("contentstable");
 			table.replaceChildren(...docs);
