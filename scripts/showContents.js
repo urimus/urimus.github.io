@@ -611,7 +611,7 @@ function linesToDOM(lines, textColor) {
 		const cell = document.createElement("td");
 
 		cell.className = className;
-		cell.style.padding = "0 10px";
+		if (i === 0) cell.style.textAlign = "center";
 
 		cell.innerHTML = lines[i];
 
@@ -640,6 +640,9 @@ function showContents(type, sortby, lang) {
 				.map(s => s.trim())
 				.filter(Boolean);
 
+			const recNum = lines.length - 1;
+			lines[0] += `<br><b class="${textColor}_blue">${recNum} ${t("record", { count: recNum })}</b>`;
+
 			const docs = linesToDOM(lines, textColor);
 
 			if (sortby === "date") {
@@ -665,20 +668,6 @@ function showContents(type, sortby, lang) {
 					textColor + "_blue"
 				);
 			}
-
-			const firstCell = docs[0].firstElementChild;
-			firstCell.style.paddingTop = "10px";
-			firstCell.style.textAlign = "center";
-
-			const recNum = lines.length - 1;
-			const count = document.createElement("b");
-			count.className = textColor + "_blue";
-			count.textContent = `${recNum} ${t("record", { count: recNum })}`;
-
-			firstCell.append(document.createElement("br"), count);
-
-			const lastCell = docs[docs.length - 1].firstElementChild;
-			lastCell.style.paddingBottom = "10px";
 
 			const table = document.getElementById("contentstable");
 			table.replaceChildren(...docs);
