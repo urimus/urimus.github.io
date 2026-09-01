@@ -305,8 +305,6 @@ function sortByFlag(docs, textColor) {
 		const row = document.createElement("tr");
 		const cell = document.createElement("td");
 
-		cell.style.padding = "5px 10px 0 10px";
-
 		const container = document.createElement("div");
 		container.style.display = "flex";
 		container.style.alignItems = "center";
@@ -344,7 +342,7 @@ function sortByFlag(docs, textColor) {
 	function buildSeparator() {
 		const row = document.createElement("tr");
 		const cell = document.createElement("td");
-		cell.style.padding = "10px";
+		cell.style.padding = "10px 0";
 
 		const separator = document.createElement("div");
 		separator.style.border = "1px solid #ff8a00";
@@ -471,8 +469,6 @@ function sortByDate(docs, lang, textColor) {
 	function buildYearBlock(year, textColor) {
 		const row = document.createElement("tr");
 		const cell = document.createElement("td");
-
-		cell.style.padding = "5px 10px 0 10px";
 
 		const container = document.createElement("div");
 		container.style.display = "flex";
@@ -641,7 +637,7 @@ function showContents(type, sortby, lang) {
 				.filter(Boolean);
 
 			const recNum = lines.length - 1;
-			lines[0] += `<br><b class="${textColor}_blue">${recNum} ${t("record", { count: recNum })}</b>`;
+			lines[0] += `<b class="${textColor}_blue" style="display: block; margin-bottom: 10px;">${recNum} ${t("record", { count: recNum })}</b>`;
 
 			const docs = linesToDOM(lines, textColor);
 
