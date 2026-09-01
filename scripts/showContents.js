@@ -290,19 +290,13 @@ function adjustContentsScrollDiv() {
 	scrollDiv.style.height = "100%";
 }
 
-function correctPadding(element) {
+function removePadding(element) {
 	const cell = element.cells?.[0] ?? element;
 	const span = cell.querySelector("span");
 
 	if (span) {
-		span.style.padding = "0 10px";
-		return;
+		span.replaceWith(...span.childNodes);
 	}
-
-	const wrapper = cell.ownerDocument.createElement("span");
-	wrapper.style.padding = "0 10px";
-	wrapper.append(...cell.childNodes);
-	cell.appendChild(wrapper);
 }
 
 function sortByFlag(docs, textColor) {
@@ -313,7 +307,7 @@ function sortByFlag(docs, textColor) {
 
 		const container = document.createElement("div");
 		container.style.cssText =
-			"display:flex;align-items:center;margin-top:5px;";
+			"display:flex; align-items:center; padding: 5px 10px 0 10px;";
 
 		const left = document.createElement("div");
 		left.style.cssText =
@@ -350,12 +344,10 @@ function sortByFlag(docs, textColor) {
 		const row = document.createElement("tr");
 		const cell = document.createElement("td");
 
-		cell.style.cssText =
-			"width:100%;padding:0;";
-
 		const separator = document.createElement("div");
+
 		separator.style.cssText =
-			"border:1px solid #ff8a00;margin:10px 0;";
+			"border:1px solid #ff8a00; margin: 10px;";
 
 		cell.appendChild(separator);
 		row.appendChild(cell);
@@ -369,7 +361,7 @@ function sortByFlag(docs, textColor) {
 	for (let i = 1; i < docs.length; i++) {
 		const doc = docs[i];
 
-		correctPadding(doc);
+		removePadding(doc);
 
 		const flagStr = doc.querySelector("[data-country]")?.dataset.country;
 
@@ -482,7 +474,7 @@ function sortByDate(docs, lang, textColor) {
 
 		const container = document.createElement("div");
 		container.style.cssText =
-			"display:flex;align-items:center;margin-top:5px;";
+			"display:flex; align-items:center; padding: 5px 10px 0 10px;";
 
 		const left = document.createElement("div");
 		left.style.cssText =
@@ -508,7 +500,7 @@ function sortByDate(docs, lang, textColor) {
 	const items = [];
 	for (let i = 1; i < docs.length; i++) {
 		const doc = docs[i];
-		correctPadding(doc);
+		removePadding(doc);
 		items.push(parseDate(doc));
 	}
 
