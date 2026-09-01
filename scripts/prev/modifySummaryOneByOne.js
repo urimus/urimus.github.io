@@ -11,6 +11,7 @@
 	let wordsCount = 0;
 	let currentLineTop = 0;
 	let linesCount = 1;
+	let lastLineStartWord = 0;
 
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
@@ -25,15 +26,12 @@
 			element2.innerHTML = formatSummary(words_arr, wordsCount);
 			this.innerHTML = "[▼]";
 		}
-
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 
-	// Pointer для первого прохода
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
 
-	// Первый проход — ищем место, где начинаются новые строки.
 	for (let k = 0; k < words_arr.length; k++) {
 		element2.innerHTML = formatSummary(words_arr, k + 1);
 
@@ -48,26 +46,17 @@
 			}
 
 			if (linesCount === linesToShow) {
-				// Нужно начинать второй проход уже с нормальной ссылки.
 				element2.innerHTML = "";
 				element.removeChild(pointer);
 				element.appendChild(extensionA);
 
-				wordsCount = 0;
-				linesCount = 1;
-
+				wordsCount = lastLineStartWord;
+				element2.innerHTML = formatSummary(words_arr, wordsCount);
 				currentLineTop = extensionA.offsetTop;
 
-				// Второй проход — ищем точное количество слов.
-				for (let k2 = 0; k2 < words_arr.length; k2++) {
+				for (let k2 = lastLineStartWord; k2 < words_arr.length; k2++) {
 					wordsCount++;
-
-					element2.innerHTML =
-						formatSummary(words_arr, wordsCount);
-
-					if (k2 === 0) {
-						currentLineTop = extensionA.offsetTop;
-					}
+					element2.innerHTML = formatSummary(words_arr, wordsCount);
 
 					if (extensionA.offsetTop !== currentLineTop) {
 						if (Math.abs(extensionA.offsetTop - currentLineTop) < 2) {
@@ -77,10 +66,7 @@
 
 						if (linesCount === linesToShow) {
 							wordsCount--;
-
-							element2.innerHTML =
-								formatSummary(words_arr, wordsCount);
-
+							element2.innerHTML = formatSummary(words_arr, wordsCount);
 							break;
 						}
 
@@ -92,12 +78,12 @@
 				break;
 			}
 
+			lastLineStartWord = k;
 			currentLineTop = pointer.offsetTop;
 			linesCount++;
 		}
 	}
 
-	// Весь текст помещается.
 	if (wordsCount === 0 && linesCount < linesToShow) {
 		element.removeChild(pointer);
 		element.appendChild(extensionA);
@@ -105,7 +91,6 @@
 		return;
 	}
 
-	// Если цикл закончился, значит весь текст помещается.
 	if (wordsCount === 0) {
 		element.removeChild(pointer);
 		element2.innerHTML = summary;
