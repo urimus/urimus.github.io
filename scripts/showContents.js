@@ -292,8 +292,6 @@ function adjustContentsScrollDiv() {
 
 function correctPadding(element) {
 	const cell = element.cells?.[0] ?? element;
-	if (!cell) return;
-
 	const span = cell.querySelector("span");
 
 	if (span) {
@@ -305,6 +303,7 @@ function correctPadding(element) {
 	wrapper.style.paddingLeft = "10px";
 	wrapper.append(...cell.childNodes);
 	cell.appendChild(wrapper);
+
 }
 
 function sortByFlag(docs, textColor) {
@@ -437,9 +436,17 @@ function sortByDate(docs, lang, textColor) {
 		}
 	};
 
-	function parseDate(textDate) {
+	function parseDate(doc) {
 
-		if (!textDate) return null;
+		const textDate = doc.querySelector("[data-added]")?.dataset.added;
+
+		if (!textDate) {
+			return {
+				doc,
+				date: 0,
+				year: 0
+			};
+		}
 
 		let day, month, year;
 
@@ -460,7 +467,8 @@ function sortByDate(docs, lang, textColor) {
 		}
 
 		return {
-			value: Number(
+			doc,
+			date: Number(
 				year +
 				monthIndexes[lang][month] +
 				day
@@ -499,21 +507,10 @@ function sortByDate(docs, lang, textColor) {
 	}
 
 	const items = [];
-
 	for (let i = 1; i < docs.length; i++) {
 		const doc = docs[i];
-
 		correctPadding(doc);
-
-		const parsedDate = parseDate(
-			doc.querySelector("[data-added]")?.dataset.added
-		);
-
-		items.push({
-			doc,
-			date: parsedDate?.value ?? 0,
-			year: parsedDate?.year ?? 0
-		});
+		items.push(parseDate(doc));
 	}
 
 	items.sort((a, b) => b.date - a.date);
