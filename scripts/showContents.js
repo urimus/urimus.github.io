@@ -295,15 +295,14 @@ function correctPadding(element) {
 	const span = cell.querySelector("span");
 
 	if (span) {
-		span.style.paddingLeft = "10px";
+		span.style.padding = "0 10px";
 		return;
 	}
 
 	const wrapper = cell.ownerDocument.createElement("span");
-	wrapper.style.paddingLeft = "10px";
+	wrapper.style.padding = "0 10px";
 	wrapper.append(...cell.childNodes);
 	cell.appendChild(wrapper);
-
 }
 
 function sortByFlag(docs, textColor) {
