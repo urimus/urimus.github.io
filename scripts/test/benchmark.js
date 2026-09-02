@@ -77,13 +77,13 @@ function getStatistics(perf) {
 
 	return {
 		count: perf.count,
-		total: perf.total.toFixed(2) + " ms",
-		"avg = total / count": (perf.total / perf.count).toFixed(4) + " ms",
-		median: percentile(0.50).toFixed(4) + " ms",
-		p95: percentile(0.95).toFixed(4) + " ms",
-		p99: percentile(0.99).toFixed(4) + " ms",
-		min: perf.min.toFixed(4) + " ms",
-		max: perf.max.toFixed(4) + " ms"
+		total: perf.total.toFixed(1) + " ms",
+		average: (perf.total / perf.count).toFixed(4) + " ms",
+		median: percentile(0.50).toFixed(1) + " ms",
+		p95: percentile(0.95).toFixed(1) + " ms",
+		p99: percentile(0.99).toFixed(1) + " ms",
+		min: perf.min.toFixed(1) + " ms",
+		max: perf.max.toFixed(1) + " ms"
 	};
 }
 
@@ -99,7 +99,6 @@ function testSummary(summaryDiv) {
 	console.log(
 		`Modify Summary Speed Test Started: ${TEST_COUNT} texts.`
 	);
-
 
 	// =========================================================
 	// PERFORMANCE DATA
@@ -129,7 +128,6 @@ function testSummary(summaryDiv) {
 		times: []
 	};
 
-
 	// =========================================================
 	// TEST TEXT GENERATION
 	// =========================================================
@@ -154,7 +152,6 @@ function testSummary(summaryDiv) {
 			words: words
 		};
 	}
-
 
 	// =========================================================
 	// ALGORITHM 1
@@ -195,7 +192,6 @@ function testSummary(summaryDiv) {
 		addPerf(perf1, time);
 	}
 
-
 	// =========================================================
 	// ALGORITHM 2
 	// =========================================================
@@ -234,7 +230,6 @@ function testSummary(summaryDiv) {
 
 		addPerf(perf2, time);
 	}
-
 
 	// =========================================================
 	// ONE BY ONE
@@ -275,7 +270,6 @@ function testSummary(summaryDiv) {
 		addPerf(perf3, time);
 	}
 
-
 	// =========================================================
 	// RUN BENCHMARK
 	// =========================================================
@@ -302,7 +296,6 @@ function testSummary(summaryDiv) {
 
 		const summary_words =
 			data.words;
-
 
 		// -----------------------------------------------------
 		// Random order for all three algorithms.
@@ -345,7 +338,6 @@ function testSummary(summaryDiv) {
 	const testTime =
 		performance.now() - testStart;
 
-
 	// =========================================================
 	// STATISTICS
 	// =========================================================
@@ -365,7 +357,6 @@ function testSummary(summaryDiv) {
 
 	const totalAverageTime =
 		avg1 + avg2 + avg3;
-
 
 	// ---------------------------------------------------------
 	// Base statistics for each algorithm.
@@ -413,7 +404,6 @@ function testSummary(summaryDiv) {
 		"One By One": statistics3
 	});
 
-
 	// =========================================================
 	// RESULT
 	// =========================================================
@@ -459,7 +449,6 @@ function testSummary(summaryDiv) {
 		};
 	}
 
-
 	const comparison12 =
 		compareAlgorithms(
 			avg1,
@@ -483,7 +472,6 @@ function testSummary(summaryDiv) {
 			"Alg 2",
 			"One By One"
 		);
-
 
 	console.log("=== RESULT ===");
 
