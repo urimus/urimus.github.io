@@ -336,7 +336,7 @@ function modifySummaryOneByOne(
 
 	let wordsCount = 1;
 	let linesCount = 1;
-	let lastLineStartWord = 0;
+	let lastLineStartWord = 1;
 
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
@@ -345,7 +345,7 @@ function modifySummaryOneByOne(
 
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			element2.innerHTML = summary + "    ";
+			element2.innerHTML = summary + " ";
 			this.innerHTML = "[▲▲▲]";
 			this.dataset.expanded = "true";
 		} else {
@@ -362,11 +362,11 @@ function modifySummaryOneByOne(
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
 
-	element2.innerHTML = formatSummary(words_arr, 1);
+	element2.innerHTML = formatSummary(words_arr, 1, false);
 	let currentLineTop = pointer.offsetTop;
 
 	for (let k = 1; k < words_arr.length; k++) {
-		element2.innerHTML = formatSummary(words_arr, k + 1);
+		element2.innerHTML = formatSummary(words_arr, k + 1, false);
 
 		if (pointer.offsetTop !== currentLineTop) {
 
