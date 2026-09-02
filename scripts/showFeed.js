@@ -556,13 +556,20 @@ function formatSummaryDiv(summaryDiv, entry) {
 	}
 	entry_summary = summary_words.join(" ");
 
+	if (testComplete) { // change to !testComplete to execute
+		summaryDiv.innerHTML = "";
+		let summarySpan = document.createElement('span');
+		summarySpan.setAttribute('class', "text_red");
+		summarySpan.style.overflowWrap = "anywhere";
+		summaryDiv.appendChild(summarySpan);
+		testSummary(summaryDiv);
+	}
+
 	summaryDiv.innerHTML = "";
 	let summarySpan = document.createElement('span');
 	summarySpan.setAttribute('class', "text_red");
 	summarySpan.style.overflowWrap = "anywhere";
 	summaryDiv.appendChild(summarySpan);
-
-//	testSummary(summaryDiv);
 	modifySummary(summaryDiv, summarySpan, entry_summary, summary_words, "red", 4);
 
 	adjustFeedScrollDiv();
