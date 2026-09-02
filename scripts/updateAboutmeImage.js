@@ -195,7 +195,10 @@ function updateAboutMeImage3(lang, i) {
 			descSpan.setAttribute('class', "text_blue");
 			descSpan.style.overflowWrap = "anywhere";
 			descDiv.appendChild(descSpan);
-			modifySummary(descDiv, descSpan, item_description, description_words, "blue", 4);
+
+			const algorithms = [modifySummary, modifySummary2, modifySummaryOneByOne];
+			const algorithm = algorithms[Math.floor(Math.random() * algorithms.length)];
+			algorithm(descDiv, descSpan, item_description, description_words, "blue", 4);
 		}
 		adjustScrollDiv();
 	}

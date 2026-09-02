@@ -176,13 +176,16 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
 	extensionA.setAttribute("class", "standardb_" + col);
+	extensionA.dataset.expanded = "false";
 	extensionA.onclick = function () {
-		if (this.innerHTML === "[▼]") {
+		if (this.dataset.expanded === "false") {
 			element2.innerHTML = summary + " ";
 			this.innerHTML = "[▲]";
-		} else if (this.innerHTML === "[▲]") {
+			this.dataset.expanded = "true";
+		} else {
 			element2.innerHTML = formatSummary(words_arr, wordsCount);
 			this.innerHTML = "[▼]";
+			this.dataset.expanded = "false";
 		}
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
@@ -206,4 +209,222 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 		}
 	}
 	element2.innerHTML = formatSummary(words_arr, wordsCount);
+}
+
+// =========================================================
+// OTHER ALGORITHMS
+// =========================================================
+
+// ---------------------------------------------------------
+// Algorithm 2
+// ---------------------------------------------------------
+
+function formatSummary2(words_arr, wordsCount, addSpace = true) {
+	const pointersClass = "summary_word_pointer";
+
+	return words_arr
+		.slice(0, wordsCount)
+		.map(word => {
+			return word + '<span class="' + pointersClass + '"></span>';
+		})
+		.join(" ") + (addSpace ? " " : "");;
+}
+
+
+function getLineInfo2(element, linesToShow) {
+	const pointers = element.getElementsByClassName("summary_word_pointer");
+	const lines = new Set();
+
+	for (const pointer of pointers) {
+		const top = pointer.offsetTop;
+
+		if (!lines.has(top)) {
+			lines.add(top);
+
+			if (lines.size > linesToShow) {
+				return {
+					fitsLinesToShow: false,
+					fitsLinesToShowM1: false
+				};
+			}
+		}
+	}
+
+	return {
+		fitsLinesToShow: true,
+		fitsLinesToShowM1: lines.size <= linesToShow - 1
+	};
+}
+
+function modifySummary2(element, element2, summary, words_arr, col = "blue", linesToShow = 4) {
+	if (!words_arr.length) return;
+
+	// Estimate the likely result to start exponential search.
+	const estimatedResult = linesToShow * 10;
+
+	let wordsCount = 1;
+	let left;
+	let right = words_arr.length;
+	let current = Math.min(estimatedResult, right);
+	let lastSuccessfulLinesToShowM1 = 0;
+
+	// Exponential search.
+	while (true) {
+		element2.innerHTML = formatSummary2(words_arr, current, false);
+		const result = getLineInfo2(element, linesToShow);
+		if (!result.fitsLinesToShow) break;
+		wordsCount = current;
+		if (result.fitsLinesToShowM1) {
+			lastSuccessfulLinesToShowM1 = current;
+		}
+		// The entire summary fits.
+		if (current === right) return;
+		current = Math.min(current * 2, right);
+	}
+
+	const extensionA = document.createElement("a");
+	extensionA.setAttribute("href", "javascript:void(0);");
+	extensionA.setAttribute("class", "standardb_" + col + " summary_word_pointer");
+	extensionA.dataset.expanded = "false";
+	extensionA.onclick = function () {
+		if (this.dataset.expanded === "false") {
+			element2.innerHTML = summary + " ";
+			this.innerHTML = "[△]";
+			this.dataset.expanded = "true";
+		} else {
+			element2.innerHTML = formatSummary(words_arr, wordsCount);
+			this.innerHTML = "[▽]";
+			this.dataset.expanded = "false";
+		}
+		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
+	};
+	extensionA.innerHTML = "[▽]";
+	element.appendChild(extensionA);
+
+	// Binary search bounds.
+	left = Math.max(2, lastSuccessfulLinesToShowM1 + 1);
+	right = current - 1;
+
+	// Binary search.
+	while (left <= right) {
+		const middle = Math.floor((left + right) / 2);
+		element2.innerHTML = formatSummary2(words_arr, middle);
+		const result = getLineInfo2(element, linesToShow);
+		if (result.fitsLinesToShow) {
+			wordsCount = middle;
+			left = middle + 1;
+		} else {
+			right = middle - 1;
+		}
+	}
+	element2.innerHTML = formatSummary(words_arr, wordsCount);
+}
+
+// ---------------------------------------------------------
+// One By One
+// ---------------------------------------------------------
+
+function modifySummaryOneByOne(
+	element,
+	element2,
+	summary,
+	words_arr,
+	col = "blue",
+	linesToShow = 4
+) {
+	if (!words_arr.length) return;
+
+	let wordsCount = 0;
+	let currentLineTop = 0;
+	let linesCount = 1;
+	let lastLineStartWord = 0;
+
+	const extensionA = document.createElement("a");
+	extensionA.setAttribute("href", "javascript:void(0);");
+	extensionA.setAttribute("class", "standardb_" + col);
+	extensionA.dataset.expanded = "false";
+	extensionA.onclick = function () {
+		if (this.dataset.expanded === "false") {
+			element2.innerHTML = summary + "    ";
+			this.innerHTML = "[▴]";
+			this.dataset.expanded = "true";
+		} else {
+			element2.innerHTML = formatSummary(words_arr, wordsCount);
+			this.innerHTML = "[▾]";
+			this.dataset.expanded = "false";
+		}
+		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
+	};
+	extensionA.innerHTML = "[▾]";
+
+	const pointer = document.createElement("a");
+	element.appendChild(pointer);
+
+	for (let k = 0; k < words_arr.length; k++) {
+		element2.innerHTML = formatSummary(words_arr, k + 1);
+
+		if (k === 0) {
+			currentLineTop = pointer.offsetTop;
+		}
+
+		if (pointer.offsetTop !== currentLineTop) {
+			if (Math.abs(pointer.offsetTop - currentLineTop) < 2) {
+				currentLineTop = pointer.offsetTop;
+				continue;
+			}
+
+			if (linesCount === linesToShow) {
+				element2.innerHTML = "";
+				element.removeChild(pointer);
+				element.appendChild(extensionA);
+
+				wordsCount = lastLineStartWord;
+				element2.innerHTML = formatSummary(words_arr, wordsCount);
+				currentLineTop = extensionA.offsetTop;
+
+				for (let k2 = lastLineStartWord; k2 < words_arr.length; k2++) {
+					wordsCount++;
+					element2.innerHTML = formatSummary(words_arr, wordsCount);
+
+					if (extensionA.offsetTop !== currentLineTop) {
+						if (Math.abs(extensionA.offsetTop - currentLineTop) < 2) {
+							currentLineTop = extensionA.offsetTop;
+							continue;
+						}
+
+						if (linesCount === linesToShow) {
+							wordsCount--;
+							element2.innerHTML = formatSummary(words_arr, wordsCount);
+							break;
+						}
+
+						currentLineTop = extensionA.offsetTop;
+						linesCount++;
+					}
+				}
+
+				break;
+			}
+
+			lastLineStartWord = k;
+			currentLineTop = pointer.offsetTop;
+			linesCount++;
+		}
+	}
+
+	if (wordsCount === 0 && linesCount < linesToShow) {
+		element.removeChild(pointer);
+		element.appendChild(extensionA);
+		element2.innerHTML = summary;
+		return;
+	}
+
+	if (wordsCount === 0) {
+		element.removeChild(pointer);
+		element2.innerHTML = summary;
+		return;
+	}
+
+	element2.innerHTML = formatSummary(words_arr, wordsCount);
+	element.appendChild(extensionA);
 }
