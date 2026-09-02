@@ -334,8 +334,7 @@ function modifySummaryOneByOne(
 ) {
 	if (!words_arr.length) return;
 
-	let wordsCount = 0;
-	let currentLineTop = 0;
+	let wordsCount = 1;
 	let linesCount = 1;
 	let lastLineStartWord = 0;
 
@@ -343,6 +342,7 @@ function modifySummaryOneByOne(
 	extensionA.setAttribute("href", "javascript:void(0);");
 	extensionA.setAttribute("class", "standardb_" + col);
 	extensionA.dataset.expanded = "false";
+
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
 			element2.innerHTML = summary + "    ";
@@ -353,25 +353,22 @@ function modifySummaryOneByOne(
 			this.innerHTML = "[▼▼▼]";
 			this.dataset.expanded = "false";
 		}
+
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
+
 	extensionA.innerHTML = "[▼▼▼]";
 
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
 
-	for (let k = 0; k < words_arr.length; k++) {
+	element2.innerHTML = formatSummary(words_arr, 1);
+	let currentLineTop = pointer.offsetTop;
+
+	for (let k = 1; k < words_arr.length; k++) {
 		element2.innerHTML = formatSummary(words_arr, k + 1);
 
-		if (k === 0) {
-			currentLineTop = pointer.offsetTop;
-		}
-
 		if (pointer.offsetTop !== currentLineTop) {
-			if (Math.abs(pointer.offsetTop - currentLineTop) < 2) {
-				currentLineTop = pointer.offsetTop;
-				continue;
-			}
 
 			if (linesCount === linesToShow) {
 				element2.innerHTML = "";
@@ -380,6 +377,7 @@ function modifySummaryOneByOne(
 
 				wordsCount = lastLineStartWord;
 				element2.innerHTML = formatSummary(words_arr, wordsCount);
+
 				currentLineTop = extensionA.offsetTop;
 
 				for (let k2 = lastLineStartWord; k2 < words_arr.length; k2++) {
@@ -387,23 +385,13 @@ function modifySummaryOneByOne(
 					element2.innerHTML = formatSummary(words_arr, wordsCount);
 
 					if (extensionA.offsetTop !== currentLineTop) {
-						if (Math.abs(extensionA.offsetTop - currentLineTop) < 2) {
-							currentLineTop = extensionA.offsetTop;
-							continue;
-						}
-
-						if (linesCount === linesToShow) {
-							wordsCount--;
-							element2.innerHTML = formatSummary(words_arr, wordsCount);
-							break;
-						}
-
-						currentLineTop = extensionA.offsetTop;
-						linesCount++;
+						wordsCount--;
+						element2.innerHTML = formatSummary(words_arr, wordsCount);
+						break;
 					}
 				}
 
-				break;
+				return;
 			}
 
 			lastLineStartWord = k;
@@ -412,19 +400,7 @@ function modifySummaryOneByOne(
 		}
 	}
 
-	if (wordsCount === 0 && linesCount < linesToShow) {
-		element.removeChild(pointer);
-		element.appendChild(extensionA);
-		element2.innerHTML = summary;
-		return;
-	}
+	element.removeChild(pointer);
+	element2.innerHTML = summary;
 
-	if (wordsCount === 0) {
-		element.removeChild(pointer);
-		element2.innerHTML = summary;
-		return;
-	}
-
-	element2.innerHTML = formatSummary(words_arr, wordsCount);
-	element.appendChild(extensionA);
 }
