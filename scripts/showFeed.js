@@ -808,8 +808,9 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		let extensionImgA = document.createElement('a');
 		extensionImgA.setAttribute('href', "javascript:void(0);");
 		extensionImgA.setAttribute('class', 'standardb_red');
+		extensionImgA.dataset.expanded = "false";
 		extensionImgA.onclick = function () {
-			if (this.innerHTML == "[▼]") {
+			if (this.dataset.expanded === "false") {
 				for (let j = 0; j < entry.additMediaUrl.length; j++) {
 					let Img2 = document.createElement("img");
 					Img2.setAttribute('class', "text_red");
@@ -831,6 +832,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					imageDiv.appendChild(Img2);
 				}
 				this.innerHTML = "[▲]";
+				this.dataset.expanded = "true";
 				showMoreDiv.innerHTML = t("hide") + " " + entry.additMediaUrl.length + " " + t("more") + " ";
 				showMoreDiv.appendChild(this);
 
@@ -839,6 +841,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					imageDiv.removeChild(imageDiv.lastChild);
 				}
 				this.innerHTML = "[▼]";
+				this.dataset.expanded = "false";
 				showMoreDiv.innerHTML = t("show") + " " + entry.additMediaUrl.length + " " + t("more") + " ";
 				showMoreDiv.appendChild(this);
 			}
@@ -860,9 +863,9 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		let extensionVideoA = document.createElement('a');
 		extensionVideoA.setAttribute('href', "javascript:void(0);");
 		extensionVideoA.setAttribute('class', 'standardb_red');
+		extensionVideoA.dataset.expanded = "false";
 		extensionVideoA.onclick  = function () { 
-			// ▼- &#9660;   ▲- &#9650;
-			if (this.innerHTML=="[▼]") { // expand
+			if (this.dataset.expanded === "false") {
 				let cssText = 
 					'display:block;' +
 					'margin-bottom:5px;' +
@@ -916,11 +919,13 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					imageDiv.appendChild(video);
 				}
 				this.innerHTML="[▲]";
+				this.dataset.expanded = "true";
 				showMoreDiv.innerHTML = t("hide") + " " + t("video") + " ";
 				showMoreDiv.appendChild(this);
-			} else if (this.innerHTML=="[▲]") { // collapse
+			} else {
 				imageDiv.removeChild(imageDiv.lastChild);
 				this.innerHTML="[▼]";
+				this.dataset.expanded = "false";
 				showMoreDiv.innerHTML = t("show") + " " + t("video") + " ";
 				showMoreDiv.appendChild(this);
 			}
