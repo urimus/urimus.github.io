@@ -75,15 +75,30 @@ function getStatistics(perf) {
 		return sorted[Math.floor((sorted.length - 1) * p)];
 	}
 
+	function round(num, digits = 4) {
+		return Number(num.toFixed(digits));
+	}
+
+	const average = perf.total / perf.count;
+
+	// Population standard deviation
+	const variance = perf.times.reduce(
+		(sum, time) => sum + Math.pow(time - average, 2),
+		0
+	) / perf.count;
+
+	const standardDeviation = Math.sqrt(variance);
+
 	return {
 		count: perf.count,
-		total: perf.total.toFixed(1) + " ms",
-		average: (perf.total / perf.count).toFixed(4) + " ms",
-		median: percentile(0.50).toFixed(1) + " ms",
-		p95: percentile(0.95).toFixed(1) + " ms",
-		p99: percentile(0.99).toFixed(1) + " ms",
-		min: perf.min.toFixed(1) + " ms",
-		max: perf.max.toFixed(1) + " ms"
+		total: round(perf.total) + " ms",
+		average: round(average) + " ms",
+		median: round(percentile(0.50)) + " ms",
+		p95: round(percentile(0.95)) + " ms",
+		p99: round(percentile(0.99)) + " ms",
+		stdDev: round(standardDeviation) + " ms",
+		min: round(perf.min) + " ms",
+		max: round(perf.max) + " ms"
 	};
 }
 
