@@ -309,7 +309,9 @@ function testSummary(summaryDiv) {
 	const MIN_LINES = 1;
 	const MAX_LINES = 10;
 
-	console.log(`Modify Summary Speed Test Started: ${TEST_COUNT} texts.`);
+	console.log(
+		`Modify Summary Speed Test Started: ${TEST_COUNT} texts.`
+	);
 
 	const perf1 = {
 		count: 0,
@@ -337,7 +339,9 @@ function testSummary(summaryDiv) {
 
 	function generateTestText(linesToShow) {
 		const maxWords = linesToShow * 20;
-		const wordsCount = 1 + Math.floor(Math.random() * maxWords);
+		const wordsCount =
+			1 + Math.floor(Math.random() * maxWords);
+
 		const words = new Array(wordsCount);
 
 		for (let i = 0; i < wordsCount; i++) {
@@ -350,10 +354,15 @@ function testSummary(summaryDiv) {
 		};
 	}
 
-	function runAlgorithm1(entry_summary, summary_words, linesToShow) {
+	function runAlgorithm1(
+		entry_summary,
+		summary_words,
+		linesToShow
+	) {
 		summaryDiv.innerHTML = "";
 
 		const span = document.createElement("span");
+
 		span.setAttribute("class", "text_red");
 		span.style.overflowWrap = "anywhere";
 
@@ -375,10 +384,15 @@ function testSummary(summaryDiv) {
 		addPerf(perf1, time);
 	}
 
-	function runAlgorithm2(entry_summary, summary_words, linesToShow) {
+	function runAlgorithm2(
+		entry_summary,
+		summary_words,
+		linesToShow
+	) {
 		summaryDiv.innerHTML = "";
 
 		const span = document.createElement("span");
+
 		span.setAttribute("class", "text_red");
 		span.style.overflowWrap = "anywhere";
 
@@ -400,10 +414,15 @@ function testSummary(summaryDiv) {
 		addPerf(perf2, time);
 	}
 
-	function runAlgorithm3(entry_summary, summary_words, linesToShow) {
+	function runAlgorithm3(
+		entry_summary,
+		summary_words,
+		linesToShow
+	) {
 		summaryDiv.innerHTML = "";
 
 		const span = document.createElement("span");
+
 		span.setAttribute("class", "text_red");
 		span.style.overflowWrap = "anywhere";
 
@@ -431,7 +450,8 @@ function testSummary(summaryDiv) {
 		const linesToShow =
 			MIN_LINES +
 			Math.floor(
-				Math.random() * (MAX_LINES - MIN_LINES + 1)
+				Math.random() *
+				(MAX_LINES - MIN_LINES + 1)
 			);
 
 		const data = generateTestText(linesToShow);
@@ -449,8 +469,13 @@ function testSummary(summaryDiv) {
 		for (let i = algorithms.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
 
-			[algorithms[i], algorithms[j]] =
-				[algorithms[j], algorithms[i]];
+			[
+				algorithms[i],
+				algorithms[j]
+			] = [
+				algorithms[j],
+				algorithms[i]
+			];
 		}
 
 		for (const algorithm of algorithms) {
@@ -464,13 +489,50 @@ function testSummary(summaryDiv) {
 
 	const testTime = performance.now() - testStart;
 
+
 	// =========================================================
 	// STATISTICS
 	// =========================================================
 
-	const statistics1 = getStatistics(perf1);
-	const statistics2 = getStatistics(perf2);
-	const statistics3 = getStatistics(perf3);
+	const avg1 = perf1.total / perf1.count;
+	const avg2 = perf2.total / perf2.count;
+	const avg3 = perf3.total / perf3.count;
+
+	const totalAverageTime =
+		avg1 + avg2 + avg3;
+
+	const statistics1 = {
+		...getStatistics(perf1),
+
+		"average time share":
+			(
+				avg1 /
+				totalAverageTime *
+				100
+			).toFixed(2) + "%"
+	};
+
+	const statistics2 = {
+		...getStatistics(perf2),
+
+		"average time share":
+			(
+				avg2 /
+				totalAverageTime *
+				100
+			).toFixed(2) + "%"
+	};
+
+	const statistics3 = {
+		...getStatistics(perf3),
+
+		"average time share":
+			(
+				avg3 /
+				totalAverageTime *
+				100
+			).toFixed(2) + "%"
+	};
 
 	console.log("=== STATISTICS ===");
 
@@ -480,133 +542,63 @@ function testSummary(summaryDiv) {
 		"One By One": statistics3
 	});
 
+
 	// =========================================================
-	// RESULT: Alg 1 vs Alg 2
+	// RESULT
 	// =========================================================
 
-	const avg1 = perf1.total / perf1.count;
-	const avg2 = perf2.total / perf2.count;
-	const avg3 = perf3.total / perf3.count;
+	function compareAlgorithms(avgA, avgB) {
+		return {
+			averageDifference:
+				(avgA - avgB).toFixed(4) + " ms",
 
-	// ---------------------------------------------------------
-	// Alg 1 vs Alg 2
-	// ---------------------------------------------------------
+			speedup:
+				(
+					Math.max(avgA, avgB) /
+					Math.min(avgA, avgB)
+				).toFixed(2) + "x"
+		};
+	}
 
-	const differenceTotal12 = perf1.total - perf2.total;
-	const differenceAverage12 = avg1 - avg2;
+	const comparison12 =
+		compareAlgorithms(avg1, avg2);
 
-	const averageTimeTotal12 = avg1 + avg2;
+	const comparison13 =
+		compareAlgorithms(avg1, avg3);
 
-	const averageTimeShare1_12 =
-		avg1 / averageTimeTotal12 * 100;
+	const comparison23 =
+		compareAlgorithms(avg2, avg3);
 
-	const averageTimeShare2_12 =
-		avg2 / averageTimeTotal12 * 100;
-
-	const totalTime12 = perf1.total + perf2.total;
-
-	const totalTimeShare1_12 =
-		perf1.total / totalTime12 * 100;
-
-	const totalTimeShare2_12 =
-		perf2.total / totalTime12 * 100;
-
-	const averageSpeedup12 =
-		Math.max(avg1, avg2) /
-		Math.min(avg1, avg2);
-
-	console.log("=== RESULT: Alg 1 vs Alg 2 ===");
+	console.log("=== RESULT ===");
 
 	console.table({
-		"Alg 1": {
-			count: perf1.count,
-			total: perf1.total.toFixed(2) + " ms",
-			"total time share":
-				totalTimeShare1_12.toFixed(2) + "%",
-			average: avg1.toFixed(4) + " ms",
-			"average time share":
-				averageTimeShare1_12.toFixed(2) + "%"
-		},
+		"Average Difference": {
+			"Alg 1 - Alg 2":
+				comparison12.averageDifference,
 
-		"Alg 2": {
-			count: perf2.count,
-			total: perf2.total.toFixed(2) + " ms",
-			"total time share":
-				totalTimeShare2_12.toFixed(2) + "%",
-			average: avg2.toFixed(4) + " ms",
-			"average time share":
-				averageTimeShare2_12.toFixed(2) + "%"
-		},
+			"Alg 1 - One By One":
+				comparison13.averageDifference,
 
-		"Difference": {
-			total: differenceTotal12.toFixed(2) + " ms",
-			average: differenceAverage12.toFixed(4) + " ms"
+			"Alg 2 - One By One":
+				comparison23.averageDifference
 		},
 
 		"Speedup": {
-			average: averageSpeedup12.toFixed(2) + "x"
+			"Alg 1 - Alg 2":
+				comparison12.speedup,
+
+			"Alg 1 - One By One":
+				comparison13.speedup,
+
+			"Alg 2 - One By One":
+				comparison23.speedup
 		}
 	});
 
+
 	// =========================================================
-	// RESULT: Alg 1 vs One By One
+	// COMPLETE
 	// =========================================================
-
-	const differenceTotal13 = perf1.total - perf3.total;
-	const differenceAverage13 = avg1 - avg3;
-
-	const averageTimeTotal13 = avg1 + avg3;
-
-	const averageTimeShare1_13 =
-		avg1 / averageTimeTotal13 * 100;
-
-	const averageTimeShare3_13 =
-		avg3 / averageTimeTotal13 * 100;
-
-	const totalTime13 = perf1.total + perf3.total;
-
-	const totalTimeShare1_13 =
-		perf1.total / totalTime13 * 100;
-
-	const totalTimeShare3_13 =
-		perf3.total / totalTime13 * 100;
-
-	const averageSpeedup13 =
-		Math.max(avg1, avg3) /
-		Math.min(avg1, avg3);
-
-	console.log("=== RESULT: Alg 1 vs One By One ===");
-
-	console.table({
-		"Alg 1": {
-			count: perf1.count,
-			total: perf1.total.toFixed(2) + " ms",
-			"total time share":
-				totalTimeShare1_13.toFixed(2) + "%",
-			average: avg1.toFixed(4) + " ms",
-			"average time share":
-				averageTimeShare1_13.toFixed(2) + "%"
-		},
-
-		"One By One": {
-			count: perf3.count,
-			total: perf3.total.toFixed(2) + " ms",
-			"total time share":
-				totalTimeShare3_13.toFixed(2) + "%",
-			average: avg3.toFixed(4) + " ms",
-			"average time share":
-				averageTimeShare3_13.toFixed(2) + "%"
-		},
-
-		"Difference": {
-			total: differenceTotal13.toFixed(2) + " ms",
-			average: differenceAverage13.toFixed(4) + " ms"
-		},
-
-		"Speedup": {
-			average: averageSpeedup13.toFixed(2) + "x"
-		}
-	});
 
 	console.log(
 		`Modify Summary Speed Test Completed. Duration: ${testTime.toFixed(2)} ms.`
