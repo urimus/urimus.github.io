@@ -522,7 +522,7 @@ function processPageResize(lang) {
 	}
 
 	if (scrollDiv != null) {
-		if (!lang) {
+		if (!lang) { // not load
 			if (page.startsWith("/news")) {
 				let feedTable = document.getElementById('feedtable');
 				if (feedTable != null && feedTable.innerHTML != "") adjustFeedScrollDiv();
@@ -532,7 +532,7 @@ function processPageResize(lang) {
 			} else {
 				adjustScrollDiv();
 			}
-		} else {
+		} else { // load
 			if (!(page.startsWith("/html_editor") || page.startsWith("/site_map") || page.startsWith("/news"))) {
 				adjustScrollDiv();
 			}
