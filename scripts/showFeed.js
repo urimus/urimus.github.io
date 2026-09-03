@@ -561,11 +561,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	}
 
 	summaryDiv.innerHTML = "";
-	let summarySpan = document.createElement('span');
-	summarySpan.setAttribute('class', "text_red");
-	summarySpan.style.overflowWrap = "anywhere";
-	summaryDiv.appendChild(summarySpan);
-	modifySummary(summaryDiv, summarySpan, entry_summary, summary_words, "red", 4);
+	modifySummary(summaryDiv, entry_summary, summary_words, "red", 4);
 
 	adjustFeedScrollDiv();
 }
@@ -1499,7 +1495,7 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 			if (source == "artemis") {
 				if (!data || typeof data !== "object" || data.message !== "fetch news event is successful.") {
 					showFeedError("API Parse Error: Invalid API Response", feedURL, lang);
-					adjustScrollDiv();
+					adjustFeedScrollDiv();
 					return;
 				}
 				result = data;
@@ -1512,7 +1508,7 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 					result = json.rss.channel;
 				} catch (e) {
    					showFeedError("XML Parse Error: " + e.message, feedURL, lang);
-					adjustScrollDiv();
+					adjustFeedScrollDiv();
 					return;
 				}
 			}

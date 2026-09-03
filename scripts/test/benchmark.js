@@ -172,38 +172,12 @@ function testSummary(summaryDiv) {
 	// ALGORITHM 1
 	// =========================================================
 
-	function runAlgorithm1(
-		entry_summary,
-		summary_words,
-		linesToShow
-	) {
+	function runAlgorithm1(entry_summary, summary_words, linesToShow	) {
+
 		summaryDiv.innerHTML = "";
-
-		const span = document.createElement("span");
-
-		span.setAttribute(
-			"class",
-			"text_red"
-		);
-
-		span.style.overflowWrap = "anywhere";
-
-		summaryDiv.appendChild(span);
-
 		const start = performance.now();
-
-		modifySummary(
-			summaryDiv,
-			span,
-			entry_summary,
-			summary_words,
-			"red",
-			linesToShow
-		);
-
-		const time =
-			performance.now() - start;
-
+		modifySummary(summaryDiv, entry_summary, summary_words, "red", linesToShow);
+		const time = performance.now() - start;
 		addPerf(perf1, time);
 	}
 
@@ -211,38 +185,12 @@ function testSummary(summaryDiv) {
 	// ALGORITHM 2
 	// =========================================================
 
-	function runAlgorithm2(
-		entry_summary,
-		summary_words,
-		linesToShow
-	) {
+	function runAlgorithm2(entry_summary, summary_words, linesToShow) {
+
 		summaryDiv.innerHTML = "";
-
-		const span = document.createElement("span");
-
-		span.setAttribute(
-			"class",
-			"text_red"
-		);
-
-		span.style.overflowWrap = "anywhere";
-
-		summaryDiv.appendChild(span);
-
 		const start = performance.now();
-
-		modifySummary2(
-			summaryDiv,
-			span,
-			entry_summary,
-			summary_words,
-			"red",
-			linesToShow
-		);
-
-		const time =
-			performance.now() - start;
-
+		modifySummary2(summaryDiv, entry_summary, summary_words, "red", linesToShow);
+		const time = performance.now() - start;
 		addPerf(perf2, time);
 	}
 
@@ -250,38 +198,12 @@ function testSummary(summaryDiv) {
 	// ONE BY ONE
 	// =========================================================
 
-	function runAlgorithm3(
-		entry_summary,
-		summary_words,
-		linesToShow
-	) {
+	function runAlgorithm3(entry_summary, summary_words, linesToShow) {
+
 		summaryDiv.innerHTML = "";
-
-		const span = document.createElement("span");
-
-		span.setAttribute(
-			"class",
-			"text_red"
-		);
-
-		span.style.overflowWrap = "anywhere";
-
-		summaryDiv.appendChild(span);
-
 		const start = performance.now();
-
-		modifySummaryOneByOne(
-			summaryDiv,
-			span,
-			entry_summary,
-			summary_words,
-			"red",
-			linesToShow
-		);
-
-		const time =
-			performance.now() - start;
-
+		modifySummaryOneByOne(summaryDiv, entry_summary, summary_words, "red", linesToShow);
+		const time = performance.now() - start;
 		addPerf(perf3, time);
 	}
 
@@ -291,11 +213,7 @@ function testSummary(summaryDiv) {
 
 	const testStart = performance.now();
 
-	for (
-		let test = 0;
-		test < TEST_COUNT;
-		test++
-	) {
+	for (let test = 0; test < TEST_COUNT; test++) {
 		const linesToShow =
 			MIN_LINES +
 			Math.floor(
@@ -303,75 +221,37 @@ function testSummary(summaryDiv) {
 				(MAX_LINES - MIN_LINES + 1)
 			);
 
-		const data =
-			generateTestText(linesToShow);
-
-		const entry_summary =
-			data.summary;
-
-		const summary_words =
-			data.words;
+		const data = generateTestText(linesToShow);
+		const entry_summary = data.summary;
+		const summary_words = data.words;
 
 		// -----------------------------------------------------
 		// Random order for all three algorithms.
 		// -----------------------------------------------------
 
-		const algorithms = [
-			runAlgorithm1,
-			runAlgorithm2,
-			runAlgorithm3
-		];
+		const algorithms = [runAlgorithm1, runAlgorithm2, runAlgorithm3];
 
-		for (
-			let i = algorithms.length - 1;
-			i > 0;
-			i--
-		) {
-			const j =
-				Math.floor(
-					Math.random() * (i + 1)
-				);
-
-			[
-				algorithms[i],
-				algorithms[j]
-			] = [
-				algorithms[j],
-				algorithms[i]
-			];
+		for (let i = algorithms.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[algorithms[i], algorithms[j]] = [algorithms[j], algorithms[i]];
 		}
 
 		for (const algorithm of algorithms) {
-			algorithm(
-				entry_summary,
-				summary_words,
-				linesToShow
-			);
+			algorithm(entry_summary, summary_words, linesToShow);
 		}
 	}
 
-	const testTime =
-		performance.now() - testStart;
+	const testTime = performance.now() - testStart;
 
 	// =========================================================
 	// STATISTICS
 	// =========================================================
 
-	const avg1 =
-		perf1.total / perf1.count;
+	const avg1 = perf1.total / perf1.count;
+	const avg2 = perf2.total / perf2.count;
+	const avg3 = perf3.total / perf3.count;
 
-	const avg2 =
-		perf2.total / perf2.count;
-
-	const avg3 =
-		perf3.total / perf3.count;
-
-
-	// Sum of average execution times.
-	// Used only to calculate average time share.
-
-	const totalAverageTime =
-		avg1 + avg2 + avg3;
+	const totalAverageTime = avg1 + avg2 + avg3;
 
 	// ---------------------------------------------------------
 	// Base statistics for each algorithm.
@@ -379,37 +259,16 @@ function testSummary(summaryDiv) {
 
 	const statistics1 = {
 		...getStatistics(perf1),
-
-		"average time share":
-			(
-				avg1 /
-				totalAverageTime *
-				100
-			).toFixed(2) + "%"
+		"average time share": (avg1 / totalAverageTime * 100).toFixed(2) + "%"
 	};
-
 	const statistics2 = {
 		...getStatistics(perf2),
-
-		"average time share":
-			(
-				avg2 /
-				totalAverageTime *
-				100
-			).toFixed(2) + "%"
+		"average time share": (avg2 / totalAverageTime * 100).toFixed(2) + "%"
 	};
-
 	const statistics3 = {
 		...getStatistics(perf3),
-
-		"average time share":
-			(
-				avg3 /
-				totalAverageTime *
-				100
-			).toFixed(2) + "%"
+		"average time share": (avg3 / totalAverageTime * 100).toFixed(2) + "%"
 	};
-
 
 	console.log("=== STATISTICS ===");
 
@@ -423,14 +282,9 @@ function testSummary(summaryDiv) {
 	// RESULT
 	// =========================================================
 
-	function compareAlgorithms(
-		avgA,
-		avgB,
-		nameA,
-		nameB
-	) {
-		const difference =
-			Math.abs(avgA - avgB);
+	function compareAlgorithms(avgA, avgB, nameA, nameB) {
+
+		const difference = Math.abs(avgA - avgB);
 
 		let faster;
 		let slower;
@@ -450,55 +304,23 @@ function testSummary(summaryDiv) {
 		}
 
 		return {
-			"Faster":
-				faster,
-
-			"Slower":
-				slower,
-
-			"Average Difference":
-				difference.toFixed(4) + " ms",
-
-			"Speedup":
-				(slowerAvg / fasterAvg).toFixed(2) + "x"
+			"Faster": faster,
+			"Slower": slower,
+			"Average Difference": difference.toFixed(4) + " ms",
+			"Speedup": (slowerAvg / fasterAvg).toFixed(2) + "x"
 		};
 	}
 
-	const comparison12 =
-		compareAlgorithms(
-			avg1,
-			avg2,
-			"Alg 1",
-			"Alg 2"
-		);
-
-	const comparison13 =
-		compareAlgorithms(
-			avg1,
-			avg3,
-			"Alg 1",
-			"One By One"
-		);
-
-	const comparison23 =
-		compareAlgorithms(
-			avg2,
-			avg3,
-			"Alg 2",
-			"One By One"
-		);
+	const comparison12 = compareAlgorithms(avg1, avg2, "Alg 1", "Alg 2");
+	const comparison13 = compareAlgorithms(avg1, avg3, "Alg 1", "One By One");
+	const comparison23 = compareAlgorithms(avg2, avg3, "Alg 2", "One By One");
 
 	console.log("=== RESULT ===");
 
 	console.table({
-		"Alg 1 ↔ Alg 2":
-			comparison12,
-
-		"Alg 1 ↔ One By One":
-			comparison13,
-
-		"Alg 2 ↔ One By One":
-			comparison23
+		"Alg 1 ↔ Alg 2": comparison12,
+		"Alg 1 ↔ One By One": comparison13,
+		"Alg 2 ↔ One By One": comparison23
 	});
 
 	// =========================================================

@@ -144,8 +144,13 @@ function getLineInfo(element, linesToShow) {
 	};
 }
 
-function modifySummary(element, element2, summary, words_arr, col = "blue", linesToShow = 4) {
+function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 4) {
 	if (!words_arr.length) return;
+
+	let span = document.createElement('span');
+	span.setAttribute('class', "text_" + col);
+	span.style.overflowWrap = "anywhere";
+	element.appendChild(span);
 
 	// Estimate the likely result to start exponential search.
 	const estimatedResult = linesToShow * 10;
@@ -161,7 +166,7 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 
 	// Exponential search.
 	while (true) {
-		element2.innerHTML = formatSummary(words_arr, current, false);
+		span.innerHTML = formatSummary(words_arr, current, false);
 		const result = getLineInfo(element, linesToShow);
 		if (!result.fitsLinesToShow) break;
 		wordsCount = current;
@@ -179,11 +184,11 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	extensionA.dataset.expanded = "false";
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			element2.innerHTML = summary + " ";
+			span.innerHTML = summary + " ";
 			this.innerHTML = "[▲]";
 			this.dataset.expanded = "true";
 		} else {
-			element2.innerHTML = formatSummary(words_arr, wordsCount);
+			span.innerHTML = formatSummary(words_arr, wordsCount);
 			this.innerHTML = "[▼]";
 			this.dataset.expanded = "false";
 		}
@@ -199,7 +204,7 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 	// Binary search.
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
-		element2.innerHTML = formatSummary(words_arr, middle);
+		span.innerHTML = formatSummary(words_arr, middle);
 		const result = getLineInfo(element, linesToShow);
 		if (result.fitsLinesToShow) {
 			wordsCount = middle;
@@ -208,7 +213,7 @@ function modifySummary(element, element2, summary, words_arr, col = "blue", line
 			right = middle - 1;
 		}
 	}
-	element2.innerHTML = formatSummary(words_arr, wordsCount);
+	span.innerHTML = formatSummary(words_arr, wordsCount);
 }
 
 // =========================================================
@@ -256,8 +261,13 @@ function getLineInfo2(element, linesToShow) {
 	};
 }
 
-function modifySummary2(element, element2, summary, words_arr, col = "blue", linesToShow = 4) {
+function modifySummary2(element, summary, words_arr, col = "blue", linesToShow = 4) {
 	if (!words_arr.length) return;
+
+	let span = document.createElement('span');
+	span.setAttribute('class', "text_" + col);
+	span.style.overflowWrap = "anywhere";
+	element.appendChild(span);
 
 	// Estimate the likely result to start exponential search.
 	const estimatedResult = linesToShow * 10;
@@ -270,7 +280,7 @@ function modifySummary2(element, element2, summary, words_arr, col = "blue", lin
 
 	// Exponential search.
 	while (true) {
-		element2.innerHTML = formatSummary2(words_arr, current, false);
+		span.innerHTML = formatSummary2(words_arr, current, false);
 		const result = getLineInfo2(element, linesToShow);
 		if (!result.fitsLinesToShow) break;
 		wordsCount = current;
@@ -288,11 +298,11 @@ function modifySummary2(element, element2, summary, words_arr, col = "blue", lin
 	extensionA.dataset.expanded = "false";
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			element2.innerHTML = summary + " ";
+			span.innerHTML = summary + " ";
 			this.innerHTML = "[▲▲]";
 			this.dataset.expanded = "true";
 		} else {
-			element2.innerHTML = formatSummary(words_arr, wordsCount);
+			span.innerHTML = formatSummary(words_arr, wordsCount);
 			this.innerHTML = "[▼▼]";
 			this.dataset.expanded = "false";
 		}
@@ -308,7 +318,7 @@ function modifySummary2(element, element2, summary, words_arr, col = "blue", lin
 	// Binary search.
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
-		element2.innerHTML = formatSummary2(words_arr, middle);
+		span.innerHTML = formatSummary2(words_arr, middle);
 		const result = getLineInfo2(element, linesToShow);
 		if (result.fitsLinesToShow) {
 			wordsCount = middle;
@@ -317,22 +327,20 @@ function modifySummary2(element, element2, summary, words_arr, col = "blue", lin
 			right = middle - 1;
 		}
 	}
-	element2.innerHTML = formatSummary(words_arr, wordsCount);
+	span.innerHTML = formatSummary(words_arr, wordsCount);
 }
 
 // ---------------------------------------------------------
 // One By One
 // ---------------------------------------------------------
 
-function modifySummaryOneByOne(
-	element,
-	element2,
-	summary,
-	words_arr,
-	col = "blue",
-	linesToShow = 4
-) {
+function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesToShow = 4) {
 	if (!words_arr.length) return;
+
+	let span = document.createElement('span');
+	span.setAttribute('class', "text_" + col);
+	span.style.overflowWrap = "anywhere";
+	element.appendChild(span);
 
 	let wordsCount = 1;
 	let linesCount = 1;
@@ -345,11 +353,11 @@ function modifySummaryOneByOne(
 
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			element2.innerHTML = summary + " ";
+			span.innerHTML = summary + " ";
 			this.innerHTML = "[▲▲▲]";
 			this.dataset.expanded = "true";
 		} else {
-			element2.innerHTML = formatSummary(words_arr, wordsCount);
+			span.innerHTML = formatSummary(words_arr, wordsCount);
 			this.innerHTML = "[▼▼▼]";
 			this.dataset.expanded = "false";
 		}
@@ -362,31 +370,31 @@ function modifySummaryOneByOne(
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
 
-	element2.innerHTML = formatSummary(words_arr, 1, false);
+	span.innerHTML = formatSummary(words_arr, 1, false);
 	let currentLineTop = pointer.offsetTop;
 
 	for (let k = 1; k < words_arr.length; k++) {
-		element2.innerHTML = formatSummary(words_arr, k + 1, false);
+		span.innerHTML = formatSummary(words_arr, k + 1, false);
 
 		if (pointer.offsetTop !== currentLineTop) {
 
 			if (linesCount === linesToShow) {
-				element2.innerHTML = "";
+				span.innerHTML = "";
 				element.removeChild(pointer);
 				element.appendChild(extensionA);
 
 				wordsCount = lastLineStartWord;
-				element2.innerHTML = formatSummary(words_arr, wordsCount);
+				span.innerHTML = formatSummary(words_arr, wordsCount);
 
 				currentLineTop = extensionA.offsetTop;
 
 				for (let k2 = lastLineStartWord; k2 < words_arr.length; k2++) {
 					wordsCount++;
-					element2.innerHTML = formatSummary(words_arr, wordsCount);
+					span.innerHTML = formatSummary(words_arr, wordsCount);
 
 					if (extensionA.offsetTop !== currentLineTop) {
 						wordsCount--;
-						element2.innerHTML = formatSummary(words_arr, wordsCount);
+						span.innerHTML = formatSummary(words_arr, wordsCount);
 						break;
 					}
 				}
@@ -401,6 +409,6 @@ function modifySummaryOneByOne(
 	}
 
 	element.removeChild(pointer);
-	element2.innerHTML = summary;
+	span.innerHTML = summary;
 
 }

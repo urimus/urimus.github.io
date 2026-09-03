@@ -191,14 +191,9 @@ function updateAboutMeImage3(lang, i) {
 	imgSVG.setAttribute('height', 27);
 	imgSVG.onload = function () {
 		if (item_description) {
-			let descSpan = document.createElement('span');
-			descSpan.setAttribute('class', "text_blue");
-			descSpan.style.overflowWrap = "anywhere";
-			descDiv.appendChild(descSpan);
-
 			const algorithms = [modifySummary, modifySummary2, modifySummaryOneByOne];
 			const algorithm = algorithms[Math.floor(Math.random() * algorithms.length)];
-			algorithm(descDiv, descSpan, item_description, description_words, "blue", 4);
+			algorithm(descDiv, item_description, description_words, "blue", 4);
 		}
 		adjustScrollDiv();
 	}
