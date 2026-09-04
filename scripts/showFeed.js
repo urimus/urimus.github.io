@@ -1840,11 +1840,15 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	for (let c = 0; c < items.length; c++) {
 		let entry = items[c];
 
-		if (source == "yahoo" && entry.source) {
-			if (entry.source._text == "BBC" || entry.source._text == "Yahoo Finance UK" || entry.source._text == "The Telegraph") {
-				continue;
-			}
+		if (source == "yahoo" && entry.source
+		&& (entry.source._text == "BBC" || entry.source._text == "Yahoo Finance UK" || entry.source._text == "The Telegraph")) {
+			continue;
 		}
+		if (source == "nasa" && entry.category) {
+			let categories = Array.isArray(entry.category) ? entry.category : [entry.category];
+			if (categories.map(c => c._cdata || c._text).filter(Boolean).includes("APOD")) continue;
+		}
+
 		i++;
 
 		result.entries[i] = {};
