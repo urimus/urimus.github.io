@@ -110,6 +110,7 @@ function splitAllSpaces(str) {
 		.filter(Boolean);
 }
 
+
 // ---------------------------------------------------------
 // Algorithm 1
 // ---------------------------------------------------------
@@ -224,7 +225,7 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 // Algorithm 2
 // ---------------------------------------------------------
 
-function formatSummary2(words_arr, wordsCount, addSpace = true) {
+function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 	const pointersClass = "summary_word_pointer";
 
 	return words_arr
@@ -232,32 +233,30 @@ function formatSummary2(words_arr, wordsCount, addSpace = true) {
 		.map(word => {
 			return word + '<span class="' + pointersClass + '"></span>';
 		})
-		.join(" ") + (addSpace ? " " : "");;
+		.join(" ") + (addSpace ? " " : "");
 }
 
-
-function getLineInfo2(element, linesToShow) {
+function getWordsCount(element, linesToShow, hasExtension = false) {
 	const pointers = element.getElementsByClassName("summary_word_pointer");
 	const lines = new Set();
 
-	for (const pointer of pointers) {
-		const top = pointer.offsetTop;
+	let wordsCount = 0;
+	let wordsCountM1 = 0;
 
+	for (let i = 0; i < pointers.length; i++) {
+		const top = pointers[i].offsetTop;
 		if (!lines.has(top)) {
 			lines.add(top);
-
-			if (lines.size > linesToShow) {
-				return {
-					fitsLinesToShow: false,
-					fitsLinesToShowM1: false
-				};
-			}
+			if (lines.size > linesToShow) break;
+		}
+		wordsCount = i + (hasExtension ? 0 : 1);
+		if (lines.size <= linesToShow - 1) {
+			wordsCountM1 = i + (hasExtension ? 0 : 1);
 		}
 	}
-
 	return {
-		fitsLinesToShow: true,
-		fitsLinesToShowM1: lines.size <= linesToShow - 1
+		wordsCount: Math.max(1, wordsCount),
+		wordsCountM1: Math.max(1, wordsCountM1)
 	};
 }
 
@@ -276,21 +275,34 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	let left;
 	let right = words_arr.length;
 	let current = Math.min(estimatedResult, right);
-	let lastSuccessfulLinesToShowM1 = 0;
 
+	let maxWordsInLinesM1 = 0;
+
+	// ---------------------------------------------------------
 	// Exponential search.
+	// ---------------------------------------------------------
+
 	while (true) {
-		span.innerHTML = formatSummary2(words_arr, current, false);
-		const result = getLineInfo2(element, linesToShow);
-		if (!result.fitsLinesToShow) break;
-		wordsCount = current;
-		if (result.fitsLinesToShowM1) {
-			lastSuccessfulLinesToShowM1 = current;
+		span.innerHTML = formatSummaryWithPointers(words_arr, current, false);
+		const result = getWordsCount(element, linesToShow, false);
+		if (result.wordsCount < current) {
+			wordsCount = result.wordsCount;
+			break;
 		}
+		wordsCount = result.wordsCount;
+		if (result.wordsCountM1 > maxWordsInLinesM1) {
+			maxWordsInLinesM1 = result.wordsCountM1;
+		}
+
 		// The entire summary fits.
 		if (current === right) return;
+
 		current = Math.min(current * 2, right);
 	}
+
+	// ---------------------------------------------------------
+	// Add extension link.
+	// ---------------------------------------------------------
 
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
@@ -311,16 +323,22 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	extensionA.innerHTML = "[▼▼]";
 	element.appendChild(extensionA);
 
+	// ---------------------------------------------------------
 	// Binary search bounds.
-	left = Math.max(2, lastSuccessfulLinesToShowM1 + 1);
+	// ---------------------------------------------------------
+
+	left = maxWordsInLinesM1 + 1;
 	right = current - 1;
 
+	// ---------------------------------------------------------
 	// Binary search.
+	// ---------------------------------------------------------
+
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
-		span.innerHTML = formatSummary2(words_arr, middle);
-		const result = getLineInfo2(element, linesToShow);
-		if (result.fitsLinesToShow) {
+		span.innerHTML = formatSummaryWithPointers(words_arr, middle);
+		const result = getWordsCount(element, linesToShow, true);
+		if (result.wordsCount >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
 		} else {
@@ -417,5 +435,4 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 
 	element.removeChild(pointer);
 	span.innerHTML = summary;
-
 }
