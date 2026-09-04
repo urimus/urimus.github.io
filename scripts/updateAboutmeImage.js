@@ -170,6 +170,10 @@ function updateAboutMeImage3(lang, i) {
 
 	let item_description = null;
 	let description_words;
+	
+	// for testing only
+	// item.description._text = "새로운 тихий 春天 旅路 Morning سلام 미래 quiet 蓝色 桜 حياة город 친구 книга 梦想 river 海 نور надежда 风景 오늘 未来 طريق bright музыка 마음 时间 window أمل 朝 世界 дорога journey 여행 希望 صباح солнце صديق 햇빛 hope 朋友 友達 기억 光 gentle дружба سماء 月光 вечер 道路 風景 사랑 قلب music 바람 свежий future سفر 時間 清晨 встреча 希望 مستقبل 하늘 garden 夢 мечта people 꿈 故事 空 حلم ветер 길 远方 道 dream مدينة 아침 زهرة 笑顔 улыбка silver 微笑 世界 время cloud وقت 세상 天空 春 walking 웃음 هدوء путь 旅行 평화 家园 light فرح";
+
 	if (item.description._text) {
 		item_description = DOMPurify.sanitize(item.description._text);
 		description_words = splitAllSpaces(item_description);

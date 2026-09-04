@@ -377,7 +377,10 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 		span.innerHTML = formatSummary(words_arr, k + 1, false);
 
 		if (pointer.offsetTop !== currentLineTop) {
-
+			if (Math.abs(pointer.offsetTop - currentLineTop) < 2) {
+				currentLineTop = pointer.offsetTop;
+				continue;
+			}
 			if (linesCount === linesToShow) {
 				span.innerHTML = "";
 				element.removeChild(pointer);
@@ -393,6 +396,10 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 					span.innerHTML = formatSummary(words_arr, wordsCount);
 
 					if (extensionA.offsetTop !== currentLineTop) {
+						if (Math.abs(extensionA.offsetTop - currentLineTop) < 2) {
+							currentLineTop = extensionA.offsetTop;
+							continue;
+						}
 						wordsCount--;
 						span.innerHTML = formatSummary(words_arr, wordsCount);
 						break;
