@@ -164,7 +164,10 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	let current = Math.min(estimatedResult, wordsLength);
 	let lastSuccessfulLinesToShowM1 = 0;
 
+	// ---------------------------------------------------------
 	// Exponential search.
+	// ---------------------------------------------------------
+
 	while (true) {
 		span.innerHTML = formatSummary(words_arr, current, false);
 		const result = getLineInfo(element, linesToShow);
@@ -177,6 +180,10 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 		if (current === wordsLength) return;
 		current = Math.min(current * 2, wordsLength);
 	}
+
+	// ---------------------------------------------------------
+	// Add extension link.
+	// ---------------------------------------------------------
 
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
@@ -197,11 +204,17 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	extensionA.innerHTML = "[▼]";
 	element.appendChild(extensionA);
 
+	// ---------------------------------------------------------
 	// Binary search bounds.
+	// ---------------------------------------------------------
+
 	let left = Math.max(2, lastSuccessfulLinesToShowM1 + 1);
 	let right = current - 1;
 
+	// ---------------------------------------------------------
 	// Binary search.
+	// ---------------------------------------------------------
+
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummary(words_arr, middle);
@@ -248,9 +261,9 @@ function getWordsCount(element, linesToShow, hasExtension = false) {
 			lines.add(top);
 			if (lines.size > linesToShow) break;
 		}
-		wordsCount = i + (hasExtension ? 0 : 1);
+		wordsCount = hasExtension ? i : i + 1;
 		if (lines.size <= linesToShow - 1) {
-			wordsCountM1 = i + (hasExtension ? 0 : 1);
+			wordsCountM1 = hasExtension ? i : i + 1;
 		}
 	}
 	return {
@@ -343,7 +356,8 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 // ---------------------------------------------------------
 
 function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesToShow = 4) {
-	if (!words_arr.length) return;
+	const wordsLength = words_arr.length;
+	if (!wordsLength) return;
 
 	let span = document.createElement('span');
 	span.setAttribute('class', "text_" + col);
@@ -381,7 +395,7 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	span.innerHTML = formatSummary(words_arr, 1, false);
 	let currentLineTop = pointer.offsetTop;
 
-	for (let k = 1; k < words_arr.length; k++) {
+	for (let k = 1; k < wordsLength; k++) {
 		span.innerHTML = formatSummary(words_arr, k + 1, false);
 
 		if (pointer.offsetTop !== currentLineTop) {
@@ -399,7 +413,7 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 
 				currentLineTop = extensionA.offsetTop;
 
-				for (let k2 = lastLineStartWord; k2 < words_arr.length; k2++) {
+				for (let k2 = lastLineStartWord; k2 < wordsLength; k2++) {
 					wordsCount++;
 					span.innerHTML = formatSummary(words_arr, wordsCount);
 
