@@ -172,11 +172,11 @@ function testSummary(summaryDiv) {
 	// ALGORITHM 1
 	// =========================================================
 
-	function runAlgorithm1(entry_summary, summary_words, linesToShow	) {
+	function runAlgorithm1(summary, words_arr, linesToShow	) {
 
 		summaryDiv.innerHTML = "";
 		const start = performance.now();
-		modifySummary(summaryDiv, entry_summary, summary_words, "red", linesToShow);
+		modifySummary(summaryDiv, summary, words_arr, "red", linesToShow);
 		const time = performance.now() - start;
 		addPerf(perf1, time);
 	}
@@ -185,11 +185,11 @@ function testSummary(summaryDiv) {
 	// ALGORITHM 2
 	// =========================================================
 
-	function runAlgorithm2(entry_summary, summary_words, linesToShow) {
+	function runAlgorithm2(summary, words_arr, linesToShow) {
 
 		summaryDiv.innerHTML = "";
 		const start = performance.now();
-		modifySummary2(summaryDiv, entry_summary, summary_words, "red", linesToShow);
+		modifySummary2(summaryDiv, summary, words_arr, "red", linesToShow);
 		const time = performance.now() - start;
 		addPerf(perf2, time);
 	}
@@ -198,11 +198,11 @@ function testSummary(summaryDiv) {
 	// ONE BY ONE
 	// =========================================================
 
-	function runAlgorithm3(entry_summary, summary_words, linesToShow) {
+	function runAlgorithm3(summary, words_arr, linesToShow) {
 
 		summaryDiv.innerHTML = "";
 		const start = performance.now();
-		modifySummaryOneByOne(summaryDiv, entry_summary, summary_words, "red", linesToShow);
+		modifySummaryOneByOne(summaryDiv, summary, words_arr, "red", linesToShow);
 		const time = performance.now() - start;
 		addPerf(perf3, time);
 	}
@@ -222,8 +222,6 @@ function testSummary(summaryDiv) {
 			);
 
 		const data = generateTestText(linesToShow);
-		const entry_summary = data.summary;
-		const summary_words = data.words;
 
 		// -----------------------------------------------------
 		// Random order for all three algorithms.
@@ -237,7 +235,7 @@ function testSummary(summaryDiv) {
 		}
 
 		for (const algorithm of algorithms) {
-			algorithm(entry_summary, summary_words, linesToShow);
+			algorithm(data.summary, data.words, linesToShow);
 		}
 	}
 
