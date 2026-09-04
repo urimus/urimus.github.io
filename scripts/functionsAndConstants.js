@@ -146,7 +146,8 @@ function getLineInfo(element, linesToShow) {
 }
 
 function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 4) {
-	if (!words_arr.length) return;
+	const wordsLength = words_arr.length;
+	if (!wordsLength) return;
 
 	let span = document.createElement('span');
 	span.setAttribute('class', "text_" + col);
@@ -160,9 +161,7 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	if (col === "blue") linesToShow++;
 
 	let wordsCount = 1;
-	let left;
-	let right = words_arr.length;
-	let current = Math.min(estimatedResult, right);
+	let current = Math.min(estimatedResult, wordsLength);
 	let lastSuccessfulLinesToShowM1 = 0;
 
 	// Exponential search.
@@ -175,8 +174,8 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 			lastSuccessfulLinesToShowM1 = current;
 		}
 		// The entire summary fits.
-		if (current === right) return;
-		current = Math.min(current * 2, right);
+		if (current === wordsLength) return;
+		current = Math.min(current * 2, wordsLength);
 	}
 
 	const extensionA = document.createElement("a");
@@ -199,8 +198,8 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	element.appendChild(extensionA);
 
 	// Binary search bounds.
-	left = Math.max(2, lastSuccessfulLinesToShowM1 + 1);
-	right = current - 1;
+	let left = Math.max(2, lastSuccessfulLinesToShowM1 + 1);
+	let right = current - 1;
 
 	// Binary search.
 	while (left <= right) {
@@ -261,7 +260,8 @@ function getWordsCount(element, linesToShow, hasExtension = false) {
 }
 
 function modifySummary2(element, summary, words_arr, col = "blue", linesToShow = 4) {
-	if (!words_arr.length) return;
+	const wordsLength = words_arr.length;
+	if (!wordsLength) return;
 
 	let span = document.createElement('span');
 	span.setAttribute('class', "text_" + col);
@@ -272,11 +272,8 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	const estimatedResult = linesToShow * 10;
 
 	let wordsCount = 1;
-	let left;
-	let right = words_arr.length;
-	let current = Math.min(estimatedResult, right);
-
-	let maxWordsInLinesM1 = 0;
+	let current = Math.min(estimatedResult, wordsLength);
+	let result;
 
 	// ---------------------------------------------------------
 	// Exponential search.
@@ -284,20 +281,13 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 
 	while (true) {
 		span.innerHTML = formatSummaryWithPointers(words_arr, current, false);
-		const result = getWordsCount(element, linesToShow, false);
-		if (result.wordsCount < current) {
-			wordsCount = result.wordsCount;
-			break;
-		}
-		wordsCount = result.wordsCount;
-		if (result.wordsCountM1 > maxWordsInLinesM1) {
-			maxWordsInLinesM1 = result.wordsCountM1;
-		}
+		result = getWordsCount(element, linesToShow, false);
+		if (result.wordsCount < current) break;
 
 		// The entire summary fits.
-		if (current === right) return;
+		if (current === wordsLength) return;
 
-		current = Math.min(current * 2, right);
+		current = Math.min(current * 2, wordsLength);
 	}
 
 	// ---------------------------------------------------------
@@ -327,8 +317,8 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	// Binary search bounds.
 	// ---------------------------------------------------------
 
-	left = maxWordsInLinesM1 + 1;
-	right = current - 1;
+	let left = result.wordsCountM1 + 1;
+	let right = current - 1;
 
 	// ---------------------------------------------------------
 	// Binary search.
