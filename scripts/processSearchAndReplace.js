@@ -391,7 +391,7 @@ function prResizeImage(lang, dir, filePath, fileWidth, i, statisticsFilesProcess
 				let confirmResize = window.confirm(fullMessage);
 				if (confirmResize) {
 					if (dir.length == 1 && statisticsFilesProcessed == 1) {
-						window.open(filePath + dir[i]['basename'], '_blank').focus();
+						window.open(filePath + dir[i]['basename']);
 					} else {
 						window.open('html_editor_' + lang + '.html?pattern=scripts/php/logs/resize.log&i=0');
 					}
@@ -816,8 +816,15 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 			if (typeof data === "string" && data=="not logged in") {processSearchAndReplace(lang); return;}
 			if (data === 1) {
 				if (isImage) {
-					let confirm = window.confirm(message + newFilePath + "/" + filename + " " + t("uploadedSuccessfullyShowImage"));
-					if (confirm) window.open(newFilePath + "/" + filename, '_blank').focus();
+					const url = newFilePath + "/" + filename;
+					let confirm = window.confirm(message + url + " " + t("uploadedSuccessfullyShowImage"));
+					if (confirm) {
+						window.open(url);
+						const a = document.createElement("a");
+						a.href = url;
+						a.download = filename;
+						a.click();
+					}
 				} else {
 					alert(message + newFilePath+"/" + filename + " " + t("uploadedSuccessfully"));
 				}
