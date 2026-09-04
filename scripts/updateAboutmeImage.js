@@ -173,7 +173,7 @@ function updateAboutMeImage3(lang, i) {
 	
 	// for testing only
 	// item.description._text = "새로운 тихий 春天 旅路 Morning سلام 미래 quiet 蓝色 桜 حياة город 친구 книга 梦想 river 海 نور надежда 风景 오늘 未来 طريق bright музыка 마음 时间 window أمل 朝 世界 дорога journey 여행 希望 صباح солнце صديق 햇빛 hope 朋友 友達 기억 光 gentle дружба سماء 月光 вечер 道路 風景 사랑 قلب music 바람 свежий future سفر 時間 清晨 встреча 希望 مستقبل 하늘 garden 夢 мечта people 꿈 故事 空 حلم ветер 길 远方 道 dream مدينة 아침 زهرة 笑顔 улыбка silver 微笑 世界 время cloud وقت 세상 天空 春 walking 웃음 هدوء путь 旅行 평화 家园 light فرح";
-
+	// item.description._text = "Hello привет 你好 안녕 こんにちは مرحبا 🪟🌙 world мир 世界 한국 日本 العربية 🚀 computer компьютер 电脑 한국어 日本語 العربية 💡🔥 future будущее 未来 미래 未来 مستقبل 🌟 language язык 语言 언어 言語 لغة 🌍✨ test тест 测试 테스트 テスト اختبار 🧩📦 random случайный 随机 랜덤 ランダム عشوائي 🎯 window окно 窗户 창문 窓 نافذة 🪟 data данные 数据 데이터 データ بيانات 💻🌐 system система 系统 시스템 システム نظام ⚙️🔧 search поиск 搜索 검색 検索 بحث 🔎 message сообщение 消息 메시지 メッセージ رسالة 💬 program программа 程序 프로그램 プログラム برنامج 👨‍💻💻 text текст 文本 텍스트 テキスト نص 📄 number число 数字 숫자 数字 رقم 🔢🎲 keyboard клавиатура 键盘 키보드 キーボード لوحة ⌨️ browser браузер 浏览器 브라우저 ブラウザ متصفح 🌐 screen экран 屏幕 화면 画面 شاشة 🖥️✨ mouse мышь 鼠标 마우스 マウス فأرة 🖱️ network сеть 网络 네트워크 ネットワーク شبكة 📡 server сервер 服务器 서버 サーバー خادم 🖥️ database база данных 数据库 데이터베이스 データベース قاعدة بيانات 🗄️💾 algorithm алгоритм 算法 알고리즘 アルゴリズム خوارزمية 🧠 result результат 结果 결과 結果 نتيجة 🏆 finish конец 完成 완료 完了 نهاية 🎉🎉🎉";
 	if (item.description._text) {
 		item_description = DOMPurify.sanitize(item.description._text);
 		description_words = splitAllSpaces(item_description);
