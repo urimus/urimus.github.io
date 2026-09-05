@@ -66,14 +66,16 @@ function formatDate(date = Date.now(), lang = "eng") {
 }
 
 function formatBytes(bytes) {
-	let units = ['B', 'KB', 'MB', 'GB', 'TB'];
-	let bytes_i = parseInt(bytes);
-	let i;
-	for (i = 0; bytes_i >= 1000 && i < 4; i++) {
-		bytes_i /= 1000;
+	const units = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+	let unit = units[0];
+
+	for (let i = 1; i < units.length; i++) {
+		if (bytes < 1000) break;
+		bytes /= 1000;
+		unit = units[i];
 	}
-	if (i==0) return bytes_i +" "+ units[i];
-	return bytes_i.toFixed(2) +" "+ units[i];
+
+	return Number(bytes.toFixed(2)) + " " + unit;
 }
 
 function detectBomCheckSoFar(bytes) {
