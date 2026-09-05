@@ -108,57 +108,64 @@ function testSummary(summaryDiv) {
 	testComplete = true;
 
 	const TEST_COUNT = 1000;
+	const WORDS_COUNT = 1000;
 	const MIN_LINES = 1;
 	const MAX_LINES = 10;
 
+	// =========================================================
+	// ALGORITHMS
+	//
+	// To add another algorithm:
+	//
+	// { name: "Alg 4", run: (...) => modifySummary4(...) }
+	// =========================================================
+
+	const algorithms = [
+		{
+			name: "Alg 1",
+			run: (summaryDiv, summary, words_arr, linesToShow) =>
+				modifySummary(summaryDiv, summary, words_arr, "red", linesToShow)
+		},
+		{
+			name: "Alg 2",
+			run: (summaryDiv, summary, words_arr, linesToShow) =>
+				modifySummary2(summaryDiv, summary, words_arr, "red", linesToShow)
+		},
+		{
+			name: "One By One",
+			run: (summaryDiv, summary, words_arr, linesToShow) =>
+				modifySummaryOneByOne(summaryDiv, summary, words_arr, "red", linesToShow)
+		}
+	];
+
 	console.log(
-		`Modify Summary Speed Test Started: ${TEST_COUNT} texts.`
+		`Modify Summary Speed Test Started: ${TEST_COUNT} texts, ${WORDS_COUNT} words, ${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
 	);
 
 	// =========================================================
 	// PERFORMANCE DATA
 	// =========================================================
 
-	const perf1 = {
-		count: 0,
-		total: 0,
-		min: Infinity,
-		max: 0,
-		times: []
-	};
+	const perfData = new Map();
 
-	const perf2 = {
-		count: 0,
-		total: 0,
-		min: Infinity,
-		max: 0,
-		times: []
-	};
-
-	const perf3 = {
-		count: 0,
-		total: 0,
-		min: Infinity,
-		max: 0,
-		times: []
-	};
+	for (const algorithm of algorithms) {
+		perfData.set(algorithm, {
+			count: 0,
+			total: 0,
+			min: Infinity,
+			max: 0,
+			times: []
+		});
+	}
 
 	// =========================================================
 	// TEST TEXT GENERATION
 	// =========================================================
 
-	function generateTestText(linesToShow) {
-		const maxWords = linesToShow * 20;
+	function generateTestText() {
+		const words = new Array(WORDS_COUNT);
 
-		const wordsCount =
-			1 +
-			Math.floor(
-				Math.random() * maxWords
-			);
-
-		const words = new Array(wordsCount);
-
-		for (let i = 0; i < wordsCount; i++) {
+		for (let i = 0; i < WORDS_COUNT; i++) {
 			words[i] = randomWord();
 		}
 
@@ -166,45 +173,6 @@ function testSummary(summaryDiv) {
 			summary: words.join(" "),
 			words: words
 		};
-	}
-
-	// =========================================================
-	// ALGORITHM 1
-	// =========================================================
-
-	function runAlgorithm1(summary, words_arr, linesToShow	) {
-
-		summaryDiv.innerHTML = "";
-		const start = performance.now();
-		modifySummary(summaryDiv, summary, words_arr, "red", linesToShow);
-		const time = performance.now() - start;
-		addPerf(perf1, time);
-	}
-
-	// =========================================================
-	// ALGORITHM 2
-	// =========================================================
-
-	function runAlgorithm2(summary, words_arr, linesToShow) {
-
-		summaryDiv.innerHTML = "";
-		const start = performance.now();
-		modifySummary2(summaryDiv, summary, words_arr, "red", linesToShow);
-		const time = performance.now() - start;
-		addPerf(perf2, time);
-	}
-
-	// =========================================================
-	// ONE BY ONE
-	// =========================================================
-
-	function runAlgorithm3(summary, words_arr, linesToShow) {
-
-		summaryDiv.innerHTML = "";
-		const start = performance.now();
-		modifySummaryOneByOne(summaryDiv, summary, words_arr, "red", linesToShow);
-		const time = performance.now() - start;
-		addPerf(perf3, time);
 	}
 
 	// =========================================================
@@ -216,26 +184,34 @@ function testSummary(summaryDiv) {
 	for (let test = 0; test < TEST_COUNT; test++) {
 		const linesToShow =
 			MIN_LINES +
-			Math.floor(
-				Math.random() *
-				(MAX_LINES - MIN_LINES + 1)
-			);
+			Math.floor(Math.random() * (MAX_LINES - MIN_LINES + 1));
 
-		const data = generateTestText(linesToShow);
+		const data = generateTestText();
 
-		// -----------------------------------------------------
-		// Random order for all three algorithms.
-		// -----------------------------------------------------
+		// Random order for all algorithms.
+		const shuffledAlgorithms = [...algorithms];
 
-		const algorithms = [runAlgorithm1, runAlgorithm2, runAlgorithm3];
-
-		for (let i = algorithms.length - 1; i > 0; i--) {
+		for (let i = shuffledAlgorithms.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
-			[algorithms[i], algorithms[j]] = [algorithms[j], algorithms[i]];
+			[shuffledAlgorithms[i], shuffledAlgorithms[j]] =
+				[shuffledAlgorithms[j], shuffledAlgorithms[i]];
 		}
 
-		for (const algorithm of algorithms) {
-			algorithm(data.summary, data.words, linesToShow);
+		for (const algorithm of shuffledAlgorithms) {
+			summaryDiv.innerHTML = "";
+
+			const start = performance.now();
+
+			algorithm.run(
+				summaryDiv,
+				data.summary,
+				data.words,
+				linesToShow
+			);
+
+			const time = performance.now() - start;
+
+			addPerf(perfData.get(algorithm), time);
 		}
 	}
 
@@ -245,43 +221,46 @@ function testSummary(summaryDiv) {
 	// STATISTICS
 	// =========================================================
 
-	const avg1 = perf1.total / perf1.count;
-	const avg2 = perf2.total / perf2.count;
-	const avg3 = perf3.total / perf3.count;
+	let totalAverageTime = 0;
 
-	const totalAverageTime = avg1 + avg2 + avg3;
+	for (const algorithm of algorithms) {
+		const perf = perfData.get(algorithm);
+		totalAverageTime += perf.total / perf.count;
+	}
 
-	// ---------------------------------------------------------
-	// Base statistics for each algorithm.
-	// ---------------------------------------------------------
+	const statistics = {};
 
-	const statistics1 = {
-		...getStatistics(perf1),
-		"average time share": (avg1 / totalAverageTime * 100).toFixed(2) + "%"
-	};
-	const statistics2 = {
-		...getStatistics(perf2),
-		"average time share": (avg2 / totalAverageTime * 100).toFixed(2) + "%"
-	};
-	const statistics3 = {
-		...getStatistics(perf3),
-		"average time share": (avg3 / totalAverageTime * 100).toFixed(2) + "%"
-	};
+	for (const algorithm of algorithms) {
+		const perf = perfData.get(algorithm);
+		const average = perf.total / perf.count;
+
+		statistics[algorithm.name] = {
+			...getStatistics(perf),
+			"average time share":
+				(average / totalAverageTime * 100).toFixed(2) + "%"
+		};
+	}
 
 	console.log("=== STATISTICS ===");
-
-	console.table({
-		"Alg 1": statistics1,
-		"Alg 2": statistics2,
-		"One By One": statistics3
-	});
+	console.table(statistics);
 
 	// =========================================================
 	// RESULT
+	//
+	// Compare any two algorithms manually here.
 	// =========================================================
 
-	function compareAlgorithms(avgA, avgB, nameA, nameB) {
+	function compareAlgorithms(algorithmA, algorithmB) {
+		const perfA = perfData.get(algorithmA);
+		const perfB = perfData.get(algorithmB);
 
+		if (!perfA || !perfB) {
+			console.error("Algorithm not found in benchmark.");
+			return null;
+		}
+
+		const avgA = perfA.total / perfA.count;
+		const avgB = perfB.total / perfB.count;
 		const difference = Math.abs(avgA - avgB);
 
 		let faster;
@@ -290,13 +269,13 @@ function testSummary(summaryDiv) {
 		let slowerAvg;
 
 		if (avgA <= avgB) {
-			faster = nameA;
-			slower = nameB;
+			faster = algorithmA.name;
+			slower = algorithmB.name;
 			fasterAvg = avgA;
 			slowerAvg = avgB;
 		} else {
-			faster = nameB;
-			slower = nameA;
+			faster = algorithmB.name;
+			slower = algorithmA.name;
 			fasterAvg = avgB;
 			slowerAvg = avgA;
 		}
@@ -309,16 +288,20 @@ function testSummary(summaryDiv) {
 		};
 	}
 
-	const comparison12 = compareAlgorithms(avg1, avg2, "Alg 1", "Alg 2");
-	const comparison13 = compareAlgorithms(avg1, avg3, "Alg 1", "One By One");
-	const comparison23 = compareAlgorithms(avg2, avg3, "Alg 2", "One By One");
+	// =========================================================
+	// MANUAL COMPARISONS
+	// =========================================================
+
+	const comparison12 = compareAlgorithms(algorithms[0], algorithms[1]);
+	const comparison13 = compareAlgorithms(algorithms[0], algorithms[2]);
+	const comparison23 = compareAlgorithms(algorithms[1], algorithms[2]);
 
 	console.log("=== RESULT ===");
 
 	console.table({
-		"Alg 1 ↔ Alg 2": comparison12,
-		"Alg 1 ↔ One By One": comparison13,
-		"Alg 2 ↔ One By One": comparison23
+		[`${algorithms[0].name} ↔ ${algorithms[1].name}`]: comparison12,
+		[`${algorithms[0].name} ↔ ${algorithms[2].name}`]: comparison13,
+		[`${algorithms[1].name} ↔ ${algorithms[2].name}`]: comparison23
 	});
 
 	// =========================================================
