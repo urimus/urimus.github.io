@@ -502,13 +502,12 @@ function download(lang, encoding = "UTF-8", filename = "") {
 	);
 
 	if (!("showSaveFilePicker" in window)) {
-		const _URL = window.URL || window.webkitURL;
-		const blobUrl = _URL.createObjectURL(blob);
+		const blobUrl = URL.createObjectURL(blob);
 		const a = document.createElement('a');
 		a.href = blobUrl;
 		a.download = filename;
 		a.click();
-		setTimeout(() => _URL.revokeObjectURL(blobUrl), 0);
+		setTimeout(() => URL.revokeObjectURL(blobUrl), 0);
 		return;
 	}
 
@@ -708,13 +707,12 @@ function upload2(lang, allFiles, i, newFilePath, createFolder) {
 function upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, createFolder) {
 
 	let filetype=file.type;
-	let _URL = window.URL || window.webkitURL;
 	let img = new Image();
-	let objectUrl = _URL.createObjectURL(file);
+	let objectUrl = URL.createObjectURL(file);
 	img.onload = function () {
 		let imageWidth=this.width;
 		let imageHeight=this.height;
-		_URL.revokeObjectURL(objectUrl);
+		URL.revokeObjectURL(objectUrl);
 
 		let newImageWidth = prompt(t("image") + newFilePath + "/" + filename + "'. " + t("enterImageWidth"), imageWidth);
 		if (newImageWidth == null ) return;
@@ -817,13 +815,12 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 					let confirm = window.confirm(message + url + " " + t("uploadedSuccessfullyShowImage"));
 					if (confirm) {
 						window.open(url);
-						const _URL = window.URL || window.webkitURL;
-						const blobUrl = _URL.createObjectURL(file);
+						const blobUrl = URL.createObjectURL(file);
 						const a = document.createElement("a");
 						a.href = blobUrl;
 						a.download = filename;
 						a.click();
-						setTimeout(() => _URL.revokeObjectURL(blobUrl), 0);
+						setTimeout(() => URL.revokeObjectURL(blobUrl), 0);
 					}
 				} else {
 					alert(message + newFilePath+"/" + filename + " " + t("uploadedSuccessfully"));
