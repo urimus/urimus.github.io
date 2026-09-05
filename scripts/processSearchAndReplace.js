@@ -739,8 +739,8 @@ function upload3(file, filename, isJpg, toJpg, lang, allFiles, i, newFilePath, c
 		let blobtype=filetype;
 		if (toJpg || isJpg) blobtype='image/jpeg';
 		canvas.toBlob(function (blob) {
-			let file2 = new File([blob], filename, blob);
-			upload4(file2, filename, lang, allFiles, i, newFilePath, createFolder);
+			file = new File([blob], filename, { type: blob.type });
+			upload4(file, filename, lang, allFiles, i, newFilePath, createFolder);
 		}, blobtype);
 	};
 	img.src = objectUrl;
@@ -820,10 +820,16 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 					let confirm = window.confirm(message + url + " " + t("uploadedSuccessfullyShowImage"));
 					if (confirm) {
 						window.open(url);
+
+						const _URL = window.URL || window.webkitURL;
+						const blobUrl = _URL.createObjectURL(file);
+
 						const a = document.createElement("a");
-						a.href = url;
+						a.href = blobUrl;
 						a.download = filename;
 						a.click();
+
+						setTimeout(() => _URL.revokeObjectURL(blobUrl), 1000);
 					}
 				} else {
 					alert(message + newFilePath+"/" + filename + " " + t("uploadedSuccessfully"));
