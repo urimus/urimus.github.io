@@ -208,7 +208,7 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	// Binary search bounds.
 	// ---------------------------------------------------------
 
-	let left = Math.max(2, lastSuccessfulLinesToShowM1 + 1);
+	let left = Math.max(1, lastSuccessfulLinesToShowM1);
 	let right = current - 1;
 
 	// ---------------------------------------------------------
@@ -330,7 +330,7 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	// Binary search bounds.
 	// ---------------------------------------------------------
 
-	let left = result.wordsCountM1 + 1;
+	let left = result.wordsCountM1;
 	let right = current - 1;
 
 	// ---------------------------------------------------------
