@@ -504,14 +504,11 @@ function download(lang, encoding = "UTF-8", filename = "") {
 	if (!("showSaveFilePicker" in window)) {
 		const _URL = window.URL || window.webkitURL;
 		const blobUrl = _URL.createObjectURL(blob);
-
 		const a = document.createElement('a');
 		a.href = blobUrl;
 		a.download = filename;
 		a.click();
-		setTimeout(() => {
-			_URL.revokeObjectURL(blobUrl);
-		}, 1000);
+		setTimeout(() => _URL.revokeObjectURL(blobUrl), 0);
 		return;
 	}
 
@@ -820,16 +817,13 @@ function uploadFile(file, filename, lang, allFiles, i, newFilePath, createFolder
 					let confirm = window.confirm(message + url + " " + t("uploadedSuccessfullyShowImage"));
 					if (confirm) {
 						window.open(url);
-
 						const _URL = window.URL || window.webkitURL;
 						const blobUrl = _URL.createObjectURL(file);
-
 						const a = document.createElement("a");
 						a.href = blobUrl;
 						a.download = filename;
 						a.click();
-
-						setTimeout(() => _URL.revokeObjectURL(blobUrl), 1000);
+						setTimeout(() => _URL.revokeObjectURL(blobUrl), 0);
 					}
 				} else {
 					alert(message + newFilePath+"/" + filename + " " + t("uploadedSuccessfully"));
