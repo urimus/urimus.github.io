@@ -162,7 +162,9 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 
 	let wordsCount = 1;
 	let current = Math.min(estimatedResult, wordsLength);
-	let lastSuccessfulLinesToShowM1 = 0;
+
+	// Binary search bound.
+	let left = 1;
 
 	// ---------------------------------------------------------
 	// Exponential search.
@@ -174,7 +176,7 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 		if (!result.fitsLinesToShow) break;
 		wordsCount = current;
 		if (result.fitsLinesToShowM1) {
-			lastSuccessfulLinesToShowM1 = current;
+			left = current;
 		}
 		// The entire summary fits.
 		if (current === wordsLength) return;
@@ -208,7 +210,6 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	// Binary search bounds.
 	// ---------------------------------------------------------
 
-	let left = Math.max(1, lastSuccessfulLinesToShowM1);
 	let right = current - 1;
 
 	// ---------------------------------------------------------
