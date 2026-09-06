@@ -10,17 +10,31 @@ function randomWord() {
 	const r = Math.random();
 	let length;
 
-	if (r < 0.02) length = 1;
-	else if (r < 0.08) length = 2;
-	else if (r < 0.20) length = 3;
-	else if (r < 0.38) length = 4;
-	else if (r < 0.58) length = 5;
-	else if (r < 0.74) length = 6;
-	else if (r < 0.84) length = 7;
-	else if (r < 0.91) length = 8;
-	else if (r < 0.95) length = 9;
-	else if (r < 0.975) length = 10;
-	else length = 11 + Math.floor(Math.random() * 5);
+	if (r < 0.01) { // long word stress test
+		length = 100 + Math.floor(Math.random() * 200);
+	} else {
+		const r2 = (r - 0.01) / 0.99;
+		// english language distribution
+		if (r2 < 0.03) length = 1;
+		else if (r2 < 0.2065) length = 2;
+		else if (r2 < 0.4116) length = 3;
+		else if (r2 < 0.5595) length = 4;
+		else if (r2 < 0.6665) length = 5;
+		else if (r2 < 0.7504) length = 6;
+		else if (r2 < 0.8298) length = 7;
+		else if (r2 < 0.8892) length = 8;
+		else if (r2 < 0.9336) length = 9;
+		else if (r2 < 0.9644) length = 10;
+		else if (r2 < 0.9820) length = 11;
+		else if (r2 < 0.9916) length = 12;
+		else if (r2 < 0.9968) length = 13;
+		else if (r2 < 0.9990) length = 14;
+		else if (r2 < 0.99976) length = 15;
+		else if (r2 < 0.99996) length = 16;
+		else if (r2 < 0.99997) length = 17;
+		else if (r2 < 0.999974) length = 18;
+		else length = 19 + Math.floor(Math.random() * 5);
+	}
 
 	const letters =
 		"eeeeeeeeeeeeeeeeeeee" +
@@ -108,7 +122,6 @@ function testSummary(summaryDiv) {
 	testComplete = true;
 
 	const TEST_COUNT = 1000;
-	const WORDS_COUNT = 1000;
 	const MIN_LINES = 1;
 	const MAX_LINES = 10;
 
@@ -139,7 +152,9 @@ function testSummary(summaryDiv) {
 	];
 
 	console.log(
-		`Modify Summary Speed Test Started: ${TEST_COUNT} texts, ${WORDS_COUNT} words, ${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
+		`Modify Summary Speed Test Started: ${TEST_COUNT} texts, ` +
+		`${MIN_LINES}...${MAX_LINES} lines, ` +
+		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
 	);
 
 	// =========================================================
@@ -163,12 +178,12 @@ function testSummary(summaryDiv) {
 	// =========================================================
 
 	function generateTestText() {
-		const words = new Array(WORDS_COUNT);
 
-		for (let i = 0; i < WORDS_COUNT; i++) {
+		const wordsCount = 1 + Math.floor(Math.random() * MAX_LINES * 20);
+		const words = new Array(wordsCount);
+		for (let i = 0; i < wordsCount; i++) {
 			words[i] = randomWord();
 		}
-
 		return {
 			summary: words.join(" "),
 			words: words
