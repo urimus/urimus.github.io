@@ -4,7 +4,7 @@
 // BENCHMARK
 // =========================================================
 
-let testComplete = true;
+console.log("Type testSummary() to start Modify Summary Speed Test");
 
 function randomWord() {
 	const r = Math.random();
@@ -116,10 +116,31 @@ function getStatistics(perf) {
 	};
 }
 
-function testSummary(summaryDiv) {
-	if (testComplete) return;
+function testSummary() {
 
-	testComplete = true;
+	// =========================================================
+	// SUMMARY DIV POSITIONING
+	// =========================================================
+
+	let container = document.createElement("div");
+
+	container.style.position = "fixed";
+	container.style.left = "-100000px";
+	container.style.top = "0";
+	container.style.width = "450px";
+	container.style.padding = "10px";
+	container.style.visibility = "hidden";
+	container.style.pointerEvents = "none";
+
+	let summaryDiv = document.createElement("div");
+	summaryDiv.setAttribute("class", "text_red");
+
+	container.appendChild(summaryDiv);
+	document.body.appendChild(container);
+
+	// =========================================================
+	// CONSTANTS
+	// =========================================================
 
 	const TEST_COUNT = 1000;
 	const MIN_LINES = 1;
@@ -334,12 +355,10 @@ function testSummary(summaryDiv) {
 	console.log("=== ALGORITHM COMPARISONS ===");
 	console.table(comparisons);
 
-
 	// =========================================================
 	// COMPLETE
 	// =========================================================
 
-	console.log(
-		`Modify Summary Speed Test Completed. Duration: ${testTime.toFixed(2)} ms.`
-	);
+	console.log(`Modify Summary Speed Test Completed. Duration: ${testTime.toFixed(2)} ms.`);
+	container.remove();
 }

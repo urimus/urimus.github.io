@@ -556,10 +556,6 @@ function formatSummaryDiv(summaryDiv, entry) {
 	}
 	entry_summary = summary_words.join(" ");
 
-	if (!testComplete) {
-		testSummary(summaryDiv);
-	}
-
 	summaryDiv.innerHTML = "";
 	modifySummary(summaryDiv, entry_summary, summary_words, "red", 4);
 
