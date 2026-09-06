@@ -245,9 +245,7 @@ function testSummary(summaryDiv) {
 	console.table(statistics);
 
 	// =========================================================
-	// RESULT
-	//
-	// Compare any two algorithms manually here.
+	// ALGORITHM COMPARISONS
 	// =========================================================
 
 	function compareAlgorithms(algorithmA, algorithmB) {
@@ -288,21 +286,39 @@ function testSummary(summaryDiv) {
 		};
 	}
 
-	// =========================================================
-	// MANUAL COMPARISONS
-	// =========================================================
+	function getAlgorithm(algorithm) {
+		if (typeof algorithm === "number") {
+			return algorithms[algorithm];
+		}
 
-	const comparison12 = compareAlgorithms(algorithms[0], algorithms[1]);
-	const comparison13 = compareAlgorithms(algorithms[0], algorithms[2]);
-	const comparison23 = compareAlgorithms(algorithms[1], algorithms[2]);
+		if (typeof algorithm === "string") {
+			return algorithms.find(item => item.name === algorithm);
+		}
 
-	console.log("=== RESULT ===");
+		return null;
+	}
 
-	console.table({
-		[`${algorithms[0].name} ↔ ${algorithms[1].name}`]: comparison12,
-		[`${algorithms[0].name} ↔ ${algorithms[2].name}`]: comparison13,
-		[`${algorithms[1].name} ↔ ${algorithms[2].name}`]: comparison23
-	});
+	function addComparison(comparisons, algorithmA, algorithmB) {
+		const a = getAlgorithm(algorithmA);
+		const b = getAlgorithm(algorithmB);
+
+		if (!a || !b) {
+			console.error("Algorithm not found.", { algorithmA, algorithmB });
+			return;
+		}
+
+		comparisons[`${a.name} ↔ ${b.name}`] = compareAlgorithms(a, b);
+	}
+
+	const comparisons = {};
+
+	addComparison(comparisons, "Alg 1", "Alg 2");
+	addComparison(comparisons, "Alg 1", "One By One");
+	addComparison(comparisons, "Alg 2", "One By One");
+
+	console.log("=== ALGORITHM COMPARISONS ===");
+	console.table(comparisons);
+
 
 	// =========================================================
 	// COMPLETE
