@@ -556,7 +556,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	}
 	entry_summary = summary_words.join(" ");
 
-	if (testComplete) { // change to !testComplete to execute
+	if (!testComplete) {
 		testSummary(summaryDiv);
 	}
 

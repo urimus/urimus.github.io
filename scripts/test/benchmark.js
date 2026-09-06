@@ -4,7 +4,7 @@
 // BENCHMARK
 // =========================================================
 
-let testComplete = false;
+let testComplete = true;
 
 function randomWord() {
 	const r = Math.random();
