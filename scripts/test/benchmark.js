@@ -195,12 +195,12 @@ function testSummary() {
 	}
 
 	// =========================================================
-	// TEST TEXT GENERATION
+	// TEST GENERATION
 	// =========================================================
 
-	function generateTestText() {
+	function generateTest() {
 
-		const wordsCount = 1 + Math.floor(Math.random() * MAX_LINES * 20);
+		const wordsCount = 1 + Math.floor(Math.random() * MAX_LINES * 10);
 		const words = new Array(wordsCount);
 		for (let i = 0; i < wordsCount; i++) {
 			words[i] = randomWord();
@@ -218,35 +218,22 @@ function testSummary() {
 	const testStart = performance.now();
 
 	for (let test = 0; test < TEST_COUNT; test++) {
-		const linesToShow =
-			MIN_LINES +
-			Math.floor(Math.random() * (MAX_LINES - MIN_LINES + 1));
-
-		const data = generateTestText();
+		const linesToShow = MIN_LINES + Math.floor(Math.random() * (MAX_LINES - MIN_LINES + 1));
+		const data = generateTest();
 
 		// Random order for all algorithms.
 		const shuffledAlgorithms = [...algorithms];
 
 		for (let i = shuffledAlgorithms.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
-			[shuffledAlgorithms[i], shuffledAlgorithms[j]] =
-				[shuffledAlgorithms[j], shuffledAlgorithms[i]];
+			[shuffledAlgorithms[i], shuffledAlgorithms[j]] = [shuffledAlgorithms[j], shuffledAlgorithms[i]];
 		}
 
 		for (const algorithm of shuffledAlgorithms) {
 			summaryDiv.innerHTML = "";
-
 			const start = performance.now();
-
-			algorithm.run(
-				summaryDiv,
-				data.summary,
-				data.words,
-				linesToShow
-			);
-
+			algorithm.run(summaryDiv, data.summary, data.words, linesToShow);
 			const time = performance.now() - start;
-
 			addPerf(perfData.get(algorithm), time);
 		}
 	}
@@ -272,8 +259,7 @@ function testSummary() {
 
 		statistics[algorithm.name] = {
 			...getStatistics(perf),
-			"average time share":
-				(average / totalAverageTime * 100).toFixed(2) + "%"
+			"average time share": (average / totalAverageTime * 100).toFixed(2) + "%"
 		};
 	}
 
