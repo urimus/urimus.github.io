@@ -205,13 +205,22 @@ function testSummary(wordsCount) {
 
 	function generateTest() {
 
-		const words = new Array(WORDS_COUNT);
-		for (let i = 0; i < WORDS_COUNT; i++) {
+		const linesToShow = MIN_LINES + Math.floor(Math.random() * (MAX_LINES - MIN_LINES + 1));
+		const useEarlyExit = Math.random() < 0.5;
+
+		let words;
+		if (useEarlyExit) {
+			words = new Array(linesToShow * 5);
+		} else {
+			words = new Array(WORDS_COUNT);
+		}
+		for (let i = 0; i < words.length; i++) {
 			words[i] = randomWord();
 		}
 		return {
+			linesToShow,
 			summary: words.join(" "),
-			words: words
+			words
 		};
 	}
 
@@ -222,7 +231,7 @@ function testSummary(wordsCount) {
 	const testStart = performance.now();
 
 	for (let test = 0; test < TEST_COUNT; test++) {
-		const linesToShow = MIN_LINES + Math.floor(Math.random() * (MAX_LINES - MIN_LINES + 1));
+
 		const data = generateTest();
 
 		// Random order for all algorithms.
@@ -236,7 +245,7 @@ function testSummary(wordsCount) {
 		for (const algorithm of shuffledAlgorithms) {
 			summaryDiv.innerHTML = "";
 			const start = performance.now();
-			algorithm.run(summaryDiv, data.summary, data.words, linesToShow);
+			algorithm.run(summaryDiv, data.summary, data.words, data.linesToShow);
 			const time = performance.now() - start;
 			addPerf(perfData.get(algorithm), time);
 		}
