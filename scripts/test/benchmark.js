@@ -347,6 +347,15 @@ function testSummary() {
 	// COMPLETE
 	// =========================================================
 
-	console.log(`Modify Summary Speed Test Completed. Duration: ${testTime.toFixed(2)} ms.`);
+	const totalAlgorithmsTime = algorithms.reduce(
+		(sum, algorithm) => sum + perfData.get(algorithm).total,
+		0
+	);
+
+	console.log(
+		`Modify Summary Speed Test Completed. ` +
+		`Duration: ${(testTime / 1000).toFixed(2)} s. ` +
+		`Algorithms total: ${(totalAlgorithmsTime / 1000).toFixed(2)} s.`
+	);
 	container.remove();
 }
