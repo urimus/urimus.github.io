@@ -354,8 +354,8 @@ function testSummary() {
 
 	console.log(
 		`Modify Summary Speed Test Completed. ` +
-		`Duration: ${(testTime / 1000).toFixed(2)} s. ` +
-		`Algorithms total: ${(totalAlgorithmsTime / 1000).toFixed(2)} s.`
+		`Algorithms Total: ${(totalAlgorithmsTime / 1000).toFixed(2)} s. ` +
+		`Duration: ${(testTime / 1000).toFixed(2)} s.`
 	);
 	container.remove();
 }
