@@ -6,7 +6,7 @@
 
 console.log(
 	'Type "testSummary(number)" to start Modify Summary Speed Test. ' +
-	'Number - Maximum Word Count per Test, Default - 100.'
+	'Number - Words Count per Test, Default - 100.'
 );
 
 function randomWord() {
@@ -148,7 +148,7 @@ function testSummary(wordsCount) {
 	const TEST_COUNT = 1000;
 	const MIN_LINES = 1;
 	const MAX_LINES = 10;
-	const MAX_WORDS = wordsCount ?? MAX_LINES * 10;
+	const WORDS_COUNT = wordsCount ?? MAX_LINES * 10;
 
 	// =========================================================
 	// ALGORITHMS
@@ -178,7 +178,7 @@ function testSummary(wordsCount) {
 
 	console.log(
 		`Modify Summary Speed Test Started: ${TEST_COUNT} texts, ` +
-		`1...${MAX_WORDS} words, ` +
+		`${WORDS_COUNT} words, ` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines, ` +
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
 	);
@@ -205,9 +205,8 @@ function testSummary(wordsCount) {
 
 	function generateTest() {
 
-		const wordsCount = 1 + Math.floor(Math.random() * MAX_WORDS);
-		const words = new Array(wordsCount);
-		for (let i = 0; i < wordsCount; i++) {
+		const words = new Array(WORDS_COUNT);
+		for (let i = 0; i < WORDS_COUNT; i++) {
 			words[i] = randomWord();
 		}
 		return {
