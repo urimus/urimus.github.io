@@ -108,7 +108,7 @@ function getStatistics(perf) {
 
 	return {
 		count: perf.count,
-		total: round(perf.total / 1000) + " s",
+		total: round(perf.total) + " ms",
 		average: round(average) + " ms",
 		median: round(percentile(0.50)) + " ms",
 		p95: round(percentile(0.95)) + " ms",
@@ -117,6 +117,184 @@ function getStatistics(perf) {
 		min: round(perf.min) + " ms",
 		max: round(perf.max) + " ms"
 	};
+}
+
+function consolePlot(title, perf) {
+
+	const { times, min, max, total } = perf;
+
+	const WIDTH = 90;
+	const HEIGHT = 22;
+
+	const MIN_Y = 0;
+	const MAX_Y = Math.max(...times);
+
+	// Символы графика
+	const POINT = "●";
+	const LINE = "•";
+	const AXIS = "│";
+	const H_AXIS = "─";
+	const CORNER = "└";
+
+	// Не допускаем деления на 0
+	const yRange = MAX_Y - MIN_Y || 1;
+
+	// Перевод значения Y в строку графика
+	function valueToRow(value) {
+		return Math.round(
+			(value - MIN_Y) / yRange * HEIGHT
+		);
+	}
+
+	// Перевод индекса в колонку
+	function indexToCol(index) {
+		return Math.round(
+			index / (times.length - 1) * (WIDTH - 1)
+		);
+	}
+
+	// Создаём пустую сетку
+	const grid = Array.from(
+		{ length: HEIGHT + 1 },
+		() => Array(WIDTH).fill(" ")
+	);
+
+	// =====================================================
+	// DRAW LINE
+	// =====================================================
+
+	for (let i = 0; i < times.length - 1; i++) {
+
+		const x1 = indexToCol(i);
+		const x2 = indexToCol(i + 1);
+
+		const y1 = valueToRow(times[i]);
+		const y2 = valueToRow(times[i + 1]);
+
+		const dx = x2 - x1;
+		const dy = y2 - y1;
+
+		const steps = Math.max(Math.abs(dx), Math.abs(dy));
+
+		for (let s = 0; s <= steps; s++) {
+
+			const t = steps === 0 ? 0 : s / steps;
+
+			const x = Math.round(x1 + dx * t);
+			const y = Math.round(y1 + dy * t);
+
+			const row = HEIGHT - y;
+
+			if (
+				row >= 0 &&
+				row <= HEIGHT &&
+				x >= 0 &&
+				x < WIDTH
+			) {
+				grid[row][x] = LINE;
+			}
+		}
+	}
+
+	// =====================================================
+	// DRAW POINTS
+	// =====================================================
+
+	for (let i = 0; i < times.length; i++) {
+
+		const x = indexToCol(i);
+		const y = valueToRow(times[i]);
+		const row = HEIGHT - y;
+
+		if (
+			row >= 0 &&
+			row <= HEIGHT &&
+			x >= 0 &&
+			x < WIDTH
+		) {
+			grid[row][x] = POINT;
+		}
+	}
+
+	// =====================================================
+	// TITLE
+	// =====================================================
+
+	console.log("");
+	console.log(`=== ${title} ===`);
+
+	// =====================================================
+	// Y AXIS + GRAPH
+	// =====================================================
+
+	for (let row = 0; row <= HEIGHT; row++) {
+
+		const yValue =
+			MAX_Y -
+			(MAX_Y - MIN_Y) * row / HEIGHT;
+
+		const label = yValue.toFixed(1).padStart(7);
+
+		console.log(
+			`${label} ${AXIS}${grid[row].join("")}`
+		);
+	}
+
+	// =====================================================
+	// X AXIS
+	// =====================================================
+
+	console.log(
+		`        ${CORNER}${H_AXIS.repeat(WIDTH)}`
+	);
+
+	// =====================================================
+	// X LABELS
+	// =====================================================
+
+	const labels = Array(WIDTH).fill(" ");
+
+	const xIndexes = [
+		0,
+		Math.round((times.length - 1) * 0.25),
+		Math.round((times.length - 1) * 0.50),
+		Math.round((times.length - 1) * 0.75),
+		times.length - 1
+	];
+
+	for (const index of xIndexes) {
+
+		const x = indexToCol(index);
+		const text = String(index + 1);
+
+		let start = x - Math.floor(text.length / 2);
+
+		start = Math.max(
+			0,
+			Math.min(start, WIDTH - text.length)
+		);
+
+		for (let i = 0; i < text.length; i++) {
+			labels[start + i] = text[i];
+		}
+	}
+
+	console.log(
+		`         ${labels.join("")}`
+	);
+
+	// =====================================================
+	// STATISTICS
+	// =====================================================
+
+	console.log(
+		`min: ${min.toFixed(3)} ms | ` +
+		`avg: ${(total / times.length).toFixed(3)} ms | ` +
+		`max: ${max.toFixed(3)} ms | ` +
+		`total: ${total.toFixed(3)} ms`
+	);
+
+	console.log("");
 }
 
 function testSummary(maxLines) {
@@ -259,6 +437,17 @@ function testSummary(maxLines) {
 
 	console.log("=== STATISTICS ===");
 	console.table(statistics);
+
+
+	// =========================================================
+	// PERFORMANCE GRAPHS
+	// =========================================================
+
+	console.log("=== PERFORMANCE GRAPHS ===");
+
+	for (const algorithm of algorithms) {
+		consolePlot(algorithm.name, perfData.get(algorithm));
+	}
 
 	// =========================================================
 	// ALGORITHM COMPARISONS
