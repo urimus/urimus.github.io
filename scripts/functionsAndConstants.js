@@ -428,8 +428,10 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 
 	element.removeChild(pointer);
 	element.appendChild(extensionA);
-	span.innerHTML = formatSummary(words_arr, wordsCount);
-	if (wordsCount === 1) return;
+	if (wordsCount === 1) {
+		span.innerHTML = formatSummary(words_arr, wordsCount);
+		return;
+	}
 
 	// ---------------------------------------------------------
 	// Second pass: walk backwards until extension moves
