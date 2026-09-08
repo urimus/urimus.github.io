@@ -108,7 +108,7 @@ function getStatistics(perf) {
 
 	return {
 		count: perf.count,
-		total: round(perf.total) + " ms",
+		total: round(perf.total / 1000) + " s",
 		average: round(average) + " ms",
 		median: round(percentile(0.50)) + " ms",
 		p95: round(percentile(0.95)) + " ms",
@@ -181,6 +181,8 @@ function testSummary(maxLines) {
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
 	);
 
+	const testStart = performance.now();
+
 	// =========================================================
 	// PERFORMANCE DATA
 	// =========================================================
@@ -201,24 +203,15 @@ function testSummary(maxLines) {
 	// GENERATE DATA
 	// =========================================================
 
-	const generationStart = performance.now();
-	console.log("Test Data Generation Started.");
-
 	const words = new Array(WORDS_COUNT);
 	for (let i = 0; i < words.length; i++) {
 		words[i] = randomWord();
 	}
 	const summary = words.join(" ");
 
-	const generationTime = performance.now() - generationStart;
-	console.log(`Test Data Generation Completed. Duration: ${(generationTime / 1000).toFixed(2)} s.`);
-
 	// =========================================================
 	// RUN BENCHMARK
 	// =========================================================
-
-	const algorithmStart = performance.now();
-	console.log("Algorithms Processing Started.");
 
 	for (let linesToShow = MIN_LINES; linesToShow < MAX_LINES + 1; linesToShow++) {
 
@@ -239,8 +232,6 @@ function testSummary(maxLines) {
 		}
 	}
 
-	const algorithmTime = performance.now() - algorithmStart;
-	console.log(`Algorithms Processing Completed. Duration: ${(algorithmTime / 1000).toFixed(2)} s.`);
 	container.remove();
 
 	// =========================================================
@@ -348,6 +339,6 @@ function testSummary(maxLines) {
 	// COMPLETE
 	// =========================================================
 
-	const testTime = performance.now() - generationStart;
+	const testTime = performance.now() - testStart;
 	console.log(`Modify Summary Speed Test Completed. Duration: ${(testTime / 1000).toFixed(2)} s.`);
 }
