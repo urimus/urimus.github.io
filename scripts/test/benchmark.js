@@ -119,7 +119,7 @@ function getStatistics(perf) {
 	};
 }
 
-function consolePlot(title, perf) {
+function consolePlot(title, perf, actualLines) {
 
 	const { times, min, max, total } = perf;
 
@@ -132,6 +132,7 @@ function consolePlot(title, perf) {
 	// Символы графика
 	const POINT = "●";
 	const LINE = "•";
+	const ACTUAL_LINE = "┊";
 	const AXIS = "│";
 	const H_AXIS = "─";
 	const CORNER = "└";
@@ -153,11 +154,40 @@ function consolePlot(title, perf) {
 		);
 	}
 
-	// Создаём пустую сетку
+	// =====================================================
+	// ACTUAL LINES POSITION
+	// =====================================================
+
+	const actualLinesIndex = actualLines - 1;
+
+	const actualLinesCol =
+		actualLines >= 1 && actualLines <= times.length
+			? indexToCol(actualLinesIndex)
+			: null;
+
+	// =====================================================
+	// CREATE GRID
+	// =====================================================
+
 	const grid = Array.from(
 		{ length: HEIGHT + 1 },
 		() => Array(WIDTH).fill(" ")
 	);
+
+	// =====================================================
+	// DRAW ACTUAL LINES
+	// =====================================================
+
+	if (actualLinesCol !== null) {
+
+		for (let row = 0; row <= HEIGHT; row++) {
+
+			// Не затираем точки графика
+			if (grid[row][actualLinesCol] === " ") {
+				grid[row][actualLinesCol] = ACTUAL_LINE;
+			}
+		}
+	}
 
 	// =====================================================
 	// DRAW LINE
@@ -174,7 +204,10 @@ function consolePlot(title, perf) {
 		const dx = x2 - x1;
 		const dy = y2 - y1;
 
-		const steps = Math.max(Math.abs(dx), Math.abs(dy));
+		const steps = Math.max(
+			Math.abs(dx),
+			Math.abs(dy)
+		);
 
 		for (let s = 0; s <= steps; s++) {
 
@@ -233,7 +266,9 @@ function consolePlot(title, perf) {
 			MAX_Y -
 			(MAX_Y - MIN_Y) * row / HEIGHT;
 
-		const label = yValue.toFixed(1).padStart(7);
+		const label = yValue
+			.toFixed(1)
+			.padStart(7);
 
 		console.log(
 			`${label} ${AXIS}${grid[row].join("")}`
@@ -271,7 +306,10 @@ function consolePlot(title, perf) {
 
 		start = Math.max(
 			0,
-			Math.min(start, WIDTH - text.length)
+			Math.min(
+				start,
+				WIDTH - text.length
+			)
 		);
 
 		for (let i = 0; i < text.length; i++) {
@@ -291,7 +329,8 @@ function consolePlot(title, perf) {
 		`min: ${min.toFixed(3)} ms | ` +
 		`avg: ${(total / times.length).toFixed(3)} ms | ` +
 		`max: ${max.toFixed(3)} ms | ` +
-		`total: ${total.toFixed(3)} ms`
+		`total: ${total.toFixed(3)} ms | ` +
+		`actual lines: ${actualLines}`
 	);
 
 	console.log("");
@@ -387,6 +426,24 @@ function testSummary(maxLines) {
 	}
 	const summary = words.join(" ");
 
+	summaryDiv.innerHTML = "";
+	let span = document.createElement('span');
+	span.setAttribute('class', "text_red");
+	span.style.overflowWrap = "anywhere";
+	span.innerHTML = summary;
+	summaryDiv.appendChild(span);
+
+	const range = document.createRange();
+	range.selectNodeContents(summaryDiv);
+	const rects = range.getClientRects();
+	const lines = new Set();
+
+	for (const rect of rects) {
+		lines.add(rect.top);
+	}
+
+	const actualLines = lines.size;
+
 	// =========================================================
 	// RUN BENCHMARK
 	// =========================================================
@@ -446,7 +503,7 @@ function testSummary(maxLines) {
 	console.log("=== PERFORMANCE GRAPHS ===");
 
 	for (const algorithm of algorithms) {
-		consolePlot(algorithm.name, perfData.get(algorithm));
+		consolePlot(algorithm.name, perfData.get(algorithm), actualLines);
 	}
 
 	// =========================================================
