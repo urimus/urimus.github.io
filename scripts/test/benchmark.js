@@ -6,7 +6,7 @@
 
 console.log(
 	'Type "testSummary(number)" to start Modify Summary Speed Test. ' +
-	'Number - Words Count per Test, Default - 100.'
+	'Number - Lines Count per Test, Default - 100.'
 );
 
 function randomWord() {
@@ -146,8 +146,8 @@ function testSummary(wordsCount) {
 	// =========================================================
 
 	const MIN_LINES = 1;
-	const MAX_LINES = 10;
-	const WORDS_COUNT = wordsCount ?? MAX_LINES * 10;
+	const MAX_LINES = maxLines ?? 100;
+	const WORDS_COUNT = MAX_LINES * 5;
 
 	// =========================================================
 	// ALGORITHMS
