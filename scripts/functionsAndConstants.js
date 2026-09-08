@@ -122,6 +122,7 @@ function formatSummary(words_arr, wordsCount, addSpace = true) {
 }
 
 function getLineInfo(element, linesToShow) {
+
 	const range = document.createRange();
 	range.selectNodeContents(element);
 	const rects = range.getClientRects();
@@ -131,7 +132,6 @@ function getLineInfo(element, linesToShow) {
 	for (const rect of rects) {
 		if (!lines.has(rect.top)) {
 			lines.add(rect.top);
-
 			if (lines.size > linesToShow) {
 				return {
 					fitsLinesToShow: false,
@@ -140,7 +140,6 @@ function getLineInfo(element, linesToShow) {
 			}
 		}
 	}
-
 	return {
 		fitsLinesToShow: true,
 		fitsLinesToShowM1: lines.size <= linesToShow - 1
@@ -173,15 +172,23 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	// ---------------------------------------------------------
 
 	while (true) {
-		span.innerHTML = formatSummary(words_arr, current, false);
+		if (current < wordsLength) {
+			span.innerHTML = formatSummary(words_arr, current, false);
+		} else {
+			span.innerHTML = summary;
+		}
 		const result = getLineInfo(element, linesToShow);
-		if (!result.fitsLinesToShow) break;
+		if (!result.fitsLinesToShow) {
+			break;
+		}
 		wordsCount = current;
 		if (result.fitsLinesToShowM1) {
 			left = current;
 		}
 		// The entire summary fits.
-		if (current === wordsLength) return;
+		if (current === wordsLength) {
+			return;
+		}
 		current = Math.min(current * 2, wordsLength);
 	}
 
@@ -301,7 +308,10 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 		if (result.wordsCount < current) break;
 
 		// The entire summary fits.
-		if (current === wordsLength) return;
+		if (current === wordsLength) {
+			span.innerHTML = summary;
+			return;
+		}
 
 		current = Math.min(current * 2, wordsLength);
 	}
