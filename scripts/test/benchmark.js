@@ -222,8 +222,6 @@ function testSummary(wordsCount) {
 
 	for (let linesToShow = MIN_LINES; linesToShow < MAX_LINES + 1; linesToShow++) {
 
-		console.log(`Testing linesToShow = ${linesToShow}`);
-
 		// Random order for all algorithms.
 		const shuffledAlgorithms = [...algorithms];
 
@@ -346,4 +344,10 @@ function testSummary(wordsCount) {
 	console.log("=== ALGORITHM COMPARISONS ===");
 	console.table(comparisons);
 
+	// =========================================================
+	// COMPLETE
+	// =========================================================
+
+	const testTime = performance.now() - generationStart;
+	console.log(`Modify Summary Speed Test Completed. Duration: ${(testTime / 1000).toFixed(2)} s.`);
 }
