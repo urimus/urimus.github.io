@@ -369,7 +369,6 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 
 	let wordsCount = 1;
 	let linesCount = 1;
-	let lastLineStartWord = 1;
 
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
@@ -398,48 +397,48 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	span.innerHTML = formatSummary(words_arr, 1, false);
 	let currentLineTop = pointer.offsetTop;
 
+	// ---------------------------------------------------------
+	// First pass
+	// ---------------------------------------------------------
+
 	for (let k = 1; k < wordsLength; k++) {
-		span.innerHTML = formatSummary(words_arr, k + 1, false);
+		wordsCount = k + 1;
+		span.innerHTML = formatSummary(words_arr, wordsCount, false);
 
-		if (pointer.offsetTop !== currentLineTop) {
-			if (Math.abs(pointer.offsetTop - currentLineTop) < 2) {
-				currentLineTop = pointer.offsetTop;
-				continue;
-			}
-			if (linesCount === linesToShow) {
-				span.innerHTML = "";
-				element.removeChild(pointer);
-				element.appendChild(extensionA);
+		const pointerTop = pointer.offsetTop;
+		if (Math.abs(pointerTop - currentLineTop) < 2) continue;
 
-				wordsCount = lastLineStartWord;
-				span.innerHTML = formatSummary(words_arr, wordsCount);
+		currentLineTop = pointerTop;
+		linesCount++;
 
-				currentLineTop = extensionA.offsetTop;
-
-				for (let k2 = lastLineStartWord; k2 < wordsLength; k2++) {
-					wordsCount++;
-					span.innerHTML = formatSummary(words_arr, wordsCount);
-
-					if (extensionA.offsetTop !== currentLineTop) {
-						if (Math.abs(extensionA.offsetTop - currentLineTop) < 2) {
-							currentLineTop = extensionA.offsetTop;
-							continue;
-						}
-						wordsCount--;
-						span.innerHTML = formatSummary(words_arr, wordsCount);
-						break;
-					}
-				}
-
-				return;
-			}
-
-			lastLineStartWord = k;
-			currentLineTop = pointer.offsetTop;
-			linesCount++;
-		}
+		if (linesCount > linesToShow) break;
 	}
 
+	// Entire summary fits
+	if (wordsCount === wordsLength && linesCount <= linesToShow) {
+		element.removeChild(pointer);
+		span.innerHTML = summary;
+		return;
+	}
+
+	// ---------------------------------------------------------
+	// Overflow was detected.
+	// Remove the word that caused overflow and replace pointer with extension.
+	// ---------------------------------------------------------
+
 	element.removeChild(pointer);
-	span.innerHTML = summary;
+	element.appendChild(extensionA);
+	if (wordsCount === 1) return;
+
+	// ---------------------------------------------------------
+	// Second pass: walk backwards until extension moves
+	// to the previous line.
+	// currentLineTop is the line where overflow was detected
+	// ---------------------------------------------------------
+
+	while (wordsCount > 1) {
+		wordsCount--;
+		span.innerHTML = formatSummary(words_arr, wordsCount);
+		if (Math.abs(extensionA.offsetTop - currentLineTop) >= 2) break;
+	}
 }
