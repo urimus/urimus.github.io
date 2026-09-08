@@ -117,8 +117,8 @@ function splitAllSpaces(str) {
 // Algorithm 1
 // ---------------------------------------------------------
 
-function formatSummary(words_arr, wordsCount, addSpace = true) {
-	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
+function formatSummary(words_arr, wordsCount) {
+	return words_arr.slice(0, wordsCount).join(" ");
 }
 
 function getLineInfo(element, linesToShow) {
@@ -173,7 +173,7 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	// ---------------------------------------------------------
 
 	while (true) {
-		span.innerHTML = formatSummary(words_arr, current, false);
+		span.innerHTML = formatSummary(words_arr, current);
 		const result = getLineInfo(element, linesToShow);
 		if (!result.fitsLinesToShow) break;
 		wordsCount = current;
@@ -195,17 +195,17 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	extensionA.dataset.expanded = "false";
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			span.innerHTML = summary + " ";
-			this.innerHTML = "[▲]";
+			span.innerHTML = summary;
+			this.innerHTML = " [▲]";
 			this.dataset.expanded = "true";
 		} else {
 			span.innerHTML = formatSummary(words_arr, wordsCount);
-			this.innerHTML = "[▼]";
+			this.innerHTML = " [▼]";
 			this.dataset.expanded = "false";
 		}
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
-	extensionA.innerHTML = "[▼]";
+	extensionA.innerHTML = " [▼]";
 	element.appendChild(extensionA);
 
 	// ---------------------------------------------------------
@@ -240,7 +240,7 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 // Algorithm 2
 // ---------------------------------------------------------
 
-function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
+function formatSummaryWithPointers(words_arr, wordsCount) {
 	const pointersClass = "summary_word_pointer";
 
 	return words_arr
@@ -248,7 +248,7 @@ function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 		.map(word => {
 			return word + '<span class="' + pointersClass + '"></span>';
 		})
-		.join(" ") + (addSpace ? " " : "");
+		.join(" ");
 }
 
 function getWordsCount(element, linesToShow, hasExtension = false) {
@@ -296,7 +296,7 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	// ---------------------------------------------------------
 
 	while (true) {
-		span.innerHTML = formatSummaryWithPointers(words_arr, current, false);
+		span.innerHTML = formatSummaryWithPointers(words_arr, current);
 		result = getWordsCount(element, linesToShow, false);
 		if (result.wordsCount < current) break;
 
@@ -316,17 +316,17 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	extensionA.dataset.expanded = "false";
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			span.innerHTML = summary + " ";
-			this.innerHTML = "[▲▲]";
+			span.innerHTML = summary;
+			this.innerHTML = " [▲▲]";
 			this.dataset.expanded = "true";
 		} else {
 			span.innerHTML = formatSummary(words_arr, wordsCount);
-			this.innerHTML = "[▼▼]";
+			this.innerHTML = " [▼▼]";
 			this.dataset.expanded = "false";
 		}
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
-	extensionA.innerHTML = "[▼▼]";
+	extensionA.innerHTML = " [▼▼]";
 	element.appendChild(extensionA);
 
 	// ---------------------------------------------------------
@@ -377,24 +377,24 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			span.innerHTML = summary + " ";
-			this.innerHTML = "[▲▲▲]";
+			span.innerHTML = summary;
+			this.innerHTML = " [▲▲▲]";
 			this.dataset.expanded = "true";
 		} else {
 			span.innerHTML = formatSummary(words_arr, wordsCount);
-			this.innerHTML = "[▼▼▼]";
+			this.innerHTML = " [▼▼▼]";
 			this.dataset.expanded = "false";
 		}
 
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 
-	extensionA.innerHTML = "[▼▼▼]";
+	extensionA.innerHTML = " [▼▼▼]";
 
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
 
-	span.innerHTML = formatSummary(words_arr, 1, false);
+	span.innerHTML = formatSummary(words_arr, 1);
 	let currentLineTop = pointer.offsetTop;
 
 	// ---------------------------------------------------------
@@ -403,7 +403,7 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 
 	for (let k = 1; k < wordsLength; k++) {
 		wordsCount = k + 1;
-		span.innerHTML = formatSummary(words_arr, wordsCount, false);
+		span.innerHTML = formatSummary(words_arr, wordsCount);
 
 		const pointerTop = pointer.offsetTop;
 		if (Math.abs(pointerTop - currentLineTop) < 2) continue;
