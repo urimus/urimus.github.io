@@ -145,7 +145,6 @@ function testSummary(wordsCount) {
 	// CONSTANTS
 	// =========================================================
 
-	const TEST_COUNT = 1000;
 	const MIN_LINES = 1;
 	const MAX_LINES = 10;
 	const WORDS_COUNT = wordsCount ?? MAX_LINES * 10;
@@ -177,8 +176,7 @@ function testSummary(wordsCount) {
 	];
 
 	console.log(
-		`Modify Summary Speed Test Started: ${TEST_COUNT} texts, ` +
-		`${WORDS_COUNT} words, ` +
+		`Modify Summary Speed Test Started: ${WORDS_COUNT} words, ` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines, ` +
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
 	);
@@ -200,39 +198,31 @@ function testSummary(wordsCount) {
 	}
 
 	// =========================================================
-	// TEST GENERATION
+	// GENERATE DATA
 	// =========================================================
 
-	function generateTest() {
+	const generationStart = performance.now();
+	console.log("Test Data Generation Started.");
 
-		const linesToShow = MIN_LINES + Math.floor(Math.random() * (MAX_LINES - MIN_LINES + 1));
-		const useEarlyExit = Math.random() < 0.5;
-
-		let words;
-		if (useEarlyExit) {
-			words = new Array(linesToShow * 5);
-		} else {
-			words = new Array(WORDS_COUNT);
-		}
-		for (let i = 0; i < words.length; i++) {
-			words[i] = randomWord();
-		}
-		return {
-			linesToShow,
-			summary: words.join(" "),
-			words
-		};
+	const words = new Array(WORDS_COUNT);
+	for (let i = 0; i < words.length; i++) {
+		words[i] = randomWord();
 	}
+	const summary = words.join(" ");
+
+	const generationTime = performance.now() - generationStart;
+	console.log(`Test Data Generation Completed. Duration: ${(generationTime / 1000).toFixed(2)} s.`);
 
 	// =========================================================
 	// RUN BENCHMARK
 	// =========================================================
 
-	const testStart = performance.now();
+	const algorithmStart = performance.now();
+	console.log("Algorithms Processing Started.");
 
-	for (let test = 0; test < TEST_COUNT; test++) {
+	for (let linesToShow = MIN_LINES; linesToShow < MAX_LINES + 1; linesToShow++) {
 
-		const data = generateTest();
+		console.log(`Testing linesToShow = ${linesToShow}`);
 
 		// Random order for all algorithms.
 		const shuffledAlgorithms = [...algorithms];
@@ -245,13 +235,15 @@ function testSummary(wordsCount) {
 		for (const algorithm of shuffledAlgorithms) {
 			summaryDiv.innerHTML = "";
 			const start = performance.now();
-			algorithm.run(summaryDiv, data.summary, data.words, data.linesToShow);
+			algorithm.run(summaryDiv, summary, words, linesToShow);
 			const time = performance.now() - start;
 			addPerf(perfData.get(algorithm), time);
 		}
 	}
 
-	const testTime = performance.now() - testStart;
+	const algorithmTime = performance.now() - algorithmStart;
+	console.log(`Algorithms Processing Completed. Duration: ${(algorithmTime / 1000).toFixed(2)} s.`);
+	container.remove();
 
 	// =========================================================
 	// STATISTICS
@@ -354,19 +346,4 @@ function testSummary(wordsCount) {
 	console.log("=== ALGORITHM COMPARISONS ===");
 	console.table(comparisons);
 
-	// =========================================================
-	// COMPLETE
-	// =========================================================
-
-	const totalAlgorithmsTime = algorithms.reduce(
-		(sum, algorithm) => sum + perfData.get(algorithm).total,
-		0
-	);
-
-	console.log(
-		`Modify Summary Speed Test Completed. ` +
-		`Algorithms Total: ${(totalAlgorithmsTime / 1000).toFixed(2)} s. ` +
-		`Duration: ${(testTime / 1000).toFixed(2)} s.`
-	);
-	container.remove();
 }
