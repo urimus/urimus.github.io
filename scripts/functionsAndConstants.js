@@ -429,7 +429,7 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	element.removeChild(pointer);
 	element.appendChild(extensionA);
 	if (wordsCount === 1) {
-		span.innerHTML = formatSummary(words_arr, wordsCount);
+		span.innerHTML += " ";
 		return;
 	}
 
