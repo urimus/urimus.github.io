@@ -119,7 +119,7 @@ function getStatistics(perf) {
 	};
 }
 
-function testSummary(wordsCount) {
+function testSummary(maxLines) {
 
 	// =========================================================
 	// SUMMARY DIV POSITIONING
