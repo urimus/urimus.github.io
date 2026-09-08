@@ -428,6 +428,7 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 
 	element.removeChild(pointer);
 	element.appendChild(extensionA);
+	span.innerHTML = formatSummary(words_arr, wordsCount);
 	if (wordsCount === 1) return;
 
 	// ---------------------------------------------------------
@@ -439,6 +440,6 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	while (wordsCount > 1) {
 		wordsCount--;
 		span.innerHTML = formatSummary(words_arr, wordsCount);
-		if (Math.abs(extensionA.offsetTop - currentLineTop) >= 2) break;
+		if (Math.abs(extensionA.offsetTop - currentLineTop) >= 2) return;
 	}
 }
