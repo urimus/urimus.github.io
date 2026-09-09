@@ -11,16 +11,16 @@ console.log(
 
 function randomWord() {
 
-	// long word stress test
-	const useStressTest = false;
+	// multiline word test
+	const useMultilineWord = false;
 
 	const r = Math.random();
 	let length;
 
-	if (useStressTest && r < 0.01) {
+	if (useMultilineWord && r < 0.01) {
 		length = 100 + Math.floor(Math.random() * 200);
 	} else {
-		const r2 = useStressTest ? r : (r - 0.01) / 0.99;
+		const r2 = useMultilineWord ? r : (r - 0.01) / 0.99;
 		// english language distribution
 		if (r2 < 0.03) length = 1;
 		else if (r2 < 0.2065) length = 2;
@@ -135,7 +135,7 @@ function consolePlot(title, perf, actualLines) {
 
 	// Символы графика
 	const POINT = "●";
-	const LINE = "•";
+//	const LINE = "•";
 	const ACTUAL_LINE = "┊";
 	const AXIS = "│";
 	const H_AXIS = "─";
@@ -192,7 +192,7 @@ function consolePlot(title, perf, actualLines) {
 			}
 		}
 	}
-
+/*
 	// =====================================================
 	// DRAW LINE
 	// =====================================================
@@ -232,7 +232,7 @@ function consolePlot(title, perf, actualLines) {
 			}
 		}
 	}
-
+*/
 	// =====================================================
 	// DRAW POINTS
 	// =====================================================
