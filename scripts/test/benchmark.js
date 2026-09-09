@@ -5,22 +5,19 @@
 // =========================================================
 
 console.log(
-	'Type "testSummary(number)" to start Modify Summary Speed Test. ' +
-	'Number - Lines Count per Test, Default - 100.'
+	'Type "testSummary(boolean)" to start Modify Summary Speed Test. ' +
+	'Boolean - Allow Multiline Words, Default - false.'
 );
 
-function randomWord() {
-
-	// multiline word test
-	const useMultilineWord = false;
+function randomWord(allowMultilineWords) {
 
 	const r = Math.random();
 	let length;
 
-	if (useMultilineWord && r < 0.01) {
+	if (allowMultilineWords && r < 0.01) {
 		length = 100 + Math.floor(Math.random() * 200);
 	} else {
-		const r2 = useMultilineWord ? r : (r - 0.01) / 0.99;
+		const r2 = allowMultilineWords ? r : (r - 0.01) / 0.99;
 		// english language distribution
 		if (r2 < 0.03) length = 1;
 		else if (r2 < 0.2065) length = 2;
@@ -340,7 +337,7 @@ function consolePlot(title, perf, actualLines) {
 	console.log("");
 }
 
-function testSummary(maxLines) {
+function testSummary(allowMultilineWords) {
 
 	// =========================================================
 	// SUMMARY DIV POSITIONING
@@ -367,7 +364,8 @@ function testSummary(maxLines) {
 	// =========================================================
 
 	const MIN_LINES = 1;
-	const MAX_LINES = maxLines ?? 100;
+	const MAX_LINES = 100;
+	const MULTILINE_WORDS = !!allowMultilineWords;
 	const WORDS_COUNT = MAX_LINES * 5;
 
 	// =========================================================
@@ -397,7 +395,7 @@ function testSummary(maxLines) {
 	];
 
 	console.log(
-		`Modify Summary Speed Test Started: ${WORDS_COUNT} words, ` +
+		`Modify Summary Speed Test Started: ${WORDS_COUNT} words, ${MULTILINE_WORDS ? "allow multiline, " : ""}` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines, ` +
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
 	);
@@ -426,7 +424,7 @@ function testSummary(maxLines) {
 
 	const words = new Array(WORDS_COUNT);
 	for (let i = 0; i < words.length; i++) {
-		words[i] = randomWord();
+		words[i] = randomWord(MULTILINE_WORDS);
 	}
 	const summary = words.join(" ");
 
