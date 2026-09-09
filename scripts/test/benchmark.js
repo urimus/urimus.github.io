@@ -10,13 +10,17 @@ console.log(
 );
 
 function randomWord() {
+
+	// long word stress test
+	const useStressTest = false;
+
 	const r = Math.random();
 	let length;
 
-	if (r < 0.01) { // long word stress test
+	if (useStressTest && r < 0.01) {
 		length = 100 + Math.floor(Math.random() * 200);
 	} else {
-		const r2 = (r - 0.01) / 0.99;
+		const r2 = useStressTest ? r : (r - 0.01) / 0.99;
 		// english language distribution
 		if (r2 < 0.03) length = 1;
 		else if (r2 < 0.2065) length = 2;
