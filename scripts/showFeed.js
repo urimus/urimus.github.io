@@ -2460,9 +2460,13 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 			}
 				
 			if (media?.url) {
-				let url = new URL(media.url);
-				url.search = "";
-				media.url = url.toString();
+				try {
+					const url = new URL(media.url);
+					url.search = "";
+					media.url = url.toString();
+				} catch (e) {
+					console.log("Update: Record #", i, "- Invalid media.url:", media.url);
+				}
 			}
 
 			seeAlso = getMetas(doc, 'meta[property="og:see_also"]');
