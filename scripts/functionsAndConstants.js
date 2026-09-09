@@ -327,16 +327,16 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
 			span.innerHTML = summary + " ";
-			this.innerHTML = "[▲▲]";
+			this.innerHTML = "[▲]";
 			this.dataset.expanded = "true";
 		} else {
 			span.innerHTML = formatSummary(words_arr, wordsCount);
-			this.innerHTML = "[▼▼]";
+			this.innerHTML = "[▼]";
 			this.dataset.expanded = "false";
 		}
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
-	extensionA.innerHTML = "[▼▼]";
+	extensionA.innerHTML = "[▼]";
 	element.appendChild(extensionA);
 
 	// ---------------------------------------------------------
@@ -388,18 +388,18 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
 			span.innerHTML = summary + " ";
-			this.innerHTML = "[▲▲▲]";
+			this.innerHTML = "[▲]";
 			this.dataset.expanded = "true";
 		} else {
 			span.innerHTML = formatSummary(words_arr, wordsCount);
-			this.innerHTML = "[▼▼▼]";
+			this.innerHTML = "[▼]";
 			this.dataset.expanded = "false";
 		}
 
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 
-	extensionA.innerHTML = "[▼▼▼]";
+	extensionA.innerHTML = "[▼]";
 
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
