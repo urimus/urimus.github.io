@@ -2465,7 +2465,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					url.search = "";
 					media.url = url.toString();
 				} catch (e) {
-					console.log("Update: Record #", i, "- Invalid media.url:", media.url);
+					console.log("Update: Record #", i + 1, "- Invalid media.url:", media.url);
 				}
 			}
 
