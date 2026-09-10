@@ -129,7 +129,7 @@ function consolePlot(title, perf, actualLines) {
 	const MAX_Y = Math.max(...times);
 
 	// Символы графика
-	const EARLY_EXIT_POINT = "✦";
+	const EARLY_EXIT_POINT = "▪"; //○✦
 	const NORMAL_POINT = "●";
 	const ACTUAL_LINE = "┊";
 	const AXIS = "│";
