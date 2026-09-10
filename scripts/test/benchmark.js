@@ -4,7 +4,10 @@
 // BENCHMARK
 // =========================================================
 
-console.log('Type "testSummary()" to start Modify Summary Speed Test. ');
+console.log(
+	"Type \"testSummary(number)\" to start Modify Summary Speed Test. " +
+	"Number - Words Count in Summary, Default - 1000."
+);
 
 function randomWord() {
 
@@ -306,7 +309,7 @@ function consolePlot(title, perf, actualLines) {
 	console.log("");
 }
 
-function testSummary() {
+function testSummary(wordsCount) {
 
 	// =========================================================
 	// SUMMARY DIV POSITIONING
@@ -332,9 +335,10 @@ function testSummary() {
 	// CONSTANTS
 	// =========================================================
 
+	const count = Math.floor(Number(wordsCount));
+	const WORDS_COUNT = count > 0 ? count : 1000;
 	const MIN_LINES = 1;
-	const MAX_LINES = 100;
-	const WORDS_COUNT = MAX_LINES * 5;
+	const MAX_LINES = Math.max(1, Math.floor(WORDS_COUNT / 5));
 
 	// =========================================================
 	// ALGORITHMS
