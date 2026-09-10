@@ -117,6 +117,14 @@ function splitAllSpaces(str) {
 // Algorithm 1
 // ---------------------------------------------------------
 
+function createSpan(element, col) {
+	const span = document.createElement('span');
+	span.setAttribute('class', "text_" + col);
+	span.style.overflowWrap = "anywhere";
+	element.appendChild(span);
+	return span;
+}
+
 function formatSummary(words_arr, wordsCount, addSpace = true) {
 	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
 }
@@ -150,10 +158,7 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return;
 
-	let span = document.createElement('span');
-	span.setAttribute('class', "text_" + col);
-	span.style.overflowWrap = "anywhere";
-	element.appendChild(span);
+	const span = createSpan(element, col);
 
 	// Estimate the likely result to start exponential search.
 	const estimatedResult = linesToShow * 10;
@@ -243,6 +248,17 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 // OTHER ALGORITHMS
 // =========================================================
 
+function getLineHeight(span) {
+	span.textContent = '\u200B';
+
+	const range = document.createRange();
+	range.selectNodeContents(span);
+
+	const rects = range.getClientRects();
+
+	return rects[0]?.height || 17;
+}
+
 // ---------------------------------------------------------
 // Algorithm 2
 // ---------------------------------------------------------
@@ -258,27 +274,35 @@ function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 		.join(" ") + (addSpace ? " " : "");
 }
 
-function getWordsCount(element, linesToShow, hasExtension = false) {
+function getWordsCount(element, linesToShow, lineHeight, hasExtension = false) {
+
 	const pointers = element.getElementsByClassName("summary_word_pointer");
-	const lines = new Set();
 
-	let wordsCount = 0;
-	let wordsCountM1 = 0;
+	let linesCount = 1;
+	let wordsCount = 1;
+	let wordsCountM1 = 1;
+	let previousTop = pointers[0].offsetTop;
 
-	for (let i = 0; i < pointers.length; i++) {
+	for (let i = 1; i < pointers.length; i++) {
+
 		const top = pointers[i].offsetTop;
-		if (!lines.has(top)) {
-			lines.add(top);
-			if (lines.size > linesToShow) break;
+
+		if (top > previousTop) {
+			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
+			previousTop = top;
 		}
+
+		if (linesCount > linesToShow) break;
+
 		wordsCount = hasExtension ? i : i + 1;
-		if (lines.size <= linesToShow - 1) {
+		if (linesCount <= linesToShow - 1) {
 			wordsCountM1 = hasExtension ? i : i + 1;
 		}
 	}
+
 	return {
-		wordsCount: Math.max(1, wordsCount),
-		wordsCountM1: Math.max(1, wordsCountM1)
+		wordsCount,
+		wordsCountM1
 	};
 }
 
@@ -286,10 +310,8 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return;
 
-	let span = document.createElement('span');
-	span.setAttribute('class', "text_" + col);
-	span.style.overflowWrap = "anywhere";
-	element.appendChild(span);
+	const span = createSpan(element, col);
+	const lineHeight = getLineHeight(span);
 
 	// Estimate the likely result to start exponential search.
 	const estimatedResult = linesToShow * 10;
@@ -304,7 +326,7 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 
 	while (true) {
 		span.innerHTML = formatSummaryWithPointers(words_arr, current, false);
-		result = getWordsCount(element, linesToShow, false);
+		result = getWordsCount(element, linesToShow, lineHeight, false);
 		if (result.wordsCount < current) break;
 
 		// The entire summary fits.
@@ -353,7 +375,7 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummaryWithPointers(words_arr, middle);
-		const result = getWordsCount(element, linesToShow, true);
+		const result = getWordsCount(element, linesToShow, lineHeight, true);
 		if (result.wordsCount >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
@@ -372,10 +394,8 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return;
 
-	let span = document.createElement('span');
-	span.setAttribute('class', "text_" + col);
-	span.style.overflowWrap = "anywhere";
-	element.appendChild(span);
+	const span = createSpan(element, col);
+	const lineHeight = getLineHeight(span);
 
 	let wordsCount = 1;
 	let linesCount = 1;
@@ -418,8 +438,10 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 		const pointerTop = pointer.offsetTop;
 		if (Math.abs(pointerTop - currentLineTop) < 2) continue;
 
+		const additionalLines = Math.max(1, Math.round((pointerTop - currentLineTop) / lineHeight) );
+		linesCount += additionalLines;
+
 		currentLineTop = pointerTop;
-		linesCount++;
 
 		if (linesCount > linesToShow) break;
 	}

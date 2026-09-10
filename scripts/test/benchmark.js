@@ -4,20 +4,17 @@
 // BENCHMARK
 // =========================================================
 
-console.log(
-	'Type "testSummary(boolean)" to start Modify Summary Speed Test. ' +
-	'Boolean - Allow Multiline Words, Default - false.'
-);
+console.log('Type "testSummary()" to start Modify Summary Speed Test. ');
 
-function randomWord(allowMultilineWords) {
+function randomWord() {
 
 	const r = Math.random();
 	let length;
 
-	if (allowMultilineWords && r < 0.01) {
+	if (r < 0.01) {
 		length = 100 + Math.floor(Math.random() * 200);
 	} else {
-		const r2 = allowMultilineWords ? r : (r - 0.01) / 0.99;
+		const r2 = (r - 0.01) / 0.99;
 		// english language distribution
 		if (r2 < 0.03) length = 1;
 		else if (r2 < 0.2065) length = 2;
@@ -337,7 +334,7 @@ function consolePlot(title, perf, actualLines) {
 	console.log("");
 }
 
-function testSummary(allowMultilineWords) {
+function testSummary() {
 
 	// =========================================================
 	// SUMMARY DIV POSITIONING
@@ -365,7 +362,6 @@ function testSummary(allowMultilineWords) {
 
 	const MIN_LINES = 1;
 	const MAX_LINES = 100;
-	const MULTILINE_WORDS = !!allowMultilineWords;
 	const WORDS_COUNT = MAX_LINES * 5;
 
 	// =========================================================
@@ -395,7 +391,7 @@ function testSummary(allowMultilineWords) {
 	];
 
 	console.log(
-		`Modify Summary Speed Test Started: ${WORDS_COUNT} words, ${MULTILINE_WORDS ? "allow multiline, " : ""}` +
+		`Modify Summary Speed Test Started: ${WORDS_COUNT} words, ` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines, ` +
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
 	);
@@ -424,7 +420,7 @@ function testSummary(allowMultilineWords) {
 
 	const words = new Array(WORDS_COUNT);
 	for (let i = 0; i < words.length; i++) {
-		words[i] = randomWord(MULTILINE_WORDS);
+		words[i] = randomWord();
 	}
 	const summary = words.join(" ");
 
