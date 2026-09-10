@@ -351,18 +351,18 @@ function testSummary(wordsCount) {
 	const algorithms = [
 		{
 			name: "Alg 1",
-			run: (summaryDiv, summary, words_arr, linesToShow) =>
-				modifySummary(summaryDiv, summary, words_arr, "red", linesToShow)
+			run: (summaryDiv, summary, words_arr, line) =>
+				modifySummary(summaryDiv, summary, words_arr, "red", line)
 		},
 		{
 			name: "Alg 2",
-			run: (summaryDiv, summary, words_arr, linesToShow) =>
-				modifySummary2(summaryDiv, summary, words_arr, "red", linesToShow)
+			run: (summaryDiv, summary, words_arr, line) =>
+				modifySummary2(summaryDiv, summary, words_arr, "red", line)
 		},
 		{
 			name: "One By One",
-			run: (summaryDiv, summary, words_arr, linesToShow) =>
-				modifySummaryOneByOne(summaryDiv, summary, words_arr, "red", linesToShow)
+			run: (summaryDiv, summary, words_arr, line) =>
+				modifySummaryOneByOne(summaryDiv, summary, words_arr, "red", line)
 		}
 	];
 
