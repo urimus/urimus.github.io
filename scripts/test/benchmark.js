@@ -212,7 +212,6 @@ function consolePlot(title, perf, actualLines) {
 	// TITLE
 	// =====================================================
 
-	console.log("");
 	console.log(`=== ${title} ===`);
 
 	// =====================================================
