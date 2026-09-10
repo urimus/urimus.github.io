@@ -249,14 +249,8 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 // =========================================================
 
 function getLineHeight(span) {
-	span.textContent = '\u200B';
-
-	const range = document.createRange();
-	range.selectNodeContents(span);
-
-	const rects = range.getClientRects();
-
-	return rects[0]?.height || 17;
+	span.innerHTML = '<span style="display:inline-block">&#8203;</span>';
+	return span.firstElementChild.offsetHeight || 17;
 }
 
 // ---------------------------------------------------------
