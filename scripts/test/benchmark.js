@@ -423,7 +423,17 @@ function testSummary(wordsCount) {
 	// RUN BENCHMARK
 	// =========================================================
 
-	for (let linesToShow = MIN_LINES; linesToShow < MAX_LINES + 1; linesToShow++) {
+	let labelTime = performance.now();
+
+	for (let line = MIN_LINES; line <= MAX_LINES; line++) {
+
+		if (performance.now() - labelTime > 5000) {
+			console.log(
+				`Processing line ${line} - ` +
+				`${Math.floor(line / MAX_LINES * 100)}%`
+			);
+			labelTime = performance.now();
+		}
 
 		// Random order for all algorithms.
 		const shuffledAlgorithms = [...algorithms];
@@ -436,7 +446,7 @@ function testSummary(wordsCount) {
 		for (const algorithm of shuffledAlgorithms) {
 			summaryDiv.innerHTML = "";
 			const start = performance.now();
-			const isEarlyExit = algorithm.run(summaryDiv, summary, words, linesToShow);
+			const isEarlyExit = algorithm.run(summaryDiv, summary, words, line);
 			const time = performance.now() - start;
 			addPerf(perfData.get(algorithm), time, isEarlyExit);
 		}
@@ -476,6 +486,7 @@ function testSummary(wordsCount) {
 	// =========================================================
 
 	console.log("=== PERFORMANCE GRAPHS ===");
+	console.log("");
 
 	for (const algorithm of algorithms) {
 		consolePlot(algorithm.name, perfData.get(algorithm), actualLines);
@@ -485,7 +496,25 @@ function testSummary(wordsCount) {
 	// ALGORITHM COMPARISONS
 	// =========================================================
 
-	function compareAlgorithms(algorithmA, algorithmB) {
+	function getAlgorithmAverage(perf) {
+		return perf.total / perf.count;
+	}
+
+	function getAlgorithmAverageP99(perf) {
+		const sorted = [...perf.times].sort((a, b) => a - b);
+		const p99 = sorted[Math.floor((sorted.length - 1) * 0.99)];
+		const filtered = sorted.filter(time => time <= p99);
+		return filtered.reduce((sum, time) => sum + time, 0) / filtered.length;
+	}
+
+	function getAlgorithmAverageP95(perf) {
+		const sorted = [...perf.times].sort((a, b) => a - b);
+		const p95 = sorted[Math.floor((sorted.length - 1) * 0.95)];
+		const filtered = sorted.filter(time => time <= p95);
+		return filtered.reduce((sum, time) => sum + time, 0) / filtered.length;
+	}
+
+	function compareAlgorithms(algorithmA, algorithmB, getAverage) {
 		const perfA = perfData.get(algorithmA);
 		const perfB = perfData.get(algorithmB);
 
@@ -494,8 +523,8 @@ function testSummary(wordsCount) {
 			return null;
 		}
 
-		const avgA = perfA.total / perfA.count;
-		const avgB = perfB.total / perfB.count;
+		const avgA = getAverage(perfA);
+		const avgB = getAverage(perfB);
 		const difference = Math.abs(avgA - avgB);
 
 		let faster;
@@ -527,15 +556,13 @@ function testSummary(wordsCount) {
 		if (typeof algorithm === "number") {
 			return algorithms[algorithm];
 		}
-
 		if (typeof algorithm === "string") {
 			return algorithms.find(item => item.name === algorithm);
 		}
-
 		return null;
 	}
 
-	function addComparison(comparisons, algorithmA, algorithmB) {
+	function addComparison(comparisons, algorithmA, algorithmB, getAverage) {
 		const a = getAlgorithm(algorithmA);
 		const b = getAlgorithm(algorithmB);
 
@@ -544,16 +571,46 @@ function testSummary(wordsCount) {
 			return;
 		}
 
-		comparisons[`${a.name} ↔ ${b.name}`] = compareAlgorithms(a, b);
+		comparisons[`${a.name} ↔ ${b.name}`] = compareAlgorithms(a, b, getAverage);
 	}
 
-	const comparisons = {};
+	// =========================================================
+	// ALL VALUES
+	// =========================================================
 
-	addComparison(comparisons, "Alg 1", "Alg 2");
-	addComparison(comparisons, "Alg 1", "One By One");
-	addComparison(comparisons, "Alg 2", "One By One");
+	let comparisons = {};
 
-	console.log("=== ALGORITHM COMPARISONS ===");
+	addComparison(comparisons, "Alg 1", "Alg 2", getAlgorithmAverage);
+	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverage);
+	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverage);
+
+	console.log("=== ALGORITHM COMPARISONS - ALL VALUES ===");
+	console.table(comparisons);
+
+	// =========================================================
+	// P99 FILTERED VALUES
+	// =========================================================
+
+	comparisons = {};
+
+	addComparison(comparisons, "Alg 1", "Alg 2", getAlgorithmAverageP99);
+	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverageP99);
+	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverageP99);
+
+	console.log("=== ALGORITHM COMPARISONS - P99 FILTERED VALUES ===");
+	console.table(comparisons);
+
+	// =========================================================
+	// P95 FILTERED VALUES
+	// =========================================================
+
+	comparisons = {};
+
+	addComparison(comparisons, "Alg 1", "Alg 2", getAlgorithmAverageP95);
+	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverageP95);
+	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverageP95);
+
+	console.log("=== ALGORITHM COMPARISONS - P95 FILTERED VALUES ===");
 	console.table(comparisons);
 
 	// =========================================================
