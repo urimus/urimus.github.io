@@ -1977,28 +1977,32 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			newEntry.summary = entry.description._cdata;
 		}
 
+		const checkIsVideo = (url) => {
+			if (!url) return false;
+			url = url.split(/[?#]/)[0];
+			const dotPos = url.lastIndexOf(".");
+			if (dotPos === -1) return false;
+			const ext = url.substring(dotPos + 1).toLowerCase();
+			return ["mp4", "3gp", "ogg", "webm", "mov", "m4v"].includes(ext);
+		};
+		const setMedia = (newEntry, url) => {
+			if (!url) {
+				newEntry.media.url = "images/icons/error/no_image.png";
+				newEntry.media.comment = t("imageAbsent");
+				return;
+			}
+			if (checkIsVideo(url)) {
+				newEntry.media.url = "";
+				newEntry.video = url;
+			} else {
+				newEntry.media.url = url;
+			}
+		};
+
 		// --- wired ---
 		if (source == "wired") {
 			newEntry.title = entry.title._text;
-			let isVideo = false;
-			let url = entry["media:thumbnail"]?._attributes?.url;
-			if (url) {
-				url = url.split(/[?#]/)[0]; // remove ? and #
-				const dotPos = url.lastIndexOf(".");
-				if (dotPos !== -1) {
-					const ext = url.substring(dotPos + 1).toLowerCase();
-					isVideo = ["mp4", "3gp", "ogg", "webm", "mov", "m4v"].includes(ext);
-				}
-				if (isVideo) {
-					newEntry.media.url = "";
-					newEntry.video = entry["media:thumbnail"]._attributes.url;
-				} else {
-					newEntry.media.url = entry["media:thumbnail"]._attributes.url;
-				}
-			} else {
-				newEntry.media.url = "images/icons/error/no_image.png";
-				newEntry.media.comment = t("imageAbsent");
-			}
+			setMedia(newEntry, entry["media:thumbnail"]?._attributes?.url);
 			if (entry.description) {
 				newEntry.summary = entry.description._text;
 			}
@@ -2007,13 +2011,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		// --- yahoo ---
 		if (source == "yahoo") {
 			newEntry.title = entry.title._text;
-			const url = entry["media:content"]?._attributes?.url;
-			if (url) {
-				newEntry.media.url = url;
-			} else {
-				newEntry.media.url = "images/icons/error/no_image.png";
-				newEntry.media.comment = t("imageAbsent");
-			}
+			setMedia(newEntry, entry["media:content"]?._attributes?.url);
 		}
 
 		// --- yonhap ---
@@ -2160,7 +2158,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 	}
 
-	if (source == "wired") {
+	if (source == "wired" || source == "yahoo") {
 		for (let i = 0; i < totalEntries ; i++) {
 			if (result.entries[i].video) {
 				let url = new URL(proxyURL);
@@ -2178,7 +2176,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			}
 		}
 	}
-
 
 	document.getElementById("processedCount").innerHTML = result.totalUpdated;
 	document.getElementById("leftCount").innerHTML = totalEntries - result.totalUpdated;
@@ -2478,7 +2475,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				result.entries[i].summary = description;
 				locStUpdateDataNew.summary = description;
 			}
-			if (media.url) {
+			if (media.url && !result.entries[i].video) {
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = media.url;
 				if (media.comment) {
