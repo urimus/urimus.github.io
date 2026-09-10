@@ -156,7 +156,7 @@ function getLineInfo(element, linesToShow) {
 
 function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 4) {
 	const wordsLength = words_arr.length;
-	if (!wordsLength) return;
+	if (!wordsLength) return true;
 
 	const span = createSpan(element, col);
 
@@ -192,7 +192,7 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 		}
 		// The entire summary fits.
 		if (current === wordsLength) {
-			return;
+			return true;
 		}
 		current = Math.min(current * 2, wordsLength);
 	}
@@ -242,6 +242,8 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 		}
 	}
 	span.innerHTML = formatSummary(words_arr, wordsCount);
+
+	return false;
 }
 
 // =========================================================
@@ -302,7 +304,7 @@ function getWordsCount(element, linesToShow, lineHeight, hasExtension = false) {
 
 function modifySummary2(element, summary, words_arr, col = "blue", linesToShow = 4) {
 	const wordsLength = words_arr.length;
-	if (!wordsLength) return;
+	if (!wordsLength) return true;
 
 	const span = createSpan(element, col);
 	const lineHeight = getLineHeight(span);
@@ -326,7 +328,7 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 		// The entire summary fits.
 		if (current === wordsLength) {
 			span.innerHTML = summary;
-			return;
+			return true;
 		}
 
 		current = Math.min(current * 2, wordsLength);
@@ -378,6 +380,8 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 		}
 	}
 	span.innerHTML = formatSummary(words_arr, wordsCount);
+
+	return false;
 }
 
 // ---------------------------------------------------------
@@ -386,7 +390,7 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 
 function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesToShow = 4) {
 	const wordsLength = words_arr.length;
-	if (!wordsLength) return;
+	if (!wordsLength) return true;
 
 	const span = createSpan(element, col);
 	const lineHeight = getLineHeight(span);
@@ -444,7 +448,7 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	if (wordsCount === wordsLength && linesCount <= linesToShow) {
 		element.removeChild(pointer);
 		span.innerHTML = summary;
-		return;
+		return true;
 	}
 
 	// ---------------------------------------------------------
@@ -456,7 +460,7 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	element.appendChild(extensionA);
 	if (wordsCount === 1) {
 		span.innerHTML += " ";
-		return;
+		return true;
 	}
 
 	// ---------------------------------------------------------
@@ -468,6 +472,6 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	while (wordsCount > 1) {
 		wordsCount--;
 		span.innerHTML = formatSummary(words_arr, wordsCount);
-		if (Math.abs(extensionA.offsetTop - currentLineTop) >= 2) return;
+		if (Math.abs(extensionA.offsetTop - currentLineTop) >= 2) return false;
 	}
 }

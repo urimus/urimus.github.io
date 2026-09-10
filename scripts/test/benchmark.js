@@ -74,10 +74,11 @@ function randomWord() {
 	return word;
 }
 
-function addPerf(perf, time) {
+function addPerf(perf, time, isEarlyExit) {
 	perf.count++;
 	perf.total += time;
 	perf.times.push(time);
+	perf.earlyExits.push(isEarlyExit);
 
 	if (time < perf.min) perf.min = time;
 	if (time > perf.max) perf.max = time;
@@ -119,7 +120,7 @@ function getStatistics(perf) {
 
 function consolePlot(title, perf, actualLines) {
 
-	const { times, min, max, total } = perf;
+	const { times, earlyExits, min, max, total } = perf;
 
 	const WIDTH = 90;
 	const HEIGHT = 22;
@@ -128,8 +129,8 @@ function consolePlot(title, perf, actualLines) {
 	const MAX_Y = Math.max(...times);
 
 	// Символы графика
-	const POINT = "●";
-//	const LINE = "•";
+	const EARLY_EXIT_POINT = "✦";
+	const NORMAL_POINT = "●";
 	const ACTUAL_LINE = "┊";
 	const AXIS = "│";
 	const H_AXIS = "─";
@@ -186,47 +187,7 @@ function consolePlot(title, perf, actualLines) {
 			}
 		}
 	}
-/*
-	// =====================================================
-	// DRAW LINE
-	// =====================================================
 
-	for (let i = 0; i < times.length - 1; i++) {
-
-		const x1 = indexToCol(i);
-		const x2 = indexToCol(i + 1);
-
-		const y1 = valueToRow(times[i]);
-		const y2 = valueToRow(times[i + 1]);
-
-		const dx = x2 - x1;
-		const dy = y2 - y1;
-
-		const steps = Math.max(
-			Math.abs(dx),
-			Math.abs(dy)
-		);
-
-		for (let s = 0; s <= steps; s++) {
-
-			const t = steps === 0 ? 0 : s / steps;
-
-			const x = Math.round(x1 + dx * t);
-			const y = Math.round(y1 + dy * t);
-
-			const row = HEIGHT - y;
-
-			if (
-				row >= 0 &&
-				row <= HEIGHT &&
-				x >= 0 &&
-				x < WIDTH
-			) {
-				grid[row][x] = LINE;
-			}
-		}
-	}
-*/
 	// =====================================================
 	// DRAW POINTS
 	// =====================================================
@@ -243,7 +204,7 @@ function consolePlot(title, perf, actualLines) {
 			x >= 0 &&
 			x < WIDTH
 		) {
-			grid[row][x] = POINT;
+			grid[row][x] = earlyExits[i] ? EARLY_EXIT_POINT : NORMAL_POINT;
 		}
 	}
 
@@ -320,15 +281,27 @@ function consolePlot(title, perf, actualLines) {
 	);
 
 	// =====================================================
+	// LEGEND
+	// =====================================================
+
+
+	console.log(
+		`LEGEND: ` +
+		`${NORMAL_POINT} - summary does not fit lines, ` +
+		`${EARLY_EXIT_POINT} - summary fits lines - early exit, ` +
+		`${ACTUAL_LINE} - actual lines = ${actualLines}`
+	);
+
+	// =====================================================
 	// STATISTICS
 	// =====================================================
 
 	console.log(
+		`STATISTICS: ` +
 		`min: ${min.toFixed(3)} ms | ` +
 		`avg: ${(total / times.length).toFixed(3)} ms | ` +
 		`max: ${max.toFixed(3)} ms | ` +
-		`total: ${total.toFixed(3)} ms | ` +
-		`actual lines: ${actualLines}`
+		`total: ${total.toFixed(3)} ms`
 	);
 
 	console.log("");
@@ -410,7 +383,8 @@ function testSummary() {
 			total: 0,
 			min: Infinity,
 			max: 0,
-			times: []
+			times: [],
+			earlyExits: []
 		});
 	}
 
@@ -459,9 +433,9 @@ function testSummary() {
 		for (const algorithm of shuffledAlgorithms) {
 			summaryDiv.innerHTML = "";
 			const start = performance.now();
-			algorithm.run(summaryDiv, summary, words, linesToShow);
+			const isEarlyExit = algorithm.run(summaryDiv, summary, words, linesToShow);
 			const time = performance.now() - start;
-			addPerf(perfData.get(algorithm), time);
+			addPerf(perfData.get(algorithm), time, isEarlyExit);
 		}
 	}
 
