@@ -125,6 +125,26 @@ function createSpan(element, col) {
 	return span;
 }
 
+function animateElementHeight(element, changeHTML) {
+
+	const oldHeight = element.offsetHeight;
+	changeHTML();
+	const newHeight = element.offsetHeight;
+	element.style.height = oldHeight + "px";
+	element.style.overflow = "hidden";
+	element.style.transition = "height 0.3s ease";
+	requestAnimationFrame(() => {
+		element.style.height = newHeight + "px";
+	});
+	element.addEventListener("transitionend", function handler(e) {
+		if (e.propertyName !== "height") return;
+		element.removeEventListener("transitionend", handler);
+		element.style.height = "";
+		element.style.overflow = "";
+		element.style.transition = "";
+	});
+}
+
 function formatSummary(words_arr, wordsCount, addSpace = true) {
 	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
 }
@@ -207,11 +227,15 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	extensionA.dataset.expanded = "false";
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			span.innerHTML = summary + " ";
+			animateElementHeight(element, () => {
+				span.innerHTML = summary + " ";
+			});
 			this.innerHTML = "[▲]";
 			this.dataset.expanded = "true";
 		} else {
-			span.innerHTML = formatSummary(words_arr, wordsCount);
+			animateElementHeight(element, () => {
+				span.innerHTML = formatSummary(words_arr, wordsCount);
+			});
 			this.innerHTML = "[▼]";
 			this.dataset.expanded = "false";
 		}
@@ -344,11 +368,15 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	extensionA.dataset.expanded = "false";
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			span.innerHTML = summary + " ";
+			animateElementHeight(element, () => {
+				span.innerHTML = summary + " ";
+			});
 			this.innerHTML = "[▲]";
 			this.dataset.expanded = "true";
 		} else {
-			span.innerHTML = formatSummary(words_arr, wordsCount);
+			animateElementHeight(element, () => {
+				span.innerHTML = formatSummary(words_arr, wordsCount);
+			});
 			this.innerHTML = "[▼]";
 			this.dataset.expanded = "false";
 		}
@@ -405,11 +433,15 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 
 	extensionA.onclick = function () {
 		if (this.dataset.expanded === "false") {
-			span.innerHTML = summary + " ";
+			animateElementHeight(element, () => {
+				span.innerHTML = summary + " ";
+			});
 			this.innerHTML = "[▲]";
 			this.dataset.expanded = "true";
 		} else {
-			span.innerHTML = formatSummary(words_arr, wordsCount);
+			animateElementHeight(element, () => {
+				span.innerHTML = formatSummary(words_arr, wordsCount);
+			});
 			this.innerHTML = "[▼]";
 			this.dataset.expanded = "false";
 		}
