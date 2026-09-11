@@ -497,21 +497,30 @@ function testSummary(wordsCount) {
 	// =========================================================
 
 	function getAlgorithmAverage(perf) {
-		return perf.total / perf.count;
+		return {
+			average: perf.total / perf.count,
+			count: perf.count
+		};
 	}
 
 	function getAlgorithmAverageP99(perf) {
 		const sorted = [...perf.times].sort((a, b) => a - b);
 		const p99 = sorted[Math.floor((sorted.length - 1) * 0.99)];
 		const filtered = sorted.filter(time => time <= p99);
-		return filtered.reduce((sum, time) => sum + time, 0) / filtered.length;
+		return {
+			average: filtered.reduce((sum, time) => sum + time, 0) / filtered.length,
+			count: filtered.length
+		};
 	}
 
 	function getAlgorithmAverageP95(perf) {
 		const sorted = [...perf.times].sort((a, b) => a - b);
 		const p95 = sorted[Math.floor((sorted.length - 1) * 0.95)];
 		const filtered = sorted.filter(time => time <= p95);
-		return filtered.reduce((sum, time) => sum + time, 0) / filtered.length;
+		return {
+			average: filtered.reduce((sum, time) => sum + time, 0) / filtered.length,
+			count: filtered.length
+		};
 	}
 
 	function compareAlgorithms(algorithmA, algorithmB, getAverage) {
@@ -523,8 +532,11 @@ function testSummary(wordsCount) {
 			return null;
 		}
 
-		const avgA = getAverage(perfA);
-		const avgB = getAverage(perfB);
+		const resultA = getAverage(perfA);
+		const resultB = getAverage(perfB);
+
+		const avgA = resultA.average;
+		const avgB = resultB.average;
 		const difference = Math.abs(avgA - avgB);
 
 		let faster;
@@ -545,6 +557,7 @@ function testSummary(wordsCount) {
 		}
 
 		return {
+			"Count": resultA.count + " ↔ " + resultB.count,
 			"Faster": faster,
 			"Slower": slower,
 			"Average Difference": difference.toFixed(4) + " ms",
@@ -586,7 +599,7 @@ function testSummary(wordsCount) {
 	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverage);
 	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverage);
 
-	console.log(`=== All ${MAX_LINES} Values ===`);
+	console.log("=== All Values ===");
 	console.table(comparisons);
 
 	// =========================================================
@@ -599,7 +612,7 @@ function testSummary(wordsCount) {
 	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverageP99);
 	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverageP99);
 
-	console.log(`=== P99 Filtered ${Math.ceil(MAX_LINES * 0.99)} Values ===`);
+	console.log("=== P99 Filtered Values ===");
 	console.table(comparisons);
 
 	// =========================================================
@@ -612,7 +625,7 @@ function testSummary(wordsCount) {
 	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverageP95);
 	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverageP95);
 
-	console.log(`=== P95 Filtered ${Math.ceil(MAX_LINES * 0.95)} Values ===`);
+	console.log("=== P95 Filtered Values ===");
 	console.table(comparisons);
 
 	// =========================================================
