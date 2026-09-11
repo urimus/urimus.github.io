@@ -808,10 +808,15 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					Img2.setAttribute('class', "text_red");
 					Img2.setAttribute('width', entry.media.width);
 					Img2.setAttribute('style', 'display: block; margin-bottom:5px; background-color: rgba(222, 142, 142, 0.0);');
-					Img2.style.visibility = "hidden";
+					Img2.style.aspectRatio = "16 / 9";
+					Img2.style.opacity = "0";
+					Img2.style.transition = "opacity 0.5s ease";
 					Img2.onload = function () {
 						this.width = Math.min(this.naturalWidth, entry.media.width);
-						this.style.visibility = "visible";
+						this.style.aspectRatio = "auto";
+						requestAnimationFrame(() => {
+							this.style.opacity = "1";
+						});
 						adjustFeedScrollDiv();
 					}
 					if (source== "nasa" || source == "artemis") {
@@ -863,7 +868,9 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					'margin-bottom:5px;' +
 					'border:0;' +
 					'background-color:transparent;' +
-					'aspect-ratio:16/9;';
+					'aspect-ratio:16/9;' +
+					'opacity:0;' +
+					'transition:opacity 0.4s ease;';
 				if (isEmbed(entry.video)) {
 			        	let ifrm = document.createElement("iframe");
 					ifrm.width = entry.media.width;
@@ -877,6 +884,10 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 						"gyroscope;" +
 						"picture-in-picture;";
 					ifrm.onload = function () {
+						this.style.aspectRatio = "auto";
+						requestAnimationFrame(() => {
+							this.style.opacity = "1";
+						});
 						adjustFeedScrollDiv();
 					}
 					let url = new URL(entry.video);
@@ -893,6 +904,10 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					video.width = entry.media.width;
 					video.style.cssText = cssText;
 					video.onloadedmetadata = function () {
+						this.style.aspectRatio = "auto";
+						requestAnimationFrame(() => {
+							this.style.opacity = "1";
+						});
 						adjustFeedScrollDiv();
 					};
 					if (source == "cbs") {
