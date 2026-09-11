@@ -574,6 +574,8 @@ function testSummary(wordsCount) {
 		comparisons[`${a.name} ↔ ${b.name}`] = compareAlgorithms(a, b, getAverage);
 	}
 
+	console.log("=== ALGORITHM COMPARISONS ===");
+
 	// =========================================================
 	// ALL VALUES
 	// =========================================================
@@ -584,7 +586,7 @@ function testSummary(wordsCount) {
 	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverage);
 	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverage);
 
-	console.log("=== ALGORITHM COMPARISONS - ALL VALUES ===");
+	console.log(`=== All ${MAX_LINES} Values ===`);
 	console.table(comparisons);
 
 	// =========================================================
@@ -597,7 +599,7 @@ function testSummary(wordsCount) {
 	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverageP99);
 	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverageP99);
 
-	console.log("=== ALGORITHM COMPARISONS - P99 FILTERED VALUES ===");
+	console.log(`=== P99 Filtered ${Math.ceil(MAX_LINES * 0.99)} Values ===`);
 	console.table(comparisons);
 
 	// =========================================================
@@ -610,7 +612,7 @@ function testSummary(wordsCount) {
 	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverageP95);
 	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverageP95);
 
-	console.log("=== ALGORITHM COMPARISONS - P95 FILTERED VALUES ===");
+	console.log(`=== P95 Filtered ${Math.ceil(MAX_LINES * 0.95)} Values ===`);
 	console.table(comparisons);
 
 	// =========================================================
