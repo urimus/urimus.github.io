@@ -868,9 +868,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					'margin-bottom:5px;' +
 					'border:0;' +
 					'background-color:transparent;' +
-					'aspect-ratio:16/9;' +
-					'opacity:0;' +
-					'transition:opacity 0.4s ease;';
+					'aspect-ratio:16/9;';
 				if (isEmbed(entry.video)) {
 			        	let ifrm = document.createElement("iframe");
 					ifrm.width = entry.media.width;
@@ -885,9 +883,6 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 						"picture-in-picture;";
 					ifrm.onload = function () {
 						this.style.aspectRatio = "auto";
-						requestAnimationFrame(() => {
-							this.style.opacity = "1";
-						});
 						adjustFeedScrollDiv();
 					}
 					let url = new URL(entry.video);
@@ -903,11 +898,8 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					video.preload = "auto";
 					video.width = entry.media.width;
 					video.style.cssText = cssText;
-					video.onloadedmetadata = function () {
+					video.onloadeddata = function () {
 						this.style.aspectRatio = "auto";
-						requestAnimationFrame(() => {
-							this.style.opacity = "1";
-						});
 						adjustFeedScrollDiv();
 					};
 					if (source == "cbs") {
