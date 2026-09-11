@@ -100,12 +100,7 @@ function getStatistics(perf) {
 
 	const average = perf.total / perf.count;
 
-	// Population standard deviation
-	const variance = perf.times.reduce(
-		(sum, time) => sum + Math.pow(time - average, 2),
-		0
-	) / perf.count;
-
+	const variance = perf.times.reduce((sum, time) => sum + Math.pow(time - average, 2), 0) / perf.count;
 	const standardDeviation = Math.sqrt(variance);
 
 	return {
@@ -131,7 +126,6 @@ function consolePlot(title, perf, actualLines) {
 	const MIN_Y = 0;
 	const MAX_Y = Math.max(...times);
 
-	// Символы графика
 	const EARLY_EXIT_POINT = "•"; //×▼○∘•▪●
 	const NORMAL_POINT = "●";
 	const ACTUAL_LINE = "┊";
@@ -139,117 +133,47 @@ function consolePlot(title, perf, actualLines) {
 	const H_AXIS = "─";
 	const CORNER = "└";
 
-	// Не допускаем деления на 0
 	const yRange = MAX_Y - MIN_Y || 1;
 
-	// Перевод значения Y в строку графика
 	function valueToRow(value) {
-		return Math.round(
-			(value - MIN_Y) / yRange * HEIGHT
-		);
+		return Math.round((value - MIN_Y) / yRange * HEIGHT);
 	}
 
-	// Перевод индекса в колонку
 	function indexToCol(index) {
-		return Math.round(
-			index / (times.length - 1) * (WIDTH - 1)
-		);
+		return Math.round(index / (times.length - 1) * (WIDTH - 1));
 	}
-
-	// =====================================================
-	// ACTUAL LINES POSITION
-	// =====================================================
 
 	const actualLinesIndex = actualLines - 1;
+	const actualLinesCol = actualLines >= 1 && actualLines <= times.length ? indexToCol(actualLinesIndex) : null;
 
-	const actualLinesCol =
-		actualLines >= 1 && actualLines <= times.length
-			? indexToCol(actualLinesIndex)
-			: null;
-
-	// =====================================================
-	// CREATE GRID
-	// =====================================================
-
-	const grid = Array.from(
-		{ length: HEIGHT + 1 },
-		() => Array(WIDTH).fill(" ")
-	);
-
-	// =====================================================
-	// DRAW ACTUAL LINES
-	// =====================================================
+	const grid = Array.from({ length: HEIGHT + 1 }, () => Array(WIDTH).fill(" "));
 
 	if (actualLinesCol !== null) {
-
 		for (let row = 0; row <= HEIGHT; row++) {
-
-			// Не затираем точки графика
 			if (grid[row][actualLinesCol] === " ") {
 				grid[row][actualLinesCol] = ACTUAL_LINE;
 			}
 		}
 	}
 
-	// =====================================================
-	// DRAW POINTS
-	// =====================================================
-
 	for (let i = 0; i < times.length; i++) {
-
 		const x = indexToCol(i);
 		const y = valueToRow(times[i]);
 		const row = HEIGHT - y;
-
-		if (
-			row >= 0 &&
-			row <= HEIGHT &&
-			x >= 0 &&
-			x < WIDTH
-		) {
+		if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
 			grid[row][x] = earlyExits[i] ? EARLY_EXIT_POINT : NORMAL_POINT;
 		}
 	}
 
-	// =====================================================
-	// TITLE
-	// =====================================================
-
 	console.log(`=== ${title} ===`);
-
-	// =====================================================
-	// Y AXIS + GRAPH
-	// =====================================================
-
 	for (let row = 0; row <= HEIGHT; row++) {
-
-		const yValue =
-			MAX_Y -
-			(MAX_Y - MIN_Y) * row / HEIGHT;
-
-		const label = yValue
-			.toFixed(1)
-			.padStart(7);
-
-		console.log(
-			`${label} ${AXIS}${grid[row].join("")}`
-		);
+		const yValue = MAX_Y - (MAX_Y - MIN_Y) * row / HEIGHT;
+		const label = yValue.toFixed(2).padStart(7);
+		console.log(`${label} ${AXIS}${grid[row].join("")}`);
 	}
-
-	// =====================================================
-	// X AXIS
-	// =====================================================
-
-	console.log(
-		`        ${CORNER}${H_AXIS.repeat(WIDTH)}`
-	);
-
-	// =====================================================
-	// X LABELS
-	// =====================================================
+	console.log(`        ${CORNER}${H_AXIS.repeat(WIDTH)}`	);
 
 	const labels = Array(WIDTH).fill(" ");
-
 	const xIndexes = [
 		0,
 		Math.round((times.length - 1) * 0.25),
@@ -257,35 +181,16 @@ function consolePlot(title, perf, actualLines) {
 		Math.round((times.length - 1) * 0.75),
 		times.length - 1
 	];
-
 	for (const index of xIndexes) {
-
 		const x = indexToCol(index);
 		const text = String(index + 1);
-
 		let start = x - Math.floor(text.length / 2);
-
-		start = Math.max(
-			0,
-			Math.min(
-				start,
-				WIDTH - text.length
-			)
-		);
-
+		start = Math.max(0, Math.min(start, WIDTH - text.length));
 		for (let i = 0; i < text.length; i++) {
 			labels[start + i] = text[i];
 		}
 	}
-
-	console.log(
-		`         ${labels.join("")}`
-	);
-
-	// =====================================================
-	// LEGEND
-	// =====================================================
-
+	console.log(`         ${labels.join("")}`);
 
 	console.log(
 		`LEGEND: ` +
@@ -294,10 +199,6 @@ function consolePlot(title, perf, actualLines) {
 		`${ACTUAL_LINE} - actual lines = ${actualLines}`
 	);
 
-	// =====================================================
-	// STATISTICS
-	// =====================================================
-
 	console.log(
 		`STATISTICS: ` +
 		`min: ${min.toFixed(3)} ms | ` +
@@ -305,7 +206,6 @@ function consolePlot(title, perf, actualLines) {
 		`max: ${max.toFixed(3)} ms | ` +
 		`total: ${total.toFixed(3)} ms`
 	);
-
 	console.log("");
 }
 
@@ -430,7 +330,7 @@ function testSummary(wordsCount) {
 		if (performance.now() - labelTime > 5000) {
 			console.log(
 				`Processing line ${line} - ` +
-				`${Math.floor(line / MAX_LINES * 100)}%`
+				`${Math.floor((line - 1) / MAX_LINES * 100)}%`
 			);
 			labelTime = performance.now();
 		}
