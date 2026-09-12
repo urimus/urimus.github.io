@@ -113,9 +113,9 @@ function splitAllSpaces(str) {
 }
 
 
-// ---------------------------------------------------------
-// Algorithm 1
-// ---------------------------------------------------------
+// =========================================================
+// ALGORITHM GEBERAL
+// =========================================================
 
 function createSpan(element, col) {
 	const span = document.createElement('span');
@@ -147,6 +147,10 @@ function animateElementHeight(element, prevHeight, newHeight, changeHTML) {
 function formatSummary(words_arr, wordsCount, addSpace = true) {
 	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
 }
+
+// ---------------------------------------------------------
+// Algorithm 1
+// ---------------------------------------------------------
 
 function getLineInfo(element, linesToShow) {
 
