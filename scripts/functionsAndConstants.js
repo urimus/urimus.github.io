@@ -242,7 +242,9 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 			this.innerHTML = "[▲]";
 			isExpanded = true;
 		} else {
-			animateElementHeight(element, longHeight, shortHeight, () => { span.innerHTML = formatSummary(words_arr, wordsCount); });
+			animateElementHeight(element, longHeight, shortHeight, () => {
+				span.innerHTML = formatSummary(words_arr, wordsCount);
+			});
 			this.innerHTML = "[▼]";
 			isExpanded = false;
 		}
@@ -391,7 +393,9 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 			this.innerHTML = "[▲]";
 			isExpanded = true;
 		} else {
-			animateElementHeight(element, longHeight, shortHeight, () => { span.innerHTML = formatSummary(words_arr, wordsCount); });
+			animateElementHeight(element, longHeight, shortHeight, () => {
+				span.innerHTML = formatSummary(words_arr, wordsCount);
+			});
 			this.innerHTML = "[▼]";
 			isExpanded = false;
 		}
@@ -504,7 +508,9 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 			this.innerHTML = "[▲]";
 			isExpanded = true;
 		} else {
-			animateElementHeight(element, longHeight, shortHeight, () => { span.innerHTML = formatSummary(words_arr, wordsCount); });
+			animateElementHeight(element, longHeight, shortHeight, () => {
+				span.innerHTML = formatSummary(words_arr, wordsCount);
+			});
 			this.innerHTML = "[▼]";
 			isExpanded = false;
 		}
