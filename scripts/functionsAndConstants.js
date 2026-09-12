@@ -125,20 +125,19 @@ function createSpan(element, col) {
 	return span;
 }
 
-function animateElementHeight(element, changeHTML) {
-
-	const oldHeight = element.offsetHeight;
-	changeHTML();
-	const newHeight = element.offsetHeight;
-	element.style.height = oldHeight + "px";
+function animateElementHeight(element, prevHeight, newHeight, changeHTML) {
+	element.style.height = prevHeight + "px";
 	element.style.overflow = "hidden";
-	element.style.transition = "height 0.3s ease";
+	element.style.transition = "height 0.5s ease";
+
 	requestAnimationFrame(() => {
 		element.style.height = newHeight + "px";
 	});
+
 	element.addEventListener("transitionend", function handler(e) {
 		if (e.propertyName !== "height") return;
 		element.removeEventListener("transitionend", handler);
+		if (changeHTML) changeHTML();
 		element.style.height = "";
 		element.style.overflow = "";
 		element.style.transition = "";
@@ -224,20 +223,28 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
 	extensionA.setAttribute("class", "standardb_" + col);
-	extensionA.dataset.expanded = "false";
+	let longHeight;
+	let shortHeight;
+	let isExpanded = false;
 	extensionA.onclick = function () {
-		if (this.dataset.expanded === "false") {
-			animateElementHeight(element, () => {
-				span.innerHTML = summary + " ";
-			});
+		if (longHeight === undefined) {
+			span.innerHTML = summary + " ";
+			longHeight = element.offsetHeight;
+		}
+		if (shortHeight === undefined) {
+			span.innerHTML = formatSummary(words_arr, wordsCount);
+			shortHeight = element.offsetHeight;
+		}
+
+		if (!isExpanded) {
+			span.innerHTML = summary + " ";
+			animateElementHeight(element, shortHeight, longHeight);
 			this.innerHTML = "[▲]";
-			this.dataset.expanded = "true";
+			isExpanded = true;
 		} else {
-			animateElementHeight(element, () => {
-				span.innerHTML = formatSummary(words_arr, wordsCount);
-			});
+			animateElementHeight(element, longHeight, shortHeight, () => { span.innerHTML = formatSummary(words_arr, wordsCount); });
 			this.innerHTML = "[▼]";
-			this.dataset.expanded = "false";
+			isExpanded = false;
 		}
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
@@ -365,20 +372,28 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
 	extensionA.setAttribute("class", "standardb_" + col + " summary_word_pointer");
-	extensionA.dataset.expanded = "false";
+	let longHeight;
+	let shortHeight;
+	let isExpanded = false;
 	extensionA.onclick = function () {
-		if (this.dataset.expanded === "false") {
-			animateElementHeight(element, () => {
-				span.innerHTML = summary + " ";
-			});
+		if (longHeight === undefined) {
+			span.innerHTML = summary + " ";
+			longHeight = element.offsetHeight;
+		}
+		if (shortHeight === undefined) {
+			span.innerHTML = formatSummary(words_arr, wordsCount);
+			shortHeight = element.offsetHeight;
+		}
+
+		if (!isExpanded) {
+			span.innerHTML = summary + " ";
+			animateElementHeight(element, shortHeight, longHeight);
 			this.innerHTML = "[▲]";
-			this.dataset.expanded = "true";
+			isExpanded = true;
 		} else {
-			animateElementHeight(element, () => {
-				span.innerHTML = formatSummary(words_arr, wordsCount);
-			});
+			animateElementHeight(element, longHeight, shortHeight, () => { span.innerHTML = formatSummary(words_arr, wordsCount); });
 			this.innerHTML = "[▼]";
-			this.dataset.expanded = "false";
+			isExpanded = false;
 		}
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
@@ -426,31 +441,6 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	let wordsCount = 1;
 	let linesCount = 1;
 
-	const extensionA = document.createElement("a");
-	extensionA.setAttribute("href", "javascript:void(0);");
-	extensionA.setAttribute("class", "standardb_" + col);
-	extensionA.dataset.expanded = "false";
-
-	extensionA.onclick = function () {
-		if (this.dataset.expanded === "false") {
-			animateElementHeight(element, () => {
-				span.innerHTML = summary + " ";
-			});
-			this.innerHTML = "[▲]";
-			this.dataset.expanded = "true";
-		} else {
-			animateElementHeight(element, () => {
-				span.innerHTML = formatSummary(words_arr, wordsCount);
-			});
-			this.innerHTML = "[▼]";
-			this.dataset.expanded = "false";
-		}
-
-		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
-	};
-
-	extensionA.innerHTML = "[▼]";
-
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
 
@@ -487,6 +477,40 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	// Overflow was detected.
 	// Remove the word that caused overflow and replace pointer with extension.
 	// ---------------------------------------------------------
+
+	// ---------------------------------------------------------
+	// Add extension link.
+	// ---------------------------------------------------------
+
+	const extensionA = document.createElement("a");
+	extensionA.setAttribute("href", "javascript:void(0);");
+	extensionA.setAttribute("class", "standardb_" + col);
+	let longHeight;
+	let shortHeight;
+	let isExpanded = false;
+	extensionA.onclick = function () {
+		if (longHeight === undefined) {
+			span.innerHTML = summary + " ";
+			longHeight = element.offsetHeight;
+		}
+		if (shortHeight === undefined) {
+			span.innerHTML = formatSummary(words_arr, wordsCount);
+			shortHeight = element.offsetHeight;
+		}
+
+		if (!isExpanded) {
+			span.innerHTML = summary + " ";
+			animateElementHeight(element, shortHeight, longHeight);
+			this.innerHTML = "[▲]";
+			isExpanded = true;
+		} else {
+			animateElementHeight(element, longHeight, shortHeight, () => { span.innerHTML = formatSummary(words_arr, wordsCount); });
+			this.innerHTML = "[▼]";
+			isExpanded = false;
+		}
+		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
+	};
+	extensionA.innerHTML = "[▼]";
 
 	element.removeChild(pointer);
 	element.appendChild(extensionA);
