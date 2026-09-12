@@ -248,9 +248,9 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 		} else {
 			animateElementHeight(element, longHeight, shortHeight, () => {
 				span.innerHTML = formatSummary(words_arr, wordsCount);
+				this.innerHTML = "[▼]";
+				isExpanded = false;
 			});
-			this.innerHTML = "[▼]";
-			isExpanded = false;
 		}
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
@@ -399,9 +399,9 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 		} else {
 			animateElementHeight(element, longHeight, shortHeight, () => {
 				span.innerHTML = formatSummary(words_arr, wordsCount);
+				this.innerHTML = "[▼]";
+				isExpanded = false;
 			});
-			this.innerHTML = "[▼]";
-			isExpanded = false;
 		}
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
@@ -509,9 +509,9 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 		} else {
 			animateElementHeight(element, longHeight, shortHeight, () => {
 				span.innerHTML = formatSummary(words_arr, wordsCount);
+				this.innerHTML = "[▼]";
+				isExpanded = false;
 			});
-			this.innerHTML = "[▼]";
-			isExpanded = false;
 		}
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
