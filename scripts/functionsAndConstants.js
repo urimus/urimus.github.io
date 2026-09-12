@@ -456,7 +456,7 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	let currentLineTop = pointer.offsetTop;
 
 	// ---------------------------------------------------------
-	// First pass
+	// First pass.
 	// ---------------------------------------------------------
 
 	for (let k = 1; k < wordsLength; k++) {
@@ -480,11 +480,6 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 		span.innerHTML = summary;
 		return true;
 	}
-
-	// ---------------------------------------------------------
-	// Overflow was detected.
-	// Remove the word that caused overflow and replace pointer with extension.
-	// ---------------------------------------------------------
 
 	// ---------------------------------------------------------
 	// Add extension link.
@@ -530,9 +525,7 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	}
 
 	// ---------------------------------------------------------
-	// Second pass: walk backwards until extension moves
-	// to the previous line.
-	// currentLineTop is the line where overflow was detected
+	// Second pass.
 	// ---------------------------------------------------------
 
 	while (wordsCount > 1) {
