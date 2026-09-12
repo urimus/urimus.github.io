@@ -114,7 +114,7 @@ function splitAllSpaces(str) {
 
 
 // =========================================================
-// ALGORITHM GEBERAL
+// ALGORITHM GENERAL
 // =========================================================
 
 function createSpan(element, col) {
@@ -125,27 +125,30 @@ function createSpan(element, col) {
 	return span;
 }
 
-function animateElementHeight(element, prevHeight, newHeight, changeHTML) {
-	element.style.height = prevHeight + "px";
-	element.style.overflow = "hidden";
-	element.style.transition = "height 0.5s ease";
-
-	requestAnimationFrame(() => {
-		element.style.height = newHeight + "px";
-	});
-
-	element.addEventListener("transitionend", function handler(e) {
-		if (e.propertyName !== "height") return;
-		element.removeEventListener("transitionend", handler);
-		if (changeHTML) changeHTML();
-		element.style.height = "";
-		element.style.overflow = "";
-		element.style.transition = "";
-	});
-}
-
 function formatSummary(words_arr, wordsCount, addSpace = true) {
 	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
+}
+
+let typeTimer = null;
+function typeSummary(span, words_arr, wordsCount, isExpanding) {
+	const wordsLength = words_arr.length;
+	const count = wordsLength - wordsCount;
+	if (!count) return;
+
+	const interval = Math.min(100, 500 / count);
+	let currentCount = isExpanding ? wordsCount + 1: wordsLength - 1;
+	span.innerHTML = formatSummary(words_arr, currentCount);
+
+	if (count === 1) return;
+
+	typeTimer = setInterval(() => {
+		currentCount += isExpanding ? 1 : -1;
+		span.innerHTML = formatSummary(words_arr, currentCount);
+		if ((isExpanding && currentCount >= wordsLength) || (!isExpanding&& currentCount <= wordsCount)) {
+			clearInterval(typeTimer);
+			typeTimer = null;
+		}
+	}, interval);
 }
 
 // ---------------------------------------------------------
@@ -153,13 +156,10 @@ function formatSummary(words_arr, wordsCount, addSpace = true) {
 // ---------------------------------------------------------
 
 function getLineInfo(element, linesToShow) {
-
 	const range = document.createRange();
 	range.selectNodeContents(element);
 	const rects = range.getClientRects();
-
 	const lines = new Set();
-
 	for (const rect of rects) {
 		if (!lines.has(rect.top)) {
 			lines.add(rect.top);
@@ -227,31 +227,11 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
 	extensionA.setAttribute("class", "standardb_" + col);
-	let longHeight;
-	let shortHeight;
 	let isExpanded = false;
 	extensionA.onclick = function () {
-		if (longHeight === undefined) {
-			span.innerHTML = summary + " ";
-			longHeight = element.offsetHeight;
-		}
-		if (shortHeight === undefined) {
-			span.innerHTML = formatSummary(words_arr, wordsCount);
-			shortHeight = element.offsetHeight;
-		}
-
-		if (!isExpanded) {
-			span.innerHTML = summary + " ";
-			animateElementHeight(element, shortHeight, longHeight);
-			this.innerHTML = "[▲]";
-			isExpanded = true;
-		} else {
-			animateElementHeight(element, longHeight, shortHeight, () => {
-				span.innerHTML = formatSummary(words_arr, wordsCount);
-				this.innerHTML = "[▼]";
-			});
-			isExpanded = false;
-		}
+		isExpanded = !isExpanded;
+		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
+		typeSummary(span, words_arr, wordsCount, isExpanded);
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	extensionA.innerHTML = "[▼]";
@@ -298,7 +278,6 @@ function getLineHeight(span) {
 
 function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 	const pointersClass = "summary_word_pointer";
-
 	return words_arr
 		.slice(0, wordsCount)
 		.map(word => {
@@ -308,31 +287,23 @@ function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 }
 
 function getWordsCount(element, linesToShow, lineHeight, hasExtension = false) {
-
 	const pointers = element.getElementsByClassName("summary_word_pointer");
-
 	let linesCount = 1;
 	let wordsCount = 1;
 	let wordsCountM1 = 1;
 	let previousTop = pointers[0].offsetTop;
-
 	for (let i = 1; i < pointers.length; i++) {
-
 		const top = pointers[i].offsetTop;
-
 		if (top > previousTop) {
 			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
 			previousTop = top;
 		}
-
 		if (linesCount > linesToShow) break;
-
 		wordsCount = hasExtension ? i : i + 1;
 		if (linesCount <= linesToShow - 1) {
 			wordsCountM1 = hasExtension ? i : i + 1;
 		}
 	}
-
 	return {
 		wordsCount,
 		wordsCountM1
@@ -361,13 +332,11 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 		span.innerHTML = formatSummaryWithPointers(words_arr, current, false);
 		result = getWordsCount(element, linesToShow, lineHeight, false);
 		if (result.wordsCount < current) break;
-
 		// The entire summary fits.
 		if (current === wordsLength) {
 			span.innerHTML = summary;
 			return true;
 		}
-
 		current = Math.min(current * 2, wordsLength);
 	}
 
@@ -378,31 +347,11 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
 	extensionA.setAttribute("class", "standardb_" + col + " summary_word_pointer");
-	let longHeight;
-	let shortHeight;
 	let isExpanded = false;
 	extensionA.onclick = function () {
-		if (longHeight === undefined) {
-			span.innerHTML = summary + " ";
-			longHeight = element.offsetHeight;
-		}
-		if (shortHeight === undefined) {
-			span.innerHTML = formatSummary(words_arr, wordsCount);
-			shortHeight = element.offsetHeight;
-		}
-
-		if (!isExpanded) {
-			span.innerHTML = summary + " ";
-			animateElementHeight(element, shortHeight, longHeight);
-			this.innerHTML = "[▲]";
-			isExpanded = true;
-		} else {
-			animateElementHeight(element, longHeight, shortHeight, () => {
-				span.innerHTML = formatSummary(words_arr, wordsCount);
-				this.innerHTML = "[▼]";
-			});
-			isExpanded = false;
-		}
+		isExpanded = !isExpanded;
+		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
+		typeSummary(span, words_arr, wordsCount, isExpanded);
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	extensionA.innerHTML = "[▼]";
@@ -462,15 +411,11 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	for (let k = 1; k < wordsLength; k++) {
 		wordsCount = k + 1;
 		span.innerHTML = formatSummary(words_arr, wordsCount, false);
-
 		const pointerTop = pointer.offsetTop;
 		if (Math.abs(pointerTop - currentLineTop) < 2) continue;
-
 		const additionalLines = Math.max(1, Math.round((pointerTop - currentLineTop) / lineHeight) );
 		linesCount += additionalLines;
-
 		currentLineTop = pointerTop;
-
 		if (linesCount > linesToShow) break;
 	}
 
@@ -488,31 +433,11 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	const extensionA = document.createElement("a");
 	extensionA.setAttribute("href", "javascript:void(0);");
 	extensionA.setAttribute("class", "standardb_" + col);
-	let longHeight;
-	let shortHeight;
 	let isExpanded = false;
 	extensionA.onclick = function () {
-		if (longHeight === undefined) {
-			span.innerHTML = summary + " ";
-			longHeight = element.offsetHeight;
-		}
-		if (shortHeight === undefined) {
-			span.innerHTML = formatSummary(words_arr, wordsCount);
-			shortHeight = element.offsetHeight;
-		}
-
-		if (!isExpanded) {
-			span.innerHTML = summary + " ";
-			animateElementHeight(element, shortHeight, longHeight);
-			this.innerHTML = "[▲]";
-			isExpanded = true;
-		} else {
-			animateElementHeight(element, longHeight, shortHeight, () => {
-				span.innerHTML = formatSummary(words_arr, wordsCount);
-				this.innerHTML = "[▼]";
-			});
-			isExpanded = false;
-		}
+		isExpanded = !isExpanded;
+		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
+		typeSummary(span, words_arr, wordsCount, isExpanded);
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	extensionA.innerHTML = "[▼]";
