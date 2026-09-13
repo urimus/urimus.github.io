@@ -233,6 +233,12 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	expansionA.innerHTML = "[▼]";
 	element.appendChild(expansionA);
 
+	// first word does not fit
+	if (wordsCount === 1) {
+		span.innerHTML += " ";
+		return true;
+	}
+
 	// ---------------------------------------------------------
 	// Binary search bounds.
 	// ---------------------------------------------------------
@@ -353,6 +359,12 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	expansionA.innerHTML = "[▼]";
 	element.appendChild(expansionA);
 
+	// first word does not fit
+	if (wordsCount === 1) {
+		span.innerHTML += " ";
+		return true;
+	}
+
 	// ---------------------------------------------------------
 	// Binary search bounds.
 	// ---------------------------------------------------------
@@ -436,9 +448,10 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	expansionA.innerHTML = "[▼]";
-
 	element.removeChild(pointer);
 	element.appendChild(expansionA);
+
+	// first word does not fit
 	if (wordsCount === 1) {
 		span.innerHTML += " ";
 		return true;
