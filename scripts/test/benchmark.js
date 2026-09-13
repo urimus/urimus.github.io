@@ -116,7 +116,7 @@ function getStatistics(perf) {
 	};
 }
 
-function consolePlot(title, perf, actualLines) {
+function consolePlot(title, perf, actualLines, unit = "ms") {
 
 	const { times, earlyExits, min, max, total } = perf;
 
@@ -201,10 +201,10 @@ function consolePlot(title, perf, actualLines) {
 
 	console.log(
 		`STATISTICS: ` +
-		`min: ${min.toFixed(3)} ms | ` +
-		`avg: ${(total / times.length).toFixed(3)} ms | ` +
-		`max: ${max.toFixed(3)} ms | ` +
-		`total: ${total.toFixed(3)} ms`
+		`min: ${min.toFixed(3)} ${unit} | ` +
+		`avg: ${(total / times.length).toFixed(3)} ${unit} | ` +
+		`max: ${max.toFixed(3)} ${unit}` +
+		(unit === "ms" ? ` | total: ${total.toFixed(3)} ${unit}` : "")
 	);
 	console.log("");
 }
@@ -392,77 +392,8 @@ function testSummary(wordsCount) {
 	}
 
 	// =========================================================
-	// ALGORITHM COMPARISONS
+	// SPEEDUP GRAPHS
 	// =========================================================
-
-	function getAlgorithmAverage(perf) {
-		return {
-			average: perf.total / perf.count,
-			count: perf.count
-		};
-	}
-
-	function getAlgorithmAverageP99(perf) {
-		const sorted = [...perf.times].sort((a, b) => a - b);
-		const p99 = sorted[Math.floor((sorted.length - 1) * 0.99)];
-		const filtered = sorted.filter(time => time <= p99);
-		return {
-			average: filtered.reduce((sum, time) => sum + time, 0) / filtered.length,
-			count: filtered.length
-		};
-	}
-
-	function getAlgorithmAverageP95(perf) {
-		const sorted = [...perf.times].sort((a, b) => a - b);
-		const p95 = sorted[Math.floor((sorted.length - 1) * 0.95)];
-		const filtered = sorted.filter(time => time <= p95);
-		return {
-			average: filtered.reduce((sum, time) => sum + time, 0) / filtered.length,
-			count: filtered.length
-		};
-	}
-
-	function compareAlgorithms(algorithmA, algorithmB, getAverage) {
-		const perfA = perfData.get(algorithmA);
-		const perfB = perfData.get(algorithmB);
-
-		if (!perfA || !perfB) {
-			console.error("Algorithm not found in benchmark.");
-			return null;
-		}
-
-		const resultA = getAverage(perfA);
-		const resultB = getAverage(perfB);
-
-		const avgA = resultA.average;
-		const avgB = resultB.average;
-		const difference = Math.abs(avgA - avgB);
-
-		let faster;
-		let slower;
-		let fasterAvg;
-		let slowerAvg;
-
-		if (avgA <= avgB) {
-			faster = algorithmA.name;
-			slower = algorithmB.name;
-			fasterAvg = avgA;
-			slowerAvg = avgB;
-		} else {
-			faster = algorithmB.name;
-			slower = algorithmA.name;
-			fasterAvg = avgB;
-			slowerAvg = avgA;
-		}
-
-		return {
-			"Count": resultA.count + " ↔ " + resultB.count,
-			"Faster": faster,
-			"Slower": slower,
-			"Average Difference": difference.toFixed(4) + " ms",
-			"Speedup": (slowerAvg / fasterAvg).toFixed(2) + "x"
-		};
-	}
 
 	function getAlgorithm(algorithm) {
 		if (typeof algorithm === "number") {
@@ -474,58 +405,74 @@ function testSummary(wordsCount) {
 		return null;
 	}
 
-	function addComparison(comparisons, algorithmA, algorithmB, getAverage) {
-		const a = getAlgorithm(algorithmA);
-		const b = getAlgorithm(algorithmB);
+	function createSpeedupPerf(perfA, perfB) {
+		if (perfA.times.length !== perfB.times.length) {
+			console.error("Cannot create speedup: different times length.");
+			return null;
+		}
+		const times = perfA.times.map((timeA, i) => {
+			const timeB = perfB.times[i];
+			return timeB > 0 ? timeA / timeB : 0;
+		});
+		return {
+			count: times.length,
+			total: times.reduce((sum, time) => sum + time, 0),
+			min: Math.min(...times),
+			max: Math.max(...times),
+			times,
+			earlyExits: [...perfA.earlyExits]
+		};
+	}
 
-		if (!a || !b) {
+	function consoleSpeedupPlot(algorithmA, algorithmB, actualLines, unit) {
+
+		const algA = getAlgorithm(algorithmA);
+		const algB = getAlgorithm(algorithmB);
+
+		if (!algA || !algB) {
 			console.error("Algorithm not found.", { algorithmA, algorithmB });
 			return;
 		}
 
-		comparisons[`${a.name} ↔ ${b.name}`] = compareAlgorithms(a, b, getAverage);
+		const perfA = perfData.get(algA);
+		const perfB = perfData.get(algB);
+
+		if (!perfA || !perfB) {
+			console.error("Performance data not found.", { algorithmA, algorithmB });
+			return;
+		}
+
+		const averageA = perfA.total / perfA.count;
+		const averageB = perfB.total / perfB.count;
+
+		let slowerAlgorithm;
+		let fasterAlgorithm;
+		let slowerPerf;
+		let fasterPerf;
+
+		if (averageA > averageB) {
+			slowerAlgorithm = algA;
+			fasterAlgorithm = algB;
+			slowerPerf = perfA;
+			fasterPerf = perfB;
+		} else {
+			slowerAlgorithm = algB;
+			fasterAlgorithm = algA;
+			slowerPerf = perfB;
+			fasterPerf = perfA;
+		}
+
+		const speedupPerf = createSpeedupPerf(slowerPerf, fasterPerf);
+		if (!speedupPerf) return;
+		const title = `Speedup: ${fasterAlgorithm.name} / ${slowerAlgorithm.name}`;
+		consolePlot(title, speedupPerf, actualLines, unit);
 	}
 
-	console.log("=== ALGORITHM COMPARISONS ===");
-
-	// =========================================================
-	// ALL VALUES
-	// =========================================================
-
-	let comparisons = {};
-
-	addComparison(comparisons, "Alg 1", "Alg 2", getAlgorithmAverage);
-	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverage);
-	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverage);
-
-	console.log("=== All Values ===");
-	console.table(comparisons);
-
-	// =========================================================
-	// P99 FILTERED VALUES
-	// =========================================================
-
-	comparisons = {};
-
-	addComparison(comparisons, "Alg 1", "Alg 2", getAlgorithmAverageP99);
-	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverageP99);
-	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverageP99);
-
-	console.log("=== P99 Filtered Values ===");
-	console.table(comparisons);
-
-	// =========================================================
-	// P95 FILTERED VALUES
-	// =========================================================
-
-	comparisons = {};
-
-	addComparison(comparisons, "Alg 1", "Alg 2", getAlgorithmAverageP95);
-	addComparison(comparisons, "Alg 1", "One By One", getAlgorithmAverageP95);
-	addComparison(comparisons, "Alg 2", "One By One", getAlgorithmAverageP95);
-
-	console.log("=== P95 Filtered Values ===");
-	console.table(comparisons);
+	console.log("=== SPEEDUP GRAPHS ===");
+	console.log("");
+	consoleSpeedupPlot("Alg 1", "Alg 2", actualLines, "×");
+	consoleSpeedupPlot("Alg 1", "One By One", actualLines, "×");
+	consoleSpeedupPlot("Alg 2", "One By One", actualLines, "×");
 
 	// =========================================================
 	// COMPLETE
