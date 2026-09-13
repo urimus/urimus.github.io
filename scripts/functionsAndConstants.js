@@ -140,7 +140,6 @@ function typeSummary(span, words_arr, wordsCount, isExpanding) {
 
 	if (count === 1) return;
 
-	const interval = Math.min(100, 500 / (count - 1));
 	typeTimer = setInterval(() => {
 		current += isExpanding ? 1 : -1;
 		span.innerHTML = formatSummary(words_arr, current);
@@ -148,7 +147,7 @@ function typeSummary(span, words_arr, wordsCount, isExpanding) {
 			clearInterval(typeTimer);
 			typeTimer = null;
 		}
-	}, interval);
+	}, 0);
 }
 
 // ---------------------------------------------------------
