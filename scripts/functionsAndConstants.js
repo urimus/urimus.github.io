@@ -287,7 +287,7 @@ function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 		.join(" ") + (addSpace ? " " : "");
 }
 
-function getWordsCount(element, linesToShow, lineHeight, hasExtension = false) {
+function getWordsCount(element, linesToShow, lineHeight, isBinary = false) {
 	const pointers = element.getElementsByClassName("summary_word_pointer");
 	let linesCount = 1;
 	let wordsCount = 1;
@@ -300,9 +300,9 @@ function getWordsCount(element, linesToShow, lineHeight, hasExtension = false) {
 			previousTop = top;
 		}
 		if (linesCount > linesToShow) break;
-		wordsCount = hasExtension ? i : i + 1;
+		wordsCount = isBinary ? i : i + 1;
 		if (linesCount <= linesToShow - 1) {
-			wordsCountM1 = hasExtension ? i : i + 1;
+			wordsCountM1 = isBinary ? i : i + 1;
 		}
 	}
 	return {
