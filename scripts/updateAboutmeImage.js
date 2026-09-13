@@ -174,7 +174,6 @@ function updateAboutMeImage3(lang, i) {
 	if (item.description._text) {
 		item_description = DOMPurify.sanitize(item.description._text);
 		description_words = splitAllSpaces(item_description);
-		item_description = description_words.join(" ");
 	}
 
 	let imageA = document.createElement('a');
@@ -192,7 +191,7 @@ function updateAboutMeImage3(lang, i) {
 	imgSVG.setAttribute('height', 27);
 	imgSVG.onload = function () {
 		if (item_description) {
-			modifySummary(descDiv, item_description, description_words, "blue", 4);
+			modifySummary(descDiv, description_words, "blue", 4);
 		}
 		adjustScrollDiv();
 	}

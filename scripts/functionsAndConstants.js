@@ -177,7 +177,7 @@ function getLineInfo(element, linesToShow) {
 	};
 }
 
-function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 4) {
+function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return true;
 
@@ -200,11 +200,7 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	// ---------------------------------------------------------
 
 	while (true) {
-		if (current < wordsLength) {
-			span.innerHTML = formatSummary(words_arr, current, false);
-		} else {
-			span.innerHTML = summary;
-		}
+		span.innerHTML = formatSummary(words_arr, current, false);
 		const result = getLineInfo(element, linesToShow);
 		if (!result.fitsLinesToShow) {
 			break;
@@ -224,18 +220,18 @@ function modifySummary(element, summary, words_arr, col = "blue", linesToShow = 
 	// Add extension link.
 	// ---------------------------------------------------------
 
-	const extensionA = document.createElement("a");
-	extensionA.setAttribute("href", "javascript:void(0);");
-	extensionA.setAttribute("class", "standardb_" + col);
+	const expansionA = document.createElement("a");
+	expansionA.setAttribute("href", "javascript:void(0);");
+	expansionA.setAttribute("class", "standardb_" + col);
 	let isExpanded = false;
-	extensionA.onclick = function () {
+	expansionA.onclick = function () {
 		isExpanded = !isExpanded;
 		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded);
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
-	extensionA.innerHTML = "[▼]";
-	element.appendChild(extensionA);
+	expansionA.innerHTML = "[▼]";
+	element.appendChild(expansionA);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -310,7 +306,7 @@ function getWordsCount(element, linesToShow, lineHeight, hasExtension = false) {
 	};
 }
 
-function modifySummary2(element, summary, words_arr, col = "blue", linesToShow = 4) {
+function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return true;
 
@@ -334,7 +330,7 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 		if (result.wordsCount < current) break;
 		// The entire summary fits.
 		if (current === wordsLength) {
-			span.innerHTML = summary;
+			span.innerHTML = formatSummary(words_arr, wordsLength, false);
 			return true;
 		}
 		current = Math.min(current * 2, wordsLength);
@@ -344,18 +340,18 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 	// Add extension link.
 	// ---------------------------------------------------------
 
-	const extensionA = document.createElement("a");
-	extensionA.setAttribute("href", "javascript:void(0);");
-	extensionA.setAttribute("class", "standardb_" + col + " summary_word_pointer");
+	const expansionA = document.createElement("a");
+	expansionA.setAttribute("href", "javascript:void(0);");
+	expansionA.setAttribute("class", "standardb_" + col + " summary_word_pointer");
 	let isExpanded = false;
-	extensionA.onclick = function () {
+	expansionA.onclick = function () {
 		isExpanded = !isExpanded;
 		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded);
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
-	extensionA.innerHTML = "[▼]";
-	element.appendChild(extensionA);
+	expansionA.innerHTML = "[▼]";
+	element.appendChild(expansionA);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -388,7 +384,7 @@ function modifySummary2(element, summary, words_arr, col = "blue", linesToShow =
 // One By One
 // ---------------------------------------------------------
 
-function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesToShow = 4) {
+function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4) {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return true;
 
@@ -422,7 +418,6 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	// Entire summary fits
 	if (wordsCount === wordsLength && linesCount <= linesToShow) {
 		element.removeChild(pointer);
-		span.innerHTML = summary;
 		return true;
 	}
 
@@ -430,20 +425,20 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	// Add extension link.
 	// ---------------------------------------------------------
 
-	const extensionA = document.createElement("a");
-	extensionA.setAttribute("href", "javascript:void(0);");
-	extensionA.setAttribute("class", "standardb_" + col);
+	const expansionA = document.createElement("a");
+	expansionA.setAttribute("href", "javascript:void(0);");
+	expansionA.setAttribute("class", "standardb_" + col);
 	let isExpanded = false;
-	extensionA.onclick = function () {
+	expansionA.onclick = function () {
 		isExpanded = !isExpanded;
 		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded);
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
-	extensionA.innerHTML = "[▼]";
+	expansionA.innerHTML = "[▼]";
 
 	element.removeChild(pointer);
-	element.appendChild(extensionA);
+	element.appendChild(expansionA);
 	if (wordsCount === 1) {
 		span.innerHTML += " ";
 		return true;
@@ -456,6 +451,6 @@ function modifySummaryOneByOne(element, summary, words_arr, col = "blue", linesT
 	while (wordsCount > 1) {
 		wordsCount--;
 		span.innerHTML = formatSummary(words_arr, wordsCount);
-		if (Math.abs(extensionA.offsetTop - currentLineTop) >= 2) return false;
+		if (Math.abs(expansionA.offsetTop - currentLineTop) >= 2) return false;
 	}
 }

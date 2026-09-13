@@ -251,18 +251,18 @@ function testSummary(wordsCount) {
 	const algorithms = [
 		{
 			name: "Alg 1",
-			run: (summaryDiv, summary, words_arr, line) =>
-				modifySummary(summaryDiv, summary, words_arr, "red", line)
+			run: (summaryDiv, words_arr, line) =>
+				modifySummary(summaryDiv, words_arr, "red", line)
 		},
 		{
 			name: "Alg 2",
-			run: (summaryDiv, summary, words_arr, line) =>
-				modifySummary2(summaryDiv, summary, words_arr, "red", line)
+			run: (summaryDiv, words_arr, line) =>
+				modifySummary2(summaryDiv, words_arr, "red", line)
 		},
 		{
 			name: "One By One",
-			run: (summaryDiv, summary, words_arr, line) =>
-				modifySummaryOneByOne(summaryDiv, summary, words_arr, "red", line)
+			run: (summaryDiv, words_arr, line) =>
+				modifySummaryOneByOne(summaryDiv, words_arr, "red", line)
 		}
 	];
 
@@ -299,13 +299,12 @@ function testSummary(wordsCount) {
 	for (let i = 0; i < words.length; i++) {
 		words[i] = randomWord();
 	}
-	const summary = words.join(" ");
 
 	summaryDiv.innerHTML = "";
 	let span = document.createElement('span');
 	span.setAttribute('class', "text_red");
 	span.style.overflowWrap = "anywhere";
-	span.innerHTML = summary;
+	span.innerHTML = words.join(" ");
 	summaryDiv.appendChild(span);
 
 	const range = document.createRange();
@@ -346,7 +345,7 @@ function testSummary(wordsCount) {
 		for (const algorithm of shuffledAlgorithms) {
 			summaryDiv.innerHTML = "";
 			const start = performance.now();
-			const isEarlyExit = algorithm.run(summaryDiv, summary, words, line);
+			const isEarlyExit = algorithm.run(summaryDiv, words, line);
 			const time = performance.now() - start;
 			addPerf(perfData.get(algorithm), time, isEarlyExit);
 		}

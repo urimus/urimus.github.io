@@ -554,10 +554,9 @@ function formatSummaryDiv(summaryDiv, entry) {
 	} else {
 		summary_words = splitAllSpaces(entry_summary);
 	}
-	entry_summary = summary_words.join(" ");
 
 	summaryDiv.innerHTML = "";
-	modifySummary(summaryDiv, entry_summary, summary_words, "red", 4);
+	modifySummary(summaryDiv, summary_words, "red", 4);
 
 	adjustFeedScrollDiv();
 }
@@ -797,11 +796,11 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	// preload later
 	// ------------- Additional Images Show/Hide -------------- //
 	if (entry.additMediaUrl) {
-		let extensionImgA = document.createElement('a');
-		extensionImgA.setAttribute('href', "javascript:void(0);");
-		extensionImgA.setAttribute('class', 'standardb_red');
-		extensionImgA.dataset.expanded = "false";
-		extensionImgA.onclick = function () {
+		let expansionImgA = document.createElement('a');
+		expansionImgA.setAttribute('href', "javascript:void(0);");
+		expansionImgA.setAttribute('class', 'standardb_red');
+		expansionImgA.dataset.expanded = "false";
+		expansionImgA.onclick = function () {
 			if (this.dataset.expanded === "false") {
 				for (let j = 0; j < entry.additMediaUrl.length; j++) {
 					let Img2 = document.createElement("img");
@@ -844,24 +843,24 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 			}
 			adjustFeedScrollDiv();
 		}
-		extensionImgA.innerHTML = "[▼]";
+		expansionImgA.innerHTML = "[▼]";
 
 		let showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
 		showMoreDiv.setAttribute('style', "margin-bottom:5px; text-align: right;");
 		showMoreDiv.innerHTML = t("show") + " " + entry.additMediaUrl.length + " " + t("more") + " ";
-		showMoreDiv.appendChild(extensionImgA);
+		showMoreDiv.appendChild(expansionImgA);
 		imageDiv.appendChild(showMoreDiv);
 	}
 	// ------------- End of Additional Images Show/Hide -------------- //
 
 	// ------------- Video Show/Hide -------------- //
 	if (entry.video) {
-		let extensionVideoA = document.createElement('a');
-		extensionVideoA.setAttribute('href', "javascript:void(0);");
-		extensionVideoA.setAttribute('class', 'standardb_red');
-		extensionVideoA.dataset.expanded = "false";
-		extensionVideoA.onclick  = function () { 
+		let expansionVideoA = document.createElement('a');
+		expansionVideoA.setAttribute('href', "javascript:void(0);");
+		expansionVideoA.setAttribute('class', 'standardb_red');
+		expansionVideoA.dataset.expanded = "false";
+		expansionVideoA.onclick  = function () { 
 			if (this.dataset.expanded === "false") {
 				let cssText = 
 					'display:block;' +
@@ -930,13 +929,13 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 			}
 			adjustFeedScrollDiv();
 		}
-		extensionVideoA.innerHTML = "[▼]";
+		expansionVideoA.innerHTML = "[▼]";
 
 		let showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
 		showMoreDiv.setAttribute('style', "margin-bottom:5px; text-align: right;");
 		showMoreDiv.innerHTML = t("show") + " " + t("video") + " ";
-		showMoreDiv.appendChild(extensionVideoA);
+		showMoreDiv.appendChild(expansionVideoA);
 		imageDiv.appendChild(showMoreDiv);
 	}
 	// ------------- End of Video Show/Hide -------------- //
