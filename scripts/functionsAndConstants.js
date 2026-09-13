@@ -182,6 +182,11 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	if (!wordsLength) return true;
 
 	const span = createSpan(element, col);
+	// one word only
+	if (wordsLength === 1) {
+		span.innerHTML = words_arr[0];
+		return true;
+	}
 
 	// Estimate the likely result to start exponential search.
 	const estimatedResult = linesToShow * 10;
@@ -232,12 +237,6 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	};
 	expansionA.innerHTML = "[▼]";
 	element.appendChild(expansionA);
-
-	// first word does not fit
-	if (current === 1) {
-		span.innerHTML += " ";
-		return true;
-	}
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -317,6 +316,12 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	if (!wordsLength) return true;
 
 	const span = createSpan(element, col);
+	// one word only
+	if (wordsLength === 1) {
+		span.innerHTML = words_arr[0];
+		return true;
+	}
+	
 	const lineHeight = getLineHeight(span);
 
 	// Estimate the likely result to start exponential search.
@@ -359,12 +364,6 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	expansionA.innerHTML = "[▼]";
 	element.appendChild(expansionA);
 
-	// first word does not fit
-	if (current === 1) {
-		span.innerHTML += " ";
-		return true;
-	}
-
 	// ---------------------------------------------------------
 	// Binary search bounds.
 	// ---------------------------------------------------------
@@ -401,6 +400,12 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	if (!wordsLength) return true;
 
 	const span = createSpan(element, col);
+	// one word only
+	if (wordsLength === 1) {
+		span.innerHTML = words_arr[0];
+		return true;
+	}
+	
 	const lineHeight = getLineHeight(span);
 
 	let wordsCount = 1;
@@ -450,12 +455,6 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	expansionA.innerHTML = "[▼]";
 	element.removeChild(pointer);
 	element.appendChild(expansionA);
-
-	// first word does not fit
-	if (wordsCount === 1) {
-		span.innerHTML += " ";
-		return true;
-	}
 
 	// ---------------------------------------------------------
 	// Second pass.
