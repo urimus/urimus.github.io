@@ -222,7 +222,7 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	}
 
 	// ---------------------------------------------------------
-	// Add extension link.
+	// Add expansion link.
 	// ---------------------------------------------------------
 
 	const expansionA = document.createElement("a");
@@ -259,8 +259,12 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 			right = middle - 1;
 		}
 	}
+	
+	// ---------------------------------------------------------
+	// Final setup.
+	// ---------------------------------------------------------
+	
 	span.innerHTML = formatSummary(words_arr, wordsCount);
-
 	return false;
 }
 
@@ -348,7 +352,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	}
 
 	// ---------------------------------------------------------
-	// Add extension link.
+	// Add expansion link.
 	// ---------------------------------------------------------
 
 	const expansionA = document.createElement("a");
@@ -386,8 +390,12 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 			right = middle - 1;
 		}
 	}
+	
+	// ---------------------------------------------------------
+	// Final setup.
+	// ---------------------------------------------------------
+	
 	span.innerHTML = formatSummary(words_arr, wordsCount);
-
 	return false;
 }
 
@@ -439,7 +447,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	}
 
 	// ---------------------------------------------------------
-	// Add extension link.
+	// Add expansion link.
 	// ---------------------------------------------------------
 
 	const expansionA = document.createElement("a");
