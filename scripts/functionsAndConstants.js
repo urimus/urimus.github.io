@@ -234,7 +234,7 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	element.appendChild(expansionA);
 
 	// first word does not fit
-	if (wordsCount === 1) {
+	if (current === 1) {
 		span.innerHTML += " ";
 		return true;
 	}
@@ -360,7 +360,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	element.appendChild(expansionA);
 
 	// first word does not fit
-	if (wordsCount === 1) {
+	if (current === 1) {
 		span.innerHTML += " ";
 		return true;
 	}
