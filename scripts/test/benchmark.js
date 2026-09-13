@@ -117,7 +117,6 @@ function getStatistics(perf) {
 }
 
 function consolePlot(title, perf, actualLines, unit = "ms") {
-
 	const { times, earlyExits, min, max, total } = perf;
 
 	const WIDTH = 90;
@@ -126,54 +125,158 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	const MIN_Y = 0;
 	const MAX_Y = Math.max(...times);
 
-	const EARLY_EXIT_POINT = "•"; //×▼○∘•▪●
-	const NORMAL_POINT = "●";
+	// Symbols
+	const POINT = "●";
 	const ACTUAL_LINE = "┊";
 	const AXIS = "│";
 	const H_AXIS = "─";
 	const CORNER = "└";
 
+	// Colors
+	const COLORS = {
+		normalPoint: "color: #ff5555; font-weight: bold;",
+		earlyPoint: "color: #bd93f9; font-weight: bold;",
+		actualLine: "color: #888;",
+		axis: "color: #888;",
+		labels: "color: #aaa;",
+		avg: "color: #ff5555; font-weight: bold;"
+	};
+
 	const yRange = MAX_Y - MIN_Y || 1;
 
 	function valueToRow(value) {
-		return Math.round((value - MIN_Y) / yRange * HEIGHT);
+		return Math.round(
+			(value - MIN_Y) / yRange * HEIGHT
+		);
 	}
 
 	function indexToCol(index) {
-		return Math.round(index / (times.length - 1) * (WIDTH - 1));
+		return Math.round(
+			index / (times.length - 1) * (WIDTH - 1)
+		);
 	}
 
 	const actualLinesIndex = actualLines - 1;
-	const actualLinesCol = actualLines >= 1 && actualLines <= times.length ? indexToCol(actualLinesIndex) : null;
 
-	const grid = Array.from({ length: HEIGHT + 1 }, () => Array(WIDTH).fill(" "));
+	const actualLinesCol =
+		actualLines >= 1 && actualLines <= times.length
+			? indexToCol(actualLinesIndex)
+			: null;
+
+	// ============================================================
+	// GRID
+	// ============================================================
+
+	const grid = Array.from(
+		{ length: HEIGHT + 1 },
+		() =>
+			Array.from(
+				{ length: WIDTH },
+				() => ({
+					char: " ",
+					style: null
+				})
+			)
+	);
+
+	// ============================================================
+	// ACTUAL LINES
+	// ============================================================
 
 	if (actualLinesCol !== null) {
 		for (let row = 0; row <= HEIGHT; row++) {
-			if (grid[row][actualLinesCol] === " ") {
-				grid[row][actualLinesCol] = ACTUAL_LINE;
+			if (grid[row][actualLinesCol].char === " ") {
+				grid[row][actualLinesCol] = {
+					char: ACTUAL_LINE,
+					style: COLORS.actualLine
+				};
 			}
 		}
 	}
+
+	// ============================================================
+	// POINTS
+	// ============================================================
 
 	for (let i = 0; i < times.length; i++) {
 		const x = indexToCol(i);
 		const y = valueToRow(times[i]);
 		const row = HEIGHT - y;
-		if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
-			grid[row][x] = earlyExits[i] ? EARLY_EXIT_POINT : NORMAL_POINT;
+
+		if (
+			row >= 0 &&
+			row <= HEIGHT &&
+			x >= 0 &&
+			x < WIDTH
+		) {
+			grid[row][x] = {
+				char: POINT,
+				style: earlyExits[i]
+					? COLORS.earlyPoint
+					: COLORS.normalPoint
+			};
 		}
 	}
 
+	// ============================================================
+	// TITLE
+	// ============================================================
+
 	console.log(`=== ${title} ===`);
+
+	// ============================================================
+	// GRAPH
+	// ============================================================
+
 	for (let row = 0; row <= HEIGHT; row++) {
-		const yValue = MAX_Y - (MAX_Y - MIN_Y) * row / HEIGHT;
-		const label = yValue.toFixed(2).padStart(7);
-		console.log(`${label} ${AXIS}${grid[row].join("")}`);
+		const yValue =
+			MAX_Y -
+			(MAX_Y - MIN_Y) * row / HEIGHT;
+
+		const label = yValue
+			.toFixed(2)
+			.padStart(7);
+
+		let output =
+			`%c${label} %c${AXIS}`;
+
+		const styles = [
+			COLORS.labels,
+			COLORS.axis
+		];
+
+		let currentStyle = null;
+
+		for (const cell of grid[row]) {
+			const style = cell.style;
+
+			if (style !== currentStyle) {
+				output += "%c";
+				styles.push(style || "");
+				currentStyle = style;
+			}
+
+			output += cell.char;
+		}
+
+		console.log(output, ...styles);
 	}
-	console.log(`        ${CORNER}${H_AXIS.repeat(WIDTH)}`	);
+
+	// ============================================================
+	// X AXIS
+	// ============================================================
+
+	console.log(
+		`%c        ${CORNER}${H_AXIS.repeat(WIDTH)}`,
+		COLORS.axis
+	);
+
+	// ============================================================
+	// X LABELS
+	// ============================================================
 
 	const labels = Array(WIDTH).fill(" ");
+
 	const xIndexes = [
 		0,
 		Math.round((times.length - 1) * 0.25),
@@ -181,33 +284,79 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		Math.round((times.length - 1) * 0.75),
 		times.length - 1
 	];
+
 	for (const index of xIndexes) {
 		const x = indexToCol(index);
 		const text = String(index + 1);
-		let start = x - Math.floor(text.length / 2);
-		start = Math.max(0, Math.min(start, WIDTH - text.length));
+
+		let start =
+			x - Math.floor(text.length / 2);
+
+		start = Math.max(
+			0,
+			Math.min(
+				start,
+				WIDTH - text.length
+			)
+		);
+
 		for (let i = 0; i < text.length; i++) {
 			labels[start + i] = text[i];
 		}
 	}
-	console.log(`         ${labels.join("")}`);
+
+	console.log(
+		`%c         ${labels.join("")}`,
+		COLORS.labels
+	);
+
+	// ============================================================
+	// LEGEND
+	// ============================================================
 
 	console.log(
 		`LEGEND: ` +
-		`${NORMAL_POINT} - summary does not fit lines, ` +
-		`${EARLY_EXIT_POINT} - summary fits lines - early exit, ` +
-		`${ACTUAL_LINE} - actual lines = ${actualLines}`
+		`%c${POINT}%c - summary does not fit lines, ` +
+		`%c${POINT}%c - summary fits lines - early exit, ` +
+		`%c${ACTUAL_LINE}%c - actual lines = ${actualLines}`,
+		COLORS.normalPoint,
+		"",
+		COLORS.earlyPoint,
+		"",
+		COLORS.actualLine,
+		""
 	);
 
-	console.log(
+	// ============================================================
+	// STATISTICS
+	// ============================================================
+
+	const avg = total / times.length;
+
+	let statistics =
 		`STATISTICS: ` +
 		`min: ${min.toFixed(3)} ${unit} | ` +
-		`avg: ${(total / times.length).toFixed(3)} ${unit} | ` +
-		`max: ${max.toFixed(3)} ${unit}` +
-		(unit === "ms" ? ` | total: ${total.toFixed(3)} ${unit}` : "")
+		`avg: %c${avg.toFixed(3)} ${unit}%c | ` +
+		`max: ${max.toFixed(3)} ${unit}`;
+
+	const statisticStyles = [
+		COLORS.avg,
+		""
+	];
+
+	if (unit === "ms") {
+		statistics +=
+			` | total: ${total.toFixed(3)} ${unit}`;
+	}
+
+	console.log(
+		statistics,
+		...statisticStyles
 	);
+
 	console.log("");
 }
+
 
 function testSummary(wordsCount) {
 
