@@ -139,7 +139,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		actualLine: "color: #888;",
 		axis: "color: #888;",
 		labels: "color: #aaa;",
-		avg: "color: #ff5555; font-weight: bold;"
+		avg: "color: #5599ff; font-weight: bold;"
 	};
 
 	const yRange = MAX_Y - MIN_Y || 1;
@@ -333,16 +333,49 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 
 	const avg = total / times.length;
 
+	const hasNormal = earlyExits.some(value => !value);
+	const hasEarly = earlyExits.some(value => value);
+
 	let statistics =
 		`STATISTICS: ` +
 		`min: ${min.toFixed(3)} ${unit} | ` +
-		`avg: %c${avg.toFixed(3)} ${unit}%c | ` +
-		`max: ${max.toFixed(3)} ${unit}`;
+		`avg: %c${avg.toFixed(3)} ${unit}%c`;
 
 	const statisticStyles = [
 		COLORS.avg,
 		""
 	];
+
+	if (hasNormal && hasEarly) {
+		const normalTimes = times.filter(
+			(_, index) => !earlyExits[index]
+		);
+
+		const earlyTimes = times.filter(
+			(_, index) => earlyExits[index]
+		);
+
+		const avg1 =
+			normalTimes.reduce((sum, value) => sum + value, 0) /
+			normalTimes.length;
+
+		const avg2 =
+			earlyTimes.reduce((sum, value) => sum + value, 0) /
+			earlyTimes.length;
+
+		statistics +=
+			` | avg1: %c${avg1.toFixed(3)} ${unit}%c` +
+			` | avg2: %c${avg2.toFixed(3)} ${unit}%c`;
+
+		statisticStyles.push(
+			COLORS.normalPoint,
+			"",
+			COLORS.earlyPoint,
+			""
+		);
+	}
+
+	statistics += ` | max: ${max.toFixed(3)} ${unit}`;
 
 	if (unit === "ms") {
 		statistics +=
@@ -355,8 +388,8 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	);
 
 	console.log("");
-}
 
+}
 
 function testSummary(wordsCount) {
 
