@@ -98,21 +98,21 @@ function getStatistics(perf) {
 		return sorted[Math.floor((sorted.length - 1) * p)];
 	}
 
-	const average = perf.total / perf.count;
+	const mean = perf.total / perf.count;
 
-	const variance = perf.times.reduce((sum, time) => sum + Math.pow(time - average, 2), 0) / perf.count;
+	const variance = perf.times.reduce((sum, time) => sum + Math.pow(time - mean, 2), 0) / perf.count;
 	const standardDeviation = Math.sqrt(variance);
 
 	return {
-		count: perf.count,
-		"average, ms": round(average),
-		"median, ms": round(percentile(0.50)),
-		"p95, ms": round(percentile(0.95)),
-		"p99, ms": round(percentile(0.99)),
-		"stdDev, ms": round(standardDeviation),
-		"min, ms": round(perf.min),
-		"max, ms": round(perf.max),
-		"total, ms": round(perf.total)
+		Count: perf.count,
+		"Mean, ms": round(mean),
+		"Median, ms": round(percentile(0.50)),
+		"P95, ms": round(percentile(0.95)),
+		"P99, ms": round(percentile(0.99)),
+		"Std Dev, ms": round(standardDeviation),
+		"Min, ms": round(perf.min),
+		"Max, ms": round(perf.max),
+		"Total, ms": round(perf.total)
 	};
 }
 
@@ -141,7 +141,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		actualLine: "color: #888;",
 		axis: "color: #888;",
 		labels: "color: #aaa;",
-		avg: "color: #5599ff; font-weight: bold;"
+		mean: "color: #5599ff; font-weight: bold;"
 	};
 
 	const yRange = MAX_Y - MIN_Y || 1;
@@ -359,18 +359,18 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	// STATISTICS
 	// ============================================================
 
-	const avg = total / times.length;
+	const mean = total / times.length;
 
 	const hasNormal = earlyExits.some(value => !value);
 	const hasEarly = earlyExits.some(value => value);
 
 	let statistics =
 		`STATISTICS, ${unit}: ` +
-		`min: ${min.toFixed(3)} | ` +
-		`avg: %c${avg.toFixed(3)}%c`;
+		`Min: ${min.toFixed(3)} | ` +
+		`Mean: %c${mean.toFixed(3)}%c`;
 
 	const statisticStyles = [
-		COLORS.avg,
+		COLORS.mean,
 		""
 	];
 
@@ -383,17 +383,15 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			(_, index) => earlyExits[index]
 		);
 
-		const avg1 =
+		const mean1 =
 			normalTimes.reduce((sum, value) => sum + value, 0) /
 			normalTimes.length;
 
-		const avg2 =
+		const mean2 =
 			earlyTimes.reduce((sum, value) => sum + value, 0) /
 			earlyTimes.length;
 
-		statistics +=
-			` | avg1: %c${avg1.toFixed(3)}%c` +
-			` | avg2: %c${avg2.toFixed(3)}%c`;
+		statistics += ` (%c${mean1.toFixed(3)}%c, %c${mean2.toFixed(3)}%c)`;
 
 		statisticStyles.push(
 			COLORS.normalPoint,
@@ -404,11 +402,11 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	}
 
 	statistics +=
-		` | max: ${max.toFixed(3)}`;
+		` | Max: ${max.toFixed(3)}`;
 
 	if (unit === "ms") {
 		statistics +=
-			` | total: ${total.toFixed(3)}`;
+			` | Total: ${total.toFixed(3)}`;
 	}
 
 	console.log(
@@ -581,7 +579,7 @@ function testSummary(wordsCount) {
 
 		statistics[algorithm.name] = {
 			...getStatistics(perf),
-			"share, %": round(perf.total / totalSum * 100, 2)
+			"Share, %": round(perf.total / totalSum * 100, 2)
 		};
 	}
 
@@ -619,16 +617,29 @@ function testSummary(wordsCount) {
 			console.error("Cannot create speedup: different times length.");
 			return null;
 		}
-		const times = perfA.times.map((timeA, i) => {
-			const timeB = perfB.times[i];
-			return timeB > 0 ? timeA / timeB : 0;
-		});
+
+		const getSpeedupTimes = (perfA, perfB) =>
+			perfA.times.map((timeA, i) => {
+				const timeB = perfB.times[i];
+				return timeB > 0 ? timeA / timeB : 0;
+			});
+
+		let times = getSpeedupTimes(perfA, perfB);
+		let total = times.reduce((sum, time) => sum + time, 0);
+		const isAFaster = total / times.length < 1;
+
+		if (!isAFaster) {
+			times = getSpeedupTimes(perfB, perfA);
+			total = times.reduce((sum, time) => sum + time, 0);
+		}
+
 		return {
 			count: times.length,
-			total: times.reduce((sum, time) => sum + time, 0),
+			total,
 			min: Math.min(...times),
 			max: Math.max(...times),
 			times,
+			isAFaster,
 			earlyExits: [...perfA.earlyExits]
 		};
 	}
@@ -651,29 +662,14 @@ function testSummary(wordsCount) {
 			return;
 		}
 
-		const averageA = perfA.total / perfA.count;
-		const averageB = perfB.total / perfB.count;
-
-		let slowerAlgorithm;
-		let fasterAlgorithm;
-		let slowerPerf;
-		let fasterPerf;
-
-		if (averageA > averageB) {
-			slowerAlgorithm = algA;
-			fasterAlgorithm = algB;
-			slowerPerf = perfA;
-			fasterPerf = perfB;
-		} else {
-			slowerAlgorithm = algB;
-			fasterAlgorithm = algA;
-			slowerPerf = perfB;
-			fasterPerf = perfA;
-		}
-
-		const speedupPerf = createSpeedupPerf(slowerPerf, fasterPerf);
+		const speedupPerf = createSpeedupPerf(perfA, perfB);
 		if (!speedupPerf) return;
-		const title = `Speedup: ${fasterAlgorithm.name} / ${slowerAlgorithm.name}`;
+
+		const title = "Speedup: " +
+			(speedupPerf.isAFaster
+				? `${algA.name} / ${algB.name}`
+				: `${algB.name} / ${algA.name}`);
+
 		consolePlot(title, speedupPerf, actualLines, unit);
 	}
 
