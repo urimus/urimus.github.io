@@ -564,7 +564,7 @@ function testSummary(wordsCount) {
 	container.remove();
 
 	// =========================================================
-	// STATISTICS
+	// GENERAL STATISTICS
 	// =========================================================
 
 	let totalAverageTime = 0;
@@ -586,7 +586,7 @@ function testSummary(wordsCount) {
 		};
 	}
 
-	console.log("=== STATISTICS ===");
+	console.log("=== GENERAL STATISTICS ===");
 	console.table(statistics);
 
 
