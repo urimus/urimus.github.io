@@ -105,14 +105,14 @@ function getStatistics(perf) {
 
 	return {
 		count: perf.count,
-		"total, ms": round(perf.total),
 		"average, ms": round(average),
 		"median, ms": round(percentile(0.50)),
 		"p95, ms": round(percentile(0.95)),
 		"p99, ms": round(percentile(0.99)),
 		"stdDev, ms": round(standardDeviation),
 		"min, ms": round(perf.min),
-		"max, ms": round(perf.max)
+		"max, ms": round(perf.max),
+		"total, ms": round(perf.total)
 	};
 }
 
@@ -567,22 +567,21 @@ function testSummary(wordsCount) {
 	// GENERAL STATISTICS
 	// =========================================================
 
-	let totalTime = 0;
+	let totalSum = 0;
 
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
-		totalTime += perf.total;
+		totalSum += perf.total;
 	}
 
 	const statistics = {};
 
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
-		const average = perf.total / perf.count;
 
 		statistics[algorithm.name] = {
 			...getStatistics(perf),
-			"time share, %": round(perf.total / totalTime * 100, 2)
+			"share, %": round(perf.total / totalSum * 100, 2)
 		};
 	}
 
