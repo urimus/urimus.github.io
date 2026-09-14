@@ -238,7 +238,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 
 	const unitStart = Math.max(
 		0,
-		yAxisPosition - unit.length
+		yAxisPosition - Math.ceil(unit.length / 2)
 	);
 
 	console.log(
