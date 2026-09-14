@@ -87,15 +87,15 @@ function addPerf(perf, time, isEarlyExit) {
 	if (time > perf.max) perf.max = time;
 }
 
+function round(num, digits = 4) {
+	return Number(num.toFixed(digits));
+}
+
 function getStatistics(perf) {
 	const sorted = [...perf.times].sort((a, b) => a - b);
 
 	function percentile(p) {
 		return sorted[Math.floor((sorted.length - 1) * p)];
-	}
-
-	function round(num, digits = 4) {
-		return Number(num.toFixed(digits));
 	}
 
 	const average = perf.total / perf.count;
@@ -105,14 +105,14 @@ function getStatistics(perf) {
 
 	return {
 		count: perf.count,
-		total: round(perf.total) + " ms",
-		average: round(average) + " ms",
-		median: round(percentile(0.50)) + " ms",
-		p95: round(percentile(0.95)) + " ms",
-		p99: round(percentile(0.99)) + " ms",
-		stdDev: round(standardDeviation) + " ms",
-		min: round(perf.min) + " ms",
-		max: round(perf.max) + " ms"
+		"total, ms": round(perf.total),
+		"average, ms": round(average),
+		"median, ms": round(percentile(0.50)),
+		"p95, ms": round(percentile(0.95)),
+		"p99, ms": round(percentile(0.99)),
+		"stdDev, ms": round(standardDeviation),
+		"min, ms": round(perf.min),
+		"max, ms": round(perf.max)
 	};
 }
 
@@ -582,7 +582,7 @@ function testSummary(wordsCount) {
 
 		statistics[algorithm.name] = {
 			...getStatistics(perf),
-			"average time share": (average / totalAverageTime * 100).toFixed(2) + "%"
+			"average time share, %": round(average / totalAverageTime * 100, 2)
 		};
 	}
 
