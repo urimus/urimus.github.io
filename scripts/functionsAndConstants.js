@@ -129,23 +129,32 @@ function formatSummary(words_arr, wordsCount, addSpace = true) {
 	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
 }
 
-let typeTimer = null;
-function typeSummary(span, words_arr, wordsCount, isExpanding) {
+function typeSummary(span, words_arr, wordsCount, isExpanding, onComplete) {
 	const wordsLength = words_arr.length;
 	const count = wordsLength - wordsCount;
-	if (!count) return;
+	if (!count) { onComplete?.(); return; }
 
-	let current = isExpanding ? wordsCount + 1: wordsLength - 1;
+	const step = Math.max(1, Math.ceil(count / 100));
+
+	let current;
+	if (isExpanding) {
+		current = Math.min(wordsCount + step, wordsLength);
+	} else {
+		current = Math.max(wordsLength - step, wordsCount);
+	}
 	span.innerHTML = formatSummary(words_arr, current);
+	if (count <= step) { onComplete?.(); return; }
 
-	if (count === 1) return;
-
-	typeTimer = setInterval(() => {
-		current += isExpanding ? 1 : -1;
+	const timer = setInterval(() => {
+		if (isExpanding) {
+			current = Math.min(current + step, wordsLength);
+		} else {
+			current = Math.max(current - step, wordsCount);
+		}
 		span.innerHTML = formatSummary(words_arr, current);
 		if ((isExpanding && current >= wordsLength) || (!isExpanding && current <= wordsCount)) {
-			clearInterval(typeTimer);
-			typeTimer = null;
+			clearInterval(timer);
+			onComplete?.();
 		}
 	}, 0);
 }
@@ -228,10 +237,13 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
 	let isExpanded = false;
+	let isAnimating = false;
 	expansionA.onclick = function () {
+		if (isAnimating) return;
+		isAnimating = true;
 		isExpanded = !isExpanded;
 		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
-		typeSummary(span, words_arr, wordsCount, isExpanded);
+		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	expansionA.innerHTML = "[▼]";
@@ -358,10 +370,13 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col + " summary_word_pointer");
 	let isExpanded = false;
+	let isAnimating = false;
 	expansionA.onclick = function () {
+		if (isAnimating) return;
+		isAnimating = true;
 		isExpanded = !isExpanded;
 		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
-		typeSummary(span, words_arr, wordsCount, isExpanded);
+		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	expansionA.innerHTML = "[▼]";
@@ -453,10 +468,13 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
 	let isExpanded = false;
+	let isAnimating = false;
 	expansionA.onclick = function () {
+		if (isAnimating) return;
+		isAnimating = true;
 		isExpanded = !isExpanded;
 		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
-		typeSummary(span, words_arr, wordsCount, isExpanded);
+		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	expansionA.innerHTML = "[▼]";
