@@ -688,5 +688,5 @@ function testSummary(wordsCount) {
 	// =========================================================
 
 	const testTime = performance.now() - testStart;
-	console.log(`Modify Summary Speed Test Completed. Duration: ${(testTime / 1000).toFixed(2)} s.`);
+	return `Modify Summary Speed Test Completed. Duration: ${(testTime / 1000).toFixed(2)} s.`;
 }
