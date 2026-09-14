@@ -567,11 +567,11 @@ function testSummary(wordsCount) {
 	// GENERAL STATISTICS
 	// =========================================================
 
-	let totalAverageTime = 0;
+	let totalTime = 0;
 
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
-		totalAverageTime += perf.total / perf.count;
+		totalTime += perf.total;
 	}
 
 	const statistics = {};
@@ -582,7 +582,7 @@ function testSummary(wordsCount) {
 
 		statistics[algorithm.name] = {
 			...getStatistics(perf),
-			"average time share, %": round(average / totalAverageTime * 100, 2)
+			"time share, %": round(perf.total / totalTime * 100, 2)
 		};
 	}
 
