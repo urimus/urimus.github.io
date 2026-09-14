@@ -621,12 +621,12 @@ function testSummary(wordsCount) {
 		const getSpeedupTimes = (perfA, perfB) =>
 			perfA.times.map((timeA, i) => {
 				const timeB = perfB.times[i];
-				return timeB > 0 ? timeA / timeB : 0;
+				return timeA > 0 ? timeB / timeA : 0;
 			});
 
 		let times = getSpeedupTimes(perfA, perfB);
 		let total = times.reduce((sum, time) => sum + time, 0);
-		const isAFaster = total / times.length < 1;
+		const isAFaster = total / times.length > 1;
 
 		if (!isAFaster) {
 			times = getSpeedupTimes(perfB, perfA);
