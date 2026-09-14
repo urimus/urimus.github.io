@@ -226,7 +226,11 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	// TITLE
 	// ============================================================
 
-	console.log(`=== ${title} ===`);
+	if (title.includes("%c")) {
+		console.log(`=== ${title} ===`, "font-weight: bold;", "");
+	} else {
+		console.log(`=== ${title} ===`);
+	}
 
 	// ============================================================
 	// Y AXIS UNIT
@@ -665,10 +669,9 @@ function testSummary(wordsCount) {
 		const speedupPerf = createSpeedupPerf(perfA, perfB);
 		if (!speedupPerf) return;
 
-		const title = "Speedup: " +
-			(speedupPerf.isAFaster
-				? `${algA.name} / ${algB.name}`
-				: `${algB.name} / ${algA.name}`);
+		const title = speedupPerf.isAFaster
+			? `Speedup: %c${algA.name}%c ↔ ${algB.name}`
+			: `Speedup: ${algA.name} ↔ %c${algB.name}%c`;
 
 		consolePlot(title, speedupPerf, actualLines, unit);
 	}
