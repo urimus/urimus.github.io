@@ -1826,7 +1826,10 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		result.link = "https://artemis2.live/news";
 		items = resultOrig.data;
 	} else {
-		if (!resultOrig.item || resultOrig.item.length == 0) return result;
+		if (!resultOrig.item || resultOrig.item.length == 0) {
+			 showFeedError("No Records in Feed", resultOrig.feedXML, lang);
+			return;
+		}
 		result.title = resultOrig.title?._text || resultOrig.title?._cdata;
 		result.description = resultOrig.description?._text || resultOrig.description?._cdata;
 		if (source == "wired" && type != "top") result.description = result.title;
