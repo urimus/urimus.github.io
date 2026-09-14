@@ -131,6 +131,8 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	const AXIS = "│";
 	const H_AXIS = "─";
 	const CORNER = "└";
+	const Y_ARROW = "↑";
+	const X_ARROW = "→";
 
 	// Colors
 	const COLORS = {
@@ -151,6 +153,8 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	}
 
 	function indexToCol(index) {
+		if (times.length <= 1) return 0;
+
 		return Math.round(
 			index / (times.length - 1) * (WIDTH - 1)
 		);
@@ -225,6 +229,24 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	console.log(`=== ${title} ===`);
 
 	// ============================================================
+	// Y AXIS UNIT
+	// ============================================================
+
+	// Y-axis is positioned after the 7-character Y label + space.
+	// Unit is right-aligned to the same position as the Y-axis arrow.
+	const yAxisPosition = 9;
+
+	const unitStart = Math.max(
+		0,
+		yAxisPosition - unit.length
+	);
+
+	console.log(
+		`%c${" ".repeat(unitStart)}${unit}`,
+		COLORS.labels
+	);
+
+	// ============================================================
 	// GRAPH
 	// ============================================================
 
@@ -237,8 +259,14 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			.toFixed(2)
 			.padStart(7);
 
+		// Last character of Y-axis is the arrow.
+		const axisChar =
+			row === 0
+				? Y_ARROW
+				: AXIS;
+
 		let output =
-			`%c${label} %c${AXIS}`;
+			`%c${label} %c${axisChar}`;
 
 		const styles = [
 			COLORS.labels,
@@ -267,7 +295,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	// ============================================================
 
 	console.log(
-		`%c        ${CORNER}${H_AXIS.repeat(WIDTH)}`,
+		`%c        ${CORNER}${H_AXIS.repeat(WIDTH - 1)}${X_ARROW} N`,
 		COLORS.axis
 	);
 
@@ -337,9 +365,9 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	const hasEarly = earlyExits.some(value => value);
 
 	let statistics =
-		`STATISTICS: ` +
-		`min: ${min.toFixed(3)} ${unit} | ` +
-		`avg: %c${avg.toFixed(3)} ${unit}%c`;
+		`STATISTICS, ${unit}: ` +
+		`min: ${min.toFixed(3)} | ` +
+		`avg: %c${avg.toFixed(3)}%c`;
 
 	const statisticStyles = [
 		COLORS.avg,
@@ -364,8 +392,8 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			earlyTimes.length;
 
 		statistics +=
-			` | avg1: %c${avg1.toFixed(3)} ${unit}%c` +
-			` | avg2: %c${avg2.toFixed(3)} ${unit}%c`;
+			` | avg1: %c${avg1.toFixed(3)}%c` +
+			` | avg2: %c${avg2.toFixed(3)}%c`;
 
 		statisticStyles.push(
 			COLORS.normalPoint,
@@ -375,11 +403,12 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		);
 	}
 
-	statistics += ` | max: ${max.toFixed(3)} ${unit}`;
+	statistics +=
+		` | max: ${max.toFixed(3)}`;
 
 	if (unit === "ms") {
 		statistics +=
-			` | total: ${total.toFixed(3)} ${unit}`;
+			` | total: ${total.toFixed(3)}`;
 	}
 
 	console.log(
@@ -388,7 +417,6 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	);
 
 	console.log("");
-
 }
 
 function testSummary(wordsCount) {
