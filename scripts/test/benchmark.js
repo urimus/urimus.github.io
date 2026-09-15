@@ -461,9 +461,9 @@ function testSummary(wordsCount) {
 	// RUN BENCHMARK
 	// =========================================================
 
-	// performance.now() occasionally returns 0 for very short intervals.
-	// The smallest non-zero value observed is 0.1 ms.
-	// Treat 0 as a sub-resolution measurement and use 0.05 ms as its estimate.
+	// The nominal resolution for performance.now() in a non-isolated
+	// Chromium context is 0.1 ms. Treat 0 measurement as a sub-resolution
+	// measurement and estimate it as half of that resolution.
 	const SUB_RESOLUTION_TIME = 0.05;
 
 	function addPerf(perf, time, isEarlyExit) {
