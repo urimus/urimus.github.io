@@ -77,47 +77,20 @@ function randomWord() {
 	return word;
 }
 
-function addPerf(perf, time, isEarlyExit) {
-	perf.count++;
-	perf.total += time;
-	perf.times.push(time);
-	perf.earlyExits.push(isEarlyExit);
-
-	if (time < perf.min) perf.min = time;
-	if (time > perf.max) perf.max = time;
-}
-
-function round(num, digits = 4) {
-	return Number(num.toFixed(digits));
-}
-
-function getStatistics(perf) {
-	const sorted = [...perf.times].sort((a, b) => a - b);
-
-	function percentile(p) {
-		return sorted[Math.floor((sorted.length - 1) * p)];
-	}
-
-	const mean = perf.total / perf.count;
-
-	const variance = perf.times.reduce((sum, time) => sum + Math.pow(time - mean, 2), 0) / perf.count;
-	const standardDeviation = Math.sqrt(variance);
-
-	return {
-		Count: perf.count,
-		"Mean, ms": round(mean),
-		"Median, ms": round(percentile(0.50)),
-		"P95, ms": round(percentile(0.95)),
-		"P99, ms": round(percentile(0.99)),
-		"Std Dev, ms": round(standardDeviation),
-		"Min, ms": round(perf.min),
-		"Max, ms": round(perf.max),
-		"Total, ms": round(perf.total)
-	};
-}
-
 function consolePlot(title, perf, actualLines, unit = "ms") {
-	const { times, earlyExits, min, max, total } = perf;
+	const {
+		times,
+		earlyExits,
+		min,
+		max,
+		total,
+		mean,
+		meanEE,
+		meanNoEE,
+		geometricMean,
+		geometricMeanEE,
+		geometricMeanNoEE
+	} = perf;
 
 	const WIDTH = 90;
 	const HEIGHT = 22;
@@ -236,8 +209,6 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	// Y AXIS UNIT
 	// ============================================================
 
-	// Y-axis is positioned after the 7-character Y label + space.
-	// Unit is right-aligned to the same position as the Y-axis arrow.
 	const yAxisPosition = 9;
 
 	const unitStart = Math.max(
@@ -263,7 +234,6 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			.toFixed(2)
 			.padStart(7);
 
-		// Last character of Y-axis is the arrow.
 		const axisChar =
 			row === 0
 				? Y_ARROW
@@ -363,54 +333,66 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	// STATISTICS
 	// ============================================================
 
-	const mean = total / times.length;
-
 	const hasNormal = earlyExits.some(value => !value);
 	const hasEarly = earlyExits.some(value => value);
 
-	let statistics =
-		`STATISTICS, ${unit}: ` +
-		`Min: ${min.toFixed(3)} | ` +
-		`Mean: %c${mean.toFixed(3)}%c`;
+	let statistics = `STATISTICS, ${unit}: `;
 
-	const statisticStyles = [
-		COLORS.mean,
-		""
-	];
-
-	if (hasNormal && hasEarly) {
-		const normalTimes = times.filter(
-			(_, index) => !earlyExits[index]
-		);
-
-		const earlyTimes = times.filter(
-			(_, index) => earlyExits[index]
-		);
-
-		const mean1 =
-			normalTimes.reduce((sum, value) => sum + value, 0) /
-			normalTimes.length;
-
-		const mean2 =
-			earlyTimes.reduce((sum, value) => sum + value, 0) /
-			earlyTimes.length;
-
-		statistics += ` (%c${mean1.toFixed(3)}%c, %c${mean2.toFixed(3)}%c)`;
-
-		statisticStyles.push(
-			COLORS.normalPoint,
-			"",
-			COLORS.earlyPoint,
-			""
-		);
-	}
-
-	statistics +=
-		` | Max: ${max.toFixed(3)}`;
+	const statisticStyles = [];
 
 	if (unit === "ms") {
 		statistics +=
+			`Min: ${min.toFixed(3)} | ` +
+			`Mean: %c${mean.toFixed(3)}%c`;
+
+		statisticStyles.push(
+			COLORS.mean,
+			""
+		);
+
+		if (hasNormal && hasEarly) {
+			statistics +=
+				` (%c${meanNoEE.toFixed(3)}%c, ` +
+				`%c${meanEE.toFixed(3)}%c)`;
+
+			statisticStyles.push(
+				COLORS.normalPoint,
+				"",
+				COLORS.earlyPoint,
+				""
+			);
+		}
+
+		statistics +=
+			` | Max: ${max.toFixed(3)}`;
+
+		statistics +=
 			` | Total: ${total.toFixed(3)}`;
+	} else {
+		statistics +=
+			`Min: ${min.toFixed(3)} | ` +
+			`Geometric Mean: %c${geometricMean.toFixed(3)}%c`;
+
+		statisticStyles.push(
+			COLORS.mean,
+			""
+		);
+
+		if (hasNormal && hasEarly) {
+			statistics +=
+				` (%c${geometricMeanNoEE.toFixed(3)}%c, ` +
+				`%c${geometricMeanEE.toFixed(3)}%c)`;
+
+			statisticStyles.push(
+				COLORS.normalPoint,
+				"",
+				COLORS.earlyPoint,
+				""
+			);
+		}
+
+		statistics +=
+			` | Max: ${max.toFixed(3)}`;
 	}
 
 	console.log(
@@ -420,6 +402,48 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 
 	console.log("");
 }
+
+function addPerf(perf, time, isEarlyExit) {
+	perf.count++;
+	perf.total += time;
+	perf.times.push(time);
+	perf.earlyExits.push(isEarlyExit);
+
+	if (time < perf.min) perf.min = time;
+	if (time > perf.max) perf.max = time;
+}
+
+function round(num, digits = 4) {
+	return Number(num.toFixed(digits));
+}
+
+function getStatistics(perf) {
+	const sorted = [...perf.times].sort((a, b) => a - b);
+
+	function percentile(p) {
+		return sorted[Math.floor((sorted.length - 1) * p)];
+	}
+
+	const variance = perf.times.reduce(
+		(sum, time) => sum + Math.pow(time - perf.mean, 2),
+		0
+	) / perf.count;
+
+	const standardDeviation = Math.sqrt(variance);
+
+	return {
+		Count: perf.count,
+		"Mean, ms": round(perf.mean),
+		"Median, ms": round(percentile(0.50)),
+		"P95, ms": round(percentile(0.95)),
+		"P99, ms": round(percentile(0.99)),
+		"Std Dev, ms": round(standardDeviation),
+		"Min, ms": round(perf.min),
+		"Max, ms": round(perf.max),
+		"Total, ms": round(perf.total)
+	};
+}
+
 
 function testSummary(wordsCount) {
 
@@ -573,6 +597,28 @@ function testSummary(wordsCount) {
 
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
+
+		let sumEE = 0;
+		let countEE = 0;
+		let sumNoEE = 0;
+		let countNoEE = 0;
+
+		for (let i = 0; i < perf.times.length; i++) {
+			const time = perf.times[i];
+
+			if (perf.earlyExits[i]) {
+				sumEE += time;
+				countEE++;
+			} else {
+				sumNoEE += time;
+				countNoEE++;
+			}
+		}
+
+		perf.mean = perf.total / perf.count;
+		perf.meanEE = countEE > 0 ? sumEE / countEE : 0;
+		perf.meanNoEE = countNoEE > 0 ? sumNoEE / countNoEE : 0;
+
 		totalSum += perf.total;
 	}
 
@@ -625,21 +671,67 @@ function testSummary(wordsCount) {
 		const getSpeedupTimes = (perfA, perfB) =>
 			perfA.times.map((timeA, i) => {
 				const timeB = perfB.times[i];
-				return timeA > 0 ? timeB / timeA : 0;
+				return timeA !== 0 ? timeB / timeA : 0;
 			});
 
+		const getGeometricMean = times => {
+			let count = 0;
+
+			const logSum = times.reduce((sum, time) => {
+				if (time === 0) return sum;
+
+				count++;
+				return sum + Math.log(time);
+			}, 0);
+
+			return count > 0 ? Math.exp(logSum / count) : 0;
+		};
+
+		const getGeometricMeansByEarlyExit = (times, earlyExits) => {
+			let logSumEE = 0;
+			let countEE = 0;
+			let logSumNoEE = 0;
+			let countNoEE = 0;
+
+			times.forEach((time, i) => {
+				if (time === 0) return;
+
+				if (earlyExits[i]) {
+					logSumEE += Math.log(time);
+					countEE++;
+				} else {
+					logSumNoEE += Math.log(time);
+					countNoEE++;
+				}
+			});
+
+			return {
+				geometricMeanEE: countEE > 0
+					? Math.exp(logSumEE / countEE)
+					: 0,
+				geometricMeanNoEE: countNoEE > 0
+					? Math.exp(logSumNoEE / countNoEE)
+					: 0
+			};
+		};
+
 		let times = getSpeedupTimes(perfA, perfB);
-		let total = times.reduce((sum, time) => sum + time, 0);
-		const isAFaster = total / times.length > 1;
+		let geometricMean = getGeometricMean(times);
+		const isAFaster = geometricMean >= 1;
 
 		if (!isAFaster) {
 			times = getSpeedupTimes(perfB, perfA);
-			total = times.reduce((sum, time) => sum + time, 0);
+			geometricMean = getGeometricMean(times);
 		}
+
+		let { geometricMeanEE, geometricMeanNoEE } =
+			getGeometricMeansByEarlyExit(times, perfA.earlyExits);
 
 		return {
 			count: times.length,
-			total,
+			geometricMean,
+			geometricMeanEE,
+			geometricMeanNoEE,
 			min: Math.min(...times),
 			max: Math.max(...times),
 			times,
