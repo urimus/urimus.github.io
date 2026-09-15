@@ -13,7 +13,6 @@ function randomWord() {
 
 	const r = Math.random();
 	let length;
-
 	if (r < 0.01) {
 		length = 100 + Math.floor(Math.random() * 200);
 	} else {
@@ -39,7 +38,6 @@ function randomWord() {
 		else if (r2 < 0.999974) length = 18;
 		else length = 19 + Math.floor(Math.random() * 5);
 	}
-
 	const letters =
 		"eeeeeeeeeeeeeeeeeeee" +
 		"tttttttttttt" +
@@ -69,11 +67,9 @@ function randomWord() {
 		"zz";
 
 	let word = "";
-
 	for (let i = 0; i < length; i++) {
 		word += letters[Math.floor(Math.random() * letters.length)];
 	}
-
 	return word;
 }
 
@@ -124,17 +120,14 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			(value - MIN_Y) / yRange * HEIGHT
 		);
 	}
-
 	function indexToCol(index) {
 		if (times.length <= 1) return 0;
-
 		return Math.round(
 			index / (times.length - 1) * (WIDTH - 1)
 		);
 	}
 
 	const actualLinesIndex = actualLines - 1;
-
 	const actualLinesCol =
 		actualLines >= 1 && actualLines <= times.length
 			? indexToCol(actualLinesIndex)
@@ -180,17 +173,10 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		const y = valueToRow(times[i]);
 		const row = HEIGHT - y;
 
-		if (
-			row >= 0 &&
-			row <= HEIGHT &&
-			x >= 0 &&
-			x < WIDTH
-		) {
+		if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
 			grid[row][x] = {
 				char: POINT,
-				style: earlyExits[i]
-					? COLORS.earlyPoint
-					: COLORS.normalPoint
+				style: earlyExits[i] ? COLORS.earlyPoint : COLORS.normalPoint
 			};
 		}
 	}
@@ -210,12 +196,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	// ============================================================
 
 	const yAxisPosition = 9;
-
-	const unitStart = Math.max(
-		0,
-		yAxisPosition - Math.ceil(unit.length / 2)
-	);
-
+	const unitStart = Math.max(0, yAxisPosition - Math.ceil(unit.length / 2));
 	console.log(
 		`%c${" ".repeat(unitStart)}${unit}`,
 		COLORS.labels
@@ -226,41 +207,24 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	// ============================================================
 
 	for (let row = 0; row <= HEIGHT; row++) {
-		const yValue =
-			MAX_Y -
-			(MAX_Y - MIN_Y) * row / HEIGHT;
-
-		const label = yValue
-			.toFixed(2)
-			.padStart(7);
-
-		const axisChar =
-			row === 0
-				? Y_ARROW
-				: AXIS;
-
-		let output =
-			`%c${label} %c${axisChar}`;
-
+		const yValue = MAX_Y - (MAX_Y - MIN_Y) * row / HEIGHT;
+		const label = yValue.toFixed(2).padStart(7);
+		const axisChar = row === 0 ? Y_ARROW : AXIS;
+		let output = `%c${label} %c${axisChar}`;
 		const styles = [
 			COLORS.labels,
 			COLORS.axis
 		];
-
 		let currentStyle = null;
-
 		for (const cell of grid[row]) {
 			const style = cell.style;
-
 			if (style !== currentStyle) {
 				output += "%c";
 				styles.push(style || "");
 				currentStyle = style;
 			}
-
 			output += cell.char;
 		}
-
 		console.log(output, ...styles);
 	}
 
@@ -268,17 +232,13 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	// X AXIS
 	// ============================================================
 
-	console.log(
-		`%c        ${CORNER}${H_AXIS.repeat(WIDTH - 1)}${X_ARROW} N`,
-		COLORS.axis
-	);
+	console.log(`%c        ${CORNER}${H_AXIS.repeat(WIDTH - 1)}${X_ARROW} N`, COLORS.axis);
 
 	// ============================================================
 	// X LABELS
 	// ============================================================
 
 	const labels = Array(WIDTH).fill(" ");
-
 	const xIndexes = [
 		0,
 		Math.round((times.length - 1) * 0.25),
@@ -286,14 +246,10 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		Math.round((times.length - 1) * 0.75),
 		times.length - 1
 	];
-
 	for (const index of xIndexes) {
 		const x = indexToCol(index);
 		const text = String(index + 1);
-
-		let start =
-			x - Math.floor(text.length / 2);
-
+		let start = x - Math.floor(text.length / 2);
 		start = Math.max(
 			0,
 			Math.min(
@@ -301,16 +257,11 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 				WIDTH - text.length
 			)
 		);
-
 		for (let i = 0; i < text.length; i++) {
 			labels[start + i] = text[i];
 		}
 	}
-
-	console.log(
-		`%c         ${labels.join("")}`,
-		COLORS.labels
-	);
+	console.log(`%c         ${labels.join("")}`, COLORS.labels);
 
 	// ============================================================
 	// LEGEND
@@ -335,26 +286,14 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 
 	const hasNormal = earlyExits.some(value => !value);
 	const hasEarly = earlyExits.some(value => value);
-
 	let statistics = `STATISTICS, ${unit}: `;
-
 	const statisticStyles = [];
 
 	if (unit === "ms") {
-		statistics +=
-			`Min: ${min.toFixed(3)} | ` +
-			`Mean: %c${mean.toFixed(3)}%c`;
-
-		statisticStyles.push(
-			COLORS.mean,
-			""
-		);
-
+		statistics += `Min: ${min.toFixed(3)} | Mean: %c${mean.toFixed(3)}%c`;
+		statisticStyles.push(COLORS.mean, "");
 		if (hasNormal && hasEarly) {
-			statistics +=
-				` (%c${meanNoEE.toFixed(3)}%c, ` +
-				`%c${meanEE.toFixed(3)}%c)`;
-
+			statistics += ` (%c${meanNoEE.toFixed(3)}%c, %c${meanEE.toFixed(3)}%c)`;
 			statisticStyles.push(
 				COLORS.normalPoint,
 				"",
@@ -362,27 +301,16 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 				""
 			);
 		}
-
-		statistics +=
-			` | Max: ${max.toFixed(3)}`;
-
-		statistics +=
-			` | Total: ${total.toFixed(3)}`;
+		statistics += ` | Max: ${max.toFixed(3)}`;
+		statistics += ` | Total: ${total.toFixed(3)}`;
 	} else {
-		statistics +=
-			`Min: ${min.toFixed(3)} | ` +
-			`Geometric Mean: %c${geometricMean.toFixed(3)}%c`;
-
+		statistics += `Min: ${min.toFixed(3)} | Geometric Mean: %c${geometricMean.toFixed(3)}%c`;
 		statisticStyles.push(
 			COLORS.mean,
 			""
 		);
-
 		if (hasNormal && hasEarly) {
-			statistics +=
-				` (%c${geometricMeanNoEE.toFixed(3)}%c, ` +
-				`%c${geometricMeanEE.toFixed(3)}%c)`;
-
+			statistics += ` (%c${geometricMeanNoEE.toFixed(3)}%c, %c${geometricMeanEE.toFixed(3)}%c)`;
 			statisticStyles.push(
 				COLORS.normalPoint,
 				"",
@@ -390,16 +318,9 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 				""
 			);
 		}
-
-		statistics +=
-			` | Max: ${max.toFixed(3)}`;
+		statistics += ` | Max: ${max.toFixed(3)}`;
 	}
-
-	console.log(
-		statistics,
-		...statisticStyles
-	);
-
+	console.log(statistics, ...statisticStyles);
 	console.log("");
 }
 
@@ -521,7 +442,6 @@ function testSummary(wordsCount) {
 		perf.total += time;
 		perf.times.push(time);
 		perf.earlyExits.push(isEarlyExit);
-
 		if (time < perf.min) perf.min = time;
 		if (time > perf.max) perf.max = time;
 	}
@@ -582,6 +502,7 @@ function testSummary(wordsCount) {
 
 		for (let i = 0; i < perf.times.length; i++) {
 			const time = perf.times[i];
+			// time is min 0.1
 			const logTime = Math.log(time);
 			logSum += logTime;
 
@@ -645,7 +566,6 @@ function testSummary(wordsCount) {
 	console.log("=== GENERAL STATISTICS ===");
 	console.table(statistics);
 
-
 	// =========================================================
 	// PERFORMANCE GRAPHS
 	// =========================================================
@@ -686,30 +606,18 @@ function testSummary(wordsCount) {
 			});
 
 		// GM(B / A) = GM(B) / GM(A)
-		const speedupAB =
-			perfB.geometricMean / perfA.geometricMean;
-
-		// If B / A >= 1, A is faster.
+		const speedupAB = perfB.geometricMean / perfA.geometricMean;
 		const isAFaster = speedupAB >= 1;
 
 		const perfFast = isAFaster ? perfA : perfB;
 		const perfSlow = isAFaster ? perfB : perfA;
 
-		// Slow / Fast
 		const times = getSpeedupTimes(perfFast, perfSlow);
-
-		// GM(Slow / Fast)
-		const geometricMean = isAFaster
-			? speedupAB
-			: 1 / speedupAB;
-
-		// GM(Slow / Fast | EE)
+		const geometricMean = isAFaster ? speedupAB : 1 / speedupAB;
 		const geometricMeanEE =
 			perfFast.geometricMeanEE > 0
 				? perfSlow.geometricMeanEE / perfFast.geometricMeanEE
 				: 0;
-
-		// GM(Slow / Fast | NoEE)
 		const geometricMeanNoEE =
 			perfFast.geometricMeanNoEE > 0
 				? perfSlow.geometricMeanNoEE / perfFast.geometricMeanNoEE
@@ -732,15 +640,12 @@ function testSummary(wordsCount) {
 
 		const algA = getAlgorithm(algorithmA);
 		const algB = getAlgorithm(algorithmB);
-
 		if (!algA || !algB) {
 			console.error("Algorithm not found.", { algorithmA, algorithmB });
 			return;
 		}
-
 		const perfA = perfData.get(algA);
 		const perfB = perfData.get(algB);
-
 		if (!perfA || !perfB) {
 			console.error("Performance data not found.", { algorithmA, algorithmB });
 			return;
@@ -748,7 +653,6 @@ function testSummary(wordsCount) {
 
 		const speedupPerf = createSpeedupPerf(perfA, perfB);
 		if (!speedupPerf) return;
-
 		const title = speedupPerf.isAFaster
 			? `Speedup: %c${algA.name}%c ↔ ${algB.name}`
 			: `Speedup: ${algA.name} ↔ %c${algB.name}%c`;
