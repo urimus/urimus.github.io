@@ -288,8 +288,9 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	const statisticStyles = [];
 
 	function appendMeanStatistic(statistics, styles, label, mean, valueNoEE, valueEE) {
-		const hasNoEE = valueNoEE !== 0;
-		const hasEE = valueEE !== 0;
+		const hasNoEE = valueNoEE !== undefined;
+		const hasEE = valueEE !== undefined;
+
 		if (hasNoEE && hasEE) {
 			statistics += `${label}: %c${mean.toFixed(3)}%c`;
 			styles.push(COLORS.mean, "");
@@ -301,16 +302,19 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			styles.push(COLORS.earlyPoint, "");
 			return `${statistics} (${values.join(", ")})`;
 		}
+
 		if (hasNoEE) {
 			statistics += `${label}: %c${valueNoEE.toFixed(3)}%c`;
 			styles.push(COLORS.normalPoint, "");
 			return statistics;
 		}
+
 		if (hasEE) {
 			statistics += `${label}: %c${valueEE.toFixed(3)}%c`;
 			styles.push(COLORS.earlyPoint, "");
 			return statistics;
 		}
+
 		statistics += `${label}: %c${mean.toFixed(3)}%c`;
 		styles.push(COLORS.mean, "");
 		return statistics;
@@ -539,11 +543,15 @@ function testSummary(wordsCount) {
 		}
 
 		perf.mean = perf.total / perf.count;
-		perf.meanEE = countEE > 0 ? sumEE / countEE : 0;
-		perf.meanNoEE = countNoEE > 0 ? sumNoEE / countNoEE : 0;
 		perf.geometricMean = Math.exp(logSum / perf.times.length);
-		perf.geometricMeanEE = countEE > 0 ? Math.exp(logSumEE / countEE) : 0;
-		perf.geometricMeanNoEE = countNoEE > 0 ? Math.exp(logSumNoEE / countNoEE) : 0;
+		if (countEE > 0) {
+			perf.meanEE = sumEE / countEE;
+			perf.geometricMeanEE = Math.exp(logSumEE / countEE);
+		}
+		if (countNoEE > 0) {
+			perf.meanNoEE = sumNoEE / countNoEE;
+			perf.geometricMeanNoEE = Math.exp(logSumNoEE / countNoEE);
+		}
 		totalSum += perf.total;
 	}
 
@@ -632,26 +640,31 @@ function testSummary(wordsCount) {
 
 		const times = getSpeedupTimes(perfFast, perfSlow);
 		const geometricMean = isAFaster ? speedupAB : 1 / speedupAB;
-		const geometricMeanEE =
-			perfFast.geometricMeanEE > 0
-				? perfSlow.geometricMeanEE / perfFast.geometricMeanEE
-				: 0;
-		const geometricMeanNoEE =
-			perfFast.geometricMeanNoEE > 0
-				? perfSlow.geometricMeanNoEE / perfFast.geometricMeanNoEE
-				: 0;
 
-		return {
+		const result = {
 			count: times.length,
 			geometricMean,
-			geometricMeanEE,
-			geometricMeanNoEE,
 			min: Math.min(...times),
 			max: Math.max(...times),
 			times,
 			isAFaster,
 			earlyExits: [...perfFast.earlyExits]
 		};
+
+		if (
+			perfFast.geometricMeanEE !== undefined &&
+			perfSlow.geometricMeanEE !== undefined
+		) {
+			result.geometricMeanEE = perfSlow.geometricMeanEE / perfFast.geometricMeanEE;
+		}
+		if (
+			perfFast.geometricMeanNoEE !== undefined &&
+			perfSlow.geometricMeanNoEE !== undefined
+		) {
+			result.geometricMeanNoEE = perfSlow.geometricMeanNoEE / perfFast.geometricMeanNoEE;
+		}
+
+		return result;
 	}
 
 	function consoleSpeedupPlot(algorithmA, algorithmB, actualLines, unit) {
