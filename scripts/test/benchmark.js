@@ -403,50 +403,6 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	console.log("");
 }
 
-const MIN_TIME = 0.1;
-function addPerf(perf, time, isEarlyExit) {
-	if (time === 0) time = MIN_TIME;
-	perf.count++;
-	perf.total += time;
-	perf.times.push(time);
-	perf.earlyExits.push(isEarlyExit);
-
-	if (time < perf.min) perf.min = time;
-	if (time > perf.max) perf.max = time;
-}
-
-function round(num, digits = 4) {
-	return Number(num.toFixed(digits));
-}
-
-function getStatistics(perf) {
-	const sorted = [...perf.times].sort((a, b) => a - b);
-
-	function percentile(p) {
-		return sorted[Math.floor((sorted.length - 1) * p)];
-	}
-
-	const variance = perf.times.reduce(
-		(sum, time) => sum + Math.pow(time - perf.mean, 2),
-		0
-	) / perf.count;
-
-	const standardDeviation = Math.sqrt(variance);
-
-	return {
-		Count: perf.count,
-		"Mean, ms": round(perf.mean),
-		"Median, ms": round(percentile(0.50)),
-		"P95, ms": round(percentile(0.95)),
-		"P99, ms": round(percentile(0.99)),
-		"Std Dev, ms": round(standardDeviation),
-		"Min, ms": round(perf.min),
-		"Max, ms": round(perf.max),
-		"Total, ms": round(perf.total)
-	};
-}
-
-
 function testSummary(wordsCount) {
 
 	// =========================================================
@@ -560,6 +516,17 @@ function testSummary(wordsCount) {
 	// RUN BENCHMARK
 	// =========================================================
 
+	function addPerf(perf, time, isEarlyExit) {
+		perf.count++;
+		perf.total += time;
+		perf.times.push(time);
+		perf.earlyExits.push(isEarlyExit);
+
+		if (time < perf.min) perf.min = time;
+		if (time > perf.max) perf.max = time;
+	}
+
+	const MIN_TIME = 0.1;
 	let labelTime = performance.now();
 
 	for (let line = MIN_LINES; line <= MAX_LINES; line++) {
@@ -585,6 +552,7 @@ function testSummary(wordsCount) {
 			const start = performance.now();
 			const isEarlyExit = algorithm.run(summaryDiv, words, line);
 			const time = performance.now() - start;
+			if (time === 0) time = MIN_TIME;
 			addPerf(perfData.get(algorithm), time, isEarlyExit);
 		}
 	}
@@ -599,7 +567,6 @@ function testSummary(wordsCount) {
 
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
-
 		if (!perf?.times?.length) {
 			console.error("Performance data not found.", { algorithm });
 			continue;
@@ -639,13 +606,37 @@ function testSummary(wordsCount) {
 		totalSum += perf.total;
 	}
 
+	function round(num, digits = 4) {
+		return Number(num.toFixed(digits));
+	}
+	function getStatistics(perf) {
+		const sorted = [...perf.times].sort((a, b) => a - b);
+		function percentile(p) {
+			return sorted[Math.floor((sorted.length - 1) * p)];
+		}
+		const variance = perf.times.reduce(
+			(sum, time) => sum + Math.pow(time - perf.mean, 2),
+			0
+		) / perf.count;
+		const standardDeviation = Math.sqrt(variance);
+		return {
+			Count: perf.count,
+			"Mean, ms": round(perf.mean),
+			"Median, ms": round(percentile(0.50)),
+			"P95, ms": round(percentile(0.95)),
+			"P99, ms": round(percentile(0.99)),
+			"Std Dev, ms": round(standardDeviation),
+			"Min, ms": round(perf.min),
+			"Max, ms": round(perf.max),
+			"Total, ms": round(perf.total)
+		};
+	}
+
 	const statistics = {};
 
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
-
 		if (!perf?.times?.length) continue;
-
 		statistics[algorithm.name] = {
 			...getStatistics(perf),
 			"Share, %": round(perf.total / totalSum * 100, 2)
