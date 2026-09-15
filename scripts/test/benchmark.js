@@ -284,42 +284,35 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	// STATISTICS
 	// ============================================================
 
-	const hasNormal = earlyExits.some(value => !value);
-	const hasEarly = earlyExits.some(value => value);
 	let statistics = `STATISTICS, ${unit}: `;
 	const statisticStyles = [];
+
+	function appendSplitStatistic(statistics, styles, valueNoEE, valueEE) {
+		const values = [];
+		if (valueNoEE !== 0) {
+			values.push(`%c${valueNoEE.toFixed(3)}%c`);
+			styles.push(COLORS.normalPoint, "");
+		}
+		if (valueEE !== 0) {
+			values.push(`%c${valueEE.toFixed(3)}%c`);
+			styles.push(COLORS.earlyPoint, "");
+		}
+		return values.length ? `${statistics} (${values.join(", ")})` : statistics;
+	}
 
 	if (unit === "ms") {
 		statistics += `Min: ${min.toFixed(3)} | Mean: %c${mean.toFixed(3)}%c`;
 		statisticStyles.push(COLORS.mean, "");
-		if (hasNormal && hasEarly) {
-			statistics += ` (%c${meanNoEE.toFixed(3)}%c, %c${meanEE.toFixed(3)}%c)`;
-			statisticStyles.push(
-				COLORS.normalPoint,
-				"",
-				COLORS.earlyPoint,
-				""
-			);
-		}
+		statistics = appendSplitStatistic(statistics, statisticStyles, meanNoEE, meanEE);
 		statistics += ` | Max: ${max.toFixed(3)}`;
 		statistics += ` | Total: ${total.toFixed(3)}`;
 	} else {
 		statistics += `Min: ${min.toFixed(3)} | Geometric Mean: %c${geometricMean.toFixed(3)}%c`;
-		statisticStyles.push(
-			COLORS.mean,
-			""
-		);
-		if (hasNormal && hasEarly) {
-			statistics += ` (%c${geometricMeanNoEE.toFixed(3)}%c, %c${geometricMeanEE.toFixed(3)}%c)`;
-			statisticStyles.push(
-				COLORS.normalPoint,
-				"",
-				COLORS.earlyPoint,
-				""
-			);
-		}
+		statisticStyles.push(COLORS.mean, "");
+		statistics = appendSplitStatistic(statistics, statisticStyles, geometricMeanNoEE, geometricMeanEE);
 		statistics += ` | Max: ${max.toFixed(3)}`;
 	}
+
 	console.log(statistics, ...statisticStyles);
 	console.log("");
 }
@@ -437,6 +430,8 @@ function testSummary(wordsCount) {
 	// RUN BENCHMARK
 	// =========================================================
 
+	const MIN_TIME = 0.1;
+
 	function addPerf(perf, time, isEarlyExit) {
 		perf.count++;
 		perf.total += time;
@@ -446,7 +441,6 @@ function testSummary(wordsCount) {
 		if (time > perf.max) perf.max = time;
 	}
 
-	const MIN_TIME = 0.1;
 	let labelTime = performance.now();
 
 	for (let line = MIN_LINES; line <= MAX_LINES; line++) {
@@ -502,7 +496,7 @@ function testSummary(wordsCount) {
 
 		for (let i = 0; i < perf.times.length; i++) {
 			const time = perf.times[i];
-			// time is min 0.1
+			// time is always >= MIN_TIME
 			const logTime = Math.log(time);
 			logSum += logTime;
 
@@ -600,10 +594,7 @@ function testSummary(wordsCount) {
 		}
 
 		const getSpeedupTimes = (perfFast, perfSlow) =>
-			perfFast.times.map((timeFast, i) => {
-				const timeSlow = perfSlow.times[i];
-				return timeFast !== 0 ? timeSlow / timeFast : 0;
-			});
+			perfFast.times.map((timeFast, i) => perfSlow.times[i] / timeFast);
 
 		// GM(B / A) = GM(B) / GM(A)
 		const speedupAB = perfB.geometricMean / perfA.geometricMean;
