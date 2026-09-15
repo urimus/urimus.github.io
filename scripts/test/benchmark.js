@@ -403,7 +403,9 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	console.log("");
 }
 
+const MIN_TIME = 0.1;
 function addPerf(perf, time, isEarlyExit) {
+	if (time === 0) time = MIN_TIME;
 	perf.count++;
 	perf.total += time;
 	perf.times.push(time);
@@ -603,22 +605,34 @@ function testSummary(wordsCount) {
 		let sumNoEE = 0;
 		let countNoEE = 0;
 
+		let logSum = 0;
+		let logSumEE = 0;
+		let logSumNoEE = 0;
+		let count = 0;
+
 		for (let i = 0; i < perf.times.length; i++) {
 			const time = perf.times[i];
+			const logTime = Math.log(time);
+			logSum += logTime;
+			count++;
 
 			if (perf.earlyExits[i]) {
 				sumEE += time;
 				countEE++;
+				logSumEE += logTime;
 			} else {
 				sumNoEE += time;
 				countNoEE++;
+				logSumNoEE += logTime;
 			}
 		}
 
 		perf.mean = perf.total / perf.count;
 		perf.meanEE = countEE > 0 ? sumEE / countEE : 0;
 		perf.meanNoEE = countNoEE > 0 ? sumNoEE / countNoEE : 0;
-
+		perf.geometricMean = count > 0 ? Math.exp(logSum / count) : 0;
+		perf.geometricMeanEE = countEE > 0 ? Math.exp(logSumEE / countEE) : 0;
+		perf.geometricMeanNoEE = countNoEE > 0 ? Math.exp(logSumNoEE / countNoEE) : 0;
 		totalSum += perf.total;
 	}
 
@@ -668,64 +682,41 @@ function testSummary(wordsCount) {
 			return null;
 		}
 
-		const getSpeedupTimes = (perfA, perfB) =>
-			perfA.times.map((timeA, i) => {
-				const timeB = perfB.times[i];
-				return timeA !== 0 ? timeB / timeA : 0;
+		const getSpeedupTimes = (perfFast, perfSlow) =>
+			perfFast.times.map((timeFast, i) => {
+				const timeSlow = perfSlow.times[i];
+				return timeFast !== 0 ? timeSlow / timeFast : 0;
 			});
 
-		const getGeometricMean = times => {
-			let count = 0;
+		// GM(B / A) = GM(B) / GM(A)
+		const speedupAB =
+			perfB.geometricMean / perfA.geometricMean;
 
-			const logSum = times.reduce((sum, time) => {
-				if (time === 0) return sum;
+		// If B / A >= 1, A is faster.
+		const isAFaster = speedupAB >= 1;
 
-				count++;
-				return sum + Math.log(time);
-			}, 0);
+		const perfFast = isAFaster ? perfA : perfB;
+		const perfSlow = isAFaster ? perfB : perfA;
 
-			return count > 0 ? Math.exp(logSum / count) : 0;
-		};
+		// Slow / Fast
+		const times = getSpeedupTimes(perfFast, perfSlow);
 
-		const getGeometricMeansByEarlyExit = (times, earlyExits) => {
-			let logSumEE = 0;
-			let countEE = 0;
-			let logSumNoEE = 0;
-			let countNoEE = 0;
+		// GM(Slow / Fast)
+		const geometricMean = isAFaster
+			? speedupAB
+			: 1 / speedupAB;
 
-			times.forEach((time, i) => {
-				if (time === 0) return;
+		// GM(Slow / Fast | EE)
+		const geometricMeanEE =
+			perfFast.geometricMeanEE > 0
+				? perfSlow.geometricMeanEE / perfFast.geometricMeanEE
+				: 0;
 
-				if (earlyExits[i]) {
-					logSumEE += Math.log(time);
-					countEE++;
-				} else {
-					logSumNoEE += Math.log(time);
-					countNoEE++;
-				}
-			});
-
-			return {
-				geometricMeanEE: countEE > 0
-					? Math.exp(logSumEE / countEE)
-					: 0,
-				geometricMeanNoEE: countNoEE > 0
-					? Math.exp(logSumNoEE / countNoEE)
-					: 0
-			};
-		};
-
-		let times = getSpeedupTimes(perfA, perfB);
-		let geometricMean = getGeometricMean(times);
-		const isAFaster = geometricMean >= 1;
-
-		if (!isAFaster) {
-			times = getSpeedupTimes(perfB, perfA);
-			geometricMean = getGeometricMean(times);
-		}
-
-		let { geometricMeanEE, geometricMeanNoEE } =
-			getGeometricMeansByEarlyExit(times, perfA.earlyExits);
+		// GM(Slow / Fast | NoEE)
+		const geometricMeanNoEE =
+			perfFast.geometricMeanNoEE > 0
+				? perfSlow.geometricMeanNoEE / perfFast.geometricMeanNoEE
+				: 0;
 
 		return {
 			count: times.length,
@@ -736,7 +727,7 @@ function testSummary(wordsCount) {
 			max: Math.max(...times),
 			times,
 			isAFaster,
-			earlyExits: [...perfA.earlyExits]
+			earlyExits: [...perfFast.earlyExits]
 		};
 	}
 
