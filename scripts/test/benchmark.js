@@ -600,6 +600,11 @@ function testSummary(wordsCount) {
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
 
+		if (!perf?.times?.length) {
+			console.error("Performance data not found.", { algorithm });
+			continue;
+		}
+
 		let sumEE = 0;
 		let countEE = 0;
 		let sumNoEE = 0;
@@ -608,13 +613,11 @@ function testSummary(wordsCount) {
 		let logSum = 0;
 		let logSumEE = 0;
 		let logSumNoEE = 0;
-		let count = 0;
 
 		for (let i = 0; i < perf.times.length; i++) {
 			const time = perf.times[i];
 			const logTime = Math.log(time);
 			logSum += logTime;
-			count++;
 
 			if (perf.earlyExits[i]) {
 				sumEE += time;
@@ -630,7 +633,7 @@ function testSummary(wordsCount) {
 		perf.mean = perf.total / perf.count;
 		perf.meanEE = countEE > 0 ? sumEE / countEE : 0;
 		perf.meanNoEE = countNoEE > 0 ? sumNoEE / countNoEE : 0;
-		perf.geometricMean = count > 0 ? Math.exp(logSum / count) : 0;
+		perf.geometricMean = Math.exp(logSum / perf.times.length);
 		perf.geometricMeanEE = countEE > 0 ? Math.exp(logSumEE / countEE) : 0;
 		perf.geometricMeanNoEE = countNoEE > 0 ? Math.exp(logSumNoEE / countNoEE) : 0;
 		totalSum += perf.total;
@@ -640,6 +643,8 @@ function testSummary(wordsCount) {
 
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
+
+		if (!perf?.times?.length) continue;
 
 		statistics[algorithm.name] = {
 			...getStatistics(perf),
@@ -659,7 +664,9 @@ function testSummary(wordsCount) {
 	console.log("");
 
 	for (const algorithm of algorithms) {
-		consolePlot(algorithm.name, perfData.get(algorithm), actualLines);
+		const perf = perfData.get(algorithm);
+		if (!perf?.times?.length) continue;
+		consolePlot(algorithm.name, perf, actualLines);
 	}
 
 	// =========================================================
