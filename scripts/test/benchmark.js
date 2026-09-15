@@ -461,7 +461,10 @@ function testSummary(wordsCount) {
 	// RUN BENCHMARK
 	// =========================================================
 
-	const MIN_TIME = 0.1;
+	// performance.now() occasionally returns 0 for very short intervals.
+	// The smallest non-zero value observed is 0.1 ms.
+	// Treat 0 as a sub-resolution measurement and use 0.05 ms as its estimate.
+	const SUB_RESOLUTION_TIME = 0.05;
 
 	function addPerf(perf, time, isEarlyExit) {
 		perf.count++;
@@ -496,7 +499,7 @@ function testSummary(wordsCount) {
 			summaryDiv.innerHTML = "";
 			const start = performance.now();
 			const isEarlyExit = algorithm.run(summaryDiv, words, line);
-			const time = Math.max(performance.now() - start, MIN_TIME);
+			const time = Math.max(performance.now() - start, SUB_RESOLUTION_TIME);
 			addPerf(perfData.get(algorithm), time, isEarlyExit);
 		}
 	}
@@ -527,7 +530,7 @@ function testSummary(wordsCount) {
 
 		for (let i = 0; i < perf.times.length; i++) {
 			const time = perf.times[i];
-			// time is always >= MIN_TIME
+			// time is always >= SUB_RESOLUTION_TIME
 			const logTime = Math.log(time);
 			logSum += logTime;
 
