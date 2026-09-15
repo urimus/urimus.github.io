@@ -287,32 +287,59 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	let statistics = `STATISTICS, ${unit}: `;
 	const statisticStyles = [];
 
-	function appendSplitStatistic(statistics, styles, valueNoEE, valueEE) {
-		const values = [];
-		if (valueNoEE !== 0) {
-			values.push(`%c${valueNoEE.toFixed(3)}%c`);
+	function appendMeanStatistic(statistics, styles, label, mean, valueNoEE, valueEE) {
+		const hasNoEE = valueNoEE !== 0;
+		const hasEE = valueEE !== 0;
+		if (hasNoEE && hasEE) {
+			statistics += `${label}: %c${mean.toFixed(3)}%c`;
+			styles.push(COLORS.mean, "");
+			const values = [
+				`%c${valueNoEE.toFixed(3)}%c`,
+				`%c${valueEE.toFixed(3)}%c`
+			];
 			styles.push(COLORS.normalPoint, "");
-		}
-		if (valueEE !== 0) {
-			values.push(`%c${valueEE.toFixed(3)}%c`);
 			styles.push(COLORS.earlyPoint, "");
+			return `${statistics} (${values.join(", ")})`;
 		}
-		return values.length ? `${statistics} (${values.join(", ")})` : statistics;
+		if (hasNoEE) {
+			statistics += `${label}: %c${valueNoEE.toFixed(3)}%c`;
+			styles.push(COLORS.normalPoint, "");
+			return statistics;
+		}
+		if (hasEE) {
+			statistics += `${label}: %c${valueEE.toFixed(3)}%c`;
+			styles.push(COLORS.earlyPoint, "");
+			return statistics;
+		}
+		statistics += `${label}: %c${mean.toFixed(3)}%c`;
+		styles.push(COLORS.mean, "");
+		return statistics;
 	}
 
 	if (unit === "ms") {
-		statistics += `Min: ${min.toFixed(3)} | Mean: %c${mean.toFixed(3)}%c`;
-		statisticStyles.push(COLORS.mean, "");
-		statistics = appendSplitStatistic(statistics, statisticStyles, meanNoEE, meanEE);
+		statistics += `Min: ${min.toFixed(3)} | `;
+		statistics = appendMeanStatistic(
+			statistics,
+			statisticStyles,
+			"Mean",
+			mean,
+			meanNoEE,
+			meanEE
+		);
 		statistics += ` | Max: ${max.toFixed(3)}`;
 		statistics += ` | Total: ${total.toFixed(3)}`;
 	} else {
-		statistics += `Min: ${min.toFixed(3)} | Geometric Mean: %c${geometricMean.toFixed(3)}%c`;
-		statisticStyles.push(COLORS.mean, "");
-		statistics = appendSplitStatistic(statistics, statisticStyles, geometricMeanNoEE, geometricMeanEE);
+		statistics += `Min: ${min.toFixed(3)} | `;
+		statistics = appendMeanStatistic(
+			statistics,
+			statisticStyles,
+			"Geometric Mean",
+			geometricMean,
+			geometricMeanNoEE,
+			geometricMeanEE
+		);
 		statistics += ` | Max: ${max.toFixed(3)}`;
 	}
-
 	console.log(statistics, ...statisticStyles);
 	console.log("");
 }
