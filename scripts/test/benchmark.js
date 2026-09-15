@@ -551,8 +551,7 @@ function testSummary(wordsCount) {
 			summaryDiv.innerHTML = "";
 			const start = performance.now();
 			const isEarlyExit = algorithm.run(summaryDiv, words, line);
-			const time = performance.now() - start;
-			if (time === 0) time = MIN_TIME;
+			const time = Math.max(performance.now() - start, MIN_TIME);
 			addPerf(perfData.get(algorithm), time, isEarlyExit);
 		}
 	}
