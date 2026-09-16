@@ -208,7 +208,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 
 	for (let row = 0; row <= HEIGHT; row++) {
 		const yValue = MAX_Y - (MAX_Y - MIN_Y) * row / HEIGHT;
-		const label = yValue.toFixed(2).padStart(7);
+		const label = yValue.toFixed(2).padStart(7)."\u200B".repeat(row % 2);
 		const axisChar = row === 0 ? Y_ARROW : AXIS;
 		let output = `%c${label} %c${axisChar}`;
 		const styles = [
