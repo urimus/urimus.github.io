@@ -464,16 +464,9 @@ function testSummary(wordsCount) {
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
 	);
 
-
 	// =========================================================
 	// RUN BENCHMARK
 	// =========================================================
-
-	// The nominal resolution for performance.now() in a non-isolated
-	// Chromium context is 0.1 ms, while Firefox typically uses 1 ms.
-	// Treat a 0 measurement as a sub-resolution measurement and
-	// estimate it as half of that resolution.
-	const SUB_RESOLUTION_TIME = navigator.userAgent.includes("Firefox") ? 0.5 : 0.05;
 
 	function addPerf(perf, time, isEarlyExit) {
 		perf.count++;
@@ -486,6 +479,18 @@ function testSummary(wordsCount) {
 
 	let labelTime = performance.now();
 	console.log("Processing started.");
+
+	function getTimerQuantum(samples = 1000) {
+		let previous = performance.now();
+		let current;
+		do {
+			current = performance.now();
+		} while (current === previous);
+		return current - previous;
+	}
+	// Minimum total time for a series of very short measurements
+	// to neutralize reduced timing precision caused by timing-attack protection.
+	const measureFixingTime = getTimerQuantum() * 10;
 
 	for (let line = MIN_LINES; line <= MAX_LINES; line++) {
 
@@ -506,12 +511,22 @@ function testSummary(wordsCount) {
 		}
 
 		for (const algorithm of shuffledAlgorithms) {
-			summaryDiv.innerHTML = "";
-			const start = performance.now();
-			const isEarlyExit = algorithm.run(summaryDiv, words, line);
-			const time = Math.max(performance.now() - start, SUB_RESOLUTION_TIME);
+			let totalTime = 0;
+			let runs = 0;
+			let isEarlyExit;
+
+			do {
+				summaryDiv.innerHTML = "";
+				const start = performance.now();
+				isEarlyExit = algorithm.run(summaryDiv, words, line);
+				totalTime += performance.now() - start;
+				runs++;
+			} while (totalTime < measureFixingTime);
+
+			const time = totalTime / runs;
 			addPerf(perfData.get(algorithm), time, isEarlyExit);
 		}
+
 	}
 
 	container.remove();
@@ -540,7 +555,7 @@ function testSummary(wordsCount) {
 
 		for (let i = 0; i < perf.times.length; i++) {
 			const time = perf.times[i];
-			// time is always >= SUB_RESOLUTION_TIME
+			// time is always > 0
 			const logTime = Math.log(time);
 			logSum += logTime;
 
