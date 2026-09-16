@@ -457,12 +457,6 @@ function testSummary(wordsCount) {
 
 	const actualLines = lines.size;
 
-	console.log(
-		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
-		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
-		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
-	);
-	
 	function getTimerQuantum(samples = 10) {
 		const start = performance.now();
 		let previous = start;
@@ -480,6 +474,12 @@ function testSummary(wordsCount) {
 	// Minimum total time for a series of very short measurements
 	// to neutralize reduced timing precision caused by timing-attack protection.
 	const measureFixingTime = getTimerQuantum() * 10;
+	
+	console.log(
+		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
+		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
+		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
+	);
 	
 	// =========================================================
 	// RUN BENCHMARK
