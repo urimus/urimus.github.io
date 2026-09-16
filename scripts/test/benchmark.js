@@ -480,13 +480,19 @@ function testSummary(wordsCount) {
 	let labelTime = performance.now();
 	console.log("Processing started.");
 
-	function getTimerQuantum(samples = 1000) {
-		let previous = performance.now();
+	function getTimerQuantum(samples = 10) {
+		const start = performance.now();
+		let previous = start;
 		let current;
-		do {
+		let count = 0;
+		while (count < samples) {
 			current = performance.now();
-		} while (current === previous);
-		return current - previous;
+			if (current !== previous) {
+				previous = current;
+				count++;
+			}
+		}
+		return (current - start) / samples;
 	}
 	// Minimum total time for a series of very short measurements
 	// to neutralize reduced timing precision caused by timing-attack protection.
