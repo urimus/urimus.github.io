@@ -409,11 +409,7 @@ function testSummary(wordsCount) {
 		}
 	];
 
-	console.log(
-		`Modify Summary Speed Test Started: ${WORDS_COUNT} words, ` +
-		`applied for ${MIN_LINES}...${MAX_LINES} lines, ` +
-		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
-	);
+	console.log("Modify Summary Speed Test Started.");
 
 	const testStart = performance.now();
 
@@ -461,6 +457,14 @@ function testSummary(wordsCount) {
 
 	const actualLines = lines.size;
 
+
+	console.log(
+		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
+		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
+		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
+	);
+
+
 	// =========================================================
 	// RUN BENCHMARK
 	// =========================================================
@@ -486,7 +490,7 @@ function testSummary(wordsCount) {
 
 		if (performance.now() - labelTime > 5000) {
 			console.log(
-				`Processing line ${line} - ` +
+				`Processing: lines to show = ${line} - ` +
 				`${Math.floor((line - 1) / MAX_LINES * 100)}%`
 			);
 			labelTime = performance.now();
@@ -710,5 +714,9 @@ function testSummary(wordsCount) {
 	// =========================================================
 
 	const testTime = performance.now() - testStart;
-	return `Modify Summary Speed Test Completed. Duration: ${(testTime / 1000).toFixed(2)} s.`;
+	console.log("Modify Summary Speed Test Completed.");
+	console.log(`Duration: ${(testTime / 1000).toFixed(2)} s.`);
+
+	return "End";
+
 }
