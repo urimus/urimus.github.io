@@ -462,9 +462,10 @@ function testSummary(wordsCount) {
 	// =========================================================
 
 	// The nominal resolution for performance.now() in a non-isolated
-	// Chromium context is 0.1 ms. Treat 0 measurement as a sub-resolution
-	// measurement and estimate it as half of that resolution.
-	const SUB_RESOLUTION_TIME = 0.05;
+	// Chromium context is 0.1 ms, while Firefox typically uses 1 ms.
+	// Treat a 0 measurement as a sub-resolution measurement and
+	// estimate it as half of that resolution.
+	const SUB_RESOLUTION_TIME = navigator.userAgent.includes("Firefox") ? 0.5 : 0.05;
 
 	function addPerf(perf, time, isEarlyExit) {
 		perf.count++;
