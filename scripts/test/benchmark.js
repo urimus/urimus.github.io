@@ -621,7 +621,7 @@ function testSummary(wordsCount) {
 		if (!perf?.times?.length) continue;
 		statistics[algorithm.name] = {
 			...getStatistics(perf),
-			"Share, %": round(perf.total / totalSum * 100, 2)
+			"Share, %": round(perf.total / totalSum * 100)
 		};
 	}
 
