@@ -485,6 +485,7 @@ function testSummary(wordsCount) {
 	}
 
 	let labelTime = performance.now();
+	console.log("Processing started.");
 
 	for (let line = MIN_LINES; line <= MAX_LINES; line++) {
 
