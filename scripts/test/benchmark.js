@@ -354,6 +354,10 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 
 function testSummary(wordsCount) {
 
+	console.log("Modify Summary Speed Test Started.");
+
+	const testStart = performance.now();
+
 	// =========================================================
 	// SUMMARY DIV POSITIONING
 	// =========================================================
@@ -409,10 +413,6 @@ function testSummary(wordsCount) {
 		}
 	];
 
-	console.log("Modify Summary Speed Test Started.");
-
-	const testStart = performance.now();
-
 	// =========================================================
 	// PERFORMANCE DATA
 	// =========================================================
@@ -457,29 +457,12 @@ function testSummary(wordsCount) {
 
 	const actualLines = lines.size;
 
-
 	console.log(
 		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
 	);
-
-	// =========================================================
-	// RUN BENCHMARK
-	// =========================================================
-
-	function addPerf(perf, time, isEarlyExit) {
-		perf.count++;
-		perf.total += time;
-		perf.times.push(time);
-		perf.earlyExits.push(isEarlyExit);
-		if (time < perf.min) perf.min = time;
-		if (time > perf.max) perf.max = time;
-	}
-
-	let labelTime = performance.now();
-	console.log("Processing started.");
-
+	
 	function getTimerQuantum(samples = 10) {
 		const start = performance.now();
 		let previous = start;
@@ -497,6 +480,22 @@ function testSummary(wordsCount) {
 	// Minimum total time for a series of very short measurements
 	// to neutralize reduced timing precision caused by timing-attack protection.
 	const measureFixingTime = getTimerQuantum() * 10;
+	
+	// =========================================================
+	// RUN BENCHMARK
+	// =========================================================
+
+	function addPerf(perf, time, isEarlyExit) {
+		perf.count++;
+		perf.total += time;
+		perf.times.push(time);
+		perf.earlyExits.push(isEarlyExit);
+		if (time < perf.min) perf.min = time;
+		if (time > perf.max) perf.max = time;
+	}
+
+	let labelTime = performance.now();
+	console.log("Processing started.");
 
 	for (let line = MIN_LINES; line <= MAX_LINES; line++) {
 
