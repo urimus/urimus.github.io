@@ -463,7 +463,7 @@ function showFeedData(type, source, lang, result) {
 		let tableMainRow = table.insertRow(-1);
 		tableMainRow.id = 'tableMainRow';
 
-		if (result.totalUpdated == totalEntries || source == "merco" || (source=="nasa" && type=="image") || source == "phys.org" || source == "space.com" || source == "wired") {
+		if (result.totalUpdated == totalEntries || source == "merco" || (source=="nasa" && type=="image") || source == "phys.org" || source == "space.com" || source == "wired" || source == "yahoo") {
 			let table2 = document.getElementById("messagetable");
 			table2.replaceChildren();
 			adjustFeedScrollDiv();
@@ -526,6 +526,8 @@ function extractLines(html) {
 	let parser = new DOMParser();
 	let doc = parser.parseFromString(html, 'text/html');
 
+	doc.querySelectorAll('figure, img').forEach(el => el.remove());
+
 	doc.querySelectorAll('p').forEach(p => {
 		p.replaceWith(document.createTextNode(p.innerText + '\n'));
 	});
@@ -552,7 +554,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 		entry_summary  = "<span style='padding-left:10px;'><span>" + lines.join(" <br><span style='padding-left:10px;'><span>");
 		summary_words = splitIgnoringSpecialSpan(entry_summary);
 	} else {
-		summary_words = splitAllSpaces(entry_summary);
+		summary_words = splitAllSpaces(lines[0] || "");
 	}
 
 	summaryDiv.innerHTML = "";
@@ -1814,7 +1816,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 	result.totalUpdated = 0;
 
-	if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap" || source == "yahoo") {
+	if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap") {
 		let locStPar = source + "_" + type + "_updates";
 		locStUpdateData = getLocalStorageData(locStPar);
 	}
@@ -2067,6 +2069,9 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				newEntry.media.url = "images/icons/error/no_image.png";
 				newEntry.media.comment = t("imageAbsent");
 			}
+			if (entry.description) {
+				newEntry.summary = entry.description._cdata;
+			}
 		}
 
 		// --- yonhap ---
@@ -2186,7 +2191,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 
 		// --- Prevous Updates Load ---
-		if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap" || source == "yahoo") { 
+		if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap") { 
 			let update = locStUpdateData[newEntry.link];
 			if (update) {
 				newEntry.storage.updateProcessed = 1;
@@ -2220,7 +2225,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 	}
 
-	if (source == "wired" || source == "yahoo") {
+	if (source == "wired") {
 		for (let i = 0; i < totalEntries ; i++) {
 			if (result.entries[i].video) {
 				let url = new URL(proxyURL);
@@ -2389,27 +2394,6 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					return null;
 				}
 			};
-/*
-			if (source == "yahoo") {
-				let scriptData = null;
-				const scripts = getScripts(doc, 'script[type="application/ld+json"]');
-				for (const script of scripts) {
-					scriptData = safeParseJSON(script);
-					if (scriptData?.creator?.name) {
-						creators = [
-   							{
-								name: scriptData.creator.name.trim(),
-								email: null,
-								url: null,
-								description: null
-							},
-							...(creators ?? []).filter(c => c.name !== scriptData.creator.name)
-						];
-						break;
-					}
-				}
-			}
-*/
 			if (source == "cbs") {
 				let scriptData = null;
 				const scripts = getScripts(doc, 'script[type="application/ld+json"]');
@@ -2538,7 +2522,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				result.entries[i].summary = description;
 				locStUpdateDataNew.summary = description;
 			}
-			if (source != "yahoo" && media.url && !result.entries[i].video) {
+			if (media.url) {
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = media.url;
 				if (media.comment) {
