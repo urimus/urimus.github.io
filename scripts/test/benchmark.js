@@ -349,7 +349,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		statistics += ` | Max: ${max.toFixed(3)}`;
 	}
 	console.log(statistics, ...statisticStyles);
-	console.log("");
+	console.log("\u200B");
 }
 
 function testSummary(wordsCount) {
@@ -633,7 +633,7 @@ function testSummary(wordsCount) {
 	// =========================================================
 
 	console.log("=== PERFORMANCE GRAPHS ===");
-	console.log("");
+	console.log("\u200B");
 
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
@@ -725,7 +725,7 @@ function testSummary(wordsCount) {
 	}
 
 	console.log("=== SPEEDUP GRAPHS ===");
-	console.log("");
+	console.log("\u200B");
 	consoleSpeedupPlot("Alg 1", "Alg 2", actualLines, "×");
 	consoleSpeedupPlot("Alg 1", "One By One", actualLines, "×");
 	consoleSpeedupPlot("Alg 2", "One By One", actualLines, "×");

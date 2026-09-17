@@ -648,9 +648,9 @@ function preloadImage(type, source, lang, result) {
 		// preloading additional images
 		if ("serviceWorker" in navigator) {
 			navigator.serviceWorker.ready.then(() => {
-				if (entry.additMedia?.length) {
-					for (let j = 0; j < entry.additMedia.length; j++) {
-						const url = new URL(entry.additMedia[j].url);
+				if (typeof entry.additMediaUrl !== "undefined") {
+					for (let j = 0; j < entry.additMediaUrl.length; j++) {
+						const url = new URL(entry.additMediaUrl[j]);
 						if (source === "nasa" || source === "artemis") {
 							url.searchParams.set("w", "450");
 						}
@@ -795,14 +795,14 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 
 	// preload later
 	// ------------- Additional Images Show/Hide -------------- //
-	if (entry.additMedia?.length) {
+	if (entry.additMediaUrl) {
 		let expansionImgA = document.createElement('a');
 		expansionImgA.setAttribute('href', "javascript:void(0);");
 		expansionImgA.setAttribute('class', 'standardb_red');
 		expansionImgA.dataset.expanded = "false";
 		expansionImgA.onclick = function () {
 			if (this.dataset.expanded === "false") {
-				for (let j = 0; j < entry.additMedia.length; j++) {
+				for (let j = 0; j < entry.additMediaUrl.length; j++) {
 					let Img2 = document.createElement("img");
 					Img2.setAttribute('class', "text_red");
 					Img2.setAttribute('width', entry.media.width);
@@ -818,28 +818,27 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 						});
 						adjustFeedScrollDiv();
 					}
-					Img2.title = entry.additMedia[j].comment;
 					if (source== "nasa" || source == "artemis") {
-						const url = new URL(entry.additMedia[j].url);
+						const url = new URL(entry.additMediaUrl[j]);
 						url.searchParams.set("w", "450");
 						Img2.src = url.toString();
 					} else {
-						Img2.src=entry.additMedia[j].url;
+						Img2.src=entry.additMediaUrl[j];
 					}
 					imageDiv.appendChild(Img2);
 				}
 				this.innerHTML = "[▲]";
 				this.dataset.expanded = "true";
-				showMoreDiv.innerHTML = t("hide") + " " + entry.additMedia.length + " " + t("more") + " ";
+				showMoreDiv.innerHTML = t("hide") + " " + entry.additMediaUrl.length + " " + t("more") + " ";
 				showMoreDiv.appendChild(this);
 
 			} else {
-				for (let j = 0; j < entry.additMedia.length; j++) {
+				for (let j = 0; j < entry.additMediaUrl.length; j++) {
 					imageDiv.removeChild(imageDiv.lastChild);
 				}
 				this.innerHTML = "[▼]";
 				this.dataset.expanded = "false";
-				showMoreDiv.innerHTML = t("show") + " " + entry.additMedia.length + " " + t("more") + " ";
+				showMoreDiv.innerHTML = t("show") + " " + entry.additMediaUrl.length + " " + t("more") + " ";
 				showMoreDiv.appendChild(this);
 			}
 			adjustFeedScrollDiv();
@@ -849,7 +848,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		let showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
 		showMoreDiv.setAttribute('style', "margin-bottom:5px; text-align: right;");
-		showMoreDiv.innerHTML = t("show") + " " + entry.additMedia.length + " " + t("more") + " ";
+		showMoreDiv.innerHTML = t("show") + " " + entry.additMediaUrl.length + " " + t("more") + " ";
 		showMoreDiv.appendChild(expansionImgA);
 		imageDiv.appendChild(showMoreDiv);
 	}
@@ -1471,7 +1470,7 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 	});
 */
 
-	if (source == "cbs" || source == "merco" || source == "phys.org" || source == "space.com" || source == "yahoo" || source == "yonhap") {
+	if (source == "cbs" || source == "merco" || source == "phys.org" || source == "space.com" || source == "yonhap") {
 		axiosConfig.url = proxyURL;
 		axiosConfig.params = {
 			url: feedURL,
@@ -1843,59 +1842,13 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		items = resultOrig.item;
 	}
 
-	const createMediaComment = (mediaContent, description, content, credit) => {
-		const fixHtmlEntities = text =>
-			text?.replaceAll("&amp;", "&").replace(/&#0+(\d+);/g, "&#$1;");
-
-		const mediaCommentBlock = (caption, content, marginTop = 0) => `
-			<div style="display:flex; align-items:center; margin-top:${marginTop}px">
-				<div style="flex:1; border:1px solid #ff8a00;"></div>
-				<div style="padding:0 5px; white-space:nowrap;">${caption}</div>
-				<div style="flex:1; border:1px solid #ff8a00;"></div>
-			</div>
-			<div>${content}</div>
-		`;
-
-		description = fixHtmlEntities(mediaContent?.[description]?._cdata);
-		content = fixHtmlEntities(mediaContent?.[content]?._cdata);
-		credit = fixHtmlEntities(mediaContent?.[credit]?._cdata);
-
-		let comment = "";
-
-		if (description && content && content.toLowerCase() === description.toLowerCase()) {
-			comment += mediaCommentBlock(t("description") + "/" + t("content"), description);
-		} else {
-			if (description) {
-				comment += mediaCommentBlock(t("description"), description);
-			}
-			if (content) {
-				const padding = comment ? 5 : 0;
-				comment += mediaCommentBlock(t("content"), content, padding);
-			}
-		}
-		if (credit) {
-			const padding = comment ? 5 : 0;
-			comment += mediaCommentBlock(t("credit"), credit, padding);
-		}
-		return comment;
-	};
-
-	const checkIsVideo = (url) => {
-		if (!url) return false;
-		url = url.split(/[?#]/)[0];
-		const dotPos = url.lastIndexOf(".");
-		if (dotPos === -1) return false;
-		const ext = url.substring(dotPos + 1).toLowerCase();
-		return ["mp4", "3gp", "ogg", "webm", "mov", "m4v"].includes(ext);
-	};
-
 	for (let c = 0; c < items.length; c++) {
 		let entry = items[c];
 
-//		if (source == "yahoo" && entry.source
-//		&& (entry.source._text == "BBC" || entry.source._text == "Yahoo Finance UK" || entry.source._text == "The Telegraph")) {
-//			continue;
-//		}
+		if (source == "yahoo" && entry.source
+		&& (entry.source._text == "BBC" || entry.source._text == "Yahoo Finance UK" || entry.source._text == "The Telegraph")) {
+			continue;
+		}
 		if (source == "nasa" && entry.category) {
 			let categories = Array.isArray(entry.category) ? entry.category : [entry.category];
 			if (categories.map(c => c._cdata || c._text).filter(Boolean).includes("APOD")) continue;
@@ -1996,14 +1949,35 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			newEntry.title = entry.title._cdata;
 			const url = entry["media:thumbnail"]?._attributes?.url;
 			if (url) {
+				const fixHtmlEntities = text => text?.replaceAll("&amp;", "&").replace(/&#0+(\d+);/g, "&#$1;");
+				const mediaCommentBlock = (caption, content, marginTop = 0) => `
+					<div style="display:flex; align-items:center; margin-top:${marginTop}px">
+						<div style="flex:1; border:1px solid #ff8a00;"></div>
+						<div style="padding:0 5px; white-space:nowrap;">${caption}</div>
+						<div style="flex:1; border:1px solid #ff8a00;"></div>
+					</div>
+					<div>${content}</div>
+				`;
+
 				newEntry.media.url = url;
-				if (entry["media:content"]) {
-					newEntry.media.comment = createMediaComment(
-						entry["media:content"],
-						"media:description",
-						"media:text",
-						"media:credit"
-					);
+				newEntry.media.comment = "";
+				let description = fixHtmlEntities(entry["media:content"]?.["media:description"]?._cdata);
+				let content = fixHtmlEntities(entry["media:content"]?.["media:text"]?._cdata);
+				if (description && content && content.toLowerCase() === description.toLowerCase()) {
+					newEntry.media.comment += mediaCommentBlock(t("description")+"/"+t("content"), description);
+				} else {
+					if (description) {
+						newEntry.media.comment += mediaCommentBlock(t("description"), description);
+					}
+					if (content) {
+						let padding = newEntry.media.comment ? 5 : 0;
+						newEntry.media.comment += mediaCommentBlock(t("content"), content, padding);
+					}
+				}
+				let credit = fixHtmlEntities(entry["media:content"]?.["media:credit"]?._cdata);
+				if (credit) {
+					let padding = newEntry.media.comment ? 5 : 0;
+					newEntry.media.comment += mediaCommentBlock(t("credit"), credit, padding);
 				}
 			} else {
 				newEntry.media.url = "images/icons/error/no_image.png";
@@ -2012,21 +1986,32 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			newEntry.summary = entry.description._cdata;
 		}
 
+		const checkIsVideo = (url) => {
+			if (!url) return false;
+			url = url.split(/[?#]/)[0];
+			const dotPos = url.lastIndexOf(".");
+			if (dotPos === -1) return false;
+			const ext = url.substring(dotPos + 1).toLowerCase();
+			return ["mp4", "3gp", "ogg", "webm", "mov", "m4v"].includes(ext);
+		};
+		const setMedia = (newEntry, url) => {
+			if (!url) {
+				newEntry.media.url = "images/icons/error/no_image.png";
+				newEntry.media.comment = t("imageAbsent");
+				return;
+			}
+			if (checkIsVideo(url)) {
+				newEntry.media.url = "";
+				newEntry.video = url;
+			} else {
+				newEntry.media.url = url;
+			}
+		};
+
 		// --- wired ---
 		if (source == "wired") {
 			newEntry.title = entry.title._text;
-			const url = entry["media:thumbnail"]?._attributes?.url;
-			if (url) {
-				if (checkIsVideo(url)) {
-					newEntry.media.url = "";
-					newEntry.video = url;
-				} else {
-					newEntry.media.url = url;
-				}
-			} else {
-				newEntry.media.url = "images/icons/error/no_image.png";
-				newEntry.media.comment = t("imageAbsent");
-			}
+			setMedia(newEntry, entry["media:thumbnail"]?._attributes?.url);
 			if (entry.description) {
 				newEntry.summary = entry.description._text;
 			}
@@ -2034,39 +2019,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 		// --- yahoo ---
 		if (source == "yahoo") {
-			newEntry.title = entry.title._cdata;
-			if (entry["media:content"]) {
-				let mediaContent = Array.isArray(entry["media:content"])
-					? entry["media:content"]
-					: [entry["media:content"]];
-
-				newEntry.media.url = mediaContent[0]._attributes.url;
-				newEntry.media.comment = createMediaComment(
-					mediaContent[0],
-					"media:description",
-					"media:title",
-					"media:credit"
-				);
-
-				const additMediaContent = mediaContent
-					.slice(1)
-					.filter(item => item._attributes.url !== newEntry.media.url);
-
-				if (additMediaContent.length > 0) {
-					newEntry.additMedia = additMediaContent.map(item => ({
-						url: item._attributes.url,
-						comment: createMediaComment(
-							item,
-							"media:description",
-							"media:title",
-							"media:credit"
-						)
-					}));
-				}
-			} else {
-				newEntry.media.url = "images/icons/error/no_image.png";
-				newEntry.media.comment = t("imageAbsent");
-			}
+			newEntry.title = entry.title._text;
+			setMedia(newEntry, entry["media:content"]?._attributes?.url);
 		}
 
 		// --- yonhap ---
@@ -2077,17 +2031,10 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 					? entry["media:content"]
 					: [entry["media:content"]];
 				newEntry.media.url = mediaContent[0]._attributes.url;
-				newEntry.media.comment = "";
-
-				const additMediaContent = mediaContent
-					.slice(1)
-					.filter(item => item._attributes.url);
-
-				if (additMediaContent.length > 0) {
-					newEntry.additMedia = additMediaContent.map(item => ({
-						url: item._attributes.url,
-						comment: ""
-					}));
+				if (mediaContent.length > 1) {
+					newEntry.additMediaUrl = mediaContent
+						.slice(1)
+						.map(item => item._attributes.url);
 				}
 			} else {
 				newEntry.media.url = "images/icons/error/no_image.png";
@@ -2104,14 +2051,14 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		// --- dc:creator ---
 		if (entry.source) {
 			newEntry.source = {};
-			newEntry.source.title = entry.source._text || entry.source._cdata;
-			if (entry.source._attributes?.url) newEntry.source.url = entry.source._attributes.url;
+			newEntry.source.title = entry.source._text;
+			newEntry.source.url = entry.source._attributes.url;
 		}
 
 		// --- dc:publisher ---
 		if (entry["dc:publisher"]) {
 			newEntry.source = {};
-			newEntry.source.title = entry["dc:publisher"]._text || entry["dc:publisher"]._cdata;
+			newEntry.source.title = entry["dc:publisher"]._text;
 		}
 
 		// --- dc:creator ---
@@ -2176,7 +2123,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			newEntry.link = entry.sourceUrl;
 			newEntry.date_ms = new Date(entry.updatedAt).getTime();
 		} else {
-			newEntry.link = entry.link._text || entry.link._cdata;
+			newEntry.link = entry.link._text ||  entry.link._cdata;
 			newEntry.date_ms = new Date(entry.pubDate._text).getTime();
 		}
 
@@ -2389,7 +2336,6 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					return null;
 				}
 			};
-/*
 			if (source == "yahoo") {
 				let scriptData = null;
 				const scripts = getScripts(doc, 'script[type="application/ld+json"]');
@@ -2409,7 +2355,6 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					}
 				}
 			}
-*/
 			if (source == "cbs") {
 				let scriptData = null;
 				const scripts = getScripts(doc, 'script[type="application/ld+json"]');
@@ -2430,6 +2375,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					if (scriptData.keywords?.length) {
 						categories = [...new Set([...(scriptData.keywords ?? []), ...(categories ?? [])])];
 					}
+
 				}
 			}
 			if (source == "nasa" || source == "artemis") {
@@ -2538,7 +2484,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				result.entries[i].summary = description;
 				locStUpdateDataNew.summary = description;
 			}
-			if (source != "yahoo" && media.url && !result.entries[i].video) {
+			if (media.url && !result.entries[i].video) {
 				result.entries[i].media.origUrl = result.entries[i].media.url;
 				result.entries[i].media.url = media.url;
 				if (media.comment) {
