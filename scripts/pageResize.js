@@ -51,7 +51,7 @@ if ("serviceWorker" in navigator) {
 	if (controlling) {
 		console.log("[SW] Existing controller detected.");
 		if (window.crossOriginIsolated) {
-			console.log("[SW] Page is cross-origin isolated.");
+			console.log("[SW] Page is cross-origin isolated. Controller: active.");
 			alreadyIsolated = true;
 		} else {
 			console.log("[SW] Page is not cross-origin isolated.");
