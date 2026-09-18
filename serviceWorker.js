@@ -87,23 +87,11 @@ self.addEventListener("fetch", function (event) {
 	// Only HTTP / HTTPS
 	// -------------------------------------------------
 
-	let protocol = new URL(request.url).protocol;
+	let url = new URL(request.url);
 
 	if (
-		protocol !== "http:" &&
-		protocol !== "https:"
-	) {
-		return;
-	}
-
-
-	// -------------------------------------------------
-	// DO NOT INTERFERE WITH CROSS-ORIGIN NAVIGATIONS
-	// -------------------------------------------------
-
-	if (
-		request.mode === "navigate" &&
-		new URL(request.url).origin !== self.location.origin
+		url.protocol !== "http:" &&
+		url.protocol !== "https:"
 	) {
 		return;
 	}
@@ -135,8 +123,17 @@ self.addEventListener("fetch", function (event) {
 	}
 
 
+	// -------------------------------------------------
+	// DO NOT INTERFERE WITH CROSS-ORIGIN REQUESTS
+	// -------------------------------------------------
+
+	if (url.origin !== self.location.origin) {
+		return;
+	}
+
+
 	// =================================================
-	// ALL OTHER REQUESTS
+	// SAME-ORIGIN / COI
 	// =================================================
 
 	event.respondWith(
