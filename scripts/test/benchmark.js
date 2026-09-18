@@ -471,13 +471,13 @@ function testSummary(wordsCount) {
 		}
 		return (current - start) / samples;
 	}
-	const timerQueantum = getTimerQuantum();
+	const timerQuantum = getTimerQuantum();
 
 	// Minimum total time for a series of very short measurements
 	// to neutralize reduced timing precision caused by timing-attack protection.
 	// Not needed when crossOriginIsolated is enabled,
 	// because performance.now() has sufficient precision.
-	const measureFixingTime = timerQueantum * 10;
+	const measureFixingTime = timerQuantum * 10;
 
 	function round(num, digits = 4) {
 		return Number(num.toFixed(digits));
@@ -487,7 +487,7 @@ function testSummary(wordsCount) {
 		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}. ` +
-		`Measurement Precision - Timer Quantum: ${round(timerQueantum * 1000, 2)} µs.`
+		`Measurement Precision - Timer Quantum: ${round(timerQuantum * 1000, 2)} µs.`
 	);
 	
 	// =========================================================
@@ -532,7 +532,7 @@ function testSummary(wordsCount) {
 				summaryDiv.innerHTML = "";
 				const start = performance.now();
 				isEarlyExit = algorithm.run(summaryDiv, words, line);
-				time = performance.now() - start;
+				time = Math.max(performance.now() - start, timerQuantum);
 			} else {
 				let totalTime = 0;
 				let runs = 0;
