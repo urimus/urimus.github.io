@@ -15,7 +15,7 @@ let META_SUFFIX = "?sw-meta";
 // 30 days
 let MAX_AGE = 1000 * 60 * 60 * 24 * 30;
 
-// in-flight dedupe
+// in-flight dedupe 
 let IN_FLIGHT = new Map();
 
 // =====================================================
