@@ -479,11 +479,15 @@ function testSummary(wordsCount) {
 	// because performance.now() has sufficient precision.
 	const measureFixingTime = timerQueantum * 10;
 
+	function round(num, digits = 4) {
+		return Number(num.toFixed(digits));
+	}
+
 	console.log(
 		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}. ` +
-		`Measurement Precision - Timer Quantum: ${timerQueantum} ms.`
+		`Measurement Precision - Timer Quantum: ${round(timerQueantum * 1000, 2)} µs.`
 	);
 	
 	// =========================================================
@@ -601,9 +605,6 @@ function testSummary(wordsCount) {
 		totalSum += perf.total;
 	}
 
-	function round(num, digits = 4) {
-		return Number(num.toFixed(digits));
-	}
 	function getStatistics(perf) {
 		const sorted = [...perf.times].sort((a, b) => a - b);
 		function percentile(p) {
