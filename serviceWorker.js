@@ -87,23 +87,44 @@ self.addEventListener("fetch", function (event) {
 	// Only HTTP / HTTPS
 	// -------------------------------------------------
 
-	let protocol = new URL(request.url).protocol;
+	let url = new URL(request.url);
 
 	if (
-		protocol !== "http:"
-		&& protocol !== "https:"
+		url.protocol !== "http:" &&
+		url.protocol !== "https:"
 	) {
 		return;
 	}
 
-	// -------------------------------------------------
-	// only-if-cached + cross-origin
-	// same protection as coi-serviceworker
-	// -------------------------------------------------
+
+	// =================================================
+	// CROSS-ORIGIN
+	// =================================================
+
+	if (url.origin !== self.location.origin) {
+
+		// Only images are handled by our cache.
+		if (request.destination === "image") {
+
+			event.respondWith(
+				handleImageRequest(event, request)
+			);
+
+		}
+
+		// Everything else:
+		// browser handles it normally.
+		return;
+	}
+
+
+	// =================================================
+	// SAME-ORIGIN
+	// =================================================
 
 	if (
-		request.cache === "only-if-cached"
-		&& request.mode !== "same-origin"
+		request.cache === "only-if-cached" &&
+		request.mode !== "same-origin"
 	) {
 		return;
 	}
@@ -124,7 +145,7 @@ self.addEventListener("fetch", function (event) {
 
 
 	// =================================================
-	// ALL OTHER REQUESTS
+	// COI
 	// =================================================
 
 	event.respondWith(
