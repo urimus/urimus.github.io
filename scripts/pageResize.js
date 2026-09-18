@@ -23,229 +23,76 @@ location.reload();
 // =====================================================
 // SERVICE WORKER + COI
 // =====================================================
-
 if ("serviceWorker" in navigator) {
 
-	(function () {
+	let reloadedBySelf = sessionStorage.getItem("coiReloadedBySelf");
+	sessionStorage.removeItem("coiReloadedBySelf");
 
-		let reloadedBySelf =
-			sessionStorage.getItem(
-				"coiReloadedBySelf"
-			);
-
-		sessionStorage.removeItem(
-			"coiReloadedBySelf"
-		);
-
-
-		// -------------------------------------------------
-		// Initial page state
-		// -------------------------------------------------
-
-		console.log(
-			"[SW] crossOriginIsolated:",
-			window.crossOriginIsolated
-		);
-
-
-		// -------------------------------------------------
-		// New Service Worker took control
-		// -------------------------------------------------
-
-		navigator.serviceWorker.addEventListener(
-			"controllerchange",
-			function () {
-
-				console.log(
-					"[SW] Controller changed."
-				);
-
-				console.log(
-					"[SW] crossOriginIsolated:",
-					window.crossOriginIsolated
-				);
-
-
-				// Prevent reload loop
-
-				if (reloadedBySelf) {
-
-					console.log(
-						"[SW] Reload already performed. No further reload."
-					);
-
-					return;
-
-				}
-
-
-				sessionStorage.setItem(
-					"coiReloadedBySelf",
-					"controllerchange"
-				);
-
-
-				console.log(
-					"[SW] Reloading page after controller change."
-				);
-
-				window.location.reload();
-
-			}
-		);
-
-
-		// -------------------------------------------------
-		// Existing controller
-		// -------------------------------------------------
-
-		let controlling =
-			navigator.serviceWorker.controller;
-
-
-		if (controlling) {
-
-			console.log(
-				"[SW] Existing controller detected."
-			);
-
-			console.log(
-				"[SW] crossOriginIsolated:",
-				window.crossOriginIsolated
-			);
-
-
-			// -------------------------------------------------
-			// Already isolated
-			// -------------------------------------------------
-
-			if (window.crossOriginIsolated) {
-
-				console.log(
-					"[SW] Page is cross-origin isolated."
-				);
-
-				return;
-
-			}
-
-
-			console.log(
-				"[SW] Page is not cross-origin isolated."
-			);
-
+	// -------------------------------------------------
+	// New Service Worker took control
+	// -------------------------------------------------
+	navigator.serviceWorker.addEventListener("controllerchange", function () {
+		console.log("[SW] Controller changed.");
+		if (reloadedBySelf) {
+			console.log("[SW] Reload already performed. No further reload.");
+			return;
 		}
+		sessionStorage.setItem("coiReloadedBySelf", "controllerchange");
+		console.log("[SW] Reloading page after controller change.");
+		window.location.reload();
+	});
 
+	// -------------------------------------------------
+	// Existing controller
+	// -------------------------------------------------
+	let controlling = navigator.serviceWorker.controller;
+	let alreadyIsolated = false;
 
-		// -------------------------------------------------
-		// Register Service Worker
-		// -------------------------------------------------
+	if (controlling) {
+		console.log("[SW] Existing controller detected.");
+		if (window.crossOriginIsolated) {
+			console.log("[SW] Page is cross-origin isolated.");
+			alreadyIsolated = true;
+		} else {
+			console.log("[SW] Page is not cross-origin isolated.");
+		}
+	}
 
-		console.log(
-			"[SW] Registering Service Worker..."
-		);
-
-
-		navigator.serviceWorker.register(
-			"/serviceWorker.js",
-			{
-				scope: "/"
-			}
-		)
-
+	// -------------------------------------------------
+	// Register Service Worker
+	// -------------------------------------------------
+	if (!alreadyIsolated) {
+		console.log("[SW] Registering Service Worker...");
+		navigator.serviceWorker.register("/serviceWorker.js", {
+			scope: "/"
+		})
 		.then(function (registration) {
-
-			console.log(
-				"[SW] Registered. Scope:",
-				registration.scope
-			);
-
-
-			// -------------------------------------------------
-			// New SW found
-			// -------------------------------------------------
-
-			registration.addEventListener(
-				"updatefound",
-				function () {
-
-					console.log(
-						"[SW] Update found. Installing new version."
-					);
-
-				}
-			);
-
+			console.log("[SW] Registered. Scope:", registration.scope);
+			registration.addEventListener("updatefound", function () {
+				console.log("[SW] Update found. Installing new version.");
+			});
 
 			// -------------------------------------------------
 			// Active SW exists but doesn't control page
 			// -------------------------------------------------
-
-			if (
-				registration.active
-				&& !navigator.serviceWorker.controller
-			) {
-
-				console.log(
-					"[SW] Active worker is not controlling the page."
-				);
-
-				console.log(
-					"[SW] crossOriginIsolated:",
-					window.crossOriginIsolated
-				);
-
-
-				sessionStorage.setItem(
-					"coiReloadedBySelf",
-					"notcontrolling"
-				);
-
-
-				console.log(
-					"[SW] Reloading page to activate Service Worker."
-				);
-
+			if (registration.active && !navigator.serviceWorker.controller) {
+				console.log("[SW] Active worker is not controlling the page.");
+				sessionStorage.setItem("coiReloadedBySelf", "notcontrolling");
+				console.log("[SW] Reloading page to activate Service Worker.");
 				window.location.reload();
-
 				return;
-
 			}
-
 
 			// -------------------------------------------------
 			// Final state
 			// -------------------------------------------------
-
-			console.log(
-				"[SW] Initialization complete."
-			);
-
-			console.log(
-				"[SW] Controller:",
-				navigator.serviceWorker.controller
-					? "active"
-					: "none"
-			);
-
-			console.log(
-				"[SW] crossOriginIsolated:",
-				window.crossOriginIsolated
-			);
-
+			console.log("[SW] Initialization complete.");
+			console.log("[SW] Controller:", navigator.serviceWorker.controller ? "active" : "none");
 		})
-
 		.catch(function (error) {
-
-			console.error(
-				"[SW] Registration failed:",
-				error
-			);
-
+			console.log("[SW] Registration failed:", error);
 		});
-
-	})();
-
+	}
 }
 
 // --- tab navigation ---
