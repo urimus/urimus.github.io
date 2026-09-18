@@ -24,13 +24,9 @@ location.reload();
 // SERVICE WORKER + COI
 // =====================================================
 if ("serviceWorker" in navigator) {
-
 	let reloadedBySelf = sessionStorage.getItem("coiReloadedBySelf");
 	sessionStorage.removeItem("coiReloadedBySelf");
 
-	// -------------------------------------------------
-	// New Service Worker took control
-	// -------------------------------------------------
 	navigator.serviceWorker.addEventListener("controllerchange", function () {
 		console.log("[SW] Controller changed.");
 		if (reloadedBySelf) {
@@ -42,57 +38,29 @@ if ("serviceWorker" in navigator) {
 		window.location.reload();
 	});
 
-	// -------------------------------------------------
-	// Existing controller
-	// -------------------------------------------------
-	let controlling = navigator.serviceWorker.controller;
-	let alreadyIsolated = false;
-
-	if (controlling) {
-		console.log("[SW] Existing controller detected.");
-		if (window.crossOriginIsolated) {
-			console.log("[SW] Page is cross-origin isolated. Controller: active.");
-			alreadyIsolated = true;
-		} else {
-			console.log("[SW] Page is not cross-origin isolated.");
-		}
-	}
-
-	// -------------------------------------------------
-	// Register Service Worker
-	// -------------------------------------------------
-	if (!alreadyIsolated) {
-		console.log("[SW] Registering Service Worker...");
-		navigator.serviceWorker.register("/serviceWorker.js", {
-			scope: "/"
-		})
-		.then(function (registration) {
-			console.log("[SW] Registered. Scope:", registration.scope);
-			registration.addEventListener("updatefound", function () {
-				console.log("[SW] Update found. Installing new version.");
-			});
-
-			// -------------------------------------------------
-			// Active SW exists but doesn't control page
-			// -------------------------------------------------
-			if (registration.active && !navigator.serviceWorker.controller) {
-				console.log("[SW] Active worker is not controlling the page.");
-				sessionStorage.setItem("coiReloadedBySelf", "notcontrolling");
-				console.log("[SW] Reloading page to activate Service Worker.");
-				window.location.reload();
-				return;
-			}
-
-			// -------------------------------------------------
-			// Final state
-			// -------------------------------------------------
-			console.log("[SW] Initialization complete.");
-			console.log("[SW] Controller:", navigator.serviceWorker.controller ? "active" : "none");
-		})
-		.catch(function (error) {
-			console.log("[SW] Registration failed:", error);
+	navigator.serviceWorker.register("/serviceWorker.js", {
+		scope: "/"
+	})
+	.then(function (registration) {
+		console.log("[SW] Registered. Scope:", registration.scope);
+		registration.addEventListener("updatefound", function () {
+			console.log("[SW] Update found. Installing new version.");
 		});
-	}
+
+		if (registration.active && !navigator.serviceWorker.controller) {
+			console.log("[SW] Active worker is not controlling the page.");
+			sessionStorage.setItem("coiReloadedBySelf", "notcontrolling");
+			console.log("[SW] Reloading page to activate Service Worker.");
+			window.location.reload();
+			return;
+		}
+
+		console.log("[SW] Initialization complete.");
+		console.log("[SW] Controller:", navigator.serviceWorker.controller ? "active" : "none");
+	})
+	.catch(function (error) {
+		console.log("[SW] Registration failed:", error);
+	});
 }
 
 // --- tab navigation ---
