@@ -473,17 +473,9 @@ function testSummary(wordsCount) {
 	}
 	// Minimum total time for a series of very short measurements
 	// to neutralize reduced timing precision caused by timing-attack protection.
-	// if coi-serviceworker is applied then not used
+	// Not needed when crossOriginIsolated is enabled,
+	// because performance.now() has sufficient precision.
 	const measureFixingTime = crossOriginIsolated ? 0 : getTimerQuantum() * 10;
-console.log(
-	"crossOriginIsolated:",
-	crossOriginIsolated
-);
-
-console.log(
-	"measureFixingTime:",
-	measureFixingTime
-);
 
 	console.log(
 		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
@@ -535,10 +527,8 @@ console.log(
 				isEarlyExit = algorithm.run(summaryDiv, words, line);
 				time = performance.now() - start;
 			} else {
-		
 				let totalTime = 0;
 				let runs = 0;
-
 				do {
 					summaryDiv.innerHTML = "";
 					const start = performance.now();
@@ -549,9 +539,9 @@ console.log(
 
 				time = totalTime / runs;
 			}
+
 			addPerf(perfData.get(algorithm), time, isEarlyExit);
 		}
-
 	}
 
 	container.remove();
