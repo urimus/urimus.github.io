@@ -873,6 +873,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					'aspect-ratio:16/9;';
 				if (isEmbed(entry.video)) {
 			        	let ifrm = document.createElement("iframe");
+					ifrm.credentialless = true;
 					ifrm.width = entry.media.width;
 					ifrm.style.cssText = cssText;
 					ifrm.allow = 
