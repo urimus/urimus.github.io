@@ -122,24 +122,6 @@ self.addEventListener("fetch", function (event) {
 		return;
 	}
 
-/*
-	// -------------------------------------------------
-	// DO NOT INTERFERE WITH CROSS-ORIGIN REQUESTS
-	// -------------------------------------------------
-
-	if (url.origin !== self.location.origin) {
-		return;
-	}
-*/
-
-	// -------------------------------------------------
-	// DO NOT INTERFERE WITH GOOGLE DRIVE
-	// -------------------------------------------------
-
-	if (url.origin === "https://drive.google.com") {
-		return;
-	}
-
 	// =================================================
 	// SAME-ORIGIN / COI
 	// =================================================
@@ -200,14 +182,14 @@ function handleCOIRequest(request) {
 			// -------------------------------------------------
 			// COEP
 			// -------------------------------------------------
-
+/*
 			newHeaders.set(
 				"Cross-Origin-Embedder-Policy",
 				coepCredentialless
 					? "credentialless"
 					: "require-corp"
 			);
-
+*/
 
 			// -------------------------------------------------
 			// COOP
