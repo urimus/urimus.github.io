@@ -87,44 +87,35 @@ self.addEventListener("fetch", function (event) {
 	// Only HTTP / HTTPS
 	// -------------------------------------------------
 
-	let url = new URL(request.url);
+	let protocol = new URL(request.url).protocol;
 
 	if (
-		url.protocol !== "http:" &&
-		url.protocol !== "https:"
+		protocol !== "http:" &&
+		protocol !== "https:"
 	) {
 		return;
 	}
 
 
-	// =================================================
-	// CROSS-ORIGIN
-	// =================================================
+	// -------------------------------------------------
+	// DO NOT INTERFERE WITH CROSS-ORIGIN NAVIGATIONS
+	// -------------------------------------------------
 
-	if (url.origin !== self.location.origin) {
-
-		// Only images are handled by our cache.
-		if (request.destination === "image") {
-
-			event.respondWith(
-				handleImageRequest(event, request)
-			);
-
-		}
-
-		// Everything else:
-		// browser handles it normally.
+	if (
+		request.mode === "navigate" &&
+		new URL(request.url).origin !== self.location.origin
+	) {
 		return;
 	}
 
 
-	// =================================================
-	// SAME-ORIGIN
-	// =================================================
+	// -------------------------------------------------
+	// only-if-cached + cross-origin
+	// -------------------------------------------------
 
 	if (
-		request.cache === "only-if-cached" &&
-		request.mode !== "same-origin"
+		request.cache === "only-if-cached"
+		&& request.mode !== "same-origin"
 	) {
 		return;
 	}
@@ -145,7 +136,7 @@ self.addEventListener("fetch", function (event) {
 
 
 	// =================================================
-	// COI
+	// ALL OTHER REQUESTS
 	// =================================================
 
 	event.respondWith(
