@@ -197,8 +197,6 @@ function loadNextCacheImage(state, images) {
 
 function preloadImagesGeneral() {
 
-	if (!("serviceWorker" in navigator)) return;
-
 	const images = [
 	
 		...["date_black","date_blue","date_green","date_red","date_selected","date_white",
@@ -268,19 +266,17 @@ function preloadImagesGeneral() {
 
 	if (images.length === 0) return;
 
-	navigator.serviceWorker.ready.then(() => {
-		console.log("[SW] general images caching started");
-		const state = {
-			index: -1,
-			loaded: 0,
-			failed: 0,
-			startTime: Date.now(),
-			source: "general images"
-		};
-		for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once
-			loadNextCacheImage(state, images);
-		}
-	});
+	console.log("[SW] general images caching started");
+	const state = {
+		index: -1,
+		loaded: 0,
+		failed: 0,
+		startTime: Date.now(),
+		source: "general images"
+	};
+	for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once
+		loadNextCacheImage(state, images);
+	}
 }
 
 // --- Listerners ---
@@ -554,9 +550,11 @@ function processPageResize(lang) {
 	let page = window.location.pathname;
 	if (lang) {
 		changeLanguage(lang);
-		if (!(page.startsWith("/about_me") || page.startsWith("/news") || page.startsWith("/site_map") || 	page.startsWith("/html_editor"))) {
+		if ("serviceWorker" in navigator && !(page.startsWith("/about_me") || page.startsWith("/news") || page.startsWith("/site_map") || 	page.startsWith("/html_editor"))) {
 			requestIdleCallback(() => {
-				preloadImagesGeneral();
+				navigator.serviceWorker.ready.then(() => {
+					preloadImagesGeneral();
+				});
 			});
 		}
 		checkMenu6();

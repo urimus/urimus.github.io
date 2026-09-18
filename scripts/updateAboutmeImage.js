@@ -21,12 +21,6 @@ function showErrorImage(message = "") {
 		let dateDiv = document.getElementById("dateDiv");
 		if (dateDiv) descDiv.remove();
 		adjustScrollDiv();
-		if (!imagesCachingStarted) {
-			requestIdleCallback(() => {
-				preloadImagesGeneral();
-			});
-			imagesCachingStarted = true;
-		}
 	}
 	ImgE.src = "images/icons/error/error.jpg";
 
@@ -48,8 +42,6 @@ function showInformation(lang) {
 
 function preloadImagesIOTD() {
 
-	if (!("serviceWorker" in navigator)) return;
-
 	let images = result.item.map(entry => {
 		const url = new URL(entry.enclosure._attributes.url);
 		url.searchParams.set("w", "450");
@@ -57,19 +49,17 @@ function preloadImagesIOTD() {
 	});
 	if (images.length === 0) return;
 
-	navigator.serviceWorker.ready.then(() => {
-		console.log("[SW] image of the day images caching started");
-		const state = {
-			index: -1,
-			loaded: 0,
-			failed: 0,
-			startTime: Date.now(),
-			source: "image of the day images"
-		};
-		for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once
-			loadNextCacheImage(state, images);
-		}
-	});
+	console.log("[SW] image of the day images caching started");
+	const state = {
+		index: -1,
+		loaded: 0,
+		failed: 0,
+		startTime: Date.now(),
+		source: "image of the day images"
+	};
+	for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once
+		loadNextCacheImage(state, images);
+	}
 
 }
 
@@ -234,12 +224,14 @@ function updateAboutMeImage3(lang, i) {
 	Img.onload = function () {
 		let Img2 = document.getElementById("iotd");
 		Img2.replaceWith(Img);
-		if (!imagesCachingStarted) {
-			requestIdleCallback(() => {
-				preloadImagesGeneral();
-				preloadImagesIOTD();
-			});
+		if (!imagesCachingStarted && "serviceWorker" in navigator) {
 			imagesCachingStarted = true;
+			requestIdleCallback(() => {
+				navigator.serviceWorker.ready.then(() => {
+					preloadImagesGeneral();
+					preloadImagesIOTD();
+				});
+			});
 		}
 		adjustScrollDiv();
 	}

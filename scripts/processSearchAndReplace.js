@@ -1066,7 +1066,13 @@ function processSearch(lang) {
 				consoleAxiosError
 			)
 			.finally(() => {
-				requestIdleCallback(() => { preloadImagesGeneral(); });
+				if ("serviceWorker" in navigator) {
+					requestIdleCallback(() => {
+						navigator.serviceWorker.ready.then(() => {
+							preloadImagesGeneral();
+						});
+					});
+				}
 			});
 		} else {
 			window.location.href='html_editor_'+lang+'.html?pattern='+ encodeURIComponent(searchPatt)+'&i=0';

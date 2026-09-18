@@ -1454,9 +1454,6 @@ function showFeedError(message, feedURL, lang) {
 	container.appendChild(reloadLink);
 
 	adjustFeedScrollDiv();
-	requestIdleCallback(() => {
-		preloadImagesGeneral();
-	});
 }
 
 function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
@@ -1521,7 +1518,13 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 
 			result.feedXML = feedURL;
 			optimizeUpdateResult(type, source, lang, result);
-			requestIdleCallback(() => { preloadImagesGeneral(); });
+			if ("serviceWorker" in navigator) {
+				requestIdleCallback(() => {
+					navigator.serviceWorker.ready.then(() => {
+						preloadImagesGeneral();
+					});
+				});
+			}
 		},
 		error => {
 			consoleAxiosError(error, t("feedLoadError") + " | " + t("loadAttempt") + " " + loadAttempt);

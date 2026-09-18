@@ -529,73 +529,42 @@ function sortByDate(docs, lang, textColor) {
 }
 
 function preloadImagesContents(type, docs) {
-	if (!("serviceWorker" in navigator)) return;
 
-	if (
-		type !== "movies" &&
-		type !== "music" &&
-		type !== "series" &&
-		type !== "games" &&
-		type !== "junk"
-	) {
-		return;
-	}
+	if (type !== "movies" && type !== "music" && type !== "series" && type !== "games" && type !== "junk") return;
 
 	const images = new Set();
-
 	for (const doc of docs) {
 		const link = doc.querySelector("a");
-
 		if (!link) continue;
-
 		const hash = link.hash.slice(1);
-
 		if (!hash) continue;
-
 		let type2 = type;
-
-		if (
-			type === "series" &&
-			(
-				hash === "animation" ||
-				hash === "body_horror" ||
-				hash === "space_opera" ||
-				hash === "movies_superhero" ||
-				hash === "dc_extended_universe" ||
-				hash === "marvel_cinematic_universe"
-			)
+		if (	type === "series" &&
+			(hash === "animation" ||
+			hash === "body_horror" ||
+			hash === "space_opera" ||
+			hash === "movies_superhero" ||
+			hash === "dc_extended_universe" ||
+			hash === "marvel_cinematic_universe")
 		) {
 			type2 = "movies";
 		}
-
-		images.add(
-			"images/icons/" + type2 + "/" + hash + ".jpg"
-		);
+		images.add("images/icons/" + type2 + "/" + hash + ".jpg");
 	}
 
 	if (!images.size) return;
-
-	navigator.serviceWorker.ready.then(() => {
-		console.log("[SW] site map images caching started");
-
-		const imageList = [...images];
-
-		const state = {
-			index: -1,
-			loaded: 0,
-			failed: 0,
-			startTime: Date.now(),
-			source: "site map images"
-		};
-
-		for (
-			let i = 0, count = Math.min(imageList.length, 5);
-			i < count;
-			i++
-		) {
-			loadNextCacheImage(state, imageList);
-		}
-	});
+	console.log("[SW] site map images caching started");
+	const imageList = [...images];
+	const state = {
+		index: -1,
+		loaded: 0,
+		failed: 0,
+		startTime: Date.now(),
+		source: "site map images"
+	};
+	for (let i = 0, count = Math.min(imageList.length, 5); i < count; i++) {
+		loadNextCacheImage(state, imageList);
+	}
 }
 
 function linesToDOM(lines, textColor) {
@@ -670,15 +639,23 @@ function showContents(type, sortby, lang) {
 
 			adjustContentsScrollDiv();
 
-			requestIdleCallback(() => {
-				preloadImagesContents(type, docs);
-			});
+			if ("serviceWorker" in navigator) {
+				requestIdleCallback(() => {
+					navigator.serviceWorker.ready.then(() => {
+						preloadImagesContents(type, docs);
+					});
+				});
+			}
 		},
 		consoleAxiosError
 	)
 	.finally(() => {
-		requestIdleCallback(() => {
-			preloadImagesGeneral();
-		});
+		if ("serviceWorker" in navigator) {
+			requestIdleCallback(() => {
+				navigator.serviceWorker.ready.then(() => {
+					preloadImagesGeneral();
+				});
+			});
+		}
 	});
 }
