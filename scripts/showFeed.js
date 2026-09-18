@@ -770,7 +770,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	if (typeof entry.error !== "undefined" && entry.error != null) {
 		let Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
-		Div.innerHTML = "💥 " + DOMPurify.sanitize(entry.error);
+		Div.innerHTML = "💥 " + entry.error;
 		container.appendChild(Div);
 	}
 
