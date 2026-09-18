@@ -471,16 +471,19 @@ function testSummary(wordsCount) {
 		}
 		return (current - start) / samples;
 	}
+	const timerQueantum = getTimerQuantum();
+
 	// Minimum total time for a series of very short measurements
 	// to neutralize reduced timing precision caused by timing-attack protection.
 	// Not needed when crossOriginIsolated is enabled,
 	// because performance.now() has sufficient precision.
-	const measureFixingTime = crossOriginIsolated ? 0 : getTimerQuantum() * 10;
+	const measureFixingTime = timerQueantum * 10;
 
 	console.log(
 		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
-		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}.`
+		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}. ` +
+		`Measurement Precision - Timer Quantum: ${timerQueantum} ms.`
 	);
 	
 	// =========================================================
