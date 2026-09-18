@@ -182,14 +182,14 @@ function handleCOIRequest(request) {
 			// -------------------------------------------------
 			// COEP
 			// -------------------------------------------------
-/*
+
 			newHeaders.set(
 				"Cross-Origin-Embedder-Policy",
 				coepCredentialless
 					? "credentialless"
 					: "require-corp"
 			);
-*/
+
 
 			// -------------------------------------------------
 			// COOP
