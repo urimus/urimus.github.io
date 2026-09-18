@@ -473,8 +473,18 @@ function testSummary(wordsCount) {
 	}
 	// Minimum total time for a series of very short measurements
 	// to neutralize reduced timing precision caused by timing-attack protection.
-	const measureFixingTime = getTimerQuantum() * 10;
-	
+	// if coi-serviceworker is applied then not used
+	const measureFixingTime = crossOriginIsolated ? 0 : getTimerQuantum() * 10;
+console.log(
+	"crossOriginIsolated:",
+	crossOriginIsolated
+);
+
+console.log(
+	"measureFixingTime:",
+	measureFixingTime
+);
+
 	console.log(
 		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
@@ -516,19 +526,29 @@ function testSummary(wordsCount) {
 		}
 
 		for (const algorithm of shuffledAlgorithms) {
-			let totalTime = 0;
-			let runs = 0;
-			let isEarlyExit;
 
-			do {
+			let time;
+			let isEarlyExit;
+			if (crossOriginIsolated) {
 				summaryDiv.innerHTML = "";
 				const start = performance.now();
 				isEarlyExit = algorithm.run(summaryDiv, words, line);
-				totalTime += performance.now() - start;
-				runs++;
-			} while (totalTime < measureFixingTime);
+				time = performance.now() - start;
+			} else {
+		
+				let totalTime = 0;
+				let runs = 0;
 
-			const time = totalTime / runs;
+				do {
+					summaryDiv.innerHTML = "";
+					const start = performance.now();
+					isEarlyExit = algorithm.run(summaryDiv, words, line);
+					totalTime += performance.now() - start;
+					runs++;
+				} while (totalTime < measureFixingTime);
+
+				time = totalTime / runs;
+			}
 			addPerf(perfData.get(algorithm), time, isEarlyExit);
 		}
 
