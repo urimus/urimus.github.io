@@ -12,47 +12,135 @@ navigator.serviceWorker.getRegistrations().then(regs => {
 navigator.serviceWorker.controller
 
 navigator.serviceWorker.getRegistrations().then(console.log)
+
+
+sessionStorage.removeItem("coiCoepHasFailed");
+sessionStorage.removeItem("coiReloadedBySelf");
+location.reload();
+
 */
 
-if ("serviceWorker" in navigator && !window.location.pathname.startsWith("/about_me")) {
-	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
-	.then(function (registration) {
+// =====================================================
+// SERVICE WORKER + COI
+// =====================================================
 
-		console.log("[SW] registered");
-		registration.update();
-		navigator.serviceWorker.ready.then(function (registration) {
-			if (registration.active) console.log("[SW] ready, state:", registration.active.state);
-			if (registration.waiting) console.log("[SW] ready, state:", registration.waiting.state);
-			if (registration.installing) console.log("[SW] ready, state:", registration.installing.state);
-		});
+if (
+	"serviceWorker" in navigator
+) {
 
-		registration.addEventListener("updatefound", function () {
-			console.log("[SW] update found");
-			const newWorker = registration.installing;
-			if (!newWorker) {
-				console.log("[SW] missing worker installing");
+	(function () {
+
+		let reloadedBySelf =
+			sessionStorage.getItem(
+				"coiReloadedBySelf"
+			);
+
+		sessionStorage.removeItem(
+			"coiReloadedBySelf"
+		);
+
+
+		let controlling =
+			navigator.serviceWorker.controller;
+
+
+		// -------------------------------------------------
+		// Existing controller
+		// -------------------------------------------------
+
+		if (controlling) {
+
+			// -------------------------------------------------
+			// Tell SW to use credentialless
+			// -------------------------------------------------
+
+			controlling.postMessage({
+				type: "coepCredentialless",
+				value: true
+			});
+
+
+			// -------------------------------------------------
+			// If we are already isolated, nothing else needed
+			// -------------------------------------------------
+
+			if (window.crossOriginIsolated) {
 				return;
 			}
 
-			newWorker.addEventListener("statechange", function () {
-				console.log("[SW] state:", newWorker.state);
-				if (newWorker.state === "installed") {
-					if (navigator.serviceWorker.controller) {
-						console.log("[SW] updated");
-					}
-					else {
-						console.log("[SW] installed first time");
-					}
+		}
+
+
+		// -------------------------------------------------
+		// Register our combined SW
+		// -------------------------------------------------
+
+		navigator.serviceWorker.register(
+			"/serviceWorker.js",
+			{
+				scope: "/"
+			}
+		)
+
+		.then(function (registration) {
+
+			console.log(
+				"[COI] Service Worker registered:",
+				registration.scope
+			);
+
+
+			// -------------------------------------------------
+			// New SW found
+			// -------------------------------------------------
+
+			registration.addEventListener(
+				"updatefound",
+				function () {
+
+					console.log(
+						"[COI] Service Worker update found"
+					);
+
 				}
-				if (newWorker.state === "activated") {
-					console.log("[SW] activated");
-				}
-			});
+			);
+
+
+			// -------------------------------------------------
+			// Active SW exists but doesn't control page
+			// -------------------------------------------------
+
+			if (
+				registration.active
+				&& !navigator.serviceWorker.controller
+			) {
+
+				console.log(
+					"[COI] Reloading to activate COI..."
+				);
+
+				sessionStorage.setItem(
+					"coiReloadedBySelf",
+					"notcontrolling"
+				);
+
+				window.location.reload();
+
+			}
+
+		})
+
+		.catch(function (error) {
+
+			console.error(
+				"[COI] Service Worker registration failed:",
+				error
+			);
+
 		});
-	})
-	.catch(function (error) {
-		console.log("[SW] registration failed:", error);
-	});
+
+	})();
+
 }
 
 // --- tab navigation ---
