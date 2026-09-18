@@ -24,9 +24,7 @@ location.reload();
 // SERVICE WORKER + COI
 // =====================================================
 
-if (
-	"serviceWorker" in navigator
-) {
+if ("serviceWorker" in navigator) {
 
 	(function () {
 
@@ -41,6 +39,16 @@ if (
 
 
 		// -------------------------------------------------
+		// Initial page state
+		// -------------------------------------------------
+
+		console.log(
+			"[SW] crossOriginIsolated:",
+			window.crossOriginIsolated
+		);
+
+
+		// -------------------------------------------------
 		// New Service Worker took control
 		// -------------------------------------------------
 
@@ -49,17 +57,36 @@ if (
 			function () {
 
 				console.log(
-					"[COI] New Service Worker is now controlling the page."
+					"[SW] Controller changed."
 				);
 
+				console.log(
+					"[SW] crossOriginIsolated:",
+					window.crossOriginIsolated
+				);
+
+
 				// Prevent reload loop
+
 				if (reloadedBySelf) {
+
+					console.log(
+						"[SW] Reload already performed. No further reload."
+					);
+
 					return;
+
 				}
+
 
 				sessionStorage.setItem(
 					"coiReloadedBySelf",
 					"controllerchange"
+				);
+
+
+				console.log(
+					"[SW] Reloading page after controller change."
 				);
 
 				window.location.reload();
@@ -68,40 +95,56 @@ if (
 		);
 
 
-		let controlling =
-			navigator.serviceWorker.controller;
-
-
 		// -------------------------------------------------
 		// Existing controller
 		// -------------------------------------------------
 
+		let controlling =
+			navigator.serviceWorker.controller;
+
+
 		if (controlling) {
 
-			// -------------------------------------------------
-			// Tell SW to use credentialless
-			// -------------------------------------------------
+			console.log(
+				"[SW] Existing controller detected."
+			);
 
-			controlling.postMessage({
-				type: "coepCredentialless",
-				value: true
-			});
+			console.log(
+				"[SW] crossOriginIsolated:",
+				window.crossOriginIsolated
+			);
 
 
 			// -------------------------------------------------
-			// If we are already isolated, nothing else needed
+			// Already isolated
 			// -------------------------------------------------
 
 			if (window.crossOriginIsolated) {
+
+				console.log(
+					"[SW] Page is cross-origin isolated."
+				);
+
 				return;
+
 			}
+
+
+			console.log(
+				"[SW] Page is not cross-origin isolated."
+			);
 
 		}
 
 
 		// -------------------------------------------------
-		// Register our combined SW
+		// Register Service Worker
 		// -------------------------------------------------
+
+		console.log(
+			"[SW] Registering Service Worker..."
+		);
+
 
 		navigator.serviceWorker.register(
 			"/serviceWorker.js",
@@ -113,7 +156,7 @@ if (
 		.then(function (registration) {
 
 			console.log(
-				"[COI] Service Worker registered:",
+				"[SW] Registered. Scope:",
 				registration.scope
 			);
 
@@ -127,7 +170,7 @@ if (
 				function () {
 
 					console.log(
-						"[COI] Service Worker update found"
+						"[SW] Update found. Installing new version."
 					);
 
 				}
@@ -144,24 +187,58 @@ if (
 			) {
 
 				console.log(
-					"[COI] Reloading to activate COI..."
+					"[SW] Active worker is not controlling the page."
 				);
+
+				console.log(
+					"[SW] crossOriginIsolated:",
+					window.crossOriginIsolated
+				);
+
 
 				sessionStorage.setItem(
 					"coiReloadedBySelf",
 					"notcontrolling"
 				);
 
+
+				console.log(
+					"[SW] Reloading page to activate Service Worker."
+				);
+
 				window.location.reload();
 
+				return;
+
 			}
+
+
+			// -------------------------------------------------
+			// Final state
+			// -------------------------------------------------
+
+			console.log(
+				"[SW] Initialization complete."
+			);
+
+			console.log(
+				"[SW] Controller:",
+				navigator.serviceWorker.controller
+					? "active"
+					: "none"
+			);
+
+			console.log(
+				"[SW] crossOriginIsolated:",
+				window.crossOriginIsolated
+			);
 
 		})
 
 		.catch(function (error) {
 
 			console.error(
-				"[COI] Service Worker registration failed:",
+				"[SW] Registration failed:",
 				error
 			);
 

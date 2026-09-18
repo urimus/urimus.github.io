@@ -43,30 +43,6 @@ self.addEventListener("activate", function (event) {
 	);
 });
 
-
-// =====================================================
-// COI MESSAGE
-// =====================================================
-
-self.addEventListener("message", function (event) {
-
-	if (!event.data) {
-		return;
-	}
-
-	if (event.data.type === "coepCredentialless") {
-
-		coepCredentialless = !!event.data.value;
-
-		console.log(
-			"[COI] credentialless:",
-			coepCredentialless
-		);
-	}
-
-});
-
-
 // =====================================================
 // FETCH
 // =====================================================
