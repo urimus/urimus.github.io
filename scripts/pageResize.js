@@ -40,6 +40,34 @@ if (
 		);
 
 
+		// -------------------------------------------------
+		// New Service Worker took control
+		// -------------------------------------------------
+
+		navigator.serviceWorker.addEventListener(
+			"controllerchange",
+			function () {
+
+				console.log(
+					"[COI] New Service Worker is now controlling the page."
+				);
+
+				// Prevent reload loop
+				if (reloadedBySelf) {
+					return;
+				}
+
+				sessionStorage.setItem(
+					"coiReloadedBySelf",
+					"controllerchange"
+				);
+
+				window.location.reload();
+
+			}
+		);
+
+
 		let controlling =
 			navigator.serviceWorker.controller;
 
