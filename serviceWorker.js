@@ -122,7 +122,7 @@ self.addEventListener("fetch", function (event) {
 		return;
 	}
 
-
+/*
 	// -------------------------------------------------
 	// DO NOT INTERFERE WITH CROSS-ORIGIN REQUESTS
 	// -------------------------------------------------
@@ -130,7 +130,15 @@ self.addEventListener("fetch", function (event) {
 	if (url.origin !== self.location.origin) {
 		return;
 	}
+*/
 
+	// -------------------------------------------------
+	// DO NOT INTERFERE WITH GOOGLE DRIVE
+	// -------------------------------------------------
+
+	if (url.origin === "https://drive.google.com") {
+		return;
+	}
 
 	// =================================================
 	// SAME-ORIGIN / COI
