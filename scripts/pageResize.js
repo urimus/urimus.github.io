@@ -13,7 +13,8 @@ navigator.serviceWorker.controller
 
 navigator.serviceWorker.getRegistrations().then(console.log)
 */
-if ("serviceWorker" in navigator) {
+
+if ("serviceWorker" in navigator && !window.location.pathname.startsWith("/about_me")) {
 	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
 	.then(function (registration) {
 
