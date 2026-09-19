@@ -557,20 +557,26 @@ function testSummary(wordsCount) {
 	// GENERAL STATISTICS
 	// =========================================================
 
+	// --- Calculate total sum ---
 	let totalSum = 0;
-
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
 		if (!perf?.times?.length) {
 			console.error("Performance data not found.", { algorithm });
 			continue;
 		}
+		totalSum += perf.total;
+	}
+
+	const statisticsTable = {};
+	for (const algorithm of algorithms) {
+		const perf = perfData.get(algorithm);
+		if (!perf?.times?.length) continue;
 
 		let sumEE = 0;
-		let countEE = 0;
 		let sumNoEE = 0;
+		let countEE = 0;
 		let countNoEE = 0;
-
 		let logSum = 0;
 		let logSumEE = 0;
 		let logSumNoEE = 0;
@@ -580,7 +586,6 @@ function testSummary(wordsCount) {
 			// time is always > 0
 			const logTime = Math.log(time);
 			logSum += logTime;
-
 			if (perf.earlyExits[i]) {
 				sumEE += time;
 				countEE++;
@@ -602,45 +607,25 @@ function testSummary(wordsCount) {
 			perf.meanNoEE = sumNoEE / countNoEE;
 			perf.geometricMeanNoEE = Math.exp(logSumNoEE / countNoEE);
 		}
-		totalSum += perf.total;
-	}
-
-	function getStatistics(perf) {
-		const sorted = [...perf.times].sort((a, b) => a - b);
-		function percentile(p) {
-			return sorted[Math.floor((sorted.length - 1) * p)];
+		// --- Standard deviation ---
+		let varianceSum = 0;
+		for (const time of perf.times) {
+			varianceSum += Math.pow(time - perf.mean, 2);
 		}
-		const variance = perf.times.reduce(
-			(sum, time) => sum + Math.pow(time - perf.mean, 2),
-			0
-		) / perf.count;
-		const standardDeviation = Math.sqrt(variance);
-		return {
+		const standardDeviation = Math.sqrt(varianceSum / perf.count);
+		statisticsTable[algorithm.name] = {
 			Count: perf.count,
 			"Mean, ms": round(perf.mean),
-			"Median, ms": round(percentile(0.50)),
-			"P95, ms": round(percentile(0.95)),
-			"P99, ms": round(percentile(0.99)),
 			"Std Dev, ms": round(standardDeviation),
 			"Min, ms": round(perf.min),
 			"Max, ms": round(perf.max),
-			"Total, ms": round(perf.total)
-		};
-	}
-
-	const statistics = {};
-
-	for (const algorithm of algorithms) {
-		const perf = perfData.get(algorithm);
-		if (!perf?.times?.length) continue;
-		statistics[algorithm.name] = {
-			...getStatistics(perf),
+			"Total, ms": round(perf.total),
 			"Share, %": round(perf.total / totalSum * 100)
 		};
 	}
 
 	console.log("=== GENERAL STATISTICS ===");
-	console.table(statistics);
+	console.table(statisticsTable);
 
 	// =========================================================
 	// PERFORMANCE GRAPHS
