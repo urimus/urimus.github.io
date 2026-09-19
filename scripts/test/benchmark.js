@@ -83,6 +83,9 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		mean,
 		meanEE,
 		meanNoEE,
+		median,
+		medianEE,
+		medianNoEE,
 		geometricMean,
 		geometricMeanEE,
 		geometricMeanNoEE
@@ -291,7 +294,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	let statistics = `STATISTICS, ${unit}: `;
 	const statisticStyles = [];
 
-	function appendMeanStatistic(statistics, styles, label, mean, valueNoEE, valueEE) {
+	function appendStatistic(statistics, styles, label, mean, valueNoEE, valueEE) {
 		const hasNoEE = valueNoEE !== undefined;
 		const hasEE = valueEE !== undefined;
 
@@ -326,7 +329,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 
 	if (unit === "ms") {
 		statistics += `Min: ${min.toFixed(3)} | `;
-		statistics = appendMeanStatistic(
+		statistics = appendStatistic(
 			statistics,
 			statisticStyles,
 			"Mean",
@@ -334,11 +337,20 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			meanNoEE,
 			meanEE
 		);
+		statistics += " | ";
+		statistics = appendStatistic(
+			statistics,
+			statisticStyles,
+			"Median",
+			median,
+			medianNoEE,
+			medianEE
+		);
 		statistics += ` | Max: ${max.toFixed(3)}`;
 		statistics += ` | Total: ${total.toFixed(3)}`;
 	} else {
 		statistics += `Min: ${min.toFixed(3)} | `;
-		statistics = appendMeanStatistic(
+		statistics = appendStatistic(
 			statistics,
 			statisticStyles,
 			"Geometric Mean",
@@ -571,7 +583,16 @@ function testSummary(wordsCount) {
 		let logSumEE = 0;
 		let logSumNoEE = 0;
 		let varianceSum = 0;
+		
+		const timesEE = [];
+		const timesNoEE = [];
+		
 		perf.mean = perf.total / perf.count;
+		const sortedTimes = [...perf.times].sort((a, b) => a - b);
+		const middle = Math.floor(sortedTimes.length / 2);
+		perf.median = sortedTimes.length % 2 === 0
+			? (sortedTimes[middle - 1] + sortedTimes[middle]) / 2
+			: sortedTimes[middle];
 
 		for (let i = 0; i < perf.times.length; i++) {
 			const time = perf.times[i];
@@ -584,10 +605,12 @@ function testSummary(wordsCount) {
 				sumEE += time;
 				countEE++;
 				logSumEE += logTime;
+				timesEE.push(time);
 			} else {
 				sumNoEE += time;
 				countNoEE++;
 				logSumNoEE += logTime;
+				timesNoEE.push(time);
 			}
 		}
 
@@ -596,14 +619,27 @@ function testSummary(wordsCount) {
 		if (countEE > 0) {
 			perf.meanEE = sumEE / countEE;
 			perf.geometricMeanEE = Math.exp(logSumEE / countEE);
+			
+			const sortedEE = timesEE.sort((a, b) => a - b);
+			const middleEE = Math.floor(sortedEE.length / 2);
+			perf.medianEE = sortedEE.length % 2 === 0
+				? (sortedEE[middleEE - 1] + sortedEE[middleEE]) / 2
+				: sortedEE[middleEE];
 		}
 		if (countNoEE > 0) {
 			perf.meanNoEE = sumNoEE / countNoEE;
 			perf.geometricMeanNoEE = Math.exp(logSumNoEE / countNoEE);
+			
+			const sortedNoEE = timesNoEE.sort((a, b) => a - b);
+			const middleNoEE = Math.floor(sortedNoEE.length / 2);
+			perf.medianNoEE = sortedNoEE.length % 2 === 0
+				? (sortedNoEE[middleNoEE - 1] + sortedNoEE[middleNoEE]) / 2
+				: sortedNoEE[middleNoEE];
 		}
 		statisticsTable[algorithm.name] = {
 			Count: perf.count,
 			"Mean, ms": round(perf.mean),
+			"Median, ms": round(perf.median),
 			"Std Dev, ms": round(standardDeviation),
 			"Min, ms": round(perf.min),
 			"Max, ms": round(perf.max),
