@@ -494,9 +494,11 @@ function testSummary(wordsCount) {
 	// RUN BENCHMARK
 	// =========================================================
 
+	let totalSum = 0;
 	function addPerf(perf, time, isEarlyExit) {
 		perf.count++;
 		perf.total += time;
+		totalSum += time;
 		perf.times.push(time);
 		perf.earlyExits.push(isEarlyExit);
 		if (time < perf.min) perf.min = time;
@@ -556,17 +558,6 @@ function testSummary(wordsCount) {
 	// =========================================================
 	// GENERAL STATISTICS
 	// =========================================================
-
-	// --- Calculate total sum ---
-	let totalSum = 0;
-	for (const algorithm of algorithms) {
-		const perf = perfData.get(algorithm);
-		if (!perf?.times?.length) {
-			console.error("Performance data not found.", { algorithm });
-			continue;
-		}
-		totalSum += perf.total;
-	}
 
 	const statisticsTable = {};
 	for (const algorithm of algorithms) {
