@@ -414,23 +414,6 @@ function testSummary(wordsCount) {
 	];
 
 	// =========================================================
-	// PERFORMANCE DATA
-	// =========================================================
-
-	const perfData = new Map();
-
-	for (const algorithm of algorithms) {
-		perfData.set(algorithm, {
-			count: 0,
-			total: 0,
-			min: Infinity,
-			max: 0,
-			times: [],
-			earlyExits: []
-		});
-	}
-
-	// =========================================================
 	// GENERATE DATA
 	// =========================================================
 
@@ -489,12 +472,28 @@ function testSummary(wordsCount) {
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}. ` +
 		`Measurement Precision - Timer Quantum: ${round(timerQuantum * 1000, 2)} µs.`
 	);
+
+	// =========================================================
+	// PERFORMANCE DATA
+	// =========================================================
+
+	const perfData = new Map();
+	let totalSum = 0;
+	for (const algorithm of algorithms) {
+		perfData.set(algorithm, {
+			count: 0,
+			total: 0,
+			min: Infinity,
+			max: 0,
+			times: [],
+			earlyExits: []
+		});
+	}
 	
 	// =========================================================
 	// RUN BENCHMARK
 	// =========================================================
 
-	let totalSum = 0;
 	function addPerf(perf, time, isEarlyExit) {
 		perf.count++;
 		perf.total += time;
