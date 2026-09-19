@@ -580,12 +580,16 @@ function testSummary(wordsCount) {
 		let logSum = 0;
 		let logSumEE = 0;
 		let logSumNoEE = 0;
+		let varianceSum = 0;
+		perf.mean = perf.total / perf.count;
 
 		for (let i = 0; i < perf.times.length; i++) {
 			const time = perf.times[i];
 			// time is always > 0
 			const logTime = Math.log(time);
 			logSum += logTime;
+			const diff = time - perf.mean;
+			varianceSum += diff * diff;
 			if (perf.earlyExits[i]) {
 				sumEE += time;
 				countEE++;
@@ -597,7 +601,7 @@ function testSummary(wordsCount) {
 			}
 		}
 
-		perf.mean = perf.total / perf.count;
+		const standardDeviation = Math.sqrt(varianceSum / perf.count);
 		perf.geometricMean = Math.exp(logSum / perf.times.length);
 		if (countEE > 0) {
 			perf.meanEE = sumEE / countEE;
@@ -607,12 +611,6 @@ function testSummary(wordsCount) {
 			perf.meanNoEE = sumNoEE / countNoEE;
 			perf.geometricMeanNoEE = Math.exp(logSumNoEE / countNoEE);
 		}
-		// --- Standard deviation ---
-		let varianceSum = 0;
-		for (const time of perf.times) {
-			varianceSum += Math.pow(time - perf.mean, 2);
-		}
-		const standardDeviation = Math.sqrt(varianceSum / perf.count);
 		statisticsTable[algorithm.name] = {
 			Count: perf.count,
 			"Mean, ms": round(perf.mean),
