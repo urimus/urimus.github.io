@@ -285,7 +285,9 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 
 function getLineHeight(span) {
 	span.innerHTML = '<span style="display:inline-block">&#8203;</span>';
-	return span.firstElementChild.offsetHeight || 17;
+	const lineHeight = span.firstElementChild.offsetHeight;
+	span.innerHTML = "";
+	return lineHeight || 17;
 }
 
 // ---------------------------------------------------------
@@ -294,30 +296,33 @@ function getLineHeight(span) {
 
 function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 	const pointersClass = "summary_word_pointer";
-	return words_arr
-		.slice(0, wordsCount)
-		.map(word => {
-			return word + '<span class="' + pointersClass + '"></span>';
-		})
-		.join(" ") + (addSpace ? " " : "");
+	return '<span class="' + pointersClass + '"></span>' +
+		words_arr
+			.slice(0, wordsCount)
+			.map(word => {
+				return word + '<span class="' + pointersClass + '"></span>';
+			})
+			.join(" ") + (addSpace ? " " : "");
 }
 
 function getWordsCount(element, linesToShow, lineHeight, isBinary = false) {
 	const pointers = element.getElementsByClassName("summary_word_pointer");
-	let linesCount = 1;
+	
+	const startLineTop = pointers[0].offsetTop;
+	let previousTop = pointers[1].offsetTop;
+	let linesCount = Math.max(1, Math.round((previousTop - startLineTop) / lineHeight));
 	let wordsCount = 1;
 	let wordsCountM1 = 1;
-	let previousTop = pointers[0].offsetTop;
-	for (let i = 1; i < pointers.length; i++) {
+	for (let i = 2; i < pointers.length; i++) {
 		const top = pointers[i].offsetTop;
 		if (top > previousTop) {
 			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
 			previousTop = top;
 		}
 		if (linesCount > linesToShow) break;
-		wordsCount = isBinary ? i : i + 1;
+		wordsCount = isBinary ? i - 1 : i;
 		if (linesCount <= linesToShow - 1) {
-			wordsCountM1 = isBinary ? i : i + 1;
+			wordsCountM1 = isBinary ? i - 1 : i;
 		}
 	}
 	return {
@@ -429,15 +434,14 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	}
 	
 	const lineHeight = getLineHeight(span);
-
 	let wordsCount = 1;
-	let linesCount = 1;
-
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
-
+	const startLineTop = pointer.offsetTop;
 	span.innerHTML = formatSummary(words_arr, 1, false);
 	let currentLineTop = pointer.offsetTop;
+	const additionalLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight));
+	let linesCount = additionalLines;
 
 	// ---------------------------------------------------------
 	// First pass.
@@ -448,7 +452,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 		span.innerHTML = formatSummary(words_arr, wordsCount, false);
 		const pointerTop = pointer.offsetTop;
 		if (Math.abs(pointerTop - currentLineTop) < 2) continue;
-		const additionalLines = Math.max(1, Math.round((pointerTop - currentLineTop) / lineHeight) );
+		const additionalLines = Math.max(1, Math.round((pointerTop - currentLineTop) / lineHeight));
 		linesCount += additionalLines;
 		currentLineTop = pointerTop;
 		if (linesCount > linesToShow) break;
