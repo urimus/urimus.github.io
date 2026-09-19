@@ -532,7 +532,7 @@ function testSummary(wordsCount) {
 				summaryDiv.innerHTML = "";
 				const start = performance.now();
 				isEarlyExit = algorithm.run(summaryDiv, words, line);
-				time = Math.max(performance.now() - start, timerQuantum);
+				time = Math.max(performance.now() - start, timerQuantum / 2);
 			} else {
 				let totalTime = 0;
 				let runs = 0;

@@ -1896,12 +1896,13 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	};
 
 	for (let c = 0; c < items.length; c++) {
-		let entry = items[c];
-
-//		if (source == "yahoo" && entry.source
-//		&& (entry.source._text == "BBC" || entry.source._text == "Yahoo Finance UK" || entry.source._text == "The Telegraph")) {
-//			continue;
-//		}
+		const entry = items[c];
+		if (source == "yahoo" && entry.source &&
+		(entry.source._cdata == "BBC" ||
+		entry.source._cdata == "Yahoo Finance UK" ||
+		entry.source._cdata == "The Telegraph")) {
+			continue;
+		}
 		if (source == "nasa" && entry.category) {
 			let categories = Array.isArray(entry.category) ? entry.category : [entry.category];
 			if (categories.map(c => c._cdata || c._text).filter(Boolean).includes("APOD")) continue;
@@ -1910,7 +1911,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		i++;
 
 		result.entries[i] = {};
-		let newEntry = result.entries[i];
+		const newEntry = result.entries[i];
 		newEntry.media = {};
 		newEntry.media.comment = "";
 		newEntry.storage = {};
@@ -2166,9 +2167,20 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			let categories = Array.isArray(entry.category)
 				? entry.category
 				: [entry.category];
-			newEntry.category = categories
+			const excludedPrefixes = [
+				"site|",
+				"provider_name|",
+				"region|",
+				"language|",
+				"author_name|"
+			];
+			categories = categories
 				.map(c => c._cdata || c._text)
-				.filter(Boolean);
+				.filter(Boolean)
+				.filter(c => !excludedPrefixes.some(prefix => c.startsWith(prefix)));
+			if (categories.length > 0) {
+				newEntry.category = categories;
+			}
 		}
 
 		// --- media:keywords ---
