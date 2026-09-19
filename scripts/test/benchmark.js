@@ -79,7 +79,6 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		earlyExits,
 		min,
 		max,
-		total,
 		mean,
 		meanEE,
 		meanNoEE,
@@ -94,8 +93,8 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	const WIDTH = 90;
 	const HEIGHT = 22;
 
-	const MIN_Y = 0;
-	const MAX_Y = Math.max(...times);
+	const MIN_Y = min;
+	const MAX_Y = max;
 
 	// Symbols
 	const POINT = "●";
