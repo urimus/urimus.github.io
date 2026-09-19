@@ -295,6 +295,8 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	const statisticStyles = [];
 
 	function appendStatistic(statistics, styles, label, mean, valueNoEE, valueEE) {
+		statistics += " | ";
+		
 		const hasNoEE = valueNoEE !== undefined;
 		const hasEE = valueEE !== undefined;
 
@@ -327,8 +329,8 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		return statistics;
 	}
 
+	statistics += `Min: ${min.toFixed(3)}`;
 	if (unit === "ms") {
-		statistics += `Min: ${min.toFixed(3)} | `;
 		statistics = appendStatistic(
 			statistics,
 			statisticStyles,
@@ -337,7 +339,6 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			meanNoEE,
 			meanEE
 		);
-		statistics += " | ";
 		statistics = appendStatistic(
 			statistics,
 			statisticStyles,
@@ -346,10 +347,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			medianNoEE,
 			medianEE
 		);
-		statistics += ` | Max: ${max.toFixed(3)}`;
-		statistics += ` | Total: ${total.toFixed(3)}`;
 	} else {
-		statistics += `Min: ${min.toFixed(3)} | `;
 		statistics = appendStatistic(
 			statistics,
 			statisticStyles,
@@ -358,8 +356,8 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 			geometricMeanNoEE,
 			geometricMeanEE
 		);
-		statistics += ` | Max: ${max.toFixed(3)}`;
 	}
+	statistics += ` | Max: ${max.toFixed(3)}`;
 	console.log(statistics, ...statisticStyles);
 	console.log("\u200B");
 }
