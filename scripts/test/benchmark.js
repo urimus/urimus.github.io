@@ -602,7 +602,7 @@ function testSummary(wordsCount) {
 		}
 
 		const standardDeviation = Math.sqrt(varianceSum / perf.count);
-		perf.geometricMean = Math.exp(logSum / perf.times.length);
+		perf.geometricMean = Math.exp(logSum / perf.count);
 		if (countEE > 0) {
 			perf.meanEE = sumEE / countEE;
 			perf.geometricMeanEE = Math.exp(logSumEE / countEE);
