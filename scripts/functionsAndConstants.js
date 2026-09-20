@@ -324,7 +324,7 @@ function getWordsCount(element, pointerTops, linesToShow, lineHeight, current, e
 	for (let i = pointerTops.length; i < pointers.length; i++) {
 		pointerTops.push(pointers[i].offsetTop);
 	}
-	const currentPointerTops = pointerTops.slice(0, current);
+	const currentPointerTops = pointerTops.slice(0, current + 1);
 	const tops = expansionA ? currentPointerTops.concat(expansionA.offsetTop) : currentPointerTops;
 
 	let linesCount = Math.max(1, Math.round((tops[1] - tops[0]) / lineHeight) + 1);
@@ -351,7 +351,11 @@ function getWordsCount(element, pointerTops, linesToShow, lineHeight, current, e
 		}
 		if (linesCount <= linesToShow) {
 			wordsCount = current;
-			if (linesCount <= linesToShow - 1) wordsCountM1 = current;
+			if (linesCount <= linesToShow - 1) {
+				wordsCountM1 = current;
+			}
+		} else {
+			wordsCount = current - 1;
 		}
 	}
 	return { wordsCount, wordsCountM1 };
