@@ -338,9 +338,18 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, expansion
 			previousTop = top;
 		}
 		if (linesCount > linesToShow) break;
-		wordsCount = expansionA ? i - 1 : i;
-		if (linesCount <= linesToShow - 1) {
-			wordsCountM1 = expansionA ? i - 1 : i;
+		wordsCount = i;
+		if (linesCount <= linesToShow - 1) wordsCountM1 = i;
+	}
+
+	if (expansionA) {
+		const top = expansionA.offsetTop;
+		if (top > previousTop) {
+			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
+		}
+		if (linesCount <= linesToShow) {
+			wordsCount = pointerTops.length;
+			if (linesCount <= linesToShow - 1) wordsCountM1 = pointerTops.length;
 		}
 	}
 	return { wordsCount, wordsCountM1 };
