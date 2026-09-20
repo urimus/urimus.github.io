@@ -307,14 +307,15 @@ function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 
 function getWordsCount(element, linesToShow, lineHeight, isBinary = false) {
 	const pointers = element.getElementsByClassName("summary_word_pointer");
+	const tops = Array.from(pointers, pointer => pointer.offsetTop);
 
-	const startLineTop = pointers[0].offsetTop;
-	let previousTop = pointers[1].offsetTop;
-	let linesCount = Math.max(1, Math.round((previousTop - startLineTop) / lineHeight) + 1);
+	let linesCount = Math.max(1, Math.round((tops[1] - tops[0]) / lineHeight) + 1);
 	let wordsCount = 1;
 	let wordsCountM1 = 1;
-	for (let i = 2; i < pointers.length; i++) {
-		const top = pointers[i].offsetTop;
+	let previousTop = tops[1];
+
+	for (let i = 2; i < tops.length; i++) {
+		const top = tops[i];
 		if (top > previousTop) {
 			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
 			previousTop = top;
