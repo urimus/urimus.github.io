@@ -310,11 +310,9 @@ function getWordsCount(element, linesToShow, lineHeight, isBinary = false) {
 
 	const startLineTop = pointers[0].offsetTop;
 	let previousTop = pointers[1].offsetTop;
-
-	let linesCount = Math.max(1, Math.round((previousTop - startLineTop) / lineHeight));
+	let linesCount = Math.max(1, Math.round((previousTop - startLineTop) / lineHeight) + 1);
 	let wordsCount = 1;
 	let wordsCountM1 = 1;
-
 	for (let i = 2; i < pointers.length; i++) {
 		const top = pointers[i].offsetTop;
 		if (top > previousTop) {
@@ -434,36 +432,52 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 		span.innerHTML = words_arr[0];
 		return true;
 	}
-	
 	const lineHeight = getLineHeight(span);
-	let wordsCount = 1;
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
 	const startLineTop = pointer.offsetTop;
-	span.innerHTML = formatSummary(words_arr, 1, false);
+
+	// ---------------------------------------------------------
+	// Estimate the likely result.
+	// ---------------------------------------------------------
+
+	const estimatedResult = Math.min(linesToShow * 10, wordsLength);
+	let wordsCount = estimatedResult;
+	span.innerHTML = formatSummary(words_arr, wordsCount, false);
 	let currentLineTop = pointer.offsetTop;
-	const additionalLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight));
-	let linesCount = additionalLines;
+	const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
 
 	// ---------------------------------------------------------
 	// First pass.
 	// ---------------------------------------------------------
 
-	for (let k = 1; k < wordsLength; k++) {
-		wordsCount = k + 1;
-		span.innerHTML = formatSummary(words_arr, wordsCount, false);
-		const pointerTop = pointer.offsetTop;
-		if (Math.abs(pointerTop - currentLineTop) < 2) continue;
-		const additionalLines = Math.max(1, Math.round((pointerTop - currentLineTop) / lineHeight));
-		linesCount += additionalLines;
-		currentLineTop = pointerTop;
-		if (linesCount > linesToShow) break;
-	}
+	let linesCount = estimatedLines;
 
-	// Entire summary fits
-	if (wordsCount === wordsLength && linesCount <= linesToShow) {
-		element.removeChild(pointer);
-		return true;
+	// Estimate fits.
+	// Continue forward until the summary no longer fits.
+	if (estimatedLines <= linesToShow) {
+		// Entire summary fits.
+		if (wordsCount === wordsLength) {
+			element.removeChild(pointer);
+			return true;
+		}
+
+		for (let k = wordsCount; k < wordsLength; k++) {
+			wordsCount = k + 1;
+			span.innerHTML = formatSummary(words_arr, wordsCount, false);
+			const pointerTop = pointer.offsetTop;
+			if (Math.abs(pointerTop - currentLineTop) < 2) continue;
+			const additionalLines = Math.max(1, Math.round((pointerTop - currentLineTop) / lineHeight));
+			linesCount += additionalLines;
+			currentLineTop = pointerTop;
+			if (linesCount > linesToShow) break;
+		}
+
+		// Entire summary fits.
+		if (wordsCount === wordsLength && linesCount <= linesToShow) {
+			element.removeChild(pointer);
+			return true;
+		}
 	}
 
 	// ---------------------------------------------------------
@@ -489,6 +503,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 
 	// ---------------------------------------------------------
 	// Second pass.
+	// Search backwards with the expansion link present.
 	// ---------------------------------------------------------
 
 	while (wordsCount > 1) {
@@ -496,4 +511,5 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 		span.innerHTML = formatSummary(words_arr, wordsCount);
 		if (Math.abs(expansionA.offsetTop - currentLineTop) >= 2) return false;
 	}
+	return false;
 }
