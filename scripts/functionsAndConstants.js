@@ -324,30 +324,23 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, expansion
 		pointerTops.push(pointers[i].offsetTop);
 	}
 
-	let linesCount = Math.max(1, Math.round((pointerTops[1] - pointerTops[0]) / lineHeight) + 1);
+	const tops = expansionA ? pointerTops.concat(expansionA.offsetTop) : pointerTops;
+
+	let linesCount = Math.max(1, Math.round((tops[1] - tops[0]) / lineHeight) + 1);
 	let wordsCount = 1;
 	let wordsCountM1 = 1;
-	let previousTop = pointerTops[1];
+	let previousTop = tops[1];
 
-	for (let i = 2; i < pointerTops.length; i++) {
-		const top = pointerTops[i];
+	for (let i = 2; i < tops.length; i++) {
+		const top = tops[i];
 		if (top > previousTop) {
 			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
 			previousTop = top;
 		}
 		if (linesCount > linesToShow) break;
-		wordsCount = i;
-		if (linesCount <= linesToShow - 1) wordsCountM1 = i;
-	}
-
-	if (expansionA) {
-		const top = expansionA.offsetTop;
-		if (top > previousTop) {
-			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
-		}
-		if (linesCount <= linesToShow) {
-			wordsCount = pointerTops.length;
-			if (linesCount <= linesToShow - 1) wordsCountM1 = pointerTops.length;
+		wordsCount = expansionA ? i - 1 : i;
+		if (linesCount <= linesToShow - 1) {
+			wordsCountM1 = expansionA ? i - 1 : i;
 		}
 	}
 	return { wordsCount, wordsCountM1 };
@@ -396,10 +389,8 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
-
 	let isExpanded = false;
 	let isAnimating = false;
-
 	expansionA.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
