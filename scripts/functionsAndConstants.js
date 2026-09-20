@@ -349,6 +349,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 
 	let formatTime = 0;
+	let spanTime = 0;
 	let getWordsCountTime = 0;
 	
 	// Estimate the likely result to start exponential search.
@@ -364,10 +365,15 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 
 	while (true) {
 		let t0 = performance.now();
-		span.innerHTML = formatSummaryWithPointers(words_arr, current, false);
+		const newSummary = formatSummaryWithPointers(words_arr, current, false);
 		let t1 = performance.now();
 		formatTime += t1 - t0;
-
+		
+		t0 = performance.now();
+		span.innerHTML = newSummary;
+		t1 = performance.now();
+		spanTime += t1 - t0;
+		
 		t0 = performance.now();
 		result = getWordsCount(element, linesToShow, lineHeight, false);
 		t1 = performance.now();
@@ -380,6 +386,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 			console.log(
 				"modifySummary2, Early Exit: ",
 				"formatSummaryWithPointers =", formatTime.toFixed(3), "ms,",
+				"span.innerHTML =", spanTime.toFixed(3), "ms,",
 				"getWordsCount =", getWordsCountTime.toFixed(3), "ms"
 			);
 			return true;
@@ -421,9 +428,14 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		let t0 = performance.now();
-		span.innerHTML = formatSummaryWithPointers(words_arr, middle);
+		const newSummary = formatSummaryWithPointers(words_arr, middle);
 		let t1 = performance.now();
 		formatTime += t1 - t0;
+		
+		t0 = performance.now();
+		span.innerHTML = newSummary;
+		t1 = performance.now();
+		spanTime += t1 - t0;
 
 		t0 = performance.now();
 		const result = getWordsCount(element, linesToShow, lineHeight, true);
@@ -445,6 +457,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	console.log(
 		"modifySummary2, No Early Exit: ",
 		"formatSummaryWithPointers =", formatTime.toFixed(3), "ms,",
+		"span.innerHTML =", spanTime.toFixed(3), "ms,",
 		"getWordsCount =", getWordsCountTime.toFixed(3), "ms"
 	);
 	return false;
