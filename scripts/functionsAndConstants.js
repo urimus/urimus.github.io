@@ -306,13 +306,18 @@ function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 }
 
 function getWordsCount(element, linesToShow, lineHeight, isBinary = false) {
+	const t0 = performance.now();
 	const pointers = element.getElementsByClassName("summary_word_pointer");
-	
+	const t1 = performance.now();
+
 	const startLineTop = pointers[0].offsetTop;
 	let previousTop = pointers[1].offsetTop;
+	const t2 = performance.now();
+
 	let linesCount = Math.max(1, Math.round((previousTop - startLineTop) / lineHeight));
 	let wordsCount = 1;
 	let wordsCountM1 = 1;
+
 	for (let i = 2; i < pointers.length; i++) {
 		const top = pointers[i].offsetTop;
 		if (top > previousTop) {
@@ -325,6 +330,16 @@ function getWordsCount(element, linesToShow, lineHeight, isBinary = false) {
 			wordsCountM1 = isBinary ? i - 1 : i;
 		}
 	}
+
+	const t3 = performance.now();
+
+	// временно
+	console.log(
+		"getElementsByClassName =", (t1 - t0).toFixed(3),
+		"ms, first offsetTop =", (t2 - t1).toFixed(3),
+		"ms, rest + calculation =", (t3 - t2).toFixed(3), "ms"
+	);
+
 	return {
 		wordsCount,
 		wordsCountM1
@@ -343,14 +358,6 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	}
 	
 	const lineHeight = getLineHeight(span);
-
-	// ---------------------------------------------------------
-	// Timers.
-	// ---------------------------------------------------------
-
-	let formatTime = 0;
-	let spanTime = 0;
-	let getWordsCountTime = 0;
 	
 	// Estimate the likely result to start exponential search.
 	const estimatedResult = linesToShow * 10;
@@ -364,31 +371,12 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 
 	while (true) {
-		let t0 = performance.now();
-		const newSummary = formatSummaryWithPointers(words_arr, current, false);
-		let t1 = performance.now();
-		formatTime += t1 - t0;
-		
-		t0 = performance.now();
-		span.innerHTML = newSummary;
-		t1 = performance.now();
-		spanTime += t1 - t0;
-		
-		t0 = performance.now();
+		span.innerHTML = formatSummaryWithPointers(words_arr, current, false);
 		result = getWordsCount(element, linesToShow, lineHeight, false);
-		t1 = performance.now();
-		getWordsCountTime += t1 - t0;
-		
 		if (result.wordsCount < current) break;
 		// The entire summary fits.
 		if (current === wordsLength) {
 			span.innerHTML = formatSummary(words_arr, wordsLength, false);
-			console.log(
-				"modifySummary2, Early Exit: ",
-				"formatSummaryWithPointers =", formatTime.toFixed(3), "ms,",
-				"span.innerHTML =", spanTime.toFixed(3), "ms,",
-				"getWordsCount =", getWordsCountTime.toFixed(3), "ms"
-			);
 			return true;
 		}
 		current = Math.min(current * 2, wordsLength);
@@ -427,20 +415,8 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
-		let t0 = performance.now();
-		const newSummary = formatSummaryWithPointers(words_arr, middle);
-		let t1 = performance.now();
-		formatTime += t1 - t0;
-		
-		t0 = performance.now();
-		span.innerHTML = newSummary;
-		t1 = performance.now();
-		spanTime += t1 - t0;
-
-		t0 = performance.now();
+		span.innerHTML = formatSummaryWithPointers(words_arr, middle);
 		const result = getWordsCount(element, linesToShow, lineHeight, true);
-		t1 = performance.now();
-		getWordsCountTime += t1 - t0;
 		if (result.wordsCount >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
@@ -454,12 +430,6 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 	
 	span.innerHTML = formatSummary(words_arr, wordsCount);
-	console.log(
-		"modifySummary2, No Early Exit: ",
-		"formatSummaryWithPointers =", formatTime.toFixed(3), "ms,",
-		"span.innerHTML =", spanTime.toFixed(3), "ms,",
-		"getWordsCount =", getWordsCountTime.toFixed(3), "ms"
-	);
 	return false;
 }
 
