@@ -306,13 +306,10 @@ function formatSummaryWithPointers(words_arr, wordsCount, addSpace = true) {
 }
 
 function getWordsCount(element, linesToShow, lineHeight, isBinary = false) {
-	const t0 = performance.now();
 	const pointers = element.getElementsByClassName("summary_word_pointer");
-	const t1 = performance.now();
 
 	const startLineTop = pointers[0].offsetTop;
 	let previousTop = pointers[1].offsetTop;
-	const t2 = performance.now();
 
 	let linesCount = Math.max(1, Math.round((previousTop - startLineTop) / lineHeight));
 	let wordsCount = 1;
@@ -330,16 +327,6 @@ function getWordsCount(element, linesToShow, lineHeight, isBinary = false) {
 			wordsCountM1 = isBinary ? i - 1 : i;
 		}
 	}
-
-	const t3 = performance.now();
-
-	// временно
-	console.log(
-		"getElementsByClassName =", (t1 - t0).toFixed(3),
-		"ms, first offsetTop =", (t2 - t1).toFixed(3),
-		"ms, rest + calculation =", (t3 - t2).toFixed(3), "ms"
-	);
-
 	return {
 		wordsCount,
 		wordsCountM1
