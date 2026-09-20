@@ -77,9 +77,7 @@ function reloadAboutMeImage(lang) {
 
 function updateAboutMeImage(lang, random = false) {
 
-	let i = random
-		? Math.floor(Math.random() * result.item.length)
-		: 0;
+	let i = random ? Math.floor(Math.random() * result.item.length) : 0;
 
 	let Div2 = document.getElementById('information_div');
 	Div2.style.right = '6px';
@@ -181,7 +179,7 @@ function updateAboutMeImage3(lang, i) {
 	imgSVG.setAttribute('height', 27);
 	imgSVG.onload = function () {
 		if (item_description) {
-			modifySummary(descDiv, description_words, "blue", 4);
+			modifySummaryOneByOne(descDiv, description_words, "blue", 4);
 		}
 		adjustScrollDiv();
 	}
