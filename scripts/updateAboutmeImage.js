@@ -179,7 +179,7 @@ function updateAboutMeImage3(lang, i) {
 	imgSVG.setAttribute('height', 27);
 	imgSVG.onload = function () {
 		if (item_description) {
-			modifySummaryOneByOne(descDiv, description_words, "blue", 4);
+			modifySummary(descDiv, description_words, "blue", 4);
 		}
 		adjustScrollDiv();
 	}
