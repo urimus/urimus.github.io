@@ -489,6 +489,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	// Estimate fits.
 	// Continue forward until the summary no longer fits.
 	if (estimatedLines <= linesToShow) {
+
 		// Entire summary fits.
 		if (wordsCount === wordsLength) {
 			element.removeChild(pointer);
@@ -501,15 +502,30 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 			const pointerTop = pointer.offsetTop;
 			if (Math.abs(pointerTop - currentLineTop) < 2) continue;
 			const additionalLines = Math.max(1, Math.round((pointerTop - currentLineTop) / lineHeight));
+			if (linesCount + additionalLines > linesToShow) break;
 			linesCount += additionalLines;
 			currentLineTop = pointerTop;
-			if (linesCount > linesToShow) break;
 		}
 
 		// Entire summary fits.
-		if (wordsCount === wordsLength && linesCount <= linesToShow) {
+		if (wordsCount === wordsLength) {
 			element.removeChild(pointer);
 			return true;
+		}
+	}
+	// Estimate does not fit.
+	// Search backward until the summary fits.
+	else {
+
+		while (wordsCount > 1) {
+			wordsCount--;
+			span.innerHTML = formatSummary(words_arr, wordsCount, false);
+			const pointerTop = pointer.offsetTop;
+			if (Math.abs(pointerTop - currentLineTop) < 2) continue;
+			const removedLines = Math.max(1, Math.round((currentLineTop - pointerTop) / lineHeight));
+			linesCount -= removedLines;
+			currentLineTop = pointerTop;
+			if (linesCount <= linesToShow) break;
 		}
 	}
 
@@ -517,6 +533,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	// Add expansion link.
 	// ---------------------------------------------------------
 
+	span.innerHTML += " ";
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
@@ -539,10 +556,14 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	// Search backwards with the expansion link present.
 	// ---------------------------------------------------------
 
-	while (wordsCount > 1) {
-		wordsCount--;
-		span.innerHTML = formatSummary(words_arr, wordsCount);
-		if (Math.abs(expansionA.offsetTop - currentLineTop) >= 2) return false;
+	if (Math.abs(expansionA.offsetTop - currentLineTop) >= 2) {
+		while (wordsCount > 1) {
+			wordsCount--;
+			span.innerHTML = formatSummary(words_arr, wordsCount);
+			if (Math.abs(expansionA.offsetTop - currentLineTop) < 2) {
+				break;
+			}
+		}
 	}
 	return false;
 }

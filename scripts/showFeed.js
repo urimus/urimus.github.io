@@ -558,7 +558,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 	}
 
 	summaryDiv.innerHTML = "";
-	modifySummaryOneByOne(summaryDiv, summary_words, "red", 4);
+	modifySummary(summaryDiv, summary_words, "red", 4);
 
 	adjustFeedScrollDiv();
 }
