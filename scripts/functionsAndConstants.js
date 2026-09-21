@@ -353,9 +353,7 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 	if (expansionA) {
 		// All current words fit.
 		// Check whether the expansion link moves to the next line.
-		if (expansionTop > previousTop) {
-			linesCount += Math.max(1, Math.round((expansionTop - previousTop) / lineHeight));
-		}
+		if (expansionTop > previousTop) linesCount++;
 		if (linesCount <= linesToShow) {
 			wordsCount = current;
 			if (linesCount <= linesToShow - 1) {
