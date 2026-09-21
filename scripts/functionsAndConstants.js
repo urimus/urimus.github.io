@@ -334,6 +334,7 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 	let wordsCount = 1;
 	let wordsCountM1 = 1;
 	let previousTop = tops[1];
+	let isBreak = false;
 
 	for (let i = 2; i < tops.length; i++) {
 		const top = tops[i];
@@ -341,23 +342,36 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
 			previousTop = top;
 		}
-		if (linesCount > linesToShow) break;
+		if (linesCount > linesToShow) {
+			isBreak = true;
+			break;
+		}
 		wordsCount = i;
 		if (linesCount <= linesToShow - 1) {
 			wordsCountM1 = i;
 		}
 	}
 	if (expansionA) {
-		if (expansionTop > previousTop) {
-			linesCount += Math.max(1, Math.round((expansionTop - previousTop) / lineHeight));
-		}
-		if (linesCount <= linesToShow) {
-			wordsCount = current;
-			if (linesCount <= linesToShow - 1) {
-				wordsCountM1 = current;
-			}
-		} else {
+		if (isBreak) {
+			// The current word does not fit.
 			wordsCount = current - 1;
+		} else {
+			// The current words fit.
+			// Check whether the expansion link moves to the next line.
+			if (expansionTop > previousTop) {
+				linesCount += Math.max(1, Math.round((expansionTop - previousTop) / lineHeight));
+			}
+			if (linesCount <= linesToShow) {
+				// The expansion link also fits.
+				wordsCount = current;
+				// There is still one full line of spare space.
+				if (linesCount <= linesToShow - 1) {
+					wordsCountM1 = current;
+				}
+			} else {
+				// The expansion link does not fit.
+				wordsCount = current - 1;
+			}
 		}
 	}
 	return { wordsCount, wordsCountM1 };
