@@ -319,8 +319,7 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount, addSpace 
 			.join(" ") + (addSpace ? " " : "");
 }
 
-function getWordsCount(element, pointerTops, linesToShow, lineHeight, current, expansionA = null) {
-	const pointers = element.getElementsByClassName("summary_word_pointer");
+function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, expansionA = null) {
 	for (let i = pointerTops.length; i < pointers.length; i++) {
 		pointerTops.push(pointers[i].offsetTop);
 	}
@@ -366,6 +365,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	if (!wordsLength) return true;
 
 	const span = createSpan(element, col);
+	const pointersLive = span.getElementsByClassName("summary_word_pointer");
 
 	// one word only
 	if (wordsLength === 1) {
@@ -385,7 +385,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 
 	while (true) {
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current, false);
-		result = getWordsCount(element, pointerTops, linesToShow, lineHeight, current);
+		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
 		if (result.wordsCount < current) break;
 		if (current === wordsLength) {
 			span.innerHTML = formatSummary(words_arr, wordsLength, false);
@@ -428,7 +428,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
-		result = getWordsCount(element, pointerTops, linesToShow, lineHeight, middle, expansionA);
+		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle, expansionA);
 		if (result.wordsCount >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
