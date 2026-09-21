@@ -342,7 +342,7 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 			previousTop = top;
 		}
 		if (linesCount > linesToShow) {
-			if (expansionA) wordsCount = i - 1;
+			if (expansionA) wordsCount--;
 			return { wordsCount, wordsCountM1 };
 		}
 		wordsCount = i;
