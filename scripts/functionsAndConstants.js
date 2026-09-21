@@ -365,7 +365,6 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	if (!wordsLength) return true;
 
 	const span = createSpan(element, col);
-	const pointersLive = span.getElementsByClassName("summary_word_pointer");
 
 	// one word only
 	if (wordsLength === 1) {
@@ -373,6 +372,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 		return true;
 	}
 	const lineHeight = getLineHeight(span);
+	const pointersLive = span.getElementsByClassName("summary_word_pointer");
 	const estimatedResult = linesToShow * 10;
 
 	let wordsCount = 1;
