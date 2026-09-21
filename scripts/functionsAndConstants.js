@@ -323,8 +323,12 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 	for (let i = pointerTops.length; i < pointers.length; i++) {
 		pointerTops.push(pointers[i].offsetTop);
 	}
-	const currentPointerTops = pointerTops.slice(0, current + 1);
-	const tops = expansionA ? currentPointerTops.concat(expansionA.offsetTop) : currentPointerTops;
+	const tops = pointerTops.slice(0, current + 1);
+	let expansionTop;
+	if (expansionA) {
+		expansionTop = expansionA.offsetTop;
+		tops.push(expansionTop);
+	}
 
 	let linesCount = Math.max(1, Math.round((tops[1] - tops[0]) / lineHeight) + 1);
 	let wordsCount = 1;
@@ -344,9 +348,8 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 		}
 	}
 	if (expansionA) {
-		const top = expansionA.offsetTop;
-		if (top > previousTop) {
-			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
+		if (expansionTop > previousTop) {
+			linesCount += Math.max(1, Math.round((expansionTop - previousTop) / lineHeight));
 		}
 		if (linesCount <= linesToShow) {
 			wordsCount = current;
