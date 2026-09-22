@@ -159,6 +159,13 @@ function typeSummary(span, words_arr, wordsCount, isExpanding, onComplete) {
 	}, 0);
 }
 
+function getLineHeight(span) {
+	span.innerHTML = '<span style="display:inline-block">&#8203;</span>';
+	const lineHeight = span.firstElementChild.offsetHeight;
+	span.innerHTML = "";
+	return lineHeight || 17;
+}
+
 // ---------------------------------------------------------
 // Algorithm 1
 // ---------------------------------------------------------
@@ -196,14 +203,31 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 		return true;
 	}
 
-	// Estimate the likely result to start exponential search.
-	const estimatedResult = linesToShow * 10;
+	// ---------------------------------------------------------
+	// Estimate the likely result.
+	// ---------------------------------------------------------
+
+	const lineHeight = getLineHeight(span);
+	const pointer = document.createElement("a");
+	element.appendChild(pointer);
+	const startLineTop = pointer.offsetTop;
+
+	const estimatedResult = Math.min(linesToShow * 10, wordsLength);
+	span.innerHTML = formatSummary(words_arr, estimatedResult, false);
+	let currentLineTop = pointer.offsetTop;
+	const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
+	pointer.remove();
+	
+	if (estimatedLines <= linesToShow && estimatedResult === wordsLength) {
+		return true;
+	}
+	
 
 	// For blue, one line is occupied by the image.
 	if (col === "blue") linesToShow++;
 
 	let wordsCount = 1;
-	let current = Math.min(estimatedResult, wordsLength);
+	let current = estimatedResult;
 
 	// Binary search bound.
 	let left = 1;
@@ -282,13 +306,6 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 // =========================================================
 // OTHER ALGORITHMS
 // =========================================================
-
-function getLineHeight(span) {
-	span.innerHTML = '<span style="display:inline-block">&#8203;</span>';
-	const lineHeight = span.firstElementChild.offsetHeight;
-	span.innerHTML = "";
-	return lineHeight || 17;
-}
 
 // ---------------------------------------------------------
 // Algorithm 2
@@ -379,12 +396,30 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	}
 	const lineHeight = getLineHeight(span);
 	const pointersLive = span.getElementsByClassName("summary_word_pointer");
-	const estimatedResult = linesToShow * 10;
+
+	// ---------------------------------------------------------
+	// Estimate the likely result.
+	// ---------------------------------------------------------
+
+	const pointer = document.createElement("a");
+	element.appendChild(pointer);
+	const startLineTop = pointer.offsetTop;
+
+	const estimatedResult = Math.min(linesToShow * 10, wordsLength);
+	span.innerHTML = formatSummary(words_arr, estimatedResult, false);
+	let currentLineTop = pointer.offsetTop;
+	const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
+	pointer.remove();
+	
+	if (estimatedLines <= linesToShow && estimatedResult === wordsLength) {
+		return true;
+	}
 
 	let wordsCount = 1;
-	let current = Math.min(estimatedResult, wordsLength);
+	let current = estimatedResult;
 	let result;
 	let pointerTops = [];
+	
 	// ---------------------------------------------------------
 	// Exponential search.
 	// ---------------------------------------------------------
@@ -475,8 +510,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	// ---------------------------------------------------------
 
 	const estimatedResult = Math.min(linesToShow * 10, wordsLength);
-	let wordsCount = estimatedResult;
-	span.innerHTML = formatSummary(words_arr, wordsCount, false);
+	span.innerHTML = formatSummary(words_arr, estimatedResult, false);
 	let currentLineTop = pointer.offsetTop;
 	const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
 
@@ -484,6 +518,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	// First pass.
 	// ---------------------------------------------------------
 
+	let wordsCount = estimatedResult;
 	let linesCount = estimatedLines;
 
 	// Estimate fits.
@@ -492,7 +527,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 
 		// Entire summary fits.
 		if (wordsCount === wordsLength) {
-			element.removeChild(pointer);
+			pointer.remove();
 			return true;
 		}
 
@@ -509,7 +544,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 
 		// Entire summary fits.
 		if (wordsCount === wordsLength) {
-			element.removeChild(pointer);
+			pointer.remove();
 			return true;
 		}
 	}
