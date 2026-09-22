@@ -271,15 +271,16 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 		}
 	}
 
-	// ---------------------------------------------------------
-	// Add expansion link.
-	// ---------------------------------------------------------
-
 	span.innerHTML = formatSummary(words_arr, wordsCount);
 	element.appendChild(pointer);
 	const lastLineTop = pointer.offsetTop;
 	pointer.remove();
-	
+
+	// ---------------------------------------------------------
+	// Add expansion link.
+	// ---------------------------------------------------------
+
+	span.innerHTML = formatSummary(words_arr, wordsCount, false);
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
