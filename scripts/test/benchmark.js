@@ -411,6 +411,11 @@ function testSummary(wordsCount) {
 				modifySummary(summaryDiv, words_arr, "red", line)
 		},
 		{
+			name: "Alg 1 mod",
+			run: (summaryDiv, words_arr, line) =>
+				modifySummaryMod(summaryDiv, words_arr, "red", line)
+		},
+		{
 			name: "Alg 2",
 			run: (summaryDiv, words_arr, line) =>
 				modifySummary2(summaryDiv, words_arr, "red", line)
@@ -746,6 +751,7 @@ function testSummary(wordsCount) {
 
 	console.log("=== SPEEDUP GRAPHS ===");
 	console.log("\u200B");
+	consoleSpeedupPlot("Alg 1", "Alg 1 mod", actualLines, "×");
 	consoleSpeedupPlot("Alg 1", "Alg 2", actualLines, "×");
 	consoleSpeedupPlot("Alg 1", "One By One", actualLines, "×");
 	consoleSpeedupPlot("Alg 2", "One By One", actualLines, "×");
