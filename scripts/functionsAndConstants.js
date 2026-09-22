@@ -349,8 +349,8 @@ t = performance.now();
 	pointerTops.push(...Array.from(pointers, p => p.offsetTop));
 let mapTime = performance.now() - t;
 
-console.log("for: ", forTime.toFixed(4), "ms");
-console.log("map: ", mapTime.toFixed(4), "ms");
+console.log("for:", forTime, "ms");
+console.log("map:", mapTime, "ms");
 
 	const tops = pointerTops.slice(0, current + 1);
 
