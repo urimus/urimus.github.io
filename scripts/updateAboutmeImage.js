@@ -170,7 +170,7 @@ function updateAboutMeImage3(lang, i) {
 	imageA.setAttribute('target', '_blank');
 	imageA.setAttribute('tabindex', "0");
 	imageA.style.float = "left";
-	imageA.style.marginRight = "5px";
+	imageA.style.margin = "0 5px 5px 0";
 	let title = "<div>Image #" + (i + 1) + "</div>";
 	title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
 	title += "NASA Image of the Day";
