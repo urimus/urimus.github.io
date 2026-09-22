@@ -333,7 +333,7 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
 }
 
 function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current) {
-	for (let i = pointerTops.length; i < pointers.length; i++) {
+	for (let i = 0; i < pointers.length; i++) {
 		pointerTops.push(pointers[i].offsetTop);
 	}
 	const tops = pointerTops.slice(0, current + 1);
@@ -396,7 +396,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 
 	while (true) {
-		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current, false);
+		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current);
 		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
 		if (result < current) break;
 		if (current === wordsLength) {
