@@ -409,7 +409,8 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 	// Binary search bounds.
 	// ---------------------------------------------------------
-
+console.log(span.innerHTML);
+console.log(result);
 	let left = result;
 	let right = current - 1;
 
