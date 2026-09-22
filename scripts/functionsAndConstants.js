@@ -346,7 +346,7 @@ pointerTops.length = 0;
 pointerTops.push(...savedPointerTops);
 
 t = performance.now();
-	pointerTops.push(...pointers.map(p => p.offsetTop));
+	pointerTops.push(...Array.from(pointers, p => p.offsetTop));
 let mapTime = performance.now() - t;
 
 console.log("for: ", forTime.toFixed(4), "ms");
