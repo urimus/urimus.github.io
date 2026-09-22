@@ -270,16 +270,16 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 			right = middle - 1;
 		}
 	}
-	
-	element.appendChild(pointer);
-	const lastLineTop = pointer.offsetTop;
-	pointer.remove();
-	
+
 	// ---------------------------------------------------------
 	// Add expansion link.
 	// ---------------------------------------------------------
 
 	span.innerHTML = formatSummary(words_arr, wordsCount);
+	element.appendChild(pointer);
+	const lastLineTop = pointer.offsetTop;
+	pointer.remove();
+	
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
@@ -299,10 +299,7 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 	// Final setup.
 	// ---------------------------------------------------------
-console.log(words_arr);
-console.log("expansionA.offsetTop -",expansionA.offsetTop);
-console.log("lastLineTop -",lastLineTop);
-console.log("wordsCount1 -",wordsCount);
+
 	if (Math.abs(expansionA.offsetTop - lastLineTop) >= 2) {
 		while (wordsCount > 1) {
 			wordsCount--;
@@ -312,7 +309,6 @@ console.log("wordsCount1 -",wordsCount);
 			}
 		}
 	}
-console.log("wordsCount2 -",wordsCount);
 	return false;
 }
 
