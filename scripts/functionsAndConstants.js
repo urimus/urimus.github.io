@@ -299,7 +299,9 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 	// Final setup.
 	// ---------------------------------------------------------
-
+console.log(words_arr);
+console.log("expansionA.offsetTop -",expansionA.offsetTop);
+console.log("lastLineTop -",lastLineTop);
 	if (Math.abs(expansionA.offsetTop - lastLineTop) >= 2) {
 		while (wordsCount > 1) {
 			wordsCount--;
