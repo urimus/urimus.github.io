@@ -409,10 +409,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 	// Binary search bounds.
 	// ---------------------------------------------------------
-console.log(words_arr);
-console.log("result =", result);
-console.log("current =", current);
-console.log("pointerTops.length =", pointerTops.length);
+
 	let left = result;
 	let right = current - 1;
 
@@ -424,11 +421,6 @@ console.log("pointerTops.length =", pointerTops.length);
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
 		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle);
-console.log(
-	"middle =", middle,
-	"result =", result,
-	"pointerTops.length =", pointerTops.length
-);
 		if (result >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
@@ -463,10 +455,6 @@ console.log(
 	// ---------------------------------------------------------
 
 	const lastLineTop = pointerTops[wordsCount];
-
-console.log(span.innerHTML);
-console.log("lastLineTop -",lastLineTop);
-console.log("expansionA.offsetTop -",expansionA.offsetTop);
 
 	if (Math.abs(expansionA.offsetTop - lastLineTop) >= 2) {
 		while (wordsCount > 1) {
