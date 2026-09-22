@@ -459,10 +459,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	if (Math.abs(expansionA.offsetTop - lastLineTop) >= 2) {
 		while (wordsCount > 1) {
 			wordsCount--;
-
 			span.innerHTML = formatSummary(words_arr, wordsCount);
-			element.appendChild(expansionA);
-
 			if (Math.abs(expansionA.offsetTop - lastLineTop) < 2) {
 				break;
 			}
