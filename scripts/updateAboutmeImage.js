@@ -189,11 +189,6 @@ function updateAboutMeImage3(lang, i) {
 	imageA.appendChild(imgSVG);
 	descDiv.appendChild(imageA);
 
-	let imgSpan = document.createElement('span');
-	imgSpan.setAttribute('class', "text_blue");
-	imgSpan.innerHTML = " ";
-	descDiv.appendChild(imgSpan);
-
 	let dateDiv = document.getElementById("dateDiv");
 	if (!dateDiv) {
 		dateDiv = document.createElement('div');
