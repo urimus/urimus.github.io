@@ -455,7 +455,11 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 
 	const lastLineTop = pointerTops[wordsCount];
-	
+
+console.log(span.innerHTML);
+console.log("lastLineTop -",lastLineTop);
+console.log("expansionA.offsetTop -",expansionA.offsetTop);
+
 	if (Math.abs(expansionA.offsetTop - lastLineTop) >= 2) {
 		while (wordsCount > 1) {
 			wordsCount--;
