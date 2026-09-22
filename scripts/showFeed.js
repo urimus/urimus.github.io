@@ -2389,9 +2389,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				comment: getMeta(doc, 'meta[property="og:image:alt"]')
 			};
 
-			if (source == "nasa" || source == "artemis") { // do not update NASA and Artemis description
-				description = result.entries[i].summary;
-			} else {
+			if (source != "nasa" && source != "artemis") { // do not update NASA and Artemis description
 				description = getMeta(doc, 'meta[name="description"]');
 				if (description == null) description = getMeta(doc, 'meta[property="og:description"]');
 				if (description == null) description = getMeta(doc, 'meta[name="twitter:description"]');
@@ -2534,7 +2532,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 			if (videoURL == null) videoURL = getMeta(doc, 'meta[property="og:video:url"]');
 
 			let locStUpdateDataNew = {};
-			if (description != null) {
+			if (description) {
 				result.entries[i].summary = description;
 				locStUpdateDataNew.summary = description;
 			}
