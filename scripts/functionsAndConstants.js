@@ -433,6 +433,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// Add expansion link.
 	// ---------------------------------------------------------
 
+	span.innerHTML = formatSummary(words_arr, wordsCount);
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
@@ -466,9 +467,6 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 				break;
 			}
 		}
-	} else {
-		// cleanup
-		span.innerHTML = formatSummary(words_arr, wordsCount);
 	}
 	
 	return false;
