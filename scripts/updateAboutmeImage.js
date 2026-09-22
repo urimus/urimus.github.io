@@ -158,7 +158,7 @@ function updateAboutMeImage3(lang, i) {
 
 	let item_description = null;
 	let description_words;
-	
+
 	if (item.description._text) {
 		item_description = DOMPurify.sanitize(item.description._text);
 		description_words = splitAllSpaces(item_description);
@@ -169,6 +169,8 @@ function updateAboutMeImage3(lang, i) {
 	imageA.setAttribute('class', 'standardb_blue icon_link');
 	imageA.setAttribute('target', '_blank');
 	imageA.setAttribute('tabindex', "0");
+	imageA.style.float = "left";
+	imageA.style.marginRight = "5px";
 	let title = "<div>Image #" + (i + 1) + "</div>";
 	title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
 	title += "NASA Image of the Day";

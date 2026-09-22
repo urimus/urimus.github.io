@@ -221,10 +221,6 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	if (estimatedLines <= linesToShow && estimatedResult === wordsLength) {
 		return true;
 	}
-	
-
-	// For blue, one line is occupied by the image.
-	if (col === "blue") linesToShow++;
 
 	let wordsCount = 1;
 	let current = estimatedResult;
