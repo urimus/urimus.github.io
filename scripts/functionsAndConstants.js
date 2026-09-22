@@ -307,7 +307,7 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 // Algorithm 2
 // ---------------------------------------------------------
 
-function formatSummaryWithPointers(pointerTops, words_arr, wordsCount, addSpace = true) {
+function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
 	const pointersClass = "summary_word_pointer";
 
 	if (!pointerTops.length) {
@@ -317,11 +317,11 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount, addSpace 
 				.map(word => {
 					return word + '<span class="' + pointersClass + '"></span>';
 				})
-				.join(" ") + (addSpace ? " " : "");
+				.join(" ");
 	}
 
 	const currentWordsCount = pointerTops.length - 1;
-	if (wordsCount <= currentWordsCount) return formatSummary(words_arr, wordsCount, addSpace);
+	if (wordsCount <= currentWordsCount) return formatSummary(words_arr, wordsCount, false);
 
 	return formatSummary(words_arr, currentWordsCount) +
 		words_arr
@@ -329,23 +329,17 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount, addSpace 
 			.map(word => {
 				return word + '<span class="' + pointersClass + '"></span>';
 			})
-			.join(" ") + (addSpace ? " " : "");
+			.join(" ");
 }
 
-function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, expansionA = null) {
+function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current) {
 	for (let i = pointerTops.length; i < pointers.length; i++) {
 		pointerTops.push(pointers[i].offsetTop);
 	}
 	const tops = pointerTops.slice(0, current + 1);
-	let expansionTop;
-	if (expansionA) {
-		expansionTop = expansionA.offsetTop;
-		tops.push(expansionTop);
-	}
 
 	let linesCount = Math.max(1, Math.round((tops[1] - tops[0]) / lineHeight) + 1);
 	let wordsCount = 1;
-	let wordsCountM1 = 1;
 	let previousTop = tops[1];
 
 	for (let i = 2; i < tops.length; i++) {
@@ -354,29 +348,10 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
 			previousTop = top;
 		}
-		if (linesCount > linesToShow) {
-			if (expansionA) wordsCount--;
-			return { wordsCount, wordsCountM1 };
-		}
+		if (linesCount > linesToShow) return wordsCount;
 		wordsCount = i;
-		if (linesCount <= linesToShow - 1) {
-			wordsCountM1 = i;
-		}
 	}
-	if (expansionA) {
-		// All current words fit.
-		// Check whether the expansion link moves to the next line.
-		if (expansionTop > previousTop) linesCount++;
-		if (linesCount <= linesToShow) {
-			wordsCount = current;
-			if (linesCount <= linesToShow - 1) {
-				wordsCountM1 = current;
-			}
-		} else {
-			wordsCount = current - 1;
-		}
-	}
-	return { wordsCount, wordsCountM1 };
+	return wordsCount;
 }
 
 function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
@@ -423,12 +398,35 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	while (true) {
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current, false);
 		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
-		if (result.wordsCount < current) break;
+		if (result < current) break;
 		if (current === wordsLength) {
 			span.innerHTML = formatSummary(words_arr, wordsLength, false);
 			return true;
 		}
 		current = Math.min(current * 2, wordsLength);
+	}
+
+	// ---------------------------------------------------------
+	// Binary search bounds.
+	// ---------------------------------------------------------
+
+	let left = result;
+	let right = current - 1;
+
+	// ---------------------------------------------------------
+	// Binary search.
+	// ---------------------------------------------------------
+
+	while (left <= right) {
+		const middle = Math.floor((left + right) / 2);
+		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
+		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle);
+		if (result >= middle) {
+			wordsCount = middle;
+			left = middle + 1;
+		} else {
+			right = middle - 1;
+		}
 	}
 
 	// ---------------------------------------------------------
@@ -452,33 +450,27 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	element.appendChild(expansionA);
 
 	// ---------------------------------------------------------
-	// Binary search bounds.
-	// ---------------------------------------------------------
-
-	let left = result.wordsCountM1;
-	let right = current - 1;
-
-	// ---------------------------------------------------------
-	// Binary search.
-	// ---------------------------------------------------------
-
-	while (left <= right) {
-		const middle = Math.floor((left + right) / 2);
-		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
-		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle, expansionA);
-		if (result.wordsCount >= middle) {
-			wordsCount = middle;
-			left = middle + 1;
-		} else {
-			right = middle - 1;
-		}
-	}
-
-	// ---------------------------------------------------------
 	// Final setup.
 	// ---------------------------------------------------------
 
-	span.innerHTML = formatSummary(words_arr, wordsCount);
+	const lastLineTop = pointerTops[wordsCount];
+	
+	if (Math.abs(expansionA.offsetTop - lastLineTop) >= 2) {
+		while (wordsCount > 1) {
+			wordsCount--;
+
+			span.innerHTML = formatSummary(words_arr, wordsCount);
+			element.appendChild(expansionA);
+
+			if (Math.abs(expansionA.offsetTop - lastLineTop) < 2) {
+				break;
+			}
+		}
+	} else {
+		// cleanup
+		span.innerHTML = formatSummary(words_arr, wordsCount);
+	}
+	
 	return false;
 }
 
