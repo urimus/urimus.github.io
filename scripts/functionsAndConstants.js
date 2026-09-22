@@ -334,24 +334,7 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
 
 function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current) {
 	
-const savedPointerTops = pointerTops.slice();
-
-let t = performance.now();
-	for (let i = 0; i < pointers.length; i++) {
-		pointerTops.push(pointers[i].offsetTop);
-	}
-let forTime = performance.now() - t;
-
-pointerTops.length = 0;
-pointerTops.push(...savedPointerTops);
-
-t = performance.now();
 	pointerTops.push(...Array.from(pointers, p => p.offsetTop));
-let mapTime = performance.now() - t;
-
-console.log("for:", forTime, "ms");
-console.log("map:", mapTime, "ms");
-
 	const tops = pointerTops.slice(0, current + 1);
 
 	let linesCount = Math.max(1, Math.round((tops[1] - tops[0]) / lineHeight) + 1);
