@@ -250,9 +250,36 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	}
 
 	// ---------------------------------------------------------
+	// Binary search bounds.
+	// ---------------------------------------------------------
+
+	let right = current - 1;
+
+	// ---------------------------------------------------------
+	// Binary search.
+	// ---------------------------------------------------------
+
+	while (left <= right) {
+		const middle = Math.floor((left + right) / 2);
+		span.innerHTML = formatSummary(words_arr, middle, false);
+		const result = getLineInfo(element, linesToShow);
+		if (result.fitsLinesToShow) {
+			wordsCount = middle;
+			left = middle + 1;
+		} else {
+			right = middle - 1;
+		}
+	}
+	
+	element.appendChild(pointer);
+	const lastLineTop = pointer.offsetTop;
+	pointer.remove();
+	
+	// ---------------------------------------------------------
 	// Add expansion link.
 	// ---------------------------------------------------------
 
+	span.innerHTML = formatSummary(words_arr, wordsCount);
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
@@ -268,34 +295,21 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	};
 	expansionA.innerHTML = "[▼]";
 	element.appendChild(expansionA);
-
-	// ---------------------------------------------------------
-	// Binary search bounds.
-	// ---------------------------------------------------------
-
-	let right = current - 1;
-
-	// ---------------------------------------------------------
-	// Binary search.
-	// ---------------------------------------------------------
-
-	while (left <= right) {
-		const middle = Math.floor((left + right) / 2);
-		span.innerHTML = formatSummary(words_arr, middle);
-		const result = getLineInfo(element, linesToShow);
-		if (result.fitsLinesToShow) {
-			wordsCount = middle;
-			left = middle + 1;
-		} else {
-			right = middle - 1;
-		}
-	}
 	
 	// ---------------------------------------------------------
 	// Final setup.
 	// ---------------------------------------------------------
+
+	if (Math.abs(expansionA.offsetTop - lastLineTop) >= 2) {
+		while (wordsCount > 1) {
+			wordsCount--;
+			span.innerHTML = formatSummary(words_arr, wordsCount);
+			if (Math.abs(expansionA.offsetTop - lastLineTop) < 2) {
+				break;
+			}
+		}
+	}
 	
-	span.innerHTML = formatSummary(words_arr, wordsCount);
 	return false;
 }
 
