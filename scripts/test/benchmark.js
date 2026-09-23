@@ -278,7 +278,7 @@ function consolePlot(title, perf, unit = "ms") {
 		`LEGEND: ` +
 		`%c${POINT}%c - summary does not fit lines, ` +
 		`%c${POINT}%c - summary fits lines - early exit, ` +
-		`%c${MEASURED_LINE}%c - measured lines count: ${measuredLines}`,
+		`%c${MEASURED_LINE}%c - summary size: ${measuredLines} lines`,
 		COLORS.normalPoint,
 		"",
 		COLORS.earlyPoint,
