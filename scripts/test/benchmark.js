@@ -87,7 +87,8 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		medianNoEE,
 		geometricMean,
 		geometricMeanEE,
-		geometricMeanNoEE
+		geometricMeanNoEE,
+		measuredLines
 	} = perf;
 
 	const WIDTH = 90;
@@ -98,7 +99,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 
 	// Symbols
 	const POINT = "●";
-	const ACTUAL_LINE = "┊";
+	const MEASURED_LINE = "┊";
 	const AXIS = "│";
 	const H_AXIS = "─";
 	const CORNER = "└";
@@ -109,7 +110,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	const COLORS = {
 		normalPoint: "color: #ff5555; font-weight: bold;",
 		earlyPoint: "color: #bd93f9; font-weight: bold;",
-		actualLine: "color: #888;",
+		measuredLine: "color: #888;",
 		axis: "color: #888;",
 		labels: "color: #aaa;",
 		mean: "color: #5599ff; font-weight: bold;"
@@ -129,10 +130,10 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		);
 	}
 
-	const actualLinesIndex = actualLines - 1;
-	const actualLinesCol =
-		actualLines >= 1 && actualLines <= times.length
-			? indexToCol(actualLinesIndex)
+	const measuredLinesIndex = measuredLines - 1;
+	const measuredLinesCol =
+		measuredLines >= 1 && measuredLines <= times.length
+			? indexToCol(measuredLinesIndex)
 			: null;
 
 	// ============================================================
@@ -152,15 +153,15 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 	);
 
 	// ============================================================
-	// ACTUAL LINES
+	// MEASURED LINE
 	// ============================================================
 
-	if (actualLinesCol !== null) {
+	if (measuredLinesCol !== null) {
 		for (let row = 0; row <= HEIGHT; row++) {
-			if (grid[row][actualLinesCol].char === " ") {
-				grid[row][actualLinesCol] = {
-					char: ACTUAL_LINE,
-					style: COLORS.actualLine
+			if (grid[row][measuredLinesCol].char === " ") {
+				grid[row][measuredLinesCol] = {
+					char: MEASURED_LINE,
+					style: COLORS.measuredLine
 				};
 			}
 		}
@@ -277,7 +278,7 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		`LEGEND: ` +
 		`%c${POINT}%c - summary does not fit lines, ` +
 		`%c${POINT}%c - summary fits lines - early exit, ` +
-		`%c${ACTUAL_LINE}%c - actual lines = ${actualLines}`,
+		`%c${ACTUAL_LINE}%c - measured lines: ${measuredLines} (${actualLines})`,
 		COLORS.normalPoint,
 		"",
 		COLORS.earlyPoint,
@@ -503,7 +504,7 @@ function testSummary(wordsCount) {
 			earlyExits: []
 		});
 	}
-	
+
 	// =========================================================
 	// RUN BENCHMARK
 	// =========================================================
@@ -616,6 +617,7 @@ function testSummary(wordsCount) {
 			}
 		}
 
+		perf.measuredLines = countEE > 0 ? MIN_LINES + countNoEE : `> ${MAX_LINES}`;
 		const standardDeviation = Math.sqrt(varianceSum / perf.count);
 		perf.geometricMean = Math.exp(logSum / perf.count);
 		if (countEE > 0) {
