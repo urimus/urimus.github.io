@@ -73,7 +73,7 @@ function randomWord() {
 	return word;
 }
 
-function consolePlot(title, perf, actualLines, unit = "ms") {
+function consolePlot(title, perf, unit = "ms") {
 	const {
 		times,
 		earlyExits,
@@ -278,12 +278,12 @@ function consolePlot(title, perf, actualLines, unit = "ms") {
 		`LEGEND: ` +
 		`%c${POINT}%c - summary does not fit lines, ` +
 		`%c${POINT}%c - summary fits lines - early exit, ` +
-		`%c${MEASURED_LINE}%c - measured lines: ${measuredLines} (${actualLines})`,
+		`%c${MEASURED_LINE}%c - measured lines: ${measuredLines}`,
 		COLORS.normalPoint,
 		"",
 		COLORS.earlyPoint,
 		"",
-		COLORS.actualLine,
+		COLORS.measuredLine,
 		""
 	);
 
@@ -665,7 +665,7 @@ function testSummary(wordsCount) {
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
 		if (!perf?.times?.length) continue;
-		consolePlot(algorithm.name, perf, actualLines);
+		consolePlot(algorithm.name, perf);
 	}
 
 	// =========================================================
@@ -728,7 +728,7 @@ function testSummary(wordsCount) {
 		return result;
 	}
 
-	function consoleSpeedupPlot(algorithmA, algorithmB, actualLines, unit) {
+	function consoleSpeedupPlot(algorithmA, algorithmB, unit) {
 
 		const algA = getAlgorithm(algorithmA);
 		const algB = getAlgorithm(algorithmB);
@@ -749,16 +749,16 @@ function testSummary(wordsCount) {
 			? `Speedup: %c${algA.name}%c ↔ ${algB.name}`
 			: `Speedup: ${algA.name} ↔ %c${algB.name}%c`;
 
-		consolePlot(title, speedupPerf, actualLines, unit);
+		consolePlot(title, speedupPerf, unit);
 	}
 
 	console.log("=== SPEEDUP GRAPHS ===");
 	console.log("\u200B");
-	consoleSpeedupPlot("Alg 1", "Alg 1 mod", actualLines, "×");
-	consoleSpeedupPlot("Alg 1", "Alg 2", actualLines, "×");
-	consoleSpeedupPlot("Alg 2", "Alg 1 mod", actualLines, "×");
-	consoleSpeedupPlot("Alg 1", "One By One", actualLines, "×");
-	consoleSpeedupPlot("Alg 2", "One By One", actualLines, "×");
+	consoleSpeedupPlot("Alg 1", "Alg 1 mod", "×");
+	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
+	consoleSpeedupPlot("Alg 2", "Alg 1 mod", "×");
+	consoleSpeedupPlot("Alg 1", "One By One", "×");
+	consoleSpeedupPlot("Alg 2", "One By One", "×");
 
 	// =========================================================
 	// COMPLETE
