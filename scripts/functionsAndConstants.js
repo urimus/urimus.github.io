@@ -166,7 +166,7 @@ function formatSummary(words_arr, wordsCount, addSpace = true) {
 	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
 }
 
-function isEqualTops(top1, top2, tolerance = 2) {
+function isApprox(top1, top2, tolerance = 2) {
 	return Math.abs(top1 - top2) < tolerance;
 }
 
@@ -416,11 +416,11 @@ function modifySummaryMod(element, words_arr, col = "blue", linesToShow = 4) {
 	// Final setup.
 	// ---------------------------------------------------------
 
-	if (!isEqualTops(expansionA.offsetTop, lastLineTop)) {
+	if (!isApprox(expansionA.offsetTop, lastLineTop)) {
 		while (wordsCount > 1) {
 			wordsCount--;
 			span.innerHTML = formatSummary(words_arr, wordsCount);
-			if (isEqualTops(expansionA.offsetTop, lastLineTop)) {
+			if (isApprox(expansionA.offsetTop, lastLineTop)) {
 				break;
 			}
 		}
@@ -473,7 +473,7 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current) 
 
 	for (let i = 2; i < tops.length; i++) {
 		const top = tops[i];
-		if (!isEqualTops(top, previousTop)) {
+		if (!isApprox(top, previousTop)) {
 			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
 			previousTop = top;
 		}
@@ -588,11 +588,11 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 
 	const lastLineTop = pointerTops[wordsCount];
 
-	if (!isEqualTops(expansionA.offsetTop, lastLineTop)) {
+	if (!isApprox(expansionA.offsetTop, lastLineTop)) {
 		while (wordsCount > 1) {
 			wordsCount--;
 			span.innerHTML = formatSummary(words_arr, wordsCount);
-			if (isEqualTops(expansionA.offsetTop, lastLineTop)) {
+			if (isApprox(expansionA.offsetTop, lastLineTop)) {
 				break;
 			}
 		}
@@ -650,7 +650,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 			wordsCount = k + 1;
 			span.innerHTML = formatSummary(words_arr, wordsCount, false);
 			const pointerTop = pointer.offsetTop;
-			if (isEqualTops(pointerTop, currentLineTop)) continue;
+			if (isApprox(pointerTop, currentLineTop)) continue;
 			const additionalLines = Math.max(1, Math.round((pointerTop - currentLineTop) / lineHeight));
 			if (linesCount + additionalLines > linesToShow) break;
 			linesCount += additionalLines;
@@ -671,7 +671,7 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 			wordsCount--;
 			span.innerHTML = formatSummary(words_arr, wordsCount, false);
 			const pointerTop = pointer.offsetTop;
-			if (isEqualTops(pointerTop, currentLineTop)) continue;
+			if (isApprox(pointerTop, currentLineTop)) continue;
 			const removedLines = Math.max(1, Math.round((currentLineTop - pointerTop) / lineHeight));
 			linesCount -= removedLines;
 			currentLineTop = pointerTop;
@@ -706,11 +706,11 @@ function modifySummaryOneByOne(element, words_arr, col = "blue", linesToShow = 4
 	// Search backwards with the expansion link present.
 	// ---------------------------------------------------------
 
-	if (!isEqualTops(expansionA.offsetTop, currentLineTop)) {
+	if (!isApprox(expansionA.offsetTop, currentLineTop)) {
 		while (wordsCount > 1) {
 			wordsCount--;
 			span.innerHTML = formatSummary(words_arr, wordsCount);
-			if (isEqualTops(expansionA.offsetTop, currentLineTop)) break;
+			if (isApprox(expansionA.offsetTop, currentLineTop)) break;
 		}
 	}
 	return false;
