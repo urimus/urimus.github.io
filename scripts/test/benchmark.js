@@ -753,6 +753,7 @@ function testSummary(wordsCount) {
 	console.log("\u200B");
 	consoleSpeedupPlot("Alg 1", "Alg 1 mod", actualLines, "×");
 	consoleSpeedupPlot("Alg 1", "Alg 2", actualLines, "×");
+	consoleSpeedupPlot("Alg 2", "Alg 1 mod", actualLines, "×");
 	consoleSpeedupPlot("Alg 1", "One By One", actualLines, "×");
 	consoleSpeedupPlot("Alg 2", "One By One", actualLines, "×");
 
