@@ -464,6 +464,7 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current) 
 
 	let linesCount = Math.max(1, Math.round((tops[1] - tops[0]) / lineHeight) + 1);
 	let wordsCount = 1;
+	let wordsCountM1 = 1;
 	let previousTop = tops[1];
 
 	for (let i = 2; i < tops.length; i++) {
@@ -472,10 +473,13 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current) 
 			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
 			previousTop = top;
 		}
-		if (linesCount > linesToShow) return wordsCount;
+		if (linesCount > linesToShow) return { wordsCount, wordsCountM1 };
 		wordsCount = i;
+		if (linesCount <= linesToShow - 1) {
+			wordsCountM1 = i;
+		}
 	}
-	return wordsCount;
+	return { wordsCount, wordsCountM1 };
 }
 
 function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
@@ -522,7 +526,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	while (true) {
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current);
 		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
-		if (result < current) break;
+		if (result.wordsCount < current) break;
 		if (current === wordsLength) {
 			span.innerHTML = formatSummary(words_arr, wordsLength, false);
 			return true;
@@ -534,7 +538,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// Binary search bounds.
 	// ---------------------------------------------------------
 
-	let left = result;
+	let left = result.wordsCountM1;
 	let right = current - 1;
 
 	// ---------------------------------------------------------
@@ -545,7 +549,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
 		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle);
-		if (result >= middle) {
+		if (result.wordsCount >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
 		} else {
