@@ -708,7 +708,8 @@ function testSummary(wordsCount) {
 			max: Math.max(...times),
 			times,
 			isAFaster,
-			earlyExits: [...perfFast.earlyExits]
+			earlyExits: [...perfFast.earlyExits],
+			measuredLines: [...perfFast.measuredLines]
 		};
 
 		if (
