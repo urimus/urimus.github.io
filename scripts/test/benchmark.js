@@ -709,7 +709,7 @@ function testSummary(wordsCount) {
 			times,
 			isAFaster,
 			earlyExits: [...perfFast.earlyExits],
-			measuredLines: [...perfFast.measuredLines]
+			measuredLines: perfFast.measuredLines
 		};
 
 		if (
