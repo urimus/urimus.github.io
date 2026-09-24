@@ -2050,8 +2050,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				newEntry.media.url = mediaContent[0]._attributes.url;
 				newEntry.media.comment = createMediaComment(
 					mediaContent[0],
-					"media:description",
 					"media:title",
+					"media:description",
 					"media:credit"
 				);
 
