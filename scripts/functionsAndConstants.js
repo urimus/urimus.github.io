@@ -226,9 +226,12 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 		return true;
 	}
 
+	// ---------------------------------------------------------
+	// Init.
+	// ---------------------------------------------------------
+
 	let wordsCount = 1;
 	let current = estimatedResult;
-
 	// Binary search bound.
 	let left = 1;
 
@@ -373,8 +376,6 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 		return true;
 	}
 	const lineHeight = getLineHeight(span);
-	const pointersLive = span.getElementsByClassName("summary_word_pointer");
-
 
 	// ---------------------------------------------------------
 	// Estimate the likely result, faster than if to use Exponential search.
@@ -394,11 +395,16 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 		return true;
 	}
 
+	// ---------------------------------------------------------
+	// Init.
+	// ---------------------------------------------------------
+
 	let wordsCount = 1;
 	let current = estimatedResult;
 	let pointerTops = [];
 	let result;
-
+	const pointersLive = span.getElementsByClassName("summary_word_pointer");
+	
 	// ---------------------------------------------------------
 	// Exponential search.
 	// ---------------------------------------------------------
