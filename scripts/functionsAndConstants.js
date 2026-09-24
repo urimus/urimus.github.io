@@ -381,7 +381,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	let result;
 	
 	// ---------------------------------------------------------
-	// Exponential search.
+	// Exponential search with Estimate the likely result.
 	// ---------------------------------------------------------
 
 	while (true) {
