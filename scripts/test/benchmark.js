@@ -417,11 +417,6 @@ function testSummary(wordsCount) {
 				modifySummary2(summaryDiv, words_arr, "red", line)
 		},
 		{
-			name: "Alg 2 No Est",
-			run: (summaryDiv, words_arr, line) =>
-				modifySummary2NoEst(summaryDiv, words_arr, "red", line)
-		},
-		{
 			name: "One By One",
 			run: (summaryDiv, words_arr, line) =>
 				modifySummaryOneByOne(summaryDiv, words_arr, "red", line)
@@ -756,7 +751,6 @@ function testSummary(wordsCount) {
 	console.log("\u200B");
 	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
 	consoleSpeedupPlot("Alg 1", "One By One", "×");
-	consoleSpeedupPlot("Alg 2", "Alg 2 No Est", "×");
 	consoleSpeedupPlot("Alg 2", "One By One", "×");
 
 	// =========================================================
