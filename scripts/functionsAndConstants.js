@@ -483,6 +483,109 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	return false;
 }
 
+
+function modifySummary2NoEst(element, words_arr, col = "blue", linesToShow = 4) {
+	const wordsLength = words_arr.length;
+	if (!wordsLength) return true;
+
+	const span = createSpan(element, col);
+
+	// one word only
+	if (wordsLength === 1) {
+		span.innerHTML = words_arr[0];
+		return true;
+	}
+	const lineHeight = getLineHeight(span);
+
+	// ---------------------------------------------------------
+	// Init.
+	// ---------------------------------------------------------
+
+	let wordsCount = 1;
+	let current = Math.min(linesToShow * 10, wordsLength);
+	let pointerTops = [];
+	let result;
+	const pointersLive = span.getElementsByClassName("summary_word_pointer");
+	
+	// ---------------------------------------------------------
+	// Exponential search.
+	// ---------------------------------------------------------
+
+	while (true) {
+		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current);
+		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
+		if (result.wordsCount < current) break;
+		if (current === wordsLength) {
+			span.innerHTML = formatSummary(words_arr, wordsLength, false);
+			return true;
+		}
+		current = Math.min(current * 2, wordsLength);
+	}
+
+	// ---------------------------------------------------------
+	// Binary search bounds.
+	// ---------------------------------------------------------
+
+	let left = result.wordsCountM1;
+	let right = current - 1;
+
+	// ---------------------------------------------------------
+	// Binary search.
+	// ---------------------------------------------------------
+
+	while (left <= right) {
+		const middle = Math.floor((left + right) / 2);
+		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
+		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle);
+		if (result.wordsCount >= middle) {
+			wordsCount = middle;
+			left = middle + 1;
+		} else {
+			right = middle - 1;
+		}
+	}
+
+	// ---------------------------------------------------------
+	// Add expansion link.
+	// ---------------------------------------------------------
+
+	span.innerHTML = formatSummary(words_arr, wordsCount);
+	const expansionA = document.createElement("a");
+	expansionA.setAttribute("href", "javascript:void(0);");
+	expansionA.setAttribute("class", "standardb_" + col);
+	let isExpanded = false;
+	let isAnimating = false;
+	expansionA.onclick = function () {
+		if (isAnimating) return;
+		isAnimating = true;
+		isExpanded = !isExpanded;
+		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
+		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
+		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
+	};
+	expansionA.innerHTML = "[▼]";
+	element.appendChild(expansionA);
+
+	// ---------------------------------------------------------
+	// Final setup.
+	// ---------------------------------------------------------
+
+	const lastLineTop = pointerTops[wordsCount];
+
+	if (!isApprox(expansionA.offsetTop, lastLineTop)) {
+		while (wordsCount > 1) {
+			wordsCount--;
+			span.innerHTML = formatSummary(words_arr, wordsCount);
+			if (isApprox(expansionA.offsetTop, lastLineTop)) {
+				break;
+			}
+		}
+	}
+	
+	return false;
+}
+
+
 // ---------------------------------------------------------
 // One By One
 // ---------------------------------------------------------
