@@ -375,13 +375,32 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	const lineHeight = getLineHeight(span);
 	const pointersLive = span.getElementsByClassName("summary_word_pointer");
 
+
+	// ---------------------------------------------------------
+	// Estimate the likely result, faster than if to use Exponential search.
+	// ---------------------------------------------------------
+
+	const pointer = document.createElement("a");
+	element.appendChild(pointer);
+	const startLineTop = pointer.offsetTop;
+
+	const estimatedResult = Math.min(linesToShow * 10, wordsLength);
+	span.innerHTML = formatSummary(words_arr, estimatedResult, false);
+	let currentLineTop = pointer.offsetTop;
+	const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
+	pointer.remove();
+	
+	if (estimatedLines <= linesToShow && estimatedResult === wordsLength) {
+		return true;
+	}
+
 	let wordsCount = 1;
-	let current = Math.min(linesToShow * 10, wordsLength);
+	let current = estimatedResult;
 	let pointerTops = [];
 	let result;
-	
+
 	// ---------------------------------------------------------
-	// Exponential search with Estimate the likely result.
+	// Exponential search.
 	// ---------------------------------------------------------
 
 	while (true) {
