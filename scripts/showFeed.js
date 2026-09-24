@@ -2064,8 +2064,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 						url: item._attributes.url,
 						comment: createMediaComment(
 							item,
-							"media:description",
 							"media:title",
+							"media:description",
 							"media:credit"
 						)
 					}));
