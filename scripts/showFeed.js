@@ -522,36 +522,51 @@ function showFeedData(type, source, lang, result) {
 	}
 }
 
-function extractLines(html) {
+function extractSummaryWords(html) {
 	const parser = new DOMParser();
-	const doc = parser.parseFromString(html, 'text/html');
+	const doc = parser.parseFromString(html, "text/html");
 
-	doc.querySelectorAll('figure, img').forEach(el => el.remove());
+	doc.querySelectorAll("figure, img").forEach(el => el.remove());
 
-	doc.querySelectorAll('p').forEach(p => {
-		p.replaceWith(document.createTextNode(p.innerText + '\n'));
+	const lines = [];
+	const paragraphs = doc.querySelectorAll("p");
+
+	const elements = paragraphs.length
+		? paragraphs
+		: [doc.body];
+
+	elements.forEach(el => {
+		el.innerText
+			.replaceAll("\\n", "\n")
+			.split("\n")
+			.forEach(line => {
+				line = line.trim();
+
+				if (line) {
+					lines.push(line);
+				}
+			});
 	});
 
-	return doc.body.innerText
-		.replaceAll("\\n", "\n")
-		.split("\n")
-		.map(s => s.trim())
-		.filter(Boolean);
+	if (lines.length <= 1) {
+		return splitAllSpaces(lines[0] || "");
+	}
+
+	const paddingSpan = "<span style='padding-left:10px;'><span>";
+	const result = [];
+	lines.forEach(line => {
+		const words = splitAllSpaces(line);
+		if (words.length) {
+			words[0] = paddingSpan + words[0];
+		}
+		result.push(...words);
+	});
+	return result;
 }
 
 function formatSummaryDiv(summaryDiv, entry) {
-	let entry_summary = DOMPurify.sanitize(entry.summary);
-	let summary_words;
-	const lines = extractLines(entry_summary);
-	if (lines.length > 1) {
-		const paddingSpan = "<span style='padding-left:10px;'><span>";
-		const placeholder = "\\n";
-		entry_summary  = paddingSpan + lines.join(" <br>" + paddingSpan);
-		summary_words = splitAllSpaces(entry_summary.replaceAll(paddingSpan, placeholder))
-			.map(s => s.replaceAll(placeholder, paddingSpan));
-	} else {
-		summary_words = splitAllSpaces(lines[0] || "");
-	}
+	const entry_summary = DOMPurify.sanitize(entry.summary);
+	const summary_words = extractSummaryWords(entry_summary);
 
 	summaryDiv.innerHTML = "";
 	modifySummary(summaryDiv, summary_words, "red", 4);
