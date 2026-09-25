@@ -554,7 +554,7 @@ function extractSummaryWords(html) {
 
 	const paddingSpan = "<span style='padding-left:10px;'><span>";
 	const result = [];
-	lines.forEach(line => {
+	lines.forEach((line, index) => {
 		const words = splitAllSpaces(line);
 		if (words.length) {
 			words[0] = (index === 0 ? paddingSpan : "<br>" + paddingSpan) + words[0];
