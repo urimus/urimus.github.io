@@ -315,16 +315,13 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 // ---------------------------------------------------------
 
 function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
-	const pointersClass = "summary_word_pointer";
+	const pointerSpan = '<span class="summary_word_pointer"></span>';
 
 	if (!pointerTops.length) {
-		return '<span class="' + pointersClass + '"></span>' +
+		return pointerSpan +
 			words_arr
 				.slice(0, wordsCount)
-				.map(word => {
-					return word + '<span class="' + pointersClass + '"></span>';
-				})
-				.join(" ");
+				.join(pointerSpan + " ") + pointerSpan;
 	}
 
 	const currentWordsCount = pointerTops.length - 1;
@@ -333,10 +330,7 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
 	return formatSummary(words_arr, currentWordsCount) +
 		words_arr
 			.slice(currentWordsCount, wordsCount)
-			.map(word => {
-				return word + '<span class="' + pointersClass + '"></span>';
-			})
-			.join(" ");
+			.join(pointerSpan + " ") + pointerSpan;
 }
 
 function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current) {
