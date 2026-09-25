@@ -341,7 +341,9 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
 
 function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current) {
 	
-	pointerTops.push(...Array.from(pointers, p => p.offsetTop));
+	for (let i = 0; i < pointers.length; i++) {
+		pointerTops.push(pointers[i].offsetTop);
+	}
 
 	let linesCount = Math.max(1, Math.round((pointerTops[1] - pointerTops[0]) / lineHeight) + 1);
 	let wordsCount = 1;
@@ -434,151 +436,6 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
 		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle);
-		if (result.wordsCount >= middle) {
-			wordsCount = middle;
-			left = middle + 1;
-		} else {
-			right = middle - 1;
-		}
-	}
-
-	// ---------------------------------------------------------
-	// Add expansion link.
-	// ---------------------------------------------------------
-
-	span.innerHTML = formatSummary(words_arr, wordsCount);
-	const expansionA = document.createElement("a");
-	expansionA.setAttribute("href", "javascript:void(0);");
-	expansionA.setAttribute("class", "standardb_" + col);
-	let isExpanded = false;
-	let isAnimating = false;
-	expansionA.onclick = function () {
-		if (isAnimating) return;
-		isAnimating = true;
-		isExpanded = !isExpanded;
-		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
-		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
-		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
-	};
-	expansionA.innerHTML = "[▼]";
-	element.appendChild(expansionA);
-
-	// ---------------------------------------------------------
-	// Final setup.
-	// ---------------------------------------------------------
-
-	const lastLineTop = pointerTops[wordsCount];
-
-	if (!isApprox(expansionA.offsetTop, lastLineTop)) {
-		while (wordsCount > 1) {
-			wordsCount--;
-			span.innerHTML = formatSummary(words_arr, wordsCount);
-			if (isApprox(expansionA.offsetTop, lastLineTop)) {
-				break;
-			}
-		}
-	}
-	
-	return false;
-}
-
-function getWordsCountFor(pointers, pointerTops, linesToShow, lineHeight, current) {
-	
-	for (let i = 0; i < pointers.length; i++) {
-		pointerTops.push(pointers[i].offsetTop);
-	}
-
-	let linesCount = Math.max(1, Math.round((pointerTops[1] - pointerTops[0]) / lineHeight) + 1);
-	let wordsCount = 1;
-	let wordsCountM1 = 1;
-	let previousTop = pointerTops[1];
-
-	for (let i = 2; i <= current; i++) {
-		const top = pointerTops[i];
-		if (!isApprox(top, previousTop)) {
-			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
-			previousTop = top;
-		}
-		if (linesCount > linesToShow) return { wordsCount, wordsCountM1 };
-		wordsCount = i;
-		if (linesCount <= linesToShow - 1) {
-			wordsCountM1 = i;
-		}
-	}
-	return { wordsCount, wordsCountM1 };
-}
-
-function modifySummary2For(element, words_arr, col = "blue", linesToShow = 4) {
-	const wordsLength = words_arr.length;
-	if (!wordsLength) return true;
-
-	const span = createSpan(element, col);
-
-	// one word only
-	if (wordsLength === 1) {
-		span.innerHTML = words_arr[0];
-		return true;
-	}
-	const lineHeight = getLineHeight(span);
-
-	// ---------------------------------------------------------
-	// Estimate the likely result, faster than if to use Exponential search.
-	// ---------------------------------------------------------
-
-	const pointer = document.createElement("a");
-	element.appendChild(pointer);
-	const startLineTop = pointer.offsetTop;
-
-	const estimatedResult = Math.min(linesToShow * 10, wordsLength);
-	span.innerHTML = formatSummary(words_arr, estimatedResult, false);
-	let currentLineTop = pointer.offsetTop;
-	const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
-	pointer.remove();
-	
-	if (estimatedLines <= linesToShow && estimatedResult === wordsLength) {
-		return true;
-	}
-
-	// ---------------------------------------------------------
-	// Init.
-	// ---------------------------------------------------------
-
-	let wordsCount = 1;
-	let current = estimatedResult;
-	let pointerTops = [];
-	let result;
-	const pointersLive = span.getElementsByClassName("summary_word_pointer");
-	
-	// ---------------------------------------------------------
-	// Exponential search.
-	// ---------------------------------------------------------
-
-	while (true) {
-		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current);
-		result = getWordsCountFor(pointersLive, pointerTops, linesToShow, lineHeight, current);
-		if (result.wordsCount < current) break;
-		if (current === wordsLength) {
-			span.innerHTML = formatSummary(words_arr, wordsLength, false);
-			return true;
-		}
-		current = Math.min(current * 2, wordsLength);
-	}
-
-	// ---------------------------------------------------------
-	// Binary search bounds.
-	// ---------------------------------------------------------
-
-	let left = result.wordsCountM1;
-	let right = current - 1;
-
-	// ---------------------------------------------------------
-	// Binary search.
-	// ---------------------------------------------------------
-
-	while (left <= right) {
-		const middle = Math.floor((left + right) / 2);
-		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
-		result = getWordsCountFor(pointersLive, pointerTops, linesToShow, lineHeight, middle);
 		if (result.wordsCount >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
