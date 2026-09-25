@@ -523,8 +523,8 @@ function showFeedData(type, source, lang, result) {
 }
 
 function extractLines(html) {
-	let parser = new DOMParser();
-	let doc = parser.parseFromString(html, 'text/html');
+	const parser = new DOMParser();
+	const doc = parser.parseFromString(html, 'text/html');
 
 	doc.querySelectorAll('figure, img').forEach(el => el.remove());
 
@@ -539,20 +539,16 @@ function extractLines(html) {
 		.filter(Boolean);
 }
 
-function splitIgnoringSpecialSpan(str) {
-	const placeholder = "\\n";
-	const specialSpan = "<span style='padding-left:10px;'><span>";
-	return splitAllSpaces(str.replaceAll(specialSpan, placeholder))
-		.map(s => s.replaceAll(placeholder, specialSpan));
-}
-
 function formatSummaryDiv(summaryDiv, entry) {
 	let entry_summary = DOMPurify.sanitize(entry.summary);
 	let summary_words;
-	let lines = extractLines(entry_summary);
+	const lines = extractLines(entry_summary);
 	if (lines.length > 1) {
-		entry_summary  = "<span style='padding-left:10px;'><span>" + lines.join(" <br><span style='padding-left:10px;'><span>");
-		summary_words = splitIgnoringSpecialSpan(entry_summary);
+		const paddingSpan = "<span style='padding-left:10px;'><span>";
+		const placeholder = "\\n";
+		entry_summary  = paddingSpan + lines.join(" <br>" + paddingSpan);
+		summary_words = splitAllSpaces(entry_summary.replaceAll(paddingSpan, placeholder))
+			.map(s => s.replaceAll(placeholder, paddingSpan));
 	} else {
 		summary_words = splitAllSpaces(lines[0] || "");
 	}
