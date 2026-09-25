@@ -417,6 +417,11 @@ function testSummary(wordsCount) {
 				modifySummary2(summaryDiv, words_arr, "red", line)
 		},
 		{
+			name: "Alg 2 For",
+			run: (summaryDiv, words_arr, line) =>
+				modifySummary2For(summaryDiv, words_arr, "red", line)
+		},
+		{
 			name: "One By One",
 			run: (summaryDiv, words_arr, line) =>
 				modifySummaryOneByOne(summaryDiv, words_arr, "red", line)
@@ -752,6 +757,8 @@ function testSummary(wordsCount) {
 	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
 	consoleSpeedupPlot("Alg 1", "One By One", "×");
 	consoleSpeedupPlot("Alg 2", "One By One", "×");
+	consoleSpeedupPlot("Alg 2", "Alg 2 For", "×");
+	
 	// =========================================================
 	// COMPLETE
 	// =========================================================
