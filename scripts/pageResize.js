@@ -204,7 +204,7 @@ function preloadImagesGeneral() {
 		...["api_icon","attribution","build","copyright","link","loading","loading_red","mailto","image",
 		"mailto_red","rss_icon","tips"]
 			.map(f => `/images/icons/feed/${f}.svg`),
-		...["artemis","cbs_news","nasa_worm","space_com","wired","yahoo_news","yonhap_news"]
+		...["artemis","cbs_news","nasa_worm","yonhap_news"]
 			.map(f => `/images/icons/feed/${f}_logo.svg`),
 		...["mercopress","phys_org"]
 			.map(f => `/images/icons/feed/${f}_logo.png`),
