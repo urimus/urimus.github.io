@@ -548,9 +548,8 @@ function extractSummaryWords(html) {
 			});
 	});
 
-	if (lines.length <= 1) {
-		return splitAllSpaces(lines[0] || "");
-	}
+	if (!lines.length) return "";
+	if (lines.length === 1) return splitAllSpaces(lines[0]);
 
 	const result = [];
 	const paddingSpan = "<span style='padding-left:10px;'><span>";
