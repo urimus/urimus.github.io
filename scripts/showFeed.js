@@ -553,11 +553,12 @@ function extractSummaryWords(html) {
 	}
 
 	const result = [];
-	lines.forEach(line => {
+	const paddingSpan = "<span style='padding-left:10px;'><span>";
+	lines.forEach((line, index) => {
 		const words = splitAllSpaces(line);
 		if (words.length) {
-			words[0] = "<p>" + words[0];
-			words[words.length - 1] += "</p>";
+			words[0] =
+				(index === 0 ? paddingSpan : "<br>" + paddingSpan) + words[0];
 		}
 		result.push(...words);
 	});
