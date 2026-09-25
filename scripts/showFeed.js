@@ -247,7 +247,7 @@ function newsLoad(lang) {
 	
 	sourceL=getParameterByName('source');
 	if (sourceL && sourceL!="") {
-		if (sourceL=="artemis" || sourceL=="cbs" || sourceL=="merco" || sourceL=="nasa" || sourceL=="phys.org" || sourceL=="space.com" || sourceL=="wired" || sourceL=="yahoo" || sourceL=="yonhap")  {
+		if (sourceL=="artemis" || sourceL=="cbs" || sourceL=="merco" || sourceL=="nasa" || sourceL=="phys.org" || sourceL=="yonhap")  {
 			source=sourceL;
 		}
 	} else {
@@ -260,7 +260,7 @@ function newsLoad(lang) {
 	}
 
 	if (toRedirect==1) {
-		window.location.href='news_'+lang+'.html?source=yahoo&type=top';
+		window.location.href='news_'+lang+'.html?source=nasa&type=releases';
 		return;
 	}
 
@@ -281,15 +281,13 @@ function newsLoad(lang) {
 										|| typeL=="astrobiology" || typeL=="astronomy" || typeL=="planetary" || typeL=="space"
 										|| typeL=="agriculture" || typeL=="biotechnology" || typeL=="cell" || typeL=="ecology" || typeL=="evolution" || typeL=="molecular" || typeL=="otherb" || typeL=="paleontology" || typeL=="plants" || typeL=="veterinary"
 										|| typeL=="analytical" || typeL=="biochemistry" || typeL=="materials" || typeL=="otherc" || typeL=="polymers")
-		|| source=="wired" && (typeL=="top" || typeL=="business" || typeL=="ai" || typeL=="culture" || typeL=="gear" || typeL=="ideas" || typeL=="science" || typeL=="security" || typeL=="backchannel" || typeL=="guides")
-		|| source=="yahoo" && (typeL=="top" || typeL=="world" || typeL=="us" || typeL=="politics" || typeL=="health" || typeL=="finance" || typeL=="science" || typeL=="sports" || typeL=="entertainment" || typeL=="lifestyle")
 		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports") )  {
 			type=typeL;
 		}
 	} else {
 		toRedirect=1;
 	}
-	if (source=="space.com" || source=="artemis") {
+	if (source=="artemis") {
 		type="all";
 		toRedirect=0;
 	}
@@ -300,15 +298,12 @@ function newsLoad(lang) {
 	}
 
 	if (toRedirect==1) { // restore
-	    	if (source=="artemis") window.location.href='news_'+lang+'.html?source=artemis';
-	    	if (source=="cbs") window.location.href='news_'+lang+'.html?source=cbs&type=top';
-	    	if (source=="merco") window.location.href='news_'+lang+'.html?source=merco&type=main';
-	    	if (source=="nasa") window.location.href='news_'+lang+'.html?source=nasa&type=releases';
-	    	if (source=="phys.org") window.location.href='news_'+lang+'.html?source=phys.org&type=all';
-	    	if (source=="space.com") window.location.href='news_'+lang+'.html?source=space.com';
-	    	if (source=="wired") window.location.href='news_'+lang+'.html?source=wired&type=top';
-	    	if (source=="yahoo") window.location.href='news_'+lang+'.html?source=yahoo&type=top';
-	    	if (source=="yonhap") window.location.href='news_'+lang+'.html?source=yonhap&type=all';
+		if (source=="artemis") window.location.href='news_'+lang+'.html?source=artemis';
+		if (source=="cbs") window.location.href='news_'+lang+'.html?source=cbs&type=top';
+		if (source=="merco") window.location.href='news_'+lang+'.html?source=merco&type=main';
+		if (source=="nasa") window.location.href='news_'+lang+'.html?source=nasa&type=releases';
+		if (source=="phys.org") window.location.href='news_'+lang+'.html?source=phys.org&type=all';
+		if (source=="yonhap") window.location.href='news_'+lang+'.html?source=yonhap&type=all';
 		return;
 	}
 
@@ -463,7 +458,7 @@ function showFeedData(type, source, lang, result) {
 		let tableMainRow = table.insertRow(-1);
 		tableMainRow.id = 'tableMainRow';
 
-		if (result.totalUpdated == totalEntries || source == "merco" || (source=="nasa" && type=="image") || source == "phys.org" || source == "space.com" || source == "wired" || source == "yahoo") {
+		if (result.totalUpdated == totalEntries || source == "merco" || (source=="nasa" && type=="image") || source == "phys.org") {
 			let table2 = document.getElementById("messagetable");
 			table2.replaceChildren();
 			adjustFeedScrollDiv();
@@ -1183,31 +1178,6 @@ function generateTabs(type, source, lang) {
 			tabs["polymers"]="Polymers";
 		}
 	}
-	if (source=="wired") {
-		tabs["top"]="Top";
-		tabs["business"]="Business";
-		tabs["ai"]="Artificial";
-		tabs2["ai"]="Artificial Intelligence";
-		tabs["culture"]="Culture";
-		tabs["gear"]="Gear";
-		tabs["ideas"]="Ideas";
-		tabs["science"]="Science";
-		tabs["security"]="Security";
-		tabs["backchannel"]="Backchannel";
-		tabs["guides"]="Guides";
-	}
-	if (source=="yahoo") {
-		tabs["top"]="Top";
-		tabs["world"]="World";
-		tabs["us"]="US";
-		tabs["politics"]="Politics";
-		tabs["health"]="Health";
-		tabs["finance"]="Finance";
-		tabs["science"]="Science";
-		tabs["sports"]="Sports";
-		tabs["entertainment"]="Entertainment";
-		tabs["lifestyle"]="Lifestyle";
-	}
 	if (source=="yonhap") {
 		tabs["all"]="All News";
 		tabs["national"]="National";
@@ -1222,39 +1192,27 @@ function generateTabs(type, source, lang) {
 	let menuDiv;
 	if (source=="artemis") {
 		textFeedSource = "Artemis II";
-		menuDiv=document.getElementById("menu_26_8");
+		menuDiv=document.getElementById("menu_26_1");
 	}
 	if (source == "cbs") {
 		textFeedSource = "CBS News";
-		menuDiv=document.getElementById("menu_26_3");
+		menuDiv=document.getElementById("menu_26_2");
 	}
 	if (source == "merco") {
 		textFeedSource = "MercoPress.";
-		menuDiv=document.getElementById("menu_26_9");
+		menuDiv=document.getElementById("menu_26_3");
 	}
 	if (source == "nasa") {
 		textFeedSource = "NASA";
-		menuDiv=document.getElementById("menu_26_2");
+		menuDiv=document.getElementById("menu_26_4");
 	}
 	if (source=="phys.org") {
 		textFeedSource = "Phys.org";
-		menuDiv=document.getElementById("menu_26_1");
-	}
-	if (source=="space.com") {
-		textFeedSource = "Space.com";
-		menuDiv=document.getElementById("menu_26_6");
-	}
-	if (source == "wired") {
-		textFeedSource = "Wired";
-		menuDiv=document.getElementById("menu_26_7");
-	}
-	if (source == "yahoo") {
-		textFeedSource = "Yahoo! News";
 		menuDiv=document.getElementById("menu_26_5");
 	}
 	if (source == "yonhap") {
 		textFeedSource = "Yonhap News";
-		menuDiv=document.getElementById("menu_26_4");
+		menuDiv=document.getElementById("menu_26_6");
 	}
 
 	menuDiv.setAttribute('class', "menu_selected");
@@ -1287,8 +1245,8 @@ function generateTabs(type, source, lang) {
 			tabtype2="Chemistry &blacktriangleright; "+tabs[type];
 			if (type=="analytical") tabtype2="Chemistry &blacktriangleright; "+tabs2[type];
 		}
-	} else if (source=="artemis" || source=="space.com") tabtype2="";
-	else if (source=="nasa" && type=="recent" || source=="wired" && type=="ai") tabtype2=tabs2[type];
+	} else if (source=="artemis") tabtype2="";
+	else if (source=="nasa" && type=="recent") tabtype2=tabs2[type];
 	else tabtype2=tabs[type];
 
 	let feedTitle=document.getElementById("feedTitle");
@@ -1482,7 +1440,7 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 	});
 */
 
-	if (source == "cbs" || source == "merco" || source == "phys.org" || source == "space.com" || source == "yahoo" || source == "yonhap") {
+	if (source == "cbs" || source == "merco" || source == "phys.org" || source == "yonhap") {
 		axiosConfig.url = proxyURL;
 		axiosConfig.params = {
 			url: feedURL,
@@ -1656,45 +1614,6 @@ function showFeed(type, source, lang) {
 		if (physTypes[type]) feedURL = physTypes[type];
 	}
 
-	if (source == "space.com") {
-		let spaceComTypes = {
-			"all": "https://www.space.com/feeds.xml"
-		};
-		if (spaceComTypes[type]) feedURL = spaceComTypes[type];
-	}
-
-	if (source == "wired") {
-		let wiredTypes = {
-			"top": "https://www.wired.com/feed/rss",
-			"business": "https://www.wired.com/feed/category/business/latest/rss",
-			"ai": "https://www.wired.com/feed/tag/ai/latest/rss",
-			"culture": "https://www.wired.com/feed/category/culture/latest/rss",
-			"gear": "https://www.wired.com/feed/category/gear/latest/rss",
-			"ideas": "https://www.wired.com/feed/category/ideas/latest/rss",
-			"science": "https://www.wired.com/feed/category/science/latest/rss",
-			"security": "https://www.wired.com/feed/category/security/latest/rss",
-			"backchannel": "https://www.wired.com/feed/category/backchannel/latest/rss",
-			"guides": "https://www.wired.com/feed/tag/wired-guide/latest/rss"
-		};
-		if (wiredTypes[type]) feedURL = wiredTypes[type];
-	}
-
-	if (source == "yahoo") {
-		let yahooTypes = {
-			"top": "https://news.yahoo.com/rss/",
-			"world": "https://news.yahoo.com/rss/world",
-			"us": "https://news.yahoo.com/rss/us",
-			"politics": "https://news.yahoo.com/rss/politics",
-			"health": "https://news.yahoo.com/rss/health",
-			"finance": "https://news.yahoo.com/rss/finance",
-			"science": "https://news.yahoo.com/rss/science",
-			"sports": "https://news.yahoo.com/rss/sports",
-			"entertainment": "https://news.yahoo.com/rss/entertainment",
-			"lifestyle": "https://news.yahoo.com/rss/lifestyle"
-		};
-		if (yahooTypes[type]) feedURL = yahooTypes[type];
-	}
-
 	if (source == "yonhap") {
 		let yonhapTypes = {
 			"all": "https://en.yna.co.kr/RSS/news.xml",
@@ -1824,9 +1743,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	if (source == "nasa") result.image = "images/icons/feed/nasa_worm_logo.svg";
 	if (source == "merco") result.image = "images/icons/feed/mercopress_logo.png";
 	if (source == "phys.org") result.image = "images/icons/feed/phys_org_logo.png";
-	if (source == "space.com") result.image = "images/icons/feed/space_com_logo.svg";
-	if (source == "wired") result.image = "images/icons/feed/wired_logo.svg";
-	if (source == "yahoo") result.image = "images/icons/feed/yahoo_news_logo.svg";
 	if (source == "yonhap") result.image = "images/icons/feed/yonhap_news_logo.svg";
 
 	result.totalUpdated = 0;
@@ -1850,9 +1766,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 		result.title = resultOrig.title?._text || resultOrig.title?._cdata;
 		result.description = resultOrig.description?._text || resultOrig.description?._cdata;
-		if (source == "wired" && type != "top") result.description = result.title;
 		result.link = resultOrig.link._text;
-		if (source == "space.com") result.link = "https://www.space.com";
 		let lastBuild = resultOrig.pubDate?._text || resultOrig.lastBuildDate?._text;
 		if (lastBuild) result.date_ms = new Date(lastBuild).getTime();
 		let copyright = resultOrig.copyright?._text || resultOrig.copyright?._cdata;
@@ -1908,12 +1822,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 	for (let c = 0; c < items.length; c++) {
 		const entry = items[c];
-		if (source == "yahoo" && entry.source &&
-		(entry.source._cdata == "BBC" ||
-		entry.source._cdata == "Yahoo Finance UK" ||
-		entry.source._cdata == "The Telegraph")) {
-			continue;
-		}
 		if (source == "nasa" && entry.category) {
 			let categories = Array.isArray(entry.category) ? entry.category : [entry.category];
 			if (categories.map(c => c._cdata || c._text).filter(Boolean).includes("APOD")) continue;
@@ -2009,87 +1917,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			newEntry.summary = entry.description._text;
 		}
 
-		// --- space.com ---
-		if (source == "space.com") {
-			newEntry.title = entry.title._cdata;
-			const url = entry["media:thumbnail"]?._attributes?.url;
-			if (url) {
-				newEntry.media.url = url;
-				if (entry["media:content"]) {
-					newEntry.media.comment = createMediaComment(
-						entry["media:content"],
-						"media:description",
-						"media:text",
-						"media:credit"
-					);
-				}
-			} else {
-				newEntry.media.url = "images/icons/error/no_image.png";
-				newEntry.media.comment = t("imageAbsent");
-			}
-			newEntry.summary = entry.description._cdata;
-		}
-
-		// --- wired ---
-		if (source == "wired") {
-			newEntry.title = entry.title._text;
-			const url = entry["media:thumbnail"]?._attributes?.url;
-			if (url) {
-				if (checkIsVideo(url)) {
-					newEntry.media.url = "";
-					newEntry.video = url;
-				} else {
-					newEntry.media.url = url;
-				}
-			} else {
-				newEntry.media.url = "images/icons/error/no_image.png";
-				newEntry.media.comment = t("imageAbsent");
-			}
-			if (entry.description) {
-				newEntry.summary = entry.description._text;
-			}
-		}
-
-		// --- yahoo ---
-		if (source == "yahoo") {
-			newEntry.title = entry.title._cdata;
-			if (entry["media:content"]) {
-				let mediaContent = Array.isArray(entry["media:content"])
-					? entry["media:content"]
-					: [entry["media:content"]];
-
-				newEntry.media.url = mediaContent[0]._attributes.url;
-				newEntry.media.comment = createMediaComment(
-					mediaContent[0],
-					"media:title",
-					"media:description",
-					"media:credit"
-				);
-
-				const additMediaContent = mediaContent
-					.slice(1)
-					.filter(item => item._attributes.url !== newEntry.media.url);
-
-				if (additMediaContent.length > 0) {
-					newEntry.additMedia = additMediaContent.map(item => ({
-						url: item._attributes.url,
-						comment: createMediaComment(
-							item,
-							"media:title",
-							"media:description",
-							"media:credit"
-						)
-					}));
-				}
-			} else {
-				newEntry.media.url = "images/icons/error/no_image.png";
-				newEntry.media.comment = t("imageAbsent");
-			}
-			if (entry.description) {
-				newEntry.summary = entry.description._cdata;
-			}
-		}
-
 		// --- yonhap ---
 		if (source == "yonhap") {
 			newEntry.title = entry.title._cdata;
@@ -2138,17 +1965,14 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		// --- dc:creator ---
 		if (entry["dc:creator"]) {
 			newEntry.creator = [];
-			if (source != "wired") {
-				let creators = Array.isArray(entry["dc:creator"])
-					? entry["dc:creator"]
-					: [entry["dc:creator"]];
-				newEntry.creator = creators
-					.map(c => c._cdata || c._text)
-					.filter(Boolean)
-					.map(name => ({ name }));
-			} else {
-				newEntry.creator = entry["dc:creator"]._text.split(",").map(name => ({ name: name.trim() }));
-			}
+
+			let creators = Array.isArray(entry["dc:creator"])
+				? entry["dc:creator"]
+				: [entry["dc:creator"]];
+			newEntry.creator = creators
+				.map(c => c._cdata || c._text)
+				.filter(Boolean)
+				.map(name => ({ name }));
 		}
 
 		// --- rss:author ---
@@ -2174,7 +1998,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 
 		// --- rss:category ---
-		if (entry.category && source != "wired" && source != "merco") {
+		if (entry.category && source != "merco") {
 			let categories = Array.isArray(entry.category)
 				? entry.category
 				: [entry.category];
@@ -2252,7 +2076,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 	}
 
-	if (source == "wired") {
+/* if video in .media.url
 		for (let i = 0; i < totalEntries ; i++) {
 			if (result.entries[i].video) {
 				let url = new URL(proxyURL);
@@ -2269,7 +2093,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				});
 			}
 		}
-	}
+*/
 
 	document.getElementById("processedCount").innerHTML = result.totalUpdated;
 	document.getElementById("leftCount").innerHTML = totalEntries - result.totalUpdated;

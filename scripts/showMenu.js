@@ -5073,763 +5073,602 @@ if (lang=="eng") {
 	wholeMenu["● News"].html = '&#9679; News';
 
 	wholeMenu["Artemis II API Feed"] = {};
-	wholeMenu["Artemis II API Feed"].id = "26_8";
+	wholeMenu["Artemis II API Feed"].id = "26_1";
 	wholeMenu["Artemis II API Feed"].color = "red";
 	wholeMenu["Artemis II API Feed"].hasSub = 0;
 	wholeMenu["Artemis II API Feed"].link = "news_eng.html?source=artemis";
 	wholeMenu["Artemis II API Feed"].html = 'Artemis II API Feed';
 
 	wholeMenu["● CBS RSS Feed"] = {};
-	wholeMenu["● CBS RSS Feed"].id = "26_3";
+	wholeMenu["● CBS RSS Feed"].id = "26_2";
 	wholeMenu["● CBS RSS Feed"].color = "red";
 	wholeMenu["● CBS RSS Feed"].hasSub = 1;
 	wholeMenu["● CBS RSS Feed"].link = "";
 	wholeMenu["● CBS RSS Feed"].html = '&#9679; CBS RSS Feed';
 
 	wholeMenu["CBS RSS Feed Top Stories"] = {};
-	wholeMenu["CBS RSS Feed Top Stories"].id = "26_3_1";
+	wholeMenu["CBS RSS Feed Top Stories"].id = "26_2_1";
 	wholeMenu["CBS RSS Feed Top Stories"].color = "red";
 	wholeMenu["CBS RSS Feed Top Stories"].hasSub = 0;
 	wholeMenu["CBS RSS Feed Top Stories"].link = "news_eng.html?source=cbs&type=top";
 	wholeMenu["CBS RSS Feed Top Stories"].html = 'Top Stories';
 
 	wholeMenu["CBS RSS Feed U.S."] = {};
-	wholeMenu["CBS RSS Feed U.S."].id = "26_3_2";
+	wholeMenu["CBS RSS Feed U.S."].id = "26_2_2";
 	wholeMenu["CBS RSS Feed U.S."].color = "red";
 	wholeMenu["CBS RSS Feed U.S."].hasSub = 0;
 	wholeMenu["CBS RSS Feed U.S."].link = "news_eng.html?source=cbs&type=us";
 	wholeMenu["CBS RSS Feed U.S."].html = 'U.S.';
 
 	wholeMenu["CBS RSS Feed Politics"] = {};
-	wholeMenu["CBS RSS Feed Politics"].id = "26_3_3";
+	wholeMenu["CBS RSS Feed Politics"].id = "26_2_3";
 	wholeMenu["CBS RSS Feed Politics"].color = "red";
 	wholeMenu["CBS RSS Feed Politics"].hasSub = 0;
 	wholeMenu["CBS RSS Feed Politics"].link = "news_eng.html?source=cbs&type=politics";
 	wholeMenu["CBS RSS Feed Politics"].html = 'Politics';
 
 	wholeMenu["CBS RSS Feed World"] = {};
-	wholeMenu["CBS RSS Feed World"].id = "26_3_4";
+	wholeMenu["CBS RSS Feed World"].id = "26_2_4";
 	wholeMenu["CBS RSS Feed World"].color = "red";
 	wholeMenu["CBS RSS Feed World"].hasSub = 0;
 	wholeMenu["CBS RSS Feed World"].link = "news_eng.html?source=cbs&type=world";
 	wholeMenu["CBS RSS Feed World"].html = 'World';
 
 	wholeMenu["CBS RSS Feed Health"] = {};
-	wholeMenu["CBS RSS Feed Health"].id = "26_3_5";
+	wholeMenu["CBS RSS Feed Health"].id = "26_2_5";
 	wholeMenu["CBS RSS Feed Health"].color = "red";
 	wholeMenu["CBS RSS Feed Health"].hasSub = 0;
 	wholeMenu["CBS RSS Feed Health"].link = "news_eng.html?source=cbs&type=health";
 	wholeMenu["CBS RSS Feed Health"].html = 'Health';
 
 	wholeMenu["CBS RSS Feed MoneyWatch"] = {};
-	wholeMenu["CBS RSS Feed MoneyWatch"].id = "26_3_6";
+	wholeMenu["CBS RSS Feed MoneyWatch"].id = "26_2_6";
 	wholeMenu["CBS RSS Feed MoneyWatch"].color = "red";
 	wholeMenu["CBS RSS Feed MoneyWatch"].hasSub = 0;
 	wholeMenu["CBS RSS Feed MoneyWatch"].link = "news_eng.html?source=cbs&type=moneywatch";
 	wholeMenu["CBS RSS Feed MoneyWatch"].html = 'MoneyWatch';
 
 	wholeMenu["CBS RSS Feed Science"] = {};
-	wholeMenu["CBS RSS Feed Science"].id = "26_3_7";
+	wholeMenu["CBS RSS Feed Science"].id = "26_2_7";
 	wholeMenu["CBS RSS Feed Science"].color = "red";
 	wholeMenu["CBS RSS Feed Science"].hasSub = 0;
 	wholeMenu["CBS RSS Feed Science"].link = "news_eng.html?source=cbs&type=science";
 	wholeMenu["CBS RSS Feed Science"].html = 'Science';
 
 	wholeMenu["CBS RSS Feed Technology"] = {};
-	wholeMenu["CBS RSS Feed Technology"].id = "26_3_8";
+	wholeMenu["CBS RSS Feed Technology"].id = "26_2_8";
 	wholeMenu["CBS RSS Feed Technology"].color = "red";
 	wholeMenu["CBS RSS Feed Technology"].hasSub = 0;
 	wholeMenu["CBS RSS Feed Technology"].link = "news_eng.html?source=cbs&type=technology";
 	wholeMenu["CBS RSS Feed Technology"].html = 'Technology';
 
 	wholeMenu["CBS RSS Feed Entertainment"] = {};
-	wholeMenu["CBS RSS Feed Entertainment"].id = "26_3_9";
+	wholeMenu["CBS RSS Feed Entertainment"].id = "26_2_9";
 	wholeMenu["CBS RSS Feed Entertainment"].color = "red";
 	wholeMenu["CBS RSS Feed Entertainment"].hasSub = 0;
 	wholeMenu["CBS RSS Feed Entertainment"].link = "news_eng.html?source=cbs&type=entertainment";
 	wholeMenu["CBS RSS Feed Entertainment"].html = 'Entertainment';
 
 	wholeMenu["CBS RSS Feed Space"] = {};
-	wholeMenu["CBS RSS Feed Space"].id = "26_3_10";
+	wholeMenu["CBS RSS Feed Space"].id = "26_2_10";
 	wholeMenu["CBS RSS Feed Space"].color = "red";
 	wholeMenu["CBS RSS Feed Space"].hasSub = 0;
 	wholeMenu["CBS RSS Feed Space"].link = "news_eng.html?source=cbs&type=space";
 	wholeMenu["CBS RSS Feed Space"].html = 'Space';
 
 	wholeMenu["● MercoPress RSS Feed"] = {};
-	wholeMenu["● MercoPress RSS Feed"].id = "26_9";
+	wholeMenu["● MercoPress RSS Feed"].id = "26_3";
 	wholeMenu["● MercoPress RSS Feed"].color = "red";
 	wholeMenu["● MercoPress RSS Feed"].hasSub = 1;
 	wholeMenu["● MercoPress RSS Feed"].link = "";
 	wholeMenu["● MercoPress RSS Feed"].html = '&#9679; MercoPress RSS Feed';
 
 	wholeMenu["MercoPress RSS Feed Main"] = {};
-	wholeMenu["MercoPress RSS Feed Main"].id = "26_9_1";
+	wholeMenu["MercoPress RSS Feed Main"].id = "26_3_1";
 	wholeMenu["MercoPress RSS Feed Main"].color = "red";
 	wholeMenu["MercoPress RSS Feed Main"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Main"].link = "news_eng.html?source=merco&type=main";
 	wholeMenu["MercoPress RSS Feed Main"].html = 'Main';
 
 	wholeMenu["MercoPress RSS Feed Agriculture"] = {};
-	wholeMenu["MercoPress RSS Feed Agriculture"].id = "26_9_2";
+	wholeMenu["MercoPress RSS Feed Agriculture"].id = "26_3_2";
 	wholeMenu["MercoPress RSS Feed Agriculture"].color = "red";
 	wholeMenu["MercoPress RSS Feed Agriculture"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Agriculture"].link = "news_eng.html?source=merco&type=agriculture";
 	wholeMenu["MercoPress RSS Feed Agriculture"].html = 'Agriculture';
 
 	wholeMenu["MercoPress RSS Feed Economy"] = {};
-	wholeMenu["MercoPress RSS Feed Economy"].id = "26_9_3";
+	wholeMenu["MercoPress RSS Feed Economy"].id = "26_3_3";
 	wholeMenu["MercoPress RSS Feed Economy"].color = "red";
 	wholeMenu["MercoPress RSS Feed Economy"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Economy"].link = "news_eng.html?source=merco&type=economy";
 	wholeMenu["MercoPress RSS Feed Economy"].html = 'Economy';
 
 	wholeMenu["MercoPress RSS Feed Energy"] = {};
-	wholeMenu["MercoPress RSS Feed Energy"].id = "26_9_4";
+	wholeMenu["MercoPress RSS Feed Energy"].id = "26_3_4";
 	wholeMenu["MercoPress RSS Feed Energy"].color = "red";
 	wholeMenu["MercoPress RSS Feed Energy"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Energy"].link = "news_eng.html?source=merco&type=energy";
 	wholeMenu["MercoPress RSS Feed Energy"].html = 'Energy';
 
 	wholeMenu["MercoPress RSS Feed Environment"] = {};
-	wholeMenu["MercoPress RSS Feed Environment"].id = "26_9_5";
+	wholeMenu["MercoPress RSS Feed Environment"].id = "26_3_5";
 	wholeMenu["MercoPress RSS Feed Environment"].color = "red";
 	wholeMenu["MercoPress RSS Feed Environment"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Environment"].link = "news_eng.html?source=merco&type=environment";
 	wholeMenu["MercoPress RSS Feed Environment"].html = 'Environment';
 
 	wholeMenu["MercoPress RSS Feed Fisheries"] = {};
-	wholeMenu["MercoPress RSS Feed Fisheries"].id = "26_9_6";
+	wholeMenu["MercoPress RSS Feed Fisheries"].id = "26_3_6";
 	wholeMenu["MercoPress RSS Feed Fisheries"].color = "red";
 	wholeMenu["MercoPress RSS Feed Fisheries"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Fisheries"].link = "news_eng.html?source=merco&type=fisheries";
 	wholeMenu["MercoPress RSS Feed Fisheries"].html = 'Fisheries';
 
 	wholeMenu["MercoPress RSS Feed Health & Science"] = {};
-	wholeMenu["MercoPress RSS Feed Health & Science"].id = "26_9_7";
+	wholeMenu["MercoPress RSS Feed Health & Science"].id = "26_3_7";
 	wholeMenu["MercoPress RSS Feed Health & Science"].color = "red";
 	wholeMenu["MercoPress RSS Feed Health & Science"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Health & Science"].link = "news_eng.html?source=merco&type=health";
 	wholeMenu["MercoPress RSS Feed Health & Science"].html = 'Health & Science';
 
 	wholeMenu["MercoPress RSS Feed Investments"] = {};
-	wholeMenu["MercoPress RSS Feed Investments"].id = "26_9_8";
+	wholeMenu["MercoPress RSS Feed Investments"].id = "26_3_8";
 	wholeMenu["MercoPress RSS Feed Investments"].color = "red";
 	wholeMenu["MercoPress RSS Feed Investments"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Investments"].link = "news_eng.html?source=merco&type=investments";
 	wholeMenu["MercoPress RSS Feed Investments"].html = 'Investments';
 
 	wholeMenu["MercoPress RSS Feed Politics"] = {};
-	wholeMenu["MercoPress RSS Feed Politics"].id = "26_9_9";
+	wholeMenu["MercoPress RSS Feed Politics"].id = "26_3_9";
 	wholeMenu["MercoPress RSS Feed Politics"].color = "red";
 	wholeMenu["MercoPress RSS Feed Politics"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Politics"].link = "news_eng.html?source=merco&type=politics";
 	wholeMenu["MercoPress RSS Feed Politics"].html = 'Politics';
 
 	wholeMenu["MercoPress RSS Feed Real Estate"] = {};
-	wholeMenu["MercoPress RSS Feed Real Estate"].id = "26_9_10";
+	wholeMenu["MercoPress RSS Feed Real Estate"].id = "26_3_10";
 	wholeMenu["MercoPress RSS Feed Real Estate"].color = "red";
 	wholeMenu["MercoPress RSS Feed Real Estate"].hasSub = 0;
 	wholeMenu["MercoPress RSS Feed Real Estate"].link = "news_eng.html?source=merco&type=realestate";
 	wholeMenu["MercoPress RSS Feed Real Estate"].html = 'Real Estate';
 
 	wholeMenu["● NASA RSS Feed"] = {};
-	wholeMenu["● NASA RSS Feed"].id = "26_2";
+	wholeMenu["● NASA RSS Feed"].id = "26_4";
 	wholeMenu["● NASA RSS Feed"].color = "red";
 	wholeMenu["● NASA RSS Feed"].hasSub = 1;
 	wholeMenu["● NASA RSS Feed"].link = "";
 	wholeMenu["● NASA RSS Feed"].html = '&#9679; NASA RSS Feed';
 
 	wholeMenu["NASA RSS Feed Releases"] = {};
-	wholeMenu["NASA RSS Feed Releases"].id = "26_2_1";
+	wholeMenu["NASA RSS Feed Releases"].id = "26_4_1";
 	wholeMenu["NASA RSS Feed Releases"].color = "red";
 	wholeMenu["NASA RSS Feed Releases"].hasSub = 0;
 	wholeMenu["NASA RSS Feed Releases"].link = "news_eng.html?source=nasa&type=releases";
 	wholeMenu["NASA RSS Feed Releases"].html = 'Releases';
 
 	wholeMenu["NASA RSS Feed Recent"] = {};
-	wholeMenu["NASA RSS Feed Recent"].id = "26_2_2";
+	wholeMenu["NASA RSS Feed Recent"].id = "26_4_2";
 	wholeMenu["NASA RSS Feed Recent"].color = "red";
 	wholeMenu["NASA RSS Feed Recent"].hasSub = 0;
 	wholeMenu["NASA RSS Feed Recent"].link = "news_eng.html?source=nasa&type=recent";
 	wholeMenu["NASA RSS Feed Recent"].html = 'Recently Published Content';
 
 	wholeMenu["NASA RSS Feed Image"] = {};
-	wholeMenu["NASA RSS Feed Image"].id = "26_2_3";
+	wholeMenu["NASA RSS Feed Image"].id = "26_4_3";
 	wholeMenu["NASA RSS Feed Image"].color = "red";
 	wholeMenu["NASA RSS Feed Image"].hasSub = 0;
 	wholeMenu["NASA RSS Feed Image"].link = "news_eng.html?source=nasa&type=image";
 	wholeMenu["NASA RSS Feed Image"].html = 'Image of the Day';
 
 	wholeMenu["NASA RSS Feed Technology"] = {};
-	wholeMenu["NASA RSS Feed Technology"].id = "26_2_4";
+	wholeMenu["NASA RSS Feed Technology"].id = "26_4_4";
 	wholeMenu["NASA RSS Feed Technology"].color = "red";
 	wholeMenu["NASA RSS Feed Technology"].hasSub = 0;
 	wholeMenu["NASA RSS Feed Technology"].link = "news_eng.html?source=nasa&type=technology";
 	wholeMenu["NASA RSS Feed Technology"].html = 'Technology';
 
 	wholeMenu["NASA RSS Feed Aeronautics"] = {};
-	wholeMenu["NASA RSS Feed Aeronautics"].id = "26_2_5";
+	wholeMenu["NASA RSS Feed Aeronautics"].id = "26_4_5";
 	wholeMenu["NASA RSS Feed Aeronautics"].color = "red";
 	wholeMenu["NASA RSS Feed Aeronautics"].hasSub = 0;
 	wholeMenu["NASA RSS Feed Aeronautics"].link = "news_eng.html?source=nasa&type=aeronautics";
 	wholeMenu["NASA RSS Feed Aeronautics"].html = 'Aeronautics';
 
 	wholeMenu["NASA RSS Feed ISS"] = {};
-	wholeMenu["NASA RSS Feed ISS"].id = "26_2_6";
+	wholeMenu["NASA RSS Feed ISS"].id = "26_4_6";
 	wholeMenu["NASA RSS Feed ISS"].color = "red";
 	wholeMenu["NASA RSS Feed ISS"].hasSub = 0;
 	wholeMenu["NASA RSS Feed ISS"].link = "news_eng.html?source=nasa&type=iss";
 	wholeMenu["NASA RSS Feed ISS"].html = 'Space Station';
 
 	wholeMenu["NASA RSS Feed Artemis"] = {};
-	wholeMenu["NASA RSS Feed Artemis"].id = "26_2_7";
+	wholeMenu["NASA RSS Feed Artemis"].id = "26_4_7";
 	wholeMenu["NASA RSS Feed Artemis"].color = "red";
 	wholeMenu["NASA RSS Feed Artemis"].hasSub = 0;
 	wholeMenu["NASA RSS Feed Artemis"].link = "news_eng.html?source=nasa&type=artemis";
 	wholeMenu["NASA RSS Feed Artemis"].html = 'Artemis';
 
 	wholeMenu["● Phys.org RSS Feed"] = {};
-	wholeMenu["● Phys.org RSS Feed"].id = "26_1";
+	wholeMenu["● Phys.org RSS Feed"].id = "26_5";
 	wholeMenu["● Phys.org RSS Feed"].color = "red";
 	wholeMenu["● Phys.org RSS Feed"].hasSub = 1;
 	wholeMenu["● Phys.org RSS Feed"].link = "";
 	wholeMenu["● Phys.org RSS Feed"].html = '&#9679; Phys.org RSS Feed';
 
 	wholeMenu["Phys.org RSS Feed All Stories"] = {};
-	wholeMenu["Phys.org RSS Feed All Stories"].id = "26_1_1";
+	wholeMenu["Phys.org RSS Feed All Stories"].id = "26_5_1";
 	wholeMenu["Phys.org RSS Feed All Stories"].color = "red";
 	wholeMenu["Phys.org RSS Feed All Stories"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed All Stories"].link = "news_eng.html?source=phys.org&type=all";
 	wholeMenu["Phys.org RSS Feed All Stories"].html = 'All Stories';
 
 	wholeMenu["● Earth"] = {};
-	wholeMenu["● Earth"].id = "26_1_2";
+	wholeMenu["● Earth"].id = "26_5_2";
 	wholeMenu["● Earth"].color = "red";
 	wholeMenu["● Earth"].hasSub = 1;
 	wholeMenu["● Earth"].link = "";
 	wholeMenu["● Earth"].html = '&#9679; Earth';
 
 	wholeMenu["Phys.org RSS Feed Earth Sciences"] = {};
-	wholeMenu["Phys.org RSS Feed Earth Sciences"].id = "26_1_2_1";
+	wholeMenu["Phys.org RSS Feed Earth Sciences"].id = "26_5_2_1";
 	wholeMenu["Phys.org RSS Feed Earth Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Feed Earth Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Earth Sciences"].link = "news_eng.html?source=phys.org&type=earth";
 	wholeMenu["Phys.org RSS Feed Earth Sciences"].html = 'Earth Sciences';
 
 	wholeMenu["Phys.org RSS Feed Environment"] = {};
-	wholeMenu["Phys.org RSS Feed Environment"].id = "26_1_2_2";
+	wholeMenu["Phys.org RSS Feed Environment"].id = "26_5_2_2";
 	wholeMenu["Phys.org RSS Feed Environment"].color = "red";
 	wholeMenu["Phys.org RSS Feed Environment"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Environment"].link = "news_eng.html?source=phys.org&type=environment";
 	wholeMenu["Phys.org RSS Feed Environment"].html = 'Environment';
 
 	wholeMenu["● Other Sciences"] = {};
-	wholeMenu["● Other Sciences"].id = "26_1_3";
+	wholeMenu["● Other Sciences"].id = "26_5_3";
 	wholeMenu["● Other Sciences"].color = "red";
 	wholeMenu["● Other Sciences"].hasSub = 1;
 	wholeMenu["● Other Sciences"].link = "";
 	wholeMenu["● Other Sciences"].html = '&#9679; Other Sciences';
 
 	wholeMenu["Phys.org RSS Feed Archaeology"] = {};
-	wholeMenu["Phys.org RSS Feed Archaeology"].id = "26_1_3_1";
+	wholeMenu["Phys.org RSS Feed Archaeology"].id = "26_5_3_1";
 	wholeMenu["Phys.org RSS Feed Archaeology"].color = "red";
 	wholeMenu["Phys.org RSS Feed Archaeology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Archaeology"].link = "news_eng.html?source=phys.org&type=archaeology";
 	wholeMenu["Phys.org RSS Feed Archaeology"].html = 'Archaeology';
 
 	wholeMenu["Phys.org RSS Feed Economics & Business"] = {};
-	wholeMenu["Phys.org RSS Feed Economics & Business"].id = "26_1_3_2";
+	wholeMenu["Phys.org RSS Feed Economics & Business"].id = "26_5_3_2";
 	wholeMenu["Phys.org RSS Feed Economics & Business"].color = "red";
 	wholeMenu["Phys.org RSS Feed Economics & Business"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Economics & Business"].link = "news_eng.html?source=phys.org&type=economics";
 	wholeMenu["Phys.org RSS Feed Economics & Business"].html = 'Economics & Business';
 
 	wholeMenu["Phys.org RSS Feed Education"] = {};
-	wholeMenu["Phys.org RSS Feed Education"].id = "26_1_3_3";
+	wholeMenu["Phys.org RSS Feed Education"].id = "26_5_3_3";
 	wholeMenu["Phys.org RSS Feed Education"].color = "red";
 	wholeMenu["Phys.org RSS Feed Education"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Education"].link = "news_eng.html?source=phys.org&type=education";
 	wholeMenu["Phys.org RSS Feed Education"].html = 'Education';
 
 	wholeMenu["Phys.org RSS Feed Mathematics"] = {};
-	wholeMenu["Phys.org RSS Feed Mathematics"].id = "26_1_3_4";
+	wholeMenu["Phys.org RSS Feed Mathematics"].id = "26_5_3_4";
 	wholeMenu["Phys.org RSS Feed Mathematics"].color = "red";
 	wholeMenu["Phys.org RSS Feed Mathematics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Mathematics"].link = "news_eng.html?source=phys.org&type=mathematics";
 	wholeMenu["Phys.org RSS Feed Mathematics"].html = 'Mathematics';
 
 	wholeMenu["Phys.org RSS Feed Other"] = {};
-	wholeMenu["Phys.org RSS Feed Other"].id = "26_1_3_5";
+	wholeMenu["Phys.org RSS Feed Other"].id = "26_5_3_5";
 	wholeMenu["Phys.org RSS Feed Other"].color = "red";
 	wholeMenu["Phys.org RSS Feed Other"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Other"].link = "news_eng.html?source=phys.org&type=other";
 	wholeMenu["Phys.org RSS Feed Other"].html = 'Other';
 
 	wholeMenu["Phys.org RSS Feed Political Science"] = {};
-	wholeMenu["Phys.org RSS Feed Political Science"].id = "26_1_3_6";
+	wholeMenu["Phys.org RSS Feed Political Science"].id = "26_5_3_6";
 	wholeMenu["Phys.org RSS Feed Political Science"].color = "red";
 	wholeMenu["Phys.org RSS Feed Political Science"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Political Science"].link = "news_eng.html?source=phys.org&type=political";
 	wholeMenu["Phys.org RSS Feed Political Science"].html = 'Political Science';
 
 	wholeMenu["Phys.org RSS Feed Political Social Sciences"] = {};
-	wholeMenu["Phys.org RSS Feed Political Social Sciences"].id = "26_1_3_7";
+	wholeMenu["Phys.org RSS Feed Political Social Sciences"].id = "26_5_3_7";
 	wholeMenu["Phys.org RSS Feed Political Social Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Feed Political Social Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Political Social Sciences"].link = "news_eng.html?source=phys.org&type=social";
 	wholeMenu["Phys.org RSS Feed Political Social Sciences"].html = 'Social Sciences';
 
 	wholeMenu["● Nanotechnology"] = {};
-	wholeMenu["● Nanotechnology"].id = "26_1_4";
+	wholeMenu["● Nanotechnology"].id = "26_5_4";
 	wholeMenu["● Nanotechnology"].color = "red";
 	wholeMenu["● Nanotechnology"].hasSub = 1;
 	wholeMenu["● Nanotechnology"].link = "";
 	wholeMenu["● Nanotechnology"].html = '&#9679; Nanotechnology';
 
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"] = {};
-	wholeMenu["Phys.org RSS Feed Bio & Medicine"].id = "26_1_4_1";
+	wholeMenu["Phys.org RSS Feed Bio & Medicine"].id = "26_5_4_1";
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"].color = "red";
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"].link = "news_eng.html?source=phys.org&type=bio";
 	wholeMenu["Phys.org RSS Feed Bio & Medicine"].html = 'Bio & Medicine';
 
 	wholeMenu["Phys.org RSS Feed Nanomaterials"] = {};
-	wholeMenu["Phys.org RSS Feed Nanomaterials"].id = "26_1_4_2";
+	wholeMenu["Phys.org RSS Feed Nanomaterials"].id = "26_5_4_2";
 	wholeMenu["Phys.org RSS Feed Nanomaterials"].color = "red";
 	wholeMenu["Phys.org RSS Feed Nanomaterials"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Nanomaterials"].link = "news_eng.html?source=phys.org&type=nanomaterials";
 	wholeMenu["Phys.org RSS Feed Nanomaterials"].html = 'Nanomaterials';
 
 	wholeMenu["Phys.org RSS Feed Nanophysics"] = {};
-	wholeMenu["Phys.org RSS Feed Nanophysics"].id = "26_1_4_3";
+	wholeMenu["Phys.org RSS Feed Nanophysics"].id = "26_5_4_3";
 	wholeMenu["Phys.org RSS Feed Nanophysics"].color = "red";
 	wholeMenu["Phys.org RSS Feed Nanophysics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Nanophysics"].link = "news_eng.html?source=phys.org&type=nanophysics";
 	wholeMenu["Phys.org RSS Feed Nanophysics"].html = 'Nanophysics';
 
 	wholeMenu["● Physics"] = {};
-	wholeMenu["● Physics"].id = "26_1_5";
+	wholeMenu["● Physics"].id = "26_5_5";
 	wholeMenu["● Physics"].color = "red";
 	wholeMenu["● Physics"].hasSub = 1;
 	wholeMenu["● Physics"].link = "";
 	wholeMenu["● Physics"].html = '&#9679; Physics';
 
 	wholeMenu["Phys.org RSS Feed Condensed Matter"] = {};
-	wholeMenu["Phys.org RSS Feed Condensed Matter"].id = "26_1_5_1";
+	wholeMenu["Phys.org RSS Feed Condensed Matter"].id = "26_5_5_1";
 	wholeMenu["Phys.org RSS Feed Condensed Matter"].color = "red";
 	wholeMenu["Phys.org RSS Feed Condensed Matter"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Condensed Matter"].link = "news_eng.html?source=phys.org&type=condensed";
 	wholeMenu["Phys.org RSS Feed Condensed Matter"].html = 'Condensed Matter';
 
 	wholeMenu["Phys.org RSS Feed General Physics"] = {};
-	wholeMenu["Phys.org RSS Feed General Physics"].id = "26_1_5_2";
+	wholeMenu["Phys.org RSS Feed General Physics"].id = "26_5_5_2";
 	wholeMenu["Phys.org RSS Feed General Physics"].color = "red";
 	wholeMenu["Phys.org RSS Feed General Physics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed General Physics"].link = "news_eng.html?source=phys.org&type=general";
 	wholeMenu["Phys.org RSS Feed General Physics"].html = 'General Physics';
 
 	wholeMenu["Phys.org RSS Feed Optics & Photonics"] = {};
-	wholeMenu["Phys.org RSS Feed Optics & Photonics"].id = "26_1_5_3";
+	wholeMenu["Phys.org RSS Feed Optics & Photonics"].id = "26_5_5_3";
 	wholeMenu["Phys.org RSS Feed Optics & Photonics"].color = "red";
 	wholeMenu["Phys.org RSS Feed Optics & Photonics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Optics & Photonics"].link = "news_eng.html?source=phys.org&type=optics";
 	wholeMenu["Phys.org RSS Feed Optics & Photonics"].html = 'Optics & Photonics';
 
 	wholeMenu["Phys.org RSS Feed Plasma Physics"] = {};
-	wholeMenu["Phys.org RSS Feed Plasma Physics"].id = "26_1_5_4";
+	wholeMenu["Phys.org RSS Feed Plasma Physics"].id = "26_5_5_4";
 	wholeMenu["Phys.org RSS Feed Plasma Physics"].color = "red";
 	wholeMenu["Phys.org RSS Feed Plasma Physics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Plasma Physics"].link = "news_eng.html?source=phys.org&type=plasma";
 	wholeMenu["Phys.org RSS Feed Plasma Physics"].html = 'Plasma Physics';
 
 	wholeMenu["Phys.org RSS Feed Quantum Physics"] = {};
-	wholeMenu["Phys.org RSS Feed Quantum Physics"].id = "26_1_5_5";
+	wholeMenu["Phys.org RSS Feed Quantum Physics"].id = "26_5_5_5";
 	wholeMenu["Phys.org RSS Feed Quantum Physics"].color = "red";
 	wholeMenu["Phys.org RSS Feed Quantum Physics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Quantum Physics"].link = "news_eng.html?source=phys.org&type=quantum";
 	wholeMenu["Phys.org RSS Feed Quantum Physics"].html = 'Quantum Physics';
 
 	wholeMenu["Phys.org RSS Feed Soft Matter"] = {};
-	wholeMenu["Phys.org RSS Feed Soft Matter"].id = "26_1_5_6";
+	wholeMenu["Phys.org RSS Feed Soft Matter"].id = "26_5_5_6";
 	wholeMenu["Phys.org RSS Feed Soft Matter"].color = "red";
 	wholeMenu["Phys.org RSS Feed Soft Matter"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Soft Matter"].link = "news_eng.html?source=phys.org&type=soft";
 	wholeMenu["Phys.org RSS Feed Soft Matter"].html = 'Soft Matter';
 
 	wholeMenu["Phys.org RSS Feed Superconductivity"] = {};
-	wholeMenu["Phys.org RSS Feed Superconductivity"].id = "26_1_5_7";
+	wholeMenu["Phys.org RSS Feed Superconductivity"].id = "26_5_5_7";
 	wholeMenu["Phys.org RSS Feed Superconductivity"].color = "red";
 	wholeMenu["Phys.org RSS Feed Superconductivity"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Superconductivity"].link = "news_eng.html?source=phys.org&type=superconductivity";
 	wholeMenu["Phys.org RSS Feed Superconductivity"].html = 'Superconductivity';
 
 	wholeMenu["● Astronomy & Space"] = {};
-	wholeMenu["● Astronomy & Space"].id = "26_1_6";
+	wholeMenu["● Astronomy & Space"].id = "26_5_6";
 	wholeMenu["● Astronomy & Space"].color = "red";
 	wholeMenu["● Astronomy & Space"].hasSub = 1;
 	wholeMenu["● Astronomy & Space"].link = "";
 	wholeMenu["● Astronomy & Space"].html = '&#9679; Astronomy & Space';
 
 	wholeMenu["Phys.org RSS Feed Astrobiology"] = {};
-	wholeMenu["Phys.org RSS Feed Astrobiology"].id = "26_1_6_1";
+	wholeMenu["Phys.org RSS Feed Astrobiology"].id = "26_5_6_1";
 	wholeMenu["Phys.org RSS Feed Astrobiology"].color = "red";
 	wholeMenu["Phys.org RSS Feed Astrobiology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Astrobiology"].link = "news_eng.html?source=phys.org&type=astrobiology";
 	wholeMenu["Phys.org RSS Feed Astrobiology"].html = 'Astrobiology';
 
 	wholeMenu["Phys.org RSS Feed Astronomy"] = {};
-	wholeMenu["Phys.org RSS Feed Astronomy"].id = "26_1_6_2";
+	wholeMenu["Phys.org RSS Feed Astronomy"].id = "26_5_6_2";
 	wholeMenu["Phys.org RSS Feed Astronomy"].color = "red";
 	wholeMenu["Phys.org RSS Feed Astronomy"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Astronomy"].link = "news_eng.html?source=phys.org&type=astronomy";
 	wholeMenu["Phys.org RSS Feed Astronomy"].html = 'Astronomy';
 
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"] = {};
-	wholeMenu["Phys.org RSS Feed Planetary Sciences"].id = "26_1_6_3";
+	wholeMenu["Phys.org RSS Feed Planetary Sciences"].id = "26_5_6_3";
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"].link = "news_eng.html?source=phys.org&type=planetary";
 	wholeMenu["Phys.org RSS Feed Planetary Sciences"].html = 'Planetary Sciences';
 
 	wholeMenu["Phys.org RSS Feed Space Exploration"] = {};
-	wholeMenu["Phys.org RSS Feed Space Exploration"].id = "26_1_6_4";
+	wholeMenu["Phys.org RSS Feed Space Exploration"].id = "26_5_6_4";
 	wholeMenu["Phys.org RSS Feed Space Exploration"].color = "red";
 	wholeMenu["Phys.org RSS Feed Space Exploration"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Space Exploration"].link = "news_eng.html?source=phys.org&type=space";
 	wholeMenu["Phys.org RSS Feed Space Exploration"].html = 'Space Exploration';
 
 	wholeMenu["● Biology"] = {};
-	wholeMenu["● Biology"].id = "26_1_7";
+	wholeMenu["● Biology"].id = "26_5_7";
 	wholeMenu["● Biology"].color = "red";
 	wholeMenu["● Biology"].hasSub = 1;
 	wholeMenu["● Biology"].link = "";
 	wholeMenu["● Biology"].html = '&#9679; Biology';
 
 	wholeMenu["Phys.org RSS Feed Agriculture"] = {};
-	wholeMenu["Phys.org RSS Feed Agriculture"].id = "26_1_7_1";
+	wholeMenu["Phys.org RSS Feed Agriculture"].id = "26_5_7_1";
 	wholeMenu["Phys.org RSS Feed Agriculture"].color = "red";
 	wholeMenu["Phys.org RSS Feed Agriculture"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Agriculture"].link = "news_eng.html?source=phys.org&type=agriculture";
 	wholeMenu["Phys.org RSS Feed Agriculture"].html = 'Agriculture';
 
 	wholeMenu["Phys.org RSS Feed Biotechnology"] = {};
-	wholeMenu["Phys.org RSS Feed Biotechnology"].id = "26_1_7_2";
+	wholeMenu["Phys.org RSS Feed Biotechnology"].id = "26_5_7_2";
 	wholeMenu["Phys.org RSS Feed Biotechnology"].color = "red";
 	wholeMenu["Phys.org RSS Feed Biotechnology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Biotechnology"].link = "news_eng.html?source=phys.org&type=biotechnology";
 	wholeMenu["Phys.org RSS Feed Biotechnology"].html = 'Biotechnology';
 
 	wholeMenu["Phys.org RSS Feed Cell & Microbiology"] = {};
-	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].id = "26_1_7_3";
+	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].id = "26_5_7_3";
 	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].color = "red";
 	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].link = "news_eng.html?source=phys.org&type=cell";
 	wholeMenu["Phys.org RSS Feed Cell & Microbiology"].html = 'Cell & Microbiology';
 
 	wholeMenu["Phys.org RSS Feed Ecology"] = {};
-	wholeMenu["Phys.org RSS Feed Ecology"].id = "26_1_7_4";
+	wholeMenu["Phys.org RSS Feed Ecology"].id = "26_5_7_4";
 	wholeMenu["Phys.org RSS Feed Ecology"].color = "red";
 	wholeMenu["Phys.org RSS Feed Ecology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Ecology"].link = "news_eng.html?source=phys.org&type=ecology";
 	wholeMenu["Phys.org RSS Feed Ecology"].html = 'Ecology';
 
 	wholeMenu["Phys.org RSS Feed Evolution"] = {};
-	wholeMenu["Phys.org RSS Feed Evolution"].id = "26_1_7_5";
+	wholeMenu["Phys.org RSS Feed Evolution"].id = "26_5_7_5";
 	wholeMenu["Phys.org RSS Feed Evolution"].color = "red";
 	wholeMenu["Phys.org RSS Feed Evolution"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Evolution"].link = "news_eng.html?source=phys.org&type=evolution";
 	wholeMenu["Phys.org RSS Feed Evolution"].html = 'Evolution';
 
 	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"] = {};
-	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].id = "26_1_7_6";
+	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].id = "26_5_7_6";
 	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].color = "red";
 	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].link = "news_eng.html?source=phys.org&type=molecular";
 	wholeMenu["Phys.org RSS Feed Molecular & Computational Biology"].html = 'Molecular & Computational Biology';
 
 	wholeMenu["Phys.org RSS Feed OtherB"] = {};
-	wholeMenu["Phys.org RSS Feed OtherB"].id = "26_1_7_7";
+	wholeMenu["Phys.org RSS Feed OtherB"].id = "26_5_7_7";
 	wholeMenu["Phys.org RSS Feed OtherB"].color = "red";
 	wholeMenu["Phys.org RSS Feed OtherB"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed OtherB"].link = "news_eng.html?source=phys.org&type=otherb";
 	wholeMenu["Phys.org RSS Feed OtherB"].html = 'Other';
 
 	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"] = {};
-	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].id = "26_1_7_8";
+	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].id = "26_5_7_8";
 	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].color = "red";
 	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].link = "news_eng.html?source=phys.org&type=paleontology";
 	wholeMenu["Phys.org RSS Feed Paleontology & Fossils"].html = 'Paleontology & Fossils';
 
 	wholeMenu["Phys.org RSS Feed Plants & Animals"] = {};
-	wholeMenu["Phys.org RSS Feed Plants & Animals"].id = "26_1_7_9";
+	wholeMenu["Phys.org RSS Feed Plants & Animals"].id = "26_5_7_9";
 	wholeMenu["Phys.org RSS Feed Plants & Animals"].color = "red";
 	wholeMenu["Phys.org RSS Feed Plants & Animals"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Plants & Animals"].link = "news_eng.html?source=phys.org&type=plants";
 	wholeMenu["Phys.org RSS Feed Plants & Animals"].html = 'Plants & Animals';
 
 	wholeMenu["Phys.org RSS Feed Veterinary Medicine"] = {};
-	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].id = "26_1_7_10";
+	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].id = "26_5_7_10";
 	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].color = "red";
 	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].link = "news_eng.html?source=phys.org&type=veterinary";
 	wholeMenu["Phys.org RSS Feed Veterinary Medicine"].html = 'Veterinary Medicine';
 
 	wholeMenu["● Chemistry"] = {};
-	wholeMenu["● Chemistry"].id = "26_1_8";
+	wholeMenu["● Chemistry"].id = "26_5_8";
 	wholeMenu["● Chemistry"].color = "red";
 	wholeMenu["● Chemistry"].hasSub = 1;
 	wholeMenu["● Chemistry"].link = "";
 	wholeMenu["● Chemistry"].html = '&#9679; Chemistry';
 
 	wholeMenu["Phys.org RSS Feed Analytical Chemistry"] = {};
-	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].id = "26_1_8_1";
+	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].id = "26_5_8_1";
 	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].color = "red";
 	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].link = "news_eng.html?source=phys.org&type=analytical";
 	wholeMenu["Phys.org RSS Feed Analytical Chemistry"].html = 'Analytical Chemistry';
 
 	wholeMenu["Phys.org RSS Feed Biochemistry"] = {};
-	wholeMenu["Phys.org RSS Feed Biochemistry"].id = "26_1_8_2";
+	wholeMenu["Phys.org RSS Feed Biochemistry"].id = "26_5_8_2";
 	wholeMenu["Phys.org RSS Feed Biochemistry"].color = "red";
 	wholeMenu["Phys.org RSS Feed Biochemistry"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Biochemistry"].link = "news_eng.html?source=phys.org&type=biochemistry";
 	wholeMenu["Phys.org RSS Feed Biochemistry"].html = 'Biochemistry';
 
 	wholeMenu["Phys.org RSS Feed Materials Science"] = {};
-	wholeMenu["Phys.org RSS Feed Materials Science"].id = "26_1_8_3";
+	wholeMenu["Phys.org RSS Feed Materials Science"].id = "26_5_8_3";
 	wholeMenu["Phys.org RSS Feed Materials Science"].color = "red";
 	wholeMenu["Phys.org RSS Feed Materials Science"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Materials Science"].link = "news_eng.html?source=phys.org&type=materials";
 	wholeMenu["Phys.org RSS Feed Materials Science"].html = 'Materials Science';
 
 	wholeMenu["Phys.org RSS Feed OtherC"] = {};
-	wholeMenu["Phys.org RSS Feed OtherC"].id = "26_1_8_4";
+	wholeMenu["Phys.org RSS Feed OtherC"].id = "26_5_8_4";
 	wholeMenu["Phys.org RSS Feed OtherC"].color = "red";
 	wholeMenu["Phys.org RSS Feed OtherC"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed OtherC"].link = "news_eng.html?source=phys.org&type=otherc";
 	wholeMenu["Phys.org RSS Feed OtherC"].html = 'Other';
 
 	wholeMenu["Phys.org RSS Feed Polymers"] = {};
-	wholeMenu["Phys.org RSS Feed Polymers"].id = "26_1_8_5";
+	wholeMenu["Phys.org RSS Feed Polymers"].id = "26_5_8_5";
 	wholeMenu["Phys.org RSS Feed Polymers"].color = "red";
 	wholeMenu["Phys.org RSS Feed Polymers"].hasSub = 0;
 	wholeMenu["Phys.org RSS Feed Polymers"].link = "news_eng.html?source=phys.org&type=polymers";
 	wholeMenu["Phys.org RSS Feed Polymers"].html = 'Polymers';
 
-	wholeMenu["Space.com RSS Feed"] = {};
-	wholeMenu["Space.com RSS Feed"].id = "26_6";
-	wholeMenu["Space.com RSS Feed"].color = "red";
-	wholeMenu["Space.com RSS Feed"].hasSub = 0;
-	wholeMenu["Space.com RSS Feed"].link = "news_eng.html?source=space.com";
-	wholeMenu["Space.com RSS Feed"].html = 'Space.com RSS Feed';
-
-	wholeMenu["● Wired RSS Feed"] = {};
-	wholeMenu["● Wired RSS Feed"].id = "26_7";
-	wholeMenu["● Wired RSS Feed"].color = "red";
-	wholeMenu["● Wired RSS Feed"].hasSub = 1;
-	wholeMenu["● Wired RSS Feed"].link = "";
-	wholeMenu["● Wired RSS Feed"].html = '&#9679; Wired RSS Feed';
-
-	wholeMenu["Wired RSS Feed Top"] = {};
-	wholeMenu["Wired RSS Feed Top"].id = "26_7_1";
-	wholeMenu["Wired RSS Feed Top"].color = "red";
-	wholeMenu["Wired RSS Feed Top"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Top"].link = "news_eng.html?source=wired&type=top";
-	wholeMenu["Wired RSS Feed Top"].html = 'Top';
-
-	wholeMenu["Wired RSS Feed Business"] = {};
-	wholeMenu["Wired RSS Feed Business"].id = "26_7_2";
-	wholeMenu["Wired RSS Feed Business"].color = "red";
-	wholeMenu["Wired RSS Feed Business"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Business"].link = "news_eng.html?source=wired&type=business";
-	wholeMenu["Wired RSS Feed Business"].html = 'Business';
-
-	wholeMenu["Wired RSS Feed Artificial Intelligence"] = {};
-	wholeMenu["Wired RSS Feed Artificial Intelligence"].id = "26_7_3";
-	wholeMenu["Wired RSS Feed Artificial Intelligence"].color = "red";
-	wholeMenu["Wired RSS Feed Artificial Intelligence"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Artificial Intelligence"].link = "news_eng.html?source=wired&type=ai";
-	wholeMenu["Wired RSS Feed Artificial Intelligence"].html = 'Artificial Intelligence';
-
-	wholeMenu["Wired RSS Feed Culture"] = {};
-	wholeMenu["Wired RSS Feed Culture"].id = "26_7_4";
-	wholeMenu["Wired RSS Feed Culture"].color = "red";
-	wholeMenu["Wired RSS Feed Culture"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Culture"].link = "news_eng.html?source=wired&type=culture";
-	wholeMenu["Wired RSS Feed Culture"].html = 'Culture';
-
-	wholeMenu["Wired RSS Feed Gear"] = {};
-	wholeMenu["Wired RSS Feed Gear"].id = "26_7_5";
-	wholeMenu["Wired RSS Feed Gear"].color = "red";
-	wholeMenu["Wired RSS Feed Gear"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Gear"].link = "news_eng.html?source=wired&type=gear";
-	wholeMenu["Wired RSS Feed Gear"].html = 'Gear';
-
-	wholeMenu["Wired RSS Feed Ideas"] = {};
-	wholeMenu["Wired RSS Feed Ideas"].id = "26_7_6";
-	wholeMenu["Wired RSS Feed Ideas"].color = "red";
-	wholeMenu["Wired RSS Feed Ideas"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Ideas"].link = "news_eng.html?source=wired&type=ideas";
-	wholeMenu["Wired RSS Feed Ideas"].html = 'Ideas';
-
-	wholeMenu["Wired RSS Feed Science"] = {};
-	wholeMenu["Wired RSS Feed Science"].id = "26_7_7";
-	wholeMenu["Wired RSS Feed Science"].color = "red";
-	wholeMenu["Wired RSS Feed Science"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Science"].link = "news_eng.html?source=wired&type=science";
-	wholeMenu["Wired RSS Feed Science"].html = 'Science';
-
-	wholeMenu["Wired RSS Feed Security"] = {};
-	wholeMenu["Wired RSS Feed Security"].id = "26_7_8";
-	wholeMenu["Wired RSS Feed Security"].color = "red";
-	wholeMenu["Wired RSS Feed Security"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Security"].link = "news_eng.html?source=wired&type=security";
-	wholeMenu["Wired RSS Feed Security"].html = 'Security';
-
-	wholeMenu["Wired RSS Feed Backchannel"] = {};
-	wholeMenu["Wired RSS Feed Backchannel"].id = "26_7_9";
-	wholeMenu["Wired RSS Feed Backchannel"].color = "red";
-	wholeMenu["Wired RSS Feed Backchannel"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Backchannel"].link = "news_eng.html?source=wired&type=backchannel";
-	wholeMenu["Wired RSS Feed Backchannel"].html = 'Backchannel';
-
-	wholeMenu["Wired RSS Feed Guides"] = {};
-	wholeMenu["Wired RSS Feed Guides"].id = "26_7_10";
-	wholeMenu["Wired RSS Feed Guides"].color = "red";
-	wholeMenu["Wired RSS Feed Guides"].hasSub = 0;
-	wholeMenu["Wired RSS Feed Guides"].link = "news_eng.html?source=wired&type=guides";
-	wholeMenu["Wired RSS Feed Guides"].html = 'Guides';
-
-	wholeMenu["● Yahoo RSS Feed"] = {};
-	wholeMenu["● Yahoo RSS Feed"].id = "26_5";
-	wholeMenu["● Yahoo RSS Feed"].color = "red";
-	wholeMenu["● Yahoo RSS Feed"].hasSub = 1;
-	wholeMenu["● Yahoo RSS Feed"].link = "";
-	wholeMenu["● Yahoo RSS Feed"].html = '&#9679; Yahoo RSS Feed';
-
-	wholeMenu["Yahoo RSS Feed Top"] = {};
-	wholeMenu["Yahoo RSS Feed Top"].id = "26_5_1";
-	wholeMenu["Yahoo RSS Feed Top"].color = "red";
-	wholeMenu["Yahoo RSS Feed Top"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed Top"].link = "news_eng.html?source=yahoo&type=top";
-	wholeMenu["Yahoo RSS Feed Top"].html = 'Top';
-
-	wholeMenu["Yahoo RSS Feed World"] = {};
-	wholeMenu["Yahoo RSS Feed World"].id = "26_5_2";
-	wholeMenu["Yahoo RSS Feed World"].color = "red";
-	wholeMenu["Yahoo RSS Feed World"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed World"].link = "news_eng.html?source=yahoo&type=world";
-	wholeMenu["Yahoo RSS Feed World"].html = 'World';
-
-	wholeMenu["Yahoo RSS Feed US"] = {};
-	wholeMenu["Yahoo RSS Feed US"].id = "26_5_3";
-	wholeMenu["Yahoo RSS Feed US"].color = "red";
-	wholeMenu["Yahoo RSS Feed US"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed US"].link = "news_eng.html?source=yahoo&type=us";
-	wholeMenu["Yahoo RSS Feed US"].html = 'US';
-
-	wholeMenu["Yahoo RSS Feed Politics"] = {};
-	wholeMenu["Yahoo RSS Feed Politics"].id = "26_5_4";
-	wholeMenu["Yahoo RSS Feed Politics"].color = "red";
-	wholeMenu["Yahoo RSS Feed Politics"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed Politics"].link = "news_eng.html?source=yahoo&type=politics";
-	wholeMenu["Yahoo RSS Feed Politics"].html = 'Politics';
-
-	wholeMenu["Yahoo RSS Feed Health"] = {};
-	wholeMenu["Yahoo RSS Feed Health"].id = "26_5_5";
-	wholeMenu["Yahoo RSS Feed Health"].color = "red";
-	wholeMenu["Yahoo RSS Feed Health"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed Health"].link = "news_eng.html?source=yahoo&type=health";
-	wholeMenu["Yahoo RSS Feed Health"].html = 'Health';
-
-	wholeMenu["Yahoo RSS Feed Finance"] = {};
-	wholeMenu["Yahoo RSS Feed Finance"].id = "26_5_6";
-	wholeMenu["Yahoo RSS Feed Finance"].color = "red";
-	wholeMenu["Yahoo RSS Feed Finance"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed Finance"].link = "news_eng.html?source=yahoo&type=finance";
-	wholeMenu["Yahoo RSS Feed Finance"].html = 'Finance';
-
-	wholeMenu["Yahoo RSS Feed Science"] = {};
-	wholeMenu["Yahoo RSS Feed Science"].id = "26_5_7";
-	wholeMenu["Yahoo RSS Feed Science"].color = "red";
-	wholeMenu["Yahoo RSS Feed Science"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed Science"].link = "news_eng.html?source=yahoo&type=science";
-	wholeMenu["Yahoo RSS Feed Science"].html = 'Science';
-
-	wholeMenu["Yahoo RSS Feed Sports"] = {};
-	wholeMenu["Yahoo RSS Feed Sports"].id = "26_5_8";
-	wholeMenu["Yahoo RSS Feed Sports"].color = "red";
-	wholeMenu["Yahoo RSS Feed Sports"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed Sports"].link = "news_eng.html?source=yahoo&type=sports";
-	wholeMenu["Yahoo RSS Feed Sports"].html = 'Sports';
-
-	wholeMenu["Yahoo RSS Feed Entertainment"] = {};
-	wholeMenu["Yahoo RSS Feed Entertainment"].id = "26_5_9";
-	wholeMenu["Yahoo RSS Feed Entertainment"].color = "red";
-	wholeMenu["Yahoo RSS Feed Entertainment"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed Entertainment"].link = "news_eng.html?source=yahoo&type=entertainment";
-	wholeMenu["Yahoo RSS Feed Entertainment"].html = 'Entertainment';
-
-	wholeMenu["Yahoo RSS Feed Lifestyle"] = {};
-	wholeMenu["Yahoo RSS Feed Lifestyle"].id = "26_5_10";
-	wholeMenu["Yahoo RSS Feed Lifestyle"].color = "red";
-	wholeMenu["Yahoo RSS Feed Lifestyle"].hasSub = 0;
-	wholeMenu["Yahoo RSS Feed Lifestyle"].link = "news_eng.html?source=yahoo&type=lifestyle";
-	wholeMenu["Yahoo RSS Feed Lifestyle"].html = 'Lifestyle';
-
 	wholeMenu["● Yonhap RSS Feed"] = {};
-	wholeMenu["● Yonhap RSS Feed"].id = "26_4";
+	wholeMenu["● Yonhap RSS Feed"].id = "26_6";
 	wholeMenu["● Yonhap RSS Feed"].color = "red";
 	wholeMenu["● Yonhap RSS Feed"].hasSub = 1;
 	wholeMenu["● Yonhap RSS Feed"].link = "";
 	wholeMenu["● Yonhap RSS Feed"].html = '&#9679; Yonhap RSS Feed';
 
 	wholeMenu["Yonhap RSS Feed All News"] = {};
-	wholeMenu["Yonhap RSS Feed All News"].id = "26_4_1";
+	wholeMenu["Yonhap RSS Feed All News"].id = "26_6_1";
 	wholeMenu["Yonhap RSS Feed All News"].color = "red";
 	wholeMenu["Yonhap RSS Feed All News"].hasSub = 0;
 	wholeMenu["Yonhap RSS Feed All News"].link = "news_eng.html?source=yonhap&type=all";
 	wholeMenu["Yonhap RSS Feed All News"].html = 'All News';
 
 	wholeMenu["Yonhap RSS Feed National"] = {};
-	wholeMenu["Yonhap RSS Feed National"].id = "26_4_2";
+	wholeMenu["Yonhap RSS Feed National"].id = "26_6_2";
 	wholeMenu["Yonhap RSS Feed National"].color = "red";
 	wholeMenu["Yonhap RSS Feed National"].hasSub = 0;
 	wholeMenu["Yonhap RSS Feed National"].link = "news_eng.html?source=yonhap&type=national";
 	wholeMenu["Yonhap RSS Feed National"].html = 'National';
 
 	wholeMenu["Yonhap RSS Feed North Korea"] = {};
-	wholeMenu["Yonhap RSS Feed North Korea"].id = "26_4_3";
+	wholeMenu["Yonhap RSS Feed North Korea"].id = "26_6_3";
 	wholeMenu["Yonhap RSS Feed North Korea"].color = "red";
 	wholeMenu["Yonhap RSS Feed North Korea"].hasSub = 0;
 	wholeMenu["Yonhap RSS Feed North Korea"].link = "news_eng.html?source=yonhap&type=northkorea";
 	wholeMenu["Yonhap RSS Feed North Korea"].html = 'North Korea';
 
 	wholeMenu["Yonhap RSS Feed Economy/Finance"] = {};
-	wholeMenu["Yonhap RSS Feed Economy/Finance"].id = "26_4_4";
+	wholeMenu["Yonhap RSS Feed Economy/Finance"].id = "26_6_4";
 	wholeMenu["Yonhap RSS Feed Economy/Finance"].color = "red";
 	wholeMenu["Yonhap RSS Feed Economy/Finance"].hasSub = 0;
 	wholeMenu["Yonhap RSS Feed Economy/Finance"].link = "news_eng.html?source=yonhap&type=economy";
 	wholeMenu["Yonhap RSS Feed Economy/Finance"].html = 'Economy/Finance';
 
 	wholeMenu["Yonhap RSS Feed BIZ"] = {};
-	wholeMenu["Yonhap RSS Feed BIZ"].id = "26_4_5";
+	wholeMenu["Yonhap RSS Feed BIZ"].id = "26_6_5";
 	wholeMenu["Yonhap RSS Feed BIZ"].color = "red";
 	wholeMenu["Yonhap RSS Feed BIZ"].hasSub = 0;
 	wholeMenu["Yonhap RSS Feed BIZ"].link = "news_eng.html?source=yonhap&type=biz";
 	wholeMenu["Yonhap RSS Feed BIZ"].html = 'BIZ';
 
 	wholeMenu["Yonhap RSS Feed Culture/K-pop"] = {};
-	wholeMenu["Yonhap RSS Feed Culture/K-pop"].id = "26_4_6";
+	wholeMenu["Yonhap RSS Feed Culture/K-pop"].id = "26_6_6";
 	wholeMenu["Yonhap RSS Feed Culture/K-pop"].color = "red";
 	wholeMenu["Yonhap RSS Feed Culture/K-pop"].hasSub = 0;
 	wholeMenu["Yonhap RSS Feed Culture/K-pop"].link = "news_eng.html?source=yonhap&type=culture";
 	wholeMenu["Yonhap RSS Feed Culture/K-pop"].html = 'Culture/K-pop';
 
 	wholeMenu["Yonhap RSS Feed Sports"] = {};
-	wholeMenu["Yonhap RSS Feed Sports"].id = "26_4_7";
+	wholeMenu["Yonhap RSS Feed Sports"].id = "26_6_7";
 	wholeMenu["Yonhap RSS Feed Sports"].color = "red";
 	wholeMenu["Yonhap RSS Feed Sports"].hasSub = 0;
 	wholeMenu["Yonhap RSS Feed Sports"].link = "news_eng.html?source=yonhap&type=sports";
@@ -5851,763 +5690,602 @@ if (lang=="rus") {
 	wholeMenu["● Новости"].html = '&#9679; Новости';
 
 	wholeMenu["Artemis II API Строка"] = {};
-	wholeMenu["Artemis II API Строка"].id = "26_8";
+	wholeMenu["Artemis II API Строка"].id = "26_1";
 	wholeMenu["Artemis II API Строка"].color = "red";
 	wholeMenu["Artemis II API Строка"].hasSub = 0;
 	wholeMenu["Artemis II API Строка"].link = "news_rus.html?source=artemis";
 	wholeMenu["Artemis II API Строка"].html = 'Artemis II API Строка';
 
 	wholeMenu["● CBS RSS Строка"] = {};
-	wholeMenu["● CBS RSS Строка"].id = "26_3";
+	wholeMenu["● CBS RSS Строка"].id = "26_2";
 	wholeMenu["● CBS RSS Строка"].color = "red";
 	wholeMenu["● CBS RSS Строка"].hasSub = 1;
 	wholeMenu["● CBS RSS Строка"].link = "";
 	wholeMenu["● CBS RSS Строка"].html = '&#9679; CBS RSS Строка';
 
 	wholeMenu["CBS RSS Строка Top Stories"] = {};
-	wholeMenu["CBS RSS Строка Top Stories"].id = "26_3_1";
+	wholeMenu["CBS RSS Строка Top Stories"].id = "26_2_1";
 	wholeMenu["CBS RSS Строка Top Stories"].color = "red";
 	wholeMenu["CBS RSS Строка Top Stories"].hasSub = 0;
 	wholeMenu["CBS RSS Строка Top Stories"].link = "news_rus.html?source=cbs&type=top";
 	wholeMenu["CBS RSS Строка Top Stories"].html = 'Top Stories';
 
 	wholeMenu["CBS RSS Строка U.S."] = {};
-	wholeMenu["CBS RSS Строка U.S."].id = "26_3_2";
+	wholeMenu["CBS RSS Строка U.S."].id = "26_2_2";
 	wholeMenu["CBS RSS Строка U.S."].color = "red";
 	wholeMenu["CBS RSS Строка U.S."].hasSub = 0;
 	wholeMenu["CBS RSS Строка U.S."].link = "news_rus.html?source=cbs&type=us";
 	wholeMenu["CBS RSS Строка U.S."].html = 'U.S.';
 
 	wholeMenu["CBS RSS Строка Politics"] = {};
-	wholeMenu["CBS RSS Строка Politics"].id = "26_3_3";
+	wholeMenu["CBS RSS Строка Politics"].id = "26_2_3";
 	wholeMenu["CBS RSS Строка Politics"].color = "red";
 	wholeMenu["CBS RSS Строка Politics"].hasSub = 0;
 	wholeMenu["CBS RSS Строка Politics"].link = "news_rus.html?source=cbs&type=politics";
 	wholeMenu["CBS RSS Строка Politics"].html = 'Politics';
 
 	wholeMenu["CBS RSS Строка World"] = {};
-	wholeMenu["CBS RSS Строка World"].id = "26_3_4";
+	wholeMenu["CBS RSS Строка World"].id = "26_2_4";
 	wholeMenu["CBS RSS Строка World"].color = "red";
 	wholeMenu["CBS RSS Строка World"].hasSub = 0;
 	wholeMenu["CBS RSS Строка World"].link = "news_rus.html?source=cbs&type=world";
 	wholeMenu["CBS RSS Строка World"].html = 'World';
 
 	wholeMenu["CBS RSS Строка Health"] = {};
-	wholeMenu["CBS RSS Строка Health"].id = "26_3_5";
+	wholeMenu["CBS RSS Строка Health"].id = "26_2_5";
 	wholeMenu["CBS RSS Строка Health"].color = "red";
 	wholeMenu["CBS RSS Строка Health"].hasSub = 0;
 	wholeMenu["CBS RSS Строка Health"].link = "news_rus.html?source=cbs&type=health";
 	wholeMenu["CBS RSS Строка Health"].html = 'Health';
 
 	wholeMenu["CBS RSS Строка MoneyWatch"] = {};
-	wholeMenu["CBS RSS Строка MoneyWatch"].id = "26_3_6";
+	wholeMenu["CBS RSS Строка MoneyWatch"].id = "26_2_6";
 	wholeMenu["CBS RSS Строка MoneyWatch"].color = "red";
 	wholeMenu["CBS RSS Строка MoneyWatch"].hasSub = 0;
 	wholeMenu["CBS RSS Строка MoneyWatch"].link = "news_rus.html?source=cbs&type=moneywatch";
 	wholeMenu["CBS RSS Строка MoneyWatch"].html = 'MoneyWatch';
 
 	wholeMenu["CBS RSS Строка Science"] = {};
-	wholeMenu["CBS RSS Строка Science"].id = "26_3_7";
+	wholeMenu["CBS RSS Строка Science"].id = "26_2_7";
 	wholeMenu["CBS RSS Строка Science"].color = "red";
 	wholeMenu["CBS RSS Строка Science"].hasSub = 0;
 	wholeMenu["CBS RSS Строка Science"].link = "news_rus.html?source=cbs&type=science";
 	wholeMenu["CBS RSS Строка Science"].html = 'Science';
 
 	wholeMenu["CBS RSS Строка Technology"] = {};
-	wholeMenu["CBS RSS Строка Technology"].id = "26_3_8";
+	wholeMenu["CBS RSS Строка Technology"].id = "26_2_8";
 	wholeMenu["CBS RSS Строка Technology"].color = "red";
 	wholeMenu["CBS RSS Строка Technology"].hasSub = 0;
 	wholeMenu["CBS RSS Строка Technology"].link = "news_rus.html?source=cbs&type=technology";
 	wholeMenu["CBS RSS Строка Technology"].html = 'Technology';
 
 	wholeMenu["CBS RSS Строка Entertainment"] = {};
-	wholeMenu["CBS RSS Строка Entertainment"].id = "26_3_9";
+	wholeMenu["CBS RSS Строка Entertainment"].id = "26_2_9";
 	wholeMenu["CBS RSS Строка Entertainment"].color = "red";
 	wholeMenu["CBS RSS Строка Entertainment"].hasSub = 0;
 	wholeMenu["CBS RSS Строка Entertainment"].link = "news_rus.html?source=cbs&type=entertainment";
 	wholeMenu["CBS RSS Строка Entertainment"].html = 'Entertainment';
 
 	wholeMenu["CBS RSS Строка Space"] = {};
-	wholeMenu["CBS RSS Строка Space"].id = "26_3_10";
+	wholeMenu["CBS RSS Строка Space"].id = "26_2_10";
 	wholeMenu["CBS RSS Строка Space"].color = "red";
 	wholeMenu["CBS RSS Строка Space"].hasSub = 0;
 	wholeMenu["CBS RSS Строка Space"].link = "news_rus.html?source=cbs&type=space";
 	wholeMenu["CBS RSS Строка Space"].html = 'Space';
 
 	wholeMenu["● MercoPress RSS Строка"] = {};
-	wholeMenu["● MercoPress RSS Строка"].id = "26_9";
+	wholeMenu["● MercoPress RSS Строка"].id = "26_3";
 	wholeMenu["● MercoPress RSS Строка"].color = "red";
 	wholeMenu["● MercoPress RSS Строка"].hasSub = 1;
 	wholeMenu["● MercoPress RSS Строка"].link = "";
 	wholeMenu["● MercoPress RSS Строка"].html = '&#9679; MercoPress RSS Строка';
 
 	wholeMenu["MercoPress RSS Строка Main"] = {};
-	wholeMenu["MercoPress RSS Строка Main"].id = "26_9_1";
+	wholeMenu["MercoPress RSS Строка Main"].id = "26_3_1";
 	wholeMenu["MercoPress RSS Строка Main"].color = "red";
 	wholeMenu["MercoPress RSS Строка Main"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Main"].link = "news_rus.html?source=merco&type=main";
 	wholeMenu["MercoPress RSS Строка Main"].html = 'Main';
 
 	wholeMenu["MercoPress RSS Строка Agriculture"] = {};
-	wholeMenu["MercoPress RSS Строка Agriculture"].id = "26_9_2";
+	wholeMenu["MercoPress RSS Строка Agriculture"].id = "26_3_2";
 	wholeMenu["MercoPress RSS Строка Agriculture"].color = "red";
 	wholeMenu["MercoPress RSS Строка Agriculture"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Agriculture"].link = "news_rus.html?source=merco&type=agriculture";
 	wholeMenu["MercoPress RSS Строка Agriculture"].html = 'Agriculture';
 
 	wholeMenu["MercoPress RSS Строка Economy"] = {};
-	wholeMenu["MercoPress RSS Строка Economy"].id = "26_9_3";
+	wholeMenu["MercoPress RSS Строка Economy"].id = "26_3_3";
 	wholeMenu["MercoPress RSS Строка Economy"].color = "red";
 	wholeMenu["MercoPress RSS Строка Economy"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Economy"].link = "news_rus.html?source=merco&type=economy";
 	wholeMenu["MercoPress RSS Строка Economy"].html = 'Economy';
 
 	wholeMenu["MercoPress RSS Строка Energy"] = {};
-	wholeMenu["MercoPress RSS Строка Energy"].id = "26_9_4";
+	wholeMenu["MercoPress RSS Строка Energy"].id = "26_3_4";
 	wholeMenu["MercoPress RSS Строка Energy"].color = "red";
 	wholeMenu["MercoPress RSS Строка Energy"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Energy"].link = "news_rus.html?source=merco&type=energy";
 	wholeMenu["MercoPress RSS Строка Energy"].html = 'Energy';
 
 	wholeMenu["MercoPress RSS Строка Environment"] = {};
-	wholeMenu["MercoPress RSS Строка Environment"].id = "26_9_5";
+	wholeMenu["MercoPress RSS Строка Environment"].id = "26_3_5";
 	wholeMenu["MercoPress RSS Строка Environment"].color = "red";
 	wholeMenu["MercoPress RSS Строка Environment"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Environment"].link = "news_rus.html?source=merco&type=environment";
 	wholeMenu["MercoPress RSS Строка Environment"].html = 'Environment';
 
 	wholeMenu["MercoPress RSS Строка Fisheries"] = {};
-	wholeMenu["MercoPress RSS Строка Fisheries"].id = "26_9_6";
+	wholeMenu["MercoPress RSS Строка Fisheries"].id = "26_3_6";
 	wholeMenu["MercoPress RSS Строка Fisheries"].color = "red";
 	wholeMenu["MercoPress RSS Строка Fisheries"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Fisheries"].link = "news_rus.html?source=merco&type=fisheries";
 	wholeMenu["MercoPress RSS Строка Fisheries"].html = 'Fisheries';
 
 	wholeMenu["MercoPress RSS Строка Health & Science"] = {};
-	wholeMenu["MercoPress RSS Строка Health & Science"].id = "26_9_7";
+	wholeMenu["MercoPress RSS Строка Health & Science"].id = "26_3_7";
 	wholeMenu["MercoPress RSS Строка Health & Science"].color = "red";
 	wholeMenu["MercoPress RSS Строка Health & Science"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Health & Science"].link = "news_rus.html?source=merco&type=health";
 	wholeMenu["MercoPress RSS Строка Health & Science"].html = 'Health & Science';
 
 	wholeMenu["MercoPress RSS Строка Investments"] = {};
-	wholeMenu["MercoPress RSS Строка Investments"].id = "26_9_8";
+	wholeMenu["MercoPress RSS Строка Investments"].id = "26_3_8";
 	wholeMenu["MercoPress RSS Строка Investments"].color = "red";
 	wholeMenu["MercoPress RSS Строка Investments"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Investments"].link = "news_rus.html?source=merco&type=investments";
 	wholeMenu["MercoPress RSS Строка Investments"].html = 'Investments';
 
 	wholeMenu["MercoPress RSS Строка Politics"] = {};
-	wholeMenu["MercoPress RSS Строка Politics"].id = "26_9_9";
+	wholeMenu["MercoPress RSS Строка Politics"].id = "26_3_9";
 	wholeMenu["MercoPress RSS Строка Politics"].color = "red";
 	wholeMenu["MercoPress RSS Строка Politics"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Politics"].link = "news_rus.html?source=merco&type=politics";
 	wholeMenu["MercoPress RSS Строка Politics"].html = 'Politics';
 
 	wholeMenu["MercoPress RSS Строка Real Estate"] = {};
-	wholeMenu["MercoPress RSS Строка Real Estate"].id = "26_9_10";
+	wholeMenu["MercoPress RSS Строка Real Estate"].id = "26_3_10";
 	wholeMenu["MercoPress RSS Строка Real Estate"].color = "red";
 	wholeMenu["MercoPress RSS Строка Real Estate"].hasSub = 0;
 	wholeMenu["MercoPress RSS Строка Real Estate"].link = "news_rus.html?source=merco&type=realestate";
 	wholeMenu["MercoPress RSS Строка Real Estate"].html = 'Real Estate';
 
 	wholeMenu["● NASA RSS Строка"] = {};
-	wholeMenu["● NASA RSS Строка"].id = "26_2";
+	wholeMenu["● NASA RSS Строка"].id = "26_4";
 	wholeMenu["● NASA RSS Строка"].color = "red";
 	wholeMenu["● NASA RSS Строка"].hasSub = 1;
 	wholeMenu["● NASA RSS Строка"].link = "";
 	wholeMenu["● NASA RSS Строка"].html = '&#9679; NASA RSS Строка';
 
 	wholeMenu["NASA RSS Строка Releases"] = {};
-	wholeMenu["NASA RSS Строка Releases"].id = "26_2_1";
+	wholeMenu["NASA RSS Строка Releases"].id = "26_4_1";
 	wholeMenu["NASA RSS Строка Releases"].color = "red";
 	wholeMenu["NASA RSS Строка Releases"].hasSub = 0;
 	wholeMenu["NASA RSS Строка Releases"].link = "news_rus.html?source=nasa&type=releases";
 	wholeMenu["NASA RSS Строка Releases"].html = 'Releases';
 
 	wholeMenu["NASA RSS Строка Recent"] = {};
-	wholeMenu["NASA RSS Строка Recent"].id = "26_2_2";
+	wholeMenu["NASA RSS Строка Recent"].id = "26_4_2";
 	wholeMenu["NASA RSS Строка Recent"].color = "red";
 	wholeMenu["NASA RSS Строка Recent"].hasSub = 0;
 	wholeMenu["NASA RSS Строка Recent"].link = "news_rus.html?source=nasa&type=recent";
 	wholeMenu["NASA RSS Строка Recent"].html = 'Recently Published Content';
 
 	wholeMenu["NASA RSS Строка Image"] = {};
-	wholeMenu["NASA RSS Строка Image"].id = "26_2_3";
+	wholeMenu["NASA RSS Строка Image"].id = "26_4_3";
 	wholeMenu["NASA RSS Строка Image"].color = "red";
 	wholeMenu["NASA RSS Строка Image"].hasSub = 0;
 	wholeMenu["NASA RSS Строка Image"].link = "news_rus.html?source=nasa&type=image";
 	wholeMenu["NASA RSS Строка Image"].html = 'Image of the Day';
 
 	wholeMenu["NASA RSS Строка Technology"] = {};
-	wholeMenu["NASA RSS Строка Technology"].id = "26_2_4";
+	wholeMenu["NASA RSS Строка Technology"].id = "26_4_4";
 	wholeMenu["NASA RSS Строка Technology"].color = "red";
 	wholeMenu["NASA RSS Строка Technology"].hasSub = 0;
 	wholeMenu["NASA RSS Строка Technology"].link = "news_rus.html?source=nasa&type=technology";
 	wholeMenu["NASA RSS Строка Technology"].html = 'Technology';
 
 	wholeMenu["NASA RSS Строка Aeronautics"] = {};
-	wholeMenu["NASA RSS Строка Aeronautics"].id = "26_2_5";
+	wholeMenu["NASA RSS Строка Aeronautics"].id = "26_4_5";
 	wholeMenu["NASA RSS Строка Aeronautics"].color = "red";
 	wholeMenu["NASA RSS Строка Aeronautics"].hasSub = 0;
 	wholeMenu["NASA RSS Строка Aeronautics"].link = "news_rus.html?source=nasa&type=aeronautics";
 	wholeMenu["NASA RSS Строка Aeronautics"].html = 'Aeronautics';
 
 	wholeMenu["NASA RSS Строка ISS"] = {};
-	wholeMenu["NASA RSS Строка ISS"].id = "26_2_6";
+	wholeMenu["NASA RSS Строка ISS"].id = "26_4_6";
 	wholeMenu["NASA RSS Строка ISS"].color = "red";
 	wholeMenu["NASA RSS Строка ISS"].hasSub = 0;
 	wholeMenu["NASA RSS Строка ISS"].link = "news_rus.html?source=nasa&type=iss";
 	wholeMenu["NASA RSS Строка ISS"].html = 'Space Station';
 
 	wholeMenu["NASA RSS Строка Artemis"] = {};
-	wholeMenu["NASA RSS Строка Artemis"].id = "26_2_7";
+	wholeMenu["NASA RSS Строка Artemis"].id = "26_4_7";
 	wholeMenu["NASA RSS Строка Artemis"].color = "red";
 	wholeMenu["NASA RSS Строка Artemis"].hasSub = 0;
 	wholeMenu["NASA RSS Строка Artemis"].link = "news_rus.html?source=nasa&type=artemis";
 	wholeMenu["NASA RSS Строка Artemis"].html = 'Artemis';
 
 	wholeMenu["● Phys.org RSS Строка"] = {};
-	wholeMenu["● Phys.org RSS Строка"].id = "26_1";
+	wholeMenu["● Phys.org RSS Строка"].id = "26_5";
 	wholeMenu["● Phys.org RSS Строка"].color = "red";
 	wholeMenu["● Phys.org RSS Строка"].hasSub = 1;
 	wholeMenu["● Phys.org RSS Строка"].link = "";
 	wholeMenu["● Phys.org RSS Строка"].html = '&#9679; Phys.org RSS Строка';
 
 	wholeMenu["Phys.org RSS Строка All Stories"] = {};
-	wholeMenu["Phys.org RSS Строка All Stories"].id = "26_1_1";
+	wholeMenu["Phys.org RSS Строка All Stories"].id = "26_5_1";
 	wholeMenu["Phys.org RSS Строка All Stories"].color = "red";
 	wholeMenu["Phys.org RSS Строка All Stories"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка All Stories"].link = "news_rus.html?source=phys.org&type=all";
 	wholeMenu["Phys.org RSS Строка All Stories"].html = 'All Stories';
 
 	wholeMenu["● Earth"] = {};
-	wholeMenu["● Earth"].id = "26_1_2";
+	wholeMenu["● Earth"].id = "26_5_2";
 	wholeMenu["● Earth"].color = "red";
 	wholeMenu["● Earth"].hasSub = 1;
 	wholeMenu["● Earth"].link = "";
 	wholeMenu["● Earth"].html = '&#9679; Earth';
 
 	wholeMenu["Phys.org RSS Строка Earth Sciences"] = {};
-	wholeMenu["Phys.org RSS Строка Earth Sciences"].id = "26_1_2_1";
+	wholeMenu["Phys.org RSS Строка Earth Sciences"].id = "26_5_2_1";
 	wholeMenu["Phys.org RSS Строка Earth Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Строка Earth Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Earth Sciences"].link = "news_rus.html?source=phys.org&type=earth";
 	wholeMenu["Phys.org RSS Строка Earth Sciences"].html = 'Earth Sciences';
 
 	wholeMenu["Phys.org RSS Строка Environment"] = {};
-	wholeMenu["Phys.org RSS Строка Environment"].id = "26_1_2_2";
+	wholeMenu["Phys.org RSS Строка Environment"].id = "26_5_2_2";
 	wholeMenu["Phys.org RSS Строка Environment"].color = "red";
 	wholeMenu["Phys.org RSS Строка Environment"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Environment"].link = "news_rus.html?source=phys.org&type=environment";
 	wholeMenu["Phys.org RSS Строка Environment"].html = 'Environment';
 
 	wholeMenu["● Other Sciences"] = {};
-	wholeMenu["● Other Sciences"].id = "26_1_3";
+	wholeMenu["● Other Sciences"].id = "26_5_3";
 	wholeMenu["● Other Sciences"].color = "red";
 	wholeMenu["● Other Sciences"].hasSub = 1;
 	wholeMenu["● Other Sciences"].link = "";
 	wholeMenu["● Other Sciences"].html = '&#9679; Other Sciences';
 
 	wholeMenu["Phys.org RSS Строка Archaeology"] = {};
-	wholeMenu["Phys.org RSS Строка Archaeology"].id = "26_1_3_1";
+	wholeMenu["Phys.org RSS Строка Archaeology"].id = "26_5_3_1";
 	wholeMenu["Phys.org RSS Строка Archaeology"].color = "red";
 	wholeMenu["Phys.org RSS Строка Archaeology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Archaeology"].link = "news_rus.html?source=phys.org&type=archaeology";
 	wholeMenu["Phys.org RSS Строка Archaeology"].html = 'Archaeology';
 
 	wholeMenu["Phys.org RSS Строка Economics & Business"] = {};
-	wholeMenu["Phys.org RSS Строка Economics & Business"].id = "26_1_3_2";
+	wholeMenu["Phys.org RSS Строка Economics & Business"].id = "26_5_3_2";
 	wholeMenu["Phys.org RSS Строка Economics & Business"].color = "red";
 	wholeMenu["Phys.org RSS Строка Economics & Business"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Economics & Business"].link = "news_rus.html?source=phys.org&type=economics";
 	wholeMenu["Phys.org RSS Строка Economics & Business"].html = 'Economics & Business';
 
 	wholeMenu["Phys.org RSS Строка Education"] = {};
-	wholeMenu["Phys.org RSS Строка Education"].id = "26_1_3_3";
+	wholeMenu["Phys.org RSS Строка Education"].id = "26_5_3_3";
 	wholeMenu["Phys.org RSS Строка Education"].color = "red";
 	wholeMenu["Phys.org RSS Строка Education"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Education"].link = "news_rus.html?source=phys.org&type=education";
 	wholeMenu["Phys.org RSS Строка Education"].html = 'Education';
 
 	wholeMenu["Phys.org RSS Строка Mathematics"] = {};
-	wholeMenu["Phys.org RSS Строка Mathematics"].id = "26_1_3_4";
+	wholeMenu["Phys.org RSS Строка Mathematics"].id = "26_5_3_4";
 	wholeMenu["Phys.org RSS Строка Mathematics"].color = "red";
 	wholeMenu["Phys.org RSS Строка Mathematics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Mathematics"].link = "news_rus.html?source=phys.org&type=mathematics";
 	wholeMenu["Phys.org RSS Строка Mathematics"].html = 'Mathematics';
 
 	wholeMenu["Phys.org RSS Строка Other"] = {};
-	wholeMenu["Phys.org RSS Строка Other"].id = "26_1_3_5";
+	wholeMenu["Phys.org RSS Строка Other"].id = "26_5_3_5";
 	wholeMenu["Phys.org RSS Строка Other"].color = "red";
 	wholeMenu["Phys.org RSS Строка Other"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Other"].link = "news_rus.html?source=phys.org&type=other";
 	wholeMenu["Phys.org RSS Строка Other"].html = 'Other';
 
 	wholeMenu["Phys.org RSS Строка Political Science"] = {};
-	wholeMenu["Phys.org RSS Строка Political Science"].id = "26_1_3_6";
+	wholeMenu["Phys.org RSS Строка Political Science"].id = "26_5_3_6";
 	wholeMenu["Phys.org RSS Строка Political Science"].color = "red";
 	wholeMenu["Phys.org RSS Строка Political Science"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Political Science"].link = "news_rus.html?source=phys.org&type=political";
 	wholeMenu["Phys.org RSS Строка Political Science"].html = 'Political Science';
 
 	wholeMenu["Phys.org RSS Строка Political Social Sciences"] = {};
-	wholeMenu["Phys.org RSS Строка Political Social Sciences"].id = "26_1_3_7";
+	wholeMenu["Phys.org RSS Строка Political Social Sciences"].id = "26_5_3_7";
 	wholeMenu["Phys.org RSS Строка Political Social Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Строка Political Social Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Political Social Sciences"].link = "news_rus.html?source=phys.org&type=social";
 	wholeMenu["Phys.org RSS Строка Political Social Sciences"].html = 'Social Sciences';
 
 	wholeMenu["● Nanotechnology"] = {};
-	wholeMenu["● Nanotechnology"].id = "26_1_4";
+	wholeMenu["● Nanotechnology"].id = "26_5_4";
 	wholeMenu["● Nanotechnology"].color = "red";
 	wholeMenu["● Nanotechnology"].hasSub = 1;
 	wholeMenu["● Nanotechnology"].link = "";
 	wholeMenu["● Nanotechnology"].html = '&#9679; Nanotechnology';
 
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"] = {};
-	wholeMenu["Phys.org RSS Строка Bio & Medicine"].id = "26_1_4_1";
+	wholeMenu["Phys.org RSS Строка Bio & Medicine"].id = "26_5_4_1";
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"].color = "red";
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"].link = "news_rus.html?source=phys.org&type=bio";
 	wholeMenu["Phys.org RSS Строка Bio & Medicine"].html = 'Bio & Medicine';
 
 	wholeMenu["Phys.org RSS Строка Nanomaterials"] = {};
-	wholeMenu["Phys.org RSS Строка Nanomaterials"].id = "26_1_4_2";
+	wholeMenu["Phys.org RSS Строка Nanomaterials"].id = "26_5_4_2";
 	wholeMenu["Phys.org RSS Строка Nanomaterials"].color = "red";
 	wholeMenu["Phys.org RSS Строка Nanomaterials"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Nanomaterials"].link = "news_rus.html?source=phys.org&type=nanomaterials";
 	wholeMenu["Phys.org RSS Строка Nanomaterials"].html = 'Nanomaterials';
 
 	wholeMenu["Phys.org RSS Строка Nanophysics"] = {};
-	wholeMenu["Phys.org RSS Строка Nanophysics"].id = "26_1_4_3";
+	wholeMenu["Phys.org RSS Строка Nanophysics"].id = "26_5_4_3";
 	wholeMenu["Phys.org RSS Строка Nanophysics"].color = "red";
 	wholeMenu["Phys.org RSS Строка Nanophysics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Nanophysics"].link = "news_rus.html?source=phys.org&type=nanophysics";
 	wholeMenu["Phys.org RSS Строка Nanophysics"].html = 'Nanophysics';
 
 	wholeMenu["● Physics"] = {};
-	wholeMenu["● Physics"].id = "26_1_5";
+	wholeMenu["● Physics"].id = "26_5_5";
 	wholeMenu["● Physics"].color = "red";
 	wholeMenu["● Physics"].hasSub = 1;
 	wholeMenu["● Physics"].link = "";
 	wholeMenu["● Physics"].html = '&#9679; Physics';
 
 	wholeMenu["Phys.org RSS Строка Condensed Matter"] = {};
-	wholeMenu["Phys.org RSS Строка Condensed Matter"].id = "26_1_5_1";
+	wholeMenu["Phys.org RSS Строка Condensed Matter"].id = "26_5_5_1";
 	wholeMenu["Phys.org RSS Строка Condensed Matter"].color = "red";
 	wholeMenu["Phys.org RSS Строка Condensed Matter"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Condensed Matter"].link = "news_rus.html?source=phys.org&type=condensed";
 	wholeMenu["Phys.org RSS Строка Condensed Matter"].html = 'Condensed Matter';
 
 	wholeMenu["Phys.org RSS Строка General Physics"] = {};
-	wholeMenu["Phys.org RSS Строка General Physics"].id = "26_1_5_2";
+	wholeMenu["Phys.org RSS Строка General Physics"].id = "26_5_5_2";
 	wholeMenu["Phys.org RSS Строка General Physics"].color = "red";
 	wholeMenu["Phys.org RSS Строка General Physics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка General Physics"].link = "news_rus.html?source=phys.org&type=general";
 	wholeMenu["Phys.org RSS Строка General Physics"].html = 'General Physics';
 
 	wholeMenu["Phys.org RSS Строка Optics & Photonics"] = {};
-	wholeMenu["Phys.org RSS Строка Optics & Photonics"].id = "26_1_5_3";
+	wholeMenu["Phys.org RSS Строка Optics & Photonics"].id = "26_5_5_3";
 	wholeMenu["Phys.org RSS Строка Optics & Photonics"].color = "red";
 	wholeMenu["Phys.org RSS Строка Optics & Photonics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Optics & Photonics"].link = "news_rus.html?source=phys.org&type=optics";
 	wholeMenu["Phys.org RSS Строка Optics & Photonics"].html = 'Optics & Photonics';
 
 	wholeMenu["Phys.org RSS Строка Plasma Physics"] = {};
-	wholeMenu["Phys.org RSS Строка Plasma Physics"].id = "26_1_5_4";
+	wholeMenu["Phys.org RSS Строка Plasma Physics"].id = "26_5_5_4";
 	wholeMenu["Phys.org RSS Строка Plasma Physics"].color = "red";
 	wholeMenu["Phys.org RSS Строка Plasma Physics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Plasma Physics"].link = "news_rus.html?source=phys.org&type=plasma";
 	wholeMenu["Phys.org RSS Строка Plasma Physics"].html = 'Plasma Physics';
 
 	wholeMenu["Phys.org RSS Строка Quantum Physics"] = {};
-	wholeMenu["Phys.org RSS Строка Quantum Physics"].id = "26_1_5_5";
+	wholeMenu["Phys.org RSS Строка Quantum Physics"].id = "26_5_5_5";
 	wholeMenu["Phys.org RSS Строка Quantum Physics"].color = "red";
 	wholeMenu["Phys.org RSS Строка Quantum Physics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Quantum Physics"].link = "news_rus.html?source=phys.org&type=quantum";
 	wholeMenu["Phys.org RSS Строка Quantum Physics"].html = 'Quantum Physics';
 
 	wholeMenu["Phys.org RSS Строка Soft Matter"] = {};
-	wholeMenu["Phys.org RSS Строка Soft Matter"].id = "26_1_5_6";
+	wholeMenu["Phys.org RSS Строка Soft Matter"].id = "26_5_5_6";
 	wholeMenu["Phys.org RSS Строка Soft Matter"].color = "red";
 	wholeMenu["Phys.org RSS Строка Soft Matter"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Soft Matter"].link = "news_rus.html?source=phys.org&type=soft";
 	wholeMenu["Phys.org RSS Строка Soft Matter"].html = 'Soft Matter';
 
 	wholeMenu["Phys.org RSS Строка Superconductivity"] = {};
-	wholeMenu["Phys.org RSS Строка Superconductivity"].id = "26_1_5_7";
+	wholeMenu["Phys.org RSS Строка Superconductivity"].id = "26_5_5_7";
 	wholeMenu["Phys.org RSS Строка Superconductivity"].color = "red";
 	wholeMenu["Phys.org RSS Строка Superconductivity"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Superconductivity"].link = "news_rus.html?source=phys.org&type=superconductivity";
 	wholeMenu["Phys.org RSS Строка Superconductivity"].html = 'Superconductivity';
 
 	wholeMenu["● Astronomy & Space"] = {};
-	wholeMenu["● Astronomy & Space"].id = "26_1_6";
+	wholeMenu["● Astronomy & Space"].id = "26_5_6";
 	wholeMenu["● Astronomy & Space"].color = "red";
 	wholeMenu["● Astronomy & Space"].hasSub = 1;
 	wholeMenu["● Astronomy & Space"].link = "";
 	wholeMenu["● Astronomy & Space"].html = '&#9679; Astronomy & Space';
 
 	wholeMenu["Phys.org RSS Строка Astrobiology"] = {};
-	wholeMenu["Phys.org RSS Строка Astrobiology"].id = "26_1_6_1";
+	wholeMenu["Phys.org RSS Строка Astrobiology"].id = "26_5_6_1";
 	wholeMenu["Phys.org RSS Строка Astrobiology"].color = "red";
 	wholeMenu["Phys.org RSS Строка Astrobiology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Astrobiology"].link = "news_rus.html?source=phys.org&type=astrobiology";
 	wholeMenu["Phys.org RSS Строка Astrobiology"].html = 'Astrobiology';
 
 	wholeMenu["Phys.org RSS Строка Astronomy"] = {};
-	wholeMenu["Phys.org RSS Строка Astronomy"].id = "26_1_6_2";
+	wholeMenu["Phys.org RSS Строка Astronomy"].id = "26_5_6_2";
 	wholeMenu["Phys.org RSS Строка Astronomy"].color = "red";
 	wholeMenu["Phys.org RSS Строка Astronomy"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Astronomy"].link = "news_rus.html?source=phys.org&type=astronomy";
 	wholeMenu["Phys.org RSS Строка Astronomy"].html = 'Astronomy';
 
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"] = {};
-	wholeMenu["Phys.org RSS Строка Planetary Sciences"].id = "26_1_6_3";
+	wholeMenu["Phys.org RSS Строка Planetary Sciences"].id = "26_5_6_3";
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"].link = "news_rus.html?source=phys.org&type=planetary";
 	wholeMenu["Phys.org RSS Строка Planetary Sciences"].html = 'Planetary Sciences';
 
 	wholeMenu["Phys.org RSS Строка Space Exploration"] = {};
-	wholeMenu["Phys.org RSS Строка Space Exploration"].id = "26_1_6_4";
+	wholeMenu["Phys.org RSS Строка Space Exploration"].id = "26_5_6_4";
 	wholeMenu["Phys.org RSS Строка Space Exploration"].color = "red";
 	wholeMenu["Phys.org RSS Строка Space Exploration"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Space Exploration"].link = "news_rus.html?source=phys.org&type=space";
 	wholeMenu["Phys.org RSS Строка Space Exploration"].html = 'Space Exploration';
 
 	wholeMenu["● Biology"] = {};
-	wholeMenu["● Biology"].id = "26_1_7";
+	wholeMenu["● Biology"].id = "26_5_7";
 	wholeMenu["● Biology"].color = "red";
 	wholeMenu["● Biology"].hasSub = 1;
 	wholeMenu["● Biology"].link = "";
 	wholeMenu["● Biology"].html = '&#9679; Biology';
 
 	wholeMenu["Phys.org RSS Строка Agriculture"] = {};
-	wholeMenu["Phys.org RSS Строка Agriculture"].id = "26_1_7_1";
+	wholeMenu["Phys.org RSS Строка Agriculture"].id = "26_5_7_1";
 	wholeMenu["Phys.org RSS Строка Agriculture"].color = "red";
 	wholeMenu["Phys.org RSS Строка Agriculture"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Agriculture"].link = "news_rus.html?source=phys.org&type=agriculture";
 	wholeMenu["Phys.org RSS Строка Agriculture"].html = 'Agriculture';
 
 	wholeMenu["Phys.org RSS Строка Biotechnology"] = {};
-	wholeMenu["Phys.org RSS Строка Biotechnology"].id = "26_1_7_2";
+	wholeMenu["Phys.org RSS Строка Biotechnology"].id = "26_5_7_2";
 	wholeMenu["Phys.org RSS Строка Biotechnology"].color = "red";
 	wholeMenu["Phys.org RSS Строка Biotechnology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Biotechnology"].link = "news_rus.html?source=phys.org&type=biotechnology";
 	wholeMenu["Phys.org RSS Строка Biotechnology"].html = 'Biotechnology';
 
 	wholeMenu["Phys.org RSS Строка Cell & Microbiology"] = {};
-	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].id = "26_1_7_3";
+	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].id = "26_5_7_3";
 	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].color = "red";
 	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].link = "news_rus.html?source=phys.org&type=cell";
 	wholeMenu["Phys.org RSS Строка Cell & Microbiology"].html = 'Cell & Microbiology';
 
 	wholeMenu["Phys.org RSS Строка Ecology"] = {};
-	wholeMenu["Phys.org RSS Строка Ecology"].id = "26_1_7_4";
+	wholeMenu["Phys.org RSS Строка Ecology"].id = "26_5_7_4";
 	wholeMenu["Phys.org RSS Строка Ecology"].color = "red";
 	wholeMenu["Phys.org RSS Строка Ecology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Ecology"].link = "news_rus.html?source=phys.org&type=ecology";
 	wholeMenu["Phys.org RSS Строка Ecology"].html = 'Ecology';
 
 	wholeMenu["Phys.org RSS Строка Evolution"] = {};
-	wholeMenu["Phys.org RSS Строка Evolution"].id = "26_1_7_5";
+	wholeMenu["Phys.org RSS Строка Evolution"].id = "26_5_7_5";
 	wholeMenu["Phys.org RSS Строка Evolution"].color = "red";
 	wholeMenu["Phys.org RSS Строка Evolution"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Evolution"].link = "news_rus.html?source=phys.org&type=evolution";
 	wholeMenu["Phys.org RSS Строка Evolution"].html = 'Evolution';
 
 	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"] = {};
-	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].id = "26_1_7_6";
+	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].id = "26_5_7_6";
 	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].color = "red";
 	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].link = "news_rus.html?source=phys.org&type=molecular";
 	wholeMenu["Phys.org RSS Строка Molecular & Computational Biology"].html = 'Molecular & Computational Biology';
 
 	wholeMenu["Phys.org RSS Строка OtherB"] = {};
-	wholeMenu["Phys.org RSS Строка OtherB"].id = "26_1_7_7";
+	wholeMenu["Phys.org RSS Строка OtherB"].id = "26_5_7_7";
 	wholeMenu["Phys.org RSS Строка OtherB"].color = "red";
 	wholeMenu["Phys.org RSS Строка OtherB"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка OtherB"].link = "news_rus.html?source=phys.org&type=otherb";
 	wholeMenu["Phys.org RSS Строка OtherB"].html = 'Other';
 
 	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"] = {};
-	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].id = "26_1_7_8";
+	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].id = "26_5_7_8";
 	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].color = "red";
 	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].link = "news_rus.html?source=phys.org&type=paleontology";
 	wholeMenu["Phys.org RSS Строка Paleontology & Fossils"].html = 'Paleontology & Fossils';
 
 	wholeMenu["Phys.org RSS Строка Plants & Animals"] = {};
-	wholeMenu["Phys.org RSS Строка Plants & Animals"].id = "26_1_7_9";
+	wholeMenu["Phys.org RSS Строка Plants & Animals"].id = "26_5_7_9";
 	wholeMenu["Phys.org RSS Строка Plants & Animals"].color = "red";
 	wholeMenu["Phys.org RSS Строка Plants & Animals"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Plants & Animals"].link = "news_rus.html?source=phys.org&type=plants";
 	wholeMenu["Phys.org RSS Строка Plants & Animals"].html = 'Plants & Animals';
 
 	wholeMenu["Phys.org RSS Строка Veterinary Medicine"] = {};
-	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].id = "26_1_7_10";
+	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].id = "26_5_7_10";
 	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].color = "red";
 	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].link = "news_rus.html?source=phys.org&type=veterinary";
 	wholeMenu["Phys.org RSS Строка Veterinary Medicine"].html = 'Veterinary Medicine';
 
 	wholeMenu["● Chemistry"] = {};
-	wholeMenu["● Chemistry"].id = "26_1_8";
+	wholeMenu["● Chemistry"].id = "26_5_8";
 	wholeMenu["● Chemistry"].color = "red";
 	wholeMenu["● Chemistry"].hasSub = 1;
 	wholeMenu["● Chemistry"].link = "";
 	wholeMenu["● Chemistry"].html = '&#9679; Chemistry';
 
 	wholeMenu["Phys.org RSS Строка Analytical Chemistry"] = {};
-	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].id = "26_1_8_1";
+	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].id = "26_5_8_1";
 	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].color = "red";
 	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].link = "news_rus.html?source=phys.org&type=analytical";
 	wholeMenu["Phys.org RSS Строка Analytical Chemistry"].html = 'Analytical Chemistry';
 
 	wholeMenu["Phys.org RSS Строка Biochemistry"] = {};
-	wholeMenu["Phys.org RSS Строка Biochemistry"].id = "26_1_8_2";
+	wholeMenu["Phys.org RSS Строка Biochemistry"].id = "26_5_8_2";
 	wholeMenu["Phys.org RSS Строка Biochemistry"].color = "red";
 	wholeMenu["Phys.org RSS Строка Biochemistry"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Biochemistry"].link = "news_rus.html?source=phys.org&type=biochemistry";
 	wholeMenu["Phys.org RSS Строка Biochemistry"].html = 'Biochemistry';
 
 	wholeMenu["Phys.org RSS Строка Materials Science"] = {};
-	wholeMenu["Phys.org RSS Строка Materials Science"].id = "26_1_8_3";
+	wholeMenu["Phys.org RSS Строка Materials Science"].id = "26_5_8_3";
 	wholeMenu["Phys.org RSS Строка Materials Science"].color = "red";
 	wholeMenu["Phys.org RSS Строка Materials Science"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Materials Science"].link = "news_rus.html?source=phys.org&type=materials";
 	wholeMenu["Phys.org RSS Строка Materials Science"].html = 'Materials Science';
 
 	wholeMenu["Phys.org RSS Строка OtherC"] = {};
-	wholeMenu["Phys.org RSS Строка OtherC"].id = "26_1_8_4";
+	wholeMenu["Phys.org RSS Строка OtherC"].id = "26_5_8_4";
 	wholeMenu["Phys.org RSS Строка OtherC"].color = "red";
 	wholeMenu["Phys.org RSS Строка OtherC"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка OtherC"].link = "news_rus.html?source=phys.org&type=otherc";
 	wholeMenu["Phys.org RSS Строка OtherC"].html = 'Other';
 
 	wholeMenu["Phys.org RSS Строка Polymers"] = {};
-	wholeMenu["Phys.org RSS Строка Polymers"].id = "26_1_8_5";
+	wholeMenu["Phys.org RSS Строка Polymers"].id = "26_5_8_5";
 	wholeMenu["Phys.org RSS Строка Polymers"].color = "red";
 	wholeMenu["Phys.org RSS Строка Polymers"].hasSub = 0;
 	wholeMenu["Phys.org RSS Строка Polymers"].link = "news_rus.html?source=phys.org&type=polymers";
 	wholeMenu["Phys.org RSS Строка Polymers"].html = 'Polymers';
 
-	wholeMenu["Space.com RSS Строка"] = {};
-	wholeMenu["Space.com RSS Строка"].id = "26_6";
-	wholeMenu["Space.com RSS Строка"].color = "red";
-	wholeMenu["Space.com RSS Строка"].hasSub = 0;
-	wholeMenu["Space.com RSS Строка"].link = "news_rus.html?source=space.com";
-	wholeMenu["Space.com RSS Строка"].html = 'Space.com RSS Строка';
-
-	wholeMenu["● Wired RSS Строка"] = {};
-	wholeMenu["● Wired RSS Строка"].id = "26_7";
-	wholeMenu["● Wired RSS Строка"].color = "red";
-	wholeMenu["● Wired RSS Строка"].hasSub = 1;
-	wholeMenu["● Wired RSS Строка"].link = "";
-	wholeMenu["● Wired RSS Строка"].html = '&#9679; Wired RSS Строка';
-
-	wholeMenu["Wired RSS Строка Top"] = {};
-	wholeMenu["Wired RSS Строка Top"].id = "26_7_1";
-	wholeMenu["Wired RSS Строка Top"].color = "red";
-	wholeMenu["Wired RSS Строка Top"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Top"].link = "news_rus.html?source=wired&type=top";
-	wholeMenu["Wired RSS Строка Top"].html = 'Top';
-
-	wholeMenu["Wired RSS Строка Business"] = {};
-	wholeMenu["Wired RSS Строка Business"].id = "26_7_2";
-	wholeMenu["Wired RSS Строка Business"].color = "red";
-	wholeMenu["Wired RSS Строка Business"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Business"].link = "news_rus.html?source=wired&type=business";
-	wholeMenu["Wired RSS Строка Business"].html = 'Business';
-
-	wholeMenu["Wired RSS Строка Artificial Intelligence"] = {};
-	wholeMenu["Wired RSS Строка Artificial Intelligence"].id = "26_7_3";
-	wholeMenu["Wired RSS Строка Artificial Intelligence"].color = "red";
-	wholeMenu["Wired RSS Строка Artificial Intelligence"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Artificial Intelligence"].link = "news_rus.html?source=wired&type=ai";
-	wholeMenu["Wired RSS Строка Artificial Intelligence"].html = 'Artificial Intelligence';
-
-	wholeMenu["Wired RSS Строка Culture"] = {};
-	wholeMenu["Wired RSS Строка Culture"].id = "26_7_4";
-	wholeMenu["Wired RSS Строка Culture"].color = "red";
-	wholeMenu["Wired RSS Строка Culture"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Culture"].link = "news_rus.html?source=wired&type=culture";
-	wholeMenu["Wired RSS Строка Culture"].html = 'Culture';
-
-	wholeMenu["Wired RSS Строка Gear"] = {};
-	wholeMenu["Wired RSS Строка Gear"].id = "26_7_5";
-	wholeMenu["Wired RSS Строка Gear"].color = "red";
-	wholeMenu["Wired RSS Строка Gear"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Gear"].link = "news_rus.html?source=wired&type=gear";
-	wholeMenu["Wired RSS Строка Gear"].html = 'Gear';
-
-	wholeMenu["Wired RSS Строка Ideas"] = {};
-	wholeMenu["Wired RSS Строка Ideas"].id = "26_7_6";
-	wholeMenu["Wired RSS Строка Ideas"].color = "red";
-	wholeMenu["Wired RSS Строка Ideas"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Ideas"].link = "news_rus.html?source=wired&type=ideas";
-	wholeMenu["Wired RSS Строка Ideas"].html = 'Ideas';
-
-	wholeMenu["Wired RSS Строка Science"] = {};
-	wholeMenu["Wired RSS Строка Science"].id = "26_7_7";
-	wholeMenu["Wired RSS Строка Science"].color = "red";
-	wholeMenu["Wired RSS Строка Science"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Science"].link = "news_rus.html?source=wired&type=science";
-	wholeMenu["Wired RSS Строка Science"].html = 'Science';
-
-	wholeMenu["Wired RSS Строка Security"] = {};
-	wholeMenu["Wired RSS Строка Security"].id = "26_7_8";
-	wholeMenu["Wired RSS Строка Security"].color = "red";
-	wholeMenu["Wired RSS Строка Security"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Security"].link = "news_rus.html?source=wired&type=security";
-	wholeMenu["Wired RSS Строка Security"].html = 'Security';
-
-	wholeMenu["Wired RSS Строка Backchannel"] = {};
-	wholeMenu["Wired RSS Строка Backchannel"].id = "26_7_9";
-	wholeMenu["Wired RSS Строка Backchannel"].color = "red";
-	wholeMenu["Wired RSS Строка Backchannel"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Backchannel"].link = "news_rus.html?source=wired&type=backchannel";
-	wholeMenu["Wired RSS Строка Backchannel"].html = 'Backchannel';
-
-	wholeMenu["Wired RSS Строка Guides"] = {};
-	wholeMenu["Wired RSS Строка Guides"].id = "26_7_10";
-	wholeMenu["Wired RSS Строка Guides"].color = "red";
-	wholeMenu["Wired RSS Строка Guides"].hasSub = 0;
-	wholeMenu["Wired RSS Строка Guides"].link = "news_rus.html?source=wired&type=guides";
-	wholeMenu["Wired RSS Строка Guides"].html = 'Guides';
-
-	wholeMenu["● Yahoo RSS Строка"] = {};
-	wholeMenu["● Yahoo RSS Строка"].id = "26_5";
-	wholeMenu["● Yahoo RSS Строка"].color = "red";
-	wholeMenu["● Yahoo RSS Строка"].hasSub = 1;
-	wholeMenu["● Yahoo RSS Строка"].link = "";
-	wholeMenu["● Yahoo RSS Строка"].html = '&#9679; Yahoo RSS Строка';
-
-	wholeMenu["Yahoo RSS Строка Top"] = {};
-	wholeMenu["Yahoo RSS Строка Top"].id = "26_5_1";
-	wholeMenu["Yahoo RSS Строка Top"].color = "red";
-	wholeMenu["Yahoo RSS Строка Top"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка Top"].link = "news_rus.html?source=yahoo&type=top";
-	wholeMenu["Yahoo RSS Строка Top"].html = 'Top';
-
-	wholeMenu["Yahoo RSS Строка World"] = {};
-	wholeMenu["Yahoo RSS Строка World"].id = "26_5_2";
-	wholeMenu["Yahoo RSS Строка World"].color = "red";
-	wholeMenu["Yahoo RSS Строка World"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка World"].link = "news_rus.html?source=yahoo&type=world";
-	wholeMenu["Yahoo RSS Строка World"].html = 'World';
-
-	wholeMenu["Yahoo RSS Строка US"] = {};
-	wholeMenu["Yahoo RSS Строка US"].id = "26_5_3";
-	wholeMenu["Yahoo RSS Строка US"].color = "red";
-	wholeMenu["Yahoo RSS Строка US"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка US"].link = "news_rus.html?source=yahoo&type=us";
-	wholeMenu["Yahoo RSS Строка US"].html = 'US';
-
-	wholeMenu["Yahoo RSS Строка Politics"] = {};
-	wholeMenu["Yahoo RSS Строка Politics"].id = "26_5_4";
-	wholeMenu["Yahoo RSS Строка Politics"].color = "red";
-	wholeMenu["Yahoo RSS Строка Politics"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка Politics"].link = "news_rus.html?source=yahoo&type=politics";
-	wholeMenu["Yahoo RSS Строка Politics"].html = 'Politics';
-
-	wholeMenu["Yahoo RSS Строка Health"] = {};
-	wholeMenu["Yahoo RSS Строка Health"].id = "26_5_5";
-	wholeMenu["Yahoo RSS Строка Health"].color = "red";
-	wholeMenu["Yahoo RSS Строка Health"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка Health"].link = "news_rus.html?source=yahoo&type=health";
-	wholeMenu["Yahoo RSS Строка Health"].html = 'Health';
-
-	wholeMenu["Yahoo RSS Строка Finance"] = {};
-	wholeMenu["Yahoo RSS Строка Finance"].id = "26_5_6";
-	wholeMenu["Yahoo RSS Строка Finance"].color = "red";
-	wholeMenu["Yahoo RSS Строка Finance"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка Finance"].link = "news_rus.html?source=yahoo&type=finance";
-	wholeMenu["Yahoo RSS Строка Finance"].html = 'Finance';
-
-	wholeMenu["Yahoo RSS Строка Science"] = {};
-	wholeMenu["Yahoo RSS Строка Science"].id = "26_5_7";
-	wholeMenu["Yahoo RSS Строка Science"].color = "red";
-	wholeMenu["Yahoo RSS Строка Science"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка Science"].link = "news_rus.html?source=yahoo&type=science";
-	wholeMenu["Yahoo RSS Строка Science"].html = 'Science';
-
-	wholeMenu["Yahoo RSS Строка Sports"] = {};
-	wholeMenu["Yahoo RSS Строка Sports"].id = "26_5_8";
-	wholeMenu["Yahoo RSS Строка Sports"].color = "red";
-	wholeMenu["Yahoo RSS Строка Sports"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка Sports"].link = "news_rus.html?source=yahoo&type=sports";
-	wholeMenu["Yahoo RSS Строка Sports"].html = 'Sports';
-
-	wholeMenu["Yahoo RSS Строка Entertainment"] = {};
-	wholeMenu["Yahoo RSS Строка Entertainment"].id = "26_5_9";
-	wholeMenu["Yahoo RSS Строка Entertainment"].color = "red";
-	wholeMenu["Yahoo RSS Строка Entertainment"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка Entertainment"].link = "news_rus.html?source=yahoo&type=entertainment";
-	wholeMenu["Yahoo RSS Строка Entertainment"].html = 'Entertainment';
-
-	wholeMenu["Yahoo RSS Строка Lifestyle"] = {};
-	wholeMenu["Yahoo RSS Строка Lifestyle"].id = "26_5_10";
-	wholeMenu["Yahoo RSS Строка Lifestyle"].color = "red";
-	wholeMenu["Yahoo RSS Строка Lifestyle"].hasSub = 0;
-	wholeMenu["Yahoo RSS Строка Lifestyle"].link = "news_rus.html?source=yahoo&type=lifestyle";
-	wholeMenu["Yahoo RSS Строка Lifestyle"].html = 'Lifestyle';
-
 	wholeMenu["● Yonhap RSS Строка"] = {};
-	wholeMenu["● Yonhap RSS Строка"].id = "26_4";
+	wholeMenu["● Yonhap RSS Строка"].id = "26_6";
 	wholeMenu["● Yonhap RSS Строка"].color = "red";
 	wholeMenu["● Yonhap RSS Строка"].hasSub = 1;
 	wholeMenu["● Yonhap RSS Строка"].link = "";
 	wholeMenu["● Yonhap RSS Строка"].html = '&#9679; Yonhap RSS Строка';
 
 	wholeMenu["Yonhap RSS Строка All News"] = {};
-	wholeMenu["Yonhap RSS Строка All News"].id = "26_4_1";
+	wholeMenu["Yonhap RSS Строка All News"].id = "26_6_1";
 	wholeMenu["Yonhap RSS Строка All News"].color = "red";
 	wholeMenu["Yonhap RSS Строка All News"].hasSub = 0;
 	wholeMenu["Yonhap RSS Строка All News"].link = "news_rus.html?source=yonhap&type=all";
 	wholeMenu["Yonhap RSS Строка All News"].html = 'All News';
 
 	wholeMenu["Yonhap RSS Строка National"] = {};
-	wholeMenu["Yonhap RSS Строка National"].id = "26_4_2";
+	wholeMenu["Yonhap RSS Строка National"].id = "26_6_2";
 	wholeMenu["Yonhap RSS Строка National"].color = "red";
 	wholeMenu["Yonhap RSS Строка National"].hasSub = 0;
 	wholeMenu["Yonhap RSS Строка National"].link = "news_rus.html?source=yonhap&type=national";
 	wholeMenu["Yonhap RSS Строка National"].html = 'National';
 
 	wholeMenu["Yonhap RSS Строка North Korea"] = {};
-	wholeMenu["Yonhap RSS Строка North Korea"].id = "26_4_3";
+	wholeMenu["Yonhap RSS Строка North Korea"].id = "26_6_3";
 	wholeMenu["Yonhap RSS Строка North Korea"].color = "red";
 	wholeMenu["Yonhap RSS Строка North Korea"].hasSub = 0;
 	wholeMenu["Yonhap RSS Строка North Korea"].link = "news_rus.html?source=yonhap&type=northkorea";
 	wholeMenu["Yonhap RSS Строка North Korea"].html = 'North Korea';
 
 	wholeMenu["Yonhap RSS Строка Economy/Finance"] = {};
-	wholeMenu["Yonhap RSS Строка Economy/Finance"].id = "26_4_4";
+	wholeMenu["Yonhap RSS Строка Economy/Finance"].id = "26_6_4";
 	wholeMenu["Yonhap RSS Строка Economy/Finance"].color = "red";
 	wholeMenu["Yonhap RSS Строка Economy/Finance"].hasSub = 0;
 	wholeMenu["Yonhap RSS Строка Economy/Finance"].link = "news_rus.html?source=yonhap&type=economy";
 	wholeMenu["Yonhap RSS Строка Economy/Finance"].html = 'Economy/Finance';
 
 	wholeMenu["Yonhap RSS Строка BIZ"] = {};
-	wholeMenu["Yonhap RSS Строка BIZ"].id = "26_4_5";
+	wholeMenu["Yonhap RSS Строка BIZ"].id = "26_6_5";
 	wholeMenu["Yonhap RSS Строка BIZ"].color = "red";
 	wholeMenu["Yonhap RSS Строка BIZ"].hasSub = 0;
 	wholeMenu["Yonhap RSS Строка BIZ"].link = "news_rus.html?source=yonhap&type=biz";
 	wholeMenu["Yonhap RSS Строка BIZ"].html = 'BIZ';
 
 	wholeMenu["Yonhap RSS Строка Culture/K-pop"] = {};
-	wholeMenu["Yonhap RSS Строка Culture/K-pop"].id = "26_4_6";
+	wholeMenu["Yonhap RSS Строка Culture/K-pop"].id = "26_6_6";
 	wholeMenu["Yonhap RSS Строка Culture/K-pop"].color = "red";
 	wholeMenu["Yonhap RSS Строка Culture/K-pop"].hasSub = 0;
 	wholeMenu["Yonhap RSS Строка Culture/K-pop"].link = "news_rus.html?source=yonhap&type=culture";
 	wholeMenu["Yonhap RSS Строка Culture/K-pop"].html = 'Culture/K-pop';
 
 	wholeMenu["Yonhap RSS Строка Sports"] = {};
-	wholeMenu["Yonhap RSS Строка Sports"].id = "26_4_7";
+	wholeMenu["Yonhap RSS Строка Sports"].id = "26_6_7";
 	wholeMenu["Yonhap RSS Строка Sports"].color = "red";
 	wholeMenu["Yonhap RSS Строка Sports"].hasSub = 0;
 	wholeMenu["Yonhap RSS Строка Sports"].link = "news_rus.html?source=yonhap&type=sports";
@@ -6628,763 +6306,602 @@ if (lang=="lat") {
 	wholeMenu["● Nuntii"].html = '&#9679; Nuntii';
 
 	wholeMenu["Artemis II API Fluxus"] = {};
-	wholeMenu["Artemis II API Fluxus"].id = "26_8";
+	wholeMenu["Artemis II API Fluxus"].id = "26_1";
 	wholeMenu["Artemis II API Fluxus"].color = "red";
 	wholeMenu["Artemis II API Fluxus"].hasSub = 0;
 	wholeMenu["Artemis II API Fluxus"].link = "news_lat.html?source=artemis";
 	wholeMenu["Artemis II API Fluxus"].html = 'Artemis II API Fluxus';
 
 	wholeMenu["● CBS RSS Fluxus"] = {};
-	wholeMenu["● CBS RSS Fluxus"].id = "26_3";
+	wholeMenu["● CBS RSS Fluxus"].id = "26_2";
 	wholeMenu["● CBS RSS Fluxus"].color = "red";
 	wholeMenu["● CBS RSS Fluxus"].hasSub = 1;
 	wholeMenu["● CBS RSS Fluxus"].link = "";
 	wholeMenu["● CBS RSS Fluxus"].html = '&#9679; CBS RSS Fluxus';
 
 	wholeMenu["CBS RSS Fluxus Top Stories"] = {};
-	wholeMenu["CBS RSS Fluxus Top Stories"].id = "26_3_1";
+	wholeMenu["CBS RSS Fluxus Top Stories"].id = "26_2_1";
 	wholeMenu["CBS RSS Fluxus Top Stories"].color = "red";
 	wholeMenu["CBS RSS Fluxus Top Stories"].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus Top Stories"].link = "news_lat.html?source=cbs&type=top";
 	wholeMenu["CBS RSS Fluxus Top Stories"].html = 'Top Stories';
 
 	wholeMenu["CBS RSS Fluxus U.S."] = {};
-	wholeMenu["CBS RSS Fluxus U.S."].id = "26_3_2";
+	wholeMenu["CBS RSS Fluxus U.S."].id = "26_2_2";
 	wholeMenu["CBS RSS Fluxus U.S."].color = "red";
 	wholeMenu["CBS RSS Fluxus U.S."].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus U.S."].link = "news_lat.html?source=cbs&type=us";
 	wholeMenu["CBS RSS Fluxus U.S."].html = 'U.S.';
 
 	wholeMenu["CBS RSS Fluxus Politics"] = {};
-	wholeMenu["CBS RSS Fluxus Politics"].id = "26_3_3";
+	wholeMenu["CBS RSS Fluxus Politics"].id = "26_2_3";
 	wholeMenu["CBS RSS Fluxus Politics"].color = "red";
 	wholeMenu["CBS RSS Fluxus Politics"].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus Politics"].link = "news_lat.html?source=cbs&type=politics";
 	wholeMenu["CBS RSS Fluxus Politics"].html = 'Politics';
 
 	wholeMenu["CBS RSS Fluxus World"] = {};
-	wholeMenu["CBS RSS Fluxus World"].id = "26_3_4";
+	wholeMenu["CBS RSS Fluxus World"].id = "26_2_4";
 	wholeMenu["CBS RSS Fluxus World"].color = "red";
 	wholeMenu["CBS RSS Fluxus World"].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus World"].link = "news_lat.html?source=cbs&type=world";
 	wholeMenu["CBS RSS Fluxus World"].html = 'World';
 
 	wholeMenu["CBS RSS Fluxus Health"] = {};
-	wholeMenu["CBS RSS Fluxus Health"].id = "26_3_5";
+	wholeMenu["CBS RSS Fluxus Health"].id = "26_2_5";
 	wholeMenu["CBS RSS Fluxus Health"].color = "red";
 	wholeMenu["CBS RSS Fluxus Health"].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus Health"].link = "news_lat.html?source=cbs&type=health";
 	wholeMenu["CBS RSS Fluxus Health"].html = 'Health';
 
 	wholeMenu["CBS RSS Fluxus MoneyWatch"] = {};
-	wholeMenu["CBS RSS Fluxus MoneyWatch"].id = "26_3_6";
+	wholeMenu["CBS RSS Fluxus MoneyWatch"].id = "26_2_6";
 	wholeMenu["CBS RSS Fluxus MoneyWatch"].color = "red";
 	wholeMenu["CBS RSS Fluxus MoneyWatch"].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus MoneyWatch"].link = "news_lat.html?source=cbs&type=moneywatch";
 	wholeMenu["CBS RSS Fluxus MoneyWatch"].html = 'MoneyWatch';
 
 	wholeMenu["CBS RSS Fluxus Science"] = {};
-	wholeMenu["CBS RSS Fluxus Science"].id = "26_3_7";
+	wholeMenu["CBS RSS Fluxus Science"].id = "26_2_7";
 	wholeMenu["CBS RSS Fluxus Science"].color = "red";
 	wholeMenu["CBS RSS Fluxus Science"].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus Science"].link = "news_lat.html?source=cbs&type=science";
 	wholeMenu["CBS RSS Fluxus Science"].html = 'Science';
 
 	wholeMenu["CBS RSS Fluxus Technology"] = {};
-	wholeMenu["CBS RSS Fluxus Technology"].id = "26_3_8";
+	wholeMenu["CBS RSS Fluxus Technology"].id = "26_2_8";
 	wholeMenu["CBS RSS Fluxus Technology"].color = "red";
 	wholeMenu["CBS RSS Fluxus Technology"].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus Technology"].link = "news_lat.html?source=cbs&type=technology";
 	wholeMenu["CBS RSS Fluxus Technology"].html = 'Technology';
 
 	wholeMenu["CBS RSS Fluxus Entertainment"] = {};
-	wholeMenu["CBS RSS Fluxus Entertainment"].id = "26_3_9";
+	wholeMenu["CBS RSS Fluxus Entertainment"].id = "26_2_9";
 	wholeMenu["CBS RSS Fluxus Entertainment"].color = "red";
 	wholeMenu["CBS RSS Fluxus Entertainment"].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus Entertainment"].link = "news_lat.html?source=cbs&type=entertainment";
 	wholeMenu["CBS RSS Fluxus Entertainment"].html = 'Entertainment';
 
 	wholeMenu["CBS RSS Fluxus Space"] = {};
-	wholeMenu["CBS RSS Fluxus Space"].id = "26_3_10";
+	wholeMenu["CBS RSS Fluxus Space"].id = "26_2_10";
 	wholeMenu["CBS RSS Fluxus Space"].color = "red";
 	wholeMenu["CBS RSS Fluxus Space"].hasSub = 0;
 	wholeMenu["CBS RSS Fluxus Space"].link = "news_lat.html?source=cbs&type=space";
 	wholeMenu["CBS RSS Fluxus Space"].html = 'Space';
 
 	wholeMenu["● MercoPress RSS Fluxus"] = {};
-	wholeMenu["● MercoPress RSS Fluxus"].id = "26_9";
+	wholeMenu["● MercoPress RSS Fluxus"].id = "26_3";
 	wholeMenu["● MercoPress RSS Fluxus"].color = "red";
 	wholeMenu["● MercoPress RSS Fluxus"].hasSub = 1;
 	wholeMenu["● MercoPress RSS Fluxus"].link = "";
 	wholeMenu["● MercoPress RSS Fluxus"].html = '&#9679; MercoPress RSS Fluxus';
 
 	wholeMenu["MercoPress RSS Fluxus Main"] = {};
-	wholeMenu["MercoPress RSS Fluxus Main"].id = "26_9_1";
+	wholeMenu["MercoPress RSS Fluxus Main"].id = "26_3_1";
 	wholeMenu["MercoPress RSS Fluxus Main"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Main"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Main"].link = "news_lat.html?source=merco&type=main";
 	wholeMenu["MercoPress RSS Fluxus Main"].html = 'Main';
 
 	wholeMenu["MercoPress RSS Fluxus Agriculture"] = {};
-	wholeMenu["MercoPress RSS Fluxus Agriculture"].id = "26_9_2";
+	wholeMenu["MercoPress RSS Fluxus Agriculture"].id = "26_3_2";
 	wholeMenu["MercoPress RSS Fluxus Agriculture"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Agriculture"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Agriculture"].link = "news_lat.html?source=merco&type=agriculture";
 	wholeMenu["MercoPress RSS Fluxus Agriculture"].html = 'Agriculture';
 
 	wholeMenu["MercoPress RSS Fluxus Economy"] = {};
-	wholeMenu["MercoPress RSS Fluxus Economy"].id = "26_9_3";
+	wholeMenu["MercoPress RSS Fluxus Economy"].id = "26_3_3";
 	wholeMenu["MercoPress RSS Fluxus Economy"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Economy"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Economy"].link = "news_lat.html?source=merco&type=economy";
 	wholeMenu["MercoPress RSS Fluxus Economy"].html = 'Economy';
 
 	wholeMenu["MercoPress RSS Fluxus Energy"] = {};
-	wholeMenu["MercoPress RSS Fluxus Energy"].id = "26_9_4";
+	wholeMenu["MercoPress RSS Fluxus Energy"].id = "26_3_4";
 	wholeMenu["MercoPress RSS Fluxus Energy"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Energy"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Energy"].link = "news_lat.html?source=merco&type=energy";
 	wholeMenu["MercoPress RSS Fluxus Energy"].html = 'Energy';
 
 	wholeMenu["MercoPress RSS Fluxus Environment"] = {};
-	wholeMenu["MercoPress RSS Fluxus Environment"].id = "26_9_5";
+	wholeMenu["MercoPress RSS Fluxus Environment"].id = "26_3_5";
 	wholeMenu["MercoPress RSS Fluxus Environment"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Environment"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Environment"].link = "news_lat.html?source=merco&type=environment";
 	wholeMenu["MercoPress RSS Fluxus Environment"].html = 'Environment';
 
 	wholeMenu["MercoPress RSS Fluxus Fisheries"] = {};
-	wholeMenu["MercoPress RSS Fluxus Fisheries"].id = "26_9_6";
+	wholeMenu["MercoPress RSS Fluxus Fisheries"].id = "26_3_6";
 	wholeMenu["MercoPress RSS Fluxus Fisheries"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Fisheries"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Fisheries"].link = "news_lat.html?source=merco&type=fisheries";
 	wholeMenu["MercoPress RSS Fluxus Fisheries"].html = 'Fisheries';
 
 	wholeMenu["MercoPress RSS Fluxus Health & Science"] = {};
-	wholeMenu["MercoPress RSS Fluxus Health & Science"].id = "26_9_7";
+	wholeMenu["MercoPress RSS Fluxus Health & Science"].id = "26_3_7";
 	wholeMenu["MercoPress RSS Fluxus Health & Science"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Health & Science"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Health & Science"].link = "news_lat.html?source=merco&type=health";
 	wholeMenu["MercoPress RSS Fluxus Health & Science"].html = 'Health & Science';
 
 	wholeMenu["MercoPress RSS Fluxus Investments"] = {};
-	wholeMenu["MercoPress RSS Fluxus Investments"].id = "26_9_8";
+	wholeMenu["MercoPress RSS Fluxus Investments"].id = "26_3_8";
 	wholeMenu["MercoPress RSS Fluxus Investments"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Investments"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Investments"].link = "news_lat.html?source=merco&type=investments";
 	wholeMenu["MercoPress RSS Fluxus Investments"].html = 'Investments';
 
 	wholeMenu["MercoPress RSS Fluxus Politics"] = {};
-	wholeMenu["MercoPress RSS Fluxus Politics"].id = "26_9_9";
+	wholeMenu["MercoPress RSS Fluxus Politics"].id = "26_3_9";
 	wholeMenu["MercoPress RSS Fluxus Politics"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Politics"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Politics"].link = "news_lat.html?source=merco&type=politics";
 	wholeMenu["MercoPress RSS Fluxus Politics"].html = 'Politics';
 
 	wholeMenu["MercoPress RSS Fluxus Real Estate"] = {};
-	wholeMenu["MercoPress RSS Fluxus Real Estate"].id = "26_9_10";
+	wholeMenu["MercoPress RSS Fluxus Real Estate"].id = "26_3_10";
 	wholeMenu["MercoPress RSS Fluxus Real Estate"].color = "red";
 	wholeMenu["MercoPress RSS Fluxus Real Estate"].hasSub = 0;
 	wholeMenu["MercoPress RSS Fluxus Real Estate"].link = "news_lat.html?source=merco&type=realestate";
 	wholeMenu["MercoPress RSS Fluxus Real Estate"].html = 'Real Estate';
 
 	wholeMenu["● NASA RSS Fluxus"] = {};
-	wholeMenu["● NASA RSS Fluxus"].id = "26_2";
+	wholeMenu["● NASA RSS Fluxus"].id = "26_4";
 	wholeMenu["● NASA RSS Fluxus"].color = "red";
 	wholeMenu["● NASA RSS Fluxus"].hasSub = 1;
 	wholeMenu["● NASA RSS Fluxus"].link = "";
 	wholeMenu["● NASA RSS Fluxus"].html = '&#9679; NASA RSS Fluxus';
 
 	wholeMenu["NASA RSS Fluxus Releases"] = {};
-	wholeMenu["NASA RSS Fluxus Releases"].id = "26_2_1";
+	wholeMenu["NASA RSS Fluxus Releases"].id = "26_4_1";
 	wholeMenu["NASA RSS Fluxus Releases"].color = "red";
 	wholeMenu["NASA RSS Fluxus Releases"].hasSub = 0;
 	wholeMenu["NASA RSS Fluxus Releases"].link = "news_lat.html?source=nasa&type=releases";
 	wholeMenu["NASA RSS Fluxus Releases"].html = 'Releases';
 
 	wholeMenu["NASA RSS Fluxus Recent"] = {};
-	wholeMenu["NASA RSS Fluxus Recent"].id = "26_2_2";
+	wholeMenu["NASA RSS Fluxus Recent"].id = "26_4_2";
 	wholeMenu["NASA RSS Fluxus Recent"].color = "red";
 	wholeMenu["NASA RSS Fluxus Recent"].hasSub = 0;
 	wholeMenu["NASA RSS Fluxus Recent"].link = "news_lat.html?source=nasa&type=recent";
 	wholeMenu["NASA RSS Fluxus Recent"].html = 'Recently Published Content';
 
 	wholeMenu["NASA RSS Fluxus Image"] = {};
-	wholeMenu["NASA RSS Fluxus Image"].id = "26_2_3";
+	wholeMenu["NASA RSS Fluxus Image"].id = "26_4_3";
 	wholeMenu["NASA RSS Fluxus Image"].color = "red";
 	wholeMenu["NASA RSS Fluxus Image"].hasSub = 0;
 	wholeMenu["NASA RSS Fluxus Image"].link = "news_lat.html?source=nasa&type=image";
 	wholeMenu["NASA RSS Fluxus Image"].html = 'Image of the Day';
 
 	wholeMenu["NASA RSS Fluxus Technology"] = {};
-	wholeMenu["NASA RSS Fluxus Technology"].id = "26_2_4";
+	wholeMenu["NASA RSS Fluxus Technology"].id = "26_4_4";
 	wholeMenu["NASA RSS Fluxus Technology"].color = "red";
 	wholeMenu["NASA RSS Fluxus Technology"].hasSub = 0;
 	wholeMenu["NASA RSS Fluxus Technology"].link = "news_lat.html?source=nasa&type=technology";
 	wholeMenu["NASA RSS Fluxus Technology"].html = 'Technology';
 
 	wholeMenu["NASA RSS Fluxus Aeronautics"] = {};
-	wholeMenu["NASA RSS Fluxus Aeronautics"].id = "26_2_5";
+	wholeMenu["NASA RSS Fluxus Aeronautics"].id = "26_4_5";
 	wholeMenu["NASA RSS Fluxus Aeronautics"].color = "red";
 	wholeMenu["NASA RSS Fluxus Aeronautics"].hasSub = 0;
 	wholeMenu["NASA RSS Fluxus Aeronautics"].link = "news_lat.html?source=nasa&type=aeronautics";
 	wholeMenu["NASA RSS Fluxus Aeronautics"].html = 'Aeronautics';
 
 	wholeMenu["NASA RSS Fluxus ISS"] = {};
-	wholeMenu["NASA RSS Fluxus ISS"].id = "26_2_6";
+	wholeMenu["NASA RSS Fluxus ISS"].id = "26_4_6";
 	wholeMenu["NASA RSS Fluxus ISS"].color = "red";
 	wholeMenu["NASA RSS Fluxus ISS"].hasSub = 0;
 	wholeMenu["NASA RSS Fluxus ISS"].link = "news_lat.html?source=nasa&type=iss";
 	wholeMenu["NASA RSS Fluxus ISS"].html = 'Space Station';
 
 	wholeMenu["NASA RSS Fluxus Artemis"] = {};
-	wholeMenu["NASA RSS Fluxus Artemis"].id = "26_2_7";
+	wholeMenu["NASA RSS Fluxus Artemis"].id = "26_4_7";
 	wholeMenu["NASA RSS Fluxus Artemis"].color = "red";
 	wholeMenu["NASA RSS Fluxus Artemis"].hasSub = 0;
 	wholeMenu["NASA RSS Fluxus Artemis"].link = "news_lat.html?source=nasa&type=artemis";
 	wholeMenu["NASA RSS Fluxus Artemis"].html = 'Artemis';
 
 	wholeMenu["● Phys.org RSS Fluxus"] = {};
-	wholeMenu["● Phys.org RSS Fluxus"].id = "26_1";
+	wholeMenu["● Phys.org RSS Fluxus"].id = "26_5";
 	wholeMenu["● Phys.org RSS Fluxus"].color = "red";
 	wholeMenu["● Phys.org RSS Fluxus"].hasSub = 1;
 	wholeMenu["● Phys.org RSS Fluxus"].link = "";
 	wholeMenu["● Phys.org RSS Fluxus"].html = '&#9679; Phys.org RSS Fluxus';
 
 	wholeMenu["Phys.org RSS Fluxus All Stories"] = {};
-	wholeMenu["Phys.org RSS Fluxus All Stories"].id = "26_1_1";
+	wholeMenu["Phys.org RSS Fluxus All Stories"].id = "26_5_1";
 	wholeMenu["Phys.org RSS Fluxus All Stories"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus All Stories"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus All Stories"].link = "news_lat.html?source=phys.org&type=all";
 	wholeMenu["Phys.org RSS Fluxus All Stories"].html = 'All Stories';
 
 	wholeMenu["● Earth"] = {};
-	wholeMenu["● Earth"].id = "26_1_2";
+	wholeMenu["● Earth"].id = "26_5_2";
 	wholeMenu["● Earth"].color = "red";
 	wholeMenu["● Earth"].hasSub = 1;
 	wholeMenu["● Earth"].link = "";
 	wholeMenu["● Earth"].html = '&#9679; Earth';
 
 	wholeMenu["Phys.org RSS Fluxus Earth Sciences"] = {};
-	wholeMenu["Phys.org RSS Fluxus Earth Sciences"].id = "26_1_2_1";
+	wholeMenu["Phys.org RSS Fluxus Earth Sciences"].id = "26_5_2_1";
 	wholeMenu["Phys.org RSS Fluxus Earth Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Earth Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Earth Sciences"].link = "news_lat.html?source=phys.org&type=earth";
 	wholeMenu["Phys.org RSS Fluxus Earth Sciences"].html = 'Earth Sciences';
 
 	wholeMenu["Phys.org RSS Fluxus Environment"] = {};
-	wholeMenu["Phys.org RSS Fluxus Environment"].id = "26_1_2_2";
+	wholeMenu["Phys.org RSS Fluxus Environment"].id = "26_5_2_2";
 	wholeMenu["Phys.org RSS Fluxus Environment"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Environment"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Environment"].link = "news_lat.html?source=phys.org&type=environment";
 	wholeMenu["Phys.org RSS Fluxus Environment"].html = 'Environment';
 
 	wholeMenu["● Other Sciences"] = {};
-	wholeMenu["● Other Sciences"].id = "26_1_3";
+	wholeMenu["● Other Sciences"].id = "26_5_3";
 	wholeMenu["● Other Sciences"].color = "red";
 	wholeMenu["● Other Sciences"].hasSub = 1;
 	wholeMenu["● Other Sciences"].link = "";
 	wholeMenu["● Other Sciences"].html = '&#9679; Other Sciences';
 
 	wholeMenu["Phys.org RSS Fluxus Archaeology"] = {};
-	wholeMenu["Phys.org RSS Fluxus Archaeology"].id = "26_1_3_1";
+	wholeMenu["Phys.org RSS Fluxus Archaeology"].id = "26_5_3_1";
 	wholeMenu["Phys.org RSS Fluxus Archaeology"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Archaeology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Archaeology"].link = "news_lat.html?source=phys.org&type=archaeology";
 	wholeMenu["Phys.org RSS Fluxus Archaeology"].html = 'Archaeology';
 
 	wholeMenu["Phys.org RSS Fluxus Economics & Business"] = {};
-	wholeMenu["Phys.org RSS Fluxus Economics & Business"].id = "26_1_3_2";
+	wholeMenu["Phys.org RSS Fluxus Economics & Business"].id = "26_5_3_2";
 	wholeMenu["Phys.org RSS Fluxus Economics & Business"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Economics & Business"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Economics & Business"].link = "news_lat.html?source=phys.org&type=economics";
 	wholeMenu["Phys.org RSS Fluxus Economics & Business"].html = 'Economics & Business';
 
 	wholeMenu["Phys.org RSS Fluxus Education"] = {};
-	wholeMenu["Phys.org RSS Fluxus Education"].id = "26_1_3_3";
+	wholeMenu["Phys.org RSS Fluxus Education"].id = "26_5_3_3";
 	wholeMenu["Phys.org RSS Fluxus Education"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Education"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Education"].link = "news_lat.html?source=phys.org&type=education";
 	wholeMenu["Phys.org RSS Fluxus Education"].html = 'Education';
 
 	wholeMenu["Phys.org RSS Fluxus Mathematics"] = {};
-	wholeMenu["Phys.org RSS Fluxus Mathematics"].id = "26_1_3_4";
+	wholeMenu["Phys.org RSS Fluxus Mathematics"].id = "26_5_3_4";
 	wholeMenu["Phys.org RSS Fluxus Mathematics"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Mathematics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Mathematics"].link = "news_lat.html?source=phys.org&type=mathematics";
 	wholeMenu["Phys.org RSS Fluxus Mathematics"].html = 'Mathematics';
 
 	wholeMenu["Phys.org RSS Fluxus Other"] = {};
-	wholeMenu["Phys.org RSS Fluxus Other"].id = "26_1_3_5";
+	wholeMenu["Phys.org RSS Fluxus Other"].id = "26_5_3_5";
 	wholeMenu["Phys.org RSS Fluxus Other"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Other"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Other"].link = "news_lat.html?source=phys.org&type=other";
 	wholeMenu["Phys.org RSS Fluxus Other"].html = 'Other';
 
 	wholeMenu["Phys.org RSS Fluxus Political Science"] = {};
-	wholeMenu["Phys.org RSS Fluxus Political Science"].id = "26_1_3_6";
+	wholeMenu["Phys.org RSS Fluxus Political Science"].id = "26_5_3_6";
 	wholeMenu["Phys.org RSS Fluxus Political Science"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Political Science"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Political Science"].link = "news_lat.html?source=phys.org&type=political";
 	wholeMenu["Phys.org RSS Fluxus Political Science"].html = 'Political Science';
 
 	wholeMenu["Phys.org RSS Fluxus Political Social Sciences"] = {};
-	wholeMenu["Phys.org RSS Fluxus Political Social Sciences"].id = "26_1_3_7";
+	wholeMenu["Phys.org RSS Fluxus Political Social Sciences"].id = "26_5_3_7";
 	wholeMenu["Phys.org RSS Fluxus Political Social Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Political Social Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Political Social Sciences"].link = "news_lat.html?source=phys.org&type=social";
 	wholeMenu["Phys.org RSS Fluxus Political Social Sciences"].html = 'Social Sciences';
 
 	wholeMenu["● Nanotechnology"] = {};
-	wholeMenu["● Nanotechnology"].id = "26_1_4";
+	wholeMenu["● Nanotechnology"].id = "26_5_4";
 	wholeMenu["● Nanotechnology"].color = "red";
 	wholeMenu["● Nanotechnology"].hasSub = 1;
 	wholeMenu["● Nanotechnology"].link = "";
 	wholeMenu["● Nanotechnology"].html = '&#9679; Nanotechnology';
 
 	wholeMenu["Phys.org RSS Fluxus Bio & Medicine"] = {};
-	wholeMenu["Phys.org RSS Fluxus Bio & Medicine"].id = "26_1_4_1";
+	wholeMenu["Phys.org RSS Fluxus Bio & Medicine"].id = "26_5_4_1";
 	wholeMenu["Phys.org RSS Fluxus Bio & Medicine"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Bio & Medicine"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Bio & Medicine"].link = "news_lat.html?source=phys.org&type=bio";
 	wholeMenu["Phys.org RSS Fluxus Bio & Medicine"].html = 'Bio & Medicine';
 
 	wholeMenu["Phys.org RSS Fluxus Nanomaterials"] = {};
-	wholeMenu["Phys.org RSS Fluxus Nanomaterials"].id = "26_1_4_2";
+	wholeMenu["Phys.org RSS Fluxus Nanomaterials"].id = "26_5_4_2";
 	wholeMenu["Phys.org RSS Fluxus Nanomaterials"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Nanomaterials"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Nanomaterials"].link = "news_lat.html?source=phys.org&type=nanomaterials";
 	wholeMenu["Phys.org RSS Fluxus Nanomaterials"].html = 'Nanomaterials';
 
 	wholeMenu["Phys.org RSS Fluxus Nanophysics"] = {};
-	wholeMenu["Phys.org RSS Fluxus Nanophysics"].id = "26_1_4_3";
+	wholeMenu["Phys.org RSS Fluxus Nanophysics"].id = "26_5_4_3";
 	wholeMenu["Phys.org RSS Fluxus Nanophysics"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Nanophysics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Nanophysics"].link = "news_lat.html?source=phys.org&type=nanophysics";
 	wholeMenu["Phys.org RSS Fluxus Nanophysics"].html = 'Nanophysics';
 
 	wholeMenu["● Physics"] = {};
-	wholeMenu["● Physics"].id = "26_1_5";
+	wholeMenu["● Physics"].id = "26_5_5";
 	wholeMenu["● Physics"].color = "red";
 	wholeMenu["● Physics"].hasSub = 1;
 	wholeMenu["● Physics"].link = "";
 	wholeMenu["● Physics"].html = '&#9679; Physics';
 
 	wholeMenu["Phys.org RSS Fluxus Condensed Matter"] = {};
-	wholeMenu["Phys.org RSS Fluxus Condensed Matter"].id = "26_1_5_1";
+	wholeMenu["Phys.org RSS Fluxus Condensed Matter"].id = "26_5_5_1";
 	wholeMenu["Phys.org RSS Fluxus Condensed Matter"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Condensed Matter"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Condensed Matter"].link = "news_lat.html?source=phys.org&type=condensed";
 	wholeMenu["Phys.org RSS Fluxus Condensed Matter"].html = 'Condensed Matter';
 
 	wholeMenu["Phys.org RSS Fluxus General Physics"] = {};
-	wholeMenu["Phys.org RSS Fluxus General Physics"].id = "26_1_5_2";
+	wholeMenu["Phys.org RSS Fluxus General Physics"].id = "26_5_5_2";
 	wholeMenu["Phys.org RSS Fluxus General Physics"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus General Physics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus General Physics"].link = "news_lat.html?source=phys.org&type=general";
 	wholeMenu["Phys.org RSS Fluxus General Physics"].html = 'General Physics';
 
 	wholeMenu["Phys.org RSS Fluxus Optics & Photonics"] = {};
-	wholeMenu["Phys.org RSS Fluxus Optics & Photonics"].id = "26_1_5_3";
+	wholeMenu["Phys.org RSS Fluxus Optics & Photonics"].id = "26_5_5_3";
 	wholeMenu["Phys.org RSS Fluxus Optics & Photonics"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Optics & Photonics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Optics & Photonics"].link = "news_lat.html?source=phys.org&type=optics";
 	wholeMenu["Phys.org RSS Fluxus Optics & Photonics"].html = 'Optics & Photonics';
 
 	wholeMenu["Phys.org RSS Fluxus Plasma Physics"] = {};
-	wholeMenu["Phys.org RSS Fluxus Plasma Physics"].id = "26_1_5_4";
+	wholeMenu["Phys.org RSS Fluxus Plasma Physics"].id = "26_5_5_4";
 	wholeMenu["Phys.org RSS Fluxus Plasma Physics"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Plasma Physics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Plasma Physics"].link = "news_lat.html?source=phys.org&type=plasma";
 	wholeMenu["Phys.org RSS Fluxus Plasma Physics"].html = 'Plasma Physics';
 
 	wholeMenu["Phys.org RSS Fluxus Quantum Physics"] = {};
-	wholeMenu["Phys.org RSS Fluxus Quantum Physics"].id = "26_1_5_5";
+	wholeMenu["Phys.org RSS Fluxus Quantum Physics"].id = "26_5_5_5";
 	wholeMenu["Phys.org RSS Fluxus Quantum Physics"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Quantum Physics"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Quantum Physics"].link = "news_lat.html?source=phys.org&type=quantum";
 	wholeMenu["Phys.org RSS Fluxus Quantum Physics"].html = 'Quantum Physics';
 
 	wholeMenu["Phys.org RSS Fluxus Soft Matter"] = {};
-	wholeMenu["Phys.org RSS Fluxus Soft Matter"].id = "26_1_5_6";
+	wholeMenu["Phys.org RSS Fluxus Soft Matter"].id = "26_5_5_6";
 	wholeMenu["Phys.org RSS Fluxus Soft Matter"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Soft Matter"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Soft Matter"].link = "news_lat.html?source=phys.org&type=soft";
 	wholeMenu["Phys.org RSS Fluxus Soft Matter"].html = 'Soft Matter';
 
 	wholeMenu["Phys.org RSS Fluxus Superconductivity"] = {};
-	wholeMenu["Phys.org RSS Fluxus Superconductivity"].id = "26_1_5_7";
+	wholeMenu["Phys.org RSS Fluxus Superconductivity"].id = "26_5_5_7";
 	wholeMenu["Phys.org RSS Fluxus Superconductivity"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Superconductivity"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Superconductivity"].link = "news_lat.html?source=phys.org&type=superconductivity";
 	wholeMenu["Phys.org RSS Fluxus Superconductivity"].html = 'Superconductivity';
 
 	wholeMenu["● Astronomy & Space"] = {};
-	wholeMenu["● Astronomy & Space"].id = "26_1_6";
+	wholeMenu["● Astronomy & Space"].id = "26_5_6";
 	wholeMenu["● Astronomy & Space"].color = "red";
 	wholeMenu["● Astronomy & Space"].hasSub = 1;
 	wholeMenu["● Astronomy & Space"].link = "";
 	wholeMenu["● Astronomy & Space"].html = '&#9679; Astronomy & Space';
 
 	wholeMenu["Phys.org RSS Fluxus Astrobiology"] = {};
-	wholeMenu["Phys.org RSS Fluxus Astrobiology"].id = "26_1_6_1";
+	wholeMenu["Phys.org RSS Fluxus Astrobiology"].id = "26_5_6_1";
 	wholeMenu["Phys.org RSS Fluxus Astrobiology"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Astrobiology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Astrobiology"].link = "news_lat.html?source=phys.org&type=astrobiology";
 	wholeMenu["Phys.org RSS Fluxus Astrobiology"].html = 'Astrobiology';
 
 	wholeMenu["Phys.org RSS Fluxus Astronomy"] = {};
-	wholeMenu["Phys.org RSS Fluxus Astronomy"].id = "26_1_6_2";
+	wholeMenu["Phys.org RSS Fluxus Astronomy"].id = "26_5_6_2";
 	wholeMenu["Phys.org RSS Fluxus Astronomy"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Astronomy"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Astronomy"].link = "news_lat.html?source=phys.org&type=astronomy";
 	wholeMenu["Phys.org RSS Fluxus Astronomy"].html = 'Astronomy';
 
 	wholeMenu["Phys.org RSS Fluxus Planetary Sciences"] = {};
-	wholeMenu["Phys.org RSS Fluxus Planetary Sciences"].id = "26_1_6_3";
+	wholeMenu["Phys.org RSS Fluxus Planetary Sciences"].id = "26_5_6_3";
 	wholeMenu["Phys.org RSS Fluxus Planetary Sciences"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Planetary Sciences"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Planetary Sciences"].link = "news_lat.html?source=phys.org&type=planetary";
 	wholeMenu["Phys.org RSS Fluxus Planetary Sciences"].html = 'Planetary Sciences';
 
 	wholeMenu["Phys.org RSS Fluxus Space Exploration"] = {};
-	wholeMenu["Phys.org RSS Fluxus Space Exploration"].id = "26_1_6_4";
+	wholeMenu["Phys.org RSS Fluxus Space Exploration"].id = "26_5_6_4";
 	wholeMenu["Phys.org RSS Fluxus Space Exploration"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Space Exploration"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Space Exploration"].link = "news_lat.html?source=phys.org&type=space";
 	wholeMenu["Phys.org RSS Fluxus Space Exploration"].html = 'Space Exploration';
 
 	wholeMenu["● Biology"] = {};
-	wholeMenu["● Biology"].id = "26_1_7";
+	wholeMenu["● Biology"].id = "26_5_7";
 	wholeMenu["● Biology"].color = "red";
 	wholeMenu["● Biology"].hasSub = 1;
 	wholeMenu["● Biology"].link = "";
 	wholeMenu["● Biology"].html = '&#9679; Biology';
 
 	wholeMenu["Phys.org RSS Fluxus Agriculture"] = {};
-	wholeMenu["Phys.org RSS Fluxus Agriculture"].id = "26_1_7_1";
+	wholeMenu["Phys.org RSS Fluxus Agriculture"].id = "26_5_7_1";
 	wholeMenu["Phys.org RSS Fluxus Agriculture"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Agriculture"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Agriculture"].link = "news_lat.html?source=phys.org&type=agriculture";
 	wholeMenu["Phys.org RSS Fluxus Agriculture"].html = 'Agriculture';
 
 	wholeMenu["Phys.org RSS Fluxus Biotechnology"] = {};
-	wholeMenu["Phys.org RSS Fluxus Biotechnology"].id = "26_1_7_2";
+	wholeMenu["Phys.org RSS Fluxus Biotechnology"].id = "26_5_7_2";
 	wholeMenu["Phys.org RSS Fluxus Biotechnology"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Biotechnology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Biotechnology"].link = "news_lat.html?source=phys.org&type=biotechnology";
 	wholeMenu["Phys.org RSS Fluxus Biotechnology"].html = 'Biotechnology';
 
 	wholeMenu["Phys.org RSS Fluxus Cell & Microbiology"] = {};
-	wholeMenu["Phys.org RSS Fluxus Cell & Microbiology"].id = "26_1_7_3";
+	wholeMenu["Phys.org RSS Fluxus Cell & Microbiology"].id = "26_5_7_3";
 	wholeMenu["Phys.org RSS Fluxus Cell & Microbiology"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Cell & Microbiology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Cell & Microbiology"].link = "news_lat.html?source=phys.org&type=cell";
 	wholeMenu["Phys.org RSS Fluxus Cell & Microbiology"].html = 'Cell & Microbiology';
 
 	wholeMenu["Phys.org RSS Fluxus Ecology"] = {};
-	wholeMenu["Phys.org RSS Fluxus Ecology"].id = "26_1_7_4";
+	wholeMenu["Phys.org RSS Fluxus Ecology"].id = "26_5_7_4";
 	wholeMenu["Phys.org RSS Fluxus Ecology"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Ecology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Ecology"].link = "news_lat.html?source=phys.org&type=ecology";
 	wholeMenu["Phys.org RSS Fluxus Ecology"].html = 'Ecology';
 
 	wholeMenu["Phys.org RSS Fluxus Evolution"] = {};
-	wholeMenu["Phys.org RSS Fluxus Evolution"].id = "26_1_7_5";
+	wholeMenu["Phys.org RSS Fluxus Evolution"].id = "26_5_7_5";
 	wholeMenu["Phys.org RSS Fluxus Evolution"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Evolution"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Evolution"].link = "news_lat.html?source=phys.org&type=evolution";
 	wholeMenu["Phys.org RSS Fluxus Evolution"].html = 'Evolution';
 
 	wholeMenu["Phys.org RSS Fluxus Molecular & Computational Biology"] = {};
-	wholeMenu["Phys.org RSS Fluxus Molecular & Computational Biology"].id = "26_1_7_6";
+	wholeMenu["Phys.org RSS Fluxus Molecular & Computational Biology"].id = "26_5_7_6";
 	wholeMenu["Phys.org RSS Fluxus Molecular & Computational Biology"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Molecular & Computational Biology"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Molecular & Computational Biology"].link = "news_lat.html?source=phys.org&type=molecular";
 	wholeMenu["Phys.org RSS Fluxus Molecular & Computational Biology"].html = 'Molecular & Computational Biology';
 
 	wholeMenu["Phys.org RSS Fluxus OtherB"] = {};
-	wholeMenu["Phys.org RSS Fluxus OtherB"].id = "26_1_7_7";
+	wholeMenu["Phys.org RSS Fluxus OtherB"].id = "26_5_7_7";
 	wholeMenu["Phys.org RSS Fluxus OtherB"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus OtherB"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus OtherB"].link = "news_lat.html?source=phys.org&type=otherb";
 	wholeMenu["Phys.org RSS Fluxus OtherB"].html = 'Other';
 
 	wholeMenu["Phys.org RSS Fluxus Paleontology & Fossils"] = {};
-	wholeMenu["Phys.org RSS Fluxus Paleontology & Fossils"].id = "26_1_7_8";
+	wholeMenu["Phys.org RSS Fluxus Paleontology & Fossils"].id = "26_5_7_8";
 	wholeMenu["Phys.org RSS Fluxus Paleontology & Fossils"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Paleontology & Fossils"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Paleontology & Fossils"].link = "news_lat.html?source=phys.org&type=paleontology";
 	wholeMenu["Phys.org RSS Fluxus Paleontology & Fossils"].html = 'Paleontology & Fossils';
 
 	wholeMenu["Phys.org RSS Fluxus Plants & Animals"] = {};
-	wholeMenu["Phys.org RSS Fluxus Plants & Animals"].id = "26_1_7_9";
+	wholeMenu["Phys.org RSS Fluxus Plants & Animals"].id = "26_5_7_9";
 	wholeMenu["Phys.org RSS Fluxus Plants & Animals"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Plants & Animals"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Plants & Animals"].link = "news_lat.html?source=phys.org&type=plants";
 	wholeMenu["Phys.org RSS Fluxus Plants & Animals"].html = 'Plants & Animals';
 
 	wholeMenu["Phys.org RSS Fluxus Veterinary Medicine"] = {};
-	wholeMenu["Phys.org RSS Fluxus Veterinary Medicine"].id = "26_1_7_10";
+	wholeMenu["Phys.org RSS Fluxus Veterinary Medicine"].id = "26_5_7_10";
 	wholeMenu["Phys.org RSS Fluxus Veterinary Medicine"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Veterinary Medicine"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Veterinary Medicine"].link = "news_lat.html?source=phys.org&type=veterinary";
 	wholeMenu["Phys.org RSS Fluxus Veterinary Medicine"].html = 'Veterinary Medicine';
 
 	wholeMenu["● Chemistry"] = {};
-	wholeMenu["● Chemistry"].id = "26_1_8";
+	wholeMenu["● Chemistry"].id = "26_5_8";
 	wholeMenu["● Chemistry"].color = "red";
 	wholeMenu["● Chemistry"].hasSub = 1;
 	wholeMenu["● Chemistry"].link = "";
 	wholeMenu["● Chemistry"].html = '&#9679; Chemistry';
 
 	wholeMenu["Phys.org RSS Fluxus Analytical Chemistry"] = {};
-	wholeMenu["Phys.org RSS Fluxus Analytical Chemistry"].id = "26_1_8_1";
+	wholeMenu["Phys.org RSS Fluxus Analytical Chemistry"].id = "26_5_8_1";
 	wholeMenu["Phys.org RSS Fluxus Analytical Chemistry"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Analytical Chemistry"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Analytical Chemistry"].link = "news_lat.html?source=phys.org&type=analytical";
 	wholeMenu["Phys.org RSS Fluxus Analytical Chemistry"].html = 'Analytical Chemistry';
 
 	wholeMenu["Phys.org RSS Fluxus Biochemistry"] = {};
-	wholeMenu["Phys.org RSS Fluxus Biochemistry"].id = "26_1_8_2";
+	wholeMenu["Phys.org RSS Fluxus Biochemistry"].id = "26_5_8_2";
 	wholeMenu["Phys.org RSS Fluxus Biochemistry"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Biochemistry"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Biochemistry"].link = "news_lat.html?source=phys.org&type=biochemistry";
 	wholeMenu["Phys.org RSS Fluxus Biochemistry"].html = 'Biochemistry';
 
 	wholeMenu["Phys.org RSS Fluxus Materials Science"] = {};
-	wholeMenu["Phys.org RSS Fluxus Materials Science"].id = "26_1_8_3";
+	wholeMenu["Phys.org RSS Fluxus Materials Science"].id = "26_5_8_3";
 	wholeMenu["Phys.org RSS Fluxus Materials Science"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Materials Science"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Materials Science"].link = "news_lat.html?source=phys.org&type=materials";
 	wholeMenu["Phys.org RSS Fluxus Materials Science"].html = 'Materials Science';
 
 	wholeMenu["Phys.org RSS Fluxus OtherC"] = {};
-	wholeMenu["Phys.org RSS Fluxus OtherC"].id = "26_1_8_4";
+	wholeMenu["Phys.org RSS Fluxus OtherC"].id = "26_5_8_4";
 	wholeMenu["Phys.org RSS Fluxus OtherC"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus OtherC"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus OtherC"].link = "news_lat.html?source=phys.org&type=otherc";
 	wholeMenu["Phys.org RSS Fluxus OtherC"].html = 'Other';
 
 	wholeMenu["Phys.org RSS Fluxus Polymers"] = {};
-	wholeMenu["Phys.org RSS Fluxus Polymers"].id = "26_1_8_5";
+	wholeMenu["Phys.org RSS Fluxus Polymers"].id = "26_5_8_5";
 	wholeMenu["Phys.org RSS Fluxus Polymers"].color = "red";
 	wholeMenu["Phys.org RSS Fluxus Polymers"].hasSub = 0;
 	wholeMenu["Phys.org RSS Fluxus Polymers"].link = "news_lat.html?source=phys.org&type=polymers";
 	wholeMenu["Phys.org RSS Fluxus Polymers"].html = 'Polymers';
 
-	wholeMenu["Space.com RSS Fluxus"] = {};
-	wholeMenu["Space.com RSS Fluxus"].id = "26_6";
-	wholeMenu["Space.com RSS Fluxus"].color = "red";
-	wholeMenu["Space.com RSS Fluxus"].hasSub = 0;
-	wholeMenu["Space.com RSS Fluxus"].link = "news_lat.html?source=space.com";
-	wholeMenu["Space.com RSS Fluxus"].html = 'Space.com RSS Fluxus';
-
-	wholeMenu["● Wired RSS Fluxus"] = {};
-	wholeMenu["● Wired RSS Fluxus"].id = "26_7";
-	wholeMenu["● Wired RSS Fluxus"].color = "red";
-	wholeMenu["● Wired RSS Fluxus"].hasSub = 1;
-	wholeMenu["● Wired RSS Fluxus"].link = "";
-	wholeMenu["● Wired RSS Fluxus"].html = '&#9679; Wired RSS Fluxus';
-
-	wholeMenu["Wired RSS Fluxus Top"] = {};
-	wholeMenu["Wired RSS Fluxus Top"].id = "26_7_1";
-	wholeMenu["Wired RSS Fluxus Top"].color = "red";
-	wholeMenu["Wired RSS Fluxus Top"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Top"].link = "news_lat.html?source=wired&type=top";
-	wholeMenu["Wired RSS Fluxus Top"].html = 'Top';
-
-	wholeMenu["Wired RSS Fluxus Business"] = {};
-	wholeMenu["Wired RSS Fluxus Business"].id = "26_7_2";
-	wholeMenu["Wired RSS Fluxus Business"].color = "red";
-	wholeMenu["Wired RSS Fluxus Business"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Business"].link = "news_lat.html?source=wired&type=business";
-	wholeMenu["Wired RSS Fluxus Business"].html = 'Business';
-
-	wholeMenu["Wired RSS Fluxus Artificial Intelligence"] = {};
-	wholeMenu["Wired RSS Fluxus Artificial Intelligence"].id = "26_7_3";
-	wholeMenu["Wired RSS Fluxus Artificial Intelligence"].color = "red";
-	wholeMenu["Wired RSS Fluxus Artificial Intelligence"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Artificial Intelligence"].link = "news_lat.html?source=wired&type=ai";
-	wholeMenu["Wired RSS Fluxus Artificial Intelligence"].html = 'Artificial Intelligence';
-
-	wholeMenu["Wired RSS Fluxus Culture"] = {};
-	wholeMenu["Wired RSS Fluxus Culture"].id = "26_7_4";
-	wholeMenu["Wired RSS Fluxus Culture"].color = "red";
-	wholeMenu["Wired RSS Fluxus Culture"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Culture"].link = "news_lat.html?source=wired&type=culture";
-	wholeMenu["Wired RSS Fluxus Culture"].html = 'Culture';
-
-	wholeMenu["Wired RSS Fluxus Gear"] = {};
-	wholeMenu["Wired RSS Fluxus Gear"].id = "26_7_5";
-	wholeMenu["Wired RSS Fluxus Gear"].color = "red";
-	wholeMenu["Wired RSS Fluxus Gear"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Gear"].link = "news_lat.html?source=wired&type=gear";
-	wholeMenu["Wired RSS Fluxus Gear"].html = 'Gear';
-
-	wholeMenu["Wired RSS Fluxus Ideas"] = {};
-	wholeMenu["Wired RSS Fluxus Ideas"].id = "26_7_6";
-	wholeMenu["Wired RSS Fluxus Ideas"].color = "red";
-	wholeMenu["Wired RSS Fluxus Ideas"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Ideas"].link = "news_lat.html?source=wired&type=ideas";
-	wholeMenu["Wired RSS Fluxus Ideas"].html = 'Ideas';
-
-	wholeMenu["Wired RSS Fluxus Science"] = {};
-	wholeMenu["Wired RSS Fluxus Science"].id = "26_7_7";
-	wholeMenu["Wired RSS Fluxus Science"].color = "red";
-	wholeMenu["Wired RSS Fluxus Science"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Science"].link = "news_lat.html?source=wired&type=science";
-	wholeMenu["Wired RSS Fluxus Science"].html = 'Science';
-
-	wholeMenu["Wired RSS Fluxus Security"] = {};
-	wholeMenu["Wired RSS Fluxus Security"].id = "26_7_8";
-	wholeMenu["Wired RSS Fluxus Security"].color = "red";
-	wholeMenu["Wired RSS Fluxus Security"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Security"].link = "news_lat.html?source=wired&type=security";
-	wholeMenu["Wired RSS Fluxus Security"].html = 'Security';
-
-	wholeMenu["Wired RSS Fluxus Backchannel"] = {};
-	wholeMenu["Wired RSS Fluxus Backchannel"].id = "26_7_9";
-	wholeMenu["Wired RSS Fluxus Backchannel"].color = "red";
-	wholeMenu["Wired RSS Fluxus Backchannel"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Backchannel"].link = "news_lat.html?source=wired&type=backchannel";
-	wholeMenu["Wired RSS Fluxus Backchannel"].html = 'Backchannel';
-
-	wholeMenu["Wired RSS Fluxus Guides"] = {};
-	wholeMenu["Wired RSS Fluxus Guides"].id = "26_7_10";
-	wholeMenu["Wired RSS Fluxus Guides"].color = "red";
-	wholeMenu["Wired RSS Fluxus Guides"].hasSub = 0;
-	wholeMenu["Wired RSS Fluxus Guides"].link = "news_lat.html?source=wired&type=guides";
-	wholeMenu["Wired RSS Fluxus Guides"].html = 'Guides';
-
-	wholeMenu["● Yahoo RSS Fluxus"] = {};
-	wholeMenu["● Yahoo RSS Fluxus"].id = "26_5";
-	wholeMenu["● Yahoo RSS Fluxus"].color = "red";
-	wholeMenu["● Yahoo RSS Fluxus"].hasSub = 1;
-	wholeMenu["● Yahoo RSS Fluxus"].link = "";
-	wholeMenu["● Yahoo RSS Fluxus"].html = '&#9679; Yahoo RSS Fluxus';
-
-	wholeMenu["Yahoo RSS Fluxus Top"] = {};
-	wholeMenu["Yahoo RSS Fluxus Top"].id = "26_5_1";
-	wholeMenu["Yahoo RSS Fluxus Top"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus Top"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus Top"].link = "news_lat.html?source=yahoo&type=top";
-	wholeMenu["Yahoo RSS Fluxus Top"].html = 'Top';
-
-	wholeMenu["Yahoo RSS Fluxus World"] = {};
-	wholeMenu["Yahoo RSS Fluxus World"].id = "26_5_2";
-	wholeMenu["Yahoo RSS Fluxus World"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus World"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus World"].link = "news_lat.html?source=yahoo&type=world";
-	wholeMenu["Yahoo RSS Fluxus World"].html = 'World';
-
-	wholeMenu["Yahoo RSS Fluxus US"] = {};
-	wholeMenu["Yahoo RSS Fluxus US"].id = "26_5_3";
-	wholeMenu["Yahoo RSS Fluxus US"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus US"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus US"].link = "news_lat.html?source=yahoo&type=us";
-	wholeMenu["Yahoo RSS Fluxus US"].html = 'US';
-
-	wholeMenu["Yahoo RSS Fluxus Politics"] = {};
-	wholeMenu["Yahoo RSS Fluxus Politics"].id = "26_5_4";
-	wholeMenu["Yahoo RSS Fluxus Politics"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus Politics"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus Politics"].link = "news_lat.html?source=yahoo&type=politics";
-	wholeMenu["Yahoo RSS Fluxus Politics"].html = 'Politics';
-
-	wholeMenu["Yahoo RSS Fluxus Health"] = {};
-	wholeMenu["Yahoo RSS Fluxus Health"].id = "26_5_5";
-	wholeMenu["Yahoo RSS Fluxus Health"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus Health"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus Health"].link = "news_lat.html?source=yahoo&type=health";
-	wholeMenu["Yahoo RSS Fluxus Health"].html = 'Health';
-
-	wholeMenu["Yahoo RSS Fluxus Finance"] = {};
-	wholeMenu["Yahoo RSS Fluxus Finance"].id = "26_5_6";
-	wholeMenu["Yahoo RSS Fluxus Finance"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus Finance"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus Finance"].link = "news_lat.html?source=yahoo&type=finance";
-	wholeMenu["Yahoo RSS Fluxus Finance"].html = 'Finance';
-
-	wholeMenu["Yahoo RSS Fluxus Science"] = {};
-	wholeMenu["Yahoo RSS Fluxus Science"].id = "26_5_7";
-	wholeMenu["Yahoo RSS Fluxus Science"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus Science"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus Science"].link = "news_lat.html?source=yahoo&type=science";
-	wholeMenu["Yahoo RSS Fluxus Science"].html = 'Science';
-
-	wholeMenu["Yahoo RSS Fluxus Sports"] = {};
-	wholeMenu["Yahoo RSS Fluxus Sports"].id = "26_5_8";
-	wholeMenu["Yahoo RSS Fluxus Sports"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus Sports"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus Sports"].link = "news_lat.html?source=yahoo&type=sports";
-	wholeMenu["Yahoo RSS Fluxus Sports"].html = 'Sports';
-
-	wholeMenu["Yahoo RSS Fluxus Entertainment"] = {};
-	wholeMenu["Yahoo RSS Fluxus Entertainment"].id = "26_5_9";
-	wholeMenu["Yahoo RSS Fluxus Entertainment"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus Entertainment"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus Entertainment"].link = "news_lat.html?source=yahoo&type=entertainment";
-	wholeMenu["Yahoo RSS Fluxus Entertainment"].html = 'Entertainment';
-
-	wholeMenu["Yahoo RSS Fluxus Lifestyle"] = {};
-	wholeMenu["Yahoo RSS Fluxus Lifestyle"].id = "26_5_10";
-	wholeMenu["Yahoo RSS Fluxus Lifestyle"].color = "red";
-	wholeMenu["Yahoo RSS Fluxus Lifestyle"].hasSub = 0;
-	wholeMenu["Yahoo RSS Fluxus Lifestyle"].link = "news_lat.html?source=yahoo&type=lifestyle";
-	wholeMenu["Yahoo RSS Fluxus Lifestyle"].html = 'Lifestyle';
-
 	wholeMenu["● Yonhap RSS Fluxus"] = {};
-	wholeMenu["● Yonhap RSS Fluxus"].id = "26_4";
+	wholeMenu["● Yonhap RSS Fluxus"].id = "26_6";
 	wholeMenu["● Yonhap RSS Fluxus"].color = "red";
 	wholeMenu["● Yonhap RSS Fluxus"].hasSub = 1;
 	wholeMenu["● Yonhap RSS Fluxus"].link = "";
 	wholeMenu["● Yonhap RSS Fluxus"].html = '&#9679; Yonhap RSS Fluxus';
 
 	wholeMenu["Yonhap RSS Fluxus All News"] = {};
-	wholeMenu["Yonhap RSS Fluxus All News"].id = "26_4_1";
+	wholeMenu["Yonhap RSS Fluxus All News"].id = "26_6_1";
 	wholeMenu["Yonhap RSS Fluxus All News"].color = "red";
 	wholeMenu["Yonhap RSS Fluxus All News"].hasSub = 0;
 	wholeMenu["Yonhap RSS Fluxus All News"].link = "news_lat.html?source=yonhap&type=all";
 	wholeMenu["Yonhap RSS Fluxus All News"].html = 'All News';
 
 	wholeMenu["Yonhap RSS Fluxus National"] = {};
-	wholeMenu["Yonhap RSS Fluxus National"].id = "26_4_2";
+	wholeMenu["Yonhap RSS Fluxus National"].id = "26_6_2";
 	wholeMenu["Yonhap RSS Fluxus National"].color = "red";
 	wholeMenu["Yonhap RSS Fluxus National"].hasSub = 0;
 	wholeMenu["Yonhap RSS Fluxus National"].link = "news_lat.html?source=yonhap&type=national";
 	wholeMenu["Yonhap RSS Fluxus National"].html = 'National';
 
 	wholeMenu["Yonhap RSS Fluxus North Korea"] = {};
-	wholeMenu["Yonhap RSS Fluxus North Korea"].id = "26_4_3";
+	wholeMenu["Yonhap RSS Fluxus North Korea"].id = "26_6_3";
 	wholeMenu["Yonhap RSS Fluxus North Korea"].color = "red";
 	wholeMenu["Yonhap RSS Fluxus North Korea"].hasSub = 0;
 	wholeMenu["Yonhap RSS Fluxus North Korea"].link = "news_lat.html?source=yonhap&type=northkorea";
 	wholeMenu["Yonhap RSS Fluxus North Korea"].html = 'North Korea';
 
 	wholeMenu["Yonhap RSS Fluxus Economy/Finance"] = {};
-	wholeMenu["Yonhap RSS Fluxus Economy/Finance"].id = "26_4_4";
+	wholeMenu["Yonhap RSS Fluxus Economy/Finance"].id = "26_6_4";
 	wholeMenu["Yonhap RSS Fluxus Economy/Finance"].color = "red";
 	wholeMenu["Yonhap RSS Fluxus Economy/Finance"].hasSub = 0;
 	wholeMenu["Yonhap RSS Fluxus Economy/Finance"].link = "news_lat.html?source=yonhap&type=economy";
 	wholeMenu["Yonhap RSS Fluxus Economy/Finance"].html = 'Economy/Finance';
 
 	wholeMenu["Yonhap RSS Fluxus BIZ"] = {};
-	wholeMenu["Yonhap RSS Fluxus BIZ"].id = "26_4_5";
+	wholeMenu["Yonhap RSS Fluxus BIZ"].id = "26_6_5";
 	wholeMenu["Yonhap RSS Fluxus BIZ"].color = "red";
 	wholeMenu["Yonhap RSS Fluxus BIZ"].hasSub = 0;
 	wholeMenu["Yonhap RSS Fluxus BIZ"].link = "news_lat.html?source=yonhap&type=biz";
 	wholeMenu["Yonhap RSS Fluxus BIZ"].html = 'BIZ';
 
 	wholeMenu["Yonhap RSS Fluxus Culture/K-pop"] = {};
-	wholeMenu["Yonhap RSS Fluxus Culture/K-pop"].id = "26_4_6";
+	wholeMenu["Yonhap RSS Fluxus Culture/K-pop"].id = "26_6_6";
 	wholeMenu["Yonhap RSS Fluxus Culture/K-pop"].color = "red";
 	wholeMenu["Yonhap RSS Fluxus Culture/K-pop"].hasSub = 0;
 	wholeMenu["Yonhap RSS Fluxus Culture/K-pop"].link = "news_lat.html?source=yonhap&type=culture";
 	wholeMenu["Yonhap RSS Fluxus Culture/K-pop"].html = 'Culture/K-pop';
 
 	wholeMenu["Yonhap RSS Fluxus Sports"] = {};
-	wholeMenu["Yonhap RSS Fluxus Sports"].id = "26_4_7";
+	wholeMenu["Yonhap RSS Fluxus Sports"].id = "26_6_7";
 	wholeMenu["Yonhap RSS Fluxus Sports"].color = "red";
 	wholeMenu["Yonhap RSS Fluxus Sports"].hasSub = 0;
 	wholeMenu["Yonhap RSS Fluxus Sports"].link = "news_lat.html?source=yonhap&type=sports";
