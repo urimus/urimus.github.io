@@ -529,7 +529,7 @@ function extractSummaryWords(html) {
 
 	const elements = paragraphs.length
 		? paragraphs
-		: [doc.body];
+		: [doc];
 
 	elements.forEach(el => {
 		el.textContent
