@@ -156,14 +156,6 @@ function updateAboutMeImage3(lang, i) {
 		descDiv.innerHTML = "";
 	}
 
-	let item_description = null;
-	let description_words;
-
-	if (item.description._text) {
-		item_description = DOMPurify.sanitize(item.description._text);
-		description_words = splitAllSpaces(item_description);
-	}
-
 	let imageA = document.createElement('a');
 	imageA.setAttribute('href', item.link._text);
 	imageA.setAttribute('class', 'standardb_blue icon_link');
@@ -180,7 +172,8 @@ function updateAboutMeImage3(lang, i) {
 	imgSVG.setAttribute('alt', "Image #" + (i + 1));
 	imgSVG.setAttribute('height', 27);
 	imgSVG.onload = function () {
-		if (item_description) {
+		if (item.description._text) {
+			const description_words = extractSummaryWords(item.description._text);
 			modifySummary(descDiv, description_words, "blue", 4);
 		}
 		adjustScrollDiv();

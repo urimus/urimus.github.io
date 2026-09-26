@@ -2,6 +2,12 @@
 
 let proxyURL = "https://proxy.urrimus.workers.dev";
 
+function sanitizeAndText(html) {
+	const div = document.createElement("div");
+	div.innerHTML = DOMPurify.sanitize(html);
+	return escapeHtml(div.textContent);
+}
+
 function feedIcon(feedURL, lang) {
 
 	let textFeedType;
@@ -39,7 +45,8 @@ function feedIcon(feedURL, lang) {
 }
 
 function mailToIcon(email) {
-	email = DOMPurify.sanitize(email ?? "");
+	email = sanitizeAndText(email ?? "");
+
 	let a = document.createElement('a');
 	a.setAttribute('href', "mailto:"+email);
 	a.setAttribute('class', 'standardb_red icon_link');
@@ -57,14 +64,14 @@ function mailToIcon(email) {
 }
 
 function urlA(name, url, description = "") {
-	if (description) description = DOMPurify.sanitize(description);
+	if (description) description = sanitizeAndText(description);
 	let a = document.createElement('a');
 	a.setAttribute('href', url);
 	a.setAttribute('class', 'standardb_red');
 	if (description) a.setAttribute('title', description);
 	a.setAttribute('target', '_blank');
 	a.setAttribute('rel', 'noopener');
-	a.innerHTML = DOMPurify.sanitize(name);
+	a.textContent = name;
 	return a;
 }
 
@@ -345,10 +352,10 @@ function showFeedTitle(type, source, lang, result) {
 
 	let title = "";
 	if (result.title) {
-		title = DOMPurify.sanitize(result.title);
+		title = sanitizeAndText(result.title);
 		if (result.description && result.description != title) {
 			title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
-			title += DOMPurify.sanitize(result.description);
+			title += sanitizeAndText(result.description);
 		}
 	}
 
@@ -422,7 +429,7 @@ function showFeedTitle(type, source, lang, result) {
 		Img.setAttribute('tabindex', "0");
 		let title = "<div>" + t("copyright") + "</div>";
 		title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
-		title += "<div>" + DOMPurify.sanitize(result.copyright) + "</div>";
+		title += "<div>" + sanitizeAndText(result.copyright) + "</div>";
 		Img.setAttribute('alt', t("copyright"));
 		Img.setAttribute('title', title);
 		Img.setAttribute('height', 27);
@@ -517,49 +524,6 @@ function showFeedData(type, source, lang, result) {
 	}
 }
 
-function extractSummaryWords(html) {
-	
-	const doc = DOMPurify.sanitize(html, {
-		FORBID_TAGS: ["figure", "img"],
-		RETURN_DOM: true
-	});
-
-	const lines = [];
-	const paragraphs = doc.querySelectorAll("p");
-
-	const elements = paragraphs.length
-		? paragraphs
-		: [doc];
-
-	elements.forEach(el => {
-		el.textContent
-			.replaceAll("\\n", "\n")
-			.split("\n")
-			.forEach(line => {
-				line = line.trim();
-
-				if (line) {
-					lines.push(line);
-				}
-			});
-	});
-
-	if (!lines.length) return "";
-	if (lines.length === 1) return splitAllSpaces(lines[0]);
-
-	const result = [];
-	const paddingSpan = "<span style='padding-left:10px;'><span>";
-	lines.forEach((line, index) => {
-		const words = splitAllSpaces(line);
-		if (words.length) {
-			words[0] =
-				(index === 0 ? paddingSpan : "<br>" + paddingSpan) + words[0];
-		}
-		result.push(...words);
-	});
-	return result;
-}
-
 function formatSummaryDiv(summaryDiv, entry) {
 
 	const summary_words = extractSummaryWords(entry.summary);
@@ -622,8 +586,8 @@ function preloadImage(type, source, lang, result) {
 	let summaryDiv = entry.storage.summaryDiv;
 
 	let preloadImg = new Image();
-	preloadImg.alt = DOMPurify.sanitize(entry.media.comment ?? "");
-	preloadImg.title = DOMPurify.sanitize(entry.media.comment ?? "");
+	preloadImg.alt = sanitizeAndText(entry.media.comment ?? "");
+	preloadImg.title = sanitizeAndText(entry.media.comment ?? "");
 	preloadImg.onload = function () {
 		entry.storage.preloadPF=1;
 		entry.storage.preloadStarted=0;
@@ -713,8 +677,8 @@ function preloadImage(type, source, lang, result) {
 		newUrl = entry.media.origUrl;
 		if (typeof newUrl !== 'undefined' && isOrigUrl == 0 && newUrl != preloadImg.src) {
 			if (newUrl.endsWith("no_image.png")) { showErrorImage(); return; }
-			preloadImg.alt = DOMPurify.sanitize(entry.media.origComment ?? "");
-			preloadImg.title = DOMPurify.sanitize(entry.media.origComment ?? "");
+			preloadImg.alt = sanitizeAndText(entry.media.origComment ?? "");
+			preloadImg.title = sanitizeAndText(entry.media.origComment ?? "");
 			if (source === "nasa" || source === "artemis") {
 				const url = new URL(newUrl);
 				url.searchParams.set("w", "450");
@@ -782,7 +746,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 
 	let Div = document.createElement('div');
 	Div.setAttribute('class', "nimetus3_red");
-	Div.innerHTML = (i + 1) + ". " + DOMPurify.sanitize(entry.title);
+	Div.textContent = (i + 1) + ". " + entry.title;
 	container.appendChild(Div);
 
 	let imageDiv = document.createElement('div');
@@ -971,7 +935,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 			div.appendChild(urlA(entry.source.title, entry.source.url));
 		} else {
 			let span = document.createElement('span');
-			span.innerHTML = DOMPurify.sanitize(entry.source.title);
+			span.textContent = entry.source.title;
 			div.appendChild(span);
 		}
 		container.appendChild(div);
@@ -983,7 +947,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		let b = document.createElement("b");
 		b.innerHTML = t("subject") + ": ";
 		let span = document.createElement('span');
-		span.innerHTML = DOMPurify.sanitize(entry.subject);
+		span.textContent = entry.subject;
 		div.append(b, span);
 		container.appendChild(div);
 	}
@@ -1007,15 +971,12 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 				div.appendChild(span);
 			}
 
-			const name = DOMPurify.sanitize(creator.name ?? "");
-			const description = DOMPurify.sanitize(creator.description ?? "");
-
 			const span = document.createElement('span');
 			if (hasEmail) span.style.verticalAlign = "middle";
 			if (creator.url) {
-				span.append(urlA(name, creator.url, description));
+				span.append(urlA(creator.name, creator.url, creator.description));
 			} else {
-				span.innerHTML = name;
+				span.textContent = creator.name;
 			}
 			div.appendChild(span);
 
@@ -1035,7 +996,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		const b = document.createElement("b");
 		b.innerHTML = t(entry.category.length > 1 ? "categories" : "category") + ": ";
 		let span = document.createElement('span');
-		span.innerHTML = entry.category.map(DOMPurify.sanitize).join(", ");
+		span.textContent = entry.category.join(", ");
 		div.append(b, span);
 		container.append(div);
 	}

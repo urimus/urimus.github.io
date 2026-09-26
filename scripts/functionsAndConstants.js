@@ -109,9 +109,59 @@ function detectBomCheckSoFar(bytes) {
 function splitAllSpaces(str) {
 	return str
 		.split(/(?:\s+|&(?:nbsp|ensp|emsp|thinsp|hairsp|MediumSpace|ThickSpace|VeryThinSpace|NoBreak|puncsp);|&#(?:32|160|8192|8193|8194|8195|8196|8197|8198|8199|8200|8201|8202|8239|8287|12288);|&#x(?:20|A0|2000|2001|2002|2003|2004|2005|2006|2007|2008|2009|200A|202F|205F|3000);)/giu)
-		.filter(Boolean);
+		.filter(Boolean)
+		.map(escapeHtml);
 }
 
+function escapeHtml(text) {
+	return text
+		.replaceAll("&", "&amp;")
+		.replaceAll("<", "&lt;")
+		.replaceAll(">", "&gt;");
+}
+
+function extractSummaryWords(html) {
+	
+	const doc = DOMPurify.sanitize(html, {
+		FORBID_TAGS: ["figure", "img"],
+		RETURN_DOM: true
+	});
+
+	const lines = [];
+	const paragraphs = doc.querySelectorAll("p");
+
+	const elements = paragraphs.length
+		? paragraphs
+		: [doc];
+
+	elements.forEach(el => {
+		el.textContent
+			.replaceAll("\\n", "\n")
+			.split("\n")
+			.forEach(line => {
+				line = line.trim();
+
+				if (line) {
+					lines.push(line);
+				}
+			});
+	});
+
+	if (!lines.length) return [];
+	if (lines.length === 1) return splitAllSpaces(lines[0]);
+
+	const result = [];
+	const paddingSpan = "<span style='padding-left:10px;'><span>";
+	lines.forEach((line, index) => {
+		const words = splitAllSpaces(line);
+		if (words.length) {
+			words[0] =
+				(index === 0 ? paddingSpan : "<br>" + paddingSpan) + words[0];
+		}
+		result.push(...words);
+	});
+	return result;
+}
 
 // =========================================================
 // ALGORITHM GENERAL
