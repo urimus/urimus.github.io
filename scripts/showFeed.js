@@ -518,10 +518,11 @@ function showFeedData(type, source, lang, result) {
 }
 
 function extractSummaryWords(html) {
-	const parser = new DOMParser();
-	const doc = parser.parseFromString(html, "text/html");
-
-	doc.querySelectorAll("figure, img").forEach(el => el.remove());
+	
+	const doc = DOMPurify.sanitize(html, {
+		FORBID_TAGS: ["figure", "img"],
+		RETURN_DOM: true
+	});
 
 	const lines = [];
 	const paragraphs = doc.querySelectorAll("p");
@@ -531,7 +532,7 @@ function extractSummaryWords(html) {
 		: [doc.body];
 
 	elements.forEach(el => {
-		el.innerText
+		el.textContent
 			.replaceAll("\\n", "\n")
 			.split("\n")
 			.forEach(line => {
@@ -560,9 +561,8 @@ function extractSummaryWords(html) {
 }
 
 function formatSummaryDiv(summaryDiv, entry) {
-	const entry_summary = DOMPurify.sanitize(entry.summary);
-	const summary_words = extractSummaryWords(entry_summary);
 
+	const summary_words = extractSummaryWords(entry.summary);
 	summaryDiv.innerHTML = "";
 	modifySummary(summaryDiv, summary_words, "red", 4);
 
