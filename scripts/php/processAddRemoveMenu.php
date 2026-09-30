@@ -110,16 +110,18 @@ if ($matchPos4 !== false && $matchPos5 !== false) {
 	$statisticsTimesReplaced++;
 	$lineNrs[]=substr_count(substr($file_contents, 0, $matchPos4),"\n");
 
-	$menuHeightExtra = "";
+	$extra1 = "";
+	$extra2 = "";
 	if (strpos($filenameOrig, "news_") === 0 || strpos($filenameOrig, "site_map_") === 0) {
-		$menuHeightExtra = " - 8px";
+		$extra1 = "calc(";
+		$extra2 = " - 8px)";
 	}
 	// If menuHeight exists, use its row count.
 	// Otherwise use 0px.
 	if ($matchPos !== false) {
-		$newHeight = "max(calc(100dvh - 435.135px), calc(".$menuHeightInt1."*".$menuHeightInt2_new."px))".$menuHeightExtra;
+		$newHeight = $extra1."max(100dvh - 435.135px, ".$menuHeightInt1."*".$menuHeightInt2_new."px)".$extra2;
 	} else {
-		$newHeight = "max(calc(100dvh - 435.135px), 0px)".$menuHeightExtra;
+		$newHeight = $extra1."max(100dvh - 435.135px, 0px)".$extra2;
 	}
 
 	$file_contents =
