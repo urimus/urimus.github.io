@@ -323,12 +323,12 @@ function newsLoad(lang) {
 // ------------- End of Initial ---------------- //
 
 function adjustFeedScrollDiv() {
-	let scrollDiv = document.getElementById('scrollDiv');
+	const scrollDiv = document.getElementById('scrollDiv');
 
-	let tabsHeight = document.getElementById('tabstable').offsetHeight;
-	let feedTitleHeight = document.getElementById('titletable').offsetHeight;
-	let feedMessageHeight = document.getElementById('messagetable').offsetHeight;
-	let totalHeight = tabsHeight+feedTitleHeight+feedMessageHeight;
+	const tabsHeight = document.getElementById('tabstable').getBoundingClientRect().height;
+	const feedTitleHeight = document.getElementById('titletable').getBoundingClientRect().height;
+	const feedMessageHeight = document.getElementById('messagetable').getBoundingClientRect().height;
+	const totalHeight = tabsHeight+feedTitleHeight+feedMessageHeight;
 
 	if (isMobile()) {
 		scrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";

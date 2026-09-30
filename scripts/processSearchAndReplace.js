@@ -1323,11 +1323,12 @@ function processSearchAndReplace(lang) {
 }
 
 function adjustTextarea() {
-	let rowsHeight=document.getElementById('information_row').offsetHeight;
-	rowsHeight+=document.getElementById('line_column_number_row').offsetHeight;
-	rowsHeight+=document.getElementById('files_count_alphabet_row').offsetHeight;
-	rowsHeight+=document.getElementById('files_count_row').offsetHeight;
-	rowsHeight+=document.getElementById('butt_row').offsetHeight;
+	const rowsHeight =
+		document.getElementById('information_row').getBoundingClientRect().height +
+		document.getElementById('line_column_number_row').getBoundingClientRect().height +
+		document.getElementById('files_count_alphabet_row').getBoundingClientRect().height +
+		document.getElementById('files_count_row').getBoundingClientRect().height +
+		document.getElementById('butt_row').getBoundingClientRect().height;
 
 	$( "#textarea_area" ).css( "height", (menuHeight-rowsHeight-19) + "px");
 }

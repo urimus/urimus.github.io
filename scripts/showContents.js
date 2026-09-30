@@ -278,8 +278,8 @@ function showInformation(lang) {
 }
 
 function adjustContentsScrollDiv() {
-	let scrollDiv = document.getElementById('scrollDiv');
-	let tabsHeight = document.getElementById('tabstable').offsetHeight;
+	const scrollDiv = document.getElementById('scrollDiv');
+	const tabsHeight = document.getElementById('tabstable').getBoundingClientRect().height;
 	if (isMobile()) {
 		scrollDiv.style.minHeight = (menuHeight - tabsHeight - 8) + "px";
 		scrollDiv.style.height = "100%";

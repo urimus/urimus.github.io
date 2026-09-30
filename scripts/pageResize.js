@@ -310,11 +310,9 @@ function getScrollbarHeight(el) {
 	return el.offsetHeight - el.clientHeight;
 }
 function getViewportWidth() {
-	if (isTouchDevice()) return Math.max(document.documentElement.clientWidth, window.innerWidth);
 	return (window.visualViewport?.width) || document.documentElement.clientWidth || window.innerWidth;
 }
 function getViewportHeight() {
-	if (isTouchDevice()) return Math.max(document.documentElement.clientHeight, window.innerHeight);
 	return (window.visualViewport?.height) || document.documentElement.clientHeight || window.innerHeight;
 }
 
@@ -333,7 +331,7 @@ function getScrollDivOffset(){
 
 // --- adjust scrolldiv ---
 function adjustScrollDiv(){
-	let scrollDiv = document.getElementById('scrollDiv');
+	const scrollDiv = document.getElementById('scrollDiv');
 
 	if (isTouchDevice()) {
 		scrollDiv.style.minHeight = menuHeight + "px";
@@ -349,9 +347,9 @@ function adjustScrollDiv(){
 	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
 	scrollDiv.style.height = "100%";
 
-	let page = window.location.pathname;
+	const page = window.location.pathname;
 	if (page.startsWith("/about_me")) {
-		let informationDiv = document.getElementById('information_div');
+		const informationDiv = document.getElementById('information_div');
 		informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 6) + 'px';
 	}
 }
