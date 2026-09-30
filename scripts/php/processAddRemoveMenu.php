@@ -112,7 +112,7 @@ if ($matchPos4 !== false && $matchPos5 !== false) {
 
 	$viewportOffset = 435.135;
 	if (strpos($filenameOrig, "news_") === 0 || strpos($filenameOrig, "site_map_") === 0) {
-		$viewportOffset = 427.135;
+		$viewportOffset = 443.135;
 	}
 	// If menuHeight exists, use its row count.
 	// Otherwise use 0px.
