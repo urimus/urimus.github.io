@@ -110,18 +110,16 @@ if ($matchPos4 !== false && $matchPos5 !== false) {
 	$statisticsTimesReplaced++;
 	$lineNrs[]=substr_count(substr($file_contents, 0, $matchPos4),"\n");
 
-	$viewportOffset = 435.135;
 	$menuHeightExtra = "";
 	if (strpos($filenameOrig, "news_") === 0 || strpos($filenameOrig, "site_map_") === 0) {
-		$viewportOffset = 443.135;
 		$menuHeightExtra = " - 8px";
 	}
 	// If menuHeight exists, use its row count.
 	// Otherwise use 0px.
 	if ($matchPos !== false) {
-		$newHeight = "max(calc(100dvh - ".$viewportOffset."px), calc(".$menuHeightInt1."*".$menuHeightInt2_new."px".$menuHeightExtra."))";
+		$newHeight = "max(calc(100dvh - 435.135px), calc(".$menuHeightInt1."*".$menuHeightInt2_new."px))".$menuHeightExtra;
 	} else {
-		$newHeight = "max(calc(100dvh - ".$viewportOffset."px), 0px)";
+		$newHeight = "max(calc(100dvh - 435.135px), 0px)".$menuHeightExtra;
 	}
 
 	$file_contents =
