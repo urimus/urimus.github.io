@@ -1,0 +1,4 @@
+﻿<b class="text_blue">De Mihi</b>
+&#9679; <a href="about_me_lat.html#image" class = "standardb_blue" data-added="01 Ian, 2020." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">NASA Image of the Day</a>
+&#9679; <a href="about_me_lat.html#aboutme" class = "standardb_blue" data-added="02 Apr, 2014." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">De Me</a>
+&#9679; <a href="about_me_lat.html#amv" class = "standardb_blue" data-added="21 Dec, 2023." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">AMV</a>

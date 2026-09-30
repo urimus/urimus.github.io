@@ -1,0 +1,9 @@
+﻿<b class="text_white_blue">Вещества Для Расслабления</b>
+&#9679; <a href="substances_for_relaxation_cacao_rus.html" class = "standardb_white" data-added="24е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Какао</a>
+&#9679; <a href="substances_for_relaxation_cannabis_rus.html" class = "standardb_white" data-added="24е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Конопля</a>
+&#9679; <a href="substances_for_relaxation_cigarettes_rus.html" class = "standardb_white" data-added="25е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Сигареты</a>
+&#9679; <a href="substances_for_relaxation_coffee_rus.html" class = "standardb_white" data-added="25е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Кофе</a>
+&#9679; <a href="substances_for_relaxation_energy_drinks_rus.html" class = "standardb_white" data-added="24е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Энергетические Напитки</a>
+&#9679; <a href="substances_for_relaxation_psilocybin_mushrooms_rus.html" class = "standardb_white" data-added="25е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Галлюциногенные Грибы</a>
+&#9679; <a href="substances_for_relaxation_tea_rus.html" class = "standardb_white" data-added="25е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Чай</a>
+&#9679; <a href="substances_for_relaxation_tobacco_rus.html" class = "standardb_white" data-added="25е Фев, 2017." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Табак</a>

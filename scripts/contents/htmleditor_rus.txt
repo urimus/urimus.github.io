@@ -1,0 +1,3 @@
+﻿<b class="text_blue">HTML Редактор</b>
+&#9679; <a href="html_editor_rus.html?pattern=*.html&i=0" class = "standardb_blue" data-added="22е Янв, 2018." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">HTML Редактор</a>
+
