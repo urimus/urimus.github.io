@@ -336,8 +336,9 @@ function adjustFeedScrollDiv() {
 		return;
 	}
 
+	scrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";
 	// use max-height: Math.max(screen, menu)
-	scrollDiv.style.maxHeight = (Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight) - totalHeight - 8) + "px";
+	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset() - totalHeight - 8, menuHeight - totalHeight - 8) + "px";
 
 	scrollDiv.style.height = (document.getElementById('feedtable').offsetHeight==0)
 		? scrollDiv.style.maxHeight
