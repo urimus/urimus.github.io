@@ -451,7 +451,7 @@ function testSummary(wordsCount) {
 
 	const actualLines = lines.size;
 
-	function getTimerQuantum(samples = 10) {
+	function getTimerMinimum(samples = 10) {
 		const start = performance.now();
 		let previous = start;
 		let current;
@@ -465,13 +465,13 @@ function testSummary(wordsCount) {
 		}
 		return (current - start) / samples;
 	}
-	const timerQuantum = getTimerQuantum();
+	const timerMinimum = getTimerMinimum();
 
 	// Minimum total time for a series of very short measurements
 	// to neutralize reduced timing precision caused by timing-attack protection.
 	// Not needed when crossOriginIsolated is enabled,
 	// because performance.now() has sufficient precision.
-	const measureFixingTime = timerQuantum * 10;
+	const measureFixingTime = timerMinimum * 10;
 
 	function round(num, digits = 4) {
 		return Number(num.toFixed(digits));
@@ -481,7 +481,7 @@ function testSummary(wordsCount) {
 		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
 		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
 		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}. ` +
-		`Measurement Precision - Timer Quantum: ${round(timerQuantum * 1000, 2)} µs.`
+		`Measurement Precision - Timer Minimum: ${round(timerMinimum * 1000, 2)} µs.`
 	);
 
 	// =========================================================
@@ -544,7 +544,7 @@ function testSummary(wordsCount) {
 				summaryDiv.innerHTML = "";
 				const start = performance.now();
 				isEarlyExit = algorithm.run(summaryDiv, words, line);
-				time = Math.max(performance.now() - start, timerQuantum / 2);
+				time = Math.max(performance.now() - start, timerMinimum / 2);
 			} else {
 				let totalTime = 0;
 				let runs = 0;
