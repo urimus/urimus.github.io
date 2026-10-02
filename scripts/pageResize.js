@@ -323,6 +323,7 @@ function getScrollDivOffset(){
 	let hImgHeight = newImg.height;
 	let hImgWidth = newImg.width;
 */
+
 	let hImgWidth = 851;
 	let hImgHeight = 315;
 	hImgHeight = hImgHeight*(1000/hImgWidth);
@@ -342,7 +343,8 @@ function adjustScrollDiv(){
 
 	// some bug
 	let additIntend = 0;
-	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
+	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-0.25;
+	if (Math.abs(window.devicePixelRatio - 0.9) < 0.0001) additIntend =-0.5;
 
 	scrollDiv.style.height = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
 
