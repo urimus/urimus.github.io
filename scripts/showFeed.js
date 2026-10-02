@@ -324,6 +324,7 @@ function newsLoad(lang) {
 
 function adjustFeedScrollDiv() {
 	const scrollDiv = document.getElementById('scrollDiv');
+	if (!scrollDiv) return;
 
 	const tabsHeight = document.getElementById('tabstable').getBoundingClientRect().height;
 	const feedTitleHeight = document.getElementById('titletable').getBoundingClientRect().height;
@@ -336,13 +337,16 @@ function adjustFeedScrollDiv() {
 		return;
 	}
 
+	scrollDiv.style.height = Math.max(getViewportHeight() - getScrollDivOffset() - totalHeight - 8, menuHeight - totalHeight - 8) + "px";
+
+/* prev version
 	scrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";
 	// use max-height: Math.max(screen, menu)
 	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset() - totalHeight - 8, menuHeight - totalHeight - 8) + "px";
-
 	scrollDiv.style.height = (document.getElementById('feedtable').offsetHeight==0)
 		? scrollDiv.style.maxHeight
 		: "100%";
+*/
 }
 
 // ------------- Show Feed ---------------- //

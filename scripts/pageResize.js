@@ -332,8 +332,9 @@ function getScrollDivOffset(){
 // --- adjust scrolldiv ---
 function adjustScrollDiv(){
 	const scrollDiv = document.getElementById('scrollDiv');
+	if (!scrollDiv) return;
 
-	if (isTouchDevice()) {
+	if (isMobile()) {
 		scrollDiv.style.minHeight = menuHeight + "px";
 		scrollDiv.style.height = "100%";
 		return;
@@ -343,9 +344,13 @@ function adjustScrollDiv(){
 	let additIntend = 0;
 	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-1;
 
+	scrollDiv.style.height = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
+
+/* prev version
 	scrollDiv.style.minHeight = (menuHeight + additIntend) + "px";
 	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
 	scrollDiv.style.height = "100%";
+*/
 
 	const page = window.location.pathname;
 	if (page.startsWith("/about_me")) {
