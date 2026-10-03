@@ -163,6 +163,27 @@ function extractSummaryWords(html) {
 	return result;
 }
 
+function getScrollDivOffset(){
+/*
+	let newImg = new Image();
+	newImg.src = "images/icons/urmas.jpg";
+	let hImgHeight = newImg.height;
+	let hImgWidth = newImg.width;
+*/
+
+	let hImgWidth = 851;
+	let hImgHeight = 315;
+	hImgHeight = hImgHeight*(1000/hImgWidth);
+	return hImgHeight + 65 + getScrollbarHeight(document.body); // 65
+}
+
+function correctInformationDiv(){
+	const scrollDiv = document.getElementById('scrollDiv');
+	const informationDiv = document.getElementById('information_div');
+	if (!scrollDiv || !informationDiv) return;
+	informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 6) + 'px';
+}
+
 // =========================================================
 // ALGORITHM GENERAL
 // =========================================================

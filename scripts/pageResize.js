@@ -316,48 +316,6 @@ function getViewportHeight() {
 	return (window.visualViewport?.height) || document.documentElement.clientHeight || window.innerHeight;
 }
 
-function getScrollDivOffset(){
-/*
-	let newImg = new Image();
-	newImg.src = "images/icons/urmas.jpg";
-	let hImgHeight = newImg.height;
-	let hImgWidth = newImg.width;
-*/
-
-	let hImgWidth = 851;
-	let hImgHeight = 315;
-	hImgHeight = hImgHeight*(1000/hImgWidth);
-	return hImgHeight + 65 + getScrollbarHeight(document.body); // 65
-}
-
-// --- adjust scrolldiv ---
-function correctInformationDiv(){
-	const scrollDiv = document.getElementById('scrollDiv');
-	const informationDiv = document.getElementById('information_div');
-	if (!scrollDiv || !informationDiv) return;
-	informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 6) + 'px';
-
-/*
-	if (isMobile()) {
-		scrollDiv.style.minHeight = menuHeight + "px";
-		scrollDiv.style.height = "100%";
-		return;
-	}
-
-	// some bug
-	let additIntend = 0;
-	if (Math.abs(window.devicePixelRatio - 1.1) < 0.0001) additIntend =-0.25;
-	if (Math.abs(window.devicePixelRatio - 0.9) < 0.0001) additIntend =-0.5;
-
-	scrollDiv.style.height = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
-*/
-/* prev version
-	scrollDiv.style.minHeight = (menuHeight + additIntend) + "px";
-	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
-	scrollDiv.style.height = "100%";
-*/
-}
-
 // --- axios error ---
 function logData(caption, data, maxLength = 100) {
 	console.log(caption);
