@@ -636,7 +636,6 @@ function preloadImage(type, source, lang, result) {
 				}
 			});
 		}
-		adjustFeedScrollDiv();
 		preloadImage(type, source, lang, result);
 	}
 	preloadImg.onerror = function () {
@@ -664,7 +663,6 @@ function preloadImage(type, source, lang, result) {
 			preloadImg2.src="images/icons/error/error.jpg";
 			preloadImg2.onload = function () {
 				loadingImg.replaceWith(preloadImg2);
-				adjustFeedScrollDiv();
 			}
 
 			for (let j = 0; j < totalEntries; j++) {
@@ -761,9 +759,6 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	Img.setAttribute('class', "spin_text");
 	Img.setAttribute('width', 450 - 200);
 	Img.setAttribute('style', 'display: block; margin: 5px 100px;');
-	Img.onload = function () {
-		adjustFeedScrollDiv();
-	}
 	Img.src="images/icons/feed/loading_red.svg";
 	imageDiv.appendChild(Img);
 
@@ -793,7 +788,6 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 						requestAnimationFrame(() => {
 							this.style.opacity = "1";
 						});
-						adjustFeedScrollDiv();
 					}
 					Img2.title = entry.additMedia[j].comment;
 					if (source== "nasa" || source == "artemis") {
@@ -819,7 +813,6 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 				showMoreDiv.innerHTML = t("show") + " " + entry.additMedia.length + " " + t("more") + " ";
 				showMoreDiv.appendChild(this);
 			}
-			adjustFeedScrollDiv();
 		}
 		expansionImgA.innerHTML = "[▼]";
 
@@ -861,7 +854,6 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 						"picture-in-picture;";
 					ifrm.onload = function () {
 						this.style.aspectRatio = "auto";
-						adjustFeedScrollDiv();
 					}
 					let url = new URL(entry.video);
 					url.searchParams.set("autoplay", "1");
@@ -878,7 +870,6 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					video.style.cssText = cssText;
 					video.onloadeddata = function () {
 						this.style.aspectRatio = "auto";
-						adjustFeedScrollDiv();
 					};
 					if (source == "cbs") {
 						if (window.Hls && Hls.isSupported()) {
@@ -906,7 +897,6 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 				showMoreDiv.innerHTML = t("show") + " " + t("video") + " ";
 				showMoreDiv.appendChild(this);
 			}
-			adjustFeedScrollDiv();
 		}
 		expansionVideoA.innerHTML = "[▼]";
 

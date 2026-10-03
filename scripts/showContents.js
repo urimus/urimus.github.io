@@ -644,8 +644,6 @@ function showContents(type, sortby, lang) {
 			const table = document.getElementById("contentstable");
 			table.replaceChildren(...docs);
 
-			adjustContentsScrollDiv();
-
 			if ("serviceWorker" in navigator) {
 				requestIdleCallback(() => {
 					navigator.serviceWorker.ready.then(() => {
