@@ -539,11 +539,11 @@ function processPageResize(lang) {
 				let contentsTable = document.getElementById('contentstable');
 				if (contentsTable != null && contentsTable.innerHTML != "") adjustContentsScrollDiv();
 			} else if (page.startsWith("/about_me")) { 
-				adjustScrollDiv();
+				correctInformationDiv();
 			}
 		} else { // load
 			if (page.startsWith("/about_me")) { 
-				adjustScrollDiv();
+				correctInformationDiv();
 			}
 		}
 	}
