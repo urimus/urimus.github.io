@@ -331,10 +331,13 @@ function getScrollDivOffset(){
 }
 
 // --- adjust scrolldiv ---
-function adjustScrollDiv(){
+function correctInformationDiv(){
 	const scrollDiv = document.getElementById('scrollDiv');
-	if (!scrollDiv) return;
+	const informationDiv = document.getElementById('information_div');
+	if (!scrollDiv || !informationDiv) return;
+	informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 6) + 'px';
 
+/*
 	if (isMobile()) {
 		scrollDiv.style.minHeight = menuHeight + "px";
 		scrollDiv.style.height = "100%";
@@ -347,18 +350,12 @@ function adjustScrollDiv(){
 	if (Math.abs(window.devicePixelRatio - 0.9) < 0.0001) additIntend =-0.5;
 
 	scrollDiv.style.height = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
-
+*/
 /* prev version
 	scrollDiv.style.minHeight = (menuHeight + additIntend) + "px";
 	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset(), menuHeight + additIntend) + "px";
 	scrollDiv.style.height = "100%";
 */
-
-	const page = window.location.pathname;
-	if (page.startsWith("/about_me")) {
-		const informationDiv = document.getElementById('information_div');
-		informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 6) + 'px';
-	}
 }
 
 // --- axios error ---
@@ -541,11 +538,11 @@ function processPageResize(lang) {
 			} else if (page.startsWith("/site_map")) {
 				let contentsTable = document.getElementById('contentstable');
 				if (contentsTable != null && contentsTable.innerHTML != "") adjustContentsScrollDiv();
-			} else {
+			} else if (page.startsWith("/about_me")) { 
 				adjustScrollDiv();
 			}
 		} else { // load
-			if (!(page.startsWith("/html_editor") || page.startsWith("/site_map") || page.startsWith("/news"))) {
+			if (page.startsWith("/about_me")) { 
 				adjustScrollDiv();
 			}
 		}

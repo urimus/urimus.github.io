@@ -326,7 +326,6 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 		isExpanded = !isExpanded;
 		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
-		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	expansionA.innerHTML = "[▼]";
 	element.appendChild(expansionA);
@@ -489,7 +488,6 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 		isExpanded = !isExpanded;
 		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
-		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	expansionA.innerHTML = "[▼]";
 	element.removeChild(pointer);
@@ -655,7 +653,6 @@ function modifySummary3(element, words_arr, col = "blue", linesToShow = 4) {
 		isExpanded = !isExpanded;
 		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
-		col === "red" ? adjustFeedScrollDiv() : adjustScrollDiv();
 	};
 	expansionA.innerHTML = "[▼]";
 	element.appendChild(expansionA);

@@ -20,7 +20,7 @@ function showErrorImage(message = "") {
 		if (descDiv) descDiv.remove();
 		let dateDiv = document.getElementById("dateDiv");
 		if (dateDiv) descDiv.remove();
-		adjustScrollDiv();
+		correctInformationDiv();
 	}
 	ImgE.src = "images/icons/error/error.jpg";
 
@@ -91,7 +91,7 @@ function updateAboutMeImage(lang, random = false) {
 		Img.onload = function () {
 			let Img2 = document.getElementById("iotd");
 			Img2.replaceWith(Img);
-			adjustScrollDiv();
+			correctInformationDiv();
 			updateAboutMeImage2(lang, i);
 		}
 		Img.src="images/icons/feed/loading.svg";
@@ -176,7 +176,7 @@ function updateAboutMeImage3(lang, i) {
 			const description_words = extractSummaryWords(item.description._text);
 			modifySummary(descDiv, description_words, "blue", 4);
 		}
-		adjustScrollDiv();
+		correctInformationDiv();
 	}
 	imgSVG.setAttribute('src', "images/icons/feed/image.svg");
 	imageA.appendChild(imgSVG);
@@ -196,7 +196,7 @@ function updateAboutMeImage3(lang, i) {
 	} else {
 		dateDiv.innerHTML = formatDate(new Date(item.pubDate._text).getTime(), lang);
 	}
-	adjustScrollDiv();
+	correctInformationDiv();
 
 	let Img = document.createElement("img");
 	Img.setAttribute('id', "iotd");
@@ -221,7 +221,7 @@ function updateAboutMeImage3(lang, i) {
 				});
 			});
 		}
-		adjustScrollDiv();
+		correctInformationDiv();
 	}
 	const url = new URL(item.enclosure._attributes.url);
 	url.searchParams.set("w", "450");
