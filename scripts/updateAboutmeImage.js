@@ -5,6 +5,13 @@ let imagesCachingStarted = false;
 let result = null;
 // ------------- End of Global Variables ---------------- //
 
+function correctInformationDiv(){
+	const scrollDiv = document.getElementById('scrollDiv');
+	const informationDiv = document.getElementById('information_div');
+	if (!scrollDiv || !informationDiv) return;
+	informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 6) + 'px';
+}
+
 function showErrorImage(message = "") {
 	let ImgE = document.createElement("img");
 	ImgE.setAttribute('id', "iotd");

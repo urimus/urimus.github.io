@@ -177,13 +177,6 @@ function getScrollDivOffset(){
 	return hImgHeight + 65 + getScrollbarHeight(document.body); // 65
 }
 
-function correctInformationDiv(){
-	const scrollDiv = document.getElementById('scrollDiv');
-	const informationDiv = document.getElementById('information_div');
-	if (!scrollDiv || !informationDiv) return;
-	informationDiv.style.right = (getScrollbarWidth(scrollDiv) + 6) + 'px';
-}
-
 // =========================================================
 // ALGORITHM GENERAL
 // =========================================================
