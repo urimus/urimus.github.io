@@ -85,9 +85,6 @@ function consolePlot(title, perf, unit = "ms", description) {
 		median,
 		medianEE,
 		medianNoEE,
-		geometricMean,
-		geometricMeanEE,
-		geometricMeanNoEE,
 		measuredLines
 	} = perf;
 
@@ -332,25 +329,14 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 
 	statistics += `Min: ${min.toFixed(3)}`;
-	if (unit === "ms") {
-		statistics = appendStatistic(
-			statistics,
-			statisticStyles,
-			"Mean",
-			mean,
-			meanNoEE,
-			meanEE
-		);
-	} else {
-		statistics = appendStatistic(
-			statistics,
-			statisticStyles,
-			"Geometric Mean",
-			geometricMean,
-			geometricMeanNoEE,
-			geometricMeanEE
-		);
-	}
+	statistics = appendStatistic(
+		statistics,
+		statisticStyles,
+		"Mean",
+		mean,
+		meanNoEE,
+		meanEE
+	);
 	statistics = appendStatistic(
 		statistics,
 		statisticStyles,
@@ -578,9 +564,6 @@ function testSummary(wordsCount) {
 		let sumNoEE = 0;
 		let countEE = 0;
 		let countNoEE = 0;
-		let logSum = 0;
-		let logSumEE = 0;
-		let logSumNoEE = 0;
 		let varianceSum = 0;
 		
 		const timesEE = [];
@@ -595,27 +578,21 @@ function testSummary(wordsCount) {
 
 		for (let i = 0; i < perf.times.length; i++) {
 			const time = perf.times[i];
-			// time is always > 0
-			const logTime = Math.log(time);
-			logSum += logTime;
 			const diff = time - perf.mean;
 			varianceSum += diff * diff;
 			if (perf.earlyExits[i]) {
 				sumEE += time;
 				countEE++;
-				logSumEE += logTime;
 				timesEE.push(time);
 			} else {
 				sumNoEE += time;
 				countNoEE++;
-				logSumNoEE += logTime;
 				timesNoEE.push(time);
 			}
 		}
 
 		perf.measuredLines = countEE > 0 ? MIN_LINES + countNoEE : `> ${MAX_LINES}`;
 		const standardDeviation = Math.sqrt(varianceSum / perf.count);
-		perf.geometricMean = Math.exp(logSum / perf.count);
 		if (countEE > 0) {
 			perf.meanEE = sumEE / countEE;
 			perf.geometricMeanEE = Math.exp(logSumEE / countEE);
@@ -628,7 +605,6 @@ function testSummary(wordsCount) {
 		}
 		if (countNoEE > 0) {
 			perf.meanNoEE = sumNoEE / countNoEE;
-			perf.geometricMeanNoEE = Math.exp(logSumNoEE / countNoEE);
 			
 			const sortedNoEE = timesNoEE.sort((a, b) => a - b);
 			const middleNoEE = Math.floor(sortedNoEE.length / 2);
@@ -684,67 +660,70 @@ function testSummary(wordsCount) {
 			return null;
 		}
 
-		const getSpeedupTimes = (perfFast, perfSlow) =>
-			perfFast.times.map((timeFast, i) => perfSlow.times[i] / timeFast);
-
-		// GM(B / A) = GM(B) / GM(A)
-		const speedupAB = perfB.geometricMean / perfA.geometricMean;
-		const isAFaster = speedupAB >= 1;
+		// Determine which algorithm is faster by its mean.
+		const isAFaster = perfA.mean <= perfB.mean;
 
 		const perfFast = isAFaster ? perfA : perfB;
 		const perfSlow = isAFaster ? perfB : perfA;
 
-		const times = getSpeedupTimes(perfFast, perfSlow);
-		const geometricMean = isAFaster ? speedupAB : 1 / speedupAB;
-
-		// median
+		const times = new Array(perfFast.times.length);
 		const timesEE = [];
 		const timesNoEE = [];
+
+		let sum = 0;
+		let min = Infinity;
+		let max = -Infinity;
+
 		for (let i = 0; i < times.length; i++) {
+			const time = perfSlow.times[i] / perfFast.times[i];
+			times[i] = time;
+			sum += time;
+			if (time < min) min = time;
+			if (time > max) max = time;
 			if (perfFast.earlyExits[i]) {
-				timesEE.push(times[i]);
+				timesEE.push(time);
 			} else {
-				timesNoEE.push(times[i]);
+				timesNoEE.push(time);
 			}
 		}
+
+		const mean = sum / times.length;
+
+		const getMean = values => {
+			if (!values.length) return undefined;
+			let sum = 0;
+			for (const value of values) {
+				sum += value;
+			}
+			return sum / values.length;
+		};
+
 		const getMedian = values => {
 			if (!values.length) return undefined;
+
 			const sorted = [...values].sort((a, b) => a - b);
 			const middle = Math.floor(sorted.length / 2);
+
 			return sorted.length % 2 === 0
 				? (sorted[middle - 1] + sorted[middle]) / 2
 				: sorted[middle];
 		};
-		const median = getMedian(times);
-		const medianEE = getMedian(timesEE);
-		const medianNoEE = getMedian(timesNoEE);
 
 		const result = {
 			count: times.length,
-			geometricMean,
-			median,
-			medianEE,
-			medianNoEE,
-			min: Math.min(...times),
-			max: Math.max(...times),
+			mean,
+			median: getMedian(times),
+			meanEE: getMean(timesEE),
+			medianEE: getMedian(timesEE),
+			meanNoEE: getMean(timesNoEE),
+			medianNoEE: getMedian(timesNoEE),
+			min,
+			max,
 			times,
 			isAFaster,
 			earlyExits: [...perfFast.earlyExits],
 			measuredLines: perfFast.measuredLines
 		};
-
-		if (
-			perfFast.geometricMeanEE !== undefined &&
-			perfSlow.geometricMeanEE !== undefined
-		) {
-			result.geometricMeanEE = perfSlow.geometricMeanEE / perfFast.geometricMeanEE;
-		}
-		if (
-			perfFast.geometricMeanNoEE !== undefined &&
-			perfSlow.geometricMeanNoEE !== undefined
-		) {
-			result.geometricMeanNoEE = perfSlow.geometricMeanNoEE / perfFast.geometricMeanNoEE;
-		}
 
 		return result;
 	}
