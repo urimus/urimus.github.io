@@ -670,6 +670,8 @@ function testSummary(wordsCount) {
 		let sum = 0;
 		let min = Infinity;
 		let max = -Infinity;
+		let sumEE = 0;
+		let sumNoEE = 0;
 
 		for (let i = 0; i < times.length; i++) {
 			const time = perfSlow.times[i] / perfFast.times[i];
@@ -679,21 +681,16 @@ function testSummary(wordsCount) {
 			if (time > max) max = time;
 			if (perfFast.earlyExits[i]) {
 				timesEE.push(time);
+				sumEE += time;
 			} else {
 				timesNoEE.push(time);
+				sumNoEE += time;
 			}
 		}
 
 		const mean = sum / times.length;
-
-		const getMean = values => {
-			if (!values.length) return undefined;
-			let sum = 0;
-			for (const value of values) {
-				sum += value;
-			}
-			return sum / values.length;
-		};
+		const meanEE = timesEE.length ? sumEE / timesEE.length : undefined;
+		const meanNoEE = timesNoEE.length ? sumNoEE / timesNoEE.length : undefined;
 
 		const getMedian = values => {
 			if (!values.length) return undefined;
@@ -705,14 +702,13 @@ function testSummary(wordsCount) {
 				? (sorted[middle - 1] + sorted[middle]) / 2
 				: sorted[middle];
 		};
-
 		const result = {
 			count: times.length,
 			mean,
 			median: getMedian(times),
-			meanEE: getMean(timesEE),
+			meanEE,
 			medianEE: getMedian(timesEE),
-			meanNoEE: getMean(timesNoEE),
+			meanNoEE,
 			medianNoEE: getMedian(timesNoEE),
 			min,
 			max,
@@ -721,7 +717,6 @@ function testSummary(wordsCount) {
 			earlyExits: [...perfFast.earlyExits],
 			measuredLines: perfFast.measuredLines
 		};
-
 		return result;
 	}
 
