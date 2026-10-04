@@ -595,8 +595,6 @@ function testSummary(wordsCount) {
 		const standardDeviation = Math.sqrt(varianceSum / perf.count);
 		if (countEE > 0) {
 			perf.meanEE = sumEE / countEE;
-			perf.geometricMeanEE = Math.exp(logSumEE / countEE);
-			
 			const sortedEE = timesEE.sort((a, b) => a - b);
 			const middleEE = Math.floor(sortedEE.length / 2);
 			perf.medianEE = sortedEE.length % 2 === 0
@@ -605,7 +603,6 @@ function testSummary(wordsCount) {
 		}
 		if (countNoEE > 0) {
 			perf.meanNoEE = sumNoEE / countNoEE;
-			
 			const sortedNoEE = timesNoEE.sort((a, b) => a - b);
 			const middleNoEE = Math.floor(sortedNoEE.length / 2);
 			perf.medianNoEE = sortedNoEE.length % 2 === 0
