@@ -508,8 +508,6 @@ function showFeedData(type, source, lang, result) {
 			};
 			let loadingMessages = document.getElementById("loadingMessages");
 			loadingMessages.appendChild(a);
-			adjustFeedScrollDiv();
-
 			let processedDiv = document.getElementById("processedDiv");
 			processedDiv.style.display = "block";
 			adjustFeedScrollDiv();
@@ -535,7 +533,6 @@ function formatSummaryDiv(summaryDiv, entry) {
 	summaryDiv.innerHTML = "";
 	modifySummary(summaryDiv, summary_words, "red", 4);
 
-	adjustFeedScrollDiv();
 }
 
 // ------------- Image Preload -------------- //
@@ -1033,6 +1030,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	date.setAttribute("style", "text-align:right; padding-right:10px;");
 	date.innerHTML = formatDate(entry.date_ms, lang);
 	container.appendChild(date);
+
 }
 
 function generateTabs(type, source, lang) {
@@ -2371,6 +2369,8 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					+ (updateAttempt > 1 ? "/" + updateAttempt : "")
 					+ " ❎.&nbsp;";
 
+				adjustFeedScrollDiv();
+
 				// check for redirect in html
 				let redirectURL = getMeta(doc, 'meta[http-equiv="refresh"]');
 				if (redirectURL && redirectCount < 5) {
@@ -2425,6 +2425,8 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					+ (updateAttempt > 1 ? "/" + updateAttempt : "")
 					+ " ✅.&nbsp;";
 
+				adjustFeedScrollDiv();
+
 				let locStPar = source + "_" + type + "_updates";
 				let locStUpdateData = getLocalStorageData(locStPar);
 				if (result.entries[i].origLink != null) {
@@ -2448,6 +2450,8 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				+ " #" + (i + 1)
 				+ (updateAttempt > 1 ? "/" + updateAttempt : "")
 				+ " ❎.&nbsp;";
+
+			adjustFeedScrollDiv();
 
 			consoleAxiosError(error, t("record") + " # " + (i + 1) + " | " + t("updateAttempt") + " " + updateAttempt);
 			if (updateAttempt < 5) { // 5 attempts
