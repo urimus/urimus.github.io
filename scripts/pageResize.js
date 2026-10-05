@@ -297,11 +297,11 @@ function isMobileLike() {
 
 // --- additional functions ---
 function getScrollbarWidth(el) {
-	if (!el || isTouchDevice()) return 0;
+	if (!el) return 0;
 	return el.offsetWidth - el.clientWidth;
 }
 function getScrollbarHeight(el) {
-	if (!el || isTouchDevice()) return 0;
+	if (!el) return 0;
 	return el.offsetHeight - el.clientHeight;
 }
 function getViewportWidth() {
