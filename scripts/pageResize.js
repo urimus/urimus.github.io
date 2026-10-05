@@ -28,38 +28,33 @@ if ("serviceWorker" in navigator) {
 	sessionStorage.removeItem("coiReloadedBySelf");
 
 	navigator.serviceWorker.addEventListener("controllerchange", function () {
-		console.log("[SW] Controller changed. crossOriginIsolated:", crossOriginIsolated);
+		console.log("[Service Worker] Controller changed. crossOriginIsolated:", crossOriginIsolated);
 		if (reloadedBySelf) {
-			console.log("[SW] Reload already performed. No further reload.");
+			console.log("[Service Worker] Reload already performed. No further reload.");
 			return;
 		}
 		sessionStorage.setItem("coiReloadedBySelf", "controllerchange");
-		console.log("[SW] Reloading page after controller change.");
+		console.log("[Service Worker] Reloading page after controller change.");
 		window.location.reload();
 	});
 
-	navigator.serviceWorker.register("/serviceWorker.js", {
-		scope: "/"
-	})
+	navigator.serviceWorker.register("/serviceWorker.js", { scope: "/" })
 	.then(function (registration) {
-		console.log("[SW] Registered. crossOriginIsolated:", crossOriginIsolated);
+		console.log("[Service Worker] Registered. crossOriginIsolated:", crossOriginIsolated);
 		registration.addEventListener("updatefound", function () {
-			console.log("[SW] Update found. Installing new version.");
+			console.log("[Service Worker] Update found. Installing new version.");
 		});
-
 		if (registration.active && !navigator.serviceWorker.controller) {
-			console.log("[SW] Active worker is not controlling the page.");
+			console.log("[Service Worker] Active worker is not controlling the page.");
 			sessionStorage.setItem("coiReloadedBySelf", "notcontrolling");
-			console.log("[SW] Reloading page to activate Service Worker.");
+			console.log("[Service Worker] Reloading page to activate Service Worker.");
 			window.location.reload();
 			return;
 		}
-
-		console.log("[SW] Initialization complete.");
-		console.log("[SW] Controller:", navigator.serviceWorker.controller ? "active" : "none");
+		console.log("[Service Worker] Controller:", navigator.serviceWorker.controller ? "active" : "none");
 	})
 	.catch(function (error) {
-		console.log("[SW] Registration failed:", error);
+		console.log("[Service Worker] Registration failed:", error);
 	});
 }
 
