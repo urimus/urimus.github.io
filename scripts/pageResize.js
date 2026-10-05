@@ -28,7 +28,7 @@ if ("serviceWorker" in navigator) {
 	sessionStorage.removeItem("coiReloadedBySelf");
 
 	navigator.serviceWorker.addEventListener("controllerchange", function () {
-		console.log("[SW] Controller changed.");
+		console.log("[SW] Controller changed. crossOriginIsolated:", crossOriginIsolated);
 		if (reloadedBySelf) {
 			console.log("[SW] Reload already performed. No further reload.");
 			return;
@@ -42,7 +42,7 @@ if ("serviceWorker" in navigator) {
 		scope: "/"
 	})
 	.then(function (registration) {
-		console.log("[SW] Registered. Scope:", registration.scope);
+		console.log("[SW] Registered. crossOriginIsolated:", crossOriginIsolated);
 		registration.addEventListener("updatefound", function () {
 			console.log("[SW] Update found. Installing new version.");
 		});
