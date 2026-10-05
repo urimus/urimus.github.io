@@ -296,12 +296,21 @@ function isMobileLike() {
 }
 
 // --- additional functions ---
+function isSafariBrowser() {
+	const ua = navigator.userAgent;
+	return (
+		/Safari/.test(ua) &&
+		!/Chrome|CriOS|Android|Edg|OPR|Firefox|FxiOS/.test(ua)
+	);
+}
 function getScrollbarWidth(el) {
-	if (!el) return 0;
+	if (!el || isTouchDevice()) return 0;
+	if (isSafariBrowser() && el.scrollHeight > el.clientHeight) return 15;
 	return el.offsetWidth - el.clientWidth;
 }
 function getScrollbarHeight(el) {
-	if (!el) return 0;
+	if (!el || isTouchDevice()) return 0;
+	if (isSafariBrowser() && el.scrollWidth > el.clientWidth) return 15;
 	return el.offsetHeight - el.clientHeight;
 }
 function getViewportWidth() {
