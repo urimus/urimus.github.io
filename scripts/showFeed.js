@@ -1362,19 +1362,18 @@ function showFeedError(message, feedURL, lang) {
 	div.style.gap = "6px";
 	div.append(t("newsFeed"), feedIcon(feedURL, lang));
 
-	container.append(
-		div,
-		document.createElement("br"),
-		document.createTextNode(message),
-		document.createElement("br")
-	);
-
 	const reloadLink = document.createElement("a");
 	reloadLink.href = "javascript:location.reload();";
 	reloadLink.className = "standardb_red";
 	reloadLink.textContent = t("reloadPage");
 
-	container.appendChild(reloadLink);
+	container.append(
+		div,
+		document.createElement("br"),
+		document.createTextNode(message),
+		document.createElement("br"),
+		reloadLink
+	);
 
 	adjustFeedScrollDiv();
 }
@@ -1453,8 +1452,19 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 			consoleAxiosError(error, t("feedLoadError") + " | " + t("loadAttempt") + " " + loadAttempt);
 			if (loadAttempt < 10) {
 				loadAttempt++;
-				let loadAttemptSpan = document.getElementById("loadAttempt");
-				if (loadAttemptSpan) loadAttemptSpan.innerHTML="<br>" + t("loadAttempt") + ": " + loadAttempt;
+				const loadAttemptSpan = document.getElementById("loadAttempt");
+				if (loadAttemptSpan) {
+					const reloadLink = document.createElement("a");
+					reloadLink.href = "javascript:location.reload();";
+					reloadLink.className = "standardb_red";
+					reloadLink.textContent = t("reloadPage");
+					loadAttemptSpan.replaceChildren(
+						document.createElement("br"),
+						document.createTextNode(t("loadAttempt") + ": " + loadAttempt),
+						document.createElement("br"),
+						reloadLink
+					);
+				}
 				adjustFeedScrollDiv();
 				loadFeed(type, source, lang, feedURL, loadAttempt);
 				return;
