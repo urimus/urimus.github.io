@@ -780,11 +780,7 @@ function testSummary(wordsCount) {
 
 	const testTime = performance.now() - testStart;
 	console.log("Modify Summary Benchmark Completed.");
-	console.log(
-		`Duration: ${Math.floor(testTime / 1000)}.${Math.round(testTime % 1000)
-			.toString()
-			.padStart(3, "0")}s.`
-	);
+	console.log(`Duration: ${(testTime / 1000).toFixed(3)}s.`);
 
 	return "End";
 
