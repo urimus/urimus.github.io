@@ -73,85 +73,19 @@ function randomWord() {
 	return word;
 }
 
-function consolePlotStatistics(perf, unit, COLORS) {
-	const {
-		min,
-		max,
-		mean,
-		meanEE,
-		meanNoEE,
-		median,
-		medianEE,
-		medianNoEE
-	} = perf;
-
-	let statistics = `STATISTICS, ${unit}: `;
-	const statisticStyles = [];
-
-	function appendStatistic(statistics, styles, label, value, valueNoEE, valueEE) {
-		statistics += " | ";
-		
-		const hasNoEE = valueNoEE !== undefined;
-		const hasEE = valueEE !== undefined;
-
-		if (hasNoEE && hasEE) {
-			statistics += `${label}: %c${value.toFixed(3)}%c`;
-			styles.push(COLORS.value, "");
-			const values = [
-				`%c${valueNoEE.toFixed(3)}%c`,
-				`%c${valueEE.toFixed(3)}%c`
-			];
-			styles.push(COLORS.normalPoint, "");
-			styles.push(COLORS.earlyPoint, "");
-			return `${statistics} (${values.join(", ")})`;
-		}
-
-		if (hasNoEE) {
-			statistics += `${label}: %c${valueNoEE.toFixed(3)}%c`;
-			styles.push(COLORS.normalPoint, "");
-			return statistics;
-		}
-
-		if (hasEE) {
-			statistics += `${label}: %c${valueEE.toFixed(3)}%c`;
-			styles.push(COLORS.earlyPoint, "");
-			return statistics;
-		}
-
-		statistics += `${label}: %c${value.toFixed(3)}%c`;
-		styles.push(COLORS.value, "");
-		return statistics;
-	}
-
-	statistics += `Min: ${min.toFixed(3)}`;
-	statistics = appendStatistic(
-		statistics,
-		statisticStyles,
-		"Mean",
-		mean,
-		meanNoEE,
-		meanEE
-	);
-	statistics = appendStatistic(
-		statistics,
-		statisticStyles,
-		"Median",
-		median,
-		medianNoEE,
-		medianEE
-	);
-	statistics += ` | Max: ${max.toFixed(3)}`;
-	console.log(statistics, ...statisticStyles);
-	console.log("\u200B");
-}
-
 function consolePlot(title, perf, unit = "ms", description) {
 	const {
 		times,
 		earlyExits,
 		min,
 		max,
-		measuredLines
+		measuredLines,
+		mean,
+		meanEE,
+		meanNoEE,
+		median,
+		medianEE,
+		medianNoEE
 	} = perf;
 
 	// ============================================================
@@ -188,7 +122,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	if (times.length === 1) {
 		console.log(`Single Measurement: ${times[0].toFixed(3)} ${unit}`);
-		consolePlotStatistics(perf, unit, COLORS);
+		console.log("\u200B");
 		return;
 	}
 
@@ -372,7 +306,64 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// STATISTICS
 	// ============================================================
 
-	consolePlotStatistics(perf, unit, COLORS);
+	let statistics = `STATISTICS, ${unit}: `;
+	const statisticStyles = [];
+
+	function appendStatistic(statistics, styles, label, value, valueNoEE, valueEE) {
+		statistics += " | ";
+		
+		const hasNoEE = valueNoEE !== undefined;
+		const hasEE = valueEE !== undefined;
+
+		if (hasNoEE && hasEE) {
+			statistics += `${label}: %c${value.toFixed(3)}%c`;
+			styles.push(COLORS.value, "");
+			const values = [
+				`%c${valueNoEE.toFixed(3)}%c`,
+				`%c${valueEE.toFixed(3)}%c`
+			];
+			styles.push(COLORS.normalPoint, "");
+			styles.push(COLORS.earlyPoint, "");
+			return `${statistics} (${values.join(", ")})`;
+		}
+
+		if (hasNoEE) {
+			statistics += `${label}: %c${valueNoEE.toFixed(3)}%c`;
+			styles.push(COLORS.normalPoint, "");
+			return statistics;
+		}
+
+		if (hasEE) {
+			statistics += `${label}: %c${valueEE.toFixed(3)}%c`;
+			styles.push(COLORS.earlyPoint, "");
+			return statistics;
+		}
+
+		statistics += `${label}: %c${value.toFixed(3)}%c`;
+		styles.push(COLORS.value, "");
+		return statistics;
+	}
+
+	statistics += `Min: ${min.toFixed(3)}`;
+	statistics = appendStatistic(
+		statistics,
+		statisticStyles,
+		"Mean",
+		mean,
+		meanNoEE,
+		meanEE
+	);
+	statistics = appendStatistic(
+		statistics,
+		statisticStyles,
+		"Median",
+		median,
+		medianNoEE,
+		medianEE
+	);
+	statistics += ` | Max: ${max.toFixed(3)}`;
+	console.log(statistics, ...statisticStyles);
+	console.log("\u200B");
 }
 
 function testSummary(wordsCount) {
