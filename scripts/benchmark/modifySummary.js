@@ -521,14 +521,12 @@ function testSummary(wordsCount) {
 
 		// Random order for all algorithms.
 		const shuffledAlgorithms = [...algorithms];
-
 		for (let i = shuffledAlgorithms.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
 			[shuffledAlgorithms[i], shuffledAlgorithms[j]] = [shuffledAlgorithms[j], shuffledAlgorithms[i]];
 		}
 
 		for (const algorithm of shuffledAlgorithms) {
-
 			let time;
 			let isEarlyExit;
 			if (crossOriginIsolated) {
@@ -555,6 +553,7 @@ function testSummary(wordsCount) {
 				measurementComplete = true;
 			}
 		}
+		
 		if (measurementComplete) break;
 		line++;
 	}
