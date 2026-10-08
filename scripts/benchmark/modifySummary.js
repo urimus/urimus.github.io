@@ -789,11 +789,11 @@ function testSummary(wordsCount) {
 
 	const testTime = performance.now() - testStart;
 	console.log("Modify Summary Benchmark Completed.");
-	const seconds = Math.floor(testTime / 1000);
-	const milliseconds = Math.round(testTime % 1000)
-		.toString()
-		.padStart(3, "0");
-	console.log(`Duration: ${seconds},${milliseconds}s.`);
+	console.log(
+		`Duration: ${Math.floor(testTime / 1000)}.${Math.round(testTime % 1000)
+			.toString()
+			.padStart(3, "0")}s.`
+	);
 
 	return "End";
 
