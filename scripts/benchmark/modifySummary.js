@@ -549,7 +549,7 @@ function testSummary(wordsCount) {
 			}
 
 			const measuredLines = addPerf(perfData.get(algorithm), time, isEarlyExit);
-			if (measuredLines !== null && line >= measuredLines * (1 + EXTRA_LINES_RATIO)) {
+			if (measuredLines !== null && line >= measuredLines + (measuredLines - 1) * EXTRA_LINES_RATIO) {
 				measurementComplete = true;
 			}
 		}
