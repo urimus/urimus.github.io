@@ -383,7 +383,8 @@ function testSummary(wordsCount) {
 	const count = Math.floor(Number(wordsCount));
 	const WORDS_COUNT = count > 0 ? count : 1000;
 	const MIN_LINES = 1;
-	const MAX_LINES = Math.max(1, Math.floor(WORDS_COUNT / 5));
+	const SAFETY_MAX_LINES = Math.max(1, WORDS_COUNT);
+	const EXTRA_LINES_RATIO = 0.5;
 
 	// =========================================================
 	// ALGORITHMS
@@ -465,8 +466,7 @@ function testSummary(wordsCount) {
 
 	console.log(
 		`Test Data Generated: ${WORDS_COUNT} words (${actualLines} lines), ` +
-		`applied for ${MIN_LINES}...${MAX_LINES} lines to show, ` +
-		`${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}. ` +
+		`applied for ${algorithms.length} algorithms: ${algorithms.map(algorithm => algorithm.name).join(", ")}. ` +
 		`Measurement Precision - Timer Minimum: ${round(timerMinimum * 1000, 2)} µs.`
 	);
 
@@ -483,7 +483,8 @@ function testSummary(wordsCount) {
 			min: Infinity,
 			max: 0,
 			times: [],
-			earlyExits: []
+			earlyExits: [],
+			measuredLines: null
 		});
 	}
 
@@ -497,20 +498,24 @@ function testSummary(wordsCount) {
 		totalSum += time;
 		perf.times.push(time);
 		perf.earlyExits.push(isEarlyExit);
+		if (isEarlyExit && perf.measuredLines === null) perf.measuredLines = perf.count;
 		if (time < perf.min) perf.min = time;
 		if (time > perf.max) perf.max = time;
+		return perf.measuredLines;
 	}
 
 	let labelTime = performance.now();
 	console.log("Processing started.");
+	
+	let line = MIN_LINES;
+	let measurementComplete = false;
 
-	for (let line = MIN_LINES; line <= MAX_LINES; line++) {
+	while (true) {
+
+		if (line > SAFETY_MAX_LINES) break;
 
 		if (performance.now() - labelTime > 5000) {
-			console.log(
-				`Processing: lines to show = ${line} - ` +
-				`${Math.floor((line - 1) / MAX_LINES * 100)}%`
-			);
+			console.log("Processing: lines to show = " + line);
 			labelTime = performance.now();
 		}
 
@@ -545,8 +550,13 @@ function testSummary(wordsCount) {
 				time = totalTime / runs;
 			}
 
-			addPerf(perfData.get(algorithm), time, isEarlyExit);
+			const measuredLines = addPerf(perfData.get(algorithm), time, isEarlyExit);
+			if (measuredLines !== null && line >= measuredLines * (1 + EXTRA_LINES_RATIO)) {
+				measurementComplete = true;
+			}
 		}
+		if (measurementComplete) break;
+		line++;
 	}
 
 	container.remove();
@@ -591,7 +601,6 @@ function testSummary(wordsCount) {
 			}
 		}
 
-		perf.measuredLines = countEE > 0 ? MIN_LINES + countNoEE : `> ${MAX_LINES}`;
 		const standardDeviation = Math.sqrt(varianceSum / perf.count);
 		if (countEE > 0) {
 			perf.meanEE = sumEE / countEE;
