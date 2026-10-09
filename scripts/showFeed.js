@@ -331,11 +331,13 @@ function adjustFeedScrollDiv() {
 	const feedMessageHeight = document.getElementById('messagetable').getBoundingClientRect().height;
 	const totalHeight = tabsHeight+feedTitleHeight+feedMessageHeight;
 
+/*
 	if (isMobile()) {
 		scrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
+*/
 
 	scrollDiv.style.height = Math.max(getViewportHeight() - getScrollDivOffset() - totalHeight - 8, menuHeight - totalHeight - 8) + "px";
 

@@ -282,11 +282,14 @@ function adjustContentsScrollDiv() {
 	if (!scrollDiv) return;
 
 	const tabsHeight = document.getElementById('tabstable').getBoundingClientRect().height;
+
+/*
 	if (isMobile()) {
 		scrollDiv.style.minHeight = (menuHeight - tabsHeight - 8) + "px";
 		scrollDiv.style.height = "100%";
 		return;
 	}
+*/
 
 	scrollDiv.style.height = Math.max(getViewportHeight() - getScrollDivOffset() - tabsHeight - 8, menuHeight - tabsHeight - 8) + "px";
 
