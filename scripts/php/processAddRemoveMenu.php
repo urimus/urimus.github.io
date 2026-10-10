@@ -116,12 +116,13 @@ if ($matchPos4 !== false && $matchPos5 !== false) {
 		$extra1 = "calc(";
 		$extra2 = " - 8px)";
 	}
+
 	// If menuHeight exists, use its row count.
 	// Otherwise use 0px.
 	if ($matchPos !== false) {
-		$newHeight = $extra1."max(100dvh - 435.135px, ".$menuHeightInt1."*".$menuHeightInt2_new."px)".$extra2;
+		$newHeight = $extra1."max(100dvh - 435.153px, ".$menuHeightInt1."*".$menuHeightInt2_new."px)".$extra2;
 	} else {
-		$newHeight = $extra1."max(100dvh - 435.135px, 0px)".$extra2;
+		$newHeight = $extra1."max(100dvh - 435.153px, 0px)".$extra2;
 	}
 
 	$file_contents =

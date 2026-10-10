@@ -258,7 +258,11 @@ function generateTabs(type, lang) {
 	Div.style.right = '2px';
 	Div.style.bottom = '0px';
 
-	adjustContentsScrollDiv();
+	const scrollDiv = document.getElementById('scrollDiv');
+	if (scrollDiv) {
+		const tabsHeight = table.getBoundingClientRect().height;
+		scrollDiv.style.height = `max(100dvh - ${getScrollDivOffset() + tabsHeight + 8}3px, ${menuHeight - tabsHeight - 8}px)`;
+	}
 
 	return tabsColor[type];
 }
@@ -275,29 +279,6 @@ function showInformation(lang) {
 		},
 		consoleAxiosError
 	);
-}
-
-function adjustContentsScrollDiv() {
-	const scrollDiv = document.getElementById('scrollDiv');
-	if (!scrollDiv) return;
-
-	const tabsHeight = document.getElementById('tabstable').getBoundingClientRect().height;
-
-/*
-	if (isMobile()) {
-		scrollDiv.style.minHeight = (menuHeight - tabsHeight - 8) + "px";
-		scrollDiv.style.height = "100%";
-		return;
-	}
-*/
-
-	scrollDiv.style.height = Math.max(getViewportHeight() - getScrollDivOffset() - tabsHeight - 8, menuHeight - tabsHeight - 8) + "px";
-
-/* prev version
-	scrollDiv.style.minHeight = (menuHeight - tabsHeight - 8) + "px";
-	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset() - tabsHeight - 8, menuHeight - tabsHeight - 8) + "px";
-	scrollDiv.style.height = "100%";
-*/
 }
 
 function removePadding(element) {

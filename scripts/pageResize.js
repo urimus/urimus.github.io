@@ -488,9 +488,6 @@ function processPageResize(lang) {
 			if (page.startsWith("/news")) {
 				let feedTable = document.getElementById('feedtable');
 				if (feedTable != null && feedTable.innerHTML != "") adjustFeedScrollDiv();
-			} else if (page.startsWith("/site_map")) {
-				let contentsTable = document.getElementById('contentstable');
-				if (contentsTable != null && contentsTable.innerHTML != "") adjustContentsScrollDiv();
 			} else if (page.startsWith("/about_me")) { 
 				correctInformationDiv();
 			}
