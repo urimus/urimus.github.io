@@ -244,7 +244,7 @@ function preloadImagesGeneral() {
 
 // --- Listerners ---
 document.addEventListener("DOMContentLoaded", () => {
-	let page = window.location.pathname;
+	const page = window.location.pathname;
 	if (page == "/" || page == "/index.html") return;
 	document.body.addEventListener("pointerover", (event) => {
 		const topEl = document.elementFromPoint(event.clientX, event.clientY);
@@ -424,7 +424,7 @@ function consoleAxiosError(error, description) {
 
 // --- html editor menu corr ---
 function checkMenu6() {
-	let menu6 = document.getElementById('menu_6');
+	const menu6 = document.getElementById('menu_6');
 	if (!menu6) return;
 
 	const disableMenu6 = title => {
@@ -469,9 +469,9 @@ function checkMenu6() {
 // --- pageResize ---
 function processPageResize(lang) {
 
-	let scrollDiv = document.getElementById('scrollDiv');
-	let page = window.location.pathname;
-	if (lang) {
+	const scrollDiv = document.getElementById('scrollDiv');
+	const page = window.location.pathname;
+	if (lang) { // load
 		changeLanguage(lang);
 		if ("serviceWorker" in navigator && !(page.startsWith("/about_me") || page.startsWith("/news") || page.startsWith("/site_map") || 	page.startsWith("/html_editor"))) {
 			requestIdleCallback(() => {
@@ -483,22 +483,10 @@ function processPageResize(lang) {
 		checkMenu6();
 	}
 
-	if (scrollDiv != null) {
-		if (!lang) { // not load
-			if (page.startsWith("/news")) {
-				let feedTable = document.getElementById('feedtable');
-				if (feedTable != null && feedTable.innerHTML != "") adjustFeedScrollDiv();
-			} else if (page.startsWith("/about_me")) { 
-				correctInformationDiv();
-			}
-		} else { // load
-			if (page.startsWith("/about_me")) { 
-				correctInformationDiv();
-			}
-		}
-	}
-	if (page.startsWith("/html_editor") && !lang) {
-		let textArea = document.getElementById('textarea_area');
+	if (page.startsWith("/about_me")) correctInformationDiv();
+
+	if (page.startsWith("/html_editor") && !lang) { // not load
+		const textArea = document.getElementById('textarea_area');
 		if (textArea != null && textArea.value != "") adjustTextarea();
 	}
 

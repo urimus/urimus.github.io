@@ -171,9 +171,8 @@ function getScrollDivOffset(){
 	let hImgWidth = newImg.width;
 */
 
-	let hImgWidth = 851;
-	let hImgHeight = 315;
-	hImgHeight = hImgHeight*(1000/hImgWidth);
+	const hImgWidth = 851;
+	const hImgHeight = 315 *(1000/hImgWidth);
 	return hImgHeight + 65 + getScrollbarHeight(document.body); // 65
 }
 

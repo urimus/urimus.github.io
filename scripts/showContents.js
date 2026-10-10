@@ -261,7 +261,7 @@ function generateTabs(type, lang) {
 	const scrollDiv = document.getElementById('scrollDiv');
 	if (scrollDiv) {
 		const tabsHeight = table.getBoundingClientRect().height;
-		scrollDiv.style.height = `max(100dvh - ${getScrollDivOffset() + tabsHeight + 8}3px, ${menuHeight - tabsHeight - 8}px)`;
+		scrollDiv.style.height = `max(100dvh - ${getScrollDivOffset() + tabsHeight + 8}px, ${menuHeight - tabsHeight - 8}px)`;
 	}
 
 	return tabsColor[type];

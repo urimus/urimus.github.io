@@ -329,26 +329,10 @@ function adjustFeedScrollDiv() {
 	const tabsHeight = document.getElementById('tabstable').getBoundingClientRect().height;
 	const feedTitleHeight = document.getElementById('titletable').getBoundingClientRect().height;
 	const feedMessageHeight = document.getElementById('messagetable').getBoundingClientRect().height;
-	const totalHeight = tabsHeight+feedTitleHeight+feedMessageHeight;
+	const totalHeight = tabsHeight + feedTitleHeight + feedMessageHeight;
 
-/*
-	if (isMobile()) {
-		scrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";
-		scrollDiv.style.height = "100%";
-		return;
-	}
-*/
+	scrollDiv.style.height = `max(100dvh - ${getScrollDivOffset() + totalHeight + 8}px, ${menuHeight - totalHeight - 8}px)`;
 
-	scrollDiv.style.height = Math.max(getViewportHeight() - getScrollDivOffset() - totalHeight - 8, menuHeight - totalHeight - 8) + "px";
-
-/* prev version
-	scrollDiv.style.minHeight = (menuHeight - totalHeight - 8) + "px";
-	// use max-height: Math.max(screen, menu)
-	scrollDiv.style.maxHeight = Math.max(getViewportHeight() - getScrollDivOffset() - totalHeight - 8, menuHeight - totalHeight - 8) + "px";
-	scrollDiv.style.height = (document.getElementById('feedtable').offsetHeight==0)
-		? scrollDiv.style.maxHeight
-		: "100%";
-*/
 }
 
 // ------------- Show Feed ---------------- //
