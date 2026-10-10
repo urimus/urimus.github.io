@@ -230,10 +230,6 @@ function formatSummary(words_arr, wordsCount, addSpace = true) {
 	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
 }
 
-function isApprox(top1, top2, tolerance = 2) {
-	return Math.abs(top1 - top2) < tolerance;
-}
-
 // ---------------------------------------------------------
 // Algorithm 1
 // a stable baseline option.
@@ -377,6 +373,10 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 // =========================================================
 // OTHER ALGORITHMS
 // =========================================================
+
+function isApprox(top1, top2, tolerance = 2) {
+	return Math.abs(top1 - top2) < tolerance;
+}
 
 // ---------------------------------------------------------
 // Algorithm 2
