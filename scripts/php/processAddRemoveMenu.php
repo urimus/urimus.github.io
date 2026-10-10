@@ -101,28 +101,31 @@ if ($matchPos !== false) {
 
 // ---------------- second part
 $matchPos4 = strpos($file_contents, '"scrollDiv"');
+$matchPos5 = false;
+
 if ($matchPos4 !== false) {
-    $matchPos4 = strpos($file_contents, 'style="height:', $matchPos4);
+	$matchPos4 = strpos($file_contents, 'style="height:', $matchPos4);
+
+	if ($matchPos4 !== false) {
+		$matchPos5 = strpos($file_contents, ";", $matchPos4);
+	}
 }
-$matchPos5 = strpos($file_contents, ";", $matchPos4);
 
 if ($matchPos4 !== false && $matchPos5 !== false) {
 	$statisticsTimesReplaced++;
-	$lineNrs[]=substr_count(substr($file_contents, 0, $matchPos4),"\n");
+	$lineNrs[] = substr_count(substr($file_contents, 0, $matchPos4), "\n");
 
-	$extra1 = "";
-	$extra2 = "";
+	$extra = "";
 	if (strpos($filenameOrig, "news_") === 0 || strpos($filenameOrig, "site_map_") === 0) {
-		$extra1 = "calc(";
-		$extra2 = " - 8px)";
+		$extra = " - 8px";
 	}
 
 	// If menuHeight exists, use its row count.
 	// Otherwise use 0px.
 	if ($matchPos !== false) {
-		$newHeight = $extra1."max(100dvh - 435.153px, ".$menuHeightInt1."*".$menuHeightInt2_new."px)".$extra2;
+		$newHeight = "max(100dvh - 435.153px".$extra.", ".$menuHeightInt1."*".$menuHeightInt2_new."px".$extra.")";
 	} else {
-		$newHeight = $extra1."max(100dvh - 435.153px, 0px)".$extra2;
+		$newHeight = "max(100dvh - 435.153px".$extra.", 0px".$extra.")";
 	}
 
 	$file_contents =
