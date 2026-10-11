@@ -248,11 +248,10 @@ function newsLoad(lang) {
 
 	changeLanguage(lang); // i18next
 
-	let sourceL="";
 	let source="";
 	let toRedirect=0;
 	
-	sourceL=getParameterByName('source');
+	const sourceL=getParameterByName('source');
 	if (sourceL && sourceL!="") {
 		if (sourceL=="artemis" || sourceL=="cbs" || sourceL=="merco" || sourceL=="nasa" || sourceL=="phys.org" || sourceL=="yonhap")  {
 			source=sourceL;
@@ -271,11 +270,10 @@ function newsLoad(lang) {
 		return;
 	}
 
-	let typeL="";
 	let type="";
 	toRedirect=0;
 	
-	typeL=getParameterByName('type');
+	const typeL = getParameterByName('type');
 	if (typeL && typeL!="") {
 		if (source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
 		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis") 
@@ -314,7 +312,7 @@ function newsLoad(lang) {
 		return;
 	}
 
-	let scrollDiv = document.getElementById('scrollDiv');
+	const scrollDiv = document.getElementById('scrollDiv');
 	if (scrollDiv) enableKeyboardScroll(scrollDiv);
 	processPageResize(lang);
 	showFeed(type, source, lang);

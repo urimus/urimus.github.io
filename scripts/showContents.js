@@ -4,14 +4,12 @@ function contentsLoad(lang) {
 
 	changeLanguage(lang); // i18next
 
-	let typeL="";
-	let sortbyL="";
 	let type="";
 	let sortby="";
 	let toRedirect=0;
 	
-	typeL=getParameterByName('type'); 
-	sortbyL=getParameterByName('sortby');
+	const typeL=getParameterByName('type'); 
+	const sortbyL=getParameterByName('sortby');
 
 	if (typeL && typeL!="") {
 		if ( (lang=="eng" || lang=="rus") && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="htmleditor" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities" || typeL=="news") || (lang=="lat" && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="news"))) {
