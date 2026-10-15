@@ -1,0 +1,4 @@
+﻿<b class="text_blue">About Me</b>
+&#9679; <a href="about_me_eng.html#image" class = "standardb_blue" data-added="01st of Jan, 2020." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">NASA Image of the Day</a>
+&#9679; <a href="about_me_eng.html#aboutme" class = "standardb_blue" data-added="02nd of Apr, 2014." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">About Me</a>
+&#9679; <a href="about_me_eng.html#amv" class = "standardb_blue" data-added="21st of Dec, 2023." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">AMV</a>

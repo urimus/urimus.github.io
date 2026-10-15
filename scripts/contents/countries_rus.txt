@@ -1,0 +1,3 @@
+﻿<b class="text_green_blue">Страны</b>
+&#9679; <a href="countries_ussr_rus.html" class = "standardb_green" data-added="22е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Союз Советских Социалистических Республик (СССР)</a>
+&#9679; <a href="countries_ireland_rus.html" class = "standardb_green" data-added="21е Фев, 2018." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Ирландия</a>

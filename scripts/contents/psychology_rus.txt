@@ -1,0 +1,7 @@
+﻿<b class="text_green_blue">Психология</b>
+&#10004; <a href="psychology_true_rus.html" class = "standardb_green" data-added="05е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Труъ</a>
+<span style="padding-left:10px;">- <a href="psychology_true_rus.html#evolutionary_psychology" class = "standardb_green" data-added="05е Июл, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Эволюционная</a></span>
+<span style="padding-left:10px;">- <a href="psychology_true_rus.html#integrity" class = "standardb_green" data-added="02е Дек, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Принципиальность</a></span>
+&#10008; <a href="psychology_pseudo_rus.html" class = "standardb_green" data-added="02е Авг, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Псевдо-</a>
+<span style="padding-left:10px;">- <a href="psychology_pseudo_rus.html#psychoanalysis" class = "standardb_green" data-added="02е Авг, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Психоанализ</a></span>
+<span style="padding-left:10px;">- <a href="psychology_pseudo_rus.html#transactional_analysis" class = "standardb_green" data-added="02е Авг, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Трансакционный Анализ</a></span>

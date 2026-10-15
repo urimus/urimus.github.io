@@ -1,0 +1,9 @@
+=== New session: 05.01.2026 02:06:11 ===
+[05-Jan-2026 02:06:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function canReadPath2() in /srv/disk24/4224587/www/urimus2.royalwebhosting.net/scripts/php/dir.php:41
+Stack trace:
+#0 {main}
+  thrown in /srv/disk24/4224587/www/urimus2.royalwebhosting.net/scripts/php/dir.php on line 41
+[FATAL] Uncaught Error: Call to undefined function canReadPath2() in /srv/disk24/4224587/www/urimus2.royalwebhosting.net/scripts/php/dir.php:41
+Stack trace:
+#0 {main}
+  thrown in dir.php:41
