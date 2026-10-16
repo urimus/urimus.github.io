@@ -494,6 +494,199 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	return false;
 }
 
+function formatSummaryWithProbe(checkedWordsCount, words_arr, wordsCount, addSpace = true) {
+	const probeOpen = '<span class="summary_word_probe">';
+	const probeClose = '</span>';
+
+	if (!checkedWordsCount) {
+		return probeOpen +
+			formatSummary(words_arr, wordsCount, false) +
+			probeClose + (addSpace ? " " : "");
+	}
+
+	if (wordsCount <= checkedWordsCount) {
+		return formatSummary(words_arr, wordsCount, addSpace);
+	}
+
+	return formatSummary(words_arr, checkedWordsCount) +
+		probeOpen +
+		words_arr.slice(checkedWordsCount, wordsCount).join(" ") +
+		probeClose + (addSpace ? " " : "");
+}
+
+function getLineInfoIncremental(probesLive, lines, linesToShow, isBinary = false) {
+	const newLines = new Set();
+
+	const probesCount = isBinary
+		? probesLive.length - 1
+		: probesLive.length;
+
+	for (let i = 0; i < probesCount; i++) {
+		for (const rect of probesLive[i].getClientRects()) {
+			if (rect.height <= 0) continue;
+			if (lines.has(rect.top) || newLines.has(rect.top)) continue;
+
+			newLines.add(rect.top);
+
+			if (lines.size + newLines.size > linesToShow) {
+				return {
+					fitsLinesToShow: false,
+					fitsLinesToShowM1: false
+				};
+			}
+		}
+	}
+
+	const expansionLines = new Set();
+
+	if (isBinary && probesLive.length > 0) {
+		const expansionA = probesLive[probesLive.length - 1];
+
+		for (const rect of expansionA.getClientRects()) {
+			if (rect.height <= 0) continue;
+			if (lines.has(rect.top) || newLines.has(rect.top)) continue;
+
+			expansionLines.add(rect.top);
+
+			if (lines.size + newLines.size + expansionLines.size > linesToShow) {
+				return {
+					fitsLinesToShow: false,
+					fitsLinesToShowM1: false
+				};
+			}
+		}
+	}
+
+	for (const top of newLines) {
+		lines.add(top);
+	}
+
+	const totalLines = lines.size + expansionLines.size;
+
+	return {
+		fitsLinesToShow: totalLines <= linesToShow,
+		fitsLinesToShowM1: totalLines <= linesToShow - 1
+	};
+}
+
+function modifySummary2Mod(element, words_arr, col = "blue", linesToShow = 4) {
+	const wordsLength = words_arr.length;
+	if (!wordsLength) return true;
+
+	const span = createSpan(element, col);
+	// one word only
+	if (wordsLength === 1) {
+		span.innerHTML = words_arr[0];
+		return true;
+	}
+
+	// ---------------------------------------------------------
+	// Init.
+	// ---------------------------------------------------------
+
+	let wordsCount = 1;
+	// Binary search bound.
+	let left = 1;
+	let checkedWordsCount = 0;
+	const lines = new Set();
+	const probesLive = element.getElementsByClassName("summary_word_probe");
+	
+	// ---------------------------------------------------------
+	// Estimate the likely result.
+	// ---------------------------------------------------------
+
+	let current = Math.min(linesToShow * 10, wordsLength);
+
+	if (current === wordsLength) {
+		const lineHeight = getLineHeight(span);
+		const pointer = document.createElement("a");
+		element.appendChild(pointer);
+		const startLineTop = pointer.offsetTop;
+		span.innerHTML = formatSummary(words_arr, wordsLength, false);
+		const currentLineTop = pointer.offsetTop;
+		const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
+		pointer.remove();
+		if (estimatedLines <= linesToShow) return true;
+	} else {
+
+		// ---------------------------------------------------------
+		// Exponential search.
+		// ---------------------------------------------------------
+
+		while (true) {
+			span.innerHTML = formatSummaryWithProbe(checkedWordsCount, words_arr, current, false);
+			const result = getLineInfoIncremental(probesLive, lines, linesToShow);
+			if (!result.fitsLinesToShow) {
+				break;
+			}
+			checkedWordsCount = current;
+			wordsCount = current;
+			if (result.fitsLinesToShowM1) {
+				left = current;
+			}
+			// The entire summary fits.
+			if (current === wordsLength) {
+				return true;
+			}
+			current = Math.min(current * 2, wordsLength);
+		}
+	}
+
+	// ---------------------------------------------------------
+	// Add expansion link.
+	// ---------------------------------------------------------
+
+	const expansionA = document.createElement("a");
+	expansionA.setAttribute("href", "javascript:void(0);");
+	expansionA.setAttribute("class", "standardb_" + col + " summary_word_probe");
+	let isExpanded = false;
+	let isAnimating = false;
+	expansionA.onclick = function () {
+		if (isAnimating) return;
+		isAnimating = true;
+		isExpanded = !isExpanded;
+		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
+		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
+	};
+	expansionA.innerHTML = "[▼]";
+	element.appendChild(expansionA);
+
+	// ---------------------------------------------------------
+	// Binary search bounds.
+	// ---------------------------------------------------------
+
+	let right = current - 1;
+
+	// ---------------------------------------------------------
+	// Binary search.
+	// ---------------------------------------------------------
+
+	while (left <= right) {
+		const middle = Math.floor((left + right) / 2);
+		if (middle < checkedWordsCount) {
+			checkedWordsCount = 0;
+			lines.clear();
+		}
+		span.innerHTML = formatSummaryWithProbe(checkedWordsCount, words_arr, middle);
+		const result = getLineInfoIncremental(probesLive, lines, linesToShow, true);
+		if (result.fitsLinesToShow) {
+			checkedWordsCount = middle;
+			wordsCount = middle;
+			left = middle + 1;
+		} else {
+			right = middle - 1;
+		}
+	}
+	
+	// ---------------------------------------------------------
+	// Final setup.
+	// ---------------------------------------------------------
+	
+	span.innerHTML = formatSummary(words_arr, wordsCount);
+	return false;
+}
+
+
 // ---------------------------------------------------------
 // Algorithm 3
 // The slowest on average.
@@ -587,7 +780,6 @@ function modifySummary3(element, words_arr, col = "blue", linesToShow = 4) {
 	// Binary search bound.
 	let left = 1;
 	let pointerTops = [];
-	let result;
 	const pointersLive = element.getElementsByClassName("summary_word_pointer");
 
 	// ---------------------------------------------------------
@@ -613,7 +805,7 @@ function modifySummary3(element, words_arr, col = "blue", linesToShow = 4) {
 
 		while (true) {
 			span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current, false);
-			result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
+			const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
 			if (result.wordsCount < current) break;
 			if (current === wordsLength) {
 				span.innerHTML = formatSummary(words_arr, wordsLength, false);
@@ -657,7 +849,7 @@ function modifySummary3(element, words_arr, col = "blue", linesToShow = 4) {
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
-		result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle, true);
+		const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle, true);
 		if (result.wordsCount >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
