@@ -515,7 +515,7 @@ function formatSummaryDiv(summaryDiv, entry) {
 
 	const summary_words = extractSummaryWords(entry.summary);
 	summaryDiv.innerHTML = "";
-	modifySummary2Mod(summaryDiv, summary_words, "red", 4);
+	modifySummary3(summaryDiv, summary_words, "red", 4);
 
 }
 
