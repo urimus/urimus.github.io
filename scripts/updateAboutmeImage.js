@@ -166,7 +166,7 @@ function updateAboutMeImage3(lang, i) {
 	imageA.setAttribute('target', '_blank');
 	imageA.setAttribute('tabindex', "0");
 	imageA.style.float = "left";
-	imageA.style.margin = "0 5px 5px 0";
+	imageA.style.marginRight = "5px";
 	let title = "<div>Image #" + (i + 1) + "</div>";
 	title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
 	title += "NASA Image of the Day";
@@ -174,7 +174,7 @@ function updateAboutMeImage3(lang, i) {
 	const imgSVG = document.createElement("img");
 	imgSVG.setAttribute('class', "thumbnail_image_blue_png");
 	imgSVG.setAttribute('alt', "Image #" + (i + 1));
-	imgSVG.setAttribute('height', 27);
+	imgSVG.setAttribute('height', 34);
 	imgSVG.onload = function () {
 		if (item.description._text) {
 			const description_words = extractSummaryWords(item.description._text);
