@@ -370,8 +370,8 @@ function formatSummaryWithProbe(checkedWordsCount, words_arr, wordsCount, addSpa
 
 	if (!checkedWordsCount) {
 		return probeOpen +
-			formatSummary(words_arr, wordsCount, false) +
-			probeClose + (addSpace ? " " : "");
+			formatSummary(words_arr, wordsCount, addSpace) +
+			probeClose;
 	}
 
 	if (wordsCount <= checkedWordsCount) {
@@ -380,8 +380,8 @@ function formatSummaryWithProbe(checkedWordsCount, words_arr, wordsCount, addSpa
 
 	return formatSummary(words_arr, checkedWordsCount) +
 		probeOpen +
-		words_arr.slice(checkedWordsCount, wordsCount).join(" ") +
-		probeClose + (addSpace ? " " : "");
+		words_arr.slice(checkedWordsCount, wordsCount).join(" ") + (addSpace ? " " : "") +
+		probeClose;
 }
 
 function getLineInfoIncremental(probesLive, lines, linesToShow, isBinary = false) {
