@@ -420,12 +420,6 @@ function testSummary(wordsCount) {
 				modifySummary2(summaryDiv, words_arr, "red", line)
 		},
 		{
-			name: "Alg 2 Mod",
-			description: "Stable option using getClientRects modified",
-			run: (summaryDiv, words_arr, line) =>
-				modifySummary2Mod(summaryDiv, words_arr, "red", line)
-		},
-		{
 			name: "Alg 3",
 			description: "The slowest on average",
 			run: (summaryDiv, words_arr, line) =>
@@ -779,7 +773,6 @@ function testSummary(wordsCount) {
 	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
 	consoleSpeedupPlot("Alg 1", "Alg 3", "×");
 	consoleSpeedupPlot("Alg 2", "Alg 3", "×");
-	consoleSpeedupPlot("Alg 2", "Alg 2 Mod", "×");
 	
 	// =========================================================
 	// COMPLETE
