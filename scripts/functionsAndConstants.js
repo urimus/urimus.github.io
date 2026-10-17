@@ -471,7 +471,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 		span.innerHTML = formatSummaryWithProbe(0, words_arr, current, false);
 		const result = getLineInfoIncremental(probesLive, lines, linesToShow);
 		if (result.fitsLinesToShow) {
-			span.innerHTML = formatSummary(words_arr, current);
+			span.innerHTML = formatSummary(words_arr, current, false);
 			return true;
 		}
 	} else {
@@ -493,6 +493,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 			}
 			// The entire summary fits.
 			if (current === wordsLength) {
+				span.innerHTML = formatSummary(words_arr, current, false);
 				return true;
 			}
 			current = Math.min(current * 2, wordsLength);
