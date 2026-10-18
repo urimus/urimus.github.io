@@ -198,53 +198,58 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// SLOPE LINE (NoEE only)
 	// ============================================================
 
-const drawSlope = slopeNoEE != null && unit === "ms";
+	const drawSlope = slopeNoEE != null && unit === "ms";
 
-if (drawSlope) {
-	const slopeStyle = COLORS.slope;
+	if (drawSlope) {
+		let previous = null;
 
-	let previous = null;
+		for (let i = 0; i < times.length; i++) {
+			if (earlyExits[i]) continue;
 
-	for (let i = 0; i < times.length; i++) {
-		if (earlyExits[i]) continue;
+			const x = indexToCol(i);
+			const value = slopeNoEE * (i + 1);
+			const y = HEIGHT - valueToRow(value);
 
-		const x = indexToCol(i);
-		const value = slopeNoEE * (i + 1);
-		const y = HEIGHT - valueToRow(value);
+			if (y < 0 || y > HEIGHT) {
+				previous = null;
+				continue;
+			}
 
-		if (y < 0 || y > HEIGHT) {
-			previous = null;
-			continue;
-		}
+			if (previous !== null) {
+				const dx = x - previous.x;
+				const dy = y - previous.y;
+				const steps = Math.max(Math.abs(dx), Math.abs(dy));
 
-		if (previous !== null) {
-			const dx = x - previous.x;
-			const dy = y - previous.y;
-			const steps = Math.max(Math.abs(dx), Math.abs(dy));
+				for (let step = 0; step <= steps; step++) {
+					const px = Math.round(previous.x + dx * step / steps);
+					const py = Math.round(previous.y + dy * step / steps);
 
-			for (let step = 0; step <= steps; step++) {
-				const px = Math.round(previous.x + dx * step / steps);
-				const py = Math.round(previous.y + dy * step / steps);
+					if (
+						py < 0 || py > HEIGHT ||
+						px < 0 || px >= WIDTH
+					) continue;
 
-				if (py >= 0 && py <= HEIGHT && px >= 0 && px < WIDTH) {
+					const char =
+						dx === 0 ? "│" :
+						dy === 0 ? "─" :
+						(dy / dx < 0 ? "╱" : "╲");
+
 					grid[py][px] = {
-						char: POINT,
-						style: slopeStyle
+						char,
+						style: COLORS.slope
 					};
 				}
-			}
-		} else {
-			if (x >= 0 && x < WIDTH) {
+			} else if (x >= 0 && x < WIDTH) {
 				grid[y][x] = {
-					char: POINT,
-					style: slopeStyle
+					char: "─",
+					style: COLORS.slope
 				};
 			}
-		}
 
-		previous = { x, y };
+			previous = { x, y };
+		}
 	}
-}
+
 
 	// ============================================================
 	// POINTS
