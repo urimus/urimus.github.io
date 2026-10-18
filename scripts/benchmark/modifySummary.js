@@ -86,7 +86,8 @@ function consolePlot(title, perf, unit = "ms", description) {
 		median,
 		medianEE,
 		medianNoEE,
-		slopeNoEE
+		slopeNoEE,
+		interceptNoEE
 	} = perf;
 
 	// ============================================================
@@ -188,7 +189,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	if (drawSlope) {
 		const slopePoints = times.map((time, i) => ({
 			n: i + 1,
-			value: slopeNoEE * (i + 1)
+			value: interceptNoEE + slopeNoEE * (i + 1)
 		}));
 
 		for (const point of slopePoints) {
@@ -643,6 +644,7 @@ function testSummary(wordsCount) {
 		let countEE = 0;
 		let countNoEE = 0;
 		let varianceSum = 0;
+		let sumNNoEE = 0;
 		let sumNTNoEE = 0;
 		let sumN2NoEE = 0;
 		
@@ -668,9 +670,10 @@ function testSummary(wordsCount) {
 				sumNoEE += time;
 				countNoEE++;
 				timesNoEE.push(time);
-				const line = i + MIN_LINES;
-				sumNTNoEE += line * time;
-				sumN2NoEE += line * line;
+				const n = i + MIN_LINES;
+				sumNNoEE += n;
+				sumNTNoEE += n * time;
+				sumN2NoEE += n * n;
 			}
 		}
 
@@ -690,10 +693,23 @@ function testSummary(wordsCount) {
 			perf.medianNoEE = sortedNoEE.length % 2 === 0
 				? (sortedNoEE[middleNoEE - 1] + sortedNoEE[middleNoEE]) / 2
 				: sortedNoEE[middleNoEE];
+			const denominator =
+				countNoEE * sumN2NoEE - sumNNoEE * sumNNoEE;
+			if (denominator > 0) {
+				perf.slopeNoEE =
+					(countNoEE * sumNTNoEE - sumNNoEE * sumNoEE)
+					/ denominator;
+				perf.interceptNoEE =
+					(sumNoEE - perf.slopeNoEE * sumNNoEE)
+					/ countNoEE;
+			} else {
+				perf.slopeNoEE = null;
+				perf.interceptNoEE = null;
+			}
+		} else {
+			perf.slopeNoEE = null;
+			perf.interceptNoEE = null;
 		}
-		perf.slopeNoEE = sumN2NoEE > 0
-			? sumNTNoEE / sumN2NoEE
-			: null;
 		statisticsTable[algorithm.name] = {
 			Count: perf.count,
 			"Mean, ms": round(perf.mean),
