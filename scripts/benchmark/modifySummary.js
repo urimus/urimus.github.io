@@ -318,8 +318,8 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// LEGEND
 	// ============================================================
 
-	const slopeLegend = unit === "ms"
-		? ` (%c${SLOPE_POINT}%c - slope)`
+	const approximationLegend = unit === "ms"
+		? ` (%c${SLOPE_POINT}%c - approximation)`
 		: "";
 
 	const legendStyles = unit === "ms"
@@ -345,7 +345,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	console.log(
 		`LEGEND: ` +
 		`%c${POINT}%c - summary does not fit lines` +
-		`${slopeLegend}, ` +
+		`${approximationLegend}, ` +
 		`%c${POINT}%c - summary fits lines - early exit, ` +
 		`%c${MEASURED_LINE}%c - summary size: ${measuredLines} lines`,
 		...legendStyles
@@ -412,9 +412,12 @@ function consolePlot(title, perf, unit = "ms", description) {
 		medianEE
 	);
 	statistics += ` | Max: ${max.toFixed(3)}`;
-	if (slopeNoEE != null) {
-		statistics += ` | Slope: %c${slopeNoEE.toFixed(3)}%c`;
-		statisticStyles.push(COLORS.normalPoint, "");
+	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
+		statistics += ` | Approximation: %c${slopeNoEE.toFixed(3)}%cN + %c${interceptNoEE.toFixed(3)}%c`;
+		statisticStyles.push(
+			COLORS.normalPoint, "",
+			COLORS.normalPoint, ""
+		);
 	}
 	console.log(statistics, ...statisticStyles);
 	console.log("\u200B");
