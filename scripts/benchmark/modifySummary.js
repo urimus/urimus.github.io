@@ -135,7 +135,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	// Symbols
 	const POINT = "●";
-	const SLOPE_POINT = "×"; // ○
+	const SLOPE_POINT = "·"; // ○×
 	const MEASURED_LINE = "┊";
 	const AXIS = "│";
 	const H_AXIS = "─";
