@@ -112,7 +112,8 @@ function consolePlot(title, perf, unit = "ms", description) {
 		measuredLine: "color: #888;",
 		axis: "color: #888;",
 		labels: "color: #aaa;",
-		value: "color: #5599ff; font-weight: bold;"
+		value: "color: #5599ff; font-weight: bold;",
+		slope: "color: #ff9900; font-weight: bold;"
 	};
 
 	if (times.length === 0) {
@@ -207,6 +208,35 @@ function consolePlot(title, perf, unit = "ms", description) {
 				char: POINT,
 				style: earlyExits[i] ? COLORS.earlyPoint : COLORS.normalPoint
 			};
+		}
+	}
+
+	// ============================================================
+	// SLOPE LINE (NoEE only)
+	// ============================================================
+
+	const drawSlope = slopeNoEE != null && unit === "ms";
+
+	if (drawSlope) {
+		const slopePoints = times
+			.map((time, i) => ({
+				n: i + 1,
+				value: slopeNoEE * (i + 1),
+				earlyExit: earlyExits[i]
+			}))
+			.filter(point => !point.earlyExit);
+
+		for (const point of slopePoints) {
+			const x = indexToCol(point.n - 1);
+			const y = valueToRow(point.value);
+			const row = HEIGHT - y;
+
+			if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
+				grid[row][x] = {
+					char: POINT,
+					style: COLORS.slope
+				};
+			}
 		}
 	}
 
@@ -365,7 +395,10 @@ function consolePlot(title, perf, unit = "ms", description) {
 	statistics += ` | Max: ${max.toFixed(3)}`;
 	if (slopeNoEE != null) {
 		statistics += ` | Slope: %c${slopeNoEE.toFixed(3)}%c`;
-		statisticStyles.push(COLORS.normalPoint, "");
+		statisticStyles.push(
+			unit === "ms" ? COLORS.slope : COLORS.normalPoint,
+			""
+		);
 	}
 	console.log(statistics, ...statisticStyles);
 	console.log("\u200B");
