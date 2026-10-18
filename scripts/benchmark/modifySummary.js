@@ -195,23 +195,6 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 
 	// ============================================================
-	// POINTS
-	// ============================================================
-
-	for (let i = 0; i < times.length; i++) {
-		const x = indexToCol(i);
-		const y = valueToRow(times[i]);
-		const row = HEIGHT - y;
-
-		if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
-			grid[row][x] = {
-				char: POINT,
-				style: earlyExits[i] ? COLORS.earlyPoint : COLORS.normalPoint
-			};
-		}
-	}
-
-	// ============================================================
 	// SLOPE LINE (NoEE only)
 	// ============================================================
 
@@ -237,6 +220,23 @@ function consolePlot(title, perf, unit = "ms", description) {
 					style: COLORS.slope
 				};
 			}
+		}
+	}
+
+	// ============================================================
+	// POINTS
+	// ============================================================
+
+	for (let i = 0; i < times.length; i++) {
+		const x = indexToCol(i);
+		const y = valueToRow(times[i]);
+		const row = HEIGHT - y;
+
+		if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
+			grid[row][x] = {
+				char: POINT,
+				style: earlyExits[i] ? COLORS.earlyPoint : COLORS.normalPoint
+			};
 		}
 	}
 
