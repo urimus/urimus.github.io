@@ -85,7 +85,8 @@ function consolePlot(title, perf, unit = "ms", description) {
 		meanNoEE,
 		median,
 		medianEE,
-		medianNoEE
+		medianNoEE,
+		slopeNoEE
 	} = perf;
 
 	// ============================================================
@@ -362,6 +363,10 @@ function consolePlot(title, perf, unit = "ms", description) {
 		medianEE
 	);
 	statistics += ` | Max: ${max.toFixed(3)}`;
+	if (slopeNoEE != null) {
+		statistics += ` | Slope NoEE: %c${slopeNoEE.toFixed(6)}%c`;
+		statisticStyles.push(COLORS.normalPoint, "");
+	}
 	console.log(statistics, ...statisticStyles);
 	console.log("\u200B");
 }
@@ -690,8 +695,13 @@ function testSummary(wordsCount) {
 			return null;
 		}
 
-		// Determine which algorithm is faster by its mean.
-		const isAFaster = perfA.mean <= perfB.mean;
+		// Determine which algorithm is faster by its NoEE slope.
+		if (perfA.slopeNoEE == null || perfB.slopeNoEE == null) {
+			console.error("Cannot compare speedup: missing NoEE slope.");
+			return null;
+		}
+
+		const isAFaster = perfA.slopeNoEE <= perfB.slopeNoEE;
 
 		const perfFast = isAFaster ? perfA : perfB;
 		const perfSlow = isAFaster ? perfB : perfA;
@@ -743,6 +753,7 @@ function testSummary(wordsCount) {
 			medianEE: getMedian(timesEE),
 			meanNoEE,
 			medianNoEE: getMedian(timesNoEE),
+			slopeNoEE: perfSlow.slopeNoEE / perfFast.slopeNoEE,
 			min,
 			max,
 			times,
