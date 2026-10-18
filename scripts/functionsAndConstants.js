@@ -279,16 +279,15 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	let wordsCount = 1;
 	// Binary search bound.
 	let left = 1;
+	const pointer = document.createElement("a");
+	element.appendChild(pointer);
+	const startLineTop = pointer.offsetTop;
 
 	// ---------------------------------------------------------
 	// Estimate the likely result.
 	// ---------------------------------------------------------
 	let current = Math.min(linesToShow * 10, wordsLength);
 	
-	const pointer = document.createElement("a");
-	element.appendChild(pointer);
-	const startLineTop = pointer.offsetTop;
-
 	// ---------------------------------------------------------
 	// Exponential search.
 	// ---------------------------------------------------------
@@ -310,7 +309,6 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 		}
 		current = Math.min(current * 2, wordsLength);
 	}
-
 
 	// ---------------------------------------------------------
 	// Add expansion link.
