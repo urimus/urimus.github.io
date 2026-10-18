@@ -136,7 +136,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	// Symbols
 	const POINT = "●";
-	const SLOPE_POINT = "∙"; // ○×·
+	const APPROXIMATION_POINT = "∙"; // ○×·
 	const MEASURED_LINE = "┊";
 	const AXIS = "│";
 	const H_AXIS = "─";
@@ -199,7 +199,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 			if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
 				grid[row][x] = {
-					char: SLOPE_POINT,
+					char: APPROXIMATION_POINT,
 					style: COLORS.normalPoint
 				};
 			}
@@ -319,7 +319,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// ============================================================
 
 	const approximationLegend = unit === "ms"
-		? ` (%c${SLOPE_POINT}%c - approximation)`
+		? ` (%c${APPROXIMATION_POINT}%c - approximation)`
 		: "";
 
 	const legendStyles = unit === "ms"
@@ -416,7 +416,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
 		console.log(
-			`APPROXIMATION: %c${slopeNoEE.toFixed(3)}%cN ${interceptNoEE < 0 ? "−" : "+"} %c${Math.abs(interceptNoEE).toFixed(3)}`,
+			`LINEAR APPROXIMATION, ${unit}: %c${slopeNoEE.toFixed(3)}%cN ${interceptNoEE < 0 ? "−" : "+"} %c${Math.abs(interceptNoEE).toFixed(3)}`,
 			COLORS.normalPoint, "",
 			COLORS.normalPoint
 		);
