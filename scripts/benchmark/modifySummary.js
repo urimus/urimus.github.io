@@ -135,6 +135,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	// Symbols
 	const POINT = "●";
+	const SLOPE_POINT = "○";
 	const MEASURED_LINE = "┊";
 	const AXIS = "│";
 	const H_AXIS = "─";
@@ -177,6 +178,32 @@ function consolePlot(title, perf, unit = "ms", description) {
 				})
 			)
 	);
+
+	// ============================================================
+	// SLOPE LINE (All N)
+	// ============================================================
+
+	const drawSlope = slopeNoEE != null && unit === "ms";
+
+	if (drawSlope) {
+		const slopePoints = times.map((time, i) => ({
+			n: i + 1,
+			value: slopeNoEE * (i + 1)
+		}));
+
+		for (const point of slopePoints) {
+			const x = indexToCol(point.n - 1);
+			const y = valueToRow(point.value);
+			const row = HEIGHT - y;
+
+			if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
+				grid[row][x] = {
+					char: SLOPE_POINT,
+					style: COLORS.normalPoint
+				};
+			}
+		}
+	}
 
 	// ============================================================
 	// MEASURED LINE
