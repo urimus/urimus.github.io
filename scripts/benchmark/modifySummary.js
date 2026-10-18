@@ -412,14 +412,15 @@ function consolePlot(title, perf, unit = "ms", description) {
 		medianEE
 	);
 	statistics += ` | Max: ${max.toFixed(3)}`;
+	console.log(statistics, ...statisticStyles);
+
 	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
-		statistics += ` | Approximation: %c${slopeNoEE.toFixed(3)}%cN + %c${interceptNoEE.toFixed(3)}%c`;
-		statisticStyles.push(
+		console.log(
+			`APPROXIMATION: %c${slopeNoEE.toFixed(3)}%cN ${interceptNoEE < 0 ? "−" : "+"} %c${Math.abs(interceptNoEE).toFixed(3)}`,
 			COLORS.normalPoint, "",
-			COLORS.normalPoint, ""
+			COLORS.normalPoint
 		);
 	}
-	console.log(statistics, ...statisticStyles);
 	console.log("\u200B");
 }
 
