@@ -135,7 +135,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	// Symbols
 	const POINT = "●";
-	const SLOPE_POINT = "○";
+	const SLOPE_POINT = "×"; // ○
 	const MEASURED_LINE = "┊";
 	const AXIS = "│";
 	const H_AXIS = "─";
@@ -317,20 +317,39 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// LEGEND
 	// ============================================================
 
+	const slopeLegend = unit === "ms"
+		? ` (%c${SLOPE_POINT}%c - slope)`
+		: "";
+
+	const legendStyles = unit === "ms"
+		? [
+			COLORS.normalPoint,
+			"",
+			COLORS.normalPoint,
+			"",
+			COLORS.earlyPoint,
+			"",
+			COLORS.measuredLine,
+			""
+		]
+		: [
+			COLORS.normalPoint,
+			"",
+			COLORS.earlyPoint,
+			"",
+			COLORS.measuredLine,
+			""
+		];
+
 	console.log(
 		`LEGEND: ` +
-		`%c${POINT}%c - summary does not fit lines (%c${SLOPE_POINT}%c - slope), ` +
+		`%c${POINT}%c - summary does not fit lines` +
+		`${slopeLegend}, ` +
 		`%c${POINT}%c - summary fits lines - early exit, ` +
 		`%c${MEASURED_LINE}%c - summary size: ${measuredLines} lines`,
-		COLORS.normalPoint,
-		"",
-		COLORS.normalPoint,
-		"",
-		COLORS.earlyPoint,
-		"",
-		COLORS.measuredLine,
-		""
+		...legendStyles
 	);
+
 
 	// ============================================================
 	// STATISTICS
