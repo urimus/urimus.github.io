@@ -364,7 +364,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	);
 	statistics += ` | Max: ${max.toFixed(3)}`;
 	if (slopeNoEE != null) {
-		statistics += ` | Slope NoEE: %c${slopeNoEE.toFixed(6)}%c`;
+		statistics += ` | Slope: %c${slopeNoEE.toFixed(3)}%c`;
 		statisticStyles.push(COLORS.normalPoint, "");
 	}
 	console.log(statistics, ...statisticStyles);
@@ -653,7 +653,7 @@ function testSummary(wordsCount) {
 			"Std Dev, ms": round(standardDeviation),
 			"Min, ms": round(perf.min),
 			"Max, ms": round(perf.max),
-			"Slope NoEE, ms": perf.slopeNoEE === null ? null : round(perf.slopeNoEE),
+			"Slope, ms": perf.slopeNoEE === null ? null : round(perf.slopeNoEE),
 			"Total, ms": round(perf.total),
 			"Share, %": round(perf.total / totalSum * 100)
 		};
