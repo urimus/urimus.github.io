@@ -821,7 +821,6 @@ function testSummary(wordsCount) {
 			medianEE: getMedian(timesEE),
 			meanNoEE,
 			medianNoEE: getMedian(timesNoEE),
-			slopeNoEE: perfSlow.slopeNoEE / perfFast.slopeNoEE,
 			min,
 			max,
 			times,
