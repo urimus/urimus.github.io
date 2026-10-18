@@ -229,6 +229,22 @@ function formatSummary(words_arr, wordsCount, addSpace = true) {
 	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
 }
 
+/*
+	if (current === wordsLength) {
+		const pointer = document.createElement("a");
+		element.appendChild(pointer);
+		const startLineTop = pointer.offsetTop;
+		span.innerHTML = formatSummary(words_arr, wordsLength, false);
+		const currentLineTop = pointer.offsetTop;
+		const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
+		pointer.remove();
+		if (estimatedLines <= linesToShow) return true;
+	} else {
+		// ---------------------------------------------------------
+		// Exponential search.
+		// ---------------------------------------------------------
+*/
+
 // ---------------------------------------------------------
 // Algorithm 1
 // Simplest and fastest option.
@@ -267,43 +283,34 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 	// Estimate the likely result.
 	// ---------------------------------------------------------
-
 	let current = Math.min(linesToShow * 10, wordsLength);
+	
 	const pointer = document.createElement("a");
 	element.appendChild(pointer);
 	const startLineTop = pointer.offsetTop;
-	if (current === wordsLength) {
+
+	// ---------------------------------------------------------
+	// Exponential search.
+	// ---------------------------------------------------------
+
+	while (true) {
 		span.innerHTML = formatSummary(words_arr, current, false);
 		const result = getLineInfo(pointer, startLineTop, lineHeight, linesToShow);
+		if (!result.fitsLinesToShow) {
+			break;
+		}
+		wordsCount = current;
+		if (result.fitsLinesToShowM1) {
+			left = current;
+		}
 		// The entire summary fits.
-		if (result.fitsLinesToShow) {
+		if (current === wordsLength) {
 			pointer.remove();
 			return true;
 		}
-	} else {
-
-		// ---------------------------------------------------------
-		// Exponential search.
-		// ---------------------------------------------------------
-
-		while (true) {
-			span.innerHTML = formatSummary(words_arr, current, false);
-			const result = getLineInfo(pointer, startLineTop, lineHeight, linesToShow);
-			if (!result.fitsLinesToShow) {
-				break;
-			}
-			wordsCount = current;
-			if (result.fitsLinesToShowM1) {
-				left = current;
-			}
-			// The entire summary fits.
-			if (current === wordsLength) {
-				pointer.remove();
-				return true;
-			}
-			current = Math.min(current * 2, wordsLength);
-		}
+		current = Math.min(current * 2, wordsLength);
 	}
+
 
 	// ---------------------------------------------------------
 	// Add expansion link.
@@ -464,40 +471,29 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 	// Estimate the likely result.
 	// ---------------------------------------------------------
-
 	let current = Math.min(linesToShow * 10, wordsLength);
 
-	if (current === wordsLength) {
-		span.innerHTML = formatSummaryWithProbe(0, words_arr, current, false);
+	// ---------------------------------------------------------
+	// Exponential search.
+	// ---------------------------------------------------------
+
+	while (true) {
+		span.innerHTML = formatSummaryWithProbe(checkedWordsCount, words_arr, current, false);
 		const result = getLineInfoIncremental(probesLive, lines, linesToShow);
-		if (result.fitsLinesToShow) {
+		if (!result.fitsLinesToShow) {
+			break;
+		}
+		checkedWordsCount = current;
+		wordsCount = current;
+		if (result.fitsLinesToShowM1) {
+			left = current;
+		}
+		// The entire summary fits.
+		if (current === wordsLength) {
 			span.innerHTML = formatSummary(words_arr, current, false);
 			return true;
 		}
-	} else {
-
-		// ---------------------------------------------------------
-		// Exponential search.
-		// ---------------------------------------------------------
-
-		while (true) {
-			span.innerHTML = formatSummaryWithProbe(checkedWordsCount, words_arr, current, false);
-			const result = getLineInfoIncremental(probesLive, lines, linesToShow);
-			if (!result.fitsLinesToShow) {
-				break;
-			}
-			checkedWordsCount = current;
-			wordsCount = current;
-			if (result.fitsLinesToShowM1) {
-				left = current;
-			}
-			// The entire summary fits.
-			if (current === wordsLength) {
-				span.innerHTML = formatSummary(words_arr, current, false);
-				return true;
-			}
-			current = Math.min(current * 2, wordsLength);
-		}
+		current = Math.min(current * 2, wordsLength);
 	}
 
 	// ---------------------------------------------------------
@@ -652,35 +648,22 @@ function modifySummary3(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 	// Estimate the likely result.
 	// ---------------------------------------------------------
-
 	let current = Math.min(linesToShow * 10, wordsLength);
 
-	if (current === wordsLength) {
-		const pointer = document.createElement("a");
-		element.appendChild(pointer);
-		const startLineTop = pointer.offsetTop;
-		span.innerHTML = formatSummary(words_arr, wordsLength, false);
-		const currentLineTop = pointer.offsetTop;
-		const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
-		pointer.remove();
-		if (estimatedLines <= linesToShow) return true;
-	} else {
+	// ---------------------------------------------------------
+	// Exponential search.
+	// ---------------------------------------------------------
 
-		// ---------------------------------------------------------
-		// Exponential search.
-		// ---------------------------------------------------------
-
-		while (true) {
-			span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current, false);
-			const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
-			if (result.wordsCount < current) break;
-			if (current === wordsLength) {
-				span.innerHTML = formatSummary(words_arr, wordsLength, false);
-				return true;
-			}
-			left = result.wordsCountM1;
-			current = Math.min(current * 2, wordsLength);
+	while (true) {
+		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current, false);
+		const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
+		if (result.wordsCount < current) break;
+		if (current === wordsLength) {
+			span.innerHTML = formatSummary(words_arr, wordsLength, false);
+			return true;
 		}
+		left = result.wordsCountM1;
+		current = Math.min(current * 2, wordsLength);
 	}
 
 	// ---------------------------------------------------------
