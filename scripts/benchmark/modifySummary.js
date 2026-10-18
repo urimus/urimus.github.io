@@ -198,19 +198,29 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// SLOPE LINE (NoEE only)
 	// ============================================================
 
-	const drawSlope = slopeNoEE != null && unit === "ms";
+	const drawSlope =
+		Number.isFinite(slopeNoEE) && unit === "ms";
 
 	if (drawSlope) {
 		let previous = null;
 
 		for (let i = 0; i < times.length; i++) {
+			// Only measurements without early exits
 			if (earlyExits[i]) continue;
 
 			const x = indexToCol(i);
 			const value = slopeNoEE * (i + 1);
 			const y = HEIGHT - valueToRow(value);
 
-			if (y < 0 || y > HEIGHT) {
+			// Skip invalid or out-of-range coordinates
+			if (
+				!Number.isFinite(x) ||
+				!Number.isFinite(y) ||
+				y < 0 ||
+				y > HEIGHT ||
+				x < 0 ||
+				x >= WIDTH
+			) {
 				previous = null;
 				continue;
 			}
@@ -218,16 +228,46 @@ function consolePlot(title, perf, unit = "ms", description) {
 			if (previous !== null) {
 				const dx = x - previous.x;
 				const dy = y - previous.y;
-				const steps = Math.max(Math.abs(dx), Math.abs(dy));
+
+				if (
+					!Number.isFinite(dx) ||
+					!Number.isFinite(dy)
+				) {
+					previous = null;
+					continue;
+				}
+
+				const steps = Math.max(
+					Math.abs(dx),
+					Math.abs(dy)
+				);
+
+				if (steps === 0) {
+					previous = { x, y };
+					continue;
+				}
 
 				for (let step = 0; step <= steps; step++) {
-					const px = Math.round(previous.x + dx * step / steps);
-					const py = Math.round(previous.y + dy * step / steps);
+					const t = step / steps;
+
+					const px = Math.round(
+						previous.x + dx * t
+					);
+
+					const py = Math.round(
+						previous.y + dy * t
+					);
 
 					if (
-						py < 0 || py > HEIGHT ||
-						px < 0 || px >= WIDTH
-					) continue;
+						!Number.isFinite(px) ||
+						!Number.isFinite(py) ||
+						py < 0 ||
+						py > HEIGHT ||
+						px < 0 ||
+						px >= WIDTH
+					) {
+						continue;
+					}
 
 					const char =
 						dx === 0 ? "│" :
@@ -239,9 +279,9 @@ function consolePlot(title, perf, unit = "ms", description) {
 						style: COLORS.slope
 					};
 				}
-			} else if (x >= 0 && x < WIDTH) {
+			} else {
 				grid[y][x] = {
-					char: "─",
+					char: POINT,
 					style: COLORS.slope
 				};
 			}
@@ -249,7 +289,6 @@ function consolePlot(title, perf, unit = "ms", description) {
 			previous = { x, y };
 		}
 	}
-
 
 	// ============================================================
 	// POINTS
