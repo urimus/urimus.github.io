@@ -575,7 +575,7 @@ function testSummary(wordsCount) {
 	}
 
 	container.remove();
-	
+
 	// =========================================================
 	// GENERAL STATISTICS
 	// =========================================================
@@ -590,6 +590,8 @@ function testSummary(wordsCount) {
 		let countEE = 0;
 		let countNoEE = 0;
 		let varianceSum = 0;
+		let sumNTNoEE = 0;
+		let sumN2NoEE = 0;
 		
 		const timesEE = [];
 		const timesNoEE = [];
@@ -613,6 +615,9 @@ function testSummary(wordsCount) {
 				sumNoEE += time;
 				countNoEE++;
 				timesNoEE.push(time);
+				const line = i + MIN_LINES;
+				sumNTNoEE += line * time;
+				sumN2NoEE += line * line;
 			}
 		}
 
@@ -633,6 +638,9 @@ function testSummary(wordsCount) {
 				? (sortedNoEE[middleNoEE - 1] + sortedNoEE[middleNoEE]) / 2
 				: sortedNoEE[middleNoEE];
 		}
+		perf.slopeNoEE = sumN2NoEE > 0
+			? sumNTNoEE / sumN2NoEE
+			: null;
 		statisticsTable[algorithm.name] = {
 			Count: perf.count,
 			"Mean, ms": round(perf.mean),
@@ -640,6 +648,7 @@ function testSummary(wordsCount) {
 			"Std Dev, ms": round(standardDeviation),
 			"Min, ms": round(perf.min),
 			"Max, ms": round(perf.max),
+			"Slope NoEE, ms": perf.slopeNoEE === null ? null : round(perf.slopeNoEE),
 			"Total, ms": round(perf.total),
 			"Share, %": round(perf.total / totalSum * 100)
 		};
