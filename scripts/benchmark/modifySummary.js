@@ -198,30 +198,53 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// SLOPE LINE (NoEE only)
 	// ============================================================
 
-	const drawSlope = slopeNoEE != null && unit === "ms";
+const drawSlope = slopeNoEE != null && unit === "ms";
 
-	if (drawSlope) {
-		const slopePoints = times
-			.map((time, i) => ({
-				n: i + 1,
-				value: slopeNoEE * (i + 1),
-				earlyExit: earlyExits[i]
-			}))
-			.filter(point => !point.earlyExit);
+if (drawSlope) {
+	const slopeStyle = COLORS.slope;
 
-		for (const point of slopePoints) {
-			const x = indexToCol(point.n - 1);
-			const y = valueToRow(point.value);
-			const row = HEIGHT - y;
+	let previous = null;
 
-			if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
-				grid[row][x] = {
+	for (let i = 0; i < times.length; i++) {
+		if (earlyExits[i]) continue;
+
+		const x = indexToCol(i);
+		const value = slopeNoEE * (i + 1);
+		const y = HEIGHT - valueToRow(value);
+
+		if (y < 0 || y > HEIGHT) {
+			previous = null;
+			continue;
+		}
+
+		if (previous !== null) {
+			const dx = x - previous.x;
+			const dy = y - previous.y;
+			const steps = Math.max(Math.abs(dx), Math.abs(dy));
+
+			for (let step = 0; step <= steps; step++) {
+				const px = Math.round(previous.x + dx * step / steps);
+				const py = Math.round(previous.y + dy * step / steps);
+
+				if (py >= 0 && py <= HEIGHT && px >= 0 && px < WIDTH) {
+					grid[py][px] = {
+						char: POINT,
+						style: slopeStyle
+					};
+				}
+			}
+		} else {
+			if (x >= 0 && x < WIDTH) {
+				grid[y][x] = {
 					char: POINT,
-					style: COLORS.slope
+					style: slopeStyle
 				};
 			}
 		}
+
+		previous = { x, y };
 	}
+}
 
 	// ============================================================
 	// POINTS
