@@ -319,9 +319,11 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	console.log(
 		`LEGEND: ` +
-		`%c${POINT}%c - summary does not fit lines, ` +
+		`%c${POINT}%c - summary does not fit lines (%c${SLOPE_POINT}%c - slope), ` +
 		`%c${POINT}%c - summary fits lines - early exit, ` +
 		`%c${MEASURED_LINE}%c - summary size: ${measuredLines} lines`,
+		COLORS.normalPoint,
+		"",
 		COLORS.normalPoint,
 		"",
 		COLORS.earlyPoint,
