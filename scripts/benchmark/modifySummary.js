@@ -416,8 +416,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
 		console.log(
-			`LINEAR APPROXIMATION, ${unit}: %c${slopeNoEE.toFixed(3)}%cN ${interceptNoEE < 0 ? "−" : "+"} %c${Math.abs(interceptNoEE).toFixed(3)}`,
-			COLORS.normalPoint, "",
+			`LINEAR APPROXIMATION, ${unit}: %c${slopeNoEE.toFixed(3)}N ${interceptNoEE < 0 ? "−" : "+"} ${Math.abs(interceptNoEE).toFixed(3)}`,
 			COLORS.normalPoint
 		);
 	}
