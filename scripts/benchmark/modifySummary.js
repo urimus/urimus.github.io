@@ -719,9 +719,6 @@ function testSummary(wordsCount) {
 			"Mean NoEE, ms": perf.meanNoEE == null
 				? null
 				: round(perf.meanNoEE),
-			"Mean EE, ms": perf.meanEE == null
-				? null
-				: round(perf.meanEE),
 			"Median, ms": round(perf.median),
 			"Std Dev, ms": round(standardDeviation),
 			"Min, ms": round(perf.min),
