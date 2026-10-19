@@ -475,12 +475,6 @@ function testSummary(wordsCount) {
 			description: "Stable option using getClientRects",
 			run: (summaryDiv, words_arr, line) =>
 				modifySummary2(summaryDiv, words_arr, "red", line)
-		},
-		{
-			name: "Alg 3",
-			description: "The slowest on average",
-			run: (summaryDiv, words_arr, line) =>
-				modifySummary3(summaryDiv, words_arr, "red", line)
 		}
 	];
 
@@ -858,8 +852,6 @@ function testSummary(wordsCount) {
 	console.log("=== SPEEDUP GRAPHS ===");
 	console.log("\u200B");
 	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
-	consoleSpeedupPlot("Alg 1", "Alg 3", "×");
-	consoleSpeedupPlot("Alg 2", "Alg 3", "×");
 	
 	// =========================================================
 	// COMPLETE
