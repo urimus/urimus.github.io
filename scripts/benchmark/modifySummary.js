@@ -716,11 +716,16 @@ function testSummary(wordsCount) {
 		statisticsTable[algorithm.name] = {
 			Count: perf.count,
 			"Mean, ms": round(perf.mean),
+			"Mean NoEE, ms": perf.meanNoEE == null
+				? null
+				: round(perf.meanNoEE),
+			"Mean EE, ms": perf.meanEE == null
+				? null
+				: round(perf.meanEE),
 			"Median, ms": round(perf.median),
 			"Std Dev, ms": round(standardDeviation),
 			"Min, ms": round(perf.min),
 			"Max, ms": round(perf.max),
-			"Slope, ms": perf.slopeNoEE === null ? null : round(perf.slopeNoEE),
 			"Total, ms": round(perf.total),
 			"Share, %": round(perf.total / totalSum * 100)
 		};
@@ -762,13 +767,12 @@ function testSummary(wordsCount) {
 			return null;
 		}
 
-		// Determine which algorithm is faster by its NoEE slope.
-		if (perfA.slopeNoEE == null || perfB.slopeNoEE == null) {
-			console.error("Cannot compare speedup: missing NoEE slope.");
+		// Determine which algorithm is faster by its NoEE Mean.
+		if (perfA.meanNoEE == null || perfB.meanNoEE == null) {
+			console.error("Cannot compare speedup: missing NoEE measurements.");
 			return null;
 		}
-
-		const isAFaster = perfA.slopeNoEE <= perfB.slopeNoEE;
+		const isAFaster = perfA.meanNoEE <= perfB.meanNoEE;
 
 		const perfFast = isAFaster ? perfA : perfB;
 		const perfSlow = isAFaster ? perfB : perfA;
