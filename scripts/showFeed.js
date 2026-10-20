@@ -514,7 +514,7 @@ function showFeedData(type, source, lang, result) {
 function formatSummaryDiv(summaryDiv, entry) {
 
 	const summary_words = extractSummaryWords(entry.summary);
-	summaryDiv.innerHTML = "";
+	summaryDiv.replaceChildren();
 	modifySummary(summaryDiv, summary_words, 4, "red");
 
 }

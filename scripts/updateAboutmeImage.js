@@ -157,7 +157,7 @@ function updateAboutMeImage3(lang, i) {
 		const cell1 = tableRow.insertCell(0);
 		cell1.appendChild(descDiv);
 	} else {
-		descDiv.innerHTML = "";
+		descDiv.replaceChildren();
 	}
 
 	const imageA = document.createElement('a');
