@@ -472,14 +472,12 @@ function testSummary(wordsCount) {
 		{
 			name: "Alg 1",
 			description: "Simplest and fastest option",
-			run: (summaryDiv, words_arr, line) =>
-				modifySummary(summaryDiv, words_arr, "red", line)
+			run: modifySummary
 		},
 		{
 			name: "Alg 2",
 			description: "Stable option using getClientRects",
-			run: (summaryDiv, words_arr, line) =>
-				modifySummary2(summaryDiv, words_arr, "red", line)
+			run: modifySummary2
 		}
 	];
 

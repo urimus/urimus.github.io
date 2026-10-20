@@ -178,7 +178,7 @@ function updateAboutMeImage3(lang, i) {
 	imgSVG.onload = function () {
 		if (item.description._text) {
 			const description_words = extractSummaryWords(item.description._text);
-			modifySummary(descDiv, description_words, "blue", 4);
+			modifySummary(descDiv, description_words, 4, "blue");
 		}
 		correctInformationDiv();
 	}

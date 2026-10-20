@@ -259,7 +259,7 @@ function getLineInfo(pointer, startLineTop, lineHeight, linesToShow) {
 	};
 }
 
-function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
+function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return true;
 
@@ -444,7 +444,7 @@ function getLineInfoIncremental(probesLive, lines, linesToShow, isBinary = false
 	};
 }
 
-function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
+function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return true;
 
@@ -620,7 +620,7 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 	return { wordsCount, wordsCountM1 };
 }
 
-function modifySummary3(element, words_arr, col = "blue", linesToShow = 4) {
+function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return true;
 
