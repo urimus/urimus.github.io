@@ -221,7 +221,7 @@ function createSpan(element, col) {
 function getLineHeight(span) {
 	span.innerHTML = '<span style="display:inline-block">&#8203;</span>';
 	const lineHeight = span.firstElementChild.offsetHeight;
-	span.innerHTML = "";
+	span.replaceChildren();
 	return lineHeight || 17;
 }
 
