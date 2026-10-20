@@ -599,6 +599,10 @@ function testSummary(wordsCount) {
 		}
 
 		for (const algorithm of shuffledAlgorithms) {
+if (algorithm.name === "Alg 1") {
+	exponentialIterations = 0;
+	binaryIterations = 0;
+}
 			let time;
 			let isEarlyExit;
 			if (crossOriginIsolated) {
@@ -621,11 +625,20 @@ function testSummary(wordsCount) {
 			}
 
 			const measuredLines = addPerf(perfData.get(algorithm), time, isEarlyExit);
+if (algorithm.name === "Alg 1") {
+console.log({
+    line,
+    time: +time.toFixed(3),
+	isEarlyExit,
+    exponentialIterations,
+    binaryIterations,
+    totalIterations: exponentialIterations + binaryIterations
+});
+}
 			if (measuredLines !== null && line >= measuredLines + (measuredLines - 1) * EXTRA_LINES_RATIO) {
 				measurementComplete = true;
 			}
 		}
-		
 		if (measurementComplete) break;
 		line++;
 	}
