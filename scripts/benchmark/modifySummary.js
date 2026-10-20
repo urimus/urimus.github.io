@@ -414,8 +414,8 @@ function consolePlot(title, perf, unit = "ms", description) {
 		medianEE
 	);
 	
-	statistics += ` | Max: %c${max.toFixed(3)}%c`;
-	statisticStyles.push(COLORS.value, "");
+	statistics += ` | Max: %c${max.toFixed(3)}`;
+	statisticStyles.push(COLORS.value);
 
 	console.log(statistics, ...statisticStyles);
 
