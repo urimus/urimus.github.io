@@ -331,7 +331,8 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
 	expansionA.innerHTML = "[▼]";
-	element.removeChild(pointer);
+	pointer.remove();
+	//element.removeChild(pointer);
 	element.appendChild(expansionA);
 
 	// ---------------------------------------------------------
