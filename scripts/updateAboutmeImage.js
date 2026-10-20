@@ -176,6 +176,7 @@ function updateAboutMeImage3(lang, i) {
 	imgSVG.setAttribute('alt', "Image #" + (i + 1));
 	imgSVG.setAttribute('height', 34);
 	imgSVG.onload = function () {
+		descDiv.appendChild(imageA);
 		if (item.description._text) {
 			const description_words = extractSummaryWords(item.description._text);
 			modifySummary(descDiv, description_words, 4, "blue");
@@ -184,7 +185,6 @@ function updateAboutMeImage3(lang, i) {
 	}
 	imgSVG.setAttribute('src', "images/icons/feed/image.svg");
 	imageA.appendChild(imgSVG);
-	descDiv.appendChild(imageA);
 
 	let dateDiv = document.getElementById("dateDiv");
 	if (!dateDiv) {
