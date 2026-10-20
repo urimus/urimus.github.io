@@ -394,7 +394,9 @@ function consolePlot(title, perf, unit = "ms", description) {
 		return statistics;
 	}
 
-	statistics += `Min: ${min.toFixed(3)}`;
+	statistics += `Min: %c${min.toFixed(3)}%c`;
+	statisticStyles.push(COLORS.value, "");
+	
 	statistics = appendStatistic(
 		statistics,
 		statisticStyles,
@@ -411,7 +413,10 @@ function consolePlot(title, perf, unit = "ms", description) {
 		medianNoEE,
 		medianEE
 	);
-	statistics += ` | Max: ${max.toFixed(3)}`;
+	
+	statistics += ` | Max: %c${max.toFixed(3)}%c`;
+	statisticStyles.push(COLORS.value, "");
+
 	console.log(statistics, ...statisticStyles);
 
 	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
