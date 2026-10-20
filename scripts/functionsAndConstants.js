@@ -245,6 +245,9 @@ function formatSummary(words_arr, wordsCount, addSpace = true) {
 		// ---------------------------------------------------------
 */
 
+let exponentialIterations = 0;
+let binaryIterations = 0;
+
 // ---------------------------------------------------------
 // Algorithm 1
 // Simplest and fastest option.
@@ -280,7 +283,7 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	// Binary search bound.
 	let left = 1;
 	const pointer = document.createElement("a");
-	element.append(pointer);
+	element.appendChild(pointer);
 	const startLineTop = pointer.offsetTop;
 
 	// ---------------------------------------------------------
@@ -293,6 +296,7 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 
 	while (true) {
+		exponentialIterations++;
 		span.innerHTML = formatSummary(words_arr, current, false);
 		const result = getLineInfo(pointer, startLineTop, lineHeight, linesToShow);
 		if (!result.fitsLinesToShow) {
@@ -328,7 +332,8 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	};
 	expansionA.innerHTML = "[▼]";
 	pointer.remove();
-	element.append(expansionA);
+	//element.removeChild(pointer);
+	element.appendChild(expansionA);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -341,6 +346,7 @@ function modifySummary(element, words_arr, col = "blue", linesToShow = 4) {
 	// ---------------------------------------------------------
 
 	while (left <= right) {
+		binaryIterations++;
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummary(words_arr, middle);
 		const result = getLineInfo(expansionA, startLineTop, lineHeight, linesToShow);
@@ -511,7 +517,7 @@ function modifySummary2(element, words_arr, col = "blue", linesToShow = 4) {
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
 	expansionA.innerHTML = "[▼]";
-	element.append(expansionA);
+	element.appendChild(expansionA);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -682,7 +688,7 @@ function modifySummary3(element, words_arr, col = "blue", linesToShow = 4) {
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
 	expansionA.innerHTML = "[▼]";
-	element.append(expansionA);
+	element.appendChild(expansionA);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
