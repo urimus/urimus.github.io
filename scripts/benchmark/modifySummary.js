@@ -603,6 +603,7 @@ function testSummary(wordsCount) {
 			let isEarlyExit;
 			if (crossOriginIsolated) {
 				summaryDiv.innerHTML = "";
+				summaryDiv.offsetHeight;
 				const start = performance.now();
 				isEarlyExit = algorithm.run(summaryDiv, words, line);
 				time = Math.max(performance.now() - start, timerMinimum / 2);
@@ -611,6 +612,7 @@ function testSummary(wordsCount) {
 				let runs = 0;
 				do {
 					summaryDiv.innerHTML = "";
+					summaryDiv.offsetHeight;
 					const start = performance.now();
 					isEarlyExit = algorithm.run(summaryDiv, words, line);
 					totalTime += performance.now() - start;
