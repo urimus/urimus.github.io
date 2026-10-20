@@ -428,7 +428,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	console.log("\u200B");
 }
 
-async function testSummary(wordsCount) {
+function testSummary(wordsCount) {
 
 	console.log("Modify Summary Benchmark Started.");
 
@@ -604,7 +604,6 @@ async function testSummary(wordsCount) {
 			if (crossOriginIsolated) {
 				summaryDiv.innerHTML = "";
 				summaryDiv.offsetHeight;
-				await new Promise(requestAnimationFrame);
 				const start = performance.now();
 				isEarlyExit = algorithm.run(summaryDiv, words, line);
 				time = Math.max(performance.now() - start, timerMinimum / 2);
@@ -614,7 +613,6 @@ async function testSummary(wordsCount) {
 				do {
 					summaryDiv.innerHTML = "";
 					summaryDiv.offsetHeight;
-					await new Promise(requestAnimationFrame);
 					const start = performance.now();
 					isEarlyExit = algorithm.run(summaryDiv, words, line);
 					totalTime += performance.now() - start;
