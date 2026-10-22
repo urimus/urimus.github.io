@@ -494,6 +494,9 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 		current = Math.min(current * 2, wordsLength);
 	}
 
+	// last word should be checked with addSpace now
+	checkedWordsCount = Math.max(0, checkedWordsCount - 1);
+
 	// ---------------------------------------------------------
 	// Add expansion link.
 	// ---------------------------------------------------------
