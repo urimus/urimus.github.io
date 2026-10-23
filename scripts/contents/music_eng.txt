@@ -62,7 +62,6 @@
 
 &#9679; <a href="music_pop_eng.html#pop" class = "standardb_black" data-added="27th of Jun, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Pop</a>
 <span style="padding-left:10px;">- <a href="music_pop_eng.html#a_ha" class = "standardb_black" data-added="30th of Jun, 2016." data-genre="Pop" data-country="norway" data-established="1982" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">A-ha</a></span>
-<span style="padding-left:10px;">- <a href="music_pop_eng.html#kornelyuk" class = "standardb_black" data-added="13th of Apr, 2017." data-genre="Pop" data-country="ussr" data-lang="rus" data-author_orig="Игорь Корнелюк" data-established="1982" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Igor Kornelyuk</a></span>
 <span style="padding-left:10px;">- <a href="music_pop_eng.html#spears" class = "standardb_black" data-added="30th of Jun, 2016." data-genre="Pop" data-country="usa" data-established="1992" onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Britney Spears</a></span>
 
 &#9679; <b class="text_black_blue" data-added="30th of Jun, 2016.">Psychedelic</b>
