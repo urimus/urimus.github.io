@@ -317,10 +317,6 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	// Add expansion link.
 	// ---------------------------------------------------------
 
-	const expansionSpan = document.createElement("span");
-	expansionSpan.setAttribute("class", "text_" + col);
-	expansionSpan.style.overflowWrap = "anywhere";
-
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
@@ -334,10 +330,8 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
 	expansionA.textContent = "[▼]";
-
-	expansionSpan.append(document.createTextNode(" "), expansionA);
 	pointer.remove();
-	element.append(expansionSpan);
+	element.append(document.createTextNode(" "), expansionA);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -683,10 +677,6 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// Add expansion link.
 	// ---------------------------------------------------------
 
-	const expansionSpan = document.createElement("span");
-	expansionSpan.setAttribute("class", "text_" + col);
-	expansionSpan.style.overflowWrap = "anywhere";
-	
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col + " summary_word_pointer");
@@ -700,9 +690,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
 	expansionA.textContent = "[▼]";
-	
-	expansionSpan.append(document.createTextNode(" "), expansionA);
-	element.append(expansionSpan);
+	element.append(document.createTextNode(" "), expansionA);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
