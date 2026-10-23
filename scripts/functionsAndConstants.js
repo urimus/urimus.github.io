@@ -219,14 +219,17 @@ function createSpan(element, col) {
 }
 
 function getLineHeight(span) {
-	span.innerHTML = '<span style="display:inline-block">&#8203;</span>';
-	const lineHeight = span.firstElementChild.offsetHeight;
-	span.replaceChildren();
+	const marker = document.createElement("span");
+	marker.style.display = "inline-block";
+	marker.textContent = "\u200B";
+	span.appendChild(marker);
+	const lineHeight = marker.offsetHeight;
+	marker.remove();
 	return lineHeight || 17;
 }
 
-function formatSummary(words_arr, wordsCount, addSpace = true) {
-	return words_arr.slice(0, wordsCount).join(" ") + (addSpace ? " " : "");
+function formatSummary(words_arr, wordsCount) {
+	return words_arr.slice(0, wordsCount).join(" ");
 }
 
 /*
@@ -293,7 +296,7 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	// ---------------------------------------------------------
 
 	while (true) {
-		span.innerHTML = formatSummary(words_arr, current, false);
+		span.innerHTML = formatSummary(words_arr, current);
 		const result = getLineInfo(pointer, startLineTop, lineHeight, linesToShow);
 		if (!result.fitsLinesToShow) {
 			break;
@@ -313,6 +316,10 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	// ---------------------------------------------------------
 	// Add expansion link.
 	// ---------------------------------------------------------
+	const expansionSpan = document.createElement("span");
+	expansionSpan.setAttribute("class", "text_" + col);
+	expansionSpan.style.overflowWrap = "anywhere";
+	expansionSpan.appendChild(document.createTextNode(" "));
 
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
@@ -323,12 +330,14 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
-		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
+		this.textContent = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
-	expansionA.innerHTML = "[▼]";
+	expansionA.textContent = "[▼]";
+
+	expansionSpan.append(expansionA);
 	pointer.remove();
-	element.append(expansionA);
+	element.append(expansionSpan);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -369,23 +378,23 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 // Stable option using getClientRects.
 // ---------------------------------------------------------
 
-function formatSummaryWithProbe(checkedWordsCount, words_arr, wordsCount, addSpace = true) {
+function formatSummaryWithProbe(checkedWordsCount, words_arr, wordsCount) {
 	const probeOpen = '<span class="summary_word_probe">';
 	const probeClose = '</span>';
 
 	if (!checkedWordsCount) {
 		return probeOpen +
-			formatSummary(words_arr, wordsCount, addSpace) +
+			formatSummary(words_arr, wordsCount) +
 			probeClose;
 	}
 
 	if (wordsCount <= checkedWordsCount) {
-		return formatSummary(words_arr, wordsCount, addSpace);
+		return formatSummary(words_arr, wordsCount);
 	}
 
 	return formatSummary(words_arr, checkedWordsCount) +
 		probeOpen +
-		words_arr.slice(checkedWordsCount, wordsCount).join(" ") + (addSpace ? " " : "") +
+		words_arr.slice(checkedWordsCount, wordsCount).join(" ") +
 		probeClose;
 }
 
@@ -476,7 +485,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	// ---------------------------------------------------------
 
 	while (true) {
-		span.innerHTML = formatSummaryWithProbe(checkedWordsCount, words_arr, current, false);
+		span.innerHTML = formatSummaryWithProbe(checkedWordsCount, words_arr, current);
 		const result = getLineInfoIncremental(probesLive, lines, linesToShow);
 		if (!result.fitsLinesToShow) {
 			break;
@@ -488,33 +497,37 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 		}
 		// The entire summary fits.
 		if (current === wordsLength) {
-			span.innerHTML = formatSummary(words_arr, current, false);
+			span.innerHTML = formatSummary(words_arr, current);
 			return true;
 		}
 		current = Math.min(current * 2, wordsLength);
 	}
 
-	// last word should be checked with addSpace now
-	checkedWordsCount = Math.max(0, checkedWordsCount - 1);
-
 	// ---------------------------------------------------------
 	// Add expansion link.
 	// ---------------------------------------------------------
 
+	const expansionSpan = document.createElement("span");
+	expansionSpan.setAttribute("class", "text_" + col + " summary_word_probe");
+	expansionSpan.style.overflowWrap = "anywhere";
+	expansionSpan.appendChild(document.createTextNode(" "));
+	
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
-	expansionA.setAttribute("class", "standardb_" + col + " summary_word_probe");
+	expansionA.setAttribute("class", "standardb_" + col);
 	let isExpanded = false;
 	let isAnimating = false;
 	expansionA.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
-		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
+		this.textContent = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
-	expansionA.innerHTML = "[▼]";
-	element.append(expansionA);
+	expansionA.textContent = "[▼]";
+
+	expansionSpan.append(expansionA);
+	element.append(expansionSpan);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -556,7 +569,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 // The slowest on average.
 // ---------------------------------------------------------
 
-function formatSummaryWithPointers(pointerTops, words_arr, wordsCount, addSpace = true) {
+function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
 	
 	const pointerSpan = '<span class="summary_word_pointer"></span>';
 
@@ -564,16 +577,16 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount, addSpace 
 		return pointerSpan +
 			words_arr
 				.slice(0, wordsCount)
-				.join(pointerSpan + " ") + pointerSpan + (addSpace ? " " : "");
+				.join(pointerSpan + " ") + pointerSpan;
 	}
 
 	const currentWordsCount = pointerTops.length - 1;
-	if (wordsCount <= currentWordsCount) return formatSummary(words_arr, wordsCount, addSpace);
+	if (wordsCount <= currentWordsCount) return formatSummary(words_arr, wordsCount);
 
 	return formatSummary(words_arr, currentWordsCount) +
 		words_arr
 			.slice(currentWordsCount, wordsCount)
-			.join(pointerSpan + " ") + pointerSpan + (addSpace ? " " : "");
+			.join(pointerSpan + " ") + pointerSpan;
 }
 
 function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, isBinary = false) {
@@ -656,11 +669,11 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// ---------------------------------------------------------
 
 	while (true) {
-		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current, false);
+		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current);
 		const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
 		if (result.wordsCount < current) break;
 		if (current === wordsLength) {
-			span.innerHTML = formatSummary(words_arr, wordsLength, false);
+			span.innerHTML = formatSummary(words_arr, wordsLength);
 			return true;
 		}
 		left = result.wordsCountM1;
@@ -671,7 +684,11 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// Add expansion link.
 	// ---------------------------------------------------------
 
-	span.innerHTML = formatSummary(words_arr, wordsCount);
+	const expansionSpan = document.createElement("span");
+	expansionSpan.setAttribute("class", "text_" + col);
+	expansionSpan.style.overflowWrap = "anywhere";
+	expansionSpan.appendChild(document.createTextNode(" "));
+	
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col + " summary_word_pointer");
@@ -681,11 +698,13 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
-		this.innerHTML = isExpanded ? "[▲]" : "[▼]";
+		this.textContent = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
-	expansionA.innerHTML = "[▼]";
-	element.append(expansionA);
+	expansionA.textContent = "[▼]";
+	
+	expansionSpan.append(expansionA);
+	element.append(expansionSpan);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
