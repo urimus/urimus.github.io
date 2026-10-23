@@ -780,7 +780,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					}
 					imageDiv.appendChild(Img2);
 				}
-				this.innerHTML = "[▲]";
+				this.textContent = "[▲]";
 				this.dataset.expanded = "true";
 				showMoreDiv.innerHTML = t("hide") + " " + entry.additMedia.length + " " + t("more") + " ";
 				showMoreDiv.appendChild(this);
@@ -789,13 +789,13 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 				for (let j = 0; j < entry.additMedia.length; j++) {
 					imageDiv.removeChild(imageDiv.lastChild);
 				}
-				this.innerHTML = "[▼]";
+				this.textContent = "[▼]";
 				this.dataset.expanded = "false";
 				showMoreDiv.innerHTML = t("show") + " " + entry.additMedia.length + " " + t("more") + " ";
 				showMoreDiv.appendChild(this);
 			}
 		}
-		expansionImgA.innerHTML = "[▼]";
+		expansionImgA.textContent = "[▼]";
 
 		let showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
@@ -867,19 +867,19 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					}
 					imageDiv.appendChild(video);
 				}
-				this.innerHTML="[▲]";
+				this.textContent="[▲]";
 				this.dataset.expanded = "true";
 				showMoreDiv.innerHTML = t("hide") + " " + t("video") + " ";
 				showMoreDiv.appendChild(this);
 			} else {
 				imageDiv.removeChild(imageDiv.lastChild);
-				this.innerHTML="[▼]";
+				this.textContent="[▼]";
 				this.dataset.expanded = "false";
 				showMoreDiv.innerHTML = t("show") + " " + t("video") + " ";
 				showMoreDiv.appendChild(this);
 			}
 		}
-		expansionVideoA.innerHTML = "[▼]";
+		expansionVideoA.textContent = "[▼]";
 
 		let showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
