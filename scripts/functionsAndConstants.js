@@ -316,10 +316,10 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	// ---------------------------------------------------------
 	// Add expansion link.
 	// ---------------------------------------------------------
+
 	const expansionSpan = document.createElement("span");
 	expansionSpan.setAttribute("class", "text_" + col);
 	expansionSpan.style.overflowWrap = "anywhere";
-	expansionSpan.appendChild(document.createTextNode(" "));
 
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
@@ -335,7 +335,7 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	};
 	expansionA.textContent = "[▼]";
 
-	expansionSpan.append(expansionA);
+	expansionSpan.append(document.createTextNode(" "), expansionA);
 	pointer.remove();
 	element.append(expansionSpan);
 
@@ -510,7 +510,6 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	const expansionSpan = document.createElement("span");
 	expansionSpan.setAttribute("class", "text_" + col + " summary_word_probe");
 	expansionSpan.style.overflowWrap = "anywhere";
-	expansionSpan.appendChild(document.createTextNode(" "));
 	
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
@@ -526,7 +525,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	};
 	expansionA.textContent = "[▼]";
 
-	expansionSpan.append(expansionA);
+	expansionSpan.append(document.createTextNode(" "), expansionA);
 	element.append(expansionSpan);
 
 	// ---------------------------------------------------------
@@ -687,7 +686,6 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	const expansionSpan = document.createElement("span");
 	expansionSpan.setAttribute("class", "text_" + col);
 	expansionSpan.style.overflowWrap = "anywhere";
-	expansionSpan.appendChild(document.createTextNode(" "));
 	
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
@@ -703,7 +701,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	};
 	expansionA.textContent = "[▼]";
 	
-	expansionSpan.append(expansionA);
+	expansionSpan.append(document.createTextNode(" "), expansionA);
 	element.append(expansionSpan);
 
 	// ---------------------------------------------------------
