@@ -475,17 +475,10 @@ function testSummary(wordsCount) {
 			run: modifySummary
 		},
 		{
-			name: "Alg 1 Mod",
-			description: "Simplest and fastest option",
-			run: modifySummaryMod
-		}
-/*		,
-		{
 			name: "Alg 2",
 			description: "Stable option using getClientRects",
 			run: modifySummary2
 		}
-*/
 /*
 		{
 			name: "Alg 3",
