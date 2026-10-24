@@ -478,11 +478,6 @@ function testSummary(wordsCount) {
 			name: "Alg 2",
 			description: "Stable option using getClientRects",
 			run: modifySummary2
-		},
-		{
-			name: "Alg 2 Mod",
-			description: "Stable option using getClientRects Modified",
-			run: modifySummary2Mod
 		}
 /*,
 		{
@@ -868,7 +863,6 @@ function testSummary(wordsCount) {
 	console.log("=== SPEEDUP GRAPHS ===");
 	console.log("\u200B");
 	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
-	consoleSpeedupPlot("Alg 2", "Alg 2 Mod", "×");
 	
 	// =========================================================
 	// COMPLETE
