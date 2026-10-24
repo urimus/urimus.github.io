@@ -648,8 +648,8 @@ function getWordsCount(pointers, pointerTops, lineCounts, linesToShow, lineHeigh
 	if (wordsCount === -1) wordsCount = 1;
 
 	if (wordsCountM1 === -1) {
-		left = 2;
-		right = current;
+		let left = 2;
+		let right = current;
 
 		while (left <= right) {
 			const middle = Math.floor((left + right) / 2);
