@@ -393,14 +393,18 @@ function formatSummaryWithProbe(checkedWordsCount, words_arr, wordsCount) {
 }
 
 function getLineInfoIncremental(probesLive, lines, linesToShow, isBinary = false) {
+	
+	if (probesLive.length === 0) {
+		return {
+			fitsLinesToShow: lines.size <= linesToShow,
+			fitsLinesToShowM1: lines.size <= linesToShow - 1
+		};
+	}
+	
 	const newLines = new Set();
 
-	const probesCount = isBinary
-		? probesLive.length - 1
-		: probesLive.length;
-
-	for (let i = 0; i < probesCount; i++) {
-		for (const rect of probesLive[i].getClientRects()) {
+	if (!isBinary || probesLive.length > 1) {
+		for (const rect of probesLive[0].getClientRects()) {
 			if (rect.height <= 0) continue;
 			if (lines.has(rect.top) || newLines.has(rect.top)) continue;
 
@@ -417,7 +421,7 @@ function getLineInfoIncremental(probesLive, lines, linesToShow, isBinary = false
 
 	const expansionLines = new Set();
 
-	if (isBinary && probesLive.length > 0) {
+	if (isBinary) {
 		const expansionA = probesLive[probesLive.length - 1];
 
 		for (const rect of expansionA.getClientRects()) {
