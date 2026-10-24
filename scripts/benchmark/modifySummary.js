@@ -478,13 +478,14 @@ function testSummary(wordsCount) {
 			name: "Alg 2",
 			description: "Stable option using getClientRects",
 			run: modifySummary2
-		},
+		}
+/*,
 		{
 			name: "Alg 3",
 			description: "Option using many pointers",
 			run: modifySummary3
 		}
-
+*/
 	];
 
 	// =========================================================
