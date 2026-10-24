@@ -585,12 +585,12 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
 			.join(pointerSpan + " ") + pointerSpan;
 }
 
-function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, isBinary = false) {
+function getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current, isBinary = false) {
 
-	const pointersCount = pointers.length - (isBinary ? 1 : 0);
+	const pointersCount = pointersLive.length - (isBinary ? 1 : 0);
 
 	for (let i = 0; i < pointersCount; i++) {
-		pointerTops.push(pointers[i].offsetTop);
+		pointerTops.push(pointersLive[i].offsetTop);
 	}
 
 	let linesCount = Math.max(1, Math.round((pointerTops[1] - pointerTops[0]) / lineHeight) + 1);
@@ -613,7 +613,7 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 	
 	if (isBinary) {
 		const firstTop = pointerTops[0];
-		const lastTop = pointers[pointers.length - 1].offsetTop;
+		const lastTop = pointersLive[pointersLive.length - 1].offsetTop;
 		const expansionLines = Math.max(
 			1,
 			Math.round((lastTop - firstTop) / lineHeight) + 1
@@ -664,7 +664,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 
 	while (true) {
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current);
-		const result = getWordsCountOrig(pointersLive, pointerTops, linesToShow, lineHeight, current);
+		const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
 		if (result.wordsCount < current) break;
 		if (current === wordsLength) {
 			span.innerHTML = formatSummary(words_arr, wordsLength);
@@ -706,7 +706,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
-		const result = getWordsCountOrig(pointersLive, pointerTops, linesToShow, lineHeight, middle, true);
+		const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle, true);
 		if (result.wordsCount >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
