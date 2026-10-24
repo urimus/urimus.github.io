@@ -503,7 +503,6 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 
 	const expansionSpan = document.createElement("span");
 	expansionSpan.setAttribute("class", "text_" + col + " summary_word_probe");
-	expansionSpan.style.overflowWrap = "anywhere";
 	
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
