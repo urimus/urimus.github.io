@@ -471,21 +471,19 @@ function testSummary(wordsCount) {
 	const algorithms = [
 		{
 			name: "Alg 1",
-			description: "Simplest and fastest option",
+			description: "Simplest and fastest option using single pointer",
 			run: modifySummary
 		},
 		{
 			name: "Alg 2",
 			description: "Stable option using getClientRects",
 			run: modifySummary2
-		}
-/*
+		},
 		{
 			name: "Alg 3",
-			description: "The slowest on average",
+			description: "Option using many pointers",
 			run: modifySummary3
 		}
-*/
 	];
 
 	// =========================================================
@@ -863,6 +861,8 @@ function testSummary(wordsCount) {
 	console.log("=== SPEEDUP GRAPHS ===");
 	console.log("\u200B");
 	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
+	consoleSpeedupPlot("Alg 1", "Alg 3", "×");
+	consoleSpeedupPlot("Alg 2", "Alg 3", "×");
 	
 	// =========================================================
 	// COMPLETE

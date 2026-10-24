@@ -562,7 +562,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 
 // ---------------------------------------------------------
 // Algorithm 3
-// The slowest on average.
+// Option using many pointers.
 // ---------------------------------------------------------
 
 function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
@@ -585,37 +585,73 @@ function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
 			.join(pointerSpan + " ") + pointerSpan;
 }
 
-function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, isBinary = false) {
 
-	const pointersCount = isBinary
-		? pointers.length - 1
-		: pointers.length;
-	
+function getWordsCount(pointers, pointerTops, lineCounts, linesToShow, lineHeight, current, isBinary = false) {
+	const pointersCount = pointers.length - (isBinary ? 1 : 0);
+
 	for (let i = 0; i < pointersCount; i++) {
 		pointerTops.push(pointers[i].offsetTop);
 	}
 
-	let linesCount = Math.max(1, Math.round((pointerTops[1] - pointerTops[0]) / lineHeight) + 1);
-	let wordsCount = 1;
-	let wordsCountM1 = 1;
-	let previousTop = pointerTops[1];
+	// Calculate only new positions.
+	if (lineCounts.length === 0 && pointerTops.length >= 2) {
+		lineCounts[0] = 0;
+		lineCounts[1] = Math.max(
+			1,
+			Math.round((pointerTops[1] - pointerTops[0]) / lineHeight) + 1
+		);
+	}
 
-	for (let i = 2; i <= current; i++) {
+	for (let i = lineCounts.length; i < pointerTops.length; i++) {
+		const previousTop = pointerTops[i - 1];
 		const top = pointerTops[i];
+
+		lineCounts[i] = lineCounts[i - 1];
+
 		if (top !== previousTop) {
-			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
-			previousTop = top;
-		}
-		if (linesCount > linesToShow) return { wordsCount, wordsCountM1 };
-		wordsCount = i;
-		if (linesCount <= linesToShow - 1) {
-			wordsCountM1 = i;
+			lineCounts[i] += Math.max(
+				1,
+				Math.round((top - previousTop) / lineHeight)
+			);
 		}
 	}
-	
+
+	// Find the largest fitting word index using cached values.
+	let left = 2;
+	let right = current;
+	let wordsCount = 1;
+	let wordsCountM1 = 1;
+
+	while (left <= right) {
+		const middle = Math.floor((left + right) / 2);
+		const count = lineCounts[middle];
+
+		if (count <= linesToShow) {
+			wordsCount = middle;
+			left = middle + 1;
+		} else {
+			right = middle - 1;
+		}
+	}
+
+	left = 2;
+	right = current;
+
+	while (left <= right) {
+		const middle = Math.floor((left + right) / 2);
+
+		if (lineCounts[middle] <= linesToShow - 1) {
+			wordsCountM1 = middle;
+			left = middle + 1;
+		} else {
+			right = middle - 1;
+		}
+	}
+
 	if (isBinary) {
 		const firstTop = pointerTops[0];
 		const lastTop = pointers[pointers.length - 1].offsetTop;
+
 		const expansionLines = Math.max(
 			1,
 			Math.round((lastTop - firstTop) / lineHeight) + 1
@@ -628,7 +664,7 @@ function getWordsCount(pointers, pointerTops, linesToShow, lineHeight, current, 
 			};
 		}
 	}
-	
+
 	return { wordsCount, wordsCountM1 };
 }
 
@@ -653,6 +689,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// Binary search bound.
 	let left = 1;
 	let pointerTops = [];
+	const lineCounts = [];
 	const pointersLive = element.getElementsByClassName("summary_word_pointer");
 
 	// ---------------------------------------------------------
@@ -666,7 +703,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 
 	while (true) {
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current);
-		const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current);
+		const result = getWordsCount(pointersLive, pointerTops, lineCounts, linesToShow, lineHeight, current);
 		if (result.wordsCount < current) break;
 		if (current === wordsLength) {
 			span.innerHTML = formatSummary(words_arr, wordsLength);
@@ -708,7 +745,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
-		const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle, true);
+		const result = getWordsCount(pointersLive, pointerTops, lineCounts, linesToShow, lineHeight, middle, true);
 		if (result.wordsCount >= middle) {
 			wordsCount = middle;
 			left = middle + 1;
