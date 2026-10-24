@@ -602,6 +602,9 @@ function getWordsCount(pointers, pointerTops, lineCounts, linesToShow, lineHeigh
 		);
 	}
 
+	let wordsCount = -1;
+	let wordsCountM1 = -1;
+
 	for (let i = lineCounts.length; i < pointerTops.length; i++) {
 		const previousTop = pointerTops[i - 1];
 		const top = pointerTops[i];
@@ -614,39 +617,52 @@ function getWordsCount(pointers, pointerTops, lineCounts, linesToShow, lineHeigh
 				Math.round((top - previousTop) / lineHeight)
 			);
 		}
+		const count = lineCounts[i];
+
+		if (i <= current && count <= linesToShow) {
+			wordsCount = i;
+		}
+		if (i <= current && count <= linesToShow - 1) {
+			wordsCountM1 = i;
+		}
 	}
 
 	// Find the largest fitting word index using cached values.
-	let left = 2;
-	let right = current;
-	let wordsCount = 1;
-	let wordsCountM1 = 1;
 
-	while (left <= right) {
-		const middle = Math.floor((left + right) / 2);
-		const count = lineCounts[middle];
+	if (wordsCount === -1) {
+		let left = 2;
+		let right = current;
 
-		if (count <= linesToShow) {
-			wordsCount = middle;
-			left = middle + 1;
-		} else {
-			right = middle - 1;
+		while (left <= right) {
+			const middle = Math.floor((left + right) / 2);
+			const count = lineCounts[middle];
+
+			if (count <= linesToShow) {
+				wordsCount = middle;
+				left = middle + 1;
+			} else {
+				right = middle - 1;
+			}
 		}
 	}
+	if (wordsCount === -1) wordsCount = 1;
 
-	left = 2;
-	right = current;
+	if (wordsCountM1 === -1) {
+		left = 2;
+		right = current;
 
-	while (left <= right) {
-		const middle = Math.floor((left + right) / 2);
+		while (left <= right) {
+			const middle = Math.floor((left + right) / 2);
 
-		if (lineCounts[middle] <= linesToShow - 1) {
-			wordsCountM1 = middle;
-			left = middle + 1;
-		} else {
-			right = middle - 1;
+			if (lineCounts[middle] <= linesToShow - 1) {
+				wordsCountM1 = middle;
+				left = middle + 1;
+			} else {
+				right = middle - 1;
+			}
 		}
 	}
+	if (wordsCountM1 === -1) wordsCountM1 = 1;
 
 	if (isBinary) {
 		const firstTop = pointerTops[0];
