@@ -483,7 +483,7 @@ function testSummary(wordsCount) {
 			name: "Alg 3 Orig",
 			description: "Option using many pointers Orig",
 			run: modifySummary3Orig
-		}
+		},
 		{
 			name: "Alg 3",
 			description: "Option using many pointers",
