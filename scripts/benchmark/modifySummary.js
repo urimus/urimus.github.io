@@ -862,7 +862,7 @@ function testSummary(wordsCount) {
 
 	console.log("=== SPEEDUP GRAPHS ===");
 	console.log("\u200B");
-	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
+	consoleSpeedupPlot("Alg 1", "Alg 2", "×", "by Mean for No Early Exit Points");
 	
 	// =========================================================
 	// COMPLETE
