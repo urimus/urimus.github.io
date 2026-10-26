@@ -836,7 +836,7 @@ function testSummary(wordsCount) {
 		return result;
 	}
 
-	function consoleSpeedupPlot(algorithmA, algorithmB, unit) {
+	function consoleSpeedupPlot(algorithmA, algorithmB, unit, description) {
 
 		const algA = getAlgorithm(algorithmA);
 		const algB = getAlgorithm(algorithmB);
@@ -857,7 +857,7 @@ function testSummary(wordsCount) {
 			? `Speedup: %c${algA.name}%c ↔ ${algB.name}`
 			: `Speedup: ${algA.name} ↔ %c${algB.name}%c`;
 
-		consolePlot(title, speedupPerf, unit);
+		consolePlot(title, speedupPerf, unit, description);
 	}
 
 	console.log("=== SPEEDUP GRAPHS ===");
