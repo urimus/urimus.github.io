@@ -421,7 +421,10 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
 		console.log(
-			`THEIL–SEN APPROXIMATION, ${unit}: %c${slopeNoEE.toFixed(4)}N ${interceptNoEE < 0 ? "−" : "+"} ${Math.abs(interceptNoEE).toFixed(4)}`,
+			`THEIL–SEN APPROXIMATION, ${unit}: ` +
+			`y(N) = ${slopeNoEE.toFixed(4)}N ` +
+			`${interceptNoEE < 0 ? "−" : "+"} ` +
+			`${Math.abs(interceptNoEE).toFixed(4)}`,
 			COLORS.normalPoint
 		);
 	}
@@ -642,7 +645,7 @@ function testSummary(wordsCount) {
 	// GENERAL STATISTICS
 	// =========================================================
 
-	function linearApproximationTheilSen(times, earlyExits, minLines) {
+	function theilSenRegression(times, earlyExits, minLines) {
 		const points = [];
 		for (let i = 0; i < times.length; i++) {
 			if (!earlyExits[i]) {
@@ -730,13 +733,13 @@ function testSummary(wordsCount) {
 			perf.medianNoEE = sortedNoEE.length % 2 === 0
 				? (sortedNoEE[middleNoEE - 1] + sortedNoEE[middleNoEE]) / 2
 				: sortedNoEE[middleNoEE];
-			const approximation = linearApproximationTheilSen(
+			const regression = theilSenRegression(
 				perf.times,
 				perf.earlyExits,
 				MIN_LINES
 			);
-			perf.slopeNoEE = approximation?.slope ?? null;
-			perf.interceptNoEE = approximation?.intercept ?? null;
+			perf.slopeNoEE = regression?.slope ?? null;
+			perf.interceptNoEE = regression?.intercept ?? null;
 		} else {
 			perf.slopeNoEE = null;
 			perf.interceptNoEE = null;
