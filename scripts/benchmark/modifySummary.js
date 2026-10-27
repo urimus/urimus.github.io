@@ -422,7 +422,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
 		console.log(
 			`THEIL–SEN APPROXIMATION, ${unit}: ` +
-			`y(N) = ${slopeNoEE.toFixed(4)}N ` +
+			`%cy(N) = ${slopeNoEE.toFixed(4)}N ` +
 			`${interceptNoEE < 0 ? "−" : "+"} ` +
 			`${Math.abs(interceptNoEE).toFixed(4)}`,
 			COLORS.normalPoint
