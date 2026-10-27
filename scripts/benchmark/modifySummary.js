@@ -431,8 +431,8 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 	if (unit !== "ms" && regressionSpeedup != null) {
 		console.log(
-			`THEIL–SEN REGRESSION SPEEDUP: %c${regressionSpeedup.toFixed(3)}×`,
-			COLORS.value
+			`THEIL–SEN REGRESSION SPEEDUP, ${unit}: %c${regressionSpeedup.toFixed(3)}`,
+			COLORS.normalPoint
 		);
 	}
 	console.log("\u200B");
