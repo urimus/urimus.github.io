@@ -87,7 +87,8 @@ function consolePlot(title, perf, unit = "ms", description) {
 		medianEE,
 		medianNoEE,
 		slopeNoEE,
-		interceptNoEE
+		interceptNoEE,
+		regressionSpeedup
 	} = perf;
 
 	// ============================================================
@@ -426,6 +427,12 @@ function consolePlot(title, perf, unit = "ms", description) {
 			`${interceptNoEE < 0 ? "−" : "+"} ` +
 			`${Math.abs(interceptNoEE).toFixed(4)}`,
 			COLORS.normalPoint
+		);
+	}
+	if (unit !== "ms" && regressionSpeedup != null) {
+		console.log(
+			`THEIL–SEN REGRESSION SPEEDUP: %c${regressionSpeedup.toFixed(3)}×`,
+			COLORS.value
 		);
 	}
 	console.log("\u200B");
@@ -806,6 +813,7 @@ function testSummary(wordsCount) {
 
 		const perfFast = isAFaster ? perfA : perfB;
 		const perfSlow = isAFaster ? perfB : perfA;
+		const regressionSpeedup = isAFaster ? predictedB / predictedA : predictedA / predictedB;
 
 		const times = new Array(perfFast.times.length);
 		const timesEE = [];
@@ -858,6 +866,7 @@ function testSummary(wordsCount) {
 			max,
 			times,
 			isAFaster,
+			regressionSpeedup,
 			earlyExits: [...perfFast.earlyExits],
 			measuredLines: perfFast.measuredLines
 		};
@@ -891,7 +900,7 @@ function testSummary(wordsCount) {
 	console.log("=== SPEEDUP GRAPHS ===");
 	console.log("\u200B");
 	consoleSpeedupPlot("Alg 1", "Alg 2", "×", "the Winner is Selected by Theil–Sen Regression for No Early Exit Points");
-	
+
 	// =========================================================
 	// COMPLETE
 	// =========================================================
