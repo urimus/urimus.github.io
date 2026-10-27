@@ -642,6 +642,43 @@ function testSummary(wordsCount) {
 	// GENERAL STATISTICS
 	// =========================================================
 
+	function linearApproximationTheilSen(times, earlyExits, minLines) {
+		const points = [];
+		for (let i = 0; i < times.length; i++) {
+			if (!earlyExits[i]) {
+				points.push({
+					x: i + minLines,
+					y: times[i]
+				});
+			}
+		}
+		if (points.length < 2) return null;
+		const slopes = [];
+		for (let i = 0; i < points.length - 1; i++) {
+			for (let j = i + 1; j < points.length; j++) {
+				const dx = points[j].x - points[i].x;
+				if (dx !== 0) {
+					slopes.push(
+						(points[j].y - points[i].y) / dx
+					);
+				}
+			}
+		}
+		if (!slopes.length) return null;
+		const median = values => {
+			values.sort((a, b) => a - b);
+			const middle = Math.floor(values.length / 2);
+			return values.length % 2
+				? values[middle]
+				: (values[middle - 1] + values[middle]) / 2;
+		};
+		const slope = median(slopes);
+		const intercept = median(
+			points.map(point => point.y - slope * point.x)
+		);
+		return { slope, intercept };
+	}
+
 	const statisticsTable = {};
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
@@ -652,10 +689,6 @@ function testSummary(wordsCount) {
 		let countEE = 0;
 		let countNoEE = 0;
 		let varianceSum = 0;
-		let sumNNoEE = 0;
-		let sumNTNoEE = 0;
-		let sumN2NoEE = 0;
-		
 		const timesEE = [];
 		const timesNoEE = [];
 		
@@ -678,10 +711,6 @@ function testSummary(wordsCount) {
 				sumNoEE += time;
 				countNoEE++;
 				timesNoEE.push(time);
-				const n = i + MIN_LINES;
-				sumNNoEE += n;
-				sumNTNoEE += n * time;
-				sumN2NoEE += n * n;
 			}
 		}
 
@@ -701,19 +730,13 @@ function testSummary(wordsCount) {
 			perf.medianNoEE = sortedNoEE.length % 2 === 0
 				? (sortedNoEE[middleNoEE - 1] + sortedNoEE[middleNoEE]) / 2
 				: sortedNoEE[middleNoEE];
-			const denominator =
-				countNoEE * sumN2NoEE - sumNNoEE * sumNNoEE;
-			if (denominator > 0) {
-				perf.slopeNoEE =
-					(countNoEE * sumNTNoEE - sumNNoEE * sumNoEE)
-					/ denominator;
-				perf.interceptNoEE =
-					(sumNoEE - perf.slopeNoEE * sumNNoEE)
-					/ countNoEE;
-			} else {
-				perf.slopeNoEE = null;
-				perf.interceptNoEE = null;
-			}
+			const approximation = linearApproximationTheilSen(
+				perf.times,
+				perf.earlyExits,
+				MIN_LINES
+			);
+			perf.slopeNoEE = approximation?.slope ?? null;
+			perf.interceptNoEE = approximation?.intercept ?? null;
 		} else {
 			perf.slopeNoEE = null;
 			perf.interceptNoEE = null;
