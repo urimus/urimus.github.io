@@ -721,18 +721,18 @@ function testSummary(wordsCount) {
 		if (countEE > 0) {
 			perf.meanEE = sumEE / countEE;
 			const sortedEE = timesEE.sort((a, b) => a - b);
-			const middleEE = Math.floor(sortedEE.length / 2);
+			const middleEEIndex = Math.floor(sortedEE.length / 2);
 			perf.medianEE = sortedEE.length % 2 === 0
-				? (sortedEE[middleEE - 1] + sortedEE[middleEE]) / 2
-				: sortedEE[middleEE];
+				? (sortedEE[middleEEIndex - 1] + sortedEE[middleEEIndex]) / 2
+				: sortedEE[middleEEIndex];
 		}
 		if (countNoEE > 0) {
 			perf.meanNoEE = sumNoEE / countNoEE;
 			const sortedNoEE = timesNoEE.sort((a, b) => a - b);
-			const middleNoEE = Math.floor(sortedNoEE.length / 2);
+			const middleNoEEIndex = Math.floor(sortedNoEE.length / 2);
 			perf.medianNoEE = sortedNoEE.length % 2 === 0
-				? (sortedNoEE[middleNoEE - 1] + sortedNoEE[middleNoEE]) / 2
-				: sortedNoEE[middleNoEE];
+				? (sortedNoEE[middleNoEEIndex - 1] + sortedNoEE[middleNoEEIndex]) / 2
+				: sortedNoEE[middleNoEEIndex];
 			const regression = theilSenRegression(
 				perf.times,
 				perf.earlyExits,
@@ -748,9 +748,6 @@ function testSummary(wordsCount) {
 		statisticsTable[algorithm.name] = {
 			Count: perf.count,
 			"Mean, ms": round(perf.mean),
-			"Mean NoEE, ms": perf.meanNoEE == null
-				? null
-				: round(perf.meanNoEE),
 			"Median, ms": round(perf.median),
 			"Std Dev, ms": round(standardDeviation),
 			"Min, ms": round(perf.min),
