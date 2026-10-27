@@ -656,6 +656,7 @@ function testSummary(wordsCount) {
 			}
 		}
 		if (points.length < 2) return null;
+		const middle = minLines + (points.length - 1) / 2;
 		const slopes = [];
 		for (let i = 0; i < points.length - 1; i++) {
 			for (let j = i + 1; j < points.length; j++) {
@@ -679,7 +680,7 @@ function testSummary(wordsCount) {
 		const intercept = median(
 			points.map(point => point.y - slope * point.x)
 		);
-		return { slope, intercept };
+		return { slope, intercept, middle };
 	}
 
 	const statisticsTable = {};
@@ -740,7 +741,7 @@ function testSummary(wordsCount) {
 			);
 			perf.slopeNoEE = regression?.slope ?? null;
 			perf.interceptNoEE = regression?.intercept ?? null;
-			perf.middleNoEE = MIN_LINES + (countNoEE - 1) / 2;
+			perf.middleNoEE = regression?.middle ?? null;
 		} else {
 			perf.slopeNoEE = null;
 			perf.interceptNoEE = null;
