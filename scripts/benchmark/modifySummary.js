@@ -793,7 +793,7 @@ function testSummary(wordsCount) {
 			return null;
 		}
 
-		// Determine which algorithm scales better by its Theil–Sen slope.
+		// Determine which algorithm is faster by its Theil–Sen Regression for No Early Exit Points.
 		if (perfA.slopeNoEE == null || perfA.interceptNoEE == null || perfB.slopeNoEE == null || perfB.interceptNoEE == null) {
 			console.error("Cannot compare speedup: missing NoEE regression data.");
 			return null;
