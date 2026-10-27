@@ -740,6 +740,7 @@ function testSummary(wordsCount) {
 			);
 			perf.slopeNoEE = regression?.slope ?? null;
 			perf.interceptNoEE = regression?.intercept ?? null;
+			perf.middleNoEE = MIN_LINES + (countNoEE - 1) / 2;
 		} else {
 			perf.slopeNoEE = null;
 			perf.interceptNoEE = null;
@@ -795,12 +796,15 @@ function testSummary(wordsCount) {
 			return null;
 		}
 
-		// Determine which algorithm is faster by its NoEE Mean.
-		if (perfA.meanNoEE == null || perfB.meanNoEE == null) {
-			console.error("Cannot compare speedup: missing NoEE measurements.");
+		// Determine which algorithm scales better by its Theil–Sen slope.
+		if (perfA.slopeNoEE == null || perfA.interceptNoEE == null || perfB.slopeNoEE == null || perfB.interceptNoEE == null) {
+			console.error("Cannot compare speedup: missing NoEE regression data.");
 			return null;
 		}
-		const isAFaster = perfA.meanNoEE <= perfB.meanNoEE;
+		const middleN = perfA.middleNoEE;
+		const predictedA = perfA.slopeNoEE * middleN + perfA.interceptNoEE;
+		const predictedB = perfB.slopeNoEE * middleN + perfB.interceptNoEE;
+		const isAFaster = predictedA <= predictedB;
 
 		const perfFast = isAFaster ? perfA : perfB;
 		const perfSlow = isAFaster ? perfB : perfA;
@@ -888,7 +892,7 @@ function testSummary(wordsCount) {
 
 	console.log("=== SPEEDUP GRAPHS ===");
 	console.log("\u200B");
-	consoleSpeedupPlot("Alg 1", "Alg 2", "×", "the Winner is Selected by Mean for No Early Exit Points");
+	consoleSpeedupPlot("Alg 1", "Alg 2", "×", "the Winner is Selected by Theil–Sen Regression for No Early Exit Points");
 	
 	// =========================================================
 	// COMPLETE
