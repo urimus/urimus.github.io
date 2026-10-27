@@ -357,6 +357,22 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// STATISTICS
 	// ============================================================
 
+	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
+		console.log(
+			`THEIL–SEN APPROXIMATION, ${unit}: ` +
+			`%cy(N) = ${slopeNoEE.toFixed(4)}N ` +
+			`${interceptNoEE < 0 ? "−" : "+"} ` +
+			`${Math.abs(interceptNoEE).toFixed(4)}`,
+			COLORS.normalPoint
+		);
+	}
+	if (unit !== "ms" && regressionSpeedup != null) {
+		console.log(
+			`THEIL–SEN REGRESSION SPEEDUP, ${unit}: %c${regressionSpeedup.toFixed(3)}`,
+			COLORS.normalPoint
+		);
+	}
+
 	let statistics = `STATISTICS, ${unit}: `;
 	const statisticStyles = [];
 
@@ -419,22 +435,6 @@ function consolePlot(title, perf, unit = "ms", description) {
 	statisticStyles.push(COLORS.value);
 
 	console.log(statistics, ...statisticStyles);
-
-	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
-		console.log(
-			`THEIL–SEN APPROXIMATION, ${unit}: ` +
-			`%cy(N) = ${slopeNoEE.toFixed(4)}N ` +
-			`${interceptNoEE < 0 ? "−" : "+"} ` +
-			`${Math.abs(interceptNoEE).toFixed(4)}`,
-			COLORS.normalPoint
-		);
-	}
-	if (unit !== "ms" && regressionSpeedup != null) {
-		console.log(
-			`THEIL–SEN REGRESSION SPEEDUP, ${unit}: %c${regressionSpeedup.toFixed(3)}`,
-			COLORS.normalPoint
-		);
-	}
 	console.log("\u200B");
 }
 
