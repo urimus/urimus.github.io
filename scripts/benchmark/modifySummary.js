@@ -88,6 +88,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 		medianNoEE,
 		slopeNoEE,
 		interceptNoEE,
+		middleNoEE,
 		regressionSpeedup
 	} = perf;
 
@@ -359,10 +360,13 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
 		console.log(
-			`THEIL–SEN APPROXIMATION, ${unit}: ` +
+			`Theil–Sen Approximation, ${unit}: ` +
 			`%cy(N) = ${slopeNoEE.toFixed(4)}N ` +
 			`${interceptNoEE < 0 ? "−" : "+"} ` +
-			`${Math.abs(interceptNoEE).toFixed(4)}`,
+			`${Math.abs(interceptNoEE).toFixed(4)}%c` +
+			`middle value: %c${middleNoEE}`,
+			COLORS.normalPoint,
+			"",
 			COLORS.normalPoint
 		);
 	}
@@ -752,6 +756,7 @@ function testSummary(wordsCount) {
 		} else {
 			perf.slopeNoEE = null;
 			perf.interceptNoEE = null;
+			perf.middleNoEE = null;
 		}
 		statisticsTable[algorithm.name] = {
 			Count: perf.count,
