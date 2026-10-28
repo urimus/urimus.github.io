@@ -899,7 +899,7 @@ function testSummary(wordsCount) {
 	}
 
 	console.log("=== SPEEDUP GRAPHS ===");
-	console.log("=== The Winner is Selected by Theil–Sen Regression for NoEE Points ===");
+	console.log("=== The Winner is Selected Based on Theil–Sen Regression Ratio for NoEE Points ===");
 	console.log("\u200B");
 	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
 	consoleSpeedupPlot("Alg 1", "Alg 3", "×");
