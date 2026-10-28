@@ -372,7 +372,8 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 	if (unit !== "ms" && regressionSpeedup != null) {
 		console.log(
-			`Theil–Sen Regression Speedup, ${unit}: %c${regressionSpeedup.toFixed(3)}`,
+			`Theil–Sen Regression Speedup, ${unit}: ` +
+			`%c${regressionSpeedup.numerator.toFixed(4)} / ${regressionSpeedup.denominator.toFixed(4)} = ${regressionSpeedup.value.toFixed(4)}`,
 			COLORS.normalPoint
 		);
 	}
@@ -816,7 +817,13 @@ function testSummary(wordsCount) {
 
 		const perfFast = isAFaster ? perfA : perfB;
 		const perfSlow = isAFaster ? perfB : perfA;
-		const regressionSpeedup = isAFaster ? predictedB / predictedA : predictedA / predictedB;
+		const regressionSpeedup = {
+			numerator: isAFaster ? predictedB : predictedA,
+			denominator: isAFaster ? predictedA : predictedB,
+			value: isAFaster
+				? predictedB / predictedA
+				: predictedA / predictedB
+		};
 
 		const times = new Array(perfFast.times.length);
 		const timesEE = [];
