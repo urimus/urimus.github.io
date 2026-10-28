@@ -369,7 +369,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 	if (unit !== "ms" && regression != null) {
 		console.log(
-			`Theil–Sen Regression Speedup, ${unit}: ` +
+			`Theil–Sen Regressions' Speedup, ${unit}: ` +
 			`%c${regression.numerator.toFixed(4)} / ${regression.denominator.toFixed(4)} = ${regression.value.toFixed(4)}`,
 			COLORS.normalPoint
 		);
