@@ -345,7 +345,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 		];
 
 	console.log(
-		`LEGEND: ` +
+		`Legend: ` +
 		`%c${POINT}%c - summary does not fit lines` +
 		`${approximationLegend}, ` +
 		`%c${POINT}%c - summary fits lines - early exit, ` +
@@ -361,7 +361,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
 		console.log(
 			`Theil–Sen Approximation, ${unit}: ` +
-			`%cy(N) = ${slopeNoEE.toFixed(4)}N ` +
+			`%cy(x) = ${slopeNoEE.toFixed(4)}x ` +
 			`${interceptNoEE < 0 ? "−" : "+"} ` +
 			`${Math.abs(interceptNoEE).toFixed(4)}%c` +
 			`, middle: %cy(${middleNoEE}) = ${(slopeNoEE * middleNoEE + interceptNoEE).toFixed(4)}`,
@@ -372,12 +372,12 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 	if (unit !== "ms" && regressionSpeedup != null) {
 		console.log(
-			`THEIL–SEN REGRESSION SPEEDUP, ${unit}: %c${regressionSpeedup.toFixed(3)}`,
+			`Theil–Sen Regression Speedup, ${unit}: %c${regressionSpeedup.toFixed(3)}`,
 			COLORS.normalPoint
 		);
 	}
 
-	let statistics = `STATISTICS, ${unit}: `;
+	let statistics = `Statistics, ${unit}: `;
 	const statisticStyles = [];
 
 	function appendStatistic(statistics, styles, label, value, valueNoEE, valueEE) {
