@@ -85,12 +85,9 @@ function consolePlot(title, perf, unit = "ms", description) {
 		meanNoEE,
 		median,
 		medianEE,
-		medianNoEE,
-		slopeNoEE,
-		interceptNoEE,
-		middleNoEE,
-		regressionSpeedup
+		medianNoEE
 	} = perf;
+	const regression = perf.regression ? { ...perf.regression } : null;
 
 	// ============================================================
 	// TITLE AND DESCRIPTION
@@ -358,22 +355,22 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// STATISTICS
 	// ============================================================
 
-	if (unit === "ms" && slopeNoEE != null && interceptNoEE != null) {
+	if (unit === "ms" && regression != null) {
 		console.log(
 			`Theil–Sen Approximation, ${unit}: ` +
-			`%cy(x) = ${slopeNoEE.toFixed(4)}x ` +
-			`${interceptNoEE < 0 ? "−" : "+"} ` +
-			`${Math.abs(interceptNoEE).toFixed(4)}%c` +
-			`, middle: %cy(${middleNoEE}) = ${(slopeNoEE * middleNoEE + interceptNoEE).toFixed(4)}`,
+			`%cy(x) = ${regression.slope.toFixed(4)}x ` +
+			`${regression.intercept < 0 ? "−" : "+"} ` +
+			`${Math.abs(regression.intercept).toFixed(4)}%c` +
+			`, middle: %cy(${regression.middle}) = ${(regression.slope * regression.middle + regression.intercept).toFixed(4)}`,
 			COLORS.normalPoint,
 			"",
 			COLORS.normalPoint
 		);
 	}
-	if (unit !== "ms" && regressionSpeedup != null) {
+	if (unit !== "ms" && regression != null) {
 		console.log(
 			`Theil–Sen Regression Speedup, ${unit}: ` +
-			`%c${regressionSpeedup.numerator.toFixed(4)} / ${regressionSpeedup.denominator.toFixed(4)} = ${regressionSpeedup.value.toFixed(4)}`,
+			`%c${regression.numerator.toFixed(4)} / ${regression.denominator.toFixed(4)} = ${regression.value.toFixed(4)}`,
 			COLORS.normalPoint
 		);
 	}
@@ -744,19 +741,12 @@ function testSummary(wordsCount) {
 			perf.medianNoEE = sortedNoEE.length % 2 === 0
 				? (sortedNoEE[middleNoEEIndex - 1] + sortedNoEE[middleNoEEIndex]) / 2
 				: sortedNoEE[middleNoEEIndex];
-			const regression = theilSenRegression(
-				perf.times,
-				perf.earlyExits,
-				MIN_LINES
-			);
-			perf.slopeNoEE = regression?.slope ?? null;
-			perf.interceptNoEE = regression?.intercept ?? null;
-			perf.middleNoEE = regression?.middle ?? null;
-		} else {
-			perf.slopeNoEE = null;
-			perf.interceptNoEE = null;
-			perf.middleNoEE = null;
 		}
+		perf.regression = theilSenRegression(
+			perf.times,
+			perf.earlyExits,
+			MIN_LINES
+		);
 		statisticsTable[algorithm.name] = {
 			Count: perf.count,
 			"Mean, ms": round(perf.mean),
@@ -806,18 +796,19 @@ function testSummary(wordsCount) {
 		}
 
 		// Determine which algorithm is faster by its Theil–Sen Regression for No Early Exit Points.
-		if (perfA.slopeNoEE == null || perfA.interceptNoEE == null || perfB.slopeNoEE == null || perfB.interceptNoEE == null) {
+		if (perfA.regression == null || perfB.regression == null) {
 			console.error("Cannot compare speedup: missing NoEE regression data.");
 			return null;
 		}
-		const middleN = perfA.middleNoEE;
-		const predictedA = perfA.slopeNoEE * middleN + perfA.interceptNoEE;
-		const predictedB = perfB.slopeNoEE * middleN + perfB.interceptNoEE;
+		
+		const middle = perfA.regression.middle;
+		const predictedA = perfA.regression.slope * middle + perfA.regression.intercept;
+		const predictedB = perfB.regression.slope * middle + perfB.regression.intercept;
 		const isAFaster = predictedA <= predictedB;
 
 		const perfFast = isAFaster ? perfA : perfB;
 		const perfSlow = isAFaster ? perfB : perfA;
-		const regressionSpeedup = {
+		const regression = {
 			numerator: isAFaster ? predictedB : predictedA,
 			denominator: isAFaster ? predictedA : predictedB,
 			value: isAFaster
@@ -876,7 +867,7 @@ function testSummary(wordsCount) {
 			max,
 			times,
 			isAFaster,
-			regressionSpeedup,
+			regression,
 			earlyExits: [...perfFast.earlyExits],
 			measuredLines: perfFast.measuredLines
 		};
