@@ -369,7 +369,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 	if (unit !== "ms" && regression != null) {
 		console.log(
-			`Theil–Sen Regressions' Speedup, ${unit}: ` +
+			`Ratio of Theil–Sen Regressions, ${unit}: ` +
 			`%c${regression.numerator.toFixed(4)} / ${regression.denominator.toFixed(4)} = ${regression.value.toFixed(4)}`,
 			COLORS.normalPoint
 		);
@@ -899,7 +899,7 @@ function testSummary(wordsCount) {
 	}
 
 	console.log("=== SPEEDUP GRAPHS ===");
-	console.log("=== The Winner is Selected Based on Theil–Sen Regression Ratio for NoEE Points ===");
+	console.log("=== The Winner is Selected Based on the Ratio of Theil–Sen Regressions for NoEE Points ===");
 	console.log("\u200B");
 	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
 	consoleSpeedupPlot("Alg 1", "Alg 3", "×");
