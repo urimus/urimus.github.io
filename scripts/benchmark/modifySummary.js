@@ -364,7 +364,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 			`%cy(N) = ${slopeNoEE.toFixed(4)}N ` +
 			`${interceptNoEE < 0 ? "−" : "+"} ` +
 			`${Math.abs(interceptNoEE).toFixed(4)}%c` +
-			`middle value: %cy(${middleNoEE}) = ${slopeNoEE * middleNoEE + interceptNoEE}`,
+			`, middle value: %cy(${middleNoEE}) = ${(slopeNoEE * middleNoEE + interceptNoEE).toFixed(4)}`,
 			COLORS.normalPoint,
 			"",
 			COLORS.normalPoint
