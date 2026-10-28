@@ -492,14 +492,12 @@ function testSummary(wordsCount) {
 			name: "Alg 2",
 			description: "Stable option using getClientRects",
 			run: modifySummary2
-		}
-/*,
+		},
 		{
 			name: "Alg 3",
 			description: "Option using many pointers",
 			run: modifySummary3
 		}
-*/
 	];
 
 	// =========================================================
@@ -903,8 +901,11 @@ function testSummary(wordsCount) {
 	}
 
 	console.log("=== SPEEDUP GRAPHS ===");
+	console.log("=== The Winner is Selected by Theil–Sen Regression for NoEE Points ===");
 	console.log("\u200B");
-	consoleSpeedupPlot("Alg 1", "Alg 2", "×", "the Winner is Selected by Theil–Sen Regression for No Early Exit Points");
+	consoleSpeedupPlot("Alg 1", "Alg 2", "×");
+	consoleSpeedupPlot("Alg 1", "Alg 3", "×");
+	consoleSpeedupPlot("Alg 2", "Alg 3", "×");
 
 	// =========================================================
 	// COMPLETE
