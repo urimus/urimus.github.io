@@ -183,12 +183,12 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// SLOPE LINE (All N)
 	// ============================================================
 
-	const drawSlope = slopeNoEE != null && unit === "ms";
+	const drawSlope = regression != null && unit === "ms";
 
 	if (drawSlope) {
 		const slopePoints = times.map((time, i) => ({
 			n: i + 1,
-			value: interceptNoEE + slopeNoEE * (i + 1)
+			value: regression.intercept + regression.slope * (i + 1)
 		}));
 
 		for (const point of slopePoints) {
