@@ -5,8 +5,8 @@
 // =========================================================
 
 console.log(
-	"Type \"testSummary(number)\" to start the Modify Summary Benchmark. " +
-	"Number - Words Count in Summary, Default - 1000."
+	"Type \"testSummary(number)\" to start the Modify Summary Benchmark run. " +
+	"Number - Word count in the summary, Default - 1000."
 );
 
 function randomWord() {
@@ -446,7 +446,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 function testSummary(wordsCount) {
 
-	console.log("Modify Summary Benchmark Started.");
+	console.log("Modify Summary Benchmark Run Started.");
 
 	const testStart = performance.now();
 
@@ -913,7 +913,7 @@ function testSummary(wordsCount) {
 	// =========================================================
 
 	const testTime = performance.now() - testStart;
-	console.log("Modify Summary Benchmark Completed.");
+	console.log("Modify Summary Benchmark Run Completed.");
 	console.log(`Duration: ${(testTime / 1000).toFixed(3)}s.`);
 
 	return "End";
