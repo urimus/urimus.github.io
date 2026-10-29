@@ -373,7 +373,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 		console.log(
 			`Ratio of Theil–Sen Regressions, ${unit}: ` +
 			`%c${regression.numerator.toFixed(4)} / ${regression.denominator.toFixed(4)} = ${regression.midpointValue.toFixed(4)}%c` + 
-			` midpoint: %c${regression.midpoint}`,
+			`, midpoint: %c${regression.midpoint}`,
 			COLORS.normalPoint,
 			"",
 			COLORS.value
