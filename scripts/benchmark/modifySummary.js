@@ -370,8 +370,12 @@ function consolePlot(title, perf, unit = "ms", description) {
 	if (unit !== "ms" && regression != null) {
 		console.log(
 			`Ratio of Theil–Sen Regressions, ${unit}: ` +
-			`%c${regression.numerator.toFixed(4)} / ${regression.denominator.toFixed(4)} = ${regression.value.toFixed(4)}`,
-			COLORS.normalPoint
+			`%c${regression.numerator.toFixed(4)} / ${regression.denominator.toFixed(4)} = ${regression.value.toFixed(4)}%c` + 
+			` in the middle = %c${regression.middle}%c point`,
+			COLORS.normalPoint,
+			"",
+			COLORS.value,
+			""
 		);
 	}
 
@@ -811,9 +815,8 @@ function testSummary(wordsCount) {
 		const regression = {
 			numerator: isAFaster ? predictedB : predictedA,
 			denominator: isAFaster ? predictedA : predictedB,
-			value: isAFaster
-				? predictedB / predictedA
-				: predictedA / predictedB
+			value: isAFaster ? predictedB / predictedA : predictedA / predictedB,
+			middle
 		};
 
 		const times = new Array(perfFast.times.length);
