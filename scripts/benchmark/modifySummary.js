@@ -361,8 +361,10 @@ function consolePlot(title, perf, unit = "ms", description) {
 			`%cy(x) = ${regression.slope.toFixed(4)}x ` +
 			`${regression.intercept < 0 ? "−" : "+"} ` +
 			`${Math.abs(regression.intercept).toFixed(4)}%c` +
-			`, middle: %cy(${regression.middle}) = ${(regression.slope * regression.middle + regression.intercept).toFixed(4)}`,
+			`, midpoint: %c${regression.midpoint}%c, %cy(${regression.midpoint}) = ${(regression.midpointValue).toFixed(4)}`,
 			COLORS.normalPoint,
+			"",
+			COLORS.value,
 			"",
 			COLORS.normalPoint
 		);
@@ -370,12 +372,11 @@ function consolePlot(title, perf, unit = "ms", description) {
 	if (unit !== "ms" && regression != null) {
 		console.log(
 			`Ratio of Theil–Sen Regressions, ${unit}: ` +
-			`%c${regression.numerator.toFixed(4)} / ${regression.denominator.toFixed(4)} = ${regression.value.toFixed(4)}%c` + 
-			` in the middle = %c${regression.middle}%c point`,
+			`%c${regression.numerator.toFixed(4)} / ${regression.denominator.toFixed(4)} = ${regression.midpointValue.toFixed(4)}%c` + 
+			` in the midpoint = %c${regression.midpoint}`,
 			COLORS.normalPoint,
 			"",
-			COLORS.value,
-			""
+			COLORS.value
 		);
 	}
 
@@ -667,7 +668,7 @@ function testSummary(wordsCount) {
 			}
 		}
 		if (points.length < 2) return null;
-		const middle = minLines + (points.length - 1) / 2;
+		const midpoint = minLines + (points.length - 1) / 2;
 		const slopes = [];
 		for (let i = 0; i < points.length - 1; i++) {
 			for (let j = i + 1; j < points.length; j++) {
@@ -691,7 +692,8 @@ function testSummary(wordsCount) {
 		const intercept = median(
 			points.map(point => point.y - slope * point.x)
 		);
-		return { slope, intercept, middle };
+		const midpointValue = slope * midpoint + intercept;
+		return { slope, intercept, midpoint, midpointValue };
 	}
 
 	const statisticsTable = {};
@@ -733,18 +735,18 @@ function testSummary(wordsCount) {
 		if (countEE > 0) {
 			perf.meanEE = sumEE / countEE;
 			const sortedEE = timesEE.sort((a, b) => a - b);
-			const middleEEIndex = Math.floor(sortedEE.length / 2);
+			const middleEE = Math.floor(sortedEE.length / 2);
 			perf.medianEE = sortedEE.length % 2 === 0
-				? (sortedEE[middleEEIndex - 1] + sortedEE[middleEEIndex]) / 2
-				: sortedEE[middleEEIndex];
+				? (sortedEE[middleEE - 1] + sortedEE[middleEE]) / 2
+				: sortedEE[middleEE];
 		}
 		if (countNoEE > 0) {
 			perf.meanNoEE = sumNoEE / countNoEE;
 			const sortedNoEE = timesNoEE.sort((a, b) => a - b);
-			const middleNoEEIndex = Math.floor(sortedNoEE.length / 2);
+			const middleNoEE = Math.floor(sortedNoEE.length / 2);
 			perf.medianNoEE = sortedNoEE.length % 2 === 0
-				? (sortedNoEE[middleNoEEIndex - 1] + sortedNoEE[middleNoEEIndex]) / 2
-				: sortedNoEE[middleNoEEIndex];
+				? (sortedNoEE[middleNoEE - 1] + sortedNoEE[middleNoEE]) / 2
+				: sortedNoEE[middleNoEE];
 		}
 		perf.regression = theilSenRegression(
 			perf.times,
@@ -805,9 +807,10 @@ function testSummary(wordsCount) {
 			return null;
 		}
 		
-		const middle = perfA.regression.middle;
-		const predictedA = perfA.regression.slope * middle + perfA.regression.intercept;
-		const predictedB = perfB.regression.slope * middle + perfB.regression.intercept;
+		const midpoint = perfA.regression.midpoint;
+		const predictedA = perfA.regression.midpointValue;
+		// recalculate predictedB
+		const predictedB = perfB.regression.slope * midpoint + perfB.regression.intercept;
 		const isAFaster = predictedA <= predictedB;
 
 		const perfFast = isAFaster ? perfA : perfB;
@@ -815,8 +818,8 @@ function testSummary(wordsCount) {
 		const regression = {
 			numerator: isAFaster ? predictedB : predictedA,
 			denominator: isAFaster ? predictedA : predictedB,
-			value: isAFaster ? predictedB / predictedA : predictedA / predictedB,
-			middle
+			midpointValue: isAFaster ? predictedB / predictedA : predictedA / predictedB,
+			midpoint
 		};
 
 		const times = new Array(perfFast.times.length);
