@@ -818,8 +818,8 @@ function testSummary(wordsCount) {
 		const regression = {
 			numerator: isAFaster ? predictedB : predictedA,
 			denominator: isAFaster ? predictedA : predictedB,
-			midpointValue: isAFaster ? predictedB / predictedA : predictedA / predictedB,
-			midpoint
+			midpoint,
+			midpointValue: isAFaster ? predictedB / predictedA : predictedA / predictedB
 		};
 
 		const times = new Array(perfFast.times.length);
