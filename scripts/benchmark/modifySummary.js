@@ -800,17 +800,19 @@ function testSummary(wordsCount) {
 			console.error("Cannot create speedup: different times length.");
 			return null;
 		}
-
-		// Determine which algorithm is faster by its Theil–Sen Regression for No Early Exit Points.
 		if (perfA.regression == null || perfB.regression == null) {
 			console.error("Cannot compare speedup: missing NoEE regression data.");
 			return null;
 		}
-		
+		if (perfA.regression.midpoint !== perfB.regression.midpoint) {
+			console.error("Cannot compare speedup: different regression midpoints.");
+			return null;
+		}
+
+		// Determine which algorithm is faster by its Theil–Sen Regression for No Early Exit Points.
 		const midpoint = perfA.regression.midpoint;
 		const predictedA = perfA.regression.midpointValue;
-		// recalculate predictedB
-		const predictedB = perfB.regression.slope * midpoint + perfB.regression.intercept;
+		const predictedB = perfB.regression.midpointValue;
 		const isAFaster = predictedA <= predictedB;
 
 		const perfFast = isAFaster ? perfA : perfB;
