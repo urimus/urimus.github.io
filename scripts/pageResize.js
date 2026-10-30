@@ -129,7 +129,7 @@ window.addEventListener('popstate', function () {
 function logIfCachingComplete(state, images) {
 	if (state.loaded + state.failed >= images.length) {
 		console.log(
-			`[SW] ${state.source} caching complete.` +
+			`[SW] ${state.source} caching complete,` +
 			` loaded: ${state.loaded}` +
 			(state.failed > 0 ? `, failed: ${state.failed}` : "") +
 			` of ${images.length},` +
