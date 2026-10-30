@@ -133,7 +133,7 @@ function logIfCachingComplete(state, images) {
 			` loaded: ${state.loaded}` +
 			(state.failed > 0 ? `, failed: ${state.failed}` : "") +
 			` of ${images.length},` +
-			` duration - ${Date.now() - state.startTime}ms.`
+			` duration: ${Date.now() - state.startTime}ms.`
 		);
 	}
 }
