@@ -130,10 +130,10 @@ function logIfCachingComplete(state, images) {
 	if (state.loaded + state.failed >= images.length) {
 		console.log(
 			`[SW] ${state.source} caching complete.` +
-			` loaded - ${state.loaded}` +
+			` loaded count - ${state.loaded}` +
 			(state.loaded !== images.length ? `/${images.length}` : "") + "," +
 			(state.failed > 0
-				? ` failed - ${state.failed}` +
+				? ` failed count - ${state.failed}` +
 					(state.failed !== images.length ? `/${images.length}` : "") + ","
 				: "") +
 			` duration - ${Date.now() - state.startTime}ms.`
