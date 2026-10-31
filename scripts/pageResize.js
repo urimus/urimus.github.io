@@ -164,7 +164,7 @@ function logIfCachingComplete(state, total) {
 	let log = `[SW] ${state.source} caching complete, total: ${total}, `;
 	if (state.cached > 0) log += `cached: ${state.cached}, `;
 	if (state.failed > 0) log += `failed: ${state.failed}, `;
-	log += `duration: ${Date.now() - state.startTime}ms.`
+	log += `duration: ${((Date.now() - state.startTime) / 1000).toFixed(2)}s.`;
 	console.log(log);
 }
 
