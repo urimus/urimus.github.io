@@ -23,6 +23,8 @@ location.reload();
 // =====================================================
 // SERVICE WORKER + COI
 // =====================================================
+let imageCacheResults = new Map();
+
 if ("serviceWorker" in navigator) {
 	let reloadedBySelf = sessionStorage.getItem("coiReloadedBySelf");
 	sessionStorage.removeItem("coiReloadedBySelf");
@@ -55,6 +57,28 @@ if ("serviceWorker" in navigator) {
 	})
 	.catch(function (error) {
 		console.log("[Service Worker] Registration failed:", error);
+	});
+	
+	navigator.serviceWorker.addEventListener("message", function (event) {
+		if (!event.data || event.data.type !== "IMAGE_CACHE_RESULT") return;
+		let pending = imageCacheResults.get(event.data.url);
+		if (!pending) return;
+		clearTimeout(pending.timeout);
+		imageCacheResults.delete(event.data.url);
+		pending.resolve(event.data.cached);
+	});
+}
+
+function waitImageCacheResult(url) {
+	return new Promise(function (resolve) {
+		let timeout = setTimeout(function () {
+			imageCacheResults.delete(url);
+			resolve(false);
+		}, 10000);
+		imageCacheResults.set(url, {
+			resolve: resolve,
+			timeout: timeout
+		});
 	});
 }
 
@@ -136,20 +160,36 @@ function logIfCachingComplete(state, total) {
 	console.log(log);
 }
 
-function loadNextCacheImage(state, images) {
+function cancelImageCacheResult(url) {
+	let pending = imageCacheResults.get(url);
+	if (!pending) return;
+	clearTimeout(pending.timeout);
+	imageCacheResults.delete(url);
+	pending.resolve(false);
+}
 
+function loadNextCacheImage(state, images) {
 	state.index++;
 	if (state.index >= images.length) return;
 	const imgSrc = images[state.index];
-
+	let cacheUrl = new URL(imgSrc, document.baseURI);
+	cacheUrl.hash = "";
+	cacheUrl = cacheUrl.href;
+	let cacheResult = waitImageCacheResult(cacheUrl);
 	let img = new Image();
 	img.onload = function () {
-		state.loaded++;
-		logIfCachingComplete(state, images.length);
-		loadNextCacheImage(state, images);
+		cacheResult.then(function (cached) {
+			if (cached) {
+				state.loaded++;
+			} else {
+				state.failed++;
+			}
+			logIfCachingComplete(state, images.length);
+			loadNextCacheImage(state, images);
+		});
 	};
-
 	img.onerror = function () {
+		cancelImageCacheResult(cacheUrl);
 		state.failed++;
 		logIfCachingComplete(state, images.length);
 		loadNextCacheImage(state, images);
