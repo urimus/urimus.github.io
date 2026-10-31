@@ -49,13 +49,24 @@ self.addEventListener("activate", function (event) {
 
 function notifyImageCacheResult(clientId, url, cached) {
 
-	if (!clientId) return Promise.resolve();
+	console.log("[SW] Notify:", {
+		clientId: clientId,
+		url: url,
+		cached: cached
+	});
+
+	if (!clientId) {
+		console.warn("[SW] Missing clientId:", url);
+		return Promise.resolve();
+	}
 
 	return self.clients.get(clientId)
 
 		.then(function (client) {
 
 			if (client) {
+
+				console.log("[SW] Sending cache result:", url);
 
 				client.postMessage({
 
@@ -65,11 +76,19 @@ function notifyImageCacheResult(clientId, url, cached) {
 
 				});
 
+			} else {
+
+				console.warn("[SW] Client not found:", clientId, url);
+
 			}
 
 		})
 
-		.catch(function () {});
+		.catch(function (err) {
+
+			console.error("[SW] Notification error:", err, url);
+
+		});
 
 }
 
