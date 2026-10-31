@@ -46,13 +46,14 @@ self.addEventListener("activate", function (event) {
 // =====================================================
 // IMAGE CACHE NOTIFICATION
 // =====================================================
+
 function notifyImageCacheResult(clientId, url, cached) {
 
 	if (!clientId) {
 		console.warn("[SW] Missing clientId:", url);
 		return Promise.resolve();
 	}
-
+	
 	if (!cached) {
 		console.warn("[SW] Image caching failed:", url);
 	}
@@ -64,54 +65,24 @@ function notifyImageCacheResult(clientId, url, cached) {
 			if (client) {
 
 				client.postMessage({
+
 					type: "IMAGE_CACHE_RESULT",
 					url: url,
 					cached: cached
+
 				});
 
-				return;
+			} else {
+
+				console.warn("[SW] Client not found:", clientId, url);
+
 			}
-
-			// Client not found — inspect all active windows
-
-			return self.clients.matchAll({
-
-				type: "window",
-				includeUncontrolled: true
-
-			})
-
-			.then(function (clients) {
-
-				console.warn(
-					"[SW] Client not found:",
-					{
-						requestedClientId: clientId,
-						url: url,
-						activeClients: clients.map(function (c) {
-
-							return {
-								id: c.id,
-								url: c.url,
-								type: c.type,
-								frameType: c.frameType
-							};
-
-						})
-					}
-				);
-
-			});
 
 		})
 
 		.catch(function (err) {
 
-			console.error(
-				"[SW] Notification error:",
-				err,
-				url
-			);
+			console.error("[SW] Notification error:", err, url);
 
 		});
 
