@@ -59,7 +59,7 @@ function preloadImagesIOTD() {
 		index: -1,
 		cached: 0,
 		failed: 0,
-		startTime: Date.now(),
+		startTime: performance.now(),
 		source: "image of the day images"
 	};
 	for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once

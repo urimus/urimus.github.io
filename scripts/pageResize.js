@@ -164,7 +164,7 @@ function logIfCachingComplete(state, total) {
 	let log = `[SW] ${state.source} caching complete, total: ${total}, `;
 	if (state.cached > 0) log += `cached: ${state.cached}, `;
 	if (state.failed > 0) log += `failed: ${state.failed}, `;
-	log += `duration: ${((Date.now() - state.startTime) / 1000).toFixed(2)}s.`;
+	log += `duration: ${((performance.now() - state.startTime) / 1000).toFixed(2)}s.`;
 	console.log(log);
 }
 
@@ -282,7 +282,7 @@ function preloadImagesGeneral() {
 		cached: 0,
 		failed: 0,
 		completed: false,
-		startTime: Date.now(),
+		startTime: performance.now(),
 		source: "general images"
 	};
 	for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once

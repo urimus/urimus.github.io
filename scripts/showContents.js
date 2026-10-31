@@ -548,7 +548,7 @@ function preloadImagesContents(type, docs) {
 		index: -1,
 		cached: 0,
 		failed: 0,
-		startTime: Date.now(),
+		startTime: performance.now(),
 		source: "site map images"
 	};
 	for (let i = 0, count = Math.min(imageList.length, 5); i < count; i++) {
