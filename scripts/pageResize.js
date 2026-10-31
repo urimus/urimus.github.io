@@ -24,6 +24,7 @@ location.reload();
 // SERVICE WORKER + COI
 // =====================================================
 let imageCacheResults = new Map();
+let imageCacheStatus = new Map();
 
 if ("serviceWorker" in navigator) {
 	let reloadedBySelf = sessionStorage.getItem("coiReloadedBySelf");
@@ -70,18 +71,24 @@ if ("serviceWorker" in navigator) {
 }
 
 function waitImageCacheResult(url) {
+	if (imageCacheStatus.get(url) === true) {
+		return Promise.resolve(true);
+	}
+
 	return new Promise(function (resolve) {
 		let timeout = setTimeout(function () {
 			imageCacheResults.delete(url);
-console.warn("[SW] Cache confirmation timeout:", url);
+			console.warn("[SW] Cache confirmation timeout:", url);
 			resolve(false);
 		}, 10000);
+
 		imageCacheResults.set(url, {
 			resolve: resolve,
 			timeout: timeout
 		});
 	});
 }
+
 
 // --- tab navigation ---
 function keyboardClick(event, el) {
@@ -162,7 +169,10 @@ function logIfCachingComplete(state, total) {
 }
 
 function cancelImageCacheResult(url) {
-	let pending = imageCacheResults.get(url);
+	if (event.data.cached) {
+		imageCacheStatus.set(event.data.url, true);
+	}
+	let pending = imageCacheResults.get(event.data.url);
 	if (!pending) return;
 	clearTimeout(pending.timeout);
 	imageCacheResults.delete(url);
