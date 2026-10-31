@@ -546,7 +546,7 @@ function preloadImagesContents(type, docs) {
 	const imageList = [...images];
 	const state = {
 		index: -1,
-		loaded: 0,
+		cached: 0,
 		failed: 0,
 		startTime: Date.now(),
 		source: "site map images"

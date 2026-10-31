@@ -57,7 +57,7 @@ function preloadImagesIOTD() {
 	console.log("[SW] image of the day images caching started");
 	const state = {
 		index: -1,
-		loaded: 0,
+		cached: 0,
 		failed: 0,
 		startTime: Date.now(),
 		source: "image of the day images"

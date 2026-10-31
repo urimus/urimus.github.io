@@ -3,23 +3,6 @@
 let clickStarted = false;
 // ------------- End of Global Variables ---------------- //
 
-// --- service worker ---
-/* в консоли
-navigator.serviceWorker.getRegistrations().then(regs => {
-	regs.forEach(r => r.unregister());
-});
-
-navigator.serviceWorker.controller
-
-navigator.serviceWorker.getRegistrations().then(console.log)
-
-
-sessionStorage.removeItem("coiCoepHasFailed");
-sessionStorage.removeItem("coiReloadedBySelf");
-location.reload();
-
-*/
-
 // =====================================================
 // SERVICE WORKER + COI
 // =====================================================
@@ -175,11 +158,11 @@ window.addEventListener('popstate', function () {
 
 // --- preload ---
 function logIfCachingComplete(state, total) {
-	if (state.completed || state.loaded + state.failed < total) return;
+	if (state.completed || state.cached + state.failed < total) return;
 	state.completed = true;
-	let log = `[SW] ${state.source} caching complete, `;
-	if (state.loaded > 0) log += `loaded: ${state.loaded} of ${total}, `;
-	if (state.failed > 0) log += `failed: ${state.failed} of ${total}, `;
+	let log = `[SW] ${state.source} caching complete, total: ${total}, `;
+	if (state.cached > 0) log += `cached: ${state.cached}, `;
+	if (state.failed > 0) log += `failed: ${state.failed}, `;
 	log += `duration: ${Date.now() - state.startTime}ms.`
 	console.log(log);
 }
@@ -204,7 +187,7 @@ function loadNextCacheImage(state, images) {
 	img.onload = function () {
 		cacheResult.then(function (cached) {
 			if (cached) {
-				state.loaded++;
+				state.cached++;
 			} else {
 				state.failed++;
 			}
@@ -295,7 +278,7 @@ function preloadImagesGeneral() {
 	console.log("[SW] general images caching started");
 	const state = {
 		index: -1,
-		loaded: 0,
+		cached: 0,
 		failed: 0,
 		completed: false,
 		startTime: Date.now(),
