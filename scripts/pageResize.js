@@ -84,20 +84,27 @@ function waitImageCacheResult(url) {
 	return new Promise(function (resolve) {
 		let timeout = setTimeout(function () {
 			imageCacheResults.delete(url);
-			caches.match(url).then(function (response) {
-				resolve(!!response);
-			}).catch(function () {
-				resolve(false);
-			});
+			resolve(false);
 		}, 10000);
 
 		imageCacheResults.set(url, {
 			resolve: resolve,
 			timeout: timeout
 		});
+
+		caches.match(url).then(function (response) {
+			if (!response) return;
+
+			let pending = imageCacheResults.get(url);
+			if (!pending) return;
+
+			clearTimeout(pending.timeout);
+			imageCacheResults.delete(url);
+			imageCacheStatus.set(url, true);
+			pending.resolve(true);
+		}).catch(function () {});
 	});
 }
-
 
 // --- tab navigation ---
 function keyboardClick(event, el) {
