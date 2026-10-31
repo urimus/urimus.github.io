@@ -62,8 +62,14 @@ if ("serviceWorker" in navigator) {
 	
 	navigator.serviceWorker.addEventListener("message", function (event) {
 		if (!event.data || event.data.type !== "IMAGE_CACHE_RESULT") return;
+
+		if (event.data.cached) {
+			imageCacheStatus.set(event.data.url, true);
+		}
+
 		let pending = imageCacheResults.get(event.data.url);
 		if (!pending) return;
+
 		clearTimeout(pending.timeout);
 		imageCacheResults.delete(event.data.url);
 		pending.resolve(event.data.cached);
@@ -78,8 +84,6 @@ function waitImageCacheResult(url) {
 	return new Promise(function (resolve) {
 		let timeout = setTimeout(function () {
 			imageCacheResults.delete(url);
-			console.warn("[SW] Cache confirmation timeout, checking Cache Storage:", url);
-
 			caches.match(url).then(function (response) {
 				resolve(!!response);
 			}).catch(function () {
@@ -174,10 +178,7 @@ function logIfCachingComplete(state, total) {
 }
 
 function cancelImageCacheResult(url) {
-	if (event.data.cached) {
-		imageCacheStatus.set(event.data.url, true);
-	}
-	let pending = imageCacheResults.get(event.data.url);
+	let pending = imageCacheResults.get(url);
 	if (!pending) return;
 	clearTimeout(pending.timeout);
 	imageCacheResults.delete(url);

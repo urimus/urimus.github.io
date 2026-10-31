@@ -49,12 +49,6 @@ self.addEventListener("activate", function (event) {
 
 function notifyImageCacheResult(clientId, url, cached) {
 
-	console.log("[SW] Notify:", {
-		clientId: clientId,
-		url: url,
-		cached: cached
-	});
-
 	if (!clientId) {
 		console.warn("[SW] Missing clientId:", url);
 		return Promise.resolve();
@@ -65,8 +59,6 @@ function notifyImageCacheResult(clientId, url, cached) {
 		.then(function (client) {
 
 			if (client) {
-
-				console.log("[SW] Sending cache result:", url);
 
 				client.postMessage({
 
