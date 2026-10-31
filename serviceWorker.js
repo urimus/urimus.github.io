@@ -44,6 +44,36 @@ self.addEventListener("activate", function (event) {
 });
 
 // =====================================================
+// IMAGE CACHE NOTIFICATION
+// =====================================================
+
+function notifyImageCacheResult(clientId, url, cached) {
+
+	if (!clientId) return Promise.resolve();
+
+	return self.clients.get(clientId)
+
+		.then(function (client) {
+
+			if (client) {
+
+				client.postMessage({
+
+					type: "IMAGE_CACHE_RESULT",
+					url: url,
+					cached: cached
+
+				});
+
+			}
+
+		})
+
+		.catch(function () {});
+
+}
+
+// =====================================================
 // FETCH
 // =====================================================
 
@@ -222,7 +252,16 @@ function handleImageRequest(event, request) {
 							refreshIfNeeded(cache, request)
 						);
 
-						return cached;
+						return notifyImageCacheResult(
+							event.clientId,
+							request.url,
+							true
+						).then(function () {
+
+							return cached;
+
+						});
+
 					}
 
 
@@ -230,7 +269,27 @@ function handleImageRequest(event, request) {
 					// CACHE MISS
 					// -------------------------------------------------
 
-					return fetchAndCache(cache, request);
+					return fetchAndCache(cache, request)
+
+						.then(function (response) {
+
+							return cache.match(request)
+
+								.then(function (cached) {
+
+									return notifyImageCacheResult(
+										event.clientId,
+										request.url,
+										!!cached
+									).then(function () {
+
+										return response;
+
+									});
+
+								});
+
+						});
 
 				});
 
@@ -376,7 +435,7 @@ function fetchAndCache(cache, request) {
 					response.clone();
 
 
-				Promise.all([
+				return Promise.all([
 
 					cache.put(
 						request,
@@ -395,6 +454,12 @@ function fetchAndCache(cache, request) {
 
 				])
 
+				.then(function () {
+
+					return response;
+
+				})
+
 				.catch(function (err) {
 
 					console.log(
@@ -402,10 +467,9 @@ function fetchAndCache(cache, request) {
 						err
 					);
 
+					return response;
+
 				});
-
-
-				return response;
 			}
 
 
@@ -463,7 +527,7 @@ function fetchAndCache(cache, request) {
 						response.clone();
 
 
-					Promise.all([
+					return Promise.all([
 
 						cache.put(
 							request,
@@ -482,6 +546,12 @@ function fetchAndCache(cache, request) {
 
 					])
 
+					.then(function () {
+
+						return response;
+
+					})
+
 					.catch(function (err) {
 
 						console.log(
@@ -489,10 +559,9 @@ function fetchAndCache(cache, request) {
 							err
 						);
 
+						return response;
+
 					});
-
-
-					return response;
 
 				});
 
