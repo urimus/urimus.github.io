@@ -126,16 +126,14 @@ window.addEventListener('popstate', function () {
 });
 
 // --- preload ---
-function logIfCachingComplete(state, images) {
-	if (state.loaded + state.failed >= images.length) {
-		console.log(
-			`[SW] ${state.source} caching complete,` +
-			` loaded: ${state.loaded}` +
-			(state.failed > 0 ? `, failed: ${state.failed}` : "") +
-			` of ${images.length},` +
-			` duration: ${Date.now() - state.startTime}ms.`
-		);
-	}
+function logIfCachingComplete(state, total) {
+	if (state.completed || state.loaded + state.failed < total) return;
+	state.completed = true;
+	let log = `[SW] ${state.source} caching complete, `;
+	if (state.loaded > 0) log += `loaded: ${state.loaded} of ${total}, `;
+	if (state.failed > 0) log += `failed: ${state.failed} of ${total}, `;
+	log += `duration: ${Date.now() - state.startTime}ms.`
+	console.log(log);
 }
 
 function loadNextCacheImage(state, images) {
@@ -147,13 +145,13 @@ function loadNextCacheImage(state, images) {
 	let img = new Image();
 	img.onload = function () {
 		state.loaded++;
-		logIfCachingComplete(state, images);
+		logIfCachingComplete(state, images.length);
 		loadNextCacheImage(state, images);
 	};
 
 	img.onerror = function () {
 		state.failed++;
-		logIfCachingComplete(state, images);
+		logIfCachingComplete(state, images.length);
 		loadNextCacheImage(state, images);
 	};
 	img.src = imgSrc;
@@ -235,6 +233,7 @@ function preloadImagesGeneral() {
 		index: -1,
 		loaded: 0,
 		failed: 0,
+		completed: false,
 		startTime: Date.now(),
 		source: "general images"
 	};
