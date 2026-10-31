@@ -115,49 +115,34 @@ self.addEventListener("fetch", function (event) {
 
 function handleCOIRequest(request) {
 
-	// -------------------------------------------------
-	// credentialless:
-	// cross-origin no-cors requests do not send cookies
-	// -------------------------------------------------
-
 	let requestToFetch = request;
+	let url = new URL(request.url);
 
+	// Apply credentialless to cross-origin no-cors requests
 	if (
-		coepCredentialless
-		&& request.mode === "no-cors"
+		coepCredentialless &&
+		request.mode === "no-cors" &&
+		url.origin !== self.location.origin
 	) {
-
 		requestToFetch = new Request(request, {
 			credentials: "omit"
 		});
-
 	}
-
 
 	return fetch(requestToFetch)
 
 		.then(function (response) {
 
-			// -------------------------------------------------
-			// opaque response
-			// -------------------------------------------------
-
-			if (response.status === 0) {
+			// Modify headers only for navigation requests
+			if (
+				request.mode !== "navigate" ||
+				response.type === "opaque" ||
+				response.status === 0
+			) {
 				return response;
 			}
 
-
-			// -------------------------------------------------
-			// modify response headers
-			// -------------------------------------------------
-
-			let newHeaders =
-				new Headers(response.headers);
-
-
-			// -------------------------------------------------
-			// COEP
-			// -------------------------------------------------
+			let newHeaders = new Headers(response.headers);
 
 			newHeaders.set(
 				"Cross-Origin-Embedder-Policy",
@@ -166,37 +151,17 @@ function handleCOIRequest(request) {
 					: "require-corp"
 			);
 
-
-			// -------------------------------------------------
-			// COOP
-			// -------------------------------------------------
-
 			newHeaders.set(
 				"Cross-Origin-Opener-Policy",
 				"same-origin"
 			);
 
-
-			// -------------------------------------------------
-			// CORP
-			//
-			// Only needed for require-corp mode.
-			// In credentialless mode we don't add it.
-			// -------------------------------------------------
-
 			if (!coepCredentialless) {
-
 				newHeaders.set(
 					"Cross-Origin-Resource-Policy",
 					"cross-origin"
 				);
-
 			}
-
-
-			// -------------------------------------------------
-			// Return modified response
-			// -------------------------------------------------
 
 			return new Response(
 				response.body,
@@ -207,9 +172,30 @@ function handleCOIRequest(request) {
 				}
 			);
 
+		})
+
+		.catch(function (error) {
+
+			console.error(
+				"[SW] COI fetch failed:",
+				request.url,
+				error
+			);
+
+			return new Response(
+				"Network error: " + error.message,
+				{
+					status: 503,
+					headers: {
+						"Content-Type": "text/plain; charset=utf-8"
+					}
+				}
+			);
+
 		});
 
 }
+
 
 
 // =====================================================
@@ -512,7 +498,6 @@ function fetchAndCache(cache, request) {
 
 		})
 
-
 		.catch(function (err) {
 
 			console.log(
@@ -521,28 +506,22 @@ function fetchAndCache(cache, request) {
 				request.url
 			);
 
-
 			return cache.match(request)
-
 				.then(function (fallback) {
-
 					if (fallback) {
 						return fallback;
 					}
-
-					throw err;
-
+					return new Response("", {
+						status: 503
+					});
 				});
-
 		})
-
 
 		.finally(function () {
 
 			IN_FLIGHT.delete(key);
 
 		});
-
 
 	IN_FLIGHT.set(
 		key,
@@ -563,23 +542,27 @@ function fetchAndCache(cache, request) {
 // твой image cache.
 // =====================================================
 
+
 function fetchImageRequest(request) {
 
-	if (
-		coepCredentialless
-		&& request.mode === "no-cors"
-	) {
+	let url = new URL(request.url);
 
+	// Apply credentialless to cross-origin no-cors requests
+	if (
+		coepCredentialless &&
+		request.mode === "no-cors" &&
+		url.origin !== self.location.origin
+	) {
 		return fetch(
 			new Request(request, {
 				credentials: "omit"
 			})
 		);
-
 	}
 
 	return fetch(request);
 }
+
 
 
 // =====================================================
