@@ -53,6 +53,10 @@ function notifyImageCacheResult(clientId, url, cached) {
 		console.warn("[SW] Missing clientId:", url);
 		return Promise.resolve();
 	}
+	
+	if (!cached) {
+		console.warn("[SW] Image caching failed:", url);
+	}
 
 	return self.clients.get(clientId)
 

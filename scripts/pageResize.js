@@ -66,6 +66,7 @@ function waitImageCacheResult(url) {
 
 	return new Promise(function (resolve) {
 		let timeout = setTimeout(function () {
+			console.warn("[Image Cache] Timeout:", url);
 			imageCacheResults.delete(url);
 			resolve(false);
 		}, 10000);
