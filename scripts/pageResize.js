@@ -476,7 +476,7 @@ function processPageResize(lang) {
 		if ("serviceWorker" in navigator && !(page.startsWith("/about_me") || page.startsWith("/news") || page.startsWith("/site_map") || 	page.startsWith("/html_editor"))) {
 			requestIdleCallback(() => {
 				navigator.serviceWorker.ready.then(() => {
-					preloadImagesGeneral();
+					if (navigator.serviceWorker.controller) preloadImagesGeneral();
 				});
 			});
 		}

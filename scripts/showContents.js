@@ -629,7 +629,7 @@ function showContents(type, sortby, lang) {
 			if ("serviceWorker" in navigator) {
 				requestIdleCallback(() => {
 					navigator.serviceWorker.ready.then(() => {
-						preloadImagesContents(type, docs);
+						if (navigator.serviceWorker.controller) preloadImagesContents(type, docs);
 					});
 				});
 			}
@@ -640,7 +640,7 @@ function showContents(type, sortby, lang) {
 		if ("serviceWorker" in navigator) {
 			requestIdleCallback(() => {
 				navigator.serviceWorker.ready.then(() => {
-					preloadImagesGeneral();
+					if (navigator.serviceWorker.controller) preloadImagesGeneral();
 				});
 			});
 		}

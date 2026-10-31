@@ -217,11 +217,13 @@ function updateAboutMeImage3(lang, i) {
 		const Img2 = document.getElementById("iotd");
 		Img2.replaceWith(Img);
 		if (!imagesCachingStarted && "serviceWorker" in navigator) {
-			imagesCachingStarted = true;
 			requestIdleCallback(() => {
 				navigator.serviceWorker.ready.then(() => {
-					preloadImagesGeneral();
-					preloadImagesIOTD();
+					if (navigator.serviceWorker.controller && !imagesCachingStarted) {
+						imagesCachingStarted = true;
+						preloadImagesGeneral();
+						preloadImagesIOTD();
+					}
 				});
 			});
 		}
