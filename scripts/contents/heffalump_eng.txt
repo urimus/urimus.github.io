@@ -1,0 +1,2 @@
+﻿<b class="text_red_blue">Heffalump <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></b>
+&#9679; <a href="heffalump_eng.html" class = "standardb_red" data-added="23rd of Nov, 2018." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Heffalump <font color="lightcoral"><sup>&#9760; Criminal &#9760;</sup></font></a>
