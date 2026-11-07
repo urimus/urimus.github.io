@@ -312,9 +312,9 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// ============================================================
 
 	console.groupCollapsed("Legend");
-	console.log(`%c${POINT}%c ${unit !== "ms" ? "Speedup: " : ""}Normal Execution (Summary Does Not Fit Lines)`, COLORS.normalPoint, "");
+	console.log(`%c${POINT}%c ${unit !== "ms" ? "Speedup of " : ""}Normal Execution (Summary Does Not Fit Lines)`, COLORS.normalPoint, "");
 	if (unit === "ms") console.log(`%c${APPROXIMATION_POINT}%c Theil–Sen Approximation`, COLORS.approximation, "");
-	console.log(`%c${POINT}%c ${unit !== "ms" ? "Speedup: " : ""}Early Exit (Summary Fits Lines)`, COLORS.earlyPoint, "");
+	console.log(`%c${POINT}%c ${unit !== "ms" ? "Speedup of " : ""}Early Exit (Summary Fits Lines)`, COLORS.earlyPoint, "");
 	console.log(`%c${MEASURED_LINE}%c Measured Summary Size:`, COLORS.measuredLine, "", measuredLines, "Lines");
 	console.groupEnd();
 
