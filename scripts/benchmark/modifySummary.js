@@ -326,11 +326,11 @@ function consolePlot(title, perf, unit = "ms", description) {
 		const getEquation = (regression) =>
 			`y(x) = ${regression.slope.toFixed(4)}x ${regression.intercept < 0 ? "−" : "+"} ${Math.abs(regression.intercept).toFixed(4)}`;
 		if (unit === "ms") {
-			console.groupCollapsed(`Theil–Sen Regression for %cNormal Execution%c Points`, COLORS.normalPoint, "");
+			console.groupCollapsed(`Theil–Sen Regression for %cNormal Execution Points%c`, COLORS.normalPoint, "");
 			console.log(`${getEquation(regression)} (${unit})`);
 			console.log("Midpoint: (", regression.midpoint, ",", round(regression.midpointValue), ")");
 		} else {
-			console.groupCollapsed(`Comparison of the Values of Theil–Sen Regressions at the Midpoint of %cNormal Execution%c Points`, COLORS.normalPoint, "");
+			console.groupCollapsed(`Comparison of the Values of Theil–Sen Regressions at the Midpoint of %cNormal Execution Points%c`, COLORS.normalPoint, "");
 			console.log("Midpoint:", regression.midpoint);
 			const regressionA = regression.regressionA;
 			const regressionB = regression.regressionB;
