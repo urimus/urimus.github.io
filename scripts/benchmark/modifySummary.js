@@ -232,7 +232,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 
 	// ============================================================
-	// Y AXIS UNIT + MEASURED LINES LABEL
+	// Y AXIS UNIT + EXECUTION LABELS + MEASURED LINES LABEL
 	// ============================================================
 
 	const yAxisPosition = 9;
@@ -240,10 +240,32 @@ function consolePlot(title, perf, unit = "ms", description) {
 	let output = `%c${" ".repeat(unitStart)}${unit}`;
 	const styles = [COLORS.labels];
 	if (measuredLinesCol !== null) {
-		const measuredLabel = String(measuredLines);
-		const measuredLabelStart = yAxisPosition + 1 + measuredLinesCol - Math.ceil(measuredLabel.length / 2);
-		output += `%c${" ".repeat(Math.max(0, measuredLabelStart - unitStart - unit.length))}${measuredLabel}`;
-		styles.push(COLORS.measuredLine);
+		const etePosition = Math.round(measuredLinesCol / 2);
+		const erPosition = Math.round((measuredLinesCol + WIDTH - 1) / 2);
+		const labels = [
+			{
+				text: "End-to-End Executions",
+				position: etePosition,
+				color: COLORS.ETEPoint
+			},
+			{
+				text: String(measuredLines),
+				position: measuredLinesCol,
+				color: COLORS.measuredLine
+			},
+			{
+				text: "Early Return Executions",
+				position: erPosition,
+				color: COLORS.ERPoint
+			}
+		];
+		let cursor = unitStart + unit.length;
+		for (const label of labels) {
+			const start = label.position - Math.ceil(label.text.length / 2);
+			output += `%c${" ".repeat(Math.max(0, start - cursor))}${label.text}`;
+			styles.push(label.color);
+			cursor = Math.max(cursor, start) + label.text.length;
+		}
 	}
 	console.log(output, ...styles);
 
