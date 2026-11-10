@@ -260,7 +260,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 		let cursor = unitStart + unit.length;
 		for (const label of labels) {
-			const start = yAxisPosition + label.position - Math.floor(label.text.length / 2);
+			const start = yAxisPosition + 1 + label.position - Math.ceil(label.text.length / 2);
 			output += `%c${" ".repeat(Math.max(0, start - cursor))}${label.text}`;
 			styles.push(label.color);
 			cursor = Math.max(cursor, start) + label.text.length;
