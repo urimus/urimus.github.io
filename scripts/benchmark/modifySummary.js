@@ -246,24 +246,24 @@ function consolePlot(title, perf, unit = "ms", description) {
 			? [
 				{
 					text: "End-to-End Executions",
-					position: 1 + Math.ceil(measuredLinesCol / 2),
+					position: Math.ceil((measuredLinesCol + 1) / 2),
 					color: COLORS.ETEPoint
 				},
 				{
 					text: String(measuredLines),
-					position: 1 + measuredLinesCol,
+					position: measuredLinesCol + 1,
 					color: COLORS.measuredLine
 				},
 				{
 					text: "Early Return Executions",
-					position: 1 + measuredLinesCol + Math.ceil((WIDTH - measuredLinesCol) / 2),
+					position: measuredLinesCol + 1 + Math.ceil((WIDTH - measuredLinesCol) / 2)
 					color: COLORS.ERPoint
 				}
 			]
 			: [
 				{
 					text: "Early Return Executions",
-					position: 1 + Math.ceil((WIDTH - 1) / 2),
+					position: Math.ceil((WIDTH + 1) / 2),
 					color: COLORS.ERPoint
 				}
 			])
