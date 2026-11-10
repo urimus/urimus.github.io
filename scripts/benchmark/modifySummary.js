@@ -319,7 +319,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	console.groupCollapsed("Legend");
 	if (unit === "ms") {
 		console.log(`%c${POINT} End-to-End Executions (Summary Does Not Fit Lines)`, COLORS.ETEPoint);
-		console.log(`%c${APPROXIMATION_POINT}%c %cTheil–Sen Approximation`, COLORS.approximation, "", COLORS.ETEPoint);
+		console.log(`%c${APPROXIMATION_POINT}%c %cTheil–Sen Approximation of End-to-End Executions`, COLORS.approximation, "", COLORS.ETEPoint);
 		console.log(`%c${POINT} Early Return Executions (Summary Fits Lines)`, COLORS.ERPoint);
 	} else {
 		console.log(`%c${POINT} Speedups Across End-to-End Executions (Summary Does Not Fit Lines)`, COLORS.ETEPoint);
