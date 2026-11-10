@@ -1,0 +1,2 @@
+﻿<b class="text_blue">Ссылки</b>
+&#9679; <a href="links_rus.html" class = "standardb_blue" data-added="09е Авг, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Ссылки</a>

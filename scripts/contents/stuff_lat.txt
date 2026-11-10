@@ -1,0 +1,7 @@
+﻿<b class="text_black_blue">Res <font color="red"><sup>&#9889; Evil &#9889;</sup></font></b>
+&#9679; <a href="stuff_different_lat.html" class = "standardb_black" data-added="20 Iun, 2016." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Miscellanea</a>
+&#9679; <a href="stuff_chupacabra_lat.html" class = "standardb_black" data-added="14 Dec, 2017." data-lang="sp" data-title_orig="Chupacabras" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Chupacabra</a>
+&#9679; <a href="stuff_hyperspace_lat.html" class = "standardb_black" data-added="18 Iul, 2017." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Hyperspace</a>
+&#9679; <a href="stuff_images_general_lat.html" class = "standardb_black" data-added="21 Iul, 2017." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Imaginibus</a>
+&#9679; <a href="stuff_matrix_lat.html#matrix" class = "standardb_black" data-added="10 Mai, 2023." onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Matrix <font color="red"><sup>&#9889; Evil &#9889;</sup></font></a>
+&#9679; <a href="stuff_star_trek_discovery_lat.html" class = "standardb_black" data-added="30 Mai, 2024." data-country="usa" data-year="2017" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Star Trek: Discovery</a>

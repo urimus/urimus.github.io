@@ -1,0 +1,19 @@
+﻿<b class="text_green_blue">Personalities</b>
+
+&#9679; <a href="personalities_ancient_rome_eng.html" class = "standardb_green" data-added="09th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Ancient Rome</a>
+<span style="padding-left:10px;">- <a href="personalities_ancient_rome_eng.html#caesar" class = "standardb_green" data-added="09th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Julius Caesar</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ancient_rome_eng.html#cato_the_elder" class = "standardb_green" data-added="09th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Cato the Elder</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ancient_rome_eng.html#plutarch" class = "standardb_green" data-added="09th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Plutarch</a></span>
+
+&#9679; <a href="personalities_middle_ages_eng.html" class = "standardb_green" data-added="09th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Middle Ages</a>
+<span style="padding-left:10px;">- <a href="personalities_ancient_rome_eng.html#nostradamus" class = "standardb_green" data-added="09th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Nostradamus</a></span>
+
+&#9679; <a href="personalities_ussr_eng.html" class = "standardb_green" data-added="08th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">USSR</a>
+<span style="padding-left:10px;">- <a href="personalities_ussr_eng.html#lenin" class = "standardb_green" data-added="08th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">8 November 1917 — 21 January 1924 - Vladimir Lenin</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_eng.html#stalin" class = "standardb_green" data-added="08th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">21 January 1924 — 5 March 1953 - Joseph Stalin</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_eng.html#malenkov" class = "standardb_green" data-added="08th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">5 March 1953 — 8 February 1955 - Georgy Malenkov</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_eng.html#hrushev" class = "standardb_green" data-added="08th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">7 September 1953 — 14 October 1964 - Nikita Khrushchev</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_eng.html#brezhnev" class = "standardb_green" data-added="08th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">14 October 1964 — 10 November 1982 - Leonid Brezhnev</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_eng.html#andropov" class = "standardb_green" data-added="08th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">12 November 1982 — 9 February 1984 - Yuri Andropov</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_eng.html#chernenko" class = "standardb_green" data-added="08th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">13 February 1984 — 10 March 1985 - Konstantin Chernenko</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_eng.html#gorbachev" class = "standardb_green" data-added="08th of Sep, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">11 March 1985 — 25 December 1991 - Mikhail Gorbachev</a></span>

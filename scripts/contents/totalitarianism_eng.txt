@@ -1,0 +1,2 @@
+﻿<b class="text_green_blue">Totalitarianism</b>
+&#9679; <a href="totalitarianism_eng.html" class = "standardb_green" data-added="01st of Aug, 2016." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Totalitarianism</a>

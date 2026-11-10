@@ -1,0 +1,7 @@
+﻿<b class="text_red_blue">Anecdotes</b>
+&#9679; <a href="anekdots_general_eng.html" class = "standardb_red" data-added="17th of Jul, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">General</a>
+&#9679; <a href="anekdots_lieutenant_rzhevskiy_eng.html" class = "standardb_red" data-added="24th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Lieutenant Rzhevskiy</a>
+&#9679; <a href="anekdots_nuthouse_eng.html" class = "standardb_red" data-added="24th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Nuthouse</a>
+&#9679; <a href="anekdots_politics_eng.html" class = "standardb_red" data-added="06th of Nov, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Politics</a>
+&#9679; <a href="anekdots_students_eng.html" class = "standardb_red" data-added="24th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Students</a>
+&#9679; <a href="anekdots_vovochka_eng.html" class = "standardb_red" data-added="24th of Feb, 2017." onmouseenter="showSubMenu(this, 'eng', 'contentsLink');">Vovochka</a>

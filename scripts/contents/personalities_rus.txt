@@ -1,0 +1,19 @@
+﻿<b class="text_green_blue">Деятели</b>
+
+&#9679; <a href="personalities_ancient_rome_rus.html" class = "standardb_green" data-added="09е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Древний Рим</a>
+<span style="padding-left:10px;">- <a href="personalities_ancient_rome_rus.html#caesar" class = "standardb_green" data-added="09е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Гай Юлий Цезарь</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ancient_rome_rus.html#cato_the_elder" class = "standardb_green" data-added="09е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Марк Порций Катон Старший</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ancient_rome_rus.html#plutarch" class = "standardb_green" data-added="09е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Плутарх</a></span>
+
+&#9679; <a href="personalities_middle_ages_rus.html" class = "standardb_green" data-added="09е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Средние Века</a>
+<span style="padding-left:10px;">- <a href="personalities_ancient_rome_rus.html#nostradamus" class = "standardb_green" data-added="09е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Нострадамус</a></span>
+
+&#9679; <a href="personalities_ussr_rus.html" class = "standardb_green" data-added="08е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">СССР</a>
+<span style="padding-left:10px;">- <a href="personalities_ussr_rus.html#lenin" class = "standardb_green" data-added="08е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">8 ноября 1917 — 21 января 1924 - Владимир Ильич Ленин</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_rus.html#stalin" class = "standardb_green" data-added="08е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">21 января 1924 — 5 марта 1953 - Иосиф Виссарионович Сталин</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_rus.html#malenkov" class = "standardb_green" data-added="08е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">5 марта 1953 — 8 февраля 1955 - Георгий Максимилианович Маленков</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_rus.html#hrushev" class = "standardb_green" data-added="08е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">7 сентября 1953 — 14 октября 1964 - Никита Сергеевич Хрущёв</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_rus.html#brezhnev" class = "standardb_green" data-added="08е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">14 октября 1964 — 10 ноября 1982 - Леонид Ильич Брежнев</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_rus.html#andropov" class = "standardb_green" data-added="08е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">12 ноября 1982 — 9 февраля 1984 - Юрий Владимирович Андропов</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_rus.html#chernenko" class = "standardb_green" data-added="08е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">13 февраля 1984 — 10 марта 1985 - Константин Устинович Черненко</a></span>
+<span style="padding-left:10px;">- <a href="personalities_ussr_rus.html#gorbachev" class = "standardb_green" data-added="08е Сен, 2016." onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">11 марта 1985 — 25 декабря 1991 - Михаил Сергеевич Горбачёв</a></span>
