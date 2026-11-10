@@ -234,9 +234,6 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// ============================================================
 	// Y AXIS UNIT + EXECUTION LABELS + MEASURED LINES LABEL
 	// ============================================================
-	// ============================================================
-	// Y AXIS UNIT + EXECUTION LABELS + MEASURED LINES LABEL
-	// ============================================================
 
 	const yAxisPosition = 9;
 	const unitStart = Math.max(0, yAxisPosition - Math.ceil(unit.length / 2));
