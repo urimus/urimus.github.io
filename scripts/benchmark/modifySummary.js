@@ -319,7 +319,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// X LABELS
 	// ============================================================
 
-	const labels = Array(WIDTH).fill(" ");
+	const xlabels = Array(WIDTH).fill(" ");
 	const xIndexes = [
 		0,
 		Math.round((times.length - 1) * 0.25),
@@ -339,10 +339,10 @@ function consolePlot(title, perf, unit = "ms", description) {
 			)
 		);
 		for (let i = 0; i < text.length; i++) {
-			labels[start + i] = text[i];
+			xlabels[start + i] = text[i];
 		}
 	}
-	console.log(`%c         ${labels.join("")}`, COLORS.labels);
+	console.log(`%c         ${xlabels.join("")}`, COLORS.labels);
 
 	// ============================================================
 	// LEGEND
