@@ -320,7 +320,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 		console.log(`%c${POINT} Speedups Across End-to-End Executions (Summary Does Not Fit Lines)`, COLORS.ETEPoint);
 		console.log(`%c${POINT} Speedups Across Early Return Executions (Summary Fits Lines)`, COLORS.ERPoint);
 	}
-	console.log(`%c${MEASURED_LINE} Measured Summary Lines:`, COLORS.measuredLine, measuredLines);
+	console.log(`%c${MEASURED_LINE} Measured Lines Count in Summary:`, COLORS.measuredLine, measuredLines);
 	console.groupEnd();
 
 	// ============================================================
@@ -487,7 +487,7 @@ function testSummary(wordsCount) {
 	// because performance.now() has sufficient precision.
 	const measureFixingTime = timerMinimum * 10;
 
-	console.group("Test Data:");
+	console.group("Test Data - Summary:");
 	console.groupCollapsed("Words");
 	console.log(words);
 	console.groupEnd();
