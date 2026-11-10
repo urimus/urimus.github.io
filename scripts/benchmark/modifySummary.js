@@ -237,17 +237,15 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	const yAxisPosition = 9;
 	const unitStart = Math.max(0, yAxisPosition - Math.ceil(unit.length / 2));
-
-	const measuredLabel = String(measuredLines);
-	const measuredLabelStart = measuredLinesCol !== null
-		? yAxisPosition + 1 + measuredLinesCol - Math.floor(measuredLabel.length / 2)
-		: yAxisPosition + 1;
-
-	const output = 
-		`%c${" ".repeat(unitStart)}${unit}` +
-		`%c${" ".repeat(Math.max(1, measuredLabelStart - unitStart - unit.length))}${measuredLabel}`;
-
-	console.log(output, COLORS.labels, COLORS.measuredLine);
+	let output = `%c${" ".repeat(unitStart)}${unit}`;
+	const styles = [COLORS.labels];
+	if (measuredLinesCol !== null) {
+		const measuredLabel = String(measuredLines);
+		const measuredLabelStart = yAxisPosition + measuredLinesCol - Math.floor(measuredLabel.length / 2);
+		output += `%c${" ".repeat(Math.max(0, measuredLabelStart - unitStart - unit.length))}${measuredLabel}`;
+		styles.push(COLORS.measuredLine);
+	}
+	console.log(output, ...styles);
 
 	// ============================================================
 	// GRAPH
