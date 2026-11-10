@@ -239,14 +239,14 @@ function consolePlot(title, perf, unit = "ms", description) {
 	const labels = [
 		{
 			text: unit,
-			position: yAxisPosition,
+			position: 0,
 			color: COLORS.labels
 		},
 		...(measuredLinesCol !== null
 			? [
 				{
 					text: "End-to-End Executions",
-					position: Math.round(measuredLinesCol / 2),
+					position: Math.ceil(measuredLinesCol / 2),
 					color: COLORS.ETEPoint
 				},
 				{
@@ -256,14 +256,14 @@ function consolePlot(title, perf, unit = "ms", description) {
 				},
 				{
 					text: "Early Return Executions",
-					position: Math.round((measuredLinesCol + WIDTH - 1) / 2),
+					position: Math.ceil((measuredLinesCol + WIDTH - 1) / 2),
 					color: COLORS.ERPoint
 				}
 			]
 			: [
 				{
 					text: "Early Return Executions",
-					position: Math.round((WIDTH - 1) / 2),
+					position: Math.ceil((WIDTH - 1) / 2),
 					color: COLORS.ERPoint
 				}
 			])
