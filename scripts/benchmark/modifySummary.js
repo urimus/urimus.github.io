@@ -238,8 +238,11 @@ function consolePlot(title, perf, unit = "ms", description) {
 	const yAxisPosition = 9;
 	const unitStart = Math.max(0, yAxisPosition - Math.ceil(unit.length / 2));
 	console.log(
-		`%c${" ".repeat(unitStart)}${unit}`,
-		COLORS.labels
+		`%c${" ".repeat(unitStart)}${unit}%c${" ".repeat(measuredLinesCol !== null
+			? 10 + measuredLinesCol - unitStart - unit.length
+			: 1)}${MEASURED_LINE} ${measuredLines}`,
+		COLORS.labels,
+		COLORS.measuredLine
 	);
 
 	// ============================================================
