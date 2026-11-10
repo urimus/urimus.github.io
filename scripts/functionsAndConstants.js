@@ -126,13 +126,9 @@ function extractSummaryWords(html) {
 		FORBID_TAGS: ["figure", "img"],
 		RETURN_DOM: true
 	});
-
 	const lines = [];
 	const paragraphs = doc.querySelectorAll("p");
-
-	const elements = paragraphs.length
-		? paragraphs
-		: [doc];
+	const elements = paragraphs.length ? paragraphs : [doc];
 
 	elements.forEach(el => {
 		el.textContent
@@ -140,10 +136,7 @@ function extractSummaryWords(html) {
 			.split("\n")
 			.forEach(line => {
 				line = line.trim();
-
-				if (line) {
-					lines.push(line);
-				}
+				if (line) lines.push(line);
 			});
 	});
 
@@ -151,13 +144,10 @@ function extractSummaryWords(html) {
 	if (lines.length === 1) return splitAllSpaces(lines[0]);
 
 	const result = [];
-	const paddingSpan = "<span style='padding-left:10px;'><span>";
+	const paragraphIndent = "<br><span style='padding-left:10px;'><span>";
 	lines.forEach((line, index) => {
 		const words = splitAllSpaces(line);
-		if (words.length) {
-			words[0] =
-				(index === 0 ? paddingSpan : "<br>" + paddingSpan) + words[0];
-		}
+		if (words.length && index > 0) words[0] = paragraphIndent + words[0];
 		result.push(...words);
 	});
 	return result;
