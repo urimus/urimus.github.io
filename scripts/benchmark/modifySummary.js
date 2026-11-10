@@ -241,7 +241,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	const styles = [COLORS.labels];
 	if (measuredLinesCol !== null) {
 		const measuredLabel = String(measuredLines);
-		const measuredLabelStart = yAxisPosition + measuredLinesCol - Math.floor(measuredLabel.length / 2);
+		const measuredLabelStart = yAxisPosition + measuredLinesCol - Math.ceil(measuredLabel.length / 2) + 1;
 		output += `%c${" ".repeat(Math.max(0, measuredLabelStart - unitStart - unit.length))}${measuredLabel}`;
 		styles.push(COLORS.measuredLine);
 	}
