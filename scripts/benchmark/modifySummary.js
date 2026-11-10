@@ -79,7 +79,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 		earlyReturns,
 		min,
 		max,
-		measuredLines,
+		empiricalLines,
 		mean,
 		meanER,
 		meanETE,
@@ -108,7 +108,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 		ERPoint: "color: #bd93f9;",
 		axis: "color: #888;",
 		labels: "color: #aaa;",
-		measuredLine: "color: #888;"
+		empiricalLine: "color: #888;"
 	};
 
 	if (times.length === 0) {
@@ -130,7 +130,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// Symbols
 	const POINT = "●";
 	const APPROXIMATION_POINT = "∙"; // ○×·∙
-	const MEASURED_LINE = "╎";
+	const EMPIRICAL_LINE = "╎";
 	const AXIS = "│";
 	const H_AXIS = "─";
 	const CORNER = "└";
@@ -151,10 +151,10 @@ function consolePlot(title, perf, unit = "ms", description) {
 		);
 	}
 
-	const measuredLinesIndex = measuredLines - 1;
-	const measuredLinesCol =
-		measuredLines >= 1 && measuredLines <= times.length
-			? indexToCol(measuredLinesIndex)
+	const empiricalLinesIndex = empiricalLines - 1;
+	const empiricalLinesCol =
+		empiricalLines >= 1 && empiricalLines <= times.length
+			? indexToCol(empiricalLinesIndex)
 			: null;
 
 	// ============================================================
@@ -200,15 +200,15 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 
 	// ============================================================
-	// MEASURED LINE
+	// EMPIRICAL LINES COUNT
 	// ============================================================
 
-	if (measuredLinesCol !== null) {
+	if (empiricalLinesCol !== null) {
 		for (let row = 0; row <= HEIGHT; row++) {
-			if (grid[row][measuredLinesCol].char === " ") {
-				grid[row][measuredLinesCol] = {
-					char: MEASURED_LINE,
-					style: COLORS.measuredLine
+			if (grid[row][empiricalLinesCol].char === " ") {
+				grid[row][empiricalLinesCol] = {
+					char: EMPIRICAL_LINE,
+					style: COLORS.empiricalLine
 				};
 			}
 		}
@@ -232,7 +232,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	}
 
 	// ============================================================
-	// Y AXIS UNIT + EXECUTION LABELS + MEASURED LINES LABEL
+	// Y AXIS UNIT + EXECUTION LABELS + EMPIRICAL LINES LABEL
 	// ============================================================
 
 	const yAxisPosition = 9;
@@ -242,21 +242,21 @@ function consolePlot(title, perf, unit = "ms", description) {
 			position: 0,
 			color: COLORS.labels
 		},
-		...(measuredLinesCol !== null
+		...(empiricalLinesCol !== null
 			? [
 				{
 					text: "End-to-End Executions",
-					position: Math.ceil((measuredLinesCol + 1) / 2),
+					position: Math.ceil((empiricalLinesCol + 1) / 2),
 					color: COLORS.ETEPoint
 				},
 				{
-					text: String(measuredLines),
-					position: measuredLinesCol + 1,
-					color: COLORS.measuredLine
+					text: String(empiricalLines),
+					position: empiricalLinesCol + 1,
+					color: COLORS.empiricalLine
 				},
 				{
 					text: "Early Return Executions",
-					position: measuredLinesCol + 1 + Math.ceil((WIDTH - measuredLinesCol) / 2),
+					position: empiricalLinesCol + 1 + Math.ceil((WIDTH - empiricalLinesCol) / 2),
 					color: COLORS.ERPoint
 				}
 			]
@@ -357,7 +357,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 		console.log(`%c${POINT} Speedups Across End-to-End Executions (Summary Does Not Fit Lines)`, COLORS.ETEPoint);
 		console.log(`%c${POINT} Speedups Across Early Return Executions (Summary Fits Lines)`, COLORS.ERPoint);
 	}
-	console.log(`%c${MEASURED_LINE} Measured Lines Count in Summary:`, COLORS.measuredLine, measuredLines);
+	console.log(`%c${EMPIRICAL_LINE} Empirical Lines Count in Summary:`, COLORS.empiricalLine, empiricalLines);
 	console.groupEnd();
 
 	// ============================================================
@@ -547,7 +547,7 @@ function testSummary(wordsCount) {
 			max: 0,
 			times: [],
 			earlyReturns: [],
-			measuredLines: null
+			empiricalLines: null
 		});
 	}
 
@@ -561,10 +561,10 @@ function testSummary(wordsCount) {
 		totalSum += time;
 		perf.times.push(time);
 		perf.earlyReturns.push(isEarlyExit);
-		if (isEarlyExit && perf.measuredLines === null) perf.measuredLines = perf.count;
+		if (isEarlyExit && perf.empiricalLines === null) perf.empiricalLines = perf.count;
 		if (time < perf.min) perf.min = time;
 		if (time > perf.max) perf.max = time;
-		return perf.measuredLines;
+		return perf.empiricalLines;
 	}
 
 	let labelTime = performance.now();
@@ -616,8 +616,8 @@ function testSummary(wordsCount) {
 				time = totalTime / runs;
 			}
 
-			const measuredLines = addPerf(perfData.get(algorithm), time, isEarlyExit);
-			if (measuredLines !== null && line >= measuredLines + (measuredLines - 1) * EXTRA_LINES_RATIO) {
+			const empiricalLines = addPerf(perfData.get(algorithm), time, isEarlyExit);
+			if (empiricalLines !== null && line >= empiricalLines + (empiricalLines - 1) * EXTRA_LINES_RATIO) {
 				measurementComplete = true;
 			}
 		}
@@ -754,10 +754,10 @@ function testSummary(wordsCount) {
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
 		if (!perf?.times?.length) continue;
-		if (perf.measuredLines !== actualLines) {
+		if (perf.empiricalLines !== actualLines) {
 			console.error(
 				algorithm.name,
-				"Measured Lines:", perf.measuredLines,
+				"Empirical Lines:", perf.empiricalLines,
 				"!== Actual Lines:", actualLines
 			);
 			hasErrors = true;
@@ -839,7 +839,7 @@ function testSummary(wordsCount) {
 			max,
 			times,
 			earlyReturns: [...perfFast.earlyReturns],
-			measuredLines: perfFast.measuredLines
+			empiricalLines: perfFast.empiricalLines
 		};
 		return result;
 	}
