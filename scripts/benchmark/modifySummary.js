@@ -236,35 +236,46 @@ function consolePlot(title, perf, unit = "ms", description) {
 	// ============================================================
 
 	const yAxisPosition = 9;
-	const unitStart = Math.max(0, yAxisPosition - Math.ceil(unit.length / 2));
-	let output = `%c${" ".repeat(unitStart)}${unit}`;
-	const styles = [COLORS.labels];
-	if (measuredLinesCol !== null) {
-		const labels = [
-			{
-				text: "End-to-End Executions",
-				position: Math.round(measuredLinesCol / 2),
-				color: COLORS.ETEPoint
-			},
-			{
-				text: String(measuredLines),
-				position: measuredLinesCol,
-				color: COLORS.measuredLine
-			},
-			{
-				text: "Early Return Executions",
-				position: Math.round((measuredLinesCol + WIDTH - 1) / 2),
-				color: COLORS.ERPoint
-			}
-		];
-
-		let cursor = unitStart + unit.length;
-		for (const label of labels) {
-			const start = yAxisPosition + 1 + label.position - Math.ceil(label.text.length / 2);
-			output += `%c${" ".repeat(Math.max(0, start - cursor))}${label.text}`;
-			styles.push(label.color);
-			cursor = Math.max(cursor, start) + label.text.length;
-		}
+	const labels = [
+		{
+			text: unit,
+			position: yAxisPosition,
+			color: COLORS.labels
+		},
+		...(measuredLinesCol !== null
+			? [
+				{
+					text: "End-to-End Executions",
+					position: Math.round(measuredLinesCol / 2),
+					color: COLORS.ETEPoint
+				},
+				{
+					text: String(measuredLines),
+					position: measuredLinesCol,
+					color: COLORS.measuredLine
+				},
+				{
+					text: "Early Return Executions",
+					position: Math.round((measuredLinesCol + WIDTH - 1) / 2),
+					color: COLORS.ERPoint
+				}
+			]
+			: [
+				{
+					text: "Early Return Executions",
+					position: Math.round((WIDTH - 1) / 2),
+					color: COLORS.ERPoint
+				}
+			])
+	];
+	let output = "";
+	const styles = [];
+	let cursor = 0;
+	for (const label of labels) {
+		const start = yAxisPosition + label.position - Math.ceil(label.text.length / 2);
+		output += `%c${" ".repeat(Math.max(0, start - cursor))}${label.text}`;
+		styles.push(label.color);
+		cursor = Math.max(cursor, start) + label.text.length;
 	}
 	console.log(output, ...styles);
 
