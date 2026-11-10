@@ -256,7 +256,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 				},
 				{
 					text: "Early Return Executions",
-					position: 1 + Math.ceil((measuredLinesCol + WIDTH - 1) / 2),
+					position: 1 + measuredLinesCol + Math.ceil((WIDTH - measuredLinesCol) / 2),
 					color: COLORS.ERPoint
 				}
 			]
