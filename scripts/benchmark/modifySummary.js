@@ -766,8 +766,8 @@ function testSummary(wordsCount) {
 			hasErrors = true;
 			continue;
 		}
-		if (perf.regression.slope <= 0) {
-			console.error(`${algorithm.name}: Invalid regression slope:`, round(perf.regression.slope));
+		if (perf.regression.slope < 0) {
+			console.error(`${algorithm.name}: Negative regression slope:`, round(perf.regression.slope));
 			hasErrors = true;
 			continue;
 		}
