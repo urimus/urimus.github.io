@@ -757,11 +757,17 @@ function testSummary(wordsCount) {
 		const perf = perfData.get(algorithm);
 		if (!perf?.times?.length) continue;
 		if (perf.empiricalLines !== actualLines) {
-			console.error(
-				algorithm.name,
-				"Empirical Lines:", perf.empiricalLines,
-				"!== Actual Lines:", actualLines
-			);
+			console.error(algorithm.name, "Empirical Lines:", perf.empiricalLines, "!== Actual Lines:", actualLines);
+			hasErrors = true;
+			continue;
+		}
+		if (perf.regression == null) {
+			console.error(algorithm.name, "Missing Regression Data.");
+			hasErrors = true;
+			continue;
+		}
+		if (perf.regression.slope <= 0) {
+			console.error(algorithm.name, "Invalid Regression Slope:", perf.regression.slope);
 			hasErrors = true;
 			continue;
 		}
@@ -866,10 +872,6 @@ function testSummary(wordsCount) {
 		}
 		if (perfA.times.length !== perfB.times.length) {
 			console.error("Cannot create speedup: different times length.");
-			return;
-		}
-		if (perfA.regression == null || perfB.regression == null) {
-			console.error("Cannot compare speedup: missing regression data.");
 			return;
 		}
 		
