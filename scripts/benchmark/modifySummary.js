@@ -113,11 +113,13 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	if (times.length === 0) {
 		console.log("No measurements.");
+		console.groupEnd();
 		return;
 	}
 
 	if (times.length === 1) {
 		console.log("Single Measurement:", round(times[0], 3), unit);
+		console.groupEnd();
 		return;
 	}
 
