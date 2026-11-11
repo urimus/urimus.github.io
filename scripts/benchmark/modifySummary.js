@@ -757,17 +757,17 @@ function testSummary(wordsCount) {
 		const perf = perfData.get(algorithm);
 		if (!perf?.times?.length) continue;
 		if (perf.empiricalLines !== actualLines) {
-			console.error(algorithm.name, "Empirical Lines:", perf.empiricalLines, "!== Actual Lines:", actualLines);
+			console.error(`${algorithm.name}: Empirical Lines:`, perf.empiricalLines, "!== Actual Lines:", actualLines);
 			hasErrors = true;
 			continue;
 		}
 		if (perf.regression == null) {
-			console.error(algorithm.name, "Missing Regression Data.");
+			console.error(`${algorithm.name}: Missing regression data.`);
 			hasErrors = true;
 			continue;
 		}
 		if (perf.regression.slope <= 0) {
-			console.error(algorithm.name, "Invalid Regression Slope:", perf.regression.slope);
+			console.error(`${algorithm.name}: Invalid regression slope:`, round(perf.regression.slope));
 			hasErrors = true;
 			continue;
 		}
