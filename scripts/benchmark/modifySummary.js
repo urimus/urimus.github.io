@@ -850,24 +850,29 @@ function testSummary(wordsCount) {
 		const algB = getAlgorithm(algorithmB);
 		if (!algA) {
 			console.error("Algorithm", algorithmA, "not found.");
+			console.groupEnd();
 			return;
 		}
 		if (!algB) {
 			console.error("Algorithm", algorithmB, "not found.");
+			console.groupEnd();
 			return;
 		}
 		const perfA = perfData.get(algA);
 		const perfB = perfData.get(algB);
 		if (!perfA || !perfB) {
 			console.error("Cannot compare speedup: missing performance data.");
+			console.groupEnd();
 			return;
 		}
 		if (perfA.times.length !== perfB.times.length) {
 			console.error("Cannot create speedup: different times length.");
+			console.groupEnd();
 			return;
 		}
 		if (perfA.regression == null || perfB.regression == null) {
 			console.error("Cannot compare speedup: missing regression data.");
+			console.groupEnd();
 			return;
 		}
 		
