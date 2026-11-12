@@ -570,8 +570,9 @@ function testSummary(wordsCount) {
 	}
 
 	console.group("Benchmark Run");
-	let nextLabelTime = Math.floor((performance.now() - testStart) / 5000) * 5000 + 5000;
-	console.log("Processing started (elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
+	let elapsed = performance.now() - testStart;
+	let nextLabelTime = Math.floor(elapsed / 5000) * 5000 + 5000;
+	console.log("Processing started (elapsed:", round(elapsed / 1000, 2), "s)");
 
 	let line = MIN_LINES;
 	let measurementComplete = false;
@@ -579,9 +580,10 @@ function testSummary(wordsCount) {
 	while (true) {
 
 		if (line > SAFETY_MAX_LINES) break;
-
-		if (performance.now() - testStart > nextLabelTime) {
-			console.log("Processing: lines to show:", line,"(elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
+		
+		elapsed = performance.now() - testStart;
+		if (elapsed >= nextLabelTime) {
+			console.log("Processing: lines to show:", line,"(elapsed:", round(elapsed / 1000, 2), "s)");
 			nextLabelTime += 5000;
 		}
 
