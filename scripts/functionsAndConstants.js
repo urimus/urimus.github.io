@@ -559,7 +559,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 
 // ---------------------------------------------------------
 // Algorithm 3
-// Simple option using element height.
+// Simple option using measure span.
 // ---------------------------------------------------------
 
 function getElementLineInfo(element, lineHeight, linesToShow) {
