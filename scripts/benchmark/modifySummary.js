@@ -583,7 +583,7 @@ function testSummary(wordsCount) {
 
 		if (performance.now() - elapsedTimeStart - lastLabelTime > 5000) {
 			console.log("Processing: lines to show:", line,"(elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
-			lastLabelTime -= 5000;
+			lastLabelTime += 5000;
 		}
 
 		// Random order for all algorithms.
