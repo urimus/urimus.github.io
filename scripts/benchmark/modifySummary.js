@@ -570,9 +570,8 @@ function testSummary(wordsCount) {
 	}
 
 	console.group("Benchmark Run");
-	let lastLabelTime = performance.now();
-	const elapsedTimeStart = performance.now() - testStart;
-	console.log("Processing started (elapsed:", round(elapsedTimeStart / 1000, 2), "s)");
+	let nextLabelTime = 5000;
+	console.log("Processing started (elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
 
 	let line = MIN_LINES;
 	let measurementComplete = false;
@@ -581,9 +580,9 @@ function testSummary(wordsCount) {
 
 		if (line > SAFETY_MAX_LINES) break;
 
-		if (performance.now() - elapsedTimeStart - lastLabelTime > 5000) {
+		if (performance.now() - testStart > nextLabelTime) {
 			console.log("Processing: lines to show:", line,"(elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
-			lastLabelTime += 5000;
+			nextLabelTime += 5000;
 		}
 
 		// Random order for all algorithms.
