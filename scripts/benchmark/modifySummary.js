@@ -580,7 +580,7 @@ function testSummary(wordsCount) {
 
 		if (line > SAFETY_MAX_LINES) break;
 
-		if (performance.now() - testStart - lastLabelTime > 5000) {
+		if (performance.now() - lastLabelTime > 5000) {
 			console.log("Processing: lines to show:", line,"(elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
 			lastLabelTime = performance.now();
 		}
