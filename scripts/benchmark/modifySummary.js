@@ -878,7 +878,7 @@ function testSummary(wordsCount) {
 		// Determine which algorithm is faster by its Theil–Sen Regression for End-to-End Execution Points.
 		const slopeA = perfA.regression.slope;
 		const slopeB = perfB.regression.slope;
-		const isAFaster = slopeA <= slopeB;
+		const isAFaster = slopeA < slopeB;
 		
 		const perfFast = isAFaster ? perfA : perfB;
 		const perfSlow = isAFaster ? perfB : perfA;
