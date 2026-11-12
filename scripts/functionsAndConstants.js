@@ -559,75 +559,17 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 
 // ---------------------------------------------------------
 // Algorithm 3
-// Option using many pointers.
+// Simple option using element height.
 // ---------------------------------------------------------
 
-function formatSummaryWithPointers(pointerTops, words_arr, wordsCount) {
-	
-	const pointerSpan = '<span class="summary_word_pointer"></span>';
-
-	if (!pointerTops.length) {
-		return pointerSpan +
-			words_arr
-				.slice(0, wordsCount)
-				.join(pointerSpan + " ") + pointerSpan;
-	}
-
-	const currentWordsCount = pointerTops.length - 1;
-	if (wordsCount <= currentWordsCount) return formatSummary(words_arr, wordsCount);
-
-	return formatSummary(words_arr, currentWordsCount) + " " +
-		words_arr
-			.slice(currentWordsCount, wordsCount)
-			.join(pointerSpan + " ") + pointerSpan;
-}
-
-function getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, current) {
-
-	const isBinary = current != null;
-	const pointersCount = pointersLive.length - (isBinary ? 1 : 0);
-
-	for (let i = 0; i < pointersCount; i++) {
-		pointerTops.push(roundLayoutValue(pointersLive[i].getBoundingClientRect().top));
-	}
-
-	let linesCount = Math.max(1, Math.round((pointerTops[1] - pointerTops[0]) / lineHeight) + 1);
-	let wordsCount = 1;
-	let wordsCountM1 = 1;
-	let previousTop = pointerTops[1];
-	
-	const lastIndex = isBinary ? current : pointerTops.length - 1;
-
-	for (let i = 2; i <= lastIndex; i++) {
-		const top = pointerTops[i];
-		if (top > previousTop) {
-			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
-			previousTop = top;
-		}
-		if (linesCount > linesToShow) return { wordsCount, wordsCountM1 };
-		wordsCount = i;
-		if (linesCount <= linesToShow - 1) {
-			wordsCountM1 = i;
-		}
-	}
-	
-	if (isBinary) {
-		const firstTop = pointerTops[0];
-		const lastTop = roundLayoutValue(pointersLive[pointersLive.length - 1].getBoundingClientRect().top);
-		const expansionLines = Math.max(
-			1,
-			Math.round((lastTop - firstTop) / lineHeight) + 1
-		);
-
-		if (expansionLines > linesToShow) {
-			return {
-				wordsCount: Math.min(wordsCount, current - 1),
-				wordsCountM1
-			};
-		}
-	}
-	
-	return { wordsCount, wordsCountM1 };
+function getElementLineInfo(element, lineHeight, linesToShow) {
+	const rect = element.getBoundingClientRect();
+	const height = roundLayoutValue(rect.bottom - rect.top);
+	const linesCount = Math.max(1, Math.round(height / lineHeight));
+	return {
+		fitsLinesToShow: linesCount <= linesToShow,
+		fitsLinesToShowM1: linesCount <= linesToShow - 1
+	};
 }
 
 function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
@@ -650,12 +592,11 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	let wordsCount = 1;
 	// Binary search bound.
 	let left = 1;
-	let pointerTops = [];
-	const pointersLive = element.getElementsByClassName("summary_word_pointer");
 
 	// ---------------------------------------------------------
 	// Estimate the likely result.
 	// ---------------------------------------------------------
+
 	let current = Math.min(linesToShow * 10, wordsLength);
 
 	// ---------------------------------------------------------
@@ -663,14 +604,24 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// ---------------------------------------------------------
 
 	while (true) {
-		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, current);
-		const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight);
-		if (result.wordsCount < current) break;
+		span.innerHTML = formatSummary(words_arr, current);
+		const result = getElementLineInfo(element, lineHeight, linesToShow);
+
+		if (!result.fitsLinesToShow) {
+			break;
+		}
+
+		wordsCount = current;
+
+		if (result.fitsLinesToShowM1) {
+			left = current;
+		}
+
+		// The entire summary fits.
 		if (current === wordsLength) {
-			span.innerHTML = formatSummary(words_arr, wordsLength);
 			return true;
 		}
-		left = result.wordsCountM1;
+
 		current = Math.min(current * 2, wordsLength);
 	}
 
@@ -680,16 +631,21 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
-	expansionA.setAttribute("class", "standardb_" + col + " summary_word_pointer");
+	expansionA.setAttribute("class", "standardb_" + col);
+
 	let isExpanded = false;
 	let isAnimating = false;
+
 	expansionA.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
 		this.textContent = isExpanded ? "[▲]" : "[▼]";
-		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
+		typeSummary(span, words_arr, wordsCount, isExpanded, () => {
+			isAnimating = false;
+		});
 	};
+
 	expansionA.textContent = "[▼]";
 	element.append(document.createTextNode(" "), expansionA);
 
@@ -705,9 +661,11 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
-		span.innerHTML = formatSummaryWithPointers(pointerTops, words_arr, middle);
-		const result = getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, middle);
-		if (result.wordsCount >= middle) {
+		span.innerHTML = formatSummary(words_arr, middle);
+
+		const result = getElementLineInfo(element, lineHeight, linesToShow);
+
+		if (result.fitsLinesToShow) {
 			wordsCount = middle;
 			left = middle + 1;
 		} else {
@@ -718,7 +676,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// ---------------------------------------------------------
 	// Final setup.
 	// ---------------------------------------------------------
-	
+
 	span.innerHTML = formatSummary(words_arr, wordsCount);
 	return false;
 }

@@ -466,7 +466,7 @@ function testSummary(wordsCount) {
 		},
 		{
 			name: "Alg 3",
-			description: "Option using many pointers",
+			description: "Simple option using element height",
 			run: modifySummary3
 		}
 	];
