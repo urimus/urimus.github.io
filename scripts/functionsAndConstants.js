@@ -448,7 +448,7 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 // ---------------------------------------------------------
 
 function getLineInfo(pointer, startLineTop, lineHeight, linesToShow) {
-	const currentLineTop = roundLayoutValue(pointer.getBoundingClientRect().top);
+	const currentLineTop = pointer.getBoundingClientRect().top;
 	const linesCount = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
 	return {
 		fitsLinesToShow: linesCount <= linesToShow,
@@ -478,7 +478,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	let left = 1;
 	const pointer = document.createElement("span");
 	element.append(pointer);
-	const startLineTop = roundLayoutValue(pointer.getBoundingClientRect().top);
+	const startLineTop = pointer.getBoundingClientRect().top;
 
 	// ---------------------------------------------------------
 	// Estimate the likely result.
