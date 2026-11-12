@@ -562,9 +562,9 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 // Simple option using measure span.
 // ---------------------------------------------------------
 
-function getElementLineInfo(element, lineHeight, linesToShow) {
-	const rect = element.getBoundingClientRect();
-	const linesCount = Math.max(1, Math.ceil((rect.height - 0.5) / lineHeight));
+function getMeasureLineInfo(measureSpan, lineHeight, linesToShow) {
+	const measureHeight = measureSpan.getBoundingClientRect().height;
+	const linesCount = Math.max(1, Math.ceil((measureHeight - 0.5) / lineHeight));
 	return {
 		fitsLinesToShow: linesCount <= linesToShow,
 		fitsLinesToShowM1: linesCount <= linesToShow - 1
@@ -605,7 +605,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 
 	while (true) {
 		span.innerHTML = formatSummary(words_arr, current);
-		const result = getElementLineInfo(measureSpan, lineHeight, linesToShow);
+		const result = getMeasureLineInfo(measureSpan, lineHeight, linesToShow);
 
 		if (!result.fitsLinesToShow) {
 			break;
@@ -663,7 +663,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummary(words_arr, middle);
 
-		const result = getElementLineInfo(measureSpan, lineHeight, linesToShow);
+		const result = getMeasureLineInfo(measureSpan, lineHeight, linesToShow);
 
 		if (result.fitsLinesToShow) {
 			wordsCount = middle;
