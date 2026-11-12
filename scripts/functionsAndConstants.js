@@ -600,7 +600,7 @@ function getWordsCount(pointersLive, pointerTops, linesToShow, lineHeight, curre
 
 	for (let i = 2; i <= lastIndex; i++) {
 		const top = pointerTops[i];
-		if (top !== previousTop) {
+		if (top > previousTop) {
 			linesCount += Math.max(1, Math.round((top - previousTop) / lineHeight));
 			previousTop = top;
 		}
