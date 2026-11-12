@@ -756,21 +756,23 @@ function testSummary(wordsCount) {
 	for (const algorithm of algorithms) {
 		const perf = perfData.get(algorithm);
 		if (!perf?.times?.length) continue;
+		let hasAlgorithmErrors = false;
 		if (perf.empiricalLines !== actualLines) {
 			console.error(`${algorithm.name}: Empirical Lines:`, perf.empiricalLines, "!== Actual Lines:", actualLines);
 			hasErrors = true;
-			continue;
+			hasAlgorithmErrors = true;
 		}
 		if (perf.regression == null) {
 			console.error(`${algorithm.name}: Missing regression data.`);
 			hasErrors = true;
-			continue;
+			hasAlgorithmErrors = true;
 		}
-		if (perf.regression.slope < 0) {
+		if (perf.regression?.slope < 0) {
 			console.error(`${algorithm.name}: Negative regression slope:`, round(perf.regression.slope));
 			hasErrors = true;
-			continue;
+			hasAlgorithmErrors = true;
 		}
+		if (hasAlgorithmErrors) continue;
 		consolePlot(algorithm.name, perf, "ms", algorithm.description);
 	}
 	console.groupEnd();
