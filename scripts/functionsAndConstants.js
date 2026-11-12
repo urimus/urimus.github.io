@@ -575,8 +575,8 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return true;
 
-	const measureSpan = createSpan(element, col);
-	const span = createSpan(measureSpan, col);
+//	const measureSpan = createSpan(element, col);
+	const span = createSpan(element, col);
 
 	// one word only
 	if (wordsLength === 1) {
@@ -605,7 +605,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 
 	while (true) {
 		span.innerHTML = formatSummary(words_arr, current);
-		const result = getElementLineInfo(measureSpan, lineHeight, linesToShow);
+		const result = getElementLineInfo(element, lineHeight, linesToShow);
 
 		if (!result.fitsLinesToShow) {
 			break;
@@ -647,7 +647,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	};
 
 	expansionA.textContent = "[▼]";
-	measureSpan.append(document.createTextNode(" "), expansionA);
+	element.append(document.createTextNode(" "), expansionA);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -663,7 +663,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummary(words_arr, middle);
 
-		const result = getElementLineInfo(measureSpan, lineHeight, linesToShow);
+		const result = getElementLineInfo(element, lineHeight, linesToShow);
 
 		if (result.fitsLinesToShow) {
 			wordsCount = middle;
