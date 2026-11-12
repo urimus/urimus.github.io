@@ -564,8 +564,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 
 function getElementLineInfo(element, lineHeight, linesToShow) {
 	const rect = element.getBoundingClientRect();
-	const height = roundLayoutValue(rect.bottom - rect.top);
-	const linesCount = Math.max(1, Math.round(height / lineHeight));
+	const linesCount = Math.max(1, Math.round((rect.bottom - rect.top) / lineHeight));
 	return {
 		fitsLinesToShow: linesCount <= linesToShow,
 		fitsLinesToShowM1: linesCount <= linesToShow - 1
@@ -576,7 +575,8 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return true;
 
-	const span = createSpan(element, col);
+	const measureSpan = createSpan(element, col);
+	const span = createSpan(measureSpan, col);
 
 	// one word only
 	if (wordsLength === 1) {
@@ -605,7 +605,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 
 	while (true) {
 		span.innerHTML = formatSummary(words_arr, current);
-		const result = getElementLineInfo(element, lineHeight, linesToShow);
+		const result = getElementLineInfo(measureSpan, lineHeight, linesToShow);
 
 		if (!result.fitsLinesToShow) {
 			break;
@@ -647,7 +647,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	};
 
 	expansionA.textContent = "[▼]";
-	element.append(document.createTextNode(" "), expansionA);
+	measureSpan.append(document.createTextNode(" "), expansionA);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -663,7 +663,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummary(words_arr, middle);
 
-		const result = getElementLineInfo(element, lineHeight, linesToShow);
+		const result = getElementLineInfo(measureSpan, lineHeight, linesToShow);
 
 		if (result.fitsLinesToShow) {
 			wordsCount = middle;
