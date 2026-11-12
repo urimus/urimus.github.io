@@ -376,7 +376,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 			console.groupCollapsed(`Comparison of the Slopes of Theil–Sen Regressions of %cEnd-to-End Executions%c`, COLORS.ETEPoint, "");
 			consoleEquation(algAName + ": ", regression.regressionA);
 			consoleEquation(algBName + ": ", regression.regressionB);
-			console.log(`${description}:`, round(regression.greaterSlope), ">", round(regression.smallerSlope));
+			console.log(`${description}:`, round(regression.greaterSlope), regression.operator, round(regression.smallerSlope));
 		}
 		console.groupEnd();
 	}
@@ -875,28 +875,56 @@ function testSummary(wordsCount) {
 			return;
 		}
 		
+		const title = `${algA.name} ↔ ${algB.name}`;
+		
 		// Determine which algorithm is faster by its Theil–Sen Regression for End-to-End Execution Points.
 		const slopeA = perfA.regression.slope;
 		const slopeB = perfB.regression.slope;
 		const isAFaster = slopeA < slopeB;
 		
-		const perfFast = isAFaster ? perfA : perfB;
-		const perfSlow = isAFaster ? perfB : perfA;
-		const speedupPerf = createSpeedupPerf(perfFast, perfSlow);
-		
-		const regression = {
-			smallerSlope: perfFast.regression.slope,
-			greaterSlope: perfSlow.regression.slope,
-			regressionA : perfA.regression,
-			regressionB : perfB.regression
-		};
-		speedupPerf.regression = regression;
-		speedupPerf.algAName = algA.name;
-		speedupPerf.algBName = algB.name;
-		
-		const title = `${algA.name} ↔ ${algB.name}`;
-		const description = (isAFaster ? algA.name : algB.name) + " is Faster";
-		consolePlot(title, speedupPerf, unit, description);
+		if (slopeA < slopeB) {
+			const speedupPerf = createSpeedupPerf(perfA, perfB);
+			const regression = {
+				smallerSlope: perfA.regression.slope,
+				greaterSlope: perfB.regression.slope,
+				operator: ">",
+				regressionA : perfA.regression,
+				regressionB : perfB.regression
+			};
+			speedupPerf.regression = regression;
+			speedupPerf.algAName = algA.name;
+			speedupPerf.algBName = algB.name;
+			const description = `${algA.name} is Faster`;
+			consolePlot(title, speedupPerf, unit, description);
+		} else if (slopeA > slopeB) {
+			const speedupPerf = createSpeedupPerf(perfB, perfA);
+			const regression = {
+				smallerSlope: perfB.regression.slope,
+				greaterSlope: perfA.regression.slope,
+				operator: ">",
+				regressionA : perfA.regression,
+				regressionB : perfB.regression
+			};
+			speedupPerf.regression = regression;
+			speedupPerf.algAName = algA.name;
+			speedupPerf.algBName = algB.name;
+			const description = `${algB.name} is Faster`;
+			consolePlot(title, speedupPerf, unit, description);
+		} else {
+			const speedupPerf = createSpeedupPerf(perfA, perfB);
+			const regression = {
+				smallerSlope: perfA.regression.slope,
+				greaterSlope: perfB.regression.slope,
+				operator: "=",
+				regressionA : perfA.regression,
+				regressionB : perfB.regression
+			};
+			speedupPerf.regression = regression;
+			speedupPerf.algAName = algA.name;
+			speedupPerf.algBName = algB.name;
+			const description = `${algA.name} is Equal to ${algB.name}`;
+			consolePlot(title, speedupPerf, unit, description);
+		}
 	}
 
 	console.group("Speedup Graphs");
