@@ -569,10 +569,9 @@ function testSummary(wordsCount) {
 		return perf.empiricalLines;
 	}
 
-	let labelTime = performance.now();
 	console.group("Benchmark Run");
-	let testTime = performance.now() - testStart;
-	console.log("Processing started (elapsed:", round(testTime / 1000, 2), "s)");
+	let lastLabelTime = performance.now();
+	console.log("Processing started (elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
 
 	let line = MIN_LINES;
 	let measurementComplete = false;
@@ -581,10 +580,9 @@ function testSummary(wordsCount) {
 
 		if (line > SAFETY_MAX_LINES) break;
 
-		if (performance.now() - labelTime > 5000) {
-			testTime = performance.now() - testStart;
-			console.log("Processing: lines to show:", line,"(elapsed:", round(testTime / 1000, 2), "s)");
-			labelTime = performance.now();
+		if (performance.now() - testStart - lastLabelTime > 5000) {
+			console.log("Processing: lines to show:", line,"(elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
+			lastLabelTime = performance.now();
 		}
 
 		// Random order for all algorithms.
@@ -629,8 +627,7 @@ function testSummary(wordsCount) {
 
 	container.remove();
 
-	testTime = performance.now() - testStart;
-	console.log("Processing completed (elapsed:", round(testTime / 1000, 2), "s)");
+	console.log("Processing completed (elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
 	console.groupEnd();
 
 	// =========================================================
@@ -777,9 +774,8 @@ function testSummary(wordsCount) {
 	}
 	console.groupEnd();
 	if (hasErrors) {
-		testTime = performance.now() - testStart;
 		console.error("Modify Summary Benchmark Run NOT Completed.");
-		console.log("Duration:", round(testTime / 1000, 2), "s.");
+		console.log("Duration:", round((performance.now() - testStart) / 1000, 2), "s.");
 		return "End";
 	}
 
@@ -940,9 +936,8 @@ function testSummary(wordsCount) {
 	// COMPLETE
 	// =========================================================
 
-	testTime = performance.now() - testStart;
 	console.log("Modify Summary Benchmark Run Completed.");
-	console.log("Duration:", round(testTime / 1000, 2), "s.");
+	console.log("Duration:", round((performance.now() - testStart) / 1000, 2), "s.");
 	return "End";
 
 }
