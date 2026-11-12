@@ -570,7 +570,7 @@ function testSummary(wordsCount) {
 	}
 
 	console.group("Benchmark Run");
-	let nextLabelTime = 5000;
+	let nextLabelTime = Math.floor((performance.now() - testStart) / 5000) * 5000 + 5000;
 	console.log("Processing started (elapsed:", round((performance.now() - testStart) / 1000, 2), "s)");
 
 	let line = MIN_LINES;
