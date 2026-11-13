@@ -222,23 +222,6 @@ function formatSummary(words_arr, wordsCount) {
 	return words_arr.slice(0, wordsCount).join(" ");
 }
 
-/*
-	if (current === wordsLength) {
-		const pointer = document.createElement("a");
-		element.appendChild(pointer);
-		const startLineTop = pointer.offsetTop;
-		span.innerHTML = formatSummary(words_arr, wordsLength, false);
-		const currentLineTop = pointer.offsetTop;
-		const estimatedLines = Math.max(1, Math.round((currentLineTop - startLineTop) / lineHeight) + 1);
-		pointer.remove();
-		if (estimatedLines <= linesToShow) return true;
-	} else {
-		// ---------------------------------------------------------
-		// Exponential search.
-		// ---------------------------------------------------------
-*/
-
-
 // ---------------------------------------------------------
 // Algorithm 1
 // Stable option using getClientRects.
@@ -602,22 +585,17 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	while (true) {
 		span.innerHTML = formatSummary(words_arr, current);
 		const result = getMeasureLineInfo(measureSpan, lineHeight, linesToShow);
-
 		if (!result.fitsLinesToShow) {
 			break;
 		}
-
 		wordsCount = current;
-
 		if (result.fitsLinesToShowM1) {
 			left = current;
 		}
-
 		// The entire summary fits.
 		if (current === wordsLength) {
 			return true;
 		}
-
 		current = Math.min(current * 2, wordsLength);
 	}
 
@@ -628,10 +606,8 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	const expansionA = document.createElement("a");
 	expansionA.setAttribute("href", "javascript:void(0);");
 	expansionA.setAttribute("class", "standardb_" + col);
-
 	let isExpanded = false;
 	let isAnimating = false;
-
 	expansionA.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
@@ -641,7 +617,6 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 			isAnimating = false;
 		});
 	};
-
 	expansionA.textContent = "[▼]";
 	measureSpan.append(document.createTextNode(" "), expansionA);
 
@@ -658,9 +633,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummary(words_arr, middle);
-
 		const result = getMeasureLineInfo(measureSpan, lineHeight, linesToShow);
-
 		if (result.fitsLinesToShow) {
 			wordsCount = middle;
 			left = middle + 1;
