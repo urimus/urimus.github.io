@@ -1185,7 +1185,7 @@ function detectBom(bytes) {
 		const bytesDetected = detectBomCheckSoFar(bytes.slice(c, c + 5));
 		if (bytesDetected) {
 			return bytes.slice(c, c + bytesDetected).concat(
-				detectBom(bytes.slice(c + bytesDetected)) || []
+				detectBom(bytes.slice(c + bytesDetected))
 			);
 		}
 	}
