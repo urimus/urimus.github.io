@@ -449,7 +449,7 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 
 function getLineInfo(pointer, startLineTop, lineHeight, linesToShow) {
 	const currentLineBottom = pointer.getBoundingClientRect().bottom;
-	const linesCount = Math.max(1, Math.ceil((currentLineBottom - startLineTop) / lineHeight));
+	const linesCount = Math.max(1, Math.round((currentLineBottom - startLineTop) / lineHeight));
 	return {
 		fitsLinesToShow: linesCount <= linesToShow,
 		fitsLinesToShowM1: linesCount <= linesToShow - 1
@@ -564,7 +564,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 
 function getMeasureLineInfo(measureSpan, lineHeight, linesToShow) {
 	const measureHeight = measureSpan.getBoundingClientRect().height;
-	const linesCount = Math.max(1, Math.ceil((measureHeight - 0.5) / lineHeight));
+	const linesCount = Math.max(1, Math.round(measureHeight / lineHeight));
 	return {
 		fitsLinesToShow: linesCount <= linesToShow,
 		fitsLinesToShowM1: linesCount <= linesToShow - 1
