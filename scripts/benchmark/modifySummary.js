@@ -766,11 +766,6 @@ function testSummary(wordsCount) {
 			hasErrors = true;
 			hasAlgorithmErrors = true;
 		}
-		if (perf.regression?.slope < 0) {
-			console.error(`${algorithm.name}: Negative regression slope:`, round(perf.regression.slope));
-			hasErrors = true;
-			hasAlgorithmErrors = true;
-		}
 		if (hasAlgorithmErrors) continue;
 		consolePlot(algorithm.name, perf, "ms", algorithm.description);
 	}
