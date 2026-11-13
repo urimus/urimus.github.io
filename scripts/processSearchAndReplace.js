@@ -1189,7 +1189,7 @@ function detectBom(bytes) {
 			);
 		}
 	}
-	return null;
+	return [];
 }
 
 function logAllBOMs(dir) {
@@ -1199,7 +1199,7 @@ function logAllBOMs(dir) {
 }
 
 function setBOM(first10bytes) {
-	const bomDetected = detectBom(first10bytes) || [];
+	const bomDetected = detectBom(first10bytes);
 	const bomDiv = document.getElementById("bom_div");
 	const bomDiv2 = document.getElementById("bom_div2");
 
