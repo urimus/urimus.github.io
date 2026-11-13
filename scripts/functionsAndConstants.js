@@ -208,10 +208,6 @@ function createSpan(element, col) {
 	return span;
 }
 
-function roundLayoutValue(value) {
-	return Math.round(value * 1000) / 1000;
-}
-
 function getLineHeight(span) {
 	const marker = document.createElement("span");
 	marker.style.display = "inline-block";
@@ -281,7 +277,7 @@ function getLineInfoIncremental(probesLive, lines, linesToShow, isBinary = false
 
 	if (!isBinary || probesLive.length > 1) {
 		for (const rect of probesLive[0].getClientRects()) {
-			const top = roundLayoutValue(rect.top);
+			const top = round(rect.top, 3);
 			if (rect.height <= 0) continue;
 			if (lines.has(top) || newLines.has(top)) continue;
 
@@ -302,7 +298,7 @@ function getLineInfoIncremental(probesLive, lines, linesToShow, isBinary = false
 		const expansionA = probesLive[probesLive.length - 1];
 
 		for (const rect of expansionA.getClientRects()) {
-			const top = roundLayoutValue(rect.top);
+			const top = round(rect.top, 3);
 			if (rect.height <= 0) continue;
 			if (lines.has(top) || newLines.has(top)) continue;
 

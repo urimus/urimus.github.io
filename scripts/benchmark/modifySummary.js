@@ -499,7 +499,7 @@ function testSummary(wordsCount) {
 	const lines = new Set();
 
 	for (const rect of rects) {
-		lines.add(roundLayoutValue(rect.top));
+		lines.add(round(rect.top, 3));
 	}
 
 	const actualLines = lines.size;

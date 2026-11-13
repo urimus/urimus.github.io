@@ -208,7 +208,8 @@ function waitImageCacheResult(url) {
 }
 
 function round(num, digits = 4) {
-	return Number(num.toFixed(digits));
+	const factor = 10 ** digits;
+	return Math.round(num * factor) / factor;
 }
 
 function logIfCachingComplete(state, total) {
