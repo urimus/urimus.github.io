@@ -1162,43 +1162,35 @@ function setLineAndColumnNumber(lang) {
 }
 
 function detectBom(bytes) {
-	for (let c = 0; c < bytes.length; c++ ) {
-		if (c==5) return null;
-		let bytesDetected=detectBomCheckSoFar(bytes.slice(c,c+5));
-		if (bytesDetected>0) return bytes.slice(c,c+bytesDetected).concat(detectBom(bytes.slice(bytesDetected)));
+	for (let c = 0; c < bytes.length && c < 5; c++) {
+		const bytesDetected = detectBomCheckSoFar(bytes.slice(c, c + 5));
+		if (bytesDetected) {
+			return bytes.slice(c, c + bytesDetected).concat(
+				detectBom(bytes.slice(c + bytesDetected)) || []
+			);
+		}
 	}
 	return null;
 }
 
 function logAllBOMs(dir) {
-	for (let i=0; i<dir.length; i++) {
-		console.log(i+" BOM = "+detectBom(dir[i]['first10bytes']));
+	for (let i = 0; i < dir.length; i++) {
+		console.log(i + " BOM = " + detectBom(dir[i].first10bytes));
 	}
 }
 
 function setBOM(first10bytes) {
+	const bomDetected = detectBom(first10bytes) || [];
+	const bomDiv = document.getElementById("bom_div");
+	const bomDiv2 = document.getElementById("bom_div2");
 
-	let i=0;
-	let bomDetected=detectBom(first10bytes);
+	bomDiv.innerHTML = bomDetected.length
+		? bomDetected.join("&nbsp;") + "&nbsp;"
+		: "";
 
-	if (bomDetected) {
-		bomDetected.pop();
-		let bomDiv=document.getElementById("bom_div");
-		bomDiv.innerHTML="";
-		for (i=0; i<bomDetected.length; i++) {
-			bomDiv.innerHTML=bomDiv.innerHTML+bomDetected[i]+"&nbsp;";
-		}
-	}
-
-	let bomDiv2=document.getElementById("bom_div2");
-	bomDiv2.innerHTML="";
-	for (let j=i; j<first10bytes.length; j++) {
-		if (j==i) {
-			bomDiv2.innerHTML=bomDiv2.innerHTML+first10bytes[j];
-		} else {
-			bomDiv2.innerHTML=bomDiv2.innerHTML+"&nbsp;"+first10bytes[j];
-		}
-	}
+	bomDiv2.innerHTML = first10bytes
+		.slice(bomDetected.length)
+		.join("&nbsp;");
 }
 
 function setTextAreaChanged(lang, isChanged = true) {

@@ -79,31 +79,21 @@ function formatBytes(bytes) {
 }
 
 function detectBomCheckSoFar(bytes) {
-	if (typeof bytes[1] !== 'undefined') {
-		if (bytes[0]=="fe" && bytes[1]=="ff") return 2;
-		if (bytes[0]=="ff" && bytes[1]=="fe") return 2;
-		if (bytes[0]=="ff" && bytes[1]=="d8") return 2;
-	} 
-	if (typeof bytes[2] !== 'undefined') {
-		if (bytes[0]=="ef" && bytes[1]=="bb" && bytes[2]=="bf") return 3;
-		if (bytes[0]=="f7" && bytes[1]=="64" && bytes[2]=="4c") return 3;
-		if (bytes[0]=="0e" && bytes[1]=="fe" && bytes[2]=="ff") return 3;
-		if (bytes[0]=="fb" && bytes[1]=="ee" && bytes[2]=="28") return 3;
-	}
-	if (typeof bytes[3] !== 'undefined') {
-		if (bytes[0]=="00" && bytes[1]=="00" && bytes[2]=="fe" && bytes[3]=="ff") return 4;
-		if (bytes[0]=="ff" && bytes[1]=="fe" && bytes[2]=="00" && bytes[3]=="00") return 4;
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="38") return 4;
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="39") return 4;
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="2b") return 4;
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="2f") return 4;
-		if (bytes[0]=="dd" && bytes[1]=="73" && bytes[2]=="66" && bytes[3]=="73") return 4;
-		if (bytes[0]=="84" && bytes[1]=="31" && bytes[2]=="95" && bytes[3]=="33") return 4;
-	}
-	if (typeof bytes[4] !== 'undefined') {
-		if (bytes[0]=="2b" && bytes[1]=="2f" && bytes[2]=="76" && bytes[3]=="38" && bytes[4]=="2d") return 5;
-	}
-	return 0;
+    const signatures = [
+        ["fe", "ff"], ["ff", "fe"], ["ff", "d8"],
+        ["ef", "bb", "bf"], ["f7", "64", "4c"],
+        ["0e", "fe", "ff"], ["fb", "ee", "28"],
+        ["00", "00", "fe", "ff"], ["ff", "fe", "00", "00"],
+        ["2b", "2f", "76", "38"], ["2b", "2f", "76", "39"],
+        ["2b", "2f", "76", "2b"], ["2b", "2f", "76", "2f"],
+        ["dd", "73", "66", "73"], ["84", "31", "95", "33"],
+        ["2b", "2f", "76", "38", "2d"]
+    ];
+
+    return signatures.find(signature =>
+        bytes.length >= signature.length &&
+        signature.every((byte, i) => bytes[i] === byte)
+    )?.length || 0;
 }
 
 function splitAllSpaces(str) {
