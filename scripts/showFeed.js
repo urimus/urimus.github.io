@@ -372,7 +372,7 @@ function showFeedTitle(type, source, lang, result) {
 		const arrow = document.createElement("span");
 		arrow.textContent = direction === "ArrowRight" ? "▶" : "◀";
 		arrow.className = "standardb_red";
-		arrow.style.padding = "5px";
+		arrow.style.padding = "10px";
 		arrow.style.cursor = "pointer";
 		arrow.setAttribute("tabindex", "0");
 
