@@ -335,7 +335,7 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	// ---------------------------------------------------------
 
 	const expansionSpan = document.createElement("span");
-	expansionSpan.setAttribute("class", "text_" + col + " summary_word_probe");
+	expansionSpan.setAttribute("class", "standardb_" + col + " summary_word_probe");
 	let isExpanded = false;
 	let isAnimating = false;
 	expansionSpan.onclick = function () {
