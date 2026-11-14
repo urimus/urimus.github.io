@@ -490,15 +490,15 @@ function showFeedTitle(type, source, lang, result) {
 
 function showFeedData(type, source, lang, result) {
 
-	let totalEntries = result.entries.length;
+	const totalEntries = result.entries.length;
 
 	if (totalEntries > 0) {
-		let table = document.getElementById("feedtable");
-		let tableMainRow = table.insertRow(-1);
+		const table = document.getElementById("feedtable");
+		const tableMainRow = table.insertRow(-1);
 		tableMainRow.id = 'tableMainRow';
 
 		if (result.totalUpdated == totalEntries || source == "merco" || (source=="nasa" && type=="image") || source == "phys.org") {
-			let table2 = document.getElementById("messagetable");
+			const table2 = document.getElementById("messagetable");
 			table2.replaceChildren();
 			adjustFeedScrollDiv();
 			for (let i = 0; i < totalEntries; i++) {
@@ -511,12 +511,11 @@ function showFeedData(type, source, lang, result) {
 				}
 			}
 			document.getElementById("loadingTitleContainer").innerHTML = t("updateStarted") + ".&nbsp;";
-			let a = document.createElement('a');
-			a.setAttribute('href', "javascript:void(0);");
-			a.setAttribute('class', 'standardb_red');
-			a.innerText = t("skip");
-			let controller = new AbortController();
-			a.onclick = function () {
+			const span = document.createElement('span');
+			span.setAttribute('class', 'standardb_red');
+			span.innerText = t("skip");
+			const controller = new AbortController();
+			span.onclick = function () {
 				controller.abort();
 				for (let j = 0; j < totalEntries; j++) {
 					result.entries[j].error = t("updateSkipped") + ".";
@@ -529,13 +528,13 @@ function showFeedData(type, source, lang, result) {
 						showEntry(type, source, lang, result, j, false);
 					}
 				}
-				let table2 = document.getElementById("messagetable");
+				const table2 = document.getElementById("messagetable");
 				table2.replaceChildren();
 				adjustFeedScrollDiv();
 			};
-			let loadingMessages = document.getElementById("loadingMessages");
+			const loadingMessages = document.getElementById("loadingMessages");
 			loadingMessages.appendChild(a);
-			let processedDiv = document.getElementById("processedDiv");
+			const processedDiv = document.getElementById("processedDiv");
 			processedDiv.style.display = "block";
 			adjustFeedScrollDiv();
 
@@ -734,10 +733,10 @@ function preloadImage(type, source, lang, result) {
 
 function showEntry(type, source, lang, result, i, appendEntry = true) {
 
-	let entry = result.entries[i];
-	let totalEntries = result.entries.length;
+	const entry = result.entries[i];
+	const totalEntries = result.entries.length;
 
-	let tableMainRow = document.getElementById("tableMainRow");
+	const tableMainRow = document.getElementById("tableMainRow");
 	let cell1;
 	if (appendEntry) {
 		cell1 = tableMainRow.insertCell(-1);
@@ -747,7 +746,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		for (let j = 0; j < i; j++) {
 			if (result.entries[j].storage.updateProcessed == 1) processedCountSoFar++;
 		}
-		let scrollDiv = document.getElementById('scrollDiv');
+		const scrollDiv = document.getElementById('scrollDiv');
 		cell1 = tableMainRow.insertCell(processedCountSoFar);
 		cell1.style.padding = '0 2px';
 		if (scrollDiv.scrollLeft < 5 && processedCountSoFar == 0) {
@@ -756,7 +755,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	}
 	cell1.style.verticalAlign = 'top';
 
-	let container = document.createElement('div');
+	const container = document.createElement('div');
 	container.style.display = "inline-block";
 	container.style.padding = "10px";
 	container.style.border = "1px solid #de8e8e";
@@ -765,21 +764,21 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	cell1.appendChild(container);
 
 	if (typeof entry.error !== "undefined" && entry.error != null) {
-		let Div = document.createElement('div');
+		const Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
 		Div.innerHTML = "💥 " + entry.error;
 		container.appendChild(Div);
 	}
 
-	let Div = document.createElement('div');
+	const Div = document.createElement('div');
 	Div.setAttribute('class', "nimetus3_red");
 	Div.textContent = (i + 1) + ". " + entry.title;
 	container.appendChild(Div);
 
-	let imageDiv = document.createElement('div');
+	const imageDiv = document.createElement('div');
 	container.appendChild(imageDiv);
 
-	let Img = document.createElement("img");
+	const Img = document.createElement("img");
 	Img.setAttribute('class', "spin_text");
 	Img.setAttribute('width', 450 - 200);
 	Img.setAttribute('style', 'display: block; margin: 5px 100px;');
@@ -792,14 +791,13 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	// preload later
 	// ------------- Additional Images Show/Hide -------------- //
 	if (entry.additMedia?.length) {
-		let expansionImgA = document.createElement('a');
-		expansionImgA.setAttribute('href', "javascript:void(0);");
-		expansionImgA.setAttribute('class', 'standardb_red');
-		expansionImgA.dataset.expanded = "false";
-		expansionImgA.onclick = function () {
+		const expansionImgSpan = document.createElement('span');
+		expansionImgSpan.setAttribute('class', 'standardb_red');
+		expansionImgSpan.dataset.expanded = "false";
+		expansionImgSpan.onclick = function () {
 			if (this.dataset.expanded === "false") {
 				for (let j = 0; j < entry.additMedia.length; j++) {
-					let Img2 = document.createElement("img");
+					const Img2 = document.createElement("img");
 					Img2.setAttribute('class', "text_red");
 					Img2.setAttribute('width', entry.media.width);
 					Img2.setAttribute('style', 'display: block; margin-bottom:5px; background-color: rgba(222, 142, 142, 0.0);');
@@ -838,33 +836,32 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 				showMoreDiv.appendChild(this);
 			}
 		}
-		expansionImgA.textContent = "[▼]";
+		expansionImgSpan.textContent = "[▼]";
 
-		let showMoreDiv = document.createElement('div');
+		const showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
 		showMoreDiv.setAttribute('style', "margin-bottom:5px; text-align: right;");
 		showMoreDiv.innerHTML = t("show") + " " + entry.additMedia.length + " " + t("more") + " ";
-		showMoreDiv.appendChild(expansionImgA);
+		showMoreDiv.appendChild(expansionImgSpan);
 		imageDiv.appendChild(showMoreDiv);
 	}
 	// ------------- End of Additional Images Show/Hide -------------- //
 
 	// ------------- Video Show/Hide -------------- //
 	if (entry.video) {
-		let expansionVideoA = document.createElement('a');
-		expansionVideoA.setAttribute('href', "javascript:void(0);");
-		expansionVideoA.setAttribute('class', 'standardb_red');
-		expansionVideoA.dataset.expanded = "false";
-		expansionVideoA.onclick  = function () { 
+		const expansionVideoSpan = document.createElement('span');
+		expansionVideoSpan.setAttribute('class', 'standardb_red');
+		expansionVideoSpan.dataset.expanded = "false";
+		expansionVideoSpan.onclick = function () { 
 			if (this.dataset.expanded === "false") {
-				let cssText = 
+				const cssText = 
 					'display:block;' +
 					'margin-bottom:5px;' +
 					'border:0;' +
 					'background-color:transparent;' +
 					'aspect-ratio:16/9;';
 				if (isEmbed(entry.video)) {
-			        	let ifrm = document.createElement("iframe");
+			        const ifrm = document.createElement("iframe");
 					ifrm.credentialless = true;
 					ifrm.width = entry.media.width;
 					ifrm.style.cssText = cssText;
@@ -879,13 +876,13 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					ifrm.onload = function () {
 						this.style.aspectRatio = "auto";
 					}
-					let url = new URL(entry.video);
+					const url = new URL(entry.video);
 					url.searchParams.set("autoplay", "1");
 					url.searchParams.set("mute", "0");
 					ifrm.src = url.toString();
 					imageDiv.appendChild(ifrm);
 				} else {
-					let video = document.createElement('video');
+					const video = document.createElement('video');
 					video.controls = true;
 					video.autoplay = true;
 					video.playsInline = true;
@@ -897,7 +894,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					};
 					if (source == "cbs") {
 						if (window.Hls && Hls.isSupported()) {
-							let hls = new Hls();
+							const hls = new Hls();
 							hls.loadSource(entry.video);
 							hls.attachMedia(video);
 						} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
@@ -922,19 +919,19 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 				showMoreDiv.appendChild(this);
 			}
 		}
-		expansionVideoA.textContent = "[▼]";
+		expansionVideoSpan.textContent = "[▼]";
 
-		let showMoreDiv = document.createElement('div');
+		const showMoreDiv = document.createElement('div');
 		showMoreDiv.setAttribute('class', "text_red");
 		showMoreDiv.setAttribute('style', "margin-bottom:5px; text-align: right;");
 		showMoreDiv.innerHTML = t("show") + " " + t("video") + " ";
-		showMoreDiv.appendChild(expansionVideoA);
+		showMoreDiv.appendChild(expansionVideoSpan);
 		imageDiv.appendChild(showMoreDiv);
 	}
 	// ------------- End of Video Show/Hide -------------- //
 
 	if (entry.summary) {
-		let summaryDiv = document.createElement('div');
+		const summaryDiv = document.createElement('div');
 		summaryDiv.setAttribute('class', "text_red");
 		container.appendChild(summaryDiv);
 		formatSummaryDiv(summaryDiv, entry);
@@ -945,15 +942,15 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	preloadImage(type, source, lang, result);
 
 	if (entry.source) {
-		let div = document.createElement('div');
+		const div = document.createElement('div');
 		div.setAttribute('class', "text_red");
-		let b = document.createElement("b");
+		const b = document.createElement("b");
 		b.innerHTML = t("source") + ": ";
 		div.appendChild(b);
 		if (entry.source.url) {
 			div.appendChild(urlA(entry.source.title, entry.source.url));
 		} else {
-			let span = document.createElement('span');
+			const span = document.createElement('span');
 			span.textContent = entry.source.title;
 			div.appendChild(span);
 		}
@@ -961,11 +958,11 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	}
 
 	if (entry.subject) {
-		let div = document.createElement("div");
+		const div = document.createElement("div");
 		div.className = "text_red";
-		let b = document.createElement("b");
+		const b = document.createElement("b");
 		b.innerHTML = t("subject") + ": ";
-		let span = document.createElement('span');
+		const span = document.createElement('span');
 		span.textContent = entry.subject;
 		div.append(b, span);
 		container.appendChild(div);
@@ -1021,9 +1018,9 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	}
 
 	if (entry.link) {
-		let Div = document.createElement('div');
+		const Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
-		let a = document.createElement('a');
+		const a = document.createElement('a');
 		a.setAttribute('href', entry.link);
 		a.setAttribute('class', 'standardb_red');
 		a.setAttribute('target', '_blank');
@@ -1034,13 +1031,13 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 	}
 
 	if (entry.seeAlso?.length) {
-		let Div = document.createElement('div');
+		const Div = document.createElement('div');
 		Div.setAttribute('class', "text_red");
 		const b = document.createElement("b");
 		b.innerHTML = t("seeAlso") + ": ";
 		Div.appendChild(b);
 		for (let j = 0; j < entry.seeAlso.length; j++) {
-			let a = document.createElement('a');
+			const a = document.createElement('a');
 			a.setAttribute('href', entry.seeAlso[j]);
 			a.setAttribute('class', 'standardb_red');
 			a.setAttribute('target', '_blank');
@@ -1052,7 +1049,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 		container.appendChild(Div);
 	}
 
-	let date = document.createElement('div');
+	const date = document.createElement('div');
 	date.className = 'textsmall_red';
 	date.setAttribute("style", "text-align:right; padding-right:10px;");
 	date.innerHTML = formatDate(entry.date_ms, lang);
