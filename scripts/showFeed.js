@@ -1302,7 +1302,7 @@ function generateTabs(type, source, lang) {
 	const title = `
 		<div>${t("tip")}</div>
 		<div style="width:100%; border:#ff8a00 1px solid; margin:5px 0;"></div>
-		<div>${t("useNavigationKeys")} <kbd>&rlarr;</kbd> ${t("or")} <kbd>▶</kbd>, <kbd>◀</kbd> ${t("with")} <kbd>Shift</kbd> ${t("or")} <kbd>Home</kbd>, <kbd>End</kbd> ${t("forContentsScroll")}</div>
+		<div>${t("useNavigationKeys")} <kbd>&rlarr;</kbd> ${t("or")} <kbd>◀▶</kbd> ${t("with")} <kbd>Shift</kbd> ${t("or")} <kbd>Home</kbd>, <kbd>End</kbd> ${t("forContentsScroll")}</div>
 	`;
 	let Img = document.createElement('img');
 	Img.setAttribute('tabindex', "0");
