@@ -334,108 +334,146 @@ function adjustFeedScrollDiv() {
 }
 
 // ------------- Show Feed ---------------- //
-
 function showFeedTitle(type, source, lang, result) {
 
 	document.getElementById("loadingTitle").innerHTML = t("outputNewsFeed") + "<span></span>";
 
-	let title = "";
-	if (result.title) {
-		title = sanitizeAndText(result.title);
-		if (result.description && result.description != title) {
-			title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
-			title += sanitizeAndText(result.description);
-		}
+	const title = result.title ? sanitizeAndText(result.title) : "";
+	let description = "";
+
+	if (title && result.description && result.description != title) {
+		description = "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
+		description += sanitizeAndText(result.description);
 	}
 
-	let totalEntries = result.entries.length;
-	let table = document.getElementById("titletable");
+	const totalEntries = result.entries.length;
+	const table = document.getElementById("titletable");
 	table.replaceChildren();
-	let row = table.insertRow(-1);	
-	let cell1 = row.insertCell(0);
+
+	const row = table.insertRow(-1);
+	const cell1 = row.insertCell(0);
 	cell1.setAttribute('class', 'nimetus_red');
 	cell1.style.textAlign = "center";
 	cell1.style.padding = "4px 2px";
+	cell1.style.display = "flex";
+	cell1.style.alignItems = "center";
+	cell1.style.justifyContent = "center";
 
-	let container = document.createElement("div");
+	const container = document.createElement("div");
 	container.style.padding = "5px";
 	container.style.border = "1px solid #de8e8e";
 	container.style.borderRadius = "4px";
 	container.style.fontWeight = "bold";
-
 	container.style.display = "inline-flex";
 	container.style.alignItems = "center";
 	container.style.gap = "6px";
-	cell1.appendChild(container);
 
-	let aLogo = document.createElement('a');
+	const scrollArrow = (direction) => {
+		const arrow = document.createElement("span");
+		arrow.textContent = direction === "ArrowRight" ? "⯈" : "⯇";
+		arrow.className = "standardb_red";
+		arrow.style.padding = "5px";
+		arrow.style.cursor = "pointer";
+		arrow.setAttribute("tabindex", "0");
+		arrow.setAttribute("title", direction === "ArrowRight" ? t("scrollRight") : t("scrollLeft"));
+
+		const dispatchKeydown = () => {
+			document.dispatchEvent(new KeyboardEvent("keydown", {
+				key: direction,
+				bubbles: true
+			}));
+		};
+
+		arrow.addEventListener("click", dispatchKeydown);
+		arrow.addEventListener("keydown", event => {
+			if (event.key === "Enter" || event.key === " ") {
+				event.preventDefault();
+				dispatchKeydown();
+			}
+		});
+
+		return arrow;
+	};
+
+	cell1.appendChild(scrollArrow("ArrowLeft"));
+	cell1.appendChild(container);
+	cell1.appendChild(scrollArrow("ArrowRight"));
+
+	const aLogo = document.createElement('a');
 	aLogo.setAttribute('href', result.link);
 	aLogo.setAttribute('class', 'standardb_red');
 	aLogo.setAttribute('target', '_blank');
 	aLogo.setAttribute('tabindex', "0");
-	aLogo.setAttribute('title', title);
+	aLogo.setAttribute('title', title + description);
 
-	let logoImg = document.createElement("img");
+	const logoImg = document.createElement("img");
 	logoImg.setAttribute('class', "thumbnail_image_red_png");
 	logoImg.setAttribute('alt', title);
+
 	if (source == "artemis") {
 		logoImg.setAttribute('height', 54);
 	} else {
 		logoImg.setAttribute('height', 27);
 	}
+
 	logoImg.onload = function () {
 		adjustFeedScrollDiv();
-	}
+	};
+
 	logoImg.src = result.image;
 	aLogo.appendChild(logoImg);
 	container.appendChild(aLogo);
 
-	let Div = document.createElement('div');
+	const Div = document.createElement('div');
 	Div.innerHTML = "<span id='loadedCount'>0/</span>" +
 		totalEntries +
 		" " +
-		t("record", { count: totalEntries}) +
+		t("record", { count: totalEntries }) +
 		"<span id='failedCountTitle'></span>";
-	container.appendChild(Div);
 
+	container.appendChild(Div);
 	container.appendChild(feedIcon(result.feedXML, lang));
 
 	if (result.date_ms) {
-		let Img = document.createElement('img');
+		const Img = document.createElement('img');
 		Img.setAttribute('tabindex', "0");
 		Img.setAttribute('alt', t("lastBuild"));
+
 		let title = "<div>" + t("lastBuild") + "</div>";
 		title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
 		title += "<div>" + formatDate(result.date_ms, lang) + "</div>";
+
 		Img.setAttribute('title', title);
 		Img.setAttribute('height', 27);
-		Img.src="images/icons/feed/build.svg";
+		Img.src = "images/icons/feed/build.svg";
 		container.appendChild(Img);
 	}
 
 	if (result.copyright) {
-		let Img = document.createElement('img');
+		const Img = document.createElement('img');
 		Img.setAttribute('tabindex', "0");
+
 		let title = "<div>" + t("copyright") + "</div>";
 		title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
 		title += "<div>" + sanitizeAndText(result.copyright) + "</div>";
+
 		Img.setAttribute('alt', t("copyright"));
 		Img.setAttribute('title', title);
 		Img.setAttribute('height', 27);
-		Img.src="images/icons/feed/copyright.svg";
+		Img.src = "images/icons/feed/copyright.svg";
 		container.appendChild(Img);
 	}
 
-	if (source=="nasa" && type=="image") {
-		let Img = document.createElement('img');
+	if (source == "nasa" && type == "image") {
+		const Img = document.createElement('img');
 		Img.setAttribute('tabindex', "0");
 		Img.setAttribute('alt', t("managingEditor"));
 		Img.setAttribute('title', t("managingEditor"));
 		Img.setAttribute('height', 27);
-		Img.src="images/icons/feed/attribution.svg";
+		Img.src = "images/icons/feed/attribution.svg";
 
-		let Div = document.createElement('div');
-		Div.innerHTML = "▸ Brian Dunbar"; // ⯈
+		const Div = document.createElement('div');
+		Div.innerHTML = "▸ Brian Dunbar";
 		Div.appendChild(document.createElement("span"));
 
 		container.append(Img, Div, mailToIcon("brian.dunbar@nasa.gov"));
