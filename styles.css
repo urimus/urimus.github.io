@@ -252,56 +252,56 @@ P {text-indent: 10px; margin: 0px; padding-top:0px; }
 }
 
 .standardb_blue {
-	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #448CCB; text-shadow: 2px 2px 4px #84bde4;
+	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #448CCB; text-shadow: 2px 2px 4px #84bde4; cursor: pointer;
 }
 .standardb_blue:hover {
 	color: #ff8a00; text-shadow: 2px 2px 4px #ff8a00;
 }
 
 .standardb_black {
-	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #707070; text-shadow: 2px 2px 4px #b0b0b0;
+	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #707070; text-shadow: 2px 2px 4px #b0b0b0; cursor: pointer;
 }
 .standardb_black:hover {
 	color: #ff8a00; text-shadow: 2px 2px 4px #ff8a00;
 }
 
 .standardb_red {
-	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #CE3535; text-shadow: 2px 2px 4px #de8e8e;
+	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #CE3535; text-shadow: 2px 2px 4px #de8e8e; cursor: pointer;
 }
 .standardb_red:hover {
 	color: #ff8a00; text-shadow: 2px 2px 4px #ff8a00;
 }
 
 .standardb_green {
-	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #008040; text-shadow: 2px 2px 4px #68c496;
+	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #008040; text-shadow: 2px 2px 4px #68c496; cursor: pointer;
 }
 .standardb_green:hover {
 	color: #ff8a00; text-shadow: 2px 2px 4px #ff8a00;
 }
 
 .standardb_white {
-	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #A9A9A9; text-shadow: 2px 2px 4px #dbd9d9;
+	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #A9A9A9; text-shadow: 2px 2px 4px #dbd9d9; cursor: pointer;
 }
 .standardb_white:hover {
 	color: #ff8a00; text-shadow: 2px 2px 4px #ff8a00;
 }
 
 .smallb_black {
-	font-size: 12px; font-weight: bold; text-decoration: none; color: #707070; text-shadow: 2px 2px 4px #b0b0b0;
+	font-size: 12px; font-weight: bold; text-decoration: none; color: #707070; text-shadow: 2px 2px 4px #b0b0b0; cursor: pointer;
 }
 .smallb_black:hover {
 	color: #ff8a00; text-shadow: 2px 2px 4px #ff8a00;
 }
 
 .smallb_green {
-	font-size: 12px; font-weight: bold; text-decoration: none; color: #008040; text-shadow: 2px 2px 4px #68c496;
+	font-size: 12px; font-weight: bold; text-decoration: none; color: #008040; text-shadow: 2px 2px 4px #68c496; cursor: pointer;
 }
 .smallb_green:hover {
 	color: #ff8a00; text-shadow: 2px 2px 4px #ff8a00;
 }
 
 .smallb_red {
-	font-size: 12px; font-weight: bold; text-decoration: none; color: #CE3535; text-shadow: 2px 2px 4px #de8e8e;
+	font-size: 12px; font-weight: bold; text-decoration: none; color: #CE3535; text-shadow: 2px 2px 4px #de8e8e; cursor: pointer;
 }
 .smallb_red:hover {
 	color: #ff8a00; text-shadow: 2px 2px 4px #ff8a00;

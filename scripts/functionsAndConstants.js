@@ -250,9 +250,9 @@ function getLineInfoIncremental(probesLive, lines, linesToShow, isBinary = false
 	const expansionLines = new Set();
 
 	if (isBinary) {
-		const expansionA = probesLive[probesLive.length - 1];
+		const expansionSpan = probesLive[probesLive.length - 1];
 
-		for (const rect of expansionA.getClientRects()) {
+		for (const rect of expansionSpan.getClientRects()) {
 			const top = round(rect.top, 3);
 			if (rect.height <= 0) continue;
 			if (lines.has(top) || newLines.has(top)) continue;
@@ -336,23 +336,17 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 
 	const expansionSpan = document.createElement("span");
 	expansionSpan.setAttribute("class", "text_" + col + " summary_word_probe");
-	
-	const expansionA = document.createElement("a");
-	expansionA.setAttribute("href", "javascript:void(0);");
-	expansionA.setAttribute("class", "standardb_" + col);
 	let isExpanded = false;
 	let isAnimating = false;
-	expansionA.onclick = function () {
+	expansionSpan.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
 		this.textContent = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
-	expansionA.textContent = "[▼]";
-
-	expansionSpan.append(document.createTextNode(" "), expansionA);
-	element.append(expansionSpan);
+	expansionSpan.textContent = "[▼]";
+	element.append(document.createTextNode(" "), expansionSpan);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -462,21 +456,20 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	// Add expansion link.
 	// ---------------------------------------------------------
 
-	const expansionA = document.createElement("a");
-	expansionA.setAttribute("href", "javascript:void(0);");
-	expansionA.setAttribute("class", "standardb_" + col);
+	const expansionSpan = document.createElement("span");
+	expansionSpan.setAttribute("class", "standardb_" + col);
 	let isExpanded = false;
 	let isAnimating = false;
-	expansionA.onclick = function () {
+	expansionSpan.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
 		this.textContent = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
-	expansionA.textContent = "[▼]";
+	expansionSpan.textContent = "[▼]";
 	pointer.remove();
-	element.append(document.createTextNode(" "), expansionA);
+	element.append(document.createTextNode(" "), expansionSpan);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -491,7 +484,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummary(words_arr, middle);
-		const result = getLineInfo(expansionA, startLineTop, lineHeight, linesToShow);
+		const result = getLineInfo(expansionSpan, startLineTop, lineHeight, linesToShow);
 		if (result.fitsLinesToShow) {
 			wordsCount = middle;
 			left = middle + 1;
@@ -575,12 +568,11 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// Add expansion link.
 	// ---------------------------------------------------------
 
-	const expansionA = document.createElement("a");
-	expansionA.setAttribute("href", "javascript:void(0);");
-	expansionA.setAttribute("class", "standardb_" + col);
+	const expansionSpan = document.createElement("a");
+	expansionSpan.setAttribute("class", "standardb_" + col);
 	let isExpanded = false;
 	let isAnimating = false;
-	expansionA.onclick = function () {
+	expansionSpan.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
@@ -589,8 +581,8 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 			isAnimating = false;
 		});
 	};
-	expansionA.textContent = "[▼]";
-	measureSpan.append(document.createTextNode(" "), expansionA);
+	expansionSpan.textContent = "[▼]";
+	measureSpan.append(document.createTextNode(" "), expansionSpan);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
