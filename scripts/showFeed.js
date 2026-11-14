@@ -351,7 +351,7 @@ function showFeedTitle(type, source, lang, result) {
 	cell1.style.display = "flex";
 	cell1.style.alignItems = "center";
 	cell1.style.justifyContent = "center";
-	cell1.style.gap = "10px";
+	cell1.style.gap = "5px";
 
 	const container = document.createElement("div");
 	container.style.padding = "5px";
@@ -363,12 +363,12 @@ function showFeedTitle(type, source, lang, result) {
 	container.style.gap = "6px";
 
 	const scrollArrow = (direction) => {
-		const arrow = document.createElement("span");
+		const arrow = document.createElement("button");
+		arrow.type = "button";
 		arrow.textContent = direction === "ArrowRight" ? "▶" : "◀";
 		arrow.className = "standardb_red";
-		arrow.setAttribute("tabindex", "0");
 
-		const dispatchKeydown = () => {
+		const dispatchKeydown = (event) => {
 			document.dispatchEvent(new KeyboardEvent("keydown", {
 				key: direction,
 				shiftKey: event.shiftKey,
@@ -380,13 +380,6 @@ function showFeedTitle(type, source, lang, result) {
 		};
 
 		arrow.addEventListener("click", dispatchKeydown);
-		arrow.addEventListener("keydown", event => {
-			if (event.key === "Enter" || event.key === " ") {
-				event.preventDefault();
-				dispatchKeydown();
-			}
-		});
-
 		return arrow;
 	};
 

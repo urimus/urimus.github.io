@@ -271,6 +271,13 @@ P {text-indent: 10px; margin: 0px; padding-top:0px; }
 .standardb_red:hover {
 	color: #ff8a00; text-shadow: 2px 2px 4px #ff8a00;
 }
+button.standardb_red {
+	border: 1px solid #de8e8e; border-radius: 4px; background: #F9D4D4; box-shadow: 2px 2px 4px #de8e8e;
+}
+button.standardb_red:hover {
+	border-color: #ff8a00; box-shadow: 2px 2px 4px #ff8a00;
+}
+
 
 .standardb_green {
 	font-family: Verdana; font-size: 14px; font-weight: bold; text-decoration: none; color: #008040; text-shadow: 2px 2px 4px #68c496; cursor: pointer;
