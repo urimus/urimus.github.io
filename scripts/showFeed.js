@@ -370,7 +370,7 @@ function showFeedTitle(type, source, lang, result) {
 
 	const scrollArrow = (direction) => {
 		const arrow = document.createElement("span");
-		arrow.textContent = direction === "ArrowRight" ? "⯈" : "⯇";
+		arrow.textContent = direction === "ArrowRight" ? "▶" : "◀";
 		arrow.className = "standardb_red";
 		arrow.style.padding = "5px";
 		arrow.style.cursor = "pointer";
@@ -380,6 +380,10 @@ function showFeedTitle(type, source, lang, result) {
 		const dispatchKeydown = () => {
 			document.dispatchEvent(new KeyboardEvent("keydown", {
 				key: direction,
+				shiftKey: event.shiftKey,
+				ctrlKey: event.ctrlKey,
+				altKey: event.altKey,
+				metaKey: event.metaKey,
 				bubbles: true
 			}));
 		};
@@ -439,9 +443,11 @@ function showFeedTitle(type, source, lang, result) {
 		Img.setAttribute('tabindex', "0");
 		Img.setAttribute('alt', t("lastBuild"));
 
-		let title = "<div>" + t("lastBuild") + "</div>";
-		title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
-		title += "<div>" + formatDate(result.date_ms, lang) + "</div>";
+		const title = `
+			<div>${t("lastBuild")}</div>
+			<div style="width:100%; border:#ff8a00 1px solid; margin:5px 0;"></div>
+			<div>${formatDate(result.date_ms, lang)}</div>
+		`;
 
 		Img.setAttribute('title', title);
 		Img.setAttribute('height', 27);
@@ -1294,9 +1300,11 @@ function generateTabs(type, source, lang) {
 	let cell1 = row.insertCell(0);
 	cell1.appendChild(tabssubtable2);
 
-	let title = "<div>" + t("tip") + "</div>";
-	title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
-	title += "<div>" + t("useNavigationKeys") + " <kbd>&rlarr;</kbd> " + t("with") + " <kbd>Shift</kbd> " + t("and") + " <kbd>Home</kbd>, <kbd>End</kbd> " + t("forContentsScroll") + "</div>";
+	const title = `
+		<div>${t("tip")}</div>
+		<div style="width:100%; border:#ff8a00 1px solid; margin:5px 0;"></div>
+		<div>${t("useNavigationKeys")} <kbd>&rlarr;</kbd> ${t("or")} <kbd>▶</kbd>, <kbd>◀</kbd> ${t("with")} <kbd>Shift</kbd> ${t("or")} <kbd>Home</kbd>, <kbd>End</kbd> ${t("forContentsScroll")}</div>
+	`;
 	let Img = document.createElement('img');
 	Img.setAttribute('tabindex', "0");
 	Img.setAttribute('alt', t("tip"));
