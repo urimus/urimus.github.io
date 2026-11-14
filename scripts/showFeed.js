@@ -10,23 +10,16 @@ function sanitizeAndText(html) {
 
 function feedIcon(feedURL, lang) {
 
-	let textFeedType;
-	if (feedURL == "https://api.artemis2.live/news") { // artemis
-		textFeedType = "API ";
-	} else {
-		textFeedType = "RSS "
-	}
-	textFeedType += t("feed");
-	if (lang == "rus" || lang == "lat") textFeedType += " (" + t("eng") + ")";
+	const textFeedType = `${feedURL === "https://api.artemis2.live/news" ? "API" : "RSS"} ${t("feed")}${["rus", "lat"].includes(lang) ? ` (${t("eng")})` : ""}`;
 
-	let a = document.createElement('a');
+	const a = document.createElement('a');
 	a.setAttribute('href', feedURL);
 	a.setAttribute('class', 'standardb_red');
 	a.setAttribute('target', '_blank');
 	a.setAttribute('tabindex', "0");
 	a.setAttribute('title', textFeedType);
 
-	let Img = document.createElement("img");
+	const Img = document.createElement("img");
 	Img.setAttribute('class', "thumbnail_image_red_png");
 	Img.setAttribute('alt', textFeedType);
 	Img.setAttribute('height', 27);
@@ -47,14 +40,14 @@ function feedIcon(feedURL, lang) {
 function mailToIcon(email) {
 	email = sanitizeAndText(email ?? "");
 
-	let a = document.createElement('a');
+	const a = document.createElement('a');
 	a.setAttribute('href', "mailto:"+email);
 	a.setAttribute('class', 'standardb_red icon_link');
 	a.setAttribute('target', '_blank');
 	a.setAttribute('tabindex', "0");
 	a.setAttribute('title', email);
 
-	let Img = document.createElement("img");
+	const Img = document.createElement("img");
 	Img.setAttribute('class', "thumbnail_image_red_png");
 	Img.setAttribute('alt', email);
 	Img.setAttribute('height', 27);
@@ -65,7 +58,7 @@ function mailToIcon(email) {
 
 function urlA(name, url, description = "") {
 	if (description) description = sanitizeAndText(description);
-	let a = document.createElement('a');
+	const a = document.createElement('a');
 	a.setAttribute('href', url);
 	a.setAttribute('class', 'standardb_red');
 	if (description) a.setAttribute('title', description);
@@ -458,9 +451,11 @@ function showFeedTitle(type, source, lang, result) {
 		const Img = document.createElement('img');
 		Img.setAttribute('tabindex', "0");
 
-		let title = "<div>" + t("copyright") + "</div>";
-		title += "<div style='width:100%; border:#ff8a00 1px solid; margin:5px 0;'></div>";
-		title += "<div>" + sanitizeAndText(result.copyright) + "</div>";
+		const title = `
+			<div>${t("copyright")}</div>
+			<div style="width:100%; border:#ff8a00 1px solid; margin:5px 0;"></div>
+			<div>${sanitizeAndText(result.copyright)}</div>
+		`;
 
 		Img.setAttribute('alt', t("copyright"));
 		Img.setAttribute('title', title);
@@ -533,7 +528,7 @@ function showFeedData(type, source, lang, result) {
 				adjustFeedScrollDiv();
 			};
 			const loadingMessages = document.getElementById("loadingMessages");
-			loadingMessages.appendChild(a);
+			loadingMessages.appendChild(span);
 			const processedDiv = document.getElementById("processedDiv");
 			processedDiv.style.display = "block";
 			adjustFeedScrollDiv();
@@ -582,7 +577,7 @@ function preloadImage(type, source, lang, result) {
 
 	let isOrigUrl=0;
 	let newUrl;
-	let totalEntries = result.entries.length;
+	const totalEntries = result.entries.length;
 	let preloadStartedCount=0;
 	let preloadPassedCount=0;
 	let preloadFailedCount=0;
@@ -608,12 +603,12 @@ function preloadImage(type, source, lang, result) {
 	if (preloadStartedCount==5) return; // 5 preloads simultaneously only
 	if (preloadSet==0) return;
 
-	let entry = result.entries[preloadIndex];
-	let container = entry.storage.container;
-	let loadingImg = entry.storage.loadingImg;
-	let summaryDiv = entry.storage.summaryDiv;
+	const entry = result.entries[preloadIndex];
+	const container = entry.storage.container;
+	const loadingImg = entry.storage.loadingImg;
+	const summaryDiv = entry.storage.summaryDiv;
 
-	let preloadImg = new Image();
+	const preloadImg = new Image();
 	preloadImg.alt = sanitizeAndText(entry.media.comment ?? "");
 	preloadImg.title = sanitizeAndText(entry.media.comment ?? "");
 	preloadImg.onload = function () {
@@ -667,7 +662,7 @@ function preloadImage(type, source, lang, result) {
 			entry.storage.preloadStarted=0;
 			entry.storage.preloadComplete=1;
 
-			let preloadImg2 = document.createElement("img");
+			const preloadImg2 = document.createElement("img");
 			preloadImg2.setAttribute('style', 'display: block; margin: 5px 0;');
 			preloadImg2.setAttribute('class', 'text_red;');
 			preloadImg2.setAttribute('width', 450);
@@ -1058,242 +1053,279 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 }
 
 function generateTabs(type, source, lang) {
+	const tabs = {};
+	const tabs2 = {};
 
-	let tabs = {};
-	let tabs2 = {};
+	const physGroups = [
+		{
+			types: ["earth", "environment"],
+			title: "Earth",
+			tabs: {
+				earth: "Earth Sciences",
+				environment: "Environment"
+			}
+		},
+		{
+			types: ["archaeology", "economics", "education", "mathematics", "other", "political", "social"],
+			title: "Other Sciences",
+			tabs: {
+				archaeology: "Archaeology",
+				economics: "Economics &",
+				education: "Education",
+				mathematics: "Mathematics",
+				other: "Other",
+				political: "Political Science",
+				social: "Social Sciences"
+			},
+			full: {
+				economics: "Economics & Business"
+			}
+		},
+		{
+			types: ["bio", "nanomaterials", "nanophysics"],
+			title: "Nanotechnology",
+			tabs: {
+				bio: "Bio & Medicine",
+				nanomaterials: "Nanomaterials",
+				nanophysics: "Nanophysics"
+			}
+		},
+		{
+			types: ["condensed", "general", "optics", "plasma", "quantum", "soft", "superconductivity"],
+			title: "Physics",
+			tabs: {
+				condensed: "Condensed Matter",
+				general: "General Physics",
+				optics: "Optics & Photonics",
+				plasma: "Plasma Physics",
+				quantum: "Quantum Physics",
+				soft: "Soft Matter",
+				superconductivity: "Superconductivity"
+			}
+		},
+		{
+			types: ["astrobiology", "astronomy", "planetary", "space"],
+			title: "Astronomy & Space",
+			tabs: {
+				astrobiology: "Astrobiology",
+				astronomy: "Astronomy",
+				planetary: "Planetary Sciences",
+				space: "Space Exploration"
+			}
+		},
+		{
+			types: ["agriculture", "biotechnology", "cell", "ecology", "evolution", "molecular", "otherb", "paleontology", "plants", "veterinary"],
+			title: "Biology",
+			tabs: {
+				agriculture: "Agriculture",
+				biotechnology: "Biotechnology",
+				cell: "Cell &",
+				ecology: "Ecology",
+				evolution: "Evolution",
+				molecular: "Molecular &",
+				otherb: "Other",
+				paleontology: "Paleontology &",
+				plants: "Plants & Animals",
+				veterinary: "Veterinary"
+			},
+			full: {
+				cell: "Cell & Microbiology",
+				molecular: "Molecular & Computational Biology",
+				paleontology: "Paleontology & Fossils",
+				veterinary: "Veterinary Medicine"
+			}
+		},
+		{
+			types: ["analytical", "biochemistry", "materials", "otherc", "polymers"],
+			title: "Chemistry",
+			tabs: {
+				analytical: "Analytical",
+				biochemistry: "Biochemistry",
+				materials: "Materials Science",
+				otherc: "Other",
+				polymers: "Polymers"
+			},
+			full: {
+				analytical: "Analytical Chemistry"
+			}
+		}
+	];
 
-	if (source=="cbs") {
-		tabs["top"]="Top Stories";
-		tabs["us"]="U.S.";
-		tabs["politics"]="Politics";
-		tabs["world"]="World";
-		tabs["health"]="Health";
-		tabs["moneywatch"]="MoneyWatch";
-		tabs["science"]="Science";
-		tabs["technology"]="Technology";
-		tabs["entertainment"]="Entertainment";
-		tabs["space"]="Space";
-	}
-	if (source=="nasa") {
-		tabs["releases"]="News Releases";
-		tabs["recent"]="Recently";
-		tabs2["recent"]="Recently Published Content";
-		tabs["image"]="Image of the Day";
-		tabs["technology"]="Technology";
-		tabs["aeronautics"]="Aeronautics";
-		tabs["iss"]="Space Station";
-		tabs["artemis"]="Artemis";
-	}
-	if (source=="merco") {
-		tabs["main"]="Main";
-		tabs["agriculture"]="Agriculture";
-		tabs["economy"]="Economy";
-		tabs["energy"]="Energy";
-		tabs["environment"]="Environment";
-		tabs["fisheries"]="Fisheries";
-		tabs["health"]="Health & Science";
-		tabs["investments"]="Investments";
-		tabs["politics"]="Politics";
-		tabs["realestate"]="Real Estate";
-	}
-	if (source=="phys.org") {
-		if (type=="earth" || type=="environment") {
-			tabs["earth"]="Earth Sciences";
-			tabs["environment"]="Environment";
+	const sourceTabs = {
+		cbs: {
+			top: "Top Stories",
+			us: "U.S.",
+			politics: "Politics",
+			world: "World",
+			health: "Health",
+			moneywatch: "MoneyWatch",
+			science: "Science",
+			technology: "Technology",
+			entertainment: "Entertainment",
+			space: "Space"
+		},
+		nasa: {
+			releases: "News Releases",
+			recent: "Recently",
+			image: "Image of the Day",
+			technology: "Technology",
+			aeronautics: "Aeronautics",
+			iss: "Space Station",
+			artemis: "Artemis"
+		},
+		merco: {
+			main: "Main",
+			agriculture: "Agriculture",
+			economy: "Economy",
+			energy: "Energy",
+			environment: "Environment",
+			fisheries: "Fisheries",
+			health: "Health & Science",
+			investments: "Investments",
+			politics: "Politics",
+			realestate: "Real Estate"
+		},
+		yonhap: {
+			all: "All News",
+			national: "National",
+			northkorea: "North Korea",
+			economy: "Economy/Finance",
+			biz: "BIZ",
+			culture: "Culture/K-pop",
+			sports: "Sports"
 		}
-		if (type=="archaeology" || type=="economics" || type=="education" || type=="mathematics" || type=="other" || type=="political"  || type=="social") {
-			tabs["archaeology"]="Archaeology";
-			tabs2["economics"]="Economics & Business";
-			tabs["economics"]="Economics &";
-			tabs["education"]="Education";
-			tabs["mathematics"]="Mathematics";
-			tabs["other"]="Other";
-			tabs["political"]="Political Science";
-			tabs["social"]="Social Sciences";
+	};
+
+	if (source === "phys.org") {
+		const group = physGroups.find(group => group.types.includes(type));
+		if (group) {
+			Object.assign(tabs, group.tabs);
+			if (group.full) Object.assign(tabs2, group.full);
 		}
-		if (type=="bio" || type=="nanomaterials" || type=="nanophysics") {
-			tabs["bio"]="Bio & Medicine";
-			tabs["nanomaterials"]="Nanomaterials";
-			tabs["nanophysics"]="Nanophysics";
-		}
-		if (type=="condensed" || type=="general" || type=="optics" || type=="plasma" || type=="quantum" || type=="soft" || type=="superconductivity") {
-			tabs["condensed"]="Condensed Matter";
-			tabs["general"]="General Physics";
-			tabs["optics"]="Optics & Photonics";
-			tabs["plasma"]="Plasma Physics";
-			tabs["quantum"]="Quantum Physics";
-			tabs["soft"]="Soft Matter";
-			tabs["superconductivity"]="Superconductivity";
-		}
-		if (type=="astrobiology" || type=="astronomy" || type=="planetary" || type=="space") {
-			tabs["astrobiology"]="Astrobiology";
-			tabs["astronomy"]="Astronomy";
-			tabs["planetary"]="Planetary Sciences";
-			tabs["space"]="Space Exploration";
-		}
-		if (type=="agriculture" || type=="biotechnology" || type=="cell" || type=="ecology" || type=="evolution" || type=="molecular" || type=="otherb" || type=="paleontology" || type=="plants" || type=="veterinary") {
-			tabs["agriculture"]="Agriculture";
-			tabs["biotechnology"]="Biotechnology";
-			tabs2["cell"]="Cell & Microbiology";
-			tabs["cell"]="Cell &";
-			tabs["ecology"]="Ecology";
-			tabs["evolution"]="Evolution";
-			tabs2["molecular"]="Molecular & Computational Biology";
-			tabs["molecular"]="Molecular &";
-			tabs["otherb"]="Other";
-			tabs2["paleontology"]="Paleontology & Fossils";
-			tabs["paleontology"]="Paleontology &";
-			tabs["plants"]="Plants & Animals";
-			tabs2["veterinary"]="Veterinary Medicine";
-			tabs["veterinary"]="Veterinary";
-		}
-		if (type=="analytical" || type=="biochemistry" || type=="materials" || type=="otherc" || type=="polymers") {
-			tabs2["analytical"]="Analytical Chemistry";
-			tabs["analytical"]="Analytical";
-			tabs["biochemistry"]="Biochemistry";
-			tabs["materials"]="Materials Science";
-			tabs["otherc"]="Other";
-			tabs["polymers"]="Polymers";
-		}
-	}
-	if (source=="yonhap") {
-		tabs["all"]="All News";
-		tabs["national"]="National";
-		tabs["northkorea"]="North Korea";
-		tabs["economy"]="Economy/Finance";
-		tabs["biz"]="BIZ";
-		tabs["culture"]="Culture/K-pop";
-		tabs["sports"]="Sports";
+	} else if (sourceTabs[source]) {
+		Object.assign(tabs, sourceTabs[source]);
 	}
 
-	let textFeedSource;
-	let menuDiv;
-	if (source=="artemis") {
-		textFeedSource = "Artemis II";
-		menuDiv=document.getElementById("menu_26_1");
-	}
-	if (source == "cbs") {
-		textFeedSource = "CBS News";
-		menuDiv=document.getElementById("menu_26_2");
-	}
-	if (source == "merco") {
-		textFeedSource = "MercoPress.";
-		menuDiv=document.getElementById("menu_26_3");
-	}
-	if (source == "nasa") {
-		textFeedSource = "NASA";
-		menuDiv=document.getElementById("menu_26_4");
-	}
-	if (source=="phys.org") {
-		textFeedSource = "Phys.org";
-		menuDiv=document.getElementById("menu_26_5");
-	}
-	if (source == "yonhap") {
-		textFeedSource = "Yonhap News";
-		menuDiv=document.getElementById("menu_26_6");
-	}
+	const sourceInfo = {
+		artemis: ["Artemis II", "menu_26_1"],
+		cbs: ["CBS News", "menu_26_2"],
+		merco: ["MercoPress.", "menu_26_3"],
+		nasa: ["NASA", "menu_26_4"],
+		"phys.org": ["Phys.org", "menu_26_5"],
+		yonhap: ["Yonhap News", "menu_26_6"]
+	};
+
+	const [textFeedSource, menuId] = sourceInfo[source];
+	const menuDiv = document.getElementById(menuId);
 
 	menuDiv.setAttribute('class', "menu_selected");
 	menuDiv.setAttribute('onmouseleave', "this.className='menu_selected';");
 
-	let textFeedType;
-	if (source == "artemis") {
-		textFeedType ="API ";
-	} else {
-		textFeedType ="RSS ";
-	}
-	textFeedType += t("feed");
+	const textFeedType = (source === "artemis" ? "API " : "RSS ") + t("feed");
 
-	let tabtype2;
-	if (source=="phys.org") {
-		if (type=="all") tabtype2="All Stories";
-		if (type=="earth" || type=="environment") tabtype2="Earth &blacktriangleright; "+tabs[type];
-		if (type=="archaeology" || type=="economics" || type=="education" || type=="mathematics" || type=="other" || type=="political"  || type=="social") {
-			tabtype2="Other Sciences &blacktriangleright; "+tabs[type];
-			if (type=="economics") tabtype2="Other Sciences &blacktriangleright; "+tabs2[type];
-		}
-		if (type=="bio" || type=="nanomaterials" || type=="nanophysics") tabtype2="Nanotechnology &blacktriangleright; "+tabs[type];
-		if (type=="condensed" || type=="general" || type=="optics" || type=="plasma" || type=="quantum" || type=="soft" || type=="superconductivity") tabtype2="Physics &blacktriangleright; "+tabs[type];
-		if (type=="astrobiology" || type=="astronomy" || type=="planetary" || type=="space") tabtype2="Astronomy & Space &blacktriangleright; "+tabs[type];
-		if (type=="agriculture" || type=="biotechnology" || type=="cell" || type=="ecology" || type=="evolution" || type=="molecular" || type=="otherb" || type=="paleontology" || type=="plants" || type=="veterinary") {
-			tabtype2="Biology &blacktriangleright; "+tabs[type];
-			if (type=="cell" || type=="molecular" || type=="paleontology" || type=="veterinary") tabtype2="Biology &blacktriangleright; "+tabs2[type];
-		}
-		if (type=="analytical" || type=="biochemistry" || type=="materials" || type=="otherc" || type=="polymers") {
-			tabtype2="Chemistry &blacktriangleright; "+tabs[type];
-			if (type=="analytical") tabtype2="Chemistry &blacktriangleright; "+tabs2[type];
-		}
-	} else if (source=="artemis") tabtype2="";
-	else if (source=="nasa" && type=="recent") tabtype2=tabs2[type];
-	else tabtype2=tabs[type];
+	let tabtype2 = "";
 
-	let feedTitle=document.getElementById("feedTitle");
-	if (tabtype2 != "") {
-		feedTitle.innerHTML=t("news")+" &blacktriangleright; "+textFeedSource +" "+textFeedType+" &blacktriangleright; "+tabtype2;
-	} else {
-		feedTitle.innerHTML=t("news")+" &blacktriangleright; "+textFeedSource +" "+textFeedType;
+	if (source === "phys.org") {
+		if (type === "all") {
+			tabtype2 = "All Stories";
+		} else {
+			const group = physGroups.find(group => group.types.includes(type));
+			if (group) {
+				tabtype2 = group.title + " &blacktriangleright; " + (tabs2[type] || tabs[type]);
+			}
+		}
+	} else if (source === "nasa" && type === "recent") {
+		tabtype2 = tabs2.recent;
+	} else if (source !== "artemis") {
+		tabtype2 = tabs[type];
 	}
 
-	let keys=Object.keys(tabs);
-	let table = document.getElementById("tabstable");
+	const feedTitle = document.getElementById("feedTitle");
+	feedTitle.innerHTML = t("news") + " &blacktriangleright; " + textFeedSource + " " + textFeedType +
+		(tabtype2 ? " &blacktriangleright; " + tabtype2 : "");
+
+	const keys = Object.keys(tabs);
+	const table = document.getElementById("tabstable");
 	table.replaceChildren();
 
 	// Phys.org subtable
-	if (source == "phys.org") {
-		let row = table.insertRow(-1);
-		let cell1 = row.insertCell(0);
-		let tabssubtable1 = document.createElement('table');
+	if (source === "phys.org") {
+		const row = table.insertRow(-1);
+		const cell1 = row.insertCell(0);
+		const tabssubtable1 = document.createElement('table');
+
 		tabssubtable1.setAttribute('cellpadding', "0px;");
 		tabssubtable1.setAttribute('cellspacing', "0px;");
 		tabssubtable1.setAttribute('width', "100%;");
-		let subrow = tabssubtable1.insertRow(-1);
-		let subcell = subrow.insertCell(0);
+
+		const subrow = tabssubtable1.insertRow(-1);
+		const subcell = subrow.insertCell(0);
+
 		subcell.setAttribute('style', "width: 280px; display: inline-block; textAlign: left; margin:2px;");
-		let Div = document.createElement('div');
+
+		const Div = document.createElement('div');
 		Div.setAttribute('id', "menu_100");
 		Div.setAttribute('onmouseenter', "showSubMenu(this, '"+lang+"', 'news');");
 		Div.setAttribute('onmouseleave', "this.className='menu_not_selected_red'");
-		Div.setAttribute('onclick', "showSubMenu(this, '"+lang+"', 'news');" );
+		Div.setAttribute('onclick', "showSubMenu(this, '"+lang+"', 'news');");
 		Div.setAttribute('class', "menu_not_selected_red");
 		Div.setAttribute('style', "padding-left: 5px;");
 		Div.innerHTML = "● Phys.org RSS " + t("feed");
+
 		subcell.appendChild(Div);
 		cell1.appendChild(tabssubtable1);
 		table.setAttribute("onmouseenter", "");
 	}
 
-	let tabssubtable2 = document.createElement('table');
+	const tabssubtable2 = document.createElement('table');
+
 	tabssubtable2.setAttribute('cellpadding', "0px;");
 	tabssubtable2.setAttribute('cellspacing', "0px;");
 	tabssubtable2.setAttribute('width', "100%;");
 
 	let subrow;
-	for (let i=0; i<keys.length; i++) {
-		if (i%5==0) subrow = tabssubtable2.insertRow(-1);
-		let subcell = subrow.insertCell(i%5);
-		subcell.style.width='20%';
-		if (keys.length<5) subcell.style.display='inline-block';
-		subcell.style.textAlign='center';
 
-		let Div = document.createElement('div');
-		Div.dataset.shortTitle=tabs[keys[i]];
-		if (typeof tabs2[keys[i]]!=="undefined") Div.dataset.fullTitle=tabs2[keys[i]];
-		Div.style.margin='2px';
-		if (type==keys[i]) Div.setAttribute('class', "menu_selected");
-		else Div.setAttribute('class', "menu_not_selected_red");
-		Div.setAttribute('id', "feed_"+keys[i]);
+	for (let i = 0; i < keys.length; i++) {
+		if (i % 5 === 0) subrow = tabssubtable2.insertRow(-1);
+
+		const key = keys[i];
+		const subcell = subrow.insertCell(i % 5);
+
+		subcell.style.width = '20%';
+		if (keys.length < 5) subcell.style.display = 'inline-block';
+		subcell.style.textAlign = 'center';
+
+		const Div = document.createElement('div');
+
+		Div.dataset.shortTitle = tabs[key];
+		if (tabs2[key] !== undefined) Div.dataset.fullTitle = tabs2[key];
+
+		Div.style.margin = '2px';
+		Div.setAttribute('class', type === key ? "menu_selected" : "menu_not_selected_red");
+		Div.setAttribute('id', "feed_" + key);
 		Div.setAttribute('role', "button");
 		Div.setAttribute('tabindex', "0");
-		Div.setAttribute('onmouseenter', "if (clickStarted) return; this.className='menu_selected'; if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.fullTitle;");
-		Div.setAttribute('onmouseleave', "if (clickStarted) return; mouseOutTab('"+keys[i]+"', '"+type+"'); if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.shortTitle;");
-		let divLink="news_"+lang+".html?source="+source+"&type="+keys[i];
-		Div.setAttribute('onclick', "if (event.ctrlKey){ window.open('"+divLink+"'); } else { clickStarted = true; window.location.href='"+divLink+"'; };");
-		Div.innerHTML=tabs[keys[i]];
+
+		Div.setAttribute('onmouseenter',
+			"if (clickStarted) return; this.className='menu_selected'; if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.fullTitle;"
+		);
+
+		Div.setAttribute('onmouseleave',
+			"if (clickStarted) return; mouseOutTab('"+key+"', '"+type+"'); if(typeof this.dataset.fullTitle!=='undefined') this.innerHTML=this.dataset.shortTitle;"
+		);
+
+		const divLink = "news_" + lang + ".html?source=" + source + "&type=" + key;
+
+		Div.setAttribute('onclick',
+			"if (event.ctrlKey){ window.open('"+divLink+"'); } else { clickStarted = true; window.location.href='"+divLink+"'; };"
+		);
+
+		Div.innerHTML = tabs[key];
 		subcell.appendChild(Div);
 	}
 
-	let row = table.insertRow(-1);
-	let cell1 = row.insertCell(0);
+	const row = table.insertRow(-1);
+	const cell1 = row.insertCell(0);
 	cell1.appendChild(tabssubtable2);
 
 	const title = `
@@ -1301,54 +1333,54 @@ function generateTabs(type, source, lang) {
 		<div style="width:100%; border:#ff8a00 1px solid; margin:5px 0;"></div>
 		<div>${t("useNavigationKeys")} <kbd>&rlarr;</kbd> ${t("or")} <kbd>◀▶</kbd> ${t("with")} <kbd>Shift</kbd> ${t("or")} <kbd>Home</kbd>, <kbd>End</kbd> ${t("forContentsScroll")}</div>
 	`;
-	let Img = document.createElement('img');
+
+	const Img = document.createElement('img');
 	Img.setAttribute('tabindex', "0");
 	Img.setAttribute('alt', t("tip"));
 	Img.setAttribute('title', title);
-	Img.setAttribute('style',  "height:27px; display: block;");
-	Img.src="images/icons/feed/tips.svg";
+	Img.setAttribute('style', "height:27px; display: block;");
+	Img.src = "images/icons/feed/tips.svg";
 	table.appendChild(Img);
 
-	let Div = document.createElement('div');
+	const Div = document.createElement('div');
 	Div.setAttribute('id', "information_div");
-	let a = document.createElement('a');
+
+	const a = document.createElement('a');
 	a.setAttribute('href', "javascript:showInformation('"+lang+"');");
 	a.setAttribute('tabindex', "0");
 	a.setAttribute('title', t("versionInformation"));
-	let Img2 = document.createElement('img');
+
+	const Img2 = document.createElement('img');
 	Img2.setAttribute('alt', t("versionInformation"));
 	Img2.setAttribute('id', "information_img");
 	Img2.setAttribute('class', "thumbnail_image_red_png");
 	Img2.setAttribute('style', "height: 27px; display: block;");
-	Img2.src="images/icons/html_editor/information_red.svg";
+	Img2.src = "images/icons/html_editor/information_red.svg";
+
 	a.appendChild(Img2);
 	Div.appendChild(a);
 	table.appendChild(Div);
 
-	table.style.position='relative';
-	Div.style.position='absolute';
-	Img.style.position='absolute';
+	table.style.position = 'relative';
+	Div.style.position = 'absolute';
+	Img.style.position = 'absolute';
+
+	Div.style.right = '2px';
+	Img.style.right = '32px';
 
 	if (keys.length < 5) {
-		Div.style.right='2px';
-		Img.style.right='32px';
-		Div.style.top='2px';
-		Img.style.top='2px';
-	} else if (keys.length % 5==0) {
-		Div.style.right='2px';
-		Img.style.right='32px';
-		Div.style.bottom='-27px';
-		Img.style.bottom='-27px';
+		Div.style.top = '2px';
+		Img.style.top = '2px';
+	} else if (keys.length % 5 === 0) {
+		Div.style.bottom = '-27px';
+		Img.style.bottom = '-27px';
 	} else {
-		Div.style.right='2px';
-		Img.style.right='32px';
-		Div.style.bottom='0px';
-		Img.style.bottom='0px';
+		Div.style.bottom = '0px';
+		Img.style.bottom = '0px';
 	}
 
 	adjustFeedScrollDiv();
 }
-
 
 function showInformation(lang) {
 	axios.get("scripts/showFeed.js", {
@@ -1404,9 +1436,17 @@ function showFeedError(message, feedURL, lang) {
 	adjustFeedScrollDiv();
 }
 
+
 function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 
-	let axiosConfig = {};
+	const axiosConfig = {
+		url: ["cbs", "merco", "phys.org", "yonhap"].includes(source) ? proxyURL : feedURL,
+		params: {
+			...( ["cbs", "merco", "phys.org", "yonhap"].includes(source) ? { url: feedURL } : {}),
+			_: Date.now()
+		},
+		timeout: 10000
+	};
 
 /*
 	// --- check if proxy required ---
@@ -1419,260 +1459,233 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 	});
 */
 
-	if (source == "cbs" || source == "merco" || source == "phys.org" || source == "yonhap") {
-		axiosConfig.url = proxyURL;
-		axiosConfig.params = {
-			url: feedURL,
-			_: Date.now()
-		};
-	} else {
-		axiosConfig.url = feedURL;
-		axiosConfig.params = {
-			_: Date.now()
-		};
-	}
-	axiosConfig.timeout = 10000;
-
 	axios(axiosConfig)
-	.then(
-		response => {
-			const data = response.data;
+	.then(response => {
+		const data = response.data;
 
-			let loadAttemptSpan = document.getElementById("loadAttempt");
-			if (loadAttemptSpan) loadAttemptSpan.innerHTML="";
-			adjustFeedScrollDiv();
+		const loadAttemptSpan = document.getElementById("loadAttempt");
+		if (loadAttemptSpan) loadAttemptSpan.innerHTML = "";
+		adjustFeedScrollDiv();
 
-			let result;
-			if (source == "artemis") {
-				if (!data || typeof data !== "object" || data.message !== "fetch news event is successful.") {
-					showFeedError("API Parse Error: Invalid API Response", feedURL, lang);
-					adjustFeedScrollDiv();
-					return;
-				}
-				result = data;
-			} else {
-				try {
-					let json = xml2js(data, {
-						compact: true,
-						trim: true
-					});
-					result = json.rss.channel;
-				} catch (e) {
-   					showFeedError("XML Parse Error: " + e.message, feedURL, lang);
-					adjustFeedScrollDiv();
-					return;
-				}
-			}
+		let result;
 
-			result.feedXML = feedURL;
-			optimizeUpdateResult(type, source, lang, result);
-			if ("serviceWorker" in navigator) {
-				requestIdleCallback(() => {
-					navigator.serviceWorker.ready.then(() => {
-						preloadImagesGeneral();
-					});
-				});
-			}
-		},
-		error => {
-			consoleAxiosError(error, t("feedLoadError") + " | " + t("loadAttempt") + " " + loadAttempt);
-			if (loadAttempt < 10) {
-				loadAttempt++;
-				const loadAttemptSpan = document.getElementById("loadAttempt");
-				if (loadAttemptSpan) {
-					const reloadLink = document.createElement("a");
-					reloadLink.href = "javascript:location.reload();";
-					reloadLink.className = "standardb_red";
-					reloadLink.textContent = t("reloadPage");
-					loadAttemptSpan.replaceChildren(
-						document.createElement("br"),
-						document.createTextNode(t("loadAttempt") + ": " + loadAttempt),
-						document.createElement("br"),
-						reloadLink
-					);
-				}
+		if (source === "artemis") {
+			if (!data || typeof data !== "object" || data.message !== "fetch news event is successful.") {
+				showFeedError("API Parse Error: Invalid API Response", feedURL, lang);
 				adjustFeedScrollDiv();
-				loadFeed(type, source, lang, feedURL, loadAttempt);
 				return;
-			} 
-
-			showFeedError(error.message, feedURL, lang);
-
+			}
+			result = data;
+		} else {
+			try {
+				result = xml2js(data, {
+					compact: true,
+					trim: true
+				}).rss.channel;
+			} catch (e) {
+				showFeedError("XML Parse Error: " + e.message, feedURL, lang);
+				adjustFeedScrollDiv();
+				return;
+			}
 		}
-	);
+
+		result.feedXML = feedURL;
+		optimizeUpdateResult(type, source, lang, result);
+
+		if ("serviceWorker" in navigator) {
+			requestIdleCallback(() => {
+				navigator.serviceWorker.ready.then(() => {
+					preloadImagesGeneral();
+				});
+			});
+		}
+	})
+	.catch(error => {
+		consoleAxiosError(error, t("feedLoadError") + " | " + t("loadAttempt") + " " + loadAttempt);
+
+		if (loadAttempt < 10) {
+			loadAttempt++;
+
+			const loadAttemptSpan = document.getElementById("loadAttempt");
+			if (loadAttemptSpan) {
+				const reloadLink = document.createElement("a");
+				reloadLink.href = "javascript:location.reload();";
+				reloadLink.className = "standardb_red";
+				reloadLink.textContent = t("reloadPage");
+
+				loadAttemptSpan.replaceChildren(
+					document.createElement("br"),
+					document.createTextNode(t("loadAttempt") + ": " + loadAttempt),
+					document.createElement("br"),
+					reloadLink
+				);
+			}
+
+			adjustFeedScrollDiv();
+			loadFeed(type, source, lang, feedURL, loadAttempt);
+			return;
+		}
+
+		showFeedError(error.message, feedURL, lang);
+	});
 }
 
 function showFeed(type, source, lang) {
 	generateTabs(type, source, lang);
 
-	let feedURL = "";
+	const feedTypes = {
+		artemis: {
+			all: "https://api.artemis2.live/news"
+		},
+		cbs: {
+			top: "https://www.cbsnews.com/latest/rss/main",
+			us: "https://www.cbsnews.com/latest/rss/us",
+			politics: "https://www.cbsnews.com/latest/rss/politics",
+			world: "https://www.cbsnews.com/latest/rss/world",
+			health: "https://www.cbsnews.com/latest/rss/health",
+			moneywatch: "https://www.cbsnews.com/latest/rss/moneywatch",
+			science: "https://www.cbsnews.com/latest/rss/science",
+			technology: "https://www.cbsnews.com/latest/rss/technology",
+			entertainment: "https://www.cbsnews.com/latest/rss/entertainment",
+			space: "https://www.cbsnews.com/latest/rss/space"
+		},
+		merco: {
+			main: "https://en.mercopress.com/rss/",
+			agriculture: "https://en.mercopress.com/rss/agriculture",
+			economy: "https://en.mercopress.com/rss/economy",
+			energy: "https://en.mercopress.com/rss/energy",
+			environment: "https://en.mercopress.com/rss/environment",
+			fisheries: "https://en.mercopress.com/rss/fisheries",
+			health: "https://en.mercopress.com/rss/health-science",
+			investments: "https://en.mercopress.com/rss/investments",
+			politics: "https://en.mercopress.com/rss/politics",
+			realestate: "https://en.mercopress.com/rss/real-estate"
+		},
+		nasa: {
+			releases: "https://www.nasa.gov/news-release/feed/",
+			recent: "https://www.nasa.gov/feed/",
+			image: "https://www.nasa.gov/feeds/iotd-feed/",
+			technology: "https://www.nasa.gov/technology/feed/",
+			aeronautics: "https://www.nasa.gov/aeronautics/feed/",
+			iss: "https://www.nasa.gov/missions/station/feed/",
+			artemis: "https://www.nasa.gov/missions/artemis/feed/"
+		},
+		"phys.org": {
+			all: "https://phys.org/rss-feed/",
+			earth: "https://phys.org/rss-feed/earth-news/earth-sciences/",
+			environment: "https://phys.org/rss-feed/earth-news/environment/",
+			archaeology: "https://phys.org/rss-feed/science-news/archaeology-fossils/",
+			economics: "https://phys.org/rss-feed/science-news/economics-business/",
+			education: "https://phys.org/rss-feed/science-news/education/",
+			mathematics: "https://phys.org/rss-feed/science-news/mathematics/",
+			other: "https://phys.org/rss-feed/science-news/sci-other/",
+			political: "https://phys.org/rss-feed/science-news/political-science/",
+			social: "https://phys.org/rss-feed/science-news/social-sciences/",
+			bio: "https://phys.org/rss-feed/nanotech-news/bio-medicine/",
+			nanomaterials: "https://phys.org/rss-feed/nanotech-news/nano-materials/",
+			nanophysics: "https://phys.org/rss-feed/nanotech-news/nano-physics/",
+			condensed: "https://phys.org/rss-feed/physics-news/materials/",
+			general: "https://phys.org/rss-feed/physics-news/physics/",
+			optics: "https://phys.org/rss-feed/physics-news/optics-photonics/",
+			plasma: "https://phys.org/rss-feed/physics-news/plasma/",
+			quantum: "https://phys.org/rss-feed/physics-news/quantum-physics/",
+			soft: "https://phys.org/rss-feed/physics-news/soft-matter/",
+			superconductivity: "https://phys.org/rss-feed/physics-news/superconductivity/",
+			astrobiology: "https://phys.org/rss-feed/space-news/astrobiology/",
+			astronomy: "https://phys.org/rss-feed/space-news/astronomy/",
+			planetary: "https://phys.org/rss-feed/space-news/planetary-sciences/",
+			space: "https://phys.org/rss-feed/space-news/space-exploration/",
+			agriculture: "https://phys.org/rss-feed/biology-news/agriculture/",
+			biotechnology: "https://phys.org/rss-feed/biology-news/biotechnology/",
+			cell: "https://phys.org/rss-feed/biology-news/microbiology/",
+			ecology: "https://phys.org/rss-feed/biology-news/ecology/",
+			evolution: "https://phys.org/rss-feed/biology-news/evolution/",
+			molecular: "https://phys.org/rss-feed/biology-news/molecular-computational/",
+			otherb: "https://phys.org/rss-feed/biology-news/biology-other/",
+			paleontology: "https://phys.org/rss-feed/biology-news/paleontology/",
+			plants: "https://phys.org/rss-feed/biology-news/plants-animals/",
+			veterinary: "https://phys.org/rss-feed/biology-news/veterinary-medicine/",
+			analytical: "https://phys.org/rss-feed/chemistry-news/analytical-chemistry/",
+			biochemistry: "https://phys.org/rss-feed/chemistry-news/biochemistry/",
+			materials: "https://phys.org/rss-feed/chemistry-news/materials-science/",
+			otherc: "https://phys.org/rss-feed/chemistry-news/chemistry-other/",
+			polymers: "https://phys.org/rss-feed/chemistry-news/polymers/"
+		},
+		yonhap: {
+			all: "https://en.yna.co.kr/RSS/news.xml",
+			national: "https://en.yna.co.kr/RSS/national.xml",
+			northkorea: "https://en.yna.co.kr/RSS/nk.xml",
+			economy: "https://en.yna.co.kr/RSS/economy-finance.xml",
+			biz: "https://en.yna.co.kr/RSS/biz.xml",
+			culture: "https://en.yna.co.kr/RSS/culture.xml",
+			sports: "https://en.yna.co.kr/RSS/sports.xml"
+		}
+	};
 
-	if (source == "artemis") {
-		let artemisTypes = {
-			"all": "https://api.artemis2.live/news"
-		};
-		if (artemisTypes[type]) feedURL = artemisTypes[type];
-	}
+	const feedURL = feedTypes[source]?.[type] || "";
 
-	if (source == "cbs") {
-		let cbsTypes = {
-			"top": "https://www.cbsnews.com/latest/rss/main",
-			"us": "https://www.cbsnews.com/latest/rss/us",
-			"politics": "https://www.cbsnews.com/latest/rss/politics",
-			"world": "https://www.cbsnews.com/latest/rss/world",
-			"health": "https://www.cbsnews.com/latest/rss/health",
-			"moneywatch": "https://www.cbsnews.com/latest/rss/moneywatch",
-			"science": "https://www.cbsnews.com/latest/rss/science",
-			"technology": "https://www.cbsnews.com/latest/rss/technology",
-			"entertainment": "https://www.cbsnews.com/latest/rss/entertainment",
-			"space": "https://www.cbsnews.com/latest/rss/space"
-		};
-		if (cbsTypes[type]) feedURL = cbsTypes[type];
-	}
-
-	if (source == "merco") {
-		let mercoTypes = {
-			"main": "https://en.mercopress.com/rss/",
-			"agriculture": "https://en.mercopress.com/rss/agriculture",
-			"economy": "https://en.mercopress.com/rss/economy",
-			"energy": "https://en.mercopress.com/rss/energy",
-			"environment": "https://en.mercopress.com/rss/environment",
-			"fisheries": "https://en.mercopress.com/rss/fisheries",
-			"health": "https://en.mercopress.com/rss/health-science",
-			"investments": "https://en.mercopress.com/rss/investments",
-			"politics": "https://en.mercopress.com/rss/politics",
-			"realestate": "https://en.mercopress.com/rss/real-estate"
-		};
-		if (mercoTypes[type]) feedURL = mercoTypes[type];
-	}
-
-	if (source == "nasa") {
-		let nasaTypes = {
-			"releases": "https://www.nasa.gov/news-release/feed/",
-			"recent": "https://www.nasa.gov/feed/",
-			"image": "https://www.nasa.gov/feeds/iotd-feed/",
-			"technology": "https://www.nasa.gov/technology/feed/",
-			"aeronautics": "https://www.nasa.gov/aeronautics/feed/",
-			"iss": "https://www.nasa.gov/missions/station/feed/",
-			"artemis": "https://www.nasa.gov/missions/artemis/feed/"
-		};
-		if (nasaTypes[type]) feedURL = nasaTypes[type];
-	}
-
-	if (source == "phys.org") {
-		let physTypes = {
-			"all": "https://phys.org/rss-feed/",
-			"earth": "https://phys.org/rss-feed/earth-news/earth-sciences/",
-			"environment": "https://phys.org/rss-feed/earth-news/environment/",
-			"archaeology": "https://phys.org/rss-feed/science-news/archaeology-fossils/",
-			"economics": "https://phys.org/rss-feed/science-news/economics-business/",
-			"education": "https://phys.org/rss-feed/science-news/education/",
-			"mathematics": "https://phys.org/rss-feed/science-news/mathematics/",
-			"other": "https://phys.org/rss-feed/science-news/sci-other/",
-			"political": "https://phys.org/rss-feed/science-news/political-science/",
-			"social": "https://phys.org/rss-feed/science-news/social-sciences/",
-			"bio": "https://phys.org/rss-feed/nanotech-news/bio-medicine/",
-			"nanomaterials": "https://phys.org/rss-feed/nanotech-news/nano-materials/",
-			"nanophysics": "https://phys.org/rss-feed/nanotech-news/nano-physics/",
-			"condensed": "https://phys.org/rss-feed/physics-news/materials/",
-			"general": "https://phys.org/rss-feed/physics-news/physics/",
-			"optics": "https://phys.org/rss-feed/physics-news/optics-photonics/",
-			"plasma": "https://phys.org/rss-feed/physics-news/plasma/",
-			"quantum": "https://phys.org/rss-feed/physics-news/quantum-physics/",
-			"soft": "https://phys.org/rss-feed/physics-news/soft-matter/",
-			"superconductivity": "https://phys.org/rss-feed/physics-news/superconductivity/",
-			"astrobiology": "https://phys.org/rss-feed/space-news/astrobiology/",
-			"astronomy": "https://phys.org/rss-feed/space-news/astronomy/",
-			"planetary": "https://phys.org/rss-feed/space-news/planetary-sciences/",
-			"space": "https://phys.org/rss-feed/space-news/space-exploration/",
-			"agriculture": "https://phys.org/rss-feed/biology-news/agriculture/",
-			"biotechnology": "https://phys.org/rss-feed/biology-news/biotechnology/",
-			"cell": "https://phys.org/rss-feed/biology-news/microbiology/",
-			"ecology": "https://phys.org/rss-feed/biology-news/ecology/",
-			"evolution": "https://phys.org/rss-feed/biology-news/evolution/",
-			"molecular": "https://phys.org/rss-feed/biology-news/molecular-computational/",
-			"otherb": "https://phys.org/rss-feed/biology-news/biology-other/",
-			"paleontology": "https://phys.org/rss-feed/biology-news/paleontology/",
-			"plants": "https://phys.org/rss-feed/biology-news/plants-animals/",
-			"veterinary": "https://phys.org/rss-feed/biology-news/veterinary-medicine/",
-			"analytical": "https://phys.org/rss-feed/chemistry-news/analytical-chemistry/",
-			"biochemistry": "https://phys.org/rss-feed/chemistry-news/biochemistry/",
-			"materials": "https://phys.org/rss-feed/chemistry-news/materials-science/",
-			"otherc": "https://phys.org/rss-feed/chemistry-news/chemistry-other/",
-			"polymers": "https://phys.org/rss-feed/chemistry-news/polymers/"
-		};
-		if (physTypes[type]) feedURL = physTypes[type];
-	}
-
-	if (source == "yonhap") {
-		let yonhapTypes = {
-			"all": "https://en.yna.co.kr/RSS/news.xml",
-			"national": "https://en.yna.co.kr/RSS/national.xml",
-			"northkorea": "https://en.yna.co.kr/RSS/nk.xml",
-			"economy": "https://en.yna.co.kr/RSS/economy-finance.xml",
-			"biz": "https://en.yna.co.kr/RSS/biz.xml",
-			"culture": "https://en.yna.co.kr/RSS/culture.xml",
-			"sports": "https://en.yna.co.kr/RSS/sports.xml"
-		};
-		if (yonhapTypes[type]) feedURL = yonhapTypes[type];
-	}
-
-	let loadingSpin = document.createElement("div");
+	const loadingSpin = document.createElement("div");
 	loadingSpin.className = "spin_animated_text";
 	loadingSpin.style.fontSize = "20px";
 	loadingSpin.style.paddingBottom = "2.5px"; // to avoid spin shift
 	loadingSpin.textContent = "⚙"; // ⚙ ↻⌛⏳
 
-	let processedDiv = document.createElement("div");
+	const processedDiv = document.createElement("div");
 	processedDiv.id = "processedDiv";
 	processedDiv.style.display = "none";
-	let processedLine = document.createElement("div");
-	processedLine.innerHTML = "#📊: <span id='processedCount'>0</span> | #🏁: <span id='leftCount'>0</span>";
-	let passedLine = document.createElement("div");
-	passedLine.innerHTML = "#✅: <span id='passedCount'>0</span>";
-	let failedLine = document.createElement("div");
-	failedLine.innerHTML = "#❎: <span id='failedCount'>0</span>";
-	processedDiv.appendChild(processedLine);
-	processedDiv.appendChild(passedLine);
-	processedDiv.appendChild(failedLine);
 
-	let loadingMessages = document.createElement("div");
+	const processedLine = document.createElement("div");
+	processedLine.innerHTML = "#📊: <span id='processedCount'>0</span> | #🏁: <span id='leftCount'>0</span>";
+
+	const passedLine = document.createElement("div");
+	passedLine.innerHTML = "#✅: <span id='passedCount'>0</span>";
+
+	const failedLine = document.createElement("div");
+	failedLine.innerHTML = "#❎: <span id='failedCount'>0</span>";
+
+	processedDiv.append(processedLine, passedLine, failedLine);
+
+	const loadingMessages = document.createElement("div");
 	loadingMessages.id = "loadingMessages";
-	let loadingTitleContainer = document.createElement("span");
+
+	const loadingTitleContainer = document.createElement("span");
 	loadingTitleContainer.id = "loadingTitleContainer";
-	let loadingTitle = document.createElement("span");
+
+	const loadingTitle = document.createElement("span");
 	loadingTitle.id = "loadingTitle";
 	loadingTitle.innerHTML = t("readingNewsFeed");
 	loadingTitle.appendChild(document.createElement("span"));
-	loadingTitleContainer.appendChild(loadingTitle);
-	loadingTitleContainer.appendChild(feedIcon(feedURL, lang));
+
+	loadingTitleContainer.append(loadingTitle, feedIcon(feedURL, lang));
 	loadingTitleContainer.style.display = "inline-flex";
 	loadingTitleContainer.style.alignItems = "center";
 	loadingTitleContainer.style.gap = "6px";
-	let loadAttempt = document.createElement("span");
+
+	const loadAttempt = document.createElement("span");
 	loadAttempt.id = "loadAttempt";
-	loadingMessages.appendChild(loadingTitleContainer);
-	loadingMessages.appendChild(loadAttempt);
+
+	loadingMessages.append(loadingTitleContainer, loadAttempt);
 	loadingMessages.style.display = "block";
 
-	let container = document.createElement("div");
-	container.appendChild(loadingMessages);
-	container.appendChild(loadingSpin);
-	container.appendChild(processedDiv);
+	const container = document.createElement("div");
+	container.append(loadingMessages, loadingSpin, processedDiv);
 	container.style.padding = "5px";
 	container.style.border = "2px solid #de8e8e";
 	container.style.borderRadius = "4px";
 	container.style.fontWeight = "bold";
 	container.style.display = "inline-block";
 
-	let table = document.getElementById("messagetable");
+	const table = document.getElementById("messagetable");
 	table.replaceChildren();
-	let row = table.insertRow(-1);
-	let cell1 = row.insertCell(0);
+
+	const row = table.insertRow(-1);
+	const cell1 = row.insertCell(0);
+
 	cell1.className = 'text_red';
 	cell1.style.textAlign = "center";
-	cell1.style.padding = "4px 2px 8px 2px";;
+	cell1.style.padding = "4px 2px 8px 2px";
 	cell1.appendChild(container);
+
 	adjustFeedScrollDiv();
 	loadFeed(type, source, lang, feedURL);
 }
@@ -1723,9 +1736,9 @@ function getFirstFrame(videoUrl, i, callback) {
 }
 
 function optimizeUpdateResult(type, source, lang, resultOrig) {
-	let result, locStUpdateData = {},  i = -1;
+	const result = {};
+	let locStUpdateData = {}, i = -1;
 
-	result = {};
 	result.feedXML = resultOrig.feedXML;
 
 	if (source == "artemis") result.image = "images/icons/feed/artemis_logo.svg";
@@ -1738,12 +1751,13 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	result.totalUpdated = 0;
 
 	if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap") {
-		let locStPar = source + "_" + type + "_updates";
+		const locStPar = source + "_" + type + "_updates";
 		locStUpdateData = getLocalStorageData(locStPar);
 	}
 
 	result.entries = [];
 	let items;
+
 	if (source == "artemis") {
 		result.title = "NASA’s Artemis II Mission News";
 		result.description = "NASA’s Artemis II Mission News";
@@ -1751,15 +1765,15 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		items = resultOrig.data;
 	} else {
 		if (!resultOrig.item || resultOrig.item.length == 0) {
-			 showFeedError("No Records in Feed", resultOrig.feedXML, lang);
+			showFeedError("No Records in Feed", resultOrig.feedXML, lang);
 			return;
 		}
 		result.title = resultOrig.title?._text || resultOrig.title?._cdata;
 		result.description = resultOrig.description?._text || resultOrig.description?._cdata;
 		result.link = resultOrig.link._text;
-		let lastBuild = resultOrig.pubDate?._text || resultOrig.lastBuildDate?._text;
+		const lastBuild = resultOrig.pubDate?._text || resultOrig.lastBuildDate?._text;
 		if (lastBuild) result.date_ms = new Date(lastBuild).getTime();
-		let copyright = resultOrig.copyright?._text || resultOrig.copyright?._cdata;
+		const copyright = resultOrig.copyright?._text || resultOrig.copyright?._cdata;
 		if (copyright) result.copyright = copyright;
 		items = resultOrig.item;
 	}
@@ -1813,7 +1827,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	for (let c = 0; c < items.length; c++) {
 		const entry = items[c];
 		if (source == "nasa" && entry.category) {
-			let categories = Array.isArray(entry.category) ? entry.category : [entry.category];
+			const categories = Array.isArray(entry.category) ? entry.category : [entry.category];
 			if (categories.map(c => c._cdata || c._text).filter(Boolean).includes("APOD")) continue;
 		}
 
@@ -1871,7 +1885,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			const url = entry.enclosure?._attributes?.url;
 			if (url) {
 				const pos = url.indexOf("100x80/");
-				if (pos  != -1) {
+				if (pos != -1) {
 					newEntry.media.url = url.substring(0, pos) + "600x315/" + url.substring(pos + 7);
 					newEntry.media.comment = alt;
 				}
@@ -1911,7 +1925,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		if (source == "yonhap") {
 			newEntry.title = entry.title._cdata;
 			if (entry["media:content"]) {
-				let mediaContent = Array.isArray(entry["media:content"])
+				const mediaContent = Array.isArray(entry["media:content"])
 					? entry["media:content"]
 					: [entry["media:content"]];
 				newEntry.media.url = mediaContent[0]._attributes.url;
@@ -1956,7 +1970,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		if (entry["dc:creator"]) {
 			newEntry.creator = [];
 
-			let creators = Array.isArray(entry["dc:creator"])
+			const creators = Array.isArray(entry["dc:creator"])
 				? entry["dc:creator"]
 				: [entry["dc:creator"]];
 			newEntry.creator = creators
@@ -1968,12 +1982,12 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		// --- rss:author ---
 		if (entry.author) {
 			newEntry.creator = [];
-			let authors = Array.isArray(entry.author)
+			const authors = Array.isArray(entry.author)
 				? entry.author
 				: [entry.author];
 			for (let j = 0; j < authors.length; j++) {
-				let nameEmail = authors[j]._cdata || authors[j]._text;
-				let match = nameEmail.match(/^\s*([^\s()]+@[^\s()]+)\s*\(([^)]+)\)/);
+				const nameEmail = authors[j]._cdata || authors[j]._text;
+				const match = nameEmail.match(/^\s*([^\s()]+@[^\s()]+)\s*\(([^)]+)\)/);
 				if (match) {
 					newEntry.creator.push({
 						name: match[2],
@@ -1989,10 +2003,9 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 		// --- rss:category ---
 		if (entry.category && source != "merco") {
-			let categories = Array.isArray(entry.category)
+			const categories = (Array.isArray(entry.category)
 				? entry.category
-				: [entry.category];
-			categories = categories
+				: [entry.category])
 				.map(c => c._cdata || c._text)
 				.filter(Boolean);
 			if (categories.length > 0) {
@@ -2024,8 +2037,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 
 		// --- Prevous Updates Load ---
-		if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap") { 
-			let update = locStUpdateData[newEntry.link];
+		if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap") {
+			const update = locStUpdateData[newEntry.link];
 			if (update) {
 				newEntry.storage.updateProcessed = 1;
 				result.totalUpdated++;
@@ -2036,7 +2049,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 						origUrl: newEntry.media.url,
 						origComment: newEntry.media.comment,
 						width: newEntry.media.width
-    					};
+					};
 				}
 				if (update.creator) newEntry.creator = [...update.creator];
 				if (update.category) newEntry.category = [...update.category];
@@ -2047,11 +2060,11 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	}
 
 	// --- Sort Feed by Date Desc ---
-	let totalEntries = result.entries.length;
+	const totalEntries = result.entries.length;
 	for (let i = totalEntries - 1; i >= 0; i--) {
 		for (let j = 1; j <= i; j++) {
 			if (result.entries[j - 1].date_ms < result.entries[j].date_ms) {
-				let temp = result.entries[j - 1];
+				const temp = result.entries[j - 1];
 				result.entries[j - 1] = result.entries[j];
 				result.entries[j] = temp;
 			}
@@ -2081,6 +2094,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	document.getElementById("leftCount").innerHTML = totalEntries - result.totalUpdated;
 	showFeedTitle(type, source, lang, result);
 }
+
 // ------------- End of Optimize---------------- //
 
 // ------------- Update ---------------- //
@@ -2113,17 +2127,16 @@ function consoleMetas(doc) {
 }
 
 function checkProcessedCount(source, type, result, lang, controller, pf = 1) {
-
-	let totalEntries = result.entries.length;
+	const totalEntries = result.entries.length;
 
 	// failed
 	if (pf == 0) {
-		let failedCount = document.getElementById("failedCount");
-		let failedCountInt = parseInt(failedCount.innerHTML) + 1;
+		const failedCount = document.getElementById("failedCount");
+		const failedCountInt = parseInt(failedCount.innerHTML) + 1;
 		failedCount.innerHTML = failedCountInt;
-		let failedCountTitle = document.getElementById("failedCountTitle");
+		const failedCountTitle = document.getElementById("failedCountTitle");
 		failedCountTitle.innerHTML = " (#❎: " + failedCountInt + ")";
-		let processedCount = document.getElementById("processedCount");
+		const processedCount = document.getElementById("processedCount");
 		result.totalUpdated++;
 		processedCount.innerHTML = result.totalUpdated;
 		document.getElementById("leftCount").innerHTML = (totalEntries - result.totalUpdated);
@@ -2132,24 +2145,26 @@ function checkProcessedCount(source, type, result, lang, controller, pf = 1) {
 	let processedCount = 0;
 	let nextUpdateRecord = -1;
 	let nextUpdateRecordSet = false;
+
 	for (let j = 0; j < totalEntries; j++) {
 		if (result.entries[j].storage.updateProcessed == 1) {
 			processedCount++;
-		} 
+		}
 		if (!nextUpdateRecordSet && result.entries[j].storage.updateInitiated == 0 && result.entries[j].storage.updateProcessed == 0) {
 			nextUpdateRecord = j;
 			nextUpdateRecordSet = true;
-		} 
+		}
 	}
+
 	if (processedCount == totalEntries) {
-		let table2 = document.getElementById("messagetable");
+		const table2 = document.getElementById("messagetable");
 		table2.replaceChildren();
 		adjustFeedScrollDiv();
 		return;
 	} else {
 		// passed
 		if (pf == 1) {
-			let passedCount = document.getElementById("passedCount");
+			const passedCount = document.getElementById("passedCount");
 			passedCount.innerHTML = parseInt(passedCount.innerHTML) + 1;
 			processedCount = document.getElementById("processedCount");
 			result.totalUpdated++;
@@ -2162,7 +2177,6 @@ function checkProcessedCount(source, type, result, lang, controller, pf = 1) {
 		}
 	}
 }
-
 
 function update(i, source, type, result, lang, controller, updateAttempt = 1, redirectCount = 0) {
 
@@ -2496,7 +2510,6 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 			}
 
 			const status = error.response?.status ?? 0;
-			const statusText = error.response?.statusText ?? error.message ?? String(error);
 
 			if (result.entries[i].origLink != null) {
 				result.entries[i].link = result.entries[i].origLink;
