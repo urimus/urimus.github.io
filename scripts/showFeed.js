@@ -351,6 +351,7 @@ function showFeedTitle(type, source, lang, result) {
 	cell1.style.display = "flex";
 	cell1.style.alignItems = "center";
 	cell1.style.justifyContent = "center";
+	cell1.style.gap = "10px";
 
 	const container = document.createElement("div");
 	container.style.padding = "5px";
@@ -365,8 +366,6 @@ function showFeedTitle(type, source, lang, result) {
 		const arrow = document.createElement("span");
 		arrow.textContent = direction === "ArrowRight" ? "▶" : "◀";
 		arrow.className = "standardb_red";
-		arrow.style.padding = "10px";
-		arrow.style.cursor = "pointer";
 		arrow.setAttribute("tabindex", "0");
 
 		const dispatchKeydown = () => {
