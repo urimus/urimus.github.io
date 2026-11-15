@@ -368,18 +368,45 @@ function showFeedTitle(type, source, lang, result) {
 		arrow.textContent = direction === "ArrowRight" ? "▶" : "◀";
 		arrow.className = "standardb_red";
 
-		const dispatchKeydown = (event) => {
+		let repeatTimer = null;
+		let repeatDelay = null;
+		let modifiers = {};
+		const dispatchKeydown = (repeat = false) => {
 			document.dispatchEvent(new KeyboardEvent("keydown", {
 				key: direction,
-				shiftKey: event.shiftKey,
-				ctrlKey: event.ctrlKey,
-				altKey: event.altKey,
-				metaKey: event.metaKey,
+				...modifiers,
+				repeat,
 				bubbles: true
 			}));
 		};
+		const stopRepeat = () => {
+			clearTimeout(repeatDelay);
+			clearInterval(repeatTimer);
+			repeatDelay = null;
+			repeatTimer = null;
+		};
 
-		arrow.addEventListener("click", dispatchKeydown);
+		arrow.addEventListener("mousedown", (event) => {
+			event.preventDefault();
+			stopRepeat();
+			modifiers = {
+				shiftKey: event.shiftKey,
+				ctrlKey: event.ctrlKey,
+				altKey: event.altKey,
+				metaKey: event.metaKey
+			};
+			dispatchKeydown(false);
+			repeatDelay = setTimeout(() => {
+				repeatTimer = setInterval(() => {
+					dispatchKeydown(true);
+				}, 40);
+			}, 500);
+		});
+
+		arrow.addEventListener("mouseup", stopRepeat);
+		arrow.addEventListener("mouseleave", stopRepeat);
+		document.addEventListener("mouseup", stopRepeat);
+		arrow.addEventListener("click", (event) => event.preventDefault());
 		return arrow;
 	};
 
