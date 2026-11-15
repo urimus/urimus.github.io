@@ -368,7 +368,7 @@ function showFeedTitle(type, source, lang, result) {
 		arrow.textContent = direction === "ArrowRight" ? "▶" : "◀";
 		arrow.className = "standardb_red";
 
-		let repeatTimer = null;
+		let repeatRate = null;
 		let repeatDelay = null;
 		let modifiers = {};
 		const dispatchKeydown = (repeat = false) => {
@@ -381,9 +381,9 @@ function showFeedTitle(type, source, lang, result) {
 		};
 		const stopRepeat = () => {
 			clearTimeout(repeatDelay);
-			clearInterval(repeatTimer);
+			clearInterval(repeatRate);
 			repeatDelay = null;
-			repeatTimer = null;
+			repeatRate = null;
 		};
 
 		arrow.addEventListener("mousedown", (event) => {
@@ -397,7 +397,8 @@ function showFeedTitle(type, source, lang, result) {
 			};
 			dispatchKeydown(false);
 			repeatDelay = setTimeout(() => {
-				repeatTimer = setInterval(() => {
+				dispatchKeydown(true);
+				repeatRate = setInterval(() => {
 					dispatchKeydown(true);
 				}, 40);
 			}, 500);
