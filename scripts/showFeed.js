@@ -362,6 +362,23 @@ function showFeedTitle(type, source, lang, result) {
 	container.style.alignItems = "center";
 	container.style.gap = "6px";
 
+	let shiftKey = false;
+	let ctrlKey = false;
+	let altKey = false;
+	let metaKey = false;
+	document.addEventListener('keydown', e => {
+		shiftKey = e.shiftKey;
+		ctrlKey = e.ctrlKey;
+		altKey = e.altKey;
+		metaKey = e.metaKey;
+	});
+	document.addEventListener('keyup', e => {
+		shiftKey = e.shiftKey;
+		ctrlKey = e.ctrlKey;
+		altKey = e.altKey;
+		metaKey = e.metaKey;
+	});
+
 	const scrollArrow = (direction) => {
 		const arrow = document.createElement("button");
 		arrow.type = "button";
@@ -370,11 +387,13 @@ function showFeedTitle(type, source, lang, result) {
 
 		let repeatRate = null;
 		let repeatDelay = null;
-		let modifiers = {};
 		const dispatchKeydown = (repeat = false) => {
 			document.dispatchEvent(new KeyboardEvent("keydown", {
 				key: direction,
-				...modifiers,
+				shiftKey,
+				ctrlKey,
+				altKey,
+				metaKey,
 				repeat,
 				bubbles: true
 			}));
@@ -389,12 +408,6 @@ function showFeedTitle(type, source, lang, result) {
 		arrow.addEventListener("mousedown", (event) => {
 			event.preventDefault();
 			stopRepeat();
-			modifiers = {
-				shiftKey: event.shiftKey,
-				ctrlKey: event.ctrlKey,
-				altKey: event.altKey,
-				metaKey: event.metaKey
-			};
 			dispatchKeydown(false);
 			repeatDelay = setTimeout(() => {
 				dispatchKeydown(true);
