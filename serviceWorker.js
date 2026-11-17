@@ -253,8 +253,6 @@ function handleCOIRequest(request) {
 
 }
 
-
-
 // =====================================================
 // MAIN IMAGE HANDLER
 // =====================================================
@@ -268,96 +266,83 @@ function handleImageRequest(event, request) {
 			return cache.match(request)
 
 				.then(function (cached) {
-		
+
 					// -------------------------------------------------
 					// CACHE HIT
 					// -------------------------------------------------
 
 					if (cached) {
 
-if (
-    new URL(request.url).hostname === "www.nasa.gov" ||
-    new URL(request.url).hostname === "images-assets.nasa.gov"
-) {
+						if (cached.type === "opaque") {
 
-    console.log("[SW] NASA CACHE BYPASS TEST:", request.url);
+							return fetchImageRequest(request).then(function (response) {
 
-    return fetchImageRequest(request).then(function (response) {
+								if (response && (response.status === 200 || response.type === "opaque")) {
 
-        console.log("[SW] NASA NETWORK TEST RESULT:", {
-            url: request.url,
-            type: response.type,
-            status: response.status
-        });
+									return cache.put(request, response.clone()).then(function () {
 
-        if (response && (response.status === 200 || response.type === "opaque")) {
+										return cache.put(
+											new Request(getMetaKey(request.url)),
+											new Response(Date.now().toString())
+										);
 
-            return cache.put(request, response.clone()).then(function () {
+									}).then(function () {
 
-                return cache.put(
-                    new Request(getMetaKey(request.url)),
-                    new Response(Date.now().toString())
-                );
+										return notifyImageCacheResult(
+											event.clientId,
+											request.url,
+											true
+										);
 
-            }).then(function () {
+									}).then(function () {
 
-                console.log("[SW] NASA CACHE UPDATED:", request.url);
+										return response;
 
-                return notifyImageCacheResult(
-                    event.clientId,
-                    request.url,
-                    true
-                );
+									}).catch(function (error) {
 
-            }).then(function () {
+										console.warn("[SW] Opaque image cache update failed:", error);
 
-                return response;
+										return notifyImageCacheResult(
+											event.clientId,
+											request.url,
+											false
+										).then(function () {
 
-            }).catch(function (error) {
+											return response;
 
-                console.warn("[SW] NASA CACHE UPDATE ERROR:", error);
+										});
 
-                return notifyImageCacheResult(
-                    event.clientId,
-                    request.url,
-                    false
-                ).then(function () {
+									});
 
-                    return response;
+								}
 
-                });
+								return notifyImageCacheResult(
+									event.clientId,
+									request.url,
+									false
+								).then(function () {
 
-            });
+									return response;
 
-        }
+								});
 
-        return notifyImageCacheResult(
-            event.clientId,
-            request.url,
-            false
-        ).then(function () {
+							}).catch(function (error) {
 
-            return response;
+								console.error("[SW] Opaque image fetch failed:", request.url, error);
 
-        });
+								return notifyImageCacheResult(
+									event.clientId,
+									request.url,
+									false
+								).then(function () {
 
-    }).catch(function (error) {
+									return Response.error();
 
-        console.error("[SW] NASA NETWORK TEST ERROR:", request.url, error);
+								});
 
-        return notifyImageCacheResult(
-            event.clientId,
-            request.url,
-            false
-        ).then(function () {
+							});
 
-            return Response.error();
-
-        });
-
-    });
-
-}
+						}
 
 						event.waitUntil(
 							refreshIfNeeded(cache, request)
@@ -407,7 +392,6 @@ if (
 		});
 
 }
-
 
 // =====================================================
 // REFRESH IF TTL EXPIRED
