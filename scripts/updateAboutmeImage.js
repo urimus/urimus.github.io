@@ -45,6 +45,29 @@ function showInformation(lang) {
 	);
 }
 
+function preloadImagesIOTD() {
+
+	const images = result.item.slice(1).map(entry => {
+		const url = new URL(entry.enclosure._attributes.url);
+		url.searchParams.set("w", "450");
+		return url.toString();
+	});
+	if (images.length === 0) return;
+
+	console.log("[SW] image of the day images caching started");
+	const state = {
+		index: -1,
+		cached: 0,
+		failed: 0,
+		startTime: performance.now(),
+		source: "image of the day images"
+	};
+	for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once
+		loadNextCacheImage(state, images);
+	}
+
+}
+
 function updateAboutMeImageLoad(lang) {
 	processPageResize(lang);
 	updateAboutMeImage2(lang, 0);
@@ -199,6 +222,7 @@ function updateAboutMeImage3(lang, i) {
 					if (!imagesCachingStarted) {
 						imagesCachingStarted = true;
 						preloadImagesGeneral();
+						preloadImagesIOTD();
 					}
 				});
 			});
