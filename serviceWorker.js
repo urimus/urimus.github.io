@@ -285,83 +285,10 @@ function handleImageRequest(event, request) {
 							true
 						).then(function () {
 
-if (cached.type === "opaque") {
+							if (cached.type === "opaque") {
+								return fetchImageRequest(request);
+							}
 
-	console.log("[SW] RETURNING CACHED OPAQUE RESPONSE:", {
-
-		url: request.url,
-
-		cached: {
-			type: cached.type,
-			status: cached.status,
-			ok: cached.ok,
-			redirected: cached.redirected,
-			url: cached.url,
-			bodyUsed: cached.bodyUsed,
-
-			statusText: cached.statusText,
-			headers: cached.headers,
-			body: cached.body,
-
-			clone: typeof cached.clone,
-			arrayBuffer: typeof cached.arrayBuffer,
-			blob: typeof cached.blob,
-			text: typeof cached.text,
-			json: typeof cached.json
-		},
-
-		responseConstructor: cached.constructor.name,
-
-		prototype: Object.getPrototypeOf(cached),
-
-		ownKeys: Reflect.ownKeys(cached),
-
-		responseTag: Object.prototype.toString.call(cached)
-
-	});
-
-	return cached;
-}
-
-//							if (cached.type === "opaque") {
-//								return fetchImageRequest(request);
-//							}
-
-/*
-	if (cached.type === "opaque") {
-
-		return fetchImageRequest(request).then(function (fresh) {
-
-			console.log("[SW] OPAQUE RESPONSE COMPARISON:", {
-				url: request.url,
-
-				cached: {
-					type: cached.type,
-					status: cached.status,
-					ok: cached.ok,
-					redirected: cached.redirected,
-					url: cached.url,
-					bodyUsed: cached.bodyUsed
-				},
-
-				fresh: {
-					type: fresh.type,
-					status: fresh.status,
-					ok: fresh.ok,
-					redirected: fresh.redirected,
-					url: fresh.url,
-					bodyUsed: fresh.bodyUsed
-				},
-
-				sameObject: cached === fresh
-			});
-
-			return fresh;
-
-		});
-
-	}
-*/
 							return disableBrowserCache(cached);
 
 						});
