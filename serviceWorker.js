@@ -373,7 +373,7 @@ function fetchAndCache(cache, request) {
 
 					.then(function (fallback) {
 
-						if (fallback) {
+						if (fallback && fallback.type !== "opaque") {
 							return fallback;
 						}
 
@@ -436,28 +436,19 @@ function fetchAndCache(cache, request) {
 
 			if (response.type === "opaque") {
 
-				let opaqueClone =
-					response.clone();
+				return cache.put(
+					request,
+					response.clone()
+				)
 
+				.then(function () {
 
-				return Promise.all([
+					return cache.put(
+						new Request(getMetaKey(key)),
+						new Response(Date.now().toString())
+					);
 
-					cache.put(
-						request,
-						opaqueClone
-					),
-
-					cache.put(
-						new Request(
-							getMetaKey(key)
-						),
-
-						new Response(
-							Date.now().toString()
-						)
-					)
-
-				])
+				})
 
 				.then(function () {
 
@@ -467,8 +458,8 @@ function fetchAndCache(cache, request) {
 
 				.catch(function (err) {
 
-					console.log(
-						"[SW] caching failed -",
+					console.warn(
+						"[SW] Opaque image cache update failed:",
 						err,
 						request.url
 					);
@@ -584,7 +575,7 @@ function fetchAndCache(cache, request) {
 
 			return cache.match(request)
 				.then(function (fallback) {
-					if (fallback) {
+					if (fallback && fallback.type !== "opaque") {
 						return fallback;
 					}
 					return new Response("", {
