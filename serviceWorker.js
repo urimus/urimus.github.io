@@ -656,13 +656,13 @@ function fetchAndCache(cache, request) {
 // =====================================================
 
 function fetchImageRequest(request) {
-
+/*
 	let url = new URL(request.url);
 
 	let requestToFetch = new Request(request, {
 		cache: "no-store"
 	});
-/*
+
 	// Apply credentialless to cross-origin no-cors requests
 	if (
 		coepCredentialless &&
@@ -674,7 +674,8 @@ function fetchImageRequest(request) {
 		});
 	}
 */
-	return fetch(requestToFetch);
+//	return fetch(requestToFetch);
+	return fetch(request);
 }
 
 
