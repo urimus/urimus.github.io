@@ -618,7 +618,6 @@ function fetchImageRequest(request) {
 		cache: "no-store"
 	});
 
-	// Apply credentialless to cross-origin no-cors requests
 	if (
 		coepCredentialless &&
 		request.mode === "no-cors" &&
@@ -629,7 +628,32 @@ function fetchImageRequest(request) {
 		});
 	}
 
-	return fetch(requestToFetch);
+	console.log("[SW] Fetch request:", {
+		url: requestToFetch.url,
+		mode: requestToFetch.mode,
+		credentials: requestToFetch.credentials,
+		cache: requestToFetch.cache,
+		destination: requestToFetch.destination
+	});
+
+	return fetch(requestToFetch).then(function(response) {
+
+		console.log("[SW] Fetch response:", {
+			url: request.url,
+			type: response.type,
+			status: response.status,
+			redirected: response.redirected
+		});
+
+		return response;
+
+	}).catch(function(error) {
+
+		console.error("[SW] Fetch error:", request.url, error);
+
+		throw error;
+
+	});
 }
 
 
