@@ -285,9 +285,13 @@ function handleImageRequest(event, request) {
 							true
 						).then(function () {
 
-							if (cached.type === "opaque") {
-								return fetchImageRequest(request);
-							}
+if (cached.type === "opaque") {
+	return cached;
+}
+
+//							if (cached.type === "opaque") {
+//								return fetchImageRequest(request);
+//							}
 
 /*
 	if (cached.type === "opaque") {
