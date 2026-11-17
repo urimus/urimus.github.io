@@ -138,6 +138,13 @@ self.addEventListener("fetch", function (event) {
 		return;
 	}
 
+	// -------------------------------------------------
+	// TEMP: Bypass NASA images
+	// -------------------------------------------------
+
+	if (url.hostname === "www.nasa.gov") {
+		return;
+	}
 
 	// -------------------------------------------------
 	// only-if-cached + cross-origin
