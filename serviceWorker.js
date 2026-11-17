@@ -261,6 +261,8 @@ function handleCOIRequest(request) {
 
 function handleImageRequest(event, request) {
 
+	console.log("[SW] HANDLE IMAGE REQUEST:", request.url);
+
 	return caches.open(CACHE_NAME)
 
 		.then(function (cache) {
@@ -624,6 +626,8 @@ function fetchAndCache(cache, request) {
 
 function fetchImageRequest(request) {
 
+	console.log("[SW] NASA IMAGE FETCH:", request.url);
+
 	let url = new URL(request.url);
 
 	let requestToFetch = new Request(request, {
@@ -641,40 +645,7 @@ function fetchImageRequest(request) {
 		});
 	}
 
-    console.log("[SW] NASA IMAGE FETCH:", {
-        url: request.url,
-        mode: requestToFetch.mode,
-        credentials: requestToFetch.credentials,
-        cache: requestToFetch.cache
-    });
-
-//	return fetch(requestToFetch);
-    return fetch(requestToFetch)
-
-        .then(function (response) {
-
-            console.log("[SW] NASA IMAGE RESPONSE:", {
-                url: request.url,
-                type: response.type,
-                status: response.status,
-                contentType: response.headers.get("content-type")
-            });
-
-            return response;
-
-        })
-
-        .catch(function (error) {
-
-            console.error(
-                "[SW] NASA IMAGE FETCH ERROR:",
-                request.url,
-                error
-            );
-
-            throw error;
-
-        });
+	return fetch(requestToFetch);
 }
 
 
