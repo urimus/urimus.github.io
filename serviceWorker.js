@@ -641,7 +641,40 @@ function fetchImageRequest(request) {
 		});
 	}
 
-	return fetch(requestToFetch);
+    console.log("[SW] NASA IMAGE FETCH:", {
+        url: request.url,
+        mode: requestToFetch.mode,
+        credentials: requestToFetch.credentials,
+        cache: requestToFetch.cache
+    });
+
+//	return fetch(requestToFetch);
+    return fetch(requestToFetch)
+
+        .then(function (response) {
+
+            console.log("[SW] NASA IMAGE RESPONSE:", {
+                url: request.url,
+                type: response.type,
+                status: response.status,
+                contentType: response.headers.get("content-type")
+            });
+
+            return response;
+
+        })
+
+        .catch(function (error) {
+
+            console.error(
+                "[SW] NASA IMAGE FETCH ERROR:",
+                request.url,
+                error
+            );
+
+            throw error;
+
+        });
 }
 
 
