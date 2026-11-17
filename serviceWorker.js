@@ -279,44 +279,83 @@ if (
     new URL(request.url).hostname === "www.nasa.gov" ||
     new URL(request.url).hostname === "images-assets.nasa.gov"
 ) {
+
     console.log("[SW] NASA CACHE BYPASS TEST:", request.url);
 
-return fetchImageRequest(request).then(function (response) {
+    return fetchImageRequest(request).then(function (response) {
 
-    console.log("[SW] NASA NETWORK TEST RESULT:", {
-        url: request.url,
-        type: response.type,
-        status: response.status
-    });
+        console.log("[SW] NASA NETWORK TEST RESULT:", {
+            url: request.url,
+            type: response.type,
+            status: response.status
+        });
 
-    if (response && (response.status === 200 || response.type === "opaque")) {
+        if (response && (response.status === 200 || response.type === "opaque")) {
 
-        return cache.put(request, response.clone()).then(function () {
+            return cache.put(request, response.clone()).then(function () {
 
-            return cache.put(
-                request.url + META_SUFFIX,
-                new Response(Date.now().toString())
-            );
+                return cache.put(
+                    new Request(getMetaKey(request.url)),
+                    new Response(Date.now().toString())
+                );
 
-        }).then(function () {
+            }).then(function () {
 
-            console.log("[SW] NASA CACHE UPDATED:", request.url);
+                console.log("[SW] NASA CACHE UPDATED:", request.url);
 
-            return response;
+                return notifyImageCacheResult(
+                    event.clientId,
+                    request.url,
+                    true
+                );
 
-        }).catch(function (error) {
+            }).then(function () {
 
-            console.warn("[SW] NASA CACHE UPDATE ERROR:", error);
+                return response;
+
+            }).catch(function (error) {
+
+                console.warn("[SW] NASA CACHE UPDATE ERROR:", error);
+
+                return notifyImageCacheResult(
+                    event.clientId,
+                    request.url,
+                    false
+                ).then(function () {
+
+                    return response;
+
+                });
+
+            });
+
+        }
+
+        return notifyImageCacheResult(
+            event.clientId,
+            request.url,
+            false
+        ).then(function () {
 
             return response;
 
         });
 
-    }
+    }).catch(function (error) {
 
-    return response;
+        console.error("[SW] NASA NETWORK TEST ERROR:", request.url, error);
 
-});
+        return notifyImageCacheResult(
+            event.clientId,
+            request.url,
+            false
+        ).then(function () {
+
+            return Response.error();
+
+        });
+
+    });
 
 }
 
