@@ -281,18 +281,51 @@ function handleImageRequest(event, request) {
 		coepCredentialless: coepCredentialless
 	});
 
-						event.waitUntil(
-							refreshIfNeeded(cache, request)
-						);
+						if (cached.type !== "opaque") {
+							event.waitUntil(
+								refreshIfNeeded(cache, request)
+							);
+						}
 
 						return notifyImageCacheResult(
 							event.clientId,
 							request.url,
 							true
 						).then(function () {
-if (cached.type === "opaque") {
-	return fetchImageRequest(request);
-}
+
+	if (cached.type === "opaque") {
+
+		return fetchImageRequest(request).then(function (fresh) {
+
+			console.log("[SW] OPAQUE RESPONSE COMPARISON:", {
+				url: request.url,
+
+				cached: {
+					type: cached.type,
+					status: cached.status,
+					ok: cached.ok,
+					redirected: cached.redirected,
+					url: cached.url,
+					bodyUsed: cached.bodyUsed
+				},
+
+				fresh: {
+					type: fresh.type,
+					status: fresh.status,
+					ok: fresh.ok,
+					redirected: fresh.redirected,
+					url: fresh.url,
+					bodyUsed: fresh.bodyUsed
+				},
+
+				sameObject: cached === fresh
+			});
+
+			return fresh;
+
+		});
+
+	}
 							return disableBrowserCache(cached);
 
 						});
