@@ -485,19 +485,41 @@ function fetchAndCache(cache, request) {
 
 			if (response.type === "opaque") {
 
+console.log("[SW] OPAQUE BEFORE CACHE:", {
+	url: request.url,
+	type: response.type,
+	status: response.status,
+	redirected: response.redirected,
+	urlResponse: response.url
+});
+
 				return cache.put(
 					request,
 					response.clone()
 				)
+.then(function () {
 
-				.then(function () {
+	return cache.match(request);
 
-					return cache.put(
-						new Request(getMetaKey(key)),
-						new Response(Date.now().toString())
-					);
+})
 
-				})
+.then(function (cached) {
+
+	console.log("[SW] OPAQUE AFTER CACHE:", {
+		url: request.url,
+		found: !!cached,
+		type: cached && cached.type,
+		status: cached && cached.status,
+		redirected: cached && cached.redirected,
+		urlResponse: cached && cached.url
+	});
+
+	return cache.put(
+		new Request(getMetaKey(key)),
+		new Response(Date.now().toString())
+	);
+
+})
 
 				.then(function () {
 
