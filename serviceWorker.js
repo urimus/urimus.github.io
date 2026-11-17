@@ -273,13 +273,14 @@ function handleImageRequest(event, request) {
 
 					if (cached) {
 
-
+/*
 	console.log("[SW] CACHE HIT:", {
 		url: request.url,
 		type: cached.type,
 		status: cached.status,
 		coepCredentialless: coepCredentialless
 	});
+*/
 
 						if (cached.type !== "opaque") {
 							event.waitUntil(
@@ -292,7 +293,7 @@ function handleImageRequest(event, request) {
 							request.url,
 							true
 						).then(function () {
-
+/*
 	if (cached.type === "opaque") {
 
 		return fetchImageRequest(request).then(function (fresh) {
@@ -326,6 +327,7 @@ function handleImageRequest(event, request) {
 		});
 
 	}
+*/
 							return disableBrowserCache(cached);
 
 						});
@@ -660,7 +662,7 @@ function fetchImageRequest(request) {
 	let requestToFetch = new Request(request, {
 		cache: "no-store"
 	});
-
+/*
 	// Apply credentialless to cross-origin no-cors requests
 	if (
 		coepCredentialless &&
@@ -671,7 +673,7 @@ function fetchImageRequest(request) {
 			credentials: "omit"
 		});
 	}
-
+*/
 	return fetch(requestToFetch);
 }
 
