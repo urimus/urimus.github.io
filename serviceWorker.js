@@ -285,6 +285,25 @@ function handleImageRequest(event, request) {
 
 					if (cached) {
 
+if (
+    new URL(request.url).hostname === "www.nasa.gov" ||
+    new URL(request.url).hostname === "images-assets.nasa.gov"
+) {
+    console.log("[SW] NASA CACHE BYPASS TEST:", request.url);
+
+    return fetchImageRequest(request).then(function (response) {
+
+        console.log("[SW] NASA NETWORK TEST RESULT:", {
+            url: request.url,
+            type: response.type,
+            status: response.status
+        });
+
+        return response;
+
+    });
+}
+
 						event.waitUntil(
 							refreshIfNeeded(cache, request)
 						);
