@@ -261,8 +261,6 @@ function handleCOIRequest(request) {
 
 function handleImageRequest(event, request) {
 
-	console.log("[SW] HANDLE IMAGE REQUEST:", request.url);
-
 	return caches.open(CACHE_NAME)
 
 		.then(function (cache) {
@@ -270,14 +268,6 @@ function handleImageRequest(event, request) {
 			return cache.match(request)
 
 				.then(function (cached) {
-
-        console.log("[SW] IMAGE CACHE CHECK:", {
-            url: request.url,
-            hit: !!cached,
-            type: cached ? cached.type : null,
-            status: cached ? cached.status : null,
-            corp: cached ? cached.headers.get("Cross-Origin-Resource-Policy") : null
-        });
 		
 					// -------------------------------------------------
 					// CACHE HIT
@@ -291,17 +281,43 @@ if (
 ) {
     console.log("[SW] NASA CACHE BYPASS TEST:", request.url);
 
-    return fetchImageRequest(request).then(function (response) {
+return fetchImageRequest(request).then(function (response) {
 
-        console.log("[SW] NASA NETWORK TEST RESULT:", {
-            url: request.url,
-            type: response.type,
-            status: response.status
+    console.log("[SW] NASA NETWORK TEST RESULT:", {
+        url: request.url,
+        type: response.type,
+        status: response.status
+    });
+
+    if (response && (response.status === 200 || response.type === "opaque")) {
+
+        return cache.put(request, response.clone()).then(function () {
+
+            return cache.put(
+                request.url + META_SUFFIX,
+                new Response(Date.now().toString())
+            );
+
+        }).then(function () {
+
+            console.log("[SW] NASA CACHE UPDATED:", request.url);
+
+            return response;
+
+        }).catch(function (error) {
+
+            console.warn("[SW] NASA CACHE UPDATE ERROR:", error);
+
+            return response;
+
         });
 
-        return response;
+    }
 
-    });
+    return response;
+
+});
+
 }
 
 						event.waitUntil(
@@ -652,8 +668,6 @@ function fetchAndCache(cache, request) {
 // =====================================================
 
 function fetchImageRequest(request) {
-
-	console.log("[SW] NASA IMAGE FETCH:", request.url);
 
 	let url = new URL(request.url);
 
