@@ -273,11 +273,11 @@ function handleImageRequest(event, request) {
 
 					if (cached) {
 
-//						if (cached.type !== "opaque") {
+						if (cached.type !== "opaque") {
 							event.waitUntil(
 								refreshIfNeeded(cache, request)
 							);
-//						}
+						}
 
 						return notifyImageCacheResult(
 							event.clientId,
@@ -285,9 +285,9 @@ function handleImageRequest(event, request) {
 							true
 						).then(function () {
 
-//							if (cached.type === "opaque") {
-//								return fetchImageRequest(request);
-//							}
+							if (cached.type === "opaque") {
+								return fetchImageRequest(request);
+							}
 
 							return disableBrowserCache(cached);
 
