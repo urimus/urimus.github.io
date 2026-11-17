@@ -271,6 +271,14 @@ function handleImageRequest(event, request) {
 
 				.then(function (cached) {
 
+        console.log("[SW] IMAGE CACHE CHECK:", {
+            url: request.url,
+            hit: !!cached,
+            type: cached ? cached.type : null,
+            status: cached ? cached.status : null,
+            corp: cached ? cached.headers.get("Cross-Origin-Resource-Policy") : null
+        });
+		
 					// -------------------------------------------------
 					// CACHE HIT
 					// -------------------------------------------------
