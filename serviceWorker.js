@@ -286,6 +286,40 @@ function handleImageRequest(event, request) {
 						).then(function () {
 
 if (cached.type === "opaque") {
+
+	console.log("[SW] RETURNING CACHED OPAQUE RESPONSE:", {
+
+		url: request.url,
+
+		cached: {
+			type: cached.type,
+			status: cached.status,
+			ok: cached.ok,
+			redirected: cached.redirected,
+			url: cached.url,
+			bodyUsed: cached.bodyUsed,
+
+			statusText: cached.statusText,
+			headers: cached.headers,
+			body: cached.body,
+
+			clone: typeof cached.clone,
+			arrayBuffer: typeof cached.arrayBuffer,
+			blob: typeof cached.blob,
+			text: typeof cached.text,
+			json: typeof cached.json
+		},
+
+		responseConstructor: cached.constructor.name,
+
+		prototype: Object.getPrototypeOf(cached),
+
+		ownKeys: Reflect.ownKeys(cached),
+
+		responseTag: Object.prototype.toString.call(cached)
+
+	});
+
 	return cached;
 }
 
