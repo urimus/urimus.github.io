@@ -290,7 +290,9 @@ function handleImageRequest(event, request) {
 							request.url,
 							true
 						).then(function () {
-
+if (cached.type === "opaque") {
+	return fetchImageRequest(request);
+}
 							return disableBrowserCache(cached);
 
 						});
