@@ -1657,11 +1657,11 @@ function showFeed(type, source, lang) {
 
 	const feedURL = feedTypes[source]?.[type] || "";
 
-	const loadingSpin = document.createElement("div");
-	loadingSpin.className = "spin_animated_text";
-	loadingSpin.style.fontSize = "20px";
-	loadingSpin.style.paddingBottom = "2.5px"; // to avoid spin shift
-	loadingSpin.textContent = "⚙"; // ⚙ ↻⌛⏳
+//	const loadingSpin = document.createElement("div");
+//	loadingSpin.className = "spin_animated_text";
+//	loadingSpin.style.fontSize = "20px";
+//	loadingSpin.style.paddingBottom = "2.5px"; // to avoid spin shift
+//	loadingSpin.textContent = "⚙"; // ⚙ ↻⌛⏳
 
 	const processedDiv = document.createElement("div");
 	processedDiv.id = "processedDiv";
@@ -1701,7 +1701,8 @@ function showFeed(type, source, lang) {
 	loadingMessages.style.display = "block";
 
 	const container = document.createElement("div");
-	container.append(loadingMessages, loadingSpin, processedDiv);
+//	container.append(loadingMessages, loadingSpin, processedDiv);
+	container.append(loadingMessages, processedDiv);
 	container.style.padding = "5px";
 	container.style.border = "2px solid #de8e8e";
 	container.style.borderRadius = "4px";
