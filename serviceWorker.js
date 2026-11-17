@@ -293,6 +293,10 @@ function handleImageRequest(event, request) {
 							request.url,
 							true
 						).then(function () {
+
+if (cached.type === "opaque") {
+	return cached;
+}
 /*
 	if (cached.type === "opaque") {
 
@@ -656,7 +660,7 @@ function fetchAndCache(cache, request) {
 // =====================================================
 
 function fetchImageRequest(request) {
-/*
+
 	let url = new URL(request.url);
 
 	let requestToFetch = new Request(request, {
@@ -673,9 +677,8 @@ function fetchImageRequest(request) {
 			credentials: "omit"
 		});
 	}
-*/
-//	return fetch(requestToFetch);
-	return fetch(request);
+
+	return fetch(requestToFetch);
 }
 
 
