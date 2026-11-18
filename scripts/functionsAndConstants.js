@@ -470,8 +470,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
 	expansionSpan.textContent = "[▼]";
-	pointer.remove();
-	element.append(document.createTextNode(" "), expansionSpan);
+	pointer.replaceWith(document.createTextNode(" "), expansionSpan);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
