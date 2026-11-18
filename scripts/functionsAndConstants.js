@@ -503,11 +503,11 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 
 // ---------------------------------------------------------
 // Algorithm 3
-// Simple option using measure span.
+// Simple option using element height.
 // ---------------------------------------------------------
 
-function getMeasureLineInfo(measureSpan, lineHeight, linesToShow) {
-	const measureHeight = measureSpan.getBoundingClientRect().height;
+function getElementLineInfo(element, lineHeight, linesToShow) {
+	const measureHeight = element.getBoundingClientRect().height;
 	const linesCount = Math.round(measureHeight / lineHeight);
 	return {
 		fitsLinesToShow: linesCount <= linesToShow,
@@ -519,8 +519,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) return true;
 
-	const measureSpan = createSpan(element, col);
-	const span = createSpan(measureSpan, col);
+	const span = createSpan(element, col);
 
 	// one word only
 	if (wordsLength === 1) {
@@ -528,6 +527,14 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 		return true;
 	}
 	const lineHeight = getLineHeight(span);
+	
+	// ---------------------------------------------------------
+	// Initial lines.
+	// ---------------------------------------------------------
+
+	const initialHeight = element.getBoundingClientRect().height;
+	const initialLines = Math.round(initialHeight / lineHeight);
+	linesToShow = Math.max(linesToShow, initialLines);
 
 	// ---------------------------------------------------------
 	// Init.
@@ -549,7 +556,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 
 	while (true) {
 		span.innerHTML = formatSummary(words_arr, current);
-		const result = getMeasureLineInfo(measureSpan, lineHeight, linesToShow);
+		const result = getElementLineInfo(element, lineHeight, linesToShow);
 		if (!result.fitsLinesToShow) {
 			break;
 		}
@@ -582,7 +589,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 		});
 	};
 	expansionSpan.textContent = "[▼]";
-	measureSpan.append(document.createTextNode(" "), expansionSpan);
+	element.append(document.createTextNode(" "), expansionSpan);
 
 	// ---------------------------------------------------------
 	// Binary search bounds.
@@ -597,7 +604,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	while (left <= right) {
 		const middle = Math.floor((left + right) / 2);
 		span.innerHTML = formatSummary(words_arr, middle);
-		const result = getMeasureLineInfo(measureSpan, lineHeight, linesToShow);
+		const result = getElementLineInfo(element, lineHeight, linesToShow);
 		if (result.fitsLinesToShow) {
 			wordsCount = middle;
 			left = middle + 1;

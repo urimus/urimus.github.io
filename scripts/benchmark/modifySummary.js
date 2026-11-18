@@ -466,7 +466,7 @@ function testSummary(wordsCount) {
 		},
 		{
 			name: "Alg 3",
-			description: "Simple option using measure span",
+			description: "Simple option using element height",
 			run: modifySummary3
 		}
 	];
