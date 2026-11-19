@@ -640,8 +640,8 @@ function fetchImageRequest(request) {
 
 			.catch(function (corsError) {
 
-				console.log(
-					"[SW] CORS unavailable, fallback to no-cors:",
+				console.info(
+					"[SW] Expected CORS restriction. Retrying with no-cors:",
 					request.url
 				);
 
