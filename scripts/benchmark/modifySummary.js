@@ -557,13 +557,13 @@ function testSummary(wordsCount) {
 	// RUN BENCHMARK
 	// =========================================================
 
-	function addPerf(perf, time, isEarlyExit) {
+	function addPerf(perf, time, isEarlyReturn) {
 		perf.count++;
 		perf.total += time;
 		totalSum += time;
 		perf.times.push(time);
-		perf.earlyReturns.push(isEarlyExit);
-		if (isEarlyExit && perf.empiricalLines === null) perf.empiricalLines = perf.count;
+		perf.earlyReturns.push(isEarlyReturn);
+		if (isEarlyReturn && perf.empiricalLines === null) perf.empiricalLines = perf.count;
 		if (time < perf.min) perf.min = time;
 		if (time > perf.max) perf.max = time;
 		return perf.empiricalLines;
@@ -596,12 +596,12 @@ function testSummary(wordsCount) {
 
 		for (const algorithm of shuffledAlgorithms) {
 			let time;
-			let isEarlyExit;
+			let isEarlyReturn;
 			if (crossOriginIsolated) {
 				summaryDiv.replaceChildren();
 				summaryDiv.offsetHeight;
 				const start = performance.now();
-				isEarlyExit = algorithm.run(summaryDiv, words, line);
+				isEarlyReturn = algorithm.run(summaryDiv, words, line);
 				time = Math.max(performance.now() - start, timerMinimum / 2);
 			} else {
 				let totalTime = 0;
@@ -610,7 +610,7 @@ function testSummary(wordsCount) {
 					summaryDiv.replaceChildren();
 					summaryDiv.offsetHeight;
 					const start = performance.now();
-					isEarlyExit = algorithm.run(summaryDiv, words, line);
+					isEarlyReturn = algorithm.run(summaryDiv, words, line);
 					totalTime += performance.now() - start;
 					runs++;
 				} while (totalTime < measureFixingTime);
@@ -618,7 +618,7 @@ function testSummary(wordsCount) {
 				time = totalTime / runs;
 			}
 
-			const empiricalLines = addPerf(perfData.get(algorithm), time, isEarlyExit);
+			const empiricalLines = addPerf(perfData.get(algorithm), time, isEarlyReturn);
 			if (empiricalLines !== null && line >= empiricalLines + (empiricalLines - 1) * EXTRA_LINES_RATIO) {
 				measurementComplete = true;
 			}
