@@ -640,7 +640,9 @@ function fetchImageRequest(request) {
 
 			.catch(function (corsError) {
 
-				console.info(
+				console.log(
+					"%c INFO ",
+					"background: #2563eb; color: white; font-weight: bold; padding: 2px 5px;",
 					"[SW] Expected CORS restriction. Retrying with no-cors:",
 					request.url
 				);
