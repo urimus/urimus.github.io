@@ -182,16 +182,6 @@ function createSpan(element, col) {
 	return span;
 }
 
-function getLineHeight(span) {
-	const marker = document.createElement("span");
-	marker.style.display = "inline-block";
-	marker.textContent = "\u200B";
-	span.appendChild(marker);
-	const lineHeight = marker.getBoundingClientRect().height;
-	marker.remove();
-	return lineHeight || 17;
-}
-
 function formatSummary(words_arr, wordsCount) {
 	return words_arr.slice(0, wordsCount).join(" ");
 }
@@ -414,7 +404,6 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 		span.innerHTML = words_arr[0];
 		return true;
 	}
-	const lineHeight = getLineHeight(span);
 
 	// ---------------------------------------------------------
 	// Init.
@@ -423,10 +412,16 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	let wordsCount = 1;
 	// Binary search bound.
 	let left = 1;
+	
 	const pointer = document.createElement("span");
+	pointer.style.display = "inline-block";
+	pointer.textContent = "\u200B";
 	element.append(pointer);
-	const startLineTop = pointer.getBoundingClientRect().top;
 
+	const pointerRect = pointer.getBoundingClientRect();
+	const startLineTop = pointerRect.top;
+	const lineHeight = pointerRect.height || 17;
+	
 	// ---------------------------------------------------------
 	// Estimate the likely result.
 	// ---------------------------------------------------------
@@ -527,16 +522,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 		span.innerHTML = words_arr[0];
 		return true;
 	}
-	const lineHeight = getLineHeight(span);
 	
-	// ---------------------------------------------------------
-	// Initial lines.
-	// ---------------------------------------------------------
-
-	const initialHeight = element.getBoundingClientRect().height;
-	const initialLines = Math.round(initialHeight / lineHeight);
-	linesToShow = Math.max(linesToShow, initialLines);
-
 	// ---------------------------------------------------------
 	// Init.
 	// ---------------------------------------------------------
@@ -544,6 +530,17 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	let wordsCount = 1;
 	// Binary search bound.
 	let left = 1;
+	
+	const marker = document.createElement("span");
+	marker.style.display = "inline-block";
+	marker.textContent = "\u200B";
+	span.appendChild(marker);
+	const lineHeight = marker.getBoundingClientRect().height || 17;
+	marker.remove();
+	
+	const initialHeight = element.getBoundingClientRect().height;
+	const initialLines = Math.round(initialHeight / lineHeight);
+	linesToShow = Math.max(linesToShow, initialLines);
 
 	// ---------------------------------------------------------
 	// Estimate the likely result.
