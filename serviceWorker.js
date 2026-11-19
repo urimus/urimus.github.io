@@ -289,7 +289,7 @@ function handleImageRequest(event, request) {
 							// from Cache Storage in this COEP setup.
 							// Fetch the image again instead.
 							if (cached.type === "opaque") {
-								return fetchImageRequest(request);
+								return fetchImageRequest(request, true);
 							}
 
 							return disableBrowserCache(cached);
@@ -619,17 +619,30 @@ function fetchAndCache(cache, request) {
 // a credentialless no-cors request.
 // =====================================================
 
-function fetchImageRequest(request) {
+function fetchImageRequest(request, skipCors = false) {
 
 	let url = new URL(request.url);
 
-	// Cross-origin no-cors: try CORS first
+	// Cross-origin no-cors
 	if (
 		coepCredentialless &&
 		request.mode === "no-cors" &&
 		url.origin !== self.location.origin
 	) {
 
+		// Skip CORS if opaque response is already cached
+		if (skipCors) {
+
+			let fallbackRequest = new Request(request, {
+				credentials: "omit",
+				cache: "no-store"
+			});
+
+			return fetch(fallbackRequest);
+		}
+
+
+		// Try CORS first
 		let corsRequest = new Request(request, {
 			mode: "cors",
 			credentials: "omit",
@@ -642,7 +655,7 @@ function fetchImageRequest(request) {
 
 				console.log(
 					"%c INFO ",
-					"background: #60a5fa; color: #ffffff; font-weight: bold; padding: 3px 7px; border-radius: 5px;",
+					"background: #60a5fa; color: #ffffff; font-weight: bold; padding: 3px 7px; border-radius: 10px;",
 					"[SW] Expected CORS restriction. Retrying with no-cors:",
 					request.url
 				);
@@ -659,6 +672,7 @@ function fetchImageRequest(request) {
 
 	}
 
+
 	// Normal request
 	let requestToFetch = new Request(request, {
 		cache: "no-store"
@@ -666,6 +680,7 @@ function fetchImageRequest(request) {
 
 	return fetch(requestToFetch);
 }
+
 
 
 // =====================================================
