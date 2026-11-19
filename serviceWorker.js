@@ -642,7 +642,7 @@ function fetchImageRequest(request) {
 
 				console.log(
 					"%c INFO ",
-					"background: #2563eb; color: white; font-weight: bold; padding: 2px 5px;",
+					"background: #60a5fa; color: #ffffff; font-weight: bold; padding: 3px 7px; border-radius: 5px;",
 					"[SW] Expected CORS restriction. Retrying with no-cors:",
 					request.url
 				);
