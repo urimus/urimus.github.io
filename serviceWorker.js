@@ -631,6 +631,7 @@ function fetchImageRequest(request) {
 		url.origin !== self.location.origin
 	) {
 		requestToFetch = new Request(requestToFetch, {
+			mode: "cors",
 			credentials: "omit"
 		});
 	}
