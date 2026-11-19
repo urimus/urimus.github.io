@@ -530,6 +530,8 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	let wordsCount = 1;
 	// Binary search bound.
 	let left = 1;
+
+	const initialHeight = element.getBoundingClientRect().height;
 	
 	const marker = document.createElement("span");
 	marker.style.display = "inline-block";
@@ -538,7 +540,6 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	const lineHeight = marker.getBoundingClientRect().height || 17;
 	marker.remove();
 	
-	const initialHeight = element.getBoundingClientRect().height;
 	const initialLines = Math.round(initialHeight / lineHeight);
 	linesToShow = Math.max(linesToShow, initialLines);
 
