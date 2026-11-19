@@ -771,7 +771,7 @@ function testSummary(wordsCount) {
 	}
 	console.groupEnd();
 	if (hasErrors) {
-		console.error("Modify Summary Benchmark Run NOT Completed.");
+		console.error("Modify Summary Benchmark Run Aborted.");
 		console.log("Duration:", round((performance.now() - testStart) / 1000, 2), "s.");
 		return "End";
 	}
