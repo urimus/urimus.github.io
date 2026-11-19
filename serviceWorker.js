@@ -273,11 +273,11 @@ function handleImageRequest(event, request) {
 
 					if (cached) {
 
-//						if (cached.type !== "opaque") {
+						if (cached.type !== "opaque") {
 							event.waitUntil(
 								refreshIfNeeded(cache, request)
 							);
-//						}
+						}
 
 						return notifyImageCacheResult(
 							event.clientId,
@@ -285,9 +285,12 @@ function handleImageRequest(event, request) {
 							true
 						).then(function () {
 
-//							if (cached.type === "opaque") {
-//								return fetchImageRequest(request);
-//							}
+							// Opaque responses cannot be safely served
+							// from Cache Storage in this COEP setup.
+							// Fetch the image again instead.
+							if (cached.type === "opaque") {
+								return fetchImageRequest(request);
+							}
 
 							return disableBrowserCache(cached);
 
@@ -611,30 +614,53 @@ function fetchAndCache(cache, request) {
 // IMAGE FETCH
 // =====================================================
 //
-// Это аналог credentialless-логики coi-serviceworker,
-// но только для изображений, которые идут через
-// твой image cache.
+// Try CORS first for cross-origin no-cors image requests.
+// If the server does not support CORS, fall back to
+// a credentialless no-cors request.
 // =====================================================
 
 function fetchImageRequest(request) {
 
 	let url = new URL(request.url);
 
-	let requestToFetch = new Request(request, {
-		cache: "no-store"
-	});
-
-	// Apply credentialless to cross-origin no-cors requests
+	// Cross-origin no-cors: try CORS first
 	if (
 		coepCredentialless &&
 		request.mode === "no-cors" &&
 		url.origin !== self.location.origin
 	) {
-		requestToFetch = new Request(requestToFetch, {
+
+		let corsRequest = new Request(request, {
 			mode: "cors",
-			credentials: "omit"
+			credentials: "omit",
+			cache: "no-store"
 		});
+
+		return fetch(corsRequest)
+
+			.catch(function (corsError) {
+
+				console.log(
+					"[SW] CORS unavailable, fallback to no-cors:",
+					request.url
+				);
+
+				// Fallback to credentialless no-cors
+				let fallbackRequest = new Request(request, {
+					credentials: "omit",
+					cache: "no-store"
+				});
+
+				return fetch(fallbackRequest);
+
+			});
+
 	}
+
+	// Normal request
+	let requestToFetch = new Request(request, {
+		cache: "no-store"
+	});
 
 	return fetch(requestToFetch);
 }
