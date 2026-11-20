@@ -379,6 +379,16 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 // OTHER ALGORITHMS
 // =========================================================
 
+function getLineHeight(span) {
+	const marker = document.createElement("span");
+	marker.style.display = "inline-block";
+	marker.textContent = "\u200B";
+	span.appendChild(marker);
+	const lineHeight = marker.getBoundingClientRect().height;
+	marker.remove();
+	return lineHeight || 17;
+}
+
 // ---------------------------------------------------------
 // Algorithm 2
 // Simple option using single pointer.
@@ -413,14 +423,11 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	// Binary search bound.
 	let left = 1;
 	
+	const lineHeight = getLineHeight(span);
 	const pointer = document.createElement("span");
-	pointer.style.display = "inline-block";
 	pointer.textContent = "\u200B";
 	element.append(pointer);
-
-	const pointerRect = pointer.getBoundingClientRect();
-	const startLineTop = pointerRect.top;
-	const lineHeight = pointerRect.height || 17;
+	const startLineTop = pointer.getBoundingClientRect().top;
 	
 	// ---------------------------------------------------------
 	// Estimate the likely result.
@@ -531,13 +538,7 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// Binary search bound.
 	let left = 1;
 
-	const marker = document.createElement("span");
-	marker.style.display = "inline-block";
-	marker.textContent = "\u200B";
-	span.appendChild(marker);
-	const lineHeight = marker.getBoundingClientRect().height || 17;
-	marker.remove();
-
+	const lineHeight = getLineHeight(span);
 	const initialHeight = element.getBoundingClientRect().height;
 	const initialLines = Math.round(initialHeight / lineHeight);
 	linesToShow = Math.max(linesToShow, initialLines);
