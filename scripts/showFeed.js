@@ -525,10 +525,29 @@ function showFeedData(type, source, lang, result) {
 		const tableMainRow = table.insertRow(-1);
 		tableMainRow.id = 'tableMainRow';
 
-		if (result.totalUpdated == totalEntries || source == "merco" || (source=="nasa" && type=="image") || source == "phys.org") {
+		if (result.totalUpdated === totalEntries || source == "merco" || (source=="nasa" && type=="image") || source == "phys.org") {
 			const table2 = document.getElementById("messagetable");
 			table2.replaceChildren();
 			adjustFeedScrollDiv();
+
+			// for removing cached images in Service Worker only
+			if ("serviceWorker" in navigator) {
+				requestIdleCallback(() => {
+					navigator.serviceWorker.ready.then((registration) => {
+						const locStPar = source + "_" + type + "_updates";
+						const locStUpdateData = getLocalStorageData(locStPar);
+						for (let i = 0; i < totalEntries; i++) {
+							const locStUpdateDataNew = {};
+							locStUpdateDataNew.media = {};
+							locStUpdateDataNew.media.url = result.entries[i].media.url;
+							locStUpdateData[result.entries[i].link] = locStUpdateDataNew;
+						}
+						localStorage[locStPar] = JSON.stringify(locStUpdateData);
+						removeUnusedUpdates(source, type, result);
+					});
+				});
+			}
+
 			for (let i = 0; i < totalEntries; i++) {
 				showEntry(type, source, lang, result, i, true);
 			}
@@ -2428,7 +2447,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 			videoURL = getMeta(doc, 'meta[property="og:video"]');
 			if (videoURL == null) videoURL = getMeta(doc, 'meta[property="og:video:url"]');
 
-			let locStUpdateDataNew = {};
+			const locStUpdateDataNew = {};
 			if (description) {
 				result.entries[i].summary = description;
 				locStUpdateDataNew.summary = description;
