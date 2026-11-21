@@ -146,27 +146,17 @@ function typeSummary(span, words_arr, wordsCount, isExpanding, onComplete) {
 	const wordsLength = words_arr.length;
 	const count = wordsLength - wordsCount;
 	if (!count) { onComplete?.(); return; }
-
-	const step = Math.max(1, Math.ceil(count / 100));
-
-	let current;
-	if (isExpanding) {
-		current = Math.min(wordsCount + step, wordsLength);
-	} else {
-		current = Math.max(wordsLength - step, wordsCount);
-	}
-	span.innerHTML = formatSummary(words_arr, current);
-	if (step > 1) span.scrollIntoView({ block: "end", behavior: "instant", container: "nearest" });
-	if (count <= step) { onComplete?.(); return; }
-
+	const step = Math.max(1, count / 100);
+	let iteration = 0;
 	const timer = setInterval(() => {
-		if (isExpanding) {
-			current = Math.min(current + step, wordsLength);
-		} else {
-			current = Math.max(current - step, wordsCount);
-		}
+		iteration++;
+		const current = isExpanding
+			? Math.min(wordsCount + Math.ceil(step * iteration), wordsLength)
+			: Math.max(wordsLength - Math.ceil(step * iteration), wordsCount);
 		span.innerHTML = formatSummary(words_arr, current);
-		if (step > 1) span.scrollIntoView({ block: "end", behavior: "instant", container: "nearest" });
+		if (step > 1) {
+			span.scrollIntoView({ block: "end", behavior: "instant", container: "nearest" });
+		}
 		if ((isExpanding && current >= wordsLength) || (!isExpanding && current <= wordsCount)) {
 			clearInterval(timer);
 			onComplete?.();
