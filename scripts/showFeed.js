@@ -2166,7 +2166,6 @@ function removeUnusedUpdates(source, type, result) {
 
 		// Remove unused images from Service Worker Cache
 		if (imagesToDelete.length && "serviceWorker" in navigator) {
-console.log("[Updates] Removing unused cached images:", imagesToDelete);
 			navigator.serviceWorker.ready.then(registration => {
 				if (registration.active) {
 					registration.active.postMessage({
