@@ -145,7 +145,7 @@ function getScrollDivOffset(){
 function typeSummary(span, words_arr, wordsCount, isExpanding, onComplete) {
 	const wordsLength = words_arr.length;
 	const count = wordsLength - wordsCount;
-	if (!count) { onComplete?.(); return; }
+	if (count <= 0) { onComplete?.(); return; }
 	const step = Math.max(1, count / 100);
 	let iteration = 0;
 	const timer = setInterval(() => {
