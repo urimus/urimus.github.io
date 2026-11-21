@@ -543,7 +543,7 @@ function showFeedData(type, source, lang, result) {
 							locStUpdateData[result.entries[i].link] = locStUpdateDataNew;
 						}
 						localStorage[locStPar] = JSON.stringify(locStUpdateData);
-						removeUnusedUpdates(source, type, result);
+						removeUnusedUpdates(source, type, result, locStUpdateData);
 					});
 				});
 			}
@@ -2145,9 +2145,9 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 // ------------- Update ---------------- //
 
-function removeUnusedUpdates(source, type, result) {
+function removeUnusedUpdates(source, type, result, updates) {
 	const key = `${source}_${type}_updates`;
-	const updates = getLocalStorageData(key);
+	updates = updates ?? getLocalStorageData(key);
 	const links = new Set(result.entries.map(entry => entry.link));
 
 	const unusedImages = new Set();
