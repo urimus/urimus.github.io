@@ -2125,18 +2125,58 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 // ------------- End of Optimize---------------- //
 
 // ------------- Update ---------------- //
+
 function removeUnusedUpdates(source, type, result) {
 	const key = `${source}_${type}_updates`;
 	const updates = getLocalStorageData(key);
 	const links = new Set(result.entries.map(entry => entry.link));
 
+	const unusedImages = new Set();
+
 	for (const link in updates) {
 		if (!links.has(link)) {
+			const imageUrl = updates[link]?.media?.url;
+
+			if (imageUrl) {
+				unusedImages.add(imageUrl);
+			}
+
 			delete updates[link];
 		}
 	}
 
 	localStorage[key] = JSON.stringify(updates);
+
+	// Find images that are no longer used
+	if (unusedImages.size) {
+		const usedImages = new Set();
+
+		// Check remaining updates in current storage
+		for (const link in updates) {
+			const imageUrl = updates[link]?.media?.url;
+
+			if (imageUrl) {
+				usedImages.add(imageUrl);
+			}
+		}
+
+		const imagesToDelete = [...unusedImages].filter(
+			url => !usedImages.has(url)
+		);
+
+		// Remove unused images from Service Worker Cache
+		if (imagesToDelete.length && "serviceWorker" in navigator) {
+console.log("[Updates] Removing unused cached images:", imagesToDelete);
+			navigator.serviceWorker.ready.then(registration => {
+				if (registration.active) {
+					registration.active.postMessage({
+						type: "DELETE_CACHED_IMAGES",
+						urls: imagesToDelete
+					});
+				}
+			});
+		}
+	}
 }
 
 function consoleMetas(doc) {

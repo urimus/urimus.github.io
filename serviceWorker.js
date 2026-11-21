@@ -44,6 +44,38 @@ self.addEventListener("activate", function (event) {
 });
 
 // =====================================================
+// MESSAGE
+// =====================================================
+
+self.addEventListener("message", function(event) {
+
+	if (!event.data || event.data.type !== "DELETE_CACHED_IMAGES") {
+		return;
+	}
+
+	const urls = event.data.urls || [];
+
+	event.waitUntil(
+		caches.open(CACHE_NAME).then(function(cache) {
+
+			return Promise.all(
+				urls.map(function(url) {
+
+					return Promise.all([
+						cache.delete(url),
+						cache.delete(getMetaKey(url))
+					]);
+
+				})
+
+			);
+
+		})
+	);
+
+});
+
+// =====================================================
 // IMAGE CACHE NOTIFICATION
 // =====================================================
 
