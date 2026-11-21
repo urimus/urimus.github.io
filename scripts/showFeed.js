@@ -531,7 +531,7 @@ function showFeedData(type, source, lang, result) {
 			adjustFeedScrollDiv();
 
 			// for removing cached images in Service Worker only
-			if ("serviceWorker" in navigator) {
+			if ("serviceWorker" in navigator && result.totalUpdated !== totalEntries) {
 				requestIdleCallback(() => {
 					navigator.serviceWorker.ready.then((registration) => {
 						const locStPar = source + "_" + type + "_updates";
