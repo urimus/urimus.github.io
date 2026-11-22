@@ -532,19 +532,17 @@ function showFeedData(type, source, lang, result) {
 
 			// for removing cached images in Service Worker only
 			if ("serviceWorker" in navigator && result.totalUpdated !== totalEntries) {
-				requestIdleCallback(() => {
-					navigator.serviceWorker.ready.then((registration) => {
-						const locStPar = source + "_" + type + "_updates";
-						const locStUpdateData = getLocalStorageData(locStPar);
-						for (let i = 0; i < totalEntries; i++) {
-							const locStUpdateDataNew = {};
-							locStUpdateDataNew.media = {};
-							locStUpdateDataNew.media.url = result.entries[i].media.url;
-							locStUpdateData[result.entries[i].link] = locStUpdateDataNew;
-						}
-						localStorage[locStPar] = JSON.stringify(locStUpdateData);
-						removeUnusedUpdates(source, type, result, locStUpdateData);
-					});
+				navigator.serviceWorker.ready.then((registration) => {
+					const locStPar = source + "_" + type + "_updates";
+					const locStUpdateData = getLocalStorageData(locStPar);
+					for (let i = 0; i < totalEntries; i++) {
+						const locStUpdateDataNew = {};
+						locStUpdateDataNew.media = {};
+						locStUpdateDataNew.media.url = result.entries[i].media.url;
+						locStUpdateData[result.entries[i].link] = locStUpdateDataNew;
+					}
+					localStorage[locStPar] = JSON.stringify(locStUpdateData);
+					removeUnusedUpdates(source, type, result, locStUpdateData);
 				});
 			}
 
