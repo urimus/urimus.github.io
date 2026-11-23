@@ -48,7 +48,7 @@ function showInformation(lang) {
 function preloadImagesIOTD() {
 
 	const images = result.entries.map(entry => {
-		const url = new URL(entry.enclosure._attributes.url);
+		const url = new URL(entry.link);
 		url.searchParams.set("w", "450");
 		return url.toString();
 	});
