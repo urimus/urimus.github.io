@@ -169,6 +169,7 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 
 			// saving updates used for image storage only
 			if (source == "merco" || (source=="nasa" && type=="image") || source == "phys.org") {
+				let hasNewUpdate = false;
 				for (let i = 0; i < result.entries.length; i++) {
 					const link = result.entries[i].link;
 					if (!link || updates[link]) continue;
@@ -176,8 +177,9 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 					updateNew.media = {};
 					updateNew.media.url = result.entries[i].media.url;
 					updates[link] = updateNew;
+					hasNewUpdate = true;
 				}
-				localStorage[key] = JSON.stringify(updates);
+				if (hasNewUpdate) localStorage[key] = JSON.stringify(updates);
 			}
 
 			if (!registration.active) return;
