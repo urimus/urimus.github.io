@@ -47,7 +47,7 @@ function showInformation(lang) {
 
 function preloadImagesIOTD() {
 
-	const images = result.item.slice(1).map(entry => {
+	const images = result.entries.map(entry => {
 		const url = new URL(entry.enclosure._attributes.url);
 		url.searchParams.set("w", "450");
 		return url.toString();
@@ -80,7 +80,7 @@ function reloadAboutMeImage(lang) {
 
 function updateAboutMeImage(lang, random = false) {
 
-	const i = random ? Math.floor(Math.random() * result.item.length) : 0;
+	const i = random ? Math.floor(Math.random() * result.entries.length) : 0;
 
 	document.getElementById("descDiv")?.replaceChildren();
 	document.getElementById("dateDiv")?.replaceChildren();
@@ -117,7 +117,7 @@ function updateAboutMeImage2(lang, i, loadAttempt = 1) {
 	})
 	.then(
 		response => {
-			let data = response.data;
+			const data = response.data;
 			let json;
 			try {
 				json = xml2js(data, {
@@ -128,7 +128,23 @@ function updateAboutMeImage2(lang, i, loadAttempt = 1) {
    				showErrorImage("XML Parse Error: " + e.message);
 				return;
 			}
-			result = json.rss.channel;
+			const channel = json.rss.channel;
+			result = {};
+			result.entries = [];
+			const items = channel.item;
+			for (let i = 0; i < items.length; i++) {
+				const item = items[i];
+				result.entries[i] = {};
+				const newEntry = result.entries[i];
+				newEntry.link = item.link._text;
+				newEntry.summary = item.description._text;
+				newEntry.date_ms = new Date(item.pubDate._text).getTime();
+				newEntry.title = item.title._text
+				newEntry.media = {};
+				newEntry.media.url = item.enclosure._attributes.url;
+				newEntry.media.comment = "";
+			}
+			removeUnusedCacheAndUpdates("nasa", "image", result);
 			updateAboutMeImage3(lang, i);
 		},
 		error => {
@@ -145,7 +161,7 @@ function updateAboutMeImage2(lang, i, loadAttempt = 1) {
 
 function updateAboutMeImage3(lang, i) {
 
-	const item = result.item[i];
+	const entry = result.entries[i];
 	const table = document.getElementById("imagetable");
 
 	let descDiv = document.getElementById("descDiv");
@@ -161,7 +177,7 @@ function updateAboutMeImage3(lang, i) {
 	}
 
 	const imageA = document.createElement('a');
-	imageA.setAttribute('href', item.link._text);
+	imageA.setAttribute('href', entry.link);
 	imageA.setAttribute('class', 'standardb_blue');
 	imageA.setAttribute('target', '_blank');
 	imageA.setAttribute('tabindex', "0");
@@ -177,8 +193,8 @@ function updateAboutMeImage3(lang, i) {
 	imgSVG.setAttribute('height', 34);
 	imgSVG.onload = function () {
 		descDiv.appendChild(imageA);
-		if (item.description._text) {
-			const description_words = extractSummaryWords(item.description._text);
+		if (entry.summary) {
+			const description_words = extractSummaryWords(entry.summary);
 			modifySummary(descDiv, description_words, 4, "blue");
 		}
 		correctInformationDiv();
@@ -193,12 +209,12 @@ function updateAboutMeImage3(lang, i) {
 		dateDiv.setAttribute('class', "textsmall_blue");
 		dateDiv.setAttribute('align', "right");
 		dateDiv.setAttribute("style", "padding-left:10px; padding-right:10px;");
-		dateDiv.innerHTML = formatDate(new Date(item.pubDate._text).getTime(), lang);
+		dateDiv.innerHTML = formatDate(entry.date_ms, lang);
 		const tableRow = table.insertRow(-1);
 		const cell1 = tableRow.insertCell(0);
 		cell1.appendChild(dateDiv);
 	} else {
-		dateDiv.innerHTML = formatDate(new Date(item.pubDate._text).getTime(), lang);
+		dateDiv.innerHTML = formatDate(entry.date_ms, lang);
 	}
 	correctInformationDiv();
 
@@ -206,9 +222,9 @@ function updateAboutMeImage3(lang, i) {
 	Img.setAttribute('id', "iotd");
 	Img.setAttribute('class', "text_blue");
 	Img.setAttribute('style', 'display: block; margin-bottom: 5px;');
-	const item_title = DOMPurify.sanitize(item.title._text ?? "");
-	Img.setAttribute('alt', item_title);
-	Img.setAttribute('title', item_title);
+	const entry_title = DOMPurify.sanitize(entry.title ?? "");
+	Img.setAttribute('alt', entry_title);
+	Img.setAttribute('title', entry_title);
 	Img.setAttribute('width', 450);
 	Img.onerror = function () {
 		showErrorImage(t("image") + "#" + (i + 1) + " " + t("loadingFailed") + ".");
@@ -229,7 +245,7 @@ function updateAboutMeImage3(lang, i) {
 		}
 		correctInformationDiv();
 	}
-	const url = new URL(item.enclosure._attributes.url);
+	const url = new URL(entry.media.url);
 	url.searchParams.set("w", "450");
 	Img.src = url.toString();
 }

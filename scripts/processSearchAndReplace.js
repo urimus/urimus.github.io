@@ -1226,14 +1226,6 @@ function setTextAreaChanged(lang, isChanged = true) {
 	}
 }
 
-function getLocalStorageData(par) {
-	if (typeof localStorage[par]==="undefined") {
-		return {};
-	} else {
-		return JSON.parse(localStorage[par]);
-	}
-}
-
 function processSearchAndReplace(lang) {
 
 	changeLanguage(lang); // i18next

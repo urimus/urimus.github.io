@@ -138,6 +138,69 @@ function getScrollDivOffset(){
 	return hImgHeight + 65 + getScrollbarHeight(document.body); // 65
 }
 
+function getLocalStorageData(par) {
+	if (typeof localStorage[par] === "undefined") {
+		return {};
+	} else {
+		return JSON.parse(localStorage[par]);
+	}
+}
+
+function removeUnusedCacheAndUpdates(source, type, result, updates) {
+	const key = `${source}_${type}_updates`;
+	updates = updates ?? getLocalStorageData(key);
+	const links = new Set(result.entries.map(entry => entry.link));
+	const unusedImages = new Set();
+	for (const link in updates) {
+		if (!links.has(link)) {
+			const imageUrl = updates[link]?.media?.url;
+			if (imageUrl) unusedImages.add(imageUrl);
+			delete updates[link];
+		}
+	}
+
+	if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap") {
+		localStorage[key] = JSON.stringify(updates);
+	}
+
+	// Remove unused images from Service Worker Cache
+	if (unusedImages.size && "serviceWorker" in navigator) {
+		navigator.serviceWorker.ready.then(registration => {
+
+			// saving updates used for image storage only
+			if (source == "merco" || (source=="nasa" && type=="image") || source == "phys.org") {
+				for (let i = 0; i < result.entries.length; i++) {
+					const link = result.entries[i].link;
+					if (!link || updates[link]) continue;
+					const updateNew = {};
+					updateNew.media = {};
+					updateNew.media.url = result.entries[i].media.url;
+					updates[link] = updateNew;
+				}
+				localStorage[key] = JSON.stringify(updates);
+			}
+
+			if (!registration.active) return;
+			// Find images that are no longer used
+			const usedImages = new Set();
+			for (const link in updates) {
+				const imageUrl = updates[link]?.media?.url;
+				if (imageUrl) usedImages.add(imageUrl);
+			}
+			const imagesToDelete = [...unusedImages].filter(
+				url => !usedImages.has(url)
+			);
+			if (imagesToDelete.length) {
+				registration.active.postMessage({
+					type: "DELETE_CACHED_IMAGES",
+					urls: imagesToDelete
+				});
+			}
+		});
+	}
+}
+
+
 // =========================================================
 // ALGORITHM GENERAL
 // =========================================================
