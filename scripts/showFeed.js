@@ -1775,23 +1775,28 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 		}
 	}
 
-	// saving updates used for image storage only
-	if (source == "merco" || (source=="nasa" && type=="image") || source == "phys.org") {
-		for (let i = 0; i < result.entries.length; i++) {
-			const link = result.entries[i].link;
-			if (!link || updates[link]) continue;
-			const updateNew = {};
-			updateNew.media = {};
-			updateNew.media.url = result.entries[i].media.url;
-			updates[link] = updateNew;
-		}
-	}
 
-	localStorage[key] = JSON.stringify(updates);
+	if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap") {
+		localStorage[key] = JSON.stringify(updates);
+	}
 
 	// Remove unused images from Service Worker Cache
 	if (unusedImages.size && "serviceWorker" in navigator) {
 		navigator.serviceWorker.ready.then(registration => {
+
+			// saving updates used for image storage only
+			if (source == "merco" || (source=="nasa" && type=="image") || source == "phys.org") {
+				for (let i = 0; i < result.entries.length; i++) {
+					const link = result.entries[i].link;
+					if (!link || updates[link]) continue;
+					const updateNew = {};
+					updateNew.media = {};
+					updateNew.media.url = result.entries[i].media.url;
+					updates[link] = updateNew;
+				}
+				localStorage[key] = JSON.stringify(updates);
+			}
+
 			if (!registration.active) return;
 			// Find images that are no longer used
 			const usedImages = new Set();
