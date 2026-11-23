@@ -46,12 +46,13 @@ function showInformation(lang) {
 }
 
 function preloadImagesIOTD() {
-
+console.log("result -", result);
 	const images = result.entries.map(entry => {
-		const url = new URL(entry.link);
+		const url = new URL(entry.media.url);
 		url.searchParams.set("w", "450");
 		return url.toString();
 	});
+console.log("images -", images);
 	if (images.length === 0) return;
 
 	console.log("[SW] image of the day images caching started");
@@ -144,6 +145,7 @@ function updateAboutMeImage2(lang, i, loadAttempt = 1) {
 				newEntry.media.url = item.enclosure._attributes.url;
 				newEntry.media.comment = "";
 			}
+console.log(result);
 			removeUnusedCacheAndUpdates("nasa", "image", result);
 			updateAboutMeImage3(lang, i);
 		},
