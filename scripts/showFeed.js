@@ -529,23 +529,6 @@ function showFeedData(type, source, lang, result) {
 			const table2 = document.getElementById("messagetable");
 			table2.replaceChildren();
 			adjustFeedScrollDiv();
-
-			// for removing cached images in Service Worker only
-			if ("serviceWorker" in navigator && result.totalUpdated !== totalEntries) {
-				navigator.serviceWorker.ready.then((registration) => {
-					const locStPar = source + "_" + type + "_updates";
-					const locStUpdateData = getLocalStorageData(locStPar);
-					for (let i = 0; i < totalEntries; i++) {
-						const locStUpdateDataNew = {};
-						locStUpdateDataNew.media = {};
-						locStUpdateDataNew.media.url = result.entries[i].media.url;
-						locStUpdateData[result.entries[i].link] = locStUpdateDataNew;
-					}
-					localStorage[locStPar] = JSON.stringify(locStUpdateData);
-					removeUnusedUpdates(source, type, result, locStUpdateData);
-				});
-			}
-
 			for (let i = 0; i < totalEntries; i++) {
 				showEntry(type, source, lang, result, i, true);
 			}
@@ -584,7 +567,6 @@ function showFeedData(type, source, lang, result) {
 			adjustFeedScrollDiv();
 
 			// 10 updates simultaneously only
-			removeUnusedUpdates(source, type, result);
 			let updatingCount = 0;
 			for (let i = 0; i < totalEntries; i++) {
 				if (result.entries[i].storage.updateProcessed == 0) {
@@ -1779,9 +1761,61 @@ function getFirstFrame(videoUrl, i, callback) {
 	video.src = videoUrl;
 }
 
+function removeUnusedCacheAndUpdates(source, type, result, updates) {
+	const key = `${source}_${type}_updates`;
+	updates = updates ?? getLocalStorageData(key);
+
+	const links = new Set(result.entries.map(entry => entry.link));
+	const unusedImages = new Set();
+	for (const link in updates) {
+		if (!links.has(link)) {
+			const imageUrl = updates[link]?.media?.url;
+			if (imageUrl) unusedImages.add(imageUrl);
+			delete updates[link];
+		}
+	}
+
+	// saving updates used for image storage only
+	if (source == "merco" || (source=="nasa" && type=="image") || source == "phys.org") {
+		for (let i = 0; i < result.entries.length; i++) {
+			const link = result.entries[i].link;
+			if (!link || updates[link]) continue;
+			const updateNew = {};
+			updateNew.media = {};
+			updateNew.media.url = result.entries[i].media.url;
+			updates[link] = updateNew;
+		}
+	}
+
+	localStorage[key] = JSON.stringify(updates);
+
+	// Remove unused images from Service Worker Cache
+	if (unusedImages.size && "serviceWorker" in navigator) {
+		navigator.serviceWorker.ready.then(registration => {
+			if (!registration.active) return;
+			// Find images that are no longer used
+			const usedImages = new Set();
+			for (const link in updates) {
+				const imageUrl = updates[link]?.media?.url;
+				if (imageUrl) usedImages.add(imageUrl);
+			}
+			const imagesToDelete = [...unusedImages].filter(
+				url => !usedImages.has(url)
+			);
+			if (imagesToDelete.length) {
+				registration.active.postMessage({
+					type: "DELETE_CACHED_IMAGES",
+					urls: imagesToDelete
+				});
+			}
+		});
+	}
+}
+
+
 function optimizeUpdateResult(type, source, lang, resultOrig) {
 	const result = {};
-	let locStUpdateData = {}, i = -1;
+	let i = -1;
 
 	result.feedXML = resultOrig.feedXML;
 
@@ -1794,10 +1828,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 
 	result.totalUpdated = 0;
 
-	if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap") {
-		const locStPar = source + "_" + type + "_updates";
-		locStUpdateData = getLocalStorageData(locStPar);
-	}
+	const locStPar = source + "_" + type + "_updates";
+	const locStUpdateData = getLocalStorageData(locStPar);
 
 	result.entries = [];
 	let items;
@@ -2103,6 +2135,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 	}
 
+	removeUnusedCacheAndUpdates(source, type, result, locStUpdateData);
+
 	// --- Sort Feed by Date Desc ---
 	const totalEntries = result.entries.length;
 	for (let i = totalEntries - 1; i >= 0; i--) {
@@ -2142,42 +2176,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 // ------------- End of Optimize---------------- //
 
 // ------------- Update ---------------- //
-function removeUnusedUpdates(source, type, result, updates) {
-	const key = `${source}_${type}_updates`;
-	updates = updates ?? getLocalStorageData(key);
-	const links = new Set(result.entries.map(entry => entry.link));
-	const unusedImages = new Set();
-	for (const link in updates) {
-		if (!links.has(link)) {
-			const imageUrl = updates[link]?.media?.url;
-			if (imageUrl) unusedImages.add(imageUrl);
-			delete updates[link];
-		}
-	}
-	localStorage[key] = JSON.stringify(updates);
-
-	// Remove unused images from Service Worker Cache
-	if (unusedImages.size && "serviceWorker" in navigator) {
-		navigator.serviceWorker.ready.then(registration => {
-			if (!registration.active) return;
-			// Find images that are no longer used
-			const usedImages = new Set();
-			for (const link in updates) {
-				const imageUrl = updates[link]?.media?.url;
-				if (imageUrl) usedImages.add(imageUrl);
-			}
-			const imagesToDelete = [...unusedImages].filter(
-				url => !usedImages.has(url)
-			);
-			if (imagesToDelete.length) {
-				registration.active.postMessage({
-					type: "DELETE_CACHED_IMAGES",
-					urls: imagesToDelete
-				});
-			}
-		});
-	}
-}
 
 function consoleMetas(doc) {
 	const metas = doc.querySelectorAll("meta");
