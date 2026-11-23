@@ -127,10 +127,9 @@ function updateAboutMeImage2(lang, i, loadAttempt = 1) {
    				showErrorImage("XML Parse Error: " + e.message);
 				return;
 			}
-			const channel = json.rss.channel;
 			result = {};
 			result.entries = [];
-			const items = channel.item;
+			const items = json.rss.channel.item;
 			for (let i = 0; i < items.length; i++) {
 				const item = items[i];
 				result.entries[i] = {};
