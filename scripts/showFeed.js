@@ -272,13 +272,13 @@ function newsLoad(lang) {
 		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis") 
 		|| source=="merco" && (typeL=="main" || typeL=="agriculture" || typeL=="economy" || typeL=="energy" || typeL=="environment" || typeL=="fisheries" || typeL=="health" || typeL=="investments" || typeL=="politics" || typeL=="realestate") 
 		|| source=="phys.org" && (typeL=="all" 
-										|| typeL=="earth" || typeL=="environment"
-										|| typeL=="archaeology" || typeL=="economics" || typeL=="education" || typeL=="mathematics" || typeL=="other" || typeL=="political"  || typeL=="social"
-										|| typeL=="bio" || typeL=="nanomaterials" || typeL=="nanophysics"
-										|| typeL=="condensed" || typeL=="general" || typeL=="optics" || typeL=="plasma" || typeL=="quantum" || typeL=="soft" || typeL=="superconductivity"
-										|| typeL=="astrobiology" || typeL=="astronomy" || typeL=="planetary" || typeL=="space"
-										|| typeL=="agriculture" || typeL=="biotechnology" || typeL=="cell" || typeL=="ecology" || typeL=="evolution" || typeL=="molecular" || typeL=="otherb" || typeL=="paleontology" || typeL=="plants" || typeL=="veterinary"
-										|| typeL=="analytical" || typeL=="biochemistry" || typeL=="materials" || typeL=="otherc" || typeL=="polymers")
+								|| typeL=="earth" || typeL=="environment"
+								|| typeL=="archaeology" || typeL=="economics" || typeL=="education" || typeL=="mathematics" || typeL=="other" || typeL=="political"  || typeL=="social"
+								|| typeL=="bio" || typeL=="nanomaterials" || typeL=="nanophysics"
+								|| typeL=="condensed" || typeL=="general" || typeL=="optics" || typeL=="plasma" || typeL=="quantum" || typeL=="soft" || typeL=="superconductivity"
+								|| typeL=="astrobiology" || typeL=="astronomy" || typeL=="planetary" || typeL=="space"
+								|| typeL=="agriculture" || typeL=="biotechnology" || typeL=="cell" || typeL=="ecology" || typeL=="evolution" || typeL=="molecular" || typeL=="otherb" || typeL=="paleontology" || typeL=="plants" || typeL=="veterinary"
+								|| typeL=="analytical" || typeL=="biochemistry" || typeL=="materials" || typeL=="otherc" || typeL=="polymers")
 		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports") )  {
 			type=typeL;
 		}
