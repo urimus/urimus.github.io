@@ -2,7 +2,7 @@
 
 // ------------- Global Variables ---------------- //
 let imagesCachingStarted = false;
-const result = {};
+let result = null;
 // ------------- End of Global Variables ---------------- //
 
 function correctInformationDiv(){
@@ -127,6 +127,7 @@ function updateAboutMeImage2(lang, i, loadAttempt = 1) {
    				showErrorImage("XML Parse Error: " + e.message);
 				return;
 			}
+			result = {};
 			result.entries = [];
 			const items = json.rss.channel.item;
 			for (let i = 0; i < items.length; i++) {
