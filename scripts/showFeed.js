@@ -1471,10 +1471,11 @@ function showFeedError(message, feedURL, lang) {
 
 function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 
+	const useProxy = ["cbs", "merco", "phys.org", "yonhap"].includes(source);
 	const axiosConfig = {
-		url: ["cbs", "merco", "phys.org", "yonhap"].includes(source) ? proxyURL : feedURL,
+		url: useProxy ? proxyURL : feedURL,
 		params: {
-			...( ["cbs", "merco", "phys.org", "yonhap"].includes(source) ? { url: feedURL } : {}),
+			...(useProxy ? { url: feedURL } : {}),
 			_: Date.now()
 		},
 		timeout: 10000
@@ -1531,8 +1532,8 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 				});
 			});
 		}
-	})
-	.catch(error => {
+	},
+	error => {
 		consoleAxiosError(error, t("feedLoadError") + " | " + t("loadAttempt") + " " + loadAttempt);
 
 		if (loadAttempt < 10) {
