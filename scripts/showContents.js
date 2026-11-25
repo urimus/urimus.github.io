@@ -4,42 +4,69 @@ function contentsLoad(lang) {
 
 	changeLanguage(lang); // i18next
 
-	let type="";
-	let sortby="";
-	let toRedirect=false;
+	let type = "";
+	let sortby = "";
 
-	const typeL=getParameterByName('type');
-	if (typeL &&
-		((lang=="eng" || lang=="rus") && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="htmleditor" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities" || typeL=="news") ||
-		lang=="lat" && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="news")) {
-			type=typeL;
-	} else {
-		if (lang=="lat" && (typeL=="htmleditor" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities")) {
-			type="aboutme";
-			toRedirect=true;
-		} else {
-			alert("Type '"+typeL+"' " + t("notValidRedirect"));
-			window.location.href='site_map_'+lang+'.html?type=aboutme&sortby=name';
-		}
+	const typeL = getParameterByName('type');
+	const sortbyL = getParameterByName('sortby');
+
+	const commonTypes = [
+		"aboutme", "aboutwork", "aboutphd", "links",
+		"photos", "amv", "junk", "stuff", "news"
+	];
+
+	const extendedTypes = [
+		"htmleditor", "music", "movies", "series", "games",
+		"books", "anecdotes", "heffalump", "relaxation",
+		"software", "satanism", "wicca", "falsifiability",
+		"psychology", "countries", "totalitarianism", "personalities"
+	];
+
+	const allTypes = [...commonTypes, ...extendedTypes];
+
+	const flagTypes = [
+		"music", "movies", "series", "books", "junk", "news"
+	];
+
+	// Validate page type
+	if (!typeL || !allTypes.includes(typeL)) {
+		alert("Type '" + typeL + "' " + t("notValidRedirect"));
+		window.location.href = 'site_map_' + lang + '.html?type=aboutme&sortby=name';
+		return;
 	}
 
-	const sortbyL=getParameterByName('sortby');
-	if (sortbyL && (sortbyL=="name" || sortbyL=="date" || sortbyL=="flag" && (typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="books" || typeL=="junk" || typeL=="news")) {
-		sortby=sortbyL;
-	} else {
-		alert("Sort By Type '"+sortbyL+"' " + t("notValidRedirect"));
-		window.location.href='site_map_'+lang+'.html?type='+type+'&sortby='+ sortby;
+	// Redirect unavailable types in the Latin version without showing an alert
+	if (lang === "lat" && extendedTypes.includes(typeL)) {
+		window.location.href = 'site_map_' + lang + '.html?type=aboutme&sortby=' + sortbyL;
 		return;
-	}		
+	}
 
-	if (toRedirect) {
-		window.location.href='site_map_'+lang+'.html?type='+type+'&sortby='+ sortby;
+	// Set valid page type
+	if (lang === "eng" || lang === "rus" || commonTypes.includes(typeL)) {
+		type = typeL;
+	} else {
+		alert("Type '" + typeL + "' " + t("notValidRedirect"));
+		window.location.href = 'site_map_' + lang + '.html?type=aboutme&sortby=name';
+		return;
+	}
+
+	// Validate sorting type
+	if (
+		sortbyL === "name" ||
+		sortbyL === "date" ||
+		(sortbyL === "flag" && flagTypes.includes(type))
+	) {
+		sortby = sortbyL;
+	} else {
+		alert("Sort By Type '" + sortbyL + "' " + t("notValidRedirect"));
+		window.location.href = 'site_map_' + lang + '.html?type=' + type + '&sortby=name';
 		return;
 	}
 
 	processPageResize(lang);
 	showContents(type, sortby, lang);
 }
+
 
 function mouseInSortBy(funcType) {
 	document.getElementById("sortby_" + funcType).className = "sortby_selected";

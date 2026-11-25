@@ -237,52 +237,69 @@ function enableKeyboardScroll(scrollDiv) {
 }
 
 // ------------- Initial ---------------- //
-function newsLoad(lang) {
+
+
+function contentsLoad(lang) {
 
 	changeLanguage(lang); // i18next
 
-	let source="";
-	const sourceL = getParameterByName('source');
-	if (sourceL  && (sourceL=="artemis" || sourceL=="cbs" || sourceL=="merco" || sourceL=="nasa" || sourceL=="phys.org" || sourceL=="yonhap")) {
-			source = sourceL;
-	} else {
-		alert("Source '" + sourceL + "' " + t("notValidRedirect"));
-		window.location.href='news_'+lang+'.html?source=nasa&type=releases';
-		return;
-	}
-
-	let type="";
 	const typeL = getParameterByName('type');
-	if (typeL &&
-		(source=="artemis" && (typeL=="blog" || typeL=="artemis2")
-		|| source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space")
-		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis")
-		|| source=="merco" && (typeL=="main" || typeL=="agriculture" || typeL=="economy" || typeL=="energy" || typeL=="environment" || typeL=="fisheries" || typeL=="health" || typeL=="investments" || typeL=="politics" || typeL=="realestate")
-		|| source=="phys.org" && (typeL=="all" 
-								|| typeL=="earth" || typeL=="environment"
-								|| typeL=="archaeology" || typeL=="economics" || typeL=="education" || typeL=="mathematics" || typeL=="other" || typeL=="political"  || typeL=="social"
-								|| typeL=="bio" || typeL=="nanomaterials" || typeL=="nanophysics"
-								|| typeL=="condensed" || typeL=="general" || typeL=="optics" || typeL=="plasma" || typeL=="quantum" || typeL=="soft" || typeL=="superconductivity"
-								|| typeL=="astrobiology" || typeL=="astronomy" || typeL=="planetary" || typeL=="space"
-								|| typeL=="agriculture" || typeL=="biotechnology" || typeL=="cell" || typeL=="ecology" || typeL=="evolution" || typeL=="molecular" || typeL=="otherb" || typeL=="paleontology" || typeL=="plants" || typeL=="veterinary"
-								|| typeL=="analytical" || typeL=="biochemistry" || typeL=="materials" || typeL=="otherc" || typeL=="polymers")
-		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports"))) {
-			type=typeL;
-	} else {
-		alert("Type '" + typeL + "' " + t("notValidRedirect"));
-		if (source=="artemis") window.location.href='news_'+lang+'.html?source=artemis&type=blog';
-		if (source=="cbs") window.location.href='news_'+lang+'.html?source=cbs&type=top';
-		if (source=="merco") window.location.href='news_'+lang+'.html?source=merco&type=main';
-		if (source=="nasa") window.location.href='news_'+lang+'.html?source=nasa&type=releases';
-		if (source=="phys.org") window.location.href='news_'+lang+'.html?source=phys.org&type=all';
-		if (source=="yonhap") window.location.href='news_'+lang+'.html?source=yonhap&type=all';
+	const sortbyL = getParameterByName('sortby');
+
+	const commonTypes = [
+		"aboutme", "aboutwork", "aboutphd", "links",
+		"photos", "amv", "junk", "stuff", "news"
+	];
+
+	const extendedTypes = [
+		"htmleditor", "music", "movies", "series", "games",
+		"books", "anecdotes", "heffalump", "relaxation",
+		"software", "satanism", "wicca", "falsifiability",
+		"psychology", "countries", "totalitarianism", "personalities"
+	];
+
+	const flagTypes = [
+		"music", "movies", "series", "books", "junk", "news"
+	];
+
+	const allTypes = [...commonTypes, ...extendedTypes];
+
+	// Validate page type
+	if (!typeL || !allTypes.includes(typeL)) {
+		alert(`Type '${typeL}' ${t("notValidRedirect")}`);
+		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=name`;
 		return;
 	}
 
-	const scrollDiv = document.getElementById('scrollDiv');
-	if (scrollDiv) enableKeyboardScroll(scrollDiv);
+	// Redirect unavailable types in the Latin version without showing an alert
+	if (lang === "lat" && extendedTypes.includes(typeL)) {
+		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=${sortbyL}`;
+		return;
+	}
+
+	// Validate language and set page type
+	if (commonTypes.includes(typeL) || ["eng", "rus"].includes(lang)) {
+		type = typeL;
+	} else {
+		alert(`Type '${typeL}' ${t("notValidRedirect")}`);
+		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=name`;
+		return;
+	}
+
+	// Validate sorting type
+	if (
+		["name", "date"].includes(sortbyL) ||
+		(sortbyL === "flag" && flagTypes.includes(type))
+	) {
+		sortby = sortbyL;
+	} else {
+		alert(`Sort By Type '${sortbyL}' ${t("notValidRedirect")}`);
+		window.location.href = `site_map_${lang}.html?type=${type}&sortby=name`;
+		return;
+	}
+
 	processPageResize(lang);
-	showFeed(type, source, lang);
+	showContents(type, sortby, lang);
 }
 
 // ------------- End of Initial ---------------- //
