@@ -6,57 +6,39 @@ function contentsLoad(lang) {
 
 	let type="";
 	let sortby="";
-	let toRedirect=0;
-	
-	const typeL=getParameterByName('type'); 
-	const sortbyL=getParameterByName('sortby');
+	let toRedirect=false;
 
-	if (typeL && typeL!="") {
-		if ( (lang=="eng" || lang=="rus") && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="htmleditor" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities" || typeL=="news") || (lang=="lat" && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="news"))) {
+	const typeL=getParameterByName('type');
+	if (typeL &&
+		((lang=="eng" || lang=="rus") && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="htmleditor" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities" || typeL=="news") ||
+		lang=="lat" && (typeL=="aboutme" || typeL=="aboutwork" || typeL=="aboutphd" || typeL=="links" || typeL=="photos" || typeL=="amv" || typeL=="junk" || typeL=="stuff" || typeL=="news")) {
 			type=typeL;
-		}
+	} else {
 		if (lang=="lat" && (typeL=="htmleditor" || typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="games" || typeL=="books" || typeL=="anecdotes" || typeL=="heffalump" || typeL=="relaxation" || typeL=="software" || typeL=="satanism" || typeL=="wicca" || typeL=="falsifiability" || typeL=="psychology" || typeL=="countries" || typeL=="totalitarianism" || typeL=="personalities")) {
 			type="aboutme";
-			toRedirect=1;
-		}
-	} else {
-		toRedirect=1;
-	}
-
-	if (sortbyL=="" || sortbyL==null) {
-		toRedirect=1;
-	} else {
-		if (sortbyL=="name" || sortbyL=="date") sortby=sortbyL;
-		if (sortbyL=="flag") {
-			if (typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="books" || typeL=="junk" || typeL=="news") {
-				sortby=sortbyL;
-			} else {
-				sortby="name";
-				toRedirect=1;
-			}
+			toRedirect=true;
+		} else {
+			alert("Type '"+typeL+"' " + t("notValidRedirect"));
+			window.location.href='site_map_'+lang+'.html?type=aboutme&sortby=name';
 		}
 	}
 
-	if (type=="") {
-		alert("Type '"+typeL+"' " + t("notValidRedirect"));
-		type="aboutme";
-		toRedirect=1;
-	}
-
-	if (sortby=="") {
+	const sortbyL=getParameterByName('sortby');
+	if (sortbyL && (sortbyL=="name" || sortbyL=="date" || sortbyL=="flag" && (typeL=="music" || typeL=="movies" || typeL=="series" || typeL=="books" || typeL=="junk" || typeL=="news")) {
+		sortby=sortbyL;
+	} else {
 		alert("Sort By Type '"+sortbyL+"' " + t("notValidRedirect"));
-		sortby="name";
-		toRedirect=1;
-	}
+		window.location.href='site_map_'+lang+'.html?type='+type+'&sortby='+ sortby;
+		return;
+	}		
 
-	if (toRedirect==1) {
+	if (toRedirect) {
 		window.location.href='site_map_'+lang+'.html?type='+type+'&sortby='+ sortby;
 		return;
 	}
 
 	processPageResize(lang);
 	showContents(type, sortby, lang);
-
 }
 
 function mouseInSortBy(funcType) {
