@@ -580,18 +580,12 @@
 		<div id="menu_26_1"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'eng', 'news');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('news_eng.html?source=artemis');
-			} else {
-				clickStarted = true;
-				window.location.href='news_eng.html?source=artemis';
-			};"
+		onclick="showSubMenu(this, 'eng', 'news');"
 		class="menu_not_selected_red"
 		style="padding-left: 5px;">
-		&#9679; Artemis II API Feed</div>
+		&#9679; Artemis RSS Feed</div>
 	</td>
 	</tr>
 

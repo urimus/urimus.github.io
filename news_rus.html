@@ -581,18 +581,12 @@
 		<div id="menu_26_1"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'rus', 'news');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('news_rus.html?source=artemis');
-			} else {
-				clickStarted = true;
-				window.location.href='news_rus.html?source=artemis';
-			};"
+		onclick="showSubMenu(this, 'rus', 'news');"
 		class="menu_not_selected_red"
 		style="padding-left: 5px;">
-		&#9679; Artemis II API Строка</div>
+		&#9679; Artemis RSS Строка</div>
 	</td>
 	</tr>
 

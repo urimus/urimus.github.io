@@ -1,7 +1,8 @@
 ﻿<b class="text_red_blue">Nuntium</b>
 
-&#9679; <b class = "text_red_blue" data-added="07 Feb, 2026." data-country="usa">Artemis II API Fluxus</b>
-<span style="padding-left:10px;">- <a href="news_lat.html?source=artemis" class = "standardb_red" data-added="07 Feb, 2026." data-country="usa" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Artemis II API Fluxus</a></span>
+&#9679; <b class = "text_red_blue" data-added="07 Feb, 2026." data-country="usa">Artemis RSS Fluxus</b>
+<span style="padding-left:10px;">- <a href="news_lat.html?source=artemis&type=blog" class = "standardb_red" data-added="25 Nov, 2026." data-country="usa" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Artemis Blog</a></span>
+<span style="padding-left:10px;">- <a href="news_lat.html?source=artemis&type=artemis2" class = "standardb_red" data-added="07 Feb, 2026." data-country="usa" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Artemis II API</a></span>
 
 &#9679; <b class = "text_red_blue" data-added="31 Oct, 2024." data-country="usa">CBS RSS Fluxus</b>
 <span style="padding-left:10px;">- <a href="news_lat.html?source=cbs&type=top" class = "standardb_red" data-added="31 Oct, 2024." data-country="usa" onmouseenter="showSubMenu(this, 'lat', 'contentsLink');">Top Stories</a></span>

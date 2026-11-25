@@ -27,7 +27,7 @@ function feedIcon(feedURL, lang) {
 		adjustFeedScrollDiv();
 	}
 
-	if (feedURL == "https://api.artemis2.live/news") { // artemis
+	if (feedURL == "https://api.artemis2.live/news" || feedURL == "https://www.nasa.gov/blogs/artemis/feed/") { // artemis
 		Img.setAttribute('src', "images/icons/feed/api_icon.svg");
 	} else {
 		Img.setAttribute('src', "images/icons/feed/rss_icon.svg");
@@ -242,35 +242,22 @@ function newsLoad(lang) {
 	changeLanguage(lang); // i18next
 
 	let source="";
-	let toRedirect=0;
-	
-	const sourceL=getParameterByName('source');
-	if (sourceL && sourceL!="") {
-		if (sourceL=="artemis" || sourceL=="cbs" || sourceL=="merco" || sourceL=="nasa" || sourceL=="phys.org" || sourceL=="yonhap")  {
-			source=sourceL;
-		}
+	const sourceL = getParameterByName('source');
+	if (sourceL  && (sourceL=="artemis" || sourceL=="cbs" || sourceL=="merco" || sourceL=="nasa" || sourceL=="phys.org" || sourceL=="yonhap")) {
+			source = sourceL;
 	} else {
-		toRedirect=1;
-	}
-
-	if (source=="") {
 		alert("Source '" + sourceL + "' " + t("notValidRedirect"));
-		toRedirect=1;
-	}
-
-	if (toRedirect==1) {
 		window.location.href='news_'+lang+'.html?source=nasa&type=releases';
 		return;
 	}
 
 	let type="";
-	toRedirect=0;
-	
 	const typeL = getParameterByName('type');
-	if (typeL && typeL!="") {
-		if (source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space") 
-		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis") 
-		|| source=="merco" && (typeL=="main" || typeL=="agriculture" || typeL=="economy" || typeL=="energy" || typeL=="environment" || typeL=="fisheries" || typeL=="health" || typeL=="investments" || typeL=="politics" || typeL=="realestate") 
+	if (typeL &&
+		(source=="artemis" && (typeL=="blog" || typeL=="artemis2")
+		|| source=="cbs" && (typeL=="top" || typeL=="us" || typeL=="politics" || typeL=="world" || typeL=="health" || typeL=="moneywatch" || typeL=="science" || typeL=="technology" || typeL=="entertainment" || typeL=="space")
+		|| source=="nasa" && (typeL=="releases" || typeL=="recent" || typeL=="image" || typeL=="technology" || typeL=="aeronautics" || typeL=="iss" || typeL=="artemis")
+		|| source=="merco" && (typeL=="main" || typeL=="agriculture" || typeL=="economy" || typeL=="energy" || typeL=="environment" || typeL=="fisheries" || typeL=="health" || typeL=="investments" || typeL=="politics" || typeL=="realestate")
 		|| source=="phys.org" && (typeL=="all" 
 								|| typeL=="earth" || typeL=="environment"
 								|| typeL=="archaeology" || typeL=="economics" || typeL=="education" || typeL=="mathematics" || typeL=="other" || typeL=="political"  || typeL=="social"
@@ -279,24 +266,11 @@ function newsLoad(lang) {
 								|| typeL=="astrobiology" || typeL=="astronomy" || typeL=="planetary" || typeL=="space"
 								|| typeL=="agriculture" || typeL=="biotechnology" || typeL=="cell" || typeL=="ecology" || typeL=="evolution" || typeL=="molecular" || typeL=="otherb" || typeL=="paleontology" || typeL=="plants" || typeL=="veterinary"
 								|| typeL=="analytical" || typeL=="biochemistry" || typeL=="materials" || typeL=="otherc" || typeL=="polymers")
-		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports") )  {
+		|| source=="yonhap" && (typeL=="all" || typeL=="national" || typeL=="northkorea" || typeL=="economy" || typeL=="biz" || typeL=="culture" || typeL=="sports"))) {
 			type=typeL;
-		}
 	} else {
-		toRedirect=1;
-	}
-	if (source=="artemis") {
-		type="all";
-		toRedirect=0;
-	}
-
-	if (type=="") {
 		alert("Type '" + typeL + "' " + t("notValidRedirect"));
-		toRedirect=1;
-	}
-
-	if (toRedirect==1) { // restore
-		if (source=="artemis") window.location.href='news_'+lang+'.html?source=artemis';
+		if (source=="artemis") window.location.href='news_'+lang+'.html?source=artemis&type=blog';
 		if (source=="cbs") window.location.href='news_'+lang+'.html?source=cbs&type=top';
 		if (source=="merco") window.location.href='news_'+lang+'.html?source=merco&type=main';
 		if (source=="nasa") window.location.href='news_'+lang+'.html?source=nasa&type=releases';
@@ -1184,6 +1158,10 @@ function generateTabs(type, source, lang) {
 	];
 
 	const sourceTabs = {
+		artemis: {
+			blog: "Blog",
+			artemis2: "Artemis II"
+		},
 		cbs: {
 			top: "Top Stories",
 			us: "U.S.",
@@ -1196,15 +1174,6 @@ function generateTabs(type, source, lang) {
 			entertainment: "Entertainment",
 			space: "Space"
 		},
-		nasa: {
-			releases: "News Releases",
-			recent: "Recently",
-			image: "Image of the Day",
-			technology: "Technology",
-			aeronautics: "Aeronautics",
-			iss: "Space Station",
-			artemis: "Artemis"
-		},
 		merco: {
 			main: "Main",
 			agriculture: "Agriculture",
@@ -1216,6 +1185,15 @@ function generateTabs(type, source, lang) {
 			investments: "Investments",
 			politics: "Politics",
 			realestate: "Real Estate"
+		},
+		nasa: {
+			releases: "News Releases",
+			recent: "Recently",
+			image: "Image of the Day",
+			technology: "Technology",
+			aeronautics: "Aeronautics",
+			iss: "Space Station",
+			artemis: "Artemis"
 		},
 		yonhap: {
 			all: "All News",
@@ -1239,7 +1217,7 @@ function generateTabs(type, source, lang) {
 	}
 
 	const sourceInfo = {
-		artemis: ["Artemis II", "menu_26_1"],
+		artemis: ["Artemis", "menu_26_1"],
 		cbs: ["CBS News", "menu_26_2"],
 		merco: ["MercoPress.", "menu_26_3"],
 		nasa: ["NASA", "menu_26_4"],
@@ -1253,7 +1231,7 @@ function generateTabs(type, source, lang) {
 	menuDiv.setAttribute('class', "menu_selected");
 	menuDiv.setAttribute('onmouseleave', "this.className='menu_selected';");
 
-	const textFeedType = (source === "artemis" ? "API " : "RSS ") + t("feed");
+	const textFeedType = ((source === "artemis" && type === "artemis2") ? "API " : "RSS ") + t("feed");
 
 	let tabtype2 = "";
 
@@ -1266,9 +1244,14 @@ function generateTabs(type, source, lang) {
 				tabtype2 = group.title + " &blacktriangleright; " + (tabs2[type] || tabs[type]);
 			}
 		}
-	} else if (source === "nasa" && type === "recent") {
-		tabtype2 = tabs2.recent;
-	} else if (source !== "artemis") {
+	} else if (source === "nasa") {
+		tabs2["recent"] = "Recently Published Content";
+		if (type === "recent") {
+			tabtype2 = tabs2["recent"];
+		}
+	} else if (source === "artemis" && type === "blog" && lang === "rus") {
+		tabtype2 = "Блог";
+	} else {
 		tabtype2 = tabs[type];
 	}
 
@@ -1502,7 +1485,7 @@ function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 
 		let result;
 
-		if (source === "artemis") {
+		if (source === "artemis" && type === "artemis2") {
 			if (!data || typeof data !== "object" || data.message !== "fetch news event is successful.") {
 				showFeedError("API Parse Error: Invalid API Response", feedURL, lang);
 				adjustFeedScrollDiv();
@@ -1568,7 +1551,8 @@ function showFeed(type, source, lang) {
 
 	const feedTypes = {
 		artemis: {
-			all: "https://api.artemis2.live/news"
+			blog: "https://www.nasa.gov/blogs/artemis/feed/",
+			artemis2: "https://api.artemis2.live/news"
 		},
 		cbs: {
 			top: "https://www.cbsnews.com/latest/rss/main",
@@ -1783,7 +1767,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	result.entries = [];
 	let items;
 
-	if (source == "artemis") {
+	if (source == "artemis" && type === "artemis2") {
 		result.title = "NASA’s Artemis II Mission News";
 		result.description = "NASA’s Artemis II Mission News";
 		result.link = "https://artemis2.live/news";
@@ -1869,8 +1853,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		newEntry.storage.preloadComplete = 0;
 		newEntry.storage.preloadPF = null;
 
-		// --- artemis ---
-		if (source == "artemis") {
+		// --- artemis2 ---
+		if (source == "artemis" && type === "artemis2") {
 			newEntry.title = entry.title;
 			if (entry.imagePath) {
 				newEntry.media.url = entry.imagePath;
@@ -1918,7 +1902,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 
 		// --- NASA ---
-		if (source == "nasa") {
+		if (source == "nasa" || (source === "artemis" && type === "blog")) {
 			newEntry.title = entry.title._text;
 			if (type == "image") {
 				newEntry.media.url = entry.enclosure._attributes.url;
@@ -2048,7 +2032,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			newEntry.subject = entry["dc:subject"]._text;
 		}
 
-		if (source == "artemis") {
+		if (source == "artemis" && type === "artemis2") {
 			newEntry.link = entry.sourceUrl;
 			newEntry.date_ms = new Date(entry.updatedAt).getTime();
 		} else {

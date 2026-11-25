@@ -330,18 +330,12 @@
 		<div id="menu_26_1"
 		role="button"
 		tabindex="0"
-		onmouseenter="if (!clickStarted) showSubMenu(this);" 
+		onmouseenter="if (!clickStarted) showSubMenu(this, 'lat', 'news');" 
 		onmouseleave="if (!clickStarted) this.className='menu_not_selected_red'" 
-		onclick="
-			if (event.ctrlKey) {
-				window.open('news_lat.html?source=artemis');
-			} else {
-				clickStarted = true;
-				window.location.href='news_lat.html?source=artemis';
-			};"
+		onclick="showSubMenu(this, 'lat', 'news');"
 		class="menu_not_selected_red"
 		style="padding-left: 5px;">
-		&#9679; Artemis II API Fluxus</div>
+		&#9679; Artemis RSS Fluxus</div>
 	</td>
 	</tr>
 
