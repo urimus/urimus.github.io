@@ -2,6 +2,7 @@
 
 &#9679; <b class = "text_red_blue" data-added="07е Фев, 2026." data-country="usa">Artemis RSS Строка</b>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=artemis&type=blog" class = "standardb_red" data-added="25е Ноя, 2026." data-country="usa" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Artemis Блог</a></span>
+<span style="padding-left:10px;">- <a href="news_rus.html?source=artemis&type=artemis" class = "standardb_red" data-added="25е Ноя, 2026." data-country="usa" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Artemis RSS</a></span>
 <span style="padding-left:10px;">- <a href="news_rus.html?source=artemis&type=artemis2" class = "standardb_red" data-added="07е Фев, 2026." data-country="usa" onmouseenter="showSubMenu(this, 'rus', 'contentsLink');">Artemis II API</a></span>
 
 &#9679; <b class = "text_red_blue" data-added="31е Окт, 2024." data-country="usa">CBS RSS Строка</b>

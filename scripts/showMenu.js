@@ -5086,8 +5086,15 @@ if (lang=="eng") {
 	wholeMenu["Artemis RSS Blog"].link = "news_eng.html?source=artemis&type=blog";
 	wholeMenu["Artemis RSS Blog"].html = 'Artemis Blog';
 
+	wholeMenu["Artemis RSS Feed"] = {};
+	wholeMenu["Artemis RSS Feed"].id = "26_1_2";
+	wholeMenu["Artemis RSS Feed"].color = "red";
+	wholeMenu["Artemis RSS Feed"].hasSub = 0;
+	wholeMenu["Artemis RSS Feed"].link = "news_eng.html?source=artemis&type=artemis";
+	wholeMenu["Artemis RSS Feed"].html = 'Artemis RSS';
+
 	wholeMenu["Artemis II API Feed"] = {};
-	wholeMenu["Artemis II API Feed"].id = "26_1_2";
+	wholeMenu["Artemis II API Feed"].id = "26_1_3";
 	wholeMenu["Artemis II API Feed"].color = "red";
 	wholeMenu["Artemis II API Feed"].hasSub = 0;
 	wholeMenu["Artemis II API Feed"].link = "news_eng.html?source=artemis&type=artemis2";
@@ -5717,8 +5724,15 @@ if (lang=="rus") {
 	wholeMenu["Artemis RSS Блог"].link = "news_rus.html?source=artemis&type=blog";
 	wholeMenu["Artemis RSS Блог"].html = 'Artemis Блог';
 
+	wholeMenu["Artemis RSS Строка"] = {};
+	wholeMenu["Artemis RSS Строка"].id = "26_1_2";
+	wholeMenu["Artemis RSS Строка"].color = "red";
+	wholeMenu["Artemis RSS Строка"].hasSub = 0;
+	wholeMenu["Artemis RSS Строка"].link = "news_rus.html?source=artemis&type=artemis";
+	wholeMenu["Artemis RSS Строка"].html = 'Artemis RSS';
+
 	wholeMenu["Artemis II API Строка"] = {};
-	wholeMenu["Artemis II API Строка"].id = "26_1_2";
+	wholeMenu["Artemis II API Строка"].id = "26_1_3";
 	wholeMenu["Artemis II API Строка"].color = "red";
 	wholeMenu["Artemis II API Строка"].hasSub = 0;
 	wholeMenu["Artemis II API Строка"].link = "news_rus.html?source=artemis&type=artemis2";
@@ -6347,8 +6361,15 @@ if (lang=="lat") {
 	wholeMenu["Artemis RSS Blog"].link = "news_lat.html?source=artemis&type=blog";
 	wholeMenu["Artemis RSS Blog"].html = 'Artemis Blog';
 
+	wholeMenu["Artemis RSS Fluxus"] = {};
+	wholeMenu["Artemis RSS Fluxus"].id = "26_1_2";
+	wholeMenu["Artemis RSS Fluxus"].color = "red";
+	wholeMenu["Artemis RSS Fluxus"].hasSub = 0;
+	wholeMenu["Artemis RSS Fluxus"].link = "news_lat.html?source=artemis&type=artemis";
+	wholeMenu["Artemis RSS Fluxus"].html = 'Artemis RSS';
+
 	wholeMenu["Artemis II API Fluxus"] = {};
-	wholeMenu["Artemis II API Fluxus"].id = "26_1_2";
+	wholeMenu["Artemis II API Fluxus"].id = "26_1_3";
 	wholeMenu["Artemis II API Fluxus"].color = "red";
 	wholeMenu["Artemis II API Fluxus"].hasSub = 0;
 	wholeMenu["Artemis II API Fluxus"].link = "news_lat.html?source=artemis&type=artemis2";

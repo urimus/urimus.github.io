@@ -27,7 +27,7 @@ function feedIcon(feedURL, lang) {
 		adjustFeedScrollDiv();
 	}
 
-	if (feedURL == "https://api.artemis2.live/news") { // artemis
+	if (feedURL == "https://api.artemis2.live/news") { // artemis II
 		Img.setAttribute('src', "images/icons/feed/api_icon.svg");
 	} else {
 		Img.setAttribute('src', "images/icons/feed/rss_icon.svg");
@@ -251,7 +251,7 @@ function newsLoad(lang) {
 		return;
 	}
 
-	const artemisTypes = ["blog", "artemis2"];
+	const artemisTypes = ["blog", "artemis", "artemis2"];
 
 	const cbsTypes = [
 		"top", "us", "politics", "world", "health", "moneywatch",
@@ -295,7 +295,7 @@ function newsLoad(lang) {
 	};
 
 	const defaultTypes = {
-		artemis: "blog",
+		artemis: "artemis",
 		cbs: "top",
 		merco: "main",
 		nasa: "releases",
@@ -1192,6 +1192,7 @@ function generateTabs(type, source, lang) {
 	const sourceTabs = {
 		artemis: {
 			blog: "Blog",
+			artemis: "Artemis",
 			artemis2: "Artemis II"
 		},
 		cbs: {
@@ -1278,13 +1279,13 @@ function generateTabs(type, source, lang) {
 		}
 	} else if (source === "nasa") {
 		tabs2["recent"] = "Recently Published Content";
-		if (type === "recent") {
-			tabtype2 = tabs2["recent"];
-		}
-	} else if (source === "artemis" && type === "blog" && lang === "rus") {
-		tabtype2 = "Блог";
+		if (type === "recent") tabtype2 = tabs2["recent"];
 	} else {
 		tabtype2 = tabs[type];
+	}
+	if (source === "artemis" && lang === "rus") {
+		tabs["blog"] = "Блог";
+		if (type === "blog") tabtype2 = "Блог";
 	}
 
 	const feedTitle = document.getElementById("feedTitle");
@@ -1584,6 +1585,7 @@ function showFeed(type, source, lang) {
 	const feedTypes = {
 		artemis: {
 			blog: "https://www.nasa.gov/blogs/artemis/feed/",
+			artemis: "https://www.nasa.gov/missions/artemis/feed/",
 			artemis2: "https://api.artemis2.live/news"
 		},
 		cbs: {
@@ -1933,8 +1935,8 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 			}
 		}
 
-		// --- NASA ---
-		if (source == "nasa" || (source === "artemis" && type === "blog")) {
+		// --- NASA and Artemis ---
+		if (source == "nasa" || (source === "artemis" && (type === "blog" || type === "artemis"))) {
 			newEntry.title = entry.title._text;
 			if (type == "image") {
 				newEntry.media.url = entry.enclosure._attributes.url;
