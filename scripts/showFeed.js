@@ -27,7 +27,7 @@ function feedIcon(feedURL, lang) {
 		adjustFeedScrollDiv();
 	}
 
-	if (feedURL == "https://api.artemis2.live/news" || feedURL == "https://www.nasa.gov/blogs/artemis/feed/") { // artemis
+	if (feedURL == "https://api.artemis2.live/news") { // artemis
 		Img.setAttribute('src', "images/icons/feed/api_icon.svg");
 	} else {
 		Img.setAttribute('src', "images/icons/feed/rss_icon.svg");
