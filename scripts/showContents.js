@@ -4,11 +4,8 @@ function contentsLoad(lang) {
 
 	changeLanguage(lang); // i18next
 
-	let type = "";
-	let sortby = "";
-
-	const typeL = getParameterByName('type');
-	const sortbyL = getParameterByName('sortby');
+	let type = getParameterByName('type');
+	let sortby = getParameterByName('sortby');
 
 	const commonTypes = [
 		"aboutme", "aboutwork", "aboutphd", "links",
@@ -22,43 +19,39 @@ function contentsLoad(lang) {
 		"psychology", "countries", "totalitarianism", "personalities"
 	];
 
-	const allTypes = [...commonTypes, ...extendedTypes];
-
 	const flagTypes = [
 		"music", "movies", "series", "books", "junk", "news"
 	];
 
+	const allTypes = [...commonTypes, ...extendedTypes];
+
 	// Validate page type
-	if (!typeL || !allTypes.includes(typeL)) {
-		alert(`Type '${typeL}' ${t("notValidRedirect")}`);
+	if (!type || !allTypes.includes(type)) {
+		alert(`Type '${type}' ${t("notValidRedirect")}`);
 		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=name`;
 		return;
 	}
 
 	// Redirect unavailable types in the Latin version without showing an alert
-	if (lang === "lat" && extendedTypes.includes(typeL)) {
-		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=${sortbyL}`;
+	if (lang === "lat" && extendedTypes.includes(type)) {
+		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=${sortby}`;
 		return;
 	}
 
-	// Set valid page type
-	if (lang === "eng" || lang === "rus" || commonTypes.includes(typeL)) {
-		type = typeL;
-	} else {
-		alert(`Type '${typeL}' ${t("notValidRedirect")}`);
+	// Validate language and page type
+	if (!commonTypes.includes(type) && !["eng", "rus"].includes(lang)) {
+		alert(`Type '${type}' ${t("notValidRedirect")}`);
 		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=name`;
 		return;
 	}
 
 	// Validate sorting type
 	if (
-		sortbyL === "name" ||
-		sortbyL === "date" ||
-		(sortbyL === "flag" && flagTypes.includes(type))
+		["name", "date"].includes(sortby) ||
+		(sortby === "flag" && flagTypes.includes(type))
 	) {
-		sortby = sortbyL;
 	} else {
-		alert(`Sort By Type '${sortbyL}' ${t("notValidRedirect")}`);
+		alert(`Sort By Type '${sortby}' ${t("notValidRedirect")}`);
 		window.location.href = `site_map_${lang}.html?type=${type}&sortby=name`;
 		return;
 	}

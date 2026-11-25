@@ -238,70 +238,85 @@ function enableKeyboardScroll(scrollDiv) {
 
 // ------------- Initial ---------------- //
 
-
-function contentsLoad(lang) {
+function newsLoad(lang) {
 
 	changeLanguage(lang); // i18next
 
-	const typeL = getParameterByName('type');
-	const sortbyL = getParameterByName('sortby');
+	const sources = ["artemis", "cbs", "merco", "nasa", "phys.org", "yonhap"];
+	const source = getParameterByName('source');
 
-	const commonTypes = [
-		"aboutme", "aboutwork", "aboutphd", "links",
-		"photos", "amv", "junk", "stuff", "news"
+	if (!source || !sources.includes(source)) {
+		alert(`Source '${source}' ${t("notValidRedirect")}`);
+		window.location.href = `news_${lang}.html?source=nasa&type=releases`;
+		return;
+	}
+
+	const artemisTypes = ["blog", "artemis2"];
+
+	const cbsTypes = [
+		"top", "us", "politics", "world", "health", "moneywatch",
+		"science", "technology", "entertainment", "space"
 	];
 
-	const extendedTypes = [
-		"htmleditor", "music", "movies", "series", "games",
-		"books", "anecdotes", "heffalump", "relaxation",
-		"software", "satanism", "wicca", "falsifiability",
-		"psychology", "countries", "totalitarianism", "personalities"
+	const nasaTypes = [
+		"releases", "recent", "image", "technology",
+		"aeronautics", "iss", "artemis"
 	];
 
-	const flagTypes = [
-		"music", "movies", "series", "books", "junk", "news"
+	const mercoTypes = [
+		"main", "agriculture", "economy", "energy", "environment",
+		"fisheries", "health", "investments", "politics", "realestate"
 	];
 
-	const allTypes = [...commonTypes, ...extendedTypes];
+	const physTypes = [
+		"all",
+		"earth", "environment",
+		"archaeology", "economics", "education", "mathematics", "other", "political", "social",
+		"bio", "nanomaterials", "nanophysics",
+		"condensed", "general", "optics", "plasma", "quantum", "soft", "superconductivity",
+		"astrobiology", "astronomy", "planetary", "space",
+		"agriculture", "biotechnology", "cell", "ecology", "evolution", "molecular",
+		"otherb", "paleontology", "plants", "veterinary",
+		"analytical", "biochemistry", "materials", "otherc", "polymers"
+	];
 
-	// Validate page type
-	if (!typeL || !allTypes.includes(typeL)) {
-		alert(`Type '${typeL}' ${t("notValidRedirect")}`);
-		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=name`;
+	const yonhapTypes = [
+		"all", "national", "northkorea", "economy",
+		"biz", "culture", "sports"
+	];
+
+	const sourceTypes = {
+		artemis: artemisTypes,
+		cbs: cbsTypes,
+		merco: mercoTypes,
+		nasa: nasaTypes,
+		"phys.org": physTypes,
+		yonhap: yonhapTypes
+	};
+
+	const defaultTypes = {
+		artemis: "blog",
+		cbs: "top",
+		merco: "main",
+		nasa: "releases",
+		"phys.org": "all",
+		yonhap: "all"
+	};
+
+	const type = getParameterByName('type');
+
+	if (!type || !sourceTypes[source].includes(type)) {
+		alert(`Type '${type}' ${t("notValidRedirect")}`);
+		window.location.href = `news_${lang}.html?source=${source}&type=${defaultTypes[source]}`;
 		return;
 	}
 
-	// Redirect unavailable types in the Latin version without showing an alert
-	if (lang === "lat" && extendedTypes.includes(typeL)) {
-		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=${sortbyL}`;
-		return;
-	}
-
-	// Validate language and set page type
-	if (commonTypes.includes(typeL) || ["eng", "rus"].includes(lang)) {
-		type = typeL;
-	} else {
-		alert(`Type '${typeL}' ${t("notValidRedirect")}`);
-		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=name`;
-		return;
-	}
-
-	// Validate sorting type
-	if (
-		["name", "date"].includes(sortbyL) ||
-		(sortbyL === "flag" && flagTypes.includes(type))
-	) {
-		sortby = sortbyL;
-	} else {
-		alert(`Sort By Type '${sortbyL}' ${t("notValidRedirect")}`);
-		window.location.href = `site_map_${lang}.html?type=${type}&sortby=name`;
-		return;
-	}
+	const scrollDiv = document.getElementById('scrollDiv');
+	if (scrollDiv) enableKeyboardScroll(scrollDiv);
 
 	processPageResize(lang);
-	showContents(type, sortby, lang);
+	showFeed(type, source, lang);
 }
-
 // ------------- End of Initial ---------------- //
 
 function adjustFeedScrollDiv() {
