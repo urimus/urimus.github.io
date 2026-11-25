@@ -30,14 +30,14 @@ function contentsLoad(lang) {
 
 	// Validate page type
 	if (!typeL || !allTypes.includes(typeL)) {
-		alert("Type '" + typeL + "' " + t("notValidRedirect"));
-		window.location.href = 'site_map_' + lang + '.html?type=aboutme&sortby=name';
+		alert(`Type '${typeL}' ${t("notValidRedirect")}`);
+		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=name`;
 		return;
 	}
 
 	// Redirect unavailable types in the Latin version without showing an alert
 	if (lang === "lat" && extendedTypes.includes(typeL)) {
-		window.location.href = 'site_map_' + lang + '.html?type=aboutme&sortby=' + sortbyL;
+		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=${sortbyL}`;
 		return;
 	}
 
@@ -45,8 +45,8 @@ function contentsLoad(lang) {
 	if (lang === "eng" || lang === "rus" || commonTypes.includes(typeL)) {
 		type = typeL;
 	} else {
-		alert("Type '" + typeL + "' " + t("notValidRedirect"));
-		window.location.href = 'site_map_' + lang + '.html?type=aboutme&sortby=name';
+		alert(`Type '${typeL}' ${t("notValidRedirect")}`);
+		window.location.href = `site_map_${lang}.html?type=aboutme&sortby=name`;
 		return;
 	}
 
@@ -58,15 +58,14 @@ function contentsLoad(lang) {
 	) {
 		sortby = sortbyL;
 	} else {
-		alert("Sort By Type '" + sortbyL + "' " + t("notValidRedirect"));
-		window.location.href = 'site_map_' + lang + '.html?type=' + type + '&sortby=name';
+		alert(`Sort By Type '${sortbyL}' ${t("notValidRedirect")}`);
+		window.location.href = `site_map_${lang}.html?type=${type}&sortby=name`;
 		return;
 	}
 
 	processPageResize(lang);
 	showContents(type, sortby, lang);
 }
-
 
 function mouseInSortBy(funcType) {
 	document.getElementById("sortby_" + funcType).className = "sortby_selected";
