@@ -4,8 +4,8 @@ function contentsLoad(lang) {
 
 	changeLanguage(lang); // i18next
 
-	let type = getParameterByName('type');
-	let sortby = getParameterByName('sortby');
+	const type = getParameterByName('type');
+	const sortby = getParameterByName('sortby');
 
 	const commonTypes = [
 		"aboutme", "aboutwork", "aboutphd", "links",
