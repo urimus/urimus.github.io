@@ -446,7 +446,7 @@ function getLineHeight(span) {
 
 // ---------------------------------------------------------
 // Algorithm 2
-// Simple option using single pointer.
+// Simple option using single pointer (sensitive to scroll anchoring).
 // ---------------------------------------------------------
 
 function getLineInfo(pointer, startLineTop, lineHeight, linesToShow) {
