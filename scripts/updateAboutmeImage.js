@@ -193,7 +193,14 @@ function updateAboutMeImage3(lang, i) {
 		descDiv.appendChild(imageA);
 		if (entry.summary) {
 			const description_words = extractSummaryWords(entry.summary);
-			modifySummary(descDiv, description_words, 4, "blue");
+			const modifySummaryArr = () => {
+				modifySummary(descDiv, description_words, 4, "blue");
+			};
+			modifySummaryArr();
+			window.addEventListener("resize", () => {
+				descDiv.replaceChildren();
+				modifySummaryArr();
+			});
 		}
 		correctInformationDiv();
 	}
