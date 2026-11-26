@@ -586,16 +586,18 @@ function showFeedData(type, source, lang, result) {
 	}
 }
 
-function formatSummaryDiv(summaryDiv, entry, isInit = true) {
+function formatSummaryDiv(summaryDiv, entry) {
 	const summary_words = extractSummaryWords(entry.summary);
 	const formatSummaryDivArr = () => {
 		summaryDiv.replaceChildren();
 		modifySummary3(summaryDiv, summary_words, 4, "red");
 	};
 	formatSummaryDivArr();
+/*
 	if (isInit) {
 		window.addEventListener("resize", formatSummaryDivArr);
 	}
+*/
 }
 
 // ------------- Image Preload -------------- //
@@ -675,7 +677,7 @@ function preloadImage(type, source, lang, result) {
 			container.style.width = preloadImg.naturalWidth + "px";
 			entry.media.width = preloadImg.naturalWidth;
 			if (summaryDiv && entry.summary) {
-				formatSummaryDiv(summaryDiv, entry, false);
+				formatSummaryDiv(summaryDiv, entry);
 			}
 		} else {
 			preloadImg.setAttribute('width', 450);
