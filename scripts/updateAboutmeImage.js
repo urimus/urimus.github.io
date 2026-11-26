@@ -198,8 +198,7 @@ function updateAboutMeImage3(lang, i) {
 			};
 			modifySummaryArr();
 			window.addEventListener("resize", () => {
-				descDiv.replaceChildren();
-				descDiv.appendChild(imageA);
+				descDiv.replaceChildren(imageA);
 				modifySummaryArr();
 			});
 		}
