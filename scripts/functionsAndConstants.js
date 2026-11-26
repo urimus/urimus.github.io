@@ -214,6 +214,10 @@ function typeSummary(span, words_arr, wordsCount, isExpanding, onComplete) {
 	const step = Math.max(1, count / 100);
 	let iteration = 0;
 	const timer = setInterval(() => {
+		if (!span.isConnected) {
+			clearInterval(timer);
+			return;
+		}
 		iteration++;
 		const current = isExpanding
 			? Math.min(wordsCount + Math.ceil(step * iteration), wordsLength)
