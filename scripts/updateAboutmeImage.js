@@ -194,7 +194,7 @@ function updateAboutMeImage3(lang, i) {
 		if (entry.summary) {
 			const description_words = extractSummaryWords(entry.summary);
 			const modifySummaryArr = () => {
-				modifySummary2(descDiv, description_words, 4, "blue");
+				modifySummary3(descDiv, description_words, 4, "blue");
 			};
 			modifySummaryArr();
 			window.addEventListener("resize", () => {

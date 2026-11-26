@@ -483,7 +483,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	pointer.textContent = "\u200B";
 	element.append(pointer);
 	const startLineTop = pointer.getBoundingClientRect().top;
-	
+
 	// ---------------------------------------------------------
 	// Estimate the likely result.
 	// ---------------------------------------------------------

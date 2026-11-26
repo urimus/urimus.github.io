@@ -590,7 +590,7 @@ function formatSummaryDiv(summaryDiv, entry, isInit = true) {
 	const summary_words = extractSummaryWords(entry.summary);
 	const formatSummaryDivArr = () => {
 		summaryDiv.replaceChildren();
-		modifySummary2(summaryDiv, summary_words, 4, "red");
+		modifySummary3(summaryDiv, summary_words, 4, "red");
 	};
 	formatSummaryDivArr();
 	if (isInit) {
