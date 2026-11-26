@@ -199,6 +199,7 @@ function updateAboutMeImage3(lang, i) {
 			modifySummaryArr();
 			window.addEventListener("resize", () => {
 				descDiv.replaceChildren();
+				descDiv.appendChild(imageA);
 				modifySummaryArr();
 			});
 		}
