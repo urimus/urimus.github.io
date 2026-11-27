@@ -234,11 +234,13 @@ function cancelImageCacheResult(url) {
 function loadNextCacheImage(state, images) {
 	state.index++;
 	if (state.index >= images.length) return;
-	const imgSrc = images[state.index];
-	const cacheUrl = new URL(imgSrc, document.baseURI);
-	cacheUrl.hash = "";
-	cacheUrl.searchParams.delete("preload");
-	const cacheResult = waitImageCacheResult(cacheUrl.href);
+    const url = new URL(images[state.index], document.baseURI);
+    url.searchParams.set("preload", "1");
+    const imgSrc = url.href;
+    url.hash = "";
+    url.searchParams.delete("preload");
+    const cacheUrl = url.href;
+	const cacheResult = waitImageCacheResult(cacheUrl);
 	const img = new Image();
 	img.onload = function () {
 		cacheResult.then(function (cached) {
@@ -252,7 +254,7 @@ function loadNextCacheImage(state, images) {
 		});
 	};
 	img.onerror = function () {
-		cancelImageCacheResult(cacheUrl.href);
+		cancelImageCacheResult(cacheUrl);
 		state.failed++;
 		logIfCachingComplete(state, images.length);
 		loadNextCacheImage(state, images);
@@ -332,12 +334,6 @@ function preloadImagesGeneral() {
 	if (images.length === 0) return;
 
 	console.log("[SW] general images caching started");
-	
-	const preloadImages = images.map(src => {
-		const url = new URL(src, document.baseURI);
-		url.searchParams.set("preload", "1");
-		return url.href;
-	});
 
 	const state = {
 		index: -1,
@@ -347,8 +343,8 @@ function preloadImagesGeneral() {
 		startTime: performance.now(),
 		source: "general images"
 	};
-	for (let i = 0; i < Math.min(preloadImages.length, 5); i++) { // 5 images at once
-		loadNextCacheImage(state, preloadImages);
+	for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once
+		loadNextCacheImage(state, images);
 	}
 }
 

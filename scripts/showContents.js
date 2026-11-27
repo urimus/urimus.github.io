@@ -520,42 +520,42 @@ function sortByDate(docs, lang, textColor) {
 
 function preloadImagesContents(type, docs) {
 
-	if (type !== "movies" && type !== "music" && type !== "series" && type !== "games" && type !== "junk") return;
+	if (!["movies", "music", "series", "games", "junk"].includes(type)) return;
+
+	const movieCategories = new Set([
+		"animation",
+		"body_horror",
+		"space_opera",
+		"movies_superhero",
+		"dc_extended_universe",
+		"marvel_cinematic_universe"
+	]);
 
 	const images = new Set();
+
 	for (const doc of docs) {
-		const link = doc.querySelector("a");
-		if (!link) continue;
-		const hash = link.hash.slice(1);
+		const hash = doc.querySelector("a")?.hash.slice(1);
 		if (!hash) continue;
-		let type2 = type;
-		if (	type === "series" &&
-			(hash === "animation" ||
-			hash === "body_horror" ||
-			hash === "space_opera" ||
-			hash === "movies_superhero" ||
-			hash === "dc_extended_universe" ||
-			hash === "marvel_cinematic_universe")
-		) {
-			type2 = "movies";
-		}
-		images.add("images/icons/" + type2 + "/" + hash + ".jpg");
+
+		const folder = type === "series" && movieCategories.has(hash) ? "movies" : type;
+		images.add(`images/icons/${folder}/${hash}.jpg`);
 	}
 
 	if (!images.size) return;
+
 	console.log("[SW] site map images caching started");
-	const imageList = [...images].map(src => {
-		const url = new URL(src, document.baseURI);
-		url.searchParams.set("preload", "1");
-		return url.href;
-	});
+
+	const imageList = [...images];
+
 	const state = {
 		index: -1,
 		cached: 0,
 		failed: 0,
+		completed: false,
 		startTime: performance.now(),
 		source: "site map images"
 	};
+
 	for (let i = 0, count = Math.min(imageList.length, 5); i < count; i++) {
 		loadNextCacheImage(state, imageList);
 	}

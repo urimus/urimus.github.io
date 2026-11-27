@@ -49,8 +49,7 @@ function preloadImagesIOTD() {
 	const images = result.entries.map(entry => {
 		const url = new URL(entry.media.url);
 		url.searchParams.set("w", "450");
-		url.searchParams.set("preload", "1");
-		return url.toString();
+		return url.href;
 	});
 	if (images.length === 0) return;
 
@@ -59,6 +58,7 @@ function preloadImagesIOTD() {
 		index: -1,
 		cached: 0,
 		failed: 0,
+		completed: false,
 		startTime: performance.now(),
 		source: "image of the day images"
 	};
