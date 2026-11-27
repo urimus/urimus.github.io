@@ -242,7 +242,7 @@ function newsLoad(lang) {
 
 	changeLanguage(lang); // i18next
 
-	const sources = ["artemis", "cbs", "merco", "nasa", "phys.org", "yonhap"];
+	const sources = ["artemis", "merco", "nasa", "phys.org", "yonhap"];
 	const source = getParameterByName('source');
 
 	if (!source || !sources.includes(source)) {
@@ -252,11 +252,6 @@ function newsLoad(lang) {
 	}
 
 	const artemisTypes = ["blog", "artemis", "artemis2"];
-
-	const cbsTypes = [
-		"top", "us", "politics", "world", "health", "moneywatch",
-		"science", "technology", "entertainment", "space"
-	];
 
 	const nasaTypes = [
 		"releases", "recent", "image", "technology",
@@ -287,7 +282,6 @@ function newsLoad(lang) {
 
 	const sourceTypes = {
 		artemis: artemisTypes,
-		cbs: cbsTypes,
 		merco: mercoTypes,
 		nasa: nasaTypes,
 		"phys.org": physTypes,
@@ -296,7 +290,6 @@ function newsLoad(lang) {
 
 	const defaultTypes = {
 		artemis: "artemis",
-		cbs: "top",
 		merco: "main",
 		nasa: "releases",
 		"phys.org": "all",
@@ -931,7 +924,7 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 					video.onloadeddata = function () {
 						this.style.aspectRatio = "auto";
 					};
-					if (source == "cbs") {
+/*
 						if (window.Hls && Hls.isSupported()) {
 							const hls = new Hls();
 							hls.loadSource(entry.video);
@@ -941,9 +934,8 @@ function showEntry(type, source, lang, result, i, appendEntry = true) {
 						} else {
 							console.error("HLS is not supported.");
 						}
-					} else {
-						video.src = entry.video;
-					}
+*/
+					video.src = entry.video;
 					imageDiv.appendChild(video);
 				}
 				this.textContent="[▲]";
@@ -1201,18 +1193,6 @@ function generateTabs(type, source, lang) {
 			artemis: "Artemis",
 			artemis2: "Artemis II"
 		},
-		cbs: {
-			top: "Top Stories",
-			us: "U.S.",
-			politics: "Politics",
-			world: "World",
-			health: "Health",
-			moneywatch: "MoneyWatch",
-			science: "Science",
-			technology: "Technology",
-			entertainment: "Entertainment",
-			space: "Space"
-		},
 		merco: {
 			main: "Main",
 			agriculture: "Agriculture",
@@ -1257,7 +1237,6 @@ function generateTabs(type, source, lang) {
 
 	const sourceInfo = {
 		artemis: ["Artemis", "menu_26_1"],
-		cbs: ["CBS News", "menu_26_2"],
 		merco: ["MercoPress.", "menu_26_3"],
 		nasa: ["NASA", "menu_26_4"],
 		"phys.org": ["Phys.org", "menu_26_5"],
@@ -1493,7 +1472,7 @@ function showFeedError(message, feedURL, lang) {
 
 function loadFeed(type, source, lang, feedURL, loadAttempt = 1) {
 
-	const useProxy = ["cbs", "merco", "phys.org", "yonhap"].includes(source);
+	const useProxy = ["merco", "phys.org", "yonhap"].includes(source);
 	const axiosConfig = {
 		url: useProxy ? proxyURL : feedURL,
 		params: {
@@ -1593,18 +1572,6 @@ function showFeed(type, source, lang) {
 			blog: "https://www.nasa.gov/blogs/artemis/feed/",
 			artemis: "https://www.nasa.gov/missions/artemis/feed/",
 			artemis2: "https://api.artemis2.live/news"
-		},
-		cbs: {
-			top: "https://www.cbsnews.com/latest/rss/main",
-			us: "https://www.cbsnews.com/latest/rss/us",
-			politics: "https://www.cbsnews.com/latest/rss/politics",
-			world: "https://www.cbsnews.com/latest/rss/world",
-			health: "https://www.cbsnews.com/latest/rss/health",
-			moneywatch: "https://www.cbsnews.com/latest/rss/moneywatch",
-			science: "https://www.cbsnews.com/latest/rss/science",
-			technology: "https://www.cbsnews.com/latest/rss/technology",
-			entertainment: "https://www.cbsnews.com/latest/rss/entertainment",
-			space: "https://www.cbsnews.com/latest/rss/space"
 		},
 		merco: {
 			main: "https://en.mercopress.com/rss/",
@@ -1793,7 +1760,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 	result.feedXML = resultOrig.feedXML;
 
 	if (source == "artemis") result.image = "images/icons/feed/artemis_logo.svg";
-	if (source == "cbs") result.image = "images/icons/feed/cbs_news_logo.svg";
 	if (source == "nasa") result.image = "images/icons/feed/nasa_worm_logo.svg";
 	if (source == "merco") result.image = "images/icons/feed/mercopress_logo.png";
 	if (source == "phys.org") result.image = "images/icons/feed/phys_org_logo.png";
@@ -1903,14 +1869,6 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 				newEntry.media.comment = t("imageAbsent");
 			}
 			newEntry.summary = entry.content;
-		}
-
-		// --- CBS ---
-		if (source == "cbs") {
-			newEntry.title = entry.title._text;
-			newEntry.media.url = "images/icons/error/no_image.png";
-			newEntry.media.comment = t("imageAbsent");
-			newEntry.summary = entry.description._text;
 		}
 
 		// --- MercoPress ---
@@ -2086,7 +2044,7 @@ function optimizeUpdateResult(type, source, lang, resultOrig) {
 		}
 
 		// --- Prevous Updates Load ---
-		if (source == "artemis" || source == "cbs" || (source == "nasa" && type != "image") || source == "yonhap") {
+		if (source == "artemis" || (source == "nasa" && type != "image") || source == "yonhap") {
 			const update = locStUpdateData[newEntry.link];
 			if (update) {
 				newEntry.storage.updateProcessed = 1;
@@ -2277,28 +2235,6 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 					return null;
 				}
 			};
-			if (source == "cbs") {
-				let scriptData = null;
-				const scripts = getScripts(doc, 'script[type="application/ld+json"]');
-				for (const script of scripts) {
-					scriptData= safeParseJSON(script);
-					if (scriptData?.articleBody) break;
-				}
-				if (scriptData?.articleBody) {
-					description = scriptData.articleBody.trim();
-					if (scriptData.author?.length) {
-						creators = scriptData.author.map(author => ({
-							name: author.name?.trim(),
-							email: null,
-							url: author.url || null,
-							description: author.description?.trim() || null
-						}));
-					}
-					if (scriptData.keywords?.length) {
-						categories = [...new Set([...(scriptData.keywords ?? []), ...(categories ?? [])])];
-					}
-				}
-			}
 			if (source == "nasa" || source == "artemis") {
 				let scriptData = null;
 				const scripts = getScripts(doc, 'script[type="application/ld+json"]');
@@ -2553,7 +2489,7 @@ function update(i, source, type, result, lang, controller, updateAttempt = 1, re
 				result.entries[i].link = result.entries[i].origLink;
 				result.entries[i].origLink = null;
 			}
-			if (source == "cbs" || source == "nasa") {
+			if (source == "nasa") {
 				result.entries[i].media.origComment = result.entries[i].media.comment;
 				result.entries[i].media.comment = t("updateLoadError") + " (" + status + ")";
 				result.entries[i].media.origUrl = result.entries[i].media.url;
