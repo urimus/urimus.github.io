@@ -214,10 +214,6 @@ function typeSummary(span, words_arr, wordsCount, isExpanding, onComplete) {
 	const step = Math.max(1, count / 100);
 	let iteration = 0;
 	const timer = setInterval(() => {
-		if (!span.isConnected) {
-			clearInterval(timer);
-			return;
-		}
 		iteration++;
 		const current = isExpanding
 			? Math.min(wordsCount + Math.ceil(step * iteration), wordsLength)
@@ -389,17 +385,16 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 
 	const expansionSpan = document.createElement("span");
 	expansionSpan.setAttribute("class", "standardb_" + col + " summary_word_probe");
-	let isExpanded = element.dataset.isExpanded === "true";
+	let isExpanded = false;
 	let isAnimating = false;
 	expansionSpan.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
-		element.dataset.isExpanded = String(isExpanded);
 		this.textContent = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
-	expansionSpan.textContent = isExpanded ? "[▲]" : "[▼]";
+	expansionSpan.textContent = "[▼]";
 	element.append(document.createTextNode(" "), expansionSpan);
 
 	// ---------------------------------------------------------
@@ -433,11 +428,7 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	// Final setup.
 	// ---------------------------------------------------------
 	
-	if (isExpanded) {
-		span.innerHTML = formatSummary(words_arr, wordsLength);
-	} else {
-		span.innerHTML = formatSummary(words_arr, wordsCount);
-	}
+	span.innerHTML = formatSummary(words_arr, wordsCount);
 	return false;
 }
 
@@ -530,17 +521,16 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 
 	const expansionSpan = document.createElement("span");
 	expansionSpan.setAttribute("class", "standardb_" + col);
-	let isExpanded = element.dataset.isExpanded === "true";
+	let isExpanded = false;
 	let isAnimating = false;
 	expansionSpan.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
-		element.dataset.isExpanded = String(isExpanded);
 		this.textContent = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => { isAnimating = false; });
 	};
-	expansionSpan.textContent = isExpanded ? "[▲]" : "[▼]";
+	expansionSpan.textContent = "[▼]";
 	pointer.replaceWith(document.createTextNode(" "), expansionSpan);
 
 	// ---------------------------------------------------------
@@ -569,11 +559,7 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	// Final setup.
 	// ---------------------------------------------------------
 	
-	if (isExpanded) {
-		span.innerHTML = formatSummary(words_arr, wordsLength);
-	} else {
-		span.innerHTML = formatSummary(words_arr, wordsCount);
-	}
+	span.innerHTML = formatSummary(words_arr, wordsCount);
 	return false;
 }
 
@@ -651,19 +637,18 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 
 	const expansionSpan = document.createElement("a");
 	expansionSpan.setAttribute("class", "standardb_" + col);
-	let isExpanded = element.dataset.isExpanded === "true";
+	let isExpanded = false;
 	let isAnimating = false;
 	expansionSpan.onclick = function () {
 		if (isAnimating) return;
 		isAnimating = true;
 		isExpanded = !isExpanded;
-		element.dataset.isExpanded = String(isExpanded);
 		this.textContent = isExpanded ? "[▲]" : "[▼]";
 		typeSummary(span, words_arr, wordsCount, isExpanded, () => {
 			isAnimating = false;
 		});
 	};
-	expansionSpan.textContent = isExpanded ? "[▲]" : "[▼]";
+	expansionSpan.textContent = "[▼]";
 	element.append(document.createTextNode(" "), expansionSpan);
 
 	// ---------------------------------------------------------
@@ -692,10 +677,6 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// Final setup.
 	// ---------------------------------------------------------
 
-	if (isExpanded) {
-		span.innerHTML = formatSummary(words_arr, wordsLength);
-	} else {
-		span.innerHTML = formatSummary(words_arr, wordsCount);
-	}
+	span.innerHTML = formatSummary(words_arr, wordsCount);
 	return false;
 }

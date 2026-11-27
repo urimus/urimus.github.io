@@ -581,16 +581,7 @@ function showFeedData(type, source, lang, result) {
 
 function formatSummaryDiv(summaryDiv, entry) {
 	const summary_words = extractSummaryWords(entry.summary);
-	const formatSummaryDivArr = () => {
-		summaryDiv.replaceChildren();
-		modifySummary3(summaryDiv, summary_words, 4, "red");
-	};
-	formatSummaryDivArr();
-/*
-	if (isInit) {
-		window.addEventListener("resize", formatSummaryDivArr);
-	}
-*/
+	modifySummary3(summaryDiv, summary_words, 4, "red");
 }
 
 // ------------- Image Preload -------------- //
@@ -670,6 +661,7 @@ function preloadImage(type, source, lang, result) {
 			container.style.width = preloadImg.naturalWidth + "px";
 			entry.media.width = preloadImg.naturalWidth;
 			if (summaryDiv && entry.summary) {
+				summaryDiv.replaceChildren();
 				formatSummaryDiv(summaryDiv, entry);
 			}
 		} else {
