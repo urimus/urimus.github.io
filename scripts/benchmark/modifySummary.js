@@ -461,7 +461,7 @@ function testSummary(wordsCount) {
 		},
 		{
 			name: "Alg 2",
-			description: "Simple option using single pointer (sensitive to scroll anchoring)",
+			description: "Simple option using single pointer",
 			run: modifySummary2
 		},
 		{
