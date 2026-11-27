@@ -581,7 +581,7 @@ function showFeedData(type, source, lang, result) {
 
 function formatSummaryDiv(summaryDiv, entry) {
 	const summary_words = extractSummaryWords(entry.summary);
-	modifySummary3(summaryDiv, summary_words, 4, "red");
+	modifySummary(summaryDiv, summary_words, 4, "red");
 }
 
 // ------------- Image Preload -------------- //
