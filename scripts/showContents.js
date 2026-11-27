@@ -544,7 +544,11 @@ function preloadImagesContents(type, docs) {
 
 	if (!images.size) return;
 	console.log("[SW] site map images caching started");
-	const imageList = [...images];
+	const imageList = [...images].map(src => {
+		const url = new URL(src, document.baseURI);
+		url.searchParams.set("preload", "1");
+		return url.href;
+	});
 	const state = {
 		index: -1,
 		cached: 0,

@@ -49,6 +49,7 @@ function preloadImagesIOTD() {
 	const images = result.entries.map(entry => {
 		const url = new URL(entry.media.url);
 		url.searchParams.set("w", "450");
+		url.searchParams.set("preload", "1");
 		return url.toString();
 	});
 	if (images.length === 0) return;
@@ -64,7 +65,6 @@ function preloadImagesIOTD() {
 	for (let i = 0; i < Math.min(images.length, 5); i++) { // 5 images at once
 		loadNextCacheImage(state, images);
 	}
-
 }
 
 function updateAboutMeImageLoad(lang) {

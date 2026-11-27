@@ -289,13 +289,42 @@ function handleCOIRequest(request) {
 // MAIN IMAGE HANDLER
 // =====================================================
 
+function createPreloadResponse() {
+	return new Response(
+		new Uint8Array([
+			71, 73, 70, 56, 57, 97,
+			1, 0, 1, 0, 128, 0, 0,
+			0, 0, 0, 255, 255, 255,
+			33, 249, 4, 1, 0, 0, 0, 0,
+			44, 0, 0, 0, 0, 1, 0, 1, 0,
+			0, 2, 2, 68, 1, 0, 59
+		]),
+		{
+			status: 200,
+			headers: {
+				"Content-Type": "image/gif",
+				"Cache-Control": "no-store"
+			}
+		}
+	);
+}
+
 function handleImageRequest(event, request) {
+
+	const originalUrl = new URL(request.url);
+	const isPreload = originalUrl.searchParams.has("preload");
+
+	originalUrl.searchParams.delete("preload");
+
+	const cacheRequest = isPreload
+		? new Request(originalUrl.href, request)
+		: request;
 
 	return caches.open(CACHE_NAME)
 
 		.then(function (cache) {
 
-			return cache.match(request)
+			return cache.match(cacheRequest)
 
 				.then(function (cached) {
 
@@ -305,15 +334,31 @@ function handleImageRequest(event, request) {
 
 					if (cached) {
 
+						// PRELOAD HIT
+						if (isPreload) {
+
+							return notifyImageCacheResult(
+								event.clientId,
+								cacheRequest.url,
+								true
+							).then(function () {
+								return createPreloadResponse();
+							});
+
+						}
+
+						// Normal image request
 						if (cached.type !== "opaque") {
+
 							event.waitUntil(
-								refreshIfNeeded(cache, request)
+								refreshIfNeeded(cache, cacheRequest)
 							);
+
 						}
 
 						return notifyImageCacheResult(
 							event.clientId,
-							request.url,
+							cacheRequest.url,
 							true
 						).then(function () {
 
@@ -321,7 +366,7 @@ function handleImageRequest(event, request) {
 							// from Cache Storage in this COEP setup.
 							// Fetch the image again instead.
 							if (cached.type === "opaque") {
-								return fetchImageRequest(request, true);
+								return fetchImageRequest(cacheRequest, true);
 							}
 
 							return disableBrowserCache(cached);
@@ -335,21 +380,23 @@ function handleImageRequest(event, request) {
 					// CACHE MISS
 					// -------------------------------------------------
 
-					return fetchAndCache(cache, request)
+					return fetchAndCache(cache, cacheRequest)
 
 						.then(function (response) {
 
-							return cache.match(request)
+							return cache.match(cacheRequest)
 
 								.then(function (cached) {
 
 									return notifyImageCacheResult(
 										event.clientId,
-										request.url,
+										cacheRequest.url,
 										!!cached
 									).then(function () {
 
-										return disableBrowserCache(response);
+										return isPreload
+											? createPreloadResponse()
+											: disableBrowserCache(response);
 
 									});
 
