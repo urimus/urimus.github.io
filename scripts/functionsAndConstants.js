@@ -334,7 +334,6 @@ function getLineInfoIncremental(probesLive, lines, linesToShow, isBinary = false
 function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) {
-		delete element.dataset.isExpanded;
 		return true;
 	}
 
@@ -342,7 +341,6 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 	// one word only
 	if (wordsLength === 1) {
 		span.innerHTML = words_arr[0];
-		delete element.dataset.isExpanded;
 		return true;
 	}
 
@@ -380,7 +378,6 @@ function modifySummary(element, words_arr, linesToShow = 4, col = "red") {
 		// The entire summary fits.
 		if (current === wordsLength) {
 			span.innerHTML = formatSummary(words_arr, current);
-			delete element.dataset.isExpanded;
 			return true;
 		}
 		current = Math.min(current * 2, wordsLength);
@@ -475,7 +472,6 @@ function getLineInfo(pointer, startLineTop, lineHeight, linesToShow) {
 function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) {
-		delete element.dataset.isExpanded;
 		return true;
 	}
 
@@ -484,7 +480,6 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 	// one word only
 	if (wordsLength === 1) {
 		span.innerHTML = words_arr[0];
-		delete element.dataset.isExpanded;
 		return true;
 	}
 
@@ -524,7 +519,6 @@ function modifySummary2(element, words_arr, linesToShow = 4, col = "red") {
 		// The entire summary fits.
 		if (current === wordsLength) {
 			pointer.remove();
-			delete element.dataset.isExpanded;
 			return true;
 		}
 		current = Math.min(current * 2, wordsLength);
@@ -600,7 +594,6 @@ function getElementLineInfo(element, lineHeight, linesToShow) {
 function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	const wordsLength = words_arr.length;
 	if (!wordsLength) {
-		delete element.dataset.isExpanded;
 		return true;
 	}
 
@@ -609,7 +602,6 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 	// one word only
 	if (wordsLength === 1) {
 		span.innerHTML = words_arr[0];
-		delete element.dataset.isExpanded;
 		return true;
 	}
 	
@@ -648,7 +640,6 @@ function modifySummary3(element, words_arr, linesToShow = 4, col = "red") {
 		}
 		// The entire summary fits.
 		if (current === wordsLength) {
-			delete element.dataset.isExpanded;
 			return true;
 		}
 		current = Math.min(current * 2, wordsLength);
