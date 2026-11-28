@@ -169,7 +169,10 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 		}
 	}
 
-	if (source == "artemis" || (source == "nasa" && type != "image") || source == "yonhap") {
+	if (
+		(source == "artemis" || (source == "nasa" && type != "image") || source == "yonhap") &&
+		Object.keys(updates).length
+	) {
 		localStorage[key] = JSON.stringify(updates);
 	}
 
