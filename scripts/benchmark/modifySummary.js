@@ -131,7 +131,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 
 	// Symbols
 	const POINT = "●";
-	const APPROXIMATION_POINT = "∙"; // ○×·∙
+	const REGRESSION_POINT = "∙"; // ○×·∙
 	const EMPIRICAL_LINE = "╎";
 	const AXIS = "│";
 	const H_AXIS = "─";
@@ -176,25 +176,29 @@ function consolePlot(title, perf, unit = "ms", description) {
 	);
 
 	// ============================================================
-	// SLOPE LINE (All N)
+	// REGRESSION LINE (All WIDTH)
 	// ============================================================
 
-	const drawSlope = regression != null && unit === "ms";
+	const drawRegression = regression != null && unit === "ms";
 
-	if (drawSlope) {
-		const slopePoints = times.map((time, i) => ({
-			n: i + 1,
-			value: regression.intercept + regression.slope * (i + 1)
-		}));
+	if (drawRegression) {
+		const regressionPoints = Array.from(
+			{ length: WIDTH },
+			(_, x) => {
+				const n = 1 + x / (WIDTH - 1) * (times.length - 1);
+				return {
+					x,
+					value: regression.intercept + regression.slope * n
+				};
+			}
+		);
 
-		for (const point of slopePoints) {
-			const x = indexToCol(point.n - 1);
+		for (const point of regressionPoints) {
 			const y = valueToRow(point.value);
 			const row = HEIGHT - y;
-
-			if (row >= 0 && row <= HEIGHT && x >= 0 && x < WIDTH) {
-				grid[row][x] = {
-					char: APPROXIMATION_POINT,
+			if (row >= 0 && row <= HEIGHT) {
+				grid[row][point.x] = {
+					char: REGRESSION_POINT,
 					style: COLORS.approximation
 				};
 			}
@@ -353,7 +357,7 @@ function consolePlot(title, perf, unit = "ms", description) {
 	console.groupCollapsed("Legend");
 	if (unit === "ms") {
 		console.log(`%c${POINT} End-to-End Executions (Summary Does Not Fit Lines)`, COLORS.ETEPoint);
-		console.log(`%c${APPROXIMATION_POINT}%c %cTheil–Sen Approximation of End-to-End Executions`, COLORS.approximation, "", COLORS.ETEPoint);
+		console.log(`%c${REGRESSION_POINT}%c %cTheil–Sen Approximation of End-to-End Executions`, COLORS.approximation, "", COLORS.ETEPoint);
 		console.log(`%c${POINT} Early Return Executions (Summary Fits Lines)`, COLORS.ERPoint);
 	} else {
 		console.log(`%c${POINT} Speedups Across End-to-End Executions (Summary Does Not Fit Lines)`, COLORS.ETEPoint);
