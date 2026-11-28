@@ -674,11 +674,13 @@ function preloadImage(type, source, lang, result) {
 			navigator.serviceWorker.ready.then(() => {
 				if (entry.additMedia?.length) {
 					for (let j = 0; j < entry.additMedia.length; j++) {
-						const url = new URL(entry.additMedia[j].url);
+						const url = new URL(entry.additMedia[j].url, document.baseURI);
 						if (source === "nasa" || source === "artemis") {
 							url.searchParams.set("w", "450");
 						}
-						new Image().src = url.toString();
+						url.hash = "";
+						url.searchParams.set("preload", "1");
+						new Image().src = url.href;
 					}
 				}
 			});
