@@ -182,10 +182,12 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 				let hasNewUpdate = false;
 				for (let i = 0; i < result.entries.length; i++) {
 					const link = result.entries[i].link;
-					if (!link || updates[link]) continue;
+					const imageUrl = result.entries[i].media?.url;
+					if (!link || updates[link] || !imageUrl) continue;
+
 					const updateNew = {};
 					updateNew.media = {};
-					updateNew.media.url = result.entries[i].media.url;
+					updateNew.media.url = imageUrl;
 					updates[link] = updateNew;
 					hasNewUpdate = true;
 				}
@@ -194,13 +196,14 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 
 			if (!registration.active) return;
 
-			// Find images that are no longer used
+			// Find images that are still used in current entries
 			const usedImages = new Set();
-			for (const link in updates) {
-				const imageUrl = updates[link]?.media?.url;
+			for (const entry of result.entries) {
+				const imageUrl = entry.media?.url;
 				if (imageUrl) usedImages.add(imageUrl);
-				addAdditionalMediaUrls(usedImages, updates[link]?.additMedia);
+				addAdditionalMediaUrls(usedImages, entry.additMedia);
 			}
+
 			const imagesToDelete = [...unusedImages].filter(
 				url => !usedImages.has(url)
 			);
