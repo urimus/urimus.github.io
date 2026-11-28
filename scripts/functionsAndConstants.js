@@ -149,6 +149,7 @@ function getLocalStorageData(par) {
 function removeUnusedCacheAndUpdates(source, type, result, updates) {
 	const key = `${source}_${type}_updates`;
 	updates = updates ?? getLocalStorageData(key);
+	if (!Object.keys(updates).length) return;
 	const links = new Set(result.entries.map(entry => entry.link));
 	const unusedImages = new Set();
 
@@ -169,10 +170,7 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 		}
 	}
 
-	if (
-		(source == "artemis" || (source == "nasa" && type != "image") || source == "yonhap") &&
-		Object.keys(updates).length
-	) {
+	if (source == "artemis" || (source == "nasa" && type != "image") || source == "yonhap") {
 		localStorage[key] = JSON.stringify(updates);
 	}
 
