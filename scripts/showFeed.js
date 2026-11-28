@@ -678,7 +678,6 @@ function preloadImage(type, source, lang, result) {
 						if (source === "nasa" || source === "artemis") {
 							url.searchParams.set("w", "450");
 						}
-						url.hash = "";
 						url.searchParams.set("preload", "1");
 						new Image().src = url.href;
 					}

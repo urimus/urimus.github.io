@@ -236,7 +236,6 @@ function loadNextCacheImage(state, images) {
 	if (state.index >= images.length) return;
     const url = new URL(images[state.index], document.baseURI);
     url.searchParams.set("preload", "1");
-    url.hash = "";
     const imgSrc = url.href;
     url.searchParams.delete("preload");
     const cacheUrl = url.href;
