@@ -154,7 +154,7 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 	updates = updates ?? getLocalStorageData(key);
 
 	if (isExternallyUpdated && !Object.keys(updates).length) return;
-console.log("isExternallyUpdated -",isExternallyUpdated);
+
 	const links = new Set(result.entries.map(entry => entry.link));
 	const unusedImages = new Set();
 
@@ -180,16 +180,17 @@ console.log("isExternallyUpdated -",isExternallyUpdated);
 	}
 
 	// Remove unused images from Service Worker Cache
-	if (unusedImages.size && "serviceWorker" in navigator) {
+	if ("serviceWorker" in navigator) {
 		navigator.serviceWorker.ready.then(registration => {
 
-			// saving updates used for image storage only
+			// Saving updates used for image storage only
 			if (!isExternallyUpdated) {
 				let hasNewUpdate = false;
+
 				for (let i = 0; i < result.entries.length; i++) {
 					const link = result.entries[i].link;
 					const imageUrl = result.entries[i].media?.url;
-console.log("imageUrl -",imageUrl);
+
 					if (!link || updates[link] || !imageUrl) continue;
 
 					const updateNew = {};
@@ -198,14 +199,17 @@ console.log("imageUrl -",imageUrl);
 					updates[link] = updateNew;
 					hasNewUpdate = true;
 				}
-console.log("updates -",updates);
-				if (hasNewUpdate) localStorage[key] = JSON.stringify(updates);
+
+				if (hasNewUpdate) {
+					localStorage[key] = JSON.stringify(updates);
+				}
 			}
 
-			if (!registration.active) return;
+			if (!registration.active || !unusedImages.size) return;
 
 			// Find images that are still used in current entries
 			const usedImages = new Set();
+
 			for (const entry of result.entries) {
 				const imageUrl = entry.media?.url;
 				if (imageUrl) usedImages.add(imageUrl);
@@ -225,7 +229,6 @@ console.log("updates -",updates);
 		});
 	}
 }
-
 
 // =========================================================
 // ALGORITHM GENERAL
