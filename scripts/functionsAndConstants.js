@@ -154,7 +154,7 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 	updates = updates ?? getLocalStorageData(key);
 
 	if (isExternallyUpdated && !Object.keys(updates).length) return;
-
+console.log("isExternallyUpdated -",isExternallyUpdated);
 	const links = new Set(result.entries.map(entry => entry.link));
 	const unusedImages = new Set();
 
@@ -189,6 +189,7 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 				for (let i = 0; i < result.entries.length; i++) {
 					const link = result.entries[i].link;
 					const imageUrl = result.entries[i].media?.url;
+console.log("imageUrl -",imageUrl);
 					if (!link || updates[link] || !imageUrl) continue;
 
 					const updateNew = {};
@@ -197,6 +198,7 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 					updates[link] = updateNew;
 					hasNewUpdate = true;
 				}
+console.log("updates -",updates);
 				if (hasNewUpdate) localStorage[key] = JSON.stringify(updates);
 			}
 
