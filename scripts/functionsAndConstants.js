@@ -148,8 +148,13 @@ function getLocalStorageData(par) {
 
 function removeUnusedCacheAndUpdates(source, type, result, updates) {
 	const key = `${source}_${type}_updates`;
+	const isExternallyUpdated = ["artemis", "yonhap"].includes(source) ||
+		(source == "nasa" && type != "image");
+
 	updates = updates ?? getLocalStorageData(key);
-	if (!Object.keys(updates).length) return;
+
+	if (isExternallyUpdated && !Object.keys(updates).length) return;
+
 	const links = new Set(result.entries.map(entry => entry.link));
 	const unusedImages = new Set();
 
@@ -170,7 +175,7 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 		}
 	}
 
-	if (source == "artemis" || (source == "nasa" && type != "image") || source == "yonhap") {
+	if (isExternallyUpdated) {
 		localStorage[key] = JSON.stringify(updates);
 	}
 
@@ -179,7 +184,7 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 		navigator.serviceWorker.ready.then(registration => {
 
 			// saving updates used for image storage only
-			if (source == "merco" || (source == "nasa" && type == "image") || source == "phys.org") {
+			if (!isExternallyUpdated) {
 				let hasNewUpdate = false;
 				for (let i = 0; i < result.entries.length; i++) {
 					const link = result.entries[i].link;
