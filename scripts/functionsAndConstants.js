@@ -201,7 +201,6 @@ function removeUnusedCacheAndUpdates(source, type, result, updates) {
 				if (imageUrl) usedImages.add(imageUrl);
 				addAdditionalMediaUrls(usedImages, updates[link]?.additMedia);
 			}
-
 			const imagesToDelete = [...unusedImages].filter(
 				url => !usedImages.has(url)
 			);
