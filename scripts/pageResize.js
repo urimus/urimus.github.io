@@ -234,11 +234,9 @@ function cancelImageCacheResult(url) {
 function loadNextCacheImage(state, images) {
 	state.index++;
 	if (state.index >= images.length) return;
-    const url = new URL(images[state.index], document.baseURI);
-    url.searchParams.set("preload", "1");
-    const imgSrc = url.href;
-    url.searchParams.delete("preload");
-    const cacheUrl = url.href;
+	const imgUrl = new URL(images[state.index], document.baseURI);
+	const cacheUrl = imgUrl.href;
+	imgUrl.searchParams.set("preload", "1");
 	const cacheResult = waitImageCacheResult(cacheUrl);
 	const img = new Image();
 	img.onload = function () {
@@ -258,7 +256,7 @@ function loadNextCacheImage(state, images) {
 		logIfCachingComplete(state, images.length);
 		loadNextCacheImage(state, images);
 	};
-	img.src = imgSrc;
+	img.src = imgUrl.href;
 }
 
 function preloadImagesGeneral() {
